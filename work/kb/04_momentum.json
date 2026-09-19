@@ -1,0 +1,215 @@
+{
+  "chapter": "第四章 · 动量守恒",
+  "order": 4,
+  "intro": "动量连接力的持续作用与运动状态的改变。研究碰撞、爆炸和反冲时，若系统所受合外力冲量为零或可忽略，就能直接比较作用前后的总动量。本章先规定正方向，再用正负号表示一维矢量。",
+  "points": [
+    {
+      "id": "mom-01",
+      "title": "冲量与动量",
+      "level": "基础",
+      "definition": "动量 p=mv；恒力冲量 I=Ft。二者都是矢量，一维计算用正负号表示方向。",
+      "meaning": "动量描述物体的运动状态，冲量描述力在一段时间内的累积效果。二者都是矢量，一维计算必须先规定正方向，反向量取负值，不能只比较大小。",
+      "symbols": {
+        "p": { "desc": "动量", "unit": "kg*m/s" }, "m": { "desc": "质量", "unit": "kg" },
+        "v": { "desc": "速度", "unit": "m/s" }, "I": { "desc": "冲量", "unit": "N*s" },
+        "F": { "desc": "力", "unit": "N" }, "t": { "desc": "时间", "unit": "s" }
+      },
+      "scenarios": { "推车": { "m": 2, "v": 3, "p": 6, "F": 4, "t": 1.5, "I": 6 } },
+      "formulas": [
+        { "name": "动量定义", "expr": "p = m*v", "when": "质点模型", "checks": [
+          { "type": "numeric", "scenario": "推车", "expr": "m*v", "ref": 6.0 },
+          { "type": "direction", "scenario": "推车", "var": "m", "lo": 1, "hi": 5, "expr": "m*v", "expect": "up" },
+          { "type": "direction", "scenario": "推车", "var": "v", "lo": 1, "hi": 8, "expr": "m*v", "expect": "up" },
+          { "type": "scan", "scenario": "推车", "var": "v", "lo": -100, "hi": 100 }
+        ] },
+        { "name": "恒力的冲量", "expr": "I = F*t", "when": "恒力", "checks": [
+          { "type": "numeric", "scenario": "推车", "expr": "F*t", "ref": 6.0 },
+          { "type": "direction", "scenario": "推车", "var": "F", "lo": 2, "hi": 10, "expr": "F*t", "expect": "up" },
+          { "type": "direction", "scenario": "推车", "var": "t", "lo": 0, "hi": 5, "expr": "F*t", "expect": "up" },
+          { "type": "consistency", "scenario": "推车", "expr": "F*t", "with": "mom-01|动量定义", "with_expr": "m*v", "target": "冲量与动量" }
+        ] }
+      ],
+      "derivation": ["定义动量 p=mv。", "恒力冲量 I=Ft。", "二者量纲相同。"],
+      "errors": [
+        { "wrong": "把动量多乘 2，写成 p=2mv", "wrong_expr": "p = 2*m*v", "why": "错误式量纲仍是动量，量纲检查抓不到；代入会得到 12，而正确动量是 6。", "caught_by": "数值代入", "trap_test": { "scenario": "推车", "expr": "2*m*v", "ref": 6.0 } },
+        { "wrong": "把恒力冲量写成 I = F/t", "wrong_expr": "I = F/t", "why": "力除以时间的量纲不是冲量；同时也会错误地认为作用越久冲量越小。", "caught_by": "量纲一致性" }
+      ],
+      "example": { "stem": "2 kg 小车以 3 m/s 运动，4 N 力作用 1.5 s。求动量和冲量。", "solution": ["动量 p=2×3=6。", "冲量 I=4×1.5=6。"], "answer": "动量 6 kg·m/s，冲量 6 N·s。" },
+      "prereq": [], "next": ["mom-02"], "tags": ["动量"]
+    },
+    {
+      "id": "mom-02",
+      "title": "动量定理",
+      "level": "基础",
+      "definition": "合外力的冲量等于动量变化量：I=p₂−p₁。恒力作用时，F平均=(p₂−p₁)/Δt。",
+      "meaning": "动量变化等于末动量减初动量，必须保留方向符号。同样的动量变化若延长作用时间，平均力会减小，这正是安全气囊、缓冲垫和屈膝落地的原理。",
+      "symbols": {
+        "I": { "desc": "冲量", "unit": "N*s" }, "p1": { "desc": "初动量", "unit": "kg*m/s" },
+        "p2": { "desc": "末动量", "unit": "kg*m/s" }, "F_avg": { "desc": "平均力", "unit": "N" },
+        "Delta_t": { "desc": "时间", "unit": "s" }
+      },
+      "scenarios": {
+        "同向加速": { "p1": 2, "p2": 8, "I": 6, "Delta_t": 0.3, "F_avg": 20 },
+        "反弹": { "p1": 3, "p2": -2, "I": -5, "Delta_t": 0.25, "F_avg": -20 }
+      },
+      "formulas": [
+        { "name": "动量定理", "expr": "I = p2 - p1", "when": "任意冲量", "checks": [
+          { "type": "numeric", "scenario": "同向加速", "expr": "p2-p1", "ref": 6.0 },
+          { "type": "numeric", "scenario": "反弹", "expr": "p2-p1", "ref": -5.0 },
+          { "type": "direction", "scenario": "同向加速", "var": "p2", "lo": 3, "hi": 12, "expr": "p2-p1", "expect": "up" },
+          { "type": "consistency", "scenario": "同向加速", "expr": "p2-p1", "with": "mom-02|平均合外力", "with_expr": "F_avg*Delta_t", "target": "合外力冲量" }
+        ] },
+        { "name": "平均合外力", "expr": "F_avg = (p2-p1)/Delta_t", "when": "已知作用时间", "checks": [
+          { "type": "numeric", "scenario": "同向加速", "expr": "(p2-p1)/Delta_t", "ref": 20.0 },
+          { "type": "numeric", "scenario": "反弹", "expr": "(p2-p1)/Delta_t", "ref": -20.0 },
+          { "type": "direction", "scenario": "同向加速", "var": "Delta_t", "lo": 0.1, "hi": 1, "expr": "(p2-p1)/Delta_t", "expect": "down" },
+          { "type": "scan", "scenario": "同向加速", "var": "Delta_t", "lo": 0.01, "hi": 10 }
+        ] }
+      ],
+      "derivation": ["由 F=ma 得 FΔt=mΔv。", "mΔv=p₂−p₁。", "故 I=Δp。"],
+      "errors": [
+        { "wrong": "把变化量写成 p₁−p₂", "wrong_expr": "I = p1-p2", "why": "量纲仍正确但方向相反；本情境会算成 −6，正确结果应为正 6。", "caught_by": "数值代入", "trap_test": { "scenario": "同向加速", "expr": "p1-p2", "ref": 6.0 } },
+        { "wrong": "反弹时忽略末动量为负", "wrong_expr": "I = p1-abs(p2)", "why": "正确变化量是 −2−3=−5，而非用大小相减得到 1；矢量方向不能丢。", "caught_by": "数值代入", "trap_test": { "scenario": "反弹", "expr": "p1-abs(p2)", "ref": -5.0 } }
+      ],
+      "example": { "stem": "动量由 3 变为 −2 kg·m/s，历时 0.25 s，求冲量和力。", "solution": ["冲量 I=−2−3=−5。", "平均力 F=−5/0.25=−20。"], "answer": "−5 N·s；−20 N。" },
+      "prereq": ["mom-01"], "next": ["mom-03"], "tags": ["动量定理"]
+    },
+    {
+      "id": "mom-03",
+      "title": "动量守恒定律",
+      "level": "进阶",
+      "definition": "合外力冲量为零时，系统总动量不变：m₁v₁+m₂v₂=m₁u₁+m₂u₂。",
+      "meaning": "守恒的是选定系统的总动量，而不是每个物体各自的动量。内力只在系统内部转移动量；是否守恒取决于合外力冲量是否为零或在过程中可忽略。",
+      "symbols": {
+        "p_total": { "desc": "总动量", "unit": "kg*m/s" }, "m1": { "desc": "质量一", "unit": "kg" }, "m2": { "desc": "质量二", "unit": "kg" },
+        "v1": { "desc": "初速度一", "unit": "m/s" }, "v2": { "desc": "初速度二", "unit": "m/s" }, "u1": { "desc": "末速度一", "unit": "m/s" }, "u2": { "desc": "末速度二", "unit": "m/s" }
+      },
+      "scenarios": { "两车相互作用": { "m1": 2, "v1": 3, "m2": 1, "v2": -1, "u1": 1, "u2": 3, "p_total": 5 } },
+      "formulas": [
+        { "name": "系统初总动量", "expr": "p_total = m1*v1 + m2*v2", "when": "一维两物体", "checks": [
+          { "type": "numeric", "scenario": "两车相互作用", "expr": "m1*v1+m2*v2", "ref": 5.0 },
+          { "type": "direction", "scenario": "两车相互作用", "var": "v1", "lo": 1, "hi": 5, "expr": "m1*v1+m2*v2", "expect": "up" },
+          { "type": "consistency", "scenario": "两车相互作用", "expr": "m1*v1+m2*v2", "with": "mom-03|系统初总动量", "with_expr": "m1*u1+m2*u2", "target": "碰前后总动量" },
+          { "type": "scan", "scenario": "两车相互作用", "var": "v2", "lo": -20, "hi": 20 }
+        ] },
+        { "name": "由动量守恒求末速度", "expr": "u2 = (m1*v1+m2*v2-m1*u1)/m2", "when": "m₂不为零", "checks": [
+          { "type": "numeric", "scenario": "两车相互作用", "expr": "(m1*v1+m2*v2-m1*u1)/m2", "ref": 3.0 },
+          { "type": "direction", "scenario": "两车相互作用", "var": "u1", "lo": 0, "hi": 2, "expr": "(m1*v1+m2*v2-m1*u1)/m2", "expect": "down" },
+          { "type": "consistency", "scenario": "两车相互作用", "expr": "m2*((m1*v1+m2*v2-m1*u1)/m2)", "with": "mom-03|由动量守恒求末速度", "with_expr": "m1*v1+m2*v2-m1*u1", "target": "物体二末动量" },
+          { "type": "scan", "scenario": "两车相互作用", "var": "m2", "lo": 0.1, "hi": 100 }
+        ] }
+      ],
+      "derivation": ["系统满足 Δp=I外。", "I外=0 时 Δp=0。", "反向速度取负。"],
+      "errors": [
+        { "wrong": "把负的 v₂ 再减一次", "wrong_expr": "p_total = m1*v1-m2*v2", "why": "v₂ 已是 −1，再写减号会重复处理方向，结果变为 7，正确总动量是 5。", "caught_by": "数值代入", "trap_test": { "scenario": "两车相互作用", "expr": "m1*v1-m2*v2", "ref": 5.0 } },
+        { "wrong": "认为存在内力就不守恒", "why": "内力只在系统内部转移动量；系统是否守恒应由合外力冲量是否为零判断。", "caught_by": "人工审核" }
+      ],
+      "example": { "stem": "两车初动量合计为 5，碰后一车动量为 2，求另一车速度（质量 1 kg）。", "solution": ["另一车末动量为 5−2=3。", "速度 u₂=3/1=3 m/s。"], "answer": "3 m/s。" },
+      "prereq": ["mom-02"], "next": ["mom-04"], "tags": ["动量守恒"]
+    },
+    {
+      "id": "mom-04",
+      "title": "碰撞",
+      "level": "进阶",
+      "definition": "碰撞中系统动量守恒。弹性碰撞还守恒动能；非弹性碰撞动能减少；完全非弹性碰撞后两物体粘连。",
+      "meaning": "动量守恒不代表动能守恒。弹性碰撞还守恒总动能；非弹性碰撞的动能减少；完全非弹性碰撞后两物体粘连，动能损失达到最大。减少的动能转化为内能等其他形式。",
+      "symbols": {
+        "m1": { "desc": "质量一", "unit": "kg" }, "m2": { "desc": "质量二", "unit": "kg" }, "v1": { "desc": "初速度一", "unit": "m/s" }, "v2": { "desc": "初速度二", "unit": "m/s" },
+        "u1": { "desc": "末速度一", "unit": "m/s" }, "u2": { "desc": "末速度二", "unit": "m/s" }, "v_common": { "desc": "共同速度", "unit": "m/s" }
+      },
+      "scenarios": {
+        "完全非弹性碰撞": { "m1": 2, "m2": 2, "v1": 4, "v2": 0, "v_common": 2 },
+        "一维弹性碰撞": { "m1": 2, "m2": 1, "v1": 3, "v2": 0, "u1": 1, "u2": 4 }
+      },
+      "formulas": [
+        { "name": "完全非弹性碰撞共同速度", "expr": "v_common = (m1*v1+m2*v2)/(m1+m2)", "when": "碰后粘连", "checks": [
+          { "type": "numeric", "scenario": "完全非弹性碰撞", "expr": "(m1*v1+m2*v2)/(m1+m2)", "ref": 2.0 },
+          { "type": "direction", "scenario": "完全非弹性碰撞", "var": "v1", "lo": 1, "hi": 8, "expr": "(m1*v1+m2*v2)/(m1+m2)", "expect": "up" },
+          { "type": "compare", "scenario": "完全非弹性碰撞", "expr": "0.5*m1*v1^2+0.5*m2*v2^2", "op": ">", "vs": "0.5*(m1+m2)*v_common^2" },
+          { "type": "scan", "scenario": "完全非弹性碰撞", "var": "m2", "lo": 0.1, "hi": 100 }
+        ] },
+        { "name": "弹性碰撞中物体一末速度", "expr": "u1 = ((m1-m2)*v1+2*m2*v2)/(m1+m2)", "when": "一维弹性碰撞", "checks": [
+          { "type": "numeric", "scenario": "一维弹性碰撞", "expr": "((m1-m2)*v1+2*m2*v2)/(m1+m2)", "ref": 1.0 },
+          { "type": "consistency", "scenario": "一维弹性碰撞", "expr": "m1*v1+m2*v2", "with": "mom-04|弹性碰撞中物体一末速度", "with_expr": "m1*u1+m2*u2", "target": "弹性碰撞总动量" },
+          { "type": "consistency", "scenario": "一维弹性碰撞", "expr": "0.5*m1*v1^2+0.5*m2*v2^2", "with": "mom-04|弹性碰撞中物体一末速度", "with_expr": "0.5*m1*u1^2+0.5*m2*u2^2", "target": "弹性碰撞总动能" },
+          { "type": "scan", "scenario": "一维弹性碰撞", "var": "m1", "lo": 0.1, "hi": 100 }
+        ] }
+      ],
+      "derivation": ["粘连后末速度相同。", "弹性碰撞还守恒动能。", "损失动能转化为内能。"],
+      "errors": [
+        { "wrong": "直接取初速度平均值", "wrong_expr": "v_common = (v1+v2)/2", "why": "只有两物体质量相等时才碰巧成立；一般情形必须用质量加权平均。", "caught_by": "人工审核" },
+        { "wrong": "认为所有碰撞都保持动能不变", "wrong_expr": "0.5*m1*v1^2+0.5*m2*v2^2 = 0.5*(m1+m2)*v_common^2", "why": "完全非弹性碰撞中部分动能转化为内能；本情境碰前 16 J、碰后仅 8 J，等式明显不成立。", "caught_by": "数值代入" }
+      ],
+      "example": { "stem": "两辆 2 kg 车以 4、0 m/s 粘连，求共同速度和动能损失。", "solution": ["共同速度 v=8/4=2 m/s。", "动能由 16 J 变为 8 J。"], "answer": "2 m/s；损失 8 J。" },
+      "prereq": ["mom-03"], "next": ["mom-05"], "tags": ["碰撞"]
+    },
+    {
+      "id": "mom-05",
+      "title": "反冲运动与火箭",
+      "level": "进阶",
+      "definition": "初动量为零且外力冲量可忽略时，两部分向相反方向运动。火箭向后喷气而获得向前推力。",
+      "meaning": "反冲不需要空气作支点，火箭在真空中也能飞。火箭与喷出物组成系统，喷出物向后获得动量，火箭便获得大小相抵、方向向前的动量。",
+      "symbols": {
+        "M": { "desc": "主体质量", "unit": "kg" }, "V": { "desc": "主体速度", "unit": "m/s" }, "m_gas": { "desc": "喷出质量", "unit": "kg" }, "v_gas": { "desc": "喷出速度", "unit": "m/s" },
+        "F": { "desc": "推力", "unit": "N" }, "mu": { "desc": "质量流率", "unit": "kg/s" }, "u": { "desc": "喷气速率", "unit": "m/s" }
+      },
+      "scenarios": {
+        "静止平台抛物": { "M": 60, "V": 1, "m_gas": 2, "v_gas": -30 },
+        "理想火箭喷气": { "F": 2000, "mu": 5, "u": 400 }
+      },
+      "formulas": [
+        { "name": "反冲速度", "expr": "V = -m_gas*v_gas/M", "when": "初动量为零", "checks": [
+          { "type": "numeric", "scenario": "静止平台抛物", "expr": "-m_gas*v_gas/M", "ref": 1.0 },
+          { "type": "direction", "scenario": "静止平台抛物", "var": "m_gas", "lo": 1, "hi": 5, "expr": "-m_gas*v_gas/M", "expect": "up" },
+          { "type": "consistency", "scenario": "静止平台抛物", "expr": "M*V", "with": "mom-05|反冲速度", "with_expr": "-m_gas*v_gas", "target": "反向动量" },
+          { "type": "scan", "scenario": "静止平台抛物", "var": "M", "lo": 1, "hi": 1000 }
+        ] },
+        { "name": "理想火箭推力", "expr": "F = mu*u", "when": "稳定喷气", "checks": [
+          { "type": "numeric", "scenario": "理想火箭喷气", "expr": "mu*u", "ref": 2000.0 },
+          { "type": "direction", "scenario": "理想火箭喷气", "var": "mu", "lo": 1, "hi": 10, "expr": "mu*u", "expect": "up" },
+          { "type": "direction", "scenario": "理想火箭喷气", "var": "u", "lo": 100, "hi": 800, "expr": "mu*u", "expect": "up" },
+          { "type": "scan", "scenario": "理想火箭喷气", "var": "mu", "lo": 0, "hi": 100 }
+        ] }
+      ],
+      "derivation": ["初动量为零。", "由 MV+mv=0 求反冲速度。", "单位时间动量变化给出 F=μu。"],
+      "errors": [
+        { "wrong": "反冲速度漏掉负号，认为主体和喷出物同向", "wrong_expr": "V = m_gas*v_gas/M", "why": "错误式量纲完全正确却把反冲方向算反，会得到 −1 m/s；正确结果应是相反方向的 +1 m/s。", "caught_by": "数值代入", "trap_test": { "scenario": "静止平台抛物", "expr": "m_gas*v_gas/M", "ref": 1.0 } },
+        { "wrong": "把推力写成 F=u/μ", "wrong_expr": "F = u/mu", "why": "速度除以质量流率的量纲不是力，还会错误地认为喷出质量越多推力越小。", "caught_by": "量纲一致性" }
+      ],
+      "example": { "stem": "60 kg 平台向左抛出 2 kg 物体，速度 30 m/s，求反冲速度。", "solution": ["取向右为正，物体动量为 −60。", "60V−60=0，得 V=1 m/s。"], "answer": "向右 1 m/s。" },
+      "prereq": ["mom-03"], "next": ["mom-06"], "tags": ["反冲"]
+    },
+    {
+      "id": "mom-06",
+      "title": "动量与能量的综合",
+      "level": "拓展",
+      "definition": "由 p=mv 和 Eₖ=mv²/2 得 Eₖ=p²/(2m)，反解得动量大小 p=√(2mEₖ)。",
+      "meaning": "动量是矢量并与速度成正比，动能是标量并与速率平方成正比。碰撞题常先用动量守恒求速度，再比较碰撞前后动能来判断碰撞类型。两者不能因单位或数值相近而混用。",
+      "symbols": {
+        "Ek": { "desc": "动能", "unit": "J" }, "p": { "desc": "动量", "unit": "kg*m/s" }, "m": { "desc": "质量", "unit": "kg" }, "v": { "desc": "速率", "unit": "m/s" }
+      },
+      "scenarios": { "运动物体": { "m": 2, "v": 3, "p": 6, "Ek": 9 } },
+      "formulas": [
+        { "name": "由动量求动能", "expr": "Ek = p^2/(2*m)", "when": "质量不变", "checks": [
+          { "type": "numeric", "scenario": "运动物体", "expr": "p^2/(2*m)", "ref": 9.0 },
+          { "type": "direction", "scenario": "运动物体", "var": "p", "lo": 1, "hi": 10, "expr": "p^2/(2*m)", "expect": "up" },
+          { "type": "consistency", "scenario": "运动物体", "expr": "p^2/(2*m)", "with": "ene-03|动能", "with_expr": "0.5*m*v^2", "target": "同一物体的动能" },
+          { "type": "scan", "scenario": "运动物体", "var": "p", "lo": 0, "hi": 100 }
+        ] },
+        { "name": "由动能求动量大小", "expr": "p = sqrt(2*m*Ek)", "when": "只求大小", "checks": [
+          { "type": "numeric", "scenario": "运动物体", "expr": "sqrt(2*m*Ek)", "ref": 6.0 },
+          { "type": "direction", "scenario": "运动物体", "var": "Ek", "lo": 1, "hi": 25, "expr": "sqrt(2*m*Ek)", "expect": "up" },
+          { "type": "consistency", "scenario": "运动物体", "expr": "sqrt(2*m*Ek)", "with": "mom-01|动量定义", "with_expr": "m*v", "target": "动量大小" },
+          { "type": "scan", "scenario": "运动物体", "var": "Ek", "lo": 0, "hi": 10000 }
+        ] }
+      ],
+      "derivation": ["由 p=mv 得 v=p/m。", "代入动能式得 Eₖ=p²/(2m)。", "反解得 p=√(2mEₖ)。"],
+      "errors": [
+        { "wrong": "漏掉平方，写成 Eₖ=p/(2m)", "wrong_expr": "Ek = p/(2*m)", "why": "动量除以质量得到的是速度量纲，再除以常数仍不是能量，因此量纲检查可以直接拦住。", "caught_by": "量纲一致性" },
+        { "wrong": "由动能开方求动量时漏掉因子 2", "wrong_expr": "p = sqrt(m*Ek)", "why": "量纲仍正确，只能靠数值发现：会得到 √18，而正确值为 6。", "caught_by": "数值代入", "trap_test": { "scenario": "运动物体", "expr": "sqrt(m*Ek)", "ref": 6.0 } }
+      ],
+      "example": { "stem": "2 kg 物体动量为 6 kg·m/s，求动能并反算。", "solution": ["动能 Eₖ=36/4=9 J。", "反算 p=√36=6 kg·m/s。"], "answer": "9 J；6 kg·m/s。" },
+      "prereq": ["mom-01"], "next": [], "tags": ["动量与动能"]
+    }
+  ]
+}

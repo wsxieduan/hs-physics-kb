@@ -1,0 +1,301 @@
+{
+  "chapter": "第八章 · 静电场（二）电场的能的性质",
+  "order": 8,
+  "intro": "本章从静电力做功与路径无关出发，引入电势能、电势和电势差，再用等势面把电场的方向与能量变化联系起来。全章采用统一符号约定：W_AB 表示静电力把电荷从 A 移到 B 所做的功，U_AB=φ_A-φ_B；因此 W_AB=qU_AB。带符号代入是判断正负的关键，电势和电势差属于电场本身，不能由试探电荷的正负决定。",
+  "points": [
+    {
+      "id": "pot-01",
+      "title": "静电力做功的特点",
+      "level": "基础",
+      "definition": "静电力做功只由电荷的初位置和末位置决定，与实际经过的路径无关。同一电荷从 A 移到 B，沿任何路径的静电力功都相同；从 A 到 B 再返回 A 的闭合过程中，静电力总功为零。",
+      "meaning": "静电场力是保守力，这一点与重力相似。路径可以弯曲、长短也可以不同，只要起点和终点不变，静电力做功就不变。路径无关并不等于静电力不做功，而是说做功只看两端状态。",
+      "symbols": {
+        "W_path1": { "desc": "电荷沿路径一从 A 到 B 时静电力做的功", "unit": "J" },
+        "W_path2": { "desc": "电荷沿路径二从 A 到 B 时静电力做的功", "unit": "J" },
+        "W_AB": { "desc": "电荷从 A 到 B 时静电力做的功", "unit": "J" },
+        "W_BA": { "desc": "同一电荷从 B 返回 A 时静电力做的功", "unit": "J" }
+      },
+      "scenarios": {
+        "同端点两路径": { "W_path1": 6, "W_path2": 6, "W_AB": 6, "W_BA": -6 },
+        "反向移动": { "W_path1": -4, "W_path2": -4, "W_AB": -4, "W_BA": 4 }
+      },
+      "formulas": [
+        {
+          "name": "静电力功与路径无关",
+          "expr": "W_path1 = W_path2",
+          "when": "同一电荷在同一静电场中沿不同路径从同一初位置移到同一末位置",
+          "checks": [
+            { "type": "numeric", "scenario": "同端点两路径", "expr": "W_path1 - W_path2", "ref": 0.0, "note": "两条路径分别做功 6 J，差为 0，说明路径改变不影响静电力功" },
+            { "type": "numeric", "scenario": "反向移动", "expr": "W_path1 - W_path2", "ref": 0.0, "note": "即使静电力做负功，两条同端点路径仍都为 -4 J" },
+            { "type": "consistency", "scenario": "同端点两路径", "expr": "W_path1", "with": "pot-01|往返过程的反向功", "with_expr": "-W_BA", "target": "同一电荷从 A 到 B 时静电力所做的功", "note": "沿路径一直接记录得到 6 J；由返回过程 -6 J 取相反数也得到 6 J，两条路径互证" },
+            { "type": "scan", "scenario": "同端点两路径", "var": "W_path1", "lo": -1000000, "hi": 1000000 }
+          ]
+        },
+        {
+          "name": "往返过程的反向功",
+          "expr": "W_BA = -W_AB",
+          "when": "同一电荷沿任意路径从 A 到 B 后再返回 A",
+          "checks": [
+            { "type": "numeric", "scenario": "同端点两路径", "expr": "-W_AB", "ref": -6.0, "note": "A 到 B 做功 6 J，B 返回 A 做功 -6 J" },
+            { "type": "compare", "scenario": "同端点两路径", "expr": "W_AB + W_BA", "op": "==", "vs": "0*W_AB", "note": "往返总功 6+(-6)=0，闭合路径上静电力总功为零" },
+            { "type": "direction", "scenario": "同端点两路径", "var": "W_AB", "lo": 1, "hi": 12, "expr": "-W_AB", "expect": "down", "note": "正向功越大，反向功的代数值越小，二者始终互为相反数" },
+            { "type": "scan", "scenario": "同端点两路径", "var": "W_AB", "lo": -1000000, "hi": 1000000 }
+          ]
+        }
+      ],
+      "derivation": [
+        "把同一电荷沿路径一和路径二分别从 A 移到 B；静电场中两次静电力功相同，写成 W_path1=W_path2。",
+        "把 A 到 B 与 B 到 A 拼成闭合路径，保守力在闭合路径上的总功为零。",
+        "因此 W_AB+W_BA=0，即 W_BA=-W_AB。"
+      ],
+      "errors": [
+        { "wrong": "认为路径越长，静电力做功一定越多", "wrong_expr": "W_path2 = 2*W_path1", "why": "静电力功只由始末位置决定。同端点情境中错误式给出 12 J，而路径二实际仍为 6 J。", "caught_by": "数值代入", "trap_test": { "scenario": "同端点两路径", "expr": "2*W_path1", "ref": 6.0 } },
+        { "wrong": "认为原路返回时静电力功与去程同号，写成 W_BA=W_AB", "wrong_expr": "W_BA = W_AB", "why": "交换始末位置后静电力功变号。情境中返回功应为 -6 J，而不是 +6 J。", "caught_by": "数值代入" }
+      ],
+      "example": { "stem": "某电荷从 A 点移到 B 点，沿路径一时静电力做功 6 J。若改沿更长的路径二到达 B，再从 B 返回 A，求路径二的功和返回过程的功。", "solution": ["静电力做功与路径无关，所以路径二的功仍为 6 J。", "交换始末位置，静电力功变为相反数。", "因此从 B 返回 A 时静电力做功 -6 J，整个往返过程总功为零。"], "answer": "路径二做功 6 J；返回过程做功 -6 J。" },
+      "prereq": ["ele-03"], "next": ["pot-02"], "tags": ["静电力做功", "路径无关", "保守力"]
+    },
+    {
+      "id": "pot-02",
+      "title": "电势能",
+      "level": "基础",
+      "definition": "电荷在静电场中因位置而具有的能量叫电势能。静电力做功等于电势能减少量：W_e=Ep_A-Ep_B；等价地，电势能变化量 delta_Ep=Ep_B-Ep_A=-W_e。",
+      "meaning": "电势能属于电荷与电场组成的系统，具有相对性，必须先选定零势能参考位置。静电力做正功，电势能减少；静电力做负功，电势能增加。这与重力做功和重力势能变化的关系完全同构。",
+      "symbols": {
+        "Ep_A": { "desc": "电荷在 A 点的电势能", "unit": "J" },
+        "Ep_B": { "desc": "电荷在 B 点的电势能", "unit": "J" },
+        "delta_Ep": { "desc": "从 A 到 B 的电势能变化量，即末态减初态", "unit": "J" },
+        "W_e": { "desc": "电荷从 A 到 B 时静电力做的功", "unit": "J" }
+      },
+      "scenarios": {
+        "静电力正功": { "Ep_A": 10, "Ep_B": 4, "delta_Ep": -6, "W_e": 6 },
+        "静电力负功": { "Ep_A": 2, "Ep_B": 7, "delta_Ep": 5, "W_e": -5 }
+      },
+      "formulas": [
+        {
+          "name": "电势能变化量",
+          "expr": "delta_Ep = Ep_B - Ep_A",
+          "when": "电荷从 A 点移到 B 点，变化量按末态减初态定义",
+          "checks": [
+            { "type": "numeric", "scenario": "静电力正功", "expr": "Ep_B - Ep_A", "ref": -6.0, "note": "末态 4 J 减初态 10 J，电势能变化量为 -6 J" },
+            { "type": "numeric", "scenario": "静电力负功", "expr": "Ep_B - Ep_A", "ref": 5.0, "note": "末态 7 J 减初态 2 J，电势能增加 5 J" },
+            { "type": "direction", "scenario": "静电力正功", "var": "Ep_B", "lo": 1, "hi": 9, "expr": "Ep_B - Ep_A", "expect": "up", "note": "初态不变时，末态电势能越大，变化量越大" },
+            { "type": "scan", "scenario": "静电力正功", "var": "Ep_B", "lo": -1000000, "hi": 1000000 }
+          ]
+        },
+        {
+          "name": "静电力功与电势能变化",
+          "expr": "W_e = -delta_Ep",
+          "when": "只比较静电力做功与系统电势能变化",
+          "checks": [
+            { "type": "numeric", "scenario": "静电力正功", "expr": "-delta_Ep", "ref": 6.0, "note": "电势能减少 6 J，对应静电力做正功 6 J" },
+            { "type": "numeric", "scenario": "静电力负功", "expr": "-delta_Ep", "ref": -5.0, "note": "电势能增加 5 J，对应静电力做功 -5 J" },
+            { "type": "consistency", "scenario": "静电力正功", "expr": "-delta_Ep", "with": "pot-02|电势能变化量", "with_expr": "Ep_A - Ep_B", "target": "静电力从 A 到 B 所做的功", "note": "由变化量取负号与直接用初态减末态，两条路径都得到 6 J" },
+            { "type": "scan", "scenario": "静电力正功", "var": "delta_Ep", "lo": -1000000, "hi": 1000000 }
+          ]
+        }
+      ],
+      "derivation": ["静电力是保守力，因此可用一个只与位置有关的电势能描述系统状态。", "规定静电力做多少正功，系统电势能就减少多少，得到 W_e=Ep_A-Ep_B。", "按变化量等于末态减初态定义，delta_Ep=Ep_B-Ep_A，所以 W_e=-delta_Ep。"],
+      "errors": [
+        { "wrong": "把电势能变化量写成初态减末态", "wrong_expr": "delta_Ep = Ep_A - Ep_B", "why": "变化量必须是末态减初态。正功情境中错误式得到 +6 J，正确变化量为 -6 J。", "caught_by": "数值代入", "trap_test": { "scenario": "静电力正功", "expr": "Ep_A - Ep_B", "ref": -6.0 } },
+        { "wrong": "认为静电力做正功时电势能也增加，写成 W_e=delta_Ep", "wrong_expr": "W_e = delta_Ep", "why": "静电力功与电势能变化量互为相反数。正功情境中一个是 +6 J，另一个是 -6 J。", "caught_by": "数值代入" }
+      ],
+      "example": { "stem": "某电荷从 A 移到 B，电势能由 10 J 变为 4 J。求电势能变化量和静电力做功。", "solution": ["变化量按末态减初态：delta_Ep=4-10=-6 J。", "静电力功等于电势能减少量：W_e=-delta_Ep。", "所以静电力做正功 6 J。"], "answer": "电势能变化量为 -6 J，静电力做功为 +6 J。" },
+      "prereq": ["pot-01", "ene-04"], "next": ["pot-03"], "tags": ["电势能", "静电力功", "能量变化"]
+    },
+    {
+      "id": "pot-03",
+      "title": "电势",
+      "level": "基础",
+      "definition": "电场中某点的电势，等于正试探电荷在该点的电势能 Ep 与其电荷量 q 的比值：phi=Ep/q。电势的单位是伏特，1 V=1 J/C。",
+      "meaning": "电势是描述电场能的性质的标量，由电场和零电势参考位置决定，与放入的试探电荷无关。负电荷在正电势处可以具有负电势能，因为 Ep=q*phi；不能因为试探电荷为负，就说该点电势为负。",
+      "symbols": {
+        "phi": { "desc": "电场中某点相对于选定零点的电势", "unit": "V" },
+        "Ep": { "desc": "电荷在该点的电势能", "unit": "J" },
+        "q": { "desc": "试探电荷的带符号电荷量", "unit": "C" }
+      },
+      "scenarios": {
+        "正试探电荷": { "Ep": 0.01, "q": 2.0e-6, "phi": 5000 },
+        "负试探电荷": { "Ep": -0.01, "q": -2.0e-6, "phi": 5000 }
+      },
+      "formulas": [
+        {
+          "name": "电势定义式",
+          "expr": "phi = Ep/q",
+          "when": "q 不为零，电势能与电荷量均按正负号代入",
+          "checks": [
+            { "type": "numeric", "scenario": "正试探电荷", "expr": "Ep/q", "ref": 5000.0, "note": "0.010 J÷2.0×10^-6 C=5000 V" },
+            { "type": "numeric", "scenario": "负试探电荷", "expr": "Ep/q", "ref": 5000.0, "note": "(-0.010 J)÷(-2.0×10^-6 C)=5000 V，试探电荷变号不改变该点电势" },
+            { "type": "consistency", "scenario": "负试探电荷", "expr": "Ep/q", "with": "pot-03|电势能与电势", "with_expr": "phi", "target": "同一场点的电势", "note": "负电荷的电势能除以负电荷量得到 5000 V，与电场本身记录的电势一致" },
+            { "type": "scan", "scenario": "正试探电荷", "var": "q", "lo": 1.0e-12, "hi": 1 }
+          ]
+        },
+        {
+          "name": "电势能与电势",
+          "expr": "Ep = q*phi",
+          "when": "已知某点电势和带符号电荷量，求该电荷的电势能",
+          "checks": [
+            { "type": "numeric", "scenario": "正试探电荷", "expr": "q*phi", "ref": 0.01, "note": "2.0×10^-6 C×5000 V=0.010 J" },
+            { "type": "numeric", "scenario": "负试探电荷", "expr": "q*phi", "ref": -0.01, "note": "负电荷在正电势处的电势能为负值：-0.010 J" },
+            { "type": "direction", "scenario": "正试探电荷", "var": "phi", "lo": 1000, "hi": 9000, "expr": "q*phi", "expect": "up", "note": "对固定正电荷，电势越高，电势能越大" },
+            { "type": "scan", "scenario": "负试探电荷", "var": "phi", "lo": -1000000, "hi": 1000000 }
+          ]
+        }
+      ],
+      "derivation": ["在同一场点放入不同的非零试探电荷，电势能 Ep 与带符号电荷量 q 成正比。", "比值 Ep/q 与试探电荷无关，因此用它定义该点电势 phi。", "由定义式移项得到 Ep=q*phi；J/C 就是电势单位 V。"],
+      "errors": [
+        { "wrong": "计算负试探电荷所在点的电势时把 q 强行取绝对值", "wrong_expr": "phi = Ep/abs(q)", "why": "电势能和电荷量都必须带符号。负试探电荷情境中错误式给出 -5000 V，而该点电势实际为 +5000 V。", "caught_by": "数值代入", "trap_test": { "scenario": "负试探电荷", "expr": "Ep/abs(q)", "ref": 5000.0 } },
+        { "wrong": "把电势能关系写成 Ep=q/phi", "wrong_expr": "Ep = q/phi", "why": "C/V 不是能量 J 的量纲；正确关系是电荷量乘电势，乘积 C·V 才等于 J，乘除颠倒会被量纲检查直接发现。", "caught_by": "量纲一致性" }
+      ],
+      "example": { "stem": "在电场中的同一点，+2.0 μC 电荷的电势能为 +0.010 J。求该点电势，并求 -2.0 μC 电荷放在该点时的电势能。", "solution": ["phi=Ep/q=0.010/(2.0×10^-6)=5000 V。", "电势由电场和位置决定，更换试探电荷不改变该点电势。", "对负电荷，Ep=qphi=(-2.0×10^-6)×5000=-0.010 J。"], "answer": "该点电势为 5000 V；负电荷的电势能为 -0.010 J。" },
+      "prereq": ["pot-02"], "next": ["pot-04", "pot-05"], "tags": ["电势", "电势能", "标量", "伏特"]
+    },
+    {
+      "id": "pot-04",
+      "title": "等势面",
+      "level": "进阶",
+      "definition": "电势相等的各点组成的面叫等势面。同一等势面上任意两点的电势差为零，沿等势面移动电荷时静电力不做功。电场线处处与等势面垂直，并从电势较高的等势面指向电势较低的等势面。",
+      "meaning": "等势面是三维的面，平面图上常画成等势线。等势只表示电势相同，不表示场强为零；匀强电场中的等势面上电势处处相等，但场强可以处处非零。等势面越密处，同样距离内电势变化越快，场强通常越强。",
+      "symbols": {
+        "phi_A": { "desc": "等势面上 A 点的电势", "unit": "V" },
+        "phi_B": { "desc": "等势面上或另一位置 B 点的电势", "unit": "V" },
+        "delta_phi": { "desc": "A、B 两点电势之差 phi_A-phi_B", "unit": "V" },
+        "q": { "desc": "沿所选路径移动的带符号电荷量", "unit": "C" },
+        "W_e": { "desc": "电荷从 A 到 B 时静电力做的功", "unit": "J" }
+      },
+      "scenarios": {
+        "同一等势面": { "phi_A": 300, "phi_B": 300, "delta_phi": 0, "q": 2.0e-6, "W_e": 0 },
+        "跨越等势面": { "phi_A": 300, "phi_B": 100, "delta_phi": 200, "q": -2.0e-6, "W_e": -0.0004 }
+      },
+      "formulas": [
+        {
+          "name": "两点电势之差",
+          "expr": "delta_phi = phi_A - phi_B",
+          "when": "从 A 指向 B 定义电势之差；同一等势面上结果为零",
+          "checks": [
+            { "type": "numeric", "scenario": "同一等势面", "expr": "phi_A - phi_B", "ref": 0.0, "note": "同一等势面两点都是 300 V，电势之差为 0" },
+            { "type": "numeric", "scenario": "跨越等势面", "expr": "phi_A - phi_B", "ref": 200.0, "note": "A 点 300 V、B 点 100 V，A 相对 B 高 200 V" },
+            { "type": "direction", "scenario": "跨越等势面", "var": "phi_B", "lo": 50, "hi": 250, "expr": "phi_A - phi_B", "expect": "down", "note": "A 点电势固定时，B 点电势越高，两点电势之差越小" },
+            { "type": "scan", "scenario": "同一等势面", "var": "phi_A", "lo": -1000000, "hi": 1000000 }
+          ]
+        },
+        {
+          "name": "等势移动时的静电力功",
+          "expr": "W_e = q*delta_phi",
+          "when": "电荷从 A 移到 B；同一等势面上 delta_phi=0",
+          "checks": [
+            { "type": "numeric", "scenario": "同一等势面", "expr": "q*delta_phi", "ref": 0.0, "note": "无论电荷量多大，同一等势面上电势之差为零，所以静电力功为零" },
+            { "type": "numeric", "scenario": "跨越等势面", "expr": "q*delta_phi", "ref": -0.0004, "note": "(-2.0×10^-6 C)×200 V=-4.0×10^-4 J" },
+            { "type": "consistency", "scenario": "同一等势面", "expr": "q*delta_phi", "with": "pot-04|两点电势之差", "with_expr": "q*(phi_A-phi_B)", "target": "同一等势面上静电力做的功", "note": "先求电势差再乘电荷量，与直接代入两点电势计算，均得 0 J" },
+            { "type": "scan", "scenario": "跨越等势面", "var": "q", "lo": -1, "hi": 1 }
+          ]
+        }
+      ],
+      "derivation": ["按定义，同一等势面上任意两点满足 phi_A=phi_B，所以 delta_phi=phi_A-phi_B=0。", "静电力功等于带符号电荷量乘两点电势之差，因此沿等势面移动时 W_e=q*0=0。", "若电场线不与等势面垂直，静电力就会有沿等势面的分量并做功，与等势移动功为零矛盾，所以二者必须垂直。"],
+      "errors": [
+        { "wrong": "把两点电势之差写成电势之和", "wrong_expr": "delta_phi = phi_A + phi_B", "why": "同一等势面上错误式得到 600 V，正确电势之差应为 0 V。", "caught_by": "数值代入", "trap_test": { "scenario": "同一等势面", "expr": "phi_A + phi_B", "ref": 0.0 } },
+        { "wrong": "认为等势面上的电势相等，所以该处场强一定为零", "why": "等势面只约束沿面方向电势不变。非零电场可以垂直穿过等势面，例如匀强电场中就有一族平行等势面。", "caught_by": "人工审核" }
+      ],
+      "example": { "stem": "匀强电场中 A、B 两点位于同一等势面，电势均为 300 V。把 +2.0 μC 电荷从 A 沿该面移到 B，求静电力做功，并判断该处场强是否必为零。", "solution": ["两点电势之差 delta_phi=300-300=0 V。", "W_e=q*delta_phi=2.0×10^-6×0=0 J。", "做功为零只说明位移沿等势面；电场可沿等势面的法线方向且不为零。"], "answer": "静电力做功为 0；该处场强不一定为零。" },
+      "prereq": ["pot-03", "ele-04"], "next": ["pot-05", "pot-06"], "tags": ["等势面", "电场线", "静电力功"]
+    },
+    {
+      "id": "pot-05",
+      "title": "电势差（电压）",
+      "level": "基础",
+      "definition": "电场中 A、B 两点的电势差又叫电压，定义为 U_AB=φ_A-φ_B。静电力把电荷 q 从 A 移到 B 所做的功为 W_AB=qU_AB；等价地，在 q 不为零时 U_AB=W_AB/q。",
+      "meaning": "电势差有方向次序：U_AB=-U_BA。计算时 q 必须带正负号，W_AB 也按正负功处理。电势差由电场和两点位置决定，与移动的是正电荷还是负电荷无关；改变电荷只会同比例改变静电力功。",
+      "symbols": {
+        "U_AB": { "desc": "A 点相对 B 点的电势差", "unit": "V" },
+        "U_BA": { "desc": "B 点相对 A 点的电势差", "unit": "V" },
+        "phi_A": { "desc": "A 点电势", "unit": "V" },
+        "phi_B": { "desc": "B 点电势", "unit": "V" },
+        "q": { "desc": "从 A 移到 B 的带符号电荷量", "unit": "C" },
+        "W_AB": { "desc": "电荷从 A 到 B 时静电力做的功", "unit": "J" }
+      },
+      "scenarios": {
+        "正电荷由高到低": { "phi_A": 500, "phi_B": 100, "U_AB": 400, "U_BA": -400, "q": 2.0e-6, "W_AB": 0.0008 },
+        "负电荷由高到低": { "phi_A": 500, "phi_B": 100, "U_AB": 400, "U_BA": -400, "q": -2.0e-6, "W_AB": -0.0008 }
+      },
+      "formulas": [
+        {
+          "name": "电势差定义式",
+          "expr": "U_AB = phi_A - phi_B",
+          "when": "求 A 点相对 B 点的电势差，顺序不能颠倒",
+          "checks": [
+            { "type": "numeric", "scenario": "正电荷由高到低", "expr": "phi_A - phi_B", "ref": 400.0, "note": "500 V-100 V=400 V" },
+            { "type": "compare", "scenario": "正电荷由高到低", "expr": "U_AB + U_BA", "op": "==", "vs": "0*U_AB", "note": "U_AB=400 V、U_BA=-400 V，交换两点后电势差变号" },
+            { "type": "direction", "scenario": "正电荷由高到低", "var": "phi_A", "lo": 200, "hi": 800, "expr": "phi_A - phi_B", "expect": "up", "note": "B 点电势固定时，A 点电势越高，U_AB 越大" },
+            { "type": "scan", "scenario": "正电荷由高到低", "var": "phi_B", "lo": -1000000, "hi": 1000000 }
+          ]
+        },
+        {
+          "name": "静电力功与电势差",
+          "expr": "W_AB = q*U_AB",
+          "when": "电荷 q 从 A 移到 B，q 和 W_AB 均按正负号代入",
+          "checks": [
+            { "type": "numeric", "scenario": "正电荷由高到低", "expr": "q*U_AB", "ref": 0.0008, "note": "2.0×10^-6 C×400 V=8.0×10^-4 J，静电力做正功" },
+            { "type": "numeric", "scenario": "负电荷由高到低", "expr": "q*U_AB", "ref": -0.0008, "note": "负电荷量乘正电势差得到 -8.0×10^-4 J，静电力做负功" },
+            { "type": "consistency", "scenario": "正电荷由高到低", "expr": "W_AB/q", "with": "pot-05|电势差定义式", "with_expr": "phi_A-phi_B", "target": "A、B 两点的电势差", "note": "由静电力功除以电荷量与由两点电势相减，两条路径均得 400 V" },
+            { "type": "scan", "scenario": "负电荷由高到低", "var": "q", "lo": -1, "hi": 1 }
+          ]
+        }
+      ],
+      "derivation": ["按两点电势之差定义，U_AB=phi_A-phi_B；交换 A、B 后 U_BA=-U_AB。", "电势能满足 Ep=qphi，所以从 A 到 B 的电势能减少量为 q(phi_A-phi_B)。", "静电力功等于这份减少量，故 W_AB=qU_AB；q 不为零时可移项得 U_AB=W_AB/q。"],
+      "errors": [
+        { "wrong": "求 U_AB 时把顺序颠倒，写成 phi_B-phi_A", "wrong_expr": "U_AB = phi_B - phi_A", "why": "下标顺序决定正负。情境中错误式得 -400 V，正确 U_AB 为 +400 V。", "caught_by": "数值代入", "trap_test": { "scenario": "正电荷由高到低", "expr": "phi_B - phi_A", "ref": 400.0 } },
+        { "wrong": "计算负电荷的静电力功时把 q 取绝对值", "wrong_expr": "W_AB = abs(q)*U_AB", "why": "电荷量的负号决定功的正负。负电荷情境中错误式给出 +8.0×10^-4 J，正确值为 -8.0×10^-4 J。", "caught_by": "数值代入", "trap_test": { "scenario": "负电荷由高到低", "expr": "abs(q)*U_AB", "ref": -0.0008 } }
+      ],
+      "example": { "stem": "A 点电势为 500 V，B 点电势为 100 V。把 -2.0 μC 电荷从 A 移到 B，求 U_AB 和静电力做功。", "solution": ["U_AB=phi_A-phi_B=500-100=400 V。", "电荷量必须带符号：q=-2.0×10^-6 C。", "W_AB=qU_AB=(-2.0×10^-6)×400=-8.0×10^-4 J。", "负功说明该过程电势能增加 8.0×10^-4 J。"], "answer": "U_AB=400 V；静电力做功 -8.0×10^-4 J。" },
+      "prereq": ["pot-02", "pot-03"], "next": ["pot-06"], "tags": ["电势差", "电压", "静电力功", "符号约定"]
+    },
+    {
+      "id": "pot-06",
+      "title": "匀强电场中电势差与场强的关系",
+      "level": "进阶",
+      "definition": "在匀强电场中，沿电场方向相距 d 的两点间电势差大小满足 U=Ed。更一般地，d 应取两点位移在电场方向上的投影大小，而不是实际路径长度；因此场强大小也可写成 E=U/d。",
+      "meaning": "式 U=Ed 只直接适用于匀强电场并使用沿场强方向的有效距离。它说明沿电场方向电势均匀降低，场强数值等于每米降低的电势，单位 V/m 与 N/C 等价。垂直电场方向移动时有效距离为零，两点位于同一等势面。",
+      "symbols": {
+        "U": { "desc": "匀强电场中两点电势差的大小", "unit": "V" },
+        "E": { "desc": "匀强电场的场强大小", "unit": "N/C" },
+        "d": { "desc": "两点位移沿电场方向的投影大小", "unit": "m" },
+        "D_path": { "desc": "电荷实际经过的路径长度，仅用于辨析，不能代替 d", "unit": "m" }
+      },
+      "scenarios": {
+        "沿场方向两点": { "E": 2000, "d": 0.15, "D_path": 0.25, "U": 300 },
+        "较宽间距": { "E": 2000, "d": 0.4, "D_path": 0.5, "U": 800 }
+      },
+      "formulas": [
+        {
+          "name": "匀强电场的电势差大小",
+          "expr": "U = E*d",
+          "when": "匀强电场中，d 为两点位移沿场强方向的投影大小",
+          "checks": [
+            { "type": "numeric", "scenario": "沿场方向两点", "expr": "E*d", "ref": 300.0, "note": "2000 V/m×0.15 m=300 V" },
+            { "type": "numeric", "scenario": "较宽间距", "expr": "E*d", "ref": 800.0, "note": "同一匀强电场中有效距离 0.40 m 对应 800 V" },
+            { "type": "direction", "scenario": "沿场方向两点", "var": "d", "lo": 0, "hi": 0.5, "expr": "E*d", "expect": "up", "note": "场强不变时，沿场方向的有效距离越大，电势差大小越大" },
+            { "type": "scan", "scenario": "沿场方向两点", "var": "d", "lo": 0, "hi": 1000000 }
+          ]
+        },
+        {
+          "name": "由电势差求匀强电场场强",
+          "expr": "E = U/d",
+          "when": "匀强电场中 d 大于零，已知两点电势差大小和沿场方向有效距离",
+          "checks": [
+            { "type": "numeric", "scenario": "沿场方向两点", "expr": "U/d", "ref": 2000.0, "note": "300 V÷0.15 m=2000 V/m，与 2000 N/C 等价" },
+            { "type": "direction", "scenario": "沿场方向两点", "var": "U", "lo": 100, "hi": 900, "expr": "U/d", "expect": "up", "note": "有效距离相同时，电势差越大，匀强电场越强" },
+            { "type": "consistency", "scenario": "沿场方向两点", "expr": "U/d", "with": "pot-06|匀强电场的电势差大小", "with_expr": "E*d/d", "target": "匀强电场的场强大小", "note": "由测得的电势差反求与把 U=Ed 代回，两条路径都得到 2000 N/C" },
+            { "type": "scan", "scenario": "沿场方向两点", "var": "d", "lo": 0.000001, "hi": 1000000 }
+          ]
+        }
+      ],
+      "derivation": ["匀强电场中，静电力大小为 F=|q|E；沿场方向移动有效距离 d 时，功的大小为 W=|q|Ed。", "另一方面，静电力功大小等于 |q|U。两式相等并约去非零的 |q|，得到 U=Ed。", "因此 E=U/d，单位 V/m 与 N/C 等价；若位移不沿电场方向，d 只能取沿场方向投影。"],
+      "errors": [
+        { "wrong": "把乘法写成除法，误记为 U=E/d", "wrong_expr": "U = E/d", "why": "右边单位为 V/m²，不是电势差应有的 V；同时还会错误地预言距离越大电势差越小，量纲检查会直接拦住。", "caught_by": "量纲一致性" },
+        { "wrong": "把电荷实际走过的弯曲路径长度当成 d", "wrong_expr": "U = E*D_path", "why": "d 是两点位移沿电场方向的投影，不是路程。情境中用 0.25 m 会算出 500 V，正确结果是 300 V。", "caught_by": "数值代入", "trap_test": { "scenario": "沿场方向两点", "expr": "E*D_path", "ref": 300.0 } }
+      ],
+      "example": { "stem": "某匀强电场场强为 2.0×10^3 N/C，A、B 两点沿场强方向的距离为 0.15 m。电荷从 A 到 B 实际沿一条 0.25 m 的弯曲路径移动。求两点电势差大小。", "solution": ["U=Ed 中的 d 取两点位移沿场强方向的投影，不取实际路径长度。", "代入 E=2.0×10^3 N/C、d=0.15 m。", "U=2.0×10^3×0.15=300 V。", "路径弯曲不影响两点电势差，也不影响静电力总功。"], "answer": "两点电势差大小为 300 V。" },
+      "prereq": ["ele-05", "pot-04", "pot-05"], "next": [], "tags": ["匀强电场", "电势差", "场强", "有效距离"]
+    }
+  ]
+}

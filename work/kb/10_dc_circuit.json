@@ -1,0 +1,381 @@
+{
+  "chapter": "第十章 · 恒定电流",
+  "order": 10,
+  "intro": "恒定电流把电荷的定向移动、电路两端的电压和导体对电流的阻碍联系起来。本章既要会算局部电路，也要会把电源的电动势和内阻纳入整体分析。学习时应始终分清定义式、决定式与适用条件，并在串并联、电源和电表改装问题中先判断哪些量相同。",
+  "points": [
+    {
+      "id": "dc-01",
+      "title": "电流与微观表达式",
+      "level": "基础",
+      "definition": "电流表示电荷定向移动的快慢。通过导体横截面的电荷量 q_charge 与所用时间 t 的比值定义为电流 I = q_charge/t。对横截面积为 S 的均匀导体，载流子数密度为 n、单个载流子电荷量绝对值为 q_0、定向移动速率为 v_d 时，I = n*q_0*v_d*S。",
+      "meaning": "电流方向规定为正电荷定向移动的方向，金属中自由电子的定向移动方向与电流方向相反。微观式说明，电流并不等于单个电子跑得很快；大量载流子即使漂移速度很小，也能形成可观电流。定义式中的 q_charge 是在所考察时间内穿过截面的净电荷量。",
+      "symbols": {
+        "I": { "desc": "电流", "unit": "A" },
+        "q_charge": { "desc": "通过导体横截面的电荷量", "unit": "C" },
+        "t": { "desc": "电荷通过横截面所用时间", "unit": "s" },
+        "n": { "desc": "单位体积内的自由载流子数", "unit": "m^-3" },
+        "q_0": { "desc": "单个载流子电荷量的绝对值", "unit": "C" },
+        "v_d": { "desc": "载流子的定向移动速率", "unit": "m/s" },
+        "S": { "desc": "导体的横截面积", "unit": "m^2" }
+      },
+      "scenarios": {
+        "稳定电流": { "I": 2, "q_charge": 12, "t": 6 },
+        "金属导线": { "I": 1.6, "n": 1e28, "q_0": 1.6e-19, "v_d": 0.0001, "S": 1e-05 }
+      },
+      "formulas": [
+        {
+          "name": "电流的定义式",
+          "expr": "I = q_charge/t",
+          "when": "用一段时间内通过横截面的电荷量求平均电流；恒定电流下也等于任意时刻的电流",
+          "checks": [
+            { "type": "numeric", "scenario": "稳定电流", "expr": "q_charge/t", "ref": 2.0, "note": "12 C 电荷在 6 s 内通过截面，12÷6=2 A。" },
+            { "type": "direction", "scenario": "稳定电流", "var": "q_charge", "lo": 3, "hi": 24, "expr": "q_charge/t", "expect": "up", "note": "时间相同时，通过的电荷量越多，电流越大。" },
+            { "type": "direction", "scenario": "稳定电流", "var": "t", "lo": 2, "hi": 12, "expr": "q_charge/t", "expect": "down", "note": "通过相同电荷量所用时间越长，平均电流越小。" },
+            { "type": "scan", "scenario": "稳定电流", "var": "t", "lo": 0.1, "hi": 1000 }
+          ]
+        },
+        {
+          "name": "电流的微观表达式",
+          "expr": "I = n*q_0*v_d*S",
+          "when": "均匀导体中载流子稳定定向移动，q_0 取电荷量绝对值",
+          "checks": [
+            { "type": "numeric", "scenario": "金属导线", "expr": "n*q_0*v_d*S", "ref": 1.6, "note": "10²⁸×1.6×10⁻¹⁹×10⁻⁴×10⁻⁵=1.6 A。" },
+            { "type": "direction", "scenario": "金属导线", "var": "v_d", "lo": 0.00005, "hi": 0.0004, "expr": "n*q_0*v_d*S", "expect": "up", "note": "其余条件不变时，漂移速率越大，电流越大。" },
+            { "type": "direction", "scenario": "金属导线", "var": "S", "lo": 2e-06, "hi": 2e-05, "expr": "n*q_0*v_d*S", "expect": "up", "note": "载流子条件相同时，横截面积越大，每秒通过的载流子越多。" },
+            { "type": "consistency", "scenario": "金属导线", "expr": "n*q_0*v_d*S", "with": "dc-01|电流的定义式", "with_expr": "I", "target": "导线中的电流", "note": "微观参数算得 1.6 A，与情境给出的宏观电流相同。" }
+          ]
+        }
+      ],
+      "derivation": [
+        "电流的宏观定义是单位时间通过横截面的电荷量，因此 I=q_charge/t。",
+        "时间 t 内，载流子沿导线前进距离 v_d t，扫过体积 S v_d t。",
+        "该体积中的载流子数为 nS v_d t，总电荷量为 q_charge=nq_0S v_d t。",
+        "代入 I=q_charge/t 并约去 t，得到 I=nq_0v_dS。"
+      ],
+      "errors": [
+        { "wrong": "把电流定义式倒写成 I=t/q_charge", "wrong_expr": "I = t/q_charge", "why": "s/C 与电流单位 A 的量纲不同；定义式一旦把分子分母颠倒，量纲检查就能直接发现。", "caught_by": "量纲一致性" },
+        { "wrong": "把正、负电荷的等效贡献重复计算，误写成 I=2nq_0v_dS", "wrong_expr": "I = 2*n*q_0*v_d*S", "why": "错误式与正确式量纲完全相同，量纲检查抓不到；金属导线情境会误得 3.2 A，而正确电流是 1.6 A。", "caught_by": "数值代入", "trap_test": { "scenario": "金属导线", "expr": "2*n*q_0*v_d*S", "ref": 1.6 } }
+      ],
+      "example": {
+        "stem": "某导线中 6 s 内有 12 C 电荷通过横截面，求电流。若通过相同电荷量改用 3 s，电流是多少？",
+        "solution": ["由定义式 I=q_charge/t。", "第一次 I=12/6=2 A。", "第二次 I=12/3=4 A；相同电荷量用时减半，电流变为两倍。"],
+        "answer": "第一次为 2 A，第二次为 4 A。"
+      },
+      "prereq": ["ele-01"],
+      "next": ["dc-02"],
+      "tags": ["电流", "电荷定向移动", "微观表达式"]
+    },
+    {
+      "id": "dc-02",
+      "title": "欧姆定律与伏安特性曲线",
+      "level": "基础",
+      "definition": "对金属导体，在温度等条件不变时，通过导体的电流 I 与两端电压 U 成正比、与电阻 R 成反比，即 I=U/R。等价地，导体两端电压 U=IR。",
+      "meaning": "欧姆定律有适用条件：导体的温度和物理状态不变。伏安特性曲线若以 U 为横轴、I 为纵轴，欧姆导体是一条过原点的直线，斜率为 1/R；小灯泡因温度升高导致电阻增大，曲线会弯曲，不能拿一条固定斜率的直线描述全过程。",
+      "symbols": {
+        "I": { "desc": "通过导体的电流", "unit": "A" },
+        "U": { "desc": "导体两端电压", "unit": "V" },
+        "R": { "desc": "导体的电阻", "unit": "ohm" }
+      },
+      "scenarios": { "定值电阻": { "I": 2, "U": 12, "R": 6 } },
+      "formulas": [
+        {
+          "name": "欧姆定律",
+          "expr": "I = U/R",
+          "when": "金属导体温度和物理状态不变",
+          "checks": [
+            { "type": "numeric", "scenario": "定值电阻", "expr": "U/R", "ref": 2.0, "note": "12 V÷6 Ω=2 A。" },
+            { "type": "direction", "scenario": "定值电阻", "var": "U", "lo": 3, "hi": 24, "expr": "U/R", "expect": "up", "note": "同一电阻两端电压越高，电流越大。" },
+            { "type": "direction", "scenario": "定值电阻", "var": "R", "lo": 2, "hi": 20, "expr": "U/R", "expect": "down", "note": "电压相同时，电阻越大，电流越小。" },
+            { "type": "scan", "scenario": "定值电阻", "var": "R", "lo": 0.1, "hi": 1000000 }
+          ]
+        },
+        {
+          "name": "由电流求电压",
+          "expr": "U = I*R",
+          "when": "欧姆导体的电流和电阻已知",
+          "checks": [
+            { "type": "numeric", "scenario": "定值电阻", "expr": "I*R", "ref": 12.0, "note": "2 A×6 Ω=12 V。" },
+            { "type": "direction", "scenario": "定值电阻", "var": "I", "lo": 0.5, "hi": 4, "expr": "I*R", "expect": "up", "note": "固定电阻中电流越大，所需电压越高。" },
+            { "type": "consistency", "scenario": "定值电阻", "expr": "I*R", "with": "dc-02|欧姆定律", "with_expr": "U", "target": "导体两端电压", "note": "由 I 和 R 反求 12 V，与情境电压一致。" },
+            { "type": "scan", "scenario": "定值电阻", "var": "I", "lo": 0, "hi": 1000 }
+          ]
+        }
+      ],
+      "derivation": ["保持金属导体温度不变，实验测得 U-I 数据点落在过原点的直线上。", "直线斜率 I/U 为常量，其倒数定义为电阻 R。", "因此 I/U=1/R，整理得 I=U/R，也可写成 U=IR。"],
+      "errors": [
+        { "wrong": "把欧姆定律写成 I=UR", "wrong_expr": "I = U*R", "why": "V·Ω 与 A 的量纲不同；把本应相除的电阻改为相乘后，量纲检查会直接拦住。", "caught_by": "量纲一致性" },
+        { "wrong": "误把同一个电阻计算两次，写成 I=U/(2R)", "wrong_expr": "I = U/(2*R)", "why": "错误式的量纲仍是 A，量纲检查抓不到；12 V 与 6 Ω 会误得 1 A，而正确电流为 2 A。", "caught_by": "数值代入", "trap_test": { "scenario": "定值电阻", "expr": "U/(2*R)", "ref": 2.0 } },
+        { "wrong": "认为导体的电阻由电压除以电流‘决定’，电压变大电阻就变大", "why": "R=U/I 是测量式；对温度不变的欧姆导体，U 和 I 同比例变化，R 由材料、长度、横截面积和温度等因素决定。这个概念需人工审核。", "caught_by": "人工审核" }
+      ],
+      "example": { "stem": "一个 6 Ω 的定值电阻接在 12 V 电源两端，求电流；若电压变为 18 V，电阻温度不变，电流多大？", "solution": ["由 I=U/R。", "第一次 I=12/6=2 A。", "温度不变时 R 仍为 6 Ω，第二次 I=18/6=3 A。"], "answer": "电流分别为 2 A 和 3 A。" },
+      "prereq": ["dc-01", "pot-05"],
+      "next": ["dc-03", "dc-04"],
+      "tags": ["欧姆定律", "电阻", "伏安特性"]
+    },
+    {
+      "id": "dc-03",
+      "title": "电阻定律与电阻率",
+      "level": "基础",
+      "definition": "均匀导体的电阻 R 与长度 L 成正比、与横截面积 S 成反比，比例系数是材料的电阻率 rho，即 R=rho L/S。电阻率反映材料导电性能，并随温度等条件改变。",
+      "meaning": "电阻是具体导体对电流的阻碍，电阻率是材料属性。相同材料、相同温度下，导线越长电阻越大，越粗电阻越小；把导线均匀拉长时，长度增加且横截面积减小，两种效应会同时使电阻增大。",
+      "symbols": {
+        "R": { "desc": "导体电阻", "unit": "ohm" },
+        "rho": { "desc": "材料的电阻率", "unit": "ohm*m" },
+        "L": { "desc": "导体长度", "unit": "m" },
+        "S": { "desc": "导体横截面积", "unit": "m^2" }
+      },
+      "scenarios": { "铜质导线": { "R": 0.017, "rho": 1.7e-08, "L": 10, "S": 1e-05 } },
+      "formulas": [
+        {
+          "name": "电阻定律",
+          "expr": "R = rho*L/S",
+          "when": "材料均匀、粗细均匀且温度确定的导体",
+          "checks": [
+            { "type": "numeric", "scenario": "铜质导线", "expr": "rho*L/S", "ref": 0.017, "note": "1.7×10⁻⁸×10÷10⁻⁵=0.017 Ω。" },
+            { "type": "direction", "scenario": "铜质导线", "var": "L", "lo": 1, "hi": 50, "expr": "rho*L/S", "expect": "up", "note": "材料和粗细相同时，导线越长电阻越大。" },
+            { "type": "direction", "scenario": "铜质导线", "var": "S", "lo": 1e-06, "hi": 5e-05, "expr": "rho*L/S", "expect": "down", "note": "材料和长度相同时，横截面积越大电阻越小。" },
+            { "type": "scan", "scenario": "铜质导线", "var": "S", "lo": 1e-10, "hi": 0.01 }
+          ]
+        },
+        {
+          "name": "由导体参数求电阻率",
+          "expr": "rho = R*S/L",
+          "when": "由均匀导体的电阻、长度和横截面积测定材料电阻率",
+          "checks": [
+            { "type": "numeric", "scenario": "铜质导线", "expr": "R*S/L", "ref": 1.7e-08, "note": "0.017×10⁻⁵÷10=1.7×10⁻⁸ Ω·m。" },
+            { "type": "direction", "scenario": "铜质导线", "var": "R", "lo": 0.005, "hi": 0.05, "expr": "R*S/L", "expect": "up", "note": "在同样的几何参数下，测得电阻越大，推得电阻率越大。" },
+            { "type": "consistency", "scenario": "铜质导线", "expr": "R*S/L", "with": "dc-03|电阻定律", "with_expr": "rho", "target": "材料的电阻率", "note": "由测量量反求得 1.7×10⁻⁸ Ω·m，与情境给定值一致。" },
+            { "type": "scan", "scenario": "铜质导线", "var": "L", "lo": 0.01, "hi": 10000 }
+          ]
+        }
+      ],
+      "derivation": ["实验分别控制材料、温度和横截面积不变，得到 R 与 L 成正比。", "控制材料、温度和长度不变，得到 R 与 S 成反比。", "合并比例关系并把材料与温度的影响写入比例系数 rho，得到 R=rho L/S。", "移项可得测量电阻率的关系 rho=RS/L。"],
+      "errors": [
+        { "wrong": "把电阻定律中的横截面积写到分子，误写 R=rho LS", "wrong_expr": "R = rho*L*S", "why": "错误式的量纲变成 Ω·m⁴，并不是电阻单位 Ω；面积放错位置会被量纲检查直接发现。", "caught_by": "量纲一致性" },
+        { "wrong": "把单程长度误当成来回总长，写成 R=2rho L/S", "wrong_expr": "R = 2*rho*L/S", "why": "多出的系数 2 不改变量纲，量纲检查抓不到；铜质导线会误得 0.034 Ω，正确值为 0.017 Ω。", "caught_by": "数值代入", "trap_test": { "scenario": "铜质导线", "expr": "2*rho*L/S", "ref": 0.017 } },
+        { "wrong": "只要材料相同，就认为电阻一定相同", "why": "同种材料只保证同温度下电阻率相同；具体电阻还与长度和横截面积有关。此类条件辨析需人工审核。", "caught_by": "人工审核" }
+      ],
+      "example": { "stem": "一根电阻率为 1.7×10⁻⁸ Ω·m、长 10 m、横截面积 1.0×10⁻⁵ m² 的均匀导线，求电阻。", "solution": ["使用电阻定律 R=rho L/S。", "代入 R=1.7×10⁻⁸×10÷10⁻⁵。", "计算得 R=0.017 Ω。"], "answer": "导线电阻为 0.017 Ω。" },
+      "prereq": ["dc-02"],
+      "next": ["dc-05"],
+      "tags": ["电阻定律", "电阻率", "导体几何参数"]
+    },
+    {
+      "id": "dc-04",
+      "title": "电功、电功率与焦耳定律",
+      "level": "基础",
+      "definition": "电流通过用电器时，电场力做功使电能转化为其他形式的能。恒定电流在时间 t 内所做电功 W_e=UIt，电功率 P=UI。电流通过电阻产生的热量满足焦耳定律 Q_heat=I²Rt。",
+      "meaning": "W_e=UIt 和 P=UI 对各种电路元件都可使用；Q_heat=I²Rt 专门描述电热。对纯电阻元件，电能全部转化为内能，所以 W_e=Q_heat，还可结合欧姆定律写出其他等价形式。对电动机等非纯电阻元件，电功大于焦耳热，不能把两者混为一谈。",
+      "symbols": {
+        "W_e": { "desc": "电流所做的功，即消耗的电能", "unit": "J" },
+        "P": { "desc": "用电器的电功率", "unit": "W" },
+        "Q_heat": { "desc": "电流产生的焦耳热", "unit": "J" },
+        "U": { "desc": "用电器两端电压", "unit": "V" },
+        "I": { "desc": "通过用电器的电流", "unit": "A" },
+        "R": { "desc": "电阻", "unit": "ohm" },
+        "t": { "desc": "通电时间", "unit": "s" },
+        "q_charge": { "desc": "通电时间内通过元件的电荷量", "unit": "C" }
+      },
+      "scenarios": { "电热器": { "W_e": 21600, "P": 720, "Q_heat": 21600, "U": 120, "I": 6, "R": 20, "t": 30 } },
+      "formulas": [
+        {
+          "name": "电功",
+          "expr": "W_e = U*I*t",
+          "when": "恒定电流在时间 t 内通过电路元件",
+          "checks": [
+            { "type": "numeric", "scenario": "电热器", "expr": "U*I*t", "ref": 21600.0, "note": "120×6×30=21600 J。" },
+            { "type": "direction", "scenario": "电热器", "var": "t", "lo": 5, "hi": 60, "expr": "U*I*t", "expect": "up", "note": "电压和电流不变时，通电越久，消耗电能越多。" },
+            { "type": "consistency", "scenario": "电热器", "expr": "U*I*t", "with": "dc-04|焦耳定律", "with_expr": "I^2*R*t", "target": "纯电阻产生的热量", "note": "电热器满足 U=IR，两条路径都得 21600 J。" },
+            { "type": "scan", "scenario": "电热器", "var": "t", "lo": 0, "hi": 100000 }
+          ]
+        },
+        {
+          "name": "电功率",
+          "expr": "P = U*I",
+          "when": "用电器两端电压和通过的电流已知",
+          "checks": [
+            { "type": "numeric", "scenario": "电热器", "expr": "U*I", "ref": 720.0, "note": "120 V×6 A=720 W。" },
+            { "type": "direction", "scenario": "电热器", "var": "U", "lo": 20, "hi": 240, "expr": "U*I", "expect": "up", "note": "电流固定时，电压越高，电功率越大。" },
+            { "type": "consistency", "scenario": "电热器", "expr": "U*I", "with": "dc-04|电功", "with_expr": "W_e/t", "target": "电功率", "note": "由 UI 与由电功除以时间均得 720 W。" },
+            { "type": "scan", "scenario": "电热器", "var": "I", "lo": 0, "hi": 10000 }
+          ]
+        },
+        {
+          "name": "焦耳定律",
+          "expr": "Q_heat = I^2*R*t",
+          "when": "电流通过电阻产生热量；对任意电阻发热均适用",
+          "checks": [
+            { "type": "numeric", "scenario": "电热器", "expr": "I^2*R*t", "ref": 21600.0, "note": "6²×20×30=21600 J。" },
+            { "type": "direction", "scenario": "电热器", "var": "I", "lo": 1, "hi": 10, "expr": "I^2*R*t", "expect": "up", "note": "电阻和时间相同时，热量随电流平方增大。" },
+            { "type": "direction", "scenario": "电热器", "var": "R", "lo": 5, "hi": 50, "expr": "I^2*R*t", "expect": "up", "note": "在电流保持不变的前提下，电阻越大，发热越多。" },
+            { "type": "scan", "scenario": "电热器", "var": "I", "lo": 0, "hi": 1000 }
+          ]
+        }
+      ],
+      "derivation": ["电荷量 q_charge 通过电压 U 时电场力做功 W_e = U*q_charge。", "恒定电流中 q_charge = I*t，代入得到 W_e = U*I*t。", "功率是单位时间做功，P = W_e/t = U*I。", "对电阻，结合 U = I*R 与 Q_heat = W_e，得到 Q_heat = I^2*R*t。"],
+      "errors": [
+        { "wrong": "把电功写成 W_e=UI/t", "wrong_expr": "W_e = U*I/t", "why": "U*I 已是功率，再除以时间不可能得到能量；右边量纲与 J 不同，量纲检查会直接发现。", "caught_by": "量纲一致性" },
+        { "wrong": "误套动能公式的二分之一，写成 W_e=UI t/2", "wrong_expr": "W_e = U*I*t/2", "why": "系数 1/2 不改变量纲，量纲检查抓不到；电热器情境会误得 10800 J，正确电功为 21600 J。", "caught_by": "数值代入", "trap_test": { "scenario": "电热器", "expr": "U*I*t/2", "ref": 21600.0 } }
+      ],
+      "example": { "stem": "一个 20 Ω 的电热器通过 6 A 电流，通电 30 s。求产生的热量和功率。", "solution": ["由焦耳定律 Q_heat=I²Rt=6²×20×30=21600 J。", "电热器电压 U=IR=120 V。", "功率 P=UI=120×6=720 W，也可用 Q_heat/t 验算。"], "answer": "产生热量 21600 J，功率 720 W。" },
+      "prereq": ["dc-02", "ene-02"],
+      "next": ["dc-05", "dc-06"],
+      "tags": ["电功", "电功率", "焦耳定律"]
+    },
+    {
+      "id": "dc-05",
+      "title": "串联电路与并联电路",
+      "level": "基础",
+      "definition": "串联电路中各处电流相等，总电压等于各部分电压之和，等效电阻 R_s = R_1+R_2。并联电路中各支路电压相等，总电流等于各支路电流之和；两个电阻并联时 R_p = R_1*R_2/(R_1+R_2)。",
+      "meaning": "串联相当于让电流依次通过更多阻碍，总电阻比任一个分电阻都大；并联相当于增加通路，总电阻比任一个支路电阻都小。判断计算结果是否落在这个范围内，是比死记公式更可靠的快速自检。",
+      "symbols": {
+        "R_s": { "desc": "两个电阻串联后的等效电阻", "unit": "ohm" },
+        "R_p": { "desc": "两个电阻并联后的等效电阻", "unit": "ohm" },
+        "R_1": { "desc": "第一个电阻", "unit": "ohm" },
+        "R_2": { "desc": "第二个电阻", "unit": "ohm" },
+        "I": { "desc": "干路或串联电路中的总电流", "unit": "A" },
+        "I_1": { "desc": "并联电路第一支路的电流", "unit": "A" },
+        "I_2": { "desc": "并联电路第二支路的电流", "unit": "A" },
+        "U": { "desc": "串联电路总电压或并联电路公共电压", "unit": "V" },
+        "U_1": { "desc": "串联电路第一个电阻两端电压", "unit": "V" },
+        "U_2": { "desc": "串联电路第二个电阻两端电压", "unit": "V" }
+      },
+      "scenarios": { "两个电阻": { "R_s": 10, "R_p": 2.4, "R_1": 4, "R_2": 6 } },
+      "formulas": [
+        {
+          "name": "串联等效电阻",
+          "expr": "R_s = R_1 + R_2",
+          "when": "两个电阻首尾相接，流过相同电流",
+          "checks": [
+            { "type": "numeric", "scenario": "两个电阻", "expr": "R_1 + R_2", "ref": 10.0, "note": "4 Ω+6 Ω=10 Ω。" },
+            { "type": "direction", "scenario": "两个电阻", "var": "R_2", "lo": 1, "hi": 20, "expr": "R_1 + R_2", "expect": "up", "note": "串联增加电阻会使总电阻增大。" },
+            { "type": "compare", "scenario": "两个电阻", "expr": "R_1 + R_2", "op": ">", "vs": "R_1", "note": "正电阻串联后的总电阻大于任一分电阻。" },
+            { "type": "scan", "scenario": "两个电阻", "var": "R_2", "lo": 0, "hi": 1000000 }
+          ]
+        },
+        {
+          "name": "两电阻并联的等效电阻",
+          "expr": "R_p = R_1*R_2/(R_1 + R_2)",
+          "when": "两个正电阻并联在同一对节点间",
+          "checks": [
+            { "type": "numeric", "scenario": "两个电阻", "expr": "R_1*R_2/(R_1 + R_2)", "ref": 2.4, "note": "4×6÷(4+6)=2.4 Ω。" },
+            { "type": "direction", "scenario": "两个电阻", "var": "R_2", "lo": 1, "hi": 20, "expr": "R_1*R_2/(R_1 + R_2)", "expect": "up", "note": "固定 R_1 时，另一支路电阻增大，等效电阻增大并趋近 R_1。" },
+            { "type": "compare", "scenario": "两个电阻", "expr": "R_1*R_2/(R_1 + R_2)", "op": "<", "vs": "R_1", "note": "并联等效电阻小于任一支路电阻。" },
+            { "type": "scan", "scenario": "两个电阻", "var": "R_2", "lo": 0.001, "hi": 1000000 },
+            { "type": "consistency", "scenario": "两个电阻", "expr": "1/R_p", "with": "dc-05|两电阻并联的等效电阻", "with_expr": "1/R_1 + 1/R_2", "target": "并联电阻的倒数", "note": "由等效电阻 2.4 Ω 取倒数，与两个支路电导相加都得到 5/12 Ω⁻¹。" }
+          ]
+        }
+      ],
+      "derivation": ["串联时电流相同且 U = U_1+U_2，由 U = I*R 得 I*R_s = I*R_1+I*R_2，因此 R_s = R_1+R_2。", "并联时电压相同且 I = I_1+I_2，由 I = U/R 得 U/R_p = U/R_1+U/R_2。", "约去 U 并通分，得到 1/R_p = 1/R_1+1/R_2。", "两个电阻时整理为 R_p = R_1*R_2/(R_1+R_2)。"],
+      "errors": [
+        { "wrong": "把串联等效电阻写成 R_s=R_1R_2", "wrong_expr": "R_s = R_1*R_2", "why": "两个电阻相乘的单位是 Ω²，不是等效电阻应有的 Ω；量纲检查会直接发现这种公式结构错误。", "caught_by": "量纲一致性" },
+        { "wrong": "并联时直接相加，写成 R_p=R_1+R_2", "wrong_expr": "R_p = R_1 + R_2", "why": "量纲正确但数值错误：4 Ω 与 6 Ω 并联应为 2.4 Ω，而不是 10 Ω。", "caught_by": "数值代入", "trap_test": { "scenario": "两个电阻", "expr": "R_1 + R_2", "ref": 2.4 } }
+      ],
+      "example": { "stem": "4 Ω 和 6 Ω 两个电阻，分别求串联和并联时的等效电阻。", "solution": ["串联：R_s=R_1+R_2=4+6=10 Ω。", "并联：R_p=R_1R_2/(R_1+R_2)=4×6/10=2.4 Ω。", "范围检查：10 Ω 大于每个分电阻，2.4 Ω 小于每个分电阻，符合物理图像。"], "answer": "串联为 10 Ω，并联为 2.4 Ω。" },
+      "prereq": ["dc-02"],
+      "next": ["dc-06", "dc-07"],
+      "tags": ["串联", "并联", "等效电阻"]
+    },
+    {
+      "id": "dc-06",
+      "title": "闭合电路欧姆定律",
+      "level": "进阶",
+      "definition": "电源既有电动势 E_emf，也有内阻 r。外电路电阻为 R_ext 时，闭合电路中的电流 I=E_emf/(R_ext+r)。电源端电压等于外电路电压，也满足 U_terminal=E_emf-Ir。",
+      "meaning": "电动势描述电源把其他形式能转化为电能的本领，不是电源两端始终不变的电压。电源供电时，电流通过内阻会产生内电压 Ir，所以端电压小于电动势；外电阻越小，电流越大，端电压反而越低。外电路断开时 I=0，端电压才等于电动势。",
+      "symbols": {
+        "I": { "desc": "闭合电路中的电流", "unit": "A" },
+        "E_emf": { "desc": "电源电动势", "unit": "V" },
+        "R_ext": { "desc": "外电路等效电阻", "unit": "ohm" },
+        "r": { "desc": "电源内阻", "unit": "ohm" },
+        "U_terminal": { "desc": "电源供电时的端电压", "unit": "V" }
+      },
+      "scenarios": { "实际电源": { "I": 2, "E_emf": 12, "R_ext": 5, "r": 1, "U_terminal": 10 } },
+      "formulas": [
+        {
+          "name": "闭合电路欧姆定律",
+          "expr": "I = E_emf/(R_ext + r)",
+          "when": "电源与外电路构成闭合回路，内外电阻均按欧姆元件处理",
+          "checks": [
+            { "type": "numeric", "scenario": "实际电源", "expr": "E_emf/(R_ext + r)", "ref": 2.0, "note": "12 V÷(5 Ω+1 Ω)=2 A。" },
+            { "type": "direction", "scenario": "实际电源", "var": "R_ext", "lo": 1, "hi": 20, "expr": "E_emf/(R_ext + r)", "expect": "down", "note": "电动势和内阻不变时，外电阻越大，电流越小。" },
+            { "type": "direction", "scenario": "实际电源", "var": "E_emf", "lo": 3, "hi": 24, "expr": "E_emf/(R_ext + r)", "expect": "up", "note": "总电阻不变时，电动势越大，电流越大。" },
+            { "type": "scan", "scenario": "实际电源", "var": "R_ext", "lo": 0, "hi": 1000000 }
+          ]
+        },
+        {
+          "name": "电源端电压",
+          "expr": "U_terminal = E_emf - I*r",
+          "when": "电源向外电路供电，I 按流出电源正极方向取正",
+          "checks": [
+            { "type": "numeric", "scenario": "实际电源", "expr": "E_emf - I*r", "ref": 10.0, "note": "12 V−2 A×1 Ω=10 V。" },
+            { "type": "direction", "scenario": "实际电源", "var": "I", "lo": 0, "hi": 10, "expr": "E_emf - I*r", "expect": "down", "note": "供电电流越大，内电压越大，端电压越低。" },
+            { "type": "consistency", "scenario": "实际电源", "expr": "E_emf - I*r", "with": "dc-02|由电流求电压", "with_expr": "I*R_ext", "target": "外电路两端电压", "note": "从电动势减内电压得 10 V，由外电阻的欧姆定律也得 2×5=10 V。" },
+            { "type": "scan", "scenario": "实际电源", "var": "I", "lo": 0, "hi": 12 }
+          ]
+        }
+      ],
+      "derivation": ["电源每搬运单位电荷提供能量 E_emf，电荷通过内、外电路时分别产生电压降 Ir 与 IR_ext。", "沿完整回路有 E_emf=I(R_ext+r)。", "移项得到 I=E_emf/(R_ext+r)。", "外电路端电压 U_terminal=IR_ext，也等于 E_emf-Ir。"],
+      "errors": [
+        { "wrong": "忽略电源内阻，写成 I=E_emf/R_ext", "wrong_expr": "I = E_emf/R_ext", "why": "错误式量纲完全正确，量纲检查抓不到；代入实际电源会得 2.4 A，而把内阻计入后的正确值为 2 A。", "caught_by": "数值代入", "trap_test": { "scenario": "实际电源", "expr": "E_emf/R_ext", "ref": 2.0 } },
+        { "wrong": "供电时把端电压写成 U_terminal=E_emf+Ir", "wrong_expr": "U_terminal = E_emf + I*r", "why": "量纲正确但符号错误，会算得 14 V；电源供电时内电压是损失，正确端电压为 10 V。", "caught_by": "数值代入", "trap_test": { "scenario": "实际电源", "expr": "E_emf + I*r", "ref": 10.0 } }
+      ],
+      "example": { "stem": "电动势 12 V、内阻 1 Ω 的电源接 5 Ω 外电阻。求电流和电源端电压。", "solution": ["总电阻为 R_ext+r=5+1=6 Ω。", "由闭合电路欧姆定律 I=12/6=2 A。", "端电压 U_terminal=E_emf-Ir=12-2×1=10 V。", "用外电路验算：IR_ext=2×5=10 V。"], "answer": "电流为 2 A，端电压为 10 V。" },
+      "prereq": ["dc-02", "dc-05"],
+      "next": ["dc-07"],
+      "tags": ["闭合电路", "电动势", "内阻", "端电压"]
+    },
+    {
+      "id": "dc-07",
+      "title": "电表改装",
+      "level": "进阶",
+      "definition": "灵敏电流计的满偏电流为 I_g、内阻为 R_g。改装成量程 I_A 的电流表时，应并联小电阻 R_shunt = I_g*R_g/(I_A-I_g) 分流；改装成量程 U_V 的电压表时，应串联大电阻 R_series = U_V/I_g-R_g 分压。",
+      "meaning": "改装的核心不是背公式，而是保护表头：无论改成哪种表，表头满偏时通过它的电流仍只能是 I_g。电流表用并联电阻分走多余电流，等效电阻应很小；电压表用串联电阻承担多余电压，等效电阻应很大。连接方式一旦弄反，可能直接烧坏表头。",
+      "symbols": {
+        "I_g": { "desc": "电流计的满偏电流", "unit": "A" },
+        "R_g": { "desc": "电流计内阻", "unit": "ohm" },
+        "I_A": { "desc": "改装后电流表的量程", "unit": "A" },
+        "R_shunt": { "desc": "改装电流表所并联的分流电阻", "unit": "ohm" },
+        "U_V": { "desc": "改装后电压表的量程", "unit": "V" },
+        "R_series": { "desc": "改装电压表所串联的分压电阻", "unit": "ohm" },
+        "U_g": { "desc": "电流计满偏时表头两端的电压", "unit": "V" }
+      },
+      "scenarios": {
+        "改装电流表": { "I_g": 0.001, "R_g": 100, "I_A": 0.101, "R_shunt": 1 },
+        "改装电压表": { "I_g": 0.001, "R_g": 100, "U_V": 10, "R_series": 9900 }
+      },
+      "formulas": [
+        {
+          "name": "电流表的分流电阻",
+          "expr": "R_shunt = I_g*R_g/(I_A - I_g)",
+          "when": "I_A 大于 I_g，分流电阻与表头并联",
+          "checks": [
+            { "type": "numeric", "scenario": "改装电流表", "expr": "I_g*R_g/(I_A - I_g)", "ref": 1.0, "note": "表头满偏电压为 0.001×100=0.1 V；分流电流为 0.100 A，所以分流电阻为 1 Ω。" },
+            { "type": "direction", "scenario": "改装电流表", "var": "I_A", "lo": 0.01, "hi": 1, "expr": "I_g*R_g/(I_A - I_g)", "expect": "down", "note": "改装后的电流量程越大，需要分走的电流越多，分流电阻越小。" },
+            { "type": "compare", "scenario": "改装电流表", "expr": "I_g*R_g/(I_A - I_g)", "op": "<", "vs": "R_g", "note": "本情境中分流电阻 1 Ω 远小于表头内阻 100 Ω。" },
+            { "type": "scan", "scenario": "改装电流表", "var": "I_A", "lo": 0.0011, "hi": 100 }
+          ]
+        },
+        {
+          "name": "电压表的分压电阻",
+          "expr": "R_series = U_V/I_g - R_g",
+          "when": "U_V 大于表头满偏电压 I_gR_g，分压电阻与表头串联",
+          "checks": [
+            { "type": "numeric", "scenario": "改装电压表", "expr": "U_V/I_g - R_g", "ref": 9900.0, "note": "总电阻需为 10÷0.001=10000 Ω，减去表头 100 Ω，串联电阻为 9900 Ω。" },
+            { "type": "direction", "scenario": "改装电压表", "var": "U_V", "lo": 1, "hi": 100, "expr": "U_V/I_g - R_g", "expect": "up", "note": "电压量程越大，需要串联的分压电阻越大。" },
+            { "type": "consistency", "scenario": "改装电压表", "expr": "I_g*(R_g + R_series)", "with": "dc-02|由电流求电压", "with_expr": "U_V", "target": "改装后电压表满偏时的总电压", "note": "0.001×(100+9900)=10 V，与目标量程一致。" },
+            { "type": "scan", "scenario": "改装电压表", "var": "U_V", "lo": 0.101, "hi": 10000 }
+          ]
+        }
+      ],
+      "derivation": ["表头满偏时两端电压为 U_g = I_g*R_g。", "改装电流表时，分流支路电流为 I_A-I_g，两支路电压相同，所以 (I_A-I_g)*R_shunt = I_g*R_g。", "整理得 R_shunt = I_g*R_g/(I_A-I_g)。", "改装电压表时，总电阻应为 U_V/I_g，减去表头内阻，得到 R_series = U_V/I_g-R_g。"],
+      "errors": [
+        { "wrong": "改装电流表时把分流电阻串联在表头上", "why": "串联电阻不会分走电流，反而增大总电阻；正确做法是让小电阻与表头并联。连接方式需要人工审核。", "caught_by": "人工审核" },
+        { "wrong": "改装电压表时忘记减去表头内阻，写成 R_series=U_V/I_g", "wrong_expr": "R_series = U_V/I_g", "why": "量纲正确但会算成 10000 Ω；这其实是改装后所需总电阻，串联电阻应扣除原有 100 Ω，正确值为 9900 Ω。", "caught_by": "数值代入", "trap_test": { "scenario": "改装电压表", "expr": "U_V/I_g", "ref": 9900.0 } }
+      ],
+      "example": { "stem": "满偏电流 1 mA、内阻 100 Ω 的电流计，分别改装成量程 101 mA 的电流表和量程 10 V 的电压表。求所需电阻。", "solution": ["改装电流表，并联分流电阻：R_shunt=I_gR_g/(I_A-I_g)=0.001×100/(0.101-0.001)=1 Ω。", "改装电压表，串联分压电阻：R_series=U_V/I_g-R_g=10/0.001-100=9900 Ω。", "检查数量级：电流表并小电阻，电压表串大电阻，符合使用要求。"], "answer": "并联 1 Ω 分流电阻；串联 9900 Ω 分压电阻。" },
+      "prereq": ["dc-02", "dc-05"],
+      "next": [],
+      "tags": ["电流表", "电压表", "分流", "分压"]
+    }
+  ]
+}

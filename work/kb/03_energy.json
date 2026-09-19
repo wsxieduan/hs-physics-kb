@@ -1,0 +1,568 @@
+{
+  "chapter": "第三章 · 功与能",
+  "order": 3,
+  "intro": "力描述相互作用，功和能则提供另一条研究运动的路线：不必逐时刻追踪加速度，也能从初、末状态判断运动结果。本章把恒力做功、功率、动能定理、势能、机械能守恒和摩擦生热连成一条完整链条，并用斜面下滑情境把牛顿第二定律加运动学与动能定理作独立互证。",
+  "points": [
+    {
+      "id": "ene-01",
+      "title": "功：恒力做功、正功负功与总功",
+      "level": "基础",
+      "definition": "物体在力的作用下沿某方向发生位移，力对物体做功。恒力 F 与位移 s 的夹角为 theta 时，功 W = F s cos(theta)。功是标量，但有正负：锐角时做正功，钝角时做负功，垂直时不做功。",
+      "meaning": "功的正负不表示功有方向，而表示这个力对动能变化的作用。正功倾向于增加动能，负功倾向于减少动能。多个力同时作用时，应先分别计算各力的功再代数相加；也可以先求恒定合力，再计算合力的功。",
+      "symbols": {
+        "W": { "desc": "恒力所做的功", "unit": "J" },
+        "F": { "desc": "恒力大小", "unit": "N" },
+        "s": { "desc": "位移大小", "unit": "m" },
+        "theta": { "desc": "力与位移的夹角", "unit": "rad" },
+        "W_total": { "desc": "各力所做的总功", "unit": "J" },
+        "W1": { "desc": "第一个力做的功", "unit": "J" },
+        "W2": { "desc": "第二个力做的功", "unit": "J" },
+        "Ek1": { "desc": "初状态动能", "unit": "J" },
+        "Ek2": { "desc": "末状态动能", "unit": "J" }
+      },
+      "scenarios": {
+        "斜向拉箱": { "F": 10, "s": 5, "theta": 0.6435011088, "W": 40 },
+        "一正一负": { "W1": 50, "W2": -20, "W_total": 30, "Ek1": 10, "Ek2": 40 }
+      },
+      "formulas": [
+        {
+          "name": "恒力做功",
+          "expr": "W = F*s*cos(theta)",
+          "when": "力的大小和方向不变，物体发生直线位移",
+          "checks": [
+            { "type": "numeric", "scenario": "斜向拉箱", "expr": "F*s*cos(theta)", "ref": 40.0, "note": "cos(theta)=0.8，手工计算 10 N × 5 m × 0.8 = 40 J" },
+            { "type": "direction", "scenario": "斜向拉箱", "var": "F", "lo": 5, "hi": 20, "expr": "F*s*cos(theta)", "expect": "up", "note": "位移和夹角一定时，力越大，正功越大" },
+            { "type": "direction", "scenario": "斜向拉箱", "var": "theta", "lo": 0, "hi": 1.5707963268, "expr": "F*s*cos(theta)", "expect": "down", "note": "夹角从 0° 增至 90°，沿位移方向的分力减小，功随之减小到零" },
+            { "type": "scan", "scenario": "斜向拉箱", "var": "theta", "lo": 0, "hi": 3.1415926536 }
+          ]
+        },
+        {
+          "name": "总功的代数和",
+          "expr": "W_total = W1 + W2",
+          "when": "多个力分别对同一物体做功",
+          "checks": [
+            { "type": "numeric", "scenario": "一正一负", "expr": "W1 + W2", "ref": 30.0, "note": "手工计算 50 J + (−20 J) = 30 J" },
+            { "type": "direction", "scenario": "一正一负", "var": "W1", "lo": 20, "hi": 80, "expr": "W1 + W2", "expect": "up", "note": "负功不变时，正功增大使总功增大" },
+            { "type": "direction", "scenario": "一正一负", "var": "W2", "lo": -50, "hi": -5, "expr": "W1 + W2", "expect": "up", "note": "W2 从更负变到较不负时，总功增大" },
+            { "type": "compare", "scenario": "一正一负", "expr": "W_total", "op": "<", "vs": "W1", "note": "存在负功时，总功 30 J 小于正功 50 J" },
+            { "type": "consistency", "scenario": "一正一负", "expr": "W1+W2", "with": "ene-03|动能定理", "with_expr": "Ek2-Ek1", "target": "总功与动能变化", "note": "逐个力求功并代数相加得到 30 J；从初末动能 40−10 也独立得到 30 J" }
+          ]
+        }
+      ],
+      "derivation": [
+        "先取力在位移方向上的分量 F cos(theta)，只有这一分量产生沿位移方向的能量转移。",
+        "用沿位移方向的分力乘位移，得到 W = F s cos(theta)。N·m 与 J 等价。",
+        "若有多个力，功是标量，各力的功按正负号作代数相加，得到总功。"
+      ],
+      "errors": [
+        {
+          "wrong": "漏掉夹角因子，任何情况下都写成 W = Fs",
+          "wrong_expr": "W = F*s",
+          "why": "只有力与位移同向时 cos(theta)=1 才能写成 Fs。斜向拉箱会误算成 50 J，正确值是 40 J；两式量纲相同，只能靠数值情境抓住。",
+          "caught_by": "数值代入",
+          "trap_test": { "scenario": "斜向拉箱", "expr": "F*s", "ref": 40.0 }
+        },
+        {
+          "wrong": "把负功的大小直接相加，写成 W_total = W1 − W2",
+          "wrong_expr": "W_total = W1 - W2",
+          "why": "W2 已经带负号，再减一次会把阻力的负功变成正贡献。本情境会得到 70 J，而正确总功是 30 J。",
+          "caught_by": "数值代入",
+          "trap_test": { "scenario": "一正一负", "expr": "W1 - W2", "ref": 30.0 }
+        }
+      ],
+      "example": {
+        "stem": "用 10 N 的恒力斜向上拉箱子，力与水平位移的夹角满足 cos(theta)=0.8，箱子水平移动 5 m；同时阻力做功 −20 J。求拉力做功和总功。",
+        "solution": [
+          "拉力做功 W1 = F s cos(theta) = 10 × 5 × 0.8 = 40 J。",
+          "阻力的功已经是带符号的 −20 J。",
+          "总功 W_total = 40 + (−20) = 20 J。"
+        ],
+        "answer": "拉力做功 40 J，总功 20 J。"
+      },
+      "prereq": ["dyn-04"],
+      "next": ["ene-02", "ene-03"],
+      "tags": ["功", "正功", "负功", "总功"]
+    },
+
+    {
+      "id": "ene-02",
+      "title": "功率：平均功率与瞬时功率",
+      "level": "基础",
+      "definition": "功率描述做功的快慢。平均功率等于一段时间内所做的功与时间之比 P_avg = W/t；恒力作用下，某一瞬间的功率为 P = F v cos(theta)。功率的单位是瓦特，1 W = 1 J/s。",
+      "meaning": "功相同不代表功率相同，完成得越快，平均功率越大。发动机的额定功率是正常工作时允许长期输出的功率，不等于任何时刻都必然达到的实际功率。由 P = Fv 可知，在功率受限时，牵引力和速度不能同时任意增大。",
+      "symbols": {
+        "P_avg": { "desc": "平均功率", "unit": "W" },
+        "P": { "desc": "瞬时功率", "unit": "W" },
+        "W": { "desc": "一段时间内所做的功", "unit": "J" },
+        "t": { "desc": "做功所用时间", "unit": "s" },
+        "F": { "desc": "恒力大小", "unit": "N" },
+        "v": { "desc": "瞬时速度大小", "unit": "m/s" },
+        "theta": { "desc": "力与速度的夹角", "unit": "rad" }
+      },
+      "scenarios": {
+        "起重机提升": { "W": 6000, "t": 20, "P_avg": 300, "F": 600, "v": 0.5, "theta": 0 },
+        "汽车牵引": { "F": 2000, "v": 15, "theta": 0, "P": 30000 },
+        "斜向牵引": { "F": 1000, "v": 10, "theta": 0.6435011088, "P": 8000 }
+      },
+      "formulas": [
+        {
+          "name": "平均功率",
+          "expr": "P_avg = W/t",
+          "when": "研究一段时间内做功的平均快慢",
+          "checks": [
+            { "type": "numeric", "scenario": "起重机提升", "expr": "W/t", "ref": 300.0, "note": "手工计算 6000 J ÷ 20 s = 300 W" },
+            { "type": "direction", "scenario": "起重机提升", "var": "W", "lo": 3000, "hi": 12000, "expr": "W/t", "expect": "up", "note": "用时相同时，做功越多平均功率越大" },
+            { "type": "direction", "scenario": "起重机提升", "var": "t", "lo": 10, "hi": 40, "expr": "W/t", "expect": "down", "note": "完成同样的功，用时越长平均功率越小" },
+            { "type": "scan", "scenario": "起重机提升", "var": "t", "lo": 1, "hi": 100 },
+            { "type": "consistency", "scenario": "起重机提升", "expr": "W/t", "with": "ene-02|恒力的瞬时功率", "with_expr": "F*v*cos(theta)", "target": "匀速同向提升时的功率", "note": "由总功除时间得到 300 W；由恒定拉力 600 N 乘匀速 0.5 m/s 也得到 300 W" }
+          ]
+        },
+        {
+          "name": "恒力的瞬时功率",
+          "expr": "P = F*v*cos(theta)",
+          "when": "恒力作用于速度为 v 的物体，theta 是力与速度的夹角",
+          "checks": [
+            { "type": "numeric", "scenario": "汽车牵引", "expr": "F*v*cos(theta)", "ref": 30000.0, "note": "牵引力与速度同向，手工计算 2000 N × 15 m/s = 30000 W" },
+            { "type": "direction", "scenario": "汽车牵引", "var": "F", "lo": 1000, "hi": 4000, "expr": "F*v*cos(theta)", "expect": "up", "note": "同速同向时，牵引力越大瞬时功率越大" },
+            { "type": "direction", "scenario": "汽车牵引", "var": "v", "lo": 5, "hi": 30, "expr": "F*v*cos(theta)", "expect": "up", "note": "牵引力不变时，速度越大功率越大" },
+            { "type": "scan", "scenario": "汽车牵引", "var": "theta", "lo": 0, "hi": 1.5707963268 }
+          ]
+        }
+      ],
+      "derivation": [
+        "平均功率由定义直接得到：用完成的功 W 除以所用时间 t。",
+        "很短时间内位移可写成 s = vt，代入 W = Fs cos(theta)。",
+        "再除以时间 t，得到瞬时关系 P = Fv cos(theta)。"
+      ],
+      "errors": [
+        {
+          "wrong": "把平均功率写成 P_avg = Wt",
+          "wrong_expr": "P_avg = W*t",
+          "why": "J·s 不是功率单位 J/s，量纲检查可以直接发现。数值上还会错误地认为用时越长功率越大。",
+          "caught_by": "量纲一致性"
+        },
+        {
+          "wrong": "瞬时功率只写 P = Fv，不考虑力与速度夹角",
+          "wrong_expr": "P = F*v",
+          "why": "只有力与速度同向时才成立。斜向牵引情境中 cos(theta)=0.8，错误式得到 10000 W，正确值为 8000 W；两式量纲相同，必须靠数值核验。",
+          "caught_by": "数值代入",
+          "trap_test": { "scenario": "斜向牵引", "expr": "F*v", "ref": 8000.0 }
+        }
+      ],
+      "example": {
+        "stem": "起重机在 20 s 内做功 6000 J，求平均功率。若某时刻钢索拉力为 2000 N、重物速度为 0.5 m/s且同向，求该时刻功率。",
+        "solution": [
+          "平均功率 P_avg = W/t = 6000/20 = 300 W。",
+          "钢索拉力与速度同向，cos(theta)=1。",
+          "瞬时功率 P = Fv = 2000 × 0.5 = 1000 W。"
+        ],
+        "answer": "平均功率 300 W，所述时刻的瞬时功率 1000 W。"
+      },
+      "prereq": ["ene-01"],
+      "next": ["ene-03"],
+      "tags": ["功率", "平均功率", "瞬时功率", "额定功率"]
+    },
+
+    {
+      "id": "ene-03",
+      "title": "动能与动能定理",
+      "level": "进阶",
+      "definition": "质量为 m、速率为 v 的物体具有动能 Ek = 1/2 m v²。合力对物体所做的总功等于物体动能的变化，即 W_total = Ek2 − Ek1。动能只由质量和速率决定，是标量且不为负。",
+      "meaning": "动能定理把复杂的受力过程压缩为初末两个状态，特别适合求变力作用或路径复杂但各力做功容易计算的问题。总功为正，动能增加；总功为负，动能减少。它不要求只有一个力做功，也不等于机械能守恒。",
+      "symbols": {
+        "Ek": { "desc": "物体的动能", "unit": "J" },
+        "Ek1": { "desc": "初状态动能", "unit": "J" },
+        "Ek2": { "desc": "末状态动能", "unit": "J" },
+        "m": { "desc": "物体质量", "unit": "kg" },
+        "v": { "desc": "物体速率", "unit": "m/s" },
+        "v1": { "desc": "初速率", "unit": "m/s" },
+        "v2": { "desc": "末速率", "unit": "m/s" },
+        "W_total": { "desc": "合力所做的总功", "unit": "J" },
+        "g": { "desc": "重力加速度", "unit": "m/s^2" },
+        "h": { "desc": "斜面竖直高度", "unit": "m" },
+        "a": { "desc": "沿斜面加速度", "unit": "m/s^2" },
+        "L": { "desc": "斜面长度", "unit": "m" }
+      },
+      "scenarios": {
+        "小车加速": { "m": 2, "v": 3, "Ek": 9 },
+        "动能变化": { "m": 2, "v1": 2, "v2": 6, "Ek1": 4, "Ek2": 36, "W_total": 32 },
+        "光滑斜面下滑": { "m": 2, "g": 10, "h": 1.8, "v1": 0, "v2": 6, "Ek1": 0, "Ek2": 36, "W_total": 36, "a": 3.6, "L": 5 }
+      },
+      "formulas": [
+        {
+          "name": "动能",
+          "expr": "Ek = 0.5*m*v^2",
+          "when": "质量为 m、速率为 v 的质点或平动物体",
+          "checks": [
+            { "type": "numeric", "scenario": "小车加速", "expr": "0.5*m*v^2", "ref": 9.0, "note": "手工计算 1/2 × 2 kg × (3 m/s)² = 9 J" },
+            { "type": "direction", "scenario": "小车加速", "var": "m", "lo": 1, "hi": 4, "expr": "0.5*m*v^2", "expect": "up", "note": "速率相同时，质量越大动能越大" },
+            { "type": "direction", "scenario": "小车加速", "var": "v", "lo": 1, "hi": 6, "expr": "0.5*m*v^2", "expect": "up", "note": "质量相同时，动能随速率平方增大" },
+            { "type": "scan", "scenario": "小车加速", "var": "v", "lo": 0, "hi": 100 }
+          ]
+        },
+        {
+          "name": "动能定理",
+          "expr": "W_total = Ek2 - Ek1",
+          "when": "任意一段运动过程，总功取所有力做功的代数和",
+          "checks": [
+            { "type": "numeric", "scenario": "动能变化", "expr": "Ek2 - Ek1", "ref": 32.0, "note": "末动能 36 J 减初动能 4 J，手工得到总功 32 J" },
+            { "type": "numeric", "scenario": "光滑斜面下滑", "expr": "0.5*m*v2^2 - 0.5*m*v1^2", "ref": 36.0, "note": "手工计算 1/2×2×6²−0 = 36 J" },
+            { "type": "consistency", "scenario": "光滑斜面下滑", "expr": "0.5*m*v2^2 - 0.5*m*v1^2", "with": "ene-04|重力做功", "with_expr": "m*g*h", "target": "光滑斜面下滑时的动能增量", "note": "动能定理给出 36 J；重力做功独立给出 2×10×1.8 = 36 J" },
+            { "type": "consistency", "scenario": "光滑斜面下滑", "expr": "v2^2", "with": "kine-05|速度与位移的关系", "with_expr": "v1^2 + 2*a*L", "target": "斜面末速度的平方", "note": "动能路线由 mgh=1/2 mv² 得 v²=36；牛顿定律先得沿斜面加速度 3.6 m/s²，再由运动学得 0+2×3.6×5=36。两条路径独立吻合" }
+          ]
+        }
+      ],
+      "derivation": [
+        "恒力沿直线推动质量 m 的物体时，W_total = F s = m a s。",
+        "由运动学关系 v2² − v1² = 2as，得到 W_total = 1/2 m v2² − 1/2 m v1²。",
+        "把只与状态有关的 1/2 mv² 定义为动能，便得到 W_total = Ek2 − Ek1。",
+        "斜面互证中，能量路线直接用 mgh = 1/2 mv²；力学路线先用 F=ma 求 a，再用 v²=2aL，二者末速度必须相同。"
+      ],
+      "errors": [
+        {
+          "wrong": "漏掉二分之一，把动能写成 Ek = mv²",
+          "wrong_expr": "Ek = m*v^2",
+          "why": "错误式量纲仍是 J，量纲检查抓不到。小车情境会算成 18 J，正确值是 9 J。",
+          "caught_by": "数值代入",
+          "trap_test": { "scenario": "小车加速", "expr": "m*v^2", "ref": 9.0 }
+        },
+        {
+          "wrong": "把动能变化写反成 Ek1 − Ek2",
+          "wrong_expr": "W_total = Ek1 - Ek2",
+          "why": "加速过程中会错误得到负功。本情境算出 −32 J，而正确总功为 +32 J。",
+          "caught_by": "数值代入",
+          "trap_test": { "scenario": "动能变化", "expr": "Ek1 - Ek2", "ref": 32.0 }
+        }
+      ],
+      "example": {
+        "stem": "质量 2 kg 的物体从静止沿高 1.8 m、长 5 m 的光滑斜面下滑，取 g=10 m/s²。分别用动能定理和牛顿第二定律加运动学求末速度。",
+        "solution": [
+          "能量路线：mgh = 1/2 mv²，约去 m，得 v² = 2gh = 36，所以 v = 6 m/s。",
+          "力学路线：斜面正弦值 h/L = 1.8/5 = 0.36，沿斜面加速度 a = g sin(theta) = 3.6 m/s²。",
+          "由 v² = 2aL = 2×3.6×5 = 36，仍得 v = 6 m/s。",
+          "两条独立路径结果完全一致。"
+        ],
+        "answer": "末速度为 6 m/s；两种方法一致。"
+      },
+      "prereq": ["ene-01", "dyn-05", "kine-05"],
+      "next": ["ene-04", "ene-06"],
+      "tags": ["动能", "动能定理", "跨公式互证", "斜面"]
+    },
+
+    {
+      "id": "ene-04",
+      "title": "重力做功与重力势能",
+      "level": "进阶",
+      "definition": "重力做功只由初末高度决定，与路径无关：W_G = mg(h1−h2)。选定零势能面后，物体的重力势能 Ep = mgh；重力做功等于重力势能的减少量，即 W_G = Ep1−Ep2。",
+      "meaning": "重力势能属于物体与地球组成的系统，并且数值依赖零势能面的选择；但势能差和重力做功不依赖零面的选择。物体下落时重力做正功、势能减少；物体上升时重力做负功、势能增加。",
+      "symbols": {
+        "W_G": { "desc": "重力所做的功", "unit": "J" },
+        "m": { "desc": "物体质量", "unit": "kg" },
+        "g": { "desc": "重力加速度", "unit": "m/s^2" },
+        "h": { "desc": "相对零势能面的高度", "unit": "m" },
+        "h1": { "desc": "初位置高度", "unit": "m" },
+        "h2": { "desc": "末位置高度", "unit": "m" },
+        "Ep": { "desc": "重力势能", "unit": "J" },
+        "Ep1": { "desc": "初状态重力势能", "unit": "J" },
+        "Ep2": { "desc": "末状态重力势能", "unit": "J" }
+      },
+      "scenarios": {
+        "下落过程": { "m": 2, "g": 10, "h1": 5, "h2": 2, "W_G": 60, "Ep1": 100, "Ep2": 40 },
+        "高处物体": { "m": 3, "g": 10, "h": 4, "Ep": 120 }
+      },
+      "formulas": [
+        {
+          "name": "重力做功",
+          "expr": "W_G = m*g*(h1 - h2)",
+          "when": "近地面重力可视为恒力，h1、h2 使用同一高度基准",
+          "checks": [
+            { "type": "numeric", "scenario": "下落过程", "expr": "m*g*(h1 - h2)", "ref": 60.0, "note": "手工计算 2×10×(5−2) = 60 J" },
+            { "type": "direction", "scenario": "下落过程", "var": "h1", "lo": 3, "hi": 8, "expr": "m*g*(h1-h2)", "expect": "up", "note": "末高度不变时，起点越高，重力做的正功越多" },
+            { "type": "direction", "scenario": "下落过程", "var": "h2", "lo": 0, "hi": 4, "expr": "m*g*(h1-h2)", "expect": "down", "note": "起点不变时，末高度越高，下落高度越小，重力功越小" },
+            { "type": "consistency", "scenario": "下落过程", "expr": "m*g*(h1-h2)", "with": "ene-04|重力势能", "with_expr": "Ep1-Ep2", "target": "重力做功", "note": "高度差路线给 60 J，势能差路线给 100−40=60 J" }
+          ]
+        },
+        {
+          "name": "重力势能",
+          "expr": "Ep = m*g*h",
+          "when": "选定零势能面后，近地面范围内",
+          "checks": [
+            { "type": "numeric", "scenario": "高处物体", "expr": "m*g*h", "ref": 120.0, "note": "手工计算 3 kg × 10 m/s² × 4 m = 120 J" },
+            { "type": "direction", "scenario": "高处物体", "var": "m", "lo": 1, "hi": 6, "expr": "m*g*h", "expect": "up", "note": "同一高度处，质量越大重力势能越大" },
+            { "type": "direction", "scenario": "高处物体", "var": "h", "lo": 0, "hi": 10, "expr": "m*g*h", "expect": "up", "note": "零面固定时，高度越高重力势能越大" },
+            { "type": "scan", "scenario": "高处物体", "var": "h", "lo": -10, "hi": 100 }
+          ]
+        }
+      ],
+      "derivation": [
+        "竖直方向取向上为正，重力方向向下；物体从 h1 到 h2 时，重力做功为 mg(h1−h2)。",
+        "因为这个结果只与初末高度有关，可定义状态量 Ep = mgh。",
+        "于是 W_G = mg h1 − mg h2 = Ep1 − Ep2 = −Delta Ep。"
+      ],
+      "errors": [
+        {
+          "wrong": "下落时把重力功写成 mg(h2−h1)",
+          "wrong_expr": "W_G = m*g*(h2-h1)",
+          "why": "下落时重力与位移同向，应做正功。错误写法在本情境得到 −60 J，符号与物理过程相反。",
+          "caught_by": "数值代入",
+          "trap_test": { "scenario": "下落过程", "expr": "m*g*(h2-h1)", "ref": 60.0 }
+        },
+        {
+          "wrong": "把重力势能写成 Ep = mgh²",
+          "wrong_expr": "Ep = m*g*h^2",
+          "why": "右边单位会变成 J·m，而不是能量单位 J；高度被多乘了一次，数值也会随高度平方增长，量纲检查可以直接拦住。",
+          "caught_by": "量纲一致性"
+        }
+      ],
+      "example": {
+        "stem": "质量 2 kg 的物体从离地 5 m 处落到离地 2 m 处，取地面为零势能面，g=10 m/s²。求重力做功及势能变化。",
+        "solution": [
+          "重力做功 W_G = mg(h1−h2) = 2×10×3 = 60 J。",
+          "初势能 Ep1 = 100 J，末势能 Ep2 = 40 J。",
+          "势能变化 Delta Ep = Ep2−Ep1 = −60 J，与重力功互为相反数。"
+        ],
+        "answer": "重力做功 60 J，重力势能减少 60 J。"
+      },
+      "prereq": ["ene-01"],
+      "next": ["ene-06"],
+      "tags": ["重力做功", "重力势能", "零势能面"]
+    },
+
+    {
+      "id": "ene-05",
+      "title": "弹性势能",
+      "level": "进阶",
+      "definition": "在弹性限度内，劲度系数为 k 的弹簧形变量为 x 时，弹簧的弹性势能 Ep_s = 1/2 kx²。弹力从形变量 x1 变化到 x2 的过程中所做的功等于弹性势能的减少量。",
+      "meaning": "弹簧弹力会随形变量变化，不能直接拿某一时刻的 kx 乘位移。弹性势能与形变量的平方有关，拉伸和压缩同样大小时势能相同。这里的 x 仍然是相对原长的形变量，而不是弹簧总长。",
+      "symbols": {
+        "Ep_s": { "desc": "弹簧的弹性势能", "unit": "J" },
+        "k": { "desc": "弹簧劲度系数", "unit": "N/m" },
+        "x": { "desc": "弹簧形变量", "unit": "m" },
+        "x1": { "desc": "初状态形变量", "unit": "m" },
+        "x2": { "desc": "末状态形变量", "unit": "m" },
+        "W_spring": { "desc": "弹力所做的功", "unit": "J" },
+        "L_total": { "desc": "弹簧当前总长", "unit": "m" }
+      },
+      "scenarios": {
+        "拉伸储能": { "k": 200, "x": 0.1, "Ep_s": 1, "L_total": 0.4 },
+        "弹簧回弹": { "k": 200, "x1": 0.1, "x2": 0.04, "W_spring": 0.84 }
+      },
+      "formulas": [
+        {
+          "name": "弹性势能",
+          "expr": "Ep_s = 0.5*k*x^2",
+          "when": "理想弹簧处于弹性限度内，以原长状态为零势能状态",
+          "checks": [
+            { "type": "numeric", "scenario": "拉伸储能", "expr": "0.5*k*x^2", "ref": 1.0, "note": "手工计算 1/2×200 N/m×(0.1 m)² = 1 J" },
+            { "type": "direction", "scenario": "拉伸储能", "var": "k", "lo": 100, "hi": 400, "expr": "0.5*k*x^2", "expect": "up", "note": "形变量相同时，弹簧越硬储存的弹性势能越多" },
+            { "type": "direction", "scenario": "拉伸储能", "var": "x", "lo": 0, "hi": 0.2, "expr": "0.5*k*x^2", "expect": "up", "note": "在非负形变量范围内，形变量越大弹性势能越大" },
+            { "type": "scan", "scenario": "拉伸储能", "var": "x", "lo": -0.2, "hi": 0.2 }
+          ]
+        },
+        {
+          "name": "弹力做功",
+          "expr": "W_spring = 0.5*k*(x1^2 - x2^2)",
+          "when": "理想弹簧从形变量 x1 变化到 x2",
+          "checks": [
+            { "type": "numeric", "scenario": "弹簧回弹", "expr": "0.5*k*(x1^2-x2^2)", "ref": 0.84, "note": "手工计算 100×(0.01−0.0016) = 0.84 J" },
+            { "type": "direction", "scenario": "弹簧回弹", "var": "x1", "lo": 0.05, "hi": 0.15, "expr": "0.5*k*(x1^2-x2^2)", "expect": "up", "note": "末形变量不变时，初始压缩或拉伸越大，回弹过程弹力做功越多" },
+            { "type": "direction", "scenario": "弹簧回弹", "var": "x2", "lo": 0, "hi": 0.08, "expr": "0.5*k*(x1^2-x2^2)", "expect": "down", "note": "初形变量不变时，末态剩余形变越大，释放的能量越少" },
+            { "type": "consistency", "scenario": "弹簧回弹", "expr": "0.5*k*(x1^2-x2^2)", "with": "ene-05|弹性势能", "with_expr": "0.5*k*x1^2-0.5*k*x2^2", "target": "弹力做功", "note": "直接功公式与初末弹性势能之差都给出 0.84 J" }
+          ]
+        }
+      ],
+      "derivation": [
+        "弹簧弹力由 0 随形变量线性增加到 kx，平均弹力为 (0+kx)/2。",
+        "把平均弹力乘形变量 x，得到储存的能量 1/2 kx²。",
+        "弹簧回弹时弹性势能减少，弹力做正功，因此 W_spring = Ep_s1−Ep_s2。"
+      ],
+      "errors": [
+        {
+          "wrong": "漏掉二分之一，把弹性势能写成 kx²",
+          "wrong_expr": "Ep_s = k*x^2",
+          "why": "错误式量纲仍为 J，只有数值核验能发现。本情境会算成 2 J，正确值为 1 J。",
+          "caught_by": "数值代入",
+          "trap_test": { "scenario": "拉伸储能", "expr": "k*x^2", "ref": 1.0 }
+        },
+        {
+          "wrong": "把弹簧总长代入 x，写成 1/2 kL²",
+          "wrong_expr": "Ep_s = 0.5*k*L_total^2",
+          "why": "x 是相对原长的形变量，不是总长。错误式量纲完全正确，本情境会误算成 16 J，而正确值只有 1 J。",
+          "caught_by": "数值代入",
+          "trap_test": { "scenario": "拉伸储能", "expr": "0.5*k*L_total^2", "ref": 1.0 }
+        }
+      ],
+      "example": {
+        "stem": "劲度系数 200 N/m 的弹簧被拉伸 0.10 m，随后回弹到形变量 0.04 m。求初始弹性势能和回弹过程中弹力做功。",
+        "solution": [
+          "初始弹性势能 Ep_s1 = 1/2×200×0.10² = 1 J。",
+          "末态弹性势能 Ep_s2 = 1/2×200×0.04² = 0.16 J。",
+          "弹力做功等于势能减少量：1−0.16 = 0.84 J。"
+        ],
+        "answer": "初始弹性势能 1 J，弹力做功 0.84 J。"
+      },
+      "prereq": ["dyn-01", "ene-01"],
+      "next": ["ene-06"],
+      "tags": ["弹性势能", "弹力做功", "胡克定律"]
+    },
+
+    {
+      "id": "ene-06",
+      "title": "机械能与机械能守恒定律",
+      "level": "进阶",
+      "definition": "物体的动能与势能之和叫机械能。只有重力或系统内弹力做功时，系统机械能守恒，即初状态机械能等于末状态机械能。若有摩擦力等非保守力做功，机械能通常不守恒。",
+      "meaning": "机械能守恒不是能量守恒的同义词。能量守恒始终成立；机械能守恒需要条件。判断时应先选系统，再检查是否只有重力或系统内弹力做功，不能只看题目里是否出现摩擦力，也不能因为支持力存在就直接否定——关键是这些力是否对所选系统做功。",
+      "symbols": {
+        "E": { "desc": "机械能", "unit": "J" },
+        "Ek": { "desc": "动能", "unit": "J" },
+        "Ep": { "desc": "势能", "unit": "J" },
+        "E1": { "desc": "初状态机械能", "unit": "J" },
+        "E2": { "desc": "末状态机械能", "unit": "J" },
+        "Ek1": { "desc": "初状态动能", "unit": "J" },
+        "Ek2": { "desc": "末状态动能", "unit": "J" },
+        "Ep1": { "desc": "初状态势能", "unit": "J" },
+        "Ep2": { "desc": "末状态势能", "unit": "J" },
+        "m": { "desc": "物体质量", "unit": "kg" },
+        "g": { "desc": "重力加速度", "unit": "m/s^2" },
+        "h": { "desc": "初位置相对末位置的高度", "unit": "m" },
+        "v": { "desc": "末速率", "unit": "m/s" }
+      },
+      "scenarios": {
+        "状态机械能": { "Ek": 18, "Ep": 42, "E": 60 },
+        "自由下落守恒": { "m": 2, "g": 10, "h": 1.8, "v": 6, "Ek1": 0, "Ep1": 36, "E1": 36, "Ek2": 36, "Ep2": 0, "E2": 36 }
+      },
+      "formulas": [
+        {
+          "name": "机械能定义",
+          "expr": "E = Ek + Ep",
+          "when": "机械能由动能和所考虑的势能组成",
+          "checks": [
+            { "type": "numeric", "scenario": "状态机械能", "expr": "Ek+Ep", "ref": 60.0, "note": "手工计算 18 J + 42 J = 60 J" },
+            { "type": "direction", "scenario": "状态机械能", "var": "Ek", "lo": 0, "hi": 50, "expr": "Ek+Ep", "expect": "up", "note": "势能固定时，动能越大机械能越大" },
+            { "type": "direction", "scenario": "状态机械能", "var": "Ep", "lo": 0, "hi": 80, "expr": "Ek+Ep", "expect": "up", "note": "动能固定时，势能越大机械能越大" },
+            { "type": "compare", "scenario": "状态机械能", "expr": "E", "op": ">", "vs": "Ek", "note": "本情境势能为正，所以机械能 60 J 大于动能 18 J" },
+            { "type": "scan", "scenario": "状态机械能", "var": "Ek", "lo": 0, "hi": 100 }
+          ]
+        },
+        {
+          "name": "机械能守恒",
+          "expr": "E1 = E2",
+          "when": "选定系统内只有重力或弹力做功",
+          "checks": [
+            { "type": "numeric", "scenario": "自由下落守恒", "expr": "Ek1+Ep1", "ref": 36.0, "note": "初态静止，机械能为 0+36=36 J" },
+            { "type": "numeric", "scenario": "自由下落守恒", "expr": "Ek2+Ep2", "ref": 36.0, "note": "末态机械能为 36+0=36 J" },
+            { "type": "consistency", "scenario": "自由下落守恒", "expr": "m*g*h", "with": "ene-03|动能", "with_expr": "0.5*m*v^2", "target": "自由下落中的势能转化", "note": "初态重力势能 2×10×1.8=36 J，末态动能 1/2×2×6²=36 J" },
+            { "type": "compare", "scenario": "自由下落守恒", "expr": "Ek1+Ep1", "op": "==", "vs": "Ek2+Ep2", "note": "初末机械能均为 36 J，守恒量无漂移" }
+          ]
+        }
+      ],
+      "derivation": [
+        "动能定理给出总功等于动能变化。把重力或弹力做功改写为相应势能的减少量。",
+        "若只有这些保守力做功，就有 Delta Ek = −Delta Ep。",
+        "移项得到 Ek1+Ep1 = Ek2+Ep2，即机械能在过程中保持不变。"
+      ],
+      "errors": [
+        {
+          "wrong": "把机械能写成动能减势能 E = Ek − Ep",
+          "wrong_expr": "E = Ek - Ep",
+          "why": "机械能定义是动能与势能的代数和。错误式在本情境得到 −24 J，而正确机械能是 60 J。",
+          "caught_by": "数值代入",
+          "trap_test": { "scenario": "状态机械能", "expr": "Ek-Ep", "ref": 60.0 }
+        },
+        {
+          "wrong": "只要研究能量问题就直接写机械能守恒，不检查是否有非保守力做功",
+          "why": "有滑动摩擦、外力推动等过程时，机械能可以转化为内能或由外界输入，机械能一般不守恒；守恒的是包含相关形式在内的总能量。此错误属于适用条件判断，公式数值检查不能单独覆盖。",
+          "caught_by": "人工审核"
+        }
+      ],
+      "example": {
+        "stem": "质量 2 kg 的物体从高 1.8 m 处由静止自由下落，忽略空气阻力，g=10 m/s²。用机械能守恒求落地速度。",
+        "solution": [
+          "忽略空气阻力，物体与地球系统只有重力做功，机械能守恒。",
+          "取地面为零势能面：mgh = 1/2 mv²。",
+          "约去质量，v² = 2gh = 36，所以 v = 6 m/s。",
+          "初末机械能均为 36 J。"
+        ],
+        "answer": "落地速度为 6 m/s。"
+      },
+      "prereq": ["ene-03", "ene-04", "ene-05"],
+      "next": ["ene-07"],
+      "tags": ["机械能", "机械能守恒", "适用条件"]
+    },
+
+    {
+      "id": "ene-07",
+      "title": "功与能的关系：摩擦生热与能量守恒",
+      "level": "拓展",
+      "definition": "相对滑动过程中，滑动摩擦把机械能转化为内能。摩擦生热可写为 Q = f s_rel，其中 s_rel 是接触面之间的相对路程。若系统没有从外界获得或向外界放出能量，减少的机械能等于增加的内能。",
+      "meaning": "机械能减少并不表示能量消失，而是能量形式发生了转化。计算摩擦生热必须使用相对路程，不一定等于某一个物体对地位移。把系统边界选清楚，是判断外力做功、机械能变化和内能变化的第一步。",
+      "symbols": {
+        "Q": { "desc": "摩擦产生的内能", "unit": "J" },
+        "f": { "desc": "滑动摩擦力大小", "unit": "N" },
+        "s_rel": { "desc": "两接触面间的相对路程", "unit": "m" },
+        "E1": { "desc": "系统初状态机械能", "unit": "J" },
+        "E2": { "desc": "系统末状态机械能", "unit": "J" },
+        "W_ext": { "desc": "系统外力所做的功", "unit": "J" }
+      },
+      "scenarios": {
+        "木块滑行": { "f": 6, "s_rel": 4, "Q": 24 },
+        "粗糙面减速": { "E1": 50, "E2": 26, "Q": 24, "W_ext": 0 }
+      },
+      "formulas": [
+        {
+          "name": "摩擦生热",
+          "expr": "Q = f*s_rel",
+          "when": "大小为 f 的滑动摩擦力作用，接触面发生相对滑动",
+          "checks": [
+            { "type": "numeric", "scenario": "木块滑行", "expr": "f*s_rel", "ref": 24.0, "note": "手工计算 6 N × 4 m = 24 J" },
+            { "type": "direction", "scenario": "木块滑行", "var": "f", "lo": 2, "hi": 12, "expr": "f*s_rel", "expect": "up", "note": "相对路程相同时，摩擦力越大，产生的内能越多" },
+            { "type": "direction", "scenario": "木块滑行", "var": "s_rel", "lo": 0, "hi": 10, "expr": "f*s_rel", "expect": "up", "note": "摩擦力相同时，相对滑动路程越长，生热越多" },
+            { "type": "scan", "scenario": "木块滑行", "var": "s_rel", "lo": 0, "hi": 100 }
+          ]
+        },
+        {
+          "name": "含内能的能量守恒",
+          "expr": "Q = E1 + W_ext - E2",
+          "when": "把摩擦产生的内能计入系统，W_ext 是系统外力输入的能量",
+          "checks": [
+            { "type": "numeric", "scenario": "粗糙面减速", "expr": "E1+W_ext-E2", "ref": 24.0, "note": "手工计算 50 J + 0 − 26 J = 24 J，等于内能增加量" },
+            { "type": "consistency", "scenario": "粗糙面减速", "expr": "E1+W_ext-E2", "with": "ene-07|摩擦生热", "with_expr": "Q", "target": "机械能减少量与内能增加量", "note": "机械能减少 24 J，摩擦生热也是 24 J，总能量账目闭合" },
+            { "type": "direction", "scenario": "粗糙面减速", "var": "E2", "lo": 10, "hi": 40, "expr": "E1+W_ext-E2", "expect": "down", "note": "初能量和外功不变时，剩余机械能越多，转化成的内能越少" },
+            { "type": "compare", "scenario": "粗糙面减速", "expr": "E1+W_ext", "op": "==", "vs": "E2+Q", "note": "等式两边都是 50 J，说明机械能虽不守恒，总能量仍守恒" }
+          ]
+        }
+      ],
+      "derivation": [
+        "滑动摩擦力在相对位移上持续作用，转化的能量等于摩擦力大小乘相对路程，即 Q = f s_rel。",
+        "对选定系统列能量账：初机械能加外界输入的功，等于末机械能加转化出的内能。",
+        "没有外力做功时，E1−E2 = Q；机械能减少量有明确去向，并未消失。"
+      ],
+      "errors": [
+        {
+          "wrong": "把摩擦生热写成 Q = f/s_rel",
+          "wrong_expr": "Q = f/s_rel",
+          "why": "相除后的单位是 N/m，不是能量单位 J；而且它会错误地认为相对滑动路程越长，产生的内能反而越少，量纲检查可以直接发现。",
+          "caught_by": "量纲一致性"
+        },
+        {
+          "wrong": "机械能减少后认为能量消失，写成 E1 = E2 而漏掉 Q",
+          "wrong_expr": "E1 = E2",
+          "why": "粗糙面减速情境中初机械能 50 J、末机械能 26 J，二者不相等；少掉的 24 J 正好转化为内能。",
+          "caught_by": "数值代入"
+        }
+      ],
+      "example": {
+        "stem": "木块在粗糙水平面上滑行 4 m，受到 6 N 的滑动摩擦力。初机械能为 50 J，过程中无其他外力做功。求摩擦生热和末机械能。",
+        "solution": [
+          "接触面相对路程为 4 m，摩擦生热 Q = f s_rel = 6×4 = 24 J。",
+          "能量守恒：E1 = E2 + Q。",
+          "所以 E2 = 50−24 = 26 J。"
+        ],
+        "answer": "摩擦生热 24 J，末机械能 26 J。"
+      },
+      "prereq": ["ene-01", "ene-06", "dyn-03"],
+      "next": [],
+      "tags": ["摩擦生热", "内能", "能量守恒", "系统边界"]
+    }
+  ]
+}

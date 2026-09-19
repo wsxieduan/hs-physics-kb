@@ -1,0 +1,288 @@
+{
+  "chapter": "第六章 · 机械振动与波",
+  "order": 6,
+  "intro": "机械振动研究物体在平衡位置附近的往复运动，机械波研究振动如何在介质中传播。本章用周期、频率和相位描述振动，用波长、频率和波速连接振源与传播；特别注意，波传播的是振动形式和能量，不是介质整体随波前进。",
+  "points": [
+    {
+      "id": "osc-01",
+      "title": "简谐运动的描述",
+      "level": "基础",
+      "definition": "物体的位移随时间按正弦或余弦规律变化的运动叫简谐运动。表达式 x = A cos(omega t + phi) 中，A 是振幅，omega 是角频率，phi 是初相位；周期 T 是完成一次全振动所需的时间。",
+      "meaning": "位移 x 总是相对平衡位置测量，可正可负；振幅 A 是最大位移的大小，恒为非负。相位决定物体处在一次振动的哪个阶段，不能只凭位置判断运动方向。",
+      "symbols": {
+        "x": { "desc": "相对平衡位置的位移", "unit": "m" },
+        "A": { "desc": "振幅", "unit": "m" },
+        "omega": { "desc": "角频率", "unit": "rad/s" },
+        "t": { "desc": "时间", "unit": "s" },
+        "phi": { "desc": "初相位", "unit": "rad" },
+        "T": { "desc": "周期", "unit": "s" }
+      },
+      "scenarios": {
+        "余弦振动": { "A": 0.2, "omega": 6.283185307179586, "t": 0, "phi": 0, "x": 0.2, "T": 1 },
+        "半秒周期": { "A": 0.1, "omega": 12.566370614359172, "t": 0, "phi": 0, "x": 0.1, "T": 0.5 }
+      },
+      "formulas": [
+        {
+          "name": "简谐运动位移",
+          "expr": "x = A*cos(omega*t + phi)",
+          "when": "以平衡位置为原点、给定初相位时",
+          "checks": [
+            { "type": "numeric", "scenario": "余弦振动", "expr": "A*cos(omega*t + phi)", "ref": 0.2, "note": "t=0、phi=0 时 cos 0=1，位移为 0.2 m" },
+            { "type": "direction", "scenario": "余弦振动", "var": "A", "lo": 0.1, "hi": 0.4, "expr": "A*cos(omega*t + phi)", "expect": "up", "note": "同在余弦最大值时，振幅越大，正向位移越大" },
+            { "type": "compare", "scenario": "余弦振动", "expr": "abs(A*cos(omega*t + phi))", "op": "<=", "vs": "A", "note": "任意时刻位移的绝对值不超过振幅" },
+            { "type": "scan", "scenario": "余弦振动", "var": "t", "lo": 0, "hi": 4 }
+          ]
+        },
+        {
+          "name": "角频率与周期",
+          "expr": "omega = 2*pi/T",
+          "when": "周期运动中角频率与周期的换算",
+          "checks": [
+            { "type": "numeric", "scenario": "半秒周期", "expr": "2*pi/T", "ref": 12.566370614359172, "note": "T=0.5 s 时 omega=4pi rad/s，约 12.566 rad/s" },
+            { "type": "direction", "scenario": "半秒周期", "var": "T", "lo": 0.25, "hi": 2, "expr": "2*pi/T", "expect": "down", "note": "周期越长，每秒经历的相位越少，角频率越小" },
+            { "type": "consistency", "scenario": "半秒周期", "expr": "2*pi/T", "with": "osc-01|简谐运动位移", "with_expr": "omega", "target": "位移式所用角频率", "note": "由周期换算得到 4pi rad/s，与位移式情境给定的角频率一致" },
+            { "type": "scan", "scenario": "半秒周期", "var": "T", "lo": 0.05, "hi": 10 }
+          ]
+        }
+      ],
+      "derivation": ["一次全振动相位增加 2pi，历时一个周期 T，因此 omega*T=2pi。", "把 omega=2pi/T 代入位移式，时间增加 T 后相位恰好增加 2pi，位移重复。", "余弦函数的值介于 -1 与 1 之间，所以位移满足 -A <= x <= A。"],
+      "errors": [
+        { "wrong": "把角频率写成 omega = T/(2pi)", "wrong_expr": "omega = T/(2*pi)", "why": "量纲由 1/s 错成 s；周期 0.5 s 时数值也不会是 4pi rad/s。", "caught_by": "量纲一致性" },
+        { "wrong": "把余弦型振动误写成 x=A sin(omega t+phi)，却仍沿用原初相位", "wrong_expr": "x = A*sin(omega*t + phi)", "why": "正弦和余弦都能描述简谐运动，但互换函数时必须同步调整初相位。本情境 t=0、phi=0，错误式给出 0，正确初始位移是 0.2 m；两式量纲相同，只能靠数值代入识别。", "caught_by": "数值代入", "trap_test": { "scenario": "余弦振动", "expr": "A*sin(omega*t + phi)", "ref": 0.2 } }
+      ],
+      "example": { "stem": "振子按 x=0.2cos(2pi t) m 振动，求振幅、周期和 t=0 时位移。", "solution": ["A=0.2 m。", "omega=2pi rad/s，所以 T=2pi/omega=1 s。", "t=0 时 x=0.2 m。"], "answer": "振幅 0.2 m，周期 1 s，初始位移 0.2 m。" },
+      "prereq": ["cir-01"], "next": ["osc-02"], "tags": ["简谐运动", "振幅", "周期", "相位"]
+    },
+    {
+      "id": "osc-02",
+      "title": "简谐运动的回复力与能量",
+      "level": "进阶",
+      "definition": "简谐运动的回复力总指向平衡位置，且大小与位移成正比：F_restore = -k x。理想弹簧振子机械能守恒，总能量 E = k A^2/2。",
+      "meaning": "负号表示回复力与位移方向相反，不表示力的大小为负。振子在端点势能最大、速度为零；在平衡位置动能最大、弹性势能最小。理想模型忽略阻力，所以总机械能不随时间变化。",
+      "symbols": {
+        "F_restore": { "desc": "回复力的代数值", "unit": "N" }, "k": { "desc": "回复力系数或弹簧劲度系数", "unit": "N/m" },
+        "x": { "desc": "相对平衡位置的位移", "unit": "m" }, "A": { "desc": "振幅", "unit": "m" }, "E": { "desc": "振动总机械能", "unit": "J" }
+      },
+      "scenarios": {
+        "正向位移": { "k": 200, "x": 0.05, "F_restore": -10, "A": 0.1, "E": 1 },
+        "负向位移": { "k": 200, "x": -0.05, "F_restore": 10, "A": 0.1, "E": 1 }
+      },
+      "formulas": [
+        {
+          "name": "简谐运动回复力",
+          "expr": "F_restore = -k*x",
+          "when": "位移从平衡位置量起、回复力满足线性规律",
+          "checks": [
+            { "type": "numeric", "scenario": "正向位移", "expr": "-k*x", "ref": -10.0, "note": "200 N/m 乘 0.05 m 得 10 N，方向与正位移相反，故为 -10 N" },
+            { "type": "numeric", "scenario": "负向位移", "expr": "-k*x", "ref": 10.0, "note": "x=-0.05 m 时回复力为 +10 N，仍指向平衡位置" },
+            { "type": "direction", "scenario": "正向位移", "var": "x", "lo": 0.01, "hi": 0.1, "expr": "-k*x", "expect": "down", "note": "正向位移增大时回复力代数值更负" },
+            { "type": "scan", "scenario": "正向位移", "var": "x", "lo": -0.2, "hi": 0.2 }
+          ]
+        },
+        {
+          "name": "弹簧振子总机械能",
+          "expr": "E = 0.5*k*A^2",
+          "when": "无阻力的理想弹簧振子",
+          "checks": [
+            { "type": "numeric", "scenario": "正向位移", "expr": "0.5*k*A^2", "ref": 1.0, "note": "一半乘 200 N/m 再乘 (0.1 m)^2，手算为 1 J" },
+            { "type": "direction", "scenario": "正向位移", "var": "A", "lo": 0.05, "hi": 0.2, "expr": "0.5*k*A^2", "expect": "up", "note": "同一弹簧振幅越大，总机械能越大" },
+            { "type": "direction", "scenario": "正向位移", "var": "k", "lo": 100, "hi": 400, "expr": "0.5*k*A^2", "expect": "up", "note": "振幅相同，弹簧越硬，储存的总能量越多" },
+            { "type": "consistency", "scenario": "正向位移", "expr": "0.5*k*A^2", "with": "osc-02|简谐运动回复力", "with_expr": "0.5*abs(-k*A)*A", "target": "端点回复力—位移图像面积与总能量", "note": "直接用弹性势能公式得 1 J；回复力从 0 线性增至 kA，力—位移图像三角形面积也为 1 J" },
+            { "type": "scan", "scenario": "正向位移", "var": "A", "lo": 0, "hi": 1 }
+          ]
+        }
+      ],
+      "derivation": ["在线性回复力模型中，力的大小为 k|x|，方向总与位移相反，因此写成 F_restore=-kx。", "从平衡位置移动到端点时，回复力大小由 0 线性增到 kA，力—位移图像面积为 kA^2/2。", "端点速度为零，全部机械能为弹性势能 kA^2/2；无阻力时这就是任意时刻的总能量。"],
+      "errors": [
+        { "wrong": "漏掉回复力的负号，写成 F_restore=kx", "wrong_expr": "F_restore = k*x", "why": "这会让力指向远离平衡位置的方向；正向位移情境会算出 +10 N，而正确值是 -10 N。", "caught_by": "数值代入" },
+        { "wrong": "把总能量写成 E=kA^2，漏掉二分之一", "wrong_expr": "E = k*A^2", "why": "量纲仍是焦耳，量纲检查抓不到；情境中会得到 2 J，而独立参考值为 1 J。", "caught_by": "数值代入", "trap_test": { "scenario": "正向位移", "expr": "k*A^2", "ref": 1.0 } }
+      ],
+      "example": { "stem": "劲度系数 200 N/m 的弹簧振子振幅为 0.10 m。位移为 +0.05 m 时求回复力和总机械能。", "solution": ["回复力 F=-kx=-200×0.05=-10 N。", "总能量 E=kA²/2=200×0.10²/2=1 J。"], "answer": "回复力 -10 N（指向平衡位置），总机械能 1 J。" },
+      "prereq": ["osc-01", "dyn-01", "ene-05"], "next": ["osc-03"], "tags": ["回复力", "弹簧振子", "机械能"]
+    },
+    {
+      "id": "osc-03",
+      "title": "单摆",
+      "level": "基础",
+      "definition": "细线长度远大于摆球尺寸、线的质量可忽略且不可伸长的摆叫单摆。小角度摆动时，周期 T = 2pi sqrt(L/g)，只由摆长和当地重力加速度决定。",
+      "meaning": "周期公式只适用于小角度近似，通常要求摆角不超过约 5° 到 10°。摆长是悬点到摆球重心的距离，不是细线裸长。周期与摆球质量无关，也不能据此断言大角度时仍完全不变。",
+      "symbols": {
+        "T": { "desc": "单摆周期", "unit": "s" }, "L": { "desc": "悬点到摆球重心的摆长", "unit": "m" },
+        "g": { "desc": "当地重力加速度", "unit": "m/s^2" }, "f": { "desc": "振动频率", "unit": "Hz" }
+      },
+      "scenarios": {
+        "一米单摆": { "L": 1, "g": 9.8, "T": 2.007089923154493, "f": 0.498233219676 },
+        "四米单摆": { "L": 4, "g": 9.8, "T": 4.014179846308986, "f": 0.249116609838 }
+      },
+      "formulas": [
+        {
+          "name": "单摆周期",
+          "expr": "T = 2*pi*sqrt(L/g)",
+          "when": "小角度摆动、阻力可忽略的理想单摆",
+          "checks": [
+            { "type": "numeric", "scenario": "一米单摆", "expr": "2*pi*sqrt(L/g)", "ref": 2.007089923154493, "note": "先手算 sqrt(1/9.8)≈0.31944，再乘 2pi，得约 2.00709 s" },
+            { "type": "direction", "scenario": "一米单摆", "var": "L", "lo": 0.25, "hi": 4, "expr": "2*pi*sqrt(L/g)", "expect": "up", "note": "摆长越长，周期越长" },
+            { "type": "direction", "scenario": "一米单摆", "var": "g", "lo": 1.6, "hi": 20, "expr": "2*pi*sqrt(L/g)", "expect": "down", "note": "重力加速度越大，回复作用越强，周期越短" },
+            { "type": "scan", "scenario": "一米单摆", "var": "L", "lo": 0.01, "hi": 100 }
+          ]
+        },
+        {
+          "name": "单摆频率",
+          "expr": "f = 1/T",
+          "when": "由周期换算每秒全振动次数",
+          "checks": [
+            { "type": "numeric", "scenario": "一米单摆", "expr": "1/T", "ref": 0.498233219676, "note": "1 除以 2.007089923 s，得约 0.498233 Hz" },
+            { "type": "direction", "scenario": "一米单摆", "var": "T", "lo": 1, "hi": 4, "expr": "1/T", "expect": "down", "note": "完成一次振动用时越长，每秒次数越少" },
+            { "type": "consistency", "scenario": "一米单摆", "expr": "1/T", "with": "osc-03|单摆周期", "with_expr": "1/(2*pi*sqrt(L/g))", "target": "单摆频率", "note": "由已知周期取倒数与把周期公式整体取倒数，两条路径均得约 0.498233 Hz" },
+            { "type": "scan", "scenario": "一米单摆", "var": "T", "lo": 0.01, "hi": 100 }
+          ]
+        }
+      ],
+      "derivation": ["小角度时 sin(theta)≈theta，切向回复作用与弧长近似成正比，单摆近似简谐运动。", "单摆的等效角频率为 sqrt(g/L)，再用 T=2pi/omega 得到周期公式。", "公式中没有质量，所以在理想、小角度条件下，单摆周期与摆球质量无关。"],
+      "errors": [
+        { "wrong": "漏掉系数 2，把周期写成 T=pi sqrt(L/g)", "wrong_expr": "T = pi*sqrt(L/g)", "why": "量纲完全正确但数值少一半；一米单摆会算成约 1.00354 s，而正确值约 2.00709 s。", "caught_by": "数值代入", "trap_test": { "scenario": "一米单摆", "expr": "pi*sqrt(L/g)", "ref": 2.007089923154493 } },
+        { "wrong": "把细线长度直接当摆长，忽略摆球半径", "why": "摆长应从悬点量到摆球重心。若只取细线长度，会系统性低估 L 和周期；属于建模与测量错误。", "caught_by": "人工审核" }
+      ],
+      "example": { "stem": "一理想单摆摆长 1.00 m，取 g=9.8 m/s²，小角度摆动。求周期和频率。", "solution": ["T=2pi sqrt(1/9.8)≈2.007 s。", "f=1/T≈0.498 Hz。"], "answer": "周期约 2.01 s，频率约 0.498 Hz。" },
+      "prereq": ["osc-01", "osc-02"], "next": ["osc-04"], "tags": ["单摆", "周期公式", "小角度"]
+    },
+    {
+      "id": "osc-04",
+      "title": "受迫振动与共振",
+      "level": "进阶",
+      "definition": "系统在周期性驱动力作用下的振动叫受迫振动；稳定后振动频率等于驱动力频率。当驱动力频率接近系统固有频率时，振幅显著增大的现象叫共振。",
+      "meaning": "共振条件比较的是频率，而不是振幅。阻尼越小，共振峰通常越高、越尖；阻尼越大，峰值越低、范围越宽。工程上既可利用共振增强响应，也要通过改变固有频率、增大阻尼等方法避免破坏性共振。",
+      "symbols": {
+        "f_0": { "desc": "系统固有频率", "unit": "Hz" }, "T_0": { "desc": "系统固有周期", "unit": "s" },
+        "f_drive": { "desc": "驱动力频率", "unit": "Hz" }, "omega_drive": { "desc": "驱动力角频率", "unit": "rad/s" }
+      },
+      "scenarios": {
+        "共振调谐": { "T_0": 0.5, "f_0": 2, "f_drive": 2, "omega_drive": 12.566370614359172 },
+        "未调谐": { "T_0": 0.5, "f_0": 2, "f_drive": 3, "omega_drive": 18.84955592153876 }
+      },
+      "formulas": [
+        {
+          "name": "固有频率与固有周期",
+          "expr": "f_0 = 1/T_0",
+          "when": "系统自由振动特性的周期与频率换算",
+          "checks": [
+            { "type": "numeric", "scenario": "共振调谐", "expr": "1/T_0", "ref": 2.0, "note": "固有周期 0.5 s，1 s 内完成 2 次振动，固有频率 2 Hz" },
+            { "type": "direction", "scenario": "共振调谐", "var": "T_0", "lo": 0.25, "hi": 2, "expr": "1/T_0", "expect": "down", "note": "固有周期越长，固有频率越低" },
+            { "type": "compare", "scenario": "共振调谐", "expr": "f_drive", "op": "==", "vs": "f_0", "note": "调谐情境中驱动力频率与固有频率相等，满足理想共振条件" },
+            { "type": "scan", "scenario": "共振调谐", "var": "T_0", "lo": 0.01, "hi": 100 }
+          ]
+        },
+        {
+          "name": "驱动力角频率",
+          "expr": "omega_drive = 2*pi*f_drive",
+          "when": "驱动力普通频率与角频率换算",
+          "checks": [
+            { "type": "numeric", "scenario": "未调谐", "expr": "2*pi*f_drive", "ref": 18.84955592153876, "note": "3 Hz 乘 2pi，得到 6pi rad/s，约 18.8496 rad/s" },
+            { "type": "direction", "scenario": "未调谐", "var": "f_drive", "lo": 0.5, "hi": 8, "expr": "2*pi*f_drive", "expect": "up", "note": "驱动力频率越高，角频率越大" },
+            { "type": "consistency", "scenario": "共振调谐", "expr": "2*pi*f_drive", "with": "osc-04|固有频率与固有周期", "with_expr": "2*pi/T_0", "target": "共振时驱动角频率与固有角频率", "note": "共振时 f_drive=1/T_0，两条路径都得到 4pi rad/s" },
+            { "type": "scan", "scenario": "未调谐", "var": "f_drive", "lo": 0, "hi": 1000 }
+          ]
+        }
+      ],
+      "derivation": ["受迫振动稳定后由外界驱动力控制节奏，所以振动频率等于驱动力频率。", "固有周期 T_0 内完成一次自由振动，因此固有频率是其倒数 f_0=1/T_0。", "当驱动节奏与固有频率相近时，连续输入的能量更有效地积累，振幅出现峰值。"],
+      "errors": [
+        { "wrong": "认为受迫振动稳定后的频率始终等于固有频率", "why": "稳定受迫振动的频率由驱动力决定；固有频率决定在什么驱动频率附近响应最强。", "caught_by": "人工审核" },
+        { "wrong": "把驱动力角频率写成 omega_drive=pi*f_drive，漏掉系数 2", "wrong_expr": "omega_drive = pi*f_drive", "why": "错误式量纲仍然正确，量纲检查无法发现。未调谐情境中它只得到约 9.425 rad/s，正确的 2pi f 应为约 18.850 rad/s。", "caught_by": "数值代入", "trap_test": { "scenario": "未调谐", "expr": "pi*f_drive", "ref": 18.84955592153876 } }
+      ],
+      "example": { "stem": "某振动系统固有周期 0.50 s，外力以 2.0 Hz 周期性驱动。判断是否满足理想共振的频率条件。", "solution": ["固有频率 f0=1/T0=2.0 Hz。", "驱动力频率也为 2.0 Hz，两者相等。"], "answer": "满足理想共振的频率条件；实际峰值还受阻尼影响。" },
+      "prereq": ["osc-01"], "next": ["osc-05"], "tags": ["受迫振动", "固有频率", "共振", "阻尼"]
+    },
+    {
+      "id": "osc-05",
+      "title": "机械波的形成与传播",
+      "level": "基础",
+      "definition": "机械振动在介质中的传播形成机械波。横波中质点振动方向与传播方向垂直，纵波中两者平行。机械波传播需要介质，传播的是振动状态、能量和信息，而不是介质整体迁移。",
+      "meaning": "波源先振动，邻近质点受相互作用带动，再依次带动更远质点，因此各质点重复波源的振动但相位依次滞后。波速由介质性质决定；改变波源频率通常不会直接改变同一均匀介质中的波速。",
+      "symbols": {
+        "v": { "desc": "机械波传播速度", "unit": "m/s" }, "s": { "desc": "波形传播距离", "unit": "m" },
+        "t": { "desc": "传播时间", "unit": "s" }, "lambda": { "desc": "波长", "unit": "m" }, "T": { "desc": "波源周期", "unit": "s" }
+      },
+      "scenarios": {
+        "绳波传播": { "s": 24, "t": 3, "v": 8, "T": 0.25, "lambda": 2 },
+        "慢波传播": { "s": 6, "t": 3, "v": 2, "T": 0.5, "lambda": 1 }
+      },
+      "formulas": [
+        {
+          "name": "波的传播速度",
+          "expr": "v = s/t",
+          "when": "均匀介质中波形在时间 t 内传播距离 s",
+          "checks": [
+            { "type": "numeric", "scenario": "绳波传播", "expr": "s/t", "ref": 8.0, "note": "波形 3 s 传播 24 m，手算波速 24÷3=8 m/s" },
+            { "type": "direction", "scenario": "绳波传播", "var": "s", "lo": 8, "hi": 40, "expr": "s/t", "expect": "up", "note": "相同时间内传播越远，测得波速越大" },
+            { "type": "direction", "scenario": "绳波传播", "var": "t", "lo": 1, "hi": 6, "expr": "s/t", "expect": "down", "note": "固定传播距离时，用时越长，波速越小" },
+            { "type": "scan", "scenario": "绳波传播", "var": "t", "lo": 0.01, "hi": 100 }
+          ]
+        },
+        {
+          "name": "一个周期传播的距离",
+          "expr": "lambda = v*T",
+          "when": "波在一个振动周期内向前传播一个波长",
+          "checks": [
+            { "type": "numeric", "scenario": "绳波传播", "expr": "v*T", "ref": 2.0, "note": "8 m/s 乘 0.25 s，波在一个周期内传播 2 m，即一个波长" },
+            { "type": "direction", "scenario": "绳波传播", "var": "v", "lo": 2, "hi": 16, "expr": "v*T", "expect": "up", "note": "周期不变时，波速越大波长越长" },
+            { "type": "consistency", "scenario": "绳波传播", "expr": "v*T", "with": "osc-05|波的传播速度", "with_expr": "s*T/t", "target": "由传播测量得到的波长", "note": "先测得波速再乘周期，与直接用传播距离、时间和周期组合，均得 2 m" },
+            { "type": "scan", "scenario": "绳波传播", "var": "T", "lo": 0, "hi": 10 }
+          ]
+        }
+      ],
+      "derivation": ["介质中相邻质点依靠相互作用依次开始振动，使振动状态和能量向外传播。", "波形在时间 t 内传播距离 s，平均传播速度为 s/t。", "一个周期 T 后，波源回到原振动状态，波形向前推进的距离定义为一个波长，因此 lambda=vT。"],
+      "errors": [
+        { "wrong": "认为介质质点会随波从波源一直移动到远处", "why": "质点只在平衡位置附近振动；向外传播的是振动状态和能量。可用漂浮物随水波上下振动但不持续随波前进来辨别。", "caught_by": "人工审核" },
+        { "wrong": "误认为半个周期传播一个波长，写成 lambda=2vT", "wrong_expr": "lambda = 2*v*T", "why": "错误式量纲仍是长度，量纲检查抓不到；绳波情境会算出 4 m，而一个完整周期内传播的正确距离是 2 m。", "caught_by": "数值代入", "trap_test": { "scenario": "绳波传播", "expr": "2*v*T", "ref": 2.0 } }
+      ],
+      "example": { "stem": "绳上波形 3.0 s 传播 24 m，波源周期 0.25 s。求波速和波长。", "solution": ["v=s/t=24/3=8 m/s。", "lambda=vT=8×0.25=2 m。"], "answer": "波速 8 m/s，波长 2 m。" },
+      "prereq": ["osc-01"], "next": ["osc-06"], "tags": ["机械波", "横波", "纵波", "介质"]
+    },
+    {
+      "id": "osc-06",
+      "title": "波长、频率、波速与波的现象",
+      "level": "进阶",
+      "definition": "波速、波长和频率满足 v = lambda f。两列相干波叠加可产生稳定干涉；波遇到障碍物或孔隙时偏离直线传播的现象叫衍射，障碍物或孔的尺度与波长接近时通常更明显。",
+      "meaning": "波从一种介质进入另一种介质时，频率由波源决定并保持不变，介质改变波速，于是波长随之改变。干涉和衍射不是波速公式的附加条件，而是波的叠加与传播特征；稳定干涉还要求频率相同、相位差恒定。",
+      "symbols": {
+        "v": { "desc": "波速", "unit": "m/s" }, "lambda": { "desc": "波长", "unit": "m" }, "f": { "desc": "频率", "unit": "Hz" },
+        "delta_r": { "desc": "两列波到达某点的路程差", "unit": "m" }, "n": { "desc": "非负整数级次", "unit": "" }
+      },
+      "scenarios": {
+        "同相水波": { "v": 8, "lambda": 2, "f": 4, "n": 3, "delta_r": 6 },
+        "低频水波": { "v": 8, "lambda": 4, "f": 2, "n": 2, "delta_r": 8 }
+      },
+      "formulas": [
+        {
+          "name": "波速关系",
+          "expr": "v = lambda*f",
+          "when": "周期性机械波在均匀介质中传播",
+          "checks": [
+            { "type": "numeric", "scenario": "同相水波", "expr": "lambda*f", "ref": 8.0, "note": "波长 2 m、频率 4 Hz，每秒传播 4 个波长，波速 8 m/s" },
+            { "type": "direction", "scenario": "同相水波", "var": "lambda", "lo": 1, "hi": 4, "expr": "lambda*f", "expect": "up", "note": "频率固定时，波长越长，乘积给出的波速越大" },
+            { "type": "consistency", "scenario": "同相水波", "expr": "lambda*f", "with": "osc-05|一个周期传播的距离", "with_expr": "lambda/(1/f)", "target": "由波长与周期表示的波速", "note": "波长乘频率与波长除周期（其中 T=1/f）两条路径都得到 8 m/s" },
+            { "type": "scan", "scenario": "同相水波", "var": "f", "lo": 0, "hi": 1000 }
+          ]
+        },
+        {
+          "name": "同相波源加强点的路程差",
+          "expr": "delta_r = n*lambda",
+          "when": "两个同频、同相相干波源产生干涉加强，n 为非负整数",
+          "checks": [
+            { "type": "numeric", "scenario": "同相水波", "expr": "n*lambda", "ref": 6.0, "note": "第 3 级加强处路程差为 3×2 m=6 m" },
+            { "type": "direction", "scenario": "同相水波", "var": "n", "lo": 0, "hi": 5, "expr": "n*lambda", "expect": "up", "note": "波长固定时，加强级次越高，对应路程差越大" },
+            { "type": "direction", "scenario": "同相水波", "var": "lambda", "lo": 1, "hi": 5, "expr": "n*lambda", "expect": "up", "note": "同一级次下，波长越长，加强所需路程差越大" },
+            { "type": "scan", "scenario": "同相水波", "var": "n", "lo": 0, "hi": 100 }
+          ]
+        }
+      ],
+      "derivation": ["一个周期内波传播一个波长，所以 v=lambda/T；又因为 f=1/T，代入得 v=lambda*f。", "波跨介质边界时振源频率不变，若波速改变，则波长按 lambda=v/f 随之改变。", "同相波源到某点的路程差为整波长时，相位差为 2pi 的整数倍，两列波同相叠加而加强。"],
+      "errors": [
+        { "wrong": "把波速关系多写一个系数 2，写成 v=2 lambda f", "wrong_expr": "v = 2*lambda*f", "why": "错误式与正确式量纲完全相同，量纲检查抓不到；同相水波会算出 16 m/s，而由传播距离独立测得的正确波速是 8 m/s。", "caught_by": "数值代入", "trap_test": { "scenario": "同相水波", "expr": "2*lambda*f", "ref": 8.0 } },
+        { "wrong": "认为频率越高，波在同一介质中一定传播得越快", "why": "在高中常见的均匀、非色散介质模型中，波速主要由介质决定。波源频率升高时通常是波长缩短，使 lambda f 仍等于原波速。", "caught_by": "人工审核" }
+      ],
+      "example": { "stem": "某均匀介质中机械波频率 4 Hz、波长 2 m；两个同相波源产生干涉。求波速及路程差为 6 m 的点对应的加强级次。", "solution": ["v=lambda f=2×4=8 m/s。", "delta_r=n lambda，所以 n=6/2=3。"], "answer": "波速 8 m/s，该点对应第 3 级加强。" },
+      "prereq": ["osc-05"], "next": [], "tags": ["波速", "波长", "频率", "干涉", "衍射"]
+    }
+  ]
+}

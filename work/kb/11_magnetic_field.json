@@ -1,0 +1,307 @@
+{
+  "chapter": "第十一章 · 磁场（一）磁场与安培力",
+  "order": 11,
+  "intro": "磁场看不见，却能通过对电流的作用显现出来。本章从磁感应强度的定量定义出发，用磁感线描述空间分布，用磁通量刻画穿过某一面积的磁场，再研究通电导线所受安培力及其在电表、电动机和平衡问题中的应用。计算大小时必须同时检查导线长度、夹角和方向条件；判断方向时则要坚持使用左手定则。",
+  "points": [
+    {
+      "id": "mag-01",
+      "title": "磁场与磁感应强度",
+      "level": "基础",
+      "definition": "磁场是磁体、电流和运动电荷周围存在的一种特殊物质。把一段长度为 L、通有电流 I 的直导线垂直放入匀强磁场，若所受安培力为 F，则该处磁感应强度 B=F/(I*L)。B 的单位是特斯拉（T）。",
+      "meaning": "磁感应强度描述磁场的强弱和方向，是磁场本身的性质，不由检验导线的电流或长度决定。定义式必须满足导线与磁场垂直；若不垂直，安培力还要乘以夹角的正弦。磁场方向规定为小磁针静止时 N 极所指的方向。",
+      "symbols": {
+        "B": { "desc": "磁感应强度", "unit": "T_" },
+        "F": { "desc": "通电直导线受到的安培力", "unit": "N" },
+        "I": { "desc": "导线中的电流", "unit": "A" },
+        "L": { "desc": "处在磁场中的有效导线长度", "unit": "m" }
+      },
+      "scenarios": { "垂直检验导线": { "B": 0.5, "F": 2, "I": 4, "L": 1 } },
+      "formulas": [
+        {
+          "name": "磁感应强度的定义式",
+          "expr": "B = F/(I*L)",
+          "when": "直导线与匀强磁场垂直，且取导线在磁场中的有效长度",
+          "checks": [
+            { "type": "numeric", "scenario": "垂直检验导线", "expr": "F/(I*L)", "ref": 0.5, "note": "2 N÷(4 A×1 m)=0.5 T。" },
+            { "type": "direction", "scenario": "垂直检验导线", "var": "F", "lo": 0.5, "hi": 8, "expr": "F/(I*L)", "expect": "up", "note": "检验条件相同时，测得安培力越大，磁场越强。" },
+            { "type": "direction", "scenario": "垂直检验导线", "var": "I", "lo": 1, "hi": 10, "expr": "F/(I*L)", "expect": "down", "note": "在同一测得力下，若检验电流更大，反推的磁感应强度更小。" },
+            { "type": "scan", "scenario": "垂直检验导线", "var": "I", "lo": 0.01, "hi": 10000 }
+          ]
+        },
+        {
+          "name": "垂直导线受到的安培力",
+          "expr": "F = B*I*L",
+          "when": "直导线与匀强磁场垂直",
+          "checks": [
+            { "type": "numeric", "scenario": "垂直检验导线", "expr": "B*I*L", "ref": 2.0, "note": "0.5 T×4 A×1 m=2 N。" },
+            { "type": "direction", "scenario": "垂直检验导线", "var": "B", "lo": 0.1, "hi": 2, "expr": "B*I*L", "expect": "up", "note": "电流与长度不变时，磁场越强，安培力越大。" },
+            { "type": "consistency", "scenario": "垂直检验导线", "expr": "B*I*L", "with": "mag-01|磁感应强度的定义式", "with_expr": "F", "target": "检验导线受到的安培力", "note": "由磁场参数算得 2 N，与情境中直接测得的力一致。" },
+            { "type": "scan", "scenario": "垂直检验导线", "var": "L", "lo": 0, "hi": 1000 }
+          ]
+        }
+      ],
+      "derivation": ["保持导线与磁场垂直，实验发现安培力 F 与电流 I、有效长度 L 均成正比。", "比值 F/(IL) 与检验导线无关，只由磁场所在位置决定，因此用它定义磁感应强度 B。", "移项得到垂直条件下 F=BIL；T 也可写成 N/(A·m)。"],
+      "errors": [
+        { "wrong": "把定义式倒写成 B=IL/F", "wrong_expr": "B = I*L/F", "why": "右边量纲不是磁感应强度应有的特斯拉；把力放到分母后，所得单位与 T 完全不符，因此量纲检查可以直接发现。", "caught_by": "量纲一致性" },
+        { "wrong": "把单根直导线误当成线圈两条边同时受力，写成 F=2BIL", "wrong_expr": "F = 2*B*I*L", "why": "系数 2 不改变量纲，因此量纲检查抓不到；垂直检验导线情境会误得 4 N，而单根有效导线受到的正确安培力是 2 N。", "caught_by": "数值代入", "trap_test": { "scenario": "垂直检验导线", "expr": "2*B*I*L", "ref": 2.0 } }
+      ],
+      "example": { "stem": "一根有效长度 1 m 的直导线垂直放在匀强磁场中，通入 4 A 电流时受到 2 N 安培力，求磁感应强度。", "solution": ["导线与磁场垂直，可用 B=F/(IL)。", "代入 B=2÷(4×1)=0.5 T。", "用 F=BIL 回代得到 2 N，与已知力一致。"], "answer": "磁感应强度为 0.5 T。" },
+      "prereq": ["dc-01"],
+      "next": ["mag-02", "mag-04"],
+      "tags": ["磁场", "磁感应强度", "特斯拉"]
+    },
+    {
+      "id": "mag-02",
+      "title": "磁感线与磁场叠加",
+      "level": "基础",
+      "definition": "磁感线是在磁场中画出的有方向曲线，曲线上每一点的切线方向表示该点磁场方向，疏密表示磁场强弱。磁感线是闭合曲线：磁体外部从 N 极指向 S 极，内部从 S 极回到 N 极。多个磁场同时存在时，合磁场遵守矢量叠加。",
+      "meaning": "磁感线是描述磁场的模型，不是空间中真实存在的线，也不会相交。直线电流周围的磁感线是以导线为圆心的同心圆，方向用右手螺旋定则判断；通电螺线管外部的磁场分布类似条形磁体。共线磁场同向时大小相加，反向时大小相减并由较强者决定方向。",
+      "symbols": {
+        "B_net": { "desc": "两个共线磁场叠加后的磁感应强度大小", "unit": "T_" },
+        "B_1": { "desc": "第一个磁场的磁感应强度大小", "unit": "T_" },
+        "B_2": { "desc": "第二个磁场的磁感应强度大小", "unit": "T_" }
+      },
+      "scenarios": {
+        "同向叠加": { "B_net": 0.005, "B_1": 0.003, "B_2": 0.002 },
+        "反向叠加": { "B_net": 0.001, "B_1": 0.003, "B_2": 0.002 }
+      },
+      "formulas": [
+        {
+          "name": "共线同向磁场叠加",
+          "expr": "B_net = B_1 + B_2",
+          "when": "两个磁场在所考察点方向相同",
+          "checks": [
+            { "type": "numeric", "scenario": "同向叠加", "expr": "B_1 + B_2", "ref": 0.005, "note": "0.003 T+0.002 T=0.005 T。" },
+            { "type": "direction", "scenario": "同向叠加", "var": "B_2", "lo": 0, "hi": 0.01, "expr": "B_1 + B_2", "expect": "up", "note": "同向磁场增强时，合磁场随之增强。" },
+            { "type": "compare", "scenario": "同向叠加", "expr": "B_1 + B_2", "op": ">", "vs": "B_1", "note": "两个非零同向磁场叠加后，合磁场大于任一个分磁场。" },
+            { "type": "scan", "scenario": "同向叠加", "var": "B_2", "lo": 0, "hi": 100 }
+          ]
+        },
+        {
+          "name": "共线反向磁场叠加",
+          "expr": "B_net = abs(B_1 - B_2)",
+          "when": "两个磁场方向相反；式中给出合磁场大小",
+          "checks": [
+            { "type": "numeric", "scenario": "反向叠加", "expr": "abs(B_1 - B_2)", "ref": 0.001, "note": "|0.003−0.002| T=0.001 T，方向与较强的 B_1 相同。" },
+            { "type": "direction", "scenario": "反向叠加", "var": "B_1", "lo": 0.0021, "hi": 0.01, "expr": "abs(B_1 - B_2)", "expect": "up", "note": "在 B_1 始终较强的范围内，B_1 增大使合磁场增大。" },
+            { "type": "compare", "scenario": "反向叠加", "expr": "abs(B_1 - B_2)", "op": "<", "vs": "B_1 + B_2", "note": "同样大小的两个分磁场，反向叠加小于同向叠加。" },
+            { "type": "consistency", "scenario": "反向叠加", "expr": "abs(B_1 - B_2)", "with": "mag-02|共线反向磁场叠加", "with_expr": "B_net", "target": "反向叠加后的磁场大小", "note": "由两个分磁场作差得到 0.001 T，与情境中独立给出的合磁场大小一致。" }
+          ]
+        }
+      ],
+      "derivation": ["磁感应强度是矢量，多个磁场在同一点的作用应按矢量法则合成。", "两个磁场共线同向时，代数值同号，合磁场大小为 B_1+B_2。", "共线反向时，代数值异号，合磁场大小为 |B_1-B_2|，方向与较强的分磁场相同。"],
+      "errors": [
+        { "wrong": "同向叠加时把两个磁感应强度相乘，写成 B_net=B_1B_2", "wrong_expr": "B_net = B_1*B_2", "why": "右边单位变成 T²，不再是磁感应强度应有的单位 T；这种把矢量叠加误写成乘法的错误可由量纲检查直接发现。", "caught_by": "量纲一致性" },
+        { "wrong": "反向磁场仍直接相加，写成 B_net=B_1+B_2", "wrong_expr": "B_net = B_1 + B_2", "why": "量纲正确但方向关系错；反向叠加情境会误得 0.005 T，正确大小是 0.001 T。", "caught_by": "数值代入", "trap_test": { "scenario": "反向叠加", "expr": "B_1 + B_2", "ref": 0.001 } }
+      ],
+      "example": { "stem": "某点有两个共线磁场，大小分别为 3.0×10⁻³ T 和 2.0×10⁻³ T。分别求它们同向和反向时的合磁场。", "solution": ["同向时大小相加：B_net=0.003+0.002=0.005 T。", "反向时大小相减：B_net=|0.003−0.002|=0.001 T。", "反向时合磁场方向与 3.0×10⁻³ T 的较强磁场相同。"], "answer": "同向时为 5.0×10⁻³ T；反向时为 1.0×10⁻³ T。" },
+      "prereq": ["mag-01"],
+      "next": ["mag-03"],
+      "tags": ["磁感线", "右手螺旋定则", "磁场叠加"]
+    },
+    {
+      "id": "mag-03",
+      "title": "磁通量",
+      "level": "基础",
+      "definition": "磁通量表示穿过某一面积的磁场多少。面积为 S 的平面处在匀强磁场 B 中，若磁场方向与平面法线夹角为 theta，则 Phi=B*S*cos(theta)。磁通量单位是韦伯（Wb），1 Wb=1 T·m²。",
+      "meaning": "夹角必须看磁场与面积法线，而不是磁场与平面本身。垂直穿过平面时 theta=0，磁通量最大；磁场沿平面方向时 theta=90°，磁通量为零。磁通量是标量但有正负约定，本章主要计算其大小。",
+      "symbols": {
+        "Phi": { "desc": "穿过平面的磁通量", "unit": "Wb" },
+        "B": { "desc": "匀强磁场的磁感应强度", "unit": "T_" },
+        "S": { "desc": "平面的面积", "unit": "m^2" },
+        "theta": { "desc": "磁场方向与平面法线的夹角", "unit": "rad" },
+        "S_perp": { "desc": "平面在垂直磁场方向上的有效投影面积", "unit": "m^2" }
+      },
+      "scenarios": {
+        "倾斜线圈": { "Phi": 0.24, "B": 0.8, "S": 0.5, "theta": 0.9272952180016123 },
+        "垂直穿过": { "Phi": 0.4, "B": 0.8, "S": 0.5, "theta": 0 }
+      },
+      "formulas": [
+        {
+          "name": "匀强磁场中的磁通量",
+          "expr": "Phi = B*S*cos(theta)",
+          "when": "B、S 均匀，theta 为磁场与平面法线的夹角，计算磁通量大小时取 0 至 90°",
+          "checks": [
+            { "type": "numeric", "scenario": "倾斜线圈", "expr": "B*S*cos(theta)", "ref": 0.24, "note": "cos theta=0.6，0.8×0.5×0.6=0.24 Wb。" },
+            { "type": "direction", "scenario": "倾斜线圈", "var": "theta", "lo": 0, "hi": 1.5707963267948966, "expr": "B*S*cos(theta)", "expect": "down", "note": "从垂直穿过逐渐转到磁场沿平面，磁通量从最大值减小到零。" },
+            { "type": "compare", "scenario": "倾斜线圈", "expr": "B*S*cos(theta)", "op": "<", "vs": "B*S", "note": "倾斜放置时的磁通量 0.24 Wb 小于垂直穿过时的最大值 0.4 Wb。" },
+            { "type": "scan", "scenario": "倾斜线圈", "var": "theta", "lo": 0, "hi": 1.5707963267948966 }
+          ]
+        },
+        {
+          "name": "最大磁通量",
+          "expr": "Phi = B*S",
+          "when": "磁场方向垂直平面，即与平面法线平行",
+          "checks": [
+            { "type": "numeric", "scenario": "垂直穿过", "expr": "B*S", "ref": 0.4, "note": "0.8 T×0.5 m²=0.4 Wb。" },
+            { "type": "direction", "scenario": "垂直穿过", "var": "B", "lo": 0, "hi": 2, "expr": "B*S", "expect": "up", "note": "面积与方向不变时，磁场越强，磁通量越大。" },
+            { "type": "consistency", "scenario": "垂直穿过", "expr": "B*S", "with": "mag-03|匀强磁场中的磁通量", "with_expr": "B*S*cos(theta)", "target": "垂直穿过平面的磁通量", "note": "theta=0 时 cos theta=1，通式与最大值公式均得 0.4 Wb。" },
+            { "type": "scan", "scenario": "垂直穿过", "var": "S", "lo": 0, "hi": 1000000 }
+          ]
+        }
+      ],
+      "derivation": ["先取与磁场垂直的有效投影面积 S_perp=S cos theta。", "穿过该投影面积的磁通量等于 B 与 S_perp 的乘积，因此 Phi=BS cos theta。", "当 theta=0 时投影面积就是原面积，得到最大磁通量 Phi=BS。"],
+      "errors": [
+        { "wrong": "不论平面怎样倾斜都写成 Phi=BS", "wrong_expr": "Phi = B*S", "why": "量纲正确但漏掉投影；倾斜线圈会误得 0.4 Wb，正确值为 0.24 Wb。", "caught_by": "数值代入", "trap_test": { "scenario": "倾斜线圈", "expr": "B*S", "ref": 0.24 } },
+        { "wrong": "把磁场与法线的夹角误配正弦，写成 Phi=BS sin theta", "wrong_expr": "Phi = B*S*sin(theta)", "why": "量纲检查抓不到三角函数选错；垂直穿过时 theta=0，错误式给出 0，正确值为 0.4 Wb。", "caught_by": "数值代入", "trap_test": { "scenario": "垂直穿过", "expr": "B*S*sin(theta)", "ref": 0.4 } }
+      ],
+      "example": { "stem": "面积 0.5 m² 的线圈放在 0.8 T 匀强磁场中，磁场与线圈法线夹角的余弦为 0.6，求磁通量。", "solution": ["使用 Phi=BS cos theta，注意角度是磁场与法线的夹角。", "代入 Phi=0.8×0.5×0.6=0.24 Wb。", "最大可能值 BS=0.4 Wb，计算结果小于最大值，范围合理。"], "answer": "磁通量为 0.24 Wb。" },
+      "prereq": ["mag-01", "mag-02"],
+      "next": ["mag-04"],
+      "tags": ["磁通量", "有效面积", "韦伯"]
+    },
+    {
+      "id": "mag-04",
+      "title": "安培力",
+      "level": "基础",
+      "definition": "长为 L 的直导线通有电流 I，处在磁感应强度为 B 的匀强磁场中，若电流方向与磁场方向夹角为 theta，则安培力大小 F=B*I*L*sin(theta)。力的方向用左手定则判断，并同时垂直于电流方向和磁场方向。",
+      "meaning": "安培力大小只取决于电流与磁场的相对夹角：垂直时最大，平行或反平行时为零。公式中的 L 是磁场内的有效直线长度。左手定则只判断方向，不能替代大小计算；改变电流方向或磁场方向中的任意一个，安培力方向都会反向。",
+      "symbols": {
+        "F": { "desc": "通电导线受到的安培力", "unit": "N" },
+        "F_max": { "desc": "给定 B、I、L 时的最大安培力", "unit": "N" },
+        "B": { "desc": "匀强磁场的磁感应强度", "unit": "T_" },
+        "I": { "desc": "导线中的电流", "unit": "A" },
+        "L": { "desc": "导线在磁场中的有效长度", "unit": "m" },
+        "theta": { "desc": "电流方向与磁场方向的夹角", "unit": "rad" }
+      },
+      "scenarios": { "斜放导线": { "F": 2.4, "F_max": 4, "B": 0.5, "I": 4, "L": 2, "theta": 0.6435011087932844 } },
+      "formulas": [
+        {
+          "name": "安培力大小",
+          "expr": "F = B*I*L*sin(theta)",
+          "when": "直导线处在匀强磁场中，theta 为电流与磁场的夹角",
+          "checks": [
+            { "type": "numeric", "scenario": "斜放导线", "expr": "B*I*L*sin(theta)", "ref": 2.4, "note": "sin theta=0.6，0.5×4×2×0.6=2.4 N。" },
+            { "type": "direction", "scenario": "斜放导线", "var": "theta", "lo": 0, "hi": 1.5707963267948966, "expr": "B*I*L*sin(theta)", "expect": "up", "note": "夹角从 0 增到 90°时，安培力从零增到最大。" },
+            { "type": "compare", "scenario": "斜放导线", "expr": "B*I*L*sin(theta)", "op": "<", "vs": "B*I*L", "note": "斜放导线所受 2.4 N 小于垂直时最大值 4 N。" },
+            { "type": "scan", "scenario": "斜放导线", "var": "theta", "lo": 0, "hi": 3.141592653589793 }
+          ]
+        },
+        {
+          "name": "最大安培力",
+          "expr": "F_max = B*I*L",
+          "when": "电流方向与磁场方向垂直",
+          "checks": [
+            { "type": "numeric", "scenario": "斜放导线", "expr": "B*I*L", "ref": 4.0, "note": "0.5×4×2=4 N，是相同 B、I、L 下的最大值。" },
+            { "type": "direction", "scenario": "斜放导线", "var": "I", "lo": 0, "hi": 20, "expr": "B*I*L", "expect": "up", "note": "垂直条件下，电流越大，最大安培力越大。" },
+            { "type": "consistency", "scenario": "斜放导线", "expr": "B*I*L", "with": "mag-04|安培力大小", "with_expr": "F/sin(theta)", "target": "垂直条件下的最大安培力", "note": "由 2.4 N 除以 sin theta=0.6 反求，也得到 4 N。" },
+            { "type": "scan", "scenario": "斜放导线", "var": "B", "lo": 0, "hi": 1000 }
+          ]
+        }
+      ],
+      "derivation": ["导线与磁场垂直时，实验得 F=BIL。", "一般角度下，只有垂直于电流方向的磁场分量 B sin theta 产生安培力。", "用 B sin theta 替换垂直公式中的 B，得到 F=BIL sin theta；theta=90°时达到最大值 BIL。"],
+      "errors": [
+        { "wrong": "任何夹角都直接用 F=BIL，漏掉 sin theta", "wrong_expr": "F = B*I*L", "why": "量纲完全正确；斜放导线会误得 4 N，正确值为 2.4 N。", "caught_by": "数值代入", "trap_test": { "scenario": "斜放导线", "expr": "B*I*L", "ref": 2.4 } },
+        { "wrong": "把正弦误写成余弦，写成 F=BIL cos theta", "wrong_expr": "F = B*I*L*cos(theta)", "why": "量纲检查无法区分正弦和余弦；本情境会误得 3.2 N，正确值为 2.4 N。", "caught_by": "数值代入", "trap_test": { "scenario": "斜放导线", "expr": "B*I*L*cos(theta)", "ref": 2.4 } }
+      ],
+      "example": { "stem": "长 2 m 的直导线通有 4 A 电流，放在 0.5 T 匀强磁场中，电流与磁场夹角满足 sin theta=0.6。求安培力及其最大可能值。", "solution": ["一般夹角下 F=BIL sin theta。", "F=0.5×4×2×0.6=2.4 N。", "导线与磁场垂直时最大，F_max=BIL=4 N。", "力的具体空间方向需结合图示用左手定则判断。"], "answer": "安培力为 2.4 N，最大可能值为 4 N。" },
+      "prereq": ["mag-01"],
+      "next": ["mag-05", "mag-06"],
+      "tags": ["安培力", "左手定则", "有效长度"]
+    },
+    {
+      "id": "mag-05",
+      "title": "磁电式电表与电动机原理",
+      "level": "进阶",
+      "definition": "矩形线圈在磁场中通电后，两条有效边受到方向相反的安培力，形成力矩使线圈转动。N 匝线圈面积为 S，电流为 I，在磁场 B 中的磁力矩可写为 tau=N*B*I*S*sin(alpha)。磁电式电表用游丝回复力矩与磁力矩平衡，使指针偏角反映电流大小。",
+      "meaning": "电动机把电能转化为机械能，换向器在适当位置改变线圈电流方向，使驱动力矩持续推动转子同向转动。磁电式电表则不追求连续转动，而利用回复力矩与磁力矩平衡；在辐向磁场中 sin alpha 保持为 1，偏角与电流成正比，因此刻度均匀。",
+      "symbols": {
+        "tau": { "desc": "通电线圈受到的磁力矩", "unit": "N*m" },
+        "N_turn": { "desc": "线圈匝数", "unit": "1" },
+        "B": { "desc": "磁感应强度", "unit": "T_" },
+        "I": { "desc": "线圈中的电流", "unit": "A" },
+        "S": { "desc": "每匝线圈面积", "unit": "m^2" },
+        "alpha": { "desc": "磁场与线圈法线的夹角", "unit": "rad" },
+        "k_t": { "desc": "游丝的角回复系数", "unit": "N*m/rad" },
+        "beta": { "desc": "电表指针的偏转角", "unit": "rad" }
+      },
+      "scenarios": { "磁电式表头": { "tau": 0.001, "N_turn": 100, "B": 0.2, "I": 0.01, "S": 0.005, "alpha": 1.5707963267948966, "k_t": 0.02, "beta": 0.05 } },
+      "formulas": [
+        {
+          "name": "通电线圈的磁力矩",
+          "expr": "tau = N_turn*B*I*S*sin(alpha)",
+          "when": "N 匝平面线圈处在匀强磁场中，alpha 为磁场与线圈法线夹角",
+          "checks": [
+            { "type": "numeric", "scenario": "磁电式表头", "expr": "N_turn*B*I*S*sin(alpha)", "ref": 0.001, "note": "100×0.2×0.01×0.005×1=0.001 N·m。" },
+            { "type": "direction", "scenario": "磁电式表头", "var": "I", "lo": 0, "hi": 0.05, "expr": "N_turn*B*I*S*sin(alpha)", "expect": "up", "note": "其余条件不变时，电流越大，磁力矩越大。" },
+            { "type": "direction", "scenario": "磁电式表头", "var": "N_turn", "lo": 1, "hi": 500, "expr": "N_turn*B*I*S*sin(alpha)", "expect": "up", "note": "线圈匝数越多，各匝力矩叠加后的总力矩越大。" },
+            { "type": "scan", "scenario": "磁电式表头", "var": "alpha", "lo": 0, "hi": 3.141592653589793 }
+          ]
+        },
+        {
+          "name": "磁电式电表的电流与偏角",
+          "expr": "I = k_t*beta/(N_turn*B*S)",
+          "when": "辐向磁场中 sin alpha=1，指针稳定时磁力矩与游丝回复力矩平衡",
+          "checks": [
+            { "type": "numeric", "scenario": "磁电式表头", "expr": "k_t*beta/(N_turn*B*S)", "ref": 0.01, "note": "0.02×0.05÷(100×0.2×0.005)=0.01 A。" },
+            { "type": "direction", "scenario": "磁电式表头", "var": "beta", "lo": 0, "hi": 0.2, "expr": "k_t*beta/(N_turn*B*S)", "expect": "up", "note": "表头参数不变时，稳定偏角越大，所测电流越大。" },
+            { "type": "consistency", "scenario": "磁电式表头", "expr": "N_turn*B*I*S", "with": "mag-05|通电线圈的磁力矩", "with_expr": "k_t*beta", "target": "指针稳定时的平衡力矩", "note": "磁力矩与游丝回复力矩都为 0.001 N·m。" },
+            { "type": "scan", "scenario": "磁电式表头", "var": "B", "lo": 0.001, "hi": 100 }
+          ]
+        }
+      ],
+      "derivation": ["线圈两条相对边所受安培力构成力偶；单匝线圈的力矩为 BIS sin alpha。", "N 匝线圈的力矩相加，得到 tau=NBIS sin alpha。", "磁电式表头采用辐向磁场，使 sin alpha=1；稳定时 NBIS=k_t beta。", "移项得 I=k_t beta/(NBS)，所以偏角 beta 与电流 I 成正比。"],
+      "errors": [
+        { "wrong": "计算多匝线圈力矩时漏掉匝数 N，写成 tau=BIS sin alpha", "wrong_expr": "tau = B*I*S*sin(alpha)", "why": "量纲正确但少算各匝的共同贡献；表头情境会误得 0.00001 N·m，正确值是 0.001 N·m。", "caught_by": "数值代入", "trap_test": { "scenario": "磁电式表头", "expr": "B*I*S*sin(alpha)", "ref": 0.001 } },
+        { "wrong": "认为电动机线圈转过半周后无需换向也能持续同向转动", "why": "若电流方向不变，线圈越过平衡位置后磁力矩会促使它反向；直流电动机依靠换向器适时改变电流方向。此过程判断需人工审核。", "caught_by": "人工审核" }
+      ],
+      "example": { "stem": "某磁电式表头线圈 100 匝，每匝面积 0.005 m²，处在 0.2 T 辐向磁场中。通入 0.01 A 电流，游丝角回复系数为 0.02 N·m/rad。求磁力矩和稳定偏角。", "solution": ["辐向磁场中磁力矩 tau=NBIS。", "tau=100×0.2×0.01×0.005=0.001 N·m。", "平衡时 k_t beta=tau，所以 beta=0.001÷0.02=0.05 rad。"], "answer": "磁力矩为 0.001 N·m，稳定偏角为 0.05 rad。" },
+      "prereq": ["mag-04", "dc-07"],
+      "next": ["mag-06"],
+      "tags": ["磁电式电表", "电动机", "磁力矩"]
+    },
+    {
+      "id": "mag-06",
+      "title": "安培力作用下的平衡与加速",
+      "level": "进阶",
+      "definition": "通电导体在磁场中的平衡问题仍服从普通的受力平衡条件。若水平导线在竖直方向只受重力 mg 和反向安培力 BIL，平衡时 BIL=mg，因此所需电流 I=mg/(BL)。若两力不平衡，则由牛顿第二定律求加速度。",
+      "meaning": "解题顺序是先用左手定则判断安培力方向，再画受力图，最后列平衡式或牛顿第二定律。安培力不是额外的一套力学规则；它与重力、支持力、拉力一样参加矢量合成。若题目改变电流或磁场方向，平衡可能立刻被破坏。",
+      "symbols": {
+        "I": { "desc": "导线中的电流", "unit": "A" },
+        "m": { "desc": "导线或导体棒质量", "unit": "kg" },
+        "g": { "desc": "重力加速度", "unit": "m/s^2" },
+        "B": { "desc": "磁感应强度", "unit": "T_" },
+        "L": { "desc": "垂直磁场的有效导线长度", "unit": "m" },
+        "F": { "desc": "导线受到的安培力", "unit": "N" },
+        "a": { "desc": "取安培力方向为正时导线的加速度", "unit": "m/s^2" }
+      },
+      "scenarios": {
+        "悬浮平衡": { "I": 4, "m": 0.2, "g": 10, "B": 0.5, "L": 1, "F": 2, "a": 0 },
+        "向上加速": { "I": 6, "m": 0.2, "g": 10, "B": 0.5, "L": 1, "F": 3, "a": 5 }
+      },
+      "formulas": [
+        {
+          "name": "安培力平衡所需电流",
+          "expr": "I = m*g/(B*L)",
+          "when": "导线垂直磁场，安培力竖直向上且仅与重力平衡",
+          "checks": [
+            { "type": "numeric", "scenario": "悬浮平衡", "expr": "m*g/(B*L)", "ref": 4.0, "note": "0.2×10÷(0.5×1)=4 A。" },
+            { "type": "direction", "scenario": "悬浮平衡", "var": "m", "lo": 0.05, "hi": 1, "expr": "m*g/(B*L)", "expect": "up", "note": "磁场和长度不变时，质量越大，平衡所需电流越大。" },
+            { "type": "direction", "scenario": "悬浮平衡", "var": "B", "lo": 0.1, "hi": 2, "expr": "m*g/(B*L)", "expect": "down", "note": "导线质量不变时，磁场越强，平衡所需电流越小。" },
+            { "type": "consistency", "scenario": "悬浮平衡", "expr": "B*I*L", "with": "mag-04|最大安培力", "with_expr": "m*g", "target": "悬浮平衡时安培力与重力的大小", "note": "安培力 0.5×4×1=2 N，重力 0.2×10=2 N，两条路径吻合。" }
+          ]
+        },
+        {
+          "name": "竖直方向的加速度",
+          "expr": "a = (B*I*L - m*g)/m",
+          "when": "安培力竖直向上、重力向下，取向上为正且忽略其他竖直力",
+          "checks": [
+            { "type": "numeric", "scenario": "向上加速", "expr": "(B*I*L - m*g)/m", "ref": 5.0, "note": "安培力 3 N、重力 2 N，合力 1 N；1÷0.2=5 m/s²。" },
+            { "type": "direction", "scenario": "向上加速", "var": "I", "lo": 4, "hi": 10, "expr": "(B*I*L - m*g)/m", "expect": "up", "note": "质量和磁场不变时，向上电流效应增强会使向上加速度增大。" },
+            { "type": "consistency", "scenario": "悬浮平衡", "expr": "(B*I*L - m*g)/m", "with": "mag-06|安培力平衡所需电流", "with_expr": "a", "target": "平衡状态的加速度", "note": "平衡电流为 4 A 时两力抵消，加速度为 0。" },
+            { "type": "scan", "scenario": "向上加速", "var": "I", "lo": 0, "hi": 1000 }
+          ]
+        }
+      ],
+      "derivation": ["导线垂直磁场时，安培力大小为 BIL。", "悬浮平衡要求竖直方向合力为零，因此 BIL-mg=0，整理得 I=mg/(BL)。", "若不平衡，取安培力方向为正，由牛顿第二定律 BIL-mg=ma。", "两边除以 m，得到 a=(BIL-mg)/m；当 I 恰好等于平衡电流时 a=0。"],
+      "errors": [
+        { "wrong": "求平衡电流时漏掉重力加速度，写成 I=m/(BL)", "wrong_expr": "I = m/(B*L)", "why": "右边量纲不是电流；质量必须先乘 g 才是与安培力平衡的重力，量纲检查可直接发现。", "caught_by": "量纲一致性" },
+        { "wrong": "把方向相反的安培力与重力相加，写成 a=(BIL+mg)/m", "wrong_expr": "a = (B*I*L + m*g)/m", "why": "量纲正确但受力方向错误；向上加速情境会误得 25 m/s²，正确值为 5 m/s²。", "caught_by": "数值代入", "trap_test": { "scenario": "向上加速", "expr": "(B*I*L + m*g)/m", "ref": 5.0 } }
+      ],
+      "example": { "stem": "质量 0.2 kg、有效长度 1 m 的水平导线垂直放在 0.5 T 匀强磁场中，安培力方向竖直向上，取 g=10 m/s²。求悬浮所需电流；若电流增至 6 A，求加速度。", "solution": ["悬浮时 BIL=mg，I=0.2×10÷(0.5×1)=4 A。", "电流 6 A 时安培力 F=BIL=0.5×6×1=3 N。", "重力为 2 N，向上合力为 1 N。", "由牛顿第二定律 a=1÷0.2=5 m/s²，方向向上。"], "answer": "悬浮电流为 4 A；电流为 6 A 时加速度为 5 m/s²，方向向上。" },
+      "prereq": ["mag-04", "dyn-05"],
+      "next": [],
+      "tags": ["安培力平衡", "受力分析", "牛顿第二定律"]
+    }
+  ]
+}

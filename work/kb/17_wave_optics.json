@@ -1,0 +1,303 @@
+{
+  "chapter": "第十七章 · 波动光学",
+  "order": 17,
+  "intro": "波动光学研究光作为波所表现出的干涉、衍射和偏振现象。双缝条纹把波长变成可测的空间间距，单缝衍射揭示有限孔径对传播方向的限制，偏振则说明光是横波；这些现象最终统一在光的电磁波本性与 c = lambda f 的关系中。本章所有角度量均用无量纲的正弦或余弦表示，避免角度单位混用。",
+  "points": [
+    {
+      "id": "wop-01",
+      "title": "光的干涉与双缝条纹",
+      "level": "基础",
+      "definition": "频率相同、相位差恒定的两列光波叠加，会形成稳定的明暗相间条纹。杨氏双缝实验中，在屏到双缝距离 L 远大于双缝间距 d 的近轴条件下，相邻亮条纹或相邻暗条纹的间距 delta_x = L lambda / d，第 m_order 级亮条纹到中央亮纹的距离 x_m = m_order delta_x。",
+      "meaning": "干涉条纹不是两束光各自留下的痕迹，而是电场周期性叠加后的强弱分布。条纹间距与波长、屏距成正比，与双缝间距成反比；因此红光比蓝光的条纹更疏，屏移远后条纹更疏，双缝分得更开后条纹反而更密。这里的 m_order 是从中央亮纹起计的级次，中央亮纹为零级。",
+      "symbols": {
+        "L": { "desc": "双缝到观察屏的距离", "unit": "m" },
+        "lambda": { "desc": "单色光的波长", "unit": "m" },
+        "d": { "desc": "两条狭缝中心之间的距离", "unit": "m" },
+        "delta_x": { "desc": "相邻同类条纹的间距", "unit": "m" },
+        "m_order": { "desc": "亮条纹级次，中央亮纹取零级", "unit": "1" },
+        "x_m": { "desc": "第 m_order 级亮纹到中央亮纹的距离", "unit": "m" }
+      },
+      "scenarios": {
+        "红光双缝": { "L": 2.0, "lambda": 0.0000006, "d": 0.0004, "delta_x": 0.003, "m_order": 3, "x_m": 0.009 }
+      },
+      "formulas": [
+        {
+          "name": "双缝干涉条纹间距",
+          "expr": "delta_x = L*lambda/d",
+          "when": "双缝间距远小于屏距、使用单色相干光且观察近轴条纹",
+          "checks": [
+            { "type": "numeric", "scenario": "红光双缝", "expr": "L*lambda/d", "ref": 0.003, "note": "先算 6.0×10^-7÷4.0×10^-4 = 1.5×10^-3，再乘 2.0，得 3.0×10^-3 m（独立分步计算）" },
+            { "type": "direction", "scenario": "红光双缝", "var": "lambda", "lo": 0.0000004, "hi": 0.0000007, "expr": "L*lambda/d", "expect": "up", "note": "屏距与缝距一定时，波长越长，条纹越疏" },
+            { "type": "direction", "scenario": "红光双缝", "var": "d", "lo": 0.0002, "hi": 0.001, "expr": "L*lambda/d", "expect": "down", "note": "波长与屏距一定时，双缝间距越大，条纹间距越小" },
+            { "type": "scan", "scenario": "红光双缝", "var": "L", "lo": 0.1, "hi": 10 }
+          ]
+        },
+        {
+          "name": "第 m_order 级亮纹位置",
+          "expr": "x_m = m_order*delta_x",
+          "when": "从中央亮纹向一侧计数，m_order 为非负整数",
+          "checks": [
+            { "type": "numeric", "scenario": "红光双缝", "expr": "m_order*delta_x", "ref": 0.009, "note": "第 3 级亮纹到中央亮纹跨过 3 个条纹间距，3×0.003 = 0.009 m（独立计数）" },
+            { "type": "direction", "scenario": "红光双缝", "var": "m_order", "lo": 0, "hi": 8, "expr": "m_order*delta_x", "expect": "up", "note": "在同一侧，亮纹级次越高，离中央亮纹越远" },
+            { "type": "consistency", "scenario": "红光双缝", "expr": "m_order*delta_x", "with": "wop-01|双缝干涉条纹间距", "with_expr": "m_order*L*lambda/d", "target": "第三级亮纹到中央亮纹的距离", "note": "先算条纹间距再乘级次得到 0.009 m；把双缝参数直接代入也得到 0.009 m" },
+            { "type": "scan", "scenario": "红光双缝", "var": "m_order", "lo": 0, "hi": 20 }
+          ]
+        }
+      ],
+      "derivation": [
+        "屏上某点到两缝的路程差等于波长的整数倍时，两列光同相叠加形成亮纹。",
+        "在 L 远大于 d 的近轴条件下，相邻亮纹对应的路程差增加一个波长，由相似三角形得到 delta_x = L lambda / d。",
+        "中央亮纹取 m_order = 0；向一侧每跨过一个间距，级次增加 1，所以 x_m = m_order delta_x。"
+      ],
+      "errors": [
+        {
+          "wrong": "把双缝条纹间距写成 delta_x = d lambda / L",
+          "wrong_expr": "delta_x = d*lambda/L",
+          "why": "错误式把 L 与 d 颠倒后量纲仍是长度，所以量纲检查抓不到。本情境算出 1.2×10^-10 m，而正确值是 0.003 m。",
+          "caught_by": "数值代入",
+          "trap_test": { "scenario": "红光双缝", "expr": "d*lambda/L", "ref": 0.003 }
+        },
+        {
+          "wrong": "认为双缝间距越大，干涉条纹越疏",
+          "wrong_expr": "delta_x = L*lambda*d",
+          "why": "正确关系中 d 在分母，双缝间距增大应使条纹变密。错误式在本情境给出 4.8×10^-10 m，也与实测 0.003 m 不符。",
+          "caught_by": "数值代入",
+          "trap_test": { "scenario": "红光双缝", "expr": "L*lambda*d", "ref": 0.003 }
+        }
+      ],
+      "example": {
+        "stem": "用波长 600 nm 的单色光做双缝干涉实验，双缝间距 0.40 mm，屏到双缝的距离 2.0 m。求条纹间距和第三级亮纹到中央亮纹的距离。",
+        "solution": [
+          "统一单位：lambda = 6.0×10^-7 m，d = 4.0×10^-4 m。",
+          "delta_x = L lambda / d = 2.0×6.0×10^-7÷4.0×10^-4 = 3.0×10^-3 m。",
+          "x_m = 3 delta_x = 9.0×10^-3 m。"
+        ],
+        "answer": "条纹间距为 3.0 mm；第三级亮纹距中央亮纹 9.0 mm。"
+      },
+      "prereq": ["osc-06"],
+      "next": ["wop-02"],
+      "tags": ["波动光学", "光的干涉", "双缝实验", "条纹间距"]
+    },
+    {
+      "id": "wop-02",
+      "title": "光的衍射",
+      "level": "进阶",
+      "definition": "光绕过障碍物边缘或通过狭缝后偏离直线传播并进入几何阴影区的现象叫衍射。夫琅禾费单缝衍射中，第一暗纹方向满足 s_theta = lambda/a；在小角度、屏距 L 远大于缝宽 a 时，中央亮纹宽度近似为 w = 2 L lambda/a。",
+      "meaning": "任何波都能衍射，只是当孔或障碍物尺度与波长相近时现象更显著。单缝越窄，光扩展得越开，中央亮纹越宽；这不是缝在屏上的几何像。中央亮纹宽度约为其他亮纹的两倍，是单缝衍射图样最醒目的结构特征。",
+      "symbols": {
+        "lambda": { "desc": "单色光的波长", "unit": "m" },
+        "a": { "desc": "单缝宽度", "unit": "m" },
+        "theta": { "desc": "第一暗纹对应的衍射角", "unit": "rad" },
+        "s_theta": { "desc": "第一暗纹衍射角 theta 的正弦值", "unit": "1" },
+        "L": { "desc": "单缝到观察屏的距离", "unit": "m" },
+        "w": { "desc": "中央亮纹的近似宽度", "unit": "m" }
+      },
+      "scenarios": {
+        "窄缝衍射": { "lambda": 0.0000005, "a": 0.00001, "s_theta": 0.05, "L": 1.2, "w": 0.12 }
+      },
+      "formulas": [
+        {
+          "name": "单缝第一暗纹条件",
+          "expr": "s_theta = lambda/a",
+          "when": "夫琅禾费单缝衍射，求第一暗纹方向且 lambda 不大于 a",
+          "checks": [
+            { "type": "numeric", "scenario": "窄缝衍射", "expr": "lambda/a", "ref": 0.05, "note": "5.0×10^-7÷1.0×10^-5 = 0.05，指数相除后再算系数（独立计算）" },
+            { "type": "direction", "scenario": "窄缝衍射", "var": "lambda", "lo": 0.0000004, "hi": 0.0000007, "expr": "lambda/a", "expect": "up", "note": "缝宽一定时，波长越长，第一暗纹角度越大，衍射越明显" },
+            { "type": "direction", "scenario": "窄缝衍射", "var": "a", "lo": 0.000001, "hi": 0.00001, "expr": "lambda/a", "expect": "down", "note": "波长一定时，狭缝越宽，衍射角越小" },
+            { "type": "scan", "scenario": "窄缝衍射", "var": "a", "lo": 0.0000005, "hi": 0.0001 }
+          ]
+        },
+        {
+          "name": "单缝中央亮纹宽度",
+          "expr": "w = 2*L*lambda/a",
+          "when": "第一暗纹角度较小，屏距远大于缝宽，可用小角近似",
+          "checks": [
+            { "type": "numeric", "scenario": "窄缝衍射", "expr": "2*L*lambda/a", "ref": 0.12, "note": "lambda/a = 0.05，中央亮纹跨第一暗纹两侧，宽度为 2×1.2×0.05 = 0.12 m（独立几何计算）" },
+            { "type": "direction", "scenario": "窄缝衍射", "var": "a", "lo": 0.000001, "hi": 0.00001, "expr": "2*L*lambda/a", "expect": "down", "note": "缝越宽，中央亮纹越窄，体现衍射减弱" },
+            { "type": "consistency", "scenario": "窄缝衍射", "expr": "2*L*lambda/a", "with": "wop-02|单缝第一暗纹条件", "with_expr": "2*L*s_theta", "target": "中央亮纹宽度", "note": "由缝宽和波长直接算得 0.12 m；先算第一暗纹正弦近似再乘两侧屏距也得 0.12 m" },
+            { "type": "scan", "scenario": "窄缝衍射", "var": "L", "lo": 0.1, "hi": 10 }
+          ]
+        }
+      ],
+      "derivation": [
+        "把单缝内各处看成次波源；在第一暗纹方向上，可以把缝分成两半，使两半中成对次波的程差为半个波长并相互抵消。",
+        "第一暗纹条件为 a sin(theta) = lambda，因此 s_theta = lambda/a。",
+        "第一暗纹在中央两侧各出现一次；小角近似下单侧距离约为 L lambda/a，所以中央亮纹总宽度 w = 2L lambda/a。"
+      ],
+      "errors": [
+        {
+          "wrong": "把第一暗纹条件写反为 s_theta = a/lambda",
+          "wrong_expr": "s_theta = a/lambda",
+          "why": "本情境会得到 20，大于正弦值上限 1，物理上不可能；正确值为 0.05。",
+          "caught_by": "数值代入",
+          "trap_test": { "scenario": "窄缝衍射", "expr": "a/lambda", "ref": 0.05 }
+        },
+        {
+          "wrong": "计算中央亮纹宽度时漏掉两侧，写成 w = L lambda/a",
+          "wrong_expr": "w = L*lambda/a",
+          "why": "L lambda/a 只是中央点到一侧第一暗纹的距离。错误式得到 0.06 m，完整中央亮纹宽度应为 0.12 m。",
+          "caught_by": "数值代入",
+          "trap_test": { "scenario": "窄缝衍射", "expr": "L*lambda/a", "ref": 0.12 }
+        }
+      ],
+      "example": {
+        "stem": "波长 500 nm 的单色光照射宽 10 micrometre 的单缝，屏距 1.2 m。求第一暗纹衍射角的正弦值和中央亮纹的近似宽度。",
+        "solution": [
+          "统一单位：lambda = 5.0×10^-7 m，a = 1.0×10^-5 m。",
+          "s_theta = lambda/a = 0.05。此时衍射角约为 2.9°，符合小角近似条件。",
+          "w = 2L lambda/a = 2×1.2×0.05 = 0.12 m。"
+        ],
+        "answer": "第一暗纹衍射角的正弦值为 0.05；中央亮纹宽度约为 0.12 m。"
+      },
+      "prereq": ["osc-06"],
+      "next": ["wop-03"],
+      "tags": ["波动光学", "光的衍射", "单缝衍射", "中央亮纹"]
+    },
+    {
+      "id": "wop-03",
+      "title": "光的偏振",
+      "level": "进阶",
+      "definition": "偏振片只允许沿透振方向的电场分量通过。自然光通过理想偏振片后，透射光强 I_p = I_in/2；线偏振光再通过与其偏振方向夹角余弦为 c_theta 的检偏器时，马吕斯定律给出 I = I_p c_theta^2。偏振现象说明光的振动方向垂直于传播方向，光是横波。",
+      "meaning": "自然光的电场振动方向在垂直传播方向的平面内随机分布，第一片理想偏振片平均保留一半光强。第二片偏振片是否透光取决于两片透振方向夹角：平行时最亮，垂直时理想情况下完全消光。光强不是按余弦一次方变化，而是电场分量先乘余弦、光强再与振幅平方成正比。",
+      "symbols": {
+        "I_in": { "desc": "入射自然光的相对光强", "unit": "1" },
+        "I_p": { "desc": "自然光通过第一片理想偏振片后的相对光强", "unit": "1" },
+        "theta": { "desc": "检偏器透振方向与入射线偏振方向的夹角", "unit": "rad" },
+        "c_theta": { "desc": "夹角 theta 的余弦值", "unit": "1" },
+        "I": { "desc": "线偏振光通过检偏器后的相对光强", "unit": "1" }
+      },
+      "scenarios": {
+        "两片偏振片": { "I_in": 1.0, "I_p": 0.5, "c_theta": 0.6, "I": 0.18 }
+      },
+      "formulas": [
+        {
+          "name": "自然光通过理想偏振片",
+          "expr": "I_p = I_in/2",
+          "when": "自然光垂直入射理想偏振片，不计吸收和反射损失",
+          "checks": [
+            { "type": "numeric", "scenario": "两片偏振片", "expr": "I_in/2", "ref": 0.5, "note": "自然光各振动方向均匀分布，平方投影的方向平均为一半，单位相对光强变为 0.5（独立统计结论）" },
+            { "type": "direction", "scenario": "两片偏振片", "var": "I_in", "lo": 0.2, "hi": 2.0, "expr": "I_in/2", "expect": "up", "note": "理想偏振片的透射比例固定，入射自然光越强，透射光越强" },
+            { "type": "compare", "scenario": "两片偏振片", "expr": "I_p", "op": "<", "vs": "I_in", "note": "自然光通过第一片理想偏振片后，相对光强从 1.0 降为 0.5" },
+            { "type": "scan", "scenario": "两片偏振片", "var": "I_in", "lo": 0, "hi": 100 }
+          ]
+        },
+        {
+          "name": "马吕斯定律",
+          "expr": "I = I_p*c_theta^2",
+          "when": "线偏振光垂直入射理想检偏器，c_theta 为两偏振方向夹角的余弦",
+          "checks": [
+            { "type": "numeric", "scenario": "两片偏振片", "expr": "I_p*c_theta^2", "ref": 0.18, "note": "0.6² = 0.36，再乘第一片后的光强 0.5，得到 0.18（独立先平方后相乘）" },
+            { "type": "direction", "scenario": "两片偏振片", "var": "c_theta", "lo": 0, "hi": 1, "expr": "I_p*c_theta^2", "expect": "up", "note": "夹角从 90° 减到 0°时余弦从 0 增到 1，透射光强单调增大" },
+            { "type": "consistency", "scenario": "两片偏振片", "expr": "I_p*c_theta^2", "with": "wop-03|自然光通过理想偏振片", "with_expr": "I_in*c_theta^2/2", "target": "自然光依次通过两片偏振片后的光强", "note": "先算第一片后的 0.5 再用马吕斯定律得 0.18；合并两步由入射光强直接算也得 0.18" },
+            { "type": "scan", "scenario": "两片偏振片", "var": "c_theta", "lo": 0, "hi": 1 }
+          ]
+        }
+      ],
+      "derivation": [
+        "自然光在垂直传播方向的各个振动方向上均匀分布；通过理想偏振片后，电场平方投影的平均值为原来的一半，因此 I_p = I_in/2。",
+        "线偏振光通过检偏器时，透射电场振幅是原振幅在透振方向的投影，即乘以 c_theta。",
+        "光强与电场振幅的平方成正比，所以透射光强乘以 c_theta^2，得到 I = I_p c_theta^2。"
+      ],
+      "errors": [
+        {
+          "wrong": "认为自然光通过第一片理想偏振片后光强不变",
+          "wrong_expr": "I_p = I_in",
+          "why": "第一片偏振片只保留一个方向的电场投影，理想情况下平均光强减半。本情境错误式给出 1.0，正确值为 0.5。",
+          "caught_by": "数值代入",
+          "trap_test": { "scenario": "两片偏振片", "expr": "I_in", "ref": 0.5 }
+        },
+        {
+          "wrong": "马吕斯定律漏掉平方，写成 I = I_p c_theta",
+          "wrong_expr": "I = I_p*c_theta",
+          "why": "余弦作用在电场振幅上，光强还要再平方。本情境错误式给出 0.30，正确值为 0.18。",
+          "caught_by": "数值代入",
+          "trap_test": { "scenario": "两片偏振片", "expr": "I_p*c_theta", "ref": 0.18 }
+        }
+      ],
+      "example": {
+        "stem": "相对光强为 1.0 的自然光依次垂直通过两片理想偏振片，两片透振方向夹角的余弦为 0.6。求通过第一片和第二片后的相对光强。",
+        "solution": [
+          "自然光通过第一片理想偏振片后 I_p = I_in/2 = 0.5。",
+          "由马吕斯定律 I = I_p c_theta²。",
+          "I = 0.5×0.6² = 0.5×0.36 = 0.18。"
+        ],
+        "answer": "通过第一片后相对光强为 0.5；通过第二片后为 0.18。"
+      },
+      "prereq": [],
+      "next": ["wop-04"],
+      "tags": ["波动光学", "偏振", "横波", "马吕斯定律"]
+    },
+    {
+      "id": "wop-04",
+      "title": "光的电磁本性",
+      "level": "基础",
+      "definition": "光是电磁波，真空中的传播速度 c、真空波长 lambda 和频率 f 满足 c = lambda f。频率的倒数是振动周期 T，即 T = 1/f。可见光只是电磁波谱中很窄的一段，不同频段的电磁波在真空中传播速度相同，差别主要在频率和波长。",
+      "meaning": "麦克斯韦理论预言电磁扰动的传播速度等于当时测得的光速，赫兹实验随后证实了电磁波的存在。光跨越介质分界面时频率由光源决定而保持不变，介质中的速度和波长会改变；本知识点的 c = lambda f 专指真空量。波长越短，频率越高，但不能据此认为不同颜色的光在真空中速度不同。",
+      "symbols": {
+        "c": { "desc": "真空中的光速", "unit": "m/s" },
+        "lambda": { "desc": "光在真空中的波长", "unit": "m" },
+        "f": { "desc": "光的频率", "unit": "Hz" },
+        "T": { "desc": "电磁振动的周期", "unit": "s" }
+      },
+      "scenarios": {
+        "绿光真空传播": { "c": 300000000, "lambda": 0.0000005, "f": 600000000000000, "T": 0.0000000000000016666666666666667 }
+      },
+      "formulas": [
+        {
+          "name": "真空中光速关系",
+          "expr": "c = lambda*f",
+          "when": "光在真空中传播，lambda 取真空波长",
+          "checks": [
+            { "type": "numeric", "scenario": "绿光真空传播", "expr": "lambda*f", "ref": 300000000.0, "note": "5.0×10^-7×6.0×10^14 = 30×10^7 = 3.0×10^8 m/s（独立指数运算）" },
+            { "type": "direction", "scenario": "绿光真空传播", "var": "lambda", "lo": 0.0000004, "hi": 0.0000007, "expr": "c/lambda", "expect": "down", "note": "真空光速固定，波长越长，对应频率越低" },
+            { "type": "compare", "scenario": "绿光真空传播", "expr": "lambda*f", "op": "==", "vs": "c", "note": "绿光波长与频率的乘积恰为真空光速 3.0×10^8 m/s" },
+            { "type": "scan", "scenario": "绿光真空传播", "var": "lambda", "lo": 0.0000001, "hi": 0.001 }
+          ]
+        },
+        {
+          "name": "频率与周期",
+          "expr": "T = 1/f",
+          "when": "任何周期性电磁振动，f 大于零",
+          "checks": [
+            { "type": "numeric", "scenario": "绿光真空传播", "expr": "1/f", "ref": 0.0000000000000016666666666666667, "note": "1÷(6.0×10^14) = (1/6)×10^-14 = 1.6666667×10^-15 s（独立倒数计算）" },
+            { "type": "direction", "scenario": "绿光真空传播", "var": "f", "lo": 400000000000000, "hi": 800000000000000, "expr": "1/f", "expect": "down", "note": "频率越高，每次振动所需的周期越短" },
+            { "type": "consistency", "scenario": "绿光真空传播", "expr": "c*T", "with": "wop-04|真空中光速关系", "with_expr": "lambda", "target": "一个周期内光传播的距离", "note": "光速乘周期得到 5.0×10^-7 m；由光速关系直接给出的真空波长也是 5.0×10^-7 m" },
+            { "type": "scan", "scenario": "绿光真空传播", "var": "f", "lo": 1000000, "hi": 100000000000000000000 }
+          ]
+        }
+      ],
+      "derivation": [
+        "周期波在一个周期 T 内向前传播一个波长 lambda，因此传播速度 c = lambda/T。",
+        "频率与周期互为倒数：f = 1/T。代入速度式得到 c = lambda f。",
+        "电磁波在真空中的传播速度由真空电磁性质决定；不同频率的电磁波都服从同一速度关系。"
+      ],
+      "errors": [
+        {
+          "wrong": "把一个周期传播一个波长误记成传播两个波长，写成 c = 2 lambda f",
+          "wrong_expr": "c = 2*lambda*f",
+          "why": "错误式与正确式量纲完全相同，量纲检查抓不到；本情境会算出 6.0×10^8 m/s，而真空光速应为 3.0×10^8 m/s。",
+          "caught_by": "数值代入",
+          "trap_test": { "scenario": "绿光真空传播", "expr": "2*lambda*f", "ref": 300000000.0 }
+        },
+        {
+          "wrong": "把周期写成 T = f，混淆互为倒数的两个物理量",
+          "wrong_expr": "T = f",
+          "why": "周期单位是 s，频率单位是 Hz，即 1/s，量纲不同；绿光周期约为 1.67×10^-15 s，不是 6.0×10^14 s。",
+          "caught_by": "量纲一致性"
+        }
+      ],
+      "example": {
+        "stem": "某绿光在真空中的波长为 500 nm，取真空光速 c = 3.0×10^8 m/s。求它的频率和周期。",
+        "solution": [
+          "把波长换成国际单位：lambda = 5.0×10^-7 m。",
+          "由 c = lambda f 得 f = c/lambda = 3.0×10^8÷5.0×10^-7 = 6.0×10^14 Hz。",
+          "T = 1/f = 1÷6.0×10^14，约为 1.67×10^-15 s。"
+        ],
+        "answer": "频率为 6.0×10^14 Hz；周期约为 1.67×10^-15 s。"
+      },
+      "prereq": ["osc-06", "opt-03"],
+      "next": [],
+      "tags": ["波动光学", "电磁波", "光速", "频率", "波长"]
+    }
+  ]
+}

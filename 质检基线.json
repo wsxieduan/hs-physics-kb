@@ -1,0 +1,13 @@
+{
+  "frozen_at": "2026-09-19 13:09:19",
+  "note": "这是质检基线。冻结清单里的文件若发生改动，质检会报出来。",
+  "fingerprint": {
+    "work/physkit/quantity.py": "1b67459a28f42de4475862a8a816119ef39ea94fd4b5125ac42b190837ec677d",
+    "work/physkit/expr.py": "a626480be37bccbc8d7d6bbeab9c039599b7fa980e4e944367fd7b5ac96541a6",
+    "work/physkit/checks.py": "d519230f93f7dae630e0628f45ea5d62bf0f7c5a0cf96fb0d2ed825b0974da92",
+    "work/physkit/kb.py": "6f1214f491a042a3d9f461eeb0b1c1997667ab01df186b56e65b53e9f3f85921",
+    "work/qc.py": "6f5ec5f3a27be5d0c622664bd628f61694683e2fa7dfc34e45b664fd6d2ed590",
+    "work/net_guard.py": "ed42643eec8889ec70a0c2e310c710ae5e57d072720a3e9bca2346ab2b6b9e6e",
+    "work/orchestrator.py": "b7e6b6000cd243d386fd924f7b9c0f5451ab1eef18037675eab9aae06fc6fe6d"
+  }
+}
