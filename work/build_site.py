@@ -35,6 +35,7 @@ import html
 import json
 import os
 import sys
+from urllib.parse import quote
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 if HERE not in sys.path:
@@ -185,7 +186,7 @@ def render_formula(f):
     )
 
 
-def render_trap(t):
+def render_trap(t, point_id="", index=0):
     """一条常见错误：错在哪、为什么错、被哪类检查抓住、实测结果。"""
     ver = t.get("verify") or {}
     caught = ver.get("caught")
@@ -203,20 +204,20 @@ def render_trap(t):
     wrong_html = ('<code class="wrong-expr">%s</code>' % prose(wrong_expr)) if wrong_expr else ""
 
     return """
-        <div class="trap">
+        <div class="trap" id="%s">
           <div class="trap-head"><span class="trap-title">%s</span>%s</div>
           %s
           <div class="trap-why">%s</div>
           <div class="trap-verify"><b>实测记录</b>%s</div>
         </div>""" % (
-        prose(wrong), badge,
+        E("trap-%s-%d" % (point_id, index + 1)), prose(wrong), badge,
         ('<div class="trap-wrong">错误写法 %s</div>' % wrong_html) if wrong_html else "",
         prose(t.get("why", "")),
         prose(ver.get("detail", "未做自动实测")),
     )
 
 
-def render_point(pid, p):
+def render_point(pid, p, related=None, quiz_href=None, segment_name="高中", source_page="index.html"):
     """一个完整的知识点卡片。"""
     lvl = p.get("level", "基础")
     n_ok, n_all = p["n_pass"], p["n_total"]
@@ -245,7 +246,40 @@ def render_point(pid, p):
     traps = ""
     if p["errors"]:
         traps = '<div class="traps">%s</div>' % "".join(
-            render_trap(t) for t in p["errors"])
+            render_trap(t, pid, i) for i, t in enumerate(p["errors"]))
+
+    # 跨学段卡片按复核档位展示；低把握项目会直接提醒适用范围可能不同。
+    related_html = ""
+    if related:
+        related_rows = []
+        for item in related:
+            tier = item.get("tier", "loose")
+            tier_label = {"solid": "相关内容", "loose": "主题衔接提示", "risky": "谨慎比较"}.get(tier, "主题衔接提示")
+            warning = ""
+            if tier == "loose":
+                warning = '<p class="related-warning">这是主题衔接建议；两侧的学习深度、定义或适用条件可能不同，请勿直接套用另一学段的公式。</p>'
+            elif tier == "risky":
+                warning = '<p class="related-warning related-risk">谨慎比较：%s 请先分别确认研究对象和适用条件，不要跨学段直接套用公式。</p>' % prose(item.get("risk", ""))
+            related_rows.append(
+                '<li><span class="related-tier tier-%s">%s</span>'
+                '<a href="%s#%s">%s</a><span class="related-chapter">%s</span>'
+                '<p>%s</p>%s</li>' % (E(tier), E(tier_label), E(item["href"]), E(item["id"]),
+                                      E(item["title"]), E(item["chapter"]),
+                                      prose(item.get("note", "")), warning))
+        related_html = (
+            '<section class="field related"><h4>跨学段学习线索'
+            '<span class="related-badge">首轮整理 · 待教师复核</span></h4>'
+            '<p class="related-notice">不同档位使用不同提示；请以各自知识点的定义、条件和推导为准。</p>'
+            '<ul>%s</ul></section>' % "".join(related_rows))
+
+    # 把每个知识点直接带到对应学段的同名例题，并附上可见的返回位置。
+    practice_html = ""
+    if quiz_href:
+        source_label = segment_name + "物理知识库"
+        query = "mode=example&point=%s&source=%s&return=%s" % (
+            quote(pid), quote(source_label), quote(source_page + "#" + pid))
+        practice_html = '<div class="kp-practice"><a class="practice-link" href="%s#%s">练这道题 ↗</a></div>' % (
+            E(quiz_href), E(query))
 
     # --- 例题 ---
     example = ""
@@ -288,6 +322,7 @@ def render_point(pid, p):
         <span class="lvl %(lvlcls)s">%(lvl)s</span>
         <span class="kp-pass %(okcls)s">校验 %(nok)d/%(nall)d</span>
       </div>
+      %(practice)s
       <div class="kp-body">
         <section class="field">
           <h4>定义</h4>
@@ -307,6 +342,7 @@ def render_point(pid, p):
         </section>
         %(derivsec)s
         %(trapssec)s
+        %(related)s
         %(example)s
         <div class="kp-foot">
           <div class="tags">%(tags)s</div>
@@ -329,6 +365,8 @@ def render_point(pid, p):
         "formulas": formulas,
         "derivsec": ('<section class="field"><h4>推导要点</h4>%s</section>' % deriv) if deriv else "",
         "trapssec": ('<section class="field"><h4>常见错误与实测结果</h4>%s</section>' % traps) if traps else "",
+        "related": related_html,
+        "practice": practice_html,
         "example": example,
         "tags": tags,
         "nav": nav,
@@ -399,6 +437,13 @@ math{font-size:1.12em}
   border-radius:10px;padding:12px 18px;min-width:118px}
 .hstat b{display:block;font-size:23px;font-weight:700;letter-spacing:.01em}
 .hstat span{font-size:12px;color:#a9bcd9}
+.segment-switchbar{background:#fff;border-bottom:1px solid var(--line);padding:9px 24px}
+.segment-switch-inner{max-width:1080px;margin:0 auto;display:flex;align-items:center;gap:9px;flex-wrap:wrap}
+.segment-switch-label{font-size:12px;color:var(--ink3);margin-right:2px}
+.segment-switchbar a{display:inline-flex;align-items:center;padding:5px 12px;border:1px solid var(--line);border-radius:999px;color:var(--ink2);font-size:13px}
+.segment-switchbar a:hover{text-decoration:none;border-color:var(--brand);color:var(--brand)}
+.segment-switchbar a[aria-current="page"]{background:var(--brand);border-color:var(--brand);color:#fff}
+.segment-switchbar a.segment-quiz{margin-left:auto;border-color:#b8c9ff;background:#f4f7ff;color:#315fc4}
 
 /* ---------- 工具条 ---------- */
 .toolbar{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.94);
@@ -477,7 +522,25 @@ main{max-width:1080px;margin:0 auto;padding:26px 24px 70px}
 .kp-pass{font-size:11.5px;border-radius:5px;padding:2px 9px;font-weight:600}
 .kp-pass.ok{background:var(--ok-soft);color:var(--ok)}
 .kp-pass.bad{background:var(--bad-soft);color:var(--bad)}
+.kp-practice{padding:9px 22px 0}
+.practice-link{display:inline-flex;align-items:center;border:1px solid #bdccf4;border-radius:999px;
+  padding:4px 12px;background:#f3f6ff;color:#315fc4;font-size:12px;font-weight:600}
+.practice-link:hover{text-decoration:none;background:#e9efff}
 .kp-body{padding:6px 22px 22px}
+.related{background:#f7f9ff;border:1px solid #e1e8fb;border-radius:10px;padding:12px 16px}
+.related h4{display:flex;flex-wrap:wrap;align-items:center;gap:8px}
+.related-badge{font-size:11px;font-weight:500;color:#775b16;background:#fff4d7;border-radius:999px;padding:2px 8px}
+.related-notice{font-size:12px;color:var(--ink3);margin:0 0 8px}
+.related ul{margin:0;padding-left:20px}
+.related li{margin:7px 0;color:var(--ink2)}
+.related-chapter{margin-left:8px;color:var(--ink3);font-size:12px}
+.related li p{margin:3px 0 0;font-size:12.5px;color:var(--ink2)}
+.related-tier{display:inline-block;margin-right:7px;border-radius:999px;padding:1px 8px;font-size:11px;font-weight:600}
+.tier-solid{background:#e9f7ee;color:#18794e}
+.tier-loose{background:#fff4d7;color:#805f13}
+.tier-risky{background:#fdecea;color:#a33232}
+.related-warning{padding:6px 9px;border-left:3px solid #d49a19;background:#fff9e9;color:#75550e!important}
+.related-risk{border-left-color:#c0392b;background:#fff1ef;color:#9c2c27!important}
 .field{margin-top:20px}
 .field h4{margin:0 0 8px;font-size:13.5px;color:var(--brand);font-weight:600;
   letter-spacing:.03em}
@@ -716,11 +779,29 @@ JS = """
   });
 
   apply();
+  // 跨学段链接带有知识点或常见错误锚点；先恢复知识点视图，再滚动并短暂高亮。
+  if(window.location.hash){
+    var targetId=window.location.hash.slice(1), target=null;
+    try{target=document.getElementById(decodeURIComponent(targetId));}catch(_e){}
+    if(target){
+      document.body.setAttribute('data-view','point');
+      q.value='';cur='all';
+      chips.forEach(function(x){x.classList.remove('on');});
+      if(chips[0])chips[0].classList.add('on');
+      apply();
+      window.setTimeout(function(){
+        target.scrollIntoView({behavior:'smooth',block:'start'});
+        target.style.transition='box-shadow .4s';target.style.boxShadow='0 0 0 3px #2f6df6';
+        window.setTimeout(function(){target.style.boxShadow='';},1100);
+      },80);
+    }
+  }
 })();
 """
 
 
-def render_page(report, stats, chapters, title="高中物理知识库", lead=""):
+def render_page(report, stats, chapters, title="高中物理知识库", lead="",
+                segment_nav=None, related=None):
     """组装整个 HTML 页面。title / lead 由调用方按学段传入。"""
     # 按章节分组，保持文件顺序
     groups = []
@@ -759,7 +840,11 @@ def render_page(report, stats, chapters, title="高中物理知识库", lead="")
                     % (len(pts), sum(len(p["formulas"]) for p in pts),
                        sum(p["n_total"] for p in pts)))
         body.append("</section>")
-        body.extend(render_point(p["id"], p) for p in pts)
+        body.extend(render_point(p["id"], p, (related or {}).get(p["id"]),
+                                 (segment_nav or {}).get("quiz_href"),
+                                 (segment_nav or {}).get("current", "高中"),
+                                 (segment_nav or {}).get("senior_href" if (segment_nav or {}).get("current") == "高中" else "junior_href", "index.html"))
+                    for p in pts)
 
     chips = ['<button class="chip on" data-chapter="all">全部</button>']
     for cname, _, _ in groups:
@@ -846,6 +931,21 @@ def render_page(report, stats, chapters, title="高中物理知识库", lead="")
     hstats = "".join('<div class="hstat"><b>%s</b><span>%s</span></div>' % (v, E(k))
                      for v, k in hero_stats)
 
+    # 统一站点的学段切换入口与测试入口；独立旧版调用时可不传此配置。
+    segment_bar = ""
+    if segment_nav:
+        current = segment_nav.get("current", "高中")
+        hs_attrs = ' aria-current="page"' if current == "高中" else ""
+        junior_attrs = ' aria-current="page"' if current == "初中" else ""
+        segment_bar = (
+            '<nav class="segment-switchbar" aria-label="切换物理学段"><div class="segment-switch-inner">'
+            '<span class="segment-switch-label">知识库学段</span>'
+            '<a href="%s"%s>高中</a><a href="%s"%s>初中</a>'
+            '<a class="segment-quiz" href="%s">例题自测 ↗</a>'
+            '</div></nav>' % (E(segment_nav.get("senior_href", "index.html")), hs_attrs,
+                              E(segment_nav.get("junior_href", "junior.html")), junior_attrs,
+                              E(segment_nav.get("quiz_href", "quiz-hs.html"))))
+
     return """<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
@@ -864,6 +964,8 @@ def render_page(report, stats, chapters, title="高中物理知识库", lead="")
     <div class="hstats">%s</div>
   </div>
 </header>
+
+%s
 
 <div class="toolbar">
   <div class="toolbar-in">
@@ -902,8 +1004,9 @@ def render_page(report, stats, chapters, title="高中物理知识库", lead="")
 
 <script>%s</script>
 </body>
-</html>""" % (E(title), CSS, E(title), prose(lead), hstats, "".join(chips), toc,
-             render_method_panel(stats), "".join(body), views_html, JS)
+</html>""" % (E(title), CSS, E(title), prose(lead), hstats, segment_bar,
+             "".join(chips), toc, render_method_panel(stats), "".join(body),
+             views_html, JS)
 
 
 # ============================================================

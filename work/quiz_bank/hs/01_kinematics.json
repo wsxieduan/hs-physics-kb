@@ -1,0 +1,651 @@
+{
+  "segment": "高中",
+  "chapter": "第一章 · 运动的描述与匀变速直线运动",
+  "source_file": "01_kinematics.json",
+  "questions": [
+    {
+      "id": "diagnostic-kine-01-1",
+      "point_id": "kine-01",
+      "point_title": "平均速度与平均速率",
+      "chapter": "第一章 · 运动的描述与匀变速直线运动",
+      "stem": "学生的错误做法：把平均速度写成「路程 ÷ 时间」（错误表达式：v_avg = s_path/t）。这条错误属于哪一类？",
+      "options": [
+        {
+          "label": "A",
+          "text": "数值代入"
+        },
+        {
+          "label": "B",
+          "text": "量纲一致性"
+        },
+        {
+          "label": "C",
+          "text": "不等式关系"
+        },
+        {
+          "label": "D",
+          "text": "变化方向"
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "只有在单向直线运动中，路程和位移的大小才恰好相等，这时看不出问题。一旦运动折返，两者立刻分家：往返回到原点时位移为 0，平均速度应为 0，用路程算却会得到 10 m/s。\n知识库校验证据：情境：往返回到原点；代入错误式：s_path/t；校验参照值：0.0。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 0,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "v_avg = s_path/t",
+      "trap_test": {
+        "scenario": "往返回到原点",
+        "expr": "s_path/t",
+        "ref": 0.0
+      }
+    },
+    {
+      "id": "diagnostic-kine-01-2",
+      "point_id": "kine-01",
+      "point_title": "平均速度与平均速率",
+      "chapter": "第一章 · 运动的描述与匀变速直线运动",
+      "stem": "学生的错误做法：把平均速率写成「位移 ÷ 时间」（错误表达式：v_rate = x/t）。这条错误属于哪一类？",
+      "options": [
+        {
+          "label": "A",
+          "text": "不等式关系"
+        },
+        {
+          "label": "B",
+          "text": "变化方向"
+        },
+        {
+          "label": "C",
+          "text": "概念混淆"
+        },
+        {
+          "label": "D",
+          "text": "数值代入"
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "上一条的镜像错误。把位移代进速率的定义，往返回到原点时会算出平均速率为 0，等于说「他以 0 的速度跑完了一圈」。\n知识库校验证据：情境：往返回到原点；代入错误式：x/t；校验参照值：10.0。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 1,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "v_rate = x/t",
+      "trap_test": {
+        "scenario": "往返回到原点",
+        "expr": "x/t",
+        "ref": 10.0
+      }
+    },
+    {
+      "id": "diagnostic-kine-02-1",
+      "point_id": "kine-02",
+      "point_title": "加速度",
+      "chapter": "第一章 · 运动的描述与匀变速直线运动",
+      "stem": "学生的错误做法：把加速度定义式记成 a = v / t（漏掉初速度）（错误表达式：a = v/t）。这条错误属于哪一类？",
+      "options": [
+        {
+          "label": "A",
+          "text": "概念混淆"
+        },
+        {
+          "label": "B",
+          "text": "量纲一致性"
+        },
+        {
+          "label": "C",
+          "text": "数值代入"
+        },
+        {
+          "label": "D",
+          "text": "变化方向"
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "只有当初速度为零时，v / t 才恰好等于加速度。它和正确式子的量纲完全一样（都是 m/s²），所以量纲检查抓不到 —— 必须代入具体数字才暴露：匀加速情境中 14 ÷ 4 = 3.5 m/s²，而正确答案是 3 m/s²。\n知识库校验证据：情境：匀加速；代入错误式：v/t；校验参照值：3.0。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 0,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "a = v/t",
+      "trap_test": {
+        "scenario": "匀加速",
+        "expr": "v/t",
+        "ref": 3.0
+      }
+    },
+    {
+      "id": "diagnostic-kine-02-2",
+      "point_id": "kine-02",
+      "point_title": "加速度",
+      "chapter": "第一章 · 运动的描述与匀变速直线运动",
+      "stem": "学生的错误做法：把定义式里的除法记成乘法，写成 a = Δv · t（错误表达式：a = (v - v_0)*t）。这条错误属于哪一类？",
+      "options": [
+        {
+          "label": "A",
+          "text": "不等式关系"
+        },
+        {
+          "label": "B",
+          "text": "量纲一致性"
+        },
+        {
+          "label": "C",
+          "text": "概念混淆"
+        },
+        {
+          "label": "D",
+          "text": "数值代入"
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "加速度是「单位时间内的速度变化」，所以是除以时间。写成乘以时间后量纲立刻从 m/s² 变成 m/s，量纲检查当场报错。\n这条来源记录没有单独填写 trap_test；题目分类沿用知识库已通过校验记录中的“量纲一致性”结果。",
+      "error_type": "量纲一致性",
+      "judging": "auto",
+      "source_error_index": 1,
+      "source_caught_by": "量纲一致性",
+      "wrong_expr": "a = (v - v_0)*t",
+      "trap_test": null
+    },
+    {
+      "id": "diagnostic-kine-02-3",
+      "point_id": "kine-02",
+      "point_title": "加速度",
+      "chapter": "第一章 · 运动的描述与匀变速直线运动",
+      "stem": "学生的错误做法：以为加速度的方向就是物体运动的方向。这条错误属于哪一类？",
+      "options": [
+        {
+          "label": "A",
+          "text": "概念混淆"
+        },
+        {
+          "label": "B",
+          "text": "数值代入"
+        },
+        {
+          "label": "C",
+          "text": "量纲一致性"
+        },
+        {
+          "label": "D",
+          "text": "不等式关系"
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "这条属于概念性错误，它不体现为「哪个公式写错了」，所以任何公式类检查都碰不到它 —— 必须由人工审。典型反例：刹车时加速度与运动方向相反；竖直上抛运动在最高点速度为零、加速度却仍向下且等于 g。明确标出来，是为了不把「自动检查通过」误当成「内容一定没问题」。",
+      "error_type": "概念混淆",
+      "judging": "teacher",
+      "source_error_index": 2,
+      "source_caught_by": "人工审核",
+      "wrong_expr": null,
+      "trap_test": null
+    },
+    {
+      "id": "diagnostic-kine-03-1",
+      "point_id": "kine-03",
+      "point_title": "匀变速直线运动的速度公式",
+      "chapter": "第一章 · 运动的描述与匀变速直线运动",
+      "stem": "学生的错误做法：把 a·t 记成 a / t，写成 v = v₀ + a/t（错误表达式：v = v_0 + a/t）。这条错误属于哪一类？",
+      "options": [
+        {
+          "label": "A",
+          "text": "不等式关系"
+        },
+        {
+          "label": "B",
+          "text": "变化方向"
+        },
+        {
+          "label": "C",
+          "text": "概念混淆"
+        },
+        {
+          "label": "D",
+          "text": "量纲一致性"
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "漏掉了定义式移项时的那次乘法。写成除法之后 a/t 的量纲变成 m/s³，与 v₀ 的 m/s 根本加不起来，量纲检查直接报错——这是被最早拦住的一类错误。\n这条来源记录没有单独填写 trap_test；题目分类沿用知识库已通过校验记录中的“量纲一致性”结果。",
+      "error_type": "量纲一致性",
+      "judging": "auto",
+      "source_error_index": 0,
+      "source_caught_by": "量纲一致性",
+      "wrong_expr": "v = v_0 + a/t",
+      "trap_test": null
+    },
+    {
+      "id": "diagnostic-kine-03-2",
+      "point_id": "kine-03",
+      "point_title": "匀变速直线运动的速度公式",
+      "chapter": "第一章 · 运动的描述与匀变速直线运动",
+      "stem": "学生的错误做法：把位移公式中的 ½ 误带到速度公式，写成 v = v₀ + ½at（错误表达式：v = v_0 + a*t/2）。这条错误属于哪一类？",
+      "options": [
+        {
+          "label": "A",
+          "text": "概念混淆"
+        },
+        {
+          "label": "B",
+          "text": "量纲一致性"
+        },
+        {
+          "label": "C",
+          "text": "数值代入"
+        },
+        {
+          "label": "D",
+          "text": "变化方向"
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "速度变化量是 a·t，没有二分之一。错误式与正确式量纲完全相同，量纲检查无法发现；代入匀加速情境会得到 8 m/s，而正确末速度是 14 m/s。\n知识库校验证据：情境：匀加速；代入错误式：v_0 + a*t/2；校验参照值：14.0。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 1,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "v = v_0 + a*t/2",
+      "trap_test": {
+        "scenario": "匀加速",
+        "expr": "v_0 + a*t/2",
+        "ref": 14.0
+      }
+    },
+    {
+      "id": "diagnostic-kine-03-3",
+      "point_id": "kine-03",
+      "point_title": "匀变速直线运动的速度公式",
+      "chapter": "第一章 · 运动的描述与匀变速直线运动",
+      "stem": "学生的错误做法：刹车时把 a 当成正的代进去（错误表达式：v = v_0 + abs(a)*t）。这条错误属于哪一类？",
+      "options": [
+        {
+          "label": "A",
+          "text": "量纲一致性"
+        },
+        {
+          "label": "B",
+          "text": "变化方向"
+        },
+        {
+          "label": "C",
+          "text": "概念混淆"
+        },
+        {
+          "label": "D",
+          "text": "数值代入"
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "刹车过程中加速度与初速度反向，取正号会算出「越刹越快」。校验时把正确规律写进去（刹车时时间越长末速度越小），错写法立刻违背这条规律，于是被判为不通过。\n知识库校验证据：情境：刹车；变化方向要求：down。",
+      "error_type": "变化方向",
+      "judging": "auto",
+      "source_error_index": 2,
+      "source_caught_by": "变化方向",
+      "wrong_expr": "v = v_0 + abs(a)*t",
+      "trap_test": {
+        "scenario": "刹车",
+        "var": "t",
+        "lo": 1,
+        "hi": 3,
+        "expect": "down"
+      }
+    },
+    {
+      "id": "diagnostic-kine-03-4",
+      "point_id": "kine-03",
+      "point_title": "匀变速直线运动的速度公式",
+      "chapter": "第一章 · 运动的描述与匀变速直线运动",
+      "stem": "学生的错误做法：刹车问题里直接把超过停车时刻的时间代进去算末速度（错误表达式：v = v_0 + a*t）。这条错误属于哪一类？",
+      "options": [
+        {
+          "label": "A",
+          "text": "不等式关系"
+        },
+        {
+          "label": "B",
+          "text": "数值代入"
+        },
+        {
+          "label": "C",
+          "text": "量纲一致性"
+        },
+        {
+          "label": "D",
+          "text": "变化方向"
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "汽车在 v₀ / |a| = 20 / 4 = 5 s 时就已经停住，之后不再运动。把 8 s 代进去会得到 −12 m/s —— 一个不可能出现的负速度。校验时加一条「末速度不能小于零」的下界，这种超范围代值当场被拦住。\n知识库校验证据：情境：刹车超时；代入错误式：v_0 + a*t；边界检查：结果须满足“>= 0”；检验说明：刹车停车之后，速度不可能变成负的。",
+      "error_type": "不等式关系",
+      "judging": "auto",
+      "source_error_index": 3,
+      "source_caught_by": "不等式关系",
+      "wrong_expr": "v = v_0 + a*t",
+      "trap_test": {
+        "scenario": "刹车超时",
+        "expr": "v_0 + a*t",
+        "op": ">=",
+        "vs": "0",
+        "note": "刹车停车之后，速度不可能变成负的"
+      }
+    },
+    {
+      "id": "diagnostic-kine-04-1",
+      "point_id": "kine-04",
+      "point_title": "匀变速直线运动的位移公式",
+      "chapter": "第一章 · 运动的描述与匀变速直线运动",
+      "stem": "学生的错误做法：把第二项记成 a·t²，漏掉 ½（错误表达式：x = v_0*t + a*t^2）。这条错误属于哪一类？",
+      "options": [
+        {
+          "label": "A",
+          "text": "不等式关系"
+        },
+        {
+          "label": "B",
+          "text": "变化方向"
+        },
+        {
+          "label": "C",
+          "text": "概念混淆"
+        },
+        {
+          "label": "D",
+          "text": "数值代入"
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "★ 这条错写法的量纲完全正确（m/s² · s² 就是 m），量纲检查抓不到它。必须靠数值代入：9.8 × 9 = 88.2，而正确答案是 44.1，整整差一倍。这个例子说明为什么校验不能只靠一种手段 —— 光量纲对，公式照样可以是错的。\n知识库校验证据：情境：匀加速；代入错误式：v_0*t + a*t^2；校验参照值：32.0。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 0,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "x = v_0*t + a*t^2",
+      "trap_test": {
+        "scenario": "匀加速",
+        "expr": "v_0*t + a*t^2",
+        "ref": 32.0
+      }
+    },
+    {
+      "id": "diagnostic-kine-04-2",
+      "point_id": "kine-04",
+      "point_title": "匀变速直线运动的位移公式",
+      "chapter": "第一章 · 运动的描述与匀变速直线运动",
+      "stem": "学生的错误做法：把第二项记成 ½·a·t（t 漏了平方）（错误表达式：x = v_0*t + a*t/2）。这条错误属于哪一类？",
+      "options": [
+        {
+          "label": "A",
+          "text": "概念混淆"
+        },
+        {
+          "label": "B",
+          "text": "数值代入"
+        },
+        {
+          "label": "C",
+          "text": "量纲一致性"
+        },
+        {
+          "label": "D",
+          "text": "变化方向"
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "多写一个 ½、少写一个平方，是一对容易互相代替的错误。这一次漏掉的是平方，第二项的量纲变成 m/s，与第一项的 m 加不起来，量纲检查立刻拦住。\n这条来源记录没有单独填写 trap_test；题目分类沿用知识库已通过校验记录中的“量纲一致性”结果。",
+      "error_type": "量纲一致性",
+      "judging": "auto",
+      "source_error_index": 1,
+      "source_caught_by": "量纲一致性",
+      "wrong_expr": "x = v_0*t + a*t/2",
+      "trap_test": null
+    },
+    {
+      "id": "diagnostic-kine-05-1",
+      "point_id": "kine-05",
+      "point_title": "速度与位移的关系",
+      "chapter": "第一章 · 运动的描述与匀变速直线运动",
+      "stem": "学生的错误做法：把 v² = v₀² + 2ax 记成 v = v₀ + 2ax（漏掉平方与开方）（错误表达式：v = v_0 + 2*a*x）。这条错误属于哪一类？",
+      "options": [
+        {
+          "label": "A",
+          "text": "不等式关系"
+        },
+        {
+          "label": "B",
+          "text": "量纲一致性"
+        },
+        {
+          "label": "C",
+          "text": "概念混淆"
+        },
+        {
+          "label": "D",
+          "text": "数值代入"
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "右边 2ax 的量纲是 m²/s²，与 v₀ 的 m/s 不是同一类量，量纲检查当场拦住。\n这条来源记录没有单独填写 trap_test；题目分类沿用知识库已通过校验记录中的“量纲一致性”结果。",
+      "error_type": "量纲一致性",
+      "judging": "auto",
+      "source_error_index": 0,
+      "source_caught_by": "量纲一致性",
+      "wrong_expr": "v = v_0 + 2*a*x",
+      "trap_test": null
+    },
+    {
+      "id": "diagnostic-kine-05-2",
+      "point_id": "kine-05",
+      "point_title": "速度与位移的关系",
+      "chapter": "第一章 · 运动的描述与匀变速直线运动",
+      "stem": "学生的错误做法：漏掉系数 2，写成 v² = v₀² + ax（错误表达式：v^2 = v_0^2 + a*x）。这条错误属于哪一类？",
+      "options": [
+        {
+          "label": "A",
+          "text": "数值代入"
+        },
+        {
+          "label": "B",
+          "text": "量纲一致性"
+        },
+        {
+          "label": "C",
+          "text": "不等式关系"
+        },
+        {
+          "label": "D",
+          "text": "变化方向"
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "★ 又是量纲拦不住的一类：两边都是 m²/s²，完全正确。数值代入才暴露：√(4 + 96) = 10 m/s，而正确答案是 14 m/s。到这一章为止，已经出现三次「量纲对但公式错」，这不是巧合，而是必须配多种校验手段的直接理由。\n知识库校验证据：情境：匀加速；代入错误式：sqrt(v_0^2 + a*x)；校验参照值：14.0。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 1,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "v^2 = v_0^2 + a*x",
+      "trap_test": {
+        "scenario": "匀加速",
+        "expr": "sqrt(v_0^2 + a*x)",
+        "ref": 14.0
+      }
+    },
+    {
+      "id": "diagnostic-kine-06-1",
+      "point_id": "kine-06",
+      "point_title": "匀变速运动的平均速度、中间时刻速度与中间位置速度",
+      "chapter": "第一章 · 运动的描述与匀变速直线运动",
+      "stem": "学生的错误做法：以为中间位置的瞬时速度等于全程平均速度（错误表达式：v_x2 = (v_0 + v)/2）。这条错误属于哪一类？",
+      "options": [
+        {
+          "label": "A",
+          "text": "量纲一致性"
+        },
+        {
+          "label": "B",
+          "text": "变化方向"
+        },
+        {
+          "label": "C",
+          "text": "概念混淆"
+        },
+        {
+          "label": "D",
+          "text": "不等式关系"
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "把「中间时刻」和「中间位置」混为一谈。只有中间时刻的速度才等于平均速度；中间位置速度由平方平均数决定，总是更大。校验器直接把这两个值放在一起比对，不相等就判不通过。\n知识库校验证据：情境：匀加速；代入错误式：(v_0 + v)/2；边界检查：结果须满足“== sqrt((v_0^2 + v^2)/2)”；检验说明：错误主张：中间位置速度等于平均速度。",
+      "error_type": "不等式关系",
+      "judging": "auto",
+      "source_error_index": 0,
+      "source_caught_by": "不等式关系",
+      "wrong_expr": "v_x2 = (v_0 + v)/2",
+      "trap_test": {
+        "scenario": "匀加速",
+        "expr": "(v_0 + v)/2",
+        "op": "==",
+        "vs": "sqrt((v_0^2 + v^2)/2)",
+        "note": "错误主张：中间位置速度等于平均速度"
+      }
+    },
+    {
+      "id": "diagnostic-kine-06-2",
+      "point_id": "kine-06",
+      "point_title": "匀变速运动的平均速度、中间时刻速度与中间位置速度",
+      "chapter": "第一章 · 运动的描述与匀变速直线运动",
+      "stem": "学生的错误做法：把根号范围写错，记成 v(x/2) = √(v₀² + v²) / 2（错误表达式：v_x2 = sqrt(v_0^2 + v^2)/2）。这条错误属于哪一类？",
+      "options": [
+        {
+          "label": "A",
+          "text": "概念混淆"
+        },
+        {
+          "label": "B",
+          "text": "量纲一致性"
+        },
+        {
+          "label": "C",
+          "text": "数值代入"
+        },
+        {
+          "label": "D",
+          "text": "变化方向"
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "正确式是先把 v₀² + v² 除以 2，再整体开方；把除以 2 放到根号外会少算一个 √2 倍。两式量纲完全相同，只能靠数值代入发现：错误式约为 7.071 m/s，正确答案是 10 m/s。\n知识库校验证据：情境：匀加速；代入错误式：sqrt(v_0^2 + v^2)/2；校验参照值：10.0。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 1,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "v_x2 = sqrt(v_0^2 + v^2)/2",
+      "trap_test": {
+        "scenario": "匀加速",
+        "expr": "sqrt(v_0^2 + v^2)/2",
+        "ref": 10.0
+      }
+    },
+    {
+      "id": "diagnostic-kine-06-3",
+      "point_id": "kine-06",
+      "point_title": "匀变速运动的平均速度、中间时刻速度与中间位置速度",
+      "chapter": "第一章 · 运动的描述与匀变速直线运动",
+      "stem": "学生的错误做法：把 v̄ = (v₀ + v)/2 当成对任何运动都成立的公式。这条错误属于哪一类？",
+      "options": [
+        {
+          "label": "A",
+          "text": "量纲一致性"
+        },
+        {
+          "label": "B",
+          "text": "概念混淆"
+        },
+        {
+          "label": "C",
+          "text": "变化方向"
+        },
+        {
+          "label": "D",
+          "text": "数值代入"
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "这条式子的成立依赖「速度随时间均匀变化」。变加速运动中它不成立，而「是不是匀变速」这一点无法从公式本身读出来，因此不在自动检查的射程内，标为人工审核。这也是本知识库中第二次明确承认自动化的边界。",
+      "error_type": "概念混淆",
+      "judging": "teacher",
+      "source_error_index": 2,
+      "source_caught_by": "人工审核",
+      "wrong_expr": null,
+      "trap_test": null
+    },
+    {
+      "id": "diagnostic-kine-07-1",
+      "point_id": "kine-07",
+      "point_title": "自由落体运动",
+      "chapter": "第一章 · 运动的描述与匀变速直线运动",
+      "stem": "学生的错误做法：把高度公式记成 h = g·t²，漏掉 ½（错误表达式：h = g*t^2）。这条错误属于哪一类？",
+      "options": [
+        {
+          "label": "A",
+          "text": "数值代入"
+        },
+        {
+          "label": "B",
+          "text": "量纲一致性"
+        },
+        {
+          "label": "C",
+          "text": "不等式关系"
+        },
+        {
+          "label": "D",
+          "text": "变化方向"
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "★ 量纲依旧完全正确（m/s² · s² = m），量纲检查抓不到。数值代入立刻暴露：9.8 × 9 = 88.2 m，而正确答案是 44.1 m，差一倍。这和第四章位移公式的 ½ 是同一个错误，在自由落体里出现得更频繁。\n知识库校验证据：情境：地球表面；代入错误式：g*t^2；校验参照值：44.1。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 0,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "h = g*t^2",
+      "trap_test": {
+        "scenario": "地球表面",
+        "expr": "g*t^2",
+        "ref": 44.1
+      }
+    },
+    {
+      "id": "diagnostic-kine-07-2",
+      "point_id": "kine-07",
+      "point_title": "自由落体运动",
+      "chapter": "第一章 · 运动的描述与匀变速直线运动",
+      "stem": "学生的错误做法：以为物体越重下落越快、重的先落地。这条错误属于哪一类？",
+      "options": [
+        {
+          "label": "A",
+          "text": "量纲一致性"
+        },
+        {
+          "label": "B",
+          "text": "不等式关系"
+        },
+        {
+          "label": "C",
+          "text": "变化方向"
+        },
+        {
+          "label": "D",
+          "text": "概念混淆"
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "在没有空气阻力的条件下，所有物体的下落加速度都是同一个 g，与质量无关。日常经验里「羽毛比铁球落得慢」是空气阻力造成的。这条错误不体现为某个公式写错，公式类检查碰不到它，因此明确标为人工审核。",
+      "error_type": "概念混淆",
+      "judging": "teacher",
+      "source_error_index": 1,
+      "source_caught_by": "人工审核",
+      "wrong_expr": null,
+      "trap_test": null
+    }
+  ]
+}
