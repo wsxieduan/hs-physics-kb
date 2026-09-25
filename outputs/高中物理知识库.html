@@ -54,6 +54,31 @@ math{font-size:1.12em}
 .chip.on{background:var(--brand);border-color:var(--brand);color:#fff}
 .tgl{display:flex;align-items:center;gap:6px;font-size:12.5px;color:var(--ink2);cursor:pointer;
   white-space:nowrap}
+
+/* ---------- 目录按钮与目录面板 ---------- */
+/* 2026-09-26 新增：目录的 HTML 以前就生成了，但既没样式也没插入页面，等于没有。 */
+.tbtn{border:1px solid var(--line);background:#fff;border-radius:8px;padding:7px 14px;
+  font-size:13px;cursor:pointer;color:var(--ink2);white-space:nowrap;font-family:inherit}
+.tbtn:hover{border-color:var(--brand);color:var(--brand)}
+.tbtn.on{background:var(--brand);border-color:var(--brand);color:#fff}
+.toc{display:none;max-width:1080px;margin:16px auto 0;background:var(--panel);
+  border:1px solid var(--line);border-radius:12px;padding:14px 20px 18px}
+.toc.open{display:block}
+.toc-h{display:flex;align-items:center;justify-content:space-between;
+  font-size:13px;font-weight:600;color:var(--ink2);
+  padding-bottom:10px;border-bottom:1px solid var(--line2)}
+.toc-close{cursor:pointer;color:var(--brand);font-weight:400;font-size:12.5px}
+.toc-close:hover{text-decoration:underline}
+.toc-in{display:grid;grid-template-columns:repeat(auto-fill,minmax(225px,1fr));
+  gap:12px 24px;padding-top:12px;max-height:56vh;overflow-y:auto}
+.toc-g{margin-bottom:4px}
+.toc-g h4{margin:0 0 5px;font-size:13px;color:var(--ink);font-weight:600}
+.toc-n{margin-left:6px;font-size:11.5px;color:var(--ink3);font-weight:400}
+.toc a{display:block;font-size:12.5px;color:var(--ink2);padding:1px 0;line-height:1.55}
+.toc a:hover{color:var(--brand);text-decoration:none}
+.toc .tid{margin-left:6px;font-size:11px;color:var(--ink3);
+  font-family:"Cascadia Mono",Consolas,monospace}
+@media print{.toc{display:none!important}}
 .tgl input{cursor:pointer}
 #count{font-size:12.5px;color:var(--ink3);white-space:nowrap}
 
@@ -239,9 +264,7 @@ footer b{color:var(--ink2)}
   <div class="hero-in">
     <div class="eyebrow">离线可用 · 单文件 · 内容逐条自动校验</div>
     <h1>高中物理知识库</h1>
-    <p class="sub">高中物理（力学 · 电磁学 · 光学 · 热学 · 近代物理）的公式、推导、常见错误与典型例题。
-    每一条公式都经过量纲一致性、单位标注、数值代入、变化方向、跨公式互证、极端参数扫描六类自动检查；
-    每一条「常见错误」都真的被当作错误公式跑过一遍，验证它确实会被对应检查抓住。</p>
+    <p class="sub">高中物理（力学 · 电磁学 · 光学 · 热学 · 近代物理）的公式、推导、常见错误与典型例题。每一条公式都经过量纲一致性、单位标注、数值代入、变化方向、跨公式互证、极端参数扫描六类自动检查；每一条「常见错误」都真的被当作错误公式跑过一遍，验证它确实会被对应检查抓住。</p>
     <div class="hstats"><div class="hstat"><b>123</b><span>知识点</span></div><div class="hstat"><b>251</b><span>公式</span></div><div class="hstat"><b>1535</b><span>项自动校验</span></div><div class="hstat"><b>100%</b><span>校验通过率</span></div><div class="hstat"><b>202</b><span>条常见错误实测抓住</span></div></div>
   </div>
 </header>
@@ -253,6 +276,7 @@ footer b{color:var(--ink2)}
       <button class="vbtn" data-view="formula">只看公式</button>
       <button class="vbtn" data-view="symbol">只看符号</button>
     </div>
+    <button class="tbtn" id="tocbtn" type="button">目录</button>
     <input id="q" type="search" placeholder="搜索知识点、公式、符号、错误写法…" autocomplete="off">
     <div class="chips"><button class="chip on" data-chapter="all">全部</button><button class="chip" data-chapter="第一章 · 运动的描述与匀变速直线运动">运动的描述与匀变速直线运动</button><button class="chip" data-chapter="第二章 · 相互作用与牛顿运动定律">相互作用与牛顿运动定律</button><button class="chip" data-chapter="第三章 · 功与能">功与能</button><button class="chip" data-chapter="第四章 · 动量守恒">动量守恒</button><button class="chip" data-chapter="第五章 · 圆周运动与万有引力">圆周运动与万有引力</button><button class="chip" data-chapter="第六章 · 机械振动与波">机械振动与波</button><button class="chip" data-chapter="第七章 · 静电场（一）电场的力的性质">静电场（一）电场的力的性质</button><button class="chip" data-chapter="第八章 · 静电场（二）电场的能的性质">静电场（二）电场的能的性质</button><button class="chip" data-chapter="第九章 · 静电场（三）电容与带电粒子">静电场（三）电容与带电粒子</button><button class="chip" data-chapter="第十章 · 恒定电流">恒定电流</button><button class="chip" data-chapter="第十一章 · 磁场（一）磁场与安培力">磁场（一）磁场与安培力</button><button class="chip" data-chapter="第十二章 · 磁场（二）洛伦兹力与带电粒子">磁场（二）洛伦兹力与带电粒子</button><button class="chip" data-chapter="第十三章 · 电磁感应（一）楞次与法拉第">电磁感应（一）楞次与法拉第</button><button class="chip" data-chapter="第十四章 · 电磁感应（二）自感与综合应用">电磁感应（二）自感与综合应用</button><button class="chip" data-chapter="第十五章 · 交变电流">交变电流</button><button class="chip" data-chapter="第十六章 · 几何光学">几何光学</button><button class="chip" data-chapter="第十七章 · 波动光学">波动光学</button><button class="chip" data-chapter="第十八章 · 分子动理论与气体">分子动理论与气体</button><button class="chip" data-chapter="第十九章 · 热力学定律">热力学定律</button><button class="chip" data-chapter="第二十章 · 波粒二象性与原子结构">波粒二象性与原子结构</button><button class="chip" data-chapter="第二十一章 · 原子核与核能">原子核与核能</button></div>
     <label class="tgl"><input type="checkbox" id="expand"> 展开校验记录</label>
@@ -261,6 +285,175 @@ footer b{color:var(--ink2)}
 </div>
 
 <main>
+  <nav class="toc" id="toc" aria-label="知识点目录">
+<div class="toc-h">全部知识点<span class="toc-close" id="tocclose">收起</span></div>
+<div class="toc-in">
+<div class="toc-g"><h4>第一章 · 运动的描述与匀变速直线运动<span class="toc-n">7</span></h4>
+<a href="#kine-01">平均速度与平均速率<span class="tid">kine-01</span></a>
+<a href="#kine-02">加速度<span class="tid">kine-02</span></a>
+<a href="#kine-03">匀变速直线运动的速度公式<span class="tid">kine-03</span></a>
+<a href="#kine-04">匀变速直线运动的位移公式<span class="tid">kine-04</span></a>
+<a href="#kine-05">速度与位移的关系<span class="tid">kine-05</span></a>
+<a href="#kine-06">匀变速运动的平均速度、中间时刻速度与中间位置速度<span class="tid">kine-06</span></a>
+<a href="#kine-07">自由落体运动<span class="tid">kine-07</span></a>
+</div>
+<div class="toc-g"><h4>第二章 · 相互作用与牛顿运动定律<span class="toc-n">6</span></h4>
+<a href="#dyn-01">弹力与胡克定律<span class="tid">dyn-01</span></a>
+<a href="#dyn-02">重力<span class="tid">dyn-02</span></a>
+<a href="#dyn-03">摩擦力<span class="tid">dyn-03</span></a>
+<a href="#dyn-04">力的合成与分解（正交分解）<span class="tid">dyn-04</span></a>
+<a href="#dyn-05">牛顿第二定律<span class="tid">dyn-05</span></a>
+<a href="#dyn-06">牛顿第三定律<span class="tid">dyn-06</span></a>
+</div>
+<div class="toc-g"><h4>第三章 · 功与能<span class="toc-n">7</span></h4>
+<a href="#ene-01">功：恒力做功、正功负功与总功<span class="tid">ene-01</span></a>
+<a href="#ene-02">功率：平均功率与瞬时功率<span class="tid">ene-02</span></a>
+<a href="#ene-03">动能与动能定理<span class="tid">ene-03</span></a>
+<a href="#ene-04">重力做功与重力势能<span class="tid">ene-04</span></a>
+<a href="#ene-05">弹性势能<span class="tid">ene-05</span></a>
+<a href="#ene-06">机械能与机械能守恒定律<span class="tid">ene-06</span></a>
+<a href="#ene-07">功与能的关系：摩擦生热与能量守恒<span class="tid">ene-07</span></a>
+</div>
+<div class="toc-g"><h4>第四章 · 动量守恒<span class="toc-n">6</span></h4>
+<a href="#mom-01">冲量与动量<span class="tid">mom-01</span></a>
+<a href="#mom-02">动量定理<span class="tid">mom-02</span></a>
+<a href="#mom-03">动量守恒定律<span class="tid">mom-03</span></a>
+<a href="#mom-04">碰撞<span class="tid">mom-04</span></a>
+<a href="#mom-05">反冲运动与火箭<span class="tid">mom-05</span></a>
+<a href="#mom-06">动量与能量的综合<span class="tid">mom-06</span></a>
+</div>
+<div class="toc-g"><h4>第五章 · 圆周运动与万有引力<span class="toc-n">7</span></h4>
+<a href="#cir-01">线速度、角速度、周期与转速<span class="tid">cir-01</span></a>
+<a href="#cir-02">向心加速度<span class="tid">cir-02</span></a>
+<a href="#cir-03">向心力及其来源<span class="tid">cir-03</span></a>
+<a href="#cir-04">竖直平面内的圆周运动<span class="tid">cir-04</span></a>
+<a href="#cir-05">万有引力定律<span class="tid">cir-05</span></a>
+<a href="#cir-06">天体运动与人造卫星<span class="tid">cir-06</span></a>
+<a href="#cir-07">开普勒三定律<span class="tid">cir-07</span></a>
+</div>
+<div class="toc-g"><h4>第六章 · 机械振动与波<span class="toc-n">6</span></h4>
+<a href="#osc-01">简谐运动的描述<span class="tid">osc-01</span></a>
+<a href="#osc-02">简谐运动的回复力与能量<span class="tid">osc-02</span></a>
+<a href="#osc-03">单摆<span class="tid">osc-03</span></a>
+<a href="#osc-04">受迫振动与共振<span class="tid">osc-04</span></a>
+<a href="#osc-05">机械波的形成与传播<span class="tid">osc-05</span></a>
+<a href="#osc-06">波长、频率、波速与波的现象<span class="tid">osc-06</span></a>
+</div>
+<div class="toc-g"><h4>第七章 · 静电场（一）电场的力的性质<span class="toc-n">6</span></h4>
+<a href="#ele-01">电荷、电荷守恒与元电荷<span class="tid">ele-01</span></a>
+<a href="#ele-02">库仑定律<span class="tid">ele-02</span></a>
+<a href="#ele-03">电场强度<span class="tid">ele-03</span></a>
+<a href="#ele-04">电场线与场强叠加<span class="tid">ele-04</span></a>
+<a href="#ele-05">匀强电场<span class="tid">ele-05</span></a>
+<a href="#ele-06">静电感应与静电屏蔽<span class="tid">ele-06</span></a>
+</div>
+<div class="toc-g"><h4>第八章 · 静电场（二）电场的能的性质<span class="toc-n">6</span></h4>
+<a href="#pot-01">静电力做功的特点<span class="tid">pot-01</span></a>
+<a href="#pot-02">电势能<span class="tid">pot-02</span></a>
+<a href="#pot-03">电势<span class="tid">pot-03</span></a>
+<a href="#pot-04">等势面<span class="tid">pot-04</span></a>
+<a href="#pot-05">电势差（电压）<span class="tid">pot-05</span></a>
+<a href="#pot-06">匀强电场中电势差与场强的关系<span class="tid">pot-06</span></a>
+</div>
+<div class="toc-g"><h4>第九章 · 静电场（三）电容与带电粒子<span class="toc-n">5</span></h4>
+<a href="#cap-01">电容器与电容<span class="tid">cap-01</span></a>
+<a href="#cap-02">平行板电容器与动态分析<span class="tid">cap-02</span></a>
+<a href="#cap-03">带电粒子在电场中的加速<span class="tid">cap-03</span></a>
+<a href="#cap-04">带电粒子在匀强电场中的偏转<span class="tid">cap-04</span></a>
+<a href="#cap-05">示波管的原理<span class="tid">cap-05</span></a>
+</div>
+<div class="toc-g"><h4>第十章 · 恒定电流<span class="toc-n">7</span></h4>
+<a href="#dc-01">电流与微观表达式<span class="tid">dc-01</span></a>
+<a href="#dc-02">欧姆定律与伏安特性曲线<span class="tid">dc-02</span></a>
+<a href="#dc-03">电阻定律与电阻率<span class="tid">dc-03</span></a>
+<a href="#dc-04">电功、电功率与焦耳定律<span class="tid">dc-04</span></a>
+<a href="#dc-05">串联电路与并联电路<span class="tid">dc-05</span></a>
+<a href="#dc-06">闭合电路欧姆定律<span class="tid">dc-06</span></a>
+<a href="#dc-07">电表改装<span class="tid">dc-07</span></a>
+</div>
+<div class="toc-g"><h4>第十一章 · 磁场（一）磁场与安培力<span class="toc-n">6</span></h4>
+<a href="#mag-01">磁场与磁感应强度<span class="tid">mag-01</span></a>
+<a href="#mag-02">磁感线与磁场叠加<span class="tid">mag-02</span></a>
+<a href="#mag-03">磁通量<span class="tid">mag-03</span></a>
+<a href="#mag-04">安培力<span class="tid">mag-04</span></a>
+<a href="#mag-05">磁电式电表与电动机原理<span class="tid">mag-05</span></a>
+<a href="#mag-06">安培力作用下的平衡与加速<span class="tid">mag-06</span></a>
+</div>
+<div class="toc-g"><h4>第十二章 · 磁场（二）洛伦兹力与带电粒子<span class="toc-n">6</span></h4>
+<a href="#lor-01">洛伦兹力<span class="tid">lor-01</span></a>
+<a href="#lor-02">带电粒子在匀强磁场中的圆周运动<span class="tid">lor-02</span></a>
+<a href="#lor-03">带电粒子在磁场中的临界与极值<span class="tid">lor-03</span></a>
+<a href="#lor-04">速度选择器<span class="tid">lor-04</span></a>
+<a href="#lor-05">质谱仪<span class="tid">lor-05</span></a>
+<a href="#lor-06">回旋加速器<span class="tid">lor-06</span></a>
+</div>
+<div class="toc-g"><h4>第十三章 · 电磁感应（一）楞次与法拉第<span class="toc-n">6</span></h4>
+<a href="#ind-01">电磁感应现象与产生条件<span class="tid">ind-01</span></a>
+<a href="#ind-02">楞次定律与右手定则<span class="tid">ind-02</span></a>
+<a href="#ind-03">法拉第电磁感应定律<span class="tid">ind-03</span></a>
+<a href="#ind-04">导体切割磁感线<span class="tid">ind-04</span></a>
+<a href="#ind-05">感生电动势与动生电动势<span class="tid">ind-05</span></a>
+<a href="#ind-06">感应电流的电路分析<span class="tid">ind-06</span></a>
+</div>
+<div class="toc-g"><h4>第十四章 · 电磁感应（二）自感与综合应用<span class="toc-n">5</span></h4>
+<a href="#iad-01">自感现象与自感系数<span class="tid">iad-01</span></a>
+<a href="#iad-02">涡流及其应用<span class="tid">iad-02</span></a>
+<a href="#iad-03">电磁感应中的能量转化<span class="tid">iad-03</span></a>
+<a href="#iad-04">电磁感应中的力学综合：导轨与导体棒<span class="tid">iad-04</span></a>
+<a href="#iad-05">电磁感应中的图像问题<span class="tid">iad-05</span></a>
+</div>
+<div class="toc-g"><h4>第十五章 · 交变电流<span class="toc-n">6</span></h4>
+<a href="#ac-01">交变电流的产生<span class="tid">ac-01</span></a>
+<a href="#ac-02">交变电流的峰值、有效值、周期与频率<span class="tid">ac-02</span></a>
+<a href="#ac-03">正弦式交变电流的表达式与图像<span class="tid">ac-03</span></a>
+<a href="#ac-04">理想变压器<span class="tid">ac-04</span></a>
+<a href="#ac-05">远距离输电<span class="tid">ac-05</span></a>
+<a href="#ac-06">电感与电容对交变电流的影响<span class="tid">ac-06</span></a>
+</div>
+<div class="toc-g"><h4>第十六章 · 几何光学<span class="toc-n">5</span></h4>
+<a href="#opt-01">光的反射定律<span class="tid">opt-01</span></a>
+<a href="#opt-02">光的折射与折射定律<span class="tid">opt-02</span></a>
+<a href="#opt-03">折射率与光速的关系<span class="tid">opt-03</span></a>
+<a href="#opt-04">全反射与临界角<span class="tid">opt-04</span></a>
+<a href="#opt-05">光的色散<span class="tid">opt-05</span></a>
+</div>
+<div class="toc-g"><h4>第十七章 · 波动光学<span class="toc-n">4</span></h4>
+<a href="#wop-01">光的干涉与双缝条纹<span class="tid">wop-01</span></a>
+<a href="#wop-02">光的衍射<span class="tid">wop-02</span></a>
+<a href="#wop-03">光的偏振<span class="tid">wop-03</span></a>
+<a href="#wop-04">光的电磁本性<span class="tid">wop-04</span></a>
+</div>
+<div class="toc-g"><h4>第十八章 · 分子动理论与气体<span class="toc-n">6</span></h4>
+<a href="#mgas-01">分子动理论的基本内容与微观量估算<span class="tid">mgas-01</span></a>
+<a href="#mgas-02">分子间作用力与分子势能<span class="tid">mgas-02</span></a>
+<a href="#mgas-03">温度与温标<span class="tid">mgas-03</span></a>
+<a href="#mgas-04">物体的内能与理想气体内能<span class="tid">mgas-04</span></a>
+<a href="#mgas-05">气体实验定律<span class="tid">mgas-05</span></a>
+<a href="#mgas-06">理想气体状态方程<span class="tid">mgas-06</span></a>
+</div>
+<div class="toc-g"><h4>第十九章 · 热力学定律<span class="toc-n">5</span></h4>
+<a href="#thermo-01">热力学第一定律<span class="tid">thermo-01</span></a>
+<a href="#thermo-02">能量守恒定律<span class="tid">thermo-02</span></a>
+<a href="#thermo-03">热力学第二定律与热机效率<span class="tid">thermo-03</span></a>
+<a href="#thermo-04">固体、液体与物态变化<span class="tid">thermo-04</span></a>
+<a href="#thermo-05">饱和汽与空气湿度<span class="tid">thermo-05</span></a>
+</div>
+<div class="toc-g"><h4>第二十章 · 波粒二象性与原子结构<span class="toc-n">6</span></h4>
+<a href="#qz-01">黑体辐射与能量量子化<span class="tid">qz-01</span></a>
+<a href="#qz-02">光电效应与爱因斯坦光电方程<span class="tid">qz-02</span></a>
+<a href="#qz-03">光的波粒二象性<span class="tid">qz-03</span></a>
+<a href="#qz-04">物质波（德布罗意波长）<span class="tid">qz-04</span></a>
+<a href="#qz-05">原子的核式结构模型<span class="tid">qz-05</span></a>
+<a href="#qz-06">玻尔模型与氢原子能级<span class="tid">qz-06</span></a>
+</div>
+<div class="toc-g"><h4>第二十一章 · 原子核与核能<span class="toc-n">5</span></h4>
+<a href="#nuc-01">原子核的组成与同位素<span class="tid">nuc-01</span></a>
+<a href="#nuc-02">放射性衰变（α、β、γ）<span class="tid">nuc-02</span></a>
+<a href="#nuc-03">半衰期<span class="tid">nuc-03</span></a>
+<a href="#nuc-04">核反应方程与质能方程<span class="tid">nuc-04</span></a>
+<a href="#nuc-05">核裂变与核聚变（含结合能）<span class="tid">nuc-05</span></a>
+</div>
+</div></nav>
   
     <section class="method" id="method">
       <h2>这台机器在检查什么</h2>
@@ -10883,6 +11076,23 @@ footer b{color:var(--ink2)}
   }
   expand.addEventListener('change',syncExpand);
 
+  // ---------- 目录面板（2026-09-26 新增） ----------
+  // 上面那段「.toc a」的点击处理一直都在，但页面上从来没有 .toc 元素，等于白写。
+  var tocbtn=document.getElementById('tocbtn');
+  var toc=document.getElementById('toc');
+  var tocclose=document.getElementById('tocclose');
+  function closeToc(){
+    if(toc)toc.classList.remove('open');
+    if(tocbtn)tocbtn.classList.remove('on');
+  }
+  if(tocbtn&&toc){
+    tocbtn.addEventListener('click',function(){
+      var open=toc.classList.toggle('open');
+      tocbtn.classList.toggle('on',open);
+    });
+  }
+  if(tocclose){tocclose.addEventListener('click',closeToc);}
+
   document.querySelectorAll('.kp-nav a, .toc a').forEach(function(a){
     a.addEventListener('click',function(e){
       var id=a.getAttribute('href').slice(1);
@@ -10907,6 +11117,11 @@ footer b{color:var(--ink2)}
         cur = 'all';
         chips.forEach(function(x){ x.classList.remove('on'); });
         if(chips[0]) chips[0].classList.add('on');
+        // 公式/符号视图下知识点卡片都被隐藏，目录点了也没地方跳，直接收起并隐藏按钮
+        closeToc();
+        if(tocbtn) tocbtn.style.display = 'none';
+      }else{
+        if(tocbtn) tocbtn.style.display = '';
       }
       apply();
       // 「显示 N / M 个知识点」这句在索引视图里不成立，清掉
