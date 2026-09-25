@@ -91,6 +91,26 @@ def mathml_inline(expr_text):
 
 LEVEL_CLASS = {"基础": "lv-base", "进阶": "lv-adv", "拓展": "lv-ext"}
 
+# ---------- 学段标题配置 ----------
+# 2026-09-26 修 bug：页面标题以前写死成「高中物理知识库」，
+# 结果用同一套脚本生成的初中站，浏览器标签页也显示「高中物理」。
+# 现在按「知识库目录名」自动取用对应学段的标题与简介。
+SEGMENT = {
+    "kb": {
+        "title": "高中物理知识库",
+        "lead": "高中物理（力学 · 电磁学 · 光学 · 热学 · 近代物理）的公式、推导、常见错误与典型例题。",
+    },
+    "kb_junior": {
+        "title": "初中物理知识库",
+        "lead": "初中物理（苏科版 2024 新版：声学 · 光学 · 物态变化 · 力与运动 · "
+                "压强浮力 · 电学 · 能量）的公式、推导、常见错误与典型例题。",
+    },
+}
+# 简介的后半段讲的是校验方法，两个学段通用，拼在 lead 后面
+LEAD_TAIL = ("每一条公式都经过量纲一致性、单位标注、数值代入、变化方向、"
+             "跨公式互证、极端参数扫描六类自动检查；每一条「常见错误」都真的"
+             "被当作错误公式跑过一遍，验证它确实会被对应检查抓住。")
+
 
 # ============================================================
 # 二、六类检查的说明（写进页面，让读者知道这台机器在查什么）
@@ -394,6 +414,31 @@ math{font-size:1.12em}
 .chip.on{background:var(--brand);border-color:var(--brand);color:#fff}
 .tgl{display:flex;align-items:center;gap:6px;font-size:12.5px;color:var(--ink2);cursor:pointer;
   white-space:nowrap}
+
+/* ---------- 目录按钮与目录面板 ---------- */
+/* 2026-09-26 新增：目录的 HTML 以前就生成了，但既没样式也没插入页面，等于没有。 */
+.tbtn{border:1px solid var(--line);background:#fff;border-radius:8px;padding:7px 14px;
+  font-size:13px;cursor:pointer;color:var(--ink2);white-space:nowrap;font-family:inherit}
+.tbtn:hover{border-color:var(--brand);color:var(--brand)}
+.tbtn.on{background:var(--brand);border-color:var(--brand);color:#fff}
+.toc{display:none;max-width:1080px;margin:16px auto 0;background:var(--panel);
+  border:1px solid var(--line);border-radius:12px;padding:14px 20px 18px}
+.toc.open{display:block}
+.toc-h{display:flex;align-items:center;justify-content:space-between;
+  font-size:13px;font-weight:600;color:var(--ink2);
+  padding-bottom:10px;border-bottom:1px solid var(--line2)}
+.toc-close{cursor:pointer;color:var(--brand);font-weight:400;font-size:12.5px}
+.toc-close:hover{text-decoration:underline}
+.toc-in{display:grid;grid-template-columns:repeat(auto-fill,minmax(225px,1fr));
+  gap:12px 24px;padding-top:12px;max-height:56vh;overflow-y:auto}
+.toc-g{margin-bottom:4px}
+.toc-g h4{margin:0 0 5px;font-size:13px;color:var(--ink);font-weight:600}
+.toc-n{margin-left:6px;font-size:11.5px;color:var(--ink3);font-weight:400}
+.toc a{display:block;font-size:12.5px;color:var(--ink2);padding:1px 0;line-height:1.55}
+.toc a:hover{color:var(--brand);text-decoration:none}
+.toc .tid{margin-left:6px;font-size:11px;color:var(--ink3);
+  font-family:"Cascadia Mono",Consolas,monospace}
+@media print{.toc{display:none!important}}
 .tgl input{cursor:pointer}
 #count{font-size:12.5px;color:var(--ink3);white-space:nowrap}
 
@@ -617,6 +662,23 @@ JS = """
   }
   expand.addEventListener('change',syncExpand);
 
+  // ---------- 目录面板（2026-09-26 新增） ----------
+  // 上面那段「.toc a」的点击处理一直都在，但页面上从来没有 .toc 元素，等于白写。
+  var tocbtn=document.getElementById('tocbtn');
+  var toc=document.getElementById('toc');
+  var tocclose=document.getElementById('tocclose');
+  function closeToc(){
+    if(toc)toc.classList.remove('open');
+    if(tocbtn)tocbtn.classList.remove('on');
+  }
+  if(tocbtn&&toc){
+    tocbtn.addEventListener('click',function(){
+      var open=toc.classList.toggle('open');
+      tocbtn.classList.toggle('on',open);
+    });
+  }
+  if(tocclose){tocclose.addEventListener('click',closeToc);}
+
   document.querySelectorAll('.kp-nav a, .toc a').forEach(function(a){
     a.addEventListener('click',function(e){
       var id=a.getAttribute('href').slice(1);
@@ -641,6 +703,11 @@ JS = """
         cur = 'all';
         chips.forEach(function(x){ x.classList.remove('on'); });
         if(chips[0]) chips[0].classList.add('on');
+        // 公式/符号视图下知识点卡片都被隐藏，目录点了也没地方跳，直接收起并隐藏按钮
+        closeToc();
+        if(tocbtn) tocbtn.style.display = 'none';
+      }else{
+        if(tocbtn) tocbtn.style.display = '';
       }
       apply();
       // 「显示 N / M 个知识点」这句在索引视图里不成立，清掉
@@ -653,8 +720,8 @@ JS = """
 """
 
 
-def render_page(report, stats, chapters):
-    """组装整个 HTML 页面。"""
+def render_page(report, stats, chapters, title="高中物理知识库", lead=""):
+    """组装整个 HTML 页面。title / lead 由调用方按学段传入。"""
     # 按章节分组，保持文件顺序
     groups = []
     for fname, chapter in chapters:
@@ -664,10 +731,21 @@ def render_page(report, stats, chapters):
             groups.append((cname, chapter.get("intro", ""), pts))
 
     # 目录
-    toc = "".join(
-        '<a href="#%s">%s <span class="tid">%s</span></a>'
-        % (E(p["id"]), E(p["title"]), E(p["id"]))
-        for _, _, pts in groups for p in pts)
+    # 2026-09-26：以前这里只生成了一串平铺链接，却从来没被插进页面模板 ——
+    # JS 里那句「.toc a」的点击处理一直在空转。现在改成按章节分组，并真正渲染出来。
+    toc_parts = ['<nav class="toc" id="toc" aria-label="知识点目录">',
+                 '<div class="toc-h">全部知识点'
+                 '<span class="toc-close" id="tocclose">收起</span></div>',
+                 '<div class="toc-in">']
+    for cname, _, pts in groups:
+        toc_parts.append('<div class="toc-g"><h4>%s<span class="toc-n">%d</span></h4>'
+                         % (E(cname), len(pts)))
+        for p in pts:
+            toc_parts.append('<a href="#%s">%s<span class="tid">%s</span></a>'
+                             % (E(p["id"]), E(p["title"]), E(p["id"])))
+        toc_parts.append('</div>')
+    toc_parts.append('</div></nav>')
+    toc = "\n".join(toc_parts)
 
     # 章节 + 卡片
     body = []
@@ -773,7 +851,7 @@ def render_page(report, stats, chapters):
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>高中物理知识库 · 自动校验版</title>
+<title>%s · 自动校验版</title>
 <style>%s</style>
 </head>
 <body data-view="point">
@@ -781,10 +859,8 @@ def render_page(report, stats, chapters):
 <header class="hero">
   <div class="hero-in">
     <div class="eyebrow">离线可用 · 单文件 · 内容逐条自动校验</div>
-    <h1>高中物理知识库</h1>
-    <p class="sub">高中物理（力学 · 电磁学 · 光学 · 热学 · 近代物理）的公式、推导、常见错误与典型例题。
-    每一条公式都经过量纲一致性、单位标注、数值代入、变化方向、跨公式互证、极端参数扫描六类自动检查；
-    每一条「常见错误」都真的被当作错误公式跑过一遍，验证它确实会被对应检查抓住。</p>
+    <h1>%s</h1>
+    <p class="sub">%s</p>
     <div class="hstats">%s</div>
   </div>
 </header>
@@ -796,6 +872,7 @@ def render_page(report, stats, chapters):
       <button class="vbtn" data-view="formula">只看公式</button>
       <button class="vbtn" data-view="symbol">只看符号</button>
     </div>
+    <button class="tbtn" id="tocbtn" type="button">目录</button>
     <input id="q" type="search" placeholder="搜索知识点、公式、符号、错误写法…" autocomplete="off">
     <div class="chips">%s</div>
     <label class="tgl"><input type="checkbox" id="expand"> 展开校验记录</label>
@@ -804,6 +881,7 @@ def render_page(report, stats, chapters):
 </div>
 
 <main>
+  %s
   %s
   %s
   %s
@@ -824,8 +902,8 @@ def render_page(report, stats, chapters):
 
 <script>%s</script>
 </body>
-</html>""" % (CSS, hstats, "".join(chips), render_method_panel(stats), "".join(body),
-             views_html, JS)
+</html>""" % (E(title), CSS, E(title), prose(lead), hstats, "".join(chips), toc,
+             render_method_panel(stats), "".join(body), views_html, JS)
 
 
 # ============================================================
@@ -959,10 +1037,15 @@ def main(argv):
     if not os.path.isdir(out_dir):
         os.makedirs(out_dir)
 
-    html_path = os.path.join(out_dir, "高中物理知识库.html")
-    md_path = os.path.join(out_dir, "校验报告.md")
+    # 按知识库目录名取学段标题 —— 以前写死成「高中」，初中站跟着一起错了
+    seg_key = os.path.basename(os.path.normpath(kb_dir))
+    seg = SEGMENT.get(seg_key, {"title": "物理知识库", "lead": ""})
+    print("页面标题：%s" % seg["title"])
 
-    page = render_page(report, stats, chapters)
+    # 成品文件名也跟着学段走，否则初中站会输出一个叫「高中物理知识库.html」的文件
+    html_path = os.path.join(out_dir, "%s.html" % seg["title"])
+    md_path = os.path.join(out_dir, "校验报告.md")
+    page = render_page(report, stats, chapters, seg["title"], seg["lead"] + LEAD_TAIL)
     with open(html_path, "w", encoding="utf-8") as fh:
         fh.write(page)
 
