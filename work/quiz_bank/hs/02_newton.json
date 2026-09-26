@@ -1,0 +1,444 @@
+{
+  "segment": "高中",
+  "chapter": "第二章 · 相互作用与牛顿运动定律",
+  "source_file": "02_newton.json",
+  "questions": [
+    {
+      "id": "diagnostic-dyn-01-2",
+      "point_id": "dyn-01",
+      "point_title": "弹力与胡克定律",
+      "chapter": "第二章 · 相互作用与牛顿运动定律",
+      "stem": "【第二章 · 相互作用与牛顿运动定律 · 弹力与胡克定律】学生的错误做法：把弹簧形变后的总长度当成形变量，写成 F = kL（错误表达式：F = k*L_total）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "量纲一致性：写成除法后量纲变成 kg²·m/s²，与力的量纲对不上，量纲检查当场拦住。"
+        },
+        {
+          "label": "B",
+          "text": "概念混淆：滑动摩擦力的确与「相对运动」方向相反，但静摩擦力可以和运动方向相同 —— 例如随传送带一起加速的物体，正是静摩擦力在推它前进。"
+        },
+        {
+          "label": "C",
+          "text": "数值代入：胡克定律中的 x 是总长度与原长之差，不是总长度。"
+        },
+        {
+          "label": "D",
+          "text": "量纲一致性：写成除法后量纲变成 kg·s²/m，与力的量纲完全不同，量纲检查直接拦住。"
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "胡克定律中的 x 是总长度与原长之差，不是总长度。错误式与正确式量纲完全相同，量纲检查抓不到；本情境中误代 0.15 m 会得到 30 N，正确形变量 0.05 m 对应 10 N。\n知识库校验证据：情境：拉伸弹簧；代入错误式：k*L_total；校验参照值：10.0。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 1,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "F = k*L_total",
+      "trap_test": {
+        "scenario": "拉伸弹簧",
+        "expr": "k*L_total",
+        "ref": 10.0
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-dyn-02-2",
+      "point_id": "dyn-02",
+      "point_title": "重力",
+      "chapter": "第二章 · 相互作用与牛顿运动定律",
+      "stem": "【第二章 · 相互作用与牛顿运动定律 · 重力】学生的错误做法：已使用月球重力加速度后，又把结果额外除以 6（错误表达式：G = m*g/6）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "数值代入：月球情境里的 g = 1.6 m/s² 已经体现了约为地球六分之一，再除以 6 属于重复折算。"
+        },
+        {
+          "label": "B",
+          "text": "量纲一致性：写成除法后 k/x 的量纲变成 N/m²，与力的单位 N 完全不同，量纲检查立刻拦住。"
+        },
+        {
+          "label": "C",
+          "text": "量纲一致性：写成除法后量纲变成 kg²·m/s²，与力的量纲对不上，量纲检查当场拦住。"
+        },
+        {
+          "label": "D",
+          "text": "概念混淆：滑动摩擦力的确与「相对运动」方向相反，但静摩擦力可以和运动方向相同 —— 例如随传送带一起加速的物体，正是静摩擦力在推它前进。"
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "月球情境里的 g = 1.6 m/s² 已经体现了约为地球六分之一，再除以 6 属于重复折算。错误式与正确式量纲完全相同，只能靠数值代入发现：会算成约 0.533 N，而正确值是 3.2 N。\n知识库校验证据：情境：月球表面；代入错误式：m*g/6；校验参照值：3.2。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 1,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "G = m*g/6",
+      "trap_test": {
+        "scenario": "月球表面",
+        "expr": "m*g/6",
+        "ref": 3.2
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-dyn-02-3",
+      "point_id": "dyn-02",
+      "point_title": "重力",
+      "chapter": "第二章 · 相互作用与牛顿运动定律",
+      "stem": "【第二章 · 相互作用与牛顿运动定律 · 重力】学生的错误做法：以为物体越重下落越快、或者说「重力大的物体先落地」。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "量纲一致性：写成除法后 k/x 的量纲变成 N/m²，与力的单位 N 完全不同，量纲检查立刻拦住。"
+        },
+        {
+          "label": "B",
+          "text": "数值代入：★ 这条错写法的量纲完全正确（两个力相乘再乘纯数，仍是 N），量纲检查抓不到。"
+        },
+        {
+          "label": "C",
+          "text": "数值代入：★ 这类错误量纲完全一致（都是「纯数乘一个力」，结果还是 N），量纲检查一点用都没有。"
+        },
+        {
+          "label": "D",
+          "text": "概念混淆：重力确实与质量成正比，但加速度 a = G / m = g 与质量无关，所有物体下落加速度相同。"
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "重力确实与质量成正比，但加速度 a = G / m = g 与质量无关，所有物体下落加速度相同。这是第一章自由落体已经纠正过的错误，在这里以「误把重力当加速度」的形式再次出现。属于概念性错误，标注人工审核。",
+      "error_type": "概念混淆",
+      "judging": "teacher",
+      "source_error_index": 2,
+      "source_caught_by": "人工审核",
+      "wrong_expr": null,
+      "trap_test": null,
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-dyn-03-1",
+      "point_id": "dyn-03",
+      "point_title": "摩擦力",
+      "chapter": "第二章 · 相互作用与牛顿运动定律",
+      "stem": "【第二章 · 相互作用与牛顿运动定律 · 摩擦力】学生的错误做法：用静摩擦力公式去算「没被推动」的情形，即认为静摩擦力等于 μF_N（错误表达式：f = mu*F_N）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "量纲一致性：写成除法后量纲变成 kg·s²/m，与力的量纲完全不同，量纲检查直接拦住。"
+        },
+        {
+          "label": "B",
+          "text": "量纲一致性：写成除法后量纲变成 kg²·m/s²，与力的量纲对不上，量纲检查当场拦住。"
+        },
+        {
+          "label": "C",
+          "text": "数值代入：★ 这条错写法的量纲完全正确（两个力相乘再乘纯数，仍是 N），量纲检查抓不到。"
+        },
+        {
+          "label": "D",
+          "text": "量纲一致性：写成除法后 k/x 的量纲变成 N/m²，与力的单位 N 完全不同，量纲检查立刻拦住。"
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "★ 这条错写法的量纲完全正确（两个力相乘再乘纯数，仍是 N），量纲检查抓不到。要抓住它必须靠数值代入：物体被 1 N 的水平力推着却没动，静摩擦力只有 1 N；按公式算却得到 5.88 N —— 那个数其实是最大静摩擦力的量级，不是实际受到的摩擦力。\n知识库校验证据：情境：静摩擦未推动；代入错误式：mu*F_N；校验参照值：1.0。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 0,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "f = mu*F_N",
+      "trap_test": {
+        "scenario": "静摩擦未推动",
+        "expr": "mu*F_N",
+        "ref": 1.0
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-dyn-03-2",
+      "point_id": "dyn-03",
+      "point_title": "摩擦力",
+      "chapter": "第二章 · 相互作用与牛顿运动定律",
+      "stem": "【第二章 · 相互作用与牛顿运动定律 · 摩擦力】学生的错误做法：认为摩擦力总是阻碍物体运动，因此摩擦力的方向一定与运动方向相反。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "数值代入：★ 这类错误量纲完全一致（都是「纯数乘一个力」，结果还是 N），量纲检查一点用都没有。"
+        },
+        {
+          "label": "B",
+          "text": "概念混淆：滑动摩擦力的确与「相对运动」方向相反，但静摩擦力可以和运动方向相同 —— 例如随传送带一起加速的物体，正是静摩擦力在推它前进。"
+        },
+        {
+          "label": "C",
+          "text": "量纲一致性：写成除法后 k/x 的量纲变成 N/m²，与力的单位 N 完全不同，量纲检查立刻拦住。"
+        },
+        {
+          "label": "D",
+          "text": "量纲一致性：写成除法后量纲变成 kg·s²/m，与力的量纲完全不同，量纲检查直接拦住。"
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "滑动摩擦力的确与「相对运动」方向相反，但静摩擦力可以和运动方向相同 —— 例如随传送带一起加速的物体，正是静摩擦力在推它前进。说「阻碍运动方向」不准确，准确说法是「阻碍相对运动（或相对运动趋势）」。这类表述错误不体现为公式写错，标注人工审核。",
+      "error_type": "概念混淆",
+      "judging": "teacher",
+      "source_error_index": 1,
+      "source_caught_by": "人工审核",
+      "wrong_expr": null,
+      "trap_test": null,
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-dyn-04-1",
+      "point_id": "dyn-04",
+      "point_title": "力的合成与分解（正交分解）",
+      "chapter": "第二章 · 相互作用与牛顿运动定律",
+      "stem": "【第二章 · 相互作用与牛顿运动定律 · 力的合成与分解（正交分解）】学生的错误做法：把 cos 和 sin 记反，写成 F_x = F sin θ、F_y = F cos θ（错误表达式：F_x = F*sin(theta)）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "数值代入：★ 这类错误量纲完全一致（都是「纯数乘一个力」，结果还是 N），量纲检查一点用都没有。"
+        },
+        {
+          "label": "B",
+          "text": "量纲一致性：写成除法后 k/x 的量纲变成 N/m²，与力的单位 N 完全不同，量纲检查立刻拦住。"
+        },
+        {
+          "label": "C",
+          "text": "量纲一致性：写成除法后量纲变成 kg·s²/m，与力的量纲完全不同，量纲检查直接拦住。"
+        },
+        {
+          "label": "D",
+          "text": "量纲一致性：写成除法后量纲变成 kg²·m/s²，与力的量纲对不上，量纲检查当场拦住。"
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "★ 这类错误量纲完全一致（都是「纯数乘一个力」，结果还是 N），量纲检查一点用都没有。数值代入才暴露：θ ≈ 36.87° 时算出 6 N，而水平分量应该是 8 N —— 两个分量正好互换了。\n知识库校验证据：情境：斜向拉力；代入错误式：F*sin(theta)；校验参照值：8.0。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 0,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "F_x = F*sin(theta)",
+      "trap_test": {
+        "scenario": "斜向拉力",
+        "expr": "F*sin(theta)",
+        "ref": 8.0
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-dyn-04-2",
+      "point_id": "dyn-04",
+      "point_title": "力的合成与分解（正交分解）",
+      "chapter": "第二章 · 相互作用与牛顿运动定律",
+      "stem": "【第二章 · 相互作用与牛顿运动定律 · 力的合成与分解（正交分解）】学生的错误做法：直接把两个分力相加求合力，写成 F = F_x + F_y（错误表达式：F = F_x + F_y）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "量纲一致性：写成除法后 k/x 的量纲变成 N/m²，与力的单位 N 完全不同，量纲检查立刻拦住。"
+        },
+        {
+          "label": "B",
+          "text": "量纲一致性：写成除法后量纲变成 kg·s²/m，与力的量纲完全不同，量纲检查直接拦住。"
+        },
+        {
+          "label": "C",
+          "text": "量纲一致性：写成除法后量纲变成 kg²·m/s²，与力的量纲对不上，量纲检查当场拦住。"
+        },
+        {
+          "label": "D",
+          "text": "数值代入：★ 又一个量纲拦不住的错误：力加力还是力，量纲永远正确。"
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "★ 又一个量纲拦不住的错误：力加力还是力，量纲永远正确。数值代入才暴露：8 + 6 = 14 N，而真正的合力是 10 N。差的那 4 N 就是矢量合成与代数相加的区别。\n知识库校验证据：情境：斜向拉力；代入错误式：F_x + F_y；校验参照值：10.0。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 1,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "F = F_x + F_y",
+      "trap_test": {
+        "scenario": "斜向拉力",
+        "expr": "F_x + F_y",
+        "ref": 10.0
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-dyn-05-2",
+      "point_id": "dyn-05",
+      "point_title": "牛顿第二定律",
+      "chapter": "第二章 · 相互作用与牛顿运动定律",
+      "stem": "【第二章 · 相互作用与牛顿运动定律 · 牛顿第二定律】学生的错误做法：用牛顿第二定律时只用拉力当合力，忘掉摩擦力（错误表达式：a = F_push/m）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "概念混淆：滑动摩擦力的确与「相对运动」方向相反，但静摩擦力可以和运动方向相同 —— 例如随传送带一起加速的物体，正是静摩擦力在推它前进。"
+        },
+        {
+          "label": "B",
+          "text": "数值代入：★ 量纲完全正确（N/kg 正是 m/s²），量纲检查抓不到。"
+        },
+        {
+          "label": "C",
+          "text": "量纲一致性：写成除法后 k/x 的量纲变成 N/m²，与力的单位 N 完全不同，量纲检查立刻拦住。"
+        },
+        {
+          "label": "D",
+          "text": "量纲一致性：写成除法后量纲变成 kg·s²/m，与力的量纲完全不同，量纲检查直接拦住。"
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "★ 量纲完全正确（N/kg 正是 m/s²），量纲检查抓不到。数值代入才暴露：直接用 10 ÷ 2 得 5 m/s²，而真实加速度是 (10 − 4) ÷ 2 = 3 m/s²。这是牛顿第二定律在实际题目里最高频的错误 —— 公式背得滚瓜烂熟，但「合力」漏了一个力。\n知识库校验证据：情境：水平面加速；代入错误式：F_push/m；校验参照值：3.0。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 1,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "a = F_push/m",
+      "trap_test": {
+        "scenario": "水平面加速",
+        "expr": "F_push/m",
+        "ref": 3.0
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-dyn-06-2",
+      "point_id": "dyn-06",
+      "point_title": "牛顿第三定律",
+      "chapter": "第二章 · 相互作用与牛顿运动定律",
+      "stem": "【第二章 · 相互作用与牛顿运动定律 · 牛顿第三定律】学生的错误做法：把作用力与反作用力当成一对平衡力，认为它们可以相互抵消。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "量纲一致性：写成除法后 k/x 的量纲变成 N/m²，与力的单位 N 完全不同，量纲检查立刻拦住。"
+        },
+        {
+          "label": "B",
+          "text": "量纲一致性：写成除法后量纲变成 kg·s²/m，与力的量纲完全不同，量纲检查直接拦住。"
+        },
+        {
+          "label": "C",
+          "text": "数值代入：★ 这条错写法的量纲完全正确（两个力相乘再乘纯数，仍是 N），量纲检查抓不到。"
+        },
+        {
+          "label": "D",
+          "text": "概念混淆：平衡力作用在**同一个**物体上，作用力与反作用力分别作用在两个物体上，永远不能抵消。"
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "平衡力作用在**同一个**物体上，作用力与反作用力分别作用在两个物体上，永远不能抵消。这条错误不体现为公式写错，而是受力分析时把它们画到了同一个物体上，公式类检查无法覆盖，标注人工审核。",
+      "error_type": "概念混淆",
+      "judging": "teacher",
+      "source_error_index": 1,
+      "source_caught_by": "人工审核",
+      "wrong_expr": null,
+      "trap_test": null,
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    }
+  ],
+  "skipped": [
+    {
+      "point_id": "dyn-01",
+      "point_title": "弹力与胡克定律",
+      "source_error_index": 0,
+      "reason": "自动判定条目没有 trap_test 可执行证据；不把校验标签代替实测证据。"
+    },
+    {
+      "point_id": "dyn-02",
+      "point_title": "重力",
+      "source_error_index": 0,
+      "reason": "自动判定条目没有 trap_test 可执行证据；不把校验标签代替实测证据。"
+    },
+    {
+      "point_id": "dyn-05",
+      "point_title": "牛顿第二定律",
+      "source_error_index": 0,
+      "reason": "自动判定条目没有 trap_test 可执行证据；不把校验标签代替实测证据。"
+    },
+    {
+      "point_id": "dyn-06",
+      "point_title": "牛顿第三定律",
+      "source_error_index": 0,
+      "reason": "自动判定条目没有 trap_test 可执行证据；不把校验标签代替实测证据。"
+    }
+  ]
+}

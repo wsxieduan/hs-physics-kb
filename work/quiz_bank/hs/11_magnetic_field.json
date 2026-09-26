@@ -1,0 +1,446 @@
+{
+  "segment": "高中",
+  "chapter": "第十一章 · 磁场（一）磁场与安培力",
+  "source_file": "11_magnetic_field.json",
+  "questions": [
+    {
+      "id": "diagnostic-mag-01-2",
+      "point_id": "mag-01",
+      "point_title": "磁场与磁感应强度",
+      "chapter": "第十一章 · 磁场（一）磁场与安培力",
+      "stem": "【第十一章 · 磁场（一）磁场与安培力 · 磁场与磁感应强度】学生的错误做法：把单根直导线误当成线圈两条边同时受力，写成 F=2BIL（错误表达式：F = 2*B*I*L）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "量纲一致性：右边量纲不是电流；质量必须先乘 g 才是与安培力平衡的重力，量纲检查可直接发现。"
+        },
+        {
+          "label": "B",
+          "text": "概念混淆：若电流方向不变，线圈越过平衡位置后磁力矩会促使它反向；直流电动机依靠换向器适时改变电流方向。"
+        },
+        {
+          "label": "C",
+          "text": "数值代入：系数 2 不改变量纲，因此量纲检查抓不到；垂直检验导线情境会误得 4 N，而单根有效导线受到的正确安培力是 2 N。"
+        },
+        {
+          "label": "D",
+          "text": "量纲一致性：右边单位变成 T²，不再是磁感应强度应有的单位 T；这种把矢量叠加误写成乘法的错误可由量纲检查直接发现。"
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "系数 2 不改变量纲，因此量纲检查抓不到；垂直检验导线情境会误得 4 N，而单根有效导线受到的正确安培力是 2 N。\n知识库校验证据：情境：垂直检验导线；代入错误式：2*B*I*L；校验参照值：2.0。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 1,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "F = 2*B*I*L",
+      "trap_test": {
+        "scenario": "垂直检验导线",
+        "expr": "2*B*I*L",
+        "ref": 2.0
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-mag-02-2",
+      "point_id": "mag-02",
+      "point_title": "磁感线与磁场叠加",
+      "chapter": "第十一章 · 磁场（一）磁场与安培力",
+      "stem": "【第十一章 · 磁场（一）磁场与安培力 · 磁感线与磁场叠加】学生的错误做法：反向磁场仍直接相加，写成 B_net=B_1+B_2（错误表达式：B_net = B_1 + B_2）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "数值代入：量纲正确但方向关系错；反向叠加情境会误得 0.005 T，正确大小是 0.001 T。"
+        },
+        {
+          "label": "B",
+          "text": "量纲一致性：右边量纲不是磁感应强度应有的特斯拉；把力放到分母后，所得单位与 T 完全不符，因此量纲检查可以直接发现。"
+        },
+        {
+          "label": "C",
+          "text": "量纲一致性：右边量纲不是电流；质量必须先乘 g 才是与安培力平衡的重力，量纲检查可直接发现。"
+        },
+        {
+          "label": "D",
+          "text": "概念混淆：若电流方向不变，线圈越过平衡位置后磁力矩会促使它反向；直流电动机依靠换向器适时改变电流方向。"
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "量纲正确但方向关系错；反向叠加情境会误得 0.005 T，正确大小是 0.001 T。\n知识库校验证据：情境：反向叠加；代入错误式：B_1 + B_2；校验参照值：0.001。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 1,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "B_net = B_1 + B_2",
+      "trap_test": {
+        "scenario": "反向叠加",
+        "expr": "B_1 + B_2",
+        "ref": 0.001
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-mag-03-1",
+      "point_id": "mag-03",
+      "point_title": "磁通量",
+      "chapter": "第十一章 · 磁场（一）磁场与安培力",
+      "stem": "【第十一章 · 磁场（一）磁场与安培力 · 磁通量】学生的错误做法：不论平面怎样倾斜都写成 Phi=BS（错误表达式：Phi = B*S）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "量纲一致性：右边量纲不是磁感应强度应有的特斯拉；把力放到分母后，所得单位与 T 完全不符，因此量纲检查可以直接发现。"
+        },
+        {
+          "label": "B",
+          "text": "量纲一致性：右边单位变成 T²，不再是磁感应强度应有的单位 T；这种把矢量叠加误写成乘法的错误可由量纲检查直接发现。"
+        },
+        {
+          "label": "C",
+          "text": "量纲一致性：右边量纲不是电流；质量必须先乘 g 才是与安培力平衡的重力，量纲检查可直接发现。"
+        },
+        {
+          "label": "D",
+          "text": "数值代入：量纲正确但漏掉投影；倾斜线圈会误得 0.4 Wb，正确值为 0.24 Wb。"
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "量纲正确但漏掉投影；倾斜线圈会误得 0.4 Wb，正确值为 0.24 Wb。\n知识库校验证据：情境：倾斜线圈；代入错误式：B*S；校验参照值：0.24。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 0,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "Phi = B*S",
+      "trap_test": {
+        "scenario": "倾斜线圈",
+        "expr": "B*S",
+        "ref": 0.24
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-mag-03-2",
+      "point_id": "mag-03",
+      "point_title": "磁通量",
+      "chapter": "第十一章 · 磁场（一）磁场与安培力",
+      "stem": "【第十一章 · 磁场（一）磁场与安培力 · 磁通量】学生的错误做法：把磁场与法线的夹角误配正弦，写成 Phi=BS sin theta（错误表达式：Phi = B*S*sin(theta)）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "量纲一致性：右边单位变成 T²，不再是磁感应强度应有的单位 T；这种把矢量叠加误写成乘法的错误可由量纲检查直接发现。"
+        },
+        {
+          "label": "B",
+          "text": "量纲一致性：右边量纲不是电流；质量必须先乘 g 才是与安培力平衡的重力，量纲检查可直接发现。"
+        },
+        {
+          "label": "C",
+          "text": "数值代入：量纲检查抓不到三角函数选错；垂直穿过时 theta=0，错误式给出 0，正确值为 0.4 Wb。"
+        },
+        {
+          "label": "D",
+          "text": "量纲一致性：右边量纲不是磁感应强度应有的特斯拉；把力放到分母后，所得单位与 T 完全不符，因此量纲检查可以直接发现。"
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "量纲检查抓不到三角函数选错；垂直穿过时 theta=0，错误式给出 0，正确值为 0.4 Wb。\n知识库校验证据：情境：垂直穿过；代入错误式：B*S*sin(theta)；校验参照值：0.4。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 1,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "Phi = B*S*sin(theta)",
+      "trap_test": {
+        "scenario": "垂直穿过",
+        "expr": "B*S*sin(theta)",
+        "ref": 0.4
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-mag-04-1",
+      "point_id": "mag-04",
+      "point_title": "安培力",
+      "chapter": "第十一章 · 磁场（一）磁场与安培力",
+      "stem": "【第十一章 · 磁场（一）磁场与安培力 · 安培力】学生的错误做法：任何夹角都直接用 F=BIL，漏掉 sin theta（错误表达式：F = B*I*L）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "量纲一致性：右边量纲不是电流；质量必须先乘 g 才是与安培力平衡的重力，量纲检查可直接发现。"
+        },
+        {
+          "label": "B",
+          "text": "数值代入：量纲完全正确；斜放导线会误得 4 N，正确值为 2.4 N。"
+        },
+        {
+          "label": "C",
+          "text": "量纲一致性：右边量纲不是磁感应强度应有的特斯拉；把力放到分母后，所得单位与 T 完全不符，因此量纲检查可以直接发现。"
+        },
+        {
+          "label": "D",
+          "text": "量纲一致性：右边单位变成 T²，不再是磁感应强度应有的单位 T；这种把矢量叠加误写成乘法的错误可由量纲检查直接发现。"
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "量纲完全正确；斜放导线会误得 4 N，正确值为 2.4 N。\n知识库校验证据：情境：斜放导线；代入错误式：B*I*L；校验参照值：2.4。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 0,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "F = B*I*L",
+      "trap_test": {
+        "scenario": "斜放导线",
+        "expr": "B*I*L",
+        "ref": 2.4
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-mag-04-2",
+      "point_id": "mag-04",
+      "point_title": "安培力",
+      "chapter": "第十一章 · 磁场（一）磁场与安培力",
+      "stem": "【第十一章 · 磁场（一）磁场与安培力 · 安培力】学生的错误做法：把正弦误写成余弦，写成 F=BIL cos theta（错误表达式：F = B*I*L*cos(theta)）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "数值代入：量纲检查无法区分正弦和余弦；本情境会误得 3.2 N，正确值为 2.4 N。"
+        },
+        {
+          "label": "B",
+          "text": "量纲一致性：右边量纲不是磁感应强度应有的特斯拉；把力放到分母后，所得单位与 T 完全不符，因此量纲检查可以直接发现。"
+        },
+        {
+          "label": "C",
+          "text": "量纲一致性：右边单位变成 T²，不再是磁感应强度应有的单位 T；这种把矢量叠加误写成乘法的错误可由量纲检查直接发现。"
+        },
+        {
+          "label": "D",
+          "text": "量纲一致性：右边量纲不是电流；质量必须先乘 g 才是与安培力平衡的重力，量纲检查可直接发现。"
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "量纲检查无法区分正弦和余弦；本情境会误得 3.2 N，正确值为 2.4 N。\n知识库校验证据：情境：斜放导线；代入错误式：B*I*L*cos(theta)；校验参照值：2.4。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 1,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "F = B*I*L*cos(theta)",
+      "trap_test": {
+        "scenario": "斜放导线",
+        "expr": "B*I*L*cos(theta)",
+        "ref": 2.4
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-mag-05-1",
+      "point_id": "mag-05",
+      "point_title": "磁电式电表与电动机原理",
+      "chapter": "第十一章 · 磁场（一）磁场与安培力",
+      "stem": "【第十一章 · 磁场（一）磁场与安培力 · 磁电式电表与电动机原理】学生的错误做法：计算多匝线圈力矩时漏掉匝数 N，写成 tau=BIS sin alpha（错误表达式：tau = B*I*S*sin(alpha)）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "量纲一致性：右边量纲不是磁感应强度应有的特斯拉；把力放到分母后，所得单位与 T 完全不符，因此量纲检查可以直接发现。"
+        },
+        {
+          "label": "B",
+          "text": "量纲一致性：右边单位变成 T²，不再是磁感应强度应有的单位 T；这种把矢量叠加误写成乘法的错误可由量纲检查直接发现。"
+        },
+        {
+          "label": "C",
+          "text": "量纲一致性：右边量纲不是电流；质量必须先乘 g 才是与安培力平衡的重力，量纲检查可直接发现。"
+        },
+        {
+          "label": "D",
+          "text": "数值代入：量纲正确但少算各匝的共同贡献；表头情境会误得 0.00001 N·m，正确值是 0.001 N·m。"
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "量纲正确但少算各匝的共同贡献；表头情境会误得 0.00001 N·m，正确值是 0.001 N·m。\n知识库校验证据：情境：磁电式表头；代入错误式：B*I*S*sin(alpha)；校验参照值：0.001。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 0,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "tau = B*I*S*sin(alpha)",
+      "trap_test": {
+        "scenario": "磁电式表头",
+        "expr": "B*I*S*sin(alpha)",
+        "ref": 0.001
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-mag-05-2",
+      "point_id": "mag-05",
+      "point_title": "磁电式电表与电动机原理",
+      "chapter": "第十一章 · 磁场（一）磁场与安培力",
+      "stem": "【第十一章 · 磁场（一）磁场与安培力 · 磁电式电表与电动机原理】学生的错误做法：认为电动机线圈转过半周后无需换向也能持续同向转动。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "量纲一致性：右边单位变成 T²，不再是磁感应强度应有的单位 T；这种把矢量叠加误写成乘法的错误可由量纲检查直接发现。"
+        },
+        {
+          "label": "B",
+          "text": "数值代入：量纲正确但漏掉投影；倾斜线圈会误得 0.4 Wb，正确值为 0.24 Wb。"
+        },
+        {
+          "label": "C",
+          "text": "概念混淆：若电流方向不变，线圈越过平衡位置后磁力矩会促使它反向；直流电动机依靠换向器适时改变电流方向。"
+        },
+        {
+          "label": "D",
+          "text": "量纲一致性：右边量纲不是磁感应强度应有的特斯拉；把力放到分母后，所得单位与 T 完全不符，因此量纲检查可以直接发现。"
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "若电流方向不变，线圈越过平衡位置后磁力矩会促使它反向；直流电动机依靠换向器适时改变电流方向。此过程判断需人工审核。",
+      "error_type": "概念混淆",
+      "judging": "teacher",
+      "source_error_index": 1,
+      "source_caught_by": "人工审核",
+      "wrong_expr": null,
+      "trap_test": null,
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-mag-06-2",
+      "point_id": "mag-06",
+      "point_title": "安培力作用下的平衡与加速",
+      "chapter": "第十一章 · 磁场（一）磁场与安培力",
+      "stem": "【第十一章 · 磁场（一）磁场与安培力 · 安培力作用下的平衡与加速】学生的错误做法：把方向相反的安培力与重力相加，写成 a=(BIL+mg)/m（错误表达式：a = (B*I*L + m*g)/m）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "数值代入：量纲正确但受力方向错误；向上加速情境会误得 25 m/s²，正确值为 5 m/s²。"
+        },
+        {
+          "label": "B",
+          "text": "量纲一致性：右边量纲不是磁感应强度应有的特斯拉；把力放到分母后，所得单位与 T 完全不符，因此量纲检查可以直接发现。"
+        },
+        {
+          "label": "C",
+          "text": "量纲一致性：右边单位变成 T²，不再是磁感应强度应有的单位 T；这种把矢量叠加误写成乘法的错误可由量纲检查直接发现。"
+        },
+        {
+          "label": "D",
+          "text": "概念混淆：若电流方向不变，线圈越过平衡位置后磁力矩会促使它反向；直流电动机依靠换向器适时改变电流方向。"
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "量纲正确但受力方向错误；向上加速情境会误得 25 m/s²，正确值为 5 m/s²。\n知识库校验证据：情境：向上加速；代入错误式：(B*I*L + m*g)/m；校验参照值：5.0。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 1,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "a = (B*I*L + m*g)/m",
+      "trap_test": {
+        "scenario": "向上加速",
+        "expr": "(B*I*L + m*g)/m",
+        "ref": 5.0
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    }
+  ],
+  "skipped": [
+    {
+      "point_id": "mag-01",
+      "point_title": "磁场与磁感应强度",
+      "source_error_index": 0,
+      "reason": "自动判定条目没有 trap_test 可执行证据；不把校验标签代替实测证据。"
+    },
+    {
+      "point_id": "mag-02",
+      "point_title": "磁感线与磁场叠加",
+      "source_error_index": 0,
+      "reason": "自动判定条目没有 trap_test 可执行证据；不把校验标签代替实测证据。"
+    },
+    {
+      "point_id": "mag-06",
+      "point_title": "安培力作用下的平衡与加速",
+      "source_error_index": 0,
+      "reason": "自动判定条目没有 trap_test 可执行证据；不把校验标签代替实测证据。"
+    }
+  ]
+}

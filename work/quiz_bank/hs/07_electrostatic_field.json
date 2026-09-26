@@ -1,0 +1,409 @@
+{
+  "segment": "高中",
+  "chapter": "第七章 · 静电场（一）电场的力的性质",
+  "source_file": "07_electrostatic_field.json",
+  "questions": [
+    {
+      "id": "diagnostic-ele-01-1",
+      "point_id": "ele-01",
+      "point_title": "电荷、电荷守恒与元电荷",
+      "chapter": "第七章 · 静电场（一）电场的力的性质",
+      "stem": "【第七章 · 静电场（一）电场的力的性质 · 电荷、电荷守恒与元电荷】学生的错误做法：把异号电荷的绝对值相加，误认为系统总电荷是 |q_A|+|q_B|（错误表达式：q_total = abs(q_A) + abs(q_B)）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "量纲一致性：量纲变为 N·m，不是力；异号点电荷情境中还会算出 0.18，而正确值是 0.60 N。"
+        },
+        {
+          "label": "B",
+          "text": "量纲一致性：右边的单位变成 N·C，而电场强度的单位应为 N/C；两者基本量纲不同，量纲检查会直接拦住这一乘除颠倒。"
+        },
+        {
+          "label": "C",
+          "text": "量纲一致性：量纲变成 N·kg，不是 m/s²；也违背同样力下质量越大加速度越小。"
+        },
+        {
+          "label": "D",
+          "text": "数值代入：电荷守恒比较代数和。"
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "电荷守恒比较代数和。接触前错误式得到 4.8 μC，正确总电荷只有 1.6 μC。\n知识库校验证据：情境：接触前；代入错误式：abs(q_A) + abs(q_B)；校验参照值：1.6e-06。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 0,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "q_total = abs(q_A) + abs(q_B)",
+      "trap_test": {
+        "scenario": "接触前",
+        "expr": "abs(q_A) + abs(q_B)",
+        "ref": 1.6e-06
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-ele-02-2",
+      "point_id": "ele-02",
+      "point_title": "库仑定律",
+      "chapter": "第七章 · 静电场（一）电场的力的性质",
+      "stem": "【第七章 · 静电场（一）电场的力的性质 · 库仑定律】学生的错误做法：直接用 q_1q_2 的正负决定力的大小，得到负的力大小（错误表达式：F = k_e*q_1*q_2/r^2）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "数值代入：公式中的 F 是大小，不能为负。"
+        },
+        {
+          "label": "B",
+          "text": "量纲一致性：右边的单位变成 N·C，而电场强度的单位应为 N/C；两者基本量纲不同，量纲检查会直接拦住这一乘除颠倒。"
+        },
+        {
+          "label": "C",
+          "text": "量纲一致性：N/e 的量纲是 1/C，不是电荷量 C，量纲检查可以直接发现。"
+        },
+        {
+          "label": "D",
+          "text": "量纲一致性：量纲变成 N·kg，不是 m/s²；也违背同样力下质量越大加速度越小。"
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "公式中的 F 是大小，不能为负。异号情境错误式给出 -0.60 N；吸引或排斥应在方向判断中处理。\n知识库校验证据：情境：异号点电荷；代入错误式：k_e*q_1*q_2/r^2；校验参照值：0.6。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 1,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "F = k_e*q_1*q_2/r^2",
+      "trap_test": {
+        "scenario": "异号点电荷",
+        "expr": "k_e*q_1*q_2/r^2",
+        "ref": 0.6
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-ele-03-2",
+      "point_id": "ele-03",
+      "point_title": "电场强度",
+      "chapter": "第七章 · 静电场（一）电场的力的性质",
+      "stem": "【第七章 · 静电场（一）电场的力的性质 · 电场强度】学生的错误做法：把负点电荷的场强大小算成负数，写成 E=k_eQ/r²（错误表达式：E = k_e*Q/r^2）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "量纲一致性：N/e 的量纲是 1/C，不是电荷量 C，量纲检查可以直接发现。"
+        },
+        {
+          "label": "B",
+          "text": "量纲一致性：量纲变成 N·kg，不是 m/s²；也违背同样力下质量越大加速度越小。"
+        },
+        {
+          "label": "C",
+          "text": "数值代入：式子量纲完全正确，量纲检查抓不到；负点电荷情境会算出 -4.0×10^5 N/C，但场强大小应为正的 4.0×10^5 N/C，方向另行判断。"
+        },
+        {
+          "label": "D",
+          "text": "量纲一致性：量纲变为 N·m，不是力；异号点电荷情境中还会算出 0.18，而正确值是 0.60 N。"
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "式子量纲完全正确，量纲检查抓不到；负点电荷情境会算出 -4.0×10^5 N/C，但场强大小应为正的 4.0×10^5 N/C，方向另行判断。\n知识库校验证据：情境：负点电荷场；代入错误式：k_e*Q/r^2；校验参照值：400000。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 1,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "E = k_e*Q/r^2",
+      "trap_test": {
+        "scenario": "负点电荷场",
+        "expr": "k_e*Q/r^2",
+        "ref": 400000
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-ele-04-1",
+      "point_id": "ele-04",
+      "point_title": "电场线与场强叠加",
+      "chapter": "第七章 · 静电场（一）电场的力的性质",
+      "stem": "【第七章 · 静电场（一）电场的力的性质 · 电场线与场强叠加】学生的错误做法：叠加反向场强时把大小直接相加（错误表达式：E_net = abs(E_A) + abs(E_B)）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "量纲一致性：N/e 的量纲是 1/C，不是电荷量 C，量纲检查可以直接发现。"
+        },
+        {
+          "label": "B",
+          "text": "数值代入：场强是矢量。"
+        },
+        {
+          "label": "C",
+          "text": "量纲一致性：量纲变为 N·m，不是力；异号点电荷情境中还会算出 0.18，而正确值是 0.60 N。"
+        },
+        {
+          "label": "D",
+          "text": "量纲一致性：右边的单位变成 N·C，而电场强度的单位应为 N/C；两者基本量纲不同，量纲检查会直接拦住这一乘除颠倒。"
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "场强是矢量。情境中错误式得 5.0×10^5 N/C，带方向相加的正确结果为 3.0×10^5 N/C。\n知识库校验证据：情境：两场同轴叠加；代入错误式：abs(E_A) + abs(E_B)；校验参照值：300000。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 0,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "E_net = abs(E_A) + abs(E_B)",
+      "trap_test": {
+        "scenario": "两场同轴叠加",
+        "expr": "abs(E_A) + abs(E_B)",
+        "ref": 300000
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-ele-04-2",
+      "point_id": "ele-04",
+      "point_title": "电场线与场强叠加",
+      "chapter": "第七章 · 静电场（一）电场的力的性质",
+      "stem": "【第七章 · 静电场（一）电场的力的性质 · 电场线与场强叠加】学生的错误做法：认为负点电荷周围的场强也一律背离电荷（错误表达式：E_x = k_e*abs(Q)*x/abs(x)^3）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "数值代入：绝对值抹掉了场源电荷的符号。"
+        },
+        {
+          "label": "B",
+          "text": "量纲一致性：量纲变为 N·m，不是力；异号点电荷情境中还会算出 0.18，而正确值是 0.60 N。"
+        },
+        {
+          "label": "C",
+          "text": "量纲一致性：右边的单位变成 N·C，而电场强度的单位应为 N/C；两者基本量纲不同，量纲检查会直接拦住这一乘除颠倒。"
+        },
+        {
+          "label": "D",
+          "text": "量纲一致性：N/e 的量纲是 1/C，不是电荷量 C，量纲检查可以直接发现。"
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "绝对值抹掉了场源电荷的符号。负电荷右侧错误式给出 +1.0×10^5 N/C，而场强实际向左，为 -1.0×10^5 N/C。\n知识库校验证据：情境：负电荷右侧；代入错误式：k_e*abs(Q)*x/abs(x)^3；校验参照值：-100000。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 1,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "E_x = k_e*abs(Q)*x/abs(x)^3",
+      "trap_test": {
+        "scenario": "负电荷右侧",
+        "expr": "k_e*abs(Q)*x/abs(x)^3",
+        "ref": -100000
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-ele-05-1",
+      "point_id": "ele-05",
+      "point_title": "匀强电场",
+      "chapter": "第七章 · 静电场（一）电场的力的性质",
+      "stem": "【第七章 · 静电场（一）电场的力的性质 · 匀强电场】学生的错误做法：求电场力大小时直接代入负电荷的带符号电荷量，得到负的力大小（错误表达式：F_e = q*E）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "量纲一致性：量纲变为 N·m，不是力；异号点电荷情境中还会算出 0.18，而正确值是 0.60 N。"
+        },
+        {
+          "label": "B",
+          "text": "量纲一致性：右边的单位变成 N·C，而电场强度的单位应为 N/C；两者基本量纲不同，量纲检查会直接拦住这一乘除颠倒。"
+        },
+        {
+          "label": "C",
+          "text": "量纲一致性：N/e 的量纲是 1/C，不是电荷量 C，量纲检查可以直接发现。"
+        },
+        {
+          "label": "D",
+          "text": "数值代入：负号只能表示方向，力的大小不能为负。"
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "负号只能表示方向，力的大小不能为负。负带电小球错误式得 -0.006 N，正确大小为 0.006 N。\n知识库校验证据：情境：负带电小球；代入错误式：q*E；校验参照值：0.006。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 0,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "F_e = q*E",
+      "trap_test": {
+        "scenario": "负带电小球",
+        "expr": "q*E",
+        "ref": 0.006
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-ele-06-1",
+      "point_id": "ele-06",
+      "point_title": "静电感应与静电屏蔽",
+      "chapter": "第七章 · 静电场（一）电场的力的性质",
+      "stem": "【第七章 · 静电场（一）电场的力的性质 · 静电感应与静电屏蔽】学生的错误做法：认为静电感应会在中性孤立导体中创造一份额外电荷（错误表达式：q_net = abs(q_near) + abs(q_far)）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "量纲一致性：N/e 的量纲是 1/C，不是电荷量 C，量纲检查可以直接发现。"
+        },
+        {
+          "label": "B",
+          "text": "数值代入：感应只重新分布电荷。"
+        },
+        {
+          "label": "C",
+          "text": "量纲一致性：量纲变为 N·m，不是力；异号点电荷情境中还会算出 0.18，而正确值是 0.60 N。"
+        },
+        {
+          "label": "D",
+          "text": "量纲一致性：右边的单位变成 N·C，而电场强度的单位应为 N/C；两者基本量纲不同，量纲检查会直接拦住这一乘除颠倒。"
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "感应只重新分布电荷。中性导体情境中错误式得到 6.0 μC，代数和的正确结果为 0。\n知识库校验证据：情境：中性导体感应；代入错误式：abs(q_near) + abs(q_far)；校验参照值：0.0。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 0,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "q_net = abs(q_near) + abs(q_far)",
+      "trap_test": {
+        "scenario": "中性导体感应",
+        "expr": "abs(q_near) + abs(q_far)",
+        "ref": 0.0
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-ele-06-2",
+      "point_id": "ele-06",
+      "point_title": "静电感应与静电屏蔽",
+      "chapter": "第七章 · 静电场（一）电场的力的性质",
+      "stem": "【第七章 · 静电场（一）电场的力的性质 · 静电感应与静电屏蔽】学生的错误做法：把感应场与外场同向相加，写成 E_inside=E_out+E_induced（错误表达式：E_inside = E_out + E_induced）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "数值代入：静电平衡时感应场在导体内部与外场反向。"
+        },
+        {
+          "label": "B",
+          "text": "量纲一致性：量纲变为 N·m，不是力；异号点电荷情境中还会算出 0.18，而正确值是 0.60 N。"
+        },
+        {
+          "label": "C",
+          "text": "量纲一致性：右边的单位变成 N·C，而电场强度的单位应为 N/C；两者基本量纲不同，量纲检查会直接拦住这一乘除颠倒。"
+        },
+        {
+          "label": "D",
+          "text": "量纲一致性：N/e 的量纲是 1/C，不是电荷量 C，量纲检查可以直接发现。"
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "静电平衡时感应场在导体内部与外场反向。错误式给出 10000 N/C，正确合场强为 0。\n知识库校验证据：情境：导体内部抵消；代入错误式：E_out + E_induced；校验参照值：0.0。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 1,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "E_inside = E_out + E_induced",
+      "trap_test": {
+        "scenario": "导体内部抵消",
+        "expr": "E_out + E_induced",
+        "ref": 0.0
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    }
+  ],
+  "skipped": [
+    {
+      "point_id": "ele-01",
+      "point_title": "电荷、电荷守恒与元电荷",
+      "source_error_index": 1,
+      "reason": "自动判定条目没有 trap_test 可执行证据；不把校验标签代替实测证据。"
+    },
+    {
+      "point_id": "ele-02",
+      "point_title": "库仑定律",
+      "source_error_index": 0,
+      "reason": "自动判定条目没有 trap_test 可执行证据；不把校验标签代替实测证据。"
+    },
+    {
+      "point_id": "ele-03",
+      "point_title": "电场强度",
+      "source_error_index": 0,
+      "reason": "自动判定条目没有 trap_test 可执行证据；不把校验标签代替实测证据。"
+    },
+    {
+      "point_id": "ele-05",
+      "point_title": "匀强电场",
+      "source_error_index": 1,
+      "reason": "自动判定条目没有 trap_test 可执行证据；不把校验标签代替实测证据。"
+    }
+  ]
+}

@@ -1,0 +1,499 @@
+{
+  "segment": "高中",
+  "chapter": "第三章 · 功与能",
+  "source_file": "03_energy.json",
+  "questions": [
+    {
+      "id": "diagnostic-ene-01-1",
+      "point_id": "ene-01",
+      "point_title": "功：恒力做功、正功负功与总功",
+      "chapter": "第三章 · 功与能",
+      "stem": "【第三章 · 功与能 · 功：恒力做功、正功负功与总功】学生的错误做法：漏掉夹角因子，任何情况下都写成 W = Fs（错误表达式：W = F*s）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "量纲一致性：J·s 不是功率单位 J/s，量纲检查可以直接发现。"
+        },
+        {
+          "label": "B",
+          "text": "量纲一致性：相除后的单位是 N/m，不是能量单位 J；而且它会错误地认为相对滑动路程越长，产生的内能反而越少，量纲检查可以直接发现。"
+        },
+        {
+          "label": "C",
+          "text": "量纲一致性：右边单位会变成 J·m，而不是能量单位 J；高度被多乘了一次，数值也会随高度平方增长，量纲检查可以直接拦住。"
+        },
+        {
+          "label": "D",
+          "text": "数值代入：只有力与位移同向时 cos(theta)=1 才能写成 Fs。"
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "只有力与位移同向时 cos(theta)=1 才能写成 Fs。斜向拉箱会误算成 50 J，正确值是 40 J；两式量纲相同，只能靠数值情境抓住。\n知识库校验证据：情境：斜向拉箱；代入错误式：F*s；校验参照值：40.0。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 0,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "W = F*s",
+      "trap_test": {
+        "scenario": "斜向拉箱",
+        "expr": "F*s",
+        "ref": 40.0
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-ene-01-2",
+      "point_id": "ene-01",
+      "point_title": "功：恒力做功、正功负功与总功",
+      "chapter": "第三章 · 功与能",
+      "stem": "【第三章 · 功与能 · 功：恒力做功、正功负功与总功】学生的错误做法：把负功的大小直接相加，写成 W_total = W1 − W2（错误表达式：W_total = W1 - W2）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "量纲一致性：相除后的单位是 N/m，不是能量单位 J；而且它会错误地认为相对滑动路程越长，产生的内能反而越少，量纲检查可以直接发现。"
+        },
+        {
+          "label": "B",
+          "text": "量纲一致性：右边单位会变成 J·m，而不是能量单位 J；高度被多乘了一次，数值也会随高度平方增长，量纲检查可以直接拦住。"
+        },
+        {
+          "label": "C",
+          "text": "数值代入：W2 已经带负号，再减一次会把阻力的负功变成正贡献。"
+        },
+        {
+          "label": "D",
+          "text": "量纲一致性：J·s 不是功率单位 J/s，量纲检查可以直接发现。"
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "W2 已经带负号，再减一次会把阻力的负功变成正贡献。本情境会得到 70 J，而正确总功是 30 J。\n知识库校验证据：情境：一正一负；代入错误式：W1 - W2；校验参照值：30.0。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 1,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "W_total = W1 - W2",
+      "trap_test": {
+        "scenario": "一正一负",
+        "expr": "W1 - W2",
+        "ref": 30.0
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-ene-02-2",
+      "point_id": "ene-02",
+      "point_title": "功率：平均功率与瞬时功率",
+      "chapter": "第三章 · 功与能",
+      "stem": "【第三章 · 功与能 · 功率：平均功率与瞬时功率】学生的错误做法：瞬时功率只写 P = Fv，不考虑力与速度夹角（错误表达式：P = F*v）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "数值代入：只有力与速度同向时才成立。"
+        },
+        {
+          "label": "B",
+          "text": "量纲一致性：相除后的单位是 N/m，不是能量单位 J；而且它会错误地认为相对滑动路程越长，产生的内能反而越少，量纲检查可以直接发现。"
+        },
+        {
+          "label": "C",
+          "text": "量纲一致性：右边单位会变成 J·m，而不是能量单位 J；高度被多乘了一次，数值也会随高度平方增长，量纲检查可以直接拦住。"
+        },
+        {
+          "label": "D",
+          "text": "概念混淆：有滑动摩擦、外力推动等过程时，机械能可以转化为内能或由外界输入，机械能一般不守恒；守恒的是包含相关形式在内的总能量。"
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "只有力与速度同向时才成立。斜向牵引情境中 cos(theta)=0.8，错误式得到 10000 W，正确值为 8000 W；两式量纲相同，必须靠数值核验。\n知识库校验证据：情境：斜向牵引；代入错误式：F*v；校验参照值：8000.0。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 1,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "P = F*v",
+      "trap_test": {
+        "scenario": "斜向牵引",
+        "expr": "F*v",
+        "ref": 8000.0
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-ene-03-1",
+      "point_id": "ene-03",
+      "point_title": "动能与动能定理",
+      "chapter": "第三章 · 功与能",
+      "stem": "【第三章 · 功与能 · 动能与动能定理】学生的错误做法：漏掉二分之一，把动能写成 Ek = mv²（错误表达式：Ek = m*v^2）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "量纲一致性：J·s 不是功率单位 J/s，量纲检查可以直接发现。"
+        },
+        {
+          "label": "B",
+          "text": "量纲一致性：相除后的单位是 N/m，不是能量单位 J；而且它会错误地认为相对滑动路程越长，产生的内能反而越少，量纲检查可以直接发现。"
+        },
+        {
+          "label": "C",
+          "text": "量纲一致性：右边单位会变成 J·m，而不是能量单位 J；高度被多乘了一次，数值也会随高度平方增长，量纲检查可以直接拦住。"
+        },
+        {
+          "label": "D",
+          "text": "数值代入：错误式量纲仍是 J，量纲检查抓不到。"
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "错误式量纲仍是 J，量纲检查抓不到。小车情境会算成 18 J，正确值是 9 J。\n知识库校验证据：情境：小车加速；代入错误式：m*v^2；校验参照值：9.0。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 0,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "Ek = m*v^2",
+      "trap_test": {
+        "scenario": "小车加速",
+        "expr": "m*v^2",
+        "ref": 9.0
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-ene-03-2",
+      "point_id": "ene-03",
+      "point_title": "动能与动能定理",
+      "chapter": "第三章 · 功与能",
+      "stem": "【第三章 · 功与能 · 动能与动能定理】学生的错误做法：把动能变化写反成 Ek1 − Ek2（错误表达式：W_total = Ek1 - Ek2）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "量纲一致性：相除后的单位是 N/m，不是能量单位 J；而且它会错误地认为相对滑动路程越长，产生的内能反而越少，量纲检查可以直接发现。"
+        },
+        {
+          "label": "B",
+          "text": "量纲一致性：右边单位会变成 J·m，而不是能量单位 J；高度被多乘了一次，数值也会随高度平方增长，量纲检查可以直接拦住。"
+        },
+        {
+          "label": "C",
+          "text": "数值代入：加速过程中会错误得到负功。"
+        },
+        {
+          "label": "D",
+          "text": "量纲一致性：J·s 不是功率单位 J/s，量纲检查可以直接发现。"
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "加速过程中会错误得到负功。本情境算出 −32 J，而正确总功为 +32 J。\n知识库校验证据：情境：动能变化；代入错误式：Ek1 - Ek2；校验参照值：32.0。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 1,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "W_total = Ek1 - Ek2",
+      "trap_test": {
+        "scenario": "动能变化",
+        "expr": "Ek1 - Ek2",
+        "ref": 32.0
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-ene-04-1",
+      "point_id": "ene-04",
+      "point_title": "重力做功与重力势能",
+      "chapter": "第三章 · 功与能",
+      "stem": "【第三章 · 功与能 · 重力做功与重力势能】学生的错误做法：下落时把重力功写成 mg(h2−h1)（错误表达式：W_G = m*g*(h2-h1)）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "概念混淆：有滑动摩擦、外力推动等过程时，机械能可以转化为内能或由外界输入，机械能一般不守恒；守恒的是包含相关形式在内的总能量。"
+        },
+        {
+          "label": "B",
+          "text": "数值代入：下落时重力与位移同向，应做正功。"
+        },
+        {
+          "label": "C",
+          "text": "量纲一致性：J·s 不是功率单位 J/s，量纲检查可以直接发现。"
+        },
+        {
+          "label": "D",
+          "text": "量纲一致性：相除后的单位是 N/m，不是能量单位 J；而且它会错误地认为相对滑动路程越长，产生的内能反而越少，量纲检查可以直接发现。"
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "下落时重力与位移同向，应做正功。错误写法在本情境得到 −60 J，符号与物理过程相反。\n知识库校验证据：情境：下落过程；代入错误式：m*g*(h2-h1)；校验参照值：60.0。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 0,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "W_G = m*g*(h2-h1)",
+      "trap_test": {
+        "scenario": "下落过程",
+        "expr": "m*g*(h2-h1)",
+        "ref": 60.0
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-ene-05-1",
+      "point_id": "ene-05",
+      "point_title": "弹性势能",
+      "chapter": "第三章 · 功与能",
+      "stem": "【第三章 · 功与能 · 弹性势能】学生的错误做法：漏掉二分之一，把弹性势能写成 kx²（错误表达式：Ep_s = k*x^2）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "量纲一致性：J·s 不是功率单位 J/s，量纲检查可以直接发现。"
+        },
+        {
+          "label": "B",
+          "text": "量纲一致性：相除后的单位是 N/m，不是能量单位 J；而且它会错误地认为相对滑动路程越长，产生的内能反而越少，量纲检查可以直接发现。"
+        },
+        {
+          "label": "C",
+          "text": "量纲一致性：右边单位会变成 J·m，而不是能量单位 J；高度被多乘了一次，数值也会随高度平方增长，量纲检查可以直接拦住。"
+        },
+        {
+          "label": "D",
+          "text": "数值代入：错误式量纲仍为 J，只有数值核验能发现。"
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "错误式量纲仍为 J，只有数值核验能发现。本情境会算成 2 J，正确值为 1 J。\n知识库校验证据：情境：拉伸储能；代入错误式：k*x^2；校验参照值：1.0。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 0,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "Ep_s = k*x^2",
+      "trap_test": {
+        "scenario": "拉伸储能",
+        "expr": "k*x^2",
+        "ref": 1.0
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-ene-05-2",
+      "point_id": "ene-05",
+      "point_title": "弹性势能",
+      "chapter": "第三章 · 功与能",
+      "stem": "【第三章 · 功与能 · 弹性势能】学生的错误做法：把弹簧总长代入 x，写成 1/2 kL²（错误表达式：Ep_s = 0.5*k*L_total^2）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "量纲一致性：相除后的单位是 N/m，不是能量单位 J；而且它会错误地认为相对滑动路程越长，产生的内能反而越少，量纲检查可以直接发现。"
+        },
+        {
+          "label": "B",
+          "text": "量纲一致性：右边单位会变成 J·m，而不是能量单位 J；高度被多乘了一次，数值也会随高度平方增长，量纲检查可以直接拦住。"
+        },
+        {
+          "label": "C",
+          "text": "数值代入：x 是相对原长的形变量，不是总长。"
+        },
+        {
+          "label": "D",
+          "text": "量纲一致性：J·s 不是功率单位 J/s，量纲检查可以直接发现。"
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "x 是相对原长的形变量，不是总长。错误式量纲完全正确，本情境会误算成 16 J，而正确值只有 1 J。\n知识库校验证据：情境：拉伸储能；代入错误式：0.5*k*L_total^2；校验参照值：1.0。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 1,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "Ep_s = 0.5*k*L_total^2",
+      "trap_test": {
+        "scenario": "拉伸储能",
+        "expr": "0.5*k*L_total^2",
+        "ref": 1.0
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-ene-06-1",
+      "point_id": "ene-06",
+      "point_title": "机械能与机械能守恒定律",
+      "chapter": "第三章 · 功与能",
+      "stem": "【第三章 · 功与能 · 机械能与机械能守恒定律】学生的错误做法：把机械能写成动能减势能 E = Ek − Ep（错误表达式：E = Ek - Ep）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "量纲一致性：右边单位会变成 J·m，而不是能量单位 J；高度被多乘了一次，数值也会随高度平方增长，量纲检查可以直接拦住。"
+        },
+        {
+          "label": "B",
+          "text": "数值代入：机械能定义是动能与势能的代数和。"
+        },
+        {
+          "label": "C",
+          "text": "量纲一致性：J·s 不是功率单位 J/s，量纲检查可以直接发现。"
+        },
+        {
+          "label": "D",
+          "text": "量纲一致性：相除后的单位是 N/m，不是能量单位 J；而且它会错误地认为相对滑动路程越长，产生的内能反而越少，量纲检查可以直接发现。"
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "机械能定义是动能与势能的代数和。错误式在本情境得到 −24 J，而正确机械能是 60 J。\n知识库校验证据：情境：状态机械能；代入错误式：Ek-Ep；校验参照值：60.0。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 0,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "E = Ek - Ep",
+      "trap_test": {
+        "scenario": "状态机械能",
+        "expr": "Ek-Ep",
+        "ref": 60.0
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-ene-06-2",
+      "point_id": "ene-06",
+      "point_title": "机械能与机械能守恒定律",
+      "chapter": "第三章 · 功与能",
+      "stem": "【第三章 · 功与能 · 机械能与机械能守恒定律】学生的错误做法：只要研究能量问题就直接写机械能守恒，不检查是否有非保守力做功。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "概念混淆：有滑动摩擦、外力推动等过程时，机械能可以转化为内能或由外界输入，机械能一般不守恒；守恒的是包含相关形式在内的总能量。"
+        },
+        {
+          "label": "B",
+          "text": "数值代入：只有力与位移同向时 cos(theta)=1 才能写成 Fs。"
+        },
+        {
+          "label": "C",
+          "text": "量纲一致性：J·s 不是功率单位 J/s，量纲检查可以直接发现。"
+        },
+        {
+          "label": "D",
+          "text": "数值代入：错误式量纲仍是 J，量纲检查抓不到。"
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "有滑动摩擦、外力推动等过程时，机械能可以转化为内能或由外界输入，机械能一般不守恒；守恒的是包含相关形式在内的总能量。此错误属于适用条件判断，公式数值检查不能单独覆盖。",
+      "error_type": "概念混淆",
+      "judging": "teacher",
+      "source_error_index": 1,
+      "source_caught_by": "人工审核",
+      "wrong_expr": null,
+      "trap_test": null,
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    }
+  ],
+  "skipped": [
+    {
+      "point_id": "ene-02",
+      "point_title": "功率：平均功率与瞬时功率",
+      "source_error_index": 0,
+      "reason": "自动判定条目没有 trap_test 可执行证据；不把校验标签代替实测证据。"
+    },
+    {
+      "point_id": "ene-04",
+      "point_title": "重力做功与重力势能",
+      "source_error_index": 1,
+      "reason": "自动判定条目没有 trap_test 可执行证据；不把校验标签代替实测证据。"
+    },
+    {
+      "point_id": "ene-07",
+      "point_title": "功与能的关系：摩擦生热与能量守恒",
+      "source_error_index": 0,
+      "reason": "自动判定条目没有 trap_test 可执行证据；不把校验标签代替实测证据。"
+    },
+    {
+      "point_id": "ene-07",
+      "point_title": "功与能的关系：摩擦生热与能量守恒",
+      "source_error_index": 1,
+      "reason": "自动判定条目没有 trap_test 可执行证据；不把校验标签代替实测证据。"
+    }
+  ]
+}

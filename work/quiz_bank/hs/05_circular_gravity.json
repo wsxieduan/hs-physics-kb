@@ -1,0 +1,569 @@
+{
+  "segment": "高中",
+  "chapter": "第五章 · 圆周运动与万有引力",
+  "source_file": "05_circular_gravity.json",
+  "questions": [
+    {
+      "id": "diagnostic-cir-01-2",
+      "point_id": "cir-01",
+      "point_title": "线速度、角速度、周期与转速",
+      "chapter": "第五章 · 圆周运动与万有引力",
+      "stem": "【第五章 · 圆周运动与万有引力 · 线速度、角速度、周期与转速】学生的错误做法：漏掉一周的 2π，把角速度写成 ω = 1/T（错误表达式：omega = 1/T）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "概念混淆：等面积定律要求近日点速度较大、远日点速度较小；只有面积速度保持不变。"
+        },
+        {
+          "label": "B",
+          "text": "概念混淆：向心力只是径向合力的名称，不是新施力物。"
+        },
+        {
+          "label": "C",
+          "text": "数值代入：量纲仍然正确，只有数值检验能发现少了 2π：本情境会得到约 0.6366 rad/s，而正确值是 4 rad/s。"
+        },
+        {
+          "label": "D",
+          "text": "量纲一致性：v/r 的单位是 1/s，不是加速度单位 m/s²，量纲检查可直接发现。"
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "量纲仍然正确，只有数值检验能发现少了 2π：本情境会得到约 0.6366 rad/s，而正确值是 4 rad/s。\n知识库校验证据：情境：转盘边缘；代入错误式：1/T；校验参照值：4.0。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 1,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "omega = 1/T",
+      "trap_test": {
+        "scenario": "转盘边缘",
+        "expr": "1/T",
+        "ref": 4.0
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-cir-02-2",
+      "point_id": "cir-02",
+      "point_title": "向心加速度",
+      "chapter": "第五章 · 圆周运动与万有引力",
+      "stem": "【第五章 · 圆周运动与万有引力 · 向心加速度】学生的错误做法：凭空多除以 2，写成 a_c = v²/(2r)（错误表达式：a_c = v^2/(2*r)）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "数值代入：错误式量纲仍是加速度，量纲检查抓不到。"
+        },
+        {
+          "label": "B",
+          "text": "量纲一致性：除法使量纲变成 1/(m·s)，不再是速度；而且会错误地认为同一转盘上离轴越远线速度越小。"
+        },
+        {
+          "label": "C",
+          "text": "概念混淆：等面积定律要求近日点速度较大、远日点速度较小；只有面积速度保持不变。"
+        },
+        {
+          "label": "D",
+          "text": "概念混淆：向心力只是径向合力的名称，不是新施力物。"
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "错误式量纲仍是加速度，量纲检查抓不到。本情境会算成 24 m/s²，正确值是 48 m/s²。\n知识库校验证据：情境：弯道运动；代入错误式：v^2/(2*r)；校验参照值：48.0。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 1,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "a_c = v^2/(2*r)",
+      "trap_test": {
+        "scenario": "弯道运动",
+        "expr": "v^2/(2*r)",
+        "ref": 48.0
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-cir-03-1",
+      "point_id": "cir-03",
+      "point_title": "向心力及其来源",
+      "chapter": "第五章 · 圆周运动与万有引力",
+      "stem": "【第五章 · 圆周运动与万有引力 · 向心力及其来源】学生的错误做法：把向心力错记成动能形式，写成 F_c = mv²/(2r)（错误表达式：F_c = m*v^2/(2*r)）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "量纲一致性：除法使量纲变成 1/(m·s)，不再是速度；而且会错误地认为同一转盘上离轴越远线速度越小。"
+        },
+        {
+          "label": "B",
+          "text": "量纲一致性：v/r 的单位是 1/s，不是加速度单位 m/s²，量纲检查可直接发现。"
+        },
+        {
+          "label": "C",
+          "text": "概念混淆：等面积定律要求近日点速度较大、远日点速度较小；只有面积速度保持不变。"
+        },
+        {
+          "label": "D",
+          "text": "数值代入：多出的 1/2 不改变量纲，量纲检查抓不到；本情境会得到 12 N，正确径向合力是 24 N。"
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "多出的 1/2 不改变量纲，量纲检查抓不到；本情境会得到 12 N，正确径向合力是 24 N。\n知识库校验证据：情境：绳系小球；代入错误式：m*v^2/(2*r)；校验参照值：24.0。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 0,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "F_c = m*v^2/(2*r)",
+      "trap_test": {
+        "scenario": "绳系小球",
+        "expr": "m*v^2/(2*r)",
+        "ref": 24.0
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-cir-03-2",
+      "point_id": "cir-03",
+      "point_title": "向心力及其来源",
+      "chapter": "第五章 · 圆周运动与万有引力",
+      "stem": "【第五章 · 圆周运动与万有引力 · 向心力及其来源】学生的错误做法：在受力图中除真实的拉力、重力外，再额外画一个向心力。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "量纲一致性：v/r 的单位是 1/s，不是加速度单位 m/s²，量纲检查可直接发现。"
+        },
+        {
+          "label": "B",
+          "text": "数值代入：最高点仍需向心加速度；本情境临界速度约为 7.071 m/s，而不是 0。"
+        },
+        {
+          "label": "C",
+          "text": "概念混淆：向心力只是径向合力的名称，不是新施力物。"
+        },
+        {
+          "label": "D",
+          "text": "量纲一致性：除法使量纲变成 1/(m·s)，不再是速度；而且会错误地认为同一转盘上离轴越远线速度越小。"
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "向心力只是径向合力的名称，不是新施力物。额外画它会重复计算，必须通过受力对象与施力物的人工判断纠正。",
+      "error_type": "概念混淆",
+      "judging": "teacher",
+      "source_error_index": 1,
+      "source_caught_by": "人工审核",
+      "wrong_expr": null,
+      "trap_test": null,
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-cir-04-1",
+      "point_id": "cir-04",
+      "point_title": "竖直平面内的圆周运动",
+      "chapter": "第五章 · 圆周运动与万有引力",
+      "stem": "【第五章 · 圆周运动与万有引力 · 竖直平面内的圆周运动】学生的错误做法：认为最高点临界状态的速度等于零（错误表达式：v_min = 0）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "概念混淆：等面积定律要求近日点速度较大、远日点速度较小；只有面积速度保持不变。"
+        },
+        {
+          "label": "B",
+          "text": "数值代入：最高点仍需向心加速度；本情境临界速度约为 7.071 m/s，而不是 0。"
+        },
+        {
+          "label": "C",
+          "text": "量纲一致性：除法使量纲变成 1/(m·s)，不再是速度；而且会错误地认为同一转盘上离轴越远线速度越小。"
+        },
+        {
+          "label": "D",
+          "text": "量纲一致性：v/r 的单位是 1/s，不是加速度单位 m/s²，量纲检查可直接发现。"
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "最高点仍需向心加速度；本情境临界速度约为 7.071 m/s，而不是 0。错误式量纲不暴露问题，需要数值检验。\n知识库校验证据：情境：内轨最高点；代入错误式：0；校验参照值：7.071067811865476。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 0,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "v_min = 0",
+      "trap_test": {
+        "scenario": "内轨最高点",
+        "expr": "0",
+        "ref": 7.071067811865476
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-cir-04-2",
+      "point_id": "cir-04",
+      "point_title": "竖直平面内的圆周运动",
+      "chapter": "第五章 · 圆周运动与万有引力",
+      "stem": "【第五章 · 圆周运动与万有引力 · 竖直平面内的圆周运动】学生的错误做法：最高点把重力从向心力需求中减掉，写成 N_top = mv²/r + mg（错误表达式：N_top = m*v^2/r + m*g）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "数值代入：重力与支持力在最高点同向指向圆心，应相加后等于 mv²/r；移项后支持力应减去 mg。"
+        },
+        {
+          "label": "B",
+          "text": "量纲一致性：除法使量纲变成 1/(m·s)，不再是速度；而且会错误地认为同一转盘上离轴越远线速度越小。"
+        },
+        {
+          "label": "C",
+          "text": "量纲一致性：v/r 的单位是 1/s，不是加速度单位 m/s²，量纲检查可直接发现。"
+        },
+        {
+          "label": "D",
+          "text": "概念混淆：等面积定律要求近日点速度较大、远日点速度较小；只有面积速度保持不变。"
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "重力与支持力在最高点同向指向圆心，应相加后等于 mv²/r；移项后支持力应减去 mg。本情境错误式给出 60 N，正确为 20 N。\n知识库校验证据：情境：内轨最高点；代入错误式：m*v^2/r + m*g；校验参照值：20.0。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 1,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "N_top = m*v^2/r + m*g",
+      "trap_test": {
+        "scenario": "内轨最高点",
+        "expr": "m*v^2/r + m*g",
+        "ref": 20.0
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-cir-05-1",
+      "point_id": "cir-05",
+      "point_title": "万有引力定律",
+      "chapter": "第五章 · 圆周运动与万有引力",
+      "stem": "【第五章 · 圆周运动与万有引力 · 万有引力定律】学生的错误做法：把两个物体都产生引力理解成要乘 2，写成 F_g = 2Gm1m2/r²（错误表达式：F_g = 2*G_const*m1*m2/r^2）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "量纲一致性：除法使量纲变成 1/(m·s)，不再是速度；而且会错误地认为同一转盘上离轴越远线速度越小。"
+        },
+        {
+          "label": "B",
+          "text": "量纲一致性：v/r 的单位是 1/s，不是加速度单位 m/s²，量纲检查可直接发现。"
+        },
+        {
+          "label": "C",
+          "text": "概念混淆：等面积定律要求近日点速度较大、远日点速度较小；只有面积速度保持不变。"
+        },
+        {
+          "label": "D",
+          "text": "数值代入：作用力与反作用力是一对大小相等的力，求其中一个的大小不能相加。"
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "作用力与反作用力是一对大小相等的力，求其中一个的大小不能相加。错误式量纲完全正确，但本情境会算成 2.668×10⁻⁶ N，是正确值的两倍。\n知识库校验证据：情境：两物体引力；代入错误式：2*G_const*m1*m2/r^2；校验参照值：1.334e-06。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 0,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "F_g = 2*G_const*m1*m2/r^2",
+      "trap_test": {
+        "scenario": "两物体引力",
+        "expr": "2*G_const*m1*m2/r^2",
+        "ref": 1.334e-06
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-cir-05-2",
+      "point_id": "cir-05",
+      "point_title": "万有引力定律",
+      "chapter": "第五章 · 圆周运动与万有引力",
+      "stem": "【第五章 · 圆周运动与万有引力 · 万有引力定律】学生的错误做法：计算地面上方物体的引力时，只把离地高度当作 r。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "量纲一致性：v/r 的单位是 1/s，不是加速度单位 m/s²，量纲检查可直接发现。"
+        },
+        {
+          "label": "B",
+          "text": "数值代入：多出的 1/2 不改变量纲，量纲检查抓不到；本情境会得到 12 N，正确径向合力是 24 N。"
+        },
+        {
+          "label": "C",
+          "text": "概念混淆：公式中的 r 是到地心的距离，应等于地球半径与离地高度之和。"
+        },
+        {
+          "label": "D",
+          "text": "量纲一致性：除法使量纲变成 1/(m·s)，不再是速度；而且会错误地认为同一转盘上离轴越远线速度越小。"
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "公式中的 r 是到地心的距离，应等于地球半径与离地高度之和。这个错误取决于题目对位置的描述，需人工审核距离基准。",
+      "error_type": "概念混淆",
+      "judging": "teacher",
+      "source_error_index": 1,
+      "source_caught_by": "人工审核",
+      "wrong_expr": null,
+      "trap_test": null,
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-cir-06-1",
+      "point_id": "cir-06",
+      "point_title": "天体运动与人造卫星",
+      "chapter": "第五章 · 圆周运动与万有引力",
+      "stem": "【第五章 · 圆周运动与万有引力 · 天体运动与人造卫星】学生的错误做法：把逃逸速度公式误当圆轨道速度，写成 v_orbit = √(2GM/r)（错误表达式：v_orbit = sqrt(2*G_const*M/r)）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "概念混淆：等面积定律要求近日点速度较大、远日点速度较小；只有面积速度保持不变。"
+        },
+        {
+          "label": "B",
+          "text": "数值代入：两式量纲完全相同，量纲检查抓不到；本近地情境会得到约 11183 m/s，比正确圆轨道速度 7908 m/s 大 √2 倍。"
+        },
+        {
+          "label": "C",
+          "text": "量纲一致性：除法使量纲变成 1/(m·s)，不再是速度；而且会错误地认为同一转盘上离轴越远线速度越小。"
+        },
+        {
+          "label": "D",
+          "text": "量纲一致性：v/r 的单位是 1/s，不是加速度单位 m/s²，量纲检查可直接发现。"
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "两式量纲完全相同，量纲检查抓不到；本近地情境会得到约 11183 m/s，比正确圆轨道速度 7908 m/s 大 √2 倍。\n知识库校验证据：情境：近地圆轨道；代入错误式：sqrt(2*G_const*M/r)；校验参照值：7907.670326967355。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 0,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "v_orbit = sqrt(2*G_const*M/r)",
+      "trap_test": {
+        "scenario": "近地圆轨道",
+        "expr": "sqrt(2*G_const*M/r)",
+        "ref": 7907.670326967355
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-cir-06-2",
+      "point_id": "cir-06",
+      "point_title": "天体运动与人造卫星",
+      "chapter": "第五章 · 圆周运动与万有引力",
+      "stem": "【第五章 · 圆周运动与万有引力 · 天体运动与人造卫星】学生的错误做法：认为周期等于地球自转周期的卫星，无论轨道平面和方向如何都能静止在某地上空。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "概念混淆：地球静止卫星除周期相同外，还必须位于赤道平面、沿圆轨道且与地球自转同向。"
+        },
+        {
+          "label": "B",
+          "text": "量纲一致性：除法使量纲变成 1/(m·s)，不再是速度；而且会错误地认为同一转盘上离轴越远线速度越小。"
+        },
+        {
+          "label": "C",
+          "text": "量纲一致性：v/r 的单位是 1/s，不是加速度单位 m/s²，量纲检查可直接发现。"
+        },
+        {
+          "label": "D",
+          "text": "数值代入：多出的 1/2 不改变量纲，量纲检查抓不到；本情境会得到 12 N，正确径向合力是 24 N。"
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "地球静止卫星除周期相同外，还必须位于赤道平面、沿圆轨道且与地球自转同向。该条件组合需要人工审核。",
+      "error_type": "概念混淆",
+      "judging": "teacher",
+      "source_error_index": 1,
+      "source_caught_by": "人工审核",
+      "wrong_expr": null,
+      "trap_test": null,
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-cir-07-1",
+      "point_id": "cir-07",
+      "point_title": "开普勒三定律",
+      "chapter": "第五章 · 圆周运动与万有引力",
+      "stem": "【第五章 · 圆周运动与万有引力 · 开普勒三定律】学生的错误做法：认为行星沿椭圆轨道做速率不变的运动。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "量纲一致性：除法使量纲变成 1/(m·s)，不再是速度；而且会错误地认为同一转盘上离轴越远线速度越小。"
+        },
+        {
+          "label": "B",
+          "text": "量纲一致性：v/r 的单位是 1/s，不是加速度单位 m/s²，量纲检查可直接发现。"
+        },
+        {
+          "label": "C",
+          "text": "数值代入：多出的 1/2 不改变量纲，量纲检查抓不到；本情境会得到 12 N，正确径向合力是 24 N。"
+        },
+        {
+          "label": "D",
+          "text": "概念混淆：等面积定律要求近日点速度较大、远日点速度较小；只有面积速度保持不变。"
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "等面积定律要求近日点速度较大、远日点速度较小；只有面积速度保持不变。该概念需结合轨道位置人工审核。",
+      "error_type": "概念混淆",
+      "judging": "teacher",
+      "source_error_index": 0,
+      "source_caught_by": "人工审核",
+      "wrong_expr": null,
+      "trap_test": null,
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-cir-07-2",
+      "point_id": "cir-07",
+      "point_title": "开普勒三定律",
+      "chapter": "第五章 · 圆周运动与万有引力",
+      "stem": "【第五章 · 圆周运动与万有引力 · 开普勒三定律】学生的错误做法：把周期公式中的 2π漏成 π，写成 T = π√(a³/GM)（错误表达式：T = pi*sqrt(a^3/(G_const*M))）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "量纲一致性：v/r 的单位是 1/s，不是加速度单位 m/s²，量纲检查可直接发现。"
+        },
+        {
+          "label": "B",
+          "text": "概念混淆：向心力只是径向合力的名称，不是新施力物。"
+        },
+        {
+          "label": "C",
+          "text": "数值代入：错误式量纲仍是时间，量纲检查抓不到；本情境会得到正确周期的一半，约 1.585×10⁷ s。"
+        },
+        {
+          "label": "D",
+          "text": "量纲一致性：除法使量纲变成 1/(m·s)，不再是速度；而且会错误地认为同一转盘上离轴越远线速度越小。"
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "错误式量纲仍是时间，量纲检查抓不到；本情境会得到正确周期的一半，约 1.585×10⁷ s。\n知识库校验证据：情境：地球近似轨道；代入错误式：pi*sqrt(a^3/(G_const*M))；校验参照值：31691036.84921312。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 1,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "T = pi*sqrt(a^3/(G_const*M))",
+      "trap_test": {
+        "scenario": "地球近似轨道",
+        "expr": "pi*sqrt(a^3/(G_const*M))",
+        "ref": 31691036.84921312
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    }
+  ],
+  "skipped": [
+    {
+      "point_id": "cir-01",
+      "point_title": "线速度、角速度、周期与转速",
+      "source_error_index": 0,
+      "reason": "自动判定条目没有 trap_test 可执行证据；不把校验标签代替实测证据。"
+    },
+    {
+      "point_id": "cir-02",
+      "point_title": "向心加速度",
+      "source_error_index": 0,
+      "reason": "自动判定条目没有 trap_test 可执行证据；不把校验标签代替实测证据。"
+    }
+  ]
+}

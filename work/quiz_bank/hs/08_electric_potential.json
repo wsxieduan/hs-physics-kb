@@ -1,0 +1,405 @@
+{
+  "segment": "高中",
+  "chapter": "第八章 · 静电场（二）电场的能的性质",
+  "source_file": "08_electric_potential.json",
+  "questions": [
+    {
+      "id": "diagnostic-pot-01-1",
+      "point_id": "pot-01",
+      "point_title": "静电力做功的特点",
+      "chapter": "第八章 · 静电场（二）电场的能的性质",
+      "stem": "【第八章 · 静电场（二）电场的能的性质 · 静电力做功的特点】学生的错误做法：认为路径越长，静电力做功一定越多（错误表达式：W_path2 = 2*W_path1）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "量纲一致性：右边单位为 V/m²，不是电势差应有的 V；同时还会错误地预言距离越大电势差越小，量纲检查会直接拦住。"
+        },
+        {
+          "label": "B",
+          "text": "量纲一致性：C/V 不是能量 J 的量纲；正确关系是电荷量乘电势，乘积 C·V 才等于 J，乘除颠倒会被量纲检查直接发现。"
+        },
+        {
+          "label": "C",
+          "text": "概念混淆：等势面只约束沿面方向电势不变。"
+        },
+        {
+          "label": "D",
+          "text": "数值代入：静电力功只由始末位置决定。"
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "静电力功只由始末位置决定。同端点情境中错误式给出 12 J，而路径二实际仍为 6 J。\n知识库校验证据：情境：同端点两路径；代入错误式：2*W_path1；校验参照值：6.0。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 0,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "W_path2 = 2*W_path1",
+      "trap_test": {
+        "scenario": "同端点两路径",
+        "expr": "2*W_path1",
+        "ref": 6.0
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-pot-02-1",
+      "point_id": "pot-02",
+      "point_title": "电势能",
+      "chapter": "第八章 · 静电场（二）电场的能的性质",
+      "stem": "【第八章 · 静电场（二）电场的能的性质 · 电势能】学生的错误做法：把电势能变化量写成初态减末态（错误表达式：delta_Ep = Ep_A - Ep_B）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "概念混淆：等势面只约束沿面方向电势不变。"
+        },
+        {
+          "label": "B",
+          "text": "数值代入：变化量必须是末态减初态。"
+        },
+        {
+          "label": "C",
+          "text": "量纲一致性：右边单位为 V/m²，不是电势差应有的 V；同时还会错误地预言距离越大电势差越小，量纲检查会直接拦住。"
+        },
+        {
+          "label": "D",
+          "text": "量纲一致性：C/V 不是能量 J 的量纲；正确关系是电荷量乘电势，乘积 C·V 才等于 J，乘除颠倒会被量纲检查直接发现。"
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "变化量必须是末态减初态。正功情境中错误式得到 +6 J，正确变化量为 -6 J。\n知识库校验证据：情境：静电力正功；代入错误式：Ep_A - Ep_B；校验参照值：-6.0。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 0,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "delta_Ep = Ep_A - Ep_B",
+      "trap_test": {
+        "scenario": "静电力正功",
+        "expr": "Ep_A - Ep_B",
+        "ref": -6.0
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-pot-03-1",
+      "point_id": "pot-03",
+      "point_title": "电势",
+      "chapter": "第八章 · 静电场（二）电场的能的性质",
+      "stem": "【第八章 · 静电场（二）电场的能的性质 · 电势】学生的错误做法：计算负试探电荷所在点的电势时把 q 强行取绝对值（错误表达式：phi = Ep/abs(q)）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "量纲一致性：右边单位为 V/m²，不是电势差应有的 V；同时还会错误地预言距离越大电势差越小，量纲检查会直接拦住。"
+        },
+        {
+          "label": "B",
+          "text": "概念混淆：等势面只约束沿面方向电势不变。"
+        },
+        {
+          "label": "C",
+          "text": "量纲一致性：C/V 不是能量 J 的量纲；正确关系是电荷量乘电势，乘积 C·V 才等于 J，乘除颠倒会被量纲检查直接发现。"
+        },
+        {
+          "label": "D",
+          "text": "数值代入：电势能和电荷量都必须带符号。"
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "电势能和电荷量都必须带符号。负试探电荷情境中错误式给出 -5000 V，而该点电势实际为 +5000 V。\n知识库校验证据：情境：负试探电荷；代入错误式：Ep/abs(q)；校验参照值：5000.0。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 0,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "phi = Ep/abs(q)",
+      "trap_test": {
+        "scenario": "负试探电荷",
+        "expr": "Ep/abs(q)",
+        "ref": 5000.0
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-pot-04-1",
+      "point_id": "pot-04",
+      "point_title": "等势面",
+      "chapter": "第八章 · 静电场（二）电场的能的性质",
+      "stem": "【第八章 · 静电场（二）电场的能的性质 · 等势面】学生的错误做法：把两点电势之差写成电势之和（错误表达式：delta_phi = phi_A + phi_B）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "概念混淆：等势面只约束沿面方向电势不变。"
+        },
+        {
+          "label": "B",
+          "text": "数值代入：同一等势面上错误式得到 600 V，正确电势之差应为 0 V。"
+        },
+        {
+          "label": "C",
+          "text": "量纲一致性：右边单位为 V/m²，不是电势差应有的 V；同时还会错误地预言距离越大电势差越小，量纲检查会直接拦住。"
+        },
+        {
+          "label": "D",
+          "text": "量纲一致性：C/V 不是能量 J 的量纲；正确关系是电荷量乘电势，乘积 C·V 才等于 J，乘除颠倒会被量纲检查直接发现。"
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "同一等势面上错误式得到 600 V，正确电势之差应为 0 V。\n知识库校验证据：情境：同一等势面；代入错误式：phi_A + phi_B；校验参照值：0.0。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 0,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "delta_phi = phi_A + phi_B",
+      "trap_test": {
+        "scenario": "同一等势面",
+        "expr": "phi_A + phi_B",
+        "ref": 0.0
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-pot-04-2",
+      "point_id": "pot-04",
+      "point_title": "等势面",
+      "chapter": "第八章 · 静电场（二）电场的能的性质",
+      "stem": "【第八章 · 静电场（二）电场的能的性质 · 等势面】学生的错误做法：认为等势面上的电势相等，所以该处场强一定为零。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "概念混淆：等势面只约束沿面方向电势不变。"
+        },
+        {
+          "label": "B",
+          "text": "数值代入：静电力功只由始末位置决定。"
+        },
+        {
+          "label": "C",
+          "text": "数值代入：变化量必须是末态减初态。"
+        },
+        {
+          "label": "D",
+          "text": "数值代入：电势能和电荷量都必须带符号。"
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "等势面只约束沿面方向电势不变。非零电场可以垂直穿过等势面，例如匀强电场中就有一族平行等势面。",
+      "error_type": "概念混淆",
+      "judging": "teacher",
+      "source_error_index": 1,
+      "source_caught_by": "人工审核",
+      "wrong_expr": null,
+      "trap_test": null,
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-pot-05-1",
+      "point_id": "pot-05",
+      "point_title": "电势差（电压）",
+      "chapter": "第八章 · 静电场（二）电场的能的性质",
+      "stem": "【第八章 · 静电场（二）电场的能的性质 · 电势差（电压）】学生的错误做法：求 U_AB 时把顺序颠倒，写成 phi_B-phi_A（错误表达式：U_AB = phi_B - phi_A）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "量纲一致性：右边单位为 V/m²，不是电势差应有的 V；同时还会错误地预言距离越大电势差越小，量纲检查会直接拦住。"
+        },
+        {
+          "label": "B",
+          "text": "量纲一致性：C/V 不是能量 J 的量纲；正确关系是电荷量乘电势，乘积 C·V 才等于 J，乘除颠倒会被量纲检查直接发现。"
+        },
+        {
+          "label": "C",
+          "text": "概念混淆：等势面只约束沿面方向电势不变。"
+        },
+        {
+          "label": "D",
+          "text": "数值代入：下标顺序决定正负。"
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "下标顺序决定正负。情境中错误式得 -400 V，正确 U_AB 为 +400 V。\n知识库校验证据：情境：正电荷由高到低；代入错误式：phi_B - phi_A；校验参照值：400.0。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 0,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "U_AB = phi_B - phi_A",
+      "trap_test": {
+        "scenario": "正电荷由高到低",
+        "expr": "phi_B - phi_A",
+        "ref": 400.0
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-pot-05-2",
+      "point_id": "pot-05",
+      "point_title": "电势差（电压）",
+      "chapter": "第八章 · 静电场（二）电场的能的性质",
+      "stem": "【第八章 · 静电场（二）电场的能的性质 · 电势差（电压）】学生的错误做法：计算负电荷的静电力功时把 q 取绝对值（错误表达式：W_AB = abs(q)*U_AB）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "量纲一致性：C/V 不是能量 J 的量纲；正确关系是电荷量乘电势，乘积 C·V 才等于 J，乘除颠倒会被量纲检查直接发现。"
+        },
+        {
+          "label": "B",
+          "text": "概念混淆：等势面只约束沿面方向电势不变。"
+        },
+        {
+          "label": "C",
+          "text": "数值代入：电荷量的负号决定功的正负。"
+        },
+        {
+          "label": "D",
+          "text": "量纲一致性：右边单位为 V/m²，不是电势差应有的 V；同时还会错误地预言距离越大电势差越小，量纲检查会直接拦住。"
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "电荷量的负号决定功的正负。负电荷情境中错误式给出 +8.0×10^-4 J，正确值为 -8.0×10^-4 J。\n知识库校验证据：情境：负电荷由高到低；代入错误式：abs(q)*U_AB；校验参照值：-0.0008。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 1,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "W_AB = abs(q)*U_AB",
+      "trap_test": {
+        "scenario": "负电荷由高到低",
+        "expr": "abs(q)*U_AB",
+        "ref": -0.0008
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-pot-06-2",
+      "point_id": "pot-06",
+      "point_title": "匀强电场中电势差与场强的关系",
+      "chapter": "第八章 · 静电场（二）电场的能的性质",
+      "stem": "【第八章 · 静电场（二）电场的能的性质 · 匀强电场中电势差与场强的关系】学生的错误做法：把电荷实际走过的弯曲路径长度当成 d（错误表达式：U = E*D_path）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "数值代入：d 是两点位移沿电场方向的投影，不是路程。"
+        },
+        {
+          "label": "B",
+          "text": "量纲一致性：C/V 不是能量 J 的量纲；正确关系是电荷量乘电势，乘积 C·V 才等于 J，乘除颠倒会被量纲检查直接发现。"
+        },
+        {
+          "label": "C",
+          "text": "概念混淆：等势面只约束沿面方向电势不变。"
+        },
+        {
+          "label": "D",
+          "text": "量纲一致性：右边单位为 V/m²，不是电势差应有的 V；同时还会错误地预言距离越大电势差越小，量纲检查会直接拦住。"
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "d 是两点位移沿电场方向的投影，不是路程。情境中用 0.25 m 会算出 500 V，正确结果是 300 V。\n知识库校验证据：情境：沿场方向两点；代入错误式：E*D_path；校验参照值：300.0。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 1,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "U = E*D_path",
+      "trap_test": {
+        "scenario": "沿场方向两点",
+        "expr": "E*D_path",
+        "ref": 300.0
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    }
+  ],
+  "skipped": [
+    {
+      "point_id": "pot-01",
+      "point_title": "静电力做功的特点",
+      "source_error_index": 1,
+      "reason": "自动判定条目没有 trap_test 可执行证据；不把校验标签代替实测证据。"
+    },
+    {
+      "point_id": "pot-02",
+      "point_title": "电势能",
+      "source_error_index": 1,
+      "reason": "自动判定条目没有 trap_test 可执行证据；不把校验标签代替实测证据。"
+    },
+    {
+      "point_id": "pot-03",
+      "point_title": "电势",
+      "source_error_index": 1,
+      "reason": "自动判定条目没有 trap_test 可执行证据；不把校验标签代替实测证据。"
+    },
+    {
+      "point_id": "pot-06",
+      "point_title": "匀强电场中电势差与场强的关系",
+      "source_error_index": 0,
+      "reason": "自动判定条目没有 trap_test 可执行证据；不把校验标签代替实测证据。"
+    }
+  ]
+}

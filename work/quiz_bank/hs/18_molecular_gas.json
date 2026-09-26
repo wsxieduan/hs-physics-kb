@@ -1,0 +1,483 @@
+{
+  "segment": "高中",
+  "chapter": "第十八章 · 分子动理论与气体",
+  "source_file": "18_molecular_gas.json",
+  "questions": [
+    {
+      "id": "diagnostic-mgas-01-1",
+      "point_id": "mgas-01",
+      "point_title": "分子动理论的基本内容与微观量估算",
+      "chapter": "第十八章 · 分子动理论与气体",
+      "stem": "【第十八章 · 分子动理论与气体 · 分子动理论的基本内容与微观量估算】学生的错误做法：把分子数写成 N = V_molecule/V_total（错误表达式：N = V_molecule/V_total）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "概念混淆：内能还与分子数、物态和分子间势能等因素有关；温度只反映热运动的平均剧烈程度。"
+        },
+        {
+          "label": "B",
+          "text": "量纲一致性：乘以体积后量纲变成能量乘体积，已经不是压强；而且错误式会预言容器越大压强越大，方向也相反。"
+        },
+        {
+          "label": "C",
+          "text": "概念混淆：保守力做正功时势能应减少。"
+        },
+        {
+          "label": "D",
+          "text": "数值代入：分子数应是总体积除以单分子体积。"
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "分子数应是总体积除以单分子体积。错误式在本情境得到 10^-22，而不是 10^22，量纲虽同为无量纲但数量级完全相反。\n知识库校验证据：情境：油膜估算；代入错误式：V_molecule/V_total；校验参照值：1e+22。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 0,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "N = V_molecule/V_total",
+      "trap_test": {
+        "scenario": "油膜估算",
+        "expr": "V_molecule/V_total",
+        "ref": 1e+22
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-mgas-02-1",
+      "point_id": "mgas-02",
+      "point_title": "分子间作用力与分子势能",
+      "chapter": "第十八章 · 分子动理论与气体",
+      "stem": "【第十八章 · 分子动理论与气体 · 分子间作用力与分子势能】学生的错误做法：求分子间合力时把吸引与排斥的大小直接相加（错误表达式：F_net = F_rep+F_attr）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "量纲一致性：面积不是体积，d^2 的量纲是 L^2，而单分子体积的量纲是 L^3。"
+        },
+        {
+          "label": "B",
+          "text": "数值代入：吸引与排斥方向相反，应作差而不是相加。"
+        },
+        {
+          "label": "C",
+          "text": "概念混淆：内能还与分子数、物态和分子间势能等因素有关；温度只反映热运动的平均剧烈程度。"
+        },
+        {
+          "label": "D",
+          "text": "量纲一致性：乘以体积后量纲变成能量乘体积，已经不是压强；而且错误式会预言容器越大压强越大，方向也相反。"
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "吸引与排斥方向相反，应作差而不是相加。两种写法量纲完全相同；把错误结果与正确合力作无量纲比值，本情境得到 2.2 而不是 1，可由数值代入抓住。\n知识库校验证据：情境：距离小于平衡距离；代入错误式：(F_rep+F_attr)/F_net；校验参照值：1.0。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 0,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "F_net = F_rep+F_attr",
+      "trap_test": {
+        "scenario": "距离小于平衡距离",
+        "expr": "(F_rep+F_attr)/F_net",
+        "ref": 1.0
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-mgas-02-2",
+      "point_id": "mgas-02",
+      "point_title": "分子间作用力与分子势能",
+      "chapter": "第十八章 · 分子动理论与气体",
+      "stem": "【第十八章 · 分子动理论与气体 · 分子间作用力与分子势能】学生的错误做法：把势能变化写成 delta_Ep = W_molecular（错误表达式：delta_Ep = W_molecular）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "概念混淆：保守力做正功时势能应减少。"
+        },
+        {
+          "label": "B",
+          "text": "数值代入：分子数应是总体积除以单分子体积。"
+        },
+        {
+          "label": "C",
+          "text": "数值代入：两种温标零点不同。"
+        },
+        {
+          "label": "D",
+          "text": "数值代入：等温时 p 与 V 成反比。"
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "保守力做正功时势能应减少。本情境错误式给出正的 2.5×10^-20 J，与正确的负值符号相反；该微观能量远小于陷阱测试的固定绝对容差，不能诚实声称会被自动抓住。",
+      "error_type": "概念混淆",
+      "judging": "teacher",
+      "source_error_index": 1,
+      "source_caught_by": "人工审核",
+      "wrong_expr": "delta_Ep = W_molecular",
+      "trap_test": null,
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-mgas-03-1",
+      "point_id": "mgas-03",
+      "point_title": "温度与温标",
+      "chapter": "第十八章 · 分子动理论与气体",
+      "stem": "【第十八章 · 分子动理论与气体 · 温度与温标】学生的错误做法：把 26.85 ℃直接当成 26.85 K 代入气体定律（错误表达式：T = t_C）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "概念混淆：内能还与分子数、物态和分子间势能等因素有关；温度只反映热运动的平均剧烈程度。"
+        },
+        {
+          "label": "B",
+          "text": "量纲一致性：乘以体积后量纲变成能量乘体积，已经不是压强；而且错误式会预言容器越大压强越大，方向也相反。"
+        },
+        {
+          "label": "C",
+          "text": "量纲一致性：面积不是体积，d^2 的量纲是 L^2，而单分子体积的量纲是 L^3。"
+        },
+        {
+          "label": "D",
+          "text": "数值代入：两种温标零点不同。"
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "两种温标零点不同。本情境正确温度是 300 K，直接使用摄氏数值会把绝对温度低估十倍以上。\n知识库校验证据：情境：室温换算；代入错误式：t_C；校验参照值：300.0。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 0,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "T = t_C",
+      "trap_test": {
+        "scenario": "室温换算",
+        "expr": "t_C",
+        "ref": 300.0
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-mgas-03-2",
+      "point_id": "mgas-03",
+      "point_title": "温度与温标",
+      "chapter": "第十八章 · 分子动理论与气体",
+      "stem": "【第十八章 · 分子动理论与气体 · 温度与温标】学生的错误做法：换算时写成 T = t_C-273.15（错误表达式：T = t_C-T0）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "量纲一致性：乘以体积后量纲变成能量乘体积，已经不是压强；而且错误式会预言容器越大压强越大，方向也相反。"
+        },
+        {
+          "label": "B",
+          "text": "量纲一致性：面积不是体积，d^2 的量纲是 L^2，而单分子体积的量纲是 L^3。"
+        },
+        {
+          "label": "C",
+          "text": "数值代入：应当加上零点偏移。"
+        },
+        {
+          "label": "D",
+          "text": "概念混淆：内能还与分子数、物态和分子间势能等因素有关；温度只反映热运动的平均剧烈程度。"
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "应当加上零点偏移。本情境错误式得到 -246.3 K，不但数值错误，还违反热力学温度不得为负的物理限制。\n知识库校验证据：情境：室温换算；代入错误式：t_C-T0；校验参照值：300.0。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 1,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "T = t_C-T0",
+      "trap_test": {
+        "scenario": "室温换算",
+        "expr": "t_C-T0",
+        "ref": 300.0
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-mgas-04-1",
+      "point_id": "mgas-04",
+      "point_title": "物体的内能与理想气体内能",
+      "chapter": "第十八章 · 分子动理论与气体",
+      "stem": "【第十八章 · 分子动理论与气体 · 物体的内能与理想气体内能】学生的错误做法：认为温度相同的所有物体内能必定相同。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "数值代入：两种温标零点不同。"
+        },
+        {
+          "label": "B",
+          "text": "概念混淆：内能还与分子数、物态和分子间势能等因素有关；温度只反映热运动的平均剧烈程度。"
+        },
+        {
+          "label": "C",
+          "text": "数值代入：分子数应是总体积除以单分子体积。"
+        },
+        {
+          "label": "D",
+          "text": "数值代入：吸引与排斥方向相反，应作差而不是相加。"
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "内能还与分子数、物态和分子间势能等因素有关；温度只反映热运动的平均剧烈程度。这是适用条件判断，需人工审核。",
+      "error_type": "概念混淆",
+      "judging": "teacher",
+      "source_error_index": 0,
+      "source_caught_by": "人工审核",
+      "wrong_expr": null,
+      "trap_test": null,
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-mgas-04-2",
+      "point_id": "mgas-04",
+      "point_title": "物体的内能与理想气体内能",
+      "chapter": "第十八章 · 分子动理论与气体",
+      "stem": "【第十八章 · 分子动理论与气体 · 物体的内能与理想气体内能】学生的错误做法：漏掉系数 3/2，写成 U = Nk_B T（错误表达式：U = N*k_B*T）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "数值代入：错误式量纲仍为能量，量纲检查抓不到。"
+        },
+        {
+          "label": "B",
+          "text": "量纲一致性：乘以体积后量纲变成能量乘体积，已经不是压强；而且错误式会预言容器越大压强越大，方向也相反。"
+        },
+        {
+          "label": "C",
+          "text": "量纲一致性：面积不是体积，d^2 的量纲是 L^2，而单分子体积的量纲是 L^3。"
+        },
+        {
+          "label": "D",
+          "text": "概念混淆：保守力做正功时势能应减少。"
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "错误式量纲仍为能量，量纲检查抓不到。本情境只算得 828 J，而正确内能是 1242 J。\n知识库校验证据：情境：一份单原子理想气体；代入错误式：N*k_B*T；校验参照值：1242.0。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 1,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "U = N*k_B*T",
+      "trap_test": {
+        "scenario": "一份单原子理想气体",
+        "expr": "N*k_B*T",
+        "ref": 1242.0
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-mgas-05-1",
+      "point_id": "mgas-05",
+      "point_title": "气体实验定律",
+      "chapter": "第十八章 · 分子动理论与气体",
+      "stem": "【第十八章 · 分子动理论与气体 · 气体实验定律】学生的错误做法：等温压缩时认为体积减半、压强也减半（错误表达式：p2 = p1*V2/V1）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "概念混淆：内能还与分子数、物态和分子间势能等因素有关；温度只反映热运动的平均剧烈程度。"
+        },
+        {
+          "label": "B",
+          "text": "量纲一致性：乘以体积后量纲变成能量乘体积，已经不是压强；而且错误式会预言容器越大压强越大，方向也相反。"
+        },
+        {
+          "label": "C",
+          "text": "量纲一致性：面积不是体积，d^2 的量纲是 L^2，而单分子体积的量纲是 L^3。"
+        },
+        {
+          "label": "D",
+          "text": "数值代入：等温时 p 与 V 成反比。"
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "等温时 p 与 V 成反比。本情境错误式得到 5.0×10^4 Pa，正确值应为 2.0×10^5 Pa。\n知识库校验证据：情境：等温压缩；代入错误式：p1*V2/V1；校验参照值：200000.0。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 0,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "p2 = p1*V2/V1",
+      "trap_test": {
+        "scenario": "等温压缩",
+        "expr": "p1*V2/V1",
+        "ref": 200000.0
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-mgas-05-2",
+      "point_id": "mgas-05",
+      "point_title": "气体实验定律",
+      "chapter": "第十八章 · 分子动理论与气体",
+      "stem": "【第十八章 · 分子动理论与气体 · 气体实验定律】学生的错误做法：等压变化时把温度比写反，使用 V2 = V1*T1/T2（错误表达式：V2 = V1*T1/T2）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "量纲一致性：乘以体积后量纲变成能量乘体积，已经不是压强；而且错误式会预言容器越大压强越大，方向也相反。"
+        },
+        {
+          "label": "B",
+          "text": "量纲一致性：面积不是体积，d^2 的量纲是 L^2，而单分子体积的量纲是 L^3。"
+        },
+        {
+          "label": "C",
+          "text": "数值代入：升温时体积应增大。"
+        },
+        {
+          "label": "D",
+          "text": "概念混淆：内能还与分子数、物态和分子间势能等因素有关；温度只反映热运动的平均剧烈程度。"
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "升温时体积应增大。错误式算得 0.0032 m^3，与正确的 0.005 m^3 相反。\n知识库校验证据：情境：等压升温；代入错误式：V1*T1/T2；校验参照值：0.005。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 1,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "V2 = V1*T1/T2",
+      "trap_test": {
+        "scenario": "等压升温",
+        "expr": "V1*T1/T2",
+        "ref": 0.005
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-mgas-06-2",
+      "point_id": "mgas-06",
+      "point_title": "理想气体状态方程",
+      "chapter": "第十八章 · 分子动理论与气体",
+      "stem": "【第十八章 · 分子动理论与气体 · 理想气体状态方程】学生的错误做法：把分子平动对压强的贡献重复计算，写成 p = 2Nk_BT/V（错误表达式：p = 2*N*k_B*T/V）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "数值代入：错误式与正确式量纲完全相同，量纲检查无法发现；在微观状态方程情境中会算出 2.0×10^5 Pa，而独立参考值是 1.0×10^5 Pa。"
+        },
+        {
+          "label": "B",
+          "text": "概念混淆：内能还与分子数、物态和分子间势能等因素有关；温度只反映热运动的平均剧烈程度。"
+        },
+        {
+          "label": "C",
+          "text": "量纲一致性：面积不是体积，d^2 的量纲是 L^2，而单分子体积的量纲是 L^3。"
+        },
+        {
+          "label": "D",
+          "text": "概念混淆：保守力做正功时势能应减少。"
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "错误式与正确式量纲完全相同，量纲检查无法发现；在微观状态方程情境中会算出 2.0×10^5 Pa，而独立参考值是 1.0×10^5 Pa。\n知识库校验证据：情境：微观状态方程；代入错误式：2*N*k_B*T/V；校验参照值：100000.0。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 1,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "p = 2*N*k_B*T/V",
+      "trap_test": {
+        "scenario": "微观状态方程",
+        "expr": "2*N*k_B*T/V",
+        "ref": 100000.0
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    }
+  ],
+  "skipped": [
+    {
+      "point_id": "mgas-01",
+      "point_title": "分子动理论的基本内容与微观量估算",
+      "source_error_index": 1,
+      "reason": "自动判定条目没有 trap_test 可执行证据；不把校验标签代替实测证据。"
+    },
+    {
+      "point_id": "mgas-06",
+      "point_title": "理想气体状态方程",
+      "source_error_index": 0,
+      "reason": "自动判定条目没有 trap_test 可执行证据；不把校验标签代替实测证据。"
+    }
+  ]
+}

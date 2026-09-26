@@ -1,0 +1,595 @@
+{
+  "segment": "高中",
+  "chapter": "第二十一章 · 原子核与核能",
+  "source_file": "21_nuclear.json",
+  "questions": [
+    {
+      "id": "diagnostic-nuc-01-1",
+      "point_id": "nuc-01",
+      "point_title": "原子核的组成与同位素",
+      "chapter": "第二十一章 · 原子核与核能",
+      "stem": "【第二十一章 · 原子核与核能 · 原子核的组成与同位素】学生的错误做法：把质量数当成质子数，写成 A=Z（错误表达式：A = Z）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "概念混淆：γ 射线是光子，没有质量数也没有电荷；放出 γ 只是把核从激发态降到低能态，质量数与质子数都不变。"
+        },
+        {
+          "label": "B",
+          "text": "概念混淆：核反应中守恒的是质量数与电荷数；静质量会按 E=Δm·c² 转化为能量放出去，质量亏损是真实的物理效应。"
+        },
+        {
+          "label": "C",
+          "text": "概念混淆：稳定性要看比结合能，不是质量数。"
+        },
+        {
+          "label": "D",
+          "text": "数值代入：质量数是质子数与中子数之和，不是质子数。"
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "质量数是质子数与中子数之和，不是质子数。碳12 按这个写法会得到 6，而正确值是 12。\n知识库校验证据：情境：碳12；代入错误式：Z；校验参照值：12。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 0,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "A = Z",
+      "trap_test": {
+        "scenario": "碳12",
+        "expr": "Z",
+        "ref": 12
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-nuc-01-2",
+      "point_id": "nuc-01",
+      "point_title": "原子核的组成与同位素",
+      "chapter": "第二十一章 · 原子核与核能",
+      "stem": "【第二十一章 · 原子核与核能 · 原子核的组成与同位素】学生的错误做法：把核半径写成与质量数成正比（R=r_0·A）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "数值代入：半衰期是「剩一半」而不是「减一半」。"
+        },
+        {
+          "label": "B",
+          "text": "数值代入：要代的是**亏损的那部分质量**，不是总质量。"
+        },
+        {
+          "label": "C",
+          "text": "概念混淆：量纲虽然对得上（都是长度），但函数关系错了：核半径只按质量数的**立方根**增长。"
+        },
+        {
+          "label": "D",
+          "text": "数值代入：α 粒子含 2 个质子和 2 个中子，共 4 个核子，质量数应减 4。"
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "量纲虽然对得上（都是长度），但函数关系错了：核半径只按质量数的**立方根**增长。碳12 会算出 1.44×10⁻¹⁴ m，而正确值约 2.75×10⁻¹⁵ m，差了五倍多。此条依赖极小量级（10⁻¹⁵）的比较，机器实测抓不稳，故列人工审核。",
+      "error_type": "概念混淆",
+      "judging": "teacher",
+      "source_error_index": 1,
+      "source_caught_by": "人工审核",
+      "wrong_expr": null,
+      "trap_test": null,
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-nuc-01-3",
+      "point_id": "nuc-01",
+      "point_title": "原子核的组成与同位素",
+      "chapter": "第二十一章 · 原子核与核能",
+      "stem": "【第二十一章 · 原子核与核能 · 原子核的组成与同位素】学生的错误做法：认为质量数总等于质子数的两倍，写成 A=2Z（错误表达式：A = 2*Z）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "概念混淆：稳定性要看比结合能，不是质量数。"
+        },
+        {
+          "label": "B",
+          "text": "数值代入：只有质子数恰好等于中子数时才碰巧成立（如碳12）。"
+        },
+        {
+          "label": "C",
+          "text": "概念混淆：γ 射线是光子，没有质量数也没有电荷；放出 γ 只是把核从激发态降到低能态，质量数与质子数都不变。"
+        },
+        {
+          "label": "D",
+          "text": "概念混淆：核反应中守恒的是质量数与电荷数；静质量会按 E=Δm·c² 转化为能量放出去，质量亏损是真实的物理效应。"
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "只有质子数恰好等于中子数时才碰巧成立（如碳12）。铀238 就不成立：2×92=184，而 A=238——多出来的 54 个全是中子。\n知识库校验证据：情境：铀238；代入错误式：2*Z；校验参照值：238。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 2,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "A = 2*Z",
+      "trap_test": {
+        "scenario": "铀238",
+        "expr": "2*Z",
+        "ref": 238
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-nuc-01-4",
+      "point_id": "nuc-01",
+      "point_title": "原子核的组成与同位素",
+      "chapter": "第二十一章 · 原子核与核能",
+      "stem": "【第二十一章 · 原子核与核能 · 原子核的组成与同位素】学生的错误做法：把同位素说成「质子数不同的原子」。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "概念混淆：同位素是质子数相同、中子数不同；质子数不同就是不同的元素了。"
+        },
+        {
+          "label": "B",
+          "text": "数值代入：α 粒子含 2 个质子和 2 个中子，共 4 个核子，质量数应减 4。"
+        },
+        {
+          "label": "C",
+          "text": "数值代入：半衰期是「剩一半」而不是「减一半」。"
+        },
+        {
+          "label": "D",
+          "text": "数值代入：要代的是**亏损的那部分质量**，不是总质量。"
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "同位素是质子数相同、中子数不同；质子数不同就是不同的元素了。这条只能靠人判。",
+      "error_type": "概念混淆",
+      "judging": "teacher",
+      "source_error_index": 3,
+      "source_caught_by": "人工审核",
+      "wrong_expr": null,
+      "trap_test": null,
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-nuc-02-1",
+      "point_id": "nuc-02",
+      "point_title": "放射性衰变（α、β、γ）",
+      "chapter": "第二十一章 · 原子核与核能",
+      "stem": "【第二十一章 · 原子核与核能 · 放射性衰变（α、β、γ）】学生的错误做法：一次 α 衰变只让质量数减 2（错误表达式：A_2 = A_1 - 2）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "概念混淆：量纲虽然对得上（都是长度），但函数关系错了：核半径只按质量数的**立方根**增长。"
+        },
+        {
+          "label": "B",
+          "text": "概念混淆：核反应中守恒的是质量数与电荷数；静质量会按 E=Δm·c² 转化为能量放出去，质量亏损是真实的物理效应。"
+        },
+        {
+          "label": "C",
+          "text": "概念混淆：稳定性要看比结合能，不是质量数。"
+        },
+        {
+          "label": "D",
+          "text": "数值代入：α 粒子含 2 个质子和 2 个中子，共 4 个核子，质量数应减 4。"
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "α 粒子含 2 个质子和 2 个中子，共 4 个核子，质量数应减 4。铀238 会算成 236，而正确是 234。\n知识库校验证据：情境：铀238一次α衰变；代入错误式：A_1 - 2；校验参照值：234。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 0,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "A_2 = A_1 - 2",
+      "trap_test": {
+        "scenario": "铀238一次α衰变",
+        "expr": "A_1 - 2",
+        "ref": 234
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-nuc-02-2",
+      "point_id": "nuc-02",
+      "point_title": "放射性衰变（α、β、γ）",
+      "chapter": "第二十一章 · 原子核与核能",
+      "stem": "【第二十一章 · 原子核与核能 · 放射性衰变（α、β、γ）】学生的错误做法：认为 γ 衰变会改变质量数与质子数。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "数值代入：半衰期是「剩一半」而不是「减一半」。"
+        },
+        {
+          "label": "B",
+          "text": "数值代入：要代的是**亏损的那部分质量**，不是总质量。"
+        },
+        {
+          "label": "C",
+          "text": "概念混淆：γ 射线是光子，没有质量数也没有电荷；放出 γ 只是把核从激发态降到低能态，质量数与质子数都不变。"
+        },
+        {
+          "label": "D",
+          "text": "数值代入：质量数是质子数与中子数之和，不是质子数。"
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "γ 射线是光子，没有质量数也没有电荷；放出 γ 只是把核从激发态降到低能态，质量数与质子数都不变。",
+      "error_type": "概念混淆",
+      "judging": "teacher",
+      "source_error_index": 1,
+      "source_caught_by": "人工审核",
+      "wrong_expr": null,
+      "trap_test": null,
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-nuc-03-1",
+      "point_id": "nuc-03",
+      "point_title": "半衰期",
+      "chapter": "第二十一章 · 原子核与核能",
+      "stem": "【第二十一章 · 原子核与核能 · 半衰期】学生的错误做法：以为每过一个半衰期就少一半（线性递减），写成 N=N_0·(1−n/2)（错误表达式：N = N_0*(1 - n_half/2)）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "概念混淆：核反应中守恒的是质量数与电荷数；静质量会按 E=Δm·c² 转化为能量放出去，质量亏损是真实的物理效应。"
+        },
+        {
+          "label": "B",
+          "text": "数值代入：半衰期是「剩一半」而不是「减一半」。"
+        },
+        {
+          "label": "C",
+          "text": "概念混淆：量纲虽然对得上（都是长度），但函数关系错了：核半径只按质量数的**立方根**增长。"
+        },
+        {
+          "label": "D",
+          "text": "概念混淆：γ 射线是光子，没有质量数也没有电荷；放出 γ 只是把核从激发态降到低能态，质量数与质子数都不变。"
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "半衰期是「剩一半」而不是「减一半」。N_0=800、n=3 时错误式给出 −400，明显荒谬；正确值是 100。\n知识库校验证据：情境：三个半衰期；代入错误式：N_0*(1 - n_half/2)；校验参照值：100。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 0,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "N = N_0*(1 - n_half/2)",
+      "trap_test": {
+        "scenario": "三个半衰期",
+        "expr": "N_0*(1 - n_half/2)",
+        "ref": 100
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-nuc-03-2",
+      "point_id": "nuc-03",
+      "point_title": "半衰期",
+      "chapter": "第二十一章 · 原子核与核能",
+      "stem": "【第二十一章 · 原子核与核能 · 半衰期】学生的错误做法：把衰变常量 k 与半衰期 T 当成正比关系（k∝T）（错误表达式：k_decay = T_half）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "数值代入：k=ln2/T，二者是**反比**：半衰期越长，单位时间内衰变的概率越小。"
+        },
+        {
+          "label": "B",
+          "text": "概念混淆：量纲虽然对得上（都是长度），但函数关系错了：核半径只按质量数的**立方根**增长。"
+        },
+        {
+          "label": "C",
+          "text": "概念混淆：γ 射线是光子，没有质量数也没有电荷；放出 γ 只是把核从激发态降到低能态，质量数与质子数都不变。"
+        },
+        {
+          "label": "D",
+          "text": "概念混淆：核反应中守恒的是质量数与电荷数；静质量会按 E=Δm·c² 转化为能量放出去，质量亏损是真实的物理效应。"
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "k=ln2/T，二者是**反比**：半衰期越长，单位时间内衰变的概率越小。本情境 k≈0.1386 s⁻¹，而 T=5 s，相差悬殊。\n知识库校验证据：情境：三个半衰期；代入错误式：T_half；校验参照值：0.13862943611198905。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 1,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "k_decay = T_half",
+      "trap_test": {
+        "scenario": "三个半衰期",
+        "expr": "T_half",
+        "ref": 0.13862943611198905
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-nuc-03-3",
+      "point_id": "nuc-03",
+      "point_title": "半衰期",
+      "chapter": "第二十一章 · 原子核与核能",
+      "stem": "【第二十一章 · 原子核与核能 · 半衰期】学生的错误做法：认为半衰期可以描述某一个原子核何时衰变。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "数值代入：质量数是质子数与中子数之和，不是质子数。"
+        },
+        {
+          "label": "B",
+          "text": "数值代入：α 粒子含 2 个质子和 2 个中子，共 4 个核子，质量数应减 4。"
+        },
+        {
+          "label": "C",
+          "text": "数值代入：要代的是**亏损的那部分质量**，不是总质量。"
+        },
+        {
+          "label": "D",
+          "text": "概念混淆：半衰期是大量核的统计规律；对单个核只能给出衰变概率，不能预言它具体何时衰变。"
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "半衰期是大量核的统计规律；对单个核只能给出衰变概率，不能预言它具体何时衰变。",
+      "error_type": "概念混淆",
+      "judging": "teacher",
+      "source_error_index": 2,
+      "source_caught_by": "人工审核",
+      "wrong_expr": null,
+      "trap_test": null,
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-nuc-04-1",
+      "point_id": "nuc-04",
+      "point_title": "核反应方程与质能方程",
+      "chapter": "第二十一章 · 原子核与核能",
+      "stem": "【第二十一章 · 原子核与核能 · 核反应方程与质能方程】学生的错误做法：质能方程里代反应前的总质量，写成 E=m_before·c²（错误表达式：E = m_before*c^2）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "概念混淆：γ 射线是光子，没有质量数也没有电荷；放出 γ 只是把核从激发态降到低能态，质量数与质子数都不变。"
+        },
+        {
+          "label": "B",
+          "text": "概念混淆：稳定性要看比结合能，不是质量数。"
+        },
+        {
+          "label": "C",
+          "text": "数值代入：要代的是**亏损的那部分质量**，不是总质量。"
+        },
+        {
+          "label": "D",
+          "text": "概念混淆：量纲虽然对得上（都是长度），但函数关系错了：核半径只按质量数的**立方根**增长。"
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "要代的是**亏损的那部分质量**，不是总质量。按错误式会得到 0.14207×(3.0×10⁸)²≈1.28×10¹⁶ J，而正确值是 1.62×10¹³ J——放大了近三个数量级。\n知识库校验证据：情境：每摩尔裂变；代入错误式：m_before*c^2；校验参照值：16200000000000.0。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 0,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "E = m_before*c^2",
+      "trap_test": {
+        "scenario": "每摩尔裂变",
+        "expr": "m_before*c^2",
+        "ref": 16200000000000.0
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-nuc-04-2",
+      "point_id": "nuc-04",
+      "point_title": "核反应方程与质能方程",
+      "chapter": "第二十一章 · 原子核与核能",
+      "stem": "【第二十一章 · 原子核与核能 · 核反应方程与质能方程】学生的错误做法：认为核反应中静质量守恒，把质量亏损当成测量误差。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "数值代入：半衰期是「剩一半」而不是「减一半」。"
+        },
+        {
+          "label": "B",
+          "text": "概念混淆：核反应中守恒的是质量数与电荷数；静质量会按 E=Δm·c² 转化为能量放出去，质量亏损是真实的物理效应。"
+        },
+        {
+          "label": "C",
+          "text": "数值代入：质量数是质子数与中子数之和，不是质子数。"
+        },
+        {
+          "label": "D",
+          "text": "数值代入：α 粒子含 2 个质子和 2 个中子，共 4 个核子，质量数应减 4。"
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "核反应中守恒的是质量数与电荷数；静质量会按 E=Δm·c² 转化为能量放出去，质量亏损是真实的物理效应。",
+      "error_type": "概念混淆",
+      "judging": "teacher",
+      "source_error_index": 1,
+      "source_caught_by": "人工审核",
+      "wrong_expr": null,
+      "trap_test": null,
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-nuc-05-1",
+      "point_id": "nuc-05",
+      "point_title": "核裂变与核聚变（含结合能）",
+      "chapter": "第二十一章 · 原子核与核能",
+      "stem": "【第二十一章 · 原子核与核能 · 核裂变与核聚变（含结合能）】学生的错误做法：把比结合能写成结合能乘以质量数（错误表达式：e_b = E_b*A）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "数值代入：比结合能是「每个核子平均分摊到的结合能」，应当除以质量数而不是乘。"
+        },
+        {
+          "label": "B",
+          "text": "概念混淆：量纲虽然对得上（都是长度），但函数关系错了：核半径只按质量数的**立方根**增长。"
+        },
+        {
+          "label": "C",
+          "text": "概念混淆：γ 射线是光子，没有质量数也没有电荷；放出 γ 只是把核从激发态降到低能态，质量数与质子数都不变。"
+        },
+        {
+          "label": "D",
+          "text": "概念混淆：核反应中守恒的是质量数与电荷数；静质量会按 E=Δm·c² 转化为能量放出去，质量亏损是真实的物理效应。"
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "比结合能是「每个核子平均分摊到的结合能」，应当除以质量数而不是乘。按错误式会得到 2.709×10¹²×4≈1.08×10¹³ J，而正确是 6.7725×10¹¹ J。\n知识库校验证据：情境：每摩尔氦4；代入错误式：E_b*A；校验参照值：677250000000.0。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 0,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "e_b = E_b*A",
+      "trap_test": {
+        "scenario": "每摩尔氦4",
+        "expr": "E_b*A",
+        "ref": 677250000000.0
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-nuc-05-2",
+      "point_id": "nuc-05",
+      "point_title": "核裂变与核聚变（含结合能）",
+      "chapter": "第二十一章 · 原子核与核能",
+      "stem": "【第二十一章 · 原子核与核能 · 核裂变与核聚变（含结合能）】学生的错误做法：认为质量数越大的核一定越稳定。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "数值代入：质量数是质子数与中子数之和，不是质子数。"
+        },
+        {
+          "label": "B",
+          "text": "数值代入：α 粒子含 2 个质子和 2 个中子，共 4 个核子，质量数应减 4。"
+        },
+        {
+          "label": "C",
+          "text": "数值代入：半衰期是「剩一半」而不是「减一半」。"
+        },
+        {
+          "label": "D",
+          "text": "概念混淆：稳定性要看比结合能，不是质量数。"
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "稳定性要看比结合能，不是质量数。比结合能在铁附近最大，比铁更重或更轻的核都更不稳定——这正是重核裂变、轻核聚变都能放能的原因。",
+      "error_type": "概念混淆",
+      "judging": "teacher",
+      "source_error_index": 1,
+      "source_caught_by": "人工审核",
+      "wrong_expr": null,
+      "trap_test": null,
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    }
+  ],
+  "skipped": []
+}

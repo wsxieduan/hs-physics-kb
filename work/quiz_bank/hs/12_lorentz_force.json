@@ -1,0 +1,548 @@
+{
+  "segment": "高中",
+  "chapter": "第十二章 · 磁场（二）洛伦兹力与带电粒子",
+  "source_file": "12_lorentz_force.json",
+  "questions": [
+    {
+      "id": "diagnostic-lor-01-1",
+      "point_id": "lor-01",
+      "point_title": "洛伦兹力",
+      "chapter": "第十二章 · 磁场（二）洛伦兹力与带电粒子",
+      "stem": "【第十二章 · 磁场（二）洛伦兹力与带电粒子 · 洛伦兹力】学生的错误做法：任意夹角都直接写 F=|q|vB，漏掉 sin theta（错误表达式：F = abs(q)*v*B）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "概念混淆：经典范围内 T=2pi m/(|q|B)，速率增大时半径同比增大，周长与速率的比值不变。"
+        },
+        {
+          "label": "B",
+          "text": "概念混淆：该式只对应题设明确 r≤R 的几何约束；半圆边界、矩形边界和指定出射点会给出不同临界几何关系，必须先画轨迹，需人工审核。"
+        },
+        {
+          "label": "C",
+          "text": "概念混淆：电荷变号时电场力和磁场力同时反向，二者仍可互相平衡；只要入射方向和速率满足条件，正负电荷都能直线通过。"
+        },
+        {
+          "label": "D",
+          "text": "数值代入：量纲正确但漏掉垂直分量；斜入情境会误得 0.003 N，正确值为 0.0018 N。"
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "量纲正确但漏掉垂直分量；斜入情境会误得 0.003 N，正确值为 0.0018 N。\n知识库校验证据：情境：斜入磁场；代入错误式：abs(q)*v*B；校验参照值：0.0018。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 0,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "F = abs(q)*v*B",
+      "trap_test": {
+        "scenario": "斜入磁场",
+        "expr": "abs(q)*v*B",
+        "ref": 0.0018
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-lor-01-2",
+      "point_id": "lor-01",
+      "point_title": "洛伦兹力",
+      "chapter": "第十二章 · 磁场（二）洛伦兹力与带电粒子",
+      "stem": "【第十二章 · 磁场（二）洛伦兹力与带电粒子 · 洛伦兹力】学生的错误做法：负电荷受力方向也直接照搬正电荷的左手定则结果。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "数值代入：量纲正确但漏掉系数 2；本情境会误得 0.3 m，正确直径为 0.6 m。"
+        },
+        {
+          "label": "B",
+          "text": "数值代入：系数 2 不改变量纲，所以量纲检查抓不到；正交选择场会误得 6000 m/s，而两力平衡给出的正确速率是 3000 m/s。"
+        },
+        {
+          "label": "C",
+          "text": "概念混淆：左手定则先给出正电荷的受力方向，负电荷必须反向。"
+        },
+        {
+          "label": "D",
+          "text": "数值代入：量纲完全正确，但负电荷会算出负半径；垂直入射情境会误得 −0.4 m，而几何半径应为正的 0.4 m，电荷符号只决定偏转方向。"
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "左手定则先给出正电荷的受力方向，负电荷必须反向。空间方向依赖图示，标量公式无法覆盖，需人工审核。",
+      "error_type": "概念混淆",
+      "judging": "teacher",
+      "source_error_index": 1,
+      "source_caught_by": "人工审核",
+      "wrong_expr": null,
+      "trap_test": null,
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-lor-02-1",
+      "point_id": "lor-02",
+      "point_title": "带电粒子在匀强磁场中的圆周运动",
+      "chapter": "第十二章 · 磁场（二）洛伦兹力与带电粒子",
+      "stem": "【第十二章 · 磁场（二）洛伦兹力与带电粒子 · 带电粒子在匀强磁场中的圆周运动】学生的错误做法：求轨道半径时直接代入带符号电荷量，写成 r=mv/(qB)（错误表达式：r = m*v/(q*B)）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "概念混淆：电荷变号时电场力和磁场力同时反向，二者仍可互相平衡；只要入射方向和速率满足条件，正负电荷都能直线通过。"
+        },
+        {
+          "label": "B",
+          "text": "数值代入：量纲完全正确，但负电荷会算出负半径；垂直入射情境会误得 −0.4 m，而几何半径应为正的 0.4 m，电荷符号只决定偏转方向。"
+        },
+        {
+          "label": "C",
+          "text": "概念混淆：左手定则先给出正电荷的受力方向，负电荷必须反向。"
+        },
+        {
+          "label": "D",
+          "text": "概念混淆：该式只对应题设明确 r≤R 的几何约束；半圆边界、矩形边界和指定出射点会给出不同临界几何关系，必须先画轨迹，需人工审核。"
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "量纲完全正确，但负电荷会算出负半径；垂直入射情境会误得 −0.4 m，而几何半径应为正的 0.4 m，电荷符号只决定偏转方向。\n知识库校验证据：情境：垂直入射；代入错误式：m*v/(q*B)；校验参照值：0.4。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 0,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "r = m*v/(q*B)",
+      "trap_test": {
+        "scenario": "垂直入射",
+        "expr": "m*v/(q*B)",
+        "ref": 0.4
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-lor-02-2",
+      "point_id": "lor-02",
+      "point_title": "带电粒子在匀强磁场中的圆周运动",
+      "chapter": "第十二章 · 磁场（二）洛伦兹力与带电粒子",
+      "stem": "【第十二章 · 磁场（二）洛伦兹力与带电粒子 · 带电粒子在匀强磁场中的圆周运动】学生的错误做法：认为粒子速率越大，圆周运动周期越长。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "概念混淆：经典范围内 T=2pi m/(|q|B)，速率增大时半径同比增大，周长与速率的比值不变。"
+        },
+        {
+          "label": "B",
+          "text": "数值代入：量纲正确但漏掉垂直分量；斜入情境会误得 0.003 N，正确值为 0.0018 N。"
+        },
+        {
+          "label": "C",
+          "text": "数值代入：量纲正确但漏掉系数 2；本情境会误得 0.3 m，正确直径为 0.6 m。"
+        },
+        {
+          "label": "D",
+          "text": "数值代入：系数 2 不改变量纲，所以量纲检查抓不到；正交选择场会误得 6000 m/s，而两力平衡给出的正确速率是 3000 m/s。"
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "经典范围内 T=2pi m/(|q|B)，速率增大时半径同比增大，周长与速率的比值不变。这是概念判断，需人工审核。",
+      "error_type": "概念混淆",
+      "judging": "teacher",
+      "source_error_index": 1,
+      "source_caught_by": "人工审核",
+      "wrong_expr": null,
+      "trap_test": null,
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-lor-03-1",
+      "point_id": "lor-03",
+      "point_title": "带电粒子在磁场中的临界与极值",
+      "chapter": "第十二章 · 磁场（二）洛伦兹力与带电粒子",
+      "stem": "【第十二章 · 磁场（二）洛伦兹力与带电粒子 · 带电粒子在磁场中的临界与极值】学生的错误做法：把轨道直径直接当成半径，写成 d=r（错误表达式：d = r）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "概念混淆：左手定则先给出正电荷的受力方向，负电荷必须反向。"
+        },
+        {
+          "label": "B",
+          "text": "概念混淆：经典范围内 T=2pi m/(|q|B)，速率增大时半径同比增大，周长与速率的比值不变。"
+        },
+        {
+          "label": "C",
+          "text": "概念混淆：电荷变号时电场力和磁场力同时反向，二者仍可互相平衡；只要入射方向和速率满足条件，正负电荷都能直线通过。"
+        },
+        {
+          "label": "D",
+          "text": "数值代入：量纲正确但漏掉系数 2；本情境会误得 0.3 m，正确直径为 0.6 m。"
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "量纲正确但漏掉系数 2；本情境会误得 0.3 m，正确直径为 0.6 m。\n知识库校验证据：情境：圆形磁场边界；代入错误式：r；校验参照值：0.6。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 0,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "d = r",
+      "trap_test": {
+        "scenario": "圆形磁场边界",
+        "expr": "r",
+        "ref": 0.6
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-lor-03-2",
+      "point_id": "lor-03",
+      "point_title": "带电粒子在磁场中的临界与极值",
+      "chapter": "第十二章 · 磁场（二）洛伦兹力与带电粒子",
+      "stem": "【第十二章 · 磁场（二）洛伦兹力与带电粒子 · 带电粒子在磁场中的临界与极值】学生的错误做法：遇到任何有界磁场都直接套 v_max=|q|BR/m。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "数值代入：量纲完全正确，但负电荷会算出负半径；垂直入射情境会误得 −0.4 m，而几何半径应为正的 0.4 m，电荷符号只决定偏转方向。"
+        },
+        {
+          "label": "B",
+          "text": "数值代入：系数 2 不改变量纲，所以量纲检查抓不到；正交选择场会误得 6000 m/s，而两力平衡给出的正确速率是 3000 m/s。"
+        },
+        {
+          "label": "C",
+          "text": "概念混淆：该式只对应题设明确 r≤R 的几何约束；半圆边界、矩形边界和指定出射点会给出不同临界几何关系，必须先画轨迹，需人工审核。"
+        },
+        {
+          "label": "D",
+          "text": "数值代入：量纲正确但漏掉垂直分量；斜入情境会误得 0.003 N，正确值为 0.0018 N。"
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "该式只对应题设明确 r≤R 的几何约束；半圆边界、矩形边界和指定出射点会给出不同临界几何关系，必须先画轨迹，需人工审核。",
+      "error_type": "概念混淆",
+      "judging": "teacher",
+      "source_error_index": 1,
+      "source_caught_by": "人工审核",
+      "wrong_expr": null,
+      "trap_test": null,
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-lor-04-1",
+      "point_id": "lor-04",
+      "point_title": "速度选择器",
+      "chapter": "第十二章 · 磁场（二）洛伦兹力与带电粒子",
+      "stem": "【第十二章 · 磁场（二）洛伦兹力与带电粒子 · 速度选择器】学生的错误做法：误把两种力各算两次，写成选择速率 v=2E/B（错误表达式：v = 2*E/B）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "概念混淆：该式只对应题设明确 r≤R 的几何约束；半圆边界、矩形边界和指定出射点会给出不同临界几何关系，必须先画轨迹，需人工审核。"
+        },
+        {
+          "label": "B",
+          "text": "数值代入：系数 2 不改变量纲，所以量纲检查抓不到；正交选择场会误得 6000 m/s，而两力平衡给出的正确速率是 3000 m/s。"
+        },
+        {
+          "label": "C",
+          "text": "概念混淆：左手定则先给出正电荷的受力方向，负电荷必须反向。"
+        },
+        {
+          "label": "D",
+          "text": "概念混淆：经典范围内 T=2pi m/(|q|B)，速率增大时半径同比增大，周长与速率的比值不变。"
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "系数 2 不改变量纲，所以量纲检查抓不到；正交选择场会误得 6000 m/s，而两力平衡给出的正确速率是 3000 m/s。\n知识库校验证据：情境：正交选择场；代入错误式：2*E/B；校验参照值：3000.0。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 0,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "v = 2*E/B",
+      "trap_test": {
+        "scenario": "正交选择场",
+        "expr": "2*E/B",
+        "ref": 3000.0
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-lor-04-2",
+      "point_id": "lor-04",
+      "point_title": "速度选择器",
+      "chapter": "第十二章 · 磁场（二）洛伦兹力与带电粒子",
+      "stem": "【第十二章 · 磁场（二）洛伦兹力与带电粒子 · 速度选择器】学生的错误做法：认为速度选择器只能让正电荷通过，负电荷一定偏转。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "概念混淆：电荷变号时电场力和磁场力同时反向，二者仍可互相平衡；只要入射方向和速率满足条件，正负电荷都能直线通过。"
+        },
+        {
+          "label": "B",
+          "text": "数值代入：量纲正确但漏掉垂直分量；斜入情境会误得 0.003 N，正确值为 0.0018 N。"
+        },
+        {
+          "label": "C",
+          "text": "数值代入：量纲完全正确，但负电荷会算出负半径；垂直入射情境会误得 −0.4 m，而几何半径应为正的 0.4 m，电荷符号只决定偏转方向。"
+        },
+        {
+          "label": "D",
+          "text": "数值代入：量纲正确但漏掉系数 2；本情境会误得 0.3 m，正确直径为 0.6 m。"
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "电荷变号时电场力和磁场力同时反向，二者仍可互相平衡；只要入射方向和速率满足条件，正负电荷都能直线通过。这是方向概念，需人工审核。",
+      "error_type": "概念混淆",
+      "judging": "teacher",
+      "source_error_index": 1,
+      "source_caught_by": "人工审核",
+      "wrong_expr": null,
+      "trap_test": null,
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-lor-05-1",
+      "point_id": "lor-05",
+      "point_title": "质谱仪",
+      "chapter": "第十二章 · 磁场（二）洛伦兹力与带电粒子",
+      "stem": "【第十二章 · 磁场（二）洛伦兹力与带电粒子 · 质谱仪】学生的错误做法：电压加速公式漏掉系数 2，写成 v=sqrt(|q|U/m)（错误表达式：v = sqrt(abs(q)*U/m)）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "概念混淆：左手定则先给出正电荷的受力方向，负电荷必须反向。"
+        },
+        {
+          "label": "B",
+          "text": "概念混淆：经典范围内 T=2pi m/(|q|B)，速率增大时半径同比增大，周长与速率的比值不变。"
+        },
+        {
+          "label": "C",
+          "text": "概念混淆：该式只对应题设明确 r≤R 的几何约束；半圆边界、矩形边界和指定出射点会给出不同临界几何关系，必须先画轨迹，需人工审核。"
+        },
+        {
+          "label": "D",
+          "text": "数值代入：量纲正确但忽略动能中的 1/2；本情境会误得约 70710.7 m/s，正确值为 100000 m/s。"
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "量纲正确但忽略动能中的 1/2；本情境会误得约 70710.7 m/s，正确值为 100000 m/s。\n知识库校验证据：情境：单电荷离子；代入错误式：sqrt(abs(q)*U/m)；校验参照值：100000.0。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 0,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "v = sqrt(abs(q)*U/m)",
+      "trap_test": {
+        "scenario": "单电荷离子",
+        "expr": "sqrt(abs(q)*U/m)",
+        "ref": 100000.0
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-lor-05-2",
+      "point_id": "lor-05",
+      "point_title": "质谱仪",
+      "chapter": "第十二章 · 磁场（二）洛伦兹力与带电粒子",
+      "stem": "【第十二章 · 磁场（二）洛伦兹力与带电粒子 · 质谱仪】学生的错误做法：用带符号的 q 直接开方，认为负离子不能被电压加速。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "数值代入：量纲完全正确，但负电荷会算出负半径；垂直入射情境会误得 −0.4 m，而几何半径应为正的 0.4 m，电荷符号只决定偏转方向。"
+        },
+        {
+          "label": "B",
+          "text": "数值代入：量纲正确但漏掉系数 2；本情境会误得 0.3 m，正确直径为 0.6 m。"
+        },
+        {
+          "label": "C",
+          "text": "概念混淆：加速电势差的方向需配合电荷正负选择；计算获得的动能和速率使用做功的正值 |q|U。"
+        },
+        {
+          "label": "D",
+          "text": "数值代入：量纲正确但漏掉垂直分量；斜入情境会误得 0.003 N，正确值为 0.0018 N。"
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "加速电势差的方向需配合电荷正负选择；计算获得的动能和速率使用做功的正值 |q|U。方向问题需结合电极图示人工审核。",
+      "error_type": "概念混淆",
+      "judging": "teacher",
+      "source_error_index": 1,
+      "source_caught_by": "人工审核",
+      "wrong_expr": null,
+      "trap_test": null,
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-lor-06-1",
+      "point_id": "lor-06",
+      "point_title": "回旋加速器",
+      "chapter": "第十二章 · 磁场（二）洛伦兹力与带电粒子",
+      "stem": "【第十二章 · 磁场（二）洛伦兹力与带电粒子 · 回旋加速器】学生的错误做法：回旋频率漏掉 2pi，写成 f=|q|B/m（错误表达式：f = abs(q)*B/m）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "概念混淆：该式只对应题设明确 r≤R 的几何约束；半圆边界、矩形边界和指定出射点会给出不同临界几何关系，必须先画轨迹，需人工审核。"
+        },
+        {
+          "label": "B",
+          "text": "数值代入：量纲正确但数值大 2pi 倍；本情境会误得 4.0×10⁷ Hz，正确约为 6.366×10⁶ Hz。"
+        },
+        {
+          "label": "C",
+          "text": "概念混淆：左手定则先给出正电荷的受力方向，负电荷必须反向。"
+        },
+        {
+          "label": "D",
+          "text": "概念混淆：经典范围内 T=2pi m/(|q|B)，速率增大时半径同比增大，周长与速率的比值不变。"
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "量纲正确但数值大 2pi 倍；本情境会误得 4.0×10⁷ Hz，正确约为 6.366×10⁶ Hz。\n知识库校验证据：情境：氘核加速；代入错误式：abs(q)*B/m；校验参照值：6366197.723675814。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 0,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "f = abs(q)*B/m",
+      "trap_test": {
+        "scenario": "氘核加速",
+        "expr": "abs(q)*B/m",
+        "ref": 6366197.723675814
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-lor-06-2",
+      "point_id": "lor-06",
+      "point_title": "回旋加速器",
+      "chapter": "第十二章 · 磁场（二）洛伦兹力与带电粒子",
+      "stem": "【第十二章 · 磁场（二）洛伦兹力与带电粒子 · 回旋加速器】学生的错误做法：认为磁场在 D 形盒内持续给粒子做功、直接增加动能。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "概念混淆：洛伦兹力始终垂直速度，只负责弯转；真正增加动能的是粒子穿越盒缝时的电场。"
+        },
+        {
+          "label": "B",
+          "text": "数值代入：量纲正确但漏掉垂直分量；斜入情境会误得 0.003 N，正确值为 0.0018 N。"
+        },
+        {
+          "label": "C",
+          "text": "数值代入：量纲完全正确，但负电荷会算出负半径；垂直入射情境会误得 −0.4 m，而几何半径应为正的 0.4 m，电荷符号只决定偏转方向。"
+        },
+        {
+          "label": "D",
+          "text": "数值代入：量纲正确但漏掉系数 2；本情境会误得 0.3 m，正确直径为 0.6 m。"
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "洛伦兹力始终垂直速度，只负责弯转；真正增加动能的是粒子穿越盒缝时的电场。这是能量来源判断，需人工审核。",
+      "error_type": "概念混淆",
+      "judging": "teacher",
+      "source_error_index": 1,
+      "source_caught_by": "人工审核",
+      "wrong_expr": null,
+      "trap_test": null,
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    }
+  ],
+  "skipped": []
+}

@@ -1,0 +1,475 @@
+{
+  "segment": "高中",
+  "chapter": "第十五章 · 交变电流",
+  "source_file": "15_ac_current.json",
+  "questions": [
+    {
+      "id": "diagnostic-ac-01-1",
+      "point_id": "ac-01",
+      "point_title": "交变电流的产生",
+      "chapter": "第十五章 · 交变电流",
+      "stem": "【第十五章 · 交变电流 · 交变电流的产生】学生的错误做法：认为磁通量最大时，感应电动势也最大。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "数值代入：错误式量纲正确，只能靠数值实测抓住：峰值 141.421 V 时会算出 70.711 V，正确有效值是 100 V。"
+        },
+        {
+          "label": "B",
+          "text": "数值代入：量纲正确但数值错误：该降压情境会算出 0.2 A，正确值是 5.0 A；正确关系由功率守恒决定，电流与匝数成反比。"
+        },
+        {
+          "label": "C",
+          "text": "数值代入：输电电压主要加在用户负载和输电系统上，不是全部加在输电线电阻上。"
+        },
+        {
+          "label": "D",
+          "text": "概念混淆：感应电动势取决于磁通量的变化率，不取决于磁通量本身。"
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "感应电动势取决于磁通量的变化率，不取决于磁通量本身。磁通量处在最大值时瞬时变化率为零，电动势也为零。这个相位判断需要结合图像人工审核。",
+      "error_type": "概念混淆",
+      "judging": "teacher",
+      "source_error_index": 0,
+      "source_caught_by": "人工审核",
+      "wrong_expr": null,
+      "trap_test": null,
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-ac-01-2",
+      "point_id": "ac-01",
+      "point_title": "交变电流的产生",
+      "chapter": "第十五章 · 交变电流",
+      "stem": "【第十五章 · 交变电流 · 交变电流的产生】学生的错误做法：计算多匝线圈的峰值时漏乘匝数，写成 E_m=B*S_coil*omega（错误表达式：E_m = B*S_coil*omega）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "概念混淆：sqrt(2) 关系只适用于正弦式交变电流；其他波形必须由相同发热效果定义有效值。"
+        },
+        {
+          "label": "B",
+          "text": "概念混淆：稳定直流建立后磁通量不再变化，副线圈没有持续感应电动势；原线圈还可能因电流过大而发热损坏。"
+        },
+        {
+          "label": "C",
+          "text": "数值代入：匝数是无量纲量，漏掉它后量纲仍然完全正确，量纲检查抓不到。"
+        },
+        {
+          "label": "D",
+          "text": "概念混淆：只有从电压过零且沿正方向增大的时刻开始计时，初相位才为零。"
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "匝数是无量纲量，漏掉它后量纲仍然完全正确，量纲检查抓不到。此情境错误式只得到 1 V，100 匝串联线圈的正确峰值是 100 V。\n知识库校验证据：情境：匀速转动线圈；代入错误式：B*S_coil*omega；校验参照值：100.0。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 1,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "E_m = B*S_coil*omega",
+      "trap_test": {
+        "scenario": "匀速转动线圈",
+        "expr": "B*S_coil*omega",
+        "ref": 100.0
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-ac-02-1",
+      "point_id": "ac-02",
+      "point_title": "交变电流的峰值、有效值、周期与频率",
+      "chapter": "第十五章 · 交变电流",
+      "stem": "【第十五章 · 交变电流 · 交变电流的峰值、有效值、周期与频率】学生的错误做法：把正弦交变电压的有效值当成峰值的一半，写成 U_eff=U_m/2（错误表达式：U_eff = U_m/2）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "概念混淆：稳定直流建立后磁通量不再变化，副线圈没有持续感应电动势；原线圈还可能因电流过大而发热损坏。"
+        },
+        {
+          "label": "B",
+          "text": "数值代入：错误式量纲正确，只能靠数值实测抓住：峰值 141.421 V 时会算出 70.711 V，正确有效值是 100 V。"
+        },
+        {
+          "label": "C",
+          "text": "概念混淆：感应电动势取决于磁通量的变化率，不取决于磁通量本身。"
+        },
+        {
+          "label": "D",
+          "text": "概念混淆：只有从电压过零且沿正方向增大的时刻开始计时，初相位才为零。"
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "错误式量纲正确，只能靠数值实测抓住：峰值 141.421 V 时会算出 70.711 V，正确有效值是 100 V。\n知识库校验证据：情境：正弦交流用电器；代入错误式：U_m/2；校验参照值：100.0。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 0,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "U_eff = U_m/2",
+      "trap_test": {
+        "scenario": "正弦交流用电器",
+        "expr": "U_m/2",
+        "ref": 100.0
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-ac-02-2",
+      "point_id": "ac-02",
+      "point_title": "交变电流的峰值、有效值、周期与频率",
+      "chapter": "第十五章 · 交变电流",
+      "stem": "【第十五章 · 交变电流 · 交变电流的峰值、有效值、周期与频率】学生的错误做法：认为任何周期交变电流都满足有效值等于峰值除以 sqrt(2)。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "概念混淆：sqrt(2) 关系只适用于正弦式交变电流；其他波形必须由相同发热效果定义有效值。"
+        },
+        {
+          "label": "B",
+          "text": "数值代入：量纲正确但数值错误：该降压情境会算出 0.2 A，正确值是 5.0 A；正确关系由功率守恒决定，电流与匝数成反比。"
+        },
+        {
+          "label": "C",
+          "text": "数值代入：输电电压主要加在用户负载和输电系统上，不是全部加在输电线电阻上。"
+        },
+        {
+          "label": "D",
+          "text": "数值代入：多出的 2 没有量纲，所以错误式量纲完全正确。"
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "sqrt(2) 关系只适用于正弦式交变电流；其他波形必须由相同发热效果定义有效值。这是适用条件判断，标注人工审核。",
+      "error_type": "概念混淆",
+      "judging": "teacher",
+      "source_error_index": 1,
+      "source_caught_by": "人工审核",
+      "wrong_expr": null,
+      "trap_test": null,
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-ac-03-1",
+      "point_id": "ac-03",
+      "point_title": "正弦式交变电流的表达式与图像",
+      "chapter": "第十五章 · 交变电流",
+      "stem": "【第十五章 · 交变电流 · 正弦式交变电流的表达式与图像】学生的错误做法：把任意计时起点都写成 u=U_m*sin(omega*t)，忽略初相位。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "数值代入：错误式量纲正确，只能靠数值实测抓住：峰值 141.421 V 时会算出 70.711 V，正确有效值是 100 V。"
+        },
+        {
+          "label": "B",
+          "text": "数值代入：量纲正确但数值错误：该降压情境会算出 0.2 A，正确值是 5.0 A；正确关系由功率守恒决定，电流与匝数成反比。"
+        },
+        {
+          "label": "C",
+          "text": "数值代入：输电电压主要加在用户负载和输电系统上，不是全部加在输电线电阻上。"
+        },
+        {
+          "label": "D",
+          "text": "概念混淆：只有从电压过零且沿正方向增大的时刻开始计时，初相位才为零。"
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "只有从电压过零且沿正方向增大的时刻开始计时，初相位才为零。换起点后应写入相应初相位，这需要结合题图人工判断。",
+      "error_type": "概念混淆",
+      "judging": "teacher",
+      "source_error_index": 0,
+      "source_caught_by": "人工审核",
+      "wrong_expr": null,
+      "trap_test": null,
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-ac-03-2",
+      "point_id": "ac-03",
+      "point_title": "正弦式交变电流的表达式与图像",
+      "chapter": "第十五章 · 交变电流",
+      "stem": "【第十五章 · 交变电流 · 正弦式交变电流的表达式与图像】学生的错误做法：把零相位的正弦表达式误写成余弦式 u=U_m*cos(omega*t)（错误表达式：u = U_m*cos(omega*t)）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "概念混淆：sqrt(2) 关系只适用于正弦式交变电流；其他波形必须由相同发热效果定义有效值。"
+        },
+        {
+          "label": "B",
+          "text": "概念混淆：稳定直流建立后磁通量不再变化，副线圈没有持续感应电动势；原线圈还可能因电流过大而发热损坏。"
+        },
+        {
+          "label": "C",
+          "text": "数值代入：正弦与余弦的量纲完全相同，量纲检查无法发现相位错位。"
+        },
+        {
+          "label": "D",
+          "text": "概念混淆：感应电动势取决于磁通量的变化率，不取决于磁通量本身。"
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "正弦与余弦的量纲完全相同，量纲检查无法发现相位错位。四分之一周期时错误式给出 0 V，而正确瞬时值为 100 V。\n知识库校验证据：情境：四分之一周期；代入错误式：U_m*cos(omega*t)；校验参照值：100.0。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 1,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "u = U_m*cos(omega*t)",
+      "trap_test": {
+        "scenario": "四分之一周期",
+        "expr": "U_m*cos(omega*t)",
+        "ref": 100.0
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-ac-04-1",
+      "point_id": "ac-04",
+      "point_title": "理想变压器",
+      "chapter": "第十五章 · 交变电流",
+      "stem": "【第十五章 · 交变电流 · 理想变压器】学生的错误做法：认为理想变压器的电流也与匝数成正比，写成 I_2=I_1*N_2/N_1（错误表达式：I_2 = I_1*N_2/N_1）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "概念混淆：sqrt(2) 关系只适用于正弦式交变电流；其他波形必须由相同发热效果定义有效值。"
+        },
+        {
+          "label": "B",
+          "text": "数值代入：量纲正确但数值错误：该降压情境会算出 0.2 A，正确值是 5.0 A；正确关系由功率守恒决定，电流与匝数成反比。"
+        },
+        {
+          "label": "C",
+          "text": "概念混淆：感应电动势取决于磁通量的变化率，不取决于磁通量本身。"
+        },
+        {
+          "label": "D",
+          "text": "概念混淆：只有从电压过零且沿正方向增大的时刻开始计时，初相位才为零。"
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "量纲正确但数值错误：该降压情境会算出 0.2 A，正确值是 5.0 A；正确关系由功率守恒决定，电流与匝数成反比。\n知识库校验证据：情境：理想降压变压器；代入错误式：I_1*N_2/N_1；校验参照值：5.0。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 0,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "I_2 = I_1*N_2/N_1",
+      "trap_test": {
+        "scenario": "理想降压变压器",
+        "expr": "I_1*N_2/N_1",
+        "ref": 5.0
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-ac-04-2",
+      "point_id": "ac-04",
+      "point_title": "理想变压器",
+      "chapter": "第十五章 · 交变电流",
+      "stem": "【第十五章 · 交变电流 · 理想变压器】学生的错误做法：把稳定直流接入普通变压器，认为仍能持续得到按匝数比变化的电压。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "概念混淆：稳定直流建立后磁通量不再变化，副线圈没有持续感应电动势；原线圈还可能因电流过大而发热损坏。"
+        },
+        {
+          "label": "B",
+          "text": "数值代入：错误式量纲正确，只能靠数值实测抓住：峰值 141.421 V 时会算出 70.711 V，正确有效值是 100 V。"
+        },
+        {
+          "label": "C",
+          "text": "数值代入：输电电压主要加在用户负载和输电系统上，不是全部加在输电线电阻上。"
+        },
+        {
+          "label": "D",
+          "text": "数值代入：多出的 2 没有量纲，所以错误式量纲完全正确。"
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "稳定直流建立后磁通量不再变化，副线圈没有持续感应电动势；原线圈还可能因电流过大而发热损坏。这是适用条件判断，需人工审核。",
+      "error_type": "概念混淆",
+      "judging": "teacher",
+      "source_error_index": 1,
+      "source_caught_by": "人工审核",
+      "wrong_expr": null,
+      "trap_test": null,
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-ac-05-1",
+      "point_id": "ac-05",
+      "point_title": "远距离输电",
+      "chapter": "第十五章 · 交变电流",
+      "stem": "【第十五章 · 交变电流 · 远距离输电】学生的错误做法：用输送电压直接除以线路电阻来求输电线电流，写成 I_line=U_send/R_line（错误表达式：I_line = U_send/R_line）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "概念混淆：感应电动势取决于磁通量的变化率，不取决于磁通量本身。"
+        },
+        {
+          "label": "B",
+          "text": "概念混淆：只有从电压过零且沿正方向增大的时刻开始计时，初相位才为零。"
+        },
+        {
+          "label": "C",
+          "text": "概念混淆：sqrt(2) 关系只适用于正弦式交变电流；其他波形必须由相同发热效果定义有效值。"
+        },
+        {
+          "label": "D",
+          "text": "数值代入：输电电压主要加在用户负载和输电系统上，不是全部加在输电线电阻上。"
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "输电电压主要加在用户负载和输电系统上，不是全部加在输电线电阻上。高压输电情境中错误式得 5000 A，而由输送功率确定的正确电流仅 10 A。\n知识库校验证据：情境：高压输电；代入错误式：U_send/R_line；校验参照值：10.0。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 0,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "I_line = U_send/R_line",
+      "trap_test": {
+        "scenario": "高压输电",
+        "expr": "U_send/R_line",
+        "ref": 10.0
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-ac-06-1",
+      "point_id": "ac-06",
+      "point_title": "电感与电容对交变电流的影响",
+      "chapter": "第十五章 · 交变电流",
+      "stem": "【第十五章 · 交变电流 · 电感与电容对交变电流的影响】学生的错误做法：把感抗公式多乘一个系数 2，写成 X_L=2*omega*L_ind（错误表达式：X_L = 2*omega*L_ind）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "概念混淆：sqrt(2) 关系只适用于正弦式交变电流；其他波形必须由相同发热效果定义有效值。"
+        },
+        {
+          "label": "B",
+          "text": "数值代入：多出的 2 没有量纲，所以错误式量纲完全正确。"
+        },
+        {
+          "label": "C",
+          "text": "概念混淆：感应电动势取决于磁通量的变化率，不取决于磁通量本身。"
+        },
+        {
+          "label": "D",
+          "text": "概念混淆：只有从电压过零且沿正方向增大的时刻开始计时，初相位才为零。"
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "多出的 2 没有量纲，所以错误式量纲完全正确。工频情境中它会算出约 125.66 Ω，正确感抗约为 62.83 Ω，只能靠数值代入抓住。\n知识库校验证据：情境：工频电抗；代入错误式：2*omega*L_ind；校验参照值：62.8318530718。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 0,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "X_L = 2*omega*L_ind",
+      "trap_test": {
+        "scenario": "工频电抗",
+        "expr": "2*omega*L_ind",
+        "ref": 62.8318530718
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    }
+  ],
+  "skipped": [
+    {
+      "point_id": "ac-05",
+      "point_title": "远距离输电",
+      "source_error_index": 1,
+      "reason": "自动判定条目没有 trap_test 可执行证据；不把校验标签代替实测证据。"
+    },
+    {
+      "point_id": "ac-06",
+      "point_title": "电感与电容对交变电流的影响",
+      "source_error_index": 1,
+      "reason": "自动判定条目没有 trap_test 可执行证据；不把校验标签代替实测证据。"
+    }
+  ]
+}

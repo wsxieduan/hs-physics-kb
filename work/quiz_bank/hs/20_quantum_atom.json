@@ -1,0 +1,548 @@
+{
+  "segment": "高中",
+  "chapter": "第二十章 · 波粒二象性与原子结构",
+  "source_file": "20_quantum_atom.json",
+  "questions": [
+    {
+      "id": "diagnostic-qz-01-1",
+      "point_id": "qz-01",
+      "point_title": "黑体辐射与能量量子化",
+      "chapter": "第二十章 · 波粒二象性与原子结构",
+      "stem": "【第二十章 · 波粒二象性与原子结构 · 黑体辐射与能量量子化】学生的错误做法：把光子能量写成与频率成反比（错误表达式：E = h/nu）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "概念混淆：能否打出电子只取决于单个光子的能量 hν 是否超过 W。"
+        },
+        {
+          "label": "B",
+          "text": "概念混淆：两者描述的是同一束光的不同侧面，通过 E=hν 与 ν=c/λ 可以互相换算，并不矛盾。"
+        },
+        {
+          "label": "C",
+          "text": "概念混淆：宏观物体**有**波动性，只是波长小到无法观测（0.02 kg 小球约 10⁻³² m）。"
+        },
+        {
+          "label": "D",
+          "text": "数值代入：频率越高光子能量越大，是正比。"
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "频率越高光子能量越大，是正比。按错误式红光只得到 8.28×10⁻³⁰ eV，而正确值是 2.07 eV——差了 30 个数量级。\n知识库校验证据：情境：红光量子；代入错误式：h/nu；校验参照值：2.07。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 0,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "E = h/nu",
+      "trap_test": {
+        "scenario": "红光量子",
+        "expr": "h/nu",
+        "ref": 2.07
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-qz-01-2",
+      "point_id": "qz-01",
+      "point_title": "黑体辐射与能量量子化",
+      "chapter": "第二十章 · 波粒二象性与原子结构",
+      "stem": "【第二十章 · 波粒二象性与原子结构 · 黑体辐射与能量量子化】学生的错误做法：认为光释放或吸收的能量可以连续变化。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "数值代入：两者是反比。"
+        },
+        {
+          "label": "B",
+          "text": "数值代入：动量是 mv，动能才是 ½mv²。"
+        },
+        {
+          "label": "C",
+          "text": "概念混淆：这正是被黑体辐射实验否掉的经典图像。"
+        },
+        {
+          "label": "D",
+          "text": "数值代入：hν 是吸收到的能量，W 是必须付出的，剩下才是动能，所以是「收入减支出」。"
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "这正是被黑体辐射实验否掉的经典图像。能量是一份一份的，「一份」就是 hν。这一条是观念性错误，无法用公式检查，只能靠人判。",
+      "error_type": "概念混淆",
+      "judging": "teacher",
+      "source_error_index": 1,
+      "source_caught_by": "人工审核",
+      "wrong_expr": null,
+      "trap_test": null,
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-qz-02-1",
+      "point_id": "qz-02",
+      "point_title": "光电效应与爱因斯坦光电方程",
+      "chapter": "第二十章 · 波粒二象性与原子结构",
+      "stem": "【第二十章 · 波粒二象性与原子结构 · 光电效应与爱因斯坦光电方程】学生的错误做法：把光电方程写成 Ek = W - h*nu（减反了）（错误表达式：W - h*nu）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "概念混淆：宏观物体**有**波动性，只是波长小到无法观测（0.02 kg 小球约 10⁻³² m）。"
+        },
+        {
+          "label": "B",
+          "text": "数值代入：hν 是吸收到的能量，W 是必须付出的，剩下才是动能，所以是「收入减支出」。"
+        },
+        {
+          "label": "C",
+          "text": "概念混淆：这正是被黑体辐射实验否掉的经典图像。"
+        },
+        {
+          "label": "D",
+          "text": "概念混淆：两者描述的是同一束光的不同侧面，通过 E=hν 与 ν=c/λ 可以互相换算，并不矛盾。"
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "hν 是吸收到的能量，W 是必须付出的，剩下才是动能，所以是「收入减支出」。按错误式会得到 −0.815 eV，动能不可能为负。\n知识库校验证据：情境：钠紫光照射；代入错误式：W - h*nu；校验参照值：0.815。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 0,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "W - h*nu",
+      "trap_test": {
+        "scenario": "钠紫光照射",
+        "expr": "W - h*nu",
+        "ref": 0.815
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-qz-02-2",
+      "point_id": "qz-02",
+      "point_title": "光电效应与爱因斯坦光电方程",
+      "chapter": "第二十章 · 波粒二象性与原子结构",
+      "stem": "【第二十章 · 波粒二象性与原子结构 · 光电效应与爱因斯坦光电方程】学生的错误做法：认为只要光足够强，低于截止频率的光也能打出光电子。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "概念混淆：能否打出电子只取决于单个光子的能量 hν 是否超过 W。"
+        },
+        {
+          "label": "B",
+          "text": "数值代入：频率越高光子能量越大，是正比。"
+        },
+        {
+          "label": "C",
+          "text": "数值代入：两者是反比。"
+        },
+        {
+          "label": "D",
+          "text": "数值代入：动量是 mv，动能才是 ½mv²。"
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "能否打出电子只取决于单个光子的能量 hν 是否超过 W。光强变大只是光子数变多，每个光子的能量并没有变大。这是光电效应最核心的概念性结论，公式抓不到。",
+      "error_type": "概念混淆",
+      "judging": "teacher",
+      "source_error_index": 1,
+      "source_caught_by": "人工审核",
+      "wrong_expr": null,
+      "trap_test": null,
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-qz-03-1",
+      "point_id": "qz-03",
+      "point_title": "光的波粒二象性",
+      "chapter": "第二十章 · 波粒二象性与原子结构",
+      "stem": "【第二十章 · 波粒二象性与原子结构 · 光的波粒二象性】学生的错误做法：把波长与频率记成正比，写成 nu = c*lambda（错误表达式：nu = c*lambda）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "概念混淆：这正是被黑体辐射实验否掉的经典图像。"
+        },
+        {
+          "label": "B",
+          "text": "概念混淆：能否打出电子只取决于单个光子的能量 hν 是否超过 W。"
+        },
+        {
+          "label": "C",
+          "text": "概念混淆：宏观物体**有**波动性，只是波长小到无法观测（0.02 kg 小球约 10⁻³² m）。"
+        },
+        {
+          "label": "D",
+          "text": "数值代入：两者是反比。"
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "两者是反比。按错误式，5.0×10⁻⁷ m 的绿光会算出 150 Hz，而正确值是 6.0×10¹⁴ Hz。\n知识库校验证据：情境：绿光；代入错误式：c*lambda；校验参照值：600000000000000.0。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 0,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "nu = c*lambda",
+      "trap_test": {
+        "scenario": "绿光",
+        "expr": "c*lambda",
+        "ref": 600000000000000.0
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-qz-03-2",
+      "point_id": "qz-03",
+      "point_title": "光的波粒二象性",
+      "chapter": "第二十章 · 波粒二象性与原子结构",
+      "stem": "【第二十章 · 波粒二象性与原子结构 · 光的波粒二象性】学生的错误做法：认为「干涉说明光是波、光电效应说明光是粒子」，两者互相矛盾。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "数值代入：hν 是吸收到的能量，W 是必须付出的，剩下才是动能，所以是「收入减支出」。"
+        },
+        {
+          "label": "B",
+          "text": "数值代入：动量是 mv，动能才是 ½mv²。"
+        },
+        {
+          "label": "C",
+          "text": "概念混淆：两者描述的是同一束光的不同侧面，通过 E=hν 与 ν=c/λ 可以互相换算，并不矛盾。"
+        },
+        {
+          "label": "D",
+          "text": "数值代入：频率越高光子能量越大，是正比。"
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "两者描述的是同一束光的不同侧面，通过 E=hν 与 ν=c/λ 可以互相换算，并不矛盾。这是观念性理解，公式检查不了。",
+      "error_type": "概念混淆",
+      "judging": "teacher",
+      "source_error_index": 1,
+      "source_caught_by": "人工审核",
+      "wrong_expr": null,
+      "trap_test": null,
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-qz-04-1",
+      "point_id": "qz-04",
+      "point_title": "物质波（德布罗意波长）",
+      "chapter": "第二十章 · 波粒二象性与原子结构",
+      "stem": "【第二十章 · 波粒二象性与原子结构 · 物质波（德布罗意波长）】学生的错误做法：把动量写成 m*v^2（与动能记混）（错误表达式：p = m*v^2）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "概念混淆：两者描述的是同一束光的不同侧面，通过 E=hν 与 ν=c/λ 可以互相换算，并不矛盾。"
+        },
+        {
+          "label": "B",
+          "text": "数值代入：动量是 mv，动能才是 ½mv²。"
+        },
+        {
+          "label": "C",
+          "text": "概念混淆：这正是被黑体辐射实验否掉的经典图像。"
+        },
+        {
+          "label": "D",
+          "text": "概念混淆：能否打出电子只取决于单个光子的能量 hν 是否超过 W。"
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "动量是 mv，动能才是 ½mv²。按错误式小球会得到 0.18 kg·m/s，而正确值是 0.06 kg·m/s。\n知识库校验证据：情境：宏观小球；代入错误式：m*v^2；校验参照值：0.06。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 0,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "p = m*v^2",
+      "trap_test": {
+        "scenario": "宏观小球",
+        "expr": "m*v^2",
+        "ref": 0.06
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-qz-04-2",
+      "point_id": "qz-04",
+      "point_title": "物质波（德布罗意波长）",
+      "chapter": "第二十章 · 波粒二象性与原子结构",
+      "stem": "【第二十章 · 波粒二象性与原子结构 · 物质波（德布罗意波长）】学生的错误做法：认为宏观物体没有波动性，所以德布罗意假设是错的。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "概念混淆：宏观物体**有**波动性，只是波长小到无法观测（0.02 kg 小球约 10⁻³² m）。"
+        },
+        {
+          "label": "B",
+          "text": "数值代入：频率越高光子能量越大，是正比。"
+        },
+        {
+          "label": "C",
+          "text": "数值代入：hν 是吸收到的能量，W 是必须付出的，剩下才是动能，所以是「收入减支出」。"
+        },
+        {
+          "label": "D",
+          "text": "数值代入：两者是反比。"
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "宏观物体**有**波动性，只是波长小到无法观测（0.02 kg 小球约 10⁻³² m）。「测不到」不等于「不存在」——这条要靠人判。",
+      "error_type": "概念混淆",
+      "judging": "teacher",
+      "source_error_index": 1,
+      "source_caught_by": "人工审核",
+      "wrong_expr": null,
+      "trap_test": null,
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-qz-05-1",
+      "point_id": "qz-05",
+      "point_title": "原子的核式结构模型",
+      "chapter": "第二十章 · 波粒二象性与原子结构",
+      "stem": "【第二十章 · 波粒二象性与原子结构 · 原子的核式结构模型】学生的错误做法：把库仑力写成与距离成反比（漏掉平方）（错误表达式：F = k_e*q1*q2/r）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "概念混淆：这正是被黑体辐射实验否掉的经典图像。"
+        },
+        {
+          "label": "B",
+          "text": "概念混淆：能否打出电子只取决于单个光子的能量 hν 是否超过 W。"
+        },
+        {
+          "label": "C",
+          "text": "概念混淆：两者描述的是同一束光的不同侧面，通过 E=hν 与 ν=c/λ 可以互相换算，并不矛盾。"
+        },
+        {
+          "label": "D",
+          "text": "数值代入：是平方反比。"
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "是平方反比。漏掉平方后同一个情境只得到约 7.28×10⁻¹³ N，而正确值约为 14.6 N，量级完全错误。\n知识库校验证据：情境：α 粒子抵近金核；代入错误式：k_e*q1*q2/r；校验参照值：14.56128。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 0,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "F = k_e*q1*q2/r",
+      "trap_test": {
+        "scenario": "α 粒子抵近金核",
+        "expr": "k_e*q1*q2/r",
+        "ref": 14.56128
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-qz-05-2",
+      "point_id": "qz-05",
+      "point_title": "原子的核式结构模型",
+      "chapter": "第二十章 · 波粒二象性与原子结构",
+      "stem": "【第二十章 · 波粒二象性与原子结构 · 原子的核式结构模型】学生的错误做法：认为 α 粒子大角度偏转是因为撞上了核外电子。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "数值代入：hν 是吸收到的能量，W 是必须付出的，剩下才是动能，所以是「收入减支出」。"
+        },
+        {
+          "label": "B",
+          "text": "数值代入：两者是反比。"
+        },
+        {
+          "label": "C",
+          "text": "概念混淆：电子质量只有 α 粒子的约 1/7300，撞上电子不可能让 α 粒子大幅偏转。"
+        },
+        {
+          "label": "D",
+          "text": "数值代入：频率越高光子能量越大，是正比。"
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "电子质量只有 α 粒子的约 1/7300，撞上电子不可能让 α 粒子大幅偏转。能被弹回的只能是质量大、电荷集中的核。这是概念性判断，公式检查不到。",
+      "error_type": "概念混淆",
+      "judging": "teacher",
+      "source_error_index": 1,
+      "source_caught_by": "人工审核",
+      "wrong_expr": null,
+      "trap_test": null,
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-qz-06-1",
+      "point_id": "qz-06",
+      "point_title": "玻尔模型与氢原子能级",
+      "chapter": "第二十章 · 波粒二象性与原子结构",
+      "stem": "【第二十章 · 波粒二象性与原子结构 · 玻尔模型与氢原子能级】学生的错误做法：把能级公式写成 E_n = E_1/n（漏掉平方）（错误表达式：E_n = E_1/n_level）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "概念混淆：两者描述的是同一束光的不同侧面，通过 E=hν 与 ν=c/λ 可以互相换算，并不矛盾。"
+        },
+        {
+          "label": "B",
+          "text": "数值代入：是 n² 而不是 n。"
+        },
+        {
+          "label": "C",
+          "text": "概念混淆：这正是被黑体辐射实验否掉的经典图像。"
+        },
+        {
+          "label": "D",
+          "text": "概念混淆：能否打出电子只取决于单个光子的能量 hν 是否超过 W。"
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "是 n² 而不是 n。按错误式第二能级会得到 −6.8 eV，而正确值是 −3.4 eV——两条式子给出的谱线位置完全不同。\n知识库校验证据：情境：第二能级；代入错误式：E_1/n_level；校验参照值：-3.4。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 0,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "E_n = E_1/n_level",
+      "trap_test": {
+        "scenario": "第二能级",
+        "expr": "E_1/n_level",
+        "ref": -3.4
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-qz-06-2",
+      "point_id": "qz-06",
+      "point_title": "玻尔模型与氢原子能级",
+      "chapter": "第二十章 · 波粒二象性与原子结构",
+      "stem": "【第二十章 · 波粒二象性与原子结构 · 玻尔模型与氢原子能级】学生的错误做法：认为原子可以处于任意能量的状态。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "概念混淆：能级是分立的，原子只能待在这几条固定的「台阶」上，这也是原子光谱是一条条分离谱线而不是连续光谱的根本原因。"
+        },
+        {
+          "label": "B",
+          "text": "数值代入：频率越高光子能量越大，是正比。"
+        },
+        {
+          "label": "C",
+          "text": "数值代入：hν 是吸收到的能量，W 是必须付出的，剩下才是动能，所以是「收入减支出」。"
+        },
+        {
+          "label": "D",
+          "text": "数值代入：两者是反比。"
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "能级是分立的，原子只能待在这几条固定的「台阶」上，这也是原子光谱是一条条分离谱线而不是连续光谱的根本原因。属观念性错误，公式检查不了。",
+      "error_type": "概念混淆",
+      "judging": "teacher",
+      "source_error_index": 1,
+      "source_caught_by": "人工审核",
+      "wrong_expr": null,
+      "trap_test": null,
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    }
+  ],
+  "skipped": []
+}

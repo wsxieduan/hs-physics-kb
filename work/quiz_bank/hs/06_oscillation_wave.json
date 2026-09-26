@@ -1,0 +1,475 @@
+{
+  "segment": "高中",
+  "chapter": "第六章 · 机械振动与波",
+  "source_file": "06_oscillation_wave.json",
+  "questions": [
+    {
+      "id": "diagnostic-osc-01-2",
+      "point_id": "osc-01",
+      "point_title": "简谐运动的描述",
+      "chapter": "第六章 · 机械振动与波",
+      "stem": "【第六章 · 机械振动与波 · 简谐运动的描述】学生的错误做法：把余弦型振动误写成 x=A sin(omega t+phi)，却仍沿用原初相位（错误表达式：x = A*sin(omega*t + phi)）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "概念混淆：质点只在平衡位置附近振动；向外传播的是振动状态和能量。"
+        },
+        {
+          "label": "B",
+          "text": "概念混淆：摆长应从悬点量到摆球重心。"
+        },
+        {
+          "label": "C",
+          "text": "数值代入：正弦和余弦都能描述简谐运动，但互换函数时必须同步调整初相位。"
+        },
+        {
+          "label": "D",
+          "text": "概念混淆：稳定受迫振动的频率由驱动力决定；固有频率决定在什么驱动频率附近响应最强。"
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "正弦和余弦都能描述简谐运动，但互换函数时必须同步调整初相位。本情境 t=0、phi=0，错误式给出 0，正确初始位移是 0.2 m；两式量纲相同，只能靠数值代入识别。\n知识库校验证据：情境：余弦振动；代入错误式：A*sin(omega*t + phi)；校验参照值：0.2。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 1,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "x = A*sin(omega*t + phi)",
+      "trap_test": {
+        "scenario": "余弦振动",
+        "expr": "A*sin(omega*t + phi)",
+        "ref": 0.2
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-osc-02-2",
+      "point_id": "osc-02",
+      "point_title": "简谐运动的回复力与能量",
+      "chapter": "第六章 · 机械振动与波",
+      "stem": "【第六章 · 机械振动与波 · 简谐运动的回复力与能量】学生的错误做法：把总能量写成 E=kA^2，漏掉二分之一（错误表达式：E = k*A^2）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "数值代入：量纲仍是焦耳，量纲检查抓不到；情境中会得到 2 J，而独立参考值为 1 J。"
+        },
+        {
+          "label": "B",
+          "text": "量纲一致性：量纲由 1/s 错成 s；周期 0.5 s 时数值也不会是 4pi rad/s。"
+        },
+        {
+          "label": "C",
+          "text": "概念混淆：稳定受迫振动的频率由驱动力决定；固有频率决定在什么驱动频率附近响应最强。"
+        },
+        {
+          "label": "D",
+          "text": "概念混淆：质点只在平衡位置附近振动；向外传播的是振动状态和能量。"
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "量纲仍是焦耳，量纲检查抓不到；情境中会得到 2 J，而独立参考值为 1 J。\n知识库校验证据：情境：正向位移；代入错误式：k*A^2；校验参照值：1.0。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 1,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "E = k*A^2",
+      "trap_test": {
+        "scenario": "正向位移",
+        "expr": "k*A^2",
+        "ref": 1.0
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-osc-03-1",
+      "point_id": "osc-03",
+      "point_title": "单摆",
+      "chapter": "第六章 · 机械振动与波",
+      "stem": "【第六章 · 机械振动与波 · 单摆】学生的错误做法：漏掉系数 2，把周期写成 T=pi sqrt(L/g)（错误表达式：T = pi*sqrt(L/g)）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "量纲一致性：量纲由 1/s 错成 s；周期 0.5 s 时数值也不会是 4pi rad/s。"
+        },
+        {
+          "label": "B",
+          "text": "概念混淆：稳定受迫振动的频率由驱动力决定；固有频率决定在什么驱动频率附近响应最强。"
+        },
+        {
+          "label": "C",
+          "text": "概念混淆：质点只在平衡位置附近振动；向外传播的是振动状态和能量。"
+        },
+        {
+          "label": "D",
+          "text": "数值代入：量纲完全正确但数值少一半；一米单摆会算成约 1.00354 s，而正确值约 2.00709 s。"
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "量纲完全正确但数值少一半；一米单摆会算成约 1.00354 s，而正确值约 2.00709 s。\n知识库校验证据：情境：一米单摆；代入错误式：pi*sqrt(L/g)；校验参照值：2.007089923154493。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 0,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "T = pi*sqrt(L/g)",
+      "trap_test": {
+        "scenario": "一米单摆",
+        "expr": "pi*sqrt(L/g)",
+        "ref": 2.007089923154493
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-osc-03-2",
+      "point_id": "osc-03",
+      "point_title": "单摆",
+      "chapter": "第六章 · 机械振动与波",
+      "stem": "【第六章 · 机械振动与波 · 单摆】学生的错误做法：把细线长度直接当摆长，忽略摆球半径。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "数值代入：这会让力指向远离平衡位置的方向；正向位移情境会算出 +10 N，而正确值是 -10 N。"
+        },
+        {
+          "label": "B",
+          "text": "数值代入：错误式与正确式量纲完全相同，量纲检查抓不到；同相水波会算出 16 m/s，而由传播距离独立测得的正确波速是 8 m/s。"
+        },
+        {
+          "label": "C",
+          "text": "概念混淆：摆长应从悬点量到摆球重心。"
+        },
+        {
+          "label": "D",
+          "text": "量纲一致性：量纲由 1/s 错成 s；周期 0.5 s 时数值也不会是 4pi rad/s。"
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "摆长应从悬点量到摆球重心。若只取细线长度，会系统性低估 L 和周期；属于建模与测量错误。",
+      "error_type": "概念混淆",
+      "judging": "teacher",
+      "source_error_index": 1,
+      "source_caught_by": "人工审核",
+      "wrong_expr": null,
+      "trap_test": null,
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-osc-04-1",
+      "point_id": "osc-04",
+      "point_title": "受迫振动与共振",
+      "chapter": "第六章 · 机械振动与波",
+      "stem": "【第六章 · 机械振动与波 · 受迫振动与共振】学生的错误做法：认为受迫振动稳定后的频率始终等于固有频率。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "数值代入：量纲完全正确但数值少一半；一米单摆会算成约 1.00354 s，而正确值约 2.00709 s。"
+        },
+        {
+          "label": "B",
+          "text": "概念混淆：稳定受迫振动的频率由驱动力决定；固有频率决定在什么驱动频率附近响应最强。"
+        },
+        {
+          "label": "C",
+          "text": "量纲一致性：量纲由 1/s 错成 s；周期 0.5 s 时数值也不会是 4pi rad/s。"
+        },
+        {
+          "label": "D",
+          "text": "数值代入：这会让力指向远离平衡位置的方向；正向位移情境会算出 +10 N，而正确值是 -10 N。"
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "稳定受迫振动的频率由驱动力决定；固有频率决定在什么驱动频率附近响应最强。",
+      "error_type": "概念混淆",
+      "judging": "teacher",
+      "source_error_index": 0,
+      "source_caught_by": "人工审核",
+      "wrong_expr": null,
+      "trap_test": null,
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-osc-04-2",
+      "point_id": "osc-04",
+      "point_title": "受迫振动与共振",
+      "chapter": "第六章 · 机械振动与波",
+      "stem": "【第六章 · 机械振动与波 · 受迫振动与共振】学生的错误做法：把驱动力角频率写成 omega_drive=pi*f_drive，漏掉系数 2（错误表达式：omega_drive = pi*f_drive）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "数值代入：错误式量纲仍然正确，量纲检查无法发现。"
+        },
+        {
+          "label": "B",
+          "text": "量纲一致性：量纲由 1/s 错成 s；周期 0.5 s 时数值也不会是 4pi rad/s。"
+        },
+        {
+          "label": "C",
+          "text": "概念混淆：质点只在平衡位置附近振动；向外传播的是振动状态和能量。"
+        },
+        {
+          "label": "D",
+          "text": "概念混淆：摆长应从悬点量到摆球重心。"
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "错误式量纲仍然正确，量纲检查无法发现。未调谐情境中它只得到约 9.425 rad/s，正确的 2pi f 应为约 18.850 rad/s。\n知识库校验证据：情境：未调谐；代入错误式：pi*f_drive；校验参照值：18.84955592153876。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 1,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "omega_drive = pi*f_drive",
+      "trap_test": {
+        "scenario": "未调谐",
+        "expr": "pi*f_drive",
+        "ref": 18.84955592153876
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-osc-05-1",
+      "point_id": "osc-05",
+      "point_title": "机械波的形成与传播",
+      "chapter": "第六章 · 机械振动与波",
+      "stem": "【第六章 · 机械振动与波 · 机械波的形成与传播】学生的错误做法：认为介质质点会随波从波源一直移动到远处。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "量纲一致性：量纲由 1/s 错成 s；周期 0.5 s 时数值也不会是 4pi rad/s。"
+        },
+        {
+          "label": "B",
+          "text": "数值代入：这会让力指向远离平衡位置的方向；正向位移情境会算出 +10 N，而正确值是 -10 N。"
+        },
+        {
+          "label": "C",
+          "text": "数值代入：量纲完全正确但数值少一半；一米单摆会算成约 1.00354 s，而正确值约 2.00709 s。"
+        },
+        {
+          "label": "D",
+          "text": "概念混淆：质点只在平衡位置附近振动；向外传播的是振动状态和能量。"
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "质点只在平衡位置附近振动；向外传播的是振动状态和能量。可用漂浮物随水波上下振动但不持续随波前进来辨别。",
+      "error_type": "概念混淆",
+      "judging": "teacher",
+      "source_error_index": 0,
+      "source_caught_by": "人工审核",
+      "wrong_expr": null,
+      "trap_test": null,
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-osc-05-2",
+      "point_id": "osc-05",
+      "point_title": "机械波的形成与传播",
+      "chapter": "第六章 · 机械振动与波",
+      "stem": "【第六章 · 机械振动与波 · 机械波的形成与传播】学生的错误做法：误认为半个周期传播一个波长，写成 lambda=2vT（错误表达式：lambda = 2*v*T）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "概念混淆：稳定受迫振动的频率由驱动力决定；固有频率决定在什么驱动频率附近响应最强。"
+        },
+        {
+          "label": "B",
+          "text": "概念混淆：摆长应从悬点量到摆球重心。"
+        },
+        {
+          "label": "C",
+          "text": "数值代入：错误式量纲仍是长度，量纲检查抓不到；绳波情境会算出 4 m，而一个完整周期内传播的正确距离是 2 m。"
+        },
+        {
+          "label": "D",
+          "text": "量纲一致性：量纲由 1/s 错成 s；周期 0.5 s 时数值也不会是 4pi rad/s。"
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "错误式量纲仍是长度，量纲检查抓不到；绳波情境会算出 4 m，而一个完整周期内传播的正确距离是 2 m。\n知识库校验证据：情境：绳波传播；代入错误式：2*v*T；校验参照值：2.0。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 1,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "lambda = 2*v*T",
+      "trap_test": {
+        "scenario": "绳波传播",
+        "expr": "2*v*T",
+        "ref": 2.0
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-osc-06-1",
+      "point_id": "osc-06",
+      "point_title": "波长、频率、波速与波的现象",
+      "chapter": "第六章 · 机械振动与波",
+      "stem": "【第六章 · 机械振动与波 · 波长、频率、波速与波的现象】学生的错误做法：把波速关系多写一个系数 2，写成 v=2 lambda f（错误表达式：v = 2*lambda*f）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "概念混淆：质点只在平衡位置附近振动；向外传播的是振动状态和能量。"
+        },
+        {
+          "label": "B",
+          "text": "数值代入：错误式与正确式量纲完全相同，量纲检查抓不到；同相水波会算出 16 m/s，而由传播距离独立测得的正确波速是 8 m/s。"
+        },
+        {
+          "label": "C",
+          "text": "量纲一致性：量纲由 1/s 错成 s；周期 0.5 s 时数值也不会是 4pi rad/s。"
+        },
+        {
+          "label": "D",
+          "text": "概念混淆：稳定受迫振动的频率由驱动力决定；固有频率决定在什么驱动频率附近响应最强。"
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "错误式与正确式量纲完全相同，量纲检查抓不到；同相水波会算出 16 m/s，而由传播距离独立测得的正确波速是 8 m/s。\n知识库校验证据：情境：同相水波；代入错误式：2*lambda*f；校验参照值：8.0。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 0,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "v = 2*lambda*f",
+      "trap_test": {
+        "scenario": "同相水波",
+        "expr": "2*lambda*f",
+        "ref": 8.0
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-osc-06-2",
+      "point_id": "osc-06",
+      "point_title": "波长、频率、波速与波的现象",
+      "chapter": "第六章 · 机械振动与波",
+      "stem": "【第六章 · 机械振动与波 · 波长、频率、波速与波的现象】学生的错误做法：认为频率越高，波在同一介质中一定传播得越快。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "概念混淆：在高中常见的均匀、非色散介质模型中，波速主要由介质决定。"
+        },
+        {
+          "label": "B",
+          "text": "量纲一致性：量纲由 1/s 错成 s；周期 0.5 s 时数值也不会是 4pi rad/s。"
+        },
+        {
+          "label": "C",
+          "text": "数值代入：这会让力指向远离平衡位置的方向；正向位移情境会算出 +10 N，而正确值是 -10 N。"
+        },
+        {
+          "label": "D",
+          "text": "数值代入：量纲完全正确但数值少一半；一米单摆会算成约 1.00354 s，而正确值约 2.00709 s。"
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "在高中常见的均匀、非色散介质模型中，波速主要由介质决定。波源频率升高时通常是波长缩短，使 lambda f 仍等于原波速。",
+      "error_type": "概念混淆",
+      "judging": "teacher",
+      "source_error_index": 1,
+      "source_caught_by": "人工审核",
+      "wrong_expr": null,
+      "trap_test": null,
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    }
+  ],
+  "skipped": [
+    {
+      "point_id": "osc-01",
+      "point_title": "简谐运动的描述",
+      "source_error_index": 0,
+      "reason": "自动判定条目没有 trap_test 可执行证据；不把校验标签代替实测证据。"
+    },
+    {
+      "point_id": "osc-02",
+      "point_title": "简谐运动的回复力与能量",
+      "source_error_index": 0,
+      "reason": "自动判定条目没有 trap_test 可执行证据；不把校验标签代替实测证据。"
+    }
+  ]
+}

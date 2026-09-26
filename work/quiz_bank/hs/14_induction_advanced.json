@@ -1,0 +1,348 @@
+{
+  "segment": "高中",
+  "chapter": "第十四章 · 电磁感应（二）自感与综合应用",
+  "source_file": "14_induction_advanced.json",
+  "questions": [
+    {
+      "id": "diagnostic-iad-01-1",
+      "point_id": "iad-01",
+      "point_title": "自感现象与自感系数",
+      "chapter": "第十四章 · 电磁感应（二）自感与综合应用",
+      "stem": "【第十四章 · 电磁感应（二）自感与综合应用 · 自感现象与自感系数】学生的错误做法：认为自感电动势总与原电流方向相反。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "数值代入：量纲完全正确，必须靠数值检验；线圈储能情境中错误式得到 8.0 J，正确值为 4.0 J。"
+        },
+        {
+          "label": "B",
+          "text": "量纲一致性：错误式不仅量纲不对，也颠倒了反馈关系；正确关系中安培阻力与速度成正比。"
+        },
+        {
+          "label": "C",
+          "text": "数值代入：E-t 面积对应的是磁通匝数变化。"
+        },
+        {
+          "label": "D",
+          "text": "概念混淆：自感电动势反抗的是电流变化：通电时反抗增大，断电时反而尽力维持原电流方向。"
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "自感电动势反抗的是电流变化：通电时反抗增大，断电时反而尽力维持原电流方向。空间方向需结合绕向判断，标注人工审核。",
+      "error_type": "概念混淆",
+      "judging": "teacher",
+      "source_error_index": 0,
+      "source_caught_by": "人工审核",
+      "wrong_expr": null,
+      "trap_test": null,
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-iad-01-2",
+      "point_id": "iad-01",
+      "point_title": "自感现象与自感系数",
+      "chapter": "第十四章 · 电磁感应（二）自感与综合应用",
+      "stem": "【第十四章 · 电磁感应（二）自感与综合应用 · 自感现象与自感系数】学生的错误做法：计算自感电动势大小时不取电流变化量的绝对值，写成 E_L=L_ind*Delta_I/Delta_t（错误表达式：E_L = L_ind*Delta_I/Delta_t）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "量纲一致性：错误式不仅量纲不对，也颠倒了反馈关系；正确关系中安培阻力与速度成正比。"
+        },
+        {
+          "label": "B",
+          "text": "量纲一致性：右侧量纲不是能量，因此会被量纲检查拦住；并且电流增大一倍时，正确磁场能应增为原来的四倍，而不是两倍。"
+        },
+        {
+          "label": "C",
+          "text": "数值代入：该式量纲完全正确，但在电流减小的情境中会给出 −6.0 V；这里求的是大小，应为 6.0 V，方向另由楞次定律判断。"
+        },
+        {
+          "label": "D",
+          "text": "概念混淆：电磁炉和感应炉正是利用涡流发热；磁阻尼也可用于仪表稳定。"
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "该式量纲完全正确，但在电流减小的情境中会给出 −6.0 V；这里求的是大小，应为 6.0 V，方向另由楞次定律判断。\n知识库校验证据：情境：电流均匀减小；代入错误式：L_ind*Delta_I/Delta_t；校验参照值：6.0。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 1,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "E_L = L_ind*Delta_I/Delta_t",
+      "trap_test": {
+        "scenario": "电流均匀减小",
+        "expr": "L_ind*Delta_I/Delta_t",
+        "ref": 6.0
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-iad-02-1",
+      "point_id": "iad-02",
+      "point_title": "涡流及其应用",
+      "chapter": "第十四章 · 电磁感应（二）自感与综合应用",
+      "stem": "【第十四章 · 电磁感应（二）自感与综合应用 · 涡流及其应用】学生的错误做法：认为涡流只有危害，应在所有装置中完全消除。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "数值代入：E-t 面积对应的是磁通匝数变化。"
+        },
+        {
+          "label": "B",
+          "text": "概念混淆：电磁炉和感应炉正是利用涡流发热；磁阻尼也可用于仪表稳定。"
+        },
+        {
+          "label": "C",
+          "text": "数值代入：量纲完全正确，必须靠数值检验；线圈储能情境中错误式得到 8.0 J，正确值为 4.0 J。"
+        },
+        {
+          "label": "D",
+          "text": "量纲一致性：错误式不仅量纲不对，也颠倒了反馈关系；正确关系中安培阻力与速度成正比。"
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "电磁炉和感应炉正是利用涡流发热；磁阻尼也可用于仪表稳定。是否利用或抑制取决于装置目标，属于应用判断，需人工审核。",
+      "error_type": "概念混淆",
+      "judging": "teacher",
+      "source_error_index": 0,
+      "source_caught_by": "人工审核",
+      "wrong_expr": null,
+      "trap_test": null,
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-iad-02-2",
+      "point_id": "iad-02",
+      "point_title": "涡流及其应用",
+      "chapter": "第十四章 · 电磁感应（二）自感与综合应用",
+      "stem": "【第十四章 · 电磁感应（二）自感与综合应用 · 涡流及其应用】学生的错误做法：已经使用涡流有效值，却又多乘二分之一，写成 P_eddy=0.5*I_eddy^2*R_eddy（错误表达式：P_eddy = 0.5*I_eddy^2*R_eddy）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "数值代入：有效值已把周期内变化折算进去，不能再乘二分之一。"
+        },
+        {
+          "label": "B",
+          "text": "概念混淆：自感电动势反抗的是电流变化：通电时反抗增大，断电时反而尽力维持原电流方向。"
+        },
+        {
+          "label": "C",
+          "text": "量纲一致性：错误式不仅量纲不对，也颠倒了反馈关系；正确关系中安培阻力与速度成正比。"
+        },
+        {
+          "label": "D",
+          "text": "量纲一致性：右侧量纲不是能量，因此会被量纲检查拦住；并且电流增大一倍时，正确磁场能应增为原来的四倍，而不是两倍。"
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "有效值已把周期内变化折算进去，不能再乘二分之一。错误式量纲完全正确，却只算得 3.6 W，正确值是 7.2 W。\n知识库校验证据：情境：感应加热；代入错误式：0.5*I_eddy^2*R_eddy；校验参照值：7.2。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 1,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "P_eddy = 0.5*I_eddy^2*R_eddy",
+      "trap_test": {
+        "scenario": "感应加热",
+        "expr": "0.5*I_eddy^2*R_eddy",
+        "ref": 7.2
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-iad-03-1",
+      "point_id": "iad-03",
+      "point_title": "电磁感应中的能量转化",
+      "chapter": "第十四章 · 电磁感应（二）自感与综合应用",
+      "stem": "【第十四章 · 电磁感应（二）自感与综合应用 · 电磁感应中的能量转化】学生的错误做法：漏掉二分之一，写成 W_m=L_ind*I^2（错误表达式：W_m = L_ind*I^2）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "概念混淆：自感电动势反抗的是电流变化：通电时反抗增大，断电时反而尽力维持原电流方向。"
+        },
+        {
+          "label": "B",
+          "text": "概念混淆：电磁炉和感应炉正是利用涡流发热；磁阻尼也可用于仪表稳定。"
+        },
+        {
+          "label": "C",
+          "text": "量纲一致性：错误式不仅量纲不对，也颠倒了反馈关系；正确关系中安培阻力与速度成正比。"
+        },
+        {
+          "label": "D",
+          "text": "数值代入：量纲完全正确，必须靠数值检验；线圈储能情境中错误式得到 8.0 J，正确值为 4.0 J。"
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "量纲完全正确，必须靠数值检验；线圈储能情境中错误式得到 8.0 J，正确值为 4.0 J。\n知识库校验证据：情境：线圈储能；代入错误式：L_ind*I^2；校验参照值：4.0。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 0,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "W_m = L_ind*I^2",
+      "trap_test": {
+        "scenario": "线圈储能",
+        "expr": "L_ind*I^2",
+        "ref": 4.0
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-iad-04-2",
+      "point_id": "iad-04",
+      "point_title": "电磁感应中的力学综合：导轨与导体棒",
+      "chapter": "第十四章 · 电磁感应（二）自感与综合应用",
+      "stem": "【第十四章 · 电磁感应（二）自感与综合应用 · 电磁感应中的力学综合：导轨与导体棒】学生的错误做法：不论导体棒速度多大，都直接令安培阻力等于恒定驱动力（错误表达式：F_mag = F_drive）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "数值代入：两者只在终端匀速状态相等。"
+        },
+        {
+          "label": "B",
+          "text": "概念混淆：自感电动势反抗的是电流变化：通电时反抗增大，断电时反而尽力维持原电流方向。"
+        },
+        {
+          "label": "C",
+          "text": "概念混淆：电磁炉和感应炉正是利用涡流发热；磁阻尼也可用于仪表稳定。"
+        },
+        {
+          "label": "D",
+          "text": "量纲一致性：右侧量纲不是能量，因此会被量纲检查拦住；并且电流增大一倍时，正确磁场能应增为原来的四倍，而不是两倍。"
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "两者只在终端匀速状态相等。速度减半情境中实际安培阻力为 0.40 N，驱动力仍为 0.80 N，导体棒仍会加速。\n知识库校验证据：情境：速度减半；代入错误式：F_drive；校验参照值：0.4。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 1,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "F_mag = F_drive",
+      "trap_test": {
+        "scenario": "速度减半",
+        "expr": "F_drive",
+        "ref": 0.4
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-iad-05-1",
+      "point_id": "iad-05",
+      "point_title": "电磁感应中的图像问题",
+      "chapter": "第十四章 · 电磁感应（二）自感与综合应用",
+      "stem": "【第十四章 · 电磁感应（二）自感与综合应用 · 电磁感应中的图像问题】学生的错误做法：读 E-t 图像面积后直接当作单匝磁通量变化，漏除匝数 n（错误表达式：Delta_Phi = A_E）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "概念混淆：自感电动势反抗的是电流变化：通电时反抗增大，断电时反而尽力维持原电流方向。"
+        },
+        {
+          "label": "B",
+          "text": "概念混淆：电磁炉和感应炉正是利用涡流发热；磁阻尼也可用于仪表稳定。"
+        },
+        {
+          "label": "C",
+          "text": "量纲一致性：错误式不仅量纲不对，也颠倒了反馈关系；正确关系中安培阻力与速度成正比。"
+        },
+        {
+          "label": "D",
+          "text": "数值代入：E-t 面积对应的是磁通匝数变化。"
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "E-t 面积对应的是磁通匝数变化。40 匝情境中面积为 0.80 Wb，而单匝磁通量只变化 0.020 Wb。\n知识库校验证据：情境：矩形电动势图像；代入错误式：A_E；校验参照值：0.02。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 0,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "Delta_Phi = A_E",
+      "trap_test": {
+        "scenario": "矩形电动势图像",
+        "expr": "A_E",
+        "ref": 0.02
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    }
+  ],
+  "skipped": [
+    {
+      "point_id": "iad-03",
+      "point_title": "电磁感应中的能量转化",
+      "source_error_index": 1,
+      "reason": "自动判定条目没有 trap_test 可执行证据；不把校验标签代替实测证据。"
+    },
+    {
+      "point_id": "iad-04",
+      "point_title": "电磁感应中的力学综合：导轨与导体棒",
+      "source_error_index": 0,
+      "reason": "自动判定条目没有 trap_test 可执行证据；不把校验标签代替实测证据。"
+    },
+    {
+      "point_id": "iad-05",
+      "point_title": "电磁感应中的图像问题",
+      "source_error_index": 1,
+      "reason": "自动判定条目没有 trap_test 可执行证据；不把校验标签代替实测证据。"
+    }
+  ]
+}

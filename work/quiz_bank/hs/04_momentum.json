@@ -1,0 +1,401 @@
+{
+  "segment": "高中",
+  "chapter": "第四章 · 动量守恒",
+  "source_file": "04_momentum.json",
+  "questions": [
+    {
+      "id": "diagnostic-mom-01-1",
+      "point_id": "mom-01",
+      "point_title": "冲量与动量",
+      "chapter": "第四章 · 动量守恒",
+      "stem": "【第四章 · 动量守恒 · 冲量与动量】学生的错误做法：把动量多乘 2，写成 p=2mv（错误表达式：p = 2*m*v）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "概念混淆：只有两物体质量相等时才碰巧成立；一般情形必须用质量加权平均。"
+        },
+        {
+          "label": "B",
+          "text": "量纲一致性：动量除以质量得到的是速度量纲，再除以常数仍不是能量，因此量纲检查可以直接拦住。"
+        },
+        {
+          "label": "C",
+          "text": "概念混淆：内力只在系统内部转移动量；系统是否守恒应由合外力冲量是否为零判断。"
+        },
+        {
+          "label": "D",
+          "text": "数值代入：错误式量纲仍是动量，量纲检查抓不到；代入会得到 12，而正确动量是 6。"
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "错误式量纲仍是动量，量纲检查抓不到；代入会得到 12，而正确动量是 6。\n知识库校验证据：情境：推车；代入错误式：2*m*v；校验参照值：6.0。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 0,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "p = 2*m*v",
+      "trap_test": {
+        "scenario": "推车",
+        "expr": "2*m*v",
+        "ref": 6.0
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-mom-02-1",
+      "point_id": "mom-02",
+      "point_title": "动量定理",
+      "chapter": "第四章 · 动量守恒",
+      "stem": "【第四章 · 动量守恒 · 动量定理】学生的错误做法：把变化量写成 p₁−p₂（错误表达式：I = p1-p2）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "量纲一致性：力除以时间的量纲不是冲量；同时也会错误地认为作用越久冲量越小。"
+        },
+        {
+          "label": "B",
+          "text": "数值代入：量纲仍正确但方向相反；本情境会算成 −6，正确结果应为正 6。"
+        },
+        {
+          "label": "C",
+          "text": "概念混淆：只有两物体质量相等时才碰巧成立；一般情形必须用质量加权平均。"
+        },
+        {
+          "label": "D",
+          "text": "量纲一致性：动量除以质量得到的是速度量纲，再除以常数仍不是能量，因此量纲检查可以直接拦住。"
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "量纲仍正确但方向相反；本情境会算成 −6，正确结果应为正 6。\n知识库校验证据：情境：同向加速；代入错误式：p1-p2；校验参照值：6.0。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 0,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "I = p1-p2",
+      "trap_test": {
+        "scenario": "同向加速",
+        "expr": "p1-p2",
+        "ref": 6.0
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-mom-02-2",
+      "point_id": "mom-02",
+      "point_title": "动量定理",
+      "chapter": "第四章 · 动量守恒",
+      "stem": "【第四章 · 动量守恒 · 动量定理】学生的错误做法：反弹时忽略末动量为负（错误表达式：I = p1-abs(p2)）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "数值代入：正确变化量是 −2−3=−5，而非用大小相减得到 1；矢量方向不能丢。"
+        },
+        {
+          "label": "B",
+          "text": "概念混淆：只有两物体质量相等时才碰巧成立；一般情形必须用质量加权平均。"
+        },
+        {
+          "label": "C",
+          "text": "量纲一致性：动量除以质量得到的是速度量纲，再除以常数仍不是能量，因此量纲检查可以直接拦住。"
+        },
+        {
+          "label": "D",
+          "text": "量纲一致性：力除以时间的量纲不是冲量；同时也会错误地认为作用越久冲量越小。"
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "正确变化量是 −2−3=−5，而非用大小相减得到 1；矢量方向不能丢。\n知识库校验证据：情境：反弹；代入错误式：p1-abs(p2)；校验参照值：-5.0。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 1,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "I = p1-abs(p2)",
+      "trap_test": {
+        "scenario": "反弹",
+        "expr": "p1-abs(p2)",
+        "ref": -5.0
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-mom-03-1",
+      "point_id": "mom-03",
+      "point_title": "动量守恒定律",
+      "chapter": "第四章 · 动量守恒",
+      "stem": "【第四章 · 动量守恒 · 动量守恒定律】学生的错误做法：把负的 v₂ 再减一次（错误表达式：p_total = m1*v1-m2*v2）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "概念混淆：只有两物体质量相等时才碰巧成立；一般情形必须用质量加权平均。"
+        },
+        {
+          "label": "B",
+          "text": "量纲一致性：动量除以质量得到的是速度量纲，再除以常数仍不是能量，因此量纲检查可以直接拦住。"
+        },
+        {
+          "label": "C",
+          "text": "量纲一致性：力除以时间的量纲不是冲量；同时也会错误地认为作用越久冲量越小。"
+        },
+        {
+          "label": "D",
+          "text": "数值代入：v₂ 已是 −1，再写减号会重复处理方向，结果变为 7，正确总动量是 5。"
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "v₂ 已是 −1，再写减号会重复处理方向，结果变为 7，正确总动量是 5。\n知识库校验证据：情境：两车相互作用；代入错误式：m1*v1-m2*v2；校验参照值：5.0。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 0,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "p_total = m1*v1-m2*v2",
+      "trap_test": {
+        "scenario": "两车相互作用",
+        "expr": "m1*v1-m2*v2",
+        "ref": 5.0
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-mom-03-2",
+      "point_id": "mom-03",
+      "point_title": "动量守恒定律",
+      "chapter": "第四章 · 动量守恒",
+      "stem": "【第四章 · 动量守恒 · 动量守恒定律】学生的错误做法：认为存在内力就不守恒。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "数值代入：量纲仍正确但方向相反；本情境会算成 −6，正确结果应为正 6。"
+        },
+        {
+          "label": "B",
+          "text": "数值代入：错误式量纲完全正确却把反冲方向算反，会得到 −1 m/s；正确结果应是相反方向的 +1 m/s。"
+        },
+        {
+          "label": "C",
+          "text": "概念混淆：内力只在系统内部转移动量；系统是否守恒应由合外力冲量是否为零判断。"
+        },
+        {
+          "label": "D",
+          "text": "数值代入：错误式量纲仍是动量，量纲检查抓不到；代入会得到 12，而正确动量是 6。"
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "内力只在系统内部转移动量；系统是否守恒应由合外力冲量是否为零判断。",
+      "error_type": "概念混淆",
+      "judging": "teacher",
+      "source_error_index": 1,
+      "source_caught_by": "人工审核",
+      "wrong_expr": null,
+      "trap_test": null,
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-mom-04-1",
+      "point_id": "mom-04",
+      "point_title": "碰撞",
+      "chapter": "第四章 · 动量守恒",
+      "stem": "【第四章 · 动量守恒 · 碰撞】学生的错误做法：直接取初速度平均值（错误表达式：v_common = (v1+v2)/2）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "数值代入：v₂ 已是 −1，再写减号会重复处理方向，结果变为 7，正确总动量是 5。"
+        },
+        {
+          "label": "B",
+          "text": "概念混淆：只有两物体质量相等时才碰巧成立；一般情形必须用质量加权平均。"
+        },
+        {
+          "label": "C",
+          "text": "数值代入：错误式量纲仍是动量，量纲检查抓不到；代入会得到 12，而正确动量是 6。"
+        },
+        {
+          "label": "D",
+          "text": "数值代入：量纲仍正确但方向相反；本情境会算成 −6，正确结果应为正 6。"
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "只有两物体质量相等时才碰巧成立；一般情形必须用质量加权平均。",
+      "error_type": "概念混淆",
+      "judging": "teacher",
+      "source_error_index": 0,
+      "source_caught_by": "人工审核",
+      "wrong_expr": "v_common = (v1+v2)/2",
+      "trap_test": null,
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-mom-05-1",
+      "point_id": "mom-05",
+      "point_title": "反冲运动与火箭",
+      "chapter": "第四章 · 动量守恒",
+      "stem": "【第四章 · 动量守恒 · 反冲运动与火箭】学生的错误做法：反冲速度漏掉负号，认为主体和喷出物同向（错误表达式：V = m_gas*v_gas/M）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "概念混淆：只有两物体质量相等时才碰巧成立；一般情形必须用质量加权平均。"
+        },
+        {
+          "label": "B",
+          "text": "量纲一致性：动量除以质量得到的是速度量纲，再除以常数仍不是能量，因此量纲检查可以直接拦住。"
+        },
+        {
+          "label": "C",
+          "text": "量纲一致性：力除以时间的量纲不是冲量；同时也会错误地认为作用越久冲量越小。"
+        },
+        {
+          "label": "D",
+          "text": "数值代入：错误式量纲完全正确却把反冲方向算反，会得到 −1 m/s；正确结果应是相反方向的 +1 m/s。"
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "错误式量纲完全正确却把反冲方向算反，会得到 −1 m/s；正确结果应是相反方向的 +1 m/s。\n知识库校验证据：情境：静止平台抛物；代入错误式：m_gas*v_gas/M；校验参照值：1.0。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 0,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "V = m_gas*v_gas/M",
+      "trap_test": {
+        "scenario": "静止平台抛物",
+        "expr": "m_gas*v_gas/M",
+        "ref": 1.0
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-mom-06-2",
+      "point_id": "mom-06",
+      "point_title": "动量与能量的综合",
+      "chapter": "第四章 · 动量守恒",
+      "stem": "【第四章 · 动量守恒 · 动量与能量的综合】学生的错误做法：由动能开方求动量时漏掉因子 2（错误表达式：p = sqrt(m*Ek)）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "数值代入：量纲仍正确，只能靠数值发现：会得到 √18，而正确值为 6。"
+        },
+        {
+          "label": "B",
+          "text": "概念混淆：只有两物体质量相等时才碰巧成立；一般情形必须用质量加权平均。"
+        },
+        {
+          "label": "C",
+          "text": "量纲一致性：力除以时间的量纲不是冲量；同时也会错误地认为作用越久冲量越小。"
+        },
+        {
+          "label": "D",
+          "text": "概念混淆：内力只在系统内部转移动量；系统是否守恒应由合外力冲量是否为零判断。"
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "量纲仍正确，只能靠数值发现：会得到 √18，而正确值为 6。\n知识库校验证据：情境：运动物体；代入错误式：sqrt(m*Ek)；校验参照值：6.0。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 1,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "p = sqrt(m*Ek)",
+      "trap_test": {
+        "scenario": "运动物体",
+        "expr": "sqrt(m*Ek)",
+        "ref": 6.0
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    }
+  ],
+  "skipped": [
+    {
+      "point_id": "mom-01",
+      "point_title": "冲量与动量",
+      "source_error_index": 1,
+      "reason": "自动判定条目没有 trap_test 可执行证据；不把校验标签代替实测证据。"
+    },
+    {
+      "point_id": "mom-04",
+      "point_title": "碰撞",
+      "source_error_index": 1,
+      "reason": "自动判定条目没有 trap_test 可执行证据；不把校验标签代替实测证据。"
+    },
+    {
+      "point_id": "mom-05",
+      "point_title": "反冲运动与火箭",
+      "source_error_index": 1,
+      "reason": "自动判定条目没有 trap_test 可执行证据；不把校验标签代替实测证据。"
+    },
+    {
+      "point_id": "mom-06",
+      "point_title": "动量与能量的综合",
+      "source_error_index": 0,
+      "reason": "自动判定条目没有 trap_test 可执行证据；不把校验标签代替实测证据。"
+    }
+  ]
+}

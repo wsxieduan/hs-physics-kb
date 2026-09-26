@@ -8,7 +8,7 @@
       "point_id": "kine-01",
       "point_title": "平均速度与平均速率",
       "chapter": "第一章 · 运动的描述与匀变速直线运动",
-      "stem": "学生的错误做法：把平均速度写成「路程 ÷ 时间」（错误表达式：v_avg = s_path/t）。这条错误属于哪一类？",
+      "stem": "【第一章 · 运动的描述与匀变速直线运动 · 平均速度与平均速率】学生的错误做法：把平均速度写成「路程 ÷ 时间」（错误表达式：v_avg = s_path/t）。这条错误属于哪一类？",
       "options": [
         {
           "label": "A",
@@ -38,6 +38,16 @@
         "scenario": "往返回到原点",
         "expr": "s_path/t",
         "ref": 0.0
+      },
+      "review": {
+        "confidence": "high",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": ""
       }
     },
     {
@@ -45,7 +55,7 @@
       "point_id": "kine-01",
       "point_title": "平均速度与平均速率",
       "chapter": "第一章 · 运动的描述与匀变速直线运动",
-      "stem": "学生的错误做法：把平均速率写成「位移 ÷ 时间」（错误表达式：v_rate = x/t）。这条错误属于哪一类？",
+      "stem": "【第一章 · 运动的描述与匀变速直线运动 · 平均速度与平均速率】学生的错误做法：把平均速率写成「位移 ÷ 时间」（错误表达式：v_rate = x/t）。这条错误属于哪一类？",
       "options": [
         {
           "label": "A",
@@ -75,6 +85,16 @@
         "scenario": "往返回到原点",
         "expr": "x/t",
         "ref": 10.0
+      },
+      "review": {
+        "confidence": "high",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": ""
       }
     },
     {
@@ -82,7 +102,7 @@
       "point_id": "kine-02",
       "point_title": "加速度",
       "chapter": "第一章 · 运动的描述与匀变速直线运动",
-      "stem": "学生的错误做法：把加速度定义式记成 a = v / t（漏掉初速度）（错误表达式：a = v/t）。这条错误属于哪一类？",
+      "stem": "【第一章 · 运动的描述与匀变速直线运动 · 加速度】学生的错误做法：把加速度定义式记成 a = v / t（漏掉初速度）（错误表达式：a = v/t）。这条错误属于哪一类？",
       "options": [
         {
           "label": "A",
@@ -112,47 +132,24 @@
         "scenario": "匀加速",
         "expr": "v/t",
         "ref": 3.0
+      },
+      "review": {
+        "confidence": "high",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": ""
       }
-    },
-    {
-      "id": "diagnostic-kine-02-2",
-      "point_id": "kine-02",
-      "point_title": "加速度",
-      "chapter": "第一章 · 运动的描述与匀变速直线运动",
-      "stem": "学生的错误做法：把定义式里的除法记成乘法，写成 a = Δv · t（错误表达式：a = (v - v_0)*t）。这条错误属于哪一类？",
-      "options": [
-        {
-          "label": "A",
-          "text": "不等式关系"
-        },
-        {
-          "label": "B",
-          "text": "量纲一致性"
-        },
-        {
-          "label": "C",
-          "text": "概念混淆"
-        },
-        {
-          "label": "D",
-          "text": "数值代入"
-        }
-      ],
-      "correct_answer": "B",
-      "explanation": "加速度是「单位时间内的速度变化」，所以是除以时间。写成乘以时间后量纲立刻从 m/s² 变成 m/s，量纲检查当场报错。\n这条来源记录没有单独填写 trap_test；题目分类沿用知识库已通过校验记录中的“量纲一致性”结果。",
-      "error_type": "量纲一致性",
-      "judging": "auto",
-      "source_error_index": 1,
-      "source_caught_by": "量纲一致性",
-      "wrong_expr": "a = (v - v_0)*t",
-      "trap_test": null
     },
     {
       "id": "diagnostic-kine-02-3",
       "point_id": "kine-02",
       "point_title": "加速度",
       "chapter": "第一章 · 运动的描述与匀变速直线运动",
-      "stem": "学生的错误做法：以为加速度的方向就是物体运动的方向。这条错误属于哪一类？",
+      "stem": "【第一章 · 运动的描述与匀变速直线运动 · 加速度】学生的错误做法：以为加速度的方向就是物体运动的方向。这条错误属于哪一类？",
       "options": [
         {
           "label": "A",
@@ -178,47 +175,24 @@
       "source_error_index": 2,
       "source_caught_by": "人工审核",
       "wrong_expr": null,
-      "trap_test": null
-    },
-    {
-      "id": "diagnostic-kine-03-1",
-      "point_id": "kine-03",
-      "point_title": "匀变速直线运动的速度公式",
-      "chapter": "第一章 · 运动的描述与匀变速直线运动",
-      "stem": "学生的错误做法：把 a·t 记成 a / t，写成 v = v₀ + a/t（错误表达式：v = v_0 + a/t）。这条错误属于哪一类？",
-      "options": [
-        {
-          "label": "A",
-          "text": "不等式关系"
+      "trap_test": null,
+      "review": {
+        "confidence": "high",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
         },
-        {
-          "label": "B",
-          "text": "变化方向"
-        },
-        {
-          "label": "C",
-          "text": "概念混淆"
-        },
-        {
-          "label": "D",
-          "text": "量纲一致性"
-        }
-      ],
-      "correct_answer": "D",
-      "explanation": "漏掉了定义式移项时的那次乘法。写成除法之后 a/t 的量纲变成 m/s³，与 v₀ 的 m/s 根本加不起来，量纲检查直接报错——这是被最早拦住的一类错误。\n这条来源记录没有单独填写 trap_test；题目分类沿用知识库已通过校验记录中的“量纲一致性”结果。",
-      "error_type": "量纲一致性",
-      "judging": "auto",
-      "source_error_index": 0,
-      "source_caught_by": "量纲一致性",
-      "wrong_expr": "v = v_0 + a/t",
-      "trap_test": null
+        "note": ""
+      }
     },
     {
       "id": "diagnostic-kine-03-2",
       "point_id": "kine-03",
       "point_title": "匀变速直线运动的速度公式",
       "chapter": "第一章 · 运动的描述与匀变速直线运动",
-      "stem": "学生的错误做法：把位移公式中的 ½ 误带到速度公式，写成 v = v₀ + ½at（错误表达式：v = v_0 + a*t/2）。这条错误属于哪一类？",
+      "stem": "【第一章 · 运动的描述与匀变速直线运动 · 匀变速直线运动的速度公式】学生的错误做法：把位移公式中的 ½ 误带到速度公式，写成 v = v₀ + ½at（错误表达式：v = v_0 + a*t/2）。这条错误属于哪一类？",
       "options": [
         {
           "label": "A",
@@ -248,6 +222,16 @@
         "scenario": "匀加速",
         "expr": "v_0 + a*t/2",
         "ref": 14.0
+      },
+      "review": {
+        "confidence": "high",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": ""
       }
     },
     {
@@ -255,7 +239,7 @@
       "point_id": "kine-03",
       "point_title": "匀变速直线运动的速度公式",
       "chapter": "第一章 · 运动的描述与匀变速直线运动",
-      "stem": "学生的错误做法：刹车时把 a 当成正的代进去（错误表达式：v = v_0 + abs(a)*t）。这条错误属于哪一类？",
+      "stem": "【第一章 · 运动的描述与匀变速直线运动 · 匀变速直线运动的速度公式】学生的错误做法：刹车时把 a 当成正的代进去（错误表达式：v = v_0 + abs(a)*t）。这条错误属于哪一类？",
       "options": [
         {
           "label": "A",
@@ -275,7 +259,7 @@
         }
       ],
       "correct_answer": "B",
-      "explanation": "刹车过程中加速度与初速度反向，取正号会算出「越刹越快」。校验时把正确规律写进去（刹车时时间越长末速度越小），错写法立刻违背这条规律，于是被判为不通过。\n知识库校验证据：情境：刹车；变化方向要求：down。",
+      "explanation": "刹车过程中加速度与初速度反向，取正号会算出「越刹越快」。校验时把正确规律写进去（刹车时时间越长末速度越小），错写法立刻违背这条规律，于是被判为不通过。\n知识库校验证据：情境：刹车；变化方向要求：随自变量增大，结果应减小。",
       "error_type": "变化方向",
       "judging": "auto",
       "source_error_index": 2,
@@ -287,6 +271,16 @@
         "lo": 1,
         "hi": 3,
         "expect": "down"
+      },
+      "review": {
+        "confidence": "high",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": ""
       }
     },
     {
@@ -294,7 +288,7 @@
       "point_id": "kine-03",
       "point_title": "匀变速直线运动的速度公式",
       "chapter": "第一章 · 运动的描述与匀变速直线运动",
-      "stem": "学生的错误做法：刹车问题里直接把超过停车时刻的时间代进去算末速度（错误表达式：v = v_0 + a*t）。这条错误属于哪一类？",
+      "stem": "【第一章 · 运动的描述与匀变速直线运动 · 匀变速直线运动的速度公式】学生的错误做法：刹车问题里直接把超过停车时刻的时间代进去算末速度（错误表达式：v = v_0 + a*t）。这条错误属于哪一类？",
       "options": [
         {
           "label": "A",
@@ -326,6 +320,16 @@
         "op": ">=",
         "vs": "0",
         "note": "刹车停车之后，速度不可能变成负的"
+      },
+      "review": {
+        "confidence": "high",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": ""
       }
     },
     {
@@ -333,7 +337,7 @@
       "point_id": "kine-04",
       "point_title": "匀变速直线运动的位移公式",
       "chapter": "第一章 · 运动的描述与匀变速直线运动",
-      "stem": "学生的错误做法：把第二项记成 a·t²，漏掉 ½（错误表达式：x = v_0*t + a*t^2）。这条错误属于哪一类？",
+      "stem": "【第一章 · 运动的描述与匀变速直线运动 · 匀变速直线运动的位移公式】学生的错误做法：把第二项记成 a·t²，漏掉 ½（错误表达式：x = v_0*t + a*t^2）。这条错误属于哪一类？",
       "options": [
         {
           "label": "A",
@@ -363,80 +367,24 @@
         "scenario": "匀加速",
         "expr": "v_0*t + a*t^2",
         "ref": 32.0
+      },
+      "review": {
+        "confidence": "high",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": ""
       }
-    },
-    {
-      "id": "diagnostic-kine-04-2",
-      "point_id": "kine-04",
-      "point_title": "匀变速直线运动的位移公式",
-      "chapter": "第一章 · 运动的描述与匀变速直线运动",
-      "stem": "学生的错误做法：把第二项记成 ½·a·t（t 漏了平方）（错误表达式：x = v_0*t + a*t/2）。这条错误属于哪一类？",
-      "options": [
-        {
-          "label": "A",
-          "text": "概念混淆"
-        },
-        {
-          "label": "B",
-          "text": "数值代入"
-        },
-        {
-          "label": "C",
-          "text": "量纲一致性"
-        },
-        {
-          "label": "D",
-          "text": "变化方向"
-        }
-      ],
-      "correct_answer": "C",
-      "explanation": "多写一个 ½、少写一个平方，是一对容易互相代替的错误。这一次漏掉的是平方，第二项的量纲变成 m/s，与第一项的 m 加不起来，量纲检查立刻拦住。\n这条来源记录没有单独填写 trap_test；题目分类沿用知识库已通过校验记录中的“量纲一致性”结果。",
-      "error_type": "量纲一致性",
-      "judging": "auto",
-      "source_error_index": 1,
-      "source_caught_by": "量纲一致性",
-      "wrong_expr": "x = v_0*t + a*t/2",
-      "trap_test": null
-    },
-    {
-      "id": "diagnostic-kine-05-1",
-      "point_id": "kine-05",
-      "point_title": "速度与位移的关系",
-      "chapter": "第一章 · 运动的描述与匀变速直线运动",
-      "stem": "学生的错误做法：把 v² = v₀² + 2ax 记成 v = v₀ + 2ax（漏掉平方与开方）（错误表达式：v = v_0 + 2*a*x）。这条错误属于哪一类？",
-      "options": [
-        {
-          "label": "A",
-          "text": "不等式关系"
-        },
-        {
-          "label": "B",
-          "text": "量纲一致性"
-        },
-        {
-          "label": "C",
-          "text": "概念混淆"
-        },
-        {
-          "label": "D",
-          "text": "数值代入"
-        }
-      ],
-      "correct_answer": "B",
-      "explanation": "右边 2ax 的量纲是 m²/s²，与 v₀ 的 m/s 不是同一类量，量纲检查当场拦住。\n这条来源记录没有单独填写 trap_test；题目分类沿用知识库已通过校验记录中的“量纲一致性”结果。",
-      "error_type": "量纲一致性",
-      "judging": "auto",
-      "source_error_index": 0,
-      "source_caught_by": "量纲一致性",
-      "wrong_expr": "v = v_0 + 2*a*x",
-      "trap_test": null
     },
     {
       "id": "diagnostic-kine-05-2",
       "point_id": "kine-05",
       "point_title": "速度与位移的关系",
       "chapter": "第一章 · 运动的描述与匀变速直线运动",
-      "stem": "学生的错误做法：漏掉系数 2，写成 v² = v₀² + ax（错误表达式：v^2 = v_0^2 + a*x）。这条错误属于哪一类？",
+      "stem": "【第一章 · 运动的描述与匀变速直线运动 · 速度与位移的关系】学生的错误做法：漏掉系数 2，写成 v² = v₀² + ax（错误表达式：v^2 = v_0^2 + a*x）。这条错误属于哪一类？",
       "options": [
         {
           "label": "A",
@@ -466,6 +414,16 @@
         "scenario": "匀加速",
         "expr": "sqrt(v_0^2 + a*x)",
         "ref": 14.0
+      },
+      "review": {
+        "confidence": "high",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": ""
       }
     },
     {
@@ -473,7 +431,7 @@
       "point_id": "kine-06",
       "point_title": "匀变速运动的平均速度、中间时刻速度与中间位置速度",
       "chapter": "第一章 · 运动的描述与匀变速直线运动",
-      "stem": "学生的错误做法：以为中间位置的瞬时速度等于全程平均速度（错误表达式：v_x2 = (v_0 + v)/2）。这条错误属于哪一类？",
+      "stem": "【第一章 · 运动的描述与匀变速直线运动 · 匀变速运动的平均速度、中间时刻速度与中间位置速度】学生的错误做法：以为中间位置的瞬时速度等于全程平均速度（错误表达式：v_x2 = (v_0 + v)/2）。这条错误属于哪一类？",
       "options": [
         {
           "label": "A",
@@ -505,6 +463,16 @@
         "op": "==",
         "vs": "sqrt((v_0^2 + v^2)/2)",
         "note": "错误主张：中间位置速度等于平均速度"
+      },
+      "review": {
+        "confidence": "high",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": ""
       }
     },
     {
@@ -512,7 +480,7 @@
       "point_id": "kine-06",
       "point_title": "匀变速运动的平均速度、中间时刻速度与中间位置速度",
       "chapter": "第一章 · 运动的描述与匀变速直线运动",
-      "stem": "学生的错误做法：把根号范围写错，记成 v(x/2) = √(v₀² + v²) / 2（错误表达式：v_x2 = sqrt(v_0^2 + v^2)/2）。这条错误属于哪一类？",
+      "stem": "【第一章 · 运动的描述与匀变速直线运动 · 匀变速运动的平均速度、中间时刻速度与中间位置速度】学生的错误做法：把根号范围写错，记成 v(x/2) = √(v₀² + v²) / 2（错误表达式：v_x2 = sqrt(v_0^2 + v^2)/2）。这条错误属于哪一类？",
       "options": [
         {
           "label": "A",
@@ -542,6 +510,16 @@
         "scenario": "匀加速",
         "expr": "sqrt(v_0^2 + v^2)/2",
         "ref": 10.0
+      },
+      "review": {
+        "confidence": "high",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": ""
       }
     },
     {
@@ -549,7 +527,7 @@
       "point_id": "kine-06",
       "point_title": "匀变速运动的平均速度、中间时刻速度与中间位置速度",
       "chapter": "第一章 · 运动的描述与匀变速直线运动",
-      "stem": "学生的错误做法：把 v̄ = (v₀ + v)/2 当成对任何运动都成立的公式。这条错误属于哪一类？",
+      "stem": "【第一章 · 运动的描述与匀变速直线运动 · 匀变速运动的平均速度、中间时刻速度与中间位置速度】学生的错误做法：把 v̄ = (v₀ + v)/2 当成对任何运动都成立的公式。这条错误属于哪一类？",
       "options": [
         {
           "label": "A",
@@ -575,14 +553,24 @@
       "source_error_index": 2,
       "source_caught_by": "人工审核",
       "wrong_expr": null,
-      "trap_test": null
+      "trap_test": null,
+      "review": {
+        "confidence": "high",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": ""
+      }
     },
     {
       "id": "diagnostic-kine-07-1",
       "point_id": "kine-07",
       "point_title": "自由落体运动",
       "chapter": "第一章 · 运动的描述与匀变速直线运动",
-      "stem": "学生的错误做法：把高度公式记成 h = g·t²，漏掉 ½（错误表达式：h = g*t^2）。这条错误属于哪一类？",
+      "stem": "【第一章 · 运动的描述与匀变速直线运动 · 自由落体运动】学生的错误做法：把高度公式记成 h = g·t²，漏掉 ½（错误表达式：h = g*t^2）。这条错误属于哪一类？",
       "options": [
         {
           "label": "A",
@@ -612,6 +600,16 @@
         "scenario": "地球表面",
         "expr": "g*t^2",
         "ref": 44.1
+      },
+      "review": {
+        "confidence": "high",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": ""
       }
     },
     {
@@ -619,7 +617,7 @@
       "point_id": "kine-07",
       "point_title": "自由落体运动",
       "chapter": "第一章 · 运动的描述与匀变速直线运动",
-      "stem": "学生的错误做法：以为物体越重下落越快、重的先落地。这条错误属于哪一类？",
+      "stem": "【第一章 · 运动的描述与匀变速直线运动 · 自由落体运动】学生的错误做法：以为物体越重下落越快、重的先落地。这条错误属于哪一类？",
       "options": [
         {
           "label": "A",
@@ -645,7 +643,43 @@
       "source_error_index": 1,
       "source_caught_by": "人工审核",
       "wrong_expr": null,
-      "trap_test": null
+      "trap_test": null,
+      "review": {
+        "confidence": "high",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": ""
+      }
+    }
+  ],
+  "skipped": [
+    {
+      "point_id": "kine-02",
+      "point_title": "加速度",
+      "source_error_index": 1,
+      "reason": "自动判定条目没有 trap_test 可执行证据；不把校验标签代替实测证据。"
+    },
+    {
+      "point_id": "kine-03",
+      "point_title": "匀变速直线运动的速度公式",
+      "source_error_index": 0,
+      "reason": "自动判定条目没有 trap_test 可执行证据；不把校验标签代替实测证据。"
+    },
+    {
+      "point_id": "kine-04",
+      "point_title": "匀变速直线运动的位移公式",
+      "source_error_index": 1,
+      "reason": "自动判定条目没有 trap_test 可执行证据；不把校验标签代替实测证据。"
+    },
+    {
+      "point_id": "kine-05",
+      "point_title": "速度与位移的关系",
+      "source_error_index": 0,
+      "reason": "自动判定条目没有 trap_test 可执行证据；不把校验标签代替实测证据。"
     }
   ]
 }

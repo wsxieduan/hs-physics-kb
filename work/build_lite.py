@@ -8,7 +8,7 @@ build_lite.py —— 知识的「学生版」出口
     和 build_site.py（工程版）并列，互不影响。
 
 【为什么要做成「一个源、多个出口」】
-    需求方的原话：「可以做老师版、学生版、简洁版等」。
+    主人的原话：「可以做老师版、学生版、简洁版等」。
     如果每做一版就复制一份内容，以后改一个公式要改四遍 —— 迟早不一致。
     正确做法是**内容源只有一份**，各个版本只是"给不同的人看不同的部分"。
     这和这个项目一贯的原则是同一个：**显示与数据解耦**。
@@ -30,6 +30,7 @@ build_lite.py —— 知识的「学生版」出口
 import os
 import sys
 import html
+from urllib.parse import quote
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 if HERE not in sys.path:
@@ -64,8 +65,10 @@ def pick_error(p):
     return errs[0] if errs else None
 
 
-def render_card(p):
+def render_card(p, segment_nav=None):
     """一张知识点卡片：一屏看完。"""
+    segment_nav = segment_nav or {}
+    quiz_href = segment_nav.get("quiz_href")
     L = []
     L.append('<article class="kp" id="%s" data-chapter="%s" data-search="%s">'
              % (E(p["id"]), E(p.get("chapter", "")),
@@ -126,6 +129,16 @@ def render_card(p):
                         prose(s.get("unit", "")) or "—"))
         L.append('</tbody></table></details>')
 
+    if quiz_href:
+        # 练习链接用知识点 id 直达同一知识点的典型例题，并携带返回主知识库的位置。
+        current = segment_nav.get("current", "高中")
+        main_href = segment_nav.get(
+            "senior_href" if current == "高中" else "junior_href",
+            "index.html" if current == "高中" else "junior.html")
+        query = "mode=example&point=%s&source=%s&return=%s" % (
+            quote(p["id"]), quote(current + "物理学生版"), quote(main_href + "#" + p["id"]))
+        target = "%s?%s" % (E(quiz_href), html.escape(query, quote=True))
+        L.append('<div class="kp-practice"><a href="%s">练这道题 ↗</a></div>' % target)
     L.append('</article>')
     return "".join(L)
 
@@ -257,11 +270,17 @@ body:not([data-view="point"]) .chips{display:none}
 .vsu{font-family:Consolas,monospace;font-size:12.5px;color:var(--ink3)}
 .vsf{font-size:12px;color:var(--ink3);text-align:right}
 @media(max-width:760px){ .vsrow{grid-template-columns:78px 1fr 70px} .vsf{display:none} }
+.segment-switchbar{background:#fff;border-bottom:1px solid var(--line);padding:9px 16px;display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.segment-switchbar span{font-size:12px;color:var(--ink3)}
+.segment-switchbar a{display:inline-block;padding:4px 11px;border:1px solid var(--line);border-radius:999px;color:var(--ink2);font-size:12px;text-decoration:none}
+.segment-switchbar a[aria-current="page"]{background:var(--blue);border-color:var(--blue);color:#fff}
+.segment-switchbar a.segment-quiz{margin-left:auto;border-color:#bdccf4;background:#f4f7ff;color:var(--blue)}
+.kp-practice{margin-top:12px}.kp-practice a{display:inline-flex;padding:5px 12px;border:1px solid #bdccf4;border-radius:999px;color:var(--blue);font-size:12px;text-decoration:none}.kp-practice a:hover{background:#edf3ff}
 footer{max-width:900px;margin:0 auto;padding:0 16px 40px;color:var(--ink3);font-size:12.5px;line-height:1.9}
 """
 
 
-def build(kb_dir, out_path):
+def build(kb_dir, out_path, segment_nav=None):
     chapters = KB.load_kb(kb_dir)
     issues, id_map = KB.check_structure(chapters)
     errs = [i for i in issues if i.level == "错误"]
@@ -284,7 +303,7 @@ def build(kb_dir, out_path):
         if cintro:
             body.append('<p class="lead" style="color:#5c6b7e;font-size:13.5px;margin:0 0 6px">%s</p>'
                         % prose(cintro))
-        body.extend(render_card(p) for p in pts)
+        body.extend(render_card(p, segment_nav) for p in pts)
         chips.append('<button data-chapter="%s">%s</button>'
                      % (E(cname), E(cname.split("·")[-1].strip())))
 
@@ -302,6 +321,7 @@ def build(kb_dir, out_path):
   <h1>高中物理 · 速查</h1>
   <p>%d 个知识点 · 一句话说清是什么 · 核心公式 · 最容易错的那条</p>
 </header>
+__SEGMENT_BAR__
 <div class="bar">
   <div class="views">
     <button class="on" data-view="point">按知识点</button>
@@ -365,6 +385,21 @@ def build(kb_dir, out_path):
 </body></html>""" % (CSS, n_pts, "".join(chips), "".join(body),
                        render_formula_index(groups), render_symbol_index(groups),
                        n_pts, n_fml, n_err)
+
+    if segment_nav:
+        current = segment_nav.get("current", "高中")
+        hs_attrs = ' aria-current="page"' if current == "高中" else ""
+        junior_attrs = ' aria-current="page"' if current == "初中" else ""
+        segment_bar = (
+            '<nav class="segment-switchbar" aria-label="切换物理学段">'
+            '<span>知识库学段</span><a href="%s"%s>高中</a><a href="%s"%s>初中</a>'
+            '<a class="segment-quiz" href="%s">例题自测与错误诊断 ↗</a></nav>' % (
+                E(segment_nav.get("senior_href", "index.html")), hs_attrs,
+                E(segment_nav.get("junior_href", "junior.html")), junior_attrs,
+                E(segment_nav.get("quiz_href", "quiz-hs.html"))))
+    else:
+        segment_bar = ""
+    page = page.replace("__SEGMENT_BAR__", segment_bar)
 
     with open(out_path, "w", encoding="utf-8") as f:
         f.write(page)

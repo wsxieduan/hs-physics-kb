@@ -1,0 +1,478 @@
+{
+  "segment": "高中",
+  "chapter": "第十六章 · 几何光学",
+  "source_file": "16_geometric_optics.json",
+  "questions": [
+    {
+      "id": "diagnostic-opt-01-1",
+      "point_id": "opt-01",
+      "point_title": "光的反射定律",
+      "chapter": "第十六章 · 几何光学",
+      "stem": "【第十六章 · 几何光学 · 光的反射定律】学生的错误做法：把反射角写成入射角的两倍：theta_r = 2 theta_i（错误表达式：theta_r = 2*theta_i）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "数值代入：错误式在空气射入玻璃时给出 0.9，而正确值是 0.4；它还错误预言进入高折射率介质会偏离法线。"
+        },
+        {
+          "label": "B",
+          "text": "数值代入：玻璃中光速小于真空光速，写反会得到 2/3，小于 1；正确折射率是 1.5。"
+        },
+        {
+          "label": "C",
+          "text": "数值代入：因为 n_1 > n_2，写反后得到 1.0714，大于正弦值上限 1，物理上不可能；正确值为 14/15。"
+        },
+        {
+          "label": "D",
+          "text": "数值代入：反射角本身等于入射角；某些转镜问题中出现的两倍关系，指的是反射光线转过的角度。"
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "反射角本身等于入射角；某些转镜问题中出现的两倍关系，指的是反射光线转过的角度。30° 入射时错误式给出 60°。\n知识库校验证据：情境：三十度入射；代入错误式：2*theta_i；校验参照值：0.5235987756。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 0,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "theta_r = 2*theta_i",
+      "trap_test": {
+        "scenario": "三十度入射",
+        "expr": "2*theta_i",
+        "ref": 0.5235987756
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-opt-01-2",
+      "point_id": "opt-01",
+      "point_title": "光的反射定律",
+      "chapter": "第十六章 · 几何光学",
+      "stem": "【第十六章 · 几何光学 · 光的反射定律】学生的错误做法：认为平面镜像距是物距的两倍：d_i = 2 d_o（错误表达式：d_i = 2*d_o）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "数值代入：玻璃中光速小于真空光速，写反会得到 2/3，小于 1；正确折射率是 1.5。"
+        },
+        {
+          "label": "B",
+          "text": "数值代入：因为 n_1 > n_2，写反后得到 1.0714，大于正弦值上限 1，物理上不可能；正确值为 14/15。"
+        },
+        {
+          "label": "C",
+          "text": "数值代入：物与像之间的距离才是 2 d_o；像到镜面的距离仍等于物到镜面的距离。"
+        },
+        {
+          "label": "D",
+          "text": "数值代入：错误式在空气射入玻璃时给出 0.9，而正确值是 0.4；它还错误预言进入高折射率介质会偏离法线。"
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "物与像之间的距离才是 2 d_o；像到镜面的距离仍等于物到镜面的距离。物距 2 m 时错误式给出 4 m。\n知识库校验证据：情境：平面镜成像；代入错误式：2*d_o；校验参照值：2.0。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 1,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "d_i = 2*d_o",
+      "trap_test": {
+        "scenario": "平面镜成像",
+        "expr": "2*d_o",
+        "ref": 2.0
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-opt-02-1",
+      "point_id": "opt-02",
+      "point_title": "光的折射与折射定律",
+      "chapter": "第十六章 · 几何光学",
+      "stem": "【第十六章 · 几何光学 · 光的折射与折射定律】学生的错误做法：把折射率比例颠倒，写成 s_r = n_2 s_i / n_1（错误表达式：s_r = n_2*s_i/n_1）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "数值代入：因为 n_1 > n_2，写反后得到 1.0714，大于正弦值上限 1，物理上不可能；正确值为 14/15。"
+        },
+        {
+          "label": "B",
+          "text": "数值代入：错误式在空气射入玻璃时给出 0.9，而正确值是 0.4；它还错误预言进入高折射率介质会偏离法线。"
+        },
+        {
+          "label": "C",
+          "text": "数值代入：反射角本身等于入射角；某些转镜问题中出现的两倍关系，指的是反射光线转过的角度。"
+        },
+        {
+          "label": "D",
+          "text": "数值代入：玻璃中光速小于真空光速，写反会得到 2/3，小于 1；正确折射率是 1.5。"
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "错误式在空气射入玻璃时给出 0.9，而正确值是 0.4；它还错误预言进入高折射率介质会偏离法线。\n知识库校验证据：情境：空气射入玻璃；代入错误式：n_2*s_i/n_1；校验参照值：0.4。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 0,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "s_r = n_2*s_i/n_1",
+      "trap_test": {
+        "scenario": "空气射入玻璃",
+        "expr": "n_2*s_i/n_1",
+        "ref": 0.4
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-opt-02-2",
+      "point_id": "opt-02",
+      "point_title": "光的折射与折射定律",
+      "chapter": "第十六章 · 几何光学",
+      "stem": "【第十六章 · 几何光学 · 光的折射与折射定律】学生的错误做法：认为折射角总等于入射角，写成 s_r = s_i（错误表达式：s_r = s_i）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "数值代入：只有两侧折射率相同或正入射等特殊情形才不改变方向。"
+        },
+        {
+          "label": "B",
+          "text": "数值代入：反射角本身等于入射角；某些转镜问题中出现的两倍关系，指的是反射光线转过的角度。"
+        },
+        {
+          "label": "C",
+          "text": "数值代入：玻璃中光速小于真空光速，写反会得到 2/3，小于 1；正确折射率是 1.5。"
+        },
+        {
+          "label": "D",
+          "text": "数值代入：因为 n_1 > n_2，写反后得到 1.0714，大于正弦值上限 1，物理上不可能；正确值为 14/15。"
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "只有两侧折射率相同或正入射等特殊情形才不改变方向。本情境错误式给出 0.6，正确值为 0.4。\n知识库校验证据：情境：空气射入玻璃；代入错误式：s_i；校验参照值：0.4。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 1,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "s_r = s_i",
+      "trap_test": {
+        "scenario": "空气射入玻璃",
+        "expr": "s_i",
+        "ref": 0.4
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-opt-03-1",
+      "point_id": "opt-03",
+      "point_title": "折射率与光速的关系",
+      "chapter": "第十六章 · 几何光学",
+      "stem": "【第十六章 · 几何光学 · 折射率与光速的关系】学生的错误做法：把折射率写反为 n = v/c（错误表达式：n = v/c）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "数值代入：反射角本身等于入射角；某些转镜问题中出现的两倍关系，指的是反射光线转过的角度。"
+        },
+        {
+          "label": "B",
+          "text": "数值代入：错误式在空气射入玻璃时给出 0.9，而正确值是 0.4；它还错误预言进入高折射率介质会偏离法线。"
+        },
+        {
+          "label": "C",
+          "text": "数值代入：因为 n_1 > n_2，写反后得到 1.0714，大于正弦值上限 1，物理上不可能；正确值为 14/15。"
+        },
+        {
+          "label": "D",
+          "text": "数值代入：玻璃中光速小于真空光速，写反会得到 2/3，小于 1；正确折射率是 1.5。"
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "玻璃中光速小于真空光速，写反会得到 2/3，小于 1；正确折射率是 1.5。两式量纲都正确，只能靠数值和物理范围抓住。\n知识库校验证据：情境：玻璃中的光；代入错误式：v/c；校验参照值：1.5。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 0,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "n = v/c",
+      "trap_test": {
+        "scenario": "玻璃中的光",
+        "expr": "v/c",
+        "ref": 1.5
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-opt-03-2",
+      "point_id": "opt-03",
+      "point_title": "折射率与光速的关系",
+      "chapter": "第十六章 · 几何光学",
+      "stem": "【第十六章 · 几何光学 · 折射率与光速的关系】学生的错误做法：认为进入介质后波长增大，写成 L_m = n L_0（错误表达式：n*L_0/L_m = 1）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "数值代入：错误式在空气射入玻璃时给出 0.9，而正确值是 0.4；它还错误预言进入高折射率介质会偏离法线。"
+        },
+        {
+          "label": "B",
+          "text": "数值代入：因为 n_1 > n_2，写反后得到 1.0714，大于正弦值上限 1，物理上不可能；正确值为 14/15。"
+        },
+        {
+          "label": "C",
+          "text": "数值代入：频率不变而速度降低，波长应缩短。"
+        },
+        {
+          "label": "D",
+          "text": "数值代入：反射角本身等于入射角；某些转镜问题中出现的两倍关系，指的是反射光线转过的角度。"
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "频率不变而速度降低，波长应缩短。错误式给出 900 nm，正确值为 400 nm。\n知识库校验证据：情境：玻璃中的光；代入错误式：n*L_0/L_m；校验参照值：1.0。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 1,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "n*L_0/L_m = 1",
+      "trap_test": {
+        "scenario": "玻璃中的光",
+        "expr": "n*L_0/L_m",
+        "ref": 1.0
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-opt-04-1",
+      "point_id": "opt-04",
+      "point_title": "全反射与临界角",
+      "chapter": "第十六章 · 几何光学",
+      "stem": "【第十六章 · 几何光学 · 全反射与临界角】学生的错误做法：把临界角关系写反为 s_C = n_1/n_2（错误表达式：s_C = n_1/n_2）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "数值代入：玻璃中光速小于真空光速，写反会得到 2/3，小于 1；正确折射率是 1.5。"
+        },
+        {
+          "label": "B",
+          "text": "数值代入：因为 n_1 > n_2，写反后得到 1.0714，大于正弦值上限 1，物理上不可能；正确值为 14/15。"
+        },
+        {
+          "label": "C",
+          "text": "数值代入：反射角本身等于入射角；某些转镜问题中出现的两倍关系，指的是反射光线转过的角度。"
+        },
+        {
+          "label": "D",
+          "text": "数值代入：错误式在空气射入玻璃时给出 0.9，而正确值是 0.4；它还错误预言进入高折射率介质会偏离法线。"
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "因为 n_1 > n_2，写反后得到 1.0714，大于正弦值上限 1，物理上不可能；正确值为 14/15。\n知识库校验证据：情境：纤芯与包层；代入错误式：n_1/n_2；校验参照值：0.9333333333333333。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 0,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "s_C = n_1/n_2",
+      "trap_test": {
+        "scenario": "纤芯与包层",
+        "expr": "n_1/n_2",
+        "ref": 0.9333333333333333
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-opt-04-2",
+      "point_id": "opt-04",
+      "point_title": "全反射与临界角",
+      "chapter": "第十六章 · 几何光学",
+      "stem": "【第十六章 · 几何光学 · 全反射与临界角】学生的错误做法：数值孔径漏掉平方根，写成 NA = n_1² − n_2²（错误表达式：NA = n_1^2 - n_2^2）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "数值代入：错误式给出 0.29，正确值应为 sqrt(0.29) 约 0.538516。"
+        },
+        {
+          "label": "B",
+          "text": "数值代入：反射角本身等于入射角；某些转镜问题中出现的两倍关系，指的是反射光线转过的角度。"
+        },
+        {
+          "label": "C",
+          "text": "数值代入：错误式在空气射入玻璃时给出 0.9，而正确值是 0.4；它还错误预言进入高折射率介质会偏离法线。"
+        },
+        {
+          "label": "D",
+          "text": "数值代入：玻璃中光速小于真空光速，写反会得到 2/3，小于 1；正确折射率是 1.5。"
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "错误式给出 0.29，正确值应为 sqrt(0.29) 约 0.538516。量纲都是无量纲，必须数值检验。\n知识库校验证据：情境：纤芯与包层；代入错误式：n_1^2 - n_2^2；校验参照值：0.5385164807134505。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 1,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "NA = n_1^2 - n_2^2",
+      "trap_test": {
+        "scenario": "纤芯与包层",
+        "expr": "n_1^2 - n_2^2",
+        "ref": 0.5385164807134505
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-opt-05-1",
+      "point_id": "opt-05",
+      "point_title": "光的色散",
+      "chapter": "第十六章 · 几何光学",
+      "stem": "【第十六章 · 几何光学 · 光的色散】学生的错误做法：薄棱镜偏向角漏掉减 1，写成 delta_b = n_b A（错误表达式：delta_b = n_b*A）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "数值代入：反射角本身等于入射角；某些转镜问题中出现的两倍关系，指的是反射光线转过的角度。"
+        },
+        {
+          "label": "B",
+          "text": "数值代入：错误式在空气射入玻璃时给出 0.9，而正确值是 0.4；它还错误预言进入高折射率介质会偏离法线。"
+        },
+        {
+          "label": "C",
+          "text": "数值代入：玻璃中光速小于真空光速，写反会得到 2/3，小于 1；正确折射率是 1.5。"
+        },
+        {
+          "label": "D",
+          "text": "数值代入：错误式给出 1.53×0.1 = 0.153 rad，正确小角近似值为 0.053 rad。"
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "错误式给出 1.53×0.1 = 0.153 rad，正确小角近似值为 0.053 rad。两式量纲相同，数值检验才能发现。\n知识库校验证据：情境：薄棱镜色散；代入错误式：n_b*A；校验参照值：0.053。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 0,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "delta_b = n_b*A",
+      "trap_test": {
+        "scenario": "薄棱镜色散",
+        "expr": "n_b*A",
+        "ref": 0.053
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-opt-05-2",
+      "point_id": "opt-05",
+      "point_title": "光的色散",
+      "chapter": "第十六章 · 几何光学",
+      "stem": "【第十六章 · 几何光学 · 光的色散】学生的错误做法：把折射率差顺序写反，认为红光比蓝光偏折更大（错误表达式：delta_sep = (n_r - n_b)*A）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "数值代入：错误式在空气射入玻璃时给出 0.9，而正确值是 0.4；它还错误预言进入高折射率介质会偏离法线。"
+        },
+        {
+          "label": "B",
+          "text": "数值代入：玻璃中光速小于真空光速，写反会得到 2/3，小于 1；正确折射率是 1.5。"
+        },
+        {
+          "label": "C",
+          "text": "数值代入：错误式得到 −0.002 rad，不但符号相反，也违背普通玻璃中蓝光折射率更大、偏折更强的事实。"
+        },
+        {
+          "label": "D",
+          "text": "数值代入：反射角本身等于入射角；某些转镜问题中出现的两倍关系，指的是反射光线转过的角度。"
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "错误式得到 −0.002 rad，不但符号相反，也违背普通玻璃中蓝光折射率更大、偏折更强的事实。\n知识库校验证据：情境：薄棱镜色散；代入错误式：(n_r - n_b)*A；校验参照值：0.002。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 1,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "delta_sep = (n_r - n_b)*A",
+      "trap_test": {
+        "scenario": "薄棱镜色散",
+        "expr": "(n_r - n_b)*A",
+        "ref": 0.002
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    }
+  ],
+  "skipped": []
+}

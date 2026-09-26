@@ -1,0 +1,483 @@
+{
+  "segment": "高中",
+  "chapter": "第十三章 · 电磁感应（一）楞次与法拉第",
+  "source_file": "13_induction_basic.json",
+  "questions": [
+    {
+      "id": "diagnostic-ind-01-1",
+      "point_id": "ind-01",
+      "point_title": "电磁感应现象与产生条件",
+      "chapter": "第十三章 · 电磁感应（一）楞次与法拉第",
+      "stem": "【第十三章 · 电磁感应（一）楞次与法拉第 · 电磁感应现象与产生条件】学生的错误做法：只要闭合线圈处在磁场中，就一定有感应电流（错误表达式：Delta_Phi = Phi_2）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "概念混淆：原磁通量减少时，感应磁场应与原磁场同向以阻碍减少。"
+        },
+        {
+          "label": "B",
+          "text": "概念混淆：感应电动势由磁通量变化率决定，是否形成电流还取决于回路是否闭合。"
+        },
+        {
+          "label": "C",
+          "text": "量纲一致性：右侧量纲为 Wb·s，不是 V，且错误地认为变化越慢电动势越大。"
+        },
+        {
+          "label": "D",
+          "text": "数值代入：感应取决于磁通量的变化而非磁通量本身。"
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "感应取决于磁通量的变化而非磁通量本身。磁通量不变情境中 Phi_2=0.30 Wb，但正确变化量是 0。\n知识库校验证据：情境：磁通量不变；代入错误式：Phi_2；校验参照值：0.0。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 0,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "Delta_Phi = Phi_2",
+      "trap_test": {
+        "scenario": "磁通量不变",
+        "expr": "Phi_2",
+        "ref": 0.0
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-ind-01-2",
+      "point_id": "ind-01",
+      "point_title": "电磁感应现象与产生条件",
+      "chapter": "第十三章 · 电磁感应（一）楞次与法拉第",
+      "stem": "【第十三章 · 电磁感应（一）楞次与法拉第 · 电磁感应现象与产生条件】学生的错误做法：把磁通量变化量写成初态减末态 Delta_Phi=Phi_1−Phi_2（错误表达式：Delta_Phi = Phi_1 - Phi_2）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "概念混淆：感应电动势由磁通量变化率决定，是否形成电流还取决于回路是否闭合。"
+        },
+        {
+          "label": "B",
+          "text": "量纲一致性：右侧量纲为 Wb·s，不是 V，且错误地认为变化越慢电动势越大。"
+        },
+        {
+          "label": "C",
+          "text": "数值代入：量纲完全正确但符号相反；在约定末态减初态后，0.12−0.36=−0.24 Wb，而正确值为 +0.24 Wb。"
+        },
+        {
+          "label": "D",
+          "text": "概念混淆：原磁通量减少时，感应磁场应与原磁场同向以阻碍减少。"
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "量纲完全正确但符号相反；在约定末态减初态后，0.12−0.36=−0.24 Wb，而正确值为 +0.24 Wb。\n知识库校验证据：情境：磁通量增大；代入错误式：Phi_1 - Phi_2；校验参照值：0.24。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 1,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "Delta_Phi = Phi_1 - Phi_2",
+      "trap_test": {
+        "scenario": "磁通量增大",
+        "expr": "Phi_1 - Phi_2",
+        "ref": 0.24
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-ind-02-1",
+      "point_id": "ind-02",
+      "point_title": "楞次定律与右手定则",
+      "chapter": "第十三章 · 电磁感应（一）楞次与法拉第",
+      "stem": "【第十三章 · 电磁感应（一）楞次与法拉第 · 楞次定律与右手定则】学生的错误做法：认为感应磁场方向永远与原磁场方向相反。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "数值代入：斜向切割时只有垂直磁场的速度分量有效；错误式给 2.4 V，30° 情境正确值为 1.2 V。"
+        },
+        {
+          "label": "B",
+          "text": "概念混淆：原磁通量减少时，感应磁场应与原磁场同向以阻碍减少。"
+        },
+        {
+          "label": "C",
+          "text": "数值代入：感应取决于磁通量的变化而非磁通量本身。"
+        },
+        {
+          "label": "D",
+          "text": "数值代入：量纲正确但数值少了 200 倍；多匝线圈情境中错误式只得 0.06 V，正确值为 12 V。"
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "原磁通量减少时，感应磁场应与原磁场同向以阻碍减少。这是方向判断，公式校验无法完整表示空间方向，需人工审核。",
+      "error_type": "概念混淆",
+      "judging": "teacher",
+      "source_error_index": 0,
+      "source_caught_by": "人工审核",
+      "wrong_expr": null,
+      "trap_test": null,
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-ind-02-2",
+      "point_id": "ind-02",
+      "point_title": "楞次定律与右手定则",
+      "chapter": "第十三章 · 电磁感应（一）楞次与法拉第",
+      "stem": "【第十三章 · 电磁感应（一）楞次与法拉第 · 楞次定律与右手定则】学生的错误做法：漏掉楞次定律的负号，写成 E_signed=Delta_Phi/Delta_t（错误表达式：E_signed = Delta_Phi/Delta_t）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "数值代入：量纲和大小都正确但方向相反；正向磁通量增加情境中错误式给 +2.0 V，正确代数值为 −2.0 V。"
+        },
+        {
+          "label": "B",
+          "text": "概念混淆：感应电动势由磁通量变化率决定，是否形成电流还取决于回路是否闭合。"
+        },
+        {
+          "label": "C",
+          "text": "量纲一致性：右侧量纲为 Wb·s，不是 V，且错误地认为变化越慢电动势越大。"
+        },
+        {
+          "label": "D",
+          "text": "量纲一致性：电动势是单位电荷获得的能量，做功应随电荷量增大；错误式量纲也不是 J。"
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "量纲和大小都正确但方向相反；正向磁通量增加情境中错误式给 +2.0 V，正确代数值为 −2.0 V。\n知识库校验证据：情境：正向磁通量增加；代入错误式：Delta_Phi/Delta_t；校验参照值：-2.0。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 1,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "E_signed = Delta_Phi/Delta_t",
+      "trap_test": {
+        "scenario": "正向磁通量增加",
+        "expr": "Delta_Phi/Delta_t",
+        "ref": -2.0
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-ind-03-1",
+      "point_id": "ind-03",
+      "point_title": "法拉第电磁感应定律",
+      "chapter": "第十三章 · 电磁感应（一）楞次与法拉第",
+      "stem": "【第十三章 · 电磁感应（一）楞次与法拉第 · 法拉第电磁感应定律】学生的错误做法：多匝线圈仍按单匝计算，漏乘匝数 n（错误表达式：E_avg = abs(Delta_Phi)/Delta_t）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "概念混淆：原磁通量减少时，感应磁场应与原磁场同向以阻碍减少。"
+        },
+        {
+          "label": "B",
+          "text": "概念混淆：感应电动势由磁通量变化率决定，是否形成电流还取决于回路是否闭合。"
+        },
+        {
+          "label": "C",
+          "text": "量纲一致性：电动势是单位电荷获得的能量，做功应随电荷量增大；错误式量纲也不是 J。"
+        },
+        {
+          "label": "D",
+          "text": "数值代入：量纲正确但数值少了 200 倍；多匝线圈情境中错误式只得 0.06 V，正确值为 12 V。"
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "量纲正确但数值少了 200 倍；多匝线圈情境中错误式只得 0.06 V，正确值为 12 V。\n知识库校验证据：情境：多匝线圈；代入错误式：abs(Delta_Phi)/Delta_t；校验参照值：12.0。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 0,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "E_avg = abs(Delta_Phi)/Delta_t",
+      "trap_test": {
+        "scenario": "多匝线圈",
+        "expr": "abs(Delta_Phi)/Delta_t",
+        "ref": 12.0
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-ind-04-1",
+      "point_id": "ind-04",
+      "point_title": "导体切割磁感线",
+      "chapter": "第十三章 · 电磁感应（一）楞次与法拉第",
+      "stem": "【第十三章 · 电磁感应（一）楞次与法拉第 · 导体切割磁感线】学生的错误做法：无论运动方向怎样都直接使用 E_move=B*L*v（错误表达式：E_move = B*L*v）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "量纲一致性：右侧量纲为 Wb·s，不是 V，且错误地认为变化越慢电动势越大。"
+        },
+        {
+          "label": "B",
+          "text": "数值代入：斜向切割时只有垂直磁场的速度分量有效；错误式给 2.4 V，30° 情境正确值为 1.2 V。"
+        },
+        {
+          "label": "C",
+          "text": "概念混淆：原磁通量减少时，感应磁场应与原磁场同向以阻碍减少。"
+        },
+        {
+          "label": "D",
+          "text": "概念混淆：感应电动势由磁通量变化率决定，是否形成电流还取决于回路是否闭合。"
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "斜向切割时只有垂直磁场的速度分量有效；错误式给 2.4 V，30° 情境正确值为 1.2 V。\n知识库校验证据：情境：斜向切割；代入错误式：B*L*v；校验参照值：1.2。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 0,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "E_move = B*L*v",
+      "trap_test": {
+        "scenario": "斜向切割",
+        "expr": "B*L*v",
+        "ref": 1.2
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-ind-04-2",
+      "point_id": "ind-04",
+      "point_title": "导体切割磁感线",
+      "chapter": "第十三章 · 电磁感应（一）楞次与法拉第",
+      "stem": "【第十三章 · 电磁感应（一）楞次与法拉第 · 导体切割磁感线】学生的错误做法：把角度因子写成 cos(theta)，其中 theta 明明是速度与磁场夹角（错误表达式：E_move = B*L*v*cos(theta)）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "数值代入：量纲正确但角度定义用错；30° 情境错误式约得 2.078 V，正确值为 1.2 V。"
+        },
+        {
+          "label": "B",
+          "text": "概念混淆：原磁通量减少时，感应磁场应与原磁场同向以阻碍减少。"
+        },
+        {
+          "label": "C",
+          "text": "概念混淆：感应电动势由磁通量变化率决定，是否形成电流还取决于回路是否闭合。"
+        },
+        {
+          "label": "D",
+          "text": "量纲一致性：右侧量纲为 Wb·s，不是 V，且错误地认为变化越慢电动势越大。"
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "量纲正确但角度定义用错；30° 情境错误式约得 2.078 V，正确值为 1.2 V。\n知识库校验证据：情境：斜向切割；代入错误式：B*L*v*cos(theta)；校验参照值：1.2。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 1,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "E_move = B*L*v*cos(theta)",
+      "trap_test": {
+        "scenario": "斜向切割",
+        "expr": "B*L*v*cos(theta)",
+        "ref": 1.2
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-ind-05-1",
+      "point_id": "ind-05",
+      "point_title": "感生电动势与动生电动势",
+      "chapter": "第十三章 · 电磁感应（一）楞次与法拉第",
+      "stem": "【第十三章 · 电磁感应（一）楞次与法拉第 · 感生电动势与动生电动势】学生的错误做法：只要同时有感生和动生电动势，就把两者大小直接相加（错误表达式：E_total = E_ind + abs(E_move)）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "概念混淆：原磁通量减少时，感应磁场应与原磁场同向以阻碍减少。"
+        },
+        {
+          "label": "B",
+          "text": "概念混淆：感应电动势由磁通量变化率决定，是否形成电流还取决于回路是否闭合。"
+        },
+        {
+          "label": "C",
+          "text": "量纲一致性：右侧量纲为 Wb·s，不是 V，且错误地认为变化越慢电动势越大。"
+        },
+        {
+          "label": "D",
+          "text": "数值代入：反向情境中错误式得 3+2=5 V，实际应按统一方向代数相加为 3+(−2)=1 V。"
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "反向情境中错误式得 3+2=5 V，实际应按统一方向代数相加为 3+(−2)=1 V。\n知识库校验证据：情境：两种效应反向；代入错误式：E_ind + abs(E_move)；校验参照值：1.0。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 0,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "E_total = E_ind + abs(E_move)",
+      "trap_test": {
+        "scenario": "两种效应反向",
+        "expr": "E_ind + abs(E_move)",
+        "ref": 1.0
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-ind-06-1",
+      "point_id": "ind-06",
+      "point_title": "感应电流的电路分析",
+      "chapter": "第十三章 · 电磁感应（一）楞次与法拉第",
+      "stem": "【第十三章 · 电磁感应（一）楞次与法拉第 · 感应电流的电路分析】学生的错误做法：断路时因为电流为零，就认为感应电动势也为零。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "数值代入：斜向切割时只有垂直磁场的速度分量有效；错误式给 2.4 V，30° 情境正确值为 1.2 V。"
+        },
+        {
+          "label": "B",
+          "text": "概念混淆：感应电动势由磁通量变化率决定，是否形成电流还取决于回路是否闭合。"
+        },
+        {
+          "label": "C",
+          "text": "数值代入：感应取决于磁通量的变化而非磁通量本身。"
+        },
+        {
+          "label": "D",
+          "text": "数值代入：量纲正确但数值少了 200 倍；多匝线圈情境中错误式只得 0.06 V，正确值为 12 V。"
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "感应电动势由磁通量变化率决定，是否形成电流还取决于回路是否闭合。断路可有非零电动势而无持续电流，需结合电路状态人工审核。",
+      "error_type": "概念混淆",
+      "judging": "teacher",
+      "source_error_index": 0,
+      "source_caught_by": "人工审核",
+      "wrong_expr": null,
+      "trap_test": null,
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-ind-06-2",
+      "point_id": "ind-06",
+      "point_title": "感应电流的电路分析",
+      "chapter": "第十三章 · 电磁感应（一）楞次与法拉第",
+      "stem": "【第十三章 · 电磁感应（一）楞次与法拉第 · 感应电流的电路分析】学生的错误做法：计算多匝线圈通过的电荷量时漏乘匝数 n，写成 Q_ind=abs(Delta_Phi)/R_total（错误表达式：Q_ind = abs(Delta_Phi)/R_total）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "数值代入：错误式量纲仍是 C，量纲检查抓不到；闭合感应回路情境中错误式只得 0.008 C，正确值为 0.16 C。"
+        },
+        {
+          "label": "B",
+          "text": "概念混淆：原磁通量减少时，感应磁场应与原磁场同向以阻碍减少。"
+        },
+        {
+          "label": "C",
+          "text": "量纲一致性：右侧量纲为 Wb·s，不是 V，且错误地认为变化越慢电动势越大。"
+        },
+        {
+          "label": "D",
+          "text": "量纲一致性：电动势是单位电荷获得的能量，做功应随电荷量增大；错误式量纲也不是 J。"
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "错误式量纲仍是 C，量纲检查抓不到；闭合感应回路情境中错误式只得 0.008 C，正确值为 0.16 C。\n知识库校验证据：情境：闭合感应回路；代入错误式：abs(Delta_Phi)/R_total；校验参照值：0.16。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 1,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "Q_ind = abs(Delta_Phi)/R_total",
+      "trap_test": {
+        "scenario": "闭合感应回路",
+        "expr": "abs(Delta_Phi)/R_total",
+        "ref": 0.16
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    }
+  ],
+  "skipped": [
+    {
+      "point_id": "ind-03",
+      "point_title": "法拉第电磁感应定律",
+      "source_error_index": 1,
+      "reason": "自动判定条目没有 trap_test 可执行证据；不把校验标签代替实测证据。"
+    },
+    {
+      "point_id": "ind-05",
+      "point_title": "感生电动势与动生电动势",
+      "source_error_index": 1,
+      "reason": "自动判定条目没有 trap_test 可执行证据；不把校验标签代替实测证据。"
+    }
+  ]
+}

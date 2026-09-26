@@ -1,0 +1,311 @@
+{
+  "segment": "高中",
+  "chapter": "第九章 · 静电场（三）电容与带电粒子",
+  "source_file": "09_capacitor_particle.json",
+  "questions": [
+    {
+      "id": "diagnostic-cap-01-2",
+      "point_id": "cap-01",
+      "point_title": "电容器与电容",
+      "chapter": "第九章 · 静电场（三）电容与带电粒子",
+      "stem": "【第九章 · 静电场（三）电容与带电粒子 · 电容器与电容】学生的错误做法：把两块极板的电荷量绝对值相加，误写成 C_cap = 2Q/U（错误表达式：C_cap = 2*Q/U）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "量纲一致性：(m/s)/m 的量纲是 1/s，不是时间，量纲检查直接拦住。"
+        },
+        {
+          "label": "B",
+          "text": "量纲一致性：eU/m 的量纲是 m²/s²，对应速度的平方而不是速度；必须乘 2 后开平方，量纲检查可直接发现。"
+        },
+        {
+          "label": "C",
+          "text": "数值代入：错误式与正确式量纲完全相同，量纲检查抓不到。"
+        },
+        {
+          "label": "D",
+          "text": "量纲一致性：C/V 不是能量单位 J，量纲检查会直接发现；正确关系是电荷量乘电压。"
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "错误式与正确式量纲完全相同，量纲检查抓不到。电容定义中的 Q 只取任一极板电荷量的绝对值；代入小型电容器情境会误得 4 μF，正确值是 2 μF。\n知识库校验证据：情境：小型电容器；代入错误式：2*Q/U；校验参照值：2e-06。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 1,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "C_cap = 2*Q/U",
+      "trap_test": {
+        "scenario": "小型电容器",
+        "expr": "2*Q/U",
+        "ref": 2e-06
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-cap-02-1",
+      "point_id": "cap-02",
+      "point_title": "平行板电容器与动态分析",
+      "chapter": "第九章 · 静电场（三）电容与带电粒子",
+      "stem": "【第九章 · 静电场（三）电容与带电粒子 · 平行板电容器与动态分析】学生的错误做法：漏掉球面几何带来的 4π 因子，误写成 C_cap = εS/(k_e d)（错误表达式：C_cap = e_r*S/(k_e*d)）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "量纲一致性：(m/s)/m 的量纲是 1/s，不是时间，量纲检查直接拦住。"
+        },
+        {
+          "label": "B",
+          "text": "数值代入：错误式与正确式量纲完全相同，量纲检查抓不到。"
+        },
+        {
+          "label": "C",
+          "text": "量纲一致性：U/Q 的量纲是 V/C，与电容的 C/V 互为倒数，量纲检查可以直接发现。"
+        },
+        {
+          "label": "D",
+          "text": "量纲一致性：C/V 不是能量单位 J，量纲检查会直接发现；正确关系是电荷量乘电压。"
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "错误式与正确式量纲完全相同，量纲检查抓不到。代入插入介质情境会得到约 2.222×10⁻⁶ F，是正确值 1.7684×10⁻⁷ F 的 4π 倍。\n知识库校验证据：情境：插入介质；代入错误式：e_r*S/(k_e*d)；校验参照值：1.768388256576615e-07。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 0,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "C_cap = e_r*S/(k_e*d)",
+      "trap_test": {
+        "scenario": "插入介质",
+        "expr": "e_r*S/(k_e*d)",
+        "ref": 1.768388256576615e-07
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-cap-02-2",
+      "point_id": "cap-02",
+      "point_title": "平行板电容器与动态分析",
+      "chapter": "第九章 · 静电场（三）电容与带电粒子",
+      "stem": "【第九章 · 静电场（三）电容与带电粒子 · 平行板电容器与动态分析】学生的错误做法：电容器断开电源后拉大板间距，仍认为电压 U 不变。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "概念混淆：断开电源后保持不变的是 Q，不是 U。"
+        },
+        {
+          "label": "B",
+          "text": "量纲一致性：U/Q 的量纲是 V/C，与电容的 C/V 互为倒数，量纲检查可以直接发现。"
+        },
+        {
+          "label": "C",
+          "text": "量纲一致性：C/V 不是能量单位 J，量纲检查会直接发现；正确关系是电荷量乘电压。"
+        },
+        {
+          "label": "D",
+          "text": "量纲一致性：(m/s)/m 的量纲是 1/s，不是时间，量纲检查直接拦住。"
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "断开电源后保持不变的是 Q，不是 U。结构式显示 d 增大使 C_cap 减小，由 U=Q/C_cap 可知 U 必须增大；这类边界条件判断需人工审核。",
+      "error_type": "概念混淆",
+      "judging": "teacher",
+      "source_error_index": 1,
+      "source_caught_by": "人工审核",
+      "wrong_expr": null,
+      "trap_test": null,
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-cap-03-2",
+      "point_id": "cap-03",
+      "point_title": "带电粒子在电场中的加速",
+      "chapter": "第九章 · 静电场（三）电容与带电粒子",
+      "stem": "【第九章 · 静电场（三）电容与带电粒子 · 带电粒子在电场中的加速】学生的错误做法：有初速度时仍写 v = √(2q_abs U/m)，漏掉初动能（错误表达式：v = sqrt(2*q_abs*U/m)）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "量纲一致性：(m/s)/m 的量纲是 1/s，不是时间，量纲检查直接拦住。"
+        },
+        {
+          "label": "B",
+          "text": "量纲一致性：eU/m 的量纲是 m²/s²，对应速度的平方而不是速度；必须乘 2 后开平方，量纲检查可直接发现。"
+        },
+        {
+          "label": "C",
+          "text": "数值代入：错误式量纲正确，量纲检查抓不到。"
+        },
+        {
+          "label": "D",
+          "text": "量纲一致性：U/Q 的量纲是 V/C，与电容的 C/V 互为倒数，量纲检查可以直接发现。"
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "错误式量纲正确，量纲检查抓不到。代入情境得到 20 m/s，而包含 10 m/s 初速度后的正确结果是 √500≈22.36 m/s。\n知识库校验证据：情境：带电小球加速；代入错误式：sqrt(2*q_abs*U/m)；校验参照值：22.360679775。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 1,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "v = sqrt(2*q_abs*U/m)",
+      "trap_test": {
+        "scenario": "带电小球加速",
+        "expr": "sqrt(2*q_abs*U/m)",
+        "ref": 22.360679775
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-cap-04-2",
+      "point_id": "cap-04",
+      "point_title": "带电粒子在匀强电场中的偏转",
+      "chapter": "第九章 · 静电场（三）电容与带电粒子",
+      "stem": "【第九章 · 静电场（三）电容与带电粒子 · 带电粒子在匀强电场中的偏转】学生的错误做法：偏转位移漏掉 1/2，写成 y = q_abs E L²/(m v_0²)（错误表达式：y = q_abs*E*L^2/(m*v_0^2)）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "数值代入：错误式量纲仍是长度，量纲检查无能为力；代入情境得到 0.2 m，正确值是 0.1 m，数值检查能抓住系数错误。"
+        },
+        {
+          "label": "B",
+          "text": "量纲一致性：U/Q 的量纲是 V/C，与电容的 C/V 互为倒数，量纲检查可以直接发现。"
+        },
+        {
+          "label": "C",
+          "text": "量纲一致性：C/V 不是能量单位 J，量纲检查会直接发现；正确关系是电荷量乘电压。"
+        },
+        {
+          "label": "D",
+          "text": "量纲一致性：eU/m 的量纲是 m²/s²，对应速度的平方而不是速度；必须乘 2 后开平方，量纲检查可直接发现。"
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "错误式量纲仍是长度，量纲检查无能为力；代入情境得到 0.2 m，正确值是 0.1 m，数值检查能抓住系数错误。\n知识库校验证据：情境：带电微粒偏转；代入错误式：q_abs*E*L^2/(m*v_0^2)；校验参照值：0.1。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 1,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "y = q_abs*E*L^2/(m*v_0^2)",
+      "trap_test": {
+        "scenario": "带电微粒偏转",
+        "expr": "q_abs*E*L^2/(m*v_0^2)",
+        "ref": 0.1
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-cap-05-2",
+      "point_id": "cap-05",
+      "point_title": "示波管的原理",
+      "chapter": "第九章 · 静电场（三）电容与带电粒子",
+      "stem": "【第九章 · 静电场（三）电容与带电粒子 · 示波管的原理】学生的错误做法：把极板中点到屏幕的有效距离 l+L/2 误写成 l+L（错误表达式：y = U_d*L*(l + L)/(2*d*U_a)）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "量纲一致性：C/V 不是能量单位 J，量纲检查会直接发现；正确关系是电荷量乘电压。"
+        },
+        {
+          "label": "B",
+          "text": "量纲一致性：(m/s)/m 的量纲是 1/s，不是时间，量纲检查直接拦住。"
+        },
+        {
+          "label": "C",
+          "text": "数值代入：错误式与正确式量纲完全相同，量纲检查抓不到。"
+        },
+        {
+          "label": "D",
+          "text": "量纲一致性：U/Q 的量纲是 V/C，与电容的 C/V 互为倒数，量纲检查可以直接发现。"
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "错误式与正确式量纲完全相同，量纲检查抓不到。代入示波管情境会算得 0.020 m，正确结果是 0.018 m；错误来自把板内偏转等效作用点错放在极板起点。\n知识库校验证据：情境：示波管电子束；代入错误式：U_d*L*(l + L)/(2*d*U_a)；校验参照值：0.018。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 1,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "y = U_d*L*(l + L)/(2*d*U_a)",
+      "trap_test": {
+        "scenario": "示波管电子束",
+        "expr": "U_d*L*(l + L)/(2*d*U_a)",
+        "ref": 0.018
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    }
+  ],
+  "skipped": [
+    {
+      "point_id": "cap-01",
+      "point_title": "电容器与电容",
+      "source_error_index": 0,
+      "reason": "自动判定条目没有 trap_test 可执行证据；不把校验标签代替实测证据。"
+    },
+    {
+      "point_id": "cap-03",
+      "point_title": "带电粒子在电场中的加速",
+      "source_error_index": 0,
+      "reason": "自动判定条目没有 trap_test 可执行证据；不把校验标签代替实测证据。"
+    },
+    {
+      "point_id": "cap-04",
+      "point_title": "带电粒子在匀强电场中的偏转",
+      "source_error_index": 0,
+      "reason": "自动判定条目没有 trap_test 可执行证据；不把校验标签代替实测证据。"
+    },
+    {
+      "point_id": "cap-05",
+      "point_title": "示波管的原理",
+      "source_error_index": 0,
+      "reason": "自动判定条目没有 trap_test 可执行证据；不把校验标签代替实测证据。"
+    }
+  ]
+}

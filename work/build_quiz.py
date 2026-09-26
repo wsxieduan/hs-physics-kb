@@ -8,6 +8,7 @@
 import html
 import json
 import os
+import re
 import sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -41,7 +42,11 @@ def diagnostic_explanation(error):
         if "ref" in test:
             evidence.append("校验参照值：" + str(test["ref"]))
         if test.get("expect"):
-            evidence.append("变化方向要求：" + str(test["expect"]))
+            direction_text = {"down": "随自变量增大，结果应减小",
+                              "up": "随自变量增大，结果应增大",
+                              "same": "自变量变化时，结果应保持不变"}.get(
+                                  test["expect"], str(test["expect"]))
+            evidence.append("变化方向要求：" + direction_text)
         if test.get("op") and test.get("vs"):
             evidence.append("边界检查：结果须满足“%s %s”" % (test["op"], test["vs"]))
         if test.get("note"):
@@ -54,63 +59,169 @@ def diagnostic_explanation(error):
     return "\n".join(part for part in parts if part)
 
 
-def make_diagnostic_bank(kb_dir, output_path):
-    """只从高中第一章 errors 生成样板题，并保留来源索引供回链和复核。"""
+def _diagnostic_excerpt(text, limit=90):
+    """从来源解释截取一小段，供同章干扰项使用，不另造教学判断。"""
+    value = " ".join(str(text or "").split())
+    if not value:
+        return ""
+    for mark in ("。", "；", ";"):
+        at = value.find(mark)
+        if 0 < at < limit:
+            return value[:at + 1]
+    return value[:limit].rstrip() + ("……" if len(value) > limit else "")
+
+
+def make_diagnostic_bank(kb_dir, output_path, segment="高中", source_filename=None):
+    """按指定章节生成诊断题；选项只取同章真实错误记录，缺证据时记为跳过。"""
     chapters = KB.load_kb(kb_dir)
     source = next(((filename, chapter) for filename, chapter in chapters
-                   if os.path.basename(filename).startswith("01_")), None)
+                   if (os.path.basename(filename) == source_filename if source_filename
+                       else os.path.basename(filename).startswith("01_"))), None)
     if source is None:
-        raise ValueError("没有找到第一章 JSON，无法生成诊断题样板")
+        raise ValueError("找不到指定章节 JSON，无法生成诊断题：%s" % source_filename)
     filename, chapter = source
     errors = []
     for point in chapter.get("points", []):
         for index, error in enumerate(point.get("errors", [])):
             caught_by = error.get("caught_by", "人工审核")
             if caught_by not in DIAGNOSTIC_TYPES:
-                raise ValueError("第一章出现未登记的错误类型：%s" % caught_by)
+                raise ValueError("%s出现未登记的错误类型：%s" % (segment, caught_by))
             errors.append({
                 "point_id": point["id"], "point_title": point["title"],
-                "chapter": chapter.get("chapter", "第一章"),
+                "chapter": chapter.get("chapter", "未命名章节"),
                 "source_error_index": index, "source": error,
                 "error_type": DIAGNOSTIC_TYPES[caught_by],
                 "judging": "teacher" if caught_by == "人工审核" else "auto",
             })
 
-    # 干扰项只从本章实际出现过的类型中抽取，不引入新分类或随机内容。
+    # 五种错误标签只从源校验名派生；同章标签不足四类时，选项补充源条目的原始解释。
     available_types = [name for name in TYPE_ORDER
                        if any(item["error_type"] == name for item in errors)]
-    questions = []
+    questions, skipped = [], []
     for number, item in enumerate(errors):
         error = item["source"]
         correct_type = item["error_type"]
-        others = [name for name in available_types if name != correct_type]
-        # 四个选项由正确类型和本章其他三类组成，轮换顺序但结果可重复构建。
-        chosen_others = [others[(number + i) % len(others)] for i in range(min(3, len(others)))]
-        options_text = [correct_type] + chosen_others
-        offset = number % len(options_text)
-        options_text = options_text[offset:] + options_text[:offset]
-        options = [{"label": chr(ord("A") + i), "text": label}
-                   for i, label in enumerate(options_text)]
-        correct_answer = next(option["label"] for option in options
-                              if option["text"] == correct_type)
         wrong = error.get("wrong", "")
         wrong_expr = error.get("wrong_expr")
-        stem = "学生的错误做法：%s" % wrong
+        if not str(wrong).strip() or not str(error.get("why", "")).strip():
+            skipped.append({"point_id": item["point_id"], "point_title": item["point_title"],
+                            "source_error_index": item["source_error_index"],
+                            "reason": "来源缺少错误做法或解释，无法形成自足题干。"})
+            continue
+        if item["judging"] == "auto" and not error.get("trap_test"):
+            skipped.append({"point_id": item["point_id"], "point_title": item["point_title"],
+                            "source_error_index": item["source_error_index"],
+                            "reason": "自动判定条目没有 trap_test 可执行证据；不把校验标签代替实测证据。"})
+            continue
+
+        # 题干带上章节和知识点，避免不同知识点复用同一条常见错误时看起来重复。
+        wrong_text = str(wrong).strip()
+        if wrong_text.endswith(("。", "；", ";")):
+            wrong_text = wrong_text[:-1]
+        stem = "【%s · %s】学生的错误做法：%s" % (
+            item["chapter"], item["point_title"], wrong_text)
         if wrong_expr:
             stem += "（错误表达式：%s）" % wrong_expr
-        stem += "。这条错误属于哪一类？"
+        if not stem.endswith(("。", "！", "？", "!", "?", "；", ";")):
+            stem += "。"
+
+        choices = []
+        if len(available_types) >= 4:
+            # 四种类别都真实出现在本章时，保持已验收样板的纯类别选项样式。
+            others = [name for name in available_types if name != correct_type]
+            chosen_others = [others[(number + i) % len(others)] for i in range(3)]
+            option_texts = [correct_type] + chosen_others
+            offset = number % 4
+            option_texts = option_texts[offset:] + option_texts[:offset]
+            choices = [{"text": label, "source": None} for label in option_texts]
+            correct_text = correct_type
+            stem += "这条错误属于哪一类？"
+        else:
+            # 类别不足四种时，用同章其他真实错误的类别+原解释构成可区分选项。
+            ranked = []
+            for candidate in errors:
+                if candidate is item:
+                    continue
+                why = _diagnostic_excerpt(candidate["source"].get("why", ""))
+                if not why:
+                    continue
+                category = candidate["error_type"]
+                # 优先不同类别，再优先来自另一个知识点，避免明显重复的干扰项。
+                ranked.append((category == correct_type,
+                               candidate["point_id"] == item["point_id"],
+                               candidate["source_error_index"], candidate, why))
+            ranked.sort(key=lambda row: (row[0], row[1], row[2], row[3]["point_id"]))
+            seen = set()
+            for _same_type, _same_point, _index, candidate, why in ranked:
+                text = "%s：%s" % (candidate["error_type"], why)
+                if text == "%s：%s" % (correct_type, _diagnostic_excerpt(error.get("why", ""))):
+                    continue
+                if text in seen:
+                    continue
+                seen.add(text)
+                choices.append({"text": text, "source": candidate})
+                if len(choices) == 3:
+                    break
+            if len(choices) < 3:
+                skipped.append({"point_id": item["point_id"], "point_title": item["point_title"],
+                                "source_error_index": item["source_error_index"],
+                                "reason": "同章无法提供三个互不重复、且有来源解释的干扰项。"})
+                continue
+            correct_text = "%s：%s" % (correct_type, _diagnostic_excerpt(error.get("why", "")))
+            choices.append({"text": correct_text, "source": item})
+            # 固定轮换排列，避免正确答案总落在同一个位置。
+            offset = number % 4
+            choices = choices[offset:] + choices[:offset]
+            stem += "以下哪项“错误类别 + 判断依据”最符合题干中的做法？"
+
+        options = [{"label": chr(ord("A") + i), "text": option["text"]}
+                   for i, option in enumerate(choices)]
+        matching = [option["label"] for option in options if option["text"] == correct_text]
+        if len(options) != 4 or len(matching) != 1 or len({o["text"] for o in options}) != 4:
+            skipped.append({"point_id": item["point_id"], "point_title": item["point_title"],
+                            "source_error_index": item["source_error_index"],
+                            "reason": "选项无法保证四项互异且唯一匹配正确答案。"})
+            continue
+
+        other_segment_terms = (r"高中|高一|高二|高三" if segment == "初中"
+                               else r"初中|初一|初二|初三")
+        checked_text = " ".join([stem, error.get("why", "")] + [o["text"] for o in options])
+        no_cross_segment = not re.search(other_segment_terms, checked_text)
+        all_type_unique = len({
+            (option.get("source") or {}).get("error_type", option["text"])
+            for option in choices
+        }) == 4
+        checks = {
+            "answer_unique": len(matching) == 1,
+            "distractors_plausible": all(option.get("source") is not None or len(available_types) >= 4
+                                           for option in choices),
+            "stem_clear": len(str(wrong).strip()) >= 8 and len(str(error.get("why", "")).strip()) >= 12,
+            "no_cross_segment": no_cross_segment,
+        }
+        note_parts = []
+        if not all_type_unique:
+            note_parts.append("本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。")
+        if not checks["stem_clear"]:
+            note_parts.append("来源错误描述较短或解释信息有限，题干可能需要教师补充情境。")
+        if not no_cross_segment:
+            note_parts.append("来源文字出现另一学段字样；虽沿用本学段原始错误记录，仍需核对边界。")
+        confidence = "high" if all(checks.values()) and all_type_unique else (
+            "low" if not checks["answer_unique"] or not checks["stem_clear"] or not no_cross_segment else "medium")
+        review = {"confidence": confidence, "checks": checks,
+                  "note": "；".join(note_parts)}
         questions.append({
             "id": "diagnostic-%s-%d" % (item["point_id"], item["source_error_index"] + 1),
             "point_id": item["point_id"], "point_title": item["point_title"],
             "chapter": item["chapter"], "stem": stem, "options": options,
-            "correct_answer": correct_answer, "explanation": diagnostic_explanation(error),
+            "correct_answer": matching[0], "explanation": diagnostic_explanation(error),
             "error_type": correct_type, "judging": item["judging"],
             "source_error_index": item["source_error_index"],
             "source_caught_by": error.get("caught_by", "人工审核"),
-            "wrong_expr": wrong_expr, "trap_test": error.get("trap_test"),
+            "wrong_expr": wrong_expr, "trap_test": error.get("trap_test"), "review": review,
         })
-    bank = {"segment": "高中", "chapter": chapter.get("chapter", "第一章"),
-            "source_file": os.path.basename(filename), "questions": questions}
+    bank = {"segment": segment, "chapter": chapter.get("chapter", "未命名章节"),
+            "source_file": os.path.basename(filename), "questions": questions,
+            "skipped": skipped}
     parent = os.path.dirname(os.path.abspath(output_path))
     os.makedirs(parent, exist_ok=True)
     with open(output_path, "w", encoding="utf-8", newline="\n") as handle:
@@ -118,9 +229,27 @@ def make_diagnostic_bank(kb_dir, output_path):
         handle.write("\n")
     auto_count = sum(1 for q in questions if q["judging"] == "auto")
     teacher_count = len(questions) - auto_count
-    print("已生成高中第一章诊断样板：%d 题（自动判定 %d，教师点评 %d）" %
-          (len(questions), auto_count, teacher_count))
+    print("已生成%s诊断题：%s，%d 题（自动判定 %d，教师点评 %d，跳过 %d）" %
+          (segment, chapter.get("chapter", "未命名章节"), len(questions),
+           auto_count, teacher_count, len(skipped)))
     return bank
+
+
+def load_diagnostic_banks(path):
+    """读取单个题库或一组分章题库，跳过状态说明等非题库 JSON。"""
+    if not path:
+        return {"segment": "", "chapter": "", "questions": []}
+    paths = [path] if os.path.isfile(path) else sorted(
+        os.path.join(path, name) for name in os.listdir(path) if name.endswith(".json"))
+    banks = []
+    for bank_path in paths:
+        with open(bank_path, "r", encoding="utf-8") as handle:
+            bank = json.load(handle)
+        if isinstance(bank.get("questions"), list) and bank.get("source_file"):
+            banks.append(bank)
+    questions = [question for bank in banks for question in bank["questions"]]
+    segment = banks[0].get("segment", "") if banks else ""
+    return {"segment": segment, "chapter": "全部章节", "questions": questions}
 
 
 STYLE = r"""
@@ -379,7 +508,7 @@ DIAGNOSTIC_SCRIPT = r"""
     deck=data.questions.filter(function(q){return !pointId||q.point_id===pointId;});
     if(!deck.length){
       mode('diagnostic');show('diagnostic-intro',true);show('diagnostic-question',false);show('diagnostic-results',false);
-      setText('diagnostic-intro-message','这个知识点暂时没有错误诊断样题。本批只开放高中第一章样板；其他章节和初中暂不扩题。');
+      setText('diagnostic-intro-message','这个知识点暂时没有可用的诊断题；可先通过上方章节筛选查看本学段其他题目。');
       return;
     }
     position=0;session=[];current=null;
@@ -467,7 +596,7 @@ DIAGNOSTIC_SCRIPT = r"""
 
 
 def build(kb_dir, segment, main_page, output_path, diagnostic_path=None):
-    """把例题与已获准的诊断样板内嵌进同一张离线答题页。"""
+    """把例题与分章诊断题内嵌进同一张离线答题页。"""
     chapters = KB.load_kb(kb_dir)
     questions = []
     chapter_names = []
@@ -489,10 +618,7 @@ def build(kb_dir, segment, main_page, output_path, diagnostic_path=None):
                 "answer": prose(example.get("answer", "")),
             })
 
-    diagnostics = {"chapter": "", "questions": []}
-    if diagnostic_path and os.path.isfile(diagnostic_path):
-        with open(diagnostic_path, "r", encoding="utf-8") as handle:
-            diagnostics = json.load(handle)
+    diagnostics = load_diagnostic_banks(diagnostic_path)
     bank = {"segment": segment, "mainPage": main_page,
             "chapters": chapter_names, "questions": questions,
             "diagnostics": diagnostics}
@@ -509,12 +635,12 @@ def build(kb_dir, segment, main_page, output_path, diagnostic_path=None):
     diagnostic_auto = sum(1 for item in diagnostics.get("questions", []) if item.get("judging") == "auto")
     diagnostic_teacher = diagnostic_count - diagnostic_auto
     if diagnostic_count:
-        diagnostic_intro = "当前仅开放%s样板：共 %d 题，其中自动判定 %d 题、教师点评待确认 %d 题。" % (
-            diagnostics.get("chapter", "第一章"), diagnostic_count, diagnostic_auto, diagnostic_teacher)
-        diagnostic_button = "错误诊断（第一章样板）"
+        diagnostic_intro = "当前覆盖本学段诊断题：共 %d 题，其中机器判定 %d 题、教师点评待确认 %d 题。" % (
+            diagnostic_count, diagnostic_auto, diagnostic_teacher)
+        diagnostic_button = "错误诊断（%d题）" % diagnostic_count
     else:
-        diagnostic_intro = "错误诊断样板尚未在本学段开放；当前可继续使用例题自测。"
-        diagnostic_button = "错误诊断（样板未开放）"
+        diagnostic_intro = "本学段暂未收录可用诊断题；当前可继续使用例题自测。"
+        diagnostic_button = "错误诊断（暂无题目）"
     diagnostic_disabled = "" if diagnostic_count else " disabled"
     page = """<!doctype html>
 <html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
@@ -546,7 +672,7 @@ def build(kb_dir, segment, main_page, output_path, diagnostic_path=None):
 <section id="result-panel" class="panel hidden"></section><section id="progress-panel" class="panel hidden"></section>
 </div>
 <section id="diagnostic-panel" class="panel hidden">
-<div id="diagnostic-intro"><h2>错误诊断样板</h2><p id="diagnostic-intro-message">%(diagnostic_intro)s</p><p class="small">机器判定题来自知识库中实测可抓住的错误；教师点评题不由系统判对错，也不计入系统正确率。</p></div>
+<div id="diagnostic-intro"><h2>错误诊断</h2><p id="diagnostic-intro-message">%(diagnostic_intro)s</p><p class="small">机器判定题来自知识库中有 trap_test 证据的错误；教师点评题不由系统判对错，也不计入系统正确率。</p></div>
 <div id="diagnostic-question" class="hidden"><div id="diagnostic-number" class="question-meta"></div><div id="diagnostic-origin" class="question-meta"></div>
 <div class="inline-links"><a id="diagnostic-point-link" href="%(main)s">回看知识点</a><a id="diagnostic-trap-link" href="%(main)s">查看知识库中的这条常见错误</a></div>
 <div id="diagnostic-stem" class="diag-stem"></div><div id="diagnostic-options" class="diag-options"></div>

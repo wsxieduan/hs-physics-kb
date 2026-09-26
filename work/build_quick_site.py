@@ -1,26 +1,12 @@
 # -*- coding: utf-8 -*-
-"""
-build_quick_site.py —— 生成面向学生与老师的“高中物理速查版”
-================================================================
+"""从同一份已校验知识库生成学生、老师都能使用的离线速查版。
 
-【为什么另做一版】
-
-原来的“高中物理知识库”重点展示自动校验过程，适合作为项目技术证明；
-速查版保留同一套已经校验过的内容，但把公式、符号、适用条件和常见错误放到最前面，
-把推导与例题折叠起来。两个版本互不覆盖，使用者可以按需要选择。
-
-【怎么运行】
-
-    python build_quick_site.py
-
-脚本只使用 Python 标准库和项目现有模块，不安装任何依赖。生成结果是：
-
-    outputs/高中物理速查.html
-
-它仍然是一个可以双击打开、断网使用的单 HTML 文件。
+运行：在 work 目录执行 python build_quick_site.py。
+四个界面在浏览器里按需生成，内容只在成品中保存一份；工程版由原脚本维护。
 """
 
 import html
+import json
 import os
 import re
 import sys
@@ -30,511 +16,267 @@ if HERE not in sys.path:
     sys.path.insert(0, HERE)
 
 from physkit import kb as KB
-from prose_math import render as prose
-from prose_math import display_mathml
+from prose_math import render as base_prose, display_mathml
 
 
-def E(value):
-    """转义普通文本，避免内容被浏览器误当成 HTML。"""
-    return html.escape(str(value or ""), quote=True)
+DOMAINS = (
+    ("力学", 1, 6),
+    ("电磁学", 7, 15),
+    ("光学", 16, 17),
+    ("热学", 18, 19),
+    ("近代物理", 20, 21),
+)
+JUNIOR_DOMAINS = {
+    1: "声学", 2: "光学", 3: "光学", 4: "热学", 5: "力学", 6: "力学",
+    7: "力学", 8: "力学", 9: "力学", 10: "物质", 11: "力学", 12: "能量",
+    13: "电学", 14: "电学", 15: "电学", 16: "电学", 17: "电磁波", 18: "能源",
+}
 
 
-def math_block(mathml):
-    """用浏览器原生 MathML 显示块级公式，保证断网也能排版。"""
-    return ('<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">'
-            + display_mathml(mathml or "") + '</math>')
+def prose(value):
+    """补齐通用正文排版器遗漏的三种写法，只影响速查版的展示。"""
+    rendered = base_prose(value)
+    return (rendered
+            .replace("k_e", "k<sub>e</sub>")
+            .replace("IgR<sub>g</sub>", "I<sub>g</sub>R<sub>g</sub>")
+            .replace("Δ<sub>E</sub>_total", "ΔE<sub>总</sub>"))
 
 
-def math_inline(mathml):
-    """用于符号表中的行内公式。"""
-    return ('<math xmlns="http://www.w3.org/1998/Math/MathML">'
-            + display_mathml(mathml or "") + '</math>')
+def first_sentence(text, limit=140):
+    """卡片先给出一句定义，避免首屏被长段落占满。"""
+    value = str(text or "").strip()
+    for mark in ("。", "；", ";"):
+        pos = value.find(mark)
+        if 0 < pos <= limit:
+            return value[:pos + 1]
+    return value[:limit] + ("…" if len(value) > limit else "")
 
 
-def plain(value):
-    """把用于搜索的内容压成一行纯文本。"""
-    text = re.sub(r"<[^>]+>", " ", str(value or ""))
-    return " ".join(text.split())
-
-
-# 章节按学习领域重新分组。这里只改变导航，不改变原知识库的章节和内容。
-DOMAINS = [
-    ("力学", 1, 6, "#2563eb"),
-    ("电磁学", 7, 15, "#7c3aed"),
-    ("光学", 16, 17, "#0891b2"),
-    ("热学", 18, 19, "#d97706"),
-    ("近代物理", 20, 21, "#db2777"),
-]
-
-
-def domain_for(order):
-    for name, lo, hi, color in DOMAINS:
+def domain_of(order, segment="高中"):
+    if segment == "初中":
+        return JUNIOR_DOMAINS.get(order, "其他")
+    for name, lo, hi in DOMAINS:
         if lo <= order <= hi:
-            return name, color
-    return "其他", "#475569"
+            return name
+    return "其他"
 
 
-def short_chapter(name):
-    """导航里去掉“第几章”，只保留真正的章节名称。"""
-    return name.split("·", 1)[-1].strip()
+def readable_mathml(mathml):
+    """把解析器内部的复合下标换成学生能读懂的中文标记。"""
+    rendered = display_mathml(mathml or "")
+    rendered = rendered.replace(
+        '<msub><mi>Δ</mi><mi mathvariant="normal">E_total</mi></msub>',
+        '<msub><mi>ΔE</mi><mi mathvariant="normal">总</mi></msub>',
+    )
+    for internal, readable in (("mech_before", "机械前"),
+                               ("mech_after", "机械后"),
+                               ("int_gain", "内能增")):
+        rendered = rendered.replace(
+            '<mi mathvariant="normal">%s</mi>' % internal,
+            '<mi mathvariant="normal">%s</mi>' % readable,
+        )
+    return rendered
 
 
-def build_groups(chapters, report):
-    """把原始章节与通过校验的知识点合并成渲染需要的数据。"""
+def make_payload(chapters, report, segment="高中"):
+    """仅收取给人看的字段；公式和符号各存一次，不带1535条校验明细。"""
     groups = []
-    point_map = {}
-    for index, (_, chapter) in enumerate(chapters, start=1):
-        order = int(chapter.get("order") or index)
+    points = []
+    for fallback, (_, chapter) in enumerate(chapters, 1):
+        order = int(chapter.get("order") or fallback)
         chapter_name = chapter.get("chapter") or ("第%d章" % order)
-        domain, color = domain_for(order)
-        points = [report[p["id"]] for p in chapter.get("points", [])
-                  if p.get("id") in report]
-        group = {
-            "order": order,
-            "chapter": chapter_name,
-            "short": short_chapter(chapter_name),
-            "intro": chapter.get("intro", ""),
-            "domain": domain,
-            "color": color,
-            "points": points,
-        }
-        groups.append(group)
-        for pos, point in enumerate(points):
-            point_map[point["id"]] = (group, pos, point)
-    return groups, point_map
+        chapter_ids = []
+        for source in chapter.get("points", []):
+            point = report[source["id"]]
+            if not point["ok"]:
+                raise ValueError("知识点未通过物理校验：" + point["id"])
 
-
-def relation_links(point, group, pos, point_map):
-    """显示前置与后续关系；源数据没填写时，用章节顺序给出温和的学习建议。"""
-    before = list(point.get("prereq") or [])
-    after = list(point.get("next") or [])
-    inferred_before = False
-    inferred_after = False
-    if not before and pos > 0:
-        before = [group["points"][pos - 1]["id"]]
-        inferred_before = True
-    if not after and pos + 1 < len(group["points"]):
-        after = [group["points"][pos + 1]["id"]]
-        inferred_after = True
-
-    def render(ids, label, inferred):
-        links = []
-        for pid in ids:
-            target = point_map.get(pid)
-            if target:
-                links.append('<button class="relation-link" data-go="%s">%s</button>'
-                             % (E(pid), E(target[2]["title"])))
-        if not links:
-            return ""
-        hint = '<span class="relation-hint">建议顺序</span>' if inferred else ""
-        return '<div class="relation-row"><span>%s</span>%s%s</div>' % (
-            E(label), hint, "".join(links))
-
-    return render(before, "先理解", inferred_before) + render(after, "接着看", inferred_after)
-
-
-def render_formula(formula):
-    when = formula.get("when") or ""
-    return '''
-      <div class="formula-card">
-        <div class="formula-name">%s</div>
-        <div class="formula-math">%s</div>
-        %s
-      </div>''' % (
-        prose(formula.get("name", "")),
-        math_block(formula.get("mathml", "")),
-        ('<div class="formula-when"><b>适用：</b>%s</div>' % prose(when)) if when else "",
-    )
-
-
-def render_symbols(symbols):
-    rows = []
-    for symbol in symbols:
-        rows.append('''
-          <div class="symbol-row">
-            <span class="symbol-name">%s</span>
-            <span class="symbol-desc">%s</span>
-            <span class="symbol-unit">%s</span>
-          </div>''' % (
-            math_inline(symbol.get("mathml", "")),
-            prose(symbol.get("desc", "")),
-            prose(symbol.get("unit", "")) or "—",
-        ))
-    return "".join(rows)
-
-
-def render_errors(errors):
-    cards = []
-    for error in errors:
-        cards.append('''
-          <div class="error-card">
-            <div class="error-title">%s</div>
-            <div class="error-why">%s</div>
-          </div>''' % (prose(error.get("wrong", "")), prose(error.get("why", ""))))
-    return "".join(cards)
-
-
-def render_point(point, group, pos, point_map):
-    """一个速查卡：核心信息直接展示，长内容放进折叠区。"""
-    formulas = "".join(render_formula(f) for f in point.get("formulas", []))
-    symbols = render_symbols(point.get("symbols", []))
-    errors = render_errors(point.get("errors", []))
-    derivation = "".join("<li>%s</li>" % prose(x) for x in point.get("derivation", []))
-    example = point.get("example") or {}
-    example_steps = "".join("<li>%s</li>" % prose(x) for x in example.get("solution", []))
-    relations = relation_links(point, group, pos, point_map)
-
-    search_parts = [
-        point.get("id"), point.get("title"), group["chapter"], group["domain"],
-        point.get("definition"), point.get("meaning"), " ".join(point.get("tags", [])),
-    ]
-    for f in point.get("formulas", []):
-        search_parts.extend([f.get("name"), f.get("expr"), f.get("when")])
-    for s in point.get("symbols", []):
-        search_parts.extend([s.get("name"), s.get("desc"), s.get("unit")])
-    for err in point.get("errors", []):
-        search_parts.extend([err.get("wrong"), err.get("why")])
-
-    return '''
-    <article class="point-card searchable" id="%s" data-view-item="points"
-      data-domain="%s" data-chapter="%s" data-search="%s">
-      <div class="point-head">
-        <div>
-          <div class="point-path">%s · %s</div>
-          <h2>%s</h2>
-        </div>
-        <span class="verified" title="本知识点已通过原知识库自动校验">✓ 已校验</span>
-      </div>
-
-      <p class="definition">%s</p>
-
-      <section class="quick-section">
-        <h3>核心公式</h3>
-        <div class="formula-grid">%s</div>
-      </section>
-
-      <section class="quick-section">
-        <h3>符号与单位</h3>
-        <div class="symbol-table">
-          <div class="symbol-row symbol-head"><span>符号</span><span>含义</span><span>单位</span></div>
-          %s
-        </div>
-      </section>
-
-      <section class="quick-section errors-section">
-        <h3>容易出错</h3>
-        <div class="error-list">%s</div>
-      </section>
-
-      %s
-
-      <details class="deep-read">
-        <summary>深入理解：物理意义、推导和例题</summary>
-        <div class="deep-body">
-          <section><h3>物理意义</h3><p>%s</p></section>
-          %s
-          %s
-        </div>
-      </details>
-    </article>''' % (
-        E(point["id"]), E(group["domain"]), E(group["chapter"]),
-        E(plain(" ".join(str(x or "") for x in search_parts))),
-        E(group["domain"]), E(group["short"]), E(point["title"]),
-        prose(point.get("definition", "")), formulas, symbols, errors,
-        ('<section class="relations"><h3>知识关系</h3>%s</section>' % relations) if relations else "",
-        prose(point.get("meaning", "")),
-        ('<section><h3>推导要点</h3><ol>%s</ol></section>' % derivation) if derivation else "",
-        ('''<section class="example"><h3>典型例题</h3><p class="example-stem">%s</p>
-             <ol>%s</ol><p class="example-answer"><b>答案：</b>%s</p></section>''' %
-         (prose(example.get("stem", "")), example_steps, prose(example.get("answer", ""))))
-        if example else "",
-    )
-
-
-def render_formula_index(groups):
-    cards = []
-    for group in groups:
-        for point in group["points"]:
-            for formula in point.get("formulas", []):
-                search = plain(" ".join([
-                    point["title"], formula.get("name", ""), formula.get("expr", ""),
-                    formula.get("when", ""), group["chapter"], group["domain"],
-                ]))
-                cards.append('''
-                <article class="index-card searchable" data-view-item="formulas"
-                  data-domain="%s" data-chapter="%s" data-search="%s">
-                  <button class="index-source" data-go="%s">%s · %s</button>
-                  <h2>%s</h2>
-                  <div class="index-math">%s</div>
-                  <p><b>适用：</b>%s</p>
-                </article>''' % (
-                    E(group["domain"]), E(group["chapter"]), E(search), E(point["id"]),
-                    E(group["short"]), E(point["title"]), prose(formula.get("name", "")),
-                    math_block(formula.get("mathml", "")), prose(formula.get("when", "")),
-                ))
-    return "".join(cards)
-
-
-def render_symbol_index(groups):
-    """同名、同解释、同单位的符号合并，减少重复但不混淆不同含义。"""
-    merged = {}
-    for group in groups:
-        for point in group["points"]:
-            for symbol in point.get("symbols", []):
-                key = (symbol.get("name", ""), symbol.get("desc", ""), symbol.get("unit", ""))
-                if key not in merged:
-                    merged[key] = {"symbol": symbol, "uses": []}
-                merged[key]["uses"].append((point["id"], point["title"], group))
-
-    def sort_key(item):
-        name = item[0][0]
-        return (name.split("_")[0].lower(), name.lower())
-
-    rows = []
-    for key, item in sorted(merged.items(), key=sort_key):
-        symbol = item["symbol"]
-        uses = item["uses"]
-        first = uses[0]
-        domains = " ".join(sorted(set(x[2]["domain"] for x in uses)))
-        chapters = " ".join(sorted(set(x[2]["chapter"] for x in uses)))
-        search = plain(" ".join([key[0], key[1], key[2], domains, chapters,
-                                  " ".join(x[1] for x in uses)]))
-        where = first[1] if len(uses) == 1 else "%s 等 %d 个知识点" % (first[1], len(uses))
-        rows.append('''
-          <article class="symbol-index-row searchable" data-view-item="symbols"
-            data-domain="%s" data-chapter="%s" data-search="%s">
-            <div class="big-symbol">%s</div>
-            <div><h2>%s</h2><p>%s</p></div>
-            <div class="unit-pill">%s</div>
-            <button class="symbol-source" data-go="%s">%s</button>
-          </article>''' % (
-            E(first[2]["domain"]), E(first[2]["chapter"]), E(search),
-            math_inline(symbol.get("mathml", "")), E(key[0]), prose(key[1]),
-            prose(key[2]) or "无量纲", E(first[0]), E(where),
-        ))
-    return "".join(rows)
-
-
-def render_map(groups):
-    """生成从领域到章节、再到知识点的学习脉络图。"""
-    sections = []
-    for domain, _, _, color in DOMAINS:
-        domain_groups = [g for g in groups if g["domain"] == domain]
-        chapters = []
-        for group in domain_groups:
-            points = "".join(
-                '<button class="map-point" data-go="%s">%s</button>' %
-                (E(p["id"]), E(p["title"])) for p in group["points"])
-            chapters.append('''
-              <div class="map-chapter">
-                <button class="map-chapter-title" data-chapter-jump="%s">
-                  <span class="chapter-number">%02d</span>
-                  <span>%s</span>
-                  <span class="chapter-arrow">→</span>
-                </button>
-                <div class="map-points">%s</div>
-              </div>''' % (E(group["chapter"]), group["order"], E(group["short"]), points))
-        sections.append('''
-          <section class="map-domain" data-map-domain="%s" style="--domain:%s">
-            <div class="map-domain-head"><span class="map-dot"></span><h2>%s</h2>
-              <span>%d 章 · %d 个知识点</span></div>
-            <div class="map-path">%s</div>
-          </section>''' % (
-            E(domain), color, E(domain), len(domain_groups),
-            sum(len(g["points"]) for g in domain_groups), "".join(chapters),
-        ))
-    return "".join(sections)
+            formulas = [
+                [prose(f.get("name", "")), readable_mathml(f.get("mathml", "")),
+                 prose(f.get("when", ""))]
+                for f in point.get("formulas", [])
+            ]
+            symbols = [
+                [prose(s.get("name", "")), prose(s.get("desc", "")),
+                 prose(s.get("unit", "")) or "—"]
+                for s in point.get("symbols", [])
+            ]
+            errors_source = point.get("errors", [])
+            errors_source = sorted(
+                errors_source,
+                key=lambda error: 0 if error.get("caught_by") == "数值代入" else 1,
+            )
+            errors = [
+                [prose(e.get("wrong", "")), prose(e.get("why", ""))]
+                for e in errors_source
+            ]
+            example = point.get("example") or {}
+            # 数组比重复写 JSON 字段名更小；浏览器里的注释解释每个位置。
+            item = [
+                point["id"], prose(point["title"]), prose(first_sentence(point.get("definition"))),
+                formulas, symbols, errors, prose(point.get("meaning", "")),
+                [prose(x) for x in point.get("derivation", [])],
+                [prose(example.get("stem", "")),
+                 [prose(x) for x in example.get("solution", [])],
+                 prose(example.get("answer", ""))],
+                list(point.get("prereq") or []), list(point.get("next") or []),
+                [prose(x) for x in point.get("tags", [])], len(groups),
+            ]
+            points.append(item)
+            chapter_ids.append(len(points) - 1)
+        groups.append([chapter_name, domain_of(order, segment), order, chapter_ids])
+    return {"g": groups, "p": points}
 
 
 CSS = r'''
-:root{--ink:#172033;--muted:#64748b;--line:#e5eaf1;--soft:#f6f8fb;--brand:#2457d6;--brand2:#173f9d;--warm:#fff7ed;--danger:#b45309;--ok:#15803d}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;overflow-x:hidden;color:var(--ink);background:#f7f8fa;font:15px/1.65 system-ui,-apple-system,"Segoe UI","Microsoft YaHei",sans-serif}
-button,input,select{font:inherit}button{color:inherit}.appbar{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.96);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
-.appbar-in{max-width:1180px;min-width:0;margin:auto;padding:12px 22px;display:flex;align-items:center;gap:22px}.brand{display:flex;align-items:center;gap:11px;min-width:max-content}.brand-mark{display:grid;place-items:center;width:34px;height:34px;border-radius:11px;background:var(--brand);color:#fff;font-weight:800}.brand b{font-size:17px}.brand small{display:block;color:var(--muted);line-height:1.1}
-.topnav{display:flex;min-width:0;gap:5px;margin-left:auto}.navbtn{border:0;background:transparent;padding:8px 12px;border-radius:9px;cursor:pointer;color:#526078}.navbtn:hover,.navbtn.on{background:#edf3ff;color:var(--brand);font-weight:700}.full-link{text-decoration:none;color:var(--muted);font-size:13px;border-left:1px solid var(--line);padding-left:16px}.full-link:hover{color:var(--brand)}
-.intro{max-width:900px;margin:0 auto;padding:52px 22px 30px;text-align:center}.intro .kicker{color:var(--brand);font-weight:750;letter-spacing:.08em}.intro h1{font-size:clamp(32px,6vw,52px);letter-spacing:-.045em;margin:8px 0 6px;line-height:1.13}.intro p{color:var(--muted);font-size:17px;margin:0 auto 24px}.searchbox{display:flex;align-items:center;max-width:720px;margin:auto;background:#fff;border:1px solid #d8dee9;border-radius:16px;padding:4px 6px 4px 16px;box-shadow:0 10px 35px rgba(30,50,90,.08)}.searchbox span{font-size:19px;color:var(--muted)}.searchbox input{width:100%;border:0;outline:0;padding:13px 10px;background:transparent;font-size:16px}.searchbox kbd{background:var(--soft);color:var(--muted);border:1px solid var(--line);border-radius:7px;padding:3px 7px;font-size:12px}
-.mini-stats{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-top:17px}.mini-stats span{background:#fff;border:1px solid var(--line);border-radius:999px;padding:5px 11px;color:var(--muted);font-size:13px}.mini-stats b{color:var(--ink)}
-.filters{position:sticky;top:59px;z-index:15;background:rgba(247,248,250,.96);border-bottom:1px solid var(--line)}.filters-in{max-width:1180px;margin:auto;padding:10px 22px;display:flex;align-items:center;gap:8px;overflow:auto}.domain-chip{white-space:nowrap;border:1px solid var(--line);background:#fff;border-radius:999px;padding:7px 13px;cursor:pointer}.domain-chip:hover,.domain-chip.on{border-color:#9bb5f1;background:#edf3ff;color:var(--brand);font-weight:700}.chapter-select{margin-left:auto;border:1px solid var(--line);background:#fff;border-radius:9px;padding:7px 10px;min-width:190px}.result-count{white-space:nowrap;color:var(--muted);font-size:13px}
-main{max-width:1180px;margin:auto;padding:28px 22px 70px}.panel[hidden]{display:none!important}.point-list{display:grid;gap:22px;max-width:920px;margin:auto}.point-card{background:#fff;border:1px solid var(--line);border-radius:18px;padding:25px 27px;box-shadow:0 6px 22px rgba(30,50,90,.04);scroll-margin-top:130px}.point-head{display:flex;justify-content:space-between;gap:16px}.point-path{font-size:13px;color:var(--brand);font-weight:700}.point-head h2{font-size:24px;margin:3px 0 0;line-height:1.3}.verified{align-self:start;white-space:nowrap;color:var(--ok);background:#ecfdf3;border:1px solid #c8f2d5;border-radius:999px;padding:4px 9px;font-size:12px}.definition{font-size:16px;color:#3f4b60;margin:15px 0 22px;padding-left:13px;border-left:3px solid #bfd0f8}.quick-section{margin-top:22px}.quick-section>h3,.relations>h3,.deep-body h3{font-size:14px;margin:0 0 10px;color:#506078}.formula-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:10px}.formula-card{background:#f8faff;border:1px solid #e3eaff;border-radius:13px;padding:13px 15px}.formula-name{font-weight:700}.formula-math{font-size:21px;overflow:auto;padding:8px 0}.formula-math math{margin:0}.formula-when{color:var(--muted);font-size:13px;border-top:1px dashed #d8e1f3;padding-top:8px}.symbol-table{border:1px solid var(--line);border-radius:12px;overflow:hidden}.symbol-row{display:grid;grid-template-columns:100px 1fr 110px;align-items:center;min-height:42px;padding:7px 13px;border-top:1px solid var(--line)}.symbol-row:first-child{border-top:0}.symbol-head{background:var(--soft);font-size:12px;color:var(--muted);font-weight:700}.symbol-name{font-size:17px;font-weight:700}.symbol-unit{color:var(--muted)}.error-list{display:grid;gap:8px}.error-card{background:var(--warm);border:1px solid #fed7aa;border-left:4px solid #f59e0b;border-radius:10px;padding:11px 13px}.error-title{font-weight:750;color:#9a3412}.error-why{color:#6b4b35;margin-top:3px}.relations{margin-top:22px;border-top:1px solid var(--line);padding-top:18px}.relation-row{display:flex;align-items:center;gap:7px;flex-wrap:wrap;margin-top:7px}.relation-row>span:first-child{color:var(--muted);font-size:13px;width:48px}.relation-hint{font-size:11px!important;width:auto!important;color:#94a3b8!important}.relation-link,.index-source,.symbol-source,.map-point{border:0;background:#edf3ff;color:var(--brand);border-radius:7px;padding:4px 8px;cursor:pointer}.relation-link:hover,.index-source:hover,.symbol-source:hover,.map-point:hover{text-decoration:underline}.deep-read{margin-top:20px;border-top:1px solid var(--line);padding-top:14px}.deep-read summary{cursor:pointer;color:var(--brand);font-weight:700}.deep-body{padding:10px 3px 0;color:#435066}.deep-body section{margin-top:18px}.deep-body ol{padding-left:22px}.example{background:var(--soft);border-radius:12px;padding:13px 16px}.example-answer{color:var(--brand2)}
-.index-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:14px}.index-card{background:#fff;border:1px solid var(--line);border-radius:15px;padding:18px}.index-card h2{font-size:16px;margin:11px 0}.index-source{font-size:12px}.index-math{font-size:21px;min-height:62px;display:grid;place-items:center;background:var(--soft);border-radius:10px;overflow:auto}.index-card p{color:var(--muted);font-size:13px;margin:11px 0 0}.symbol-index{display:grid;gap:8px;max-width:960px;margin:auto}.symbol-index-row{display:grid;grid-template-columns:90px 1fr 110px 180px;align-items:center;gap:14px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:12px 16px}.big-symbol{font-size:25px;text-align:center}.symbol-index-row h2{font-size:14px;margin:0;color:var(--muted)}.symbol-index-row p{margin:2px 0}.unit-pill{justify-self:start;background:var(--soft);border-radius:7px;padding:4px 8px;color:#506078}.symbol-source{text-align:left;background:transparent;color:var(--brand);font-size:12px}
-.map-intro{text-align:center;max-width:760px;margin:0 auto 28px}.map-intro h2{font-size:27px;margin:0}.map-intro p{color:var(--muted)}.map-root{width:max-content;margin:0 auto 24px;background:var(--ink);color:#fff;border-radius:14px;padding:12px 22px;font-weight:800;position:relative}.map-root:after{content:"";position:absolute;top:100%;left:50%;height:25px;border-left:2px solid #cbd5e1}.map-domain{--domain:#2563eb;background:#fff;border:1px solid var(--line);border-left:5px solid var(--domain);border-radius:16px;padding:18px;margin:15px 0}.map-domain-head{display:flex;align-items:center;gap:10px}.map-domain-head h2{margin:0;font-size:20px}.map-domain-head>span:last-child{color:var(--muted);font-size:13px;margin-left:auto}.map-dot{width:12px;height:12px;border-radius:50%;background:var(--domain)}.map-path{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:10px;margin-top:15px}.map-chapter{border:1px solid var(--line);border-radius:11px;overflow:hidden}.map-chapter-title{width:100%;border:0;background:#fafbfc;padding:10px;display:grid;grid-template-columns:34px 1fr 20px;text-align:left;align-items:center;cursor:pointer;font-weight:700}.chapter-number{color:var(--domain)}.chapter-arrow{color:#94a3b8}.map-points{padding:8px;display:flex;flex-wrap:wrap;gap:5px}.map-point{font-size:12px;background:#fff;border:1px solid var(--line);color:#526078;text-align:left}
-.empty{display:none;text-align:center;padding:70px 20px;color:var(--muted)}footer{border-top:1px solid var(--line);background:#fff}.footer-in{max-width:1180px;margin:auto;padding:24px 22px;display:flex;justify-content:space-between;gap:18px;color:var(--muted);font-size:13px}.footer-in a{color:var(--brand);text-decoration:none}
-@media(max-width:760px){html,body{width:100%;max-width:100%;overflow-x:hidden}.appbar,.filters,footer{width:100%;max-width:100vw}.appbar-in{width:100%;max-width:100vw;padding:9px 13px;gap:8px}.brand{flex:0 0 auto}.brand small,.full-link{display:none}.topnav{flex:1;min-width:0;max-width:100%;overflow-x:auto;overflow-y:hidden}.navbtn{flex:0 0 auto;padding:7px 9px;white-space:nowrap}.intro{width:100%;max-width:100vw;overflow:hidden;padding:34px 16px 22px}.intro h1{max-width:100%;font-size:clamp(29px,9vw,34px);white-space:normal;word-break:break-all;overflow-wrap:anywhere}.intro p{max-width:100%;word-break:break-all;overflow-wrap:anywhere}.searchbox{width:100%;max-width:100%;min-width:0}.searchbox input{min-width:0}.searchbox kbd{display:none}.mini-stats{max-width:100%;overflow:hidden}.mini-stats span{max-width:100%}.filters{top:53px}.filters-in{width:100%;max-width:100vw;padding:8px 13px}.chapter-select{flex:0 0 150px;min-width:150px;margin-left:8px}.result-count{display:none}main{width:100%;max-width:100vw;overflow:hidden;padding:18px 12px 55px}.point-list{width:100%;max-width:100%}.point-card{width:100%;max-width:100%;min-width:0;overflow:hidden;padding:19px 16px;border-radius:14px}.point-head h2{font-size:21px}.verified{display:none}.formula-grid{grid-template-columns:minmax(0,1fr)}.formula-card{min-width:0}.symbol-row{grid-template-columns:72px minmax(0,1fr) 76px;padding:7px 9px}.symbol-index-row{grid-template-columns:60px minmax(0,1fr) 76px}.symbol-source{grid-column:2/4}.map-domain{padding:14px 11px}.map-path{grid-template-columns:1fr}.footer-in{display:block}.footer-in span{display:block;margin-top:7px}}
-@media print{.appbar,.filters,.intro,.deep-read,.footer-in{display:none!important}body{background:#fff}.point-card{box-shadow:none;break-inside:avoid}.point-list{max-width:none}main{padding:0}}
+:root{--ink:#172033;--muted:#617087;--line:#e5eaf1;--brand:#2457d6;--soft:#f7f9fc;--error:#9a3412}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#f7f8fa;color:var(--ink);font:15px/1.65 system-ui,-apple-system,"Microsoft YaHei",sans-serif}button,input,select{font:inherit}button{cursor:pointer}a{color:var(--brand)}
+.appbar{position:sticky;top:0;z-index:20;background:#fff;border-bottom:1px solid var(--line)}.appbar-inner{max-width:1120px;margin:auto;padding:11px 18px;display:flex;align-items:center;gap:24px}.brand{white-space:nowrap;font-size:17px;font-weight:750}.brand i{display:inline-grid;place-items:center;width:32px;height:32px;margin-right:8px;border-radius:10px;background:var(--brand);color:#fff;font-style:normal}.nav{display:flex;gap:5px;margin-left:auto}.nav button{border:0;background:none;border-radius:9px;padding:7px 11px;color:#4f5c72;white-space:nowrap}.nav button.active,.nav button:hover{background:#edf3ff;color:var(--brand);font-weight:700}.old-link{font-size:13px;text-decoration:none;white-space:nowrap;border-left:1px solid var(--line);padding-left:15px}
+.intro{text-align:center;max-width:820px;margin:auto;padding:42px 16px 29px}.eyebrow{font-weight:700;color:var(--brand);font-size:13px;letter-spacing:.08em}.intro h1{font-size:clamp(30px,5vw,47px);line-height:1.2;margin:7px 0 6px}.intro p{color:var(--muted);font-size:16px;margin:0 0 22px}.search{display:flex;align-items:center;gap:9px;text-align:left;background:#fff;border:1px solid #d4deee;border-radius:14px;padding:0 14px;box-shadow:0 8px 28px #1e32520b}.search span{color:var(--brand);font-size:21px}.search input{border:0;outline:0;width:100%;min-width:0;padding:13px 2px;background:transparent}.intro .counts{color:var(--muted);font-size:13px;margin-top:10px}
+.filters{position:sticky;top:55px;z-index:15;background:#f7f8faed;border-bottom:1px solid var(--line)}.filters-inner{max-width:1120px;margin:auto;padding:10px 18px;display:flex;gap:7px;align-items:center;overflow-x:auto}.filter{border:1px solid var(--line);background:#fff;border-radius:999px;padding:5px 12px;white-space:nowrap}.filter.active{color:var(--brand);background:#edf3ff;border-color:#b3c6f5;font-weight:700}.filters select{margin-left:auto;background:#fff;border:1px solid var(--line);border-radius:8px;padding:6px 9px;min-width:170px}.count{font-size:12px;color:var(--muted);white-space:nowrap}
+main{max-width:1120px;margin:auto;padding:24px 16px 70px}.list{max-width:900px;margin:auto;display:grid;gap:16px}.card,.index-card,.symbol-card,.map-domain{background:#fff;border:1px solid var(--line);border-radius:15px;box-shadow:0 4px 14px #1e325208}.card{padding:21px 24px;scroll-margin-top:125px}.path{font-size:12px;font-weight:700;color:var(--brand)}.card h2{font-size:22px;line-height:1.35;margin:3px 0 10px}.definition{border-left:3px solid #bed0f8;padding-left:12px;margin:0 0 18px;color:#3c4a61}.block{margin-top:17px}.block h3,.relations h3{font-size:13px;color:#52617a;margin:0 0 8px}.formulas{display:grid;grid-template-columns:repeat(auto-fit,minmax(245px,1fr));gap:8px}.formula{min-width:0;padding:10px 12px;border:1px solid #dfebff;background:#f8faff;border-radius:10px}.formula-name{font-weight:700;font-size:13px}.math{overflow-x:auto;font-size:21px;text-align:center;padding:6px 0}.math math{margin:auto}.when{border-top:1px dashed #d4e1f8;padding-top:6px;font-size:12px;color:var(--muted)}.symbols{border:1px solid var(--line);border-radius:9px;overflow:hidden}.sym-row{display:grid;grid-template-columns:80px minmax(0,1fr) 90px;gap:8px;border-top:1px solid var(--line);padding:5px 10px;font-size:13px}.sym-row:first-child{border:0}.sym-row.head{background:var(--soft);color:var(--muted);font-weight:700}.sym-name{font-size:16px}.sym-unit{color:var(--muted)}.error{border-left:3px solid #f59e0b;background:#fff8ed;border-radius:7px;padding:8px 10px;margin-top:6px}.error b{color:var(--error)}.error p{margin:3px 0 0;color:#6b4b35;font-size:13px}.relations{margin-top:17px}.relation-line{display:flex;gap:7px;align-items:center;flex-wrap:wrap;margin-top:5px}.relation-line span{font-size:12px;color:var(--muted)}.relation-line button,.source,.map-point{border:0;border-radius:6px;padding:3px 7px;background:#edf3ff;color:var(--brand);font-size:12px}.relation-line button:hover,.source:hover,.map-point:hover{text-decoration:underline}.deep{margin-top:17px;border-top:1px solid var(--line);padding-top:11px}.deep summary{color:var(--brand);font-weight:700;cursor:pointer}.deep-content{color:#435066}.deep-content h3{font-size:14px;margin:15px 0 4px}.deep-content p{margin:0}.deep-content ol{padding-left:21px;margin:5px 0}.deep-content li{margin:4px 0}.answer{color:#1d4d9b;font-weight:700}
+.index-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:12px}.index-card{padding:15px}.index-card h2{font-size:16px;margin:7px 0}.index-card .when{border-top:0;margin:4px 0 0}.symbol-grid{display:grid;gap:7px;max-width:900px;margin:auto}.symbol-card{display:grid;grid-template-columns:100px minmax(0,1fr) 100px 160px;gap:10px;align-items:center;padding:9px 13px}.symbol-card .sym-name{font-size:20px}.symbol-card p{margin:0}.symbol-card .source{text-align:left;background:none}.map-title{text-align:center;margin:0 0 20px}.map-title h2{margin:0}.map-title p{color:var(--muted);margin:5px 0}.map-root{width:max-content;margin:0 auto 20px;border-radius:10px;background:var(--ink);color:#fff;padding:9px 18px;font-weight:700}.map-domain{padding:16px;margin:12px 0;border-left:4px solid var(--brand)}.map-domain h2{font-size:19px;margin:0 0 10px}.map-domain h2 small{color:var(--muted);font-weight:400;font-size:12px;margin-left:10px}.map-chapters{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:8px}.map-chapter{border:1px solid var(--line);border-radius:9px;padding:10px}.map-chapter button:first-child{width:100%;text-align:left;border:0;background:none;font-weight:700;padding:0 0 6px}.map-chapter button:first-child:hover{color:var(--brand)}.map-points{display:flex;flex-wrap:wrap;gap:4px}.map-point{background:#fff;border:1px solid var(--line);color:#4d5b71}.empty{text-align:center;color:var(--muted);padding:60px 0}footer{background:#fff;border-top:1px solid var(--line);padding:20px;text-align:center;color:var(--muted);font-size:12px}
+@media(max-width:650px){.appbar-inner{gap:7px;padding:8px 10px}.brand{font-size:15px}.brand i{width:27px;height:27px;margin-right:5px}.nav{min-width:0;overflow-x:auto}.nav button{padding:6px 8px}.old-link{display:none}.intro{padding:30px 14px 20px}.intro h1{font-size:32px}.filters{top:44px}.filters-inner{padding:8px 10px}.filters select{min-width:145px}.count{display:none}main{padding:13px 10px 55px}.card{padding:16px 13px}.card h2{font-size:20px}.formulas{grid-template-columns:minmax(0,1fr)}.sym-row{grid-template-columns:65px minmax(0,1fr) 68px;padding:5px 7px}.symbol-card{grid-template-columns:70px minmax(0,1fr) 75px}.symbol-card .source{grid-column:2/4}.map-chapters{grid-template-columns:1fr}}
+.segment-switchbar{background:#fff;border-bottom:1px solid var(--line);padding:8px 18px}.segment-switchbar-inner{max-width:1120px;margin:auto;display:flex;align-items:center;gap:8px;flex-wrap:wrap}.segment-switchbar span{font-size:12px;color:var(--muted)}.segment-switchbar a{border:1px solid var(--line);border-radius:999px;padding:4px 11px;font-size:12px;text-decoration:none}.segment-switchbar a[aria-current="page"]{background:var(--brand);border-color:var(--brand);color:#fff}.segment-switchbar a.segment-quiz{margin-left:auto;background:#f4f7ff;border-color:#bdccf4}
+.card-practice{margin-top:12px}.card-practice a{display:inline-flex;border:1px solid #bdccf4;border-radius:999px;padding:5px 12px;color:var(--brand);font-size:12px}.card-practice a:hover{background:#edf3ff;text-decoration:none}
 '''
 
 
+# 数据数组的索引：知识点 [编号,标题,一句定义,公式,符号,错误,物理意义,推导,例题,前置,后续,标签,章节序号]。
+# 公式 [名称,MathML,适用条件]；符号 [教材写法,含义,单位]。所有文本已经由 Python 安全转义。
 JS = r'''
-(function(){
-  var currentView='points', currentDomain='全部', currentChapter='全部';
-  var q=document.getElementById('q'), count=document.getElementById('count'), empty=document.getElementById('empty');
-  var panels={points:document.getElementById('panel-points'),formulas:document.getElementById('panel-formulas'),symbols:document.getElementById('panel-symbols'),map:document.getElementById('panel-map')};
-  var requestedView=location.hash.replace('#','');
-  if(panels[requestedView]) currentView=requestedView;
-  function norm(s){return (s||'').toLowerCase().replace(/\s+/g,' ').trim();}
-  function apply(){
-    Object.keys(panels).forEach(function(k){panels[k].hidden=k!==currentView;});
-    document.querySelectorAll('.navbtn').forEach(function(b){b.classList.toggle('on',b.dataset.view===currentView);});
-    var query=norm(q.value), shown=0;
-    if(currentView==='map'){
-      document.querySelectorAll('.map-domain').forEach(function(el){
-        var ok=currentDomain==='全部'||el.dataset.mapDomain===currentDomain;
-        el.style.display=ok?'':'none'; if(ok) shown++;
-      });
-    }else{
-      panels[currentView].querySelectorAll('[data-view-item="'+currentView+'"]').forEach(function(el){
-        var okDomain=currentDomain==='全部'||el.dataset.domain===currentDomain;
-        var okChapter=currentChapter==='全部'||el.dataset.chapter===currentChapter;
-        var okQuery=!query||norm(el.dataset.search).indexOf(query)>=0;
-        var ok=okDomain&&okChapter&&okQuery;
-        el.style.display=ok?'':'none'; if(ok) shown++;
-      });
-    }
-    count.textContent=currentView==='map'?'知识脉络':('显示 '+shown+' 项');
-    empty.style.display=shown?'none':'block';
-  }
-  document.querySelectorAll('.navbtn').forEach(function(btn){btn.addEventListener('click',function(){currentView=btn.dataset.view;history.replaceState(null,'','#'+currentView);apply();window.scrollTo({top:0,behavior:'smooth'});});});
-  document.querySelectorAll('.domain-chip').forEach(function(btn){btn.addEventListener('click',function(){currentDomain=btn.dataset.domain;document.querySelectorAll('.domain-chip').forEach(function(x){x.classList.toggle('on',x===btn);});apply();});});
-  document.getElementById('chapter').addEventListener('change',function(){currentChapter=this.value;apply();});
-  q.addEventListener('input',apply);
-  document.addEventListener('keydown',function(e){if(e.key==='/'&&document.activeElement!==q){e.preventDefault();q.focus();}});
-  document.addEventListener('click',function(e){
-    var go=e.target.closest('[data-go]');
-    if(go){currentView='points';currentDomain='全部';currentChapter='全部';q.value='';document.getElementById('chapter').value='全部';document.querySelectorAll('.domain-chip').forEach(function(x){x.classList.toggle('on',x.dataset.domain==='全部');});apply();setTimeout(function(){var target=document.getElementById(go.dataset.go);if(target)target.scrollIntoView({behavior:'smooth',block:'start'});},30);}
-    var jump=e.target.closest('[data-chapter-jump]');
-    if(jump){currentView='points';currentChapter=jump.dataset.chapterJump;document.getElementById('chapter').value=currentChapter;apply();window.scrollTo({top:0,behavior:'smooth'});}
-  });
-  apply();
+(()=>{'use strict';
+const data=JSON.parse(document.getElementById('kb-data').textContent),groups=data.g,points=data.p;
+const SEGMENT_ROOT='__SEGMENT_ROOT__',QUIZ_HREF='__QUIZ_HREF__',RETURN_PAGE='__RETURN_PAGE__';
+const viewBox=document.getElementById('content'),search=document.getElementById('search'),chapter=document.getElementById('chapter'),counter=document.getElementById('count');
+const strip=s=>{const e=document.createElement('div');e.innerHTML=s||'';return(e.textContent||'').toLowerCase()};
+const clean=s=>(s||'').toLowerCase().replace(/\s+/g,' ').trim();
+const text=s=>{const e=document.createElement('span');e.textContent=s||'';return e.innerHTML};
+const groupName=i=>groups[i][0].split('·').slice(1).join('·').trim()||groups[i][0];
+let view=['points','formulas','symbols','map'].includes(location.hash.slice(1))?location.hash.slice(1):'points';
+let domain='全部',chapterName='全部',query='';
+const pointIndex=new Map(points.map((p,i)=>[p[0],i]));
+
+// 搜索只从给人看的字段建立索引，不把公式解析器的内部名称重新写进页面。
+const pointSearch=points.map(p=>clean([p[1],p[2],p[6],p[11].join(' '),groups[p[12]][0],groups[p[12]][1],...p[3].flat(),...p[4].flat(),...p[5].flat()].map(strip).join(' ')));
+const formulas=[];points.forEach((p,i)=>p[3].forEach((f,k)=>formulas.push([i,k,clean([strip(p[1]),strip(f[0]),strip(f[2]),...p[4].map(s=>strip(s[0])+' '+strip(s[1])),groups[p[12]][0]].join(' '))])));
+const symbols=[],symbolMap=new Map();points.forEach((p,i)=>p[4].forEach(s=>{const key=s.join('|');if(!symbolMap.has(key)){symbolMap.set(key,symbols.length);symbols.push([s,[i]])}else symbols[symbolMap.get(key)][1].push(i)}));
+
+function matchPoint(i){const p=points[i],g=groups[p[12]];return(domain==='全部'||g[1]===domain)&&(chapterName==='全部'||g[0]===chapterName)&&(!query||pointSearch[i].includes(query))}
+function formulaHTML(f){return '<div class="formula"><div class="formula-name">'+f[0]+'</div><div class="math"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">'+f[1]+'</math></div>'+(f[2]?'<div class="when">适用：'+f[2]+'</div>':'')+'</div>'}
+function symbolHTML(s){return '<div class="sym-row"><div class="sym-name">'+s[0]+'</div><div>'+s[1]+'</div><div class="sym-unit">'+s[2]+'</div></div>'}
+function errorHTML(e){return '<div class="error"><b>'+e[0]+'</b><p>'+e[1]+'</p></div>'}
+function relationHTML(p,i){let before=p[9].map(id=>pointIndex.get(id)).filter(x=>x!==undefined),after=p[10].map(id=>pointIndex.get(id)).filter(x=>x!==undefined);const members=groups[p[12]][3],pos=members.indexOf(i);if(!before.length&&pos>0)before=[members[pos-1]];if(!after.length&&pos<members.length-1)after=[members[pos+1]];const row=(label,list)=>list.length?'<div class="relation-line"><span>'+label+'</span>'+list.map(j=>'<button data-go="'+j+'">'+points[j][1]+'</button>').join('')+'</div>':'';return before.length||after.length?'<section class="relations"><h3>知识关系</h3>'+row('先理解',before)+row('接着看',after)+'</section>':''}
+function pointHTML(i){const p=points[i],g=groups[p[12]],more=p[5].length>2?'<details class="more-errors"><summary>查看其余 '+(p[5].length-2)+' 条常见错误</summary>'+p[5].slice(2).map(errorHTML).join('')+'</details>':'';return '<article class="card" id="'+p[0]+'"><div class="path">'+g[1]+' · '+text(groupName(p[12]))+'</div><h2>'+p[1]+'</h2><p class="definition">'+p[2]+'</p><section class="block"><h3>核心公式</h3><div class="formulas">'+p[3].map(formulaHTML).join('')+'</div></section><section class="block"><h3>容易出错</h3>'+p[5].slice(0,2).map(errorHTML).join('')+more+'</section><section class="block"><h3>符号与单位</h3><div class="symbols"><div class="sym-row head"><div>符号</div><div>含义</div><div>单位</div></div>'+p[4].map(symbolHTML).join('')+'</div></section>'+relationHTML(p,i)+'<details class="deep" data-deep="'+i+'"><summary>深入理解：物理意义、推导和例题</summary><div class="deep-content"></div></details><div class="card-practice"><a href="'+QUIZ_HREF+'?mode=example&amp;point='+encodeURIComponent(p[0])+'&amp;source='+encodeURIComponent(SEGMENT_ROOT+'速查版')+'&amp;return='+encodeURIComponent(RETURN_PAGE+'#'+p[0])+'">练这道题 ↗</a></div></article>'}
+function deepHTML(p){const ex=p[8];return '<h3>物理意义</h3><p>'+p[6]+'</p>'+(p[7].length?'<h3>推导要点</h3><ol>'+p[7].map(x=>'<li>'+x+'</li>').join('')+'</ol>':'')+(ex[0]?'<h3>典型例题</h3><p>'+ex[0]+'</p><ol>'+ex[1].map(x=>'<li>'+x+'</li>').join('')+'</ol><p class="answer">答案：'+ex[2]+'</p>':'')}
+function renderPoints(){const ids=points.map((_,i)=>i).filter(matchPoint);viewBox.className='list';viewBox.innerHTML=ids.map(pointHTML).join('');return ids.length}
+function renderFormulas(){const rows=formulas.filter(row=>matchPoint(row[0])&&(!query||row[2].includes(query)));viewBox.className='index-grid';viewBox.innerHTML=rows.map(([i,k])=>'<article class="index-card"><button class="source" data-go="'+i+'">'+points[i][1]+'</button><h2>'+points[i][3][k][0]+'</h2>'+formulaHTML(points[i][3][k])+'</article>').join('');return rows.length}
+function renderSymbols(){const rows=symbols.filter(([s,ids])=>ids.some(matchPoint)&&(!query||clean([strip(s[0]),strip(s[1]),strip(s[2]),...ids.map(i=>strip(points[i][1]))].join(' ')).includes(query)));viewBox.className='symbol-grid';viewBox.innerHTML=rows.map(([s,ids])=>{const target=ids.find(matchPoint);return '<article class="symbol-card"><div class="sym-name">'+s[0]+'</div><p>'+s[1]+'</p><div class="sym-unit">'+s[2]+'</div><button class="source" data-go="'+target+'">'+points[target][1]+(ids.length>1?' 等'+ids.length+'处':'')+'</button></article>'}).join('');return rows.length}
+function renderMap(){const gs=groups.map((g,i)=>[g,i]).filter(([g])=>(domain==='全部'||g[1]===domain)&&(chapterName==='全部'||g[0]===chapterName));const domains=[...new Set(gs.map(([g])=>g[1]))];viewBox.className='';viewBox.innerHTML='<div class="map-title"><h2>知识脉络</h2><p>按领域与章节串联知识点；章节顺序是学习建议，点击可打开速查卡。</p></div><div class="map-root">'+SEGMENT_ROOT+'</div>'+domains.map(d=>'<section class="map-domain"><h2>'+d+'<small>'+gs.filter(([g])=>g[1]===d).length+'章</small></h2><div class="map-chapters">'+gs.filter(([g])=>g[1]===d).map(([g,gi])=>'<div class="map-chapter"><button data-chapter-go="'+gi+'">'+text(groupName(gi))+' →</button><div class="map-points">'+g[3].map(i=>'<button class="map-point" data-go="'+i+'">'+points[i][1]+'</button>').join('')+'</div></div>').join('')+'</div></section>').join('');return gs.length}
+function render(){document.querySelectorAll('.nav button').forEach(b=>b.classList.toggle('active',b.dataset.view===view));let count=view==='points'?renderPoints():view==='formulas'?renderFormulas():view==='symbols'?renderSymbols():renderMap();counter.textContent=view==='map'?'知识脉络':'显示 '+count+' 项';document.getElementById('empty').hidden=count>0}
+document.querySelectorAll('.nav button').forEach(b=>b.addEventListener('click',()=>{view=b.dataset.view;history.replaceState(null,'','#'+view);render();window.scrollTo(0,0)}));
+document.querySelectorAll('.filter').forEach(b=>b.addEventListener('click',()=>{domain=b.dataset.domain;document.querySelectorAll('.filter').forEach(x=>x.classList.toggle('active',x===b));render()}));
+chapter.addEventListener('change',()=>{chapterName=chapter.value;render()});search.addEventListener('input',()=>{query=clean(search.value);if(query&&view==='map'){view='points';history.replaceState(null,'','#points')}render()});
+document.addEventListener('keydown',e=>{if(e.key==='/'&&document.activeElement!==search){e.preventDefault();search.focus()}});
+document.addEventListener('toggle',e=>{const d=e.target;if(d.matches&&d.matches('details[data-deep]')&&d.open){const slot=d.querySelector('.deep-content');if(!slot.dataset.loaded){slot.innerHTML=deepHTML(points[Number(d.dataset.deep)]);slot.dataset.loaded='1'}}},true);
+document.addEventListener('click',e=>{const go=e.target.closest('[data-go]');if(go){const i=Number(go.dataset.go);view='points';domain='全部';chapterName='全部';query='';search.value='';chapter.value='全部';document.querySelectorAll('.filter').forEach(b=>b.classList.toggle('active',b.dataset.domain==='全部'));render();document.getElementById(points[i][0]).scrollIntoView({behavior:'smooth',block:'start'});return}const ch=e.target.closest('[data-chapter-go]');if(ch){view='points';chapterName=groups[Number(ch.dataset.chapterGo)][0];chapter.value=chapterName;render();window.scrollTo(0,0)}});
+render();
 })();
 '''
 
 
-def render_page(groups, point_map, stats):
-    points_html = "".join(
-        render_point(point, group, pos, point_map)
-        for group in groups for pos, point in enumerate(group["points"])
-    )
-    formulas_html = render_formula_index(groups)
-    symbols_html = render_symbol_index(groups)
-    map_html = render_map(groups)
+HTML = r'''<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="__SEGMENT_LABEL__物理知识点、公式、符号和常见错误速查"><title>__SEGMENT_LABEL__物理速查 · 谢端</title><style>__CSS__</style></head><body>
+<header class="appbar"><div class="appbar-inner"><div class="brand"><i>物</i>__SEGMENT_LABEL__物理速查</div><nav class="nav" aria-label="查看内容"><button data-view="points">知识点</button><button data-view="formulas">公式</button><button data-view="symbols">符号</button><button data-view="map">知识脉络</button></nav><a class="old-link" href="__FULL_PAGE__">完整校验版 ↗</a></div></header>
+__SEGMENT_NAV__
+<section class="intro"><div class="eyebrow">公式 · 符号 · 条件 · 易错点</div><h1>__SEGMENT_LABEL__物理，快速查清楚</h1><p>先找到公式，再认清符号，最后避开常见错误。</p><label class="search"><span>⌕</span><input id="search" type="search" autocomplete="off" placeholder="搜索知识点、公式、符号或错误……" aria-label="搜索知识库"></label><div class="counts">__POINTS__ 个知识点 · __FORMULAS__ 条公式 · 内容已校验</div></section>
+<div class="filters"><div class="filters-inner">__DOMAIN_FILTERS__<select id="chapter" aria-label="选择章节">__CHAPTERS__</select><span class="count" id="count"></span></div></div>
+<main><div id="content"></div><div id="empty" class="empty" hidden>没有找到匹配内容，请换个关键词。</div></main>
+<footer>__SEGMENT_LABEL__物理速查 · 谢端　单文件、断网可用　<a href="__FULL_PAGE__">查看完整校验版</a></footer>
+<script type="application/json" id="kb-data">__DATA__</script><script>__JS__</script></body></html>'''
 
-    domain_buttons = ['<button class="domain-chip on" data-domain="全部">全部</button>']
-    domain_buttons.extend('<button class="domain-chip" data-domain="%s">%s</button>' % (E(d[0]), E(d[0]))
-                          for d in DOMAINS)
-    chapter_options = ['<option value="全部">全部章节</option>']
-    chapter_options.extend('<option value="%s">%02d · %s</option>' %
-                           (E(g["chapter"]), g["order"], E(g["short"])) for g in groups)
 
-    template = r'''<!DOCTYPE html>
-<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="高中物理公式、符号、适用条件和常见错误速查工具">
-<title>高中物理速查 · 谢端</title><style>__CSS__</style></head><body>
-<header class="appbar"><div class="appbar-in">
-  <div class="brand"><span class="brand-mark">物</span><div><b>高中物理速查</b><small>谢端</small></div></div>
-  <nav class="topnav" aria-label="主要视图">
-    <button class="navbtn on" data-view="points">知识点</button><button class="navbtn" data-view="formulas">公式</button>
-    <button class="navbtn" data-view="symbols">符号</button><button class="navbtn" data-view="map">知识脉络</button>
-  </nav>
-  <a class="full-link" href="高中物理知识库.html">完整校验版 ↗</a>
-</div></header>
-
-<section class="intro"><div class="kicker">公式 · 符号 · 条件 · 易错点</div><h1>高中物理，快速查清楚</h1>
-  <p>先找到要用的公式，再认清每个符号，最后避开最常见的错误。</p>
-  <label class="searchbox"><span>⌕</span><input id="q" type="search" autocomplete="off" placeholder="搜索知识点、公式、符号或错误……"><kbd>/</kbd></label>
-  <div class="mini-stats"><span><b>__POINTS__</b> 个知识点</span><span><b>__FORMULAS__</b> 条公式</span><span>内容来自已通过校验的完整知识库</span></div>
-</section>
-
-<div class="filters"><div class="filters-in">__DOMAIN_BUTTONS__
-  <select class="chapter-select" id="chapter" aria-label="按章节筛选">__CHAPTER_OPTIONS__</select><span class="result-count" id="count"></span>
-</div></div>
-
-<main>
-  <section class="panel point-list" id="panel-points">__POINTS_HTML__</section>
-  <section class="panel index-grid" id="panel-formulas" hidden>__FORMULAS_HTML__</section>
-  <section class="panel symbol-index" id="panel-symbols" hidden>__SYMBOLS_HTML__</section>
-  <section class="panel" id="panel-map" hidden>
-    <div class="map-intro"><h2>知识脉络</h2><p>从五个领域进入，沿章节顺序理解概念如何一层层建立。点击章节可回到对应速查卡，点击知识点可直接定位。</p></div>
-    <div class="map-root">高中物理</div>__MAP_HTML__
-  </section>
-  <div class="empty" id="empty">没有找到匹配内容，试试更短的关键词。</div>
-</main>
-
-<footer><div class="footer-in"><span>高中物理速查 · 谢端　单文件、零依赖、断网可用</span>
-  <span>需要推导与校验细节？<a href="高中物理知识库.html">打开完整校验版</a></span></div></footer>
-<script>__JS__</script></body></html>'''
-    replacements = {
-        "__CSS__": CSS, "__JS__": JS,
-        "__POINTS__": str(stats["points"]), "__FORMULAS__": str(stats["formulas"]),
-        "__DOMAIN_BUTTONS__": "".join(domain_buttons),
-        "__CHAPTER_OPTIONS__": "".join(chapter_options),
-        "__POINTS_HTML__": points_html, "__FORMULAS_HTML__": formulas_html,
-        "__SYMBOLS_HTML__": symbols_html, "__MAP_HTML__": map_html,
-    }
-    for marker, value in replacements.items():
-        template = template.replace(marker, value)
-    return template
+def build_page(kb_dir, segment, output_path):
+    """根据传入学段复用同一套速查模板，并在生成前重新跑知识库校验。"""
+    chapters = KB.load_kb(kb_dir)
+    issues, id_map = KB.check_structure(chapters)
+    if any(x.level == "错误" for x in issues):
+        raise RuntimeError("结构检查失败，拒绝生成%s速查版。" % segment)
+    report = KB.run_physics_checks(chapters, id_map)
+    stats = KB.summarize(report)
+    if stats["pass"] != stats["checks"] or stats["trap_failures"]:
+        raise RuntimeError("物理检查失败，拒绝生成%s速查版。" % segment)
+    payload = make_payload(chapters, report, segment)
+    groups, points = payload["g"], payload["p"]
+    options = '<option value="全部">全部章节</option>' + ''.join(
+        '<option value="%s">%02d · %s</option>' %
+        (html.escape(g[0], quote=True), g[2], html.escape(g[0].split("·", 1)[-1].strip()))
+        for g in groups)
+    domains = list(dict.fromkeys(g[1] for g in groups))
+    domain_filters = '<button class="filter active" data-domain="全部">全部</button>' + ''.join(
+        '<button class="filter" data-domain="%s">%s</button>' %
+        (html.escape(domain, quote=True), html.escape(domain)) for domain in domains)
+    senior_current = ' aria-current="page"' if segment == "高中" else ""
+    junior_current = ' aria-current="page"' if segment == "初中" else ""
+    full_page = "高中物理知识库.html" if segment == "高中" else "初中物理知识库.html"
+    quiz_page = "quiz-hs.html" if segment == "高中" else "quiz-junior.html"
+    segment_nav = (
+        '<nav class="segment-switchbar" aria-label="切换物理学段"><div class="segment-switchbar-inner">'
+        '<span>知识库学段</span><a href="index.html"%s>高中</a><a href="junior.html"%s>初中</a>'
+        '<a class="segment-quiz" href="%s">例题自测与错误诊断 ↗</a></div></nav>' % (
+            senior_current, junior_current, quiz_page))
+    # JSON 中的尖括号改成转义码，防止正文文本中意外出现关闭 script 的字符。
+    data_json = json.dumps(payload, ensure_ascii=False, separators=(",", ":")).replace("<", "\\u003c")
+    quiz_href = "quiz-hs.html" if segment == "高中" else "quiz-junior.html"
+    main_href = "index.html" if segment == "高中" else "junior.html"
+    script = (JS.replace("__SEGMENT_ROOT__", segment + "物理")
+              .replace("__QUIZ_HREF__", quiz_href)
+              .replace("__RETURN_PAGE__", main_href))
+    page = HTML.replace("__CSS__", CSS).replace("__JS__", script)
+    page = page.replace("__DATA__", data_json).replace("__CHAPTERS__", options)
+    page = page.replace("__DOMAIN_FILTERS__", domain_filters).replace("__SEGMENT_NAV__", segment_nav)
+    page = page.replace("__SEGMENT_LABEL__", html.escape(segment))
+    page = page.replace("__FULL_PAGE__", full_page)
+    page = page.replace("__POINTS__", str(stats["points"])).replace("__FORMULAS__", str(stats["formulas"]))
+    if len(points) != stats["points"] or sum(len(p[3]) for p in points) != stats["formulas"] or len(groups) != len(chapters):
+        raise RuntimeError("知识点、公式或章节数量与校验统计不匹配，拒绝生成。")
+    # 数据会在浏览器里动态插入，因此必须检查解码前的原始内容，而非只扫 HTML 外壳。
+    visible_data = json.dumps(payload, ensure_ascii=False)
+    if any(not p[5] for p in points) or re.search(
+        r'\b[A-Za-z][A-Za-z0-9]*_[A-Za-z][A-Za-z0-9]*\b', visible_data
+    ):
+        raise RuntimeError("常见错误缺失或机器写法漏入页面，拒绝生成。")
+    if 'class="chk ' in page or re.search(r'(?:src|href)="https?://', page, re.I):
+        raise RuntimeError("速查版含校验明细或外部资源，拒绝生成。")
+    encoded = page.encode("utf-8")
+    if len(encoded) > 620 * 1024:
+        raise RuntimeError("%s速查版 %.1f KB，超过 620 KB 验收上限。" % (segment, len(encoded) / 1024))
+    os.makedirs(os.path.dirname(os.path.abspath(output_path)), exist_ok=True)
+    with open(output_path, "w", encoding="utf-8", newline="\n") as handle:
+        handle.write(page)
+    print("%s速查版：%s" % (segment, output_path))
+    print("%.1f KB；%d 章、%d 个知识点、%d 条公式；%d/%d 项内容校验通过。" %
+          (len(encoded) / 1024, len(groups), len(points), stats["formulas"], stats["pass"], stats["checks"]))
+    return {"path": output_path, "stats": stats, "groups": len(groups), "bytes": len(encoded)}
 
 
 def main():
-    kb_dir = os.path.join(HERE, "kb")
-    out_dir = os.path.abspath(os.path.join(HERE, "..", "outputs"))
-    print("=" * 62)
-    print("高中物理速查版 · 出成品")
-    print("=" * 62)
-
-    chapters = KB.load_kb(kb_dir)
-    issues, id_map = KB.check_structure(chapters)
-    errors = [x for x in issues if x.level == "错误"]
-    if errors:
-        for issue in errors:
-            print("  %s" % issue)
-        print("结构检查未通过，拒绝生成速查版。")
-        return 1
-
-    report = KB.run_physics_checks(chapters, id_map)
-    stats = KB.summarize(report)
-    bad = [p for p in report.values() if not p["ok"]]
-    if bad or stats["trap_failures"]:
-        print("物理校验未全部通过，拒绝生成速查版。")
-        return 1
-
-    groups, point_map = build_groups(chapters, report)
-    page = render_page(groups, point_map, stats)
-
-    # --- 速查版自己的完整性检查 ---
-    # 物理内容已经由原流水线验证；这里再检查“展示层”有没有漏卡片、漏公式或断链。
-    point_count = page.count('data-view-item="points"')
-    formula_count = page.count('data-view-item="formulas"')
-    symbol_count = page.count('data-view-item="symbols"')
-    targets = set(re.findall(r'data-go="([^"]+)"', page))
-    missing_targets = sorted(pid for pid in targets if pid not in point_map)
-    leftovers = re.findall(r'__[A-Z_]+__', page)
-    external_assets = re.findall(r'(?:src|href)="https?://', page, flags=re.I)
-    if point_count != stats["points"] or formula_count != stats["formulas"]:
-        print("展示完整性失败：知识点或公式数量与源数据不一致。")
-        return 1
-    if symbol_count == 0 or missing_targets or leftovers or external_assets:
-        print("展示完整性失败：存在空符号表、断开的内部链接、未替换模板或外部资源。")
-        if missing_targets:
-            print("断开的知识点链接：%s" % ", ".join(missing_targets))
-        return 1
-
-    os.makedirs(out_dir, exist_ok=True)
-    path = os.path.join(out_dir, "高中物理速查.html")
-    with open(path, "w", encoding="utf-8", newline="\n") as handle:
-        handle.write(page)
-
-    size_kb = os.path.getsize(path) / 1024
-    print("校验：%d/%d 项通过" % (stats["pass"], stats["checks"]))
-    print("内容：%d 章 / %d 个知识点 / %d 条公式" %
-          (len(groups), stats["points"], stats["formulas"]))
-    print("展示：%d 张知识卡 / %d 张公式卡 / %d 条合并符号，内部跳转全部有效" %
-          (point_count, formula_count, symbol_count))
-    print("已生成：%s（%.1f KB）" % (path, size_kb))
-    if size_kb > 2048:
-        print("文件超过 2 MB 防呆上限，拒绝交付。")
-        return 1
-    print("结论：速查版可用，原完整校验版未被修改。")
+    """刷新站点旧速查页，并保留原来的独立优化版输出。"""
+    root = os.path.abspath(os.path.join(HERE, ".."))
+    site_dir = os.path.join(root, "site")
+    outputs_dir = os.path.join(root, "outputs")
+    package_dir = os.path.join(outputs_dir, "物理知识库整合版")
+    hs_result = build_page(os.path.join(HERE, "kb"), "高中",
+                           os.path.join(site_dir, "quick.html"))
+    build_page(os.path.join(HERE, "kb_junior"), "初中",
+               os.path.join(site_dir, "junior-quick.html"))
+    build_page(os.path.join(HERE, "kb"), "高中",
+               os.path.join(outputs_dir, "高中物理速查_优化版.html"))
+    for filename in ("quick.html", "junior-quick.html"):
+        source = os.path.join(site_dir, filename)
+        for directory in (outputs_dir, package_dir):
+            os.makedirs(directory, exist_ok=True)
+            with open(source, "rb") as reader, open(os.path.join(directory, filename), "wb") as writer:
+                writer.write(reader.read())
     return 0
 
 

@@ -1,0 +1,344 @@
+{
+  "segment": "高中",
+  "chapter": "第十七章 · 波动光学",
+  "source_file": "17_wave_optics.json",
+  "questions": [
+    {
+      "id": "diagnostic-wop-01-1",
+      "point_id": "wop-01",
+      "point_title": "光的干涉与双缝条纹",
+      "chapter": "第十七章 · 波动光学",
+      "stem": "【第十七章 · 波动光学 · 光的干涉与双缝条纹】学生的错误做法：把双缝条纹间距写成 delta_x = d lambda / L（错误表达式：delta_x = d*lambda/L）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "量纲一致性：周期单位是 s，频率单位是 Hz，即 1/s，量纲不同；绿光周期约为 1.67×10^-15 s，不是 6.0×10^14 s。"
+        },
+        {
+          "label": "B",
+          "text": "数值代入：本情境会得到 20，大于正弦值上限 1，物理上不可能；正确值为 0.05。"
+        },
+        {
+          "label": "C",
+          "text": "数值代入：第一片偏振片只保留一个方向的电场投影，理想情况下平均光强减半。"
+        },
+        {
+          "label": "D",
+          "text": "数值代入：错误式把 L 与 d 颠倒后量纲仍是长度，所以量纲检查抓不到。"
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "错误式把 L 与 d 颠倒后量纲仍是长度，所以量纲检查抓不到。本情境算出 1.2×10^-10 m，而正确值是 0.003 m。\n知识库校验证据：情境：红光双缝；代入错误式：d*lambda/L；校验参照值：0.003。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 0,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "delta_x = d*lambda/L",
+      "trap_test": {
+        "scenario": "红光双缝",
+        "expr": "d*lambda/L",
+        "ref": 0.003
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-wop-01-2",
+      "point_id": "wop-01",
+      "point_title": "光的干涉与双缝条纹",
+      "chapter": "第十七章 · 波动光学",
+      "stem": "【第十七章 · 波动光学 · 光的干涉与双缝条纹】学生的错误做法：认为双缝间距越大，干涉条纹越疏（错误表达式：delta_x = L*lambda*d）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "数值代入：本情境会得到 20，大于正弦值上限 1，物理上不可能；正确值为 0.05。"
+        },
+        {
+          "label": "B",
+          "text": "数值代入：第一片偏振片只保留一个方向的电场投影，理想情况下平均光强减半。"
+        },
+        {
+          "label": "C",
+          "text": "数值代入：正确关系中 d 在分母，双缝间距增大应使条纹变密。"
+        },
+        {
+          "label": "D",
+          "text": "量纲一致性：周期单位是 s，频率单位是 Hz，即 1/s，量纲不同；绿光周期约为 1.67×10^-15 s，不是 6.0×10^14 s。"
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "正确关系中 d 在分母，双缝间距增大应使条纹变密。错误式在本情境给出 4.8×10^-10 m，也与实测 0.003 m 不符。\n知识库校验证据：情境：红光双缝；代入错误式：L*lambda*d；校验参照值：0.003。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 1,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "delta_x = L*lambda*d",
+      "trap_test": {
+        "scenario": "红光双缝",
+        "expr": "L*lambda*d",
+        "ref": 0.003
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-wop-02-1",
+      "point_id": "wop-02",
+      "point_title": "光的衍射",
+      "chapter": "第十七章 · 波动光学",
+      "stem": "【第十七章 · 波动光学 · 光的衍射】学生的错误做法：把第一暗纹条件写反为 s_theta = a/lambda（错误表达式：s_theta = a/lambda）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "数值代入：第一片偏振片只保留一个方向的电场投影，理想情况下平均光强减半。"
+        },
+        {
+          "label": "B",
+          "text": "数值代入：本情境会得到 20，大于正弦值上限 1，物理上不可能；正确值为 0.05。"
+        },
+        {
+          "label": "C",
+          "text": "量纲一致性：周期单位是 s，频率单位是 Hz，即 1/s，量纲不同；绿光周期约为 1.67×10^-15 s，不是 6.0×10^14 s。"
+        },
+        {
+          "label": "D",
+          "text": "数值代入：错误式把 L 与 d 颠倒后量纲仍是长度，所以量纲检查抓不到。"
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "本情境会得到 20，大于正弦值上限 1，物理上不可能；正确值为 0.05。\n知识库校验证据：情境：窄缝衍射；代入错误式：a/lambda；校验参照值：0.05。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 0,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "s_theta = a/lambda",
+      "trap_test": {
+        "scenario": "窄缝衍射",
+        "expr": "a/lambda",
+        "ref": 0.05
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-wop-02-2",
+      "point_id": "wop-02",
+      "point_title": "光的衍射",
+      "chapter": "第十七章 · 波动光学",
+      "stem": "【第十七章 · 波动光学 · 光的衍射】学生的错误做法：计算中央亮纹宽度时漏掉两侧，写成 w = L lambda/a（错误表达式：w = L*lambda/a）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "数值代入：L lambda/a 只是中央点到一侧第一暗纹的距离。"
+        },
+        {
+          "label": "B",
+          "text": "量纲一致性：周期单位是 s，频率单位是 Hz，即 1/s，量纲不同；绿光周期约为 1.67×10^-15 s，不是 6.0×10^14 s。"
+        },
+        {
+          "label": "C",
+          "text": "数值代入：错误式把 L 与 d 颠倒后量纲仍是长度，所以量纲检查抓不到。"
+        },
+        {
+          "label": "D",
+          "text": "数值代入：第一片偏振片只保留一个方向的电场投影，理想情况下平均光强减半。"
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "L lambda/a 只是中央点到一侧第一暗纹的距离。错误式得到 0.06 m，完整中央亮纹宽度应为 0.12 m。\n知识库校验证据：情境：窄缝衍射；代入错误式：L*lambda/a；校验参照值：0.12。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 1,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "w = L*lambda/a",
+      "trap_test": {
+        "scenario": "窄缝衍射",
+        "expr": "L*lambda/a",
+        "ref": 0.12
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-wop-03-1",
+      "point_id": "wop-03",
+      "point_title": "光的偏振",
+      "chapter": "第十七章 · 波动光学",
+      "stem": "【第十七章 · 波动光学 · 光的偏振】学生的错误做法：认为自然光通过第一片理想偏振片后光强不变（错误表达式：I_p = I_in）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "量纲一致性：周期单位是 s，频率单位是 Hz，即 1/s，量纲不同；绿光周期约为 1.67×10^-15 s，不是 6.0×10^14 s。"
+        },
+        {
+          "label": "B",
+          "text": "数值代入：错误式把 L 与 d 颠倒后量纲仍是长度，所以量纲检查抓不到。"
+        },
+        {
+          "label": "C",
+          "text": "数值代入：本情境会得到 20，大于正弦值上限 1，物理上不可能；正确值为 0.05。"
+        },
+        {
+          "label": "D",
+          "text": "数值代入：第一片偏振片只保留一个方向的电场投影，理想情况下平均光强减半。"
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "第一片偏振片只保留一个方向的电场投影，理想情况下平均光强减半。本情境错误式给出 1.0，正确值为 0.5。\n知识库校验证据：情境：两片偏振片；代入错误式：I_in；校验参照值：0.5。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 0,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "I_p = I_in",
+      "trap_test": {
+        "scenario": "两片偏振片",
+        "expr": "I_in",
+        "ref": 0.5
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-wop-03-2",
+      "point_id": "wop-03",
+      "point_title": "光的偏振",
+      "chapter": "第十七章 · 波动光学",
+      "stem": "【第十七章 · 波动光学 · 光的偏振】学生的错误做法：马吕斯定律漏掉平方，写成 I = I_p c_theta（错误表达式：I = I_p*c_theta）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "数值代入：错误式把 L 与 d 颠倒后量纲仍是长度，所以量纲检查抓不到。"
+        },
+        {
+          "label": "B",
+          "text": "数值代入：本情境会得到 20，大于正弦值上限 1，物理上不可能；正确值为 0.05。"
+        },
+        {
+          "label": "C",
+          "text": "数值代入：余弦作用在电场振幅上，光强还要再平方。"
+        },
+        {
+          "label": "D",
+          "text": "量纲一致性：周期单位是 s，频率单位是 Hz，即 1/s，量纲不同；绿光周期约为 1.67×10^-15 s，不是 6.0×10^14 s。"
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "余弦作用在电场振幅上，光强还要再平方。本情境错误式给出 0.30，正确值为 0.18。\n知识库校验证据：情境：两片偏振片；代入错误式：I_p*c_theta；校验参照值：0.18。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 1,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "I = I_p*c_theta",
+      "trap_test": {
+        "scenario": "两片偏振片",
+        "expr": "I_p*c_theta",
+        "ref": 0.18
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-wop-04-1",
+      "point_id": "wop-04",
+      "point_title": "光的电磁本性",
+      "chapter": "第十七章 · 波动光学",
+      "stem": "【第十七章 · 波动光学 · 光的电磁本性】学生的错误做法：把一个周期传播一个波长误记成传播两个波长，写成 c = 2 lambda f（错误表达式：c = 2*lambda*f）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "数值代入：本情境会得到 20，大于正弦值上限 1，物理上不可能；正确值为 0.05。"
+        },
+        {
+          "label": "B",
+          "text": "数值代入：错误式与正确式量纲完全相同，量纲检查抓不到；本情境会算出 6.0×10^8 m/s，而真空光速应为 3.0×10^8 m/s。"
+        },
+        {
+          "label": "C",
+          "text": "量纲一致性：周期单位是 s，频率单位是 Hz，即 1/s，量纲不同；绿光周期约为 1.67×10^-15 s，不是 6.0×10^14 s。"
+        },
+        {
+          "label": "D",
+          "text": "数值代入：错误式把 L 与 d 颠倒后量纲仍是长度，所以量纲检查抓不到。"
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "错误式与正确式量纲完全相同，量纲检查抓不到；本情境会算出 6.0×10^8 m/s，而真空光速应为 3.0×10^8 m/s。\n知识库校验证据：情境：绿光真空传播；代入错误式：2*lambda*f；校验参照值：300000000.0。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 0,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "c = 2*lambda*f",
+      "trap_test": {
+        "scenario": "绿光真空传播",
+        "expr": "2*lambda*f",
+        "ref": 300000000.0
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    }
+  ],
+  "skipped": [
+    {
+      "point_id": "wop-04",
+      "point_title": "光的电磁本性",
+      "source_error_index": 1,
+      "reason": "自动判定条目没有 trap_test 可执行证据；不把校验标签代替实测证据。"
+    }
+  ]
+}

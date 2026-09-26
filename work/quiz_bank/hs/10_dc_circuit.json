@@ -1,0 +1,544 @@
+{
+  "segment": "高中",
+  "chapter": "第十章 · 恒定电流",
+  "source_file": "10_dc_circuit.json",
+  "questions": [
+    {
+      "id": "diagnostic-dc-01-2",
+      "point_id": "dc-01",
+      "point_title": "电流与微观表达式",
+      "chapter": "第十章 · 恒定电流",
+      "stem": "【第十章 · 恒定电流 · 电流与微观表达式】学生的错误做法：把正、负电荷的等效贡献重复计算，误写成 I=2nq_0v_dS（错误表达式：I = 2*n*q_0*v_d*S）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "量纲一致性：错误式的量纲变成 Ω·m⁴，并不是电阻单位 Ω；面积放错位置会被量纲检查直接发现。"
+        },
+        {
+          "label": "B",
+          "text": "量纲一致性：U*I 已是功率，再除以时间不可能得到能量；右边量纲与 J 不同，量纲检查会直接发现。"
+        },
+        {
+          "label": "C",
+          "text": "数值代入：错误式与正确式量纲完全相同，量纲检查抓不到；金属导线情境会误得 3.2 A，而正确电流是 1.6 A。"
+        },
+        {
+          "label": "D",
+          "text": "量纲一致性：V·Ω 与 A 的量纲不同；把本应相除的电阻改为相乘后，量纲检查会直接拦住。"
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "错误式与正确式量纲完全相同，量纲检查抓不到；金属导线情境会误得 3.2 A，而正确电流是 1.6 A。\n知识库校验证据：情境：金属导线；代入错误式：2*n*q_0*v_d*S；校验参照值：1.6。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 1,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "I = 2*n*q_0*v_d*S",
+      "trap_test": {
+        "scenario": "金属导线",
+        "expr": "2*n*q_0*v_d*S",
+        "ref": 1.6
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-dc-02-2",
+      "point_id": "dc-02",
+      "point_title": "欧姆定律与伏安特性曲线",
+      "chapter": "第十章 · 恒定电流",
+      "stem": "【第十章 · 恒定电流 · 欧姆定律与伏安特性曲线】学生的错误做法：误把同一个电阻计算两次，写成 I=U/(2R)（错误表达式：I = U/(2*R)）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "数值代入：错误式的量纲仍是 A，量纲检查抓不到；12 V 与 6 Ω 会误得 1 A，而正确电流为 2 A。"
+        },
+        {
+          "label": "B",
+          "text": "量纲一致性：s/C 与电流单位 A 的量纲不同；定义式一旦把分子分母颠倒，量纲检查就能直接发现。"
+        },
+        {
+          "label": "C",
+          "text": "量纲一致性：错误式的量纲变成 Ω·m⁴，并不是电阻单位 Ω；面积放错位置会被量纲检查直接发现。"
+        },
+        {
+          "label": "D",
+          "text": "量纲一致性：U*I 已是功率，再除以时间不可能得到能量；右边量纲与 J 不同，量纲检查会直接发现。"
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "错误式的量纲仍是 A，量纲检查抓不到；12 V 与 6 Ω 会误得 1 A，而正确电流为 2 A。\n知识库校验证据：情境：定值电阻；代入错误式：U/(2*R)；校验参照值：2.0。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 1,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "I = U/(2*R)",
+      "trap_test": {
+        "scenario": "定值电阻",
+        "expr": "U/(2*R)",
+        "ref": 2.0
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-dc-02-3",
+      "point_id": "dc-02",
+      "point_title": "欧姆定律与伏安特性曲线",
+      "chapter": "第十章 · 恒定电流",
+      "stem": "【第十章 · 恒定电流 · 欧姆定律与伏安特性曲线】学生的错误做法：认为导体的电阻由电压除以电流‘决定’，电压变大电阻就变大。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "量纲一致性：s/C 与电流单位 A 的量纲不同；定义式一旦把分子分母颠倒，量纲检查就能直接发现。"
+        },
+        {
+          "label": "B",
+          "text": "量纲一致性：错误式的量纲变成 Ω·m⁴，并不是电阻单位 Ω；面积放错位置会被量纲检查直接发现。"
+        },
+        {
+          "label": "C",
+          "text": "量纲一致性：U*I 已是功率，再除以时间不可能得到能量；右边量纲与 J 不同，量纲检查会直接发现。"
+        },
+        {
+          "label": "D",
+          "text": "概念混淆：R=U/I 是测量式；对温度不变的欧姆导体，U 和 I 同比例变化，R 由材料、长度、横截面积和温度等因素决定。"
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "R=U/I 是测量式；对温度不变的欧姆导体，U 和 I 同比例变化，R 由材料、长度、横截面积和温度等因素决定。这个概念需人工审核。",
+      "error_type": "概念混淆",
+      "judging": "teacher",
+      "source_error_index": 2,
+      "source_caught_by": "人工审核",
+      "wrong_expr": null,
+      "trap_test": null,
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-dc-03-2",
+      "point_id": "dc-03",
+      "point_title": "电阻定律与电阻率",
+      "chapter": "第十章 · 恒定电流",
+      "stem": "【第十章 · 恒定电流 · 电阻定律与电阻率】学生的错误做法：把单程长度误当成来回总长，写成 R=2rho L/S（错误表达式：R = 2*rho*L/S）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "量纲一致性：U*I 已是功率，再除以时间不可能得到能量；右边量纲与 J 不同，量纲检查会直接发现。"
+        },
+        {
+          "label": "B",
+          "text": "数值代入：多出的系数 2 不改变量纲，量纲检查抓不到；铜质导线会误得 0.034 Ω，正确值为 0.017 Ω。"
+        },
+        {
+          "label": "C",
+          "text": "量纲一致性：s/C 与电流单位 A 的量纲不同；定义式一旦把分子分母颠倒，量纲检查就能直接发现。"
+        },
+        {
+          "label": "D",
+          "text": "量纲一致性：V·Ω 与 A 的量纲不同；把本应相除的电阻改为相乘后，量纲检查会直接拦住。"
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "多出的系数 2 不改变量纲，量纲检查抓不到；铜质导线会误得 0.034 Ω，正确值为 0.017 Ω。\n知识库校验证据：情境：铜质导线；代入错误式：2*rho*L/S；校验参照值：0.017。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 1,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "R = 2*rho*L/S",
+      "trap_test": {
+        "scenario": "铜质导线",
+        "expr": "2*rho*L/S",
+        "ref": 0.017
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-dc-03-3",
+      "point_id": "dc-03",
+      "point_title": "电阻定律与电阻率",
+      "chapter": "第十章 · 恒定电流",
+      "stem": "【第十章 · 恒定电流 · 电阻定律与电阻率】学生的错误做法：只要材料相同，就认为电阻一定相同。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "概念混淆：同种材料只保证同温度下电阻率相同；具体电阻还与长度和横截面积有关。"
+        },
+        {
+          "label": "B",
+          "text": "量纲一致性：s/C 与电流单位 A 的量纲不同；定义式一旦把分子分母颠倒，量纲检查就能直接发现。"
+        },
+        {
+          "label": "C",
+          "text": "量纲一致性：V·Ω 与 A 的量纲不同；把本应相除的电阻改为相乘后，量纲检查会直接拦住。"
+        },
+        {
+          "label": "D",
+          "text": "量纲一致性：U*I 已是功率，再除以时间不可能得到能量；右边量纲与 J 不同，量纲检查会直接发现。"
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "同种材料只保证同温度下电阻率相同；具体电阻还与长度和横截面积有关。此类条件辨析需人工审核。",
+      "error_type": "概念混淆",
+      "judging": "teacher",
+      "source_error_index": 2,
+      "source_caught_by": "人工审核",
+      "wrong_expr": null,
+      "trap_test": null,
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-dc-04-2",
+      "point_id": "dc-04",
+      "point_title": "电功、电功率与焦耳定律",
+      "chapter": "第十章 · 恒定电流",
+      "stem": "【第十章 · 恒定电流 · 电功、电功率与焦耳定律】学生的错误做法：误套动能公式的二分之一，写成 W_e=UI t/2（错误表达式：W_e = U*I*t/2）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "量纲一致性：V·Ω 与 A 的量纲不同；把本应相除的电阻改为相乘后，量纲检查会直接拦住。"
+        },
+        {
+          "label": "B",
+          "text": "量纲一致性：错误式的量纲变成 Ω·m⁴，并不是电阻单位 Ω；面积放错位置会被量纲检查直接发现。"
+        },
+        {
+          "label": "C",
+          "text": "数值代入：系数 1/2 不改变量纲，量纲检查抓不到；电热器情境会误得 10800 J，正确电功为 21600 J。"
+        },
+        {
+          "label": "D",
+          "text": "量纲一致性：s/C 与电流单位 A 的量纲不同；定义式一旦把分子分母颠倒，量纲检查就能直接发现。"
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "系数 1/2 不改变量纲，量纲检查抓不到；电热器情境会误得 10800 J，正确电功为 21600 J。\n知识库校验证据：情境：电热器；代入错误式：U*I*t/2；校验参照值：21600.0。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 1,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "W_e = U*I*t/2",
+      "trap_test": {
+        "scenario": "电热器",
+        "expr": "U*I*t/2",
+        "ref": 21600.0
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-dc-05-2",
+      "point_id": "dc-05",
+      "point_title": "串联电路与并联电路",
+      "chapter": "第十章 · 恒定电流",
+      "stem": "【第十章 · 恒定电流 · 串联电路与并联电路】学生的错误做法：并联时直接相加，写成 R_p=R_1+R_2（错误表达式：R_p = R_1 + R_2）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "数值代入：量纲正确但数值错误：4 Ω 与 6 Ω 并联应为 2.4 Ω，而不是 10 Ω。"
+        },
+        {
+          "label": "B",
+          "text": "量纲一致性：s/C 与电流单位 A 的量纲不同；定义式一旦把分子分母颠倒，量纲检查就能直接发现。"
+        },
+        {
+          "label": "C",
+          "text": "量纲一致性：V·Ω 与 A 的量纲不同；把本应相除的电阻改为相乘后，量纲检查会直接拦住。"
+        },
+        {
+          "label": "D",
+          "text": "量纲一致性：错误式的量纲变成 Ω·m⁴，并不是电阻单位 Ω；面积放错位置会被量纲检查直接发现。"
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "量纲正确但数值错误：4 Ω 与 6 Ω 并联应为 2.4 Ω，而不是 10 Ω。\n知识库校验证据：情境：两个电阻；代入错误式：R_1 + R_2；校验参照值：2.4。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 1,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "R_p = R_1 + R_2",
+      "trap_test": {
+        "scenario": "两个电阻",
+        "expr": "R_1 + R_2",
+        "ref": 2.4
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-dc-06-1",
+      "point_id": "dc-06",
+      "point_title": "闭合电路欧姆定律",
+      "chapter": "第十章 · 恒定电流",
+      "stem": "【第十章 · 恒定电流 · 闭合电路欧姆定律】学生的错误做法：忽略电源内阻，写成 I=E_emf/R_ext（错误表达式：I = E_emf/R_ext）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "量纲一致性：s/C 与电流单位 A 的量纲不同；定义式一旦把分子分母颠倒，量纲检查就能直接发现。"
+        },
+        {
+          "label": "B",
+          "text": "量纲一致性：V·Ω 与 A 的量纲不同；把本应相除的电阻改为相乘后，量纲检查会直接拦住。"
+        },
+        {
+          "label": "C",
+          "text": "量纲一致性：错误式的量纲变成 Ω·m⁴，并不是电阻单位 Ω；面积放错位置会被量纲检查直接发现。"
+        },
+        {
+          "label": "D",
+          "text": "数值代入：错误式量纲完全正确，量纲检查抓不到；代入实际电源会得 2.4 A，而把内阻计入后的正确值为 2 A。"
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "错误式量纲完全正确，量纲检查抓不到；代入实际电源会得 2.4 A，而把内阻计入后的正确值为 2 A。\n知识库校验证据：情境：实际电源；代入错误式：E_emf/R_ext；校验参照值：2.0。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 0,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "I = E_emf/R_ext",
+      "trap_test": {
+        "scenario": "实际电源",
+        "expr": "E_emf/R_ext",
+        "ref": 2.0
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-dc-06-2",
+      "point_id": "dc-06",
+      "point_title": "闭合电路欧姆定律",
+      "chapter": "第十章 · 恒定电流",
+      "stem": "【第十章 · 恒定电流 · 闭合电路欧姆定律】学生的错误做法：供电时把端电压写成 U_terminal=E_emf+Ir（错误表达式：U_terminal = E_emf + I*r）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "量纲一致性：V·Ω 与 A 的量纲不同；把本应相除的电阻改为相乘后，量纲检查会直接拦住。"
+        },
+        {
+          "label": "B",
+          "text": "量纲一致性：错误式的量纲变成 Ω·m⁴，并不是电阻单位 Ω；面积放错位置会被量纲检查直接发现。"
+        },
+        {
+          "label": "C",
+          "text": "数值代入：量纲正确但符号错误，会算得 14 V；电源供电时内电压是损失，正确端电压为 10 V。"
+        },
+        {
+          "label": "D",
+          "text": "量纲一致性：s/C 与电流单位 A 的量纲不同；定义式一旦把分子分母颠倒，量纲检查就能直接发现。"
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "量纲正确但符号错误，会算得 14 V；电源供电时内电压是损失，正确端电压为 10 V。\n知识库校验证据：情境：实际电源；代入错误式：E_emf + I*r；校验参照值：10.0。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 1,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "U_terminal = E_emf + I*r",
+      "trap_test": {
+        "scenario": "实际电源",
+        "expr": "E_emf + I*r",
+        "ref": 10.0
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-dc-07-1",
+      "point_id": "dc-07",
+      "point_title": "电表改装",
+      "chapter": "第十章 · 恒定电流",
+      "stem": "【第十章 · 恒定电流 · 电表改装】学生的错误做法：改装电流表时把分流电阻串联在表头上。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "量纲一致性：错误式的量纲变成 Ω·m⁴，并不是电阻单位 Ω；面积放错位置会被量纲检查直接发现。"
+        },
+        {
+          "label": "B",
+          "text": "概念混淆：串联电阻不会分走电流，反而增大总电阻；正确做法是让小电阻与表头并联。"
+        },
+        {
+          "label": "C",
+          "text": "量纲一致性：s/C 与电流单位 A 的量纲不同；定义式一旦把分子分母颠倒，量纲检查就能直接发现。"
+        },
+        {
+          "label": "D",
+          "text": "量纲一致性：V·Ω 与 A 的量纲不同；把本应相除的电阻改为相乘后，量纲检查会直接拦住。"
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "串联电阻不会分走电流，反而增大总电阻；正确做法是让小电阻与表头并联。连接方式需要人工审核。",
+      "error_type": "概念混淆",
+      "judging": "teacher",
+      "source_error_index": 0,
+      "source_caught_by": "人工审核",
+      "wrong_expr": null,
+      "trap_test": null,
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-dc-07-2",
+      "point_id": "dc-07",
+      "point_title": "电表改装",
+      "chapter": "第十章 · 恒定电流",
+      "stem": "【第十章 · 恒定电流 · 电表改装】学生的错误做法：改装电压表时忘记减去表头内阻，写成 R_series=U_V/I_g（错误表达式：R_series = U_V/I_g）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "数值代入：量纲正确但会算成 10000 Ω；这其实是改装后所需总电阻，串联电阻应扣除原有 100 Ω，正确值为 9900 Ω。"
+        },
+        {
+          "label": "B",
+          "text": "量纲一致性：s/C 与电流单位 A 的量纲不同；定义式一旦把分子分母颠倒，量纲检查就能直接发现。"
+        },
+        {
+          "label": "C",
+          "text": "量纲一致性：V·Ω 与 A 的量纲不同；把本应相除的电阻改为相乘后，量纲检查会直接拦住。"
+        },
+        {
+          "label": "D",
+          "text": "量纲一致性：错误式的量纲变成 Ω·m⁴，并不是电阻单位 Ω；面积放错位置会被量纲检查直接发现。"
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "量纲正确但会算成 10000 Ω；这其实是改装后所需总电阻，串联电阻应扣除原有 100 Ω，正确值为 9900 Ω。\n知识库校验证据：情境：改装电压表；代入错误式：U_V/I_g；校验参照值：9900.0。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 1,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "R_series = U_V/I_g",
+      "trap_test": {
+        "scenario": "改装电压表",
+        "expr": "U_V/I_g",
+        "ref": 9900.0
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    }
+  ],
+  "skipped": [
+    {
+      "point_id": "dc-01",
+      "point_title": "电流与微观表达式",
+      "source_error_index": 0,
+      "reason": "自动判定条目没有 trap_test 可执行证据；不把校验标签代替实测证据。"
+    },
+    {
+      "point_id": "dc-02",
+      "point_title": "欧姆定律与伏安特性曲线",
+      "source_error_index": 0,
+      "reason": "自动判定条目没有 trap_test 可执行证据；不把校验标签代替实测证据。"
+    },
+    {
+      "point_id": "dc-03",
+      "point_title": "电阻定律与电阻率",
+      "source_error_index": 0,
+      "reason": "自动判定条目没有 trap_test 可执行证据；不把校验标签代替实测证据。"
+    },
+    {
+      "point_id": "dc-04",
+      "point_title": "电功、电功率与焦耳定律",
+      "source_error_index": 0,
+      "reason": "自动判定条目没有 trap_test 可执行证据；不把校验标签代替实测证据。"
+    },
+    {
+      "point_id": "dc-05",
+      "point_title": "串联电路与并联电路",
+      "source_error_index": 0,
+      "reason": "自动判定条目没有 trap_test 可执行证据；不把校验标签代替实测证据。"
+    }
+  ]
+}

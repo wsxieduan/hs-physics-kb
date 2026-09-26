@@ -1,0 +1,430 @@
+{
+  "segment": "高中",
+  "chapter": "第十九章 · 热力学定律",
+  "source_file": "19_thermodynamics.json",
+  "questions": [
+    {
+      "id": "diagnostic-thermo-01-1",
+      "point_id": "thermo-01",
+      "point_title": "热力学第一定律",
+      "chapter": "第十九章 · 热力学定律",
+      "stem": "【第十九章 · 热力学定律 · 热力学第一定律】学生的错误做法：在本章的符号约定下仍机械地写 delta_U = Q - W（错误表达式：delta_U = Q - W）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "概念混淆：熔化平台上 delta_T=0，但物质持续吸收潜热来改变微观结构。"
+        },
+        {
+          "label": "B",
+          "text": "概念混淆：百分数必须化为小数 0.70。"
+        },
+        {
+          "label": "C",
+          "text": "数值代入：“损耗”通常是机械能转化成内能并扩散到环境，不是能量消失。"
+        },
+        {
+          "label": "D",
+          "text": "数值代入：本章的 W 指外界对系统做功。"
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "本章的 W 指外界对系统做功。吸热膨胀情境中 W=-200 J，错误式得到 700 J，而能量收支应为 300 J。减号版本只适用于把 W 定义为系统对外做功的另一套约定。\n知识库校验证据：情境：吸热膨胀；代入错误式：Q - W；校验参照值：300。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 0,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "delta_U = Q - W",
+      "trap_test": {
+        "scenario": "吸热膨胀",
+        "expr": "Q - W",
+        "ref": 300
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-thermo-01-2",
+      "point_id": "thermo-01",
+      "point_title": "热力学第一定律",
+      "chapter": "第十九章 · 热力学定律",
+      "stem": "【第十九章 · 热力学定律 · 热力学第一定律】学生的错误做法：绝热过程一定不做功，所以内能不变（错误表达式：delta_U = Q）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "概念混淆：百分数必须化为小数 0.70。"
+        },
+        {
+          "label": "B",
+          "text": "数值代入：“损耗”通常是机械能转化成内能并扩散到环境，不是能量消失。"
+        },
+        {
+          "label": "C",
+          "text": "数值代入：绝热只表示 Q=0，不表示 W=0。"
+        },
+        {
+          "label": "D",
+          "text": "概念混淆：熔化平台上 delta_T=0，但物质持续吸收潜热来改变微观结构。"
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "绝热只表示 Q=0，不表示 W=0。绝热压缩中外界做功 150 J，内能增加 150 J；错误式却给出 0。\n知识库校验证据：情境：绝热压缩；代入错误式：Q；校验参照值：150。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 1,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "delta_U = Q",
+      "trap_test": {
+        "scenario": "绝热压缩",
+        "expr": "Q",
+        "ref": 150
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-thermo-02-1",
+      "point_id": "thermo-02",
+      "point_title": "能量守恒定律",
+      "chapter": "第十九章 · 热力学定律",
+      "stem": "【第十九章 · 热力学定律 · 能量守恒定律】学生的错误做法：认为能量转化过程中会有一部分能量消失（错误表达式：E_after = 0.8*E_before）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "数值代入：本章的 W 指外界对系统做功。"
+        },
+        {
+          "label": "B",
+          "text": "数值代入：“损耗”通常是机械能转化成内能并扩散到环境，不是能量消失。"
+        },
+        {
+          "label": "C",
+          "text": "概念混淆：熔化平台上 delta_T=0，但物质持续吸收潜热来改变微观结构。"
+        },
+        {
+          "label": "D",
+          "text": "概念混淆：百分数必须化为小数 0.70。"
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "“损耗”通常是机械能转化成内能并扩散到环境，不是能量消失。封闭系统情境中错误式只得 1000 J，而总能量仍应为 1250 J。\n知识库校验证据：情境：封闭系统；代入错误式：0.8*E_before；校验参照值：1250。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 0,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "E_after = 0.8*E_before",
+      "trap_test": {
+        "scenario": "封闭系统",
+        "expr": "0.8*E_before",
+        "ref": 1250
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-thermo-03-1",
+      "point_id": "thermo-03",
+      "point_title": "热力学第二定律与热机效率",
+      "chapter": "第十九章 · 热力学定律",
+      "stem": "【第十九章 · 热力学定律 · 热力学第二定律与热机效率】学生的错误做法：把热机效率的分子分母颠倒，写成 eta=Q_h/W_out（错误表达式：eta = Q_h/W_out）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "概念混淆：熔化平台上 delta_T=0，但物质持续吸收潜热来改变微观结构。"
+        },
+        {
+          "label": "B",
+          "text": "概念混淆：百分数必须化为小数 0.70。"
+        },
+        {
+          "label": "C",
+          "text": "数值代入：本章的 W 指外界对系统做功。"
+        },
+        {
+          "label": "D",
+          "text": "数值代入：效率应是有用输出除以能量输入。"
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "效率应是有用输出除以能量输入。错误式得到 1000/350≈2.86，大于 1，既与定义不符也违反第二定律。\n知识库校验证据：情境：实际热机；代入错误式：Q_h/W_out；校验参照值：0.35。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 0,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "eta = Q_h/W_out",
+      "trap_test": {
+        "scenario": "实际热机",
+        "expr": "Q_h/W_out",
+        "ref": 0.35
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-thermo-03-2",
+      "point_id": "thermo-03",
+      "point_title": "热力学第二定律与热机效率",
+      "chapter": "第十九章 · 热力学定律",
+      "stem": "【第十九章 · 热力学定律 · 热力学第二定律与热机效率】学生的错误做法：卡诺效率写成 eta_max=1-T_h/T_c（错误表达式：eta_max = 1 - T_h/T_c）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "概念混淆：百分数必须化为小数 0.70。"
+        },
+        {
+          "label": "B",
+          "text": "数值代入：本章的 W 指外界对系统做功。"
+        },
+        {
+          "label": "C",
+          "text": "数值代入：高低温温度比写反会得到 1-600/300=-1，不可能成为效率。"
+        },
+        {
+          "label": "D",
+          "text": "概念混淆：熔化平台上 delta_T=0，但物质持续吸收潜热来改变微观结构。"
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "高低温温度比写反会得到 1-600/300=-1，不可能成为效率。正确结果是 0.5。\n知识库校验证据：情境：实际热机；代入错误式：1 - T_h/T_c；校验参照值：0.5。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 1,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "eta_max = 1 - T_h/T_c",
+      "trap_test": {
+        "scenario": "实际热机",
+        "expr": "1 - T_h/T_c",
+        "ref": 0.5
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-thermo-04-1",
+      "point_id": "thermo-04",
+      "point_title": "固体、液体与物态变化",
+      "chapter": "第十九章 · 热力学定律",
+      "stem": "【第十九章 · 热力学定律 · 固体、液体与物态变化】学生的错误做法：晶体熔化过程中仍用 Q=mc delta_T，并因温度不变算出吸热为零。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "数值代入：效率应是有用输出除以能量输入。"
+        },
+        {
+          "label": "B",
+          "text": "概念混淆：熔化平台上 delta_T=0，但物质持续吸收潜热来改变微观结构。"
+        },
+        {
+          "label": "C",
+          "text": "数值代入：本章的 W 指外界对系统做功。"
+        },
+        {
+          "label": "D",
+          "text": "数值代入：“损耗”通常是机械能转化成内能并扩散到环境，不是能量消失。"
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "熔化平台上 delta_T=0，但物质持续吸收潜热来改变微观结构。2 kg 冰完全熔化需要 668000 J，并非 0。",
+      "error_type": "概念混淆",
+      "judging": "teacher",
+      "source_error_index": 0,
+      "source_caught_by": "人工审核",
+      "wrong_expr": null,
+      "trap_test": null,
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-thermo-04-2",
+      "point_id": "thermo-04",
+      "point_title": "固体、液体与物态变化",
+      "chapter": "第十九章 · 热力学定律",
+      "stem": "【第十九章 · 热力学定律 · 固体、液体与物态变化】学生的错误做法：误把相变潜热写成 Q_latent=0.5*m*L，多乘了二分之一（错误表达式：Q_latent = 0.5*m*L）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "数值代入：错误式量纲仍然是能量，量纲检查抓不到；代入 2 kg 和 334000 J/kg 只得到 334000 J，正确值应为 668000 J。"
+        },
+        {
+          "label": "B",
+          "text": "概念混淆：百分数必须化为小数 0.70。"
+        },
+        {
+          "label": "C",
+          "text": "概念混淆：熔化平台上 delta_T=0，但物质持续吸收潜热来改变微观结构。"
+        },
+        {
+          "label": "D",
+          "text": "数值代入：本章的 W 指外界对系统做功。"
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "错误式量纲仍然是能量，量纲检查抓不到；代入 2 kg 和 334000 J/kg 只得到 334000 J，正确值应为 668000 J。\n知识库校验证据：情境：冰的熔化；代入错误式：0.5*m*L；校验参照值：668000。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 1,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "Q_latent = 0.5*m*L",
+      "trap_test": {
+        "scenario": "冰的熔化",
+        "expr": "0.5*m*L",
+        "ref": 668000
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-thermo-05-1",
+      "point_id": "thermo-05",
+      "point_title": "饱和汽与空气湿度",
+      "chapter": "第十九章 · 热力学定律",
+      "stem": "【第十九章 · 热力学定律 · 饱和汽与空气湿度】学生的错误做法：把相对湿度的分子分母颠倒，写成 phi=p_sat/p_v（错误表达式：phi = p_sat/p_v）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "概念混淆：熔化平台上 delta_T=0，但物质持续吸收潜热来改变微观结构。"
+        },
+        {
+          "label": "B",
+          "text": "概念混淆：百分数必须化为小数 0.70。"
+        },
+        {
+          "label": "C",
+          "text": "数值代入：本章的 W 指外界对系统做功。"
+        },
+        {
+          "label": "D",
+          "text": "数值代入：未饱和空气中 p_v<p_sat，颠倒后会算出 2000/1400≈1.43，即 143%，而正确值为 70%。"
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "未饱和空气中 p_v<p_sat，颠倒后会算出 2000/1400≈1.43，即 143%，而正确值为 70%。\n知识库校验证据：情境：室内空气；代入错误式：p_sat/p_v；校验参照值：0.7。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 0,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "phi = p_sat/p_v",
+      "trap_test": {
+        "scenario": "室内空气",
+        "expr": "p_sat/p_v",
+        "ref": 0.7
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-thermo-05-2",
+      "point_id": "thermo-05",
+      "point_title": "饱和汽与空气湿度",
+      "chapter": "第十九章 · 热力学定律",
+      "stem": "【第十九章 · 热力学定律 · 饱和汽与空气湿度】学生的错误做法：把相对湿度 70% 直接当成数值 70 代入后续公式。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "数值代入：“损耗”通常是机械能转化成内能并扩散到环境，不是能量消失。"
+        },
+        {
+          "label": "B",
+          "text": "数值代入：效率应是有用输出除以能量输入。"
+        },
+        {
+          "label": "C",
+          "text": "概念混淆：百分数必须化为小数 0.70。"
+        },
+        {
+          "label": "D",
+          "text": "数值代入：本章的 W 指外界对系统做功。"
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "百分数必须化为小数 0.70。把 70 当作相对湿度会大 100 倍，而且相对湿度的常规范围应在 0 到 1 之间。",
+      "error_type": "概念混淆",
+      "judging": "teacher",
+      "source_error_index": 1,
+      "source_caught_by": "人工审核",
+      "wrong_expr": null,
+      "trap_test": null,
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    }
+  ],
+  "skipped": [
+    {
+      "point_id": "thermo-02",
+      "point_title": "能量守恒定律",
+      "source_error_index": 1,
+      "reason": "自动判定条目没有 trap_test 可执行证据；不把校验标签代替实测证据。"
+    }
+  ]
+}
