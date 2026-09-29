@@ -202,8 +202,12 @@ def make_diagnostic_bank(kb_dir, output_path, segment="高中", source_filename=
             choices = choices[offset:] + choices[:offset]
             stem += "以下哪项“错误类别 + 判断依据”最符合题干中的做法？"
 
-        options = [{"label": chr(ord("A") + i), "text": option["text"]}
+        # 题干与选项都过一遍排版器：诊断题直接复用了知识库「常见错误」的原文，
+        # 里面满是 v_0 / q_1q_2 / omega 这类机器写法，不走这一步就会原样印给读者。
+        # 只影响显示，判定用的还是下面 checked_text 里的原始文本。
+        options = [{"label": chr(ord("A") + i), "text": prose(option["text"])}
                    for i, option in enumerate(choices)]
+        correct_text = prose(correct_text)
         matching = [option["label"] for option in options if option["text"] == correct_text]
         if len(options) != 4 or len(matching) != 1 or len({o["text"] for o in options}) != 4:
             skipped.append({"point_id": item["point_id"], "point_title": item["point_title"],
@@ -240,12 +244,13 @@ def make_diagnostic_bank(kb_dir, output_path, segment="高中", source_filename=
         questions.append({
             "id": question_id,
             "point_id": item["point_id"], "point_title": item["point_title"],
-            "chapter": item["chapter"], "stem": stem, "options": options,
-            "correct_answer": matching[0], "explanation": diagnostic_explanation(error),
+            "chapter": item["chapter"], "stem": prose(stem), "options": options,
+            "correct_answer": matching[0], "explanation": prose(diagnostic_explanation(error)),
             "error_type": correct_type, "judging": item["judging"],
             "source_error_index": item["source_error_index"],
             "source_caught_by": error.get("caught_by", "人工审核"),
-            "wrong_expr": wrong_expr, "trap_test": error.get("trap_test"), "review": review,
+            "wrong_expr": prose(wrong_expr) if wrong_expr else wrong_expr,
+            "trap_test": error.get("trap_test"), "review": review,
         })
     bank = {"segment": segment, "chapter": chapter.get("chapter", "未命名章节"),
             "source_file": os.path.basename(filename), "questions": questions,
@@ -487,6 +492,13 @@ DIAGNOSTIC_SCRIPT = r"""
 
   function node(id){return document.getElementById(id);}
   function setText(id,value){node(id).textContent=value||'';}
+  // 题干/选项/解析里含排版器生成的 <sub>/<sup>/<strong>，必须用 innerHTML 渲染；
+  // 用 textContent 会把标签当字面文字印出来（这正是"诊断题里看到机器符号"的直接原因）。
+  function setHTML(id,value){node(id).innerHTML=value||'';}
+  function setParagraphs(id,value){
+    node(id).innerHTML=String(value||'').split(/\n{2,}/)
+      .map(function(p){return '<p>'+p.replace(/\n/g,'<br>')+'</p>';}).join('');
+  }
   function show(id,on){node(id).classList.toggle('hidden',!on);}
   function mode(value){
     var isDiagnostic=value==='diagnostic';
@@ -549,13 +561,13 @@ DIAGNOSTIC_SCRIPT = r"""
     current=deck[position];selected=null;
     setText('diagnostic-number','第 '+(position+1)+' / '+deck.length+' 题');
     setText('diagnostic-origin',current.chapter+' · '+current.point_title+' · '+(current.judging==='auto'?'机器判定题':'教师点评题 · 参考答案需教师确认'));
-    setText('diagnostic-stem',current.stem);
+    setHTML('diagnostic-stem',current.stem);
     var options=node('diagnostic-options');options.innerHTML='';
     current.options.forEach(function(option){
       var label=document.createElement('label');label.className='diag-option';
       var radio=document.createElement('input');radio.type='radio';radio.name='diagnostic-choice';radio.value=option.label;
       radio.addEventListener('change',function(){selected=this.value;answerButton.disabled=false;});
-      var text=document.createElement('span');text.textContent=option.label+'．'+option.text;
+      var text=document.createElement('span');text.innerHTML=option.label+'．'+option.text;
       label.appendChild(radio);label.appendChild(text);options.appendChild(label);
     });
     answerButton.disabled=true;nextButton.classList.add('hidden');
@@ -581,7 +593,7 @@ DIAGNOSTIC_SCRIPT = r"""
     }
     var explanation='错误做法：'+(current.wrong_expr||current.stem)+'\n\n解析：'+current.explanation;
     if(current.judging==='teacher')explanation+='\n\n教师确认前，本题不计入系统正确率。';
-    node('diagnostic-explanation').textContent=explanation;
+    setParagraphs('diagnostic-explanation',explanation);
     show('diagnostic-explanation-wrap',true);show('diagnostic-feedback',true);
     Array.prototype.forEach.call(document.querySelectorAll('input[name="diagnostic-choice"]'),function(r){r.disabled=true;});
     answerButton.disabled=true;nextButton.classList.remove('hidden');
@@ -702,7 +714,7 @@ def build(kb_dir, segment, main_page, output_path, diagnostic_path=None):
 <section id="result-panel" class="panel hidden"></section><section id="progress-panel" class="panel hidden"></section>
 </div>
 <section id="diagnostic-panel" class="panel hidden">
-<div id="diagnostic-intro"><h2>错误诊断</h2><p id="diagnostic-intro-message">%(diagnostic_intro)s</p><p class="small">机器判定题来自知识库中有 trap_test 证据的错误；教师点评题不由系统判对错，也不计入系统正确率。</p></div>
+<div id="diagnostic-intro"><h2>错误诊断</h2><p id="diagnostic-intro-message">%(diagnostic_intro)s</p><p class="small">机器判定题来自知识库中有可复现实测证据的错误；教师点评题不由系统判对错，也不计入系统正确率。</p></div>
 <div id="diagnostic-question" class="hidden"><div id="diagnostic-number" class="question-meta"></div><div id="diagnostic-origin" class="question-meta"></div>
 <div class="inline-links"><a id="diagnostic-point-link" href="%(main)s">回看知识点</a><a id="diagnostic-trap-link" href="%(main)s">查看知识库中的这条常见错误</a></div>
 <div id="diagnostic-stem" class="diag-stem"></div><div id="diagnostic-options" class="diag-options"></div>

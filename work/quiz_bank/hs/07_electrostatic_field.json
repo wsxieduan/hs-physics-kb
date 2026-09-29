@@ -8,7 +8,7 @@
       "point_id": "ele-01",
       "point_title": "电荷、电荷守恒与元电荷",
       "chapter": "第七章 · 静电场（一）电场的力的性质",
-      "stem": "【第七章 · 静电场（一）电场的力的性质 · 电荷、电荷守恒与元电荷】学生的错误做法：把异号电荷的绝对值相加，误认为系统总电荷是 |q_A|+|q_B|（错误表达式：q_total = abs(q_A) + abs(q_B)）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "stem": "【第七章 · 静电场（一）电场的力的性质 · 电荷、电荷守恒与元电荷】学生的错误做法：把异号电荷的绝对值相加，误认为系统总电荷是 |q<sub>A</sub>|+|q<sub>B</sub>|（错误表达式：q<sub>总</sub> = abs(q<sub>A</sub>) + abs(q<sub>B</sub>)）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
       "options": [
         {
           "label": "A",
@@ -28,12 +28,12 @@
         }
       ],
       "correct_answer": "D",
-      "explanation": "电荷守恒比较代数和。接触前错误式得到 4.8 μC，正确总电荷只有 1.6 μC。\n知识库校验证据：情境：接触前；代入错误式：abs(q_A) + abs(q_B)；校验参照值：1.6e-06。",
+      "explanation": "电荷守恒比较代数和。接触前错误式得到 4.8 μC，正确总电荷只有 1.6 μC。\n知识库校验证据：情境：接触前；代入错误式：abs(q<sub>A</sub>) + abs(q<sub>B</sub>)；校验参照值：1.6e-06。",
       "error_type": "数值代入",
       "judging": "auto",
       "source_error_index": 0,
       "source_caught_by": "数值代入",
-      "wrong_expr": "q_total = abs(q_A) + abs(q_B)",
+      "wrong_expr": "q<sub>总</sub> = abs(q<sub>A</sub>) + abs(q<sub>B</sub>)",
       "trap_test": {
         "scenario": "接触前",
         "expr": "abs(q_A) + abs(q_B)",
@@ -75,7 +75,7 @@
         }
       ],
       "correct_answer": "C",
-      "explanation": "N/e 的量纲是 1/C，不是电荷量 C，量纲检查可以直接发现。\n知识库校验证据：被测错误式：q = N/e；左式量纲：T·I；右式量纲：T^-1·I^-1；左右量纲不匹配；量纲校验说明：实际量纲检查得到等号左边为T·I、右边为T^-1·I^-1；两边不是同一物理量，因此该等式不成立。；变化方向要求：mismatch；检验说明：实际量纲检查得到等号左边为T·I、右边为T^-1·I^-1；两边不是同一物理量，因此该等式不成立。。",
+      "explanation": "N/e 的量纲是 1/C，不是电荷量 C，量纲检查可以直接发现。\n知识库校验证据：被测错误式：q = N/e；左式量纲：T·I；右式量纲：T⁻¹·I⁻¹；左右量纲不匹配；量纲校验说明：实际量纲检查得到等号左边为T·I、右边为T⁻¹·I⁻¹；两边不是同一物理量，因此该等式不成立。；变化方向要求：mismatch；检验说明：实际量纲检查得到等号左边为T·I、右边为T⁻¹·I⁻¹；两边不是同一物理量，因此该等式不成立。。",
       "error_type": "量纲一致性",
       "judging": "auto",
       "source_error_index": 1,
@@ -105,7 +105,7 @@
       "point_id": "ele-02",
       "point_title": "库仑定律",
       "chapter": "第七章 · 静电场（一）电场的力的性质",
-      "stem": "【第七章 · 静电场（一）电场的力的性质 · 库仑定律】学生的错误做法：漏掉距离的平方，写成 F=k_e|q_1q_2|/r（错误表达式：F = k_e*abs(q_1*q_2)/r）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "stem": "【第七章 · 静电场（一）电场的力的性质 · 库仑定律】学生的错误做法：漏掉距离的平方，写成 F=k<sub>e</sub>|q<sub>1</sub>q<sub>2</sub>|/r（错误表达式：F = k<sub>e</sub>·abs(q<sub>1</sub>·q<sub>2</sub>)/r）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
       "options": [
         {
           "label": "A",
@@ -125,12 +125,12 @@
         }
       ],
       "correct_answer": "B",
-      "explanation": "量纲变为 N·m，不是力；异号点电荷情境中还会算出 0.18，而正确值是 0.60 N。\n知识库校验证据：被测错误式：F = k_e*abs(q_1*q_2)/r；左式量纲：M·L·T^-2；右式量纲：M·L^2·T^-2；左右量纲不匹配；量纲校验说明：实际量纲检查得到等号左边为M·L·T^-2、右边为M·L^2·T^-2；两边不是同一物理量，因此该等式不成立。；变化方向要求：mismatch；检验说明：实际量纲检查得到等号左边为M·L·T^-2、右边为M·L^2·T^-2；两边不是同一物理量，因此该等式不成立。。",
+      "explanation": "量纲变为 N·m，不是力；异号点电荷情境中还会算出 0.18，而正确值是 0.60 N。\n知识库校验证据：被测错误式：F = k<sub>e</sub>·abs(q<sub>1</sub>·q<sub>2</sub>)/r；左式量纲：M·L·T⁻²；右式量纲：M·L²·T⁻²；左右量纲不匹配；量纲校验说明：实际量纲检查得到等号左边为M·L·T⁻²、右边为M·L²·T⁻²；两边不是同一物理量，因此该等式不成立。；变化方向要求：mismatch；检验说明：实际量纲检查得到等号左边为M·L·T⁻²、右边为M·L²·T⁻²；两边不是同一物理量，因此该等式不成立。。",
       "error_type": "量纲一致性",
       "judging": "auto",
       "source_error_index": 0,
       "source_caught_by": "量纲一致性",
-      "wrong_expr": "F = k_e*abs(q_1*q_2)/r",
+      "wrong_expr": "F = k<sub>e</sub>·abs(q<sub>1</sub>·q<sub>2</sub>)/r",
       "trap_test": {
         "kind": "dimension",
         "target": "F = k_e*abs(q_1*q_2)/r",
@@ -155,7 +155,7 @@
       "point_id": "ele-02",
       "point_title": "库仑定律",
       "chapter": "第七章 · 静电场（一）电场的力的性质",
-      "stem": "【第七章 · 静电场（一）电场的力的性质 · 库仑定律】学生的错误做法：直接用 q_1q_2 的正负决定力的大小，得到负的力大小（错误表达式：F = k_e*q_1*q_2/r^2）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "stem": "【第七章 · 静电场（一）电场的力的性质 · 库仑定律】学生的错误做法：直接用 q<sub>1</sub>q<sub>2</sub> 的正负决定力的大小，得到负的力大小（错误表达式：F = k<sub>e</sub>·q<sub>1</sub>·q<sub>2</sub>/r²）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
       "options": [
         {
           "label": "A",
@@ -175,12 +175,12 @@
         }
       ],
       "correct_answer": "A",
-      "explanation": "公式中的 F 是大小，不能为负。异号情境错误式给出 -0.60 N；吸引或排斥应在方向判断中处理。\n知识库校验证据：情境：异号点电荷；代入错误式：k_e*q_1*q_2/r^2；校验参照值：0.6。",
+      "explanation": "公式中的 F 是大小，不能为负。异号情境错误式给出 -0.60 N；吸引或排斥应在方向判断中处理。\n知识库校验证据：情境：异号点电荷；代入错误式：k<sub>e</sub>·q<sub>1</sub>·q<sub>2</sub>/r²；校验参照值：0.6。",
       "error_type": "数值代入",
       "judging": "auto",
       "source_error_index": 1,
       "source_caught_by": "数值代入",
-      "wrong_expr": "F = k_e*q_1*q_2/r^2",
+      "wrong_expr": "F = k<sub>e</sub>·q<sub>1</sub>·q<sub>2</sub>/r²",
       "trap_test": {
         "scenario": "异号点电荷",
         "expr": "k_e*q_1*q_2/r^2",
@@ -202,7 +202,7 @@
       "point_id": "ele-03",
       "point_title": "电场强度",
       "chapter": "第七章 · 静电场（一）电场的力的性质",
-      "stem": "【第七章 · 静电场（一）电场的力的性质 · 电场强度】学生的错误做法：把场强定义式写成 E=Fq_test（错误表达式：E = F*q_test）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "stem": "【第七章 · 静电场（一）电场的力的性质 · 电场强度】学生的错误做法：把场强定义式写成 E=Fq<sub>试探</sub>（错误表达式：E = F·q<sub>试探</sub>）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
       "options": [
         {
           "label": "A",
@@ -222,12 +222,12 @@
         }
       ],
       "correct_answer": "D",
-      "explanation": "右边的单位变成 N·C，而电场强度的单位应为 N/C；两者基本量纲不同，量纲检查会直接拦住这一乘除颠倒。\n知识库校验证据：被测错误式：E = F*q_test；左式量纲：M·L·T^-3·I^-1；右式量纲：M·L·T^-1·I；左右量纲不匹配；量纲校验说明：实际量纲检查得到等号左边为M·L·T^-3·I^-1、右边为M·L·T^-1·I；两边不是同一物理量，因此该等式不成立。；变化方向要求：mismatch；检验说明：实际量纲检查得到等号左边为M·L·T^-3·I^-1、右边为M·L·T^-1·I；两边不是同一物理量，因此该等式不成立。。",
+      "explanation": "右边的单位变成 N·C，而电场强度的单位应为 N/C；两者基本量纲不同，量纲检查会直接拦住这一乘除颠倒。\n知识库校验证据：被测错误式：E = F·q<sub>试探</sub>；左式量纲：M·L·T⁻³·I⁻¹；右式量纲：M·L·T⁻¹·I；左右量纲不匹配；量纲校验说明：实际量纲检查得到等号左边为M·L·T⁻³·I⁻¹、右边为M·L·T⁻¹·I；两边不是同一物理量，因此该等式不成立。；变化方向要求：mismatch；检验说明：实际量纲检查得到等号左边为M·L·T⁻³·I⁻¹、右边为M·L·T⁻¹·I；两边不是同一物理量，因此该等式不成立。。",
       "error_type": "量纲一致性",
       "judging": "auto",
       "source_error_index": 0,
       "source_caught_by": "量纲一致性",
-      "wrong_expr": "E = F*q_test",
+      "wrong_expr": "E = F·q<sub>试探</sub>",
       "trap_test": {
         "kind": "dimension",
         "target": "E = F*q_test",
@@ -252,7 +252,7 @@
       "point_id": "ele-03",
       "point_title": "电场强度",
       "chapter": "第七章 · 静电场（一）电场的力的性质",
-      "stem": "【第七章 · 静电场（一）电场的力的性质 · 电场强度】学生的错误做法：把负点电荷的场强大小算成负数，写成 E=k_eQ/r²（错误表达式：E = k_e*Q/r^2）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "stem": "【第七章 · 静电场（一）电场的力的性质 · 电场强度】学生的错误做法：把负点电荷的场强大小算成负数，写成 E=k<sub>e</sub>Q/r²（错误表达式：E = k<sub>e</sub>·Q/r²）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
       "options": [
         {
           "label": "A",
@@ -264,7 +264,7 @@
         },
         {
           "label": "C",
-          "text": "数值代入：式子量纲完全正确，量纲检查抓不到；负点电荷情境会算出 -4.0×10^5 N/C，但场强大小应为正的 4.0×10^5 N/C，方向另行判断。"
+          "text": "数值代入：式子量纲完全正确，量纲检查抓不到；负点电荷情境会算出 -4.0×10⁵ N/C，但场强大小应为正的 4.0×10⁵ N/C，方向另行判断。"
         },
         {
           "label": "D",
@@ -272,12 +272,12 @@
         }
       ],
       "correct_answer": "C",
-      "explanation": "式子量纲完全正确，量纲检查抓不到；负点电荷情境会算出 -4.0×10^5 N/C，但场强大小应为正的 4.0×10^5 N/C，方向另行判断。\n知识库校验证据：情境：负点电荷场；代入错误式：k_e*Q/r^2；校验参照值：400000。",
+      "explanation": "式子量纲完全正确，量纲检查抓不到；负点电荷情境会算出 -4.0×10⁵ N/C，但场强大小应为正的 4.0×10⁵ N/C，方向另行判断。\n知识库校验证据：情境：负点电荷场；代入错误式：k<sub>e</sub>·Q/r²；校验参照值：400000。",
       "error_type": "数值代入",
       "judging": "auto",
       "source_error_index": 1,
       "source_caught_by": "数值代入",
-      "wrong_expr": "E = k_e*Q/r^2",
+      "wrong_expr": "E = k<sub>e</sub>·Q/r²",
       "trap_test": {
         "scenario": "负点电荷场",
         "expr": "k_e*Q/r^2",
@@ -299,7 +299,7 @@
       "point_id": "ele-04",
       "point_title": "电场线与场强叠加",
       "chapter": "第七章 · 静电场（一）电场的力的性质",
-      "stem": "【第七章 · 静电场（一）电场的力的性质 · 电场线与场强叠加】学生的错误做法：叠加反向场强时把大小直接相加（错误表达式：E_net = abs(E_A) + abs(E_B)）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "stem": "【第七章 · 静电场（一）电场的力的性质 · 电场线与场强叠加】学生的错误做法：叠加反向场强时把大小直接相加（错误表达式：E<sub>合</sub> = abs(E<sub>A</sub>) + abs(E<sub>B</sub>)）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
       "options": [
         {
           "label": "A",
@@ -319,12 +319,12 @@
         }
       ],
       "correct_answer": "B",
-      "explanation": "场强是矢量。情境中错误式得 5.0×10^5 N/C，带方向相加的正确结果为 3.0×10^5 N/C。\n知识库校验证据：情境：两场同轴叠加；代入错误式：abs(E_A) + abs(E_B)；校验参照值：300000。",
+      "explanation": "场强是矢量。情境中错误式得 5.0×10⁵ N/C，带方向相加的正确结果为 3.0×10⁵ N/C。\n知识库校验证据：情境：两场同轴叠加；代入错误式：abs(E<sub>A</sub>) + abs(E<sub>B</sub>)；校验参照值：300000。",
       "error_type": "数值代入",
       "judging": "auto",
       "source_error_index": 0,
       "source_caught_by": "数值代入",
-      "wrong_expr": "E_net = abs(E_A) + abs(E_B)",
+      "wrong_expr": "E<sub>合</sub> = abs(E<sub>A</sub>) + abs(E<sub>B</sub>)",
       "trap_test": {
         "scenario": "两场同轴叠加",
         "expr": "abs(E_A) + abs(E_B)",
@@ -346,7 +346,7 @@
       "point_id": "ele-04",
       "point_title": "电场线与场强叠加",
       "chapter": "第七章 · 静电场（一）电场的力的性质",
-      "stem": "【第七章 · 静电场（一）电场的力的性质 · 电场线与场强叠加】学生的错误做法：认为负点电荷周围的场强也一律背离电荷（错误表达式：E_x = k_e*abs(Q)*x/abs(x)^3）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "stem": "【第七章 · 静电场（一）电场的力的性质 · 电场线与场强叠加】学生的错误做法：认为负点电荷周围的场强也一律背离电荷（错误表达式：E<sub>x</sub> = k<sub>e</sub>·abs(Q)·x/abs(x)³）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
       "options": [
         {
           "label": "A",
@@ -366,12 +366,12 @@
         }
       ],
       "correct_answer": "A",
-      "explanation": "绝对值抹掉了场源电荷的符号。负电荷右侧错误式给出 +1.0×10^5 N/C，而场强实际向左，为 -1.0×10^5 N/C。\n知识库校验证据：情境：负电荷右侧；代入错误式：k_e*abs(Q)*x/abs(x)^3；校验参照值：-100000。",
+      "explanation": "绝对值抹掉了场源电荷的符号。负电荷右侧错误式给出 +1.0×10⁵ N/C，而场强实际向左，为 -1.0×10⁵ N/C。\n知识库校验证据：情境：负电荷右侧；代入错误式：k<sub>e</sub>·abs(Q)·x/abs(x)³；校验参照值：-100000。",
       "error_type": "数值代入",
       "judging": "auto",
       "source_error_index": 1,
       "source_caught_by": "数值代入",
-      "wrong_expr": "E_x = k_e*abs(Q)*x/abs(x)^3",
+      "wrong_expr": "E<sub>x</sub> = k<sub>e</sub>·abs(Q)·x/abs(x)³",
       "trap_test": {
         "scenario": "负电荷右侧",
         "expr": "k_e*abs(Q)*x/abs(x)^3",
@@ -393,7 +393,7 @@
       "point_id": "ele-05",
       "point_title": "匀强电场",
       "chapter": "第七章 · 静电场（一）电场的力的性质",
-      "stem": "【第七章 · 静电场（一）电场的力的性质 · 匀强电场】学生的错误做法：求电场力大小时直接代入负电荷的带符号电荷量，得到负的力大小（错误表达式：F_e = q*E）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "stem": "【第七章 · 静电场（一）电场的力的性质 · 匀强电场】学生的错误做法：求电场力大小时直接代入负电荷的带符号电荷量，得到负的力大小（错误表达式：F<sub>e</sub> = q·E）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
       "options": [
         {
           "label": "A",
@@ -413,12 +413,12 @@
         }
       ],
       "correct_answer": "D",
-      "explanation": "负号只能表示方向，力的大小不能为负。负带电小球错误式得 -0.006 N，正确大小为 0.006 N。\n知识库校验证据：情境：负带电小球；代入错误式：q*E；校验参照值：0.006。",
+      "explanation": "负号只能表示方向，力的大小不能为负。负带电小球错误式得 -0.006 N，正确大小为 0.006 N。\n知识库校验证据：情境：负带电小球；代入错误式：q·E；校验参照值：0.006。",
       "error_type": "数值代入",
       "judging": "auto",
       "source_error_index": 0,
       "source_caught_by": "数值代入",
-      "wrong_expr": "F_e = q*E",
+      "wrong_expr": "F<sub>e</sub> = q·E",
       "trap_test": {
         "scenario": "负带电小球",
         "expr": "q*E",
@@ -440,7 +440,7 @@
       "point_id": "ele-05",
       "point_title": "匀强电场",
       "chapter": "第七章 · 静电场（一）电场的力的性质",
-      "stem": "【第七章 · 静电场（一）电场的力的性质 · 匀强电场】学生的错误做法：由电场力求加速度时把质量乘到分子，写成 a=q_abs E m（错误表达式：a = q_abs*E*m）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "stem": "【第七章 · 静电场（一）电场的力的性质 · 匀强电场】学生的错误做法：由电场力求加速度时把质量乘到分子，写成 a=q<sub>大小</sub> E m（错误表达式：a = q<sub>大小</sub>·E·m）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
       "options": [
         {
           "label": "A",
@@ -460,12 +460,12 @@
         }
       ],
       "correct_answer": "C",
-      "explanation": "量纲变成 N·kg，不是 m/s²；也违背同样力下质量越大加速度越小。\n知识库校验证据：被测错误式：a = q_abs*E*m；左式量纲：L·T^-2；右式量纲：M^2·L·T^-2；左右量纲不匹配；量纲校验说明：实际量纲检查得到等号左边为L·T^-2、右边为M^2·L·T^-2；两边不是同一物理量，因此该等式不成立。；变化方向要求：mismatch；检验说明：实际量纲检查得到等号左边为L·T^-2、右边为M^2·L·T^-2；两边不是同一物理量，因此该等式不成立。。",
+      "explanation": "量纲变成 N·kg，不是 m/s²；也违背同样力下质量越大加速度越小。\n知识库校验证据：被测错误式：a = q<sub>大小</sub>·E·m；左式量纲：L·T⁻²；右式量纲：M²·L·T⁻²；左右量纲不匹配；量纲校验说明：实际量纲检查得到等号左边为L·T⁻²、右边为M²·L·T⁻²；两边不是同一物理量，因此该等式不成立。；变化方向要求：mismatch；检验说明：实际量纲检查得到等号左边为L·T⁻²、右边为M²·L·T⁻²；两边不是同一物理量，因此该等式不成立。。",
       "error_type": "量纲一致性",
       "judging": "auto",
       "source_error_index": 1,
       "source_caught_by": "量纲一致性",
-      "wrong_expr": "a = q_abs*E*m",
+      "wrong_expr": "a = q<sub>大小</sub>·E·m",
       "trap_test": {
         "kind": "dimension",
         "target": "a = q_abs*E*m",
@@ -490,7 +490,7 @@
       "point_id": "ele-06",
       "point_title": "静电感应与静电屏蔽",
       "chapter": "第七章 · 静电场（一）电场的力的性质",
-      "stem": "【第七章 · 静电场（一）电场的力的性质 · 静电感应与静电屏蔽】学生的错误做法：认为静电感应会在中性孤立导体中创造一份额外电荷（错误表达式：q_net = abs(q_near) + abs(q_far)）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "stem": "【第七章 · 静电场（一）电场的力的性质 · 静电感应与静电屏蔽】学生的错误做法：认为静电感应会在中性孤立导体中创造一份额外电荷（错误表达式：q<sub>合</sub> = abs(q<sub>近</sub>) + abs(q<sub>远</sub>)）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
       "options": [
         {
           "label": "A",
@@ -510,12 +510,12 @@
         }
       ],
       "correct_answer": "B",
-      "explanation": "感应只重新分布电荷。中性导体情境中错误式得到 6.0 μC，代数和的正确结果为 0。\n知识库校验证据：情境：中性导体感应；代入错误式：abs(q_near) + abs(q_far)；校验参照值：0.0。",
+      "explanation": "感应只重新分布电荷。中性导体情境中错误式得到 6.0 μC，代数和的正确结果为 0。\n知识库校验证据：情境：中性导体感应；代入错误式：abs(q<sub>近</sub>) + abs(q<sub>远</sub>)；校验参照值：0.0。",
       "error_type": "数值代入",
       "judging": "auto",
       "source_error_index": 0,
       "source_caught_by": "数值代入",
-      "wrong_expr": "q_net = abs(q_near) + abs(q_far)",
+      "wrong_expr": "q<sub>合</sub> = abs(q<sub>近</sub>) + abs(q<sub>远</sub>)",
       "trap_test": {
         "scenario": "中性导体感应",
         "expr": "abs(q_near) + abs(q_far)",
@@ -537,7 +537,7 @@
       "point_id": "ele-06",
       "point_title": "静电感应与静电屏蔽",
       "chapter": "第七章 · 静电场（一）电场的力的性质",
-      "stem": "【第七章 · 静电场（一）电场的力的性质 · 静电感应与静电屏蔽】学生的错误做法：把感应场与外场同向相加，写成 E_inside=E_out+E_induced（错误表达式：E_inside = E_out + E_induced）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "stem": "【第七章 · 静电场（一）电场的力的性质 · 静电感应与静电屏蔽】学生的错误做法：把感应场与外场同向相加，写成 E<sub>内</sub>=E<sub>出</sub>+E<sub>感</sub>（错误表达式：E<sub>内</sub> = E<sub>出</sub> + E<sub>感</sub>）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
       "options": [
         {
           "label": "A",
@@ -557,12 +557,12 @@
         }
       ],
       "correct_answer": "A",
-      "explanation": "静电平衡时感应场在导体内部与外场反向。错误式给出 10000 N/C，正确合场强为 0。\n知识库校验证据：情境：导体内部抵消；代入错误式：E_out + E_induced；校验参照值：0.0。",
+      "explanation": "静电平衡时感应场在导体内部与外场反向。错误式给出 10000 N/C，正确合场强为 0。\n知识库校验证据：情境：导体内部抵消；代入错误式：E<sub>出</sub> + E<sub>感</sub>；校验参照值：0.0。",
       "error_type": "数值代入",
       "judging": "auto",
       "source_error_index": 1,
       "source_caught_by": "数值代入",
-      "wrong_expr": "E_inside = E_out + E_induced",
+      "wrong_expr": "E<sub>内</sub> = E<sub>出</sub> + E<sub>感</sub>",
       "trap_test": {
         "scenario": "导体内部抵消",
         "expr": "E_out + E_induced",

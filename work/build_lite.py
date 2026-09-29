@@ -86,7 +86,7 @@ def render_card(p, segment_nav=None):
     # 公式（带适用条件）
     for f in p.get("formulas", []):
         L.append('<div class="fbox">')
-        L.append('<div class="f-name">%s</div>' % E(f.get("name", "")))
+        L.append('<div class="f-name">%s</div>' % prose(f.get("name", "")))
         L.append(BS.mathml_block(f.get("mathml", "")))
         if f.get("when"):
             L.append('<div class="f-when">适用：%s</div>' % prose(f["when"]))
@@ -186,7 +186,8 @@ def render_symbol_index(groups):
                 order.append(k)
             if ptitle not in merged[k]["pts"]:
                 merged[k]["pts"].append(ptitle)
-        L.append('<h3 class="vsb">%s<span class="n">%d 个</span></h3>' % (E(base), len(order)))
+        # 标题用显示符号（α / Δ），不再印机器名 alpha / Delta
+        L.append('<h3 class="vsb">%s<span class="n">%d 个</span></h3>' % (prose(base), len(order)))
         for k in sorted(order, key=lambda x: x[0]):
             nm, _u = k
             s = merged[k]["s"]

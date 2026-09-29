@@ -8,7 +8,7 @@
       "point_id": "pot-01",
       "point_title": "静电力做功的特点",
       "chapter": "第八章 · 静电场（二）电场的能的性质",
-      "stem": "【第八章 · 静电场（二）电场的能的性质 · 静电力做功的特点】学生的错误做法：认为路径越长，静电力做功一定越多（错误表达式：W_path2 = 2*W_path1）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "stem": "【第八章 · 静电场（二）电场的能的性质 · 静电力做功的特点】学生的错误做法：认为路径越长，静电力做功一定越多（错误表达式：W<sub>路2</sub> = 2·W<sub>路1</sub>）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
       "options": [
         {
           "label": "A",
@@ -28,12 +28,12 @@
         }
       ],
       "correct_answer": "D",
-      "explanation": "静电力功只由始末位置决定。同端点情境中错误式给出 12 J，而路径二实际仍为 6 J。\n知识库校验证据：情境：同端点两路径；代入错误式：2*W_path1；校验参照值：6.0。",
+      "explanation": "静电力功只由始末位置决定。同端点情境中错误式给出 12 J，而路径二实际仍为 6 J。\n知识库校验证据：情境：同端点两路径；代入错误式：2·W<sub>路1</sub>；校验参照值：6.0。",
       "error_type": "数值代入",
       "judging": "auto",
       "source_error_index": 0,
       "source_caught_by": "数值代入",
-      "wrong_expr": "W_path2 = 2*W_path1",
+      "wrong_expr": "W<sub>路2</sub> = 2·W<sub>路1</sub>",
       "trap_test": {
         "scenario": "同端点两路径",
         "expr": "2*W_path1",
@@ -55,7 +55,7 @@
       "point_id": "pot-02",
       "point_title": "电势能",
       "chapter": "第八章 · 静电场（二）电场的能的性质",
-      "stem": "【第八章 · 静电场（二）电场的能的性质 · 电势能】学生的错误做法：把电势能变化量写成初态减末态（错误表达式：delta_Ep = Ep_A - Ep_B）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "stem": "【第八章 · 静电场（二）电场的能的性质 · 电势能】学生的错误做法：把电势能变化量写成初态减末态（错误表达式：ΔE<sub>p</sub> = Ep<sub>A</sub> - Ep<sub>B</sub>）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
       "options": [
         {
           "label": "A",
@@ -75,12 +75,12 @@
         }
       ],
       "correct_answer": "B",
-      "explanation": "变化量必须是末态减初态。正功情境中错误式得到 +6 J，正确变化量为 -6 J。\n知识库校验证据：情境：静电力正功；代入错误式：Ep_A - Ep_B；校验参照值：-6.0。",
+      "explanation": "变化量必须是末态减初态。正功情境中错误式得到 +6 J，正确变化量为 -6 J。\n知识库校验证据：情境：静电力正功；代入错误式：Ep<sub>A</sub> - Ep<sub>B</sub>；校验参照值：-6.0。",
       "error_type": "数值代入",
       "judging": "auto",
       "source_error_index": 0,
       "source_caught_by": "数值代入",
-      "wrong_expr": "delta_Ep = Ep_A - Ep_B",
+      "wrong_expr": "ΔE<sub>p</sub> = Ep<sub>A</sub> - Ep<sub>B</sub>",
       "trap_test": {
         "scenario": "静电力正功",
         "expr": "Ep_A - Ep_B",
@@ -102,7 +102,7 @@
       "point_id": "pot-03",
       "point_title": "电势",
       "chapter": "第八章 · 静电场（二）电场的能的性质",
-      "stem": "【第八章 · 静电场（二）电场的能的性质 · 电势】学生的错误做法：计算负试探电荷所在点的电势时把 q 强行取绝对值（错误表达式：phi = Ep/abs(q)）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "stem": "【第八章 · 静电场（二）电场的能的性质 · 电势】学生的错误做法：计算负试探电荷所在点的电势时把 q 强行取绝对值（错误表达式：φ = Ep/abs(q)）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
       "options": [
         {
           "label": "A",
@@ -127,7 +127,7 @@
       "judging": "auto",
       "source_error_index": 0,
       "source_caught_by": "数值代入",
-      "wrong_expr": "phi = Ep/abs(q)",
+      "wrong_expr": "φ = Ep/abs(q)",
       "trap_test": {
         "scenario": "负试探电荷",
         "expr": "Ep/abs(q)",
@@ -149,7 +149,7 @@
       "point_id": "pot-03",
       "point_title": "电势",
       "chapter": "第八章 · 静电场（二）电场的能的性质",
-      "stem": "【第八章 · 静电场（二）电场的能的性质 · 电势】学生的错误做法：把电势能关系写成 Ep=q/phi（错误表达式：Ep = q/phi）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "stem": "【第八章 · 静电场（二）电场的能的性质 · 电势】学生的错误做法：把电势能关系写成 Ep=q/φ（错误表达式：Ep = q/φ）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
       "options": [
         {
           "label": "A",
@@ -169,12 +169,12 @@
         }
       ],
       "correct_answer": "C",
-      "explanation": "C/V 不是能量 J 的量纲；正确关系是电荷量乘电势，乘积 C·V 才等于 J，乘除颠倒会被量纲检查直接发现。\n知识库校验证据：被测错误式：Ep = q/phi；左式量纲：M·L^2·T^-2；右式量纲：M^-1·L^-2·T^4·I^2；左右量纲不匹配；量纲校验说明：实际量纲检查得到等号左边为M·L^2·T^-2、右边为M^-1·L^-2·T^4·I^2；两边不是同一物理量，因此该等式不成立。；变化方向要求：mismatch；检验说明：实际量纲检查得到等号左边为M·L^2·T^-2、右边为M^-1·L^-2·T^4·I^2；两边不是同一物理量，因此该等式不成立。。",
+      "explanation": "C/V 不是能量 J 的量纲；正确关系是电荷量乘电势，乘积 C·V 才等于 J，乘除颠倒会被量纲检查直接发现。\n知识库校验证据：被测错误式：Ep = q/φ；左式量纲：M·L²·T⁻²；右式量纲：M⁻¹·L⁻²·T⁴·I²；左右量纲不匹配；量纲校验说明：实际量纲检查得到等号左边为M·L²·T⁻²、右边为M⁻¹·L⁻²·T⁴·I²；两边不是同一物理量，因此该等式不成立。；变化方向要求：mismatch；检验说明：实际量纲检查得到等号左边为M·L²·T⁻²、右边为M⁻¹·L⁻²·T⁴·I²；两边不是同一物理量，因此该等式不成立。。",
       "error_type": "量纲一致性",
       "judging": "auto",
       "source_error_index": 1,
       "source_caught_by": "量纲一致性",
-      "wrong_expr": "Ep = q/phi",
+      "wrong_expr": "Ep = q/φ",
       "trap_test": {
         "kind": "dimension",
         "target": "Ep = q/phi",
@@ -199,7 +199,7 @@
       "point_id": "pot-04",
       "point_title": "等势面",
       "chapter": "第八章 · 静电场（二）电场的能的性质",
-      "stem": "【第八章 · 静电场（二）电场的能的性质 · 等势面】学生的错误做法：把两点电势之差写成电势之和（错误表达式：delta_phi = phi_A + phi_B）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "stem": "【第八章 · 静电场（二）电场的能的性质 · 等势面】学生的错误做法：把两点电势之差写成电势之和（错误表达式：Δφ = φ<sub>A</sub> + φ<sub>B</sub>）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
       "options": [
         {
           "label": "A",
@@ -219,12 +219,12 @@
         }
       ],
       "correct_answer": "B",
-      "explanation": "同一等势面上错误式得到 600 V，正确电势之差应为 0 V。\n知识库校验证据：情境：同一等势面；代入错误式：phi_A + phi_B；校验参照值：0.0。",
+      "explanation": "同一等势面上错误式得到 600 V，正确电势之差应为 0 V。\n知识库校验证据：情境：同一等势面；代入错误式：φ<sub>A</sub> + φ<sub>B</sub>；校验参照值：0.0。",
       "error_type": "数值代入",
       "judging": "auto",
       "source_error_index": 0,
       "source_caught_by": "数值代入",
-      "wrong_expr": "delta_phi = phi_A + phi_B",
+      "wrong_expr": "Δφ = φ<sub>A</sub> + φ<sub>B</sub>",
       "trap_test": {
         "scenario": "同一等势面",
         "expr": "phi_A + phi_B",
@@ -289,7 +289,7 @@
       "point_id": "pot-05",
       "point_title": "电势差（电压）",
       "chapter": "第八章 · 静电场（二）电场的能的性质",
-      "stem": "【第八章 · 静电场（二）电场的能的性质 · 电势差（电压）】学生的错误做法：求 U_AB 时把顺序颠倒，写成 phi_B-phi_A（错误表达式：U_AB = phi_B - phi_A）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "stem": "【第八章 · 静电场（二）电场的能的性质 · 电势差（电压）】学生的错误做法：求 U<sub>AB</sub> 时把顺序颠倒，写成 φ<sub>B</sub>-φ<sub>A</sub>（错误表达式：U<sub>AB</sub> = φ<sub>B</sub> - φ<sub>A</sub>）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
       "options": [
         {
           "label": "A",
@@ -309,12 +309,12 @@
         }
       ],
       "correct_answer": "D",
-      "explanation": "下标顺序决定正负。情境中错误式得 -400 V，正确 U_AB 为 +400 V。\n知识库校验证据：情境：正电荷由高到低；代入错误式：phi_B - phi_A；校验参照值：400.0。",
+      "explanation": "下标顺序决定正负。情境中错误式得 -400 V，正确 U<sub>AB</sub> 为 +400 V。\n知识库校验证据：情境：正电荷由高到低；代入错误式：φ<sub>B</sub> - φ<sub>A</sub>；校验参照值：400.0。",
       "error_type": "数值代入",
       "judging": "auto",
       "source_error_index": 0,
       "source_caught_by": "数值代入",
-      "wrong_expr": "U_AB = phi_B - phi_A",
+      "wrong_expr": "U<sub>AB</sub> = φ<sub>B</sub> - φ<sub>A</sub>",
       "trap_test": {
         "scenario": "正电荷由高到低",
         "expr": "phi_B - phi_A",
@@ -336,7 +336,7 @@
       "point_id": "pot-05",
       "point_title": "电势差（电压）",
       "chapter": "第八章 · 静电场（二）电场的能的性质",
-      "stem": "【第八章 · 静电场（二）电场的能的性质 · 电势差（电压）】学生的错误做法：计算负电荷的静电力功时把 q 取绝对值（错误表达式：W_AB = abs(q)*U_AB）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "stem": "【第八章 · 静电场（二）电场的能的性质 · 电势差（电压）】学生的错误做法：计算负电荷的静电力功时把 q 取绝对值（错误表达式：W<sub>AB</sub> = abs(q)·U<sub>AB</sub>）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
       "options": [
         {
           "label": "A",
@@ -356,12 +356,12 @@
         }
       ],
       "correct_answer": "C",
-      "explanation": "电荷量的负号决定功的正负。负电荷情境中错误式给出 +8.0×10^-4 J，正确值为 -8.0×10^-4 J。\n知识库校验证据：情境：负电荷由高到低；代入错误式：abs(q)*U_AB；校验参照值：-0.0008。",
+      "explanation": "电荷量的负号决定功的正负。负电荷情境中错误式给出 +8.0×10⁻⁴ J，正确值为 -8.0×10⁻⁴ J。\n知识库校验证据：情境：负电荷由高到低；代入错误式：abs(q)·U<sub>AB</sub>；校验参照值：-0.0008。",
       "error_type": "数值代入",
       "judging": "auto",
       "source_error_index": 1,
       "source_caught_by": "数值代入",
-      "wrong_expr": "W_AB = abs(q)*U_AB",
+      "wrong_expr": "W<sub>AB</sub> = abs(q)·U<sub>AB</sub>",
       "trap_test": {
         "scenario": "负电荷由高到低",
         "expr": "abs(q)*U_AB",
@@ -403,7 +403,7 @@
         }
       ],
       "correct_answer": "B",
-      "explanation": "右边单位为 V/m²，不是电势差应有的 V；同时还会错误地预言距离越大电势差越小，量纲检查会直接拦住。\n知识库校验证据：被测错误式：U = E/d；左式量纲：M·L^2·T^-3·I^-1；右式量纲：M·T^-3·I^-1；左右量纲不匹配；量纲校验说明：实际量纲检查得到等号左边为M·L^2·T^-3·I^-1、右边为M·T^-3·I^-1；两边不是同一物理量，因此该等式不成立。；变化方向要求：mismatch；检验说明：实际量纲检查得到等号左边为M·L^2·T^-3·I^-1、右边为M·T^-3·I^-1；两边不是同一物理量，因此该等式不成立。。",
+      "explanation": "右边单位为 V/m²，不是电势差应有的 V；同时还会错误地预言距离越大电势差越小，量纲检查会直接拦住。\n知识库校验证据：被测错误式：U = E/d；左式量纲：M·L²·T⁻³·I⁻¹；右式量纲：M·T⁻³·I⁻¹；左右量纲不匹配；量纲校验说明：实际量纲检查得到等号左边为M·L²·T⁻³·I⁻¹、右边为M·T⁻³·I⁻¹；两边不是同一物理量，因此该等式不成立。；变化方向要求：mismatch；检验说明：实际量纲检查得到等号左边为M·L²·T⁻³·I⁻¹、右边为M·T⁻³·I⁻¹；两边不是同一物理量，因此该等式不成立。。",
       "error_type": "量纲一致性",
       "judging": "auto",
       "source_error_index": 0,
@@ -433,7 +433,7 @@
       "point_id": "pot-06",
       "point_title": "匀强电场中电势差与场强的关系",
       "chapter": "第八章 · 静电场（二）电场的能的性质",
-      "stem": "【第八章 · 静电场（二）电场的能的性质 · 匀强电场中电势差与场强的关系】学生的错误做法：把电荷实际走过的弯曲路径长度当成 d（错误表达式：U = E*D_path）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "stem": "【第八章 · 静电场（二）电场的能的性质 · 匀强电场中电势差与场强的关系】学生的错误做法：把电荷实际走过的弯曲路径长度当成 d（错误表达式：U = E·D<sub>路</sub>）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
       "options": [
         {
           "label": "A",
@@ -453,12 +453,12 @@
         }
       ],
       "correct_answer": "A",
-      "explanation": "d 是两点位移沿电场方向的投影，不是路程。情境中用 0.25 m 会算出 500 V，正确结果是 300 V。\n知识库校验证据：情境：沿场方向两点；代入错误式：E*D_path；校验参照值：300.0。",
+      "explanation": "d 是两点位移沿电场方向的投影，不是路程。情境中用 0.25 m 会算出 500 V，正确结果是 300 V。\n知识库校验证据：情境：沿场方向两点；代入错误式：E·D<sub>路</sub>；校验参照值：300.0。",
       "error_type": "数值代入",
       "judging": "auto",
       "source_error_index": 1,
       "source_caught_by": "数值代入",
-      "wrong_expr": "U = E*D_path",
+      "wrong_expr": "U = E·D<sub>路</sub>",
       "trap_test": {
         "scenario": "沿场方向两点",
         "expr": "E*D_path",
