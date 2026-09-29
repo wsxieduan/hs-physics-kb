@@ -54,6 +54,9 @@ math{font-size:1.12em}
 #q{flex:1;min-width:200px;padding:8px 13px;border:1px solid var(--line);border-radius:8px;
   font-size:14px;background:#fff;color:var(--ink);outline:none;font-family:inherit}
 #q:focus{border-color:var(--brand);box-shadow:0 0 0 3px var(--brand-soft)}
+/* 章节筛选片不放进 sticky 工具条：手机上十几个章节片会换成七八行，
+   把首屏整个占满（2026-09-29 修复）。它放在工具条下方、随页面滚动。 */
+.chipsbar{max-width:1080px;margin:0 auto;padding:10px 24px 0}
 .chips{display:flex;gap:7px;flex-wrap:wrap}
 .chip{border:1px solid var(--line);background:#fff;border-radius:999px;padding:5px 13px;
   font-size:12.5px;cursor:pointer;color:var(--ink2);white-space:nowrap;font-family:inherit}
@@ -275,6 +278,15 @@ footer b{color:var(--ink2)}
   main{padding:18px 14px 60px}
   .kp-body{padding:6px 15px 18px}
   .kp-head{padding:13px 15px}
+  /* 手机上进一步压缩吸顶区：搜索框独占一行，视图按钮与目录按钮同行 */
+  .toolbar{padding:8px 14px}
+  .toolbar-in{gap:8px}
+  .segment-switchbar{padding:8px 14px}
+  #q{min-width:0;width:100%;flex:1 0 100%}
+  .chipsbar{padding:9px 14px 0}
+  /* 手机上章节片改横向滚动单行，避免换成七八行把首屏顶下去 */
+  .chips{flex-wrap:nowrap;overflow-x:auto;-webkit-overflow-scrolling:touch;padding-bottom:5px}
+  .chip{padding:4px 11px;font-size:12px}
 }
 @media print{
   .toolbar,.hero{background:#fff;color:#000}
@@ -305,11 +317,12 @@ footer b{color:var(--ink2)}
     </div>
     <button class="tbtn" id="tocbtn" type="button">目录</button>
     <input id="q" type="search" placeholder="搜索知识点、公式、符号、错误写法…" autocomplete="off">
-    <div class="chips"><button class="chip on" data-chapter="all">全部</button><button class="chip" data-chapter="第一章 · 运动的描述与匀变速直线运动">运动的描述与匀变速直线运动</button><button class="chip" data-chapter="第二章 · 相互作用与牛顿运动定律">相互作用与牛顿运动定律</button><button class="chip" data-chapter="第三章 · 功与能">功与能</button><button class="chip" data-chapter="第四章 · 动量守恒">动量守恒</button><button class="chip" data-chapter="第五章 · 圆周运动与万有引力">圆周运动与万有引力</button><button class="chip" data-chapter="第六章 · 机械振动与波">机械振动与波</button><button class="chip" data-chapter="第七章 · 静电场（一）电场的力的性质">静电场（一）电场的力的性质</button><button class="chip" data-chapter="第八章 · 静电场（二）电场的能的性质">静电场（二）电场的能的性质</button><button class="chip" data-chapter="第九章 · 静电场（三）电容与带电粒子">静电场（三）电容与带电粒子</button><button class="chip" data-chapter="第十章 · 恒定电流">恒定电流</button><button class="chip" data-chapter="第十一章 · 磁场（一）磁场与安培力">磁场（一）磁场与安培力</button><button class="chip" data-chapter="第十二章 · 磁场（二）洛伦兹力与带电粒子">磁场（二）洛伦兹力与带电粒子</button><button class="chip" data-chapter="第十三章 · 电磁感应（一）楞次与法拉第">电磁感应（一）楞次与法拉第</button><button class="chip" data-chapter="第十四章 · 电磁感应（二）自感与综合应用">电磁感应（二）自感与综合应用</button><button class="chip" data-chapter="第十五章 · 交变电流">交变电流</button><button class="chip" data-chapter="第十六章 · 几何光学">几何光学</button><button class="chip" data-chapter="第十七章 · 波动光学">波动光学</button><button class="chip" data-chapter="第十八章 · 分子动理论与气体">分子动理论与气体</button><button class="chip" data-chapter="第十九章 · 热力学定律">热力学定律</button><button class="chip" data-chapter="第二十章 · 波粒二象性与原子结构">波粒二象性与原子结构</button><button class="chip" data-chapter="第二十一章 · 原子核与核能">原子核与核能</button></div>
     <label class="tgl"><input type="checkbox" id="expand"> 展开校验记录</label>
     <span id="count"></span>
   </div>
 </div>
+
+<div class="chipsbar"><div class="chips"><button class="chip on" data-chapter="all">全部</button><button class="chip" data-chapter="第一章 · 运动的描述与匀变速直线运动">运动的描述与匀变速直线运动</button><button class="chip" data-chapter="第二章 · 相互作用与牛顿运动定律">相互作用与牛顿运动定律</button><button class="chip" data-chapter="第三章 · 功与能">功与能</button><button class="chip" data-chapter="第四章 · 动量守恒">动量守恒</button><button class="chip" data-chapter="第五章 · 圆周运动与万有引力">圆周运动与万有引力</button><button class="chip" data-chapter="第六章 · 机械振动与波">机械振动与波</button><button class="chip" data-chapter="第七章 · 静电场（一）电场的力的性质">静电场（一）电场的力的性质</button><button class="chip" data-chapter="第八章 · 静电场（二）电场的能的性质">静电场（二）电场的能的性质</button><button class="chip" data-chapter="第九章 · 静电场（三）电容与带电粒子">静电场（三）电容与带电粒子</button><button class="chip" data-chapter="第十章 · 恒定电流">恒定电流</button><button class="chip" data-chapter="第十一章 · 磁场（一）磁场与安培力">磁场（一）磁场与安培力</button><button class="chip" data-chapter="第十二章 · 磁场（二）洛伦兹力与带电粒子">磁场（二）洛伦兹力与带电粒子</button><button class="chip" data-chapter="第十三章 · 电磁感应（一）楞次与法拉第">电磁感应（一）楞次与法拉第</button><button class="chip" data-chapter="第十四章 · 电磁感应（二）自感与综合应用">电磁感应（二）自感与综合应用</button><button class="chip" data-chapter="第十五章 · 交变电流">交变电流</button><button class="chip" data-chapter="第十六章 · 几何光学">几何光学</button><button class="chip" data-chapter="第十七章 · 波动光学">波动光学</button><button class="chip" data-chapter="第十八章 · 分子动理论与气体">分子动理论与气体</button><button class="chip" data-chapter="第十九章 · 热力学定律">热力学定律</button><button class="chip" data-chapter="第二十章 · 波粒二象性与原子结构">波粒二象性与原子结构</button><button class="chip" data-chapter="第二十一章 · 原子核与核能">原子核与核能</button></div></div>
 
 <main>
   <nav class="toc" id="toc" aria-label="知识点目录">
