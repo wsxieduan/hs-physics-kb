@@ -51,6 +51,56 @@
       }
     },
     {
+      "id": "diagnostic-mom-01-2",
+      "point_id": "mom-01",
+      "point_title": "冲量与动量",
+      "chapter": "第四章 · 动量守恒",
+      "stem": "【第四章 · 动量守恒 · 冲量与动量】学生的错误做法：把恒力冲量写成 I = F/t（错误表达式：I = F/t）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "数值代入：v₂ 已是 −1，再写减号会重复处理方向，结果变为 7，正确总动量是 5。"
+        },
+        {
+          "label": "B",
+          "text": "概念混淆：只有两物体质量相等时才碰巧成立；一般情形必须用质量加权平均。"
+        },
+        {
+          "label": "C",
+          "text": "量纲一致性：力除以时间的量纲不是冲量；同时也会错误地认为作用越久冲量越小。"
+        },
+        {
+          "label": "D",
+          "text": "数值代入：量纲仍正确但方向相反；本情境会算成 −6，正确结果应为正 6。"
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "力除以时间的量纲不是冲量；同时也会错误地认为作用越久冲量越小。\n知识库校验证据：被测错误式：I = F/t；左式量纲：M·L·T^-1；右式量纲：M·L·T^-3；左右量纲不匹配；量纲校验说明：实际量纲检查得到等号左边为M·L·T^-1、右边为M·L·T^-3；两边不是同一物理量，因此该等式不成立。；变化方向要求：mismatch；检验说明：实际量纲检查得到等号左边为M·L·T^-1、右边为M·L·T^-3；两边不是同一物理量，因此该等式不成立。。",
+      "error_type": "量纲一致性",
+      "judging": "auto",
+      "source_error_index": 1,
+      "source_caught_by": "量纲一致性",
+      "wrong_expr": "I = F/t",
+      "trap_test": {
+        "kind": "dimension",
+        "target": "I = F/t",
+        "lhs_dim": "M·L·T^-1",
+        "rhs_dim": "M·L·T^-3",
+        "expect": "mismatch",
+        "note": "实际量纲检查得到等号左边为M·L·T^-1、右边为M·L·T^-3；两边不是同一物理量，因此该等式不成立。"
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
       "id": "diagnostic-mom-02-1",
       "point_id": "mom-02",
       "point_title": "动量定理",
@@ -325,6 +375,106 @@
       }
     },
     {
+      "id": "diagnostic-mom-05-2",
+      "point_id": "mom-05",
+      "point_title": "反冲运动与火箭",
+      "chapter": "第四章 · 动量守恒",
+      "stem": "【第四章 · 动量守恒 · 反冲运动与火箭】学生的错误做法：把推力写成 F=u/μ（错误表达式：F = u/mu）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "数值代入：量纲仍正确但方向相反；本情境会算成 −6，正确结果应为正 6。"
+        },
+        {
+          "label": "B",
+          "text": "数值代入：v₂ 已是 −1，再写减号会重复处理方向，结果变为 7，正确总动量是 5。"
+        },
+        {
+          "label": "C",
+          "text": "量纲一致性：速度除以质量流率的量纲不是力，还会错误地认为喷出质量越多推力越小。"
+        },
+        {
+          "label": "D",
+          "text": "数值代入：错误式量纲仍是动量，量纲检查抓不到；代入会得到 12，而正确动量是 6。"
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "速度除以质量流率的量纲不是力，还会错误地认为喷出质量越多推力越小。\n知识库校验证据：被测错误式：F = u/mu；左式量纲：M·L·T^-2；右式量纲：M^-1·L；左右量纲不匹配；量纲校验说明：实际量纲检查得到等号左边为M·L·T^-2、右边为M^-1·L；两边不是同一物理量，因此该等式不成立。；变化方向要求：mismatch；检验说明：实际量纲检查得到等号左边为M·L·T^-2、右边为M^-1·L；两边不是同一物理量，因此该等式不成立。。",
+      "error_type": "量纲一致性",
+      "judging": "auto",
+      "source_error_index": 1,
+      "source_caught_by": "量纲一致性",
+      "wrong_expr": "F = u/mu",
+      "trap_test": {
+        "kind": "dimension",
+        "target": "F = u/mu",
+        "lhs_dim": "M·L·T^-2",
+        "rhs_dim": "M^-1·L",
+        "expect": "mismatch",
+        "note": "实际量纲检查得到等号左边为M·L·T^-2、右边为M^-1·L；两边不是同一物理量，因此该等式不成立。"
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-mom-06-1",
+      "point_id": "mom-06",
+      "point_title": "动量与能量的综合",
+      "chapter": "第四章 · 动量守恒",
+      "stem": "【第四章 · 动量守恒 · 动量与能量的综合】学生的错误做法：漏掉平方，写成 Eₖ=p/(2m)（错误表达式：Ek = p/(2*m)）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "数值代入：v₂ 已是 −1，再写减号会重复处理方向，结果变为 7，正确总动量是 5。"
+        },
+        {
+          "label": "B",
+          "text": "量纲一致性：动量除以质量得到的是速度量纲，再除以常数仍不是能量，因此量纲检查可以直接拦住。"
+        },
+        {
+          "label": "C",
+          "text": "数值代入：错误式量纲仍是动量，量纲检查抓不到；代入会得到 12，而正确动量是 6。"
+        },
+        {
+          "label": "D",
+          "text": "数值代入：量纲仍正确但方向相反；本情境会算成 −6，正确结果应为正 6。"
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "动量除以质量得到的是速度量纲，再除以常数仍不是能量，因此量纲检查可以直接拦住。\n知识库校验证据：被测错误式：Ek = p/(2*m)；左式量纲：M·L^2·T^-2；右式量纲：L·T^-1；左右量纲不匹配；量纲校验说明：实际量纲检查得到等号左边为M·L^2·T^-2、右边为L·T^-1；两边不是同一物理量，因此该等式不成立。；变化方向要求：mismatch；检验说明：实际量纲检查得到等号左边为M·L^2·T^-2、右边为L·T^-1；两边不是同一物理量，因此该等式不成立。。",
+      "error_type": "量纲一致性",
+      "judging": "auto",
+      "source_error_index": 0,
+      "source_caught_by": "量纲一致性",
+      "wrong_expr": "Ek = p/(2*m)",
+      "trap_test": {
+        "kind": "dimension",
+        "target": "Ek = p/(2*m)",
+        "lhs_dim": "M·L^2·T^-2",
+        "rhs_dim": "L·T^-1",
+        "expect": "mismatch",
+        "note": "实际量纲检查得到等号左边为M·L^2·T^-2、右边为L·T^-1；两边不是同一物理量，因此该等式不成立。"
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
       "id": "diagnostic-mom-06-2",
       "point_id": "mom-06",
       "point_title": "动量与能量的综合",
@@ -374,27 +524,9 @@
   ],
   "skipped": [
     {
-      "point_id": "mom-01",
-      "point_title": "冲量与动量",
-      "source_error_index": 1,
-      "reason": "自动判定条目没有 trap_test 可执行证据；不把校验标签代替实测证据。"
-    },
-    {
       "point_id": "mom-04",
       "point_title": "碰撞",
       "source_error_index": 1,
-      "reason": "自动判定条目没有 trap_test 可执行证据；不把校验标签代替实测证据。"
-    },
-    {
-      "point_id": "mom-05",
-      "point_title": "反冲运动与火箭",
-      "source_error_index": 1,
-      "reason": "自动判定条目没有 trap_test 可执行证据；不把校验标签代替实测证据。"
-    },
-    {
-      "point_id": "mom-06",
-      "point_title": "动量与能量的综合",
-      "source_error_index": 0,
       "reason": "自动判定条目没有 trap_test 可执行证据；不把校验标签代替实测证据。"
     }
   ]

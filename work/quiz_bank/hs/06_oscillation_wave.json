@@ -4,6 +4,56 @@
   "source_file": "06_oscillation_wave.json",
   "questions": [
     {
+      "id": "diagnostic-osc-01-1",
+      "point_id": "osc-01",
+      "point_title": "简谐运动的描述",
+      "chapter": "第六章 · 机械振动与波",
+      "stem": "【第六章 · 机械振动与波 · 简谐运动的描述】学生的错误做法：把角频率写成 omega = T/(2pi)（错误表达式：omega = T/(2*pi)）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "数值代入：这会让力指向远离平衡位置的方向；正向位移情境会算出 +10 N，而正确值是 -10 N。"
+        },
+        {
+          "label": "B",
+          "text": "数值代入：量纲完全正确但数值少一半；一米单摆会算成约 1.00354 s，而正确值约 2.00709 s。"
+        },
+        {
+          "label": "C",
+          "text": "概念混淆：稳定受迫振动的频率由驱动力决定；固有频率决定在什么驱动频率附近响应最强。"
+        },
+        {
+          "label": "D",
+          "text": "量纲一致性：量纲由 1/s 错成 s；周期 0.5 s 时数值也不会是 4pi rad/s。"
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "量纲由 1/s 错成 s；周期 0.5 s 时数值也不会是 4pi rad/s。\n知识库校验证据：被测错误式：omega = T/(2*pi)；左式量纲：T^-1；右式量纲：T；左右量纲不匹配；量纲校验说明：实际量纲检查得到等号左边为T^-1、右边为T；两边不是同一物理量，因此该等式不成立。；变化方向要求：mismatch；检验说明：实际量纲检查得到等号左边为T^-1、右边为T；两边不是同一物理量，因此该等式不成立。。",
+      "error_type": "量纲一致性",
+      "judging": "auto",
+      "source_error_index": 0,
+      "source_caught_by": "量纲一致性",
+      "wrong_expr": "omega = T/(2*pi)",
+      "trap_test": {
+        "kind": "dimension",
+        "target": "omega = T/(2*pi)",
+        "lhs_dim": "T^-1",
+        "rhs_dim": "T",
+        "expect": "mismatch",
+        "note": "实际量纲检查得到等号左边为T^-1、右边为T；两边不是同一物理量，因此该等式不成立。"
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
       "id": "diagnostic-osc-01-2",
       "point_id": "osc-01",
       "point_title": "简谐运动的描述",
@@ -459,12 +509,6 @@
     }
   ],
   "skipped": [
-    {
-      "point_id": "osc-01",
-      "point_title": "简谐运动的描述",
-      "source_error_index": 0,
-      "reason": "自动判定条目没有 trap_test 可执行证据；不把校验标签代替实测证据。"
-    },
     {
       "point_id": "osc-02",
       "point_title": "简谐运动的回复力与能量",

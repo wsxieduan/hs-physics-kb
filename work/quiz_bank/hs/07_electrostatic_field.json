@@ -51,6 +51,106 @@
       }
     },
     {
+      "id": "diagnostic-ele-01-2",
+      "point_id": "ele-01",
+      "point_title": "电荷、电荷守恒与元电荷",
+      "chapter": "第七章 · 静电场（一）电场的力的性质",
+      "stem": "【第七章 · 静电场（一）电场的力的性质 · 电荷、电荷守恒与元电荷】学生的错误做法：把量子化关系写成 q=N/e（错误表达式：q = N/e）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "数值代入：负号只能表示方向，力的大小不能为负。"
+        },
+        {
+          "label": "B",
+          "text": "数值代入：感应只重新分布电荷。"
+        },
+        {
+          "label": "C",
+          "text": "量纲一致性：N/e 的量纲是 1/C，不是电荷量 C，量纲检查可以直接发现。"
+        },
+        {
+          "label": "D",
+          "text": "数值代入：场强是矢量。"
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "N/e 的量纲是 1/C，不是电荷量 C，量纲检查可以直接发现。\n知识库校验证据：被测错误式：q = N/e；左式量纲：T·I；右式量纲：T^-1·I^-1；左右量纲不匹配；量纲校验说明：实际量纲检查得到等号左边为T·I、右边为T^-1·I^-1；两边不是同一物理量，因此该等式不成立。；变化方向要求：mismatch；检验说明：实际量纲检查得到等号左边为T·I、右边为T^-1·I^-1；两边不是同一物理量，因此该等式不成立。。",
+      "error_type": "量纲一致性",
+      "judging": "auto",
+      "source_error_index": 1,
+      "source_caught_by": "量纲一致性",
+      "wrong_expr": "q = N/e",
+      "trap_test": {
+        "kind": "dimension",
+        "target": "q = N/e",
+        "lhs_dim": "T·I",
+        "rhs_dim": "T^-1·I^-1",
+        "expect": "mismatch",
+        "note": "实际量纲检查得到等号左边为T·I、右边为T^-1·I^-1；两边不是同一物理量，因此该等式不成立。"
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-ele-02-1",
+      "point_id": "ele-02",
+      "point_title": "库仑定律",
+      "chapter": "第七章 · 静电场（一）电场的力的性质",
+      "stem": "【第七章 · 静电场（一）电场的力的性质 · 库仑定律】学生的错误做法：漏掉距离的平方，写成 F=k_e|q_1q_2|/r（错误表达式：F = k_e*abs(q_1*q_2)/r）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "数值代入：负号只能表示方向，力的大小不能为负。"
+        },
+        {
+          "label": "B",
+          "text": "量纲一致性：量纲变为 N·m，不是力；异号点电荷情境中还会算出 0.18，而正确值是 0.60 N。"
+        },
+        {
+          "label": "C",
+          "text": "数值代入：电荷守恒比较代数和。"
+        },
+        {
+          "label": "D",
+          "text": "数值代入：场强是矢量。"
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "量纲变为 N·m，不是力；异号点电荷情境中还会算出 0.18，而正确值是 0.60 N。\n知识库校验证据：被测错误式：F = k_e*abs(q_1*q_2)/r；左式量纲：M·L·T^-2；右式量纲：M·L^2·T^-2；左右量纲不匹配；量纲校验说明：实际量纲检查得到等号左边为M·L·T^-2、右边为M·L^2·T^-2；两边不是同一物理量，因此该等式不成立。；变化方向要求：mismatch；检验说明：实际量纲检查得到等号左边为M·L·T^-2、右边为M·L^2·T^-2；两边不是同一物理量，因此该等式不成立。。",
+      "error_type": "量纲一致性",
+      "judging": "auto",
+      "source_error_index": 0,
+      "source_caught_by": "量纲一致性",
+      "wrong_expr": "F = k_e*abs(q_1*q_2)/r",
+      "trap_test": {
+        "kind": "dimension",
+        "target": "F = k_e*abs(q_1*q_2)/r",
+        "lhs_dim": "M·L·T^-2",
+        "rhs_dim": "M·L^2·T^-2",
+        "expect": "mismatch",
+        "note": "实际量纲检查得到等号左边为M·L·T^-2、右边为M·L^2·T^-2；两边不是同一物理量，因此该等式不成立。"
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
       "id": "diagnostic-ele-02-2",
       "point_id": "ele-02",
       "point_title": "库仑定律",
@@ -85,6 +185,56 @@
         "scenario": "异号点电荷",
         "expr": "k_e*q_1*q_2/r^2",
         "ref": 0.6
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-ele-03-1",
+      "point_id": "ele-03",
+      "point_title": "电场强度",
+      "chapter": "第七章 · 静电场（一）电场的力的性质",
+      "stem": "【第七章 · 静电场（一）电场的力的性质 · 电场强度】学生的错误做法：把场强定义式写成 E=Fq_test（错误表达式：E = F*q_test）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "数值代入：电荷守恒比较代数和。"
+        },
+        {
+          "label": "B",
+          "text": "数值代入：场强是矢量。"
+        },
+        {
+          "label": "C",
+          "text": "数值代入：负号只能表示方向，力的大小不能为负。"
+        },
+        {
+          "label": "D",
+          "text": "量纲一致性：右边的单位变成 N·C，而电场强度的单位应为 N/C；两者基本量纲不同，量纲检查会直接拦住这一乘除颠倒。"
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "右边的单位变成 N·C，而电场强度的单位应为 N/C；两者基本量纲不同，量纲检查会直接拦住这一乘除颠倒。\n知识库校验证据：被测错误式：E = F*q_test；左式量纲：M·L·T^-3·I^-1；右式量纲：M·L·T^-1·I；左右量纲不匹配；量纲校验说明：实际量纲检查得到等号左边为M·L·T^-3·I^-1、右边为M·L·T^-1·I；两边不是同一物理量，因此该等式不成立。；变化方向要求：mismatch；检验说明：实际量纲检查得到等号左边为M·L·T^-3·I^-1、右边为M·L·T^-1·I；两边不是同一物理量，因此该等式不成立。。",
+      "error_type": "量纲一致性",
+      "judging": "auto",
+      "source_error_index": 0,
+      "source_caught_by": "量纲一致性",
+      "wrong_expr": "E = F*q_test",
+      "trap_test": {
+        "kind": "dimension",
+        "target": "E = F*q_test",
+        "lhs_dim": "M·L·T^-3·I^-1",
+        "rhs_dim": "M·L·T^-1·I",
+        "expect": "mismatch",
+        "note": "实际量纲检查得到等号左边为M·L·T^-3·I^-1、右边为M·L·T^-1·I；两边不是同一物理量，因此该等式不成立。"
       },
       "review": {
         "confidence": "medium",
@@ -286,6 +436,56 @@
       }
     },
     {
+      "id": "diagnostic-ele-05-2",
+      "point_id": "ele-05",
+      "point_title": "匀强电场",
+      "chapter": "第七章 · 静电场（一）电场的力的性质",
+      "stem": "【第七章 · 静电场（一）电场的力的性质 · 匀强电场】学生的错误做法：由电场力求加速度时把质量乘到分子，写成 a=q_abs E m（错误表达式：a = q_abs*E*m）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "数值代入：场强是矢量。"
+        },
+        {
+          "label": "B",
+          "text": "数值代入：感应只重新分布电荷。"
+        },
+        {
+          "label": "C",
+          "text": "量纲一致性：量纲变成 N·kg，不是 m/s²；也违背同样力下质量越大加速度越小。"
+        },
+        {
+          "label": "D",
+          "text": "数值代入：电荷守恒比较代数和。"
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "量纲变成 N·kg，不是 m/s²；也违背同样力下质量越大加速度越小。\n知识库校验证据：被测错误式：a = q_abs*E*m；左式量纲：L·T^-2；右式量纲：M^2·L·T^-2；左右量纲不匹配；量纲校验说明：实际量纲检查得到等号左边为L·T^-2、右边为M^2·L·T^-2；两边不是同一物理量，因此该等式不成立。；变化方向要求：mismatch；检验说明：实际量纲检查得到等号左边为L·T^-2、右边为M^2·L·T^-2；两边不是同一物理量，因此该等式不成立。。",
+      "error_type": "量纲一致性",
+      "judging": "auto",
+      "source_error_index": 1,
+      "source_caught_by": "量纲一致性",
+      "wrong_expr": "a = q_abs*E*m",
+      "trap_test": {
+        "kind": "dimension",
+        "target": "a = q_abs*E*m",
+        "lhs_dim": "L·T^-2",
+        "rhs_dim": "M^2·L·T^-2",
+        "expect": "mismatch",
+        "note": "实际量纲检查得到等号左边为L·T^-2、右边为M^2·L·T^-2；两边不是同一物理量，因此该等式不成立。"
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
       "id": "diagnostic-ele-06-1",
       "point_id": "ele-06",
       "point_title": "静电感应与静电屏蔽",
@@ -380,30 +580,5 @@
       }
     }
   ],
-  "skipped": [
-    {
-      "point_id": "ele-01",
-      "point_title": "电荷、电荷守恒与元电荷",
-      "source_error_index": 1,
-      "reason": "自动判定条目没有 trap_test 可执行证据；不把校验标签代替实测证据。"
-    },
-    {
-      "point_id": "ele-02",
-      "point_title": "库仑定律",
-      "source_error_index": 0,
-      "reason": "自动判定条目没有 trap_test 可执行证据；不把校验标签代替实测证据。"
-    },
-    {
-      "point_id": "ele-03",
-      "point_title": "电场强度",
-      "source_error_index": 0,
-      "reason": "自动判定条目没有 trap_test 可执行证据；不把校验标签代替实测证据。"
-    },
-    {
-      "point_id": "ele-05",
-      "point_title": "匀强电场",
-      "source_error_index": 1,
-      "reason": "自动判定条目没有 trap_test 可执行证据；不把校验标签代替实测证据。"
-    }
-  ]
+  "skipped": []
 }

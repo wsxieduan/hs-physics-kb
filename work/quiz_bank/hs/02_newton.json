@@ -4,6 +4,56 @@
   "source_file": "02_newton.json",
   "questions": [
     {
+      "id": "diagnostic-dyn-01-1",
+      "point_id": "dyn-01",
+      "point_title": "弹力与胡克定律",
+      "chapter": "第二章 · 相互作用与牛顿运动定律",
+      "stem": "【第二章 · 相互作用与牛顿运动定律 · 弹力与胡克定律】学生的错误做法：把胡克定律记成 F = k / x（乘法记成除法）（错误表达式：F = k/x）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "数值代入：★ 这条错写法的量纲完全正确（两个力相乘再乘纯数，仍是 N），量纲检查抓不到。"
+        },
+        {
+          "label": "B",
+          "text": "数值代入：★ 这类错误量纲完全一致（都是「纯数乘一个力」，结果还是 N），量纲检查一点用都没有。"
+        },
+        {
+          "label": "C",
+          "text": "数值代入：量纲完全正确，量纲检查抓不到。"
+        },
+        {
+          "label": "D",
+          "text": "量纲一致性：写成除法后 k/x 的量纲变成 N/m²，与力的单位 N 完全不同，量纲检查立刻拦住。"
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "写成除法后 k/x 的量纲变成 N/m²，与力的单位 N 完全不同，量纲检查立刻拦住。\n知识库校验证据：被测错误式：F = k/x；左式量纲：M·L·T^-2；右式量纲：M·L^-1·T^-2；左右量纲不匹配；量纲校验说明：实际量纲检查得到等号左边为M·L·T^-2、右边为M·L^-1·T^-2；两边不是同一物理量，因此该等式不成立。；变化方向要求：mismatch；检验说明：实际量纲检查得到等号左边为M·L·T^-2、右边为M·L^-1·T^-2；两边不是同一物理量，因此该等式不成立。。",
+      "error_type": "量纲一致性",
+      "judging": "auto",
+      "source_error_index": 0,
+      "source_caught_by": "量纲一致性",
+      "wrong_expr": "F = k/x",
+      "trap_test": {
+        "kind": "dimension",
+        "target": "F = k/x",
+        "lhs_dim": "M·L·T^-2",
+        "rhs_dim": "M·L^-1·T^-2",
+        "expect": "mismatch",
+        "note": "实际量纲检查得到等号左边为M·L·T^-2、右边为M·L^-1·T^-2；两边不是同一物理量，因此该等式不成立。"
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
       "id": "diagnostic-dyn-01-2",
       "point_id": "dyn-01",
       "point_title": "弹力与胡克定律",
@@ -38,6 +88,56 @@
         "scenario": "拉伸弹簧",
         "expr": "k*L_total",
         "ref": 10.0
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-dyn-02-1",
+      "point_id": "dyn-02",
+      "point_title": "重力",
+      "chapter": "第二章 · 相互作用与牛顿运动定律",
+      "stem": "【第二章 · 相互作用与牛顿运动定律 · 重力】学生的错误做法：把重力写成 G = m / g（错误表达式：G = m/g）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "数值代入：量纲完全正确，量纲检查抓不到。"
+        },
+        {
+          "label": "B",
+          "text": "量纲一致性：写成除法后量纲变成 kg·s²/m，与力的量纲完全不同，量纲检查直接拦住。"
+        },
+        {
+          "label": "C",
+          "text": "数值代入：★ 这条错写法的量纲完全正确（两个力相乘再乘纯数，仍是 N），量纲检查抓不到。"
+        },
+        {
+          "label": "D",
+          "text": "数值代入：★ 这类错误量纲完全一致（都是「纯数乘一个力」，结果还是 N），量纲检查一点用都没有。"
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "写成除法后量纲变成 kg·s²/m，与力的量纲完全不同，量纲检查直接拦住。同时它也会让「月球上重力变大」这种荒谬结论出现，方向检查也能抓到。\n知识库校验证据：被测错误式：G = m/g；左式量纲：M·L·T^-2；右式量纲：M·L^-1·T^2；左右量纲不匹配；量纲校验说明：实际量纲检查得到等号左边为M·L·T^-2、右边为M·L^-1·T^2；两边不是同一物理量，因此该等式不成立。；变化方向要求：mismatch；检验说明：实际量纲检查得到等号左边为M·L·T^-2、右边为M·L^-1·T^2；两边不是同一物理量，因此该等式不成立。。",
+      "error_type": "量纲一致性",
+      "judging": "auto",
+      "source_error_index": 0,
+      "source_caught_by": "量纲一致性",
+      "wrong_expr": "G = m/g",
+      "trap_test": {
+        "kind": "dimension",
+        "target": "G = m/g",
+        "lhs_dim": "M·L·T^-2",
+        "rhs_dim": "M·L^-1·T^2",
+        "expect": "mismatch",
+        "note": "实际量纲检查得到等号左边为M·L·T^-2、右边为M·L^-1·T^2；两边不是同一物理量，因此该等式不成立。"
       },
       "review": {
         "confidence": "medium",
@@ -325,6 +425,56 @@
       }
     },
     {
+      "id": "diagnostic-dyn-05-1",
+      "point_id": "dyn-05",
+      "point_title": "牛顿第二定律",
+      "chapter": "第二章 · 相互作用与牛顿运动定律",
+      "stem": "【第二章 · 相互作用与牛顿运动定律 · 牛顿第二定律】学生的错误做法：把牛顿第二定律记成 F = m / a（错误表达式：F_net = m/a）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "数值代入：★ 这类错误量纲完全一致（都是「纯数乘一个力」，结果还是 N），量纲检查一点用都没有。"
+        },
+        {
+          "label": "B",
+          "text": "数值代入：量纲完全正确，量纲检查抓不到。"
+        },
+        {
+          "label": "C",
+          "text": "量纲一致性：写成除法后量纲变成 kg²·m/s²，与力的量纲对不上，量纲检查当场拦住。"
+        },
+        {
+          "label": "D",
+          "text": "数值代入：★ 这条错写法的量纲完全正确（两个力相乘再乘纯数，仍是 N），量纲检查抓不到。"
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "写成除法后量纲变成 kg²·m/s²，与力的量纲对不上，量纲检查当场拦住。\n知识库校验证据：被测错误式：F_net = m/a；左式量纲：M·L·T^-2；右式量纲：M·L^-1·T^2；左右量纲不匹配；量纲校验说明：实际量纲检查得到等号左边为M·L·T^-2、右边为M·L^-1·T^2；两边不是同一物理量，因此该等式不成立。；变化方向要求：mismatch；检验说明：实际量纲检查得到等号左边为M·L·T^-2、右边为M·L^-1·T^2；两边不是同一物理量，因此该等式不成立。。",
+      "error_type": "量纲一致性",
+      "judging": "auto",
+      "source_error_index": 0,
+      "source_caught_by": "量纲一致性",
+      "wrong_expr": "F_net = m/a",
+      "trap_test": {
+        "kind": "dimension",
+        "target": "F_net = m/a",
+        "lhs_dim": "M·L·T^-2",
+        "rhs_dim": "M·L^-1·T^2",
+        "expect": "mismatch",
+        "note": "实际量纲检查得到等号左边为M·L·T^-2、右边为M·L^-1·T^2；两边不是同一物理量，因此该等式不成立。"
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
       "id": "diagnostic-dyn-05-2",
       "point_id": "dyn-05",
       "point_title": "牛顿第二定律",
@@ -416,24 +566,6 @@
     }
   ],
   "skipped": [
-    {
-      "point_id": "dyn-01",
-      "point_title": "弹力与胡克定律",
-      "source_error_index": 0,
-      "reason": "自动判定条目没有 trap_test 可执行证据；不把校验标签代替实测证据。"
-    },
-    {
-      "point_id": "dyn-02",
-      "point_title": "重力",
-      "source_error_index": 0,
-      "reason": "自动判定条目没有 trap_test 可执行证据；不把校验标签代替实测证据。"
-    },
-    {
-      "point_id": "dyn-05",
-      "point_title": "牛顿第二定律",
-      "source_error_index": 0,
-      "reason": "自动判定条目没有 trap_test 可执行证据；不把校验标签代替实测证据。"
-    },
     {
       "point_id": "dyn-06",
       "point_title": "牛顿第三定律",

@@ -4,6 +4,56 @@
   "source_file": "10_dc_circuit.json",
   "questions": [
     {
+      "id": "diagnostic-dc-01-1",
+      "point_id": "dc-01",
+      "point_title": "电流与微观表达式",
+      "chapter": "第十章 · 恒定电流",
+      "stem": "【第十章 · 恒定电流 · 电流与微观表达式】学生的错误做法：把电流定义式倒写成 I=t/q_charge（错误表达式：I = t/q_charge）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "数值代入：错误式量纲完全正确，量纲检查抓不到；代入实际电源会得 2.4 A，而把内阻计入后的正确值为 2 A。"
+        },
+        {
+          "label": "B",
+          "text": "概念混淆：串联电阻不会分走电流，反而增大总电阻；正确做法是让小电阻与表头并联。"
+        },
+        {
+          "label": "C",
+          "text": "数值代入：错误式的量纲仍是 A，量纲检查抓不到；12 V 与 6 Ω 会误得 1 A，而正确电流为 2 A。"
+        },
+        {
+          "label": "D",
+          "text": "量纲一致性：s/C 与电流单位 A 的量纲不同；定义式一旦把分子分母颠倒，量纲检查就能直接发现。"
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "s/C 与电流单位 A 的量纲不同；定义式一旦把分子分母颠倒，量纲检查就能直接发现。\n知识库校验证据：被测错误式：I = t/q_charge；左式量纲：I；右式量纲：I^-1；左右量纲不匹配；量纲校验说明：实际量纲检查得到等号左边为I、右边为I^-1；两边不是同一物理量，因此该等式不成立。；变化方向要求：mismatch；检验说明：实际量纲检查得到等号左边为I、右边为I^-1；两边不是同一物理量，因此该等式不成立。。",
+      "error_type": "量纲一致性",
+      "judging": "auto",
+      "source_error_index": 0,
+      "source_caught_by": "量纲一致性",
+      "wrong_expr": "I = t/q_charge",
+      "trap_test": {
+        "kind": "dimension",
+        "target": "I = t/q_charge",
+        "lhs_dim": "I",
+        "rhs_dim": "I^-1",
+        "expect": "mismatch",
+        "note": "实际量纲检查得到等号左边为I、右边为I^-1；两边不是同一物理量，因此该等式不成立。"
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
       "id": "diagnostic-dc-01-2",
       "point_id": "dc-01",
       "point_title": "电流与微观表达式",
@@ -38,6 +88,56 @@
         "scenario": "金属导线",
         "expr": "2*n*q_0*v_d*S",
         "ref": 1.6
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-dc-02-1",
+      "point_id": "dc-02",
+      "point_title": "欧姆定律与伏安特性曲线",
+      "chapter": "第十章 · 恒定电流",
+      "stem": "【第十章 · 恒定电流 · 欧姆定律与伏安特性曲线】学生的错误做法：把欧姆定律写成 I=UR（错误表达式：I = U*R）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "数值代入：错误式与正确式量纲完全相同，量纲检查抓不到；金属导线情境会误得 3.2 A，而正确电流是 1.6 A。"
+        },
+        {
+          "label": "B",
+          "text": "量纲一致性：V·Ω 与 A 的量纲不同；把本应相除的电阻改为相乘后，量纲检查会直接拦住。"
+        },
+        {
+          "label": "C",
+          "text": "数值代入：错误式量纲完全正确，量纲检查抓不到；代入实际电源会得 2.4 A，而把内阻计入后的正确值为 2 A。"
+        },
+        {
+          "label": "D",
+          "text": "概念混淆：串联电阻不会分走电流，反而增大总电阻；正确做法是让小电阻与表头并联。"
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "V·Ω 与 A 的量纲不同；把本应相除的电阻改为相乘后，量纲检查会直接拦住。\n知识库校验证据：被测错误式：I = U*R；左式量纲：I；右式量纲：M^2·L^4·T^-6·I^-3；左右量纲不匹配；量纲校验说明：实际量纲检查得到等号左边为I、右边为M^2·L^4·T^-6·I^-3；两边不是同一物理量，因此该等式不成立。；变化方向要求：mismatch；检验说明：实际量纲检查得到等号左边为I、右边为M^2·L^4·T^-6·I^-3；两边不是同一物理量，因此该等式不成立。。",
+      "error_type": "量纲一致性",
+      "judging": "auto",
+      "source_error_index": 0,
+      "source_caught_by": "量纲一致性",
+      "wrong_expr": "I = U*R",
+      "trap_test": {
+        "kind": "dimension",
+        "target": "I = U*R",
+        "lhs_dim": "I",
+        "rhs_dim": "M^2·L^4·T^-6·I^-3",
+        "expect": "mismatch",
+        "note": "实际量纲检查得到等号左边为I、右边为M^2·L^4·T^-6·I^-3；两边不是同一物理量，因此该等式不成立。"
       },
       "review": {
         "confidence": "medium",
@@ -141,6 +241,56 @@
       }
     },
     {
+      "id": "diagnostic-dc-03-1",
+      "point_id": "dc-03",
+      "point_title": "电阻定律与电阻率",
+      "chapter": "第十章 · 恒定电流",
+      "stem": "【第十章 · 恒定电流 · 电阻定律与电阻率】学生的错误做法：把电阻定律中的横截面积写到分子，误写 R=rho LS（错误表达式：R = rho*L*S）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "概念混淆：串联电阻不会分走电流，反而增大总电阻；正确做法是让小电阻与表头并联。"
+        },
+        {
+          "label": "B",
+          "text": "数值代入：错误式与正确式量纲完全相同，量纲检查抓不到；金属导线情境会误得 3.2 A，而正确电流是 1.6 A。"
+        },
+        {
+          "label": "C",
+          "text": "量纲一致性：错误式的量纲变成 Ω·m⁴，并不是电阻单位 Ω；面积放错位置会被量纲检查直接发现。"
+        },
+        {
+          "label": "D",
+          "text": "数值代入：错误式量纲完全正确，量纲检查抓不到；代入实际电源会得 2.4 A，而把内阻计入后的正确值为 2 A。"
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "错误式的量纲变成 Ω·m⁴，并不是电阻单位 Ω；面积放错位置会被量纲检查直接发现。\n知识库校验证据：被测错误式：R = rho*L*S；左式量纲：M·L^2·T^-3·I^-2；右式量纲：M·L^6·T^-3·I^-2；左右量纲不匹配；量纲校验说明：实际量纲检查得到等号左边为M·L^2·T^-3·I^-2、右边为M·L^6·T^-3·I^-2；两边不是同一物理量，因此该等式不成立。；变化方向要求：mismatch；检验说明：实际量纲检查得到等号左边为M·L^2·T^-3·I^-2、右边为M·L^6·T^-3·I^-2；两边不是同一物理量，因此该等式不成立。。",
+      "error_type": "量纲一致性",
+      "judging": "auto",
+      "source_error_index": 0,
+      "source_caught_by": "量纲一致性",
+      "wrong_expr": "R = rho*L*S",
+      "trap_test": {
+        "kind": "dimension",
+        "target": "R = rho*L*S",
+        "lhs_dim": "M·L^2·T^-3·I^-2",
+        "rhs_dim": "M·L^6·T^-3·I^-2",
+        "expect": "mismatch",
+        "note": "实际量纲检查得到等号左边为M·L^2·T^-3·I^-2、右边为M·L^6·T^-3·I^-2；两边不是同一物理量，因此该等式不成立。"
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
       "id": "diagnostic-dc-03-2",
       "point_id": "dc-03",
       "point_title": "电阻定律与电阻率",
@@ -231,6 +381,56 @@
       }
     },
     {
+      "id": "diagnostic-dc-04-1",
+      "point_id": "dc-04",
+      "point_title": "电功、电功率与焦耳定律",
+      "chapter": "第十章 · 恒定电流",
+      "stem": "【第十章 · 恒定电流 · 电功、电功率与焦耳定律】学生的错误做法：把电功写成 W_e=UI/t（错误表达式：W_e = U*I/t）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "数值代入：错误式量纲完全正确，量纲检查抓不到；代入实际电源会得 2.4 A，而把内阻计入后的正确值为 2 A。"
+        },
+        {
+          "label": "B",
+          "text": "概念混淆：串联电阻不会分走电流，反而增大总电阻；正确做法是让小电阻与表头并联。"
+        },
+        {
+          "label": "C",
+          "text": "数值代入：错误式与正确式量纲完全相同，量纲检查抓不到；金属导线情境会误得 3.2 A，而正确电流是 1.6 A。"
+        },
+        {
+          "label": "D",
+          "text": "量纲一致性：U*I 已是功率，再除以时间不可能得到能量；右边量纲与 J 不同，量纲检查会直接发现。"
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "U*I 已是功率，再除以时间不可能得到能量；右边量纲与 J 不同，量纲检查会直接发现。\n知识库校验证据：被测错误式：W_e = U*I/t；左式量纲：M·L^2·T^-2；右式量纲：M·L^2·T^-4；左右量纲不匹配；量纲校验说明：实际量纲检查得到等号左边为M·L^2·T^-2、右边为M·L^2·T^-4；两边不是同一物理量，因此该等式不成立。；变化方向要求：mismatch；检验说明：实际量纲检查得到等号左边为M·L^2·T^-2、右边为M·L^2·T^-4；两边不是同一物理量，因此该等式不成立。。",
+      "error_type": "量纲一致性",
+      "judging": "auto",
+      "source_error_index": 0,
+      "source_caught_by": "量纲一致性",
+      "wrong_expr": "W_e = U*I/t",
+      "trap_test": {
+        "kind": "dimension",
+        "target": "W_e = U*I/t",
+        "lhs_dim": "M·L^2·T^-2",
+        "rhs_dim": "M·L^2·T^-4",
+        "expect": "mismatch",
+        "note": "实际量纲检查得到等号左边为M·L^2·T^-2、右边为M·L^2·T^-4；两边不是同一物理量，因此该等式不成立。"
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
       "id": "diagnostic-dc-04-2",
       "point_id": "dc-04",
       "point_title": "电功、电功率与焦耳定律",
@@ -265,6 +465,56 @@
         "scenario": "电热器",
         "expr": "U*I*t/2",
         "ref": 21600.0
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-dc-05-1",
+      "point_id": "dc-05",
+      "point_title": "串联电路与并联电路",
+      "chapter": "第十章 · 恒定电流",
+      "stem": "【第十章 · 恒定电流 · 串联电路与并联电路】学生的错误做法：把串联等效电阻写成 R_s=R_1R_2（错误表达式：R_s = R_1*R_2）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "数值代入：错误式与正确式量纲完全相同，量纲检查抓不到；金属导线情境会误得 3.2 A，而正确电流是 1.6 A。"
+        },
+        {
+          "label": "B",
+          "text": "量纲一致性：两个电阻相乘的单位是 Ω²，不是等效电阻应有的 Ω；量纲检查会直接发现这种公式结构错误。"
+        },
+        {
+          "label": "C",
+          "text": "数值代入：错误式量纲完全正确，量纲检查抓不到；代入实际电源会得 2.4 A，而把内阻计入后的正确值为 2 A。"
+        },
+        {
+          "label": "D",
+          "text": "概念混淆：串联电阻不会分走电流，反而增大总电阻；正确做法是让小电阻与表头并联。"
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "两个电阻相乘的单位是 Ω²，不是等效电阻应有的 Ω；量纲检查会直接发现这种公式结构错误。\n知识库校验证据：被测错误式：R_s = R_1*R_2；左式量纲：M·L^2·T^-3·I^-2；右式量纲：M^2·L^4·T^-6·I^-4；左右量纲不匹配；量纲校验说明：实际量纲检查得到等号左边为M·L^2·T^-3·I^-2、右边为M^2·L^4·T^-6·I^-4；两边不是同一物理量，因此该等式不成立。；变化方向要求：mismatch；检验说明：实际量纲检查得到等号左边为M·L^2·T^-3·I^-2、右边为M^2·L^4·T^-6·I^-4；两边不是同一物理量，因此该等式不成立。。",
+      "error_type": "量纲一致性",
+      "judging": "auto",
+      "source_error_index": 0,
+      "source_caught_by": "量纲一致性",
+      "wrong_expr": "R_s = R_1*R_2",
+      "trap_test": {
+        "kind": "dimension",
+        "target": "R_s = R_1*R_2",
+        "lhs_dim": "M·L^2·T^-3·I^-2",
+        "rhs_dim": "M^2·L^4·T^-6·I^-4",
+        "expect": "mismatch",
+        "note": "实际量纲检查得到等号左边为M·L^2·T^-3·I^-2、右边为M^2·L^4·T^-6·I^-4；两边不是同一物理量，因此该等式不成立。"
       },
       "review": {
         "confidence": "medium",
@@ -509,36 +759,5 @@
       }
     }
   ],
-  "skipped": [
-    {
-      "point_id": "dc-01",
-      "point_title": "电流与微观表达式",
-      "source_error_index": 0,
-      "reason": "自动判定条目没有 trap_test 可执行证据；不把校验标签代替实测证据。"
-    },
-    {
-      "point_id": "dc-02",
-      "point_title": "欧姆定律与伏安特性曲线",
-      "source_error_index": 0,
-      "reason": "自动判定条目没有 trap_test 可执行证据；不把校验标签代替实测证据。"
-    },
-    {
-      "point_id": "dc-03",
-      "point_title": "电阻定律与电阻率",
-      "source_error_index": 0,
-      "reason": "自动判定条目没有 trap_test 可执行证据；不把校验标签代替实测证据。"
-    },
-    {
-      "point_id": "dc-04",
-      "point_title": "电功、电功率与焦耳定律",
-      "source_error_index": 0,
-      "reason": "自动判定条目没有 trap_test 可执行证据；不把校验标签代替实测证据。"
-    },
-    {
-      "point_id": "dc-05",
-      "point_title": "串联电路与并联电路",
-      "source_error_index": 0,
-      "reason": "自动判定条目没有 trap_test 可执行证据；不把校验标签代替实测证据。"
-    }
-  ]
+  "skipped": []
 }

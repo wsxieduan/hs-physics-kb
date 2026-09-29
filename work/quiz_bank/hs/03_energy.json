@@ -98,6 +98,56 @@
       }
     },
     {
+      "id": "diagnostic-ene-02-1",
+      "point_id": "ene-02",
+      "point_title": "功率：平均功率与瞬时功率",
+      "chapter": "第三章 · 功与能",
+      "stem": "【第三章 · 功与能 · 功率：平均功率与瞬时功率】学生的错误做法：把平均功率写成 P_avg = Wt（错误表达式：P_avg = W*t）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "数值代入：下落时重力与位移同向，应做正功。"
+        },
+        {
+          "label": "B",
+          "text": "量纲一致性：J·s 不是功率单位 J/s，量纲检查可以直接发现。"
+        },
+        {
+          "label": "C",
+          "text": "数值代入：只有力与位移同向时 cos(theta)=1 才能写成 Fs。"
+        },
+        {
+          "label": "D",
+          "text": "数值代入：错误式量纲仍是 J，量纲检查抓不到。"
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "J·s 不是功率单位 J/s，量纲检查可以直接发现。数值上还会错误地认为用时越长功率越大。\n知识库校验证据：被测错误式：P_avg = W*t；左式量纲：M·L^2·T^-3；右式量纲：M·L^2·T^-1；左右量纲不匹配；量纲校验说明：实际量纲检查得到等号左边为M·L^2·T^-3、右边为M·L^2·T^-1；两边不是同一物理量，因此该等式不成立。；变化方向要求：mismatch；检验说明：实际量纲检查得到等号左边为M·L^2·T^-3、右边为M·L^2·T^-1；两边不是同一物理量，因此该等式不成立。。",
+      "error_type": "量纲一致性",
+      "judging": "auto",
+      "source_error_index": 0,
+      "source_caught_by": "量纲一致性",
+      "wrong_expr": "P_avg = W*t",
+      "trap_test": {
+        "kind": "dimension",
+        "target": "P_avg = W*t",
+        "lhs_dim": "M·L^2·T^-3",
+        "rhs_dim": "M·L^2·T^-1",
+        "expect": "mismatch",
+        "note": "实际量纲检查得到等号左边为M·L^2·T^-3、右边为M·L^2·T^-1；两边不是同一物理量，因此该等式不成立。"
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
       "id": "diagnostic-ene-02-2",
       "point_id": "ene-02",
       "point_title": "功率：平均功率与瞬时功率",
@@ -273,6 +323,56 @@
         "scenario": "下落过程",
         "expr": "m*g*(h2-h1)",
         "ref": 60.0
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-ene-04-2",
+      "point_id": "ene-04",
+      "point_title": "重力做功与重力势能",
+      "chapter": "第三章 · 功与能",
+      "stem": "【第三章 · 功与能 · 重力做功与重力势能】学生的错误做法：把重力势能写成 Ep = mgh²（错误表达式：Ep = m*g*h^2）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "量纲一致性：右边单位会变成 J·m，而不是能量单位 J；高度被多乘了一次，数值也会随高度平方增长，量纲检查可以直接拦住。"
+        },
+        {
+          "label": "B",
+          "text": "数值代入：只有力与位移同向时 cos(theta)=1 才能写成 Fs。"
+        },
+        {
+          "label": "C",
+          "text": "数值代入：错误式量纲仍是 J，量纲检查抓不到。"
+        },
+        {
+          "label": "D",
+          "text": "数值代入：错误式量纲仍为 J，只有数值核验能发现。"
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "右边单位会变成 J·m，而不是能量单位 J；高度被多乘了一次，数值也会随高度平方增长，量纲检查可以直接拦住。\n知识库校验证据：被测错误式：Ep = m*g*h^2；左式量纲：M·L^2·T^-2；右式量纲：M·L^3·T^-2；左右量纲不匹配；量纲校验说明：实际量纲检查得到等号左边为M·L^2·T^-2、右边为M·L^3·T^-2；两边不是同一物理量，因此该等式不成立。；变化方向要求：mismatch；检验说明：实际量纲检查得到等号左边为M·L^2·T^-2、右边为M·L^3·T^-2；两边不是同一物理量，因此该等式不成立。。",
+      "error_type": "量纲一致性",
+      "judging": "auto",
+      "source_error_index": 1,
+      "source_caught_by": "量纲一致性",
+      "wrong_expr": "Ep = m*g*h^2",
+      "trap_test": {
+        "kind": "dimension",
+        "target": "Ep = m*g*h^2",
+        "lhs_dim": "M·L^2·T^-2",
+        "rhs_dim": "M·L^3·T^-2",
+        "expect": "mismatch",
+        "note": "实际量纲检查得到等号左边为M·L^2·T^-2、右边为M·L^3·T^-2；两边不是同一物理量，因此该等式不成立。"
       },
       "review": {
         "confidence": "medium",
@@ -468,27 +568,59 @@
         },
         "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
       }
+    },
+    {
+      "id": "diagnostic-ene-07-1",
+      "point_id": "ene-07",
+      "point_title": "功与能的关系：摩擦生热与能量守恒",
+      "chapter": "第三章 · 功与能",
+      "stem": "【第三章 · 功与能 · 功与能的关系：摩擦生热与能量守恒】学生的错误做法：把摩擦生热写成 Q = f/s_rel（错误表达式：Q = f/s_rel）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "数值代入：只有力与位移同向时 cos(theta)=1 才能写成 Fs。"
+        },
+        {
+          "label": "B",
+          "text": "数值代入：错误式量纲仍是 J，量纲检查抓不到。"
+        },
+        {
+          "label": "C",
+          "text": "数值代入：下落时重力与位移同向，应做正功。"
+        },
+        {
+          "label": "D",
+          "text": "量纲一致性：相除后的单位是 N/m，不是能量单位 J；而且它会错误地认为相对滑动路程越长，产生的内能反而越少，量纲检查可以直接发现。"
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "相除后的单位是 N/m，不是能量单位 J；而且它会错误地认为相对滑动路程越长，产生的内能反而越少，量纲检查可以直接发现。\n知识库校验证据：被测错误式：Q = f/s_rel；左式量纲：M·L^2·T^-2；右式量纲：M·T^-2；左右量纲不匹配；量纲校验说明：实际量纲检查得到等号左边为M·L^2·T^-2、右边为M·T^-2；两边不是同一物理量，因此该等式不成立。；变化方向要求：mismatch；检验说明：实际量纲检查得到等号左边为M·L^2·T^-2、右边为M·T^-2；两边不是同一物理量，因此该等式不成立。。",
+      "error_type": "量纲一致性",
+      "judging": "auto",
+      "source_error_index": 0,
+      "source_caught_by": "量纲一致性",
+      "wrong_expr": "Q = f/s_rel",
+      "trap_test": {
+        "kind": "dimension",
+        "target": "Q = f/s_rel",
+        "lhs_dim": "M·L^2·T^-2",
+        "rhs_dim": "M·T^-2",
+        "expect": "mismatch",
+        "note": "实际量纲检查得到等号左边为M·L^2·T^-2、右边为M·T^-2；两边不是同一物理量，因此该等式不成立。"
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
     }
   ],
   "skipped": [
-    {
-      "point_id": "ene-02",
-      "point_title": "功率：平均功率与瞬时功率",
-      "source_error_index": 0,
-      "reason": "自动判定条目没有 trap_test 可执行证据；不把校验标签代替实测证据。"
-    },
-    {
-      "point_id": "ene-04",
-      "point_title": "重力做功与重力势能",
-      "source_error_index": 1,
-      "reason": "自动判定条目没有 trap_test 可执行证据；不把校验标签代替实测证据。"
-    },
-    {
-      "point_id": "ene-07",
-      "point_title": "功与能的关系：摩擦生热与能量守恒",
-      "source_error_index": 0,
-      "reason": "自动判定条目没有 trap_test 可执行证据；不把校验标签代替实测证据。"
-    },
     {
       "point_id": "ene-07",
       "point_title": "功与能的关系：摩擦生热与能量守恒",

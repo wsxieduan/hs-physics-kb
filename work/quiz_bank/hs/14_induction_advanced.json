@@ -231,6 +231,106 @@
       }
     },
     {
+      "id": "diagnostic-iad-03-2",
+      "point_id": "iad-03",
+      "point_title": "电磁感应中的能量转化",
+      "chapter": "第十四章 · 电磁感应（二）自感与综合应用",
+      "stem": "【第十四章 · 电磁感应（二）自感与综合应用 · 电磁感应中的能量转化】学生的错误做法：把磁场能写成与电流一次方成正比 W_m=0.5*L_ind*I（错误表达式：W_m = 0.5*L_ind*I）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "概念混淆：电磁炉和感应炉正是利用涡流发热；磁阻尼也可用于仪表稳定。"
+        },
+        {
+          "label": "B",
+          "text": "数值代入：E-t 面积对应的是磁通匝数变化。"
+        },
+        {
+          "label": "C",
+          "text": "量纲一致性：右侧量纲不是能量，因此会被量纲检查拦住；并且电流增大一倍时，正确磁场能应增为原来的四倍，而不是两倍。"
+        },
+        {
+          "label": "D",
+          "text": "概念混淆：自感电动势反抗的是电流变化：通电时反抗增大，断电时反而尽力维持原电流方向。"
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "右侧量纲不是能量，因此会被量纲检查拦住；并且电流增大一倍时，正确磁场能应增为原来的四倍，而不是两倍。\n知识库校验证据：被测错误式：W_m = 0.5*L_ind*I；左式量纲：M·L^2·T^-2；右式量纲：M·L^2·T^-2·I^-1；左右量纲不匹配；量纲校验说明：实际量纲检查得到等号左边为M·L^2·T^-2、右边为M·L^2·T^-2·I^-1；两边不是同一物理量，因此该等式不成立。；变化方向要求：mismatch；检验说明：实际量纲检查得到等号左边为M·L^2·T^-2、右边为M·L^2·T^-2·I^-1；两边不是同一物理量，因此该等式不成立。。",
+      "error_type": "量纲一致性",
+      "judging": "auto",
+      "source_error_index": 1,
+      "source_caught_by": "量纲一致性",
+      "wrong_expr": "W_m = 0.5*L_ind*I",
+      "trap_test": {
+        "kind": "dimension",
+        "target": "W_m = 0.5*L_ind*I",
+        "lhs_dim": "M·L^2·T^-2",
+        "rhs_dim": "M·L^2·T^-2·I^-1",
+        "expect": "mismatch",
+        "note": "实际量纲检查得到等号左边为M·L^2·T^-2、右边为M·L^2·T^-2·I^-1；两边不是同一物理量，因此该等式不成立。"
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-iad-04-1",
+      "point_id": "iad-04",
+      "point_title": "电磁感应中的力学综合：导轨与导体棒",
+      "chapter": "第十四章 · 电磁感应（二）自感与综合应用",
+      "stem": "【第十四章 · 电磁感应（二）自感与综合应用 · 电磁感应中的力学综合：导轨与导体棒】学生的错误做法：认为导体棒速度越大，安培阻力越小（错误表达式：F_mag = B^2*L_rod^2/(R_total*v)）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "数值代入：量纲完全正确，必须靠数值检验；线圈储能情境中错误式得到 8.0 J，正确值为 4.0 J。"
+        },
+        {
+          "label": "B",
+          "text": "量纲一致性：错误式不仅量纲不对，也颠倒了反馈关系；正确关系中安培阻力与速度成正比。"
+        },
+        {
+          "label": "C",
+          "text": "概念混淆：自感电动势反抗的是电流变化：通电时反抗增大，断电时反而尽力维持原电流方向。"
+        },
+        {
+          "label": "D",
+          "text": "概念混淆：电磁炉和感应炉正是利用涡流发热；磁阻尼也可用于仪表稳定。"
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "错误式不仅量纲不对，也颠倒了反馈关系；正确关系中安培阻力与速度成正比。\n知识库校验证据：被测错误式：F_mag = B^2*L_rod^2/(R_total*v)；左式量纲：M·L·T^-2；右式量纲：M·L^-1；左右量纲不匹配；量纲校验说明：实际量纲检查得到等号左边为M·L·T^-2、右边为M·L^-1；两边不是同一物理量，因此该等式不成立。；变化方向要求：mismatch；检验说明：实际量纲检查得到等号左边为M·L·T^-2、右边为M·L^-1；两边不是同一物理量，因此该等式不成立。。",
+      "error_type": "量纲一致性",
+      "judging": "auto",
+      "source_error_index": 0,
+      "source_caught_by": "量纲一致性",
+      "wrong_expr": "F_mag = B^2*L_rod^2/(R_total*v)",
+      "trap_test": {
+        "kind": "dimension",
+        "target": "F_mag = B^2*L_rod^2/(R_total*v)",
+        "lhs_dim": "M·L·T^-2",
+        "rhs_dim": "M·L^-1",
+        "expect": "mismatch",
+        "note": "实际量纲检查得到等号左边为M·L·T^-2、右边为M·L^-1；两边不是同一物理量，因此该等式不成立。"
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
       "id": "diagnostic-iad-04-2",
       "point_id": "iad-04",
       "point_title": "电磁感应中的力学综合：导轨与导体棒",
@@ -323,26 +423,57 @@
         },
         "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
       }
-    }
-  ],
-  "skipped": [
-    {
-      "point_id": "iad-03",
-      "point_title": "电磁感应中的能量转化",
-      "source_error_index": 1,
-      "reason": "自动判定条目没有 trap_test 可执行证据；不把校验标签代替实测证据。"
     },
     {
-      "point_id": "iad-04",
-      "point_title": "电磁感应中的力学综合：导轨与导体棒",
-      "source_error_index": 0,
-      "reason": "自动判定条目没有 trap_test 可执行证据；不把校验标签代替实测证据。"
-    },
-    {
+      "id": "diagnostic-iad-05-2",
       "point_id": "iad-05",
       "point_title": "电磁感应中的图像问题",
+      "chapter": "第十四章 · 电磁感应（二）自感与综合应用",
+      "stem": "【第十四章 · 电磁感应（二）自感与综合应用 · 电磁感应中的图像问题】学生的错误做法：把 I-t 图像某时刻的纵坐标直接当作通过的电荷量（错误表达式：Q_ind = I_avg）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "概念混淆：电磁炉和感应炉正是利用涡流发热；磁阻尼也可用于仪表稳定。"
+        },
+        {
+          "label": "B",
+          "text": "数值代入：量纲完全正确，必须靠数值检验；线圈储能情境中错误式得到 8.0 J，正确值为 4.0 J。"
+        },
+        {
+          "label": "C",
+          "text": "量纲一致性：电流单位是 A，电荷量单位是 C，必须乘时间或求图像面积；0.60 A 持续 0.20 s 只通过 0.12 C。"
+        },
+        {
+          "label": "D",
+          "text": "概念混淆：自感电动势反抗的是电流变化：通电时反抗增大，断电时反而尽力维持原电流方向。"
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "电流单位是 A，电荷量单位是 C，必须乘时间或求图像面积；0.60 A 持续 0.20 s 只通过 0.12 C。\n知识库校验证据：被测错误式：Q_ind = I_avg；左式量纲：T·I；右式量纲：I；左右量纲不匹配；量纲校验说明：实际量纲检查得到等号左边为T·I、右边为I；两边不是同一物理量，因此该等式不成立。；变化方向要求：mismatch；检验说明：实际量纲检查得到等号左边为T·I、右边为I；两边不是同一物理量，因此该等式不成立。。",
+      "error_type": "量纲一致性",
+      "judging": "auto",
       "source_error_index": 1,
-      "reason": "自动判定条目没有 trap_test 可执行证据；不把校验标签代替实测证据。"
+      "source_caught_by": "量纲一致性",
+      "wrong_expr": "Q_ind = I_avg",
+      "trap_test": {
+        "kind": "dimension",
+        "target": "Q_ind = I_avg",
+        "lhs_dim": "T·I",
+        "rhs_dim": "I",
+        "expect": "mismatch",
+        "note": "实际量纲检查得到等号左边为T·I、右边为I；两边不是同一物理量，因此该等式不成立。"
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
     }
-  ]
+  ],
+  "skipped": []
 }

@@ -4,6 +4,56 @@
   "source_file": "09_capacitor_particle.json",
   "questions": [
     {
+      "id": "diagnostic-cap-01-1",
+      "point_id": "cap-01",
+      "point_title": "电容器与电容",
+      "chapter": "第九章 · 静电场（三）电容与带电粒子",
+      "stem": "【第九章 · 静电场（三）电容与带电粒子 · 电容器与电容】学生的错误做法：把电容定义式倒写成 C_cap = U/Q（错误表达式：C_cap = U/Q）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "数值代入：错误式与正确式量纲完全相同，量纲检查抓不到。"
+        },
+        {
+          "label": "B",
+          "text": "概念混淆：断开电源后保持不变的是 Q，不是 U。"
+        },
+        {
+          "label": "C",
+          "text": "数值代入：错误式量纲正确，量纲检查抓不到。"
+        },
+        {
+          "label": "D",
+          "text": "量纲一致性：U/Q 的量纲是 V/C，与电容的 C/V 互为倒数，量纲检查可以直接发现。"
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "U/Q 的量纲是 V/C，与电容的 C/V 互为倒数，量纲检查可以直接发现。\n知识库校验证据：被测错误式：C_cap = U/Q；左式量纲：M^-1·L^-2·T^4·I^2；右式量纲：M·L^2·T^-4·I^-2；左右量纲不匹配；量纲校验说明：实际量纲检查得到等号左边为M^-1·L^-2·T^4·I^2、右边为M·L^2·T^-4·I^-2；两边不是同一物理量，因此该等式不成立。；变化方向要求：mismatch；检验说明：实际量纲检查得到等号左边为M^-1·L^-2·T^4·I^2、右边为M·L^2·T^-4·I^-2；两边不是同一物理量，因此该等式不成立。。",
+      "error_type": "量纲一致性",
+      "judging": "auto",
+      "source_error_index": 0,
+      "source_caught_by": "量纲一致性",
+      "wrong_expr": "C_cap = U/Q",
+      "trap_test": {
+        "kind": "dimension",
+        "target": "C_cap = U/Q",
+        "lhs_dim": "M^-1·L^-2·T^4·I^2",
+        "rhs_dim": "M·L^2·T^-4·I^-2",
+        "expect": "mismatch",
+        "note": "实际量纲检查得到等号左边为M^-1·L^-2·T^4·I^2、右边为M·L^2·T^-4·I^-2；两边不是同一物理量，因此该等式不成立。"
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
       "id": "diagnostic-cap-01-2",
       "point_id": "cap-01",
       "point_title": "电容器与电容",
@@ -141,6 +191,56 @@
       }
     },
     {
+      "id": "diagnostic-cap-03-1",
+      "point_id": "cap-03",
+      "point_title": "带电粒子在电场中的加速",
+      "chapter": "第九章 · 静电场（三）电容与带电粒子",
+      "stem": "【第九章 · 静电场（三）电容与带电粒子 · 带电粒子在电场中的加速】学生的错误做法：把电场力做功写成 W = q_abs/U（错误表达式：delta_Ek = q_abs/U）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "数值代入：错误式与正确式量纲完全相同，量纲检查抓不到。"
+        },
+        {
+          "label": "B",
+          "text": "概念混淆：断开电源后保持不变的是 Q，不是 U。"
+        },
+        {
+          "label": "C",
+          "text": "数值代入：错误式量纲仍是长度，量纲检查无能为力；代入情境得到 0.2 m，正确值是 0.1 m，数值检查能抓住系数错误。"
+        },
+        {
+          "label": "D",
+          "text": "量纲一致性：C/V 不是能量单位 J，量纲检查会直接发现；正确关系是电荷量乘电压。"
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "C/V 不是能量单位 J，量纲检查会直接发现；正确关系是电荷量乘电压。\n知识库校验证据：被测错误式：delta_Ek = q_abs/U；左式量纲：M·L^2·T^-2；右式量纲：M^-1·L^-2·T^4·I^2；左右量纲不匹配；量纲校验说明：实际量纲检查得到等号左边为M·L^2·T^-2、右边为M^-1·L^-2·T^4·I^2；两边不是同一物理量，因此该等式不成立。；变化方向要求：mismatch；检验说明：实际量纲检查得到等号左边为M·L^2·T^-2、右边为M^-1·L^-2·T^4·I^2；两边不是同一物理量，因此该等式不成立。。",
+      "error_type": "量纲一致性",
+      "judging": "auto",
+      "source_error_index": 0,
+      "source_caught_by": "量纲一致性",
+      "wrong_expr": "delta_Ek = q_abs/U",
+      "trap_test": {
+        "kind": "dimension",
+        "target": "delta_Ek = q_abs/U",
+        "lhs_dim": "M·L^2·T^-2",
+        "rhs_dim": "M^-1·L^-2·T^4·I^2",
+        "expect": "mismatch",
+        "note": "实际量纲检查得到等号左边为M·L^2·T^-2、右边为M^-1·L^-2·T^4·I^2；两边不是同一物理量，因此该等式不成立。"
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
       "id": "diagnostic-cap-03-2",
       "point_id": "cap-03",
       "point_title": "带电粒子在电场中的加速",
@@ -175,6 +275,56 @@
         "scenario": "带电小球加速",
         "expr": "sqrt(2*q_abs*U/m)",
         "ref": 22.360679775
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-cap-04-1",
+      "point_id": "cap-04",
+      "point_title": "带电粒子在匀强电场中的偏转",
+      "chapter": "第九章 · 静电场（三）电容与带电粒子",
+      "stem": "【第九章 · 静电场（三）电容与带电粒子 · 带电粒子在匀强电场中的偏转】学生的错误做法：把板间运动时间写成 t = v_0/L（错误表达式：t = v_0/L）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "数值代入：错误式量纲正确，量纲检查抓不到。"
+        },
+        {
+          "label": "B",
+          "text": "量纲一致性：(m/s)/m 的量纲是 1/s，不是时间，量纲检查直接拦住。"
+        },
+        {
+          "label": "C",
+          "text": "数值代入：错误式与正确式量纲完全相同，量纲检查抓不到。"
+        },
+        {
+          "label": "D",
+          "text": "概念混淆：断开电源后保持不变的是 Q，不是 U。"
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "(m/s)/m 的量纲是 1/s，不是时间，量纲检查直接拦住。\n知识库校验证据：被测错误式：t = v_0/L；左式量纲：T；右式量纲：T^-1；左右量纲不匹配；量纲校验说明：实际量纲检查得到等号左边为T、右边为T^-1；两边不是同一物理量，因此该等式不成立。；变化方向要求：mismatch；检验说明：实际量纲检查得到等号左边为T、右边为T^-1；两边不是同一物理量，因此该等式不成立。。",
+      "error_type": "量纲一致性",
+      "judging": "auto",
+      "source_error_index": 0,
+      "source_caught_by": "量纲一致性",
+      "wrong_expr": "t = v_0/L",
+      "trap_test": {
+        "kind": "dimension",
+        "target": "t = v_0/L",
+        "lhs_dim": "T",
+        "rhs_dim": "T^-1",
+        "expect": "mismatch",
+        "note": "实际量纲检查得到等号左边为T、右边为T^-1；两边不是同一物理量，因此该等式不成立。"
       },
       "review": {
         "confidence": "medium",
@@ -235,6 +385,56 @@
       }
     },
     {
+      "id": "diagnostic-cap-05-1",
+      "point_id": "cap-05",
+      "point_title": "示波管的原理",
+      "chapter": "第九章 · 静电场（三）电容与带电粒子",
+      "stem": "【第九章 · 静电场（三）电容与带电粒子 · 示波管的原理】学生的错误做法：电子由静止加速后写成 v_0 = e_charge U_a/m_e（错误表达式：v_0 = e_charge*U_a/m_e）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "数值代入：错误式与正确式量纲完全相同，量纲检查抓不到。"
+        },
+        {
+          "label": "B",
+          "text": "概念混淆：断开电源后保持不变的是 Q，不是 U。"
+        },
+        {
+          "label": "C",
+          "text": "数值代入：错误式量纲正确，量纲检查抓不到。"
+        },
+        {
+          "label": "D",
+          "text": "量纲一致性：eU/m 的量纲是 m²/s²，对应速度的平方而不是速度；必须乘 2 后开平方，量纲检查可直接发现。"
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "eU/m 的量纲是 m²/s²，对应速度的平方而不是速度；必须乘 2 后开平方，量纲检查可直接发现。\n知识库校验证据：被测错误式：v_0 = e_charge*U_a/m_e；左式量纲：L·T^-1；右式量纲：L^2·T^-2；左右量纲不匹配；量纲校验说明：实际量纲检查得到等号左边为L·T^-1、右边为L^2·T^-2；两边不是同一物理量，因此该等式不成立。；变化方向要求：mismatch；检验说明：实际量纲检查得到等号左边为L·T^-1、右边为L^2·T^-2；两边不是同一物理量，因此该等式不成立。。",
+      "error_type": "量纲一致性",
+      "judging": "auto",
+      "source_error_index": 0,
+      "source_caught_by": "量纲一致性",
+      "wrong_expr": "v_0 = e_charge*U_a/m_e",
+      "trap_test": {
+        "kind": "dimension",
+        "target": "v_0 = e_charge*U_a/m_e",
+        "lhs_dim": "L·T^-1",
+        "rhs_dim": "L^2·T^-2",
+        "expect": "mismatch",
+        "note": "实际量纲检查得到等号左边为L·T^-1、右边为L^2·T^-2；两边不是同一物理量，因此该等式不成立。"
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
       "id": "diagnostic-cap-05-2",
       "point_id": "cap-05",
       "point_title": "示波管的原理",
@@ -282,30 +482,5 @@
       }
     }
   ],
-  "skipped": [
-    {
-      "point_id": "cap-01",
-      "point_title": "电容器与电容",
-      "source_error_index": 0,
-      "reason": "自动判定条目没有 trap_test 可执行证据；不把校验标签代替实测证据。"
-    },
-    {
-      "point_id": "cap-03",
-      "point_title": "带电粒子在电场中的加速",
-      "source_error_index": 0,
-      "reason": "自动判定条目没有 trap_test 可执行证据；不把校验标签代替实测证据。"
-    },
-    {
-      "point_id": "cap-04",
-      "point_title": "带电粒子在匀强电场中的偏转",
-      "source_error_index": 0,
-      "reason": "自动判定条目没有 trap_test 可执行证据；不把校验标签代替实测证据。"
-    },
-    {
-      "point_id": "cap-05",
-      "point_title": "示波管的原理",
-      "source_error_index": 0,
-      "reason": "自动判定条目没有 trap_test 可执行证据；不把校验标签代替实测证据。"
-    }
-  ]
+  "skipped": []
 }

@@ -145,6 +145,56 @@
       }
     },
     {
+      "id": "diagnostic-pot-03-2",
+      "point_id": "pot-03",
+      "point_title": "电势",
+      "chapter": "第八章 · 静电场（二）电场的能的性质",
+      "stem": "【第八章 · 静电场（二）电场的能的性质 · 电势】学生的错误做法：把电势能关系写成 Ep=q/phi（错误表达式：Ep = q/phi）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "数值代入：变化量必须是末态减初态。"
+        },
+        {
+          "label": "B",
+          "text": "数值代入：同一等势面上错误式得到 600 V，正确电势之差应为 0 V。"
+        },
+        {
+          "label": "C",
+          "text": "量纲一致性：C/V 不是能量 J 的量纲；正确关系是电荷量乘电势，乘积 C·V 才等于 J，乘除颠倒会被量纲检查直接发现。"
+        },
+        {
+          "label": "D",
+          "text": "数值代入：静电力功只由始末位置决定。"
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "C/V 不是能量 J 的量纲；正确关系是电荷量乘电势，乘积 C·V 才等于 J，乘除颠倒会被量纲检查直接发现。\n知识库校验证据：被测错误式：Ep = q/phi；左式量纲：M·L^2·T^-2；右式量纲：M^-1·L^-2·T^4·I^2；左右量纲不匹配；量纲校验说明：实际量纲检查得到等号左边为M·L^2·T^-2、右边为M^-1·L^-2·T^4·I^2；两边不是同一物理量，因此该等式不成立。；变化方向要求：mismatch；检验说明：实际量纲检查得到等号左边为M·L^2·T^-2、右边为M^-1·L^-2·T^4·I^2；两边不是同一物理量，因此该等式不成立。。",
+      "error_type": "量纲一致性",
+      "judging": "auto",
+      "source_error_index": 1,
+      "source_caught_by": "量纲一致性",
+      "wrong_expr": "Ep = q/phi",
+      "trap_test": {
+        "kind": "dimension",
+        "target": "Ep = q/phi",
+        "lhs_dim": "M·L^2·T^-2",
+        "rhs_dim": "M^-1·L^-2·T^4·I^2",
+        "expect": "mismatch",
+        "note": "实际量纲检查得到等号左边为M·L^2·T^-2、右边为M^-1·L^-2·T^4·I^2；两边不是同一物理量，因此该等式不成立。"
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
       "id": "diagnostic-pot-04-1",
       "point_id": "pot-04",
       "point_title": "等势面",
@@ -329,6 +379,56 @@
       }
     },
     {
+      "id": "diagnostic-pot-06-1",
+      "point_id": "pot-06",
+      "point_title": "匀强电场中电势差与场强的关系",
+      "chapter": "第八章 · 静电场（二）电场的能的性质",
+      "stem": "【第八章 · 静电场（二）电场的能的性质 · 匀强电场中电势差与场强的关系】学生的错误做法：把乘法写成除法，误记为 U=E/d（错误表达式：U = E/d）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "数值代入：电势能和电荷量都必须带符号。"
+        },
+        {
+          "label": "B",
+          "text": "量纲一致性：右边单位为 V/m²，不是电势差应有的 V；同时还会错误地预言距离越大电势差越小，量纲检查会直接拦住。"
+        },
+        {
+          "label": "C",
+          "text": "数值代入：静电力功只由始末位置决定。"
+        },
+        {
+          "label": "D",
+          "text": "数值代入：变化量必须是末态减初态。"
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "右边单位为 V/m²，不是电势差应有的 V；同时还会错误地预言距离越大电势差越小，量纲检查会直接拦住。\n知识库校验证据：被测错误式：U = E/d；左式量纲：M·L^2·T^-3·I^-1；右式量纲：M·T^-3·I^-1；左右量纲不匹配；量纲校验说明：实际量纲检查得到等号左边为M·L^2·T^-3·I^-1、右边为M·T^-3·I^-1；两边不是同一物理量，因此该等式不成立。；变化方向要求：mismatch；检验说明：实际量纲检查得到等号左边为M·L^2·T^-3·I^-1、右边为M·T^-3·I^-1；两边不是同一物理量，因此该等式不成立。。",
+      "error_type": "量纲一致性",
+      "judging": "auto",
+      "source_error_index": 0,
+      "source_caught_by": "量纲一致性",
+      "wrong_expr": "U = E/d",
+      "trap_test": {
+        "kind": "dimension",
+        "target": "U = E/d",
+        "lhs_dim": "M·L^2·T^-3·I^-1",
+        "rhs_dim": "M·T^-3·I^-1",
+        "expect": "mismatch",
+        "note": "实际量纲检查得到等号左边为M·L^2·T^-3·I^-1、右边为M·T^-3·I^-1；两边不是同一物理量，因此该等式不成立。"
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
       "id": "diagnostic-pot-06-2",
       "point_id": "pot-06",
       "point_title": "匀强电场中电势差与场强的关系",
@@ -387,18 +487,6 @@
       "point_id": "pot-02",
       "point_title": "电势能",
       "source_error_index": 1,
-      "reason": "自动判定条目没有 trap_test 可执行证据；不把校验标签代替实测证据。"
-    },
-    {
-      "point_id": "pot-03",
-      "point_title": "电势",
-      "source_error_index": 1,
-      "reason": "自动判定条目没有 trap_test 可执行证据；不把校验标签代替实测证据。"
-    },
-    {
-      "point_id": "pot-06",
-      "point_title": "匀强电场中电势差与场强的关系",
-      "source_error_index": 0,
       "reason": "自动判定条目没有 trap_test 可执行证据；不把校验标签代替实测证据。"
     }
   ]

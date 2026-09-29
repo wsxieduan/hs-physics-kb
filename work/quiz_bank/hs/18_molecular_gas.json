@@ -51,6 +51,56 @@
       }
     },
     {
+      "id": "diagnostic-mgas-01-2",
+      "point_id": "mgas-01",
+      "point_title": "分子动理论的基本内容与微观量估算",
+      "chapter": "第十八章 · 分子动理论与气体",
+      "stem": "【第十八章 · 分子动理论与气体 · 分子动理论的基本内容与微观量估算】学生的错误做法：由分子线度估体积时写成 V_molecule = d^2（错误表达式：V_molecule = d^2）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "数值代入：两种温标零点不同。"
+        },
+        {
+          "label": "B",
+          "text": "概念混淆：内能还与分子数、物态和分子间势能等因素有关；温度只反映热运动的平均剧烈程度。"
+        },
+        {
+          "label": "C",
+          "text": "量纲一致性：面积不是体积，d^2 的量纲是 L^2，而单分子体积的量纲是 L^3。"
+        },
+        {
+          "label": "D",
+          "text": "数值代入：吸引与排斥方向相反，应作差而不是相加。"
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "面积不是体积，d^2 的量纲是 L^2，而单分子体积的量纲是 L^3。\n知识库校验证据：被测错误式：V_molecule = d^2；左式量纲：L^3；右式量纲：L^2；左右量纲不匹配；量纲校验说明：实际量纲检查得到等号左边为L^3、右边为L^2；两边不是同一物理量，因此该等式不成立。；变化方向要求：mismatch；检验说明：实际量纲检查得到等号左边为L^3、右边为L^2；两边不是同一物理量，因此该等式不成立。。",
+      "error_type": "量纲一致性",
+      "judging": "auto",
+      "source_error_index": 1,
+      "source_caught_by": "量纲一致性",
+      "wrong_expr": "V_molecule = d^2",
+      "trap_test": {
+        "kind": "dimension",
+        "target": "V_molecule = d^2",
+        "lhs_dim": "L^3",
+        "rhs_dim": "L^2",
+        "expect": "mismatch",
+        "note": "实际量纲检查得到等号左边为L^3、右边为L^2；两边不是同一物理量，因此该等式不成立。"
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
       "id": "diagnostic-mgas-02-1",
       "point_id": "mgas-02",
       "point_title": "分子间作用力与分子势能",
@@ -419,6 +469,56 @@
       }
     },
     {
+      "id": "diagnostic-mgas-06-1",
+      "point_id": "mgas-06",
+      "point_title": "理想气体状态方程",
+      "chapter": "第十八章 · 分子动理论与气体",
+      "stem": "【第十八章 · 分子动理论与气体 · 理想气体状态方程】学生的错误做法：把微观状态方程写成 p = Nk_BT·V（错误表达式：p = N*k_B*T*V）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "数值代入：两种温标零点不同。"
+        },
+        {
+          "label": "B",
+          "text": "量纲一致性：乘以体积后量纲变成能量乘体积，已经不是压强；而且错误式会预言容器越大压强越大，方向也相反。"
+        },
+        {
+          "label": "C",
+          "text": "数值代入：分子数应是总体积除以单分子体积。"
+        },
+        {
+          "label": "D",
+          "text": "数值代入：吸引与排斥方向相反，应作差而不是相加。"
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "乘以体积后量纲变成能量乘体积，已经不是压强；而且错误式会预言容器越大压强越大，方向也相反。\n知识库校验证据：被测错误式：p = N*k_B*T*V；左式量纲：M·L^-1·T^-2；右式量纲：M·L^5·T^-2；左右量纲不匹配；量纲校验说明：实际量纲检查得到等号左边为M·L^-1·T^-2、右边为M·L^5·T^-2；两边不是同一物理量，因此该等式不成立。；变化方向要求：mismatch；检验说明：实际量纲检查得到等号左边为M·L^-1·T^-2、右边为M·L^5·T^-2；两边不是同一物理量，因此该等式不成立。。",
+      "error_type": "量纲一致性",
+      "judging": "auto",
+      "source_error_index": 0,
+      "source_caught_by": "量纲一致性",
+      "wrong_expr": "p = N*k_B*T*V",
+      "trap_test": {
+        "kind": "dimension",
+        "target": "p = N*k_B*T*V",
+        "lhs_dim": "M·L^-1·T^-2",
+        "rhs_dim": "M·L^5·T^-2",
+        "expect": "mismatch",
+        "note": "实际量纲检查得到等号左边为M·L^-1·T^-2、右边为M·L^5·T^-2；两边不是同一物理量，因此该等式不成立。"
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
       "id": "diagnostic-mgas-06-2",
       "point_id": "mgas-06",
       "point_title": "理想气体状态方程",
@@ -466,18 +566,5 @@
       }
     }
   ],
-  "skipped": [
-    {
-      "point_id": "mgas-01",
-      "point_title": "分子动理论的基本内容与微观量估算",
-      "source_error_index": 1,
-      "reason": "自动判定条目没有 trap_test 可执行证据；不把校验标签代替实测证据。"
-    },
-    {
-      "point_id": "mgas-06",
-      "point_title": "理想气体状态方程",
-      "source_error_index": 0,
-      "reason": "自动判定条目没有 trap_test 可执行证据；不把校验标签代替实测证据。"
-    }
-  ]
+  "skipped": []
 }

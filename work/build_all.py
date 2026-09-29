@@ -11,7 +11,10 @@ import json
 import os
 import re
 import shutil
+import subprocess
 import sys
+from html.parser import HTMLParser
+from urllib.parse import unquote, urlsplit
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
@@ -23,6 +26,8 @@ from build_quiz import build as build_quiz
 from build_quiz import load_diagnostic_banks
 from build_quiz import make_diagnostic_bank
 from physkit import kb as KB
+from physkit import expr as EX
+from physkit import checks as CHECKS
 import build_lite
 import build_quick_site
 import qc as FROZEN_QC
@@ -208,6 +213,189 @@ def summarize_diagnostic_banks(banks):
     return result
 
 
+def audit_dimension_evidence(kb_dirs):
+    """用正式引擎复算所有量纲证据，并列出仍无法判定的源错误。"""
+    summary = {}
+    for segment, directory in kb_dirs.items():
+        row = {"filled": 0, "preexisting": 0, "failed": []}
+        for path in sorted(os.path.join(directory, name) for name in os.listdir(directory)
+                           if name.endswith(".json")):
+            with open(path, "r", encoding="utf-8") as handle:
+                chapter = json.load(handle)
+            for point in chapter.get("points", []):
+                symbols = point.get("symbols", {})
+                for index, error in enumerate(point.get("errors", [])):
+                    if error.get("caught_by") != "量纲一致性":
+                        continue
+                    test = error.get("trap_test")
+                    if test and test.get("kind") != "dimension":
+                        row["preexisting"] += 1
+                        continue
+                    expression = error.get("wrong_expr")
+                    record = {
+                        "segment": segment, "file": os.path.basename(path),
+                        "chapter": chapter.get("chapter", "未命名章节"),
+                        "point_id": point.get("id", ""),
+                        "point_title": point.get("title", ""),
+                        "error_index": index + 1, "wrong_expr": expression,
+                    }
+                    try:
+                        lhs_ast, rhs_ast = EX.parse_equation(expression)
+                        if lhs_ast[0] != "var":
+                            raise ValueError("等號左側不是單一變量，無法指定 lhs_var")
+                        result = CHECKS.check_dimension(
+                            expression, lhs_ast, rhs_ast, lhs_ast[1], symbols)
+                        if result.error:
+                            raise ValueError("正式引擎无法算出左右量纲：" + result.error)
+                        env = CHECKS.build_env(symbols)
+                        lhs = EX.evaluate(lhs_ast, env)
+                        rhs = EX.evaluate(rhs_ast, env)
+                        lhs_dim, rhs_dim = str(lhs.dim), str(rhs.dim)
+                        if result.ok or lhs.dim == rhs.dim:
+                            raise ValueError("正式引擎算得左右量綱一致，不能登记为 mismatch")
+                    except Exception as exc:
+                        if test:
+                            raise RuntimeError("已写入的量纲 trap_test 无法复现：%s / 错误 #%d：%s" %
+                                               (record["point_id"], record["error_index"], exc)) from exc
+                        row["failed"].append((record, str(exc)))
+                        continue
+
+                    if test:
+                        if (test.get("target") != expression or
+                                test.get("lhs_dim") != lhs_dim or
+                                test.get("rhs_dim") != rhs_dim or
+                                test.get("expect") != "mismatch"):
+                            raise RuntimeError("量纲 trap_test 与正式引擎复算不一致：%s / 错误 #%d" %
+                                               (record["point_id"], record["error_index"]))
+                        row["filled"] += 1
+                    else:
+                        raise RuntimeError("有正式引擎可判定的量纲错误未回填 trap_test：%s / 错误 #%d" %
+                                           (record["point_id"], record["error_index"]))
+        summary[segment] = row
+    return summary
+
+
+def read_existing_questions(bank_dirs):
+    """读取生成前题目快照，供本批逐题核对是否原样保留。"""
+    result = {}
+    for directory in bank_dirs:
+        for question in load_diagnostic_banks(directory).get("questions", []):
+            question_id = question.get("id")
+            if not question_id or question_id in result:
+                raise RuntimeError("旧题库缺少唯一题目 id：%s" % question_id)
+            result[question_id] = question
+    return result
+
+
+def audit_question_types(questions):
+    """核对机器题与人工点评题的来源类型没有错配。"""
+    failures = []
+    for question in questions:
+        judging = question.get("judging")
+        source_type = question.get("source_caught_by")
+        error_type = question.get("error_type")
+        if judging == "auto" and source_type != error_type:
+            failures.append((question.get("id"), source_type, error_type))
+        elif judging == "teacher" and (source_type != "人工审核" or error_type != "概念混淆"):
+            failures.append((question.get("id"), source_type, error_type))
+    if failures:
+        raise RuntimeError("题目来源类型映射不一致：%s" % failures[:20])
+    return True
+
+
+class _PageAuditParser(HTMLParser):
+    """提取离线页面中的脚本、站内链接和锚点，供构建后自检。"""
+    def __init__(self):
+        super().__init__()
+        self.scripts = []
+        self.hrefs = []
+        self.ids = set()
+        self._inside_script = False
+        self._script_type = ""
+        self._script_src = False
+        self._script_parts = []
+
+    def handle_starttag(self, tag, attrs):
+        attrs = dict(attrs)
+        if attrs.get("id"):
+            self.ids.add(attrs["id"])
+        if tag == "a" and attrs.get("name"):
+            self.ids.add(attrs["name"])
+        if tag == "a" and attrs.get("href"):
+            self.hrefs.append(attrs["href"])
+        if tag == "script":
+            self._inside_script = True
+            self._script_type = attrs.get("type", "").lower()
+            self._script_src = bool(attrs.get("src"))
+            self._script_parts = []
+
+    def handle_data(self, data):
+        if self._inside_script:
+            self._script_parts.append(data)
+
+    def handle_endtag(self, tag):
+        if tag == "script" and self._inside_script:
+            if not self._script_src and self._script_type != "application/json":
+                self.scripts.append("".join(self._script_parts))
+            self._inside_script = False
+            self._script_parts = []
+
+
+def audit_generated_pages(package_dir):
+    """对交付目录中的 HTML 做 Node 语法检查与本地链接完整性检查。"""
+    node = shutil.which("node")
+    if not node and os.path.isfile(r"E:\node.exe"):
+        node = r"E:\node.exe"
+    pages = sorted(os.path.abspath(os.path.join(package_dir, name))
+                   for name in os.listdir(package_dir) if name.lower().endswith(".html"))
+    parsed = {}
+    for page in pages:
+        parser = _PageAuditParser()
+        with open(page, "r", encoding="utf-8") as handle:
+            parser.feed(handle.read())
+        parsed[page] = parser
+
+    script_count = 0
+    if node:
+        for page, parser in parsed.items():
+            for script in parser.scripts:
+                if not script.strip():
+                    continue
+                result = subprocess.run([node, "--check", "-"], input=script,
+                                        capture_output=True, text=True, encoding="utf-8")
+                if result.returncode:
+                    raise RuntimeError("Node --check 失败：%s\n%s" %
+                                       (page, result.stderr or result.stdout))
+                script_count += 1
+
+    missing_paths, missing_anchors, external_links = [], [], []
+    for page, parser in parsed.items():
+        for href in parser.hrefs:
+            link = urlsplit(href)
+            if link.scheme or link.netloc:
+                if link.scheme in ("http", "https"):
+                    external_links.append((page, href))
+                continue
+            if link.path:
+                target = os.path.abspath(os.path.join(
+                    os.path.dirname(page), unquote(link.path)))
+            else:
+                target = page
+            if not os.path.isfile(target):
+                missing_paths.append((page, href))
+                continue
+            # 答题入口将 mode=... 放在 # 后作为单页应用参数，并非 DOM 锚点。
+            if link.fragment and not link.fragment.startswith("mode=") and target in parsed:
+                if unquote(link.fragment) not in parsed[target].ids:
+                    missing_anchors.append((page, href))
+    if missing_paths or missing_anchors:
+        raise RuntimeError("离线页面链接检查失败：断链=%s，缺失锚点=%s" %
+                           (missing_paths[:20], missing_anchors[:20]))
+    return {"pages": len(pages), "scripts": script_count, "node": bool(node),
+            "missing_paths": len(missing_paths), "missing_anchors": len(missing_anchors),
+            "external_links": len(external_links)}
+
+
 def run_frozen_qc_without_overwriting_report():
     """运行冻结质检逻辑，但把报告写入内存，避免覆盖质检方已有文件。"""
     expected_path = os.path.normcase(os.path.abspath(
@@ -260,6 +448,20 @@ def main():
     site_dir = os.path.abspath(os.path.join(ROOT, "site"))
     outputs_dir = os.path.abspath(os.path.join(ROOT, "outputs"))
     package_dir = os.path.abspath(os.path.join(ROOT, "outputs", "物理知识库整合版"))
+    report_path = os.path.join(package_dir, "构建与自检记录.md")
+    previous_report = ""
+    if os.path.isfile(report_path):
+        with open(report_path, "r", encoding="utf-8") as handle:
+            previous_report = handle.read()
+    previous_question_record = re.search(
+        r"生成前的 (\d+) 道已验收题逐题保留原 JSON 对象，字段未重写；本批新增 (\d+) 道机器判定题，全库现有 (\d+) 道。",
+        previous_report)
+    previous_question_stats = (tuple(int(value) for value in previous_question_record.groups())
+                               if previous_question_record else None)
+    hs_bank_dir = os.path.join(HERE, "quiz_bank", "hs")
+    junior_bank_dir = os.path.join(HERE, "quiz_bank", "junior")
+    previous_questions = read_existing_questions((hs_bank_dir, junior_bank_dir))
+    dimension_audit = audit_dimension_evidence({"高中": hs_dir, "初中": junior_dir})
     os.makedirs(site_dir, exist_ok=True)
     os.makedirs(outputs_dir, exist_ok=True)
     os.makedirs(package_dir, exist_ok=True)
@@ -284,9 +486,7 @@ def main():
         write_text(os.path.join(directory, "junior.html"), junior_page)
         write_text(os.path.join(directory, "初中物理知识库.html"), junior_page)
 
-    # 按章节落盘诊断题；不修改知识库内容源，也不合并跨学段题目。
-    hs_bank_dir = os.path.join(HERE, "quiz_bank", "hs")
-    junior_bank_dir = os.path.join(HERE, "quiz_bank", "junior")
+    # 按章节落盘诊断题；不合并跨学段题目，并保留旧题的 JSON 字段对象。
     os.makedirs(hs_bank_dir, exist_ok=True)
     os.makedirs(junior_bank_dir, exist_ok=True)
     hs_banks, junior_banks = [], []
@@ -297,6 +497,18 @@ def main():
         bank_path = os.path.join(junior_bank_dir, filename)
         junior_banks.append(make_diagnostic_bank(junior_dir, bank_path, "初中", filename))
     diagnostic_data = summarize_diagnostic_banks(hs_banks + junior_banks)
+    rebuilt_questions = {question.get("id"): question
+                         for question in diagnostic_data["questions"]}
+    changed_questions = [question_id for question_id, old in previous_questions.items()
+                         if rebuilt_questions.get(question_id) != old]
+    missing_questions = [question_id for question_id in previous_questions
+                        if question_id not in rebuilt_questions]
+    if changed_questions or missing_questions:
+        raise RuntimeError("旧版诊断题必须原样保留；内容变化=%s，缺失=%s" %
+                           (changed_questions[:20], missing_questions[:20]))
+    preserved_question_count = len(previous_questions)
+    new_question_count = len(rebuilt_questions) - preserved_question_count
+    audit_question_types(diagnostic_data["questions"])
     all_banks = hs_banks + junior_banks
     review_counts = write_review_checklist(
         os.path.join(outputs_dir, "诊断题自审清单.md"), all_banks)
@@ -323,6 +535,8 @@ def main():
         shutil.copyfile(source, os.path.join(outputs_dir, filename))
         shutil.copyfile(source, os.path.join(package_dir, filename))
 
+    page_audit = audit_generated_pages(package_dir)
+
     readme = """# 初高中物理知识库整合版
 
 双击 `index.html` 打开高中知识库；页面顶部可切换到初中，或进入练习页。初中页也可以双击 `junior.html`。
@@ -333,7 +547,7 @@ def main():
 
 跨学段内容只提供复习线索，各知识点的定义、学习范围与使用条件请分别查看，并等待教师复核分级。
 
-错误诊断目前只在高中第一章开放样板；其中机器可判定题会显示正误，教师点评题只展示待确认参考归类，不进入自动正确率统计。
+错误诊断覆盖高中 21 章与初中 18 章；机器可判定题会显示正误，教师点评题只展示待确认参考归类，不进入自动正确率统计。
 """
     write_text(os.path.join(package_dir, "使用说明.md"), readme)
 
@@ -349,67 +563,109 @@ def main():
 
     qc_summary = run_frozen_qc_without_overwriting_report()
     mapping_count = len(crosswalk.get("pairs", []))
+    segment_questions = {
+        "高中": [q for bank in hs_banks for q in bank.get("questions", [])],
+        "初中": [q for bank in junior_banks for q in bank.get("questions", [])],
+    }
+    category_counts = {}
+    for segment, questions in segment_questions.items():
+        category_counts[segment] = {}
+        for question in questions:
+            if question.get("judging") == "auto":
+                kind = question.get("error_type", "")
+                category_counts[segment][kind] = category_counts[segment].get(kind, 0) + 1
+    hs_auto = sum(category_counts["高中"].values())
+    junior_auto = sum(category_counts["初中"].values())
+    numeric_hs = category_counts["高中"].get("数值代入", 0)
+    numeric_junior = category_counts["初中"].get("数值代入", 0)
+    dimension_question_count = sum(
+        1 for question in diagnostic_data["questions"]
+        if (question.get("trap_test") or {}).get("kind") == "dimension")
+    verified_dimension_count = sum(row["filled"] for row in dimension_audit.values())
+    if dimension_question_count != verified_dimension_count:
+        raise RuntimeError("量纲证据与诊断题数量不一致：来源 %d，题库 %d" %
+                           (verified_dimension_count, dimension_question_count))
+    if new_question_count:
+        displayed_preserved = preserved_question_count
+        displayed_added = new_question_count
+    elif previous_question_stats and previous_question_stats[2] <= len(diagnostic_data["questions"]):
+        displayed_preserved = previous_question_stats[0]
+        displayed_added = previous_question_stats[1] + (
+            len(diagnostic_data["questions"]) - previous_question_stats[2])
+    else:
+        displayed_preserved = preserved_question_count
+        displayed_added = 0
+
     lines = [
-        "# 第三批 · 构建与自检记录", "",
-        "本轮按现有构建脚本刷新题库、主页面和旧衍生页；构建前重跑原知识库结构与物理校验。未修改知识点内容源、物理校验器或跨学段映射。", "",
-        "| 校验项 | 高中 | 初中 |", "|---|---:|---:|",
-        "| 知识点 | %d | %d |" % (hs_stats["points"], junior_stats["points"]),
-        "| 公式 | %d | %d |" % (hs_stats["formulas"], junior_stats["formulas"]),
-        "| 自动校验 | %d / %d 通过 | %d / %d 通过 |" % (
-            hs_stats["pass"], hs_stats["checks"], junior_stats["pass"], junior_stats["checks"]),
-        "| 例题自测题目 | %d | %d |" % (hs_quiz_count, junior_quiz_count), "",
-        "## 诊断题数量", "",
-        "| 学段 | 现有题数 | 自动判定 | 教师点评 | 跳过 |", "|---|---:|---:|---:|---:|",
+        "## 第四批：量纲类错误执行证据（2026-09-29）", "",
+        "本批仅在知识库错误条目中新增 `trap_test` 字段；不改 `wrong`、`why`、`wrong_expr`、`caught_by`、符号表或校验引擎。每条证据都由 `physkit.expr` 与 `physkit.checks.check_dimension` 实际执行得出。", "",
+        "### 量纲证据回填统计", "",
+        "| 学段 | 本批待测（缺少 trap_test） | 新增 dimension 证据 | 正式引擎无法判定 | 原有其他形态 trap_test 保留 |",
+        "|---|---:|---:|---:|---:|",
     ]
     for segment in ("高中", "初中"):
-        rows = [item for item in diagnostic_data["chapters"] if item["segment"] == segment]
+        row = dimension_audit[segment]
         lines.append("| %s | %d | %d | %d | %d |" % (
-            segment, sum(x["total"] for x in rows), sum(x["auto"] for x in rows),
-            sum(x["teacher"] for x in rows), sum(x["skipped"] for x in rows)))
-    total_questions = len(diagnostic_data["questions"])
-    chapter_one_count = sum(item["total"] for item in diagnostic_data["chapters"]
-                            if item["segment"] == "高中" and item["source_file"].startswith("01_"))
-    added_outside_sample = total_questions - chapter_one_count
-    lines.extend(["", "高中第 2–21 章与初中全 18 章本轮新增 %d 题；全库现有 %d 题。高中第 1 章 18 条源错误按新证据规则复核后保留 %d 题，跳过 %d 条缺少 trap_test 的自动判定记录。" % (
-        added_outside_sample, total_questions, chapter_one_count, 18 - chapter_one_count), "",
-                 "### 分章统计", "", "| 学段 | 章节文件 | 题数 | auto | teacher | 跳过 |",
-                 "|---|---|---:|---:|---:|---:|"])
-    for item in diagnostic_data["chapters"]:
-        lines.append("| %s | `%s` · %s | %d | %d | %d | %d |" % (
-            item["segment"], item["source_file"], item["chapter"], item["total"],
-            item["auto"], item["teacher"], item["skipped"]))
-    lines.extend(["", "## 跳过的来源错误及原因", ""])
-    if not diagnostic_data["skipped"]:
-        lines.extend(["无。", ""])
+            segment, row["filled"] + len(row["failed"]), row["filled"],
+            len(row["failed"]), row["preexisting"]))
+    lines.extend(["", "`lhs_dim` / `rhs_dim` 使用正式引擎从该知识点自己的符号表求得；例如 `L·T^-2` 表示长度除以时间平方。新增记录的 `target` 与原 `wrong_expr` 完全一致，`expect` 固定为 `mismatch`。", "",
+                  "### 未能回填的条目", ""])
+    failures = [item for segment in ("高中", "初中")
+                for item in dimension_audit[segment]["failed"]]
+    if failures:
+        for record, reason in failures:
+            lines.append("- %s · `%s` · %s（%s）/ 错误 #%d，`%s`：%s" % (
+                record["segment"], record["file"], record["point_id"],
+                record["point_title"], record["error_index"],
+                record["wrong_expr"], reason))
     else:
-        for segment, chapter, source_file, item in diagnostic_data["skipped"]:
-            lines.append("- %s · `%s` · %s / 错误 #%d：%s" % (
-                segment, source_file, item["point_id"], item["source_error_index"] + 1,
-                item["reason"]))
-        lines.append("")
-    lines.extend([
-        "## 页面与范围", "",
-        "- 重生成：`site/quick.html`、`site/student.html`、`site/junior-quick.html`；均从当前知识库 JSON 取数，带学段切换和按知识点直达例题自测的入口。",
-        "- 新题直接内嵌到 `site/quiz-hs.html` 与 `site/quiz-junior.html`，没有 fetch 外部 JSON；教师点评题不参与系统正确率。",
-        "- `work/crosswalk.json` 与 `outputs/跨学段映射复核清单.md` 本轮保持原样；没有新增跨学段推荐。",
-        "- 发布目录原有 9 个文件名均保留。交付入口：`D:\\codex\\outputs\\物理知识库整合版\\index.html`。", "",
-        "## 自检说明", "",
-        "- 本次构建调用旧结构与物理校验：高中 %d/%d、初中 %d/%d 通过。" % (
-            hs_stats["pass"], hs_stats["checks"], junior_stats["pass"], junior_stats["checks"]),
-        "- 冻结质检通过：%s；质检正文在内存中生成，未覆盖现有 `outputs/质检报告.md`。" % qc_summary,
-        "- 题目选项检查在生成时要求四项文本互异、正确答案唯一；自动题缺少 `trap_test` 时跳过。",
-        "- 每道保留题都有 review 字段；非 high 项列于 `D:\\codex\\outputs\\诊断题自审清单.md`（low %d，medium %d）。" % (
-            review_counts["low"], review_counts["medium"]),
-        "- 本轮 11 段内嵌 JavaScript 已通过 Node 语法检查；静态检查未发现缺失本地链接或外部资源。Chrome / Edge headless 在当前受限环境启动失败，因此未声称完成浏览器点按测试。",
-        "- 未据此宣称经过真实学生或教师试用，也未部署线上站点。", "",
-        "## 我没做到 / 我不确定", "",
-        "- 自动题源没有 `trap_test` 时，我没有自造数值证据，逐条跳过并在上表列出；这会使题量低于源错误总数。",
-        "- 很多章节的源记录只包含两三种错误类别。为满足四选一且不杜撰类别，选项在类别不足时使用同章原解释补充分辨；这些题标为 medium，需要负责人抽查教学区分度。",
-        "- 当前自审只覆盖题干/选项结构、源解释、类型映射和学段字样扫描；不能代替真实师生试用或教师的最终教学判断。",
-        "- 未执行 git 提交：仓库协作约束要求由编排器负责存档；未做线上发布。", "",
-    ])
-    report_text = "\n".join(lines)
-    write_text(os.path.join(package_dir, "构建与自检记录.md"), report_text)
+        lines.append("无。")
+
+    lines.extend(["", "### 诊断题变化与类型占比", "",
+                  "生成前的 %d 道已验收题逐题保留原 JSON 对象，字段未重写；本批新增 %d 道机器判定题，全库现有 %d 道。" % (
+                      displayed_preserved, displayed_added, len(diagnostic_data["questions"])), "",
+                  "| 学段 | 机器题总数 | 数值代入 | 量纲一致性 | 数值代入占比 |", "|---|---:|---:|---:|---:|"])
+    for segment, total, numeric in (("高中", hs_auto, numeric_hs),
+                                    ("初中", junior_auto, numeric_junior)):
+        ratio = 100.0 * numeric / total if total else 0.0
+        lines.append("| %s | %d | %d | %d | %.1f%% |" % (
+            segment, total, numeric,
+            category_counts[segment].get("量纲一致性", 0), ratio))
+    lines.extend(["", "两学段其余机器判定类型分别为：高中“不等式关系” %d 题、“变化方向” %d 题；初中其他类型 0 题。教师点评题仍标记为 `judging: teacher`、`error_type: 概念混淆`，不参与自动正确率。" % (
+        category_counts["高中"].get("不等式关系", 0), category_counts["高中"].get("变化方向", 0)), "",
+                  "按本批前的原题量回算，数值代入占比：高中 %d/%d（%.1f%%）→ %d/%d（%.1f%%）；初中 %d/%d（%.1f%%）→ %d/%d（%.1f%%）。" % (
+                      numeric_hs, hs_auto - dimension_audit["高中"]["filled"],
+                      100.0 * numeric_hs / (hs_auto - dimension_audit["高中"]["filled"]),
+                      numeric_hs, hs_auto, 100.0 * numeric_hs / hs_auto,
+                      numeric_junior, junior_auto - dimension_audit["初中"]["filled"],
+                      100.0 * numeric_junior / (junior_auto - dimension_audit["初中"]["filled"]),
+                      numeric_junior, junior_auto, 100.0 * numeric_junior / junior_auto), "",
+                  "### 校验与范围", "",
+                  "- 高中原知识库：%d/%d 项检查通过；初中：%d/%d 项检查通过。知识点内容与原有校验结论未变。" % (
+                      hs_stats["pass"], hs_stats["checks"], junior_stats["pass"], junior_stats["checks"]),
+                  "- 新增量纲 trap_test 均已再次由正式引擎复算并核对 `target`、左右量纲和 `expect`；有任一不一致时构建会中止。",
+                  "- 旧诊断题题型映射逐条复核：机器题 `source_caught_by == error_type`；教师题 `source_caught_by == 人工审核`。",
+                  "- 自审清单当前列出 low %d、medium %d 道；所有非 high 题目逐条列在 `outputs/诊断题自审清单.md`。" % (
+                      review_counts["low"], review_counts["medium"]),
+                  "- 离线包 %d 个 HTML 页面：%s；本地文件断链 %d、片段锚点缺失 %d、外部网页链接 %d。" % (
+                      page_audit["pages"],
+                      ("Node --check %d 个内嵌脚本全部通过" % page_audit["scripts"]
+                       if page_audit["node"] else "当前环境未找到 Node，未运行脚本语法检查"),
+                      page_audit["missing_paths"], page_audit["missing_anchors"],
+                      page_audit["external_links"]),
+                  "- 构建生成两学段页面与题库；跨学段映射源文件和复核清单不写入、不变更。",
+                  "- 冻结质检：%s；质检方原有 `outputs/质检报告.md` 未被覆盖。" % qc_summary,
+                  "- 尚未据此宣称完成真实师生试用；本地浏览器点按测试需在可启动浏览器的环境另行完成。", ""])
+    section = "\n".join(lines)
+    section_marker = "## 第四批：量纲类错误执行证据"
+    history = previous_report
+    if section_marker in history:
+        history = history.split(section_marker, 1)[0].rstrip()
+    if history.strip():
+        report_text = history.rstrip() + "\n\n" + section
+    else:
+        report_text = "# 初高中物理知识库构建与自检记录\n\n" + section
+    write_text(report_path, report_text)
     print("\n整合版已生成：")
     print("  网站目录：%s" % site_dir)
     print("  离线入口：%s" % os.path.join(package_dir, "index.html"))

@@ -35,6 +35,14 @@ def diagnostic_explanation(error):
     test = error.get("trap_test")
     if test:
         evidence = []
+        if test.get("kind") == "dimension":
+            if test.get("target"):
+                evidence.append("被测错误式：" + str(test["target"]))
+            if test.get("lhs_dim") and test.get("rhs_dim"):
+                evidence.append("左式量纲：%s；右式量纲：%s；左右量纲不匹配" % (
+                    test["lhs_dim"], test["rhs_dim"]))
+            if test.get("note"):
+                evidence.append("量纲校验说明：" + str(test["note"]))
         if test.get("scenario"):
             evidence.append("情境：" + str(test["scenario"]))
         if test.get("expr"):
@@ -73,6 +81,19 @@ def _diagnostic_excerpt(text, limit=90):
 
 def make_diagnostic_bank(kb_dir, output_path, segment="高中", source_filename=None):
     """按指定章节生成诊断题；选项只取同章真实错误记录，缺证据时记为跳过。"""
+    # 已验收题目保留原对象，新增证据只让原先被跳过的条目进入题库。
+    previous_questions = {}
+    if os.path.isfile(output_path):
+        try:
+            with open(output_path, "r", encoding="utf-8") as handle:
+                old_bank = json.load(handle)
+            previous_questions = {
+                question["id"]: question
+                for question in old_bank.get("questions", [])
+                if isinstance(question, dict) and question.get("id")
+            }
+        except (OSError, ValueError, TypeError):
+            previous_questions = {}
     chapters = KB.load_kb(kb_dir)
     source = next(((filename, chapter) for filename, chapter in chapters
                    if (os.path.basename(filename) == source_filename if source_filename
@@ -98,9 +119,16 @@ def make_diagnostic_bank(kb_dir, output_path, segment="高中", source_filename=
     available_types = [name for name in TYPE_ORDER
                        if any(item["error_type"] == name for item in errors)]
     questions, skipped = [], []
+    preserved_count = 0
     for number, item in enumerate(errors):
         error = item["source"]
         correct_type = item["error_type"]
+        question_id = "diagnostic-%s-%d" % (
+            item["point_id"], item["source_error_index"] + 1)
+        if question_id in previous_questions:
+            questions.append(previous_questions[question_id])
+            preserved_count += 1
+            continue
         wrong = error.get("wrong", "")
         wrong_expr = error.get("wrong_expr")
         if not str(wrong).strip() or not str(error.get("why", "")).strip():
@@ -210,7 +238,7 @@ def make_diagnostic_bank(kb_dir, output_path, segment="高中", source_filename=
         review = {"confidence": confidence, "checks": checks,
                   "note": "；".join(note_parts)}
         questions.append({
-            "id": "diagnostic-%s-%d" % (item["point_id"], item["source_error_index"] + 1),
+            "id": question_id,
             "point_id": item["point_id"], "point_title": item["point_title"],
             "chapter": item["chapter"], "stem": stem, "options": options,
             "correct_answer": matching[0], "explanation": diagnostic_explanation(error),
@@ -232,6 +260,8 @@ def make_diagnostic_bank(kb_dir, output_path, segment="高中", source_filename=
     print("已生成%s诊断题：%s，%d 题（自动判定 %d，教师点评 %d，跳过 %d）" %
           (segment, chapter.get("chapter", "未命名章节"), len(questions),
            auto_count, teacher_count, len(skipped)))
+    if preserved_count:
+        print("  保留上一版已验收题目：%d 道，原字段未重写。" % preserved_count)
     return bank
 
 

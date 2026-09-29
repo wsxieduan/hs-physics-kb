@@ -145,6 +145,56 @@
       }
     },
     {
+      "id": "diagnostic-kine-02-2",
+      "point_id": "kine-02",
+      "point_title": "加速度",
+      "chapter": "第一章 · 运动的描述与匀变速直线运动",
+      "stem": "【第一章 · 运动的描述与匀变速直线运动 · 加速度】学生的错误做法：把定义式里的除法记成乘法，写成 a = Δv · t（错误表达式：a = (v - v_0)*t）。这条错误属于哪一类？",
+      "options": [
+        {
+          "label": "A",
+          "text": "不等式关系"
+        },
+        {
+          "label": "B",
+          "text": "量纲一致性"
+        },
+        {
+          "label": "C",
+          "text": "概念混淆"
+        },
+        {
+          "label": "D",
+          "text": "数值代入"
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "加速度是「单位时间内的速度变化」，所以是除以时间。写成乘以时间后量纲立刻从 m/s² 变成 m/s，量纲检查当场报错。\n知识库校验证据：被测错误式：a = (v - v_0)*t；左式量纲：L·T^-2；右式量纲：L；左右量纲不匹配；量纲校验说明：实际量纲检查得到等号左边为L·T^-2、右边为L；两边不是同一物理量，因此该等式不成立。；变化方向要求：mismatch；检验说明：实际量纲检查得到等号左边为L·T^-2、右边为L；两边不是同一物理量，因此该等式不成立。。",
+      "error_type": "量纲一致性",
+      "judging": "auto",
+      "source_error_index": 1,
+      "source_caught_by": "量纲一致性",
+      "wrong_expr": "a = (v - v_0)*t",
+      "trap_test": {
+        "kind": "dimension",
+        "target": "a = (v - v_0)*t",
+        "lhs_dim": "L·T^-2",
+        "rhs_dim": "L",
+        "expect": "mismatch",
+        "note": "实际量纲检查得到等号左边为L·T^-2、右边为L；两边不是同一物理量，因此该等式不成立。"
+      },
+      "review": {
+        "confidence": "high",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": ""
+      }
+    },
+    {
       "id": "diagnostic-kine-02-3",
       "point_id": "kine-02",
       "point_title": "加速度",
@@ -657,12 +707,6 @@
     }
   ],
   "skipped": [
-    {
-      "point_id": "kine-02",
-      "point_title": "加速度",
-      "source_error_index": 1,
-      "reason": "自动判定条目没有 trap_test 可执行证据；不把校验标签代替实测证据。"
-    },
     {
       "point_id": "kine-03",
       "point_title": "匀变速直线运动的速度公式",

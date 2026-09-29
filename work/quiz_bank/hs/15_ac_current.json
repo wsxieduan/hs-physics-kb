@@ -411,6 +411,56 @@
       }
     },
     {
+      "id": "diagnostic-ac-05-2",
+      "point_id": "ac-05",
+      "point_title": "远距离输电",
+      "chapter": "第十五章 · 交变电流",
+      "stem": "【第十五章 · 交变电流 · 远距离输电】学生的错误做法：认为输电电压提高两倍，线路损耗只减为一半（错误表达式：P_loss = P_send*R_line/U_send）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "数值代入：错误式量纲正确，只能靠数值实测抓住：峰值 141.421 V 时会算出 70.711 V，正确有效值是 100 V。"
+        },
+        {
+          "label": "B",
+          "text": "概念混淆：只有从电压过零且沿正方向增大的时刻开始计时，初相位才为零。"
+        },
+        {
+          "label": "C",
+          "text": "量纲一致性：功率一定时电流与电压成反比，而损耗又与电流平方成正比，所以电压加倍时损耗应降为四分之一。"
+        },
+        {
+          "label": "D",
+          "text": "概念混淆：感应电动势取决于磁通量的变化率，不取决于磁通量本身。"
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "功率一定时电流与电压成反比，而损耗又与电流平方成正比，所以电压加倍时损耗应降为四分之一。错误式还存在量纲不一致。\n知识库校验证据：被测错误式：P_loss = P_send*R_line/U_send；左式量纲：M·L^2·T^-3；右式量纲：M·L^2·T^-3·I^-1；左右量纲不匹配；量纲校验说明：实际量纲检查得到等号左边为M·L^2·T^-3、右边为M·L^2·T^-3·I^-1；两边不是同一物理量，因此该等式不成立。；变化方向要求：mismatch；检验说明：实际量纲检查得到等号左边为M·L^2·T^-3、右边为M·L^2·T^-3·I^-1；两边不是同一物理量，因此该等式不成立。。",
+      "error_type": "量纲一致性",
+      "judging": "auto",
+      "source_error_index": 1,
+      "source_caught_by": "量纲一致性",
+      "wrong_expr": "P_loss = P_send*R_line/U_send",
+      "trap_test": {
+        "kind": "dimension",
+        "target": "P_loss = P_send*R_line/U_send",
+        "lhs_dim": "M·L^2·T^-3",
+        "rhs_dim": "M·L^2·T^-3·I^-1",
+        "expect": "mismatch",
+        "note": "实际量纲检查得到等号左边为M·L^2·T^-3、右边为M·L^2·T^-3·I^-1；两边不是同一物理量，因此该等式不成立。"
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
       "id": "diagnostic-ac-06-1",
       "point_id": "ac-06",
       "point_title": "电感与电容对交变电流的影响",
@@ -456,20 +506,57 @@
         },
         "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
       }
-    }
-  ],
-  "skipped": [
-    {
-      "point_id": "ac-05",
-      "point_title": "远距离输电",
-      "source_error_index": 1,
-      "reason": "自动判定条目没有 trap_test 可执行证据；不把校验标签代替实测证据。"
     },
     {
+      "id": "diagnostic-ac-06-2",
       "point_id": "ac-06",
       "point_title": "电感与电容对交变电流的影响",
+      "chapter": "第十五章 · 交变电流",
+      "stem": "【第十五章 · 交变电流 · 电感与电容对交变电流的影响】学生的错误做法：认为电容像普通电阻一样，频率越高阻碍越强，写成 X_C=omega*C_cap（错误表达式：X_C = omega*C_cap）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "量纲一致性：正确容抗与角频率成反比；频率加倍时容抗应从约 31.83 Ω 减至约 15.92 Ω。"
+        },
+        {
+          "label": "B",
+          "text": "概念混淆：感应电动势取决于磁通量的变化率，不取决于磁通量本身。"
+        },
+        {
+          "label": "C",
+          "text": "数值代入：错误式量纲正确，只能靠数值实测抓住：峰值 141.421 V 时会算出 70.711 V，正确有效值是 100 V。"
+        },
+        {
+          "label": "D",
+          "text": "概念混淆：只有从电压过零且沿正方向增大的时刻开始计时，初相位才为零。"
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "正确容抗与角频率成反比；频率加倍时容抗应从约 31.83 Ω 减至约 15.92 Ω。错误式量纲也不是欧姆。\n知识库校验证据：被测错误式：X_C = omega*C_cap；左式量纲：M·L^2·T^-3·I^-2；右式量纲：M^-1·L^-2·T^3·I^2；左右量纲不匹配；量纲校验说明：实际量纲检查得到等号左边为M·L^2·T^-3·I^-2、右边为M^-1·L^-2·T^3·I^2；两边不是同一物理量，因此该等式不成立。；变化方向要求：mismatch；检验说明：实际量纲检查得到等号左边为M·L^2·T^-3·I^-2、右边为M^-1·L^-2·T^3·I^2；两边不是同一物理量，因此该等式不成立。。",
+      "error_type": "量纲一致性",
+      "judging": "auto",
       "source_error_index": 1,
-      "reason": "自动判定条目没有 trap_test 可执行证据；不把校验标签代替实测证据。"
+      "source_caught_by": "量纲一致性",
+      "wrong_expr": "X_C = omega*C_cap",
+      "trap_test": {
+        "kind": "dimension",
+        "target": "X_C = omega*C_cap",
+        "lhs_dim": "M·L^2·T^-3·I^-2",
+        "rhs_dim": "M^-1·L^-2·T^3·I^2",
+        "expect": "mismatch",
+        "note": "实际量纲检查得到等号左边为M·L^2·T^-3·I^-2、右边为M^-1·L^-2·T^3·I^2；两边不是同一物理量，因此该等式不成立。"
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
     }
-  ]
+  ],
+  "skipped": []
 }
