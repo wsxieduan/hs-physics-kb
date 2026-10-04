@@ -10,6 +10,8 @@ import json
 import os
 import re
 import sys
+import tempfile
+import time
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 if HERE not in sys.path:
@@ -17,6 +19,7 @@ if HERE not in sys.path:
 
 from physkit import kb as KB
 from prose_math import render as base_prose, display_mathml
+from build_site import render_learning
 
 
 DOMAINS = (
@@ -25,11 +28,16 @@ DOMAINS = (
     ("光学", 16, 17),
     ("热学", 18, 19),
     ("近代物理", 20, 21),
+    ("测量工具与数据处理", 22, 22),
+    ("常见模型", 23, 23),
+    ("必做实验", 24, 24),
+    ("解题方法", 25, 25),
 )
 JUNIOR_DOMAINS = {
     1: "声学", 2: "光学", 3: "光学", 4: "热学", 5: "力学", 6: "力学",
     7: "力学", 8: "力学", 9: "力学", 10: "物质", 11: "力学", 12: "能量",
     13: "电学", 14: "电学", 15: "电学", 16: "电学", 17: "电磁波", 18: "能源",
+    19: "测量工具与数据处理", 20: "实验专题", 21: "常见模型",
 }
 
 
@@ -121,6 +129,7 @@ def make_payload(chapters, report, segment="高中"):
                  prose(example.get("answer", ""))],
                 list(point.get("prereq") or []), list(point.get("next") or []),
                 [prose(x) for x in point.get("tags", [])], len(groups),
+                render_learning(source),
             ]
             points.append(item)
             chapter_ids.append(len(points) - 1)
@@ -134,7 +143,7 @@ CSS = r'''
 .appbar{position:sticky;top:0;z-index:20;background:#fff;border-bottom:1px solid var(--line)}.appbar-inner{max-width:1120px;margin:auto;padding:11px 18px;display:flex;align-items:center;gap:24px}.brand{white-space:nowrap;font-size:17px;font-weight:750}.brand i{display:inline-grid;place-items:center;width:32px;height:32px;margin-right:8px;border-radius:10px;background:var(--brand);color:#fff;font-style:normal}.nav{display:flex;gap:5px;margin-left:auto}.nav button{border:0;background:none;border-radius:9px;padding:7px 11px;color:#4f5c72;white-space:nowrap}.nav button.active,.nav button:hover{background:#edf3ff;color:var(--brand);font-weight:700}.old-link{font-size:13px;text-decoration:none;white-space:nowrap;border-left:1px solid var(--line);padding-left:15px}
 .intro{text-align:center;max-width:820px;margin:auto;padding:42px 16px 29px}.eyebrow{font-weight:700;color:var(--brand);font-size:13px;letter-spacing:.08em}.intro h1{font-size:clamp(30px,5vw,47px);line-height:1.2;margin:7px 0 6px}.intro p{color:var(--muted);font-size:16px;margin:0 0 22px}.search{display:flex;align-items:center;gap:9px;text-align:left;background:#fff;border:1px solid #d4deee;border-radius:14px;padding:0 14px;box-shadow:0 8px 28px #1e32520b}.search span{color:var(--brand);font-size:21px}.search input{border:0;outline:0;width:100%;min-width:0;padding:13px 2px;background:transparent}.intro .counts{color:var(--muted);font-size:13px;margin-top:10px}
 .filters{position:sticky;top:55px;z-index:15;background:#f7f8faed;border-bottom:1px solid var(--line)}.filters-inner{max-width:1120px;margin:auto;padding:10px 18px;display:flex;gap:7px;align-items:center;overflow-x:auto}.filter{border:1px solid var(--line);background:#fff;border-radius:999px;padding:5px 12px;white-space:nowrap}.filter.active{color:var(--brand);background:#edf3ff;border-color:#b3c6f5;font-weight:700}.filters select{margin-left:auto;background:#fff;border:1px solid var(--line);border-radius:8px;padding:6px 9px;min-width:170px}.count{font-size:12px;color:var(--muted);white-space:nowrap}
-main{max-width:1120px;margin:auto;padding:24px 16px 70px}.list{max-width:900px;margin:auto;display:grid;gap:16px}.card,.index-card,.symbol-card,.map-domain{background:#fff;border:1px solid var(--line);border-radius:15px;box-shadow:0 4px 14px #1e325208}.card{padding:21px 24px;scroll-margin-top:125px}.path{font-size:12px;font-weight:700;color:var(--brand)}.card h2{font-size:22px;line-height:1.35;margin:3px 0 10px}.definition{border-left:3px solid #bed0f8;padding-left:12px;margin:0 0 18px;color:#3c4a61}.block{margin-top:17px}.block h3,.relations h3{font-size:13px;color:#52617a;margin:0 0 8px}.formulas{display:grid;grid-template-columns:repeat(auto-fit,minmax(245px,1fr));gap:8px}.formula{min-width:0;padding:10px 12px;border:1px solid #dfebff;background:#f8faff;border-radius:10px}.formula-name{font-weight:700;font-size:13px}.math{overflow-x:auto;font-size:21px;text-align:center;padding:6px 0}.math math{margin:auto}.when{border-top:1px dashed #d4e1f8;padding-top:6px;font-size:12px;color:var(--muted)}.symbols{border:1px solid var(--line);border-radius:9px;overflow:hidden}.sym-row{display:grid;grid-template-columns:80px minmax(0,1fr) 90px;gap:8px;border-top:1px solid var(--line);padding:5px 10px;font-size:13px}.sym-row:first-child{border:0}.sym-row.head{background:var(--soft);color:var(--muted);font-weight:700}.sym-name{font-size:16px}.sym-unit{color:var(--muted)}.error{border-left:3px solid #f59e0b;background:#fff8ed;border-radius:7px;padding:8px 10px;margin-top:6px}.error b{color:var(--error)}.error p{margin:3px 0 0;color:#6b4b35;font-size:13px}.relations{margin-top:17px}.relation-line{display:flex;gap:7px;align-items:center;flex-wrap:wrap;margin-top:5px}.relation-line span{font-size:12px;color:var(--muted)}.relation-line button,.source,.map-point{border:0;border-radius:6px;padding:3px 7px;background:#edf3ff;color:var(--brand);font-size:12px}.relation-line button:hover,.source:hover,.map-point:hover{text-decoration:underline}.deep{margin-top:17px;border-top:1px solid var(--line);padding-top:11px}.deep summary{color:var(--brand);font-weight:700;cursor:pointer}.deep-content{color:#435066}.deep-content h3{font-size:14px;margin:15px 0 4px}.deep-content p{margin:0}.deep-content ol{padding-left:21px;margin:5px 0}.deep-content li{margin:4px 0}.answer{color:#1d4d9b;font-weight:700}
+main{max-width:1120px;margin:auto;padding:24px 16px 70px}.list{max-width:900px;margin:auto;display:grid;gap:16px}.card,.index-card,.symbol-card,.map-domain{background:#fff;border:1px solid var(--line);border-radius:15px;box-shadow:0 4px 14px #1e325208}.card{padding:21px 24px;scroll-margin-top:125px}.path{font-size:12px;font-weight:700;color:var(--brand)}.card h2{font-size:22px;line-height:1.35;margin:3px 0 10px}.definition{border-left:3px solid #bed0f8;padding-left:12px;margin:0 0 18px;color:#3c4a61}.block{margin-top:17px}.block h3,.relations h3{font-size:13px;color:#52617a;margin:0 0 8px}.formulas{display:grid;grid-template-columns:repeat(auto-fit,minmax(245px,1fr));gap:8px}.formula{min-width:0;padding:10px 12px;border:1px solid #dfebff;background:#f8faff;border-radius:10px}.formula-name{font-weight:700;font-size:13px}.math{overflow-x:auto;font-size:21px;text-align:center;padding:6px 0}.math math{margin:auto}.when{border-top:1px dashed #d4e1f8;padding-top:6px;font-size:12px;color:var(--muted)}.symbols{border:1px solid var(--line);border-radius:9px;overflow:hidden}.sym-row{display:grid;grid-template-columns:80px minmax(0,1fr) 90px;gap:8px;border-top:1px solid var(--line);padding:5px 10px;font-size:13px}.sym-row:first-child{border:0}.sym-row.head{background:var(--soft);color:var(--muted);font-weight:700}.sym-name{font-size:16px}.sym-unit{color:var(--muted)}.error{border-left:3px solid #f59e0b;background:#fff8ed;border-radius:7px;padding:8px 10px;margin-top:6px}.error b{color:var(--error)}.error p{margin:3px 0 0;color:#6b4b35;font-size:13px}.relations{margin-top:17px}.relation-line{display:flex;gap:7px;align-items:center;flex-wrap:wrap;margin-top:5px}.relation-line span{font-size:12px;color:var(--muted)}.relation-line button,.source,.map-point{border:0;border-radius:6px;padding:3px 7px;background:#edf3ff;color:var(--brand);font-size:12px}.relation-line button:hover,.source:hover,.map-point:hover{text-decoration:underline}.learning{margin:12px 0;overflow-wrap:anywhere}.learning h4{color:var(--brand);margin:8px 0}.learning p{margin:6px 0}.learning summary{cursor:pointer;color:var(--brand)}.learning svg{display:block}.deep{margin-top:17px;border-top:1px solid var(--line);padding-top:11px}.deep summary{color:var(--brand);font-weight:700;cursor:pointer}.deep-content{color:#435066}.deep-content h3{font-size:14px;margin:15px 0 4px}.deep-content p{margin:0}.deep-content ol{padding-left:21px;margin:5px 0}.deep-content li{margin:4px 0}.answer{color:#1d4d9b;font-weight:700}
 .index-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:12px}.index-card{padding:15px}.index-card h2{font-size:16px;margin:7px 0}.index-card .when{border-top:0;margin:4px 0 0}.symbol-grid{display:grid;gap:7px;max-width:900px;margin:auto}.symbol-card{display:grid;grid-template-columns:100px minmax(0,1fr) 100px 160px;gap:10px;align-items:center;padding:9px 13px}.symbol-card .sym-name{font-size:20px}.symbol-card p{margin:0}.symbol-card .source{text-align:left;background:none}.map-title{text-align:center;margin:0 0 20px}.map-title h2{margin:0}.map-title p{color:var(--muted);margin:5px 0}.map-root{width:max-content;margin:0 auto 20px;border-radius:10px;background:var(--ink);color:#fff;padding:9px 18px;font-weight:700}.map-domain{padding:16px;margin:12px 0;border-left:4px solid var(--brand)}.map-domain h2{font-size:19px;margin:0 0 10px}.map-domain h2 small{color:var(--muted);font-weight:400;font-size:12px;margin-left:10px}.map-chapters{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:8px}.map-chapter{border:1px solid var(--line);border-radius:9px;padding:10px}.map-chapter button:first-child{width:100%;text-align:left;border:0;background:none;font-weight:700;padding:0 0 6px}.map-chapter button:first-child:hover{color:var(--brand)}.map-points{display:flex;flex-wrap:wrap;gap:4px}.map-point{background:#fff;border:1px solid var(--line);color:#4d5b71}.empty{text-align:center;color:var(--muted);padding:60px 0}footer{background:#fff;border-top:1px solid var(--line);padding:20px;text-align:center;color:var(--muted);font-size:12px}
 @media(max-width:650px){.appbar-inner{gap:7px;padding:8px 10px}.brand{font-size:15px}.brand i{width:27px;height:27px;margin-right:5px}.nav{min-width:0;overflow-x:auto}.nav button{padding:6px 8px}.old-link{display:none}.intro{padding:30px 14px 20px}.intro h1{font-size:32px}.filters{top:44px}.filters-inner{padding:8px 10px}.filters select{min-width:145px}.count{display:none}main{padding:13px 10px 55px}.card{padding:16px 13px}.card h2{font-size:20px}.formulas{grid-template-columns:minmax(0,1fr)}.sym-row{grid-template-columns:65px minmax(0,1fr) 68px;padding:5px 7px}.symbol-card{grid-template-columns:70px minmax(0,1fr) 75px}.symbol-card .source{grid-column:2/4}.map-chapters{grid-template-columns:1fr}}
 .segment-switchbar{background:#fff;border-bottom:1px solid var(--line);padding:8px 18px}.segment-switchbar-inner{max-width:1120px;margin:auto;display:flex;align-items:center;gap:8px;flex-wrap:wrap}.segment-switchbar span{font-size:12px;color:var(--muted)}.segment-switchbar a{border:1px solid var(--line);border-radius:999px;padding:4px 11px;font-size:12px;text-decoration:none}.segment-switchbar a[aria-current="page"]{background:var(--brand);border-color:var(--brand);color:#fff}.segment-switchbar a.segment-quiz{margin-left:auto;background:#f4f7ff;border-color:#bdccf4}
@@ -158,7 +167,7 @@ let domain='全部',chapterName='全部',query='';
 const pointIndex=new Map(points.map((p,i)=>[p[0],i]));
 
 // 搜索只从给人看的字段建立索引，不把公式解析器的内部名称重新写进页面。
-const pointSearch=points.map(p=>clean([p[1],p[2],p[6],p[11].join(' '),groups[p[12]][0],groups[p[12]][1],...p[3].flat(),...p[4].flat(),...p[5].flat()].map(strip).join(' ')));
+const pointSearch=points.map(p=>clean([p[1],p[2],p[6],p[13],p[11].join(' '),groups[p[12]][0],groups[p[12]][1],...p[3].flat(),...p[4].flat(),...p[5].flat()].map(strip).join(' ')));
 const formulas=[];points.forEach((p,i)=>p[3].forEach((f,k)=>formulas.push([i,k,clean([strip(p[1]),strip(f[0]),strip(f[2]),...p[4].map(s=>strip(s[0])+' '+strip(s[1])),groups[p[12]][0]].join(' '))])));
 const symbols=[],symbolMap=new Map();points.forEach((p,i)=>p[4].forEach(s=>{const key=s.join('|');if(!symbolMap.has(key)){symbolMap.set(key,symbols.length);symbols.push([s,[i]])}else symbols[symbolMap.get(key)][1].push(i)}));
 
@@ -166,8 +175,8 @@ function matchPoint(i){const p=points[i],g=groups[p[12]];return(domain==='全部
 function formulaHTML(f){return '<div class="formula"><div class="formula-name">'+f[0]+'</div><div class="math"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">'+f[1]+'</math></div>'+(f[2]?'<div class="when">适用：'+f[2]+'</div>':'')+'</div>'}
 function symbolHTML(s){return '<div class="sym-row"><div class="sym-name">'+s[0]+'</div><div>'+s[1]+'</div><div class="sym-unit">'+s[2]+'</div></div>'}
 function errorHTML(e){return '<div class="error"><b>'+e[0]+'</b><p>'+e[1]+'</p></div>'}
-function relationHTML(p,i){let before=p[9].map(id=>pointIndex.get(id)).filter(x=>x!==undefined),after=p[10].map(id=>pointIndex.get(id)).filter(x=>x!==undefined);const members=groups[p[12]][3],pos=members.indexOf(i);if(!before.length&&pos>0)before=[members[pos-1]];if(!after.length&&pos<members.length-1)after=[members[pos+1]];const row=(label,list)=>list.length?'<div class="relation-line"><span>'+label+'</span>'+list.map(j=>'<button data-go="'+j+'">'+points[j][1]+'</button>').join('')+'</div>':'';return before.length||after.length?'<section class="relations"><h3>知识关系</h3>'+row('先理解',before)+row('接着看',after)+'</section>':''}
-function pointHTML(i){const p=points[i],g=groups[p[12]],more=p[5].length>2?'<details class="more-errors"><summary>查看其余 '+(p[5].length-2)+' 条常见错误</summary>'+p[5].slice(2).map(errorHTML).join('')+'</details>':'';return '<article class="card" id="'+p[0]+'"><div class="path">'+g[1]+' · '+text(groupName(p[12]))+'</div><h2>'+p[1]+'</h2><p class="definition">'+p[2]+'</p><section class="block"><h3>核心公式</h3><div class="formulas">'+p[3].map(formulaHTML).join('')+'</div></section><section class="block"><h3>容易出错</h3>'+p[5].slice(0,2).map(errorHTML).join('')+more+'</section><section class="block"><h3>符号与单位</h3><div class="symbols"><div class="sym-row head"><div>符号</div><div>含义</div><div>单位</div></div>'+p[4].map(symbolHTML).join('')+'</div></section>'+relationHTML(p,i)+'<details class="deep" data-deep="'+i+'"><summary>深入理解：物理意义、推导和例题</summary><div class="deep-content"></div></details><div class="card-practice"><a href="'+QUIZ_HREF+'?mode=example&amp;point='+encodeURIComponent(p[0])+'&amp;source='+encodeURIComponent(SEGMENT_ROOT+'速查版')+'&amp;return='+encodeURIComponent(RETURN_PAGE+'#'+p[0])+'">练这道题 ↗</a></div></article>'}
+function relationHTML(p,i){const before=p[9].map(id=>pointIndex.get(id)).filter(x=>x!==undefined),after=p[10].map(id=>pointIndex.get(id)).filter(x=>x!==undefined);const row=(label,list)=>list.length?'<div class="relation-line"><span>'+label+'</span>'+list.map(j=>'<button data-go="'+j+'">'+points[j][1]+'</button>').join('')+'</div>':'';return before.length||after.length?'<section class="relations"><h3>知识关系</h3>'+row('先理解',before)+row('接着看',after)+'</section>':''}
+function pointHTML(i){const p=points[i],g=groups[p[12]],more=p[5].length>2?'<details class="more-errors"><summary>查看其余 '+(p[5].length-2)+' 条常见错误</summary>'+p[5].slice(2).map(errorHTML).join('')+'</details>':'';return '<article class="card" id="'+p[0]+'"><div class="path">'+g[1]+' · '+text(groupName(p[12]))+'</div><h2>'+p[1]+'</h2><p class="definition">'+p[2]+'</p>'+p[13]+'<section class="block"><h3>公式与适用范围</h3><div class="formulas">'+p[3].map(formulaHTML).join('')+'</div></section><section class="block"><h3>容易出错</h3>'+p[5].slice(0,2).map(errorHTML).join('')+more+'</section><section class="block"><h3>符号与单位</h3><div class="symbols"><div class="sym-row head"><div>符号</div><div>含义</div><div>单位</div></div>'+p[4].map(symbolHTML).join('')+'</div></section>'+relationHTML(p,i)+'<details class="deep" data-deep="'+i+'"><summary>深入理解：物理意义、推导和例题</summary><div class="deep-content"></div></details><div class="card-practice"><a href="'+QUIZ_HREF+'#mode=example&amp;point='+encodeURIComponent(p[0])+'&amp;source='+encodeURIComponent(SEGMENT_ROOT+'速查版')+'&amp;return='+encodeURIComponent(RETURN_PAGE+'#'+p[0])+'">练这道题 ↗</a></div></article>'}
 function deepHTML(p){const ex=p[8];return '<h3>物理意义</h3><p>'+p[6]+'</p>'+(p[7].length?'<h3>推导要点</h3><ol>'+p[7].map(x=>'<li>'+x+'</li>').join('')+'</ol>':'')+(ex[0]?'<h3>典型例题</h3><p>'+ex[0]+'</p><ol>'+ex[1].map(x=>'<li>'+x+'</li>').join('')+'</ol><p class="answer">答案：'+ex[2]+'</p>':'')}
 function renderPoints(){const ids=points.map((_,i)=>i).filter(matchPoint);viewBox.className='list';viewBox.innerHTML=ids.map(pointHTML).join('');return ids.length}
 function renderFormulas(){const rows=formulas.filter(row=>matchPoint(row[0])&&(!query||row[2].includes(query)));viewBox.className='index-grid';viewBox.innerHTML=rows.map(([i,k])=>'<article class="index-card"><button class="source" data-go="'+i+'">'+points[i][1]+'</button><h2>'+points[i][3][k][0]+'</h2>'+formulaHTML(points[i][3][k])+'</article>').join('');return rows.length}
@@ -181,6 +190,17 @@ document.addEventListener('keydown',e=>{if(e.key==='/'&&document.activeElement!=
 document.addEventListener('toggle',e=>{const d=e.target;if(d.matches&&d.matches('details[data-deep]')&&d.open){const slot=d.querySelector('.deep-content');if(!slot.dataset.loaded){slot.innerHTML=deepHTML(points[Number(d.dataset.deep)]);slot.dataset.loaded='1'}}},true);
 document.addEventListener('click',e=>{const go=e.target.closest('[data-go]');if(go){const i=Number(go.dataset.go);view='points';domain='全部';chapterName='全部';query='';search.value='';chapter.value='全部';document.querySelectorAll('.filter').forEach(b=>b.classList.toggle('active',b.dataset.domain==='全部'));render();document.getElementById(points[i][0]).scrollIntoView({behavior:'smooth',block:'start'});return}const ch=e.target.closest('[data-chapter-go]');if(ch){view='points';chapterName=groups[Number(ch.dataset.chapterGo)][0];chapter.value=chapterName;render();window.scrollTo(0,0)}});
 render();
+// 从练习页回看时，知识点编号是阅读定位，不是视图名称。
+function restorePoint(){
+  let id;try{id=decodeURIComponent(location.hash.slice(1))}catch(e){return}
+  if(pointIndex.has(id)){
+    view='points';domain='全部';chapterName='全部';query='';search.value='';chapter.value='全部';
+    document.querySelectorAll('.filter').forEach(b=>b.classList.toggle('active',b.dataset.domain==='全部'));
+    render();requestAnimationFrame(()=>{const card=document.getElementById(id);if(card)card.scrollIntoView({behavior:'instant',block:'start'})});
+  }else if(['points','formulas','symbols','map'].includes(id)){view=id;render()}
+}
+// 首次渲染及浏览器恢复页面完成后定位；返回阅读位置无需长距离平滑动画。
+restorePoint();window.addEventListener('load',restorePoint);window.addEventListener('hashchange',restorePoint);
 })();
 '''
 
@@ -224,10 +244,16 @@ def build_page(kb_dir, segment, output_path):
         '<span>知识库学段</span><a href="index.html"%s>高中</a><a href="junior.html"%s>初中</a>'
         '<a class="segment-quiz" href="%s">例题自测与错误诊断 ↗</a></div></nav>' % (
             senior_current, junior_current, quiz_page))
-    # JSON 中的尖括号改成转义码，防止正文文本中意外出现关闭 script 的字符。
-    data_json = json.dumps(payload, ensure_ascii=False, separators=(",", ":")).replace("<", "\\u003c")
+    # 只转义会影响脚本边界的片段，避免把每个数学标签的尖括号都重复写成六字符。
+    # JSON 解码后的内容逐字不变；关闭标签、注释开头与脚本开头均不能提前改变 HTML 解析状态。
+    data_json = json.dumps(payload, ensure_ascii=False, separators=(",", ":"))
+    data_json = data_json.replace("</", "<\\/").replace("<!--", "\\u003c!--")
+    data_json = re.sub(r"<(?=script\b)", r"\\u003c", data_json, flags=re.I)
+    if json.loads(data_json) != payload:
+        raise RuntimeError("速查数据转义前后不一致，拒绝生成。")
     quiz_href = "quiz-hs.html" if segment == "高中" else "quiz-junior.html"
-    main_href = "index.html" if segment == "高中" else "junior.html"
+    # 练习完成后回到发起练习的速查卡，保留知识点片段以恢复阅读位置。
+    main_href = "quick.html" if segment == "高中" else "junior-quick.html"
     script = (JS.replace("__SEGMENT_ROOT__", segment + "物理")
               .replace("__QUIZ_HREF__", quiz_href)
               .replace("__RETURN_PAGE__", main_href))
@@ -251,8 +277,27 @@ def build_page(kb_dir, segment, output_path):
     if len(encoded) > 620 * 1024:
         raise RuntimeError("%s速查版 %.1f KB，超过 620 KB 验收上限。" % (segment, len(encoded) / 1024))
     os.makedirs(os.path.dirname(os.path.abspath(output_path)), exist_ok=True)
-    with open(output_path, "w", encoding="utf-8", newline="\n") as handle:
-        handle.write(page)
+    # 本机直接覆写刚被读取的成品多次出现EINVAL。先分块写自己的临时文件，
+    # 完整写入后再替换目标，避免失败留下半份速查页；不清理历史成果。
+    temporary = None
+    try:
+        with tempfile.NamedTemporaryFile(dir=os.path.dirname(os.path.abspath(output_path)),
+                                         prefix='速查构建_', suffix='.tmp', delete=False) as handle:
+            temporary = handle.name
+            for offset in range(0, len(encoded), 65536):
+                handle.write(encoded[offset:offset+65536])
+        for attempt in range(5):
+            try:
+                os.replace(temporary, output_path)
+                temporary = None
+                break
+            except OSError as error:
+                if error.errno != 22 or attempt == 4:
+                    raise
+                time.sleep(.2)
+    finally:
+        if temporary is not None and os.path.isfile(temporary):
+            os.unlink(temporary)
     print("%s速查版：%s" % (segment, output_path))
     print("%.1f KB；%d 章、%d 个知识点、%d 条公式；%d/%d 项内容校验通过。" %
           (len(encoded) / 1024, len(groups), len(points), stats["formulas"], stats["pass"], stats["checks"]))

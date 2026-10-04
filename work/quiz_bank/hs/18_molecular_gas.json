@@ -564,7 +564,412 @@
         },
         "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
       }
+    },
+    {
+      "id": "diagnostic-mol-05-1",
+      "point_id": "mol-05",
+      "point_title": "液晶：取向有序、流动性与显示",
+      "chapter": "第十八章 · 分子动理论与气体",
+      "stem": "【第十八章 · 分子动理论与气体 · 液晶：取向有序、流动性与显示】学生的错误做法：透射比例把入射光功率除以透射功率（错误表达式：τ = P<sub>入</sub>/P<sub>出</sub>）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "概念混淆：内能还与分子数、物态和分子间势能等因素有关；温度只反映热运动的平均剧烈程度。"
+        },
+        {
+          "label": "B",
+          "text": "量纲一致性：乘以体积后量纲变成能量乘体积，已经不是压强；而且错误式会预言容器越大压强越大，方向也相反。"
+        },
+        {
+          "label": "C",
+          "text": "量纲一致性：面积不是体积，d² 的量纲是 L²，而单分子体积的量纲是 L³。"
+        },
+        {
+          "label": "D",
+          "text": "数值代入：比例是输出透射量占输入的份额，4/10为0.4，颠倒会变成2.5，不能当作无额外光源装置的透射比例。"
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "比例是输出透射量占输入的份额，4/10为0.4，颠倒会变成2.5，不能当作无额外光源装置的透射比例。\n知识库校验证据：情境：状态甲；代入错误式：P<sub>入</sub>/P<sub>出</sub>；校验参照值：0.4。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 0,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "τ = P<sub>入</sub>/P<sub>出</sub>",
+      "trap_test": {
+        "scenario": "状态甲",
+        "expr": "P_in/P_out",
+        "ref": 0.4
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-mol-05-2",
+      "point_id": "mol-05",
+      "point_title": "液晶：取向有序、流动性与显示",
+      "chapter": "第十八章 · 分子动理论与气体",
+      "stem": "【第十八章 · 分子动理论与气体 · 液晶：取向有序、流动性与显示】学生的错误做法：液晶屏幕发亮就说明液晶分子自己发光，或加电总会更亮。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "数值代入：吸引与排斥方向相反，应作差而不是相加。"
+        },
+        {
+          "label": "B",
+          "text": "数值代入：两种温标零点不同。"
+        },
+        {
+          "label": "C",
+          "text": "概念混淆：光源通常是背光或环境光，液晶与偏振元件调制透光；明暗变化取决于结构、取向和驱动，不能从一种结构推广所有液晶。"
+        },
+        {
+          "label": "D",
+          "text": "数值代入：分子数应是总体积除以单分子体积。"
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "光源通常是背光或环境光，液晶与偏振元件调制透光；明暗变化取决于结构、取向和驱动，不能从一种结构推广所有液晶。",
+      "error_type": "概念混淆",
+      "judging": "teacher",
+      "source_error_index": 1,
+      "source_caught_by": "人工审核",
+      "wrong_expr": null,
+      "trap_test": null,
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-mol-06-1",
+      "point_id": "mol-06",
+      "point_title": "毛细现象与浸润条件",
+      "chapter": "第十八章 · 分子动理论与气体",
+      "stem": "【第十八章 · 分子动理论与气体 · 毛细现象与浸润条件】学生的错误做法：把给出的管内直径直接当公式中的半径（错误表达式：h = 2·σ·cos(θ)/(ρ·g·d)）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "量纲一致性：面积不是体积，d² 的量纲是 L²，而单分子体积的量纲是 L³。"
+        },
+        {
+          "label": "B",
+          "text": "数值代入：公式分母为内半径，直径是它的两倍；错用1 mm而不是0.5 mm会把高度算成一半，即0.72 cm。"
+        },
+        {
+          "label": "C",
+          "text": "概念混淆：内能还与分子数、物态和分子间势能等因素有关；温度只反映热运动的平均剧烈程度。"
+        },
+        {
+          "label": "D",
+          "text": "量纲一致性：乘以体积后量纲变成能量乘体积，已经不是压强；而且错误式会预言容器越大压强越大，方向也相反。"
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "公式分母为内半径，直径是它的两倍；错用1 mm而不是0.5 mm会把高度算成一半，即0.72 cm。\n知识库校验证据：情境：浸润设计；代入错误式：2·σ·cos(θ)/(ρ·g·d)；校验参照值：0.0144。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 0,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "h = 2·σ·cos(θ)/(ρ·g·d)",
+      "trap_test": {
+        "scenario": "浸润设计",
+        "expr": "2*sigma*cos(theta)/(rho*g*d)",
+        "ref": 0.0144
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-mol-06-2",
+      "point_id": "mol-06",
+      "point_title": "毛细现象与浸润条件",
+      "chapter": "第十八章 · 分子动理论与气体",
+      "stem": "【第十八章 · 分子动理论与气体 · 毛细现象与浸润条件】学生的错误做法：所有液体在任何细管中都会上升，或毛细高度大就说明流量更大。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "概念混淆：上升下降取决于浸润及接触角；静态高度与动态流量不同，流量还受黏性和阻力限制，不能从静态公式直接推出。"
+        },
+        {
+          "label": "B",
+          "text": "数值代入：分子数应是总体积除以单分子体积。"
+        },
+        {
+          "label": "C",
+          "text": "数值代入：吸引与排斥方向相反，应作差而不是相加。"
+        },
+        {
+          "label": "D",
+          "text": "数值代入：两种温标零点不同。"
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "上升下降取决于浸润及接触角；静态高度与动态流量不同，流量还受黏性和阻力限制，不能从静态公式直接推出。",
+      "error_type": "概念混淆",
+      "judging": "teacher",
+      "source_error_index": 1,
+      "source_caught_by": "人工审核",
+      "wrong_expr": null,
+      "trap_test": null,
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
     }
   ],
-  "skipped": []
+  "skipped": [],
+  "source_records": {
+    "diagnostic-mgas-01-1": {
+      "error": {
+        "wrong": "把分子数写成 N = V_molecule/V_total",
+        "wrong_expr": "N = V_molecule/V_total",
+        "why": "分子数应是总体积除以单分子体积。错误式在本情境得到 10^-22，而不是 10^22，量纲虽同为无量纲但数量级完全相反。",
+        "caught_by": "数值代入",
+        "trap_test": {
+          "scenario": "油膜估算",
+          "expr": "V_molecule/V_total",
+          "ref": 1e+22
+        }
+      },
+      "title": "分子动理论的基本内容与微观量估算",
+      "chapter": "第十八章 · 分子动理论与气体"
+    },
+    "diagnostic-mgas-01-2": {
+      "error": {
+        "wrong": "由分子线度估体积时写成 V_molecule = d^2",
+        "wrong_expr": "V_molecule = d^2",
+        "why": "面积不是体积，d^2 的量纲是 L^2，而单分子体积的量纲是 L^3。",
+        "caught_by": "量纲一致性",
+        "trap_test": {
+          "kind": "dimension",
+          "target": "V_molecule = d^2",
+          "lhs_dim": "L^3",
+          "rhs_dim": "L^2",
+          "expect": "mismatch",
+          "note": "实际量纲检查得到等号左边为L^3、右边为L^2；两边不是同一物理量，因此该等式不成立。"
+        }
+      },
+      "title": "分子动理论的基本内容与微观量估算",
+      "chapter": "第十八章 · 分子动理论与气体"
+    },
+    "diagnostic-mgas-02-1": {
+      "error": {
+        "wrong": "求分子间合力时把吸引与排斥的大小直接相加",
+        "wrong_expr": "F_net = F_rep+F_attr",
+        "why": "吸引与排斥方向相反，应作差而不是相加。两种写法量纲完全相同；把错误结果与正确合力作无量纲比值，本情境得到 2.2 而不是 1，可由数值代入抓住。",
+        "caught_by": "数值代入",
+        "trap_test": {
+          "scenario": "距离小于平衡距离",
+          "expr": "(F_rep+F_attr)/F_net",
+          "ref": 1.0
+        }
+      },
+      "title": "分子间作用力与分子势能",
+      "chapter": "第十八章 · 分子动理论与气体"
+    },
+    "diagnostic-mgas-02-2": {
+      "error": {
+        "wrong": "把势能变化写成 delta_Ep = W_molecular",
+        "wrong_expr": "delta_Ep = W_molecular",
+        "why": "保守力做正功时势能应减少。本情境错误式给出正的 2.5×10^-20 J，与正确的负值符号相反；该微观能量远小于陷阱测试的固定绝对容差，不能诚实声称会被自动抓住。",
+        "caught_by": "人工审核"
+      },
+      "title": "分子间作用力与分子势能",
+      "chapter": "第十八章 · 分子动理论与气体"
+    },
+    "diagnostic-mgas-03-1": {
+      "error": {
+        "wrong": "把 26.85 ℃直接当成 26.85 K 代入气体定律",
+        "wrong_expr": "T = t_C",
+        "why": "两种温标零点不同。本情境正确温度是 300 K，直接使用摄氏数值会把绝对温度低估十倍以上。",
+        "caught_by": "数值代入",
+        "trap_test": {
+          "scenario": "室温换算",
+          "expr": "t_C",
+          "ref": 300.0
+        }
+      },
+      "title": "温度与温标",
+      "chapter": "第十八章 · 分子动理论与气体"
+    },
+    "diagnostic-mgas-03-2": {
+      "error": {
+        "wrong": "换算时写成 T = t_C-273.15",
+        "wrong_expr": "T = t_C-T0",
+        "why": "应当加上零点偏移。本情境错误式得到 -246.3 K，不但数值错误，还违反热力学温度不得为负的物理限制。",
+        "caught_by": "数值代入",
+        "trap_test": {
+          "scenario": "室温换算",
+          "expr": "t_C-T0",
+          "ref": 300.0
+        }
+      },
+      "title": "温度与温标",
+      "chapter": "第十八章 · 分子动理论与气体"
+    },
+    "diagnostic-mgas-04-1": {
+      "error": {
+        "wrong": "认为温度相同的所有物体内能必定相同",
+        "why": "内能还与分子数、物态和分子间势能等因素有关；温度只反映热运动的平均剧烈程度。这是适用条件判断，需人工审核。",
+        "caught_by": "人工审核"
+      },
+      "title": "物体的内能与理想气体内能",
+      "chapter": "第十八章 · 分子动理论与气体"
+    },
+    "diagnostic-mgas-04-2": {
+      "error": {
+        "wrong": "漏掉系数 3/2，写成 U = Nk_B T",
+        "wrong_expr": "U = N*k_B*T",
+        "why": "错误式量纲仍为能量，量纲检查抓不到。本情境只算得 828 J，而正确内能是 1242 J。",
+        "caught_by": "数值代入",
+        "trap_test": {
+          "scenario": "一份单原子理想气体",
+          "expr": "N*k_B*T",
+          "ref": 1242.0
+        }
+      },
+      "title": "物体的内能与理想气体内能",
+      "chapter": "第十八章 · 分子动理论与气体"
+    },
+    "diagnostic-mgas-05-1": {
+      "error": {
+        "wrong": "等温压缩时认为体积减半、压强也减半",
+        "wrong_expr": "p2 = p1*V2/V1",
+        "why": "等温时 p 与 V 成反比。本情境错误式得到 5.0×10^4 Pa，正确值应为 2.0×10^5 Pa。",
+        "caught_by": "数值代入",
+        "trap_test": {
+          "scenario": "等温压缩",
+          "expr": "p1*V2/V1",
+          "ref": 200000.0
+        }
+      },
+      "title": "气体实验定律",
+      "chapter": "第十八章 · 分子动理论与气体"
+    },
+    "diagnostic-mgas-05-2": {
+      "error": {
+        "wrong": "等压变化时把温度比写反，使用 V2 = V1*T1/T2",
+        "wrong_expr": "V2 = V1*T1/T2",
+        "why": "升温时体积应增大。错误式算得 0.0032 m^3，与正确的 0.005 m^3 相反。",
+        "caught_by": "数值代入",
+        "trap_test": {
+          "scenario": "等压升温",
+          "expr": "V1*T1/T2",
+          "ref": 0.005
+        }
+      },
+      "title": "气体实验定律",
+      "chapter": "第十八章 · 分子动理论与气体"
+    },
+    "diagnostic-mgas-06-1": {
+      "error": {
+        "wrong": "把微观状态方程写成 p = N·k_B·T·V",
+        "wrong_expr": "p = N*k_B*T*V",
+        "why": "乘以体积后量纲变成能量乘体积，已经不是压强；而且错误式会预言容器越大压强越大，方向也相反。",
+        "caught_by": "量纲一致性",
+        "trap_test": {
+          "kind": "dimension",
+          "target": "p = N*k_B*T*V",
+          "lhs_dim": "M·L^-1·T^-2",
+          "rhs_dim": "M·L^5·T^-2",
+          "expect": "mismatch",
+          "note": "实际量纲检查得到等号左边为M·L^-1·T^-2、右边为M·L^5·T^-2；两边不是同一物理量，因此该等式不成立。"
+        }
+      },
+      "title": "理想气体状态方程",
+      "chapter": "第十八章 · 分子动理论与气体"
+    },
+    "diagnostic-mgas-06-2": {
+      "error": {
+        "wrong": "把分子平动对压强的贡献重复计算，写成 p = 2N·k_B·T/V",
+        "wrong_expr": "p = 2*N*k_B*T/V",
+        "why": "错误式与正确式量纲完全相同，量纲检查无法发现；在微观状态方程情境中会算出 2.0×10^5 Pa，而独立参考值是 1.0×10^5 Pa。",
+        "caught_by": "数值代入",
+        "trap_test": {
+          "scenario": "微观状态方程",
+          "expr": "2*N*k_B*T/V",
+          "ref": 100000.0
+        }
+      },
+      "title": "理想气体状态方程",
+      "chapter": "第十八章 · 分子动理论与气体"
+    },
+    "diagnostic-mol-05-1": {
+      "error": {
+        "wrong": "透射比例把入射光功率除以透射功率。",
+        "wrong_expr": "tau = P_in/P_out",
+        "why": "比例是输出透射量占输入的份额，4/10为0.4，颠倒会变成2.5，不能当作无额外光源装置的透射比例。",
+        "caught_by": "数值代入",
+        "trap_test": {
+          "scenario": "状态甲",
+          "expr": "P_in/P_out",
+          "ref": 0.4
+        }
+      },
+      "title": "液晶：取向有序、流动性与显示",
+      "chapter": "第十八章 · 分子动理论与气体"
+    },
+    "diagnostic-mol-05-2": {
+      "error": {
+        "wrong": "液晶屏幕发亮就说明液晶分子自己发光，或加电总会更亮。",
+        "why": "光源通常是背光或环境光，液晶与偏振元件调制透光；明暗变化取决于结构、取向和驱动，不能从一种结构推广所有液晶。",
+        "caught_by": "人工审核"
+      },
+      "title": "液晶：取向有序、流动性与显示",
+      "chapter": "第十八章 · 分子动理论与气体"
+    },
+    "diagnostic-mol-06-1": {
+      "error": {
+        "wrong": "把给出的管内直径直接当公式中的半径。",
+        "wrong_expr": "h = 2*sigma*cos(theta)/(rho*g*d)",
+        "why": "公式分母为内半径，直径是它的两倍；错用1 mm而不是0.5 mm会把高度算成一半，即0.72 cm。",
+        "caught_by": "数值代入",
+        "trap_test": {
+          "scenario": "浸润设计",
+          "expr": "2*sigma*cos(theta)/(rho*g*d)",
+          "ref": 0.0144
+        }
+      },
+      "title": "毛细现象与浸润条件",
+      "chapter": "第十八章 · 分子动理论与气体"
+    },
+    "diagnostic-mol-06-2": {
+      "error": {
+        "wrong": "所有液体在任何细管中都会上升，或毛细高度大就说明流量更大。",
+        "why": "上升下降取决于浸润及接触角；静态高度与动态流量不同，流量还受黏性和阻力限制，不能从静态公式直接推出。",
+        "caught_by": "人工审核"
+      },
+      "title": "毛细现象与浸润条件",
+      "chapter": "第十八章 · 分子动理论与气体"
+    }
+  }
 }

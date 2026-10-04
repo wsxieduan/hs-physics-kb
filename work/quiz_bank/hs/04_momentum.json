@@ -332,7 +332,7 @@
       "point_id": "mom-05",
       "point_title": "反冲运动与火箭",
       "chapter": "第四章 · 动量守恒",
-      "stem": "【第四章 · 动量守恒 · 反冲运动与火箭】学生的错误做法：反冲速度漏掉负号，认为主体和喷出物同向（错误表达式：V = m<sub>气</sub>·v<sub>气</sub>/M）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "stem": "【第四章 · 动量守恒 · 反冲运动与火箭】学生的错误做法：反冲速度漏掉负号，认为主体和喷出物同向（错误表达式：V = m·v/M）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
       "options": [
         {
           "label": "A",
@@ -352,15 +352,15 @@
         }
       ],
       "correct_answer": "D",
-      "explanation": "错误式量纲完全正确却把反冲方向算反，会得到 −1 m/s；正确结果应是相反方向的 +1 m/s。\n知识库校验证据：情境：静止平台抛物；代入错误式：m<sub>气</sub>·v<sub>气</sub>/M；校验参照值：1.0。",
+      "explanation": "错误式量纲完全正确却把反冲方向算反，会得到 −1 m/s；正确结果应是相反方向的 +1 m/s。\n知识库校验证据：情境：静止平台抛物；代入错误式：m·v/M；校验参照值：1.0。",
       "error_type": "数值代入",
       "judging": "auto",
       "source_error_index": 0,
       "source_caught_by": "数值代入",
-      "wrong_expr": "V = m<sub>气</sub>·v<sub>气</sub>/M",
+      "wrong_expr": "V = m·v/M",
       "trap_test": {
         "scenario": "静止平台抛物",
-        "expr": "m_gas*v_gas/M",
+        "expr": "m*v/M",
         "ref": 1.0
       },
       "review": {

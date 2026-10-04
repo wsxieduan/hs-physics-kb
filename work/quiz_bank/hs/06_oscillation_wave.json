@@ -506,6 +506,186 @@
         },
         "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
       }
+    },
+    {
+      "id": "diagnostic-osc-07-1",
+      "point_id": "osc-07",
+      "point_title": "多普勒效应",
+      "chapter": "第六章 · 机械振动与波",
+      "stem": "【第六章 · 机械振动与波 · 多普勒效应】学生的错误做法：接近的声源把分母写成声速加声源速度（错误表达式：f<sub>p</sub> = f·c/(c+v<sub>s</sub>)）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "量纲一致性：量纲由 1/s 错成 s；周期 0.5 s 时数值也不会是 4π rad/s。"
+        },
+        {
+          "label": "B",
+          "text": "概念混淆：稳定受迫振动的频率由驱动力决定；固有频率决定在什么驱动频率附近响应最强。"
+        },
+        {
+          "label": "C",
+          "text": "概念混淆：质点只在平衡位置附近振动；向外传播的是振动状态和能量。"
+        },
+        {
+          "label": "D",
+          "text": "数值代入：声源接近压缩前方波峰间距，分母必须减去向前速度；加号会把接近误算为频率降低，量纲仍然正确。"
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "声源接近压缩前方波峰间距，分母必须减去向前速度；加号会把接近误算为频率降低，量纲仍然正确。\n知识库校验证据：情境：接近；代入错误式：f·c/(c+v<sub>s</sub>)；校验参照值：1000。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 0,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "f<sub>p</sub> = f·c/(c+v<sub>s</sub>)",
+      "trap_test": {
+        "scenario": "接近",
+        "expr": "f*c/(c+v_s)",
+        "ref": 1000
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-osc-07-2",
+      "point_id": "osc-07",
+      "point_title": "多普勒效应",
+      "chapter": "第六章 · 机械振动与波",
+      "stem": "【第六章 · 机械振动与波 · 多普勒效应】学生的错误做法：认为声源移动使介质中的声速随之改变。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "数值代入：这会让力指向远离平衡位置的方向；正向位移情境会算出 +10 N，而正确值是 -10 N。"
+        },
+        {
+          "label": "B",
+          "text": "数值代入：量纲完全正确但数值少一半；一米单摆会算成约 1.00354 s，而正确值约 2.00709 s。"
+        },
+        {
+          "label": "C",
+          "text": "概念混淆：声源改变发射位置和波峰间距，波峰离开声源后仍按介质条件决定的声速传播；应区分波速与观察者接收频率。"
+        },
+        {
+          "label": "D",
+          "text": "量纲一致性：量纲由 1/s 错成 s；周期 0.5 s 时数值也不会是 4π rad/s。"
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "声源改变发射位置和波峰间距，波峰离开声源后仍按介质条件决定的声速传播；应区分波速与观察者接收频率。",
+      "error_type": "概念混淆",
+      "judging": "teacher",
+      "source_error_index": 1,
+      "source_caught_by": "人工审核",
+      "wrong_expr": null,
+      "trap_test": null,
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-osc-08-1",
+      "point_id": "osc-08",
+      "point_title": "阻尼振动",
+      "chapter": "第六章 · 机械振动与波",
+      "stem": "【第六章 · 机械振动与波 · 阻尼振动】学生的错误做法：衰减率漏掉分母中的二（错误表达式：β = b/m）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "概念混淆：质点只在平衡位置附近振动；向外传播的是振动状态和能量。"
+        },
+        {
+          "label": "B",
+          "text": "数值代入：线性阻力项对应位移解的指数衰减率是阻力系数除两倍质量；漏掉二会把振幅减半时间缩短一半，量纲却仍一致。"
+        },
+        {
+          "label": "C",
+          "text": "量纲一致性：量纲由 1/s 错成 s；周期 0.5 s 时数值也不会是 4π rad/s。"
+        },
+        {
+          "label": "D",
+          "text": "概念混淆：稳定受迫振动的频率由驱动力决定；固有频率决定在什么驱动频率附近响应最强。"
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "线性阻力项对应位移解的指数衰减率是阻力系数除两倍质量；漏掉二会把振幅减半时间缩短一半，量纲却仍一致。\n知识库校验证据：情境：欠阻尼；代入错误式：b/m；校验参照值：1。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 0,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "β = b/m",
+      "trap_test": {
+        "scenario": "欠阻尼",
+        "expr": "b/m",
+        "ref": 1
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-osc-08-2",
+      "point_id": "osc-08",
+      "point_title": "阻尼振动",
+      "chapter": "第六章 · 机械振动与波",
+      "stem": "【第六章 · 机械振动与波 · 阻尼振动】学生的错误做法：认为只要有弹簧就必然来回振荡。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "概念混淆：回复力的存在不足以保证反复振荡；阻尼过大时系统可以不越过平衡位置，本卡角频率根式只适用于欠阻尼。"
+        },
+        {
+          "label": "B",
+          "text": "量纲一致性：量纲由 1/s 错成 s；周期 0.5 s 时数值也不会是 4π rad/s。"
+        },
+        {
+          "label": "C",
+          "text": "数值代入：这会让力指向远离平衡位置的方向；正向位移情境会算出 +10 N，而正确值是 -10 N。"
+        },
+        {
+          "label": "D",
+          "text": "数值代入：量纲完全正确但数值少一半；一米单摆会算成约 1.00354 s，而正确值约 2.00709 s。"
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "回复力的存在不足以保证反复振荡；阻尼过大时系统可以不越过平衡位置，本卡角频率根式只适用于欠阻尼。",
+      "error_type": "概念混淆",
+      "judging": "teacher",
+      "source_error_index": 1,
+      "source_caught_by": "人工审核",
+      "wrong_expr": null,
+      "trap_test": null,
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
     }
   ],
   "skipped": [

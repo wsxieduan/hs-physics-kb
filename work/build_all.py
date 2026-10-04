@@ -2,7 +2,7 @@
 """统一生成初中、高中知识库与两份离线例题自测页。
 
 脚本先分别重跑原有结构与物理校验；任一知识点、公式或常见错误防线失败，
-就停止生成，避免把未通过的内容带进站点。旧速查页不会被本脚本删除或覆盖。
+就停止生成，避免把未通过的内容带进站点。中文成品别名同步最新页面，历史独立目录保留。
 """
 
 import contextlib
@@ -31,6 +31,21 @@ from physkit import checks as CHECKS
 import build_lite
 import build_quick_site
 import qc as FROZEN_QC
+
+
+def copy_output(source, target):
+    """同步成品字节；普通分块读写兼容本机文件系统，不依赖快速复制接口。"""
+    import time
+    # 本机成品刚被更新时偶发 EINVAL；只对这一瞬态错误短暂重试，不吞掉失败。
+    for attempt in range(5):
+        try:
+            with open(source, 'rb') as incoming, open(target, 'wb') as outgoing:
+                shutil.copyfileobj(incoming, outgoing, 65536)
+            return
+        except OSError as error:
+            if error.errno != 22 or attempt == 4:
+                raise
+            time.sleep(0.2)
 
 
 def inspect_kb(kb_dir, label):
@@ -135,7 +150,7 @@ def make_crosswalk_checklist(crosswalk, review_doc, senior_points, junior_points
                     item["basis"], item["risk"]))
     lines = [
         "# 初高中跨学段学习线索复核清单", "",
-        "本表是首轮保守整理，最终教学口径请由教师复核。原有映射维持 **%d 组 / %d 条单项线索**，本轮没有新增或删除目标。" % (
+        "本表是首轮保守整理，最终教学口径请由教师复核。当前映射共 **%d 组 / %d 条单项线索**，包括补录章节的基础复习入口。" % (
             len(crosswalk.get("pairs", [])), sum(len(p.get("junior", [])) for p in crosswalk.get("pairs", []))),
         "勾选列留给复核人；`稳固衔接`表示学习同一物理量或现象的延续，`主题相关`表示背景衔接，`易生误解`表示页面会显著提示谨慎比较。", ""
     ]
@@ -466,10 +481,23 @@ def main():
     os.makedirs(outputs_dir, exist_ok=True)
     os.makedirs(package_dir, exist_ok=True)
 
+    # 单独的公式校验报告也取本次源数据，避免旧版报告与最新网页数量不一致。
+    # 这是构建产物，文件名与质检方的报告、意见和回执不同。
+    for filename, segment, report, stats, chapters in (
+            ("校验报告.md", "高中", hs_report, hs_stats, hs_chapters),
+            ("初中物理校验报告.md", "初中", junior_report, junior_stats, junior_chapters)):
+        text = SITE.render_markdown(report, stats, chapters)
+        if segment == "初中":
+            text = text.replace("# 高中物理知识库", "# 初中物理知识库", 1)
+        for directory in (outputs_dir, package_dir):
+            write_text(os.path.join(directory, filename), text)
+
     hs_links = {"current": "高中", "senior_href": "index.html",
-                "junior_href": "junior.html", "quiz_href": "quiz-hs.html"}
+                "junior_href": "junior.html", "quiz_href": "quiz-hs.html",
+                "quick_href": "quick.html"}
     junior_links = {"current": "初中", "senior_href": "index.html",
-                    "junior_href": "junior.html", "quiz_href": "quiz-junior.html"}
+                    "junior_href": "junior.html", "quiz_href": "quiz-junior.html",
+                    "quick_href": "junior-quick.html"}
     hs_page = SITE.render_page(hs_report, hs_stats, hs_chapters,
                                SITE.SEGMENT["kb"]["title"],
                                SITE.SEGMENT["kb"]["lead"] + SITE.LEAD_TAIL,
@@ -485,6 +513,9 @@ def main():
         write_text(os.path.join(directory, "高中物理知识库.html"), hs_page)
         write_text(os.path.join(directory, "junior.html"), junior_page)
         write_text(os.path.join(directory, "初中物理知识库.html"), junior_page)
+        # 映射更新后同步生成教师复核表，避免成品入口和旧清单的条数不同。
+        if directory in (outputs_dir, package_dir):
+            write_text(os.path.join(directory, "跨学段映射复核清单.md"), checklist)
 
     # 按章节落盘诊断题；不合并跨学段题目，并保留旧题的 JSON 字段对象。
     os.makedirs(hs_bank_dir, exist_ok=True)
@@ -503,9 +534,15 @@ def main():
                          if rebuilt_questions.get(question_id) != old]
     missing_questions = [question_id for question_id in previous_questions
                         if question_id not in rebuilt_questions]
-    if changed_questions or missing_questions:
-        raise RuntimeError("旧版诊断题必须原样保留；内容变化=%s，缺失=%s" %
-                           (changed_questions[:20], missing_questions[:20]))
+    allowed_updates = {qid for bank in junior_banks for qid in bank.get("updated_ids", [])}
+    # 高中本批仅同步等时圆题干标题；新增题没有旧对象，另计新增。
+    hs_authorized = {'dyn-09','dyn-10','kine-09','met-07','ac-07','mol-05','mol-06','mdl-26'}
+    allowed_updates.update(q['id'] for bank in hs_banks for q in bank.get('questions', [])
+                           if q['point_id'] in hs_authorized and q['id'] in bank.get('updated_ids', []))
+    unexpected_changes = [qid for qid in changed_questions if qid not in allowed_updates]
+    if unexpected_changes or missing_questions:
+        raise RuntimeError("诊断题仅能随授权来源变化同步；未登记变化=%s，缺失=%s" %
+                           (unexpected_changes[:20], missing_questions[:20]))
     preserved_question_count = len(previous_questions)
     new_question_count = len(rebuilt_questions) - preserved_question_count
     audit_question_types(diagnostic_data["questions"])
@@ -518,28 +555,38 @@ def main():
     junior_quiz_count = build_quiz(junior_dir, "初中", "junior.html",
                                    os.path.join(site_dir, "quiz-junior.html"), junior_bank_dir)
     for filename in ("quiz-hs.html", "quiz-junior.html"):
-        shutil.copyfile(os.path.join(site_dir, filename), os.path.join(outputs_dir, filename))
-        shutil.copyfile(os.path.join(site_dir, filename), os.path.join(package_dir, filename))
+        copy_output(os.path.join(site_dir, filename), os.path.join(outputs_dir, filename))
+        copy_output(os.path.join(site_dir, filename), os.path.join(package_dir, filename))
 
     # 旧衍生页仍由现有速查/学生版模板生成，导航与练习入口统一指向同目录成品。
     hs_links = {"current": "高中", "senior_href": "index.html",
-                "junior_href": "junior.html", "quiz_href": "quiz-hs.html"}
+                "junior_href": "junior.html", "quiz_href": "quiz-hs.html",
+                "quick_href": "quick.html"}
     junior_links = {"current": "初中", "senior_href": "index.html",
-                    "junior_href": "junior.html", "quiz_href": "quiz-junior.html"}
+                    "junior_href": "junior.html", "quiz_href": "quiz-junior.html",
+                    "quick_href": "junior-quick.html"}
     if build_lite.build(hs_dir, os.path.join(site_dir, "student.html"), hs_links) != 0:
         raise RuntimeError("学生版重新生成失败")
     build_quick_site.build_page(hs_dir, "高中", os.path.join(site_dir, "quick.html"))
     build_quick_site.build_page(junior_dir, "初中", os.path.join(site_dir, "junior-quick.html"))
     for filename in ("quick.html", "junior-quick.html", "student.html"):
         source = os.path.join(site_dir, filename)
-        shutil.copyfile(source, os.path.join(outputs_dir, filename))
-        shutil.copyfile(source, os.path.join(package_dir, filename))
+        copy_output(source, os.path.join(outputs_dir, filename))
+        copy_output(source, os.path.join(package_dir, filename))
+
+    # 仍在维护的中文入口同步最新模板产物，防止双击别名误开123卡旧版。
+    aliases = {"高中物理速查.html": "quick.html", "高中物理速查_优化版.html": "quick.html",
+               "高中物理知识库-学生版.html": "student.html", "初中物理速查.html": "junior-quick.html"}
+    for alias, filename in aliases.items():
+        copy_output(os.path.join(site_dir, filename), os.path.join(outputs_dir, alias))
 
     page_audit = audit_generated_pages(package_dir)
 
     readme = """# 初高中物理知识库整合版
 
-双击 `index.html` 打开高中知识库；页面顶部可切换到初中，或进入练习页。初中页也可以双击 `junior.html`。
+初中建议双击 `junior-quick.html`，可查看基础说明、实验步骤、单位和读图证据；`junior.html` 查看完整校验。高中双击 `quick.html` 或 `index.html`；顶部可以切换学段与进入练习。
+
+新版分节覆盖前后台账及教学复核边界见同包 `初中覆盖前后台账.md`。九下完整新版分节与实践栏目待纸本或出版社目录核对，不把公式全通过当作教材完整认证。
 
 两个知识库与两份自测页均为独立 HTML 文件，不依赖网络、账号、安装程序或第三方库。请保持这个文件夹里的页面放在一起，以便学段跳转和测试回看链接正常工作。
 
@@ -547,9 +594,19 @@ def main():
 
 跨学段内容只提供复习线索，各知识点的定义、学习范围与使用条件请分别查看，并等待教师复核分级。
 
-错误诊断覆盖高中 21 章与初中 18 章；机器可判定题会显示正误，教师点评题只展示待确认参考归类，不进入自动正确率统计。
+错误诊断覆盖高中 %d 章与初中 %d 章；机器可判定题会显示正误，教师点评题只展示待确认参考归类，不进入自动正确率统计。
 """
+    # 章节从实际源文件统计，新增章节后交付说明也随之更新。
+    readme = readme % (len(hs_chapters), len(junior_chapters))
     write_text(os.path.join(package_dir, "使用说明.md"), readme)
+
+    # 把已经整理好的覆盖证据与交付说明随整合包带走，避免说明指向缺失文件。
+    # 它们由执行方维护；此处只复制，不把旧报告当作本次校验结论。
+    for filename in ("初中覆盖前后台账.md", "初中分节覆盖记录.json", "初中修补交付说明.md",
+                     "第四批补录交付说明.md", "第四批补录清单.md"):
+        source = os.path.join(outputs_dir, filename)
+        if os.path.isfile(source):
+            copy_output(source, os.path.join(package_dir, filename))
 
     write_text(os.path.join(junior_bank_dir, "诊断题库状态.json"),
                json.dumps({"segment": "初中", "status": "generated",
@@ -653,18 +710,42 @@ def main():
                        if page_audit["node"] else "当前环境未找到 Node，未运行脚本语法检查"),
                       page_audit["missing_paths"], page_audit["missing_anchors"],
                       page_audit["external_links"]),
-                  "- 构建生成两学段页面与题库；跨学段映射源文件和复核清单不写入、不变更。",
+                  "- 构建生成两学段页面与题库；跨学段线索按当前源文件生成复核清单，新增线索仍待教师确认分级。",
                   "- 冻结质检：%s；质检方原有 `outputs/质检报告.md` 未被覆盖。" % qc_summary,
                   "- 尚未据此宣称完成真实师生试用；本地浏览器点按测试需在可启动浏览器的环境另行完成。", ""])
     section = "\n".join(lines)
     section_marker = "## 第四批：量纲类错误执行证据"
     history = previous_report
+    # 顶部只保留本次构建的摘要；旧批次文字作为历史，避免旧数字被误认成现状。
+    history_marker = "<!-- 历史构建记录开始 -->"
+    if history_marker in history:
+        history = history.split(history_marker, 1)[1].lstrip()
     if section_marker in history:
         history = history.split(section_marker, 1)[0].rstrip()
     if history.strip():
         report_text = history.rstrip() + "\n\n" + section
     else:
         report_text = "# 初高中物理知识库构建与自检记录\n\n" + section
+    current_summary = "\n".join([
+        "# 当前整合版构建与自检记录", "",
+        "本次构建的知识点、公式和校验数量如下；底部旧批次说明保留作历史，不表示当前内容未修改。", "",
+        "| 学段 | 章节 | 知识点 | 公式 | 通过校验 |",
+        "|---|---:|---:|---:|---:|",
+        "| 高中 | %d | %d | %d | %d / %d |" % (
+            len(hs_chapters), hs_stats["points"], hs_stats["formulas"], hs_stats["pass"], hs_stats["checks"]),
+        "| 初中 | %d | %d | %d | %d / %d |" % (
+            len(junior_chapters), junior_stats["points"], junior_stats["formulas"], junior_stats["pass"], junior_stats["checks"]),
+        "",
+        "跨学段学习线索 %d 组 / %d 条单项；新增线索的教学分级待教师复核。" % (
+            mapping_count, sum(len(pair.get("junior", [])) for pair in crosswalk.get("pairs", []))),
+        "诊断题共 %d 题；教师点评题不参与机器自动判定。" % len(diagnostic_data["questions"]),
+        "本次按初中来源变化同步 %d 道既有题；其他题目保留答案与字段。" % len(changed_questions),
+        "冻结质检：%s。质检方原报告未被覆盖。" % qc_summary,
+        "具体内容改动、实际浏览器回归和来源查证见 `work/本批报告.md` 与 `work/交接单.json`。", "",
+        "## 历史构建记录", "",
+        history_marker, ""
+    ])
+    report_text = current_summary + report_text
     write_text(report_path, report_text)
     print("\n整合版已生成：")
     print("  网站目录：%s" % site_dir)

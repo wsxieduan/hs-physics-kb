@@ -81,8 +81,9 @@ def _diagnostic_excerpt(text, limit=90):
 
 def make_diagnostic_bank(kb_dir, output_path, segment="高中", source_filename=None):
     """按指定章节生成诊断题；选项只取同章真实错误记录，缺证据时记为跳过。"""
-    # 已验收题目保留原对象，新增证据只让原先被跳过的条目进入题库。
+    # 来源未变的题保留原对象；来源或干扰项变化时仅刷新受影响题。
     previous_questions = {}
+    old_bank = {}
     if os.path.isfile(output_path):
         try:
             with open(output_path, "r", encoding="utf-8") as handle:
@@ -101,6 +102,21 @@ def make_diagnostic_bank(kb_dir, output_path, segment="高中", source_filename=
     if source is None:
         raise ValueError("找不到指定章节 JSON，无法生成诊断题：%s" % source_filename)
     filename, chapter = source
+    # 本批只授权七个新增点及等时圆标题；其他高中章节与旧题原样保留。
+    new_hs_ids = {'dyn-09', 'dyn-10', 'kine-09', 'met-07', 'ac-07', 'mol-05', 'mol-06'}
+    if segment == "高中" and old_bank:
+        source_ids = {point['id'] for point in chapter.get('points', [])}
+        rename_needed = any(q.get('point_id') == 'mdl-26' and
+                            q.get('point_title') != '等时圆（弦轨道下滑时间相同）'
+                            for q in previous_questions.values())
+        present = {q.get('point_id') for q in previous_questions.values()}
+        source_changed = any(old_bank.get('source_records', {}).get(q['id']) !=
+                             {'error': p['errors'][q['source_error_index']], 'title': p['title'],
+                              'chapter': chapter['chapter']}
+                             for p in chapter.get('points', []) if p['id'] in new_hs_ids
+                             for q in previous_questions.values() if q['point_id'] == p['id'])
+        if not ((source_ids & new_hs_ids) - present) and not rename_needed and not source_changed:
+            return old_bank
     errors = []
     for point in chapter.get("points", []):
         for index, error in enumerate(point.get("errors", [])):
@@ -120,15 +136,44 @@ def make_diagnostic_bank(kb_dir, output_path, segment="高中", source_filename=
                        if any(item["error_type"] == name for item in errors)]
     questions, skipped = [], []
     preserved_count = 0
+    updated_ids = []
+    source_records = {}
+    def visible(value):
+        # 兼容历史上下标排版差异；正文语义、错误实测和来源标签分别核对。
+        return re.sub(r'[\s_。；;，,]', '', html.unescape(re.sub(r'<[^>]*>', '', str(value or ''))))
     for number, item in enumerate(errors):
         error = item["source"]
         correct_type = item["error_type"]
         question_id = "diagnostic-%s-%d" % (
             item["point_id"], item["source_error_index"] + 1)
-        if question_id in previous_questions:
-            questions.append(previous_questions[question_id])
+        snapshot = {"error": error, "title": item["point_title"], "chapter": item["chapter"]}
+        source_records[question_id] = snapshot
+        old = previous_questions.get(question_id)
+        if old and segment == '高中' and item['point_id'] not in new_hs_ids:
+            # 标题修订不重排选项，不重造答案；其他旧题字段逐项不变。
+            if item['point_id'] == 'mdl-26' and old.get('point_title') != item['point_title']:
+                old_title = old['point_title']
+                old = dict(old)
+                old['point_title'] = item['point_title']
+                old['stem'] = old['stem'].replace(old_title, item['point_title'], 1)
+                updated_ids.append(question_id)
+            questions.append(old)
             preserved_count += 1
             continue
+        if old:
+            previous = old_bank.get("source_records", {}).get(question_id)
+            same = (previous == snapshot) if previous else (
+                visible(prose(error.get("wrong", ""))) in visible(old.get("stem"))
+                and visible(prose(error.get("why", ""))) in visible(old.get("explanation"))
+                and old.get("trap_test") == error.get("trap_test")
+                and old.get("source_caught_by") == error.get("caught_by", "人工审核")
+                and old.get("point_title") == item["point_title"])
+            # 旧题的干扰项也可能引用被修改的解释；失效来源不能原样保留。
+            pool = {visible(prose('%s：%s' % (e['error_type'], _diagnostic_excerpt(e['source'].get('why', ''))))) for e in errors}
+            same = same and all(visible(o['text']) in pool or visible(o['text']) in {visible(t) for t in TYPE_ORDER} for o in old.get('options', []))
+            if same:
+                questions.append(old);preserved_count += 1;continue
+            updated_ids.append(question_id)
         wrong = error.get("wrong", "")
         wrong_expr = error.get("wrong_expr")
         if not str(wrong).strip() or not str(error.get("why", "")).strip():
@@ -208,6 +253,13 @@ def make_diagnostic_bank(kb_dir, output_path, segment="高中", source_filename=
         options = [{"label": chr(ord("A") + i), "text": prose(option["text"])}
                    for i, option in enumerate(choices)]
         correct_text = prose(correct_text)
+        # 刷新题干或依据时，尽量保留原题答案位置，避免无关的答案重排。
+        if old and old.get('error_type') == correct_type:
+            previous_label = old.get('correct_answer')
+            target_index = ord(previous_label) - ord('A') if previous_label in ('A','B','C','D') else -1
+            found_index = next((i for i,o in enumerate(options) if o['text'] == correct_text), -1)
+            if target_index >= 0 and found_index >= 0:
+                options[target_index]['text'], options[found_index]['text'] = options[found_index]['text'], options[target_index]['text']
         matching = [option["label"] for option in options if option["text"] == correct_text]
         if len(options) != 4 or len(matching) != 1 or len({o["text"] for o in options}) != 4:
             skipped.append({"point_id": item["point_id"], "point_title": item["point_title"],
@@ -254,7 +306,7 @@ def make_diagnostic_bank(kb_dir, output_path, segment="高中", source_filename=
         })
     bank = {"segment": segment, "chapter": chapter.get("chapter", "未命名章节"),
             "source_file": os.path.basename(filename), "questions": questions,
-            "skipped": skipped}
+            "skipped": skipped, "source_records": source_records}
     parent = os.path.dirname(os.path.abspath(output_path))
     os.makedirs(parent, exist_ok=True)
     with open(output_path, "w", encoding="utf-8", newline="\n") as handle:
@@ -267,6 +319,8 @@ def make_diagnostic_bank(kb_dir, output_path, segment="高中", source_filename=
            auto_count, teacher_count, len(skipped)))
     if preserved_count:
         print("  保留上一版已验收题目：%d 道，原字段未重写。" % preserved_count)
+    # 只供本次构建对账，不写入题库，重复构建应无额外变化。
+    bank["updated_ids"] = updated_ids
     return bank
 
 
@@ -479,7 +533,9 @@ DIAGNOSTIC_SCRIPT = r"""
   // 诊断模式只读取构建时嵌入的 JSON，保证双击离线文件也能练习。
   var bank=JSON.parse(document.getElementById('quiz-bank').textContent);
   var data=bank.diagnostics||{questions:[]};
-  var params=new URLSearchParams(window.location.hash.slice(1));
+  // 新入口使用查询串，兼容旧版片段入口；同名参数优先采用旧入口，保留既有书签。
+  var params=new URLSearchParams(window.location.search);
+  new URLSearchParams(window.location.hash.slice(1)).forEach(function(value,key){params.set(key,value);});
   var modeButtons=document.querySelectorAll('[data-mode]');
   var exampleIds=['example-mode'];
   var diagnosticPanel=document.getElementById('diagnostic-panel');
@@ -504,6 +560,7 @@ DIAGNOSTIC_SCRIPT = r"""
     var isDiagnostic=value==='diagnostic';
     exampleIds.forEach(function(id){show(id,!isDiagnostic);});
     show('diagnostic-panel',isDiagnostic);
+    ['start','progress','clear-progress','storage-notice'].forEach(function(id){show(id,!isDiagnostic);});
     modeButtons.forEach(function(button){button.setAttribute('aria-pressed',String(button.getAttribute('data-mode')===value));});
     if(isDiagnostic&&!data.questions.length){
       show('diagnostic-intro',true);show('diagnostic-question',false);show('diagnostic-results',false);
@@ -513,16 +570,16 @@ DIAGNOSTIC_SCRIPT = r"""
     button.addEventListener('click',function(){
       if(this.disabled)return;
       mode(this.getAttribute('data-mode'));
-      if(this.getAttribute('data-mode')==='diagnostic'&&data.questions.length&&!current) startDiagnostic();
+      if(this.getAttribute('data-mode')==='diagnostic'&&data.questions.length) startDiagnostic();
     });
   });
 
-  // 带来源进入时显示明确的返回位置；限制为同目录的两个知识库页面。
+  // 带来源进入时显示明确的返回位置；仅接受同目录知识库或速查页，恢复原卡阅读位置。
   var source=params.get('source'), back=params.get('return');
   if(source){
     var target=back||bank.mainPage;
     var file=target.split('#')[0];
-    if(file!=='index.html'&&file!=='junior.html')target=bank.mainPage;
+    if(!['index.html','junior.html','quick.html','junior-quick.html'].includes(file))target=bank.mainPage;
     var banner=node('source-banner');
     banner.classList.remove('hidden');
     setText('source-label','从《'+source+'》来 · ');
@@ -547,7 +604,9 @@ DIAGNOSTIC_SCRIPT = r"""
   }
 
   function startDiagnostic(pointId){
-    deck=data.questions.filter(function(q){return !pointId||q.point_id===pointId;});
+    var chapter=node('chapter-select').value,point=pointId||node('point-select').value;
+    deck=data.questions.filter(function(q){return (chapter==='all'||q.chapter===chapter)&&(point==='all'||q.point_id===point);});
+    var amount=node('amount-select').value;if(amount!=='all')deck=deck.slice(0,Math.max(1,Number(amount)||10));
     if(!deck.length){
       mode('diagnostic');show('diagnostic-intro',true);show('diagnostic-question',false);show('diagnostic-results',false);
       setText('diagnostic-intro-message','这个知识点暂时没有可用的诊断题；可先通过上方章节筛选查看本学段其他题目。');
@@ -573,6 +632,7 @@ DIAGNOSTIC_SCRIPT = r"""
     answerButton.disabled=true;nextButton.classList.add('hidden');
     var feedback=node('diagnostic-feedback');feedback.className='diag-feedback hidden';feedback.textContent='';
     node('diagnostic-explanation').textContent='';
+    show('diagnostic-explanation-wrap',false);
     var pointLink=node('diagnostic-point-link');pointLink.href=bank.mainPage+'#'+encodeURIComponent(current.point_id);pointLink.textContent='回看知识点：'+current.point_title;
     var trapLink=node('diagnostic-trap-link');
     trapLink.href=bank.mainPage+'#trap-'+current.point_id+'-'+(current.source_error_index+1);
@@ -614,11 +674,22 @@ DIAGNOSTIC_SCRIPT = r"""
     var title=document.createElement('h2');title.textContent='本组诊断完成';node('diagnostic-results').appendChild(title);
     var summary=document.createElement('p');summary.textContent='机器判定：'+right+' / '+auto.length+' 题正确（'+accuracy+'%）。教师点评题：'+teacher+' 题，未计入系统判定正确率。';node('diagnostic-results').appendChild(summary);
     var note=document.createElement('p');note.className='small';note.textContent='统计只覆盖本次作答；教师点评题需教师确认，不作为自动评分结果。';node('diagnostic-results').appendChild(note);
-    var again=document.createElement('button');again.className='button primary';again.textContent='再练一遍';again.addEventListener('click',function(){startDiagnostic(params.get('point')||'');});node('diagnostic-results').appendChild(again);
+    var again=document.createElement('button');again.className='button primary';again.textContent='再练一遍';again.addEventListener('click',function(){startDiagnostic();});node('diagnostic-results').appendChild(again);
   }
 
   // 自动入口由 URL 片段提供，不更改历史记录，因此浏览器后退仍回到来源页。
+  function applyEntry(){
+  params=new URLSearchParams(window.location.search);
+  new URLSearchParams(window.location.hash.slice(1)).forEach(function(value,key){params.set(key,value);});
   var initialMode=params.get('mode')||'example', initialPoint=params.get('point');
+  if(initialPoint){
+    var entry=bank.questions.find(function(item){return item.id===initialPoint;});
+    if(entry){node('chapter-select').value=entry.chapter;node('chapter-select').dispatchEvent(new Event('change'));node('point-select').value=initialPoint;}
+  }
+  source=params.get('source');back=params.get('return');
+  show('source-banner',!!source);
+  if(source){var dest=back||bank.mainPage;if(!['index.html','junior.html','quick.html','junior-quick.html'].includes(dest.split('#')[0]))dest=bank.mainPage;
+    setText('source-label','从《'+source+'》来 · ');node('source-return').href=dest;}
   if(initialMode==='diagnostic'){
     mode('diagnostic');startDiagnostic(initialPoint||'');
   }else{
@@ -633,6 +704,12 @@ DIAGNOSTIC_SCRIPT = r"""
       }
     }
   }
+  }
+  // 同页换入口立即刷新模式、范围与返回链接；当前筛选变化只重开诊断练习。
+  applyEntry();window.addEventListener('hashchange',applyEntry);
+  ['chapter-select','point-select','amount-select'].forEach(function(id){node(id).addEventListener('change',function(){
+    if(!diagnosticPanel.classList.contains('hidden'))startDiagnostic();
+  });});
 })();
 """
 
@@ -700,12 +777,12 @@ def build(kb_dir, segment, main_page, output_path, diagnostic_path=None):
 <button class="mode-tab" data-mode="example" aria-pressed="true">例题自测</button>
 <button class="mode-tab" data-mode="diagnostic" aria-pressed="false"%(diagnostic_disabled)s>%(diagnostic_button)s</button></div>
 <p class="hint">例题自测由学生对照解析后自评；错误诊断仅在明确标注“自动判定”的题目上计系统正确率。</p></section>
-<div id="example-mode"><section id="example-controls" class="panel"><h2>选择练习范围</h2><div class="controls">
+<section id="example-controls" class="panel"><h2>选择练习范围</h2><div class="controls">
 <div><label for="chapter-select">章节</label><select id="chapter-select"><option value="all">整册</option></select></div>
 <div><label for="point-select">知识点</label><select id="point-select"><option value="all">全部知识点</option></select></div>
-<div><label for="amount-select">本组题量</label><select id="amount-select"><option value="10">随机 10 题</option><option value="20">随机 20 题</option><option value="all">练完所选范围</option></select></div>
+<div><label for="amount-select">本组题量</label><select id="amount-select"><option value="10">10 题</option><option value="20">20 题</option><option value="all">练完所选范围</option></select></div>
 </div><div class="actions"><button id="start" class="button primary">开始练习</button><button id="progress" class="button">查看本机记录</button><button id="clear-progress" class="button">清除记录</button></div>
-<p class="hint">题目来自对应知识点的典型例题；随机顺序不重复抽取。记录只尝试保存在当前浏览器，不上传。</p><p id="storage-notice" class="hint" role="status"></p></section>
+<p class="hint">例题随机抽取；诊断按来源顺序练习。章节、知识点和题量对两种模式都有效。记录保存在当前浏览器。</p><p id="storage-notice" class="hint" role="status"></p></section><div id="example-mode">
 <section id="question-panel" class="panel hidden"><div id="question-number" class="question-meta"></div><div id="question-chapter" class="question-meta"></div>
 <div class="inline-links"><a id="question-kp-link" href="%(main)s">回看知识点</a></div><div id="question-stem" class="stem"></div><div class="actions"><button id="show-answer" class="button primary">查看解析与答案</button><button id="skip" class="button">跳过本题</button></div>
 <div id="solution-box" class="solution hidden"><b>解析</b><div id="question-solution"></div></div><div id="answer-box" class="answer hidden"><b>答案</b><div id="question-answer"></div></div>

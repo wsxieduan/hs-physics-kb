@@ -486,7 +486,7 @@
       "wrong_expr": "E<sub>n</sub> = E<sub>1</sub>/n",
       "trap_test": {
         "scenario": "第二能级",
-        "expr": "E_1/n_level",
+        "expr": "E1/n_level",
         "ref": -3.4
       },
       "review": {
@@ -526,6 +526,186 @@
       ],
       "correct_answer": "A",
       "explanation": "能级是分立的，原子只能待在这几条固定的「台阶」上，这也是原子光谱是一条条分离谱线而不是连续光谱的根本原因。属观念性错误，公式检查不了。",
+      "error_type": "概念混淆",
+      "judging": "teacher",
+      "source_error_index": 1,
+      "source_caught_by": "人工审核",
+      "wrong_expr": null,
+      "trap_test": null,
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-qz-07-1",
+      "point_id": "qz-07",
+      "point_title": "遏止电压与光电效应图像",
+      "chapter": "第二十章 · 波粒二象性与原子结构",
+      "stem": "【第二十章 · 波粒二象性与原子结构 · 遏止电压与光电效应图像】学生的错误做法：把全部光子能量都当成最大电子动能（错误表达式：U<sub>c</sub> = h·ν/e）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "概念混淆：这正是被黑体辐射实验否掉的经典图像。"
+        },
+        {
+          "label": "B",
+          "text": "概念混淆：能否打出电子只取决于单个光子的能量 hν 是否超过 W。"
+        },
+        {
+          "label": "C",
+          "text": "概念混淆：两者描述的是同一束光的不同侧面，通过 E=hν 与 ν=c/λ 可以互相换算，并不矛盾。"
+        },
+        {
+          "label": "D",
+          "text": "数值代入：电子必须先克服逸出功离开金属，全部光子能量并不都转化为初动能；漏减逸出功会把本例遏止电压加倍，量纲无法发现。"
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "电子必须先克服逸出功离开金属，全部光子能量并不都转化为初动能；漏减逸出功会把本例遏止电压加倍，量纲无法发现。\n知识库校验证据：情境：基准；代入错误式：h·ν/e；校验参照值：2.071875。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 0,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "U<sub>c</sub> = h·ν/e",
+      "trap_test": {
+        "scenario": "基准",
+        "expr": "h*nu/e",
+        "ref": 2.071875
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-qz-07-2",
+      "point_id": "qz-07",
+      "point_title": "遏止电压与光电效应图像",
+      "chapter": "第二十章 · 波粒二象性与原子结构",
+      "stem": "【第二十章 · 波粒二象性与原子结构 · 遏止电压与光电效应图像】学生的错误做法：光强翻倍就认为遏止电压也翻倍。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "数值代入：hν 是吸收到的能量，W 是必须付出的，剩下才是动能，所以是「收入减支出」。"
+        },
+        {
+          "label": "B",
+          "text": "数值代入：两者是反比。"
+        },
+        {
+          "label": "C",
+          "text": "概念混淆：在单光子线性光电响应且频率固定时，每个光子能量不变，最大初动能不变；增加的是到达的光子数及可收集电子数，不是遏止电压。"
+        },
+        {
+          "label": "D",
+          "text": "数值代入：频率越高光子能量越大，是正比。"
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "在单光子线性光电响应且频率固定时，每个光子能量不变，最大初动能不变；增加的是到达的光子数及可收集电子数，不是遏止电压。",
+      "error_type": "概念混淆",
+      "judging": "teacher",
+      "source_error_index": 1,
+      "source_caught_by": "人工审核",
+      "wrong_expr": null,
+      "trap_test": null,
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-qz-08-1",
+      "point_id": "qz-08",
+      "point_title": "康普顿效应",
+      "chapter": "第二十章 · 波粒二象性与原子结构",
+      "stem": "【第二十章 · 波粒二象性与原子结构 · 康普顿效应】学生的错误做法：反向散射把归一化波长变化误当成一（错误表达式：z = 1）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "概念混淆：两者描述的是同一束光的不同侧面，通过 E=hν 与 ν=c/λ 可以互相换算，并不矛盾。"
+        },
+        {
+          "label": "B",
+          "text": "数值代入：反向散射的余弦为负一，正确增量是两倍康普顿波长；归一化后可以让数值防线真实识别系数错误，而非把皮米变化当零。"
+        },
+        {
+          "label": "C",
+          "text": "概念混淆：这正是被黑体辐射实验否掉的经典图像。"
+        },
+        {
+          "label": "D",
+          "text": "概念混淆：能否打出电子只取决于单个光子的能量 hν 是否超过 W。"
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "反向散射的余弦为负一，正确增量是两倍康普顿波长；归一化后可以让数值防线真实识别系数错误，而非把皮米变化当零。\n知识库校验证据：情境：反向；代入错误式：1；校验参照值：2。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 0,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "z = 1",
+      "trap_test": {
+        "scenario": "反向",
+        "expr": "1",
+        "ref": 2
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-qz-08-2",
+      "point_id": "qz-08",
+      "point_title": "康普顿效应",
+      "chapter": "第二十章 · 波粒二象性与原子结构",
+      "stem": "【第二十章 · 波粒二象性与原子结构 · 康普顿效应】学生的错误做法：把电子反冲当成任意低速经典碰撞。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "概念混淆：高能光子的散射可使电子反冲达到相对论范围；低速动能近似不能无条件用于康普顿效应的完整推导，应检查能量尺度。"
+        },
+        {
+          "label": "B",
+          "text": "数值代入：频率越高光子能量越大，是正比。"
+        },
+        {
+          "label": "C",
+          "text": "数值代入：hν 是吸收到的能量，W 是必须付出的，剩下才是动能，所以是「收入减支出」。"
+        },
+        {
+          "label": "D",
+          "text": "数值代入：两者是反比。"
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "高能光子的散射可使电子反冲达到相对论范围；低速动能近似不能无条件用于康普顿效应的完整推导，应检查能量尺度。",
       "error_type": "概念混淆",
       "judging": "teacher",
       "source_error_index": 1,

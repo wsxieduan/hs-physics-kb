@@ -1,0 +1,1671 @@
+{
+  "segment": "高中",
+  "chapter": "第二十四章 · 高中物理必做实验与测量方法",
+  "source_file": "24_experiments.json",
+  "questions": [
+    {
+      "id": "diagnostic-exp-08-1",
+      "point_id": "exp-08",
+      "point_title": "探究弹簧弹力与形变量的关系",
+      "chapter": "第二十四章 · 高中物理必做实验与测量方法",
+      "stem": "【第二十四章 · 高中物理必做实验与测量方法 · 探究弹簧弹力与形变量的关系】学生的错误做法：把总长度当作形变量（错误表达式：F<sub>s</sub> = k·(x+L<sub>0</sub>)）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "概念混淆：结点位置变化会改变橡皮筋内部状态，无法比较两力和单力的等效作用。"
+        },
+        {
+          "label": "B",
+          "text": "概念混淆：这样无法区分质量和力各自对加速度的影响，应控制变量或记录总质量逐组计算。"
+        },
+        {
+          "label": "C",
+          "text": "概念混淆：没有势能变化就无法比较机械能，零势能面必须在实验前明确。"
+        },
+        {
+          "label": "D",
+          "text": "数值代入：比例式中的x必须是相对原长的改变量；截距应通过原长修正或图线拟合处理。"
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "比例式中的x必须是相对原长的改变量；截距应通过原长修正或图线拟合处理。\n知识库校验证据：情境：基准；代入错误式：k·(x+L<sub>0</sub>)；校验参照值：4。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 0,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "F<sub>s</sub> = k·(x+L<sub>0</sub>)",
+      "trap_test": {
+        "scenario": "基准",
+        "expr": "k*(x+L_0)",
+        "ref": 4
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-exp-08-2",
+      "point_id": "exp-08",
+      "point_title": "探究弹簧弹力与形变量的关系",
+      "chapter": "第二十四章 · 高中物理必做实验与测量方法",
+      "stem": "【第二十四章 · 高中物理必做实验与测量方法 · 探究弹簧弹力与形变量的关系】学生的错误做法：挂码过重导致弹簧超过弹性限度。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "数值代入：悬挂物正在加速，绳力小于其重力；本例张力1.6 N而悬挂重力2 N。"
+        },
+        {
+          "label": "B",
+          "text": "数值代入：若h定义为下降距离，重力势能减少量的绝对值等于动能增加量；负号会与速度实测变化相反。"
+        },
+        {
+          "label": "C",
+          "text": "概念混淆：发生塑性形变后，卸载数据不再回到原长，胡克定律失效。"
+        },
+        {
+          "label": "D",
+          "text": "数值代入：只有同向共线时大小才直接相加；本例垂直合力5 N，不是7 N。"
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "发生塑性形变后，卸载数据不再回到原长，胡克定律失效。",
+      "error_type": "概念混淆",
+      "judging": "teacher",
+      "source_error_index": 1,
+      "source_caught_by": "人工审核",
+      "wrong_expr": null,
+      "trap_test": null,
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-exp-09-1",
+      "point_id": "exp-09",
+      "point_title": "力的平行四边形定则实验",
+      "chapter": "第二十四章 · 高中物理必做实验与测量方法",
+      "stem": "【第二十四章 · 高中物理必做实验与测量方法 · 力的平行四边形定则实验】学生的错误做法：把力的合力大小直接相加（错误表达式：F<sub>R</sub> = F<sub>1</sub>+F<sub>2</sub>）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "概念混淆：没有势能变化就无法比较机械能，零势能面必须在实验前明确。"
+        },
+        {
+          "label": "B",
+          "text": "数值代入：只有同向共线时大小才直接相加；本例垂直合力5 N，不是7 N。"
+        },
+        {
+          "label": "C",
+          "text": "概念混淆：发生塑性形变后，卸载数据不再回到原长，胡克定律失效。"
+        },
+        {
+          "label": "D",
+          "text": "概念混淆：这样无法区分质量和力各自对加速度的影响，应控制变量或记录总质量逐组计算。"
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "只有同向共线时大小才直接相加；本例垂直合力5 N，不是7 N。\n知识库校验证据：情境：基准；代入错误式：F<sub>1</sub>+F<sub>2</sub>；校验参照值：5。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 0,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "F<sub>R</sub> = F<sub>1</sub>+F<sub>2</sub>",
+      "trap_test": {
+        "scenario": "基准",
+        "expr": "F1+F2",
+        "ref": 5
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-exp-09-2",
+      "point_id": "exp-09",
+      "point_title": "力的平行四边形定则实验",
+      "chapter": "第二十四章 · 高中物理必做实验与测量方法",
+      "stem": "【第二十四章 · 高中物理必做实验与测量方法 · 力的平行四边形定则实验】学生的错误做法：每次合成后不把结点拉回同一位置。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "概念混淆：结点位置变化会改变橡皮筋内部状态，无法比较两力和单力的等效作用。"
+        },
+        {
+          "label": "B",
+          "text": "数值代入：比例式中的x必须是相对原长的改变量；截距应通过原长修正或图线拟合处理。"
+        },
+        {
+          "label": "C",
+          "text": "数值代入：悬挂物正在加速，绳力小于其重力；本例张力1.6 N而悬挂重力2 N。"
+        },
+        {
+          "label": "D",
+          "text": "数值代入：若h定义为下降距离，重力势能减少量的绝对值等于动能增加量；负号会与速度实测变化相反。"
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "结点位置变化会改变橡皮筋内部状态，无法比较两力和单力的等效作用。",
+      "error_type": "概念混淆",
+      "judging": "teacher",
+      "source_error_index": 1,
+      "source_caught_by": "人工审核",
+      "wrong_expr": null,
+      "trap_test": null,
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-exp-10-1",
+      "point_id": "exp-10",
+      "point_title": "探究加速度与力、质量的关系",
+      "chapter": "第二十四章 · 高中物理必做实验与测量方法",
+      "stem": "【第二十四章 · 高中物理必做实验与测量方法 · 探究加速度与力、质量的关系】学生的错误做法：把悬挂物重力直接当作绳张力（错误表达式：T<sub>r</sub> = m<sub>h</sub>·g）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "概念混淆：发生塑性形变后，卸载数据不再回到原长，胡克定律失效。"
+        },
+        {
+          "label": "B",
+          "text": "概念混淆：结点位置变化会改变橡皮筋内部状态，无法比较两力和单力的等效作用。"
+        },
+        {
+          "label": "C",
+          "text": "概念混淆：没有势能变化就无法比较机械能，零势能面必须在实验前明确。"
+        },
+        {
+          "label": "D",
+          "text": "数值代入：悬挂物正在加速，绳力小于其重力；本例张力1.6 N而悬挂重力2 N。"
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "悬挂物正在加速，绳力小于其重力；本例张力1.6 N而悬挂重力2 N。\n知识库校验证据：情境：基准；代入错误式：m<sub>h</sub>·g；校验参照值：1.6。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 0,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "T<sub>r</sub> = m<sub>h</sub>·g",
+      "trap_test": {
+        "scenario": "基准",
+        "expr": "m_h*g",
+        "ref": 1.6
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-exp-10-2",
+      "point_id": "exp-10",
+      "point_title": "探究加速度与力、质量的关系",
+      "chapter": "第二十四章 · 高中物理必做实验与测量方法",
+      "stem": "【第二十四章 · 高中物理必做实验与测量方法 · 探究加速度与力、质量的关系】学生的错误做法：改变牵引力同时也随意改变总质量。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "数值代入：只有同向共线时大小才直接相加；本例垂直合力5 N，不是7 N。"
+        },
+        {
+          "label": "B",
+          "text": "数值代入：若h定义为下降距离，重力势能减少量的绝对值等于动能增加量；负号会与速度实测变化相反。"
+        },
+        {
+          "label": "C",
+          "text": "概念混淆：这样无法区分质量和力各自对加速度的影响，应控制变量或记录总质量逐组计算。"
+        },
+        {
+          "label": "D",
+          "text": "数值代入：比例式中的x必须是相对原长的改变量；截距应通过原长修正或图线拟合处理。"
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "这样无法区分质量和力各自对加速度的影响，应控制变量或记录总质量逐组计算。",
+      "error_type": "概念混淆",
+      "judging": "teacher",
+      "source_error_index": 1,
+      "source_caught_by": "人工审核",
+      "wrong_expr": null,
+      "trap_test": null,
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-exp-11-1",
+      "point_id": "exp-11",
+      "point_title": "验证机械能守恒定律",
+      "chapter": "第二十四章 · 高中物理必做实验与测量方法",
+      "stem": "【第二十四章 · 高中物理必做实验与测量方法 · 验证机械能守恒定律】学生的错误做法：把下落时势能减少写成正的增加量（错误表达式：ΔE<sub>k</sub> = -m·g·h）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "概念混淆：这样无法区分质量和力各自对加速度的影响，应控制变量或记录总质量逐组计算。"
+        },
+        {
+          "label": "B",
+          "text": "数值代入：若h定义为下降距离，重力势能减少量的绝对值等于动能增加量；负号会与速度实测变化相反。"
+        },
+        {
+          "label": "C",
+          "text": "概念混淆：发生塑性形变后，卸载数据不再回到原长，胡克定律失效。"
+        },
+        {
+          "label": "D",
+          "text": "概念混淆：结点位置变化会改变橡皮筋内部状态，无法比较两力和单力的等效作用。"
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "若h定义为下降距离，重力势能减少量的绝对值等于动能增加量；负号会与速度实测变化相反。\n知识库校验证据：情境：基准；代入错误式：-m·g·h；校验参照值：8。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 0,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "ΔE<sub>k</sub> = -m·g·h",
+      "trap_test": {
+        "scenario": "基准",
+        "expr": "-m*g*h",
+        "ref": 8
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-exp-11-2",
+      "point_id": "exp-11",
+      "point_title": "验证机械能守恒定律",
+      "chapter": "第二十四章 · 高中物理必做实验与测量方法",
+      "stem": "【第二十四章 · 高中物理必做实验与测量方法 · 验证机械能守恒定律】学生的错误做法：只测速度而不记录高度差或参考面。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "概念混淆：没有势能变化就无法比较机械能，零势能面必须在实验前明确。"
+        },
+        {
+          "label": "B",
+          "text": "数值代入：比例式中的x必须是相对原长的改变量；截距应通过原长修正或图线拟合处理。"
+        },
+        {
+          "label": "C",
+          "text": "数值代入：只有同向共线时大小才直接相加；本例垂直合力5 N，不是7 N。"
+        },
+        {
+          "label": "D",
+          "text": "数值代入：悬挂物正在加速，绳力小于其重力；本例张力1.6 N而悬挂重力2 N。"
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "没有势能变化就无法比较机械能，零势能面必须在实验前明确。",
+      "error_type": "概念混淆",
+      "judging": "teacher",
+      "source_error_index": 1,
+      "source_caught_by": "人工审核",
+      "wrong_expr": null,
+      "trap_test": null,
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-exp-12-1",
+      "point_id": "exp-12",
+      "point_title": "平抛、斜抛与运动独立性实验",
+      "chapter": "第二十四章 · 高中物理必做实验与测量方法",
+      "stem": "【第二十四章 · 高中物理必做实验与测量方法 · 平抛、斜抛与运动独立性实验】学生的错误做法：把落地时间写成水平射程除初速度大小（错误表达式：t<sub>p</sub> = √(2·x<sub>p</sub>/g)）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "概念混淆：发生塑性形变后，卸载数据不再回到原长，胡克定律失效。"
+        },
+        {
+          "label": "B",
+          "text": "概念混淆：结点位置变化会改变橡皮筋内部状态，无法比较两力和单力的等效作用。"
+        },
+        {
+          "label": "C",
+          "text": "概念混淆：这样无法区分质量和力各自对加速度的影响，应控制变量或记录总质量逐组计算。"
+        },
+        {
+          "label": "D",
+          "text": "数值代入：竖直运动决定飞行时间；平抛本例0.4 s，不能用水平位移代替竖直高度。"
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "竖直运动决定飞行时间；平抛本例0.4 s，不能用水平位移代替竖直高度。\n知识库校验证据：情境：基准；代入错误式：√(2·x<sub>p</sub>/g)；校验参照值：8.660254037844386。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 0,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "t<sub>p</sub> = √(2·x<sub>p</sub>/g)",
+      "trap_test": {
+        "scenario": "基准",
+        "expr": "sqrt(2*x_p/g)",
+        "ref": 8.660254037844386
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-exp-12-2",
+      "point_id": "exp-12",
+      "point_title": "平抛、斜抛与运动独立性实验",
+      "chapter": "第二十四章 · 高中物理必做实验与测量方法",
+      "stem": "【第二十四章 · 高中物理必做实验与测量方法 · 平抛、斜抛与运动独立性实验】学生的错误做法：斜抛高度不等时仍套用等高射程公式。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "数值代入：只有同向共线时大小才直接相加；本例垂直合力5 N，不是7 N。"
+        },
+        {
+          "label": "B",
+          "text": "数值代入：悬挂物正在加速，绳力小于其重力；本例张力1.6 N而悬挂重力2 N。"
+        },
+        {
+          "label": "C",
+          "text": "概念混淆：不同起落高度需先求竖直位移方程正时间根，再用水平匀速计算射程。"
+        },
+        {
+          "label": "D",
+          "text": "数值代入：比例式中的x必须是相对原长的改变量；截距应通过原长修正或图线拟合处理。"
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "不同起落高度需先求竖直位移方程正时间根，再用水平匀速计算射程。",
+      "error_type": "概念混淆",
+      "judging": "teacher",
+      "source_error_index": 1,
+      "source_caught_by": "人工审核",
+      "wrong_expr": null,
+      "trap_test": null,
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-exp-13-1",
+      "point_id": "exp-13",
+      "point_title": "向心力与周期的定量实验",
+      "chapter": "第二十四章 · 高中物理必做实验与测量方法",
+      "stem": "【第二十四章 · 高中物理必做实验与测量方法 · 向心力与周期的定量实验】学生的错误做法：将向心力当作一个独立外力加到受力图（错误表达式：F<sub>c</sub> = 2·m·v²/r）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "概念混淆：这样无法区分质量和力各自对加速度的影响，应控制变量或记录总质量逐组计算。"
+        },
+        {
+          "label": "B",
+          "text": "数值代入：向心力是合径向力的效果描述，不是除重力、拉力外又多出的实际相互作用力。"
+        },
+        {
+          "label": "C",
+          "text": "概念混淆：发生塑性形变后，卸载数据不再回到原长，胡克定律失效。"
+        },
+        {
+          "label": "D",
+          "text": "概念混淆：结点位置变化会改变橡皮筋内部状态，无法比较两力和单力的等效作用。"
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "向心力是合径向力的效果描述，不是除重力、拉力外又多出的实际相互作用力。\n知识库校验证据：情境：基准；代入错误式：2·m·v²/r；校验参照值：1。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 0,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "F<sub>c</sub> = 2·m·v²/r",
+      "trap_test": {
+        "scenario": "基准",
+        "expr": "2*m*v^2/r",
+        "ref": 1
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-exp-13-2",
+      "point_id": "exp-13",
+      "point_title": "向心力与周期的定量实验",
+      "chapter": "第二十四章 · 高中物理必做实验与测量方法",
+      "stem": "【第二十四章 · 高中物理必做实验与测量方法 · 向心力与周期的定量实验】学生的错误做法：砝码下降加速时仍令张力等于砝码重力。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "概念混淆：运动砝码应使用m<sub>h</sub>·g-T=m<sub>h</sub>·a，张力小于重力。"
+        },
+        {
+          "label": "B",
+          "text": "数值代入：比例式中的x必须是相对原长的改变量；截距应通过原长修正或图线拟合处理。"
+        },
+        {
+          "label": "C",
+          "text": "数值代入：只有同向共线时大小才直接相加；本例垂直合力5 N，不是7 N。"
+        },
+        {
+          "label": "D",
+          "text": "数值代入：悬挂物正在加速，绳力小于其重力；本例张力1.6 N而悬挂重力2 N。"
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "运动砝码应使用m<sub>h</sub>·g-T=m<sub>h</sub>·a，张力小于重力。",
+      "error_type": "概念混淆",
+      "judging": "teacher",
+      "source_error_index": 1,
+      "source_caught_by": "人工审核",
+      "wrong_expr": null,
+      "trap_test": null,
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-exp-14-1",
+      "point_id": "exp-14",
+      "point_title": "电容器充放电与RC时间常数",
+      "chapter": "第二十四章 · 高中物理必做实验与测量方法",
+      "stem": "【第二十四章 · 高中物理必做实验与测量方法 · 电容器充放电与RC时间常数】学生的错误做法：把电容电压随时间写成线性下降（错误表达式：U<sub>c</sub> = U<sub>0</sub>·(1-t/(R·C<sub>容</sub>))）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "概念混淆：发生塑性形变后，卸载数据不再回到原长，胡克定律失效。"
+        },
+        {
+          "label": "B",
+          "text": "概念混淆：结点位置变化会改变橡皮筋内部状态，无法比较两力和单力的等效作用。"
+        },
+        {
+          "label": "C",
+          "text": "概念混淆：这样无法区分质量和力各自对加速度的影响，应控制变量或记录总质量逐组计算。"
+        },
+        {
+          "label": "D",
+          "text": "数值代入：RC放电遵循指数而非恒定斜率直线；本例半个时间常数时电压并非恰好减半。"
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "RC放电遵循指数而非恒定斜率直线；本例半个时间常数时电压并非恰好减半。\n知识库校验证据：情境：基准；代入错误式：U<sub>0</sub>·(1-t/(R·C<sub>容</sub>))；校验参照值：5。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 0,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "U<sub>c</sub> = U<sub>0</sub>·(1-t/(R·C<sub>容</sub>))",
+      "trap_test": {
+        "scenario": "基准",
+        "expr": "U_0*(1-t/(R*C_cap))",
+        "ref": 5
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-exp-14-2",
+      "point_id": "exp-14",
+      "point_title": "电容器充放电与RC时间常数",
+      "chapter": "第二十四章 · 高中物理必做实验与测量方法",
+      "stem": "【第二十四章 · 高中物理必做实验与测量方法 · 电容器充放电与RC时间常数】学生的错误做法：电容器带电时直接用导线短接放电。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "数值代入：只有同向共线时大小才直接相加；本例垂直合力5 N，不是7 N。"
+        },
+        {
+          "label": "B",
+          "text": "数值代入：悬挂物正在加速，绳力小于其重力；本例张力1.6 N而悬挂重力2 N。"
+        },
+        {
+          "label": "C",
+          "text": "概念混淆：短路电流可能很大并损坏元件；应串联限流电阻并遵守极性和额定值。"
+        },
+        {
+          "label": "D",
+          "text": "数值代入：比例式中的x必须是相对原长的改变量；截距应通过原长修正或图线拟合处理。"
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "短路电流可能很大并损坏元件；应串联限流电阻并遵守极性和额定值。",
+      "error_type": "概念混淆",
+      "judging": "teacher",
+      "source_error_index": 1,
+      "source_caught_by": "人工审核",
+      "wrong_expr": null,
+      "trap_test": null,
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-exp-15-1",
+      "point_id": "exp-15",
+      "point_title": "测定金属丝电阻率",
+      "chapter": "第二十四章 · 高中物理必做实验与测量方法",
+      "stem": "【第二十四章 · 高中物理必做实验与测量方法 · 测定金属丝电阻率】学生的错误做法：把直径直接当作横截面积（错误表达式：S = π·d）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "概念混淆：这样无法区分质量和力各自对加速度的影响，应控制变量或记录总质量逐组计算。"
+        },
+        {
+          "label": "B",
+          "text": "数值代入：圆截面积随直径平方变化；直接用d量纲也不对，必须测直径后平方。"
+        },
+        {
+          "label": "C",
+          "text": "概念混淆：发生塑性形变后，卸载数据不再回到原长，胡克定律失效。"
+        },
+        {
+          "label": "D",
+          "text": "概念混淆：结点位置变化会改变橡皮筋内部状态，无法比较两力和单力的等效作用。"
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "圆截面积随直径平方变化；直接用d量纲也不对，必须测直径后平方。\n知识库校验证据：情境：基准；代入错误式：π·d；校验参照值：1e-06。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 0,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "S = π·d",
+      "trap_test": {
+        "scenario": "基准",
+        "expr": "pi*d",
+        "ref": 1e-06
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-exp-15-2",
+      "point_id": "exp-15",
+      "point_title": "测定金属丝电阻率",
+      "chapter": "第二十四章 · 高中物理必做实验与测量方法",
+      "stem": "【第二十四章 · 高中物理必做实验与测量方法 · 测定金属丝电阻率】学生的错误做法：只测导线一处直径便忽略不均匀。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "概念混淆：多位置测量可发现截面变化，螺旋测微器还需校零并避免夹得过紧。"
+        },
+        {
+          "label": "B",
+          "text": "数值代入：比例式中的x必须是相对原长的改变量；截距应通过原长修正或图线拟合处理。"
+        },
+        {
+          "label": "C",
+          "text": "数值代入：只有同向共线时大小才直接相加；本例垂直合力5 N，不是7 N。"
+        },
+        {
+          "label": "D",
+          "text": "数值代入：悬挂物正在加速，绳力小于其重力；本例张力1.6 N而悬挂重力2 N。"
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "多位置测量可发现截面变化，螺旋测微器还需校零并避免夹得过紧。",
+      "error_type": "概念混淆",
+      "judging": "teacher",
+      "source_error_index": 1,
+      "source_caught_by": "人工审核",
+      "wrong_expr": null,
+      "trap_test": null,
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-exp-16-1",
+      "point_id": "exp-16",
+      "point_title": "多用电表：量程、极性与读数",
+      "chapter": "第二十四章 · 高中物理必做实验与测量方法",
+      "stem": "【第二十四章 · 高中物理必做实验与测量方法 · 多用电表：量程、极性与读数】学生的错误做法：将电流档并联在电源两端测量（错误表达式：R<sub>x</sub> = U<sub>x</sub>·I<sub>x</sub>）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "概念混淆：发生塑性形变后，卸载数据不再回到原长，胡克定律失效。"
+        },
+        {
+          "label": "B",
+          "text": "概念混淆：结点位置变化会改变橡皮筋内部状态，无法比较两力和单力的等效作用。"
+        },
+        {
+          "label": "C",
+          "text": "概念混淆：这样无法区分质量和力各自对加速度的影响，应控制变量或记录总质量逐组计算。"
+        },
+        {
+          "label": "D",
+          "text": "数值代入：电流档内阻很小，误接并联会造成短路风险；公式无法补救错误接线。"
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "电流档内阻很小，误接并联会造成短路风险；公式无法补救错误接线。\n知识库校验证据：情境：基准；代入错误式：U<sub>x</sub>·I<sub>x</sub>；校验参照值：5。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 0,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "R<sub>x</sub> = U<sub>x</sub>·I<sub>x</sub>",
+      "trap_test": {
+        "scenario": "基准",
+        "expr": "U_x*I_x",
+        "ref": 5
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-exp-16-2",
+      "point_id": "exp-16",
+      "point_title": "多用电表：量程、极性与读数",
+      "chapter": "第二十四章 · 高中物理必做实验与测量方法",
+      "stem": "【第二十四章 · 高中物理必做实验与测量方法 · 多用电表：量程、极性与读数】学生的错误做法：带电状态切换欧姆档或电流插孔。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "数值代入：只有同向共线时大小才直接相加；本例垂直合力5 N，不是7 N。"
+        },
+        {
+          "label": "B",
+          "text": "数值代入：悬挂物正在加速，绳力小于其重力；本例张力1.6 N而悬挂重力2 N。"
+        },
+        {
+          "label": "C",
+          "text": "概念混淆：换档前断电并确认表笔插孔，避免损坏仪表和电路。"
+        },
+        {
+          "label": "D",
+          "text": "数值代入：比例式中的x必须是相对原长的改变量；截距应通过原长修正或图线拟合处理。"
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "换档前断电并确认表笔插孔，避免损坏仪表和电路。",
+      "error_type": "概念混淆",
+      "judging": "teacher",
+      "source_error_index": 1,
+      "source_caught_by": "人工审核",
+      "wrong_expr": null,
+      "trap_test": null,
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-exp-17-1",
+      "point_id": "exp-17",
+      "point_title": "测量电源电动势和内阻",
+      "chapter": "第二十四章 · 高中物理必做实验与测量方法",
+      "stem": "【第二十四章 · 高中物理必做实验与测量方法 · 测量电源电动势和内阻】学生的错误做法：把U-I斜率直接当正内阻（错误表达式：r<sub>s</sub> = (U<sub>2</sub>-U<sub>1</sub>)/(I<sub>2</sub>-I<sub>1</sub>)）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "概念混淆：这样无法区分质量和力各自对加速度的影响，应控制变量或记录总质量逐组计算。"
+        },
+        {
+          "label": "B",
+          "text": "数值代入：放电时U随I增加而下降，图线斜率为−r，内阻大小取反。"
+        },
+        {
+          "label": "C",
+          "text": "概念混淆：发生塑性形变后，卸载数据不再回到原长，胡克定律失效。"
+        },
+        {
+          "label": "D",
+          "text": "概念混淆：结点位置变化会改变橡皮筋内部状态，无法比较两力和单力的等效作用。"
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "放电时U随I增加而下降，图线斜率为−r，内阻大小取反。\n知识库校验证据：情境：基准；代入错误式：(U<sub>2</sub>-U<sub>1</sub>)/(I<sub>2</sub>-I<sub>1</sub>)；校验参照值：1。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 0,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "r<sub>s</sub> = (U<sub>2</sub>-U<sub>1</sub>)/(I<sub>2</sub>-I<sub>1</sub>)",
+      "trap_test": {
+        "scenario": "基准",
+        "expr": "(U2-U1)/(I2-I1)",
+        "ref": 1
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-exp-17-2",
+      "point_id": "exp-17",
+      "point_title": "测量电源电动势和内阻",
+      "chapter": "第二十四章 · 高中物理必做实验与测量方法",
+      "stem": "【第二十四章 · 高中物理必做实验与测量方法 · 测量电源电动势和内阻】学生的错误做法：用电流表直接短接电源。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "概念混淆：短路电流很大，可能损坏电源和仪表，应通过有限负载测量。"
+        },
+        {
+          "label": "B",
+          "text": "数值代入：比例式中的x必须是相对原长的改变量；截距应通过原长修正或图线拟合处理。"
+        },
+        {
+          "label": "C",
+          "text": "数值代入：只有同向共线时大小才直接相加；本例垂直合力5 N，不是7 N。"
+        },
+        {
+          "label": "D",
+          "text": "数值代入：悬挂物正在加速，绳力小于其重力；本例张力1.6 N而悬挂重力2 N。"
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "短路电流很大，可能损坏电源和仪表，应通过有限负载测量。",
+      "error_type": "概念混淆",
+      "judging": "teacher",
+      "source_error_index": 1,
+      "source_caught_by": "人工审核",
+      "wrong_expr": null,
+      "trap_test": null,
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-exp-18-1",
+      "point_id": "exp-18",
+      "point_title": "用单摆测量重力加速度",
+      "chapter": "第二十四章 · 高中物理必做实验与测量方法",
+      "stem": "【第二十四章 · 高中物理必做实验与测量方法 · 用单摆测量重力加速度】学生的错误做法：把周期平方写成一次方（错误表达式：g = 4·π²·L<sub>p</sub>/T<sub>p</sub>）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "概念混淆：发生塑性形变后，卸载数据不再回到原长，胡克定律失效。"
+        },
+        {
+          "label": "B",
+          "text": "概念混淆：结点位置变化会改变橡皮筋内部状态，无法比较两力和单力的等效作用。"
+        },
+        {
+          "label": "C",
+          "text": "概念混淆：这样无法区分质量和力各自对加速度的影响，应控制变量或记录总质量逐组计算。"
+        },
+        {
+          "label": "D",
+          "text": "数值代入：g必须具有加速度量纲，且周期平方来自振动方程。"
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "g必须具有加速度量纲，且周期平方来自振动方程。\n知识库校验证据：情境：基准；代入错误式：4·π²·L<sub>p</sub>/T<sub>p</sub>；校验参照值：9.869604401089358。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 0,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "g = 4·π²·L<sub>p</sub>/T<sub>p</sub>",
+      "trap_test": {
+        "scenario": "基准",
+        "expr": "4*pi^2*L_p/T_p",
+        "ref": 9.869604401089358
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-exp-18-2",
+      "point_id": "exp-18",
+      "point_title": "用单摆测量重力加速度",
+      "chapter": "第二十四章 · 高中物理必做实验与测量方法",
+      "stem": "【第二十四章 · 高中物理必做实验与测量方法 · 用单摆测量重力加速度】学生的错误做法：摆长只量到摆球表面。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "数值代入：只有同向共线时大小才直接相加；本例垂直合力5 N，不是7 N。"
+        },
+        {
+          "label": "B",
+          "text": "数值代入：悬挂物正在加速，绳力小于其重力；本例张力1.6 N而悬挂重力2 N。"
+        },
+        {
+          "label": "C",
+          "text": "概念混淆：摆长应从悬点量至球心，漏半径会形成系统误差。"
+        },
+        {
+          "label": "D",
+          "text": "数值代入：比例式中的x必须是相对原长的改变量；截距应通过原长修正或图线拟合处理。"
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "摆长应从悬点量至球心，漏半径会形成系统误差。",
+      "error_type": "概念混淆",
+      "judging": "teacher",
+      "source_error_index": 1,
+      "source_caught_by": "人工审核",
+      "wrong_expr": null,
+      "trap_test": null,
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-exp-19-1",
+      "point_id": "exp-19",
+      "point_title": "测量玻璃折射率",
+      "chapter": "第二十四章 · 高中物理必做实验与测量方法",
+      "stem": "【第二十四章 · 高中物理必做实验与测量方法 · 测量玻璃折射率】学生的错误做法：把界面角误当成法线角（错误表达式：n<sub>g</sub> = sin(π/2-θ<sub>i</sub>)/sin(π/2-θ<sub>r</sub>)）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "概念混淆：这样无法区分质量和力各自对加速度的影响，应控制变量或记录总质量逐组计算。"
+        },
+        {
+          "label": "B",
+          "text": "数值代入：角度必须从法线量取；若量的是界面角须先取余角。"
+        },
+        {
+          "label": "C",
+          "text": "概念混淆：发生塑性形变后，卸载数据不再回到原长，胡克定律失效。"
+        },
+        {
+          "label": "D",
+          "text": "概念混淆：结点位置变化会改变橡皮筋内部状态，无法比较两力和单力的等效作用。"
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "角度必须从法线量取；若量的是界面角须先取余角。\n知识库校验证据：情境：基准；代入错误式：sin(π/2-θ<sub>i</sub>)/sin(π/2-θ<sub>r</sub>)；校验参照值：1.4142135623730951。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 0,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "n<sub>g</sub> = sin(π/2-θ<sub>i</sub>)/sin(π/2-θ<sub>r</sub>)",
+      "trap_test": {
+        "scenario": "基准",
+        "expr": "sin(pi/2-theta_i)/sin(pi/2-theta_r)",
+        "ref": 1.4142135623730951
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-exp-19-2",
+      "point_id": "exp-19",
+      "point_title": "测量玻璃折射率",
+      "chapter": "第二十四章 · 高中物理必做实验与测量方法",
+      "stem": "【第二十四章 · 高中物理必做实验与测量方法 · 测量玻璃折射率】学生的错误做法：只用一次光路报告过多有效数字。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "概念混淆：多角度重复测量并估计线宽、法线定位带来的不确定度。"
+        },
+        {
+          "label": "B",
+          "text": "数值代入：比例式中的x必须是相对原长的改变量；截距应通过原长修正或图线拟合处理。"
+        },
+        {
+          "label": "C",
+          "text": "数值代入：只有同向共线时大小才直接相加；本例垂直合力5 N，不是7 N。"
+        },
+        {
+          "label": "D",
+          "text": "数值代入：悬挂物正在加速，绳力小于其重力；本例张力1.6 N而悬挂重力2 N。"
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "多角度重复测量并估计线宽、法线定位带来的不确定度。",
+      "error_type": "概念混淆",
+      "judging": "teacher",
+      "source_error_index": 1,
+      "source_caught_by": "人工审核",
+      "wrong_expr": null,
+      "trap_test": null,
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-exp-20-1",
+      "point_id": "exp-20",
+      "point_title": "用双缝干涉测量光波长",
+      "chapter": "第二十四章 · 高中物理必做实验与测量方法",
+      "stem": "【第二十四章 · 高中物理必做实验与测量方法 · 用双缝干涉测量光波长】学生的错误做法：把条纹间距与缝距成正比（错误表达式：Δx = λ<sub>w</sub>·L<sub>s</sub>·d<sub>s</sub>）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "概念混淆：发生塑性形变后，卸载数据不再回到原长，胡克定律失效。"
+        },
+        {
+          "label": "B",
+          "text": "概念混淆：结点位置变化会改变橡皮筋内部状态，无法比较两力和单力的等效作用。"
+        },
+        {
+          "label": "C",
+          "text": "概念混淆：这样无法区分质量和力各自对加速度的影响，应控制变量或记录总质量逐组计算。"
+        },
+        {
+          "label": "D",
+          "text": "数值代入：缝距增大使相邻干涉条纹变密；公式中d应在分母。"
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "缝距增大使相邻干涉条纹变密；公式中d应在分母。\n知识库校验证据：情境：基准；代入错误式：λ<sub>w</sub>·L<sub>s</sub>·d<sub>s</sub>；校验参照值：0.003。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 0,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "Δx = λ<sub>w</sub>·L<sub>s</sub>·d<sub>s</sub>",
+      "trap_test": {
+        "scenario": "基准",
+        "expr": "λ_w*L_s*d_s",
+        "ref": 0.003
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-exp-20-2",
+      "point_id": "exp-20",
+      "point_title": "用双缝干涉测量光波长",
+      "chapter": "第二十四章 · 高中物理必做实验与测量方法",
+      "stem": "【第二十四章 · 高中物理必做实验与测量方法 · 用双缝干涉测量光波长】学生的错误做法：把条纹级数当成间隔个数。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "数值代入：只有同向共线时大小才直接相加；本例垂直合力5 N，不是7 N。"
+        },
+        {
+          "label": "B",
+          "text": "数值代入：悬挂物正在加速，绳力小于其重力；本例张力1.6 N而悬挂重力2 N。"
+        },
+        {
+          "label": "C",
+          "text": "概念混淆：从第0到第5级有5个间隔，编号与间隔数需分清。"
+        },
+        {
+          "label": "D",
+          "text": "数值代入：比例式中的x必须是相对原长的改变量；截距应通过原长修正或图线拟合处理。"
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "从第0到第5级有5个间隔，编号与间隔数需分清。",
+      "error_type": "概念混淆",
+      "judging": "teacher",
+      "source_error_index": 1,
+      "source_caught_by": "人工审核",
+      "wrong_expr": null,
+      "trap_test": null,
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-exp-21-1",
+      "point_id": "exp-21",
+      "point_title": "探究感应电流产生条件与方向",
+      "chapter": "第二十四章 · 高中物理必做实验与测量方法",
+      "stem": "【第二十四章 · 高中物理必做实验与测量方法 · 探究感应电流产生条件与方向】学生的错误做法：认为有磁场就必有感应电流（错误表达式：E<sub>i</sub> = N<sub>i</sub>·A<sub>i</sub>·B）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "概念混淆：这样无法区分质量和力各自对加速度的影响，应控制变量或记录总质量逐组计算。"
+        },
+        {
+          "label": "B",
+          "text": "数值代入：磁通不变时电动势为零；必须有磁通变化。"
+        },
+        {
+          "label": "C",
+          "text": "概念混淆：发生塑性形变后，卸载数据不再回到原长，胡克定律失效。"
+        },
+        {
+          "label": "D",
+          "text": "概念混淆：结点位置变化会改变橡皮筋内部状态，无法比较两力和单力的等效作用。"
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "磁通不变时电动势为零；必须有磁通变化。\n知识库校验证据：情境：基准；代入错误式：N<sub>i</sub>·A<sub>i</sub>·B；校验参照值：0.1。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 0,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "E<sub>i</sub> = N<sub>i</sub>·A<sub>i</sub>·B",
+      "trap_test": {
+        "scenario": "基准",
+        "expr": "N_i*A_i*B",
+        "ref": 0.1
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-exp-21-2",
+      "point_id": "exp-21",
+      "point_title": "探究感应电流产生条件与方向",
+      "chapter": "第二十四章 · 高中物理必做实验与测量方法",
+      "stem": "【第二十四章 · 高中物理必做实验与测量方法 · 探究感应电流产生条件与方向】学生的错误做法：进场和退场的感应电流方向相同。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "概念混淆：磁通变化反向时感应电流也反向。"
+        },
+        {
+          "label": "B",
+          "text": "数值代入：比例式中的x必须是相对原长的改变量；截距应通过原长修正或图线拟合处理。"
+        },
+        {
+          "label": "C",
+          "text": "数值代入：只有同向共线时大小才直接相加；本例垂直合力5 N，不是7 N。"
+        },
+        {
+          "label": "D",
+          "text": "数值代入：悬挂物正在加速，绳力小于其重力；本例张力1.6 N而悬挂重力2 N。"
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "磁通变化反向时感应电流也反向。",
+      "error_type": "概念混淆",
+      "judging": "teacher",
+      "source_error_index": 1,
+      "source_caught_by": "人工审核",
+      "wrong_expr": null,
+      "trap_test": null,
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-exp-22-1",
+      "point_id": "exp-22",
+      "point_title": "探究变压器电压、电流与匝数关系",
+      "chapter": "第二十四章 · 高中物理必做实验与测量方法",
+      "stem": "【第二十四章 · 高中物理必做实验与测量方法 · 探究变压器电压、电流与匝数关系】学生的错误做法：把电流比写成与电压比同向（错误表达式：I<sub>1</sub> = I<sub>2</sub>·N1/N2）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "概念混淆：发生塑性形变后，卸载数据不再回到原长，胡克定律失效。"
+        },
+        {
+          "label": "B",
+          "text": "概念混淆：结点位置变化会改变橡皮筋内部状态，无法比较两力和单力的等效作用。"
+        },
+        {
+          "label": "C",
+          "text": "概念混淆：这样无法区分质量和力各自对加速度的影响，应控制变量或记录总质量逐组计算。"
+        },
+        {
+          "label": "D",
+          "text": "数值代入：理想功率近似守恒，升压时电流减小，电流比与匝数比反向。"
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "理想功率近似守恒，升压时电流减小，电流比与匝数比反向。\n知识库校验证据：情境：基准；代入错误式：I<sub>2</sub>·N<sub>1</sub>/N<sub>2</sub>；校验参照值：0.3333333333333333。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 0,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "I<sub>1</sub> = I<sub>2</sub>·N1/N2",
+      "trap_test": {
+        "scenario": "基准",
+        "expr": "I2*N1/N2",
+        "ref": 0.3333333333333333
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-exp-22-2",
+      "point_id": "exp-22",
+      "point_title": "探究变压器电压、电流与匝数关系",
+      "chapter": "第二十四章 · 高中物理必做实验与测量方法",
+      "stem": "【第二十四章 · 高中物理必做实验与测量方法 · 探究变压器电压、电流与匝数关系】学生的错误做法：用直流电源测交流变压器。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "数值代入：只有同向共线时大小才直接相加；本例垂直合力5 N，不是7 N。"
+        },
+        {
+          "label": "B",
+          "text": "数值代入：悬挂物正在加速，绳力小于其重力；本例张力1.6 N而悬挂重力2 N。"
+        },
+        {
+          "label": "C",
+          "text": "概念混淆：稳态直流不会产生持续交变磁通，可能导致初级过流和发热。"
+        },
+        {
+          "label": "D",
+          "text": "数值代入：比例式中的x必须是相对原长的改变量；截距应通过原长修正或图线拟合处理。"
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "稳态直流不会产生持续交变磁通，可能导致初级过流和发热。",
+      "error_type": "概念混淆",
+      "judging": "teacher",
+      "source_error_index": 1,
+      "source_caught_by": "人工审核",
+      "wrong_expr": null,
+      "trap_test": null,
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-exp-23-1",
+      "point_id": "exp-23",
+      "point_title": "传感器标定与自动控制数据采集",
+      "chapter": "第二十四章 · 高中物理必做实验与测量方法",
+      "stem": "【第二十四章 · 高中物理必做实验与测量方法 · 传感器标定与自动控制数据采集】学生的错误做法：只测零点便把任意传感器当成线性（错误表达式：x<sub>s</sub> = U<sub>s</sub>/k<sub>s</sub>）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "概念混淆：这样无法区分质量和力各自对加速度的影响，应控制变量或记录总质量逐组计算。"
+        },
+        {
+          "label": "B",
+          "text": "数值代入：真实传感器可能有零点偏移和非线性，须多点标定并检查工作区间。"
+        },
+        {
+          "label": "C",
+          "text": "概念混淆：发生塑性形变后，卸载数据不再回到原长，胡克定律失效。"
+        },
+        {
+          "label": "D",
+          "text": "概念混淆：结点位置变化会改变橡皮筋内部状态，无法比较两力和单力的等效作用。"
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "真实传感器可能有零点偏移和非线性，须多点标定并检查工作区间。\n知识库校验证据：情境：基准；代入错误式：U<sub>s</sub>/k<sub>s</sub>；校验参照值：0.4。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 0,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "x<sub>s</sub> = U<sub>s</sub>/k<sub>s</sub>",
+      "trap_test": {
+        "scenario": "基准",
+        "expr": "U_s/k_s",
+        "ref": 0.4
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-exp-23-2",
+      "point_id": "exp-23",
+      "point_title": "传感器标定与自动控制数据采集",
+      "chapter": "第二十四章 · 高中物理必做实验与测量方法",
+      "stem": "【第二十四章 · 高中物理必做实验与测量方法 · 传感器标定与自动控制数据采集】学生的错误做法：将未知量外推到标定范围之外仍宣称准确。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "概念混淆：外推误差可能很大；应在工作区间内使用或增加标准点。"
+        },
+        {
+          "label": "B",
+          "text": "数值代入：比例式中的x必须是相对原长的改变量；截距应通过原长修正或图线拟合处理。"
+        },
+        {
+          "label": "C",
+          "text": "数值代入：只有同向共线时大小才直接相加；本例垂直合力5 N，不是7 N。"
+        },
+        {
+          "label": "D",
+          "text": "数值代入：悬挂物正在加速，绳力小于其重力；本例张力1.6 N而悬挂重力2 N。"
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "外推误差可能很大；应在工作区间内使用或增加标准点。",
+      "error_type": "概念混淆",
+      "judging": "teacher",
+      "source_error_index": 1,
+      "source_caught_by": "人工审核",
+      "wrong_expr": null,
+      "trap_test": null,
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-exp-24-1",
+      "point_id": "exp-24",
+      "point_title": "用油膜法估测分子大小",
+      "chapter": "第二十四章 · 高中物理必做实验与测量方法",
+      "stem": "【第二十四章 · 高中物理必做实验与测量方法 · 用油膜法估测分子大小】学生的错误做法：把稀释液总体积都当成纯油体积（错误表达式：V<sub>o</sub> = V<sub>s</sub>）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "概念混淆：发生塑性形变后，卸载数据不再回到原长，胡克定律失效。"
+        },
+        {
+          "label": "B",
+          "text": "概念混淆：结点位置变化会改变橡皮筋内部状态，无法比较两力和单力的等效作用。"
+        },
+        {
+          "label": "C",
+          "text": "概念混淆：这样无法区分质量和力各自对加速度的影响，应控制变量或记录总质量逐组计算。"
+        },
+        {
+          "label": "D",
+          "text": "数值代入：只有比例c<sub>r</sub>对应的部分是纯油，本例纯油体积是5×10⁻¹⁰ m³。"
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "只有比例c<sub>r</sub>对应的部分是纯油，本例纯油体积是5×10⁻¹⁰ m³。\n知识库校验证据：情境：基准；代入错误式：V<sub>s</sub>ol；校验参照值：1e-09。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 0,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "V<sub>o</sub> = V<sub>s</sub>",
+      "trap_test": {
+        "scenario": "基准",
+        "expr": "V_s",
+        "ref": 1e-09
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-exp-24-2",
+      "point_id": "exp-24",
+      "point_title": "用油膜法估测分子大小",
+      "chapter": "第二十四章 · 高中物理必做实验与测量方法",
+      "stem": "【第二十四章 · 高中物理必做实验与测量方法 · 用油膜法估测分子大小】学生的错误做法：滴加溶液时忽略纯油稀释比例。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "数值代入：只有同向共线时大小才直接相加；本例垂直合力5 N，不是7 N。"
+        },
+        {
+          "label": "B",
+          "text": "数值代入：悬挂物正在加速，绳力小于其重力；本例张力1.6 N而悬挂重力2 N。"
+        },
+        {
+          "label": "C",
+          "text": "概念混淆：纯油体积会被高估多个数量级，必须依据配液比例还原。"
+        },
+        {
+          "label": "D",
+          "text": "数值代入：比例式中的x必须是相对原长的改变量；截距应通过原长修正或图线拟合处理。"
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "纯油体积会被高估多个数量级，必须依据配液比例还原。",
+      "error_type": "概念混淆",
+      "judging": "teacher",
+      "source_error_index": 1,
+      "source_caught_by": "人工审核",
+      "wrong_expr": null,
+      "trap_test": null,
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-exp-25-1",
+      "point_id": "exp-25",
+      "point_title": "探究一定质量气体的等温变化",
+      "chapter": "第二十四章 · 高中物理必做实验与测量方法",
+      "stem": "【第二十四章 · 高中物理必做实验与测量方法 · 探究一定质量气体的等温变化】学生的错误做法：把等温压缩时的压强变化写成与体积成正比（错误表达式：p<sub>2</sub> = p<sub>1</sub>·V<sub>2</sub>/V<sub>1</sub>）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "概念混淆：这样无法区分质量和力各自对加速度的影响，应控制变量或记录总质量逐组计算。"
+        },
+        {
+          "label": "B",
+          "text": "数值代入：恒温时p与V成反比；体积减小应使绝对压强增大。"
+        },
+        {
+          "label": "C",
+          "text": "概念混淆：发生塑性形变后，卸载数据不再回到原长，胡克定律失效。"
+        },
+        {
+          "label": "D",
+          "text": "概念混淆：结点位置变化会改变橡皮筋内部状态，无法比较两力和单力的等效作用。"
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "恒温时p与V成反比；体积减小应使绝对压强增大。本例错误写法给出约83.3 kPa，正确值为120 kPa。\n知识库校验证据：情境：基准；代入错误式：p<sub>1</sub>·V<sub>2</sub>/V<sub>1</sub>；校验参照值：120000。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 0,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "p<sub>2</sub> = p<sub>1</sub>·V<sub>2</sub>/V<sub>1</sub>",
+      "trap_test": {
+        "scenario": "基准",
+        "expr": "p1*V2/V1",
+        "ref": 120000
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-exp-25-2",
+      "point_id": "exp-25",
+      "point_title": "探究一定质量气体的等温变化",
+      "chapter": "第二十四章 · 高中物理必做实验与测量方法",
+      "stem": "【第二十四章 · 高中物理必做实验与测量方法 · 探究一定质量气体的等温变化】学生的错误做法：把表压直接代入玻意耳定律。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "概念混淆：气体定律使用绝对压强，表压需加当地大气压。"
+        },
+        {
+          "label": "B",
+          "text": "数值代入：比例式中的x必须是相对原长的改变量；截距应通过原长修正或图线拟合处理。"
+        },
+        {
+          "label": "C",
+          "text": "数值代入：只有同向共线时大小才直接相加；本例垂直合力5 N，不是7 N。"
+        },
+        {
+          "label": "D",
+          "text": "数值代入：悬挂物正在加速，绳力小于其重力；本例张力1.6 N而悬挂重力2 N。"
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "气体定律使用绝对压强，表压需加当地大气压。",
+      "error_type": "概念混淆",
+      "judging": "teacher",
+      "source_error_index": 1,
+      "source_caught_by": "人工审核",
+      "wrong_expr": null,
+      "trap_test": null,
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-exp-25-3",
+      "point_id": "exp-25",
+      "point_title": "一定质量气体状态变化实验：等温、等压与等容",
+      "chapter": "第二十四章 · 高中物理必做实验与测量方法",
+      "stem": "【第二十四章 · 高中物理必做实验与测量方法 · 一定质量气体状态变化实验：等温、等压与等容】学生的错误做法：把摄氏温度直接代入气体比例式。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "数值代入：比例式中的x必须是相对原长的改变量；截距应通过原长修正或图线拟合处理。"
+        },
+        {
+          "label": "B",
+          "text": "数值代入：只有同向共线时大小才直接相加；本例垂直合力5 N，不是7 N。"
+        },
+        {
+          "label": "C",
+          "text": "数值代入：悬挂物正在加速，绳力小于其重力；本例张力1.6 N而悬挂重力2 N。"
+        },
+        {
+          "label": "D",
+          "text": "概念混淆：气体状态变化中的温度比例使用开尔文；摄氏温标的零点不对应热力学绝对零度。"
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "气体状态变化中的温度比例使用开尔文；摄氏温标的零点不对应热力学绝对零度。",
+      "error_type": "概念混淆",
+      "judging": "teacher",
+      "source_error_index": 2,
+      "source_caught_by": "人工审核",
+      "wrong_expr": null,
+      "trap_test": null,
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    }
+  ],
+  "skipped": []
+}

@@ -10,48 +10,155 @@
       "definition": "通过线圈自身的电流发生变化时，线圈中会产生阻碍原电流变化的自感电动势。在线圈自感系数 L 可视为不变时，自感电动势大小 E_L=L*abs(Delta_I)/Delta_t。L 由线圈的匝数、形状、大小以及有无铁芯等因素决定，国际单位是亨利（H）。",
       "meaning": "自感的关键词是“阻碍变化”而不是“阻碍电流”：通电瞬间它阻碍电流增大，断电瞬间它阻碍电流减小，因此线圈电流不能突变。L 越大或电流变化越快，自感作用越明显。含理想电感和电阻的串联电路中，时间常量 tau=L/R 刻画电流变化的快慢，tau 越大，暂态过程越慢。",
       "symbols": {
-        "E_L": { "desc": "自感电动势的大小", "unit": "V" },
-        "L_ind": { "desc": "线圈的自感系数", "unit": "H" },
-        "Delta_I": { "desc": "线圈电流的变化量大小", "unit": "A" },
-        "Delta_t": { "desc": "电流变化经历的时间", "unit": "s" },
-        "tau": { "desc": "电阻—电感串联电路的时间常量", "unit": "s" },
-        "R": { "desc": "电路中的总电阻", "unit": "ohm" }
+        "E_L": {
+          "desc": "自感电动势的大小",
+          "unit": "V"
+        },
+        "L": {
+          "desc": "线圈的自感系数",
+          "unit": "H"
+        },
+        "Delta_I": {
+          "desc": "线圈电流的变化量大小",
+          "unit": "A"
+        },
+        "Delta_t": {
+          "desc": "电流变化经历的时间",
+          "unit": "s"
+        },
+        "tau": {
+          "desc": "电阻—电感串联电路的时间常量",
+          "unit": "s"
+        },
+        "R": {
+          "desc": "电路中的总电阻",
+          "unit": "ohm"
+        }
       },
       "scenarios": {
-        "电流快速变化": { "E_L": 6.0, "L_ind": 0.40, "Delta_I": 3.0, "Delta_t": 0.20, "tau": 0.20, "R": 2.0 },
-        "大电阻线圈": { "E_L": 6.0, "L_ind": 0.40, "Delta_I": 3.0, "Delta_t": 0.20, "tau": 0.05, "R": 8.0 },
-        "电流均匀减小": { "E_L": 6.0, "L_ind": 0.40, "Delta_I": -3.0, "Delta_t": 0.20, "tau": 0.20, "R": 2.0 }
+        "电流快速变化": {
+          "E_L": 6.0,
+          "L": 0.4,
+          "Delta_I": 3.0,
+          "Delta_t": 0.2,
+          "tau": 0.2,
+          "R": 2.0
+        },
+        "大电阻线圈": {
+          "E_L": 6.0,
+          "L": 0.4,
+          "Delta_I": 3.0,
+          "Delta_t": 0.2,
+          "tau": 0.05,
+          "R": 8.0
+        },
+        "电流均匀减小": {
+          "E_L": 6.0,
+          "L": 0.4,
+          "Delta_I": -3.0,
+          "Delta_t": 0.2,
+          "tau": 0.2,
+          "R": 2.0
+        }
       },
       "formulas": [
         {
           "name": "自感电动势的大小",
-          "expr": "E_L = L_ind*abs(Delta_I)/Delta_t",
+          "expr": "E_L = L*abs(Delta_I)/Delta_t",
           "when": "线圈自感系数不变，Delta_t 大于零，只计算电动势大小",
           "checks": [
-            { "type": "numeric", "scenario": "电流快速变化", "expr": "L_ind*abs(Delta_I)/Delta_t", "ref": 6.0, "note": "0.40 H×3.0 A÷0.20 s=6.0 V，参考值由乘除独立计算。" },
-            { "type": "direction", "scenario": "电流快速变化", "var": "L_ind", "lo": 0.10, "hi": 1.0, "expr": "L_ind*abs(Delta_I)/Delta_t", "expect": "up", "note": "电流变化情况相同时，自感系数越大，自感电动势越大。" },
-            { "type": "direction", "scenario": "电流快速变化", "var": "Delta_t", "lo": 0.05, "hi": 1.0, "expr": "L_ind*abs(Delta_I)/Delta_t", "expect": "down", "note": "相同电流变化拖得越久，变化率越小，自感电动势越小。" },
-            { "type": "consistency", "scenario": "电流快速变化", "expr": "E_L", "with": "iad-01|电阻—电感电路的时间常量", "with_expr": "R*tau*abs(Delta_I)/Delta_t", "target": "自感电动势大小", "note": "先由 tau=L_ind/R 得 L_ind=R*tau，再代入自感公式，与直接读取均得到 6.0 V。" },
-            { "type": "scan", "scenario": "电流快速变化", "var": "Delta_I", "lo": -1000000, "hi": 1000000 }
+            {
+              "type": "numeric",
+              "scenario": "电流快速变化",
+              "expr": "L*abs(Delta_I)/Delta_t",
+              "ref": 6.0,
+              "note": "0.40 H×3.0 A÷0.20 s=6.0 V，参考值由乘除独立计算。"
+            },
+            {
+              "type": "direction",
+              "scenario": "电流快速变化",
+              "var": "L",
+              "lo": 0.1,
+              "hi": 1.0,
+              "expr": "L*abs(Delta_I)/Delta_t",
+              "expect": "up",
+              "note": "电流变化情况相同时，自感系数越大，自感电动势越大。"
+            },
+            {
+              "type": "direction",
+              "scenario": "电流快速变化",
+              "var": "Delta_t",
+              "lo": 0.05,
+              "hi": 1.0,
+              "expr": "L*abs(Delta_I)/Delta_t",
+              "expect": "down",
+              "note": "相同电流变化拖得越久，变化率越小，自感电动势越小。"
+            },
+            {
+              "type": "consistency",
+              "scenario": "电流快速变化",
+              "expr": "E_L",
+              "with": "iad-01|电阻—电感电路的时间常量",
+              "with_expr": "R*tau*abs(Delta_I)/Delta_t",
+              "target": "自感电动势大小",
+              "note": "先由 tau=L/R 得 L=R*tau，再代入自感公式，与直接读取均得到 6.0 V。"
+            },
+            {
+              "type": "scan",
+              "scenario": "电流快速变化",
+              "var": "Delta_I",
+              "lo": -1000000,
+              "hi": 1000000
+            }
           ]
         },
         {
           "name": "电阻—电感电路的时间常量",
-          "expr": "tau = L_ind/R",
-          "when": "理想电感 L_ind 与电阻 R 构成一阶串联暂态电路，R 大于零",
+          "expr": "tau = L/R",
+          "when": "理想电感 L 与电阻 R 构成一阶串联暂态电路，R 大于零",
           "checks": [
-            { "type": "numeric", "scenario": "电流快速变化", "expr": "L_ind/R", "ref": 0.20, "note": "0.40 H÷2.0 Ω=0.20 s。" },
-            { "type": "direction", "scenario": "电流快速变化", "var": "L_ind", "lo": 0.10, "hi": 2.0, "expr": "L_ind/R", "expect": "up", "note": "电阻一定时，自感系数越大，电流建立或衰减得越慢。" },
-            { "type": "direction", "scenario": "电流快速变化", "var": "R", "lo": 0.5, "hi": 20, "expr": "L_ind/R", "expect": "down", "note": "自感系数一定时，电阻越大，时间常量越小。" },
-            { "type": "scan", "scenario": "电流快速变化", "var": "R", "lo": 0.001, "hi": 1000000 }
+            {
+              "type": "numeric",
+              "scenario": "电流快速变化",
+              "expr": "L/R",
+              "ref": 0.2,
+              "note": "0.40 H÷2.0 Ω=0.20 s。"
+            },
+            {
+              "type": "direction",
+              "scenario": "电流快速变化",
+              "var": "L",
+              "lo": 0.1,
+              "hi": 2.0,
+              "expr": "L/R",
+              "expect": "up",
+              "note": "电阻一定时，自感系数越大，电流建立或衰减得越慢。"
+            },
+            {
+              "type": "direction",
+              "scenario": "电流快速变化",
+              "var": "R",
+              "lo": 0.5,
+              "hi": 20,
+              "expr": "L/R",
+              "expect": "down",
+              "note": "自感系数一定时，电阻越大，时间常量越小。"
+            },
+            {
+              "type": "scan",
+              "scenario": "电流快速变化",
+              "var": "R",
+              "lo": 0.001,
+              "hi": 1000000
+            }
           ]
         }
       ],
       "derivation": [
         "线圈电流改变会使线圈自身产生的磁通量改变，由法拉第定律在线圈中产生感应电动势。",
-        "对结构固定、磁性材料未饱和的线圈，磁通匝数与电流近似成正比，比例系数定义为自感系数 L_ind。",
-        "将这一关系代入法拉第定律，得到自感电动势大小 E_L=L_ind*abs(Delta_I)/Delta_t；方向由楞次定律判断，永远反抗电流的变化。",
-        "在一阶电阻—电感串联电路中，L_ind/R 具有时间量纲，并决定暂态变化的快慢。"
+        "对结构固定、磁性材料未饱和的线圈，磁通匝数与电流近似成正比，比例系数定义为自感系数 L。",
+        "将这一关系代入法拉第定律，得到自感电动势大小 E_L=L*abs(Delta_I)/Delta_t；方向由楞次定律判断，永远反抗电流的变化。",
+        "在一阶电阻—电感串联电路中，L/R 具有时间量纲，并决定暂态变化的快慢。"
       ],
       "errors": [
         {
@@ -60,26 +167,39 @@
           "caught_by": "人工审核"
         },
         {
-          "wrong": "计算自感电动势大小时不取电流变化量的绝对值，写成 E_L=L_ind*Delta_I/Delta_t",
-          "wrong_expr": "E_L = L_ind*Delta_I/Delta_t",
+          "wrong": "计算自感电动势大小时不取电流变化量的绝对值，写成 E_L=L*Delta_I/Delta_t",
+          "wrong_expr": "E_L = L*Delta_I/Delta_t",
           "why": "该式量纲完全正确，但在电流减小的情境中会给出 −6.0 V；这里求的是大小，应为 6.0 V，方向另由楞次定律判断。",
           "caught_by": "数值代入",
-          "trap_test": { "scenario": "电流均匀减小", "expr": "L_ind*Delta_I/Delta_t", "ref": 6.0 }
+          "trap_test": {
+            "scenario": "电流均匀减小",
+            "expr": "L*Delta_I/Delta_t",
+            "ref": 6.0
+          }
         }
       ],
       "example": {
         "stem": "自感系数为 0.40 H 的线圈中，电流在 0.20 s 内均匀增加 3.0 A。求自感电动势大小；若电路总电阻为 2.0 Ω，求时间常量。",
         "solution": [
-          "自感电动势大小 E_L=L_ind*abs(Delta_I)/Delta_t。",
+          "自感电动势大小 E_L=L*abs(Delta_I)/Delta_t。",
           "代入得 E_L=0.40×3.0÷0.20=6.0 V。",
-          "时间常量 tau=L_ind/R=0.40÷2.0=0.20 s。",
+          "时间常量 tau=L/R=0.40÷2.0=0.20 s。",
           "电流正在增大时，自感电动势的方向与电源推动电流增大的方向相反。"
         ],
         "answer": "自感电动势大小为 6.0 V，时间常量为 0.20 s。"
       },
-      "prereq": ["ind-02", "ind-03"],
-      "next": ["iad-03"],
-      "tags": ["自感", "自感系数", "时间常量"]
+      "prereq": [
+        "ind-02",
+        "ind-03"
+      ],
+      "next": [
+        "iad-03"
+      ],
+      "tags": [
+        "自感",
+        "自感系数",
+        "时间常量"
+      ]
     },
     {
       "id": "iad-02",
@@ -88,15 +208,42 @@
       "definition": "整块导体中的磁通量发生变化时，导体内部会形成闭合的感应电流，这种电流叫涡流。涡流遵守楞次定律，并会产生焦耳热；在电磁炉、感应加热中主动利用它，在变压器和电动机铁芯中则用彼此绝缘的薄硅钢片来减小它。",
       "meaning": "涡流不是凭空消耗能量：加热时外部电源提供的电能转化为内能；磁阻尼时物体的机械能转化为内能。若把某段涡流通路近似为电阻 R、有效电流为 I_eddy，则热功率 P_eddy=I_eddy^2*R，一段时间产生的热量 Q_eddy=P_eddy*t。真实导体中的电流分布很复杂，这两个式子是等效电路模型。",
       "symbols": {
-        "I_eddy": { "desc": "涡流等效电流的有效值", "unit": "A" },
-        "R_eddy": { "desc": "涡流通路的等效电阻", "unit": "ohm" },
-        "P_eddy": { "desc": "涡流产生焦耳热的平均功率", "unit": "W" },
-        "Q_eddy": { "desc": "一段时间内涡流产生的热量", "unit": "J" },
-        "t": { "desc": "涡流持续的时间", "unit": "s" }
+        "I_eddy": {
+          "desc": "涡流等效电流的有效值",
+          "unit": "A"
+        },
+        "R_eddy": {
+          "desc": "涡流通路的等效电阻",
+          "unit": "ohm"
+        },
+        "P_eddy": {
+          "desc": "涡流产生焦耳热的平均功率",
+          "unit": "W"
+        },
+        "Q_eddy": {
+          "desc": "一段时间内涡流产生的热量",
+          "unit": "J"
+        },
+        "t": {
+          "desc": "涡流持续的时间",
+          "unit": "s"
+        }
       },
       "scenarios": {
-        "感应加热": { "I_eddy": 3.0, "R_eddy": 0.80, "P_eddy": 7.2, "Q_eddy": 36.0, "t": 5.0 },
-        "较弱涡流": { "I_eddy": 1.5, "R_eddy": 0.80, "P_eddy": 1.8, "Q_eddy": 9.0, "t": 5.0 }
+        "感应加热": {
+          "I_eddy": 3.0,
+          "R_eddy": 0.8,
+          "P_eddy": 7.2,
+          "Q_eddy": 36.0,
+          "t": 5.0
+        },
+        "较弱涡流": {
+          "I_eddy": 1.5,
+          "R_eddy": 0.8,
+          "P_eddy": 1.8,
+          "Q_eddy": 9.0,
+          "t": 5.0
+        }
       },
       "formulas": [
         {
@@ -104,10 +251,38 @@
           "expr": "P_eddy = I_eddy^2*R_eddy",
           "when": "用等效电流和等效电阻描述导体内的涡流发热",
           "checks": [
-            { "type": "numeric", "scenario": "感应加热", "expr": "I_eddy^2*R_eddy", "ref": 7.2, "note": "3.0²×0.80=7.2 W。" },
-            { "type": "direction", "scenario": "感应加热", "var": "I_eddy", "lo": 0, "hi": 10, "expr": "I_eddy^2*R_eddy", "expect": "up", "note": "等效电阻不变时，涡流越大，发热功率越大。" },
-            { "type": "compare", "scenario": "感应加热", "expr": "I_eddy^2*R_eddy", "op": ">", "vs": "0", "note": "非零电流通过正电阻时，焦耳热功率为正。" },
-            { "type": "scan", "scenario": "感应加热", "var": "I_eddy", "lo": 0, "hi": 1000000 }
+            {
+              "type": "numeric",
+              "scenario": "感应加热",
+              "expr": "I_eddy^2*R_eddy",
+              "ref": 7.2,
+              "note": "3.0²×0.80=7.2 W。"
+            },
+            {
+              "type": "direction",
+              "scenario": "感应加热",
+              "var": "I_eddy",
+              "lo": 0,
+              "hi": 10,
+              "expr": "I_eddy^2*R_eddy",
+              "expect": "up",
+              "note": "等效电阻不变时，涡流越大，发热功率越大。"
+            },
+            {
+              "type": "compare",
+              "scenario": "感应加热",
+              "expr": "I_eddy^2*R_eddy",
+              "op": ">",
+              "vs": "0",
+              "note": "非零电流通过正电阻时，焦耳热功率为正。"
+            },
+            {
+              "type": "scan",
+              "scenario": "感应加热",
+              "var": "I_eddy",
+              "lo": 0,
+              "hi": 1000000
+            }
           ]
         },
         {
@@ -115,10 +290,39 @@
           "expr": "Q_eddy = P_eddy*t",
           "when": "平均发热功率 P_eddy 在时间 t 内保持不变",
           "checks": [
-            { "type": "numeric", "scenario": "感应加热", "expr": "P_eddy*t", "ref": 36.0, "note": "7.2 W×5.0 s=36 J。" },
-            { "type": "direction", "scenario": "感应加热", "var": "t", "lo": 0, "hi": 20, "expr": "P_eddy*t", "expect": "up", "note": "功率一定时，加热时间越长，产生的热量越多。" },
-            { "type": "consistency", "scenario": "感应加热", "expr": "P_eddy*t", "with": "iad-02|涡流的焦耳热功率", "with_expr": "I_eddy^2*R_eddy*t", "target": "涡流在给定时间产生的热量", "note": "先算功率再乘时间与直接使用焦耳定律均得 36 J。" },
-            { "type": "scan", "scenario": "感应加热", "var": "t", "lo": 0, "hi": 1000000 }
+            {
+              "type": "numeric",
+              "scenario": "感应加热",
+              "expr": "P_eddy*t",
+              "ref": 36.0,
+              "note": "7.2 W×5.0 s=36 J。"
+            },
+            {
+              "type": "direction",
+              "scenario": "感应加热",
+              "var": "t",
+              "lo": 0,
+              "hi": 20,
+              "expr": "P_eddy*t",
+              "expect": "up",
+              "note": "功率一定时，加热时间越长，产生的热量越多。"
+            },
+            {
+              "type": "consistency",
+              "scenario": "感应加热",
+              "expr": "P_eddy*t",
+              "with": "iad-02|涡流的焦耳热功率",
+              "with_expr": "I_eddy^2*R_eddy*t",
+              "target": "涡流在给定时间产生的热量",
+              "note": "先算功率再乘时间与直接使用焦耳定律均得 36 J。"
+            },
+            {
+              "type": "scan",
+              "scenario": "感应加热",
+              "var": "t",
+              "lo": 0,
+              "hi": 1000000
+            }
           ]
         }
       ],
@@ -139,7 +343,11 @@
           "wrong_expr": "P_eddy = 0.5*I_eddy^2*R_eddy",
           "why": "有效值已把周期内变化折算进去，不能再乘二分之一。错误式量纲完全正确，却只算得 3.6 W，正确值是 7.2 W。",
           "caught_by": "数值代入",
-          "trap_test": { "scenario": "感应加热", "expr": "0.5*I_eddy^2*R_eddy", "ref": 7.2 }
+          "trap_test": {
+            "scenario": "感应加热",
+            "expr": "0.5*I_eddy^2*R_eddy",
+            "ref": 7.2
+          }
         }
       ],
       "example": {
@@ -152,37 +360,104 @@
         ],
         "answer": "平均发热功率为 7.2 W，产生的热量为 36 J。"
       },
-      "prereq": ["ind-01", "ind-02", "dc-04"],
-      "next": ["iad-03"],
-      "tags": ["涡流", "感应加热", "磁阻尼"]
+      "prereq": [
+        "ind-01",
+        "ind-02",
+        "dc-04"
+      ],
+      "next": [
+        "iad-03"
+      ],
+      "tags": [
+        "涡流",
+        "感应加热",
+        "磁阻尼"
+      ]
     },
     {
       "id": "iad-03",
       "title": "电磁感应中的能量转化",
       "level": "进阶",
-      "definition": "电流通过电感线圈时，能量储存在与电流相联系的磁场中。线性电感储存的磁场能为 W_m=0.5*L_ind*I^2。电流建立时电源做功，一部分变成磁场能、一部分变成电阻产生的热；断电时磁场能又可释放。",
+      "definition": "电流通过电感线圈时，能量储存在与电流相联系的磁场中。线性电感储存的磁场能为 W_m=0.5*L*I^2。电流建立时电源做功，一部分变成磁场能、一部分变成电阻产生的热；断电时磁场能又可释放。",
       "meaning": "楞次定律的能量本质是防止“无代价”地产生电能：要让导体切割磁感线并维持感应电流，外力通常必须克服安培力做功。理想情况下输入能量满足 W_source=W_m+Q_heat；若还有机械能变化，则应把动能、重力势能等一并列入总能量账本。",
       "symbols": {
-        "W_m": { "desc": "电感线圈储存的磁场能", "unit": "J" },
-        "L_ind": { "desc": "线圈的自感系数", "unit": "H" },
-        "I": { "desc": "线圈中的电流", "unit": "A" },
-        "W_source": { "desc": "电源或外力输入系统的能量", "unit": "J" },
-        "Q_heat": { "desc": "电阻产生并散出的热量", "unit": "J" }
+        "W_m": {
+          "desc": "电感线圈储存的磁场能",
+          "unit": "J"
+        },
+        "L": {
+          "desc": "线圈的自感系数",
+          "unit": "H"
+        },
+        "I": {
+          "desc": "线圈中的电流",
+          "unit": "A"
+        },
+        "W_source": {
+          "desc": "电源或外力输入系统的能量",
+          "unit": "J"
+        },
+        "Q_heat": {
+          "desc": "电阻产生并散出的热量",
+          "unit": "J"
+        }
       },
       "scenarios": {
-        "线圈储能": { "W_m": 4.0, "L_ind": 0.50, "I": 4.0, "W_source": 10.0, "Q_heat": 6.0 },
-        "较小电流": { "W_m": 1.0, "L_ind": 0.50, "I": 2.0, "W_source": 5.0, "Q_heat": 4.0 }
+        "线圈储能": {
+          "W_m": 4.0,
+          "L": 0.5,
+          "I": 4.0,
+          "W_source": 10.0,
+          "Q_heat": 6.0
+        },
+        "较小电流": {
+          "W_m": 1.0,
+          "L": 0.5,
+          "I": 2.0,
+          "W_source": 5.0,
+          "Q_heat": 4.0
+        }
       },
       "formulas": [
         {
           "name": "电感储存的磁场能",
-          "expr": "W_m = 0.5*L_ind*I^2",
-          "when": "自感系数 L_ind 不随电流改变的线性电感",
+          "expr": "W_m = 0.5*L*I^2",
+          "when": "自感系数 L 不随电流改变的线性电感",
           "checks": [
-            { "type": "numeric", "scenario": "线圈储能", "expr": "0.5*L_ind*I^2", "ref": 4.0, "note": "0.5×0.50×4.0²=4.0 J。" },
-            { "type": "direction", "scenario": "线圈储能", "var": "I", "lo": 0, "hi": 20, "expr": "0.5*L_ind*I^2", "expect": "up", "note": "自感系数一定且电流取大小时，电流越大，磁场能越大。" },
-            { "type": "direction", "scenario": "线圈储能", "var": "L_ind", "lo": 0, "hi": 5, "expr": "0.5*L_ind*I^2", "expect": "up", "note": "电流一定时，自感系数越大，储存的磁场能越多。" },
-            { "type": "scan", "scenario": "线圈储能", "var": "I", "lo": 0, "hi": 1000000 }
+            {
+              "type": "numeric",
+              "scenario": "线圈储能",
+              "expr": "0.5*L*I^2",
+              "ref": 4.0,
+              "note": "0.5×0.50×4.0²=4.0 J。"
+            },
+            {
+              "type": "direction",
+              "scenario": "线圈储能",
+              "var": "I",
+              "lo": 0,
+              "hi": 20,
+              "expr": "0.5*L*I^2",
+              "expect": "up",
+              "note": "自感系数一定且电流取大小时，电流越大，磁场能越大。"
+            },
+            {
+              "type": "direction",
+              "scenario": "线圈储能",
+              "var": "L",
+              "lo": 0,
+              "hi": 5,
+              "expr": "0.5*L*I^2",
+              "expect": "up",
+              "note": "电流一定时，自感系数越大，储存的磁场能越多。"
+            },
+            {
+              "type": "scan",
+              "scenario": "线圈储能",
+              "var": "I",
+              "lo": 0,
+              "hi": 1000000
+            }
           ]
         },
         {
@@ -190,89 +465,238 @@
           "expr": "W_source = W_m + Q_heat",
           "when": "系统初始无磁场能，末态无其他能量变化，忽略辐射等损耗",
           "checks": [
-            { "type": "numeric", "scenario": "线圈储能", "expr": "W_m + Q_heat", "ref": 10.0, "note": "4.0 J 磁场能与 6.0 J 热量相加为 10.0 J，等于输入能量。" },
-            { "type": "compare", "scenario": "线圈储能", "expr": "W_source - Q_heat", "op": "==", "vs": "W_m", "note": "输入能量扣除热损耗后恰为储存的磁场能：10−6=4 J。" },
-            { "type": "consistency", "scenario": "线圈储能", "expr": "W_source - Q_heat", "with": "iad-03|电感储存的磁场能", "with_expr": "0.5*L_ind*I^2", "target": "线圈最终储存的磁场能", "note": "由能量差和由电感、电流两条路径都得到 4.0 J。" },
-            { "type": "scan", "scenario": "线圈储能", "var": "Q_heat", "lo": 0, "hi": 10 }
+            {
+              "type": "numeric",
+              "scenario": "线圈储能",
+              "expr": "W_m + Q_heat",
+              "ref": 10.0,
+              "note": "4.0 J 磁场能与 6.0 J 热量相加为 10.0 J，等于输入能量。"
+            },
+            {
+              "type": "compare",
+              "scenario": "线圈储能",
+              "expr": "W_source - Q_heat",
+              "op": "==",
+              "vs": "W_m",
+              "note": "输入能量扣除热损耗后恰为储存的磁场能：10−6=4 J。"
+            },
+            {
+              "type": "consistency",
+              "scenario": "线圈储能",
+              "expr": "W_source - Q_heat",
+              "with": "iad-03|电感储存的磁场能",
+              "with_expr": "0.5*L*I^2",
+              "target": "线圈最终储存的磁场能",
+              "note": "由能量差和由电感、电流两条路径都得到 4.0 J。"
+            },
+            {
+              "type": "scan",
+              "scenario": "线圈储能",
+              "var": "Q_heat",
+              "lo": 0,
+              "hi": 10
+            }
           ]
         }
       ],
       "derivation": [
         "建立电流时，自感电动势反抗电流增大，电源必须持续做功。",
-        "电流由 0 增至 I 的过程中，对线性电感积分可得储能 W_m=0.5*L_ind*I²；系数 0.5 与匀加速动能公式中的系数来源相似。",
+        "电流由 0 增至 I 的过程中，对线性电感积分可得储能 W_m=0.5*L*I²；系数 0.5 与匀加速动能公式中的系数来源相似。",
         "若电路有电阻，一部分输入能量按焦耳定律转化为热量。",
         "在没有其他能量变化和损耗时，能量守恒给出 W_source=W_m+Q_heat。"
       ],
       "errors": [
         {
-          "wrong": "漏掉二分之一，写成 W_m=L_ind*I^2",
-          "wrong_expr": "W_m = L_ind*I^2",
+          "wrong": "漏掉二分之一，写成 W_m=L*I^2",
+          "wrong_expr": "W_m = L*I^2",
           "why": "量纲完全正确，必须靠数值检验；线圈储能情境中错误式得到 8.0 J，正确值为 4.0 J。",
           "caught_by": "数值代入",
-          "trap_test": { "scenario": "线圈储能", "expr": "L_ind*I^2", "ref": 4.0 }
+          "trap_test": {
+            "scenario": "线圈储能",
+            "expr": "L*I^2",
+            "ref": 4.0
+          }
         },
         {
-          "wrong": "把磁场能写成与电流一次方成正比 W_m=0.5*L_ind*I",
-          "wrong_expr": "W_m = 0.5*L_ind*I",
+          "wrong": "把磁场能写成与电流一次方成正比 W_m=0.5*L*I",
+          "wrong_expr": "W_m = 0.5*L*I",
           "why": "右侧量纲不是能量，因此会被量纲检查拦住；并且电流增大一倍时，正确磁场能应增为原来的四倍，而不是两倍。",
-          "caught_by": "量纲一致性"
+          "caught_by": "量纲一致性",
+          "trap_test": {
+            "kind": "dimension",
+            "target": "W_m = 0.5*L*I",
+            "lhs_dim": "M·L^2·T^-2",
+            "rhs_dim": "M·L^2·T^-2·I^-1",
+            "expect": "mismatch",
+            "note": "实际量纲检查得到等号左边为M·L^2·T^-2、右边为M·L^2·T^-2·I^-1；两边不是同一物理量，因此该等式不成立。"
+          }
         }
       ],
       "example": {
         "stem": "自感系数为 0.50 H 的线圈中建立 4.0 A 电流。若电源在建立电流过程中共输入 10 J，求线圈储存的磁场能和电阻产生的热量。",
         "solution": [
-          "W_m=0.5*L_ind*I²=0.5×0.50×4.0²=4.0 J。",
+          "W_m=0.5*L*I²=0.5×0.50×4.0²=4.0 J。",
           "由能量守恒 W_source=W_m+Q_heat。",
           "Q_heat=10−4.0=6.0 J。",
           "输入能量没有消失，而是分别储存在磁场中和转化为内能。"
         ],
         "answer": "磁场能为 4.0 J，产生的热量为 6.0 J。"
       },
-      "prereq": ["iad-01", "ene-07"],
-      "next": ["iad-04"],
-      "tags": ["磁场能", "能量守恒", "自感储能"]
+      "prereq": [
+        "iad-01",
+        "ene-07"
+      ],
+      "next": [
+        "iad-04"
+      ],
+      "tags": [
+        "磁场能",
+        "能量守恒",
+        "自感储能"
+      ]
     },
     {
       "id": "iad-04",
       "title": "电磁感应中的力学综合：导轨与导体棒",
       "level": "进阶",
-      "definition": "导体棒在平行导轨上垂直切割匀强磁场时，动生电动势 E=B*L*v；闭合回路中电流 I_ind=B*L*v/R_total，导体棒受到与运动相反的安培力 F_mag=B*I_ind*L。这个力随速度增大而增大，常使导体棒最终达到匀速。",
+      "definition": "导体棒在平行导轨上垂直切割匀强磁场时，动生电动势 E=B*L*v；闭合回路中电流 I=B*L*v/R_total，导体棒受到与运动相反的安培力 F_mag=B*I*L。这个力随速度增大而增大，常使导体棒最终达到匀速。",
       "meaning": "处理导轨—导体棒题应按“运动生电—电流生力—力又改变运动”的闭环分析。安培力方向由楞次定律保证其阻碍磁通量变化。在恒定驱动力 F_drive 下，终端状态满足 F_mag=F_drive，因此 v_terminal=F_drive*R_total/(B^2*L^2)。此时外力功率全部转化为焦耳热功率。",
       "symbols": {
-        "I_ind": { "desc": "闭合回路中的感应电流", "unit": "A" },
-        "B": { "desc": "垂直导轨平面的匀强磁场磁感应强度", "unit": "T_" },
-        "L_rod": { "desc": "导体棒接入回路的有效长度", "unit": "m" },
-        "v": { "desc": "导体棒切割磁感线的速度", "unit": "m/s" },
-        "R_total": { "desc": "导体棒与导轨构成回路的总电阻", "unit": "ohm" },
-        "F_mag": { "desc": "导体棒受到的安培阻力大小", "unit": "N" },
-        "F_drive": { "desc": "沿运动方向的恒定驱动力", "unit": "N" },
-        "v_terminal": { "desc": "安培阻力与驱动力平衡时的终端速度", "unit": "m/s" }
+        "I": {
+          "desc": "闭合回路中的感应电流",
+          "unit": "A"
+        },
+        "B": {
+          "desc": "垂直导轨平面的匀强磁场磁感应强度",
+          "unit": "T_"
+        },
+        "L_rod": {
+          "desc": "导体棒接入回路的有效长度",
+          "unit": "m"
+        },
+        "v": {
+          "desc": "导体棒切割磁感线的速度",
+          "unit": "m/s"
+        },
+        "R_total": {
+          "desc": "导体棒与导轨构成回路的总电阻",
+          "unit": "ohm"
+        },
+        "F_mag": {
+          "desc": "导体棒受到的安培阻力大小",
+          "unit": "N"
+        },
+        "F_drive": {
+          "desc": "沿运动方向的恒定驱动力",
+          "unit": "N"
+        },
+        "v_terminal": {
+          "desc": "安培阻力与驱动力平衡时的终端速度",
+          "unit": "m/s"
+        }
       },
       "scenarios": {
-        "导体棒匀速切割": { "I_ind": 4.0, "B": 0.50, "L_rod": 0.40, "v": 6.0, "R_total": 0.30, "F_mag": 0.80, "F_drive": 0.80, "v_terminal": 6.0 },
-        "速度减半": { "I_ind": 2.0, "B": 0.50, "L_rod": 0.40, "v": 3.0, "R_total": 0.30, "F_mag": 0.40, "F_drive": 0.80, "v_terminal": 6.0 }
+        "导体棒匀速切割": {
+          "I": 4.0,
+          "B": 0.5,
+          "L_rod": 0.4,
+          "v": 6.0,
+          "R_total": 0.3,
+          "F_mag": 0.8,
+          "F_drive": 0.8,
+          "v_terminal": 6.0
+        },
+        "速度减半": {
+          "I": 2.0,
+          "B": 0.5,
+          "L_rod": 0.4,
+          "v": 3.0,
+          "R_total": 0.3,
+          "F_mag": 0.4,
+          "F_drive": 0.8,
+          "v_terminal": 6.0
+        }
       },
       "formulas": [
         {
           "name": "导体棒切割产生的感应电流",
-          "expr": "I_ind = B*L_rod*v/R_total",
+          "expr": "I = B*L_rod*v/R_total",
           "when": "B、L_rod、v 两两垂直，闭合回路总电阻恒定且大于零",
           "checks": [
-            { "type": "numeric", "scenario": "导体棒匀速切割", "expr": "B*L_rod*v/R_total", "ref": 4.0, "note": "0.50×0.40×6.0÷0.30=4.0 A。" },
-            { "type": "direction", "scenario": "导体棒匀速切割", "var": "v", "lo": 0, "hi": 20, "expr": "B*L_rod*v/R_total", "expect": "up", "note": "其余量不变时，切割速度越大，感应电流越大。" },
-            { "type": "direction", "scenario": "导体棒匀速切割", "var": "R_total", "lo": 0.05, "hi": 5, "expr": "B*L_rod*v/R_total", "expect": "down", "note": "动生电动势一定时，回路电阻越大，感应电流越小。" },
-            { "type": "scan", "scenario": "导体棒匀速切割", "var": "R_total", "lo": 0.001, "hi": 1000000 }
+            {
+              "type": "numeric",
+              "scenario": "导体棒匀速切割",
+              "expr": "B*L_rod*v/R_total",
+              "ref": 4.0,
+              "note": "0.50×0.40×6.0÷0.30=4.0 A。"
+            },
+            {
+              "type": "direction",
+              "scenario": "导体棒匀速切割",
+              "var": "v",
+              "lo": 0,
+              "hi": 20,
+              "expr": "B*L_rod*v/R_total",
+              "expect": "up",
+              "note": "其余量不变时，切割速度越大，感应电流越大。"
+            },
+            {
+              "type": "direction",
+              "scenario": "导体棒匀速切割",
+              "var": "R_total",
+              "lo": 0.05,
+              "hi": 5,
+              "expr": "B*L_rod*v/R_total",
+              "expect": "down",
+              "note": "动生电动势一定时，回路电阻越大，感应电流越小。"
+            },
+            {
+              "type": "scan",
+              "scenario": "导体棒匀速切割",
+              "var": "R_total",
+              "lo": 0.001,
+              "hi": 1000000
+            }
           ]
         },
         {
           "name": "导体棒受到的安培阻力",
           "expr": "F_mag = B^2*L_rod^2*v/R_total",
-          "when": "由 F_mag=B*I_ind*L_rod 与感应电流公式合并，方向与运动相反",
+          "when": "由 F_mag=B*I*L_rod 与感应电流公式合并，方向与运动相反",
           "checks": [
-            { "type": "numeric", "scenario": "导体棒匀速切割", "expr": "B^2*L_rod^2*v/R_total", "ref": 0.80, "note": "0.50²×0.40²×6.0÷0.30=0.80 N。" },
-            { "type": "direction", "scenario": "导体棒匀速切割", "var": "v", "lo": 0, "hi": 20, "expr": "B^2*L_rod^2*v/R_total", "expect": "up", "note": "速度越大，感应电流和安培阻力都越大。" },
-            { "type": "consistency", "scenario": "导体棒匀速切割", "expr": "B*I_ind*L_rod", "with": "iad-04|导体棒切割产生的感应电流", "with_expr": "B^2*L_rod^2*v/R_total", "target": "导体棒受到的安培阻力", "note": "先求电流后用安培力公式与直接合并两式均得 0.80 N。" },
-            { "type": "scan", "scenario": "导体棒匀速切割", "var": "v", "lo": 0, "hi": 1000000 }
+            {
+              "type": "numeric",
+              "scenario": "导体棒匀速切割",
+              "expr": "B^2*L_rod^2*v/R_total",
+              "ref": 0.8,
+              "note": "0.50²×0.40²×6.0÷0.30=0.80 N。"
+            },
+            {
+              "type": "direction",
+              "scenario": "导体棒匀速切割",
+              "var": "v",
+              "lo": 0,
+              "hi": 20,
+              "expr": "B^2*L_rod^2*v/R_total",
+              "expect": "up",
+              "note": "速度越大，感应电流和安培阻力都越大。"
+            },
+            {
+              "type": "consistency",
+              "scenario": "导体棒匀速切割",
+              "expr": "B*I*L_rod",
+              "with": "iad-04|导体棒切割产生的感应电流",
+              "with_expr": "B^2*L_rod^2*v/R_total",
+              "target": "导体棒受到的安培阻力",
+              "note": "先求电流后用安培力公式与直接合并两式均得 0.80 N。"
+            },
+            {
+              "type": "scan",
+              "scenario": "导体棒匀速切割",
+              "var": "v",
+              "lo": 0,
+              "hi": 1000000
+            }
           ]
         },
         {
@@ -280,17 +704,47 @@
           "expr": "v_terminal = F_drive*R_total/(B^2*L_rod^2)",
           "when": "导体棒达到稳定匀速，驱动力与安培阻力大小相等",
           "checks": [
-            { "type": "numeric", "scenario": "导体棒匀速切割", "expr": "F_drive*R_total/(B^2*L_rod^2)", "ref": 6.0, "note": "0.80×0.30÷(0.50²×0.40²)=6.0 m/s。" },
-            { "type": "direction", "scenario": "导体棒匀速切割", "var": "F_drive", "lo": 0.1, "hi": 5, "expr": "F_drive*R_total/(B^2*L_rod^2)", "expect": "up", "note": "磁场和回路不变时，驱动力越大，平衡安培阻力所需的终端速度越大。" },
-            { "type": "direction", "scenario": "导体棒匀速切割", "var": "B", "lo": 0.1, "hi": 2, "expr": "F_drive*R_total/(B^2*L_rod^2)", "expect": "down", "note": "磁场越强，同一速度下安培阻力越大，所以终端速度越小。" },
-            { "type": "scan", "scenario": "导体棒匀速切割", "var": "B", "lo": 0.001, "hi": 1000 }
+            {
+              "type": "numeric",
+              "scenario": "导体棒匀速切割",
+              "expr": "F_drive*R_total/(B^2*L_rod^2)",
+              "ref": 6.0,
+              "note": "0.80×0.30÷(0.50²×0.40²)=6.0 m/s。"
+            },
+            {
+              "type": "direction",
+              "scenario": "导体棒匀速切割",
+              "var": "F_drive",
+              "lo": 0.1,
+              "hi": 5,
+              "expr": "F_drive*R_total/(B^2*L_rod^2)",
+              "expect": "up",
+              "note": "磁场和回路不变时，驱动力越大，平衡安培阻力所需的终端速度越大。"
+            },
+            {
+              "type": "direction",
+              "scenario": "导体棒匀速切割",
+              "var": "B",
+              "lo": 0.1,
+              "hi": 2,
+              "expr": "F_drive*R_total/(B^2*L_rod^2)",
+              "expect": "down",
+              "note": "磁场越强，同一速度下安培阻力越大，所以终端速度越小。"
+            },
+            {
+              "type": "scan",
+              "scenario": "导体棒匀速切割",
+              "var": "B",
+              "lo": 0.001,
+              "hi": 1000
+            }
           ]
         }
       ],
       "derivation": [
         "导体棒垂直切割磁感线，产生动生电动势 E=B*L_rod*v。",
-        "闭合回路由欧姆定律得 I_ind=E/R_total=B*L_rod*v/R_total。",
-        "载流导体棒受到安培力 F_mag=B*I_ind*L_rod，代入电流式得到 F_mag=B²*L_rod²*v/R_total。",
+        "闭合回路由欧姆定律得 I=E/R_total=B*L_rod*v/R_total。",
+        "载流导体棒受到安培力 F_mag=B*I*L_rod，代入电流式得到 F_mag=B²*L_rod²*v/R_total。",
         "安培力阻碍运动；恒定驱动力作用下达到终端速度时 F_drive=F_mag，移项得到 v_terminal=F_drive*R_total/(B²*L_rod²)。"
       ],
       "errors": [
@@ -298,14 +752,26 @@
           "wrong": "认为导体棒速度越大，安培阻力越小",
           "wrong_expr": "F_mag = B^2*L_rod^2/(R_total*v)",
           "why": "错误式不仅量纲不对，也颠倒了反馈关系；正确关系中安培阻力与速度成正比。",
-          "caught_by": "量纲一致性"
+          "caught_by": "量纲一致性",
+          "trap_test": {
+            "kind": "dimension",
+            "target": "F_mag = B^2*L_rod^2/(R_total*v)",
+            "lhs_dim": "M·L·T^-2",
+            "rhs_dim": "M·L^-1",
+            "expect": "mismatch",
+            "note": "实际量纲检查得到等号左边为M·L·T^-2、右边为M·L^-1；两边不是同一物理量，因此该等式不成立。"
+          }
         },
         {
           "wrong": "不论导体棒速度多大，都直接令安培阻力等于恒定驱动力",
           "wrong_expr": "F_mag = F_drive",
           "why": "两者只在终端匀速状态相等。速度减半情境中实际安培阻力为 0.40 N，驱动力仍为 0.80 N，导体棒仍会加速。",
           "caught_by": "数值代入",
-          "trap_test": { "scenario": "速度减半", "expr": "F_drive", "ref": 0.40 }
+          "trap_test": {
+            "scenario": "速度减半",
+            "expr": "F_drive",
+            "ref": 0.4
+          }
         }
       ],
       "example": {
@@ -313,14 +779,27 @@
         "solution": [
           "终端状态满足 F_drive=F_mag，使用 v_terminal=F_drive*R_total/(B²*L_rod²)。",
           "v_terminal=0.80×0.30÷(0.50²×0.40²)=6.0 m/s。",
-          "I_ind=B*L_rod*v/R_total=0.50×0.40×6.0÷0.30=4.0 A。",
-          "F_mag=B*I_ind*L_rod=0.50×4.0×0.40=0.80 N，与驱动力相等，完成互证。"
+          "I=B*L_rod*v/R_total=0.50×0.40×6.0÷0.30=4.0 A。",
+          "F_mag=B*I*L_rod=0.50×4.0×0.40=0.80 N，与驱动力相等，完成互证。"
         ],
         "answer": "终端速度 6.0 m/s，感应电流 4.0 A，安培阻力 0.80 N。"
       },
-      "prereq": ["ind-04", "ind-06", "mag-04", "dyn-05"],
-      "next": ["iad-05"],
-      "tags": ["导轨导体棒", "安培阻力", "终端速度"]
+      "prereq": [
+        "ind-04",
+        "ind-06",
+        "mag-04",
+        "dyn-05"
+      ],
+      "next": [
+        "iad-05",
+        "mdl-18",
+        "iad-07"
+      ],
+      "tags": [
+        "导轨导体棒",
+        "安培阻力",
+        "终端速度"
+      ]
     },
     {
       "id": "iad-05",
@@ -329,20 +808,68 @@
       "definition": "图像题既要读纵坐标，也要读斜率和面积。对 n 匝线圈，感应电动势—时间图像在某时间段内的面积绝对值 A_E=abs(E_avg)*Delta_t 等于磁通匝数变化量，因而单匝磁通量变化大小 Delta_Phi=A_E/n；电流—时间图像的面积 A_I=I_avg*Delta_t 等于通过截面的电荷量。",
       "meaning": "Phi-t 图像的斜率对应感应电动势，E-t 图像的面积对应磁通匝数变化，I-t 图像的面积对应电荷量。面积必须按横纵坐标单位计算，位于时间轴上下的部分要先按正负作代数求和；本知识点的公式取绝对值，只用于磁通量变化大小或单向电流通过的电荷量。",
       "symbols": {
-        "A_E": { "desc": "感应电动势—时间图像面积的绝对值", "unit": "Wb" },
-        "Phi": { "desc": "穿过单匝线圈的磁通量", "unit": "Wb" },
-        "E_avg": { "desc": "该时间段内感应电动势的平均大小", "unit": "V" },
-        "Delta_t": { "desc": "所考察的时间间隔", "unit": "s" },
-        "n": { "desc": "串联线圈匝数", "unit": "1" },
-        "Delta_Phi": { "desc": "单匝线圈磁通量变化大小", "unit": "Wb" },
-        "A_I": { "desc": "电流—时间图像的代数面积", "unit": "C" },
-        "I_avg": { "desc": "该时间段内的平均电流", "unit": "A" },
-        "Q_ind": { "desc": "该时间段通过回路截面的电荷量", "unit": "C" }
-        ,"Delta_Q": { "desc": "短时间内通过回路截面的电荷量变化", "unit": "C" }
+        "A_E": {
+          "desc": "感应电动势—时间图像面积的绝对值",
+          "unit": "Wb"
+        },
+        "Phi": {
+          "desc": "穿过单匝线圈的磁通量",
+          "unit": "Wb"
+        },
+        "E_avg": {
+          "desc": "该时间段内感应电动势的平均大小",
+          "unit": "V"
+        },
+        "Delta_t": {
+          "desc": "所考察的时间间隔",
+          "unit": "s"
+        },
+        "n": {
+          "desc": "串联线圈匝数",
+          "unit": "1"
+        },
+        "Delta_Phi": {
+          "desc": "单匝线圈磁通量变化大小",
+          "unit": "Wb"
+        },
+        "A_I": {
+          "desc": "电流—时间图像的代数面积",
+          "unit": "C"
+        },
+        "I_avg": {
+          "desc": "该时间段内的平均电流",
+          "unit": "A"
+        },
+        "q": {
+          "desc": "该时间段通过回路截面的电荷量",
+          "unit": "C"
+        },
+        "Delta_Q": {
+          "desc": "短时间内通过回路截面的电荷量变化",
+          "unit": "C"
+        }
       },
       "scenarios": {
-        "矩形电动势图像": { "A_E": 0.80, "E_avg": 4.0, "Delta_t": 0.20, "n": 40, "Delta_Phi": 0.020, "A_I": 0.24, "I_avg": 1.2, "Q_ind": 0.24 },
-        "矩形电流图像": { "A_E": 0.40, "E_avg": 2.0, "Delta_t": 0.20, "n": 20, "Delta_Phi": 0.020, "A_I": 0.12, "I_avg": 0.60, "Q_ind": 0.12 }
+        "矩形电动势图像": {
+          "A_E": 0.8,
+          "E_avg": 4.0,
+          "Delta_t": 0.2,
+          "n": 40,
+          "Delta_Phi": 0.02,
+          "A_I": 0.24,
+          "I_avg": 1.2,
+          "q": 0.24
+        },
+        "矩形电流图像": {
+          "A_E": 0.4,
+          "E_avg": 2.0,
+          "Delta_t": 0.2,
+          "n": 20,
+          "Delta_Phi": 0.02,
+          "A_I": 0.12,
+          "I_avg": 0.6,
+          "q": 0.12
+        }
       },
       "formulas": [
         {
@@ -350,21 +877,79 @@
           "expr": "Delta_Phi = A_E/n",
           "when": "A_E 为某时间段 E-t 图像代数面积的绝对值，n 为串联匝数",
           "checks": [
-            { "type": "numeric", "scenario": "矩形电动势图像", "expr": "A_E/n", "ref": 0.020, "note": "0.80 V·s÷40=0.020 Wb，且 1 V·s=1 Wb。" },
-            { "type": "direction", "scenario": "矩形电动势图像", "var": "A_E", "lo": 0, "hi": 5, "expr": "A_E/n", "expect": "up", "note": "匝数不变时，E-t 图像面积越大，单匝磁通量变化越大。" },
-            { "type": "consistency", "scenario": "矩形电动势图像", "expr": "E_avg*Delta_t/n", "with": "iad-05|由电动势—时间图像面积求磁通量变化", "with_expr": "A_E/n", "target": "单匝磁通量变化大小", "note": "先由矩形面积 4.0×0.20=0.80 V·s 再除匝数，与直接读取面积均得 0.020 Wb。" },
-            { "type": "scan", "scenario": "矩形电动势图像", "var": "n", "lo": 1, "hi": 1000000 }
+            {
+              "type": "numeric",
+              "scenario": "矩形电动势图像",
+              "expr": "A_E/n",
+              "ref": 0.02,
+              "note": "0.80 V·s÷40=0.020 Wb，且 1 V·s=1 Wb。"
+            },
+            {
+              "type": "direction",
+              "scenario": "矩形电动势图像",
+              "var": "A_E",
+              "lo": 0,
+              "hi": 5,
+              "expr": "A_E/n",
+              "expect": "up",
+              "note": "匝数不变时，E-t 图像面积越大，单匝磁通量变化越大。"
+            },
+            {
+              "type": "consistency",
+              "scenario": "矩形电动势图像",
+              "expr": "E_avg*Delta_t/n",
+              "with": "iad-05|由电动势—时间图像面积求磁通量变化",
+              "with_expr": "A_E/n",
+              "target": "单匝磁通量变化大小",
+              "note": "先由矩形面积 4.0×0.20=0.80 V·s 再除匝数，与直接读取面积均得 0.020 Wb。"
+            },
+            {
+              "type": "scan",
+              "scenario": "矩形电动势图像",
+              "var": "n",
+              "lo": 1,
+              "hi": 1000000
+            }
           ]
         },
         {
           "name": "由电流—时间图像面积求电荷量",
-          "expr": "Q_ind = A_I",
+          "expr": "q = A_I",
           "when": "A_I 为 I-t 图像按电流方向取正负后的代数面积",
           "checks": [
-            { "type": "numeric", "scenario": "矩形电流图像", "expr": "A_I", "ref": 0.12, "note": "图像面积 0.60 A×0.20 s=0.12 C。" },
-            { "type": "direction", "scenario": "矩形电流图像", "var": "A_I", "lo": 0, "hi": 10, "expr": "A_I", "expect": "up", "note": "电流方向不变时，I-t 图像面积越大，通过的电荷量越多。" },
-            { "type": "consistency", "scenario": "矩形电流图像", "expr": "I_avg*Delta_t", "with": "iad-05|由电流—时间图像面积求电荷量", "with_expr": "A_I", "target": "时间段内通过截面的电荷量", "note": "平均电流乘时间与读取 I-t 图像面积都得到 0.12 C。" },
-            { "type": "scan", "scenario": "矩形电流图像", "var": "A_I", "lo": -1000000, "hi": 1000000 }
+            {
+              "type": "numeric",
+              "scenario": "矩形电流图像",
+              "expr": "A_I",
+              "ref": 0.12,
+              "note": "图像面积 0.60 A×0.20 s=0.12 C。"
+            },
+            {
+              "type": "direction",
+              "scenario": "矩形电流图像",
+              "var": "A_I",
+              "lo": 0,
+              "hi": 10,
+              "expr": "A_I",
+              "expect": "up",
+              "note": "电流方向不变时，I-t 图像面积越大，通过的电荷量越多。"
+            },
+            {
+              "type": "consistency",
+              "scenario": "矩形电流图像",
+              "expr": "I_avg*Delta_t",
+              "with": "iad-05|由电流—时间图像面积求电荷量",
+              "with_expr": "A_I",
+              "target": "时间段内通过截面的电荷量",
+              "note": "平均电流乘时间与读取 I-t 图像面积都得到 0.12 C。"
+            },
+            {
+              "type": "scan",
+              "scenario": "矩形电流图像",
+              "var": "A_I",
+              "lo": -1000000,
+              "hi": 1000000
+            }
           ]
         }
       ],
@@ -380,13 +965,25 @@
           "wrong_expr": "Delta_Phi = A_E",
           "why": "E-t 面积对应的是磁通匝数变化。40 匝情境中面积为 0.80 Wb，而单匝磁通量只变化 0.020 Wb。",
           "caught_by": "数值代入",
-          "trap_test": { "scenario": "矩形电动势图像", "expr": "A_E", "ref": 0.020 }
+          "trap_test": {
+            "scenario": "矩形电动势图像",
+            "expr": "A_E",
+            "ref": 0.02
+          }
         },
         {
           "wrong": "把 I-t 图像某时刻的纵坐标直接当作通过的电荷量",
-          "wrong_expr": "Q_ind = I_avg",
+          "wrong_expr": "q = I_avg",
           "why": "电流单位是 A，电荷量单位是 C，必须乘时间或求图像面积；0.60 A 持续 0.20 s 只通过 0.12 C。",
-          "caught_by": "量纲一致性"
+          "caught_by": "量纲一致性",
+          "trap_test": {
+            "kind": "dimension",
+            "target": "q = I_avg",
+            "lhs_dim": "T·I",
+            "rhs_dim": "I",
+            "expect": "mismatch",
+            "note": "实际量纲检查得到等号左边为T·I、右边为I；两边不是同一物理量，因此该等式不成立。"
+          }
         }
       ],
       "example": {
@@ -395,13 +992,459 @@
           "E-t 图像面积 A_E=4.0×0.20=0.80 V·s。",
           "每匝磁通量变化 Delta_Phi=A_E/n=0.80÷40=0.020 Wb。",
           "I-t 图像面积 A_I=1.2×0.20=0.24 A·s。",
-          "因为 1 A·s=1 C，所以通过截面的电荷量 Q_ind=0.24 C。"
+          "因为 1 A·s=1 C，所以通过截面的电荷量 q=0.24 C。"
         ],
         "answer": "每匝磁通量变化大小为 0.020 Wb，通过的电荷量为 0.24 C。"
       },
-      "prereq": ["ind-03", "ind-06"],
+      "prereq": [
+        "ind-03",
+        "ind-06"
+      ],
       "next": [],
-      "tags": ["图像", "面积", "磁通量变化", "电荷量"]
+      "tags": [
+        "图像",
+        "面积",
+        "磁通量变化",
+        "电荷量"
+      ]
+    },
+    {
+      "id": "iad-06",
+      "title": "双杆电磁感应",
+      "level": "拓展",
+      "definition": "两导体杆组成闭合回路并在匀强磁场中沿光滑导轨运动，回路电流由两杆动生电动势之差决定：I = B*(L1*v1-L2*v2)/R。稳定时两杆电动势相等而非必然速度相等。",
+      "meaning": "回路无外接电源、无自感且总电阻固定时，可以用磁通量变化求累计电荷。等有效长度双杆的安培力大小相等、方向相反，杆系统沿轨总动量守恒；不等有效长度时这两力不相等，总机械动量一般不守恒，支架和磁场装置承担反作用。必须先区分几何条件再选守恒定律。",
+      "symbols": {
+        "B": {
+          "unit": "T_",
+          "desc": "匀强磁场磁感应强度"
+        },
+        "L1": {
+          "unit": "m",
+          "desc": "第一杆有效切割长度"
+        },
+        "L2": {
+          "unit": "m",
+          "desc": "第二杆有效切割长度"
+        },
+        "v1": {
+          "unit": "m/s",
+          "desc": "第一杆初速度，沿共同正方向"
+        },
+        "v2": {
+          "unit": "m/s",
+          "desc": "第二杆初速度，沿共同正方向"
+        },
+        "v1_p": {
+          "unit": "m/s",
+          "desc": "第一杆稳定速度"
+        },
+        "v2_p": {
+          "unit": "m/s",
+          "desc": "第二杆稳定速度"
+        },
+        "m1": {
+          "unit": "kg",
+          "desc": "第一杆质量"
+        },
+        "m2": {
+          "unit": "kg",
+          "desc": "第二杆质量"
+        },
+        "R": {
+          "unit": "ohm",
+          "desc": "整个回路固定总电阻"
+        },
+        "I": {
+          "unit": "A",
+          "desc": "选定回路正向的电流"
+        },
+        "Q": {
+          "unit": "J",
+          "desc": "无外力做功时产生的焦耳热"
+        },
+        "q": {
+          "unit": "C",
+          "desc": "通过回路的累计电荷量大小"
+        },
+        "Delta_Phi": {
+          "unit": "Wb",
+          "desc": "全过程磁通量变化的代数值"
+        },
+        "p": {
+          "unit": "kg*m/s",
+          "desc": "杆系统总机械动量"
+        }
+      },
+      "scenarios": {
+        "等长": {
+          "B": 1,
+          "L1": 1,
+          "L2": 1,
+          "v1": 4,
+          "v2": 0,
+          "v1_p": 2,
+          "v2_p": 2,
+          "m1": 1,
+          "m2": 1,
+          "R": 2,
+          "Delta_Phi": 4
+        },
+        "不等长": {
+          "B": 1,
+          "L1": 1,
+          "L2": 2,
+          "v1": 4,
+          "v2": 0,
+          "v1_p": 3.2,
+          "v2_p": 1.6,
+          "m1": 1,
+          "m2": 1,
+          "R": 2,
+          "Delta_Phi": 1.6
+        }
+      },
+      "formulas": [
+        {
+          "name": "两杆的回路电流",
+          "expr": "I = B*(L1*v1-L2*v2)/R",
+          "when": "电动势相反，符号取向固定，忽略自感，电阻为全回路电阻",
+          "checks": [
+            {
+              "type": "numeric",
+              "scenario": "等长",
+              "ref": 2,
+              "note": "两杆电动势分别4 V与0 V，全回路2 ohm，电流2 A"
+            },
+            {
+              "type": "scan",
+              "scenario": "等长",
+              "var": "R",
+              "lo": 0.1,
+              "hi": 10,
+              "n": 17,
+              "note": "总电阻严格为正，零电阻须另建含自感模型"
+            }
+          ]
+        },
+        {
+          "name": "稳定速度",
+          "expr": "v1_p = (m1*v1/L1+m2*v2/L2)/(m1/L1+m2*L1/L2^2)",
+          "when": "两杆有效长度固定、磁场相同、无沿轨外力，安培力由同一电流产生",
+          "checks": [
+            {
+              "type": "numeric",
+              "scenario": "等长",
+              "ref": 2,
+              "note": "等质量等长时由初动量4 kg·m/s平分，末速度2 m/s"
+            },
+            {
+              "type": "numeric",
+              "scenario": "不等长",
+              "ref": 3.2,
+              "note": "加权不变量为4；稳定速度关系第二杆速度为第一杆一半，因此第一杆3.2 m/s"
+            }
+          ]
+        },
+        {
+          "name": "稳定时另一杆速度",
+          "expr": "v2_p = L1*v1_p/L2",
+          "when": "稳定电流为零，两杆动生电动势相等",
+          "checks": [
+            {
+              "type": "numeric",
+              "scenario": "不等长",
+              "ref": 1.6,
+              "note": "第一杆稳定电动势3.2 V，第二杆长2 m，速度1.6 m/s"
+            }
+          ]
+        },
+        {
+          "name": "双杆减少的动能",
+          "expr": "Q = 0.5*m1*v1^2+0.5*m2*v2^2-0.5*m1*v1_p^2-0.5*m2*v2_p^2",
+          "when": "导轨光滑且无外力做功，损失的机械能转化为回路焦耳热",
+          "checks": [
+            {
+              "type": "numeric",
+              "scenario": "等长",
+              "ref": 4,
+              "note": "初动能8 J，末动能两杆各2 J，共减少4 J"
+            },
+            {
+              "type": "numeric",
+              "scenario": "不等长",
+              "ref": 1.6,
+              "note": "初动能8 J，末动能5.12+1.28=6.4 J，热量1.6 J"
+            },
+            {
+              "type": "consistency",
+              "scenario": "等长",
+              "expr": "0.5*m1*v1^2+0.5*m2*v2^2-0.5*m1*v1_p^2-0.5*m2*v2_p^2",
+              "with": "iad-06|双杆减少的动能",
+              "with_expr": "0.5*(m1*m2/(m1+m2))*(v1-v2)^2",
+              "target": "两条物理路径的结果",
+              "note": "等长情形的总动能差与相对运动约化质量能量独立核对"
+            }
+          ]
+        },
+        {
+          "name": "累计电荷量",
+          "expr": "q = abs(Delta_Phi)/R",
+          "when": "无其他电动势、回路电阻固定、忽略自感；该式为电荷量大小",
+          "checks": [
+            {
+              "type": "numeric",
+              "scenario": "等长",
+              "ref": 2,
+              "note": "磁通变化4 Wb、固定电阻2 ohm，累计电荷2 C"
+            }
+          ]
+        }
+      ],
+      "derivation": [
+        "统一两杆沿轨速度正方向，把两个动生电动势按回路方向相减。",
+        "由两杆牛顿第二定律得到速度变化率与有效长度的关系；加权组合 m1*v1/L1+m2*v2/L2 保持不变。",
+        "稳定时电流为零，得到 L1*v1_p=L2*v2_p；联合加权不变量求末速度。",
+        "仅当有效长度相同才化为普通总动量守恒；不等长示例末动量为4.8 kg·m/s，确实不同于初动量4 kg·m/s。",
+        "无外力做功时用总动能减少求焦耳热；恒电阻下对法拉第定律累加得到累计电荷。"
+      ],
+      "errors": [
+        {
+          "wrong": "等长杆最终速度误当成初速度相加",
+          "wrong_expr": "v1_p = v1+v2",
+          "why": "相等质量杆的初总动量要分配给两杆，而不是把初速度直接给每根杆；这会让末总动量和总能量同时增大，量纲仍然正确。",
+          "caught_by": "数值代入",
+          "trap_test": {
+            "scenario": "等长",
+            "expr": "v1+v2",
+            "ref": 2
+          }
+        },
+        {
+          "wrong": "不等长度双杆也直接使用杆系统总动量守恒",
+          "why": "同一电流通过不同有效长度时安培力大小不同，杆系统所受合力不为零；应使用加权不变量，不能把磁场支架的反作用忽略。",
+          "caught_by": "人工审核"
+        }
+      ],
+      "example": {
+        "stem": "两根各1 kg、有效长度均1 m的杆在1 T磁场中构成2 ohm回路，初速分别4 m/s和0，求稳定速度与焦耳热。",
+        "solution": [
+          "有效长度相等，沿轨总动量守恒；两杆稳定时速度相同，末速度均为4/2=2 m/s。",
+          "初动能8 J，末动能4 J；无沿轨外力做功，差值4 J转化为焦耳热。"
+        ],
+        "answer": "两杆稳定速度均2 m/s，焦耳热4 J；不等长度不能沿用该动量结论。"
+      },
+      "prereq": [
+        "ind-06",
+        "iad-04",
+        "mom-03"
+      ],
+      "next": [
+        "mdl-19",
+        "iad-07"
+      ],
+      "tags": [
+        "双杆",
+        "电磁感应",
+        "动量",
+        "不等长导体杆"
+      ]
+    },
+    {
+      "id": "iad-07",
+      "title": "电磁阻尼与电磁驱动",
+      "level": "拓展",
+      "definition": "闭合导轨中的导体杆运动产生电动势，感应电流的磁力阻碍原运动并使机械能转化为热。若外接电源，磁力也可驱动导体杆，运动电动势此时抵消部分电源电压。",
+      "meaning": "本卡分别限定无源制动和直流电源驱动的光滑导轨模型：磁场、有效切割长度及总电阻恒定，忽略自感。制动力随速度变化，所以不是恒力减速；无源杆指数趋于静止。电源驱动时必须计入反电动势，恒定反向负载下存在稳定速度，断路时没有持续电流制动力，零电阻情形不能使用本模型。",
+      "symbols": {
+        "B": {
+          "unit": "T_",
+          "desc": "垂直回路的磁感应强度大小"
+        },
+        "L": {
+          "unit": "m",
+          "desc": "杆的有效切割长度"
+        },
+        "R": {
+          "unit": "ohm",
+          "desc": "回路总电阻"
+        },
+        "v": {
+          "unit": "m/s",
+          "desc": "杆的当前速度大小"
+        },
+        "v_p": {
+          "unit": "m/s",
+          "desc": "无源制动经过时间t后的速度"
+        },
+        "v_s": {
+          "unit": "m/s",
+          "desc": "有源驱动的稳定速度"
+        },
+        "m": {
+          "unit": "kg",
+          "desc": "杆质量"
+        },
+        "F": {
+          "unit": "N",
+          "desc": "无源制动力大小"
+        },
+        "I": {
+          "unit": "A",
+          "desc": "当前回路电流大小"
+        },
+        "P": {
+          "unit": "W",
+          "desc": "无源制动功率"
+        },
+        "U": {
+          "unit": "V",
+          "desc": "恒定电源电压"
+        },
+        "F_e": {
+          "unit": "N",
+          "desc": "驱动情形中恒定反向负载"
+        },
+        "t": {
+          "unit": "s",
+          "desc": "无源制动经过时间"
+        }
+      },
+      "scenarios": {
+        "无源": {
+          "B": 2,
+          "L": 1,
+          "R": 4,
+          "v": 3,
+          "m": 2,
+          "I": 1.5,
+          "t": 1.3862943611198906
+        },
+        "驱动": {
+          "B": 2,
+          "L": 1,
+          "R": 4,
+          "U": 10,
+          "F_e": 2
+        }
+      },
+      "formulas": [
+        {
+          "name": "无源制动力",
+          "expr": "F = B^2*L^2*v/R",
+          "when": "无外接电源，闭合回路且电阻正，方向与运动相反",
+          "checks": [
+            {
+              "type": "numeric",
+              "scenario": "无源",
+              "ref": 3,
+              "note": "动生电动势6 V，电流1.5 A，安培力2×1×1.5=3 N"
+            },
+            {
+              "type": "scan",
+              "scenario": "无源",
+              "var": "v",
+              "lo": 0,
+              "hi": 10,
+              "n": 17,
+              "note": "速度为零时无源感应电流与制动力同时为零"
+            }
+          ]
+        },
+        {
+          "name": "无源制动功率",
+          "expr": "P = B^2*L^2*v^2/R",
+          "when": "无电源、自感与其他能量储存，机械能损失率等于焦耳热率",
+          "checks": [
+            {
+              "type": "numeric",
+              "scenario": "无源",
+              "ref": 9,
+              "note": "3 N制动力作用于3 m/s，机械能减少率9 W"
+            },
+            {
+              "type": "consistency",
+              "scenario": "无源",
+              "expr": "B^2*L^2*v^2/R",
+              "with_expr": "I^2*R",
+              "target": "两条物理路径的结果",
+              "note": "安培力的机械功率与电阻焦耳热功率独立核对",
+              "with": "iad-07|无源制动功率"
+            }
+          ]
+        },
+        {
+          "name": "无源速度指数衰减",
+          "expr": "v_p = v*exp(-B^2*L^2*t/(m*R))",
+          "when": "初始速度为v，随后只受电磁制动且模型参数恒定",
+          "checks": [
+            {
+              "type": "numeric",
+              "scenario": "无源",
+              "ref": 1.5,
+              "note": "衰减率为0.5 s^-1，经过2ln2秒速度减半为1.5 m/s"
+            }
+          ]
+        },
+        {
+          "name": "带恒定负载的驱动稳态",
+          "expr": "v_s = U/(B*L)-F_e*R/(B^2*L^2)",
+          "when": "恒电压驱动、磁场非零；正向运行需驱动力可克服负载",
+          "checks": [
+            {
+              "type": "numeric",
+              "scenario": "驱动",
+              "ref": 3,
+              "note": "稳定时负载2 N要求电流1 A，电阻压降4 V，剩反电动势6 V对应3 m/s"
+            }
+          ]
+        }
+      ],
+      "derivation": [
+        "先确认回路是否外接电源，选定速度、电流和磁力的方向。",
+        "无源时动生电动势建立电流，磁力阻碍运动，机械功率等于电热功率。",
+        "制动力正比速度，运动方程给指数衰减，不可直接用恒加速度公式。",
+        "有源时用电源电压减反电动势求电流，稳定条件是磁力平衡反向负载。"
+      ],
+      "errors": [
+        {
+          "wrong": "误把电磁制动力多除以二",
+          "wrong_expr": "F = B^2*L^2*v/(2*R)",
+          "why": "电磁制动力由瞬时电流与安培力共同给出，不含累积功中的二分之一；额外除以二会使本例制动力变为1.5 N，量纲完全相同。",
+          "caught_by": "数值代入",
+          "trap_test": {
+            "scenario": "无源",
+            "expr": "B^2*L^2*v/(2*R)",
+            "ref": 3
+          }
+        },
+        {
+          "wrong": "把电磁驱动中的反电动势当成额外助推电压",
+          "why": "运动电动势反映机械能与电能转化，正常电动运行时降低驱动电流；把它加到电源电压会错误预测越快电流越大。",
+          "caught_by": "人工审核"
+        }
+      ],
+      "example": {
+        "stem": "无源闭合回路中，2 kg杆长1 m，磁场2 T，总电阻4 ohm，初速3 m/s。求初始制动力、热功率和2ln2秒后的速度。",
+        "solution": [
+          "初电动势6 V、电流1.5 A，制动力3 N，焦耳热功率9 W。",
+          "速度衰减率为0.5 s^-1，经过2ln2秒，初速乘1/2得到1.5 m/s。"
+        ],
+        "answer": "初制动力3 N、初热功率9 W，随后速度1.5 m/s。"
+      },
+      "prereq": [
+        "iad-03",
+        "iad-04"
+      ],
+      "next": [
+        "iad-06",
+        "mdl-19"
+      ],
+      "tags": [
+        "电磁阻尼",
+        "反电动势",
+        "电磁驱动"
+      ]
     }
   ]
 }

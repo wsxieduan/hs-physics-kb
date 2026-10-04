@@ -34,6 +34,7 @@ MathML 是浏览器原生能力（Chrome 109+ / Firefox / Safari 都支持），
 import html
 import json
 import os
+import re
 import sys
 from urllib.parse import quote
 
@@ -90,6 +91,67 @@ def mathml_inline(expr_text):
             % display_mathml(expr_text))
 
 
+def compact_check_records(page):
+    """对完整校验文字作无损去重；保留全部记录和原文，浏览器展开时复原。
+
+    重复的类型、量纲说明等只保存一次。逐条回读断言保证这不是删校验或删解释。
+    JSON只转义可能影响HTML脚本边界的序列，数学子标签无需逐字符膨胀。
+    """
+    from collections import Counter
+    pattern = r'(<script type="application/json" class="check-data">)(.*?)(</script>)'
+    matches = list(re.finditer(pattern, page, re.S))
+    rows_by_formula = [json.loads(match.group(2)) for match in matches]
+    counts = Counter(value for rows in rows_by_formula for row in rows for value in (row[0], row[2], row[3]))
+    texts = [value for value, count in counts.items() if count > 1 and len(value.encode('utf-8')) >= 12]
+    positions = {value: index for index, value in enumerate(texts)}
+
+    def safe_json(value):
+        data = json.dumps(value, ensure_ascii=False, separators=(',', ':'))
+        return re.sub(r'<(?=/?script\b|!--)', r'\\u003c', data, flags=re.I)
+
+    iterator = iter(rows_by_formula)
+
+    def replace(match):
+        original = next(iterator)
+        encoded = [[positions.get(row[0], row[0]), row[1],
+                    positions.get(row[2], row[2]), positions.get(row[3], row[3])] for row in original]
+        serialized = safe_json(encoded)
+        decoded = json.loads(serialized)
+        restored = [[texts[row[0]] if isinstance(row[0], int) else row[0], row[1],
+                     texts[row[2]] if isinstance(row[2], int) else row[2],
+                     texts[row[3]] if isinstance(row[3], int) else row[3]] for row in decoded]
+        assert restored == original, '校验文字无损回读失败'
+        return match.group(1)+serialized+match.group(3)
+
+    packed = re.sub(pattern, replace, page, flags=re.S)
+    dictionary = '<script type="application/json" id="check-texts">'+safe_json(texts)+'</script>'
+    assert '<script>'+JS in packed, '缺少完整页脚本插入位置'
+    return packed.replace('<script>'+JS, dictionary+'<script>'+JS, 1)
+
+
+def compact_page(page):
+    """移除排版缩进与 HTML 内不必重复的数学命名空间，保留全部内容。"""
+    # 脚本、样式及保留空白的元素不得被空白压缩误改。
+    chunks = re.split(r'(<(?:script|style|pre|textarea)\b[^>]*>.*?</(?:script|style|pre|textarea)>)',
+                      page, flags=re.S | re.I)
+    for index in range(0, len(chunks), 2):
+        chunks[index] = re.sub(r'>\s+<', '><', chunks[index])
+        chunks[index] = chunks[index].replace(' xmlns="http://www.w3.org/1998/Math/MathML"', '')
+    # 本地静态样式只去掉注释和行首缩进，不更改选择器、属性或页面内容。
+    for index in range(1, len(chunks), 2):
+        if re.match(r'<style\b', chunks[index], re.I):
+            chunks[index] = re.sub(r'/\*.*?\*/', '', chunks[index], flags=re.S)
+            chunks[index] = re.sub(r'(?m)^[ \t]+', '', chunks[index])
+        elif re.match(r'<script\b', chunks[index], re.I):
+            # 此页脚本无多行字符串；只删行首缩进，保留换行与全部执行语句。
+            chunks[index] = re.sub(r'(?m)^[ \t]+', '', chunks[index])
+            # 中文说明保留在源文件；成品去掉独占行注释，为共享修复留出体积空间。
+            if 'application/json' not in chunks[index]:
+                chunks[index] = re.sub(r'(?m)^//[^\n]*\n', '', chunks[index])
+                chunks[index] = re.sub(r'\n[ \t]*\n', '\n', chunks[index])
+    return ''.join(chunks)
+
+
 LEVEL_CLASS = {"基础": "lv-base", "进阶": "lv-adv", "拓展": "lv-ext"}
 
 # ---------- 学段标题配置 ----------
@@ -108,9 +170,8 @@ SEGMENT = {
     },
 }
 # 简介的后半段讲的是校验方法，两个学段通用，拼在 lead 后面
-LEAD_TAIL = ("每一条公式都经过量纲一致性、单位标注、数值代入、变化方向、"
-             "跨公式互证、极端参数扫描六类自动检查；每一条「常见错误」都真的"
-             "被当作错误公式跑过一遍，验证它确实会被对应检查抓住。")
+LEAD_TAIL = ("公式经过量纲、单位和数值检查，并按适用情形检查方向、互证与边界。"
+             "可计算的错误写法经过实测；概念错误标明人工审核。自动检查不等于正文与课程覆盖认证。")
 
 
 # ============================================================
@@ -150,18 +211,12 @@ def render_formula(f):
     n_all = len(checks)
     badge = "ok" if n_ok == n_all else "bad"
 
-    rows = []
-    for c in checks:
-        rows.append(
-            '<li class="chk %s"><span class="chk-type">%s</span>'
-            '<span class="chk-mark">%s</span>'
-            '<div class="chk-body"><div class="chk-detail">%s</div>%s</div></li>'
-            % ("ok" if c["ok"] else "bad",
-               E(c["type_name"]),
-               "通过" if c["ok"] else "未通过",
-               prose(c["detail"]),
-               ('<div class="chk-note">依据：%s</div>' % prose(c["note"])) if c.get("note") else "")
-        )
+    # 校验数据仍完整内嵌，打开明细时再创建重复的行标签，降低成品体积。
+    rows = [[c["type_name"], bool(c["ok"]), prose(c["detail"]),
+             prose(c.get("note", ""))] for c in checks]
+    records = json.dumps(rows, ensure_ascii=False, separators=(",", ":"))
+    # JSON 放在非执行脚本中；转义标签起始符，防止文本提前结束容器。
+    records = records.replace("<", "\\u003c").replace(">", "\\u003e")
 
     when = ('<span class="f-when">%s</span>' % prose(f["when"])) if f.get("when") else ""
 
@@ -173,16 +228,16 @@ def render_formula(f):
           <span class="f-pass %s">%d/%d 校验通过</span>
         </div>
         <div class="fbox-math">%s</div>
-        <div class="fbox-src">机器可读形式：<code>%s</code></div>
+        <details class="fbox-src"><summary>查看校验用原式</summary><code>%s</code></details>
         <details class="checks">
           <summary>校验记录（%d 项）</summary>
-          <ul class="chk-list">%s</ul>
+          <script type="application/json" class="check-data">%s</script><ul class="chk-list"></ul>
         </details>
       </div>""" % (
         prose(f["name"]), when, badge, n_ok, n_all,
         mathml_block(f.get("mathml", "")),
         E(f.get("expr", "")),
-        n_all, "".join(rows),
+        n_all, records,
     )
 
 
@@ -215,6 +270,88 @@ def render_trap(t, point_id="", index=0):
         prose(t.get("why", "")),
         prose(ver.get("detail", "未做自动实测")),
     )
+
+
+def validate_learning(p):
+    """初中额外证据在展示前复核；不修改冻结校验器，也不混入其检查计数。"""
+    import math
+    factors = {('km/h', 'm/s'): 1/3.6, ('g', 'kg'): .001,
+               ('mL', 'm³'): 1e-6, ('L', 'm³'): .001,
+               ('g/cm³', 'kg/m³'): 1000, ('cm²', 'm²'): .0001,
+               ('kΩ', 'Ω'): 1000, ('A', 'mA'): 1000,
+               ('kW', 'W'): 1000, ('kW·h', 'J'): 3600000}
+    counts = {'conversion': 0, 'range': 0, 'graph': 0}
+    for e in p.get('evidence', []):
+        if e['kind'] == 'conversion':
+            value = e['value'] * factors[(e['from_unit'], e['to_unit'])]
+            if not math.isclose(value, e['expected'], rel_tol=1e-10, abs_tol=1e-12):
+                raise ValueError(p['id'] + '单位换算证据不符')
+        elif e['kind'] == 'range':
+            if not e['lo'] <= e['value'] <= e['hi']:
+                raise ValueError(p['id'] + '数量级示例越界')
+        else:
+            raise ValueError('未知的补充证据类型')
+        counts[e['kind']] += 1
+    for g in p.get('figures', []):
+        coordinates = dict(g['points'])
+        if len(coordinates) != len(g['points']) or sorted(coordinates) != list(coordinates):
+            raise ValueError('图像横坐标应严格递增')
+        if g['xmax'] <= 0 or g['ymax'] <= 0 or not all(0 <= x <= g['xmax'] and 0 <= y <= g['ymax'] for x,y in g['points']):
+            raise ValueError('图像坐标或范围错误')
+        for c in g['checks']:
+            if c['kind'] == 'point':
+                value = coordinates[c['x']]
+            elif c['kind'] == 'slope':
+                value = (coordinates[c['right']] - coordinates[c['left']]) / (c['right'] - c['left'])
+            else:
+                raise ValueError('未知的图像读数类型')
+            if not math.isclose(value, c['expected'], rel_tol=1e-10, abs_tol=1e-12):
+                raise ValueError(p['id'] + '图像读数证据不符')
+            counts['graph'] += 1
+    for experiment in p.get('experiments', []):
+        for key in ('title','purpose','apparatus','variables','steps','data','conclusion','limits'):
+            if not experiment.get(key):
+                raise ValueError(p['id'] + '实验链缺少' + key)
+    return counts
+
+
+def render_learning(p):
+    """把初中定性主线、实验记录和读图显示在公式前；文字不冒称自动验算。"""
+    validate_learning(p)
+    blocks = []
+    for section in p.get("core", []):
+        blocks.append('<section class="field learning"><h4>%s</h4>%s</section>' %
+                      (E(section["title"]), paras(section["text"])))
+    for experiment in p.get("experiments", []):
+        rows = [('目的', 'purpose'), ('装置与接法', 'apparatus'), ('控制、改变与观察', 'variables'),
+                ('数据与处理', 'data'), ('结论与条件', 'conclusion'), ('误差与边界', 'limits')]
+        # 按实际探究顺序先显示操作步骤，再显示数据、结论和误差。
+        before = ''.join('<p><b>%s：</b>%s</p>' % (label, prose(experiment[key])) for label, key in rows[:3])
+        after = ''.join('<p><b>%s：</b>%s</p>' % (label, prose(experiment[key])) for label, key in rows[3:])
+        steps = ''.join('<li>%s</li>' % prose(step) for step in experiment['steps'])
+        blocks.append('<details class="learning"><summary>实验：%s</summary>%s<p><b>步骤：</b></p><ol>%s</ol>%s</details>' %
+                      (E(experiment['title']), before, steps, after))
+    for graph in p.get("figures", []):
+        # 坐标和读数来自同一组源数据；SVG只负责显示，不重新计算参考答案。
+        xmax, ymax = graph['xmax'], graph['ymax']
+        coords = ' '.join('%.2f,%.2f' % (55 + x / xmax * 325, 185 - y / ymax * 140) for x, y in graph['points'])
+        labels = ''.join('<text x="%s" y="202">%s</text>' % (55+x/xmax*325, E(str(x))) for x in graph['xticks'])
+        labels += ''.join('<text x="8" y="%s">%s</text>' % (189-y/ymax*140, E(str(y))) for y in graph['yticks'])
+        # 密集刻度容易重叠；关键平台数值取自源坐标，标在曲线上方。
+        if 'mark_x' in graph:
+            x = graph['mark_x']; y = dict(graph['points'])[x]
+            labels += '<text x="%s" y="%s">%s</text>' % (55+x/xmax*325, 177-y/ymax*140, E(str(y)))
+        blocks.append('<figure class="learning"><svg viewBox="0 0 450 235" role="img" aria-label="%s" style="width:100%%;max-width:560px"><title>%s</title><path d="M55 35V185H390" fill="none" stroke="currentColor"/><polyline points="%s" fill="none" stroke="#2457d6" stroke-width="2"/>%s<text x="280" y="226">%s</text><text x="60" y="25">%s</text></svg><figcaption>%s</figcaption></figure>' %
+                      (E(graph['title']), E(graph['title']), coords, labels, E(graph['xlabel']), E(graph['ylabel']), prose(graph['reading'])))
+    for e in p.get('evidence', []):
+        if e['kind'] == 'conversion':
+            title = '单位换算证据'
+            value = '%s %s = %s %s' % (e['value'], e['from_unit'], e['expected'], e['to_unit'])
+        else:
+            title = '数量级示例'
+            value = '%s %s，参考区间 %s～%s %s' % (e['value'], e['unit'], e['lo'], e['hi'], e['unit'])
+        blocks.append('<p class="learning"><b>%s：</b>%s。%s</p>' % (title, prose(value), prose(e['note'])))
+    return ''.join(blocks)
 
 
 def render_point(pid, p, related=None, quiz_href=None, segment_name="高中", source_page="index.html"):
@@ -315,7 +452,7 @@ def render_point(pid, p, related=None, quiz_href=None, segment_name="高中", so
     tags = "".join('<span class="tag">%s</span>' % E(t) for t in p["tags"])
 
     return """
-    <article class="kp" id="%(pid)s" data-search="%(search)s" data-chapter="%(chapter)s">
+    <article class="kp" id="%(pid)s" data-chapter="%(chapter)s">
       <div class="kp-head">
         <span class="kp-id">%(pid)s</span>
         <h3>%(title)s</h3>
@@ -324,6 +461,7 @@ def render_point(pid, p, related=None, quiz_href=None, segment_name="高中", so
       </div>
       %(practice)s
       <div class="kp-body">
+        %(learning)s
         <section class="field">
           <h4>定义</h4>
           %(definition)s
@@ -360,6 +498,7 @@ def render_point(pid, p, related=None, quiz_href=None, segment_name="高中", so
         "nok": n_ok,
         "nall": n_all,
         "definition": paras(p["definition"]),
+        "learning": render_learning(p),
         "meaning": paras(p["meaning"]),
         "syms": sym_table,
         "formulas": formulas,
@@ -452,6 +591,9 @@ math{font-size:1.12em}
 #q{flex:1;min-width:200px;padding:8px 13px;border:1px solid var(--line);border-radius:8px;
   font-size:14px;background:#fff;color:var(--ink);outline:none;font-family:inherit}
 #q:focus{border-color:var(--brand);box-shadow:0 0 0 3px var(--brand-soft)}
+/* 章节筛选片不放进 sticky 工具条：手机上十几个章节片会换成七八行，
+   把首屏整个占满（2026-09-29 修复）。它放在工具条下方、随页面滚动。 */
+.chipsbar{max-width:1080px;margin:0 auto;padding:10px 24px 0}
 .chips{display:flex;gap:7px;flex-wrap:wrap}
 .chip{border:1px solid var(--line);background:#fff;border-radius:999px;padding:5px 13px;
   font-size:12.5px;cursor:pointer;color:var(--ink2);white-space:nowrap;font-family:inherit}
@@ -673,11 +815,21 @@ footer b{color:var(--ink2)}
   main{padding:18px 14px 60px}
   .kp-body{padding:6px 15px 18px}
   .kp-head{padding:13px 15px}
+  /* 手机上进一步压缩吸顶区：搜索框独占一行，视图按钮与目录按钮同行 */
+  .toolbar{padding:8px 14px}
+  .toolbar-in{gap:8px}
+  .segment-switchbar{padding:8px 14px}
+  #q{min-width:0;width:100%;flex:1 0 100%}
+  .chipsbar{padding:9px 14px 0}
+  /* 手机上章节片改横向滚动单行，避免换成七八行把首屏顶下去 */
+  .chips{flex-wrap:nowrap;overflow-x:auto;-webkit-overflow-scrolling:touch;padding-bottom:5px}
+  .chip{padding:4px 11px;font-size:12px}
 }
 @media print{
-  .toolbar,.hero{background:#fff;color:#000}
+  .hero{background:#fff;color:#000;padding:8px}
+  .hero p,.hero .eyebrow,.hero .hstats,.toolbar,.segment-switchbar,.method,.chipsbar{display:none!important}
   .checks{display:block}
-  .kp{break-inside:avoid}
+  .kp{break-inside:auto}
 }
 """
 
@@ -689,6 +841,40 @@ JS = """
   var count=document.getElementById('count');
   var expand=document.getElementById('expand');
   var cur='all';
+  // 检索文本从同一份页面内容生成，不在文件中重复保存近十万字节索引。
+  cards.forEach(function(card){
+    var visible=card.cloneNode(true);
+    visible.querySelectorAll('script').forEach(function(node){node.remove();});
+    card.dataset.search=(visible.textContent+' '+card.id+' '+card.dataset.chapter).toLowerCase();
+  });
+
+  // 校验明细按需展开，所有数值与排版文本直接复用构建时已验证的数据。
+  var checkTexts=JSON.parse(document.getElementById('check-texts').textContent);
+  function fillChecks(details){
+    if(details.dataset.ready)return;
+    var rows=JSON.parse(details.querySelector('.check-data').textContent);
+    var list=details.querySelector('.chk-list');
+    rows.forEach(function(c){
+      c=c.map(function(value,index){return index!==1&&typeof value==='number'?checkTexts[value]:value;});
+      var row=document.createElement('li');row.className='chk '+(c[1]?'ok':'bad');
+      var type=document.createElement('span');type.className='chk-type';type.textContent=c[0];
+      var mark=document.createElement('span');mark.className='chk-mark';mark.textContent=c[1]?'通过':'未通过';
+      var body=document.createElement('div');body.className='chk-body';
+      var detail=document.createElement('div');detail.className='chk-detail';detail.innerHTML=c[2];
+      body.appendChild(detail);
+      if(c[3]){var note=document.createElement('div');note.className='chk-note';
+        note.innerHTML='依据：'+c[3];body.appendChild(note);}
+      row.appendChild(type);row.appendChild(mark);row.appendChild(body);list.appendChild(row);
+    });details.dataset.ready='1';
+  }
+  document.addEventListener('toggle',function(event){
+    var details=event.target;
+    if(details.matches&&details.matches('details.checks')&&details.open)fillChecks(details);
+  },true);
+  // 打印时也填充明细，避免按需渲染使纸面记录缺失。
+  window.addEventListener('beforeprint',function(){
+    document.querySelectorAll('details.checks').forEach(function(details){fillChecks(details);});
+  });
 
   function apply(){
     var kw=(q.value||'').trim().toLowerCase();
@@ -704,10 +890,29 @@ JS = """
     document.getElementById('empty').style.display=shown?'none':'block';
     // 章节标题：该章没有可见卡片时一并隐藏
     document.querySelectorAll('.chapter').forEach(function(sec){
-      var any=Array.prototype.some.call(sec.querySelectorAll('.kp'),function(c){
-        return c.style.display!=='none';});
+      var any=cards.some(function(c){
+        return c.dataset.chapter===sec.dataset.chapter && c.style.display!=='none';});
       sec.style.display=any?'':'none';
     });
+    // 索引按实际可见内容检索；与卡片搜索共享输入框，不留下虚假的筛选状态。
+    var view=document.body.getAttribute('data-view');
+    if(view==='formula'||view==='symbol'){
+      fillIndex(view);
+      var rows=document.querySelectorAll(view==='formula'?'.vidx-f':'.vs-row'),n=0;
+      rows.forEach(function(row){
+        var host=view==='formula'?row.parentElement:row;
+        var sources=view==='formula'?[document.getElementById(host.dataset.formulas)]:row._sources;
+        var hit=sources.some(function(source){return (!kw||(row.textContent+' '+source.querySelector('.kp-head h3').textContent+' '+source.id+' '+(view==='symbol'?source._symbolText[row._key]:'')).toLowerCase().indexOf(kw)>=0)&&(cur==='all'||source.dataset.chapter===cur);});
+        row.style.display=hit?'':'none';if(hit)n++;
+      });
+      if(view==='formula')document.querySelectorAll('[data-formulas]').forEach(function(host){
+        host.previousElementSibling.style.display=Array.from(host.children).some(function(row){return row.style.display!=='none';})?'':'none';
+      });
+      document.querySelectorAll('#allformulas .vidx-g,#allsymbols .vidx-g').forEach(function(group){
+        group.style.display=Array.from(group.querySelectorAll(view==='formula'?'.vidx-f':'.vs-row')).some(function(row){return row.style.display!=='none';})?'':'none';
+      });
+      count.textContent='显示 '+n+' 项';
+    }
   }
 
   chips.forEach(function(ch){
@@ -744,22 +949,54 @@ JS = """
 
   document.querySelectorAll('.kp-nav a, .toc a').forEach(function(a){
     a.addEventListener('click',function(e){
-      var id=a.getAttribute('href').slice(1);
-      var el=document.getElementById(id);
-      if(el){e.preventDefault();el.scrollIntoView({behavior:'smooth',block:'start'});
-        el.style.transition='box-shadow .4s';el.style.boxShadow='0 0 0 3px #2f6df6';
-        setTimeout(function(){el.style.boxShadow='';},900);}
+      e.preventDefault();location.hash=a.getAttribute('href');revealHash();closeToc();
     });
   });
 
   // ---------- 视图切换：按知识点 / 只看公式 / 只看符号 ----------
-  // 只做「显示哪一段」的切换，不重新渲染任何内容 —— 切来切去都是同一份数据。
+  // 公式与符号索引复用知识点中的已排版内容，避免单文件重复存放整套公式。
+  function fillIndex(view){
+    if(view==='formula') document.querySelectorAll('[data-formulas]').forEach(function(host){
+      if(host.dataset.ready)return;
+      var source=document.getElementById(host.dataset.formulas);
+      source.querySelectorAll('.fbox').forEach(function(box){
+        var row=document.createElement('div');row.className='vidx-f';
+        var name=document.createElement('div');name.className='vf-name';
+        name.innerHTML=box.querySelector('.f-name').innerHTML;row.appendChild(name);
+        row.appendChild(box.querySelector('.fbox-math math').cloneNode(true));
+        var condition=box.querySelector('.f-when');
+        if(condition){var when=document.createElement('div');when.className='vf-when';
+          when.innerHTML=condition.innerHTML;row.appendChild(when);}
+        host.appendChild(row);
+      });host.dataset.ready='1';
+    });
+    // 符号合并行必须检索全部来源，而非只检索第一个知识点。
+    if(view==='symbol'&&!window._symbolSources){
+      window._symbolSources={};cards.forEach(function(card){card._symbolText={};card.querySelectorAll('.syms tbody tr').forEach(function(tr){var k=tr.cells[0].textContent+'|'+tr.cells[2].textContent;card._symbolText[k]=tr.textContent;(window._symbolSources[k]||(window._symbolSources[k]=[])).push(card);});});
+    }
+    if(view==='symbol') document.querySelectorAll('[data-symbol-ref]').forEach(function(row){
+      if(row.dataset.ready)return;
+      var ref=row.dataset.symbolRef.split('|');
+      var source=document.getElementById(ref[0]);
+      var cells=source.querySelectorAll('.syms tbody tr')[Number(ref[1])].cells;
+      row._key=cells[0].textContent+'|'+cells[2].textContent;row._sources=window._symbolSources[row._key];
+      // 来源标题复用知识点正文，避免每行重复储存；合并数量仍按源数据显示。
+      var count=Number(row.dataset.pointCount||1);
+      row.querySelector('.vs-from').textContent=source.querySelector('.kp-head h3').textContent
+        +(count>1?' 等 '+count+' 个知识点':'');
+      ['vs-sym','vs-desc','vs-unit'].forEach(function(cls,i){
+        var cell=document.createElement('span');cell.className=cls;cell.innerHTML=cells[i].innerHTML;
+        row.insertBefore(cell,row.querySelector('.vs-from'));
+      });row.dataset.ready='1';
+    });
+  }
   var vbtns = Array.prototype.slice.call(document.querySelectorAll('.vbtn'));
   vbtns.forEach(function(b){
     b.addEventListener('click', function(){
       vbtns.forEach(function(x){ x.classList.remove('on'); });
       b.classList.add('on');
       var v = b.getAttribute('data-view');
+      fillIndex(v);
       document.body.setAttribute('data-view', v);
       if(v !== 'point'){
         // 索引视图里没有章节筛选，把它复位，免得以后再切回来时状态不一致
@@ -773,18 +1010,18 @@ JS = """
         if(tocbtn) tocbtn.style.display = '';
       }
       apply();
-      // 「显示 N / M 个知识点」这句在索引视图里不成立，清掉
-      count.textContent = (v === 'point') ? count.textContent : '';
     });
   });
 
   apply();
   // 跨学段链接带有知识点或常见错误锚点；先恢复知识点视图，再滚动并短暂高亮。
-  if(window.location.hash){
+  function revealHash(){
     var targetId=window.location.hash.slice(1), target=null;
     try{target=document.getElementById(decodeURIComponent(targetId));}catch(_e){}
     if(target){
       document.body.setAttribute('data-view','point');
+      vbtns.forEach(function(b){b.classList.toggle('on',b.dataset.view==='point');});
+      if(tocbtn)tocbtn.style.display='';
       q.value='';cur='all';
       chips.forEach(function(x){x.classList.remove('on');});
       if(chips[0])chips[0].classList.add('on');
@@ -796,6 +1033,7 @@ JS = """
       },80);
     }
   }
+  revealHash();window.addEventListener('hashchange',revealHash);
 })();
 """
 
@@ -808,6 +1046,11 @@ def render_page(report, stats, chapters, title="高中物理知识库", lead="",
     for fname, chapter in chapters:
         cname = chapter.get("chapter", fname)
         pts = [report[p["id"]] for p in chapter.get("points", []) if p.get("id") in report]
+        # 扩充展示字段从源读取；冻结公式报告保持原结构与原检查数。
+        for source in chapter.get('points', []):
+            if source['id'] in report:
+                for key in ('core', 'experiments', 'figures', 'evidence'):
+                    report[source['id']][key] = source.get(key, [])
         if pts:
             groups.append((cname, chapter.get("intro", ""), pts))
 
@@ -832,7 +1075,7 @@ def render_page(report, stats, chapters, title="高中物理知识库", lead="",
     body = []
     for cname, cintro, pts in groups:
         n_ok = sum(1 for p in pts if p["ok"])
-        body.append('<section class="chapter">')
+        body.append('<section class="chapter" data-chapter="%s">' % E(cname))
         body.append("<h2>%s</h2>" % E(cname))
         if cintro:
             body.append('<p class="cintro">%s</p>' % prose(cintro))
@@ -862,12 +1105,7 @@ def render_page(report, stats, chapters, title="高中物理知识库", lead="",
         for p in pts:
             fs.append('<div class="vidx-p">%s<span class="pid">%s</span></div>'
                       % (E(p["title"]), E(p["id"])))
-            for f in p["formulas"]:
-                when = f.get("when") or ""
-                fs.append('<div class="vidx-f"><div class="vf-name">%s</div>%s%s</div>'
-                          % (E(f.get("name", "")),
-                             mathml_block(f.get("mathml", "")),
-                             ('<div class="vf-when">%s</div>' % prose(when)) if when else ""))
+            fs.append('<div data-formulas="%s"></div>' % E(p["id"]))
         fs.append('</div>')
     fs.append('</section>')
     formulas_html = "\n".join(fs)
@@ -878,10 +1116,11 @@ def render_page(report, stats, chapters, title="高中物理知识库", lead="",
     base_map = {}
     for cname, _, pts in groups:
         for p in pts:
-            for s in p["symbols"]:
+            for symbol_index, s in enumerate(p["symbols"]):
                 nm = s.get("name", "") or ""
                 base = nm.split("_")[0] or nm
-                base_map.setdefault(base, []).append((nm, s, p.get("title", p["id"])))
+                base_map.setdefault(base, []).append((nm, s, p.get("title", p["id"]),
+                                                      p["id"] + "|" + str(symbol_index)))
 
     def _base_key(b):
         # 拉丁字母排前面（按字母序），希腊字母排后面
@@ -891,31 +1130,32 @@ def render_page(report, stats, chapters, title="高中物理知识库", lead="",
     ss = ['<section class="vidx" id="allsymbols">',
           '<h2 class="vidx-h">全部符号一览</h2>',
           '<p class="vidx-lead">同一字母打头的符号放在一起，方便对照——'
-          '例如 v、v_0、v_平均 会排在同一块里。最右列标注它出自哪个知识点。</p>']
+          '例如 v、v₀、v̄ 会排在同一块里。最右列标注它出自哪个知识点。</p>']
     for base in sorted(base_map, key=_base_key):
         # 同名同单位的合并成一行，否则一个 v 会在十几个知识点里各占一行，反而难认。
         merged = {}
         order = []
-        for nm, s, ptitle in base_map[base]:
+        for nm, s, ptitle, symbol_ref in base_map[base]:
             key = (nm, s.get("unit", ""))
             if key not in merged:
-                merged[key] = {"s": s, "pts": []}
+                merged[key] = {"s": s, "pts": [], "ref": symbol_ref}
                 order.append(key)
             if ptitle not in merged[key]["pts"]:
                 merged[key]["pts"].append(ptitle)
+        # 归堆的标题要用**显示用的符号**，不是机器名：
+        # 分组键来自符号的机器名（`alpha` / `Delta`），直接印出来就成了
+        # 「alpha 1 个符号 α …」——标题是机器名、正文才是符号，自相矛盾。
         ss.append('<div class="vidx-g"><h3 class="vs-base">%s<span class="vs-count">%d 个符号</span></h3>'
-                  % (E(base), len(order)))
+                  % (prose(base), len(order)))
         for key in sorted(order, key=lambda k: k[0]):
             nm, unit_raw = key
             s = merged[key]["s"]
             pts = merged[key]["pts"]
-            where = pts[0] if len(pts) == 1 else "%s 等 %d 个知识点" % (pts[0], len(pts))
-            ss.append('<div class="vs-row"><span class="vs-sym">%s</span>'
-                      '<span class="vs-desc">%s</span>'
-                      '<span class="vs-unit">%s</span>'
-                      '<span class="vs-from">%s</span></div>'
-                      % (mathml_inline(s.get("mathml", "")), prose(s.get("desc", "")),
-                         prose(unit_raw) or "\u2014", E(where)))
+            # 来源文字与卡片标题一致，浏览器切到符号视图时读取，不重复嵌入。
+            count_attr = (' data-point-count="%d"' % len(pts)) if len(pts) > 1 else ''
+            ss.append('<div class="vs-row" data-symbol-ref="%s"%s>'
+                      '<span class="vs-from"></span></div>'
+                      % (E(merged[key]["ref"]), count_attr))
         ss.append('</div>')
     ss.append('</section>')
     symbols_html = "\n".join(ss)
@@ -941,12 +1181,14 @@ def render_page(report, stats, chapters, title="高中物理知识库", lead="",
             '<nav class="segment-switchbar" aria-label="切换物理学段"><div class="segment-switch-inner">'
             '<span class="segment-switch-label">知识库学段</span>'
             '<a href="%s"%s>高中</a><a href="%s"%s>初中</a>'
+            '<a href="%s">速查版 ↗</a>'
             '<a class="segment-quiz" href="%s">例题自测 ↗</a>'
             '</div></nav>' % (E(segment_nav.get("senior_href", "index.html")), hs_attrs,
                               E(segment_nav.get("junior_href", "junior.html")), junior_attrs,
+                              E(segment_nav.get("quick_href", "quick.html")),
                               E(segment_nav.get("quiz_href", "quiz-hs.html"))))
 
-    return """<!DOCTYPE html>
+    return compact_page(compact_check_records("""<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
 <meta charset="utf-8">
@@ -976,11 +1218,12 @@ def render_page(report, stats, chapters, title="高中物理知识库", lead="",
     </div>
     <button class="tbtn" id="tocbtn" type="button">目录</button>
     <input id="q" type="search" placeholder="搜索知识点、公式、符号、错误写法…" autocomplete="off">
-    <div class="chips">%s</div>
     <label class="tgl"><input type="checkbox" id="expand"> 展开校验记录</label>
     <span id="count"></span>
   </div>
 </div>
+
+<div class="chipsbar"><div class="chips">%s</div></div>
 
 <main>
   %s
@@ -1006,7 +1249,7 @@ def render_page(report, stats, chapters, title="高中物理知识库", lead="",
 </body>
 </html>""" % (E(title), CSS, E(title), prose(lead), hstats, segment_bar,
              "".join(chips), toc, render_method_panel(stats), "".join(body),
-             views_html, JS)
+             views_html, JS)))
 
 
 # ============================================================

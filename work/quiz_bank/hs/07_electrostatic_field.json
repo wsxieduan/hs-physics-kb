@@ -133,7 +133,7 @@
       "wrong_expr": "F = k<sub>e</sub>·abs(q<sub>1</sub>·q<sub>2</sub>)/r",
       "trap_test": {
         "kind": "dimension",
-        "target": "F = k_e*abs(q_1*q_2)/r",
+        "target": "F = k_e*abs(q1*q2)/r",
         "lhs_dim": "M·L·T^-2",
         "rhs_dim": "M·L^2·T^-2",
         "expect": "mismatch",
@@ -183,7 +183,7 @@
       "wrong_expr": "F = k<sub>e</sub>·q<sub>1</sub>·q<sub>2</sub>/r²",
       "trap_test": {
         "scenario": "异号点电荷",
-        "expr": "k_e*q_1*q_2/r^2",
+        "expr": "k_e*q1*q2/r^2",
         "ref": 0.6
       },
       "review": {
@@ -440,7 +440,7 @@
       "point_id": "ele-05",
       "point_title": "匀强电场",
       "chapter": "第七章 · 静电场（一）电场的力的性质",
-      "stem": "【第七章 · 静电场（一）电场的力的性质 · 匀强电场】学生的错误做法：由电场力求加速度时把质量乘到分子，写成 a=q<sub>大小</sub> E m（错误表达式：a = q<sub>大小</sub>·E·m）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "stem": "【第七章 · 静电场（一）电场的力的性质 · 匀强电场】学生的错误做法：由电场力求加速度时把质量乘到分子，写成 a=q<sub>m</sub> E m（错误表达式：a = q<sub>m</sub>·E·m）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
       "options": [
         {
           "label": "A",
@@ -460,15 +460,15 @@
         }
       ],
       "correct_answer": "C",
-      "explanation": "量纲变成 N·kg，不是 m/s²；也违背同样力下质量越大加速度越小。\n知识库校验证据：被测错误式：a = q<sub>大小</sub>·E·m；左式量纲：L·T⁻²；右式量纲：M²·L·T⁻²；左右量纲不匹配；量纲校验说明：实际量纲检查得到等号左边为L·T⁻²、右边为M²·L·T⁻²；两边不是同一物理量，因此该等式不成立。；变化方向要求：mismatch；检验说明：实际量纲检查得到等号左边为L·T⁻²、右边为M²·L·T⁻²；两边不是同一物理量，因此该等式不成立。。",
+      "explanation": "量纲变成 N·kg，不是 m/s²；也违背同样力下质量越大加速度越小。\n知识库校验证据：被测错误式：a = q<sub>m</sub>·E·m；左式量纲：L·T⁻²；右式量纲：M²·L·T⁻²；左右量纲不匹配；量纲校验说明：实际量纲检查得到等号左边为L·T⁻²、右边为M²·L·T⁻²；两边不是同一物理量，因此该等式不成立。；变化方向要求：mismatch；检验说明：实际量纲检查得到等号左边为L·T⁻²、右边为M²·L·T⁻²；两边不是同一物理量，因此该等式不成立。。",
       "error_type": "量纲一致性",
       "judging": "auto",
       "source_error_index": 1,
       "source_caught_by": "量纲一致性",
-      "wrong_expr": "a = q<sub>大小</sub>·E·m",
+      "wrong_expr": "a = q<sub>m</sub>·E·m",
       "trap_test": {
         "kind": "dimension",
-        "target": "a = q_abs*E*m",
+        "target": "a = q_m*E*m",
         "lhs_dim": "L·T^-2",
         "rhs_dim": "M^2·L·T^-2",
         "expect": "mismatch",

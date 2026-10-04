@@ -48,6 +48,7 @@ Copyright 提示：本模块只参与「出成品」的渲染，不属于冻结�
 
 import html
 import re
+import xml.etree.ElementTree as ET
 
 __all__ = ["render", "display_mathml"]
 
@@ -70,12 +71,17 @@ _WORDS = [
     ("Theta", "Θ"),
     ("Lambda", "Λ"),
     ("Delta", "Δ"),
+    # ★ 2026-09-29 补：`nu` 频率与 `Phi` 磁通量。
+    #   这两个在库里出现得极多（nu 18 处、Phi 40 处），却一直没进词表，
+    #   于是页面上直接印着英文字母 —— 这是"机器名残留"里最显眼的一批。
+    ("Phi", "Φ"),     # 磁通量（大写，教材写 Φ）
     ("phi", "φ"),
     ("rho", "ρ"),
     ("tau", "τ"),
     ("eta", "η"),
     ("psi", "ψ"),
     ("zeta", "ζ"),
+    ("nu", "ν"),      # 频率（教材写 ν；physkit 的 MathML 路径本来就已经转了）
     ("mu", "μ"),
     ("pi", "π"),
     ("beta", "β"),
@@ -124,26 +130,187 @@ _GK = r"\u0370-\u03ff"
 _RE_SQRT = re.compile(r"(?<![A-Za-z])sqrt\s*\(")
 
 # 乘号：只有两侧都是「运算对象」的 `*` 才换成 `·`
+# ★ 2026-09-29：前瞻里补上 `√` —— 原先只认字母/数字/左括号，
+#   于是 `2*pi*sqrt(...)` 里的第二个 `*` 后面紧跟根号，没被认成乘号，
+#   页面上就留下了 `2·π*√(…)` 这种半机器写法（实测 21 处里占了一半）。
 _RE_MUL = re.compile(
     r"(?<=[A-Za-z0-9" + _GK + r"\u00b2\u00b3\u2070-\u209f\u4e00-\u9fff\)])"
     r"\s*\*\s*"
-    r"(?=[A-Za-z0-9\(" + _GK + r"\u4e00-\u9fff])"
+    r"(?=[A-Za-z0-9\(\u221a" + _GK + r"\u4e00-\u9fff])"
 )
 
 # 数字上标：^2 -> ²、^-1 -> ⁻¹
 _RE_SUP_NUM = re.compile(r"\^(-?\d+)")
 # 单字母上标：^n -> ⁿ（表里没有的退化成 <sup>）
 _RE_SUP_VAR = re.compile(r"\^([A-Za-z])")
+# ★ 括号上标：^(1/3) -> <sup>1/3</sup>（`R = r_0·A^(1/3)` 这类分数指数）
+_RE_SUP_PAREN = re.compile(r"\^\(([^()]+)\)")
 
+# ★ markdown 加粗：`**有**` -> <strong>有</strong>
+#   正文里作者用了 markdown 记号，但成品页面不跑 markdown 渲染，
+#   于是星号原样印出来。这一条只认「成对」的 ** ，不会碰算式里的乘号
+#   （乘号两侧是运算对象，而 `**` 的左邻是另一个 `*`，构不成乘号）。
+_RE_BOLD = re.compile(r"\*\*([^*\n]+)\*\*")
+
+# ★ 2026-09-29 晚（第六批）：`0.5*` 是机器写法的系数，教材写 ½（二分之一）。
+#   主人反馈：动能那块印成 0.5mv²，"0.5 不常用，常用的是二分之一"。
+#   只认「0.5 后紧跟乘号、乘号后是符号/左括号/根号」的形态 —— 那一定是公式
+#   系数；`0.5 × 3`（算式）、`0.5 m/s`（测量值）、`0.5 s`（题目数据）不动。
+_RE_HALF = re.compile(
+    r"(?<![A-Za-z0-9.])0\.5\s*\*\s*(?=[A-Za-z\u0370-\u03ff(\u221a])")
+
+# ------------------------------------------------------------------
+# 下标词表（2026-09-29 全量补齐）
+#
+# 为什么非得先把词表穷举出来：下标改成「定长记号」匹配以后，凡是**不在词表里**
+# 的多字母下标就再也匹配不上，页面上会留下 `X_abc` 这种半机器写法 —— 比吞字母
+# 更难看。所以先把库里实际出现的下标词穷举一遍（实测 152 种，脚本 _qc_subdump.py），
+# 再逐个判定它该怎么显示；今后新增符号必须同步登记，否则自查脚本会报出来。
+# ------------------------------------------------------------------
+
+# 改成「上加横线」的下标（教材里"平均值"的标准写法：v̄）
+_OVERLINE_SUBS = {"avg"}
+
+# 教材里**根本不写下标**的那些：直接还原成裸符号。
+#   emf/const —— 电源电动势就写 E，万有引力常量就写 G
+#   level     —— `n_level` 是主量子数，教材就写 n（E_n = E_1/n²）
+#   db        —— `lambda_db` 是德布罗意波长，教材就写 λ
+# ⚠ 这个集合要手工确认过才加：去掉下标会让符号"变短"，
+#   万一同一章里另有一个同名符号就会撞名。以上四个都已逐个核对无冲突。
+_SUB_DROP = {"emf", "const", "level", "db"}
+
+# 机器名 -> 中文下标（键是内容里的内部写法，值是给人看的写法）
+_SUB_CN = {
+    # 实验与模型新增记号：只改展示，内部变量和物理校验保持不变。
+    "cnt": "计数", "gate": "遮光", "belt": "带", "true": "校正",
+    "s_min": "静临界", "main": "主尺", "fixed": "固定",
+    "bottom": "底", "start": "初", "end": "末", "board": "板",
+    "pul": "绳", "chord": "弦", "node": "节", "iso": "等压",
+    "isoP": "等压", "isoV": "等容", "opt": "光程", "limit": "限",
+    "display": "示值", "digit": "末位", "div": "格", "sol": "溶液",
+    "power": "功率", "pv": "初", "mot": "反", "ground": "地",
+    # 新补录卡的来源词与复合下标，统一使用学生能直接读懂的含义。
+    "rope": "绳", "eq": "等效", "rel0": "相对初", "ratio": "比", "2_ratio": "比",
+    "total": "总", "tot": "总",
+    "ind": "感", "induced": "感",
+    "net": "合", "sum": "合",
+    "eff": "有效",
+    "half": "1/2",
+    "before": "前", "after": "后",
+    "orbit": "轨", "path": "路", "ext": "外",
+    "heat": "热", "eddy": "涡", "drive": "驱",
+    "terminal": "端", "turn": "匝", "coil": "线圈",
+    "cap": "容", "charge": "荷",
+    "gas": "气", "out": "出", "move": "移", "source": "源",
+    "line": "线", "rod": "棒", "send": "送", "molecule": "分子",
+    "abs": "大小", "signed": "代",
+    "left": "左", "right": "右", "front": "前", "back": "后",
+    "upper": "上", "lower": "下", "in": "入", "loss": "损",
+    "field": "场", "outer": "外", "inner": "内", "inside": "内",
+    # ---- 第二批：把「剩余缩写」逐个按实际含义定下来（2026-09-19 晚）----
+    "absorb": "吸", "release": "放",          # 低温物体吸热 / 高温物体放热
+    "latent": "潜", "sensible": "显热",        # 潜热 / 显热
+    "attr": "引", "rep": "斥", "mag": "安",    # 引力 / 斥力 / 安培作用力
+    "restore": "回复", "spring": "弹",         # 回复力 / 弹力做功
+    "common": "共", "rel": "相对", "rate": "速率",
+    "decay": "衰变", "molecular": "分子",
+    "series": "串", "shunt": "并",             # 串联分压电阻 / 并联分流电阻
+    "test": "试探", "order": "级",             # 试探电荷 / 条纹级次
+    "sat": "饱和", "dot": "面积",              # 饱和汽压 / 面积速度
+    "perp": "有效", "sep": "分离", "oi": "物像",
+    "top": "顶", "far": "远", "near": "近", "push": "拉",
+    # ---- 第三批：2026-09-29 自查补的 30 多种（依据同样是每个符号的 desc）----
+    "use": "有用",        # W_use 有用功 / E_use 用掉的电能
+    "mech": "机械",       # E_mech 机械能
+    "sym": "符号",        # R_sym 符号率（信息传输）
+    "pull": "拉",         # F_pull 拉力
+    "range": "量程",      # I_range / U_range 电表量程
+    "loop": "回路",       # R_loop 回路电阻
+    "read": "读数",       # I_read / U_read 表的读数
+    "old": "旧", "new": "新",                 # 旧设备 / 新设备耗电
+    "nucleus": "核", "atom": "原子",          # d_nucleus 核直径 / d_atom 原子直径
+    "load": "物",         # G_load 物重 / h_load 物体上升高度
+    "info": "信息",       # t_info 信息传递时间
+    "gained": "吸", "lost": "放",             # Q_gained 吸热 / Q_lost 放热
+    "save": "节",         # E_save 节约的电能
+    "water": "水",        # c_water 水的比热容 / Q_water 水吸收的热
+    "el": "电",           # E_el 电能 / P_el 电功率
+    "ref": "参考",        # Tb_ref 标准沸点 / Tm_ref 标准熔点
+    "run": "运行",        # t_run 运行时间
+    "gap": "间距",        # s_gap 车间距
+    "mean": "平均",       # I_mean 平均电流
+    "photon": "光子",     # n_photon 光子数
+    "high": "高", "low": "低",                # E_high 高能级 / E_low 低能级
+    "solid": "固",        # m_solid 固态质量
+    "int": "内",          # E_int 内能
+    "x2": "x/2", "t2": "t/2",                 # v_x2 位移中点速度 / v_t2 时间中点速度
+    "path1": "路1", "path2": "路2",           # W_path1 / W_path2 两条路径
+    # 复合下标（一层嵌套）：整体定名，比拼两段更好读
+    "int_gain": "内增",               # E_int_gain 增加的内能
+    "mech_before": "机前", "mech_after": "机后",   # 初态 / 末态机械能
+    # ★ 以下这些**故意不改**（教材本来就这么写）：
+    #   AB / BA —— F_AB 就是「A 对 B 的力」，标准写法
+    #   max / min / rms —— 教材标准
+    #   kg / cm / km / nm / kWh —— 单位符号，本来就是拉丁字母
+}
+
+# 认得出来、但就**按原样**当下标印的词
+_SUB_KEEP = {
+    "max", "min", "rms", "AB", "BA", "ABx", "BAx",
+    "Ep", "Ek",                                # 只在 delta_Ep / delta_Ek 里出现
+    "kg", "cm", "km", "nm", "kWh",             # 单位
+}
+
+# 词表全集 = 四类下标词的并集（供下标记号正则使用）
+_SUB_LEX = set(_SUB_CN) | set(_SUB_DROP) | set(_OVERLINE_SUBS) | _SUB_KEEP
+
+
+# ------------------------------------------------------------------
 # 下标：X_abc -> X<sub>abc</sub>
-# 基名允许是 ASCII 或希腊字母（ω_drive、δ_r），下标允许数字/字母/中文（F_合）
-# ★ 2026-09-19 晚补：**下标也要允许希腊字母**。
-#   原先的字符类只写了 [A-Za-z0-9中文]，于是 `delta_phi` 变成 `δ_φ` 之后就卡住了
-#   （φ 不在类里）→ 页面上残留 `δ_φ` 这种半机器写法，没有生成真正的下标。
+#
+# ★★ 2026-09-29 重写（这是本次最要紧的一处修 bug）★★
+#
+# 旧写法是「贪婪字符类」：`_([A-Za-z0-9希腊中文]+)` 见到什么吃多少。
+# 只要作者忘了在两个相乘的符号之间加空格/乘号，它就会把**后一个符号一起吃掉**：
+#
+#     k_eQ      -> k<sub>eQ</sub>      应为 k<sub>e</sub>Q
+#     q_1q_2    -> q<sub>1q</sub>_2    应为 q<sub>1</sub>q<sub>2</sub>
+#     B_1B_2    -> B<sub>1B</sub>_2    应为 B<sub>1</sub>B<sub>2</sub>
+#     I_gR_g    -> I<sub>gR</sub>_g    应为 I<sub>g</sub>R<sub>g</sub>
+#     Nk_BT     -> Nk<sub>BT</sub>     应为 Nk<sub>B</sub>T
+#
+# 也就是用户反馈的「公式里正常的字母被当成了角标」。实测 6 处。
+#
+# 新写法：**下标必须是「一个合法记号」**，由下列形式按优先级择一匹配：
+#   1) 词表里的词（最长的先试）—— 见下面的 _SUB_LEX / _SUB_CN
+#   2) X_yyy 这种「带一层嵌套」的复合下标（delta_E_total、E_int_gain）
+#   3) 字母 + 数字（v_x2、W_path1）
+#   4) 纯数字（v_0、R_1）
+#   5) 单个拉丁字母（F_N、v_t）
+#   6) 单个希腊字母（δ_φ、Δ_Φ）
+#   7) 中文（F_合）
+#
+# 于是 `q_1q_2` 只会吃掉 `1`，剩下的 `q_2` 交给下一轮继续处理
+# （见 render() 里的多轮：因为正则的后视断言会挡住紧跟在数字后面的符号）。
+# ------------------------------------------------------------------
+def _build_sub_body():
+    """拼出「下标记号」的正则片段（不含分组）。"""
+    words = sorted(_SUB_LEX, key=len, reverse=True)   # 长词优先，避免被短词抢切
+    alt = "|".join(re.escape(w) for w in words)
+    # ⚠ `%` 比 `+` 结合得更紧，字符串必须先拼完再格式化，否则只有最后一段参与 %
+    inner = (r"(?:%s|[A-Za-z]+\d+|\d+|[A-Za-z]|[" + _GK + r"]|[\u4e00-\u9fff]+)")
+    inner = inner % alt
+    # 复合：`E_total` / `int_gain` —— 只允许再套一层，避免重新变回贪婪
+    return r"(?:[A-Za-z]_%s|%s)" % (inner, inner)
+
+
+# ⚠ 后视断言里**故意不放数字**：`2v_0`、`2Nk_B` 这种"数字紧贴符号"的写法
+#   在库里是常态，若把数字也挡住就整条匹配不上，反而留下 `v_0` 原样。
+#   挡住的只是字母/下划线/希腊字母 —— 那些才是"标识符还没结束"的信号。
 _RE_SUB = re.compile(
-    r"(?<![A-Za-z0-9_" + _GK + r"])"
+    r"(?<![A-Za-z_" + _GK + r"])"
     r"([A-Za-z" + _GK + r"][A-Za-z0-9" + _GK + r"]*)"
-    r"_([A-Za-z0-9" + _GK + r"\u4e00-\u9fff]+)"
+    r"_(" + _build_sub_body() + r")"
 )
 
 # ★ 作者有时在正文里**直接手写小写 δ**（如「速度的变化量，δv = v − v₀」）。
@@ -151,6 +318,39 @@ _RE_SUB = re.compile(
 #   ⚠ 只认「δ 后面紧跟字母」这一种：`δ_φ` 这种带下标的由 _do_sub 处理，
 #     而单独一个 δ（后面是空格或中文）不动 —— 万一将来要表示微小量 δ。
 _RE_DELTA_PREFIX = re.compile(r"\u03b4(?=[A-Za-z" + _GK + r"])")
+
+# ------------------------------------------------------------------
+# ★ 2026-09-29 晚（第六批）：正文里的平排「字母+数字」名 → 教材下标写法
+#
+#   h1、h2、T1、V2、Ek2 …… 教材写 h₁、h₂、T₁、V₂、E_k2。
+#   源数据公式里都写作 h_1 / Ek1（正规写法），但**正文散文**里作者经常
+#   顺手写成平排，页面上就成了 h1、Ek2。
+#
+#   范围用「字母集 + 单个数字」刻画；字母集是全库实际出现过的首字母
+#   （E F I R T U V W / d f h l p q s t u v x），逐类核对过正文语境：
+#   全部是「同一物理量的第几个 / 初末态」，无一歧义。
+#
+#   ⚠ 两个刻意的例外：
+#   · **不含 m** —— 初中压强一章正文里 m2 大多是「平方米」（0.02 m2、
+#     S 用 m2、1 m2=10 000 cm2），转成 m₂ 就是制造错误。公式框 MathML
+#     里的 m1/m2 全部来自动量/引力章的「质量1/质量2」，那边照转
+#     （见 _RE_MI_NUM 的注释）—— 两条路径各管各的语境。
+#   · **小写 e 不在集内** —— 1e-6 这类科学计数法不能被拆成 1ₑ-₆。
+#   已核查正文里不存在「数字+字母+数字」的 jammed 形态（全库唯一一处
+#   2T3 恰好也是真下标），所以「前一字符是数字」不用设防。
+# ------------------------------------------------------------------
+_RE_PROSE_SUB = re.compile(
+    r"(?<![A-Za-z_.])"
+    r"(Ek1|Ek2|Ep1|Ep2|Ek|Ep|([EFIRTUVWdfhlpqstuvx])[0-9])"
+    r"(?![0-9_<])"
+)
+
+
+def _do_prose_sub(m):
+    tok = m.group(1)
+    if tok.startswith("E") and len(tok) >= 2 and tok[1] in "kp":
+        return "E<sub>%s</sub>" % tok[1:]           # Ek2 -> E<sub>k2</sub>
+    return "%s<sub>%s</sub>" % (tok[0], tok[1:])    # h1  -> h<sub>1</sub>
 
 
 # ============================================================
@@ -186,16 +386,42 @@ def _do_sub(m):
       而且正文里的 `delta_r` 也还是 δ_r。这一处补齐后，两条路径口径才一致。
     """
     base, sub = m.group(1), m.group(2)
+    if base == "T" and sub == "dot":
+        return "T<sub>打点</sub>"
     # 小写 δ 在本库里一律表示「变化量」，还原成 Δ（与 MathML 那条规则同一口径）
     if base == "\u03b4":
         base = "\u0394"
+    # 复合下标（E_int_gain、mech_before）先查「整体」有没有定名；查不到再逐段换，
+    # 绝不能让下划线留在成品里（那正是"残留机器写法"最难看的一种）。
+    if sub not in _SUB_CN and "_" in sub:
+        sub = "".join(_SUB_CN.get(part, part) for part in sub.split("_"))
+
+    # ---- Δ 是**前缀算子**，不是带下标的基名 ----
+    # `Delta_Phi` 的含义是「磁通量的变化量」，教材写 **ΔΦ**（两个符号并排），
+    # 旧实现却印成 Δ<sub>Φ</sub> —— 把 Φ 压成了角标。这正是用户反馈的
+    # 「正常字母被当成角标」里最典型的一类（Phi 全库 40 处）。
+    # 规则：Δ 后面若是一个短记号（1–2 个字符，拉丁/希腊），就并排写；
+    #      若是中文词（如"分离"）则仍作下标，读起来才顺。
+    if base == "\u0394":
+        if sub.startswith("E_") or (len(sub) == 2 and sub[0] == "E"):
+            # ΔE_k / ΔE_总：Δ 挂在 E 上，后面的才是下标（命名系统只有一层下标，
+            # `delta_Ek` 只能拆成 base=delta、sub=Ek，只能在显示这步掰回来）
+            rest = sub[2:] if sub.startswith("E_") else sub[1:]
+            return "\u0394E<sub>%s</sub>" % _SUB_CN.get(rest, rest)
+        if sub in _SUB_DROP:
+            return "\u0394"
+        cn = _SUB_CN.get(sub)
+        if cn:
+            return "\u0394<sub>%s</sub>" % cn
+        if len(sub) <= 2:
+            return "\u0394" + sub                     # Δr / Δt / ΔΦ / ΔE
+        return "\u0394<sub>%s</sub>" % sub
+
     if sub in _SUB_DROP:
         return base                                   # E_emf → E、G_const → G
     if sub in _OVERLINE_SUBS:
         # 正文里用行内样式画横线：与公式框的 MathML mover 视觉上一致
         return '<span style="text-decoration:overline">%s</span>' % base
-    if base == "\u0394" and len(sub) == 2 and sub[0] == "E":
-        return "\u0394E<sub>%s</sub>" % sub[1]        # delta_Ek → ΔE<sub>k</sub>
     cn = _SUB_CN.get(sub)
     return "%s<sub>%s</sub>" % (base, cn if cn else sub)
 
@@ -230,11 +456,27 @@ def render(text):
         s = pat.sub(rep, s)
     s = _WORDS_RE.sub(_do_word, s)
     s = _RE_DELTA_PREFIX.sub("\u0394", s)   # 手写的 δv / δφ → Δv / Δφ
+    s = _RE_HALF.sub("\u00bd", s)           # 0.5* → ½（只认公式系数形态）
     s = _RE_SQRT.sub("√(", s)
     s = _RE_MUL.sub("·", s)
     s = _RE_SUP_NUM.sub(_do_sup_num, s)
+    s = _RE_SUP_PAREN.sub(lambda m: "<sup>%s</sup>" % m.group(1), s)
     s = _RE_SUP_VAR.sub(_do_sup_var, s)
-    s = _RE_SUB.sub(_do_sub, s)
+    s = _RE_BOLD.sub(r"<strong>\1</strong>", s)
+    # 数据层的 _p 专指变化后的一撇；须在普通数字下标规则之前处理。
+    s = re.sub(r"(?<![A-Za-z0-9_])(v)_?([0-9]*)_p(?![A-Za-z0-9_])",
+               lambda m: m.group(1) + ("<sub>%s</sub>" % m.group(2) if m.group(2) else "") + "′", s)
+    # ★ 平排「字母+数字」名 → 教材下标（h1→h₁、Ek2→E_k2；m 系不转，
+    #   见 _RE_PROSE_SUB 的注释——正文里 m2 多数是"平方米"）
+    s = _RE_PROSE_SUB.sub(_do_prose_sub, s)
+    # 下标要**跑多轮**：记号化以后 `R_1R_2` 第一轮只能吃到 `R_1`
+    # （后视断言会挡住紧跟在数字后面的 `R_2`），第二轮才算得完。
+    # 最多三轮兜底；没有下划线残留时自然停住，是幂等的。
+    for _ in range(3):
+        new = _RE_SUB.sub(_do_sub, s)
+        if new == s:
+            break
+        s = new
 
     return s
 
@@ -242,7 +484,7 @@ def render(text):
 # ============================================================
 # 四、数学标记的「教材写法」还原（给人看的那一层）
 # ============================================================
-# 起因（需求方 2026-09-19 的原话）：
+# 起因（主人 2026-09-19 的原话）：
 #   「实际学习中没人会把 v平均 写成 vavg 的，都是 v 上面加个横线……
 #     给人看的那部分，符号重复或者说下标用中文，都比现在好」
 #
@@ -259,57 +501,21 @@ def render(text):
 #   2) 中文下标：total→总 / half→1/2 / before→前 / after→后 …
 #   3) 保持原样：max / min / rms / AB 这类教材本来就这么写
 
-# 改成「上加横线」的下标
-_OVERLINE_SUBS = {"avg"}
-
-# 改成中文的下标（键是内容里的内部写法，值是给人看的写法）
-_SUB_CN = {
-    "total": "总", "tot": "总",
-    "ind": "感", "induced": "感",
-    "net": "合",
-    "eff": "有效",
-    "half": "1/2",
-    "before": "前", "after": "后",
-    "orbit": "轨", "path": "路", "ext": "外",
-    "heat": "热", "eddy": "涡", "drive": "驱",
-    "terminal": "端", "turn": "匝", "coil": "线圈",
-    "cap": "容", "charge": "荷",
-    "gas": "气", "out": "出", "move": "移", "source": "源",
-    "line": "线", "rod": "棒", "send": "送", "molecule": "分子",
-    "abs": "大小", "signed": "代",
-    "left": "左", "right": "右", "front": "前", "back": "后",
-    "upper": "上", "lower": "下", "in": "入", "loss": "损",
-    "field": "场", "outer": "外", "inner": "内",
-    # ---- 第二批：把「剩余缩写」逐个按实际含义定下来（2026-09-19 晚）----
-    # 依据是每个符号在内容里的 desc（先用脚本把 34 种全列出来看过一遍再定的），
-    # 不是照单词硬译。
-    "absorb": "吸", "release": "放",          # Q_absorb 低温物体吸热 / Q_release 高温物体放热
-    "latent": "潜", "sensible": "显热",        # 潜热 / 显热
-    "attr": "引", "rep": "斥", "mag": "安",    # 引力 / 斥力 / 安培阻力
-    "restore": "回复", "spring": "弹",         # 回复力 / 弹力做功
-    "common": "共", "rel": "相对", "rate": "速率",
-    "decay": "衰变", "molecular": "分子",
-    "series": "串", "shunt": "并",             # 串联分压电阻 / 并联分流电阻
-    "test": "试探", "order": "级",             # 试探电荷 / 条纹级次
-    "sat": "饱和", "dot": "面积",              # 饱和汽压 / 面积速度
-    "perp": "有效", "sep": "分离", "oi": "物像",
-    "top": "顶", "far": "远", "near": "近", "inside": "内", "push": "拉",
-    # ★ 以下这些**故意不改**（教材本来就这么写）：
-    #   AB / BA —— F_AB 就是「A 对 B 的力」，这是标准写法
-    #   max / min —— 教材标准
-    #   Ek / Ep —— 见下面 _RE_DELTA_E 的注释，它们的问题不在缩写而在下标层次
-}
-
-# ★ 教材里**根本不写下标**的那些：直接还原成裸符号。
-#   例：电源电动势教材就写 E（不写 E_emf）；万有引力常量就写 G（不写 G_const）。
-#   ⚠ 这个集合要手工确认过才加 —— 去掉下标会让符号"变短"，
-#     万一同一章里另有一个真叫 G 的符号就会撞名。目前这两个都确认无冲突。
-_SUB_DROP = {"emf", "const"}
+# ⚠ 词表（_OVERLINE_SUBS / _SUB_DROP / _SUB_CN / _SUB_KEEP / _SUB_LEX）
+#   已经上移到「一、词表」那一节，因为下标记号正则在导入时就要用它。
+#   两条路径（正文 HTML 与公式框 MathML）共用同一份词表，口径才能保证一致。
 
 # physkit 的 _mi 对「长度 > 1 的名字」会给正体，样子是：
 #     <msub><mi>v</mi><mi mathvariant="normal">avg</mi></msub>
+#
+# ★ 2026-09-29：把匹配放宽成「任意 msub + 两个 mi」。
+#   旧正则要求下标**必须带 mathvariant="normal" 且至少两个 ASCII 字母**，
+#   于是 `Delta_Phi`（physkit 给的是 <msub><mi>Δ</mi><mi>Φ</mi></msub>）
+#   整条漏掉 —— 公式框里就一直印着 Δ_Φ，Φ 被压成角标。
+#   单字母下标（E_n、F_N）会走 _do_sub_display 的"保持原样"分支，不受影响。
 _SUB_PAT = re.compile(
-    r'<msub><mi>([^<]+)</mi><mi mathvariant="normal">([A-Za-z]{2,})</mi></msub>')
+    r'<msub><mi(?: mathvariant="normal")?>([^<]+)</mi>'
+    r'<mi(?: mathvariant="normal")?>([^<]+)</mi></msub>')
 
 # 中文下标（physkit 会给单字加斜体 —— 中文用斜体不合适，这里改成正体）
 _SUB_CN_PAT = re.compile(r'<msub><mi>([^<]+)</mi><mi>([\u4e00-\u9fff]+)</mi></msub>')
@@ -332,18 +538,45 @@ _RE_DELTA = re.compile(r'<mi>\u03b4</mi>')
 
 def _do_sub_display(m):
     base, sub = m.group(1), m.group(2)
+    # 兼容已有实验数据 v_1_p：序号与一撇并列，不能嵌套成小号的字母 p。
+    if base == "v" and re.fullmatch(r"[0-9]+_p", sub):
+        return '<msubsup><mi>v</mi><mn>%s</mn><mo>′</mo></msubsup>' % sub[:-2]
+    # 一撇放在上标，序号放在下标，避免把碰后速度显示成 v1 的字母 p 下标。
+    if sub == "p" and re.fullmatch(r"v[0-9]*", base):
+        numbered = re.fullmatch(r"([A-Za-z])([0-9]+)", base)
+        if numbered:
+            return '<msubsup><mi>%s</mi><mn>%s</mn><mo>′</mo></msubsup>' % numbered.groups()
+        return '<msup><mi>%s</mi><mo>′</mo></msup>' % base
+    # 老卡片的 S_dot 是面积速度，新卡片的 T_dot 是打点周期，不共用含义。
+    if base == "T" and sub == "dot":
+        return '<msub><mi>T</mi><mi mathvariant="normal">打点</mi></msub>'
+    # 小写 δ 在本库里一律表示「变化量」，与正文那条规则同一口径
+    if base == "\u03b4":
+        base = "\u0394"
+
+    # ---- Δ / δ 是前缀算子：Δr、Δt、ΔΦ 都是两个符号并排，不是 Δ 带下标 ----
+    # （与正文 _do_sub 里的规则完全对称，两条路径口径一致）
+    if base == "\u0394":
+        if sub.startswith("E_") or (len(sub) == 2 and sub[0] == "E"):
+            rest = sub[2:] if sub.startswith("E_") else sub[1:]
+            return ('<msub><mi>\u0394E</mi><mi>%s</mi></msub>'
+                    % _SUB_CN.get(rest, rest))
+        if sub in _SUB_DROP:
+            return '<mi>\u0394</mi>'
+        cn = _SUB_CN.get(sub)
+        if cn:
+            return ('<msub><mi>\u0394</mi><mi mathvariant="normal">%s</mi></msub>'
+                    % cn)
+        if len(sub) <= 2 and not re.search(r"[\u4e00-\u9fff]", sub):
+            return '<mi>\u0394</mi><mi>%s</mi>' % sub
+        return '<msub><mi>\u0394</mi><mi mathvariant="normal">%s</mi></msub>' % sub
+
     if sub in _SUB_DROP:
         # 教材里不写下标的：还原成裸符号（E_emf → E，G_const → G）
         return '<mi>%s</mi>' % base
     if sub in _OVERLINE_SUBS:
         # v̄：mover + accent，让横线自动撑满底下的符号
         return '<mover accent="true"><mi>%s</mi><mo>\u00af</mo></mover>' % base
-    # ΔE_k 这个特例：名字 `delta_Ek` 渲染出来是 Δ_Ek，但教材写的是 **ΔE_k**
-    # ——「Δ 挂在 E 上、k 才是下标」，不是「Δ 的下标是 Ek」。
-    # 根源是命名系统只支持一层下标（`delta_Ek` 拆成 base=delta、sub=Ek），
-    # 所以只能在显示这一步把它掰回教材的样子。
-    if base == "\u03b4" and len(sub) == 2 and sub[0] == "E":
-        return ('<msub><mi>\u0394E</mi><mi>%s</mi></msub>' % sub[1])
     cn = _SUB_CN.get(sub)
     if cn:
         return ('<msub><mi>%s</mi><mi mathvariant="normal">%s</mi></msub>'
@@ -351,19 +584,178 @@ def _do_sub_display(m):
     return m.group(0)
 
 
-def display_mathml(text):
-    """把 physkit 生成的 MathML 里的「机器下标」换成人看的写法。
+# ------------------------------------------------------------------
+# ★★ 2026-09-29 晚（第六批）：公式框 MathML 的「结构化」修补 ★★
+#
+# 主人看线上页面发现三件事（原话）：
+#   1) 重力做功印成 W_G = mgh1 − h2，"h1h2 外面没有括号"；
+#   2) 弹力做功印成 0.5kx1² − x2²，"x1 的平方和 x2 的平方外面也没有括号"；
+#   3) 动能印成 Ek = 0.5mv²，"0.5 不常用，常用的是二分之一"。
+#
+# 查证结果：**源数据全是对的**（`m*g*(h1 - h2)`、`0.5*k*(x1^2 - x2^2)`），
+# 锅在渲染 —— physkit 生成的 MathML **不输出围栏括号**：和/差因子只是个
+# <mrow>，浏览器把 mrow 平铺渲染，括号就"隐形"了。这不只是难看：
+# mg(h₁−h₂) 变成 mgh₁−h₂ 是**公式含义被改变**，显示层 bug 里最严重的一类。
+# physkit 是冻结基线不能改，所以在这里做「渲染后修补」：
+# 把 MathML 解析成树（ElementTree），按结构规则改，再序列化回去。
+#
+# 树状规则（都不碰 <mn> 里的数值、不碰物理结构，只补"给人看"的记号）：
+#   ① 围栏：mrow 的直接子层含 +/−，且与左右邻居靠乘号相连 → 它是
+#      「乘法里的和/差因子」，补 <mo>(</mo>…<mo>)</mo>。
+#      靠 + − = 相连的位置不补 —— 教材本来就不加（W_总 = Ek2 − Ek1）。
+#      ⚠ physkit 的乘号（· 与不可见乘号 ⁢）是**裸文本节点**，挂在前一个
+#        元素的 tail 上，不是 <mo> —— 找乘号必须查 Element.tail。
+#   ② 乘点清理：紧贴围栏的显式乘点删掉（k·( … ) → k( … )），教材乘法靠紧排。
+#   ③ 0.5 → 二分之一：<mn>0.5</mn> → <mfrac><mn>1</mn><mn>2</mn></mfrac>。
+#      公式框里的 0.5 全部来自 expr 的系数（0.5*m、0.5*k），没有别的语境；
+#      只认数值**恰好**是 0.5 的 <mn>，0.55、1.5 都不受影响。
+#
+# 树状处理之后还有两条正则规则（见 display_mathml）：
+#   ④ <mi mathvariant="normal">h1</mi> → h₁ —— 单字母+数字的平排正体名拆下标。
+#      ⚠ MathML 里的 m1/m2 全部是「质量1/质量2」，照转；正文里的 m2 大多
+#        是"平方米"，prose 层不转（见 _RE_PROSE_SUB 的注释）。
+#   ⑤ <mi mathvariant="normal">Ek2</mi> → E 下标 k2（教材写 E_k2）。
+#      全库 expr 标识符普查：E 系只有 Ek/Ep/Ek1/Ek2/Ep1/Ep2 六种形态。
+# ------------------------------------------------------------------
 
-    ⚠ 只动**下标的名字怎么写**：不改数值、不改结构、不改符号顺序，
-      也不会碰到 <mn> 里的数字。查不到映射的原样返回。
+_MUL_CHARS = ("\u22c5", "\u2062")    # · 显式乘点 / ⁢ 不可见乘号（physkit 里是裸文本节点）
+_ADD_CHARS = ("+", "\u2212")         # + −（这两个才是真正的 <mo> 元素）
+
+
+def _mathml_fence_half(s):
+    """MathML 树状修补：① 乘法因子里的和/差 mrow 补围栏括号；
+    ② 删掉紧贴围栏的显式乘点；③ <mn>0.5</mn> → 二分之一分数。
+    解析失败就原样返回（回退到纯正则修补，不影响出页）。"""
+    try:
+        root = ET.fromstring(s)
+    except ET.ParseError:
+        return s
+    changed = [False]
+
+    def first_of(el):
+        e = el
+        while e is not None and e.tag == "mrow" and len(e):
+            e = e[0]
+        return e
+
+    def last_of(el):
+        e = el
+        while e is not None and e.tag == "mrow" and len(e):
+            e = e[len(e) - 1]
+        return e
+
+    def starts_paren(el):
+        e = first_of(el)
+        return e is not None and e.tag == "mo" and e.text == "("
+
+    def ends_paren(el):
+        e = last_of(el)
+        return e is not None and e.tag == "mo" and e.text == ")"
+
+    def is_numberish(el):
+        e = first_of(el)
+        return e is not None and e.tag == "mn"
+
+    def has_top_add(row):
+        """row 的直接子层是否为和/差（直接子里有 <mo>+ 或 −</mo>）。"""
+        return any(ch.tag == "mo" and ch.text in _ADD_CHARS for ch in row)
+
+    def is_mul_join(prev_el, mid_el, next_el):
+        """prev 与 next 之间靠乘号相连吗？乘号两种形态都认：
+        裸文本节点（挂在 prev.tail 或 mid_el.tail 上）与 <mo> 元素。"""
+        if prev_el is not None:
+            if prev_el.tail is not None and prev_el.tail.strip() in _MUL_CHARS:
+                return True
+            if prev_el.tag == "mo" and prev_el.text in _MUL_CHARS:
+                return True
+        if mid_el is not None:
+            if mid_el.tail is not None and mid_el.tail.strip() in _MUL_CHARS:
+                return True
+        if next_el is not None:
+            if next_el.tag == "mo" and next_el.text in _MUL_CHARS:
+                return True
+        return False
+
+    def walk(node):
+        for ch in node:
+            walk(ch)
+        cs = list(node)
+        # ① 围栏：乘法因子位置上的和/差 mrow
+        for i, ch in enumerate(cs):
+            if ch.tag != "mrow" or not has_top_add(ch):
+                continue
+            left = cs[i - 1] if i > 0 else None
+            right = cs[i + 1] if i + 1 < len(cs) else None
+            if not is_mul_join(left, ch, right):
+                continue                      # 靠 + − = 连接的位置不补括号
+            if len(ch) >= 2 and starts_paren(ch) and ends_paren(ch):
+                continue                      # 已有围栏，不重复加
+            o = ET.Element("mo"); o.text = "("
+            c = ET.Element("mo"); c.text = ")"
+            ch.insert(0, o)
+            ch.append(c)
+            changed[0] = True
+        # ② 乘点清理：k·( … ) → k( … )、( … )·v → ( … )v
+        #   （只删 U+22C5 显式点，⁢ 本来就不可见；括号后紧跟数字的保留，
+        #     免得 (a+b)·2 变成 (a+b)2 读不开。）
+        cs = list(node)
+        for i, ch in enumerate(cs):
+            if not ch.tail or "\u22c5" not in ch.tail:
+                continue
+            nxt = cs[i + 1] if i + 1 < len(cs) else None
+            if nxt is None:
+                continue
+            if starts_paren(nxt) or (ends_paren(ch) and not is_numberish(nxt)):
+                ch.tail = ch.tail.replace("\u22c5", "")
+                changed[0] = True
+
+    walk(root)
+
+    # ③ 0.5 → ½（先收集再改，避免迭代中动树）
+    halves = [el for el in root.iter("mn") if el.text == "0.5"]
+    for el in halves:
+        el.tag = "mfrac"
+        el.text = None
+        one = ET.SubElement(el, "mn"); one.text = "1"
+        two = ET.SubElement(el, "mn"); two.text = "2"
+
+    if not changed[0] and not halves:
+        return s                              # 什么都没改 → 原串返回，旧路径逐字节一致
+    return ET.tostring(root, encoding="unicode")
+
+
+# ④ 单字母+数字的平排正体名 → 下标（h1 → h₁、T0 → T₀、m1 → m₁ …）。
+#    全库 expr 标识符普查共 38 种，全部是「同一物理量的第几个/初末态」。
+#    (?<!<msub>) 防止命中 msub 的**底数**位置（底数若是多字符名，拆了会嵌套）。
+_RE_MI_NUM = re.compile(
+    r'(?<!<msub>)<mi mathvariant="normal">([A-Za-z])([0-9]+)</mi>')
+
+# ⑤ Ek / Ep / Ek1 / Ek2 / Ep1 / Ep2 → E 下标（教材写 E_k、E_k2）。
+#    同样跳过「作为别的符号底数」的位置：Ep_s 的底是 Ep，不能拆，
+#    否则会嵌套出双层下标（E 的下标 p，p 再带下标 s）。
+_RE_MI_EKP = re.compile(
+    r'(?<!<msub>)<mi mathvariant="normal">E([kp][0-9]*)</mi>')
+
+
+def display_mathml(text):
+    """把 physkit 生成的 MathML 里的「机器记号」换成人看的教材写法。
+
+    ⚠ 只动**记号怎么写**：不改数值、不改结构、不改符号顺序。
+      查不到映射的原样返回。
+    ★ 第六批起先做一遍树状修补（补围栏括号 / 0.5→½ 分数），
+      再做正则修补（下标改名 / δ→Δ / 平排名字拆下标）。
     """
     if not text:
         return text
-    s = _SUB_PAT.sub(_do_sub_display, text)
+    s = _mathml_fence_half(text)               # ★ 树状：围栏 + 0.5→½
+    s = _SUB_PAT.sub(_do_sub_display, s)
     s = _SUB_CN_PAT.sub(
         lambda m: '<msub><mi>%s</mi><mi mathvariant="normal">%s</mi></msub>'
                   % (m.group(1), m.group(2)), s)
     s = _RE_DELTA.sub('<mi>\u0394</mi>', s)
+    s = _RE_MI_NUM.sub(r'<msub><mi>\1</mi><mn>\2</mn></msub>', s)    # ★ h1→h₁
+    s = _RE_MI_EKP.sub(
+        r'<msub><mi>E</mi><mi mathvariant="normal">\1</mi></msub>', s)  # ★ Ek→E_k
     return s
 
 
@@ -388,9 +780,10 @@ _CASES = [
     ("v = √(2GM/r)", "v = √(2GM/r)"),          # 已是 Unicode，幂等
     ("a = g sin(theta) = 3.6 m/s²", "a = g sin(θ) = 3.6 m/s²"),
     ("Ep_s = 1/2 kx²", "Ep<sub>s</sub> = 1/2 kx²"),
-    ("delta_r=n lambda", "Δ<sub>r</sub>=n λ"),   # ★ 小写 delta 一律还原成 Δ
+    # ★ 小写 delta 一律还原成 Δ；且 Δ 是前缀算子，与后面的符号**并排**写
+    ("delta_r=n lambda", "Δr=n λ"),
     ("delta_Ek = 4 J", "ΔE<sub>k</sub> = 4 J"),  # ★ ΔE_k（Δ 挂在 E 上，不是 Δ 的下标是 Ek）
-    ("W_G = m*g*(h2-h1)", "W<sub>G</sub> = m·g·(h2-h1)"),
+    ("W_G = m*g*(h2-h1)", "W<sub>G</sub> = m·g·(h<sub>2</sub>-h<sub>1</sub>)"),
     ("spin 里不该替换", "spin 里不该替换"),      # 英文单词里的 pi 不动
     ("f = mu*F_N", "f = μ·F<sub>N</sub>"),
     ("A_dot = rv_t/2", "A<sub>面积</sub> = rv<sub>t</sub>/2"),
@@ -419,16 +812,79 @@ _CASES = [
     ("Q_absorb = 5 J", "Q<sub>吸</sub> = 5 J"),
     ("F_restore = -kx", "F<sub>回复</sub> = -kx"),
     # ---- 希腊字母下标 + 手写 δ 前缀（2026-09-19 晚补的两处漏网）----
-    ("delta_phi = 0", "Δ<sub>φ</sub> = 0"),      # 下标是希腊字母，以前不进 <sub>
-    ("delta_v = v - v_0", "Δ<sub>v</sub> = v - v<sub>0</sub>"),
+    ("delta_phi = 0", "Δφ = 0"),                 # 下标是希腊字母，以前不进 <sub>
+    ("delta_v = v - v_0", "Δv = v - v<sub>0</sub>"),
     ("速度变化量 δv = 3 m/s", "速度变化量 Δv = 3 m/s"),   # 手写的前缀形式
     ("两点之差 δφ = 0", "两点之差 Δφ = 0"),
+    # ---- ★★ 2026-09-29：下标不再吞掉相邻的正常字母 ----
+    ("F = k_e|q_1q_2|/r", "F = k<sub>e</sub>|q<sub>1</sub>q<sub>2</sub>|/r"),
+    ("B_net=B_1B_2", "B<sub>合</sub>=B<sub>1</sub>B<sub>2</sub>"),
+    ("R_s=R_1R_2", "R<sub>s</sub>=R<sub>1</sub>R<sub>2</sub>"),
+    ("I=2nq_0v_dS", "I=2nq<sub>0</sub>v<sub>d</sub>S"),
+    ("U_V 大于表头满偏电压 I_gR_g", "U<sub>V</sub> 大于表头满偏电压 I<sub>g</sub>R<sub>g</sub>"),
+    ("p = 2Nk_BT/V", "p = 2Nk<sub>B</sub>T/V"),
+    ("E = k_eQ/r²", "E = k<sub>e</sub>Q/r²"),
+    # ---- ★ 2026-09-29：补进词表的机器名 ----
+    ("E = h*nu", "E = h·ν"),                     # 频率 ν
+    ("Delta_Phi = Phi_2 - Phi_1", "ΔΦ = Φ<sub>2</sub> - Φ<sub>1</sub>"),   # 磁通量 Φ
+    ("E_n = E_1/n_level^2", "E<sub>n</sub> = E<sub>1</sub>/n²"),            # 主量子数 n
+    ("lambda_db = h/p", "λ = h/p"),                                        # 德布罗意波长
+    ("Q_water = c_water*m_water", "Q<sub>水</sub> = c<sub>水</sub>·m<sub>水</sub>"),
+    ("E_mech_before = E_mech_after+E_int_gain",
+     "E<sub>机前</sub> = E<sub>机后</sub>+E<sub>内增</sub>"),                 # 复合下标
+    ("delta_E_total = E_after - E_before", "ΔE<sub>总</sub> = E<sub>后</sub> - E<sub>前</sub>"),
+    ("v_x2 = sqrt((v_0^2 + v^2)/2)", "v<sub>x/2</sub> = √((v<sub>0</sub>² + v²)/2)"),
+    ("m_kg = m_g/1000", "m<sub>kg</sub> = m<sub>g</sub>/1000"),              # 单位下标原样保留
+    # ---- ★ 乘号 / 分数指数 / markdown 加粗 ----
+    ("T = 2*pi*sqrt(L/g)", "T = 2·π·√(L/g)"),   # 以前第二个 * 变不成 ·
+    ("R = r_0·A^(1/3)", "R = r<sub>0</sub>·A<sup>1/3</sup>"),
+    ("宏观物体**有**波动性", "宏观物体<strong>有</strong>波动性"),
     # 不应被误伤的（单字母 / 数字 / 中文 / 教材标准缩写）
     ("E_k = 9 J", "E<sub>k</sub> = 9 J"),
     ("v_0 = 2 m/s", "v<sub>0</sub> = 2 m/s"),
     ("F_合 = 6 N", "F<sub>合</sub> = 6 N"),
     ("W_AB = 3 J", "W<sub>AB</sub> = 3 J"),
     ("v_max = 8 m/s", "v<sub>max</sub> = 8 m/s"),
+    # ---- ★★ 2026-09-29 晚（第六批）：0.5→½ 与 平排名下标 ----
+    ("Ek = 0.5*m*v^2", "E<sub>k</sub> = ½m·v²"),
+    ("W = 0.5*k*(x1^2 - x2^2)", "W = ½k·(x<sub>1</sub>² - x<sub>2</sub>²)"),
+    ("0.5 × 3 = 1.5", "0.5 × 3 = 1.5"),                    # 算式里的 0.5 不动
+    ("速率为 0.5 m/s", "速率为 0.5 m/s"),                   # 测量值不动
+    ("h1、h2 使用同一高度基准", "h<sub>1</sub>、h<sub>2</sub> 使用同一高度基准"),
+    ("Delta_T = T2-T1 = 70 K", "ΔT = T<sub>2</sub>-T<sub>1</sub> = 70 K"),
+    ("动能 Ek2 = 0", "动能 E<sub>k2</sub> = 0"),
+    ("S 用 m2、F 用 N", "S 用 m2、F 用 N"),                 # ★ m2=平方米，绝不转
+    ("质量分别为 m1、m2", "质量分别为 m1、m2"),             # prose 层 m 系整体不转
+    ("p1V1=p2V2", "p<sub>1</sub>V<sub>1</sub>=p<sub>2</sub>V<sub>2</sub>"),
+]
+
+# MathML 路径的自测：display_mathml(输入) 必须包含/必须不包含
+_MML_CASES = [
+    # ③ 0.5 → 二分之一分数
+    ("<mrow><mn>0.5</mn>\u2062<mi>k</mi></mrow>",
+     "<mfrac><mn>1</mn><mn>2</mn></mfrac>", "<mn>0.5</mn>"),
+    # 0.55 / 2.5 这类不是 0.5 的数，不动
+    ("<mrow><mn>0.55</mn><mi>k</mi></mrow>", "<mn>0.55</mn>", "<mfrac>"),
+    # ① 围栏：mg(h₁−h₂) —— 乘法因子里的和差 mrow 必须补括号
+    ("<mrow><mrow><mi>m</mi>\u22c5<mi>g</mi></mrow>\u22c5"
+     "<mrow><msub><mi>h</mi><mn>1</mn></msub><mo>\u2212</mo>"
+     "<msub><mi>h</mi><mn>2</mn></msub></mrow></mrow>",
+     "<mo>(</mo>", ""),
+    # ① 反例：W = E2 − E1 —— 和差在「= 右侧整项」位置，不补括号
+    ("<mrow><mi>W</mi><mo>=</mo>"
+     "<mrow><msub><mi>E</mi><mn>2</mn></msub><mo>\u2212</mo>"
+     "<msub><mi>E</mi><mn>1</mn></msub></mrow></mrow>",
+     "", "<mo>(</mo>"),
+    # ④ 平排正体名 x1 → x₁ 下标
+    ("<msup><mi mathvariant=\"normal\">x1</mi><mn>2</mn></msup>",
+     "<msub><mi>x</mi><mn>1</mn></msub>", "x1"),
+    # ⑤ Ek2 → E 下标 k2
+    ("<mrow><mi mathvariant=\"normal\">Ek2</mi><mo>\u2212</mo>"
+     "<mi mathvariant=\"normal\">Ek1</mi></mrow>",
+     "<msub><mi>E</mi><mi mathvariant=\"normal\">k2</mi></msub>", ""),
+    # ⑤ 反例：Ep_s 的底 Ep 绝不能拆（否则嵌套出双层下标）
+    ("<msub><mi mathvariant=\"normal\">Ep</mi><mi>s</mi></msub>",
+     "", "<msub><msub"),
 ]
 
 
@@ -441,7 +897,17 @@ def _selftest():
             print("✘ 输入：%s" % src)
             print("    期望：%s" % want)
             print("    实际：%s" % got)
-    print("自测：%d / %d 通过" % (len(_CASES) - bad, len(_CASES)))
+    for src, must_have, must_not in _MML_CASES:
+        got = display_mathml(src)
+        ok = (not must_have or must_have in got) and \
+             (not must_not or must_not not in got)
+        if not ok:
+            bad += 1
+            print("✘ MML 输入：%s" % src)
+            print("    须含：%s  须无：%s" % (must_have, must_not))
+            print("    实际：%s" % got)
+    total = len(_CASES) + len(_MML_CASES)
+    print("自测：%d / %d 通过" % (total - bad, total))
     return 1 if bad else 0
 
 

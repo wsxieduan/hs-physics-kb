@@ -105,7 +105,7 @@
       "point_id": "mag-02",
       "point_title": "磁感线与磁场叠加",
       "chapter": "第十一章 · 磁场（一）磁场与安培力",
-      "stem": "【第十一章 · 磁场（一）磁场与安培力 · 磁感线与磁场叠加】学生的错误做法：同向叠加时把两个磁感应强度相乘，写成 B<sub>合</sub>=B<sub>1</sub>B<sub>2</sub>（错误表达式：B<sub>合</sub> = B<sub>1</sub>·B<sub>2</sub>）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "stem": "【第十一章 · 磁场（一）磁场与安培力 · 磁感线与磁场叠加】学生的错误做法：同向叠加时把两个磁感应强度相乘，写成 B<sub>合</sub>=B1B2（错误表达式：B<sub>合</sub> = B1·B2）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
       "options": [
         {
           "label": "A",
@@ -125,15 +125,15 @@
         }
       ],
       "correct_answer": "B",
-      "explanation": "右边单位变成 T²，不再是磁感应强度应有的单位 T；这种把矢量叠加误写成乘法的错误可由量纲检查直接发现。\n知识库校验证据：被测错误式：B<sub>合</sub> = B<sub>1</sub>·B<sub>2</sub>；左式量纲：M·T⁻²·I⁻¹；右式量纲：M²·T⁻⁴·I⁻²；左右量纲不匹配；量纲校验说明：实际量纲检查得到等号左边为M·T⁻²·I⁻¹、右边为M²·T⁻⁴·I⁻²；两边不是同一物理量，因此该等式不成立。；变化方向要求：mismatch；检验说明：实际量纲检查得到等号左边为M·T⁻²·I⁻¹、右边为M²·T⁻⁴·I⁻²；两边不是同一物理量，因此该等式不成立。。",
+      "explanation": "右边单位变成 T²，不再是磁感应强度应有的单位 T；这种把矢量叠加误写成乘法的错误可由量纲检查直接发现。\n知识库校验证据：被测错误式：B<sub>合</sub> = B1·B2；左式量纲：M·T⁻²·I⁻¹；右式量纲：M²·T⁻⁴·I⁻²；左右量纲不匹配；量纲校验说明：实际量纲检查得到等号左边为M·T⁻²·I⁻¹、右边为M²·T⁻⁴·I⁻²；两边不是同一物理量，因此该等式不成立。；变化方向要求：mismatch；检验说明：实际量纲检查得到等号左边为M·T⁻²·I⁻¹、右边为M²·T⁻⁴·I⁻²；两边不是同一物理量，因此该等式不成立。。",
       "error_type": "量纲一致性",
       "judging": "auto",
       "source_error_index": 0,
       "source_caught_by": "量纲一致性",
-      "wrong_expr": "B<sub>合</sub> = B<sub>1</sub>·B<sub>2</sub>",
+      "wrong_expr": "B<sub>合</sub> = B1·B2",
       "trap_test": {
         "kind": "dimension",
-        "target": "B_net = B_1*B_2",
+        "target": "B_net = B1*B2",
         "lhs_dim": "M·T^-2·I^-1",
         "rhs_dim": "M^2·T^-4·I^-2",
         "expect": "mismatch",
@@ -155,7 +155,7 @@
       "point_id": "mag-02",
       "point_title": "磁感线与磁场叠加",
       "chapter": "第十一章 · 磁场（一）磁场与安培力",
-      "stem": "【第十一章 · 磁场（一）磁场与安培力 · 磁感线与磁场叠加】学生的错误做法：反向磁场仍直接相加，写成 B<sub>合</sub>=B<sub>1</sub>+B<sub>2</sub>（错误表达式：B<sub>合</sub> = B<sub>1</sub> + B<sub>2</sub>）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "stem": "【第十一章 · 磁场（一）磁场与安培力 · 磁感线与磁场叠加】学生的错误做法：反向磁场仍直接相加，写成 B<sub>合</sub>=B1+B2（错误表达式：B<sub>合</sub> = B1 + B2）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
       "options": [
         {
           "label": "A",
@@ -175,15 +175,15 @@
         }
       ],
       "correct_answer": "A",
-      "explanation": "量纲正确但方向关系错；反向叠加情境会误得 0.005 T，正确大小是 0.001 T。\n知识库校验证据：情境：反向叠加；代入错误式：B<sub>1</sub> + B<sub>2</sub>；校验参照值：0.001。",
+      "explanation": "量纲正确但方向关系错；反向叠加情境会误得 0.005 T，正确大小是 0.001 T。\n知识库校验证据：情境：反向叠加；代入错误式：B1 + B2；校验参照值：0.001。",
       "error_type": "数值代入",
       "judging": "auto",
       "source_error_index": 1,
       "source_caught_by": "数值代入",
-      "wrong_expr": "B<sub>合</sub> = B<sub>1</sub> + B<sub>2</sub>",
+      "wrong_expr": "B<sub>合</sub> = B1 + B2",
       "trap_test": {
         "scenario": "反向叠加",
-        "expr": "B_1 + B_2",
+        "expr": "B1 + B2",
         "ref": 0.001
       },
       "review": {
@@ -561,6 +561,96 @@
         "expr": "(B*I*L + m*g)/m",
         "ref": 5.0
       },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-mag-07-1",
+      "point_id": "mag-07",
+      "point_title": "霍尔效应与霍尔元件",
+      "chapter": "第十一章 · 磁场（一）磁场与安培力",
+      "stem": "【第十一章 · 磁场（一）磁场与安培力 · 霍尔效应与霍尔元件】学生的错误做法：误把电压公式分母中的厚度写成宽度（错误表达式：U<sub>H</sub> = B·I/(n·q·w)）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "量纲一致性：右边量纲不是磁感应强度应有的特斯拉；把力放到分母后，所得单位与 T 完全不符，因此量纲检查可以直接发现。"
+        },
+        {
+          "label": "B",
+          "text": "量纲一致性：右边单位变成 T²，不再是磁感应强度应有的单位 T；这种把矢量叠加误写成乘法的错误可由量纲检查直接发现。"
+        },
+        {
+          "label": "C",
+          "text": "量纲一致性：右边量纲不是电流；质量必须先乘 g 才是与安培力平衡的重力，量纲检查可直接发现。"
+        },
+        {
+          "label": "D",
+          "text": "数值代入：霍尔电压跨宽度产生，而电流截面积也含宽度，消元后宽度约去；错换成宽度虽量纲一致，本例电压会缩小一百倍。"
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "霍尔电压跨宽度产生，而电流截面积也含宽度，消元后宽度约去；错换成宽度虽量纲一致，本例电压会缩小一百倍。\n知识库校验证据：情境：薄片；代入错误式：B·I/(n·q·w)；校验参照值：0.005。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 0,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "U<sub>H</sub> = B·I/(n·q·w)",
+      "trap_test": {
+        "scenario": "薄片",
+        "expr": "B*I/(n*q*w)",
+        "ref": 0.005
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-mag-07-2",
+      "point_id": "mag-07",
+      "point_title": "霍尔效应与霍尔元件",
+      "chapter": "第十一章 · 磁场（一）磁场与安培力",
+      "stem": "【第十一章 · 磁场（一）磁场与安培力 · 霍尔效应与霍尔元件】学生的错误做法：只根据电压大小式判定哪一侧电势高。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "量纲一致性：右边单位变成 T²，不再是磁感应强度应有的单位 T；这种把矢量叠加误写成乘法的错误可由量纲检查直接发现。"
+        },
+        {
+          "label": "B",
+          "text": "数值代入：量纲正确但漏掉投影；倾斜线圈会误得 0.4 Wb，正确值为 0.24 Wb。"
+        },
+        {
+          "label": "C",
+          "text": "概念混淆：同一大小公式可以对应正或负载流子；必须结合电荷符号、电流方向及磁场方向判断横向受力和电压极性。"
+        },
+        {
+          "label": "D",
+          "text": "量纲一致性：右边量纲不是磁感应强度应有的特斯拉；把力放到分母后，所得单位与 T 完全不符，因此量纲检查可以直接发现。"
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "同一大小公式可以对应正或负载流子；必须结合电荷符号、电流方向及磁场方向判断横向受力和电压极性。",
+      "error_type": "概念混淆",
+      "judging": "teacher",
+      "source_error_index": 1,
+      "source_caught_by": "人工审核",
+      "wrong_expr": null,
+      "trap_test": null,
       "review": {
         "confidence": "medium",
         "checks": {

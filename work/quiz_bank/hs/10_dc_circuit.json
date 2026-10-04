@@ -510,7 +510,7 @@
       "wrong_expr": "R<sub>s</sub> = R<sub>1</sub>·R<sub>2</sub>",
       "trap_test": {
         "kind": "dimension",
-        "target": "R_s = R_1*R_2",
+        "target": "R_s = R1*R2",
         "lhs_dim": "M·L^2·T^-3·I^-2",
         "rhs_dim": "M^2·L^4·T^-6·I^-4",
         "expect": "mismatch",
@@ -560,7 +560,7 @@
       "wrong_expr": "R<sub>p</sub> = R<sub>1</sub> + R<sub>2</sub>",
       "trap_test": {
         "scenario": "两个电阻",
-        "expr": "R_1 + R_2",
+        "expr": "R1 + R2",
         "ref": 2.4
       },
       "review": {
@@ -579,7 +579,7 @@
       "point_id": "dc-06",
       "point_title": "闭合电路欧姆定律",
       "chapter": "第十章 · 恒定电流",
-      "stem": "【第十章 · 恒定电流 · 闭合电路欧姆定律】学生的错误做法：忽略电源内阻，写成 I=E/R<sub>外</sub>（错误表达式：I = E/R<sub>外</sub>）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "stem": "【第十章 · 恒定电流 · 闭合电路欧姆定律】学生的错误做法：忽略电源内阻，写成 I=E/R（错误表达式：I = E/R）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
       "options": [
         {
           "label": "A",
@@ -599,15 +599,15 @@
         }
       ],
       "correct_answer": "D",
-      "explanation": "错误式量纲完全正确，量纲检查抓不到；代入实际电源会得 2.4 A，而把内阻计入后的正确值为 2 A。\n知识库校验证据：情境：实际电源；代入错误式：E/R<sub>外</sub>；校验参照值：2.0。",
+      "explanation": "错误式量纲完全正确，量纲检查抓不到；代入实际电源会得 2.4 A，而把内阻计入后的正确值为 2 A。\n知识库校验证据：情境：实际电源；代入错误式：E/R；校验参照值：2.0。",
       "error_type": "数值代入",
       "judging": "auto",
       "source_error_index": 0,
       "source_caught_by": "数值代入",
-      "wrong_expr": "I = E/R<sub>外</sub>",
+      "wrong_expr": "I = E/R",
       "trap_test": {
         "scenario": "实际电源",
-        "expr": "E_emf/R_ext",
+        "expr": "E_emf/R",
         "ref": 2.0
       },
       "review": {
@@ -747,6 +747,186 @@
         "expr": "U_V/I_g",
         "ref": 9900.0
       },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-dc-08-1",
+      "point_id": "dc-08",
+      "point_title": "电源的输出功率与效率",
+      "chapter": "第十章 · 恒定电流",
+      "stem": "【第十章 · 恒定电流 · 电源的输出功率与效率】学生的错误做法：把路端电压始终当成电动势（错误表达式：P<sub>出</sub> = E²/R）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "量纲一致性：s/C 与电流单位 A 的量纲不同；定义式一旦把分子分母颠倒，量纲检查就能直接发现。"
+        },
+        {
+          "label": "B",
+          "text": "量纲一致性：V·Ω 与 A 的量纲不同；把本应相除的电阻改为相乘后，量纲检查会直接拦住。"
+        },
+        {
+          "label": "C",
+          "text": "量纲一致性：错误式的量纲变成 Ω·m⁴，并不是电阻单位 Ω；面积放错位置会被量纲检查直接发现。"
+        },
+        {
+          "label": "D",
+          "text": "数值代入：内阻使路端电压随负载改变；匹配时路端电压只有电动势一半，若直接用电动势平方除外电阻，会把9 W错误算成36 W。"
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "内阻使路端电压随负载改变；匹配时路端电压只有电动势一半，若直接用电动势平方除外电阻，会把9 W错误算成36 W。\n知识库校验证据：情境：匹配；代入错误式：E²/R；校验参照值：9。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 0,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "P<sub>出</sub> = E²/R",
+      "trap_test": {
+        "scenario": "匹配",
+        "expr": "E^2/R",
+        "ref": 9
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-dc-08-2",
+      "point_id": "dc-08",
+      "point_title": "电源的输出功率与效率",
+      "chapter": "第十章 · 恒定电流",
+      "stem": "【第十章 · 恒定电流 · 电源的输出功率与效率】学生的错误做法：追求最大输出功率就等于最高效率。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "量纲一致性：V·Ω 与 A 的量纲不同；把本应相除的电阻改为相乘后，量纲检查会直接拦住。"
+        },
+        {
+          "label": "B",
+          "text": "量纲一致性：错误式的量纲变成 Ω·m⁴，并不是电阻单位 Ω；面积放错位置会被量纲检查直接发现。"
+        },
+        {
+          "label": "C",
+          "text": "概念混淆：匹配负载时电源内部与外部的耗散一样大，效率仅一半；大电阻可使效率接近一，但同时电流和输出功率趋近零。"
+        },
+        {
+          "label": "D",
+          "text": "量纲一致性：s/C 与电流单位 A 的量纲不同；定义式一旦把分子分母颠倒，量纲检查就能直接发现。"
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "匹配负载时电源内部与外部的耗散一样大，效率仅一半；大电阻可使效率接近一，但同时电流和输出功率趋近零。",
+      "error_type": "概念混淆",
+      "judging": "teacher",
+      "source_error_index": 1,
+      "source_caught_by": "人工审核",
+      "wrong_expr": null,
+      "trap_test": null,
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-dc-09-1",
+      "point_id": "dc-09",
+      "point_title": "半偏法测电表内阻",
+      "chapter": "第十章 · 恒定电流",
+      "stem": "【第十章 · 恒定电流 · 半偏法测电表内阻】学生的错误做法：电流表半偏时强行令分流电阻等于真实内阻（错误表达式：R<sub>m</sub> = R<sub>g</sub>）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "量纲一致性：错误式的量纲变成 Ω·m⁴，并不是电阻单位 Ω；面积放错位置会被量纲检查直接发现。"
+        },
+        {
+          "label": "B",
+          "text": "数值代入：并联后回路总电流增大，流入分流支路的电流略多于表头电流；达到半偏所需分流电阻必须稍小，忽略变化会漏掉系统误差。"
+        },
+        {
+          "label": "C",
+          "text": "量纲一致性：s/C 与电流单位 A 的量纲不同；定义式一旦把分子分母颠倒，量纲检查就能直接发现。"
+        },
+        {
+          "label": "D",
+          "text": "量纲一致性：V·Ω 与 A 的量纲不同；把本应相除的电阻改为相乘后，量纲检查会直接拦住。"
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "并联后回路总电流增大，流入分流支路的电流略多于表头电流；达到半偏所需分流电阻必须稍小，忽略变化会漏掉系统误差。\n知识库校验证据：情境：电流表；代入错误式：R<sub>g</sub>；校验参照值：90。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 0,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "R<sub>m</sub> = R<sub>g</sub>",
+      "trap_test": {
+        "scenario": "电流表",
+        "expr": "R_g",
+        "ref": 90
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-dc-09-2",
+      "point_id": "dc-09",
+      "point_title": "半偏法测电表内阻",
+      "chapter": "第十章 · 恒定电流",
+      "stem": "【第十章 · 恒定电流 · 半偏法测电表内阻】学生的错误做法：无论电表种类都认为半偏测量值偏小。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "概念混淆：电流表采用并联分流、电压表采用串联分压，回路变化不同；在本卡固定电源模型中，前者低估、后者高估，不能只凭半偏二字判断。"
+        },
+        {
+          "label": "B",
+          "text": "量纲一致性：s/C 与电流单位 A 的量纲不同；定义式一旦把分子分母颠倒，量纲检查就能直接发现。"
+        },
+        {
+          "label": "C",
+          "text": "量纲一致性：V·Ω 与 A 的量纲不同；把本应相除的电阻改为相乘后，量纲检查会直接拦住。"
+        },
+        {
+          "label": "D",
+          "text": "量纲一致性：错误式的量纲变成 Ω·m⁴，并不是电阻单位 Ω；面积放错位置会被量纲检查直接发现。"
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "电流表采用并联分流、电压表采用串联分压，回路变化不同；在本卡固定电源模型中，前者低估、后者高估，不能只凭半偏二字判断。",
+      "error_type": "概念混淆",
+      "judging": "teacher",
+      "source_error_index": 1,
+      "source_caught_by": "人工审核",
+      "wrong_expr": null,
+      "trap_test": null,
       "review": {
         "confidence": "medium",
         "checks": {

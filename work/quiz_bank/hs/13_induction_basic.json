@@ -8,7 +8,7 @@
       "point_id": "ind-01",
       "point_title": "电磁感应现象与产生条件",
       "chapter": "第十三章 · 电磁感应（一）楞次与法拉第",
-      "stem": "【第十三章 · 电磁感应（一）楞次与法拉第 · 电磁感应现象与产生条件】学生的错误做法：只要闭合线圈处在磁场中，就一定有感应电流（错误表达式：ΔΦ = Φ<sub>2</sub>）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "stem": "【第十三章 · 电磁感应（一）楞次与法拉第 · 电磁感应现象与产生条件】学生的错误做法：只要闭合线圈处在磁场中，就一定有感应电流（错误表达式：ΔΦ = Φ2）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
       "options": [
         {
           "label": "A",
@@ -28,15 +28,15 @@
         }
       ],
       "correct_answer": "D",
-      "explanation": "感应取决于磁通量的变化而非磁通量本身。磁通量不变情境中 Φ<sub>2</sub>=0.30 Wb，但正确变化量是 0。\n知识库校验证据：情境：磁通量不变；代入错误式：Φ<sub>2</sub>；校验参照值：0.0。",
+      "explanation": "感应取决于磁通量的变化而非磁通量本身。磁通量不变情境中 Φ2=0.30 Wb，但正确变化量是 0。\n知识库校验证据：情境：磁通量不变；代入错误式：Φ2；校验参照值：0.0。",
       "error_type": "数值代入",
       "judging": "auto",
       "source_error_index": 0,
       "source_caught_by": "数值代入",
-      "wrong_expr": "ΔΦ = Φ<sub>2</sub>",
+      "wrong_expr": "ΔΦ = Φ2",
       "trap_test": {
         "scenario": "磁通量不变",
-        "expr": "Phi_2",
+        "expr": "Phi2",
         "ref": 0.0
       },
       "review": {
@@ -55,7 +55,7 @@
       "point_id": "ind-01",
       "point_title": "电磁感应现象与产生条件",
       "chapter": "第十三章 · 电磁感应（一）楞次与法拉第",
-      "stem": "【第十三章 · 电磁感应（一）楞次与法拉第 · 电磁感应现象与产生条件】学生的错误做法：把磁通量变化量写成初态减末态 ΔΦ=Φ<sub>1</sub>−Φ<sub>2</sub>（错误表达式：ΔΦ = Φ<sub>1</sub> - Φ<sub>2</sub>）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "stem": "【第十三章 · 电磁感应（一）楞次与法拉第 · 电磁感应现象与产生条件】学生的错误做法：把磁通量变化量写成初态减末态 ΔΦ=Φ1−Φ2（错误表达式：ΔΦ = Φ1 - Φ2）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
       "options": [
         {
           "label": "A",
@@ -75,15 +75,15 @@
         }
       ],
       "correct_answer": "C",
-      "explanation": "量纲完全正确但符号相反；在约定末态减初态后，0.12−0.36=−0.24 Wb，而正确值为 +0.24 Wb。\n知识库校验证据：情境：磁通量增大；代入错误式：Φ<sub>1</sub> - Φ<sub>2</sub>；校验参照值：0.24。",
+      "explanation": "量纲完全正确但符号相反；在约定末态减初态后，0.12−0.36=−0.24 Wb，而正确值为 +0.24 Wb。\n知识库校验证据：情境：磁通量增大；代入错误式：Φ1 - Φ2；校验参照值：0.24。",
       "error_type": "数值代入",
       "judging": "auto",
       "source_error_index": 1,
       "source_caught_by": "数值代入",
-      "wrong_expr": "ΔΦ = Φ<sub>1</sub> - Φ<sub>2</sub>",
+      "wrong_expr": "ΔΦ = Φ1 - Φ2",
       "trap_test": {
         "scenario": "磁通量增大",
-        "expr": "Phi_1 - Phi_2",
+        "expr": "Phi1 - Phi2",
         "ref": 0.24
       },
       "review": {
@@ -383,7 +383,7 @@
       "point_id": "ind-05",
       "point_title": "感生电动势与动生电动势",
       "chapter": "第十三章 · 电磁感应（一）楞次与法拉第",
-      "stem": "【第十三章 · 电磁感应（一）楞次与法拉第 · 感生电动势与动生电动势】学生的错误做法：只要同时有感生和动生电动势，就把两者大小直接相加（错误表达式：E<sub>总</sub> = E<sub>感</sub> + abs(E<sub>移</sub>)）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "stem": "【第十三章 · 电磁感应（一）楞次与法拉第 · 感生电动势与动生电动势】学生的错误做法：只要同时有感生和动生电动势，就把两者大小直接相加（错误表达式：E<sub>总</sub> = E<sub>i</sub> + abs(E<sub>移</sub>)）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
       "options": [
         {
           "label": "A",
@@ -403,15 +403,15 @@
         }
       ],
       "correct_answer": "D",
-      "explanation": "反向情境中错误式得 3+2=5 V，实际应按统一方向代数相加为 3+(−2)=1 V。\n知识库校验证据：情境：两种效应反向；代入错误式：E<sub>感</sub> + abs(E<sub>移</sub>)；校验参照值：1.0。",
+      "explanation": "反向情境中错误式得 3+2=5 V，实际应按统一方向代数相加为 3+(−2)=1 V。\n知识库校验证据：情境：两种效应反向；代入错误式：E<sub>i</sub> + abs(E<sub>移</sub>)；校验参照值：1.0。",
       "error_type": "数值代入",
       "judging": "auto",
       "source_error_index": 0,
       "source_caught_by": "数值代入",
-      "wrong_expr": "E<sub>总</sub> = E<sub>感</sub> + abs(E<sub>移</sub>)",
+      "wrong_expr": "E<sub>总</sub> = E<sub>i</sub> + abs(E<sub>移</sub>)",
       "trap_test": {
         "scenario": "两种效应反向",
-        "expr": "E_ind + abs(E_move)",
+        "expr": "E_i + abs(E_move)",
         "ref": 1.0
       },
       "review": {
@@ -523,7 +523,7 @@
       "point_id": "ind-06",
       "point_title": "感应电流的电路分析",
       "chapter": "第十三章 · 电磁感应（一）楞次与法拉第",
-      "stem": "【第十三章 · 电磁感应（一）楞次与法拉第 · 感应电流的电路分析】学生的错误做法：计算多匝线圈通过的电荷量时漏乘匝数 n，写成 Q<sub>感</sub>=abs(ΔΦ)/R<sub>总</sub>（错误表达式：Q<sub>感</sub> = abs(ΔΦ)/R<sub>总</sub>）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "stem": "【第十三章 · 电磁感应（一）楞次与法拉第 · 感应电流的电路分析】学生的错误做法：计算多匝线圈通过的电荷量时漏乘匝数 n，写成 q=abs(ΔΦ)/R<sub>总</sub>（错误表达式：q = abs(ΔΦ)/R<sub>总</sub>）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
       "options": [
         {
           "label": "A",
@@ -548,7 +548,7 @@
       "judging": "auto",
       "source_error_index": 1,
       "source_caught_by": "数值代入",
-      "wrong_expr": "Q<sub>感</sub> = abs(ΔΦ)/R<sub>总</sub>",
+      "wrong_expr": "q = abs(ΔΦ)/R<sub>总</sub>",
       "trap_test": {
         "scenario": "闭合感应回路",
         "expr": "abs(Delta_Phi)/R_total",

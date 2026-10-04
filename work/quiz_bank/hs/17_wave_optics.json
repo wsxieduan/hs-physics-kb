@@ -381,6 +381,96 @@
         },
         "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
       }
+    },
+    {
+      "id": "diagnostic-wop-05-1",
+      "point_id": "wop-05",
+      "point_title": "光栅衍射",
+      "chapter": "第十七章 · 波动光学",
+      "stem": "【第十七章 · 波动光学 · 光栅衍射】学生的错误做法：较大衍射角仍用正弦近似正切求屏位置（错误表达式：s = L·k·λ/d）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "量纲一致性：周期单位是 s，频率单位是 Hz，即 1/s，量纲不同；绿光周期约为 1.67×10⁻¹⁵ s，不是 6.0×10¹⁴ s。"
+        },
+        {
+          "label": "B",
+          "text": "概念混淆：相邻缝间距控制多缝相位差，单缝宽度控制衍射包络；两者是不同几何参数，即使单位相同也不能互换。"
+        },
+        {
+          "label": "C",
+          "text": "数值代入：错误式把 L 与 d 颠倒后量纲仍是长度，所以量纲检查抓不到。"
+        },
+        {
+          "label": "D",
+          "text": "数值代入：屏幕横坐标由轴向距离乘角度正切给出；本例30度已不适合小角近似，近似式给0.866 m而正确为1 m。"
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "屏幕横坐标由轴向距离乘角度正切给出；本例30度已不适合小角近似，近似式给0.866 m而正确为1 m。\n知识库校验证据：情境：一级；代入错误式：L·k·λ/d；校验参照值：1。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 0,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "s = L·k·λ/d",
+      "trap_test": {
+        "scenario": "一级",
+        "expr": "L*k*lambda/d",
+        "ref": 1
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-wop-05-2",
+      "point_id": "wop-05",
+      "point_title": "光栅衍射",
+      "chapter": "第十七章 · 波动光学",
+      "stem": "【第十七章 · 波动光学 · 光栅衍射】学生的错误做法：把缝宽当成光栅常量来求主极大。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "数值代入：本情境会得到 20，大于正弦值上限 1，物理上不可能；正确值为 0.05。"
+        },
+        {
+          "label": "B",
+          "text": "数值代入：第一片偏振片只保留一个方向的电场投影，理想情况下平均光强减半。"
+        },
+        {
+          "label": "C",
+          "text": "概念混淆：相邻缝间距控制多缝相位差，单缝宽度控制衍射包络；两者是不同几何参数，即使单位相同也不能互换。"
+        },
+        {
+          "label": "D",
+          "text": "数值代入：错误式把 L 与 d 颠倒后量纲仍是长度，所以量纲检查抓不到。"
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "相邻缝间距控制多缝相位差，单缝宽度控制衍射包络；两者是不同几何参数，即使单位相同也不能互换。",
+      "error_type": "概念混淆",
+      "judging": "teacher",
+      "source_error_index": 1,
+      "source_caught_by": "人工审核",
+      "wrong_expr": null,
+      "trap_test": null,
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
     }
   ],
   "skipped": []

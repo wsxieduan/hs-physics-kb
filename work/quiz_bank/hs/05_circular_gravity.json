@@ -414,7 +414,7 @@
       "wrong_expr": "F<sub>g</sub> = 2·G·m1·m2/r²",
       "trap_test": {
         "scenario": "两物体引力",
-        "expr": "2*G_const*m1*m2/r^2",
+        "expr": "2*G*m1*m2/r^2",
         "ref": 1.334e-06
       },
       "review": {
@@ -504,7 +504,7 @@
       "wrong_expr": "v<sub>轨</sub> = √(2·G·M/r)",
       "trap_test": {
         "scenario": "近地圆轨道",
-        "expr": "sqrt(2*G_const*M/r)",
+        "expr": "sqrt(2*G*M/r)",
         "ref": 7907.670326967355
       },
       "review": {
@@ -637,9 +637,326 @@
       "wrong_expr": "T = π·√(a³/(G·M))",
       "trap_test": {
         "scenario": "地球近似轨道",
-        "expr": "pi*sqrt(a^3/(G_const*M))",
+        "expr": "pi*sqrt(a^3/(G*M))",
         "ref": 31691036.84921312
       },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-cir-08-1",
+      "point_id": "cir-08",
+      "point_title": "三种宇宙速度",
+      "chapter": "第五章 · 圆周运动与万有引力",
+      "stem": "【第五章 · 圆周运动与万有引力 · 三种宇宙速度】学生的错误做法：第二宇宙速度直接取第一的两倍（错误表达式：v<sub>2</sub> = 2·v<sub>1</sub>）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "概念混淆：等面积定律要求近日点速度较大、远日点速度较小；只有面积速度保持不变。"
+        },
+        {
+          "label": "B",
+          "text": "数值代入：第二速度的平方是第一速度平方的两倍，开平方后系数应为根号二；把能量倍数直接当速度倍数会把发射要求明显算大。"
+        },
+        {
+          "label": "C",
+          "text": "量纲一致性：除法使量纲变成 1/(m·s)，不再是速度；而且会错误地认为同一转盘上离轴越远线速度越小。"
+        },
+        {
+          "label": "D",
+          "text": "量纲一致性：v/r 的单位是 1/s，不是加速度单位 m/s²，量纲检查可直接发现。"
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "第二速度的平方是第一速度平方的两倍，开平方后系数应为根号二；把能量倍数直接当速度倍数会把发射要求明显算大。\n知识库校验证据：情境：标准情境；代入错误式：2·v<sub>1</sub>；校验参照值：11183.134623172522。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 0,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "v<sub>2</sub> = 2·v<sub>1</sub>",
+      "trap_test": {
+        "scenario": "标准情境",
+        "expr": "2*v1",
+        "ref": 11183.134623172522
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-cir-08-2",
+      "point_id": "cir-08",
+      "point_title": "三种宇宙速度",
+      "chapter": "第五章 · 圆周运动与万有引力",
+      "stem": "【第五章 · 圆周运动与万有引力 · 三种宇宙速度】学生的错误做法：把地球公转速率直接当作太阳逃逸所需余速（错误表达式：v<sub>3</sub> = √(v<sub>2</sub>²+v<sub>E</sub>²)）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "数值代入：逃逸所需是√2vE−vE的相对余速，不是整段地球公转速度；误用会把第三宇宙速度算高。"
+        },
+        {
+          "label": "B",
+          "text": "量纲一致性：除法使量纲变成 1/(m·s)，不再是速度；而且会错误地认为同一转盘上离轴越远线速度越小。"
+        },
+        {
+          "label": "C",
+          "text": "量纲一致性：v/r 的单位是 1/s，不是加速度单位 m/s²，量纲检查可直接发现。"
+        },
+        {
+          "label": "D",
+          "text": "概念混淆：等面积定律要求近日点速度较大、远日点速度较小；只有面积速度保持不变。"
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "逃逸所需是√2vE−vE的相对余速，不是整段地球公转速度；误用会把第三宇宙速度算高。\n知识库校验证据：情境：标准情境；代入错误式：√(v<sub>2</sub>²+v<sub>E</sub>²)；校验参照值：16649.759625596318。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 1,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "v<sub>3</sub> = √(v<sub>2</sub>²+v<sub>E</sub>²)",
+      "trap_test": {
+        "scenario": "标准情境",
+        "expr": "sqrt(v2^2+v_E^2)",
+        "ref": 16649.759625596318
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-cir-08-3",
+      "point_id": "cir-08",
+      "point_title": "三种宇宙速度",
+      "chapter": "第五章 · 圆周运动与万有引力",
+      "stem": "【第五章 · 圆周运动与万有引力 · 三种宇宙速度】学生的错误做法：把第三宇宙速度写成只由地球参数决定的固定根号系数。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "量纲一致性：除法使量纲变成 1/(m·s)，不再是速度；而且会错误地认为同一转盘上离轴越远线速度越小。"
+        },
+        {
+          "label": "B",
+          "text": "量纲一致性：v/r 的单位是 1/s，不是加速度单位 m/s²，量纲检查可直接发现。"
+        },
+        {
+          "label": "C",
+          "text": "数值代入：多出的 1/2 不改变量纲，量纲检查抓不到；本情境会得到 12 N，正确径向合力是 24 N。"
+        },
+        {
+          "label": "D",
+          "text": "概念混淆：第三宇宙速度取决于太阳引力、日地距离和发射方向；没有说明这些条件时，不能从第一、第二宇宙速度直接猜系数。"
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "第三宇宙速度取决于太阳引力、日地距离和发射方向；没有说明这些条件时，不能从第一、第二宇宙速度直接猜系数。",
+      "error_type": "概念混淆",
+      "judging": "teacher",
+      "source_error_index": 2,
+      "source_caught_by": "人工审核",
+      "wrong_expr": null,
+      "trap_test": null,
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-cir-09-1",
+      "point_id": "cir-09",
+      "point_title": "近地卫星、同步卫星与赤道上物体的比较",
+      "chapter": "第五章 · 圆周运动与万有引力",
+      "stem": "【第五章 · 圆周运动与万有引力 · 近地卫星、同步卫星与赤道上物体的比较】学生的错误做法：忽略自转时误把表观重力加速度写成相加（错误表达式：g = g<sub>0</sub>+ω²·R）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "量纲一致性：v/r 的单位是 1/s，不是加速度单位 m/s²，量纲检查可直接发现。"
+        },
+        {
+          "label": "B",
+          "text": "概念混淆：等面积定律要求近日点速度较大、远日点速度较小；只有面积速度保持不变。"
+        },
+        {
+          "label": "C",
+          "text": "数值代入：地面支持力只需要补足引力之外的径向受力差，自转占用了部分引力；加号会使赤道表观重力比纯引力还大，方向错误且量纲正确。"
+        },
+        {
+          "label": "D",
+          "text": "量纲一致性：除法使量纲变成 1/(m·s)，不再是速度；而且会错误地认为同一转盘上离轴越远线速度越小。"
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "地面支持力只需要补足引力之外的径向受力差，自转占用了部分引力；加号会使赤道表观重力比纯引力还大，方向错误且量纲正确。\n知识库校验证据：情境：地球模型；代入错误式：g<sub>0</sub>+ω²·R；校验参照值：9.965968029641427。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 0,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "g = g<sub>0</sub>+ω²·R",
+      "trap_test": {
+        "scenario": "地球模型",
+        "expr": "g_0+omega^2*R",
+        "ref": 9.965968029641427
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-cir-09-2",
+      "point_id": "cir-09",
+      "point_title": "近地卫星、同步卫星与赤道上物体的比较",
+      "chapter": "第五章 · 圆周运动与万有引力",
+      "stem": "【第五章 · 圆周运动与万有引力 · 近地卫星、同步卫星与赤道上物体的比较】学生的错误做法：同步卫星可以停在任意纬度地点正上方。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "数值代入：多出的 1/2 不改变量纲，量纲检查抓不到；本情境会得到 12 N，正确径向合力是 24 N。"
+        },
+        {
+          "label": "B",
+          "text": "概念混淆：自由圆轨道的轨道面通过地心，要与地面保持同一方向就必须在赤道平面并同向同周期；非赤道地点不能由普通同步卫星直接定点悬在正上方。"
+        },
+        {
+          "label": "C",
+          "text": "量纲一致性：除法使量纲变成 1/(m·s)，不再是速度；而且会错误地认为同一转盘上离轴越远线速度越小。"
+        },
+        {
+          "label": "D",
+          "text": "量纲一致性：v/r 的单位是 1/s，不是加速度单位 m/s²，量纲检查可直接发现。"
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "自由圆轨道的轨道面通过地心，要与地面保持同一方向就必须在赤道平面并同向同周期；非赤道地点不能由普通同步卫星直接定点悬在正上方。",
+      "error_type": "概念混淆",
+      "judging": "teacher",
+      "source_error_index": 1,
+      "source_caught_by": "人工审核",
+      "wrong_expr": null,
+      "trap_test": null,
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-cir-10-1",
+      "point_id": "cir-10",
+      "point_title": "三星系统：等质量正三角形模型",
+      "chapter": "第五章 · 圆周运动与万有引力",
+      "stem": "【第五章 · 圆周运动与万有引力 · 三星系统：等质量正三角形模型】学生的错误做法：把两份引力直接标量相加（错误表达式：F = 2·G·m²/d²）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "数值代入：两份引力夹角为六十度，不能直接当作同向；正确合力为根号三倍单份引力，直接相加会高估但量纲正确。"
+        },
+        {
+          "label": "B",
+          "text": "量纲一致性：除法使量纲变成 1/(m·s)，不再是速度；而且会错误地认为同一转盘上离轴越远线速度越小。"
+        },
+        {
+          "label": "C",
+          "text": "量纲一致性：v/r 的单位是 1/s，不是加速度单位 m/s²，量纲检查可直接发现。"
+        },
+        {
+          "label": "D",
+          "text": "概念混淆：等面积定律要求近日点速度较大、远日点速度较小；只有面积速度保持不变。"
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "两份引力夹角为六十度，不能直接当作同向；正确合力为根号三倍单份引力，直接相加会高估但量纲正确。\n知识库校验证据：情境：对称；代入错误式：2·G·m²/d²；校验参照值：1.1560226704956957e+30。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 0,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "F = 2·G·m²/d²",
+      "trap_test": {
+        "scenario": "对称",
+        "expr": "2*G*m^2/d^2",
+        "ref": 1.1560226704956957e+30
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-cir-10-2",
+      "point_id": "cir-10",
+      "point_title": "三星系统：等质量正三角形模型",
+      "chapter": "第五章 · 圆周运动与万有引力",
+      "stem": "【第五章 · 圆周运动与万有引力 · 三星系统：等质量正三角形模型】学生的错误做法：把边长当成绕质心圆周半径。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "量纲一致性：除法使量纲变成 1/(m·s)，不再是速度；而且会错误地认为同一转盘上离轴越远线速度越小。"
+        },
+        {
+          "label": "B",
+          "text": "量纲一致性：v/r 的单位是 1/s，不是加速度单位 m/s²，量纲检查可直接发现。"
+        },
+        {
+          "label": "C",
+          "text": "数值代入：多出的 1/2 不改变量纲，量纲检查抓不到；本情境会得到 12 N，正确径向合力是 24 N。"
+        },
+        {
+          "label": "D",
+          "text": "概念混淆：引力分母使用天体间距，向心加速度使用天体到共同质心的半径；两个距离相差根号三，不能在同一道式中互换。"
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "引力分母使用天体间距，向心加速度使用天体到共同质心的半径；两个距离相差根号三，不能在同一道式中互换。",
+      "error_type": "概念混淆",
+      "judging": "teacher",
+      "source_error_index": 1,
+      "source_caught_by": "人工审核",
+      "wrong_expr": null,
+      "trap_test": null,
       "review": {
         "confidence": "medium",
         "checks": {

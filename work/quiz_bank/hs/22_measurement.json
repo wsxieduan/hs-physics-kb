@@ -1,0 +1,685 @@
+{
+  "segment": "高中",
+  "chapter": "第二十二章 · 测量工具、数据处理与实验基础",
+  "source_file": "22_measurement.json",
+  "questions": [
+    {
+      "id": "diagnostic-exp-01-1",
+      "point_id": "exp-01",
+      "point_title": "打点计时器、纸带与计数点",
+      "chapter": "第二十二章 · 测量工具、数据处理与实验基础",
+      "stem": "【第二十二章 · 测量工具、数据处理与实验基础 · 打点计时器、纸带与计数点】学生的错误做法：把五个间隔误认为六个间隔（错误表达式：T<sub>c</sub> = (n+1)/f）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "概念混淆：有阻力变化、拉动不均匀或点迹模糊时，位移差未必恒定，应先检查数据而不是用公式强行拟合。"
+        },
+        {
+          "label": "B",
+          "text": "概念混淆：两次遮光持续时间不是物体从第一门到第二门的通行时间，使用速度变化率时需记录正确的时刻差。"
+        },
+        {
+          "label": "C",
+          "text": "概念混淆：导轨倾斜、气流、碰撞器固定部件和残余摩擦都可能造成外冲量，必须通过调平和数据差值检验。"
+        },
+        {
+          "label": "D",
+          "text": "数值代入：数到两端六个点不等于经历六个时间间隔；该错误量纲正确，却使本例计数周期从0.10 s错成0.12 s。"
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "数到两端六个点不等于经历六个时间间隔；该错误量纲正确，却使本例计数周期从0.10 s错成0.12 s。\n知识库校验证据：情境：基准；代入错误式：(n+1)/f；校验参照值：0.1。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 0,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "T<sub>c</sub> = (n+1)/f",
+      "trap_test": {
+        "scenario": "基准",
+        "expr": "(n+1)/f",
+        "ref": 0.1
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-exp-01-2",
+      "point_id": "exp-01",
+      "point_title": "打点计时器、纸带与计数点",
+      "chapter": "第二十二章 · 测量工具、数据处理与实验基础",
+      "stem": "【第二十二章 · 测量工具、数据处理与实验基础 · 打点计时器、纸带与计数点】学生的错误做法：未核对型号便把所有计时器接到同一种电源。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "数值代入：一次遮光对应条宽而非两倍条宽；错误式仍有速度量纲，本例错误值为2.0 m/s而正确值为1.0 m/s。"
+        },
+        {
+          "label": "B",
+          "text": "数值代入：动量是矢量，反弹方向与所选正方向相反；把负速度改成其大小会算出0.28而不是0.20 kg·m/s。"
+        },
+        {
+          "label": "C",
+          "text": "概念混淆：供电要求随型号变化，必须核对铭牌与接线说明；计时公式无法识别接线是否安全、纸带是否卡住。"
+        },
+        {
+          "label": "D",
+          "text": "数值代入：两组平均速度的时间中心相隔两个计数周期；漏掉这个间隔因子会使加速度加倍，量纲检查无法发现。"
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "供电要求随型号变化，必须核对铭牌与接线说明；计时公式无法识别接线是否安全、纸带是否卡住。",
+      "error_type": "概念混淆",
+      "judging": "teacher",
+      "source_error_index": 1,
+      "source_caught_by": "人工审核",
+      "wrong_expr": null,
+      "trap_test": null,
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-exp-02-1",
+      "point_id": "exp-02",
+      "point_title": "纸带瞬时速度、逐差法与运动检验",
+      "chapter": "第二十二章 · 测量工具、数据处理与实验基础",
+      "stem": "【第二十二章 · 测量工具、数据处理与实验基础 · 纸带瞬时速度、逐差法与运动检验】学生的错误做法：逐差时把分母写成两倍周期平方（错误表达式：a = ((x<sub>3</sub>+x<sub>4</sub>)-(x<sub>1</sub>+x<sub>2</sub>))/(2·T<sub>c</sub>²)）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "概念混淆：导轨倾斜、气流、碰撞器固定部件和残余摩擦都可能造成外冲量，必须通过调平和数据差值检验。"
+        },
+        {
+          "label": "B",
+          "text": "数值代入：两组平均速度的时间中心相隔两个计数周期；漏掉这个间隔因子会使加速度加倍，量纲检查无法发现。"
+        },
+        {
+          "label": "C",
+          "text": "概念混淆：供电要求随型号变化，必须核对铭牌与接线说明；计时公式无法识别接线是否安全、纸带是否卡住。"
+        },
+        {
+          "label": "D",
+          "text": "概念混淆：两次遮光持续时间不是物体从第一门到第二门的通行时间，使用速度变化率时需记录正确的时刻差。"
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "两组平均速度的时间中心相隔两个计数周期；漏掉这个间隔因子会使加速度加倍，量纲检查无法发现。\n知识库校验证据：情境：基准；代入错误式：((x<sub>3</sub>+x<sub>4</sub>)-(x<sub>1</sub>+x<sub>2</sub>))/(2·T<sub>c</sub>²)；校验参照值：2。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 0,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "a = ((x<sub>3</sub>+x<sub>4</sub>)-(x<sub>1</sub>+x<sub>2</sub>))/(2·T<sub>c</sub>²)",
+      "trap_test": {
+        "scenario": "基准",
+        "expr": "((x3+x4)-(x1+x2))/(2*T_c^2)",
+        "ref": 2
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-exp-02-2",
+      "point_id": "exp-02",
+      "point_title": "纸带瞬时速度、逐差法与运动检验",
+      "chapter": "第二十二章 · 测量工具、数据处理与实验基础",
+      "stem": "【第二十二章 · 测量工具、数据处理与实验基础 · 纸带瞬时速度、逐差法与运动检验】学生的错误做法：不检验运动性质就把所有纸带都按匀变速处理。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "概念混淆：有阻力变化、拉动不均匀或点迹模糊时，位移差未必恒定，应先检查数据而不是用公式强行拟合。"
+        },
+        {
+          "label": "B",
+          "text": "数值代入：数到两端六个点不等于经历六个时间间隔；该错误量纲正确，却使本例计数周期从0.10 s错成0.12 s。"
+        },
+        {
+          "label": "C",
+          "text": "数值代入：一次遮光对应条宽而非两倍条宽；错误式仍有速度量纲，本例错误值为2.0 m/s而正确值为1.0 m/s。"
+        },
+        {
+          "label": "D",
+          "text": "数值代入：动量是矢量，反弹方向与所选正方向相反；把负速度改成其大小会算出0.28而不是0.20 kg·m/s。"
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "有阻力变化、拉动不均匀或点迹模糊时，位移差未必恒定，应先检查数据而不是用公式强行拟合。",
+      "error_type": "概念混淆",
+      "judging": "teacher",
+      "source_error_index": 1,
+      "source_caught_by": "人工审核",
+      "wrong_expr": null,
+      "trap_test": null,
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-exp-03-1",
+      "point_id": "exp-03",
+      "point_title": "光电门、遮光条与速度测量",
+      "chapter": "第二十二章 · 测量工具、数据处理与实验基础",
+      "stem": "【第二十二章 · 测量工具、数据处理与实验基础 · 光电门、遮光条与速度测量】学生的错误做法：把条宽误乘二再计算速度（错误表达式：v<sub>1</sub> = 2·d/t<sub>1</sub>）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "概念混淆：供电要求随型号变化，必须核对铭牌与接线说明；计时公式无法识别接线是否安全、纸带是否卡住。"
+        },
+        {
+          "label": "B",
+          "text": "概念混淆：有阻力变化、拉动不均匀或点迹模糊时，位移差未必恒定，应先检查数据而不是用公式强行拟合。"
+        },
+        {
+          "label": "C",
+          "text": "概念混淆：导轨倾斜、气流、碰撞器固定部件和残余摩擦都可能造成外冲量，必须通过调平和数据差值检验。"
+        },
+        {
+          "label": "D",
+          "text": "数值代入：一次遮光对应条宽而非两倍条宽；错误式仍有速度量纲，本例错误值为2.0 m/s而正确值为1.0 m/s。"
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "一次遮光对应条宽而非两倍条宽；错误式仍有速度量纲，本例错误值为2.0 m/s而正确值为1.0 m/s。\n知识库校验证据：情境：基准；代入错误式：2·d/t<sub>1</sub>；校验参照值：1。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 0,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "v<sub>1</sub> = 2·d/t<sub>1</sub>",
+      "trap_test": {
+        "scenario": "基准",
+        "expr": "2*d/t1",
+        "ref": 1
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-exp-03-2",
+      "point_id": "exp-03",
+      "point_title": "光电门、遮光条与速度测量",
+      "chapter": "第二十二章 · 测量工具、数据处理与实验基础",
+      "stem": "【第二十二章 · 测量工具、数据处理与实验基础 · 光电门、遮光条与速度测量】学生的错误做法：把两个遮光持续时间之差当作两门运动时间。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "数值代入：两组平均速度的时间中心相隔两个计数周期；漏掉这个间隔因子会使加速度加倍，量纲检查无法发现。"
+        },
+        {
+          "label": "B",
+          "text": "数值代入：动量是矢量，反弹方向与所选正方向相反；把负速度改成其大小会算出0.28而不是0.20 kg·m/s。"
+        },
+        {
+          "label": "C",
+          "text": "概念混淆：两次遮光持续时间不是物体从第一门到第二门的通行时间，使用速度变化率时需记录正确的时刻差。"
+        },
+        {
+          "label": "D",
+          "text": "数值代入：数到两端六个点不等于经历六个时间间隔；该错误量纲正确，却使本例计数周期从0.10 s错成0.12 s。"
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "两次遮光持续时间不是物体从第一门到第二门的通行时间，使用速度变化率时需记录正确的时刻差。",
+      "error_type": "概念混淆",
+      "judging": "teacher",
+      "source_error_index": 1,
+      "source_caught_by": "人工审核",
+      "wrong_expr": null,
+      "trap_test": null,
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-exp-04-1",
+      "point_id": "exp-04",
+      "point_title": "气垫导轨、碰撞与动量验证",
+      "chapter": "第二十二章 · 测量工具、数据处理与实验基础",
+      "stem": "【第二十二章 · 测量工具、数据处理与实验基础 · 气垫导轨、碰撞与动量验证】学生的错误做法：把反弹速度按正值相加（错误表达式：p<sub>p</sub> = m1·(-v<sub>1</sub>′)+m2·v<sub>2</sub>′）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "概念混淆：两次遮光持续时间不是物体从第一门到第二门的通行时间，使用速度变化率时需记录正确的时刻差。"
+        },
+        {
+          "label": "B",
+          "text": "数值代入：动量是矢量，反弹方向与所选正方向相反；把负速度改成其大小会算出0.28而不是0.20 kg·m/s。"
+        },
+        {
+          "label": "C",
+          "text": "概念混淆：供电要求随型号变化，必须核对铭牌与接线说明；计时公式无法识别接线是否安全、纸带是否卡住。"
+        },
+        {
+          "label": "D",
+          "text": "概念混淆：有阻力变化、拉动不均匀或点迹模糊时，位移差未必恒定，应先检查数据而不是用公式强行拟合。"
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "动量是矢量，反弹方向与所选正方向相反；把负速度改成其大小会算出0.28而不是0.20 kg·m/s。\n知识库校验证据：情境：基准；代入错误式：m<sub>1</sub>·(-v<sub>1</sub>_p)+m<sub>2</sub>·v<sub>2</sub>_p；校验参照值：0.2。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 0,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "p<sub>p</sub> = m1·(-v<sub>1</sub>′)+m2·v<sub>2</sub>′",
+      "trap_test": {
+        "scenario": "基准",
+        "expr": "m1*(-v1_p)+m2*v2_p",
+        "ref": 0.2
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-exp-04-2",
+      "point_id": "exp-04",
+      "point_title": "气垫导轨、碰撞与动量验证",
+      "chapter": "第二十二章 · 测量工具、数据处理与实验基础",
+      "stem": "【第二十二章 · 测量工具、数据处理与实验基础 · 气垫导轨、碰撞与动量验证】学生的错误做法：认为气垫导轨上任何过程都绝对没有外力。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "概念混淆：导轨倾斜、气流、碰撞器固定部件和残余摩擦都可能造成外冲量，必须通过调平和数据差值检验。"
+        },
+        {
+          "label": "B",
+          "text": "数值代入：数到两端六个点不等于经历六个时间间隔；该错误量纲正确，却使本例计数周期从0.10 s错成0.12 s。"
+        },
+        {
+          "label": "C",
+          "text": "数值代入：两组平均速度的时间中心相隔两个计数周期；漏掉这个间隔因子会使加速度加倍，量纲检查无法发现。"
+        },
+        {
+          "label": "D",
+          "text": "数值代入：一次遮光对应条宽而非两倍条宽；错误式仍有速度量纲，本例错误值为2.0 m/s而正确值为1.0 m/s。"
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "导轨倾斜、气流、碰撞器固定部件和残余摩擦都可能造成外冲量，必须通过调平和数据差值检验。",
+      "error_type": "概念混淆",
+      "judging": "teacher",
+      "source_error_index": 1,
+      "source_caught_by": "人工审核",
+      "wrong_expr": null,
+      "trap_test": null,
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-exp-05-1",
+      "point_id": "exp-05",
+      "point_title": "游标卡尺的读数与零误差",
+      "chapter": "第二十二章 · 测量工具、数据处理与实验基础",
+      "stem": "【第二十二章 · 测量工具、数据处理与实验基础 · 游标卡尺的读数与零误差】学生的错误做法：把对齐序号多读一格（错误表达式：L = L<sub>m</sub>ain+(n+1)·δ-z）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "概念混淆：供电要求随型号变化，必须核对铭牌与接线说明；计时公式无法识别接线是否安全、纸带是否卡住。"
+        },
+        {
+          "label": "B",
+          "text": "概念混淆：有阻力变化、拉动不均匀或点迹模糊时，位移差未必恒定，应先检查数据而不是用公式强行拟合。"
+        },
+        {
+          "label": "C",
+          "text": "概念混淆：两次遮光持续时间不是物体从第一门到第二门的通行时间，使用速度变化率时需记录正确的时刻差。"
+        },
+        {
+          "label": "D",
+          "text": "数值代入：序号从游标零线开始计算；错读一格会偏移一个分度值，本例从12.32 mm变成12.34 mm。"
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "序号从游标零线开始计算；错读一格会偏移一个分度值，本例从12.32 mm变成12.34 mm。\n知识库校验证据：情境：基准；代入错误式：L<sub>m</sub>ain+(n+1)·δ-z；校验参照值：0.01232。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 0,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "L = L<sub>m</sub>ain+(n+1)·δ-z",
+      "trap_test": {
+        "scenario": "基准",
+        "expr": "L_main+(n+1)*delta-z",
+        "ref": 0.01232
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-exp-05-2",
+      "point_id": "exp-05",
+      "point_title": "游标卡尺的读数与零误差",
+      "chapter": "第二十二章 · 测量工具、数据处理与实验基础",
+      "stem": "【第二十二章 · 测量工具、数据处理与实验基础 · 游标卡尺的读数与零误差】学生的错误做法：给游标读数任意追加一个估读数字。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "数值代入：两组平均速度的时间中心相隔两个计数周期；漏掉这个间隔因子会使加速度加倍，量纲检查无法发现。"
+        },
+        {
+          "label": "B",
+          "text": "数值代入：一次遮光对应条宽而非两倍条宽；错误式仍有速度量纲，本例错误值为2.0 m/s而正确值为1.0 m/s。"
+        },
+        {
+          "label": "C",
+          "text": "概念混淆：标准游标读数按对齐格和分度值形成，不能把刻度尺的估读规则直接套到游标；报告位数需与仪器规格一致。"
+        },
+        {
+          "label": "D",
+          "text": "数值代入：数到两端六个点不等于经历六个时间间隔；该错误量纲正确，却使本例计数周期从0.10 s错成0.12 s。"
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "标准游标读数按对齐格和分度值形成，不能把刻度尺的估读规则直接套到游标；报告位数需与仪器规格一致。",
+      "error_type": "概念混淆",
+      "judging": "teacher",
+      "source_error_index": 1,
+      "source_caught_by": "人工审核",
+      "wrong_expr": null,
+      "trap_test": null,
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-exp-06-1",
+      "point_id": "exp-06",
+      "point_title": "螺旋测微器、半毫米线与估读",
+      "chapter": "第二十二章 · 测量工具、数据处理与实验基础",
+      "stem": "【第二十二章 · 测量工具、数据处理与实验基础 · 螺旋测微器、半毫米线与估读】学生的错误做法：把半毫米线漏读（错误表达式：L = L<sub>s</sub>-h+n·δ-z）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "概念混淆：两次遮光持续时间不是物体从第一门到第二门的通行时间，使用速度变化率时需记录正确的时刻差。"
+        },
+        {
+          "label": "B",
+          "text": "数值代入：固定套筒已露出的半毫米属于实际位移，漏掉它会造成0.5 mm的系统性偏差，不能靠多次平均消除。"
+        },
+        {
+          "label": "C",
+          "text": "概念混淆：供电要求随型号变化，必须核对铭牌与接线说明；计时公式无法识别接线是否安全、纸带是否卡住。"
+        },
+        {
+          "label": "D",
+          "text": "概念混淆：有阻力变化、拉动不均匀或点迹模糊时，位移差未必恒定，应先检查数据而不是用公式强行拟合。"
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "固定套筒已露出的半毫米属于实际位移，漏掉它会造成0.5 mm的系统性偏差，不能靠多次平均消除。\n知识库校验证据：情境：基准；代入错误式：L<sub>f</sub>ixed-h+n·δ-z；校验参照值：0.005736。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 0,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "L = L<sub>s</sub>-h+n·δ-z",
+      "trap_test": {
+        "scenario": "基准",
+        "expr": "L_s-h+n*delta-z",
+        "ref": 0.005736
+      },
+      "review": {
+        "confidence": "low",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": false,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。；来源错误描述较短或解释信息有限，题干可能需要教师补充情境。"
+      }
+    },
+    {
+      "id": "diagnostic-exp-06-2",
+      "point_id": "exp-06",
+      "point_title": "螺旋测微器、半毫米线与估读",
+      "chapter": "第二十二章 · 测量工具、数据处理与实验基础",
+      "stem": "【第二十二章 · 测量工具、数据处理与实验基础 · 螺旋测微器、半毫米线与估读】学生的错误做法：直接转套筒夹紧并用力压缩被测物。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "概念混淆：夹持力过大会改变软物体尺寸或损伤仪器，公式校验不能检查测力装置是否正确使用。"
+        },
+        {
+          "label": "B",
+          "text": "数值代入：数到两端六个点不等于经历六个时间间隔；该错误量纲正确，却使本例计数周期从0.10 s错成0.12 s。"
+        },
+        {
+          "label": "C",
+          "text": "数值代入：两组平均速度的时间中心相隔两个计数周期；漏掉这个间隔因子会使加速度加倍，量纲检查无法发现。"
+        },
+        {
+          "label": "D",
+          "text": "数值代入：一次遮光对应条宽而非两倍条宽；错误式仍有速度量纲，本例错误值为2.0 m/s而正确值为1.0 m/s。"
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "夹持力过大会改变软物体尺寸或损伤仪器，公式校验不能检查测力装置是否正确使用。",
+      "error_type": "概念混淆",
+      "judging": "teacher",
+      "source_error_index": 1,
+      "source_caught_by": "人工审核",
+      "wrong_expr": null,
+      "trap_test": null,
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-exp-07-1",
+      "point_id": "exp-07",
+      "point_title": "有效数字、估读与误差传播",
+      "chapter": "第二十二章 · 测量工具、数据处理与实验基础",
+      "stem": "【第二十二章 · 测量工具、数据处理与实验基础 · 有效数字、估读与误差传播】学生的错误做法：认为相减时最大误差限也相减（错误表达式：D<sub>s</sub> = D<sub>y</sub>-D<sub>x</sub>）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "概念混淆：供电要求随型号变化，必须核对铭牌与接线说明；计时公式无法识别接线是否安全、纸带是否卡住。"
+        },
+        {
+          "label": "B",
+          "text": "概念混淆：有阻力变化、拉动不均匀或点迹模糊时，位移差未必恒定，应先检查数据而不是用公式强行拟合。"
+        },
+        {
+          "label": "C",
+          "text": "概念混淆：两次遮光持续时间不是物体从第一门到第二门的通行时间，使用速度变化率时需记录正确的时刻差。"
+        },
+        {
+          "label": "D",
+          "text": "数值代入：两个测量误差可能方向相反，使差值误差扩大；保守上界应相加，本例0.003 m而不是0.001 m。"
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "两个测量误差可能方向相反，使差值误差扩大；保守上界应相加，本例0.003 m而不是0.001 m。\n知识库校验证据：情境：基准；代入错误式：D<sub>y</sub>-D<sub>x</sub>；校验参照值：0.003。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 0,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "D<sub>s</sub> = D<sub>y</sub>-D<sub>x</sub>",
+      "trap_test": {
+        "scenario": "基准",
+        "expr": "D_y-D_x",
+        "ref": 0.003
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-exp-07-2",
+      "point_id": "exp-07",
+      "point_title": "有效数字、估读与误差传播",
+      "chapter": "第二十二章 · 测量工具、数据处理与实验基础",
+      "stem": "【第二十二章 · 测量工具、数据处理与实验基础 · 有效数字、估读与误差传播】学生的错误做法：把平方和开方当成所有误差的万能规则。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "数值代入：两组平均速度的时间中心相隔两个计数周期；漏掉这个间隔因子会使加速度加倍，量纲检查无法发现。"
+        },
+        {
+          "label": "B",
+          "text": "数值代入：一次遮光对应条宽而非两倍条宽；错误式仍有速度量纲，本例错误值为2.0 m/s而正确值为1.0 m/s。"
+        },
+        {
+          "label": "C",
+          "text": "概念混淆：只有明确使用标准不确定度、满足一阶近似并处理相关性时才能使用该规则；系统偏差与误差限需要不同处理。"
+        },
+        {
+          "label": "D",
+          "text": "数值代入：数到两端六个点不等于经历六个时间间隔；该错误量纲正确，却使本例计数周期从0.10 s错成0.12 s。"
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "只有明确使用标准不确定度、满足一阶近似并处理相关性时才能使用该规则；系统偏差与误差限需要不同处理。",
+      "error_type": "概念混淆",
+      "judging": "teacher",
+      "source_error_index": 1,
+      "source_caught_by": "人工审核",
+      "wrong_expr": null,
+      "trap_test": null,
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-exp-07-3",
+      "point_id": "exp-07",
+      "point_title": "刻度尺读数、有效数字与误差传播",
+      "chapter": "第二十二章 · 测量工具、数据处理与实验基础",
+      "stem": "【第二十二章 · 测量工具、数据处理与实验基础 · 刻度尺读数、有效数字与误差传播】学生的错误做法：默认物体从零刻线开始而直接读末端刻度（错误表达式：L<sub>r</sub> = x<sub>2</sub>）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "概念混淆：两次遮光持续时间不是物体从第一门到第二门的通行时间，使用速度变化率时需记录正确的时刻差。"
+        },
+        {
+          "label": "B",
+          "text": "数值代入：物体起点不在零刻线时应作坐标差；本例直接读末端会把0.598 m误作长度，正确值为0.363 m。"
+        },
+        {
+          "label": "C",
+          "text": "概念混淆：供电要求随型号变化，必须核对铭牌与接线说明；计时公式无法识别接线是否安全、纸带是否卡住。"
+        },
+        {
+          "label": "D",
+          "text": "概念混淆：有阻力变化、拉动不均匀或点迹模糊时，位移差未必恒定，应先检查数据而不是用公式强行拟合。"
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "物体起点不在零刻线时应作坐标差；本例直接读末端会把0.598 m误作长度，正确值为0.363 m。\n知识库校验证据：情境：基准；代入错误式：x<sub>2</sub>；校验参照值：0.363。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 2,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "L<sub>r</sub> = x<sub>2</sub>",
+      "trap_test": {
+        "scenario": "基准",
+        "expr": "x2",
+        "ref": 0.363
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    }
+  ],
+  "skipped": []
+}

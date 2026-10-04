@@ -1,0 +1,4642 @@
+{
+  "segment": "高中",
+  "chapter": "第二十三章 · 常用物理模型与分阶段分析",
+  "source_file": "23_models.json",
+  "questions": [
+    {
+      "id": "diagnostic-mdl-01-1",
+      "point_id": "mdl-01",
+      "point_title": "水平传送带：共速、位移与摩擦生热",
+      "chapter": "第二十三章 · 常用物理模型与分阶段分析",
+      "stem": "【第二十三章 · 常用物理模型与分阶段分析 · 水平传送带：共速、位移与摩擦生热】学生的错误做法：把摩擦热写成物块获得的动能两倍（错误表达式：Q = 2·μ·m·g·s<sub>相对</sub>）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "概念混淆：最高点只满足瞬时速度v=0，重力仍使加速度为−g。"
+        },
+        {
+          "label": "B",
+          "text": "概念混淆：滑动加速度使用动摩擦因数，共速能否保持使用最大静摩擦条件；两者需分别给出或明确近似。"
+        },
+        {
+          "label": "C",
+          "text": "概念混淆：地面摩擦对块板系统有外冲量，必须用总动量变化等于外冲量或分别用牛顿定律。"
+        },
+        {
+          "label": "D",
+          "text": "数值代入：接触生热只等于摩擦力乘相对路程；本例热量16 J，电机额外功32 J，两者不能混为同一量。"
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "接触生热只等于摩擦力乘相对路程；本例热量16 J，电机额外功32 J，两者不能混为同一量。\n知识库校验证据：情境：基准；代入错误式：2·μ·m·g·s<sub>相对</sub>；校验参照值：16。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 0,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "Q = 2·μ·m·g·s<sub>相对</sub>",
+      "trap_test": {
+        "scenario": "基准",
+        "expr": "2*mu*m*g*s_rel",
+        "ref": 16
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-mdl-01-2",
+      "point_id": "mdl-01",
+      "point_title": "水平传送带：共速、位移与摩擦生热",
+      "chapter": "第二十三章 · 常用物理模型与分阶段分析",
+      "stem": "【第二十三章 · 常用物理模型与分阶段分析 · 水平传送带：共速、位移与摩擦生热】学生的错误做法：认为达到带速后一定继续受滑动摩擦。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "数值代入：相对速度从3 m/s匀减到零，应使用平均值1.5 m/s；错误式漏掉二分之一，使所需板长加倍。"
+        },
+        {
+          "label": "B",
+          "text": "数值代入：稳定时牵引力恰好平衡阻力，功率全部用于克服该阻力；多乘二使本例稳定速度从30错成15 m/s。"
+        },
+        {
+          "label": "C",
+          "text": "概念混淆：相对滑动消失后应重新判断受力；水平且无其他水平力时摩擦可为零，不会无限加速。"
+        },
+        {
+          "label": "D",
+          "text": "数值代入：斜面重力沿向下方向的分量不可漏掉；本例错误加速度8 m/s²，正确为2 m/s²，二者量纲完全相同。"
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "相对滑动消失后应重新判断受力；水平且无其他水平力时摩擦可为零，不会无限加速。",
+      "error_type": "概念混淆",
+      "judging": "teacher",
+      "source_error_index": 1,
+      "source_caught_by": "人工审核",
+      "wrong_expr": null,
+      "trap_test": null,
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-mdl-02-1",
+      "point_id": "mdl-02",
+      "point_title": "倾斜传送带：摩擦方向与共速条件",
+      "chapter": "第二十三章 · 常用物理模型与分阶段分析",
+      "stem": "【第二十三章 · 常用物理模型与分阶段分析 · 倾斜传送带：摩擦方向与共速条件】学生的错误做法：忽略重力分量直接使用水平带加速度（错误表达式：a = μ·g·cos(θ)）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "概念混淆：地面摩擦对块板系统有外冲量，必须用总动量变化等于外冲量或分别用牛顿定律。"
+        },
+        {
+          "label": "B",
+          "text": "数值代入：斜面重力沿向下方向的分量不可漏掉；本例错误加速度8 m/s²，正确为2 m/s²，二者量纲完全相同。"
+        },
+        {
+          "label": "C",
+          "text": "概念混淆：最高点只满足瞬时速度v=0，重力仍使加速度为−g。"
+        },
+        {
+          "label": "D",
+          "text": "概念混淆：相对滑动消失后应重新判断受力；水平且无其他水平力时摩擦可为零，不会无限加速。"
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "斜面重力沿向下方向的分量不可漏掉；本例错误加速度8 m/s²，正确为2 m/s²，二者量纲完全相同。\n知识库校验证据：情境：基准；代入错误式：μ·g·cos(θ)；校验参照值：2。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 0,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "a = μ·g·cos(θ)",
+      "trap_test": {
+        "scenario": "基准",
+        "expr": "mu*g*cos(theta)",
+        "ref": 2
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-mdl-02-2",
+      "point_id": "mdl-02",
+      "point_title": "倾斜传送带：摩擦方向与共速条件",
+      "chapter": "第二十三章 · 常用物理模型与分阶段分析",
+      "stem": "【第二十三章 · 常用物理模型与分阶段分析 · 倾斜传送带：摩擦方向与共速条件】学生的错误做法：把静摩擦因数与动摩擦因数混为同一条件。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "概念混淆：滑动加速度使用动摩擦因数，共速能否保持使用最大静摩擦条件；两者需分别给出或明确近似。"
+        },
+        {
+          "label": "B",
+          "text": "数值代入：接触生热只等于摩擦力乘相对路程；本例热量16 J，电机额外功32 J，两者不能混为同一量。"
+        },
+        {
+          "label": "C",
+          "text": "数值代入：相对速度从3 m/s匀减到零，应使用平均值1.5 m/s；错误式漏掉二分之一，使所需板长加倍。"
+        },
+        {
+          "label": "D",
+          "text": "数值代入：稳定时牵引力恰好平衡阻力，功率全部用于克服该阻力；多乘二使本例稳定速度从30错成15 m/s。"
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "滑动加速度使用动摩擦因数，共速能否保持使用最大静摩擦条件；两者需分别给出或明确近似。",
+      "error_type": "概念混淆",
+      "judging": "teacher",
+      "source_error_index": 1,
+      "source_caught_by": "人工审核",
+      "wrong_expr": null,
+      "trap_test": null,
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-mdl-03-1",
+      "point_id": "mdl-03",
+      "point_title": "滑块—木板：地面摩擦与相对滑程",
+      "chapter": "第二十三章 · 常用物理模型与分阶段分析",
+      "stem": "【第二十三章 · 常用物理模型与分阶段分析 · 滑块—木板：地面摩擦与相对滑程】学生的错误做法：把相对滑程当成相对初速乘全部时间（错误表达式：s<sub>相对</sub> = (v<sub>1</sub>-v<sub>2</sub>)·t）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "概念混淆：最高点只满足瞬时速度v=0，重力仍使加速度为−g。"
+        },
+        {
+          "label": "B",
+          "text": "概念混淆：相对滑动消失后应重新判断受力；水平且无其他水平力时摩擦可为零，不会无限加速。"
+        },
+        {
+          "label": "C",
+          "text": "概念混淆：滑动加速度使用动摩擦因数，共速能否保持使用最大静摩擦条件；两者需分别给出或明确近似。"
+        },
+        {
+          "label": "D",
+          "text": "数值代入：相对速度从3 m/s匀减到零，应使用平均值1.5 m/s；错误式漏掉二分之一，使所需板长加倍。"
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "相对速度从3 m/s匀减到零，应使用平均值1.5 m/s；错误式漏掉二分之一，使所需板长加倍。\n知识库校验证据：情境：基准；代入错误式：(v<sub>1</sub>-v<sub>2</sub>)·t；校验参照值：1.9285714285714286。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 0,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "s<sub>相对</sub> = (v<sub>1</sub>-v<sub>2</sub>)·t",
+      "trap_test": {
+        "scenario": "基准",
+        "expr": "(v1-v2)*t",
+        "ref": 1.9285714285714286
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-mdl-03-2",
+      "point_id": "mdl-03",
+      "point_title": "滑块—木板：地面摩擦与相对滑程",
+      "chapter": "第二十三章 · 常用物理模型与分阶段分析",
+      "stem": "【第二十三章 · 常用物理模型与分阶段分析 · 滑块—木板：地面摩擦与相对滑程】学生的错误做法：有地面摩擦仍使用系统动量守恒。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "数值代入：斜面重力沿向下方向的分量不可漏掉；本例错误加速度8 m/s²，正确为2 m/s²，二者量纲完全相同。"
+        },
+        {
+          "label": "B",
+          "text": "数值代入：稳定时牵引力恰好平衡阻力，功率全部用于克服该阻力；多乘二使本例稳定速度从30错成15 m/s。"
+        },
+        {
+          "label": "C",
+          "text": "概念混淆：地面摩擦对块板系统有外冲量，必须用总动量变化等于外冲量或分别用牛顿定律。"
+        },
+        {
+          "label": "D",
+          "text": "数值代入：接触生热只等于摩擦力乘相对路程；本例热量16 J，电机额外功32 J，两者不能混为同一量。"
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "地面摩擦对块板系统有外冲量，必须用总动量变化等于外冲量或分别用牛顿定律。",
+      "error_type": "概念混淆",
+      "judging": "teacher",
+      "source_error_index": 1,
+      "source_caught_by": "人工审核",
+      "wrong_expr": null,
+      "trap_test": null,
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-mdl-04-1",
+      "point_id": "mdl-04",
+      "point_title": "机车启动：匀加速、恒功率与速度上限",
+      "chapter": "第二十三章 · 常用物理模型与分阶段分析",
+      "stem": "【第二十三章 · 常用物理模型与分阶段分析 · 机车启动：匀加速、恒功率与速度上限】学生的错误做法：把稳定速度的阻力因子多乘二（错误表达式：v<sub>max</sub> = P/(2·f<sub>r</sub>)）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "概念混淆：滑动加速度使用动摩擦因数，共速能否保持使用最大静摩擦条件；两者需分别给出或明确近似。"
+        },
+        {
+          "label": "B",
+          "text": "数值代入：稳定时牵引力恰好平衡阻力，功率全部用于克服该阻力；多乘二使本例稳定速度从30错成15 m/s。"
+        },
+        {
+          "label": "C",
+          "text": "概念混淆：最高点只满足瞬时速度v=0，重力仍使加速度为−g。"
+        },
+        {
+          "label": "D",
+          "text": "概念混淆：相对滑动消失后应重新判断受力；水平且无其他水平力时摩擦可为零，不会无限加速。"
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "稳定时牵引力恰好平衡阻力，功率全部用于克服该阻力；多乘二使本例稳定速度从30错成15 m/s。\n知识库校验证据：情境：基准；代入错误式：P/(2·f<sub>r</sub>)；校验参照值：30。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 0,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "v<sub>max</sub> = P/(2·f<sub>r</sub>)",
+      "trap_test": {
+        "scenario": "基准",
+        "expr": "P/(2*f_r)",
+        "ref": 30
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-mdl-04-2",
+      "point_id": "mdl-04",
+      "point_title": "机车启动：匀加速、恒功率与速度上限",
+      "chapter": "第二十三章 · 常用物理模型与分阶段分析",
+      "stem": "【第二十三章 · 常用物理模型与分阶段分析 · 机车启动：匀加速、恒功率与速度上限】学生的错误做法：从零速直接使用牵引力等于功率除速度。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "概念混淆：零速表达无定义，实际牵引力有限；需要给出启动限制或先处理恒牵引力、恒加速度阶段。"
+        },
+        {
+          "label": "B",
+          "text": "数值代入：接触生热只等于摩擦力乘相对路程；本例热量16 J，电机额外功32 J，两者不能混为同一量。"
+        },
+        {
+          "label": "C",
+          "text": "数值代入：斜面重力沿向下方向的分量不可漏掉；本例错误加速度8 m/s²，正确为2 m/s²，二者量纲完全相同。"
+        },
+        {
+          "label": "D",
+          "text": "数值代入：相对速度从3 m/s匀减到零，应使用平均值1.5 m/s；错误式漏掉二分之一，使所需板长加倍。"
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "零速表达无定义，实际牵引力有限；需要给出启动限制或先处理恒牵引力、恒加速度阶段。",
+      "error_type": "概念混淆",
+      "judging": "teacher",
+      "source_error_index": 1,
+      "source_caught_by": "人工审核",
+      "wrong_expr": null,
+      "trap_test": null,
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-mdl-05-1",
+      "point_id": "mdl-05",
+      "point_title": "追及与相遇：最近距离和安全临界",
+      "chapter": "第二十三章 · 常用物理模型与分阶段分析",
+      "stem": "【第二十三章 · 常用物理模型与分阶段分析 · 追及与相遇：最近距离和安全临界】学生的错误做法：漏掉二分之一使追近距离加倍（错误表达式：d<sub>c</sub> = v<sub>相对</sub>²/a<sub>r</sub>）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "概念混淆：最高点只满足瞬时速度v=0，重力仍使加速度为−g。"
+        },
+        {
+          "label": "B",
+          "text": "概念混淆：相对滑动消失后应重新判断受力；水平且无其他水平力时摩擦可为零，不会无限加速。"
+        },
+        {
+          "label": "C",
+          "text": "概念混淆：滑动加速度使用动摩擦因数，共速能否保持使用最大静摩擦条件；两者需分别给出或明确近似。"
+        },
+        {
+          "label": "D",
+          "text": "数值代入：相对速度匀减至零，平均相对速度是初值的一半；本例临界距离4 m，漏系数后变成8 m。"
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "相对速度匀减至零，平均相对速度是初值的一半；本例临界距离4 m，漏系数后变成8 m。\n知识库校验证据：情境：基准；代入错误式：v<sub>相对</sub>²/a<sub>r</sub>；校验参照值：4。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 0,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "d<sub>c</sub> = v<sub>相对</sub>²/a<sub>r</sub>",
+      "trap_test": {
+        "scenario": "基准",
+        "expr": "v_rel^2/a_r",
+        "ref": 4
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-mdl-05-2",
+      "point_id": "mdl-05",
+      "point_title": "追及与相遇：最近距离和安全临界",
+      "chapter": "第二十三章 · 常用物理模型与分阶段分析",
+      "stem": "【第二十三章 · 常用物理模型与分阶段分析 · 追及与相遇：最近距离和安全临界】学生的错误做法：把两车速度相等误判为已经相遇。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "数值代入：斜面重力沿向下方向的分量不可漏掉；本例错误加速度8 m/s²，正确为2 m/s²，二者量纲完全相同。"
+        },
+        {
+          "label": "B",
+          "text": "数值代入：相对速度从3 m/s匀减到零，应使用平均值1.5 m/s；错误式漏掉二分之一，使所需板长加倍。"
+        },
+        {
+          "label": "C",
+          "text": "概念混淆：速度相等只说明间距变化率为零，位置是否相同必须另比较；最近时刻可以仍有明显间距。"
+        },
+        {
+          "label": "D",
+          "text": "数值代入：接触生热只等于摩擦力乘相对路程；本例热量16 J，电机额外功32 J，两者不能混为同一量。"
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "速度相等只说明间距变化率为零，位置是否相同必须另比较；最近时刻可以仍有明显间距。",
+      "error_type": "概念混淆",
+      "judging": "teacher",
+      "source_error_index": 1,
+      "source_caught_by": "人工审核",
+      "wrong_expr": null,
+      "trap_test": null,
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-mdl-06-1",
+      "point_id": "mdl-06",
+      "point_title": "绳杆关联：速度投影、几何约束与能量",
+      "chapter": "第二十三章 · 常用物理模型与分阶段分析",
+      "stem": "【第二十三章 · 常用物理模型与分阶段分析 · 绳杆关联：速度投影、几何约束与能量】学生的错误做法：忘记乙端速度投影（错误表达式：v<sub>A</sub> = v<sub>B</sub>/cos(α)）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "概念混淆：滑动加速度使用动摩擦因数，共速能否保持使用最大静摩擦条件；两者需分别给出或明确近似。"
+        },
+        {
+          "label": "B",
+          "text": "数值代入：乙端速度与绳方向不平行时，全部速度不等于绳长变化率；本例会由1.6错为2.0 m/s。"
+        },
+        {
+          "label": "C",
+          "text": "概念混淆：最高点只满足瞬时速度v=0，重力仍使加速度为−g。"
+        },
+        {
+          "label": "D",
+          "text": "概念混淆：相对滑动消失后应重新判断受力；水平且无其他水平力时摩擦可为零，不会无限加速。"
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "乙端速度与绳方向不平行时，全部速度不等于绳长变化率；本例会由1.6错为2.0 m/s。\n知识库校验证据：情境：基准；代入错误式：v<sub>B</sub>/cos(α)；校验参照值：1.6。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 0,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "v<sub>A</sub> = v<sub>B</sub>/cos(α)",
+      "trap_test": {
+        "scenario": "基准",
+        "expr": "v_B/cos(alpha)",
+        "ref": 1.6
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-mdl-06-2",
+      "point_id": "mdl-06",
+      "point_title": "绳杆关联：速度投影、几何约束与能量",
+      "chapter": "第二十三章 · 常用物理模型与分阶段分析",
+      "stem": "【第二十三章 · 常用物理模型与分阶段分析 · 绳杆关联：速度投影、几何约束与能量】学生的错误做法：把所有关联运动的速度式直接改写成同形式加速度式。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "概念混淆：连接方向改变会产生额外几何项，必须从长度条件重新处理；不能忽略角度变化。"
+        },
+        {
+          "label": "B",
+          "text": "数值代入：接触生热只等于摩擦力乘相对路程；本例热量16 J，电机额外功32 J，两者不能混为同一量。"
+        },
+        {
+          "label": "C",
+          "text": "数值代入：斜面重力沿向下方向的分量不可漏掉；本例错误加速度8 m/s²，正确为2 m/s²，二者量纲完全相同。"
+        },
+        {
+          "label": "D",
+          "text": "数值代入：相对速度从3 m/s匀减到零，应使用平均值1.5 m/s；错误式漏掉二分之一，使所需板长加倍。"
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "连接方向改变会产生额外几何项，必须从长度条件重新处理；不能忽略角度变化。",
+      "error_type": "概念混淆",
+      "judging": "teacher",
+      "source_error_index": 1,
+      "source_caught_by": "人工审核",
+      "wrong_expr": null,
+      "trap_test": null,
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-mdl-07-1",
+      "point_id": "mdl-07",
+      "point_title": "人船模型：质心与对岸、相对位移",
+      "chapter": "第二十三章 · 常用物理模型与分阶段分析",
+      "stem": "【第二十三章 · 常用物理模型与分阶段分析 · 人船模型：质心与对岸、相对位移】学生的错误做法：把相对行走距离直接当成人的对岸位移（错误表达式：x<sub>b</sub> = m·L/M）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "概念混淆：最高点只满足瞬时速度v=0，重力仍使加速度为−g。"
+        },
+        {
+          "label": "B",
+          "text": "概念混淆：相对滑动消失后应重新判断受力；水平且无其他水平力时摩擦可为零，不会无限加速。"
+        },
+        {
+          "label": "C",
+          "text": "概念混淆：滑动加速度使用动摩擦因数，共速能否保持使用最大静摩擦条件；两者需分别给出或明确近似。"
+        },
+        {
+          "label": "D",
+          "text": "数值代入：相对位移包含船的反向移动；本例错误船位移1.25 m，正确1 m，因此不能只除以船质量。"
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "相对位移包含船的反向移动；本例错误船位移1.25 m，正确1 m，因此不能只除以船质量。\n知识库校验证据：情境：基准；代入错误式：m·L/M；校验参照值：1。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 0,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "x<sub>b</sub> = m·L/M",
+      "trap_test": {
+        "scenario": "基准",
+        "expr": "m*L/M",
+        "ref": 1
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-mdl-07-2",
+      "point_id": "mdl-07",
+      "point_title": "人船模型：质心与对岸、相对位移",
+      "chapter": "第二十三章 · 常用物理模型与分阶段分析",
+      "stem": "【第二十三章 · 常用物理模型与分阶段分析 · 人船模型：质心与对岸、相对位移】学生的错误做法：有岸边拉绳仍认为系统质心不动。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "数值代入：斜面重力沿向下方向的分量不可漏掉；本例错误加速度8 m/s²，正确为2 m/s²，二者量纲完全相同。"
+        },
+        {
+          "label": "B",
+          "text": "数值代入：相对速度从3 m/s匀减到零，应使用平均值1.5 m/s；错误式漏掉二分之一，使所需板长加倍。"
+        },
+        {
+          "label": "C",
+          "text": "概念混淆：固定在岸的绳会提供水平外力，质心位置不变的前提被破坏，需要把该外力纳入分析。"
+        },
+        {
+          "label": "D",
+          "text": "数值代入：接触生热只等于摩擦力乘相对路程；本例热量16 J，电机额外功32 J，两者不能混为同一量。"
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "固定在岸的绳会提供水平外力，质心位置不变的前提被破坏，需要把该外力纳入分析。",
+      "error_type": "概念混淆",
+      "judging": "teacher",
+      "source_error_index": 1,
+      "source_caught_by": "人工审核",
+      "wrong_expr": null,
+      "trap_test": null,
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-mdl-08-1",
+      "point_id": "mdl-08",
+      "point_title": "子弹—木块：动量、相对穿入与能量损失",
+      "chapter": "第二十三章 · 常用物理模型与分阶段分析",
+      "stem": "【第二十三章 · 常用物理模型与分阶段分析 · 子弹—木块：动量、相对穿入与能量损失】学生的错误做法：把碰撞损失机械能算成初末动能之和（错误表达式：Q = ½m·v<sub>0</sub>²+½(m+M)·v²）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "概念混淆：滑动加速度使用动摩擦因数，共速能否保持使用最大静摩擦条件；两者需分别给出或明确近似。"
+        },
+        {
+          "label": "B",
+          "text": "数值代入：损失是初动能减末动能，末动能仍保存在整体平动中；加号会得到50.5 J而不是49.5 J。"
+        },
+        {
+          "label": "C",
+          "text": "概念混淆：最高点只满足瞬时速度v=0，重力仍使加速度为−g。"
+        },
+        {
+          "label": "D",
+          "text": "概念混淆：相对滑动消失后应重新判断受力；水平且无其他水平力时摩擦可为零，不会无限加速。"
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "损失是初动能减末动能，末动能仍保存在整体平动中；加号会得到50.5 J而不是49.5 J。\n知识库校验证据：情境：基准；代入错误式：½m·v<sub>0</sub>²+½(m+M)·v²；校验参照值：49.5。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 0,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "Q = ½m·v<sub>0</sub>²+½(m+M)·v²",
+      "trap_test": {
+        "scenario": "基准",
+        "expr": "0.5*m*v_0^2+0.5*(m+M)*v^2",
+        "ref": 49.5
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-mdl-08-2",
+      "point_id": "mdl-08",
+      "point_title": "子弹—木块：动量、相对穿入与能量损失",
+      "chapter": "第二十三章 · 常用物理模型与分阶段分析",
+      "stem": "【第二十三章 · 常用物理模型与分阶段分析 · 子弹—木块：动量、相对穿入与能量损失】学生的错误做法：用子弹对地位移代替穿入深度。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "概念混淆：木块在碰撞过程中移动，摩擦损耗取两者相对位移；固定木块是另一种边界条件。"
+        },
+        {
+          "label": "B",
+          "text": "数值代入：接触生热只等于摩擦力乘相对路程；本例热量16 J，电机额外功32 J，两者不能混为同一量。"
+        },
+        {
+          "label": "C",
+          "text": "数值代入：斜面重力沿向下方向的分量不可漏掉；本例错误加速度8 m/s²，正确为2 m/s²，二者量纲完全相同。"
+        },
+        {
+          "label": "D",
+          "text": "数值代入：相对速度从3 m/s匀减到零，应使用平均值1.5 m/s；错误式漏掉二分之一，使所需板长加倍。"
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "木块在碰撞过程中移动，摩擦损耗取两者相对位移；固定木块是另一种边界条件。",
+      "error_type": "概念混淆",
+      "judging": "teacher",
+      "source_error_index": 1,
+      "source_caught_by": "人工审核",
+      "wrong_expr": null,
+      "trap_test": null,
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-mdl-09-1",
+      "point_id": "mdl-09",
+      "point_title": "竖直圆周运动：轻绳顶部与临界条件",
+      "chapter": "第二十三章 · 常用物理模型与分阶段分析",
+      "stem": "【第二十三章 · 常用物理模型与分阶段分析 · 竖直圆周运动：轻绳顶部与临界条件】学生的错误做法：顶部临界速度漏掉根号（错误表达式：v<sub>min</sub> = g·r）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "概念混淆：最高点只满足瞬时速度v=0，重力仍使加速度为−g。"
+        },
+        {
+          "label": "B",
+          "text": "概念混淆：相对滑动消失后应重新判断受力；水平且无其他水平力时摩擦可为零，不会无限加速。"
+        },
+        {
+          "label": "C",
+          "text": "概念混淆：滑动加速度使用动摩擦因数，共速能否保持使用最大静摩擦条件；两者需分别给出或明确近似。"
+        },
+        {
+          "label": "D",
+          "text": "数值代入：速度平方才等于gr，速度应为其平方根；该错式量纲已不符，但还应通过临界受力复核。"
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "速度平方才等于gr，速度应为其平方根；该错式量纲已不符，但还应通过临界受力复核。\n知识库校验证据：情境：基准；代入错误式：g·r；校验参照值：3.1622776601683795。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 0,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "v<sub>min</sub> = g·r",
+      "trap_test": {
+        "scenario": "基准",
+        "expr": "g*r",
+        "ref": 3.1622776601683795
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-mdl-09-2",
+      "point_id": "mdl-09",
+      "point_title": "竖直圆周运动：轻绳顶部与临界条件",
+      "chapter": "第二十三章 · 常用物理模型与分阶段分析",
+      "stem": "【第二十三章 · 常用物理模型与分阶段分析 · 竖直圆周运动：轻绳顶部与临界条件】学生的错误做法：把负张力当成绳能推物体。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "数值代入：斜面重力沿向下方向的分量不可漏掉；本例错误加速度8 m/s²，正确为2 m/s²，二者量纲完全相同。"
+        },
+        {
+          "label": "B",
+          "text": "数值代入：相对速度从3 m/s匀减到零，应使用平均值1.5 m/s；错误式漏掉二分之一，使所需板长加倍。"
+        },
+        {
+          "label": "C",
+          "text": "概念混淆：绳松弛后物体不再沿原圆轨道运动，应切换到抛体阶段或按杆模型重算。"
+        },
+        {
+          "label": "D",
+          "text": "数值代入：接触生热只等于摩擦力乘相对路程；本例热量16 J，电机额外功32 J，两者不能混为同一量。"
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "绳松弛后物体不再沿原圆轨道运动，应切换到抛体阶段或按杆模型重算。",
+      "error_type": "概念混淆",
+      "judging": "teacher",
+      "source_error_index": 1,
+      "source_caught_by": "人工审核",
+      "wrong_expr": null,
+      "trap_test": null,
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-mdl-10-1",
+      "point_id": "mdl-10",
+      "point_title": "细杆、轻绳与单侧轨道的约束区别",
+      "chapter": "第二十三章 · 常用物理模型与分阶段分析",
+      "stem": "【第二十三章 · 常用物理模型与分阶段分析 · 细杆、轻绳与单侧轨道的约束区别】学生的错误做法：把杆当成只拉不推的轻绳（错误表达式：F<sub>顶</sub> = abs(m·(v<sub>顶</sub>²/r-g))）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "概念混淆：滑动加速度使用动摩擦因数，共速能否保持使用最大静摩擦条件；两者需分别给出或明确近似。"
+        },
+        {
+          "label": "B",
+          "text": "数值代入：绝对值掩盖约束方向；本例杆需要反向推力6 N，单侧轻绳不能提供这个力，结果应是绳松而非张力6 N。"
+        },
+        {
+          "label": "C",
+          "text": "概念混淆：最高点只满足瞬时速度v=0，重力仍使加速度为−g。"
+        },
+        {
+          "label": "D",
+          "text": "概念混淆：相对滑动消失后应重新判断受力；水平且无其他水平力时摩擦可为零，不会无限加速。"
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "绝对值掩盖约束方向；本例杆需要反向推力6 N，单侧轻绳不能提供这个力，结果应是绳松而非张力6 N。\n知识库校验证据：情境：基准；代入错误式：abs(m·(v<sub>顶</sub>²/r-g))；校验参照值：-6。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 0,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "F<sub>顶</sub> = abs(m·(v<sub>顶</sub>²/r-g))",
+      "trap_test": {
+        "scenario": "基准",
+        "expr": "abs(m*(v_top^2/r-g))",
+        "ref": -6
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-mdl-10-2",
+      "point_id": "mdl-10",
+      "point_title": "细杆、轻绳与单侧轨道的约束区别",
+      "chapter": "第二十三章 · 常用物理模型与分阶段分析",
+      "stem": "【第二十三章 · 常用物理模型与分阶段分析 · 细杆、轻绳与单侧轨道的约束区别】学生的错误做法：对任意单侧轨道都照抄同一接触力不等式。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "概念混淆：接触法线方向取决于物体位于轨道哪一侧，需先从几何和受力图确定允许符号。"
+        },
+        {
+          "label": "B",
+          "text": "数值代入：接触生热只等于摩擦力乘相对路程；本例热量16 J，电机额外功32 J，两者不能混为同一量。"
+        },
+        {
+          "label": "C",
+          "text": "数值代入：斜面重力沿向下方向的分量不可漏掉；本例错误加速度8 m/s²，正确为2 m/s²，二者量纲完全相同。"
+        },
+        {
+          "label": "D",
+          "text": "数值代入：相对速度从3 m/s匀减到零，应使用平均值1.5 m/s；错误式漏掉二分之一，使所需板长加倍。"
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "接触法线方向取决于物体位于轨道哪一侧，需先从几何和受力图确定允许符号。",
+      "error_type": "概念混淆",
+      "judging": "teacher",
+      "source_error_index": 1,
+      "source_caught_by": "人工审核",
+      "wrong_expr": null,
+      "trap_test": null,
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-mdl-11-1",
+      "point_id": "mdl-11",
+      "point_title": "圆锥摆：绳长、张力与转速",
+      "chapter": "第二十三章 · 常用物理模型与分阶段分析",
+      "stem": "【第二十三章 · 常用物理模型与分阶段分析 · 圆锥摆：绳长、张力与转速】学生的错误做法：将竖直方向的余弦写成正弦（错误表达式：T<sub>s</sub> = m·g/sin(θ)）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "概念混淆：最高点只满足瞬时速度v=0，重力仍使加速度为−g。"
+        },
+        {
+          "label": "B",
+          "text": "概念混淆：相对滑动消失后应重新判断受力；水平且无其他水平力时摩擦可为零，不会无限加速。"
+        },
+        {
+          "label": "C",
+          "text": "概念混淆：滑动加速度使用动摩擦因数，共速能否保持使用最大静摩擦条件；两者需分别给出或明确近似。"
+        },
+        {
+          "label": "D",
+          "text": "数值代入：角度从竖直量起，竖直分量是T cosθ；本例错误张力为16.67 N而正确为12.5 N。"
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "角度从竖直量起，竖直分量是T cosθ；本例错误张力为16.67 N而正确为12.5 N。\n知识库校验证据：情境：基准；代入错误式：m·g/sin(θ)；校验参照值：12.5。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 0,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "T<sub>s</sub> = m·g/sin(θ)",
+      "trap_test": {
+        "scenario": "基准",
+        "expr": "m*g/sin(theta)",
+        "ref": 12.5
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-mdl-11-2",
+      "point_id": "mdl-11",
+      "point_title": "圆锥摆：绳长、张力与转速",
+      "chapter": "第二十三章 · 常用物理模型与分阶段分析",
+      "stem": "【第二十三章 · 常用物理模型与分阶段分析 · 圆锥摆：绳长、张力与转速】学生的错误做法：把圆周半径误写为绳长。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "数值代入：斜面重力沿向下方向的分量不可漏掉；本例错误加速度8 m/s²，正确为2 m/s²，二者量纲完全相同。"
+        },
+        {
+          "label": "B",
+          "text": "数值代入：相对速度从3 m/s匀减到零，应使用平均值1.5 m/s；错误式漏掉二分之一，使所需板长加倍。"
+        },
+        {
+          "label": "C",
+          "text": "概念混淆：摆绳斜置，水平半径是L sinθ；直接以L作为半径会高估向心尺度。"
+        },
+        {
+          "label": "D",
+          "text": "数值代入：接触生热只等于摩擦力乘相对路程；本例热量16 J，电机额外功32 J，两者不能混为同一量。"
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "摆绳斜置，水平半径是L sinθ；直接以L作为半径会高估向心尺度。",
+      "error_type": "概念混淆",
+      "judging": "teacher",
+      "source_error_index": 1,
+      "source_caught_by": "人工审核",
+      "wrong_expr": null,
+      "trap_test": null,
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-mdl-12-1",
+      "point_id": "mdl-12",
+      "point_title": "黄金代换：地表重力、轨道速度与天体密度",
+      "chapter": "第二十三章 · 常用物理模型与分阶段分析",
+      "stem": "【第二十三章 · 常用物理模型与分阶段分析 · 黄金代换：地表重力、轨道速度与天体密度】学生的错误做法：漏掉密度公式中的3（错误表达式：ρ = g/(4·π·G·R)）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "概念混淆：滑动加速度使用动摩擦因数，共速能否保持使用最大静摩擦条件；两者需分别给出或明确近似。"
+        },
+        {
+          "label": "B",
+          "text": "数值代入：球体体积为4πR³/3，系数3必须保留；该式量纲仍为密度但数值小三倍。"
+        },
+        {
+          "label": "C",
+          "text": "概念混淆：最高点只满足瞬时速度v=0，重力仍使加速度为−g。"
+        },
+        {
+          "label": "D",
+          "text": "概念混淆：相对滑动消失后应重新判断受力；水平且无其他水平力时摩擦可为零，不会无限加速。"
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "球体体积为4πR³/3，系数3必须保留；该式量纲仍为密度但数值小三倍。\n知识库校验证据：情境：基准；代入错误式：g/(4·π·G·R)；校验参照值：5592.463403902268。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 0,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "ρ = g/(4·π·G·R)",
+      "trap_test": {
+        "scenario": "基准",
+        "expr": "g/(4*pi*G*R)",
+        "ref": 5592.463403902268
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-mdl-12-2",
+      "point_id": "mdl-12",
+      "point_title": "黄金代换：地表重力、轨道速度与天体密度",
+      "chapter": "第二十三章 · 常用物理模型与分阶段分析",
+      "stem": "【第二十三章 · 常用物理模型与分阶段分析 · 黄金代换：地表重力、轨道速度与天体密度】学生的错误做法：把地球的g与另一星球的质量半径混用。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "概念混淆：g=GM/R²只对相同天体成立；混合参数会使代换失去物理依据。"
+        },
+        {
+          "label": "B",
+          "text": "数值代入：接触生热只等于摩擦力乘相对路程；本例热量16 J，电机额外功32 J，两者不能混为同一量。"
+        },
+        {
+          "label": "C",
+          "text": "数值代入：斜面重力沿向下方向的分量不可漏掉；本例错误加速度8 m/s²，正确为2 m/s²，二者量纲完全相同。"
+        },
+        {
+          "label": "D",
+          "text": "数值代入：相对速度从3 m/s匀减到零，应使用平均值1.5 m/s；错误式漏掉二分之一，使所需板长加倍。"
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "g=GM/R²只对相同天体成立；混合参数会使代换失去物理依据。",
+      "error_type": "概念混淆",
+      "judging": "teacher",
+      "source_error_index": 1,
+      "source_caught_by": "人工审核",
+      "wrong_expr": null,
+      "trap_test": null,
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-mdl-13-1",
+      "point_id": "mdl-13",
+      "point_title": "圆轨道变轨：转移椭圆、速度增量与能量",
+      "chapter": "第二十三章 · 常用物理模型与分阶段分析",
+      "stem": "【第二十三章 · 常用物理模型与分阶段分析 · 圆轨道变轨：转移椭圆、速度增量与能量】学生的错误做法：把椭圆机械能的半长轴换成瞬时半径（错误表达式：E = -G·M·m/(2·r1)）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "概念混淆：最高点只满足瞬时速度v=0，重力仍使加速度为−g。"
+        },
+        {
+          "label": "B",
+          "text": "概念混淆：相对滑动消失后应重新判断受力；水平且无其他水平力时摩擦可为零，不会无限加速。"
+        },
+        {
+          "label": "C",
+          "text": "概念混淆：滑动加速度使用动摩擦因数，共速能否保持使用最大静摩擦条件；两者需分别给出或明确近似。"
+        },
+        {
+          "label": "D",
+          "text": "数值代入：椭圆总能量由半长轴决定，瞬时半径用于势能但不能取代能量式中的a；错误给−2.50125×10⁷ J而正确为−1.6675×10⁷ J。"
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "椭圆总能量由半长轴决定，瞬时半径用于势能但不能取代能量式中的a；错误给−2.50125×10⁷ J而正确为−1.6675×10⁷ J。\n知识库校验证据：情境：基准；代入错误式：-G·M·m/(2·r1)；校验参照值：-16675000。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 0,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "E = -G·M·m/(2·r1)",
+      "trap_test": {
+        "scenario": "基准",
+        "expr": "-G*M*m/(2*r1)",
+        "ref": -16675000
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-mdl-13-2",
+      "point_id": "mdl-13",
+      "point_title": "圆轨道变轨：转移椭圆、速度增量与能量",
+      "chapter": "第二十三章 · 常用物理模型与分阶段分析",
+      "stem": "【第二十三章 · 常用物理模型与分阶段分析 · 圆轨道变轨：转移椭圆、速度增量与能量】学生的错误做法：认为进入更高稳定轨道后速率必然更大。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "数值代入：斜面重力沿向下方向的分量不可漏掉；本例错误加速度8 m/s²，正确为2 m/s²，二者量纲完全相同。"
+        },
+        {
+          "label": "B",
+          "text": "数值代入：相对速度从3 m/s匀减到零，应使用平均值1.5 m/s；错误式漏掉二分之一，使所需板长加倍。"
+        },
+        {
+          "label": "C",
+          "text": "概念混淆：圆轨道速度随半径增大而降低；转移过程中近地点速度会先提高，远地点再调节。"
+        },
+        {
+          "label": "D",
+          "text": "数值代入：接触生热只等于摩擦力乘相对路程；本例热量16 J，电机额外功32 J，两者不能混为同一量。"
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "圆轨道速度随半径增大而降低；转移过程中近地点速度会先提高，远地点再调节。",
+      "error_type": "概念混淆",
+      "judging": "teacher",
+      "source_error_index": 1,
+      "source_caught_by": "人工审核",
+      "wrong_expr": null,
+      "trap_test": null,
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-mdl-14-1",
+      "point_id": "mdl-14",
+      "point_title": "双星系统：质心、轨道半径与周期",
+      "chapter": "第二十三章 · 常用物理模型与分阶段分析",
+      "stem": "【第二十三章 · 常用物理模型与分阶段分析 · 双星系统：质心、轨道半径与周期】学生的错误做法：只用第一颗恒星质量计算周期（错误表达式：T<sub>b</sub> = 2·π·√(L³/(G·m1))）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "概念混淆：滑动加速度使用动摩擦因数，共速能否保持使用最大静摩擦条件；两者需分别给出或明确近似。"
+        },
+        {
+          "label": "B",
+          "text": "数值代入：引力由两星共同质量关系决定，周期使用m1+m2；本例错误周期约1.405×10⁷ s而正确约8.886×10⁶ s。"
+        },
+        {
+          "label": "C",
+          "text": "概念混淆：最高点只满足瞬时速度v=0，重力仍使加速度为−g。"
+        },
+        {
+          "label": "D",
+          "text": "概念混淆：相对滑动消失后应重新判断受力；水平且无其他水平力时摩擦可为零，不会无限加速。"
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "引力由两星共同质量关系决定，周期使用m1+m2；本例错误周期约1.405×10⁷ s而正确约8.886×10⁶ s。\n知识库校验证据：情境：基准；代入错误式：2·π·√(L³/(G·m1))；校验参照值：8885765.876316732。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 0,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "T<sub>b</sub> = 2·π·√(L³/(G·m1))",
+      "trap_test": {
+        "scenario": "基准",
+        "expr": "2*pi*sqrt(L^3/(G*m1))",
+        "ref": 8885765.876316732
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-mdl-14-2",
+      "point_id": "mdl-14",
+      "point_title": "双星系统：质心、轨道半径与周期",
+      "chapter": "第二十三章 · 常用物理模型与分阶段分析",
+      "stem": "【第二十三章 · 常用物理模型与分阶段分析 · 双星系统：质心、轨道半径与周期】学生的错误做法：把星间距当成其中一颗星的质心轨道半径。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "概念混淆：质量不等时质心偏向较重恒星；应先用质量比确定各自的质心轨道半径。"
+        },
+        {
+          "label": "B",
+          "text": "数值代入：接触生热只等于摩擦力乘相对路程；本例热量16 J，电机额外功32 J，两者不能混为同一量。"
+        },
+        {
+          "label": "C",
+          "text": "数值代入：斜面重力沿向下方向的分量不可漏掉；本例错误加速度8 m/s²，正确为2 m/s²，二者量纲完全相同。"
+        },
+        {
+          "label": "D",
+          "text": "数值代入：相对速度从3 m/s匀减到零，应使用平均值1.5 m/s；错误式漏掉二分之一，使所需板长加倍。"
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "质量不等时质心偏向较重恒星；应先用质量比确定各自的质心轨道半径。",
+      "error_type": "概念混淆",
+      "judging": "teacher",
+      "source_error_index": 1,
+      "source_caught_by": "人工审核",
+      "wrong_expr": null,
+      "trap_test": null,
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-mdl-15-1",
+      "point_id": "mdl-15",
+      "point_title": "弹簧推块与接触分离：法向力条件",
+      "chapter": "第二十三章 · 常用物理模型与分阶段分析",
+      "stem": "【第二十三章 · 常用物理模型与分阶段分析 · 弹簧推块与接触分离：法向力条件】学生的错误做法：把弹簧力全部当作块2的接触力（错误表达式：N = F<sub>s</sub>）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "概念混淆：最高点只满足瞬时速度v=0，重力仍使加速度为−g。"
+        },
+        {
+          "label": "B",
+          "text": "概念混淆：相对滑动消失后应重新判断受力；水平且无其他水平力时摩擦可为零，不会无限加速。"
+        },
+        {
+          "label": "C",
+          "text": "概念混淆：滑动加速度使用动摩擦因数，共速能否保持使用最大静摩擦条件；两者需分别给出或明确近似。"
+        },
+        {
+          "label": "D",
+          "text": "数值代入：部分弹簧力用于加速块1；本例接触力为6 N而弹簧力为10 N，需对整组和单块分别列式。"
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "部分弹簧力用于加速块1；本例接触力为6 N而弹簧力为10 N，需对整组和单块分别列式。\n知识库校验证据：情境：基准；代入错误式：F<sub>s</sub>；校验参照值：6。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 0,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "N = F<sub>s</sub>",
+      "trap_test": {
+        "scenario": "基准",
+        "expr": "F_s",
+        "ref": 6
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-mdl-15-2",
+      "point_id": "mdl-15",
+      "point_title": "弹簧推块与接触分离：法向力条件",
+      "chapter": "第二十三章 · 常用物理模型与分阶段分析",
+      "stem": "【第二十三章 · 常用物理模型与分阶段分析 · 弹簧推块与接触分离：法向力条件】学生的错误做法：认为所有分离都只能发生在弹簧力等于零时。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "数值代入：斜面重力沿向下方向的分量不可漏掉；本例错误加速度8 m/s²，正确为2 m/s²，二者量纲完全相同。"
+        },
+        {
+          "label": "B",
+          "text": "数值代入：相对速度从3 m/s匀减到零，应使用平均值1.5 m/s；错误式漏掉二分之一，使所需板长加倍。"
+        },
+        {
+          "label": "C",
+          "text": "概念混淆：一般接触失效以法向力降为零为判断；弹簧仍受拉、其他约束或剪断瞬间都可能改变力和加速度关系。"
+        },
+        {
+          "label": "D",
+          "text": "数值代入：接触生热只等于摩擦力乘相对路程；本例热量16 J，电机额外功32 J，两者不能混为同一量。"
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "一般接触失效以法向力降为零为判断；弹簧仍受拉、其他约束或剪断瞬间都可能改变力和加速度关系。",
+      "error_type": "概念混淆",
+      "judging": "teacher",
+      "source_error_index": 1,
+      "source_caught_by": "人工审核",
+      "wrong_expr": null,
+      "trap_test": null,
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-mdl-16-1",
+      "point_id": "mdl-16",
+      "point_title": "势能极值、稳定平衡与回复力",
+      "chapter": "第二十三章 · 常用物理模型与分阶段分析",
+      "stem": "【第二十三章 · 常用物理模型与分阶段分析 · 势能极值、稳定平衡与回复力】学生的错误做法：把势能极大点判为稳定平衡（错误表达式：F = 4·α·x·(x²/l²-1)/l²）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "概念混淆：滑动加速度使用动摩擦因数，共速能否保持使用最大静摩擦条件；两者需分别给出或明确近似。"
+        },
+        {
+          "label": "B",
+          "text": "数值代入：力方向与势能梯度应相反；符号写反会把稳定点的回复力变成发散力，量纲检查不能发现。"
+        },
+        {
+          "label": "C",
+          "text": "概念混淆：最高点只满足瞬时速度v=0，重力仍使加速度为−g。"
+        },
+        {
+          "label": "D",
+          "text": "概念混淆：相对滑动消失后应重新判断受力；水平且无其他水平力时摩擦可为零，不会无限加速。"
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "力方向与势能梯度应相反；符号写反会把稳定点的回复力变成发散力，量纲检查不能发现。\n知识库校验证据：情境：基准；代入错误式：4·α·x·(x²/l²-1)/l²；校验参照值：1.5。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 0,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "F = 4·α·x·(x²/l²-1)/l²",
+      "trap_test": {
+        "scenario": "基准",
+        "expr": "4*alpha*x*(x^2/l^2-1)/l^2",
+        "ref": 1.5
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-mdl-16-2",
+      "point_id": "mdl-16",
+      "point_title": "势能极值、稳定平衡与回复力",
+      "chapter": "第二十三章 · 常用物理模型与分阶段分析",
+      "stem": "【第二十三章 · 常用物理模型与分阶段分析 · 势能极值、稳定平衡与回复力】学生的错误做法：从势能曲线上读出局部极小就断言系统一定静止。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "概念混淆：稳定只表示小扰动后存在回复趋势；若有足够动能，系统仍可越过势垒或持续振动。"
+        },
+        {
+          "label": "B",
+          "text": "数值代入：接触生热只等于摩擦力乘相对路程；本例热量16 J，电机额外功32 J，两者不能混为同一量。"
+        },
+        {
+          "label": "C",
+          "text": "数值代入：斜面重力沿向下方向的分量不可漏掉；本例错误加速度8 m/s²，正确为2 m/s²，二者量纲完全相同。"
+        },
+        {
+          "label": "D",
+          "text": "数值代入：相对速度从3 m/s匀减到零，应使用平均值1.5 m/s；错误式漏掉二分之一，使所需板长加倍。"
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "稳定只表示小扰动后存在回复趋势；若有足够动能，系统仍可越过势垒或持续振动。",
+      "error_type": "概念混淆",
+      "judging": "teacher",
+      "source_error_index": 1,
+      "source_caught_by": "人工审核",
+      "wrong_expr": null,
+      "trap_test": null,
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-mdl-17-1",
+      "point_id": "mdl-17",
+      "point_title": "有电源导电杆：反电动势、电流与受力",
+      "chapter": "第二十三章 · 常用物理模型与分阶段分析",
+      "stem": "【第二十三章 · 常用物理模型与分阶段分析 · 有电源导电杆：反电动势、电流与受力】学生的错误做法：漏掉杆的反电动势（错误表达式：I = (E<sub>s</sub>+B·L·v)/R<sub>t</sub>）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "概念混淆：最高点只满足瞬时速度v=0，重力仍使加速度为−g。"
+        },
+        {
+          "label": "B",
+          "text": "概念混淆：相对滑动消失后应重新判断受力；水平且无其他水平力时摩擦可为零，不会无限加速。"
+        },
+        {
+          "label": "C",
+          "text": "概念混淆：滑动加速度使用动摩擦因数，共速能否保持使用最大静摩擦条件；两者需分别给出或明确近似。"
+        },
+        {
+          "label": "D",
+          "text": "数值代入：运动杆的感应电动势在本接线方向上抵消电源，本例错式给6 A而正确4 A；方向仍需按电路图核实。"
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "运动杆的感应电动势在本接线方向上抵消电源，本例错式给6 A而正确4 A；方向仍需按电路图核实。\n知识库校验证据：情境：基准；代入错误式：(E<sub>s</sub>+B·L·v)/R<sub>t</sub>；校验参照值：4。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 0,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "I = (E<sub>s</sub>+B·L·v)/R<sub>t</sub>",
+      "trap_test": {
+        "scenario": "基准",
+        "expr": "(E_s+B*L*v)/R_t",
+        "ref": 4
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-mdl-17-2",
+      "point_id": "mdl-17",
+      "point_title": "有电源导电杆：反电动势、电流与受力",
+      "chapter": "第二十三章 · 常用物理模型与分阶段分析",
+      "stem": "【第二十三章 · 常用物理模型与分阶段分析 · 有电源导电杆：反电动势、电流与受力】学生的错误做法：用手左右换导轨而保留电流符号不变。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "数值代入：斜面重力沿向下方向的分量不可漏掉；本例错误加速度8 m/s²，正确为2 m/s²，二者量纲完全相同。"
+        },
+        {
+          "label": "B",
+          "text": "数值代入：相对速度从3 m/s匀减到零，应使用平均值1.5 m/s；错误式漏掉二分之一，使所需板长加倍。"
+        },
+        {
+          "label": "C",
+          "text": "概念混淆：导轨位置、磁场方向或电源极性改变会改变安培力方向，应重新按右手定则判定。"
+        },
+        {
+          "label": "D",
+          "text": "数值代入：接触生热只等于摩擦力乘相对路程；本例热量16 J，电机额外功32 J，两者不能混为同一量。"
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "导轨位置、磁场方向或电源极性改变会改变安培力方向，应重新按右手定则判定。",
+      "error_type": "概念混淆",
+      "judging": "teacher",
+      "source_error_index": 1,
+      "source_caught_by": "人工审核",
+      "wrong_expr": null,
+      "trap_test": null,
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-mdl-18-1",
+      "point_id": "mdl-18",
+      "point_title": "电容器与导电杆：充电约束和有效惯性",
+      "chapter": "第二十三章 · 常用物理模型与分阶段分析",
+      "stem": "【第二十三章 · 常用物理模型与分阶段分析 · 电容器与导电杆：充电约束和有效惯性】学生的错误做法：把电流写成电容电压除以导线电阻并当作零电阻稳态（错误表达式：I = C<sub>容</sub>·B·L·v）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "概念混淆：滑动加速度使用动摩擦因数，共速能否保持使用最大静摩擦条件；两者需分别给出或明确近似。"
+        },
+        {
+          "label": "B",
+          "text": "数值代入：理想电容没有直流稳态电流；该关系描述匹配电荷而非随时流动的电流，本例匀速匹配时电流为0。"
+        },
+        {
+          "label": "C",
+          "text": "概念混淆：最高点只满足瞬时速度v=0，重力仍使加速度为−g。"
+        },
+        {
+          "label": "D",
+          "text": "概念混淆：相对滑动消失后应重新判断受力；水平且无其他水平力时摩擦可为零，不会无限加速。"
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "理想电容没有直流稳态电流；该关系描述匹配电荷而非随时流动的电流，本例匀速匹配时电流为0。\n知识库校验证据：情境：基准；代入错误式：C<sub>容</sub>·B·L·v；校验参照值：0。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 0,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "I = C<sub>容</sub>·B·L·v",
+      "trap_test": {
+        "scenario": "基准",
+        "expr": "C_cap*B*L*v",
+        "ref": 0
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-mdl-18-2",
+      "point_id": "mdl-18",
+      "point_title": "电容器与导电杆：充电约束和有效惯性",
+      "chapter": "第二十三章 · 常用物理模型与分阶段分析",
+      "stem": "【第二十三章 · 常用物理模型与分阶段分析 · 电容器与导电杆：充电约束和有效惯性】学生的错误做法：无外力的匹配状态仍断言导电杆具有非零恒加速度。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "概念混淆：能量和受力均要求无净外力时匀速；非零加速度必须说明外力或暂态电路条件。"
+        },
+        {
+          "label": "B",
+          "text": "数值代入：接触生热只等于摩擦力乘相对路程；本例热量16 J，电机额外功32 J，两者不能混为同一量。"
+        },
+        {
+          "label": "C",
+          "text": "数值代入：斜面重力沿向下方向的分量不可漏掉；本例错误加速度8 m/s²，正确为2 m/s²，二者量纲完全相同。"
+        },
+        {
+          "label": "D",
+          "text": "数值代入：相对速度从3 m/s匀减到零，应使用平均值1.5 m/s；错误式漏掉二分之一，使所需板长加倍。"
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "能量和受力均要求无净外力时匀速；非零加速度必须说明外力或暂态电路条件。",
+      "error_type": "概念混淆",
+      "judging": "teacher",
+      "source_error_index": 1,
+      "source_caught_by": "人工审核",
+      "wrong_expr": null,
+      "trap_test": null,
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-mdl-19-1",
+      "point_id": "mdl-19",
+      "point_title": "线圈进出磁场：电流方向、电荷与能量",
+      "chapter": "第二十三章 · 常用物理模型与分阶段分析",
+      "stem": "【第二十三章 · 常用物理模型与分阶段分析 · 线圈进出磁场：电流方向、电荷与能量】学生的错误做法：认为线圈全在匀强磁场时也持续有切割电流（错误表达式：E<sub>i</sub> = B·L·v）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "概念混淆：最高点只满足瞬时速度v=0，重力仍使加速度为−g。"
+        },
+        {
+          "label": "B",
+          "text": "概念混淆：相对滑动消失后应重新判断受力；水平且无其他水平力时摩擦可为零，不会无限加速。"
+        },
+        {
+          "label": "C",
+          "text": "概念混淆：滑动加速度使用动摩擦因数，共速能否保持使用最大静摩擦条件；两者需分别给出或明确近似。"
+        },
+        {
+          "label": "D",
+          "text": "数值代入：磁场区域有限时，线圈完整处于均匀场内磁通保持不变，边界不被切割，本情境感应电动势为零；此式仅适用于跨边界的有效导体。"
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "磁场区域有限时，线圈完整处于均匀场内磁通保持不变，边界不被切割，本情境感应电动势为零；此式仅适用于跨边界的有效导体。\n知识库校验证据：情境：基准；代入错误式：B·L·v；校验参照值：0。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 0,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "E<sub>i</sub> = B·L·v",
+      "trap_test": {
+        "scenario": "基准",
+        "expr": "B*L*v",
+        "ref": 0
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-mdl-19-2",
+      "point_id": "mdl-19",
+      "point_title": "线圈进出磁场：电流方向、电荷与能量",
+      "chapter": "第二十三章 · 常用物理模型与分阶段分析",
+      "stem": "【第二十三章 · 常用物理模型与分阶段分析 · 线圈进出磁场：电流方向、电荷与能量】学生的错误做法：进场和出场的电流方向写成相同。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "数值代入：斜面重力沿向下方向的分量不可漏掉；本例错误加速度8 m/s²，正确为2 m/s²，二者量纲完全相同。"
+        },
+        {
+          "label": "B",
+          "text": "数值代入：相对速度从3 m/s匀减到零，应使用平均值1.5 m/s；错误式漏掉二分之一，使所需板长加倍。"
+        },
+        {
+          "label": "C",
+          "text": "概念混淆：磁通变化方向相反，楞次定律要求感应电流方向反转。"
+        },
+        {
+          "label": "D",
+          "text": "数值代入：接触生热只等于摩擦力乘相对路程；本例热量16 J，电机额外功32 J，两者不能混为同一量。"
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "磁通变化方向相反，楞次定律要求感应电流方向反转。",
+      "error_type": "概念混淆",
+      "judging": "teacher",
+      "source_error_index": 1,
+      "source_caught_by": "人工审核",
+      "wrong_expr": null,
+      "trap_test": null,
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-mdl-20-1",
+      "point_id": "mdl-20",
+      "point_title": "圆形磁场区域：粒子轨迹与弦长",
+      "chapter": "第二十三章 · 常用物理模型与分阶段分析",
+      "stem": "【第二十三章 · 常用物理模型与分阶段分析 · 圆形磁场区域：粒子轨迹与弦长】学生的错误做法：忽略轨道半径与磁区半径共同决定的几何关系（错误表达式：s = 2·R<sub>m</sub>）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "概念混淆：滑动加速度使用动摩擦因数，共速能否保持使用最大静摩擦条件；两者需分别给出或明确近似。"
+        },
+        {
+          "label": "B",
+          "text": "数值代入：弦长一般不等于磁区直径；本例交点弦长4.8 m而磁区直径6 m，粒子路径受两圆交点限制。"
+        },
+        {
+          "label": "C",
+          "text": "概念混淆：最高点只满足瞬时速度v=0，重力仍使加速度为−g。"
+        },
+        {
+          "label": "D",
+          "text": "概念混淆：相对滑动消失后应重新判断受力；水平且无其他水平力时摩擦可为零，不会无限加速。"
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "弦长一般不等于磁区直径；本例交点弦长4.8 m而磁区直径6 m，粒子路径受两圆交点限制。\n知识库校验证据：情境：基准；代入错误式：2·R<sub>m</sub>；校验参照值：4.8。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 0,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "s = 2·R<sub>m</sub>",
+      "trap_test": {
+        "scenario": "基准",
+        "expr": "2*R_m",
+        "ref": 4.8
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-mdl-20-2",
+      "point_id": "mdl-20",
+      "point_title": "圆形磁场区域：粒子轨迹与弦长",
+      "chapter": "第二十三章 · 常用物理模型与分阶段分析",
+      "stem": "【第二十三章 · 常用物理模型与分阶段分析 · 圆形磁场区域：粒子轨迹与弦长】学生的错误做法：将任意斜入射都套用法向入射弦长式。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "概念混淆：入射角变化会改变粒子轨道圆心位置和交点，需重新作几何分析。"
+        },
+        {
+          "label": "B",
+          "text": "数值代入：接触生热只等于摩擦力乘相对路程；本例热量16 J，电机额外功32 J，两者不能混为同一量。"
+        },
+        {
+          "label": "C",
+          "text": "数值代入：斜面重力沿向下方向的分量不可漏掉；本例错误加速度8 m/s²，正确为2 m/s²，二者量纲完全相同。"
+        },
+        {
+          "label": "D",
+          "text": "数值代入：相对速度从3 m/s匀减到零，应使用平均值1.5 m/s；错误式漏掉二分之一，使所需板长加倍。"
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "入射角变化会改变粒子轨道圆心位置和交点，需重新作几何分析。",
+      "error_type": "概念混淆",
+      "judging": "teacher",
+      "source_error_index": 1,
+      "source_caught_by": "人工审核",
+      "wrong_expr": null,
+      "trap_test": null,
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-mdl-21-1",
+      "point_id": "mdl-21",
+      "point_title": "电场、磁场与重力：受力抵消和速度选择",
+      "chapter": "第二十三章 · 常用物理模型与分阶段分析",
+      "stem": "【第二十三章 · 常用物理模型与分阶段分析 · 电场、磁场与重力：受力抵消和速度选择】学生的错误做法：把速度选择速度写成B/E（错误表达式：v<sub>0</sub> = B/E）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "概念混淆：最高点只满足瞬时速度v=0，重力仍使加速度为−g。"
+        },
+        {
+          "label": "B",
+          "text": "概念混淆：相对滑动消失后应重新判断受力；水平且无其他水平力时摩擦可为零，不会无限加速。"
+        },
+        {
+          "label": "C",
+          "text": "概念混淆：滑动加速度使用动摩擦因数，共速能否保持使用最大静摩擦条件；两者需分别给出或明确近似。"
+        },
+        {
+          "label": "D",
+          "text": "数值代入：平衡关系为qE=qvB，因此v=E/B；错式不仅量纲不符，数值也不对应平衡速度。"
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "平衡关系为qE=qvB，因此v=E/B；错式不仅量纲不符，数值也不对应平衡速度。\n知识库校验证据：情境：基准；代入错误式：B/E；校验参照值：3。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 0,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "v<sub>0</sub> = B/E",
+      "trap_test": {
+        "scenario": "基准",
+        "expr": "B/E",
+        "ref": 3
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-mdl-21-2",
+      "point_id": "mdl-21",
+      "point_title": "电场、磁场与重力：受力抵消和速度选择",
+      "chapter": "第二十三章 · 常用物理模型与分阶段分析",
+      "stem": "【第二十三章 · 常用物理模型与分阶段分析 · 电场、磁场与重力：受力抵消和速度选择】学生的错误做法：忽略电荷正负而直接断言偏转方向。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "数值代入：斜面重力沿向下方向的分量不可漏掉；本例错误加速度8 m/s²，正确为2 m/s²，二者量纲完全相同。"
+        },
+        {
+          "label": "B",
+          "text": "数值代入：相对速度从3 m/s匀减到零，应使用平均值1.5 m/s；错误式漏掉二分之一，使所需板长加倍。"
+        },
+        {
+          "label": "C",
+          "text": "概念混淆：正负电荷的电力和洛伦兹力方向相反，须结合实际方向逐项判断。"
+        },
+        {
+          "label": "D",
+          "text": "数值代入：接触生热只等于摩擦力乘相对路程；本例热量16 J，电机额外功32 J，两者不能混为同一量。"
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "正负电荷的电力和洛伦兹力方向相反，须结合实际方向逐项判断。",
+      "error_type": "概念混淆",
+      "judging": "teacher",
+      "source_error_index": 1,
+      "source_caught_by": "人工审核",
+      "wrong_expr": null,
+      "trap_test": null,
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-mdl-22-1",
+      "point_id": "mdl-22",
+      "point_title": "变压器与远距离输电：变比、降压和线路损失",
+      "chapter": "第二十三章 · 常用物理模型与分阶段分析",
+      "stem": "【第二十三章 · 常用物理模型与分阶段分析 · 变压器与远距离输电：变比、降压和线路损失】学生的错误做法：把线路损失写成输送功率乘线路电阻（错误表达式：ΔP = P·R）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "概念混淆：滑动加速度使用动摩擦因数，共速能否保持使用最大静摩擦条件；两者需分别给出或明确近似。"
+        },
+        {
+          "label": "B",
+          "text": "数值代入：功率损失应为I²R，且需先以U估计电流；本例数值结果需经单位和线路电流复核。"
+        },
+        {
+          "label": "C",
+          "text": "概念混淆：最高点只满足瞬时速度v=0，重力仍使加速度为−g。"
+        },
+        {
+          "label": "D",
+          "text": "概念混淆：相对滑动消失后应重新判断受力；水平且无其他水平力时摩擦可为零，不会无限加速。"
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "功率损失应为I²R，且需先以U估计电流；本例数值结果需经单位和线路电流复核。\n知识库校验证据：情境：基准；代入错误式：P·R；校验参照值：1000。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 0,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "ΔP = P·R",
+      "trap_test": {
+        "scenario": "基准",
+        "expr": "P*R",
+        "ref": 1000
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-mdl-22-2",
+      "point_id": "mdl-22",
+      "point_title": "变压器与远距离输电：变比、降压和线路损失",
+      "chapter": "第二十三章 · 常用物理模型与分阶段分析",
+      "stem": "【第二十三章 · 常用物理模型与分阶段分析 · 变压器与远距离输电：变比、降压和线路损失】学生的错误做法：认为理想变压器能提高电压同时保持次级电流不变。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "概念混淆：理想功率守恒要求电压比与电流比反向变化；升压需降低电流。"
+        },
+        {
+          "label": "B",
+          "text": "数值代入：接触生热只等于摩擦力乘相对路程；本例热量16 J，电机额外功32 J，两者不能混为同一量。"
+        },
+        {
+          "label": "C",
+          "text": "数值代入：斜面重力沿向下方向的分量不可漏掉；本例错误加速度8 m/s²，正确为2 m/s²，二者量纲完全相同。"
+        },
+        {
+          "label": "D",
+          "text": "数值代入：相对速度从3 m/s匀减到零，应使用平均值1.5 m/s；错误式漏掉二分之一，使所需板长加倍。"
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "理想功率守恒要求电压比与电流比反向变化；升压需降低电流。",
+      "error_type": "概念混淆",
+      "judging": "teacher",
+      "source_error_index": 1,
+      "source_caught_by": "人工审核",
+      "wrong_expr": null,
+      "trap_test": null,
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-mdl-23-1",
+      "point_id": "mdl-23",
+      "point_title": "电容器并联：电荷再分配与能量损失",
+      "chapter": "第二十三章 · 常用物理模型与分阶段分析",
+      "stem": "【第二十三章 · 常用物理模型与分阶段分析 · 电容器并联：电荷再分配与能量损失】学生的错误做法：把电容值直接相加后仍取原电压（错误表达式：U<sub>p</sub> = U<sub>1</sub>）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "概念混淆：最高点只满足瞬时速度v=0，重力仍使加速度为−g。"
+        },
+        {
+          "label": "B",
+          "text": "概念混淆：相对滑动消失后应重新判断受力；水平且无其他水平力时摩擦可为零，不会无限加速。"
+        },
+        {
+          "label": "C",
+          "text": "概念混淆：滑动加速度使用动摩擦因数，共速能否保持使用最大静摩擦条件；两者需分别给出或明确近似。"
+        },
+        {
+          "label": "D",
+          "text": "数值代入：电荷固定而总电容变大，电压必下降；本例共同电压4 V，不能仍为10 V。"
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "电荷固定而总电容变大，电压必下降；本例共同电压4 V，不能仍为10 V。\n知识库校验证据：情境：基准；代入错误式：U<sub>1</sub>；校验参照值：4。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 0,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "U<sub>p</sub> = U<sub>1</sub>",
+      "trap_test": {
+        "scenario": "基准",
+        "expr": "U1",
+        "ref": 4
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-mdl-23-2",
+      "point_id": "mdl-23",
+      "point_title": "电容器并联：电荷再分配与能量损失",
+      "chapter": "第二十三章 · 常用物理模型与分阶段分析",
+      "stem": "【第二十三章 · 常用物理模型与分阶段分析 · 电容器并联：电荷再分配与能量损失】学生的错误做法：认为电容并联瞬间没有电流也没有能量转换。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "数值代入：斜面重力沿向下方向的分量不可漏掉；本例错误加速度8 m/s²，正确为2 m/s²，二者量纲完全相同。"
+        },
+        {
+          "label": "B",
+          "text": "数值代入：相对速度从3 m/s匀减到零，应使用平均值1.5 m/s；错误式漏掉二分之一，使所需板长加倍。"
+        },
+        {
+          "label": "C",
+          "text": "概念混淆：电荷重新分配需经历暂态；理想化瞬时连接省略的过程仍要由非理想电路解释。"
+        },
+        {
+          "label": "D",
+          "text": "数值代入：接触生热只等于摩擦力乘相对路程；本例热量16 J，电机额外功32 J，两者不能混为同一量。"
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "电荷重新分配需经历暂态；理想化瞬时连接省略的过程仍要由非理想电路解释。",
+      "error_type": "概念混淆",
+      "judging": "teacher",
+      "source_error_index": 1,
+      "source_caught_by": "人工审核",
+      "wrong_expr": null,
+      "trap_test": null,
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-mdl-24-1",
+      "point_id": "mdl-24",
+      "point_title": "物理图像：斜率、面积与分段读数",
+      "chapter": "第二十三章 · 常用物理模型与分阶段分析",
+      "stem": "【第二十三章 · 常用物理模型与分阶段分析 · 物理图像：斜率、面积与分段读数】学生的错误做法：把速度时间图的纵坐标直接当成位移（错误表达式：dx = <span style=\"text-decoration:overline\">v</span>）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "概念混淆：滑动加速度使用动摩擦因数，共速能否保持使用最大静摩擦条件；两者需分别给出或明确近似。"
+        },
+        {
+          "label": "B",
+          "text": "数值代入：速度时间图面积才是位移；还缺一个时间因子，本例2 s内3 m/s对应6 m位移。"
+        },
+        {
+          "label": "C",
+          "text": "概念混淆：最高点只满足瞬时速度v=0，重力仍使加速度为−g。"
+        },
+        {
+          "label": "D",
+          "text": "概念混淆：相对滑动消失后应重新判断受力；水平且无其他水平力时摩擦可为零，不会无限加速。"
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "速度时间图面积才是位移；还缺一个时间因子，本例2 s内3 m/s对应6 m位移。\n知识库校验证据：情境：基准；代入错误式：<span style=\"text-decoration:overline\">v</span>；校验参照值：6。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 0,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "dx = <span style=\"text-decoration:overline\">v</span>",
+      "trap_test": {
+        "scenario": "基准",
+        "expr": "v_avg",
+        "ref": 6
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-mdl-24-2",
+      "point_id": "mdl-24",
+      "point_title": "物理图像：斜率、面积与分段读数",
+      "chapter": "第二十三章 · 常用物理模型与分阶段分析",
+      "stem": "【第二十三章 · 常用物理模型与分阶段分析 · 物理图像：斜率、面积与分段读数】学生的错误做法：位置时间曲线斜率直接称为加速度。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "概念混淆：其斜率是速度；加速度对应速度时间图斜率，需先辨认图轴。"
+        },
+        {
+          "label": "B",
+          "text": "数值代入：接触生热只等于摩擦力乘相对路程；本例热量16 J，电机额外功32 J，两者不能混为同一量。"
+        },
+        {
+          "label": "C",
+          "text": "数值代入：斜面重力沿向下方向的分量不可漏掉；本例错误加速度8 m/s²，正确为2 m/s²，二者量纲完全相同。"
+        },
+        {
+          "label": "D",
+          "text": "数值代入：相对速度从3 m/s匀减到零，应使用平均值1.5 m/s；错误式漏掉二分之一，使所需板长加倍。"
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "其斜率是速度；加速度对应速度时间图斜率，需先辨认图轴。",
+      "error_type": "概念混淆",
+      "judging": "teacher",
+      "source_error_index": 1,
+      "source_caught_by": "人工审核",
+      "wrong_expr": null,
+      "trap_test": null,
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-mdl-25-1",
+      "point_id": "mdl-25",
+      "point_title": "细绳、弹簧与轻杆：切断瞬间的受力",
+      "chapter": "第二十三章 · 常用物理模型与分阶段分析",
+      "stem": "【第二十三章 · 常用物理模型与分阶段分析 · 细绳、弹簧与轻杆：切断瞬间的受力】学生的错误做法：把水平绳力在切断后仍保留（错误表达式：a<sub>x</sub> = (F<sub>s</sub>·sin(θ)+T<sub>h</sub>)/m）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "概念混淆：最高点只满足瞬时速度v=0，重力仍使加速度为−g。"
+        },
+        {
+          "label": "B",
+          "text": "概念混淆：相对滑动消失后应重新判断受力；水平且无其他水平力时摩擦可为零，不会无限加速。"
+        },
+        {
+          "label": "C",
+          "text": "概念混淆：滑动加速度使用动摩擦因数，共速能否保持使用最大静摩擦条件；两者需分别给出或明确近似。"
+        },
+        {
+          "label": "D",
+          "text": "数值代入：切绳后水平绳张力立即消失；本例不能继续把7.5 N绳力算进水平合力。"
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "切绳后水平绳张力立即消失；本例不能继续把7.5 N绳力算进水平合力。\n知识库校验证据：情境：基准；代入错误式：(F<sub>s</sub>·sin(θ)+T<sub>h</sub>)/m；校验参照值：7.5。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 0,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "a<sub>x</sub> = (F<sub>s</sub>·sin(θ)+T<sub>h</sub>)/m",
+      "trap_test": {
+        "scenario": "基准",
+        "expr": "(F_s*sin(theta)+T_h)/m",
+        "ref": 7.5
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-mdl-25-2",
+      "point_id": "mdl-25",
+      "point_title": "细绳、弹簧与轻杆：切断瞬间的受力",
+      "chapter": "第二十三章 · 常用物理模型与分阶段分析",
+      "stem": "【第二十三章 · 常用物理模型与分阶段分析 · 细绳、弹簧与轻杆：切断瞬间的受力】学生的错误做法：声称“任何弹簧力在任何切断操作中都不能突变”。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "数值代入：斜面重力沿向下方向的分量不可漏掉；本例错误加速度8 m/s²，正确为2 m/s²，二者量纲完全相同。"
+        },
+        {
+          "label": "B",
+          "text": "数值代入：相对速度从3 m/s匀减到零，应使用平均值1.5 m/s；错误式漏掉二分之一，使所需板长加倍。"
+        },
+        {
+          "label": "C",
+          "text": "概念混淆：完整理想弹簧的形变量连续时弹力连续；切断弹簧本身、冲击、质量不可忽略或刚性连接瞬变时需按具体模型判断。"
+        },
+        {
+          "label": "D",
+          "text": "数值代入：接触生热只等于摩擦力乘相对路程；本例热量16 J，电机额外功32 J，两者不能混为同一量。"
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "完整理想弹簧的形变量连续时弹力连续；切断弹簧本身、冲击、质量不可忽略或刚性连接瞬变时需按具体模型判断。",
+      "error_type": "概念混淆",
+      "judging": "teacher",
+      "source_error_index": 1,
+      "source_caught_by": "人工审核",
+      "wrong_expr": null,
+      "trap_test": null,
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-mdl-26-1",
+      "point_id": "mdl-26",
+      "point_title": "等时圆（弦轨道下滑时间相同）",
+      "chapter": "第二十三章 · 常用物理模型与分阶段分析",
+      "stem": "【第二十三章 · 常用物理模型与分阶段分析 · 等时圆（弦轨道下滑时间相同）】学生的错误做法：只考虑加速度变化而忘记弦长也同时改变（错误表达式：t<sub>c</sub> = √(2·R/a<sub>c</sub>)）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "概念混淆：滑动加速度使用动摩擦因数，共速能否保持使用最大静摩擦条件；两者需分别给出或明确近似。"
+        },
+        {
+          "label": "B",
+          "text": "数值代入：下滑时间同时取决于路径长度和加速度；本例θ=60°时该错式为0.632? 本卡正确式为0.632 s，需改用模型区分错误。"
+        },
+        {
+          "label": "C",
+          "text": "概念混淆：最高点只满足瞬时速度v=0，重力仍使加速度为−g。"
+        },
+        {
+          "label": "D",
+          "text": "概念混淆：相对滑动消失后应重新判断受力；水平且无其他水平力时摩擦可为零，不会无限加速。"
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "下滑时间同时取决于路径长度和加速度；本例θ=60°时该错式为0.632? 本卡正确式为0.632 s，需改用模型区分错误。\n知识库校验证据：情境：基准；代入错误式：√(2·R/a<sub>c</sub>)；校验参照值：0.6324555320336759。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 0,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "t<sub>c</sub> = √(2·R/a<sub>c</sub>)",
+      "trap_test": {
+        "scenario": "基准",
+        "expr": "sqrt(2*R/a_c)",
+        "ref": 0.6324555320336759
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-mdl-26-2",
+      "point_id": "mdl-26",
+      "point_title": "等时圆（弦轨道下滑时间相同）",
+      "chapter": "第二十三章 · 常用物理模型与分阶段分析",
+      "stem": "【第二十三章 · 常用物理模型与分阶段分析 · 等时圆（弦轨道下滑时间相同）】学生的错误做法：把摩擦滚动小球也当成质点滑动。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "概念混淆：转动动能会改变平动加速度；有滚动或摩擦需重新列平动与转动方程。"
+        },
+        {
+          "label": "B",
+          "text": "数值代入：接触生热只等于摩擦力乘相对路程；本例热量16 J，电机额外功32 J，两者不能混为同一量。"
+        },
+        {
+          "label": "C",
+          "text": "数值代入：斜面重力沿向下方向的分量不可漏掉；本例错误加速度8 m/s²，正确为2 m/s²，二者量纲完全相同。"
+        },
+        {
+          "label": "D",
+          "text": "数值代入：相对速度从3 m/s匀减到零，应使用平均值1.5 m/s；错误式漏掉二分之一，使所需板长加倍。"
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "转动动能会改变平动加速度；有滚动或摩擦需重新列平动与转动方程。",
+      "error_type": "概念混淆",
+      "judging": "teacher",
+      "source_error_index": 1,
+      "source_caught_by": "人工审核",
+      "wrong_expr": null,
+      "trap_test": null,
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-mdl-27-1",
+      "point_id": "mdl-27",
+      "point_title": "多力平衡、斜拉与静摩擦临界",
+      "chapter": "第二十三章 · 常用物理模型与分阶段分析",
+      "stem": "【第二十三章 · 常用物理模型与分阶段分析 · 多力平衡、斜拉与静摩擦临界】学生的错误做法：把最大静摩擦固定写成μ<sub>s</sub>·m·g（错误表达式：f<sub>s</sub> = μ<sub>s</sub>·m·g）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "概念混淆：最高点只满足瞬时速度v=0，重力仍使加速度为−g。"
+        },
+        {
+          "label": "B",
+          "text": "概念混淆：相对滑动消失后应重新判断受力；水平且无其他水平力时摩擦可为零，不会无限加速。"
+        },
+        {
+          "label": "C",
+          "text": "概念混淆：滑动加速度使用动摩擦因数，共速能否保持使用最大静摩擦条件；两者需分别给出或明确近似。"
+        },
+        {
+          "label": "D",
+          "text": "数值代入：斜拉会减小支持力；本例最大摩擦约6.50 N，而μmg=8 N，量纲相同但物理量不同。"
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "斜拉会减小支持力；本例最大摩擦约6.50 N，而μmg=8 N，量纲相同但物理量不同。\n知识库校验证据：情境：基准；代入错误式：μ<sub>s</sub>·m·g；校验参照值：6.49906。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 0,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "f<sub>s</sub> = μ<sub>s</sub>·m·g",
+      "trap_test": {
+        "scenario": "基准",
+        "expr": "mu_s*m*g",
+        "ref": 6.49906
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-mdl-27-2",
+      "point_id": "mdl-27",
+      "point_title": "多力平衡、斜拉与静摩擦临界",
+      "chapter": "第二十三章 · 常用物理模型与分阶段分析",
+      "stem": "【第二十三章 · 常用物理模型与分阶段分析 · 多力平衡、斜拉与静摩擦临界】学生的错误做法：将动态平衡误解成物体静止。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "数值代入：斜面重力沿向下方向的分量不可漏掉；本例错误加速度8 m/s²，正确为2 m/s²，二者量纲完全相同。"
+        },
+        {
+          "label": "B",
+          "text": "数值代入：相对速度从3 m/s匀减到零，应使用平均值1.5 m/s；错误式漏掉二分之一，使所需板长加倍。"
+        },
+        {
+          "label": "C",
+          "text": "概念混淆：合力为零只推出加速度为零，物体可以保持非零恒定速度。"
+        },
+        {
+          "label": "D",
+          "text": "数值代入：接触生热只等于摩擦力乘相对路程；本例热量16 J，电机额外功32 J，两者不能混为同一量。"
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "合力为零只推出加速度为零，物体可以保持非零恒定速度。",
+      "error_type": "概念混淆",
+      "judging": "teacher",
+      "source_error_index": 1,
+      "source_caught_by": "人工审核",
+      "wrong_expr": null,
+      "trap_test": null,
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-mdl-28-1",
+      "point_id": "mdl-28",
+      "point_title": "定滑轮、动滑轮与滑轮组约束",
+      "chapter": "第二十三章 · 常用物理模型与分阶段分析",
+      "stem": "【第二十三章 · 常用物理模型与分阶段分析 · 定滑轮、动滑轮与滑轮组约束】学生的错误做法：把较重一端加速度直接写成g（错误表达式：a<sub>p</sub> = g）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "概念混淆：滑动加速度使用动摩擦因数，共速能否保持使用最大静摩擦条件；两者需分别给出或明确近似。"
+        },
+        {
+          "label": "B",
+          "text": "数值代入：轻绳另一端也运动并受张力，不是自由落体；本例加速度2而非10 m/s²。"
+        },
+        {
+          "label": "C",
+          "text": "概念混淆：最高点只满足瞬时速度v=0，重力仍使加速度为−g。"
+        },
+        {
+          "label": "D",
+          "text": "概念混淆：相对滑动消失后应重新判断受力；水平且无其他水平力时摩擦可为零，不会无限加速。"
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "轻绳另一端也运动并受张力，不是自由落体；本例加速度2而非10 m/s²。\n知识库校验证据：情境：基准；代入错误式：g；校验参照值：2。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 0,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "a<sub>p</sub> = g",
+      "trap_test": {
+        "scenario": "基准",
+        "expr": "g",
+        "ref": 2
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-mdl-28-2",
+      "point_id": "mdl-28",
+      "point_title": "定滑轮、动滑轮与滑轮组约束",
+      "chapter": "第二十三章 · 常用物理模型与分阶段分析",
+      "stem": "【第二十三章 · 常用物理模型与分阶段分析 · 定滑轮、动滑轮与滑轮组约束】学生的错误做法：动滑轮无条件提供一半拉力。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "概念混淆：只有绳段数量、方向和滑轮质量等都满足理想条件时才成立；移动支点和多滑轮要重新约束。"
+        },
+        {
+          "label": "B",
+          "text": "数值代入：接触生热只等于摩擦力乘相对路程；本例热量16 J，电机额外功32 J，两者不能混为同一量。"
+        },
+        {
+          "label": "C",
+          "text": "数值代入：斜面重力沿向下方向的分量不可漏掉；本例错误加速度8 m/s²，正确为2 m/s²，二者量纲完全相同。"
+        },
+        {
+          "label": "D",
+          "text": "数值代入：相对速度从3 m/s匀减到零，应使用平均值1.5 m/s；错误式漏掉二分之一，使所需板长加倍。"
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "只有绳段数量、方向和滑轮质量等都满足理想条件时才成立；移动支点和多滑轮要重新约束。",
+      "error_type": "概念混淆",
+      "judging": "teacher",
+      "source_error_index": 1,
+      "source_caught_by": "人工审核",
+      "wrong_expr": null,
+      "trap_test": null,
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-mdl-29-1",
+      "point_id": "mdl-29",
+      "point_title": "气体p-V图：等压、等容与曲线下面积",
+      "chapter": "第二十三章 · 常用物理模型与分阶段分析",
+      "stem": "【第二十三章 · 常用物理模型与分阶段分析 · 气体p-V图：等压、等容与曲线下面积】学生的错误做法：忽略压缩做功的负号（错误表达式：W = abs(½(p<sub>1</sub>+p<sub>2</sub>)·(V<sub>2</sub>-V<sub>1</sub>))）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "概念混淆：最高点只满足瞬时速度v=0，重力仍使加速度为−g。"
+        },
+        {
+          "label": "B",
+          "text": "概念混淆：相对滑动消失后应重新判断受力；水平且无其他水平力时摩擦可为零，不会无限加速。"
+        },
+        {
+          "label": "C",
+          "text": "概念混淆：滑动加速度使用动摩擦因数，共速能否保持使用最大静摩擦条件；两者需分别给出或明确近似。"
+        },
+        {
+          "label": "D",
+          "text": "数值代入：绝对值把气体对外做功和外界对气体做功混为一谈；本例膨胀为正，反向压缩应为负。"
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "绝对值把气体对外做功和外界对气体做功混为一谈；本例膨胀为正，反向压缩应为负。\n知识库校验证据：情境：压缩情境；代入错误式：abs(½(p<sub>1</sub>+p<sub>2</sub>)·(V<sub>2</sub>-V<sub>1</sub>))；校验参照值：-300。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 0,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "W = abs(½(p<sub>1</sub>+p<sub>2</sub>)·(V<sub>2</sub>-V<sub>1</sub>))",
+      "trap_test": {
+        "scenario": "压缩情境",
+        "expr": "abs(0.5*(p1+p2)*(V2-V1))",
+        "ref": -300
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-mdl-29-2",
+      "point_id": "mdl-29",
+      "point_title": "气体p-V图：等压、等容与曲线下面积",
+      "chapter": "第二十三章 · 常用物理模型与分阶段分析",
+      "stem": "【第二十三章 · 常用物理模型与分阶段分析 · 气体p-V图：等压、等容与曲线下面积】学生的错误做法：不同p-V路径只凭相同端点便断言做功相同。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "数值代入：斜面重力沿向下方向的分量不可漏掉；本例错误加速度8 m/s²，正确为2 m/s²，二者量纲完全相同。"
+        },
+        {
+          "label": "B",
+          "text": "数值代入：相对速度从3 m/s匀减到零，应使用平均值1.5 m/s；错误式漏掉二分之一，使所需板长加倍。"
+        },
+        {
+          "label": "C",
+          "text": "概念混淆：做功取决于整个过程路径；不同曲线下的面积一般不同。"
+        },
+        {
+          "label": "D",
+          "text": "数值代入：接触生热只等于摩擦力乘相对路程；本例热量16 J，电机额外功32 J，两者不能混为同一量。"
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "做功取决于整个过程路径；不同曲线下的面积一般不同。",
+      "error_type": "概念混淆",
+      "judging": "teacher",
+      "source_error_index": 1,
+      "source_caught_by": "人工审核",
+      "wrong_expr": null,
+      "trap_test": null,
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-mdl-30-1",
+      "point_id": "mdl-30",
+      "point_title": "驻波与薄膜干涉：边界、节点和相位反转",
+      "chapter": "第二十三章 · 常用物理模型与分阶段分析",
+      "stem": "【第二十三章 · 常用物理模型与分阶段分析 · 驻波与薄膜干涉：边界、节点和相位反转】学生的错误做法：把相邻节点间距写成整波长（错误表达式：d<sub>n</sub> = λ<sub>w</sub>）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "概念混淆：滑动加速度使用动摩擦因数，共速能否保持使用最大静摩擦条件；两者需分别给出或明确近似。"
+        },
+        {
+          "label": "B",
+          "text": "数值代入：一个完整波长含两个相邻节点间隔；本例节点间距0.10 m而波长0.20 m。"
+        },
+        {
+          "label": "C",
+          "text": "概念混淆：最高点只满足瞬时速度v=0，重力仍使加速度为−g。"
+        },
+        {
+          "label": "D",
+          "text": "概念混淆：相对滑动消失后应重新判断受力；水平且无其他水平力时摩擦可为零，不会无限加速。"
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "一个完整波长含两个相邻节点间隔；本例节点间距0.10 m而波长0.20 m。\n知识库校验证据：情境：基准；代入错误式：λ<sub>w</sub>；校验参照值：0.1。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 0,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "d<sub>n</sub> = λ<sub>w</sub>",
+      "trap_test": {
+        "scenario": "基准",
+        "expr": "λ_w",
+        "ref": 0.1
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-mdl-30-2",
+      "point_id": "mdl-30",
+      "point_title": "驻波与薄膜干涉：边界、节点和相位反转",
+      "chapter": "第二十三章 · 常用物理模型与分阶段分析",
+      "stem": "【第二十三章 · 常用物理模型与分阶段分析 · 驻波与薄膜干涉：边界、节点和相位反转】学生的错误做法：不判反射相位就直接使用同一薄膜干涉级次。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "概念混淆：反射相位变化会使增强和减弱条件互换或偏半波长，必须先辨认界面折射率关系。"
+        },
+        {
+          "label": "B",
+          "text": "数值代入：接触生热只等于摩擦力乘相对路程；本例热量16 J，电机额外功32 J，两者不能混为同一量。"
+        },
+        {
+          "label": "C",
+          "text": "数值代入：斜面重力沿向下方向的分量不可漏掉；本例错误加速度8 m/s²，正确为2 m/s²，二者量纲完全相同。"
+        },
+        {
+          "label": "D",
+          "text": "数值代入：相对速度从3 m/s匀减到零，应使用平均值1.5 m/s；错误式漏掉二分之一，使所需板长加倍。"
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "反射相位变化会使增强和减弱条件互换或偏半波长，必须先辨认界面折射率关系。",
+      "error_type": "概念混淆",
+      "judging": "teacher",
+      "source_error_index": 1,
+      "source_caught_by": "人工审核",
+      "wrong_expr": null,
+      "trap_test": null,
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-mdl-31-1",
+      "point_id": "mdl-31",
+      "point_title": "电学实验读表：电表接法、内阻与故障判断",
+      "chapter": "第二十三章 · 常用物理模型与分阶段分析",
+      "stem": "【第二十三章 · 常用物理模型与分阶段分析 · 电学实验读表：电表接法、内阻与故障判断】学生的错误做法：把电压表串联或电流表并联（错误表达式：R<sub>x</sub> = U<sub>x</sub>·I<sub>x</sub>）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "概念混淆：最高点只满足瞬时速度v=0，重力仍使加速度为−g。"
+        },
+        {
+          "label": "B",
+          "text": "概念混淆：相对滑动消失后应重新判断受力；水平且无其他水平力时摩擦可为零，不会无限加速。"
+        },
+        {
+          "label": "C",
+          "text": "概念混淆：滑动加速度使用动摩擦因数，共速能否保持使用最大静摩擦条件；两者需分别给出或明确近似。"
+        },
+        {
+          "label": "D",
+          "text": "数值代入：电表接法改变电路拓扑，不能靠公式修正；电压表应并联、电流表应串联，错误接法可能短路或无合理读数。"
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "电表接法改变电路拓扑，不能靠公式修正；电压表应并联、电流表应串联，错误接法可能短路或无合理读数。\n知识库校验证据：情境：基准；代入错误式：U<sub>x</sub>·I<sub>x</sub>；校验参照值：5。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 0,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "R<sub>x</sub> = U<sub>x</sub>·I<sub>x</sub>",
+      "trap_test": {
+        "scenario": "基准",
+        "expr": "U_x*I_x",
+        "ref": 5
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-mdl-31-2",
+      "point_id": "mdl-31",
+      "point_title": "电学实验读表：电表接法、内阻与故障判断",
+      "chapter": "第二十三章 · 常用物理模型与分阶段分析",
+      "stem": "【第二十三章 · 常用物理模型与分阶段分析 · 电学实验读表：电表接法、内阻与故障判断】学生的错误做法：电阻档接在带电电路中直接测量。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "数值代入：斜面重力沿向下方向的分量不可漏掉；本例错误加速度8 m/s²，正确为2 m/s²，二者量纲完全相同。"
+        },
+        {
+          "label": "B",
+          "text": "数值代入：相对速度从3 m/s匀减到零，应使用平均值1.5 m/s；错误式漏掉二分之一，使所需板长加倍。"
+        },
+        {
+          "label": "C",
+          "text": "概念混淆：欧姆档内部自带电源，外部带电会损坏仪表或读数错误，必须断电并按仪器规程操作。"
+        },
+        {
+          "label": "D",
+          "text": "数值代入：接触生热只等于摩擦力乘相对路程；本例热量16 J，电机额外功32 J，两者不能混为同一量。"
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "欧姆档内部自带电源，外部带电会损坏仪表或读数错误，必须断电并按仪器规程操作。",
+      "error_type": "概念混淆",
+      "judging": "teacher",
+      "source_error_index": 1,
+      "source_caught_by": "人工审核",
+      "wrong_expr": null,
+      "trap_test": null,
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-mdl-32-1",
+      "point_id": "mdl-32",
+      "point_title": "斜面滑块：摩擦、临界与分段运动",
+      "chapter": "第二十三章 · 常用物理模型与分阶段分析",
+      "stem": "【第二十三章 · 常用物理模型与分阶段分析 · 斜面滑块：摩擦、临界与分段运动】学生的错误做法：把支持力误当成mg（错误表达式：a<sub>s</sub> = g·(sin(θ)-μ<sub>k</sub>)）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "概念混淆：滑动加速度使用动摩擦因数，共速能否保持使用最大静摩擦条件；两者需分别给出或明确近似。"
+        },
+        {
+          "label": "B",
+          "text": "数值代入：支持力为mg cosθ，摩擦力还需乘cosθ；漏余弦会使本例加速度由3.268错成3.0 m/s²。"
+        },
+        {
+          "label": "C",
+          "text": "概念混淆：最高点只满足瞬时速度v=0，重力仍使加速度为−g。"
+        },
+        {
+          "label": "D",
+          "text": "概念混淆：相对滑动消失后应重新判断受力；水平且无其他水平力时摩擦可为零，不会无限加速。"
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "支持力为mg cosθ，摩擦力还需乘cosθ；漏余弦会使本例加速度由3.268错成3.0 m/s²。\n知识库校验证据：情境：基准；代入错误式：g·(sin(θ)-μ<sub>k</sub>)；校验参照值：3.267949192431123。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 0,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "a<sub>s</sub> = g·(sin(θ)-μ<sub>k</sub>)",
+      "trap_test": {
+        "scenario": "基准",
+        "expr": "g*(sin(theta)-mu_k)",
+        "ref": 3.267949192431123
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-mdl-32-2",
+      "point_id": "mdl-32",
+      "point_title": "斜面滑块：摩擦、临界与分段运动",
+      "chapter": "第二十三章 · 常用物理模型与分阶段分析",
+      "stem": "【第二十三章 · 常用物理模型与分阶段分析 · 斜面滑块：摩擦、临界与分段运动】学生的错误做法：看到下滑公式为负就断言物体会自行沿斜面向上加速。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "概念混淆：静止物体需先检验静摩擦条件；动摩擦模型不能决定静止状态是否启动。"
+        },
+        {
+          "label": "B",
+          "text": "数值代入：接触生热只等于摩擦力乘相对路程；本例热量16 J，电机额外功32 J，两者不能混为同一量。"
+        },
+        {
+          "label": "C",
+          "text": "数值代入：斜面重力沿向下方向的分量不可漏掉；本例错误加速度8 m/s²，正确为2 m/s²，二者量纲完全相同。"
+        },
+        {
+          "label": "D",
+          "text": "数值代入：相对速度从3 m/s匀减到零，应使用平均值1.5 m/s；错误式漏掉二分之一，使所需板长加倍。"
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "静止物体需先检验静摩擦条件；动摩擦模型不能决定静止状态是否启动。",
+      "error_type": "概念混淆",
+      "judging": "teacher",
+      "source_error_index": 1,
+      "source_caught_by": "人工审核",
+      "wrong_expr": null,
+      "trap_test": null,
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-mdl-32-3",
+      "point_id": "mdl-32",
+      "point_title": "斜面滑块：摩擦、临界与分段运动",
+      "chapter": "第二十三章 · 常用物理模型与分阶段分析",
+      "stem": "【第二十三章 · 常用物理模型与分阶段分析 · 斜面滑块：摩擦、临界与分段运动】学生的错误做法：把斜面临界静摩擦因数误写成cotθ（错误表达式：μ<sub>静临界</sub> = cos(θ)/sin(θ)）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "概念混淆：最高点只满足瞬时速度v=0，重力仍使加速度为−g。"
+        },
+        {
+          "label": "B",
+          "text": "概念混淆：相对滑动消失后应重新判断受力；水平且无其他水平力时摩擦可为零，不会无限加速。"
+        },
+        {
+          "label": "C",
+          "text": "概念混淆：滑动加速度使用动摩擦因数，共速能否保持使用最大静摩擦条件；两者需分别给出或明确近似。"
+        },
+        {
+          "label": "D",
+          "text": "数值代入：临界条件来自沿斜面重力分量等于最大静摩擦，得到μ<sub>s</sub>=tanθ；cotθ会给出相反的角度依赖。"
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "临界条件来自沿斜面重力分量等于最大静摩擦，得到μ<sub>s</sub>=tanθ；cotθ会给出相反的角度依赖。\n知识库校验证据：情境：基准；代入错误式：cos(θ)/sin(θ)；校验参照值：0.5773502691896257。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 2,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "μ<sub>静临界</sub> = cos(θ)/sin(θ)",
+      "trap_test": {
+        "scenario": "基准",
+        "expr": "cos(theta)/sin(theta)",
+        "ref": 0.5773502691896257
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-mdl-33-1",
+      "point_id": "mdl-33",
+      "point_title": "斜面—滑轮组合：约束方向与共同加速度",
+      "chapter": "第二十三章 · 常用物理模型与分阶段分析",
+      "stem": "【第二十三章 · 常用物理模型与分阶段分析 · 斜面—滑轮组合：约束方向与共同加速度】学生的错误做法：用悬挂重物重力除斜面块质量求加速度（错误表达式：a = m2·g/m1）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "概念混淆：相对滑动消失后应重新判断受力；水平且无其他水平力时摩擦可为零，不会无限加速。"
+        },
+        {
+          "label": "B",
+          "text": "概念混淆：滑动加速度使用动摩擦因数，共速能否保持使用最大静摩擦条件；两者需分别给出或明确近似。"
+        },
+        {
+          "label": "C",
+          "text": "数值代入：还需加速两个物体且斜面重力分量反向；本例正确加速度2.5而非10 m/s²。"
+        },
+        {
+          "label": "D",
+          "text": "概念混淆：最高点只满足瞬时速度v=0，重力仍使加速度为−g。"
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "还需加速两个物体且斜面重力分量反向；本例正确加速度2.5而非10 m/s²。\n知识库校验证据：情境：基准；代入错误式：m2·g/m1；校验参照值：2.5。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 0,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "a = m2·g/m1",
+      "trap_test": {
+        "scenario": "基准",
+        "expr": "m2*g/m1",
+        "ref": 2.5
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-mdl-33-2",
+      "point_id": "mdl-33",
+      "point_title": "斜面—滑轮组合：约束方向与共同加速度",
+      "chapter": "第二十三章 · 常用物理模型与分阶段分析",
+      "stem": "【第二十三章 · 常用物理模型与分阶段分析 · 斜面—滑轮组合：约束方向与共同加速度】学生的错误做法：认为理想轻绳张力等于悬挂重物重力。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "数值代入：相对速度从3 m/s匀减到零，应使用平均值1.5 m/s；错误式漏掉二分之一，使所需板长加倍。"
+        },
+        {
+          "label": "B",
+          "text": "概念混淆：悬挂重物加速下落时绳张力小于重力；应使用m2(g−a)。"
+        },
+        {
+          "label": "C",
+          "text": "数值代入：接触生热只等于摩擦力乘相对路程；本例热量16 J，电机额外功32 J，两者不能混为同一量。"
+        },
+        {
+          "label": "D",
+          "text": "数值代入：斜面重力沿向下方向的分量不可漏掉；本例错误加速度8 m/s²，正确为2 m/s²，二者量纲完全相同。"
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "悬挂重物加速下落时绳张力小于重力；应使用m2(g−a)。",
+      "error_type": "概念混淆",
+      "judging": "teacher",
+      "source_error_index": 1,
+      "source_caught_by": "人工审核",
+      "wrong_expr": null,
+      "trap_test": null,
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-mdl-34-1",
+      "point_id": "mdl-34",
+      "point_title": "电阻网络开关：等效电阻与端电压动态",
+      "chapter": "第二十三章 · 常用物理模型与分阶段分析",
+      "stem": "【第二十三章 · 常用物理模型与分阶段分析 · 电阻网络开关：等效电阻与端电压动态】学生的错误做法：开关接通后仍将并联电阻写成直接相加（错误表达式：R = R<sub>1</sub>+R<sub>2</sub>）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "数值代入：并联等效电阻小于任一支路电阻；本例应为2 Ω而非9 Ω，端电压和干路电流随之改变。"
+        },
+        {
+          "label": "B",
+          "text": "概念混淆：最高点只满足瞬时速度v=0，重力仍使加速度为−g。"
+        },
+        {
+          "label": "C",
+          "text": "概念混淆：相对滑动消失后应重新判断受力；水平且无其他水平力时摩擦可为零，不会无限加速。"
+        },
+        {
+          "label": "D",
+          "text": "概念混淆：滑动加速度使用动摩擦因数，共速能否保持使用最大静摩擦条件；两者需分别给出或明确近似。"
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "并联等效电阻小于任一支路电阻；本例应为2 Ω而非9 Ω，端电压和干路电流随之改变。\n知识库校验证据：情境：基准；代入错误式：R<sub>1</sub>+R<sub>2</sub>；校验参照值：2。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 0,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "R = R<sub>1</sub>+R<sub>2</sub>",
+      "trap_test": {
+        "scenario": "基准",
+        "expr": "R1+R2",
+        "ref": 2
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-mdl-34-2",
+      "point_id": "mdl-34",
+      "point_title": "电阻网络开关：等效电阻与端电压动态",
+      "chapter": "第二十三章 · 常用物理模型与分阶段分析",
+      "stem": "【第二十三章 · 常用物理模型与分阶段分析 · 电阻网络开关：等效电阻与端电压动态】学生的错误做法：端电压变化时仍假设电源内阻压降不变。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "数值代入：接触生热只等于摩擦力乘相对路程；本例热量16 J，电机额外功32 J，两者不能混为同一量。"
+        },
+        {
+          "label": "B",
+          "text": "数值代入：斜面重力沿向下方向的分量不可漏掉；本例错误加速度8 m/s²，正确为2 m/s²，二者量纲完全相同。"
+        },
+        {
+          "label": "C",
+          "text": "数值代入：相对速度从3 m/s匀减到零，应使用平均值1.5 m/s；错误式漏掉二分之一，使所需板长加倍。"
+        },
+        {
+          "label": "D",
+          "text": "概念混淆：内阻压降随总电流变化；负载切换后需重新求总电流与端电压。"
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "内阻压降随总电流变化；负载切换后需重新求总电流与端电压。",
+      "error_type": "概念混淆",
+      "judging": "teacher",
+      "source_error_index": 1,
+      "source_caught_by": "人工审核",
+      "wrong_expr": null,
+      "trap_test": null,
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-mdl-35-1",
+      "point_id": "mdl-35",
+      "point_title": "竖直上抛：最高点与返回分段",
+      "chapter": "第二十三章 · 常用物理模型与分阶段分析",
+      "stem": "【第二十三章 · 常用物理模型与分阶段分析 · 竖直上抛：最高点与返回分段】学生的错误做法：认为物体到达最高点后加速度为零。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "数值代入：斜面重力沿向下方向的分量不可漏掉；本例错误加速度8 m/s²，正确为2 m/s²，二者量纲完全相同。"
+        },
+        {
+          "label": "B",
+          "text": "数值代入：相对速度从3 m/s匀减到零，应使用平均值1.5 m/s；错误式漏掉二分之一，使所需板长加倍。"
+        },
+        {
+          "label": "C",
+          "text": "概念混淆：最高点只满足瞬时速度v=0，重力仍使加速度为−g。"
+        },
+        {
+          "label": "D",
+          "text": "数值代入：接触生热只等于摩擦力乘相对路程；本例热量16 J，电机额外功32 J，两者不能混为同一量。"
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "最高点只满足瞬时速度v=0，重力仍使加速度为−g。",
+      "error_type": "概念混淆",
+      "judging": "teacher",
+      "source_error_index": 0,
+      "source_caught_by": "人工审核",
+      "wrong_expr": null,
+      "trap_test": null,
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-mdl-35-2",
+      "point_id": "mdl-35",
+      "point_title": "竖直上抛：最高点与返回分段",
+      "chapter": "第二十三章 · 常用物理模型与分阶段分析",
+      "stem": "【第二十三章 · 常用物理模型与分阶段分析 · 竖直上抛：最高点与返回分段】学生的错误做法：把竖直上抛速度写成随时间增加（错误表达式：v<sub>t</sub> = v<sub>0</sub>+g·t）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "概念混淆：地面摩擦对块板系统有外冲量，必须用总动量变化等于外冲量或分别用牛顿定律。"
+        },
+        {
+          "label": "B",
+          "text": "数值代入：向上为正时重力加速度为负；上升速度应随时间减小。"
+        },
+        {
+          "label": "C",
+          "text": "概念混淆：相对滑动消失后应重新判断受力；水平且无其他水平力时摩擦可为零，不会无限加速。"
+        },
+        {
+          "label": "D",
+          "text": "概念混淆：滑动加速度使用动摩擦因数，共速能否保持使用最大静摩擦条件；两者需分别给出或明确近似。"
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "向上为正时重力加速度为负；上升速度应随时间减小。\n知识库校验证据：情境：基准；代入错误式：v<sub>0</sub>+g·t；校验参照值：10。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 1,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "v<sub>t</sub> = v<sub>0</sub>+g·t",
+      "trap_test": {
+        "scenario": "基准",
+        "expr": "v_0+g*t",
+        "ref": 10
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-mdl-36-1",
+      "point_id": "mdl-36",
+      "point_title": "斜面板块：相对运动与板长临界",
+      "chapter": "第二十三章 · 常用物理模型与分阶段分析",
+      "stem": "【第二十三章 · 常用物理模型与分阶段分析 · 斜面板块：相对运动与板长临界】学生的错误做法：木板加速度只计摩擦，漏计自身重力（错误表达式：a<sub>p</sub> = μ<sub>k</sub>·m<sub>b</sub>·g·cos(θ)/M）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "数值代入：木板与斜面光滑只表示没有斜面摩擦，木板自身的重力沿面分量仍在；漏计会将5.577错算成0.577，并把相对运动的加速方向判反。"
+        },
+        {
+          "label": "B",
+          "text": "概念混淆：最高点只满足瞬时速度v=0，重力仍使加速度为−g。"
+        },
+        {
+          "label": "C",
+          "text": "概念混淆：相对滑动消失后应重新判断受力；水平且无其他水平力时摩擦可为零，不会无限加速。"
+        },
+        {
+          "label": "D",
+          "text": "概念混淆：滑动加速度使用动摩擦因数，共速能否保持使用最大静摩擦条件；两者需分别给出或明确近似。"
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "木板与斜面光滑只表示没有斜面摩擦，木板自身的重力沿面分量仍在；漏计会将5.577错算成0.577，并把相对运动的加速方向判反。\n知识库校验证据：情境：标准情境；代入错误式：μ<sub>k</sub>·m<sub>b</sub>·g·cos(θ)/M；校验参照值：5.577350269189625。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 0,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "a<sub>p</sub> = μ<sub>k</sub>·m<sub>b</sub>·g·cos(θ)/M",
+      "trap_test": {
+        "scenario": "标准情境",
+        "expr": "mu_k*m_b*g*cos(theta)/M",
+        "ref": 5.577350269189625
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-mdl-36-2",
+      "point_id": "mdl-36",
+      "point_title": "斜面板块：相对运动与板长临界",
+      "chapter": "第二十三章 · 常用物理模型与分阶段分析",
+      "stem": "【第二十三章 · 常用物理模型与分阶段分析 · 斜面板块：相对运动与板长临界】学生的错误做法：两者从相对静止一起释放，仍按固定斜面的临界角判定滑块自行下滑。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "数值代入：接触生热只等于摩擦力乘相对路程；本例热量16 J，电机额外功32 J，两者不能混为同一量。"
+        },
+        {
+          "label": "B",
+          "text": "数值代入：斜面重力沿向下方向的分量不可漏掉；本例错误加速度8 m/s²，正确为2 m/s²，二者量纲完全相同。"
+        },
+        {
+          "label": "C",
+          "text": "数值代入：相对速度从3 m/s匀减到零，应使用平均值1.5 m/s；错误式漏掉二分之一，使所需板长加倍。"
+        },
+        {
+          "label": "D",
+          "text": "概念混淆：自由木板与滑块同受重力沿面加速度，初始相对静止时无需摩擦就能共同运动；固定斜面静摩擦临界不适用于这个可自由滑动的木板模型。"
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "自由木板与滑块同受重力沿面加速度，初始相对静止时无需摩擦就能共同运动；固定斜面静摩擦临界不适用于这个可自由滑动的木板模型。",
+      "error_type": "概念混淆",
+      "judging": "teacher",
+      "source_error_index": 1,
+      "source_caught_by": "人工审核",
+      "wrong_expr": null,
+      "trap_test": null,
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-mdl-37-1",
+      "point_id": "mdl-37",
+      "point_title": "平抛运动：分运动、轨迹与落地条件",
+      "chapter": "第二十三章 · 常用物理模型与分阶段分析",
+      "stem": "【第二十三章 · 常用物理模型与分阶段分析 · 平抛运动：分运动、轨迹与落地条件】学生的错误做法：认为水平速度会因重力随时间增加（错误表达式：v<sub>x</sub> = v<sub>0</sub>+g·t）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "概念混淆：相对滑动消失后应重新判断受力；水平且无其他水平力时摩擦可为零，不会无限加速。"
+        },
+        {
+          "label": "B",
+          "text": "概念混淆：滑动加速度使用动摩擦因数，共速能否保持使用最大静摩擦条件；两者需分别给出或明确近似。"
+        },
+        {
+          "label": "C",
+          "text": "数值代入：重力竖直向下，水平方向没有加速度；水平速度保持不变。"
+        },
+        {
+          "label": "D",
+          "text": "概念混淆：最高点只满足瞬时速度v=0，重力仍使加速度为−g。"
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "重力竖直向下，水平方向没有加速度；水平速度保持不变。基准情境中正确水平速度为10 m/s，错误式给出20 m/s。\n知识库校验证据：情境：基准；代入错误式：v<sub>0</sub>+g·t；校验参照值：10。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 0,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "v<sub>x</sub> = v<sub>0</sub>+g·t",
+      "trap_test": {
+        "scenario": "基准",
+        "expr": "v_0+g*t",
+        "ref": 10
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-mdl-37-2",
+      "point_id": "mdl-37",
+      "point_title": "平抛运动：分运动、轨迹与落地条件",
+      "chapter": "第二十三章 · 常用物理模型与分阶段分析",
+      "stem": "【第二十三章 · 常用物理模型与分阶段分析 · 平抛运动：分运动、轨迹与落地条件】学生的错误做法：把平抛运动的竖直方向当作匀速运动（错误表达式：y = 0）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "概念混淆：滑动加速度使用动摩擦因数，共速能否保持使用最大静摩擦条件；两者需分别给出或明确近似。"
+        },
+        {
+          "label": "B",
+          "text": "数值代入：竖直方向受重力作用，位移随时间按平方增长；基准情境抛出1 s后已下落5 m。"
+        },
+        {
+          "label": "C",
+          "text": "概念混淆：最高点只满足瞬时速度v=0，重力仍使加速度为−g。"
+        },
+        {
+          "label": "D",
+          "text": "概念混淆：相对滑动消失后应重新判断受力；水平且无其他水平力时摩擦可为零，不会无限加速。"
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "竖直方向受重力作用，位移随时间按平方增长；基准情境抛出1 s后已下落5 m。\n知识库校验证据：情境：基准；代入错误式：0；校验参照值：5。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 1,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "y = 0",
+      "trap_test": {
+        "scenario": "基准",
+        "expr": "0",
+        "ref": 5
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-mdl-37-3",
+      "point_id": "mdl-37",
+      "point_title": "平抛运动：分运动、轨迹与落地条件",
+      "chapter": "第二十三章 · 常用物理模型与分阶段分析",
+      "stem": "【第二十三章 · 常用物理模型与分阶段分析 · 平抛运动：分运动、轨迹与落地条件】学生的错误做法：水平和竖直分运动使用不同的时间。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "概念混淆：两个方向是同一物体的分运动，必须使用同一个经过时间；不能分别选择不同的时刻拼成轨迹。"
+        },
+        {
+          "label": "B",
+          "text": "数值代入：接触生热只等于摩擦力乘相对路程；本例热量16 J，电机额外功32 J，两者不能混为同一量。"
+        },
+        {
+          "label": "C",
+          "text": "数值代入：斜面重力沿向下方向的分量不可漏掉；本例错误加速度8 m/s²，正确为2 m/s²，二者量纲完全相同。"
+        },
+        {
+          "label": "D",
+          "text": "数值代入：相对速度从3 m/s匀减到零，应使用平均值1.5 m/s；错误式漏掉二分之一，使所需板长加倍。"
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "两个方向是同一物体的分运动，必须使用同一个经过时间；不能分别选择不同的时刻拼成轨迹。",
+      "error_type": "概念混淆",
+      "judging": "teacher",
+      "source_error_index": 2,
+      "source_caught_by": "人工审核",
+      "wrong_expr": null,
+      "trap_test": null,
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-mdl-38-1",
+      "point_id": "mdl-38",
+      "point_title": "斜抛运动：分运动、最高点与射程",
+      "chapter": "第二十三章 · 常用物理模型与分阶段分析",
+      "stem": "【第二十三章 · 常用物理模型与分阶段分析 · 斜抛运动：分运动、最高点与射程】学生的错误做法：把重力加速度也加到水平速度分量上（错误表达式：v<sub>x</sub> = v<sub>0</sub>·cos(θ)+g·t）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "概念混淆：最高点只满足瞬时速度v=0，重力仍使加速度为−g。"
+        },
+        {
+          "label": "B",
+          "text": "概念混淆：相对滑动消失后应重新判断受力；水平且无其他水平力时摩擦可为零，不会无限加速。"
+        },
+        {
+          "label": "C",
+          "text": "概念混淆：滑动加速度使用动摩擦因数，共速能否保持使用最大静摩擦条件；两者需分别给出或明确近似。"
+        },
+        {
+          "label": "D",
+          "text": "数值代入：重力只有竖直分量，水平速度保持v<sub>0</sub> cosθ；基准情境的正确值约17.32 m/s。"
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "重力只有竖直分量，水平速度保持v<sub>0</sub> cosθ；基准情境的正确值约17.32 m/s。\n知识库校验证据：情境：基准；代入错误式：v<sub>0</sub>·cos(θ)+g·t；校验参照值：17.320508075688775。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 0,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "v<sub>x</sub> = v<sub>0</sub>·cos(θ)+g·t",
+      "trap_test": {
+        "scenario": "基准",
+        "expr": "v_0*cos(theta)+g*t",
+        "ref": 17.320508075688775
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-mdl-38-2",
+      "point_id": "mdl-38",
+      "point_title": "斜抛运动：分运动、最高点与射程",
+      "chapter": "第二十三章 · 常用物理模型与分阶段分析",
+      "stem": "【第二十三章 · 常用物理模型与分阶段分析 · 斜抛运动：分运动、最高点与射程】学生的错误做法：把斜抛的竖直位移写成没有重力项（错误表达式：y = v<sub>0</sub>·sin(θ)·t）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "概念混淆：相对滑动消失后应重新判断受力；水平且无其他水平力时摩擦可为零，不会无限加速。"
+        },
+        {
+          "label": "B",
+          "text": "概念混淆：滑动加速度使用动摩擦因数，共速能否保持使用最大静摩擦条件；两者需分别给出或明确近似。"
+        },
+        {
+          "label": "C",
+          "text": "数值代入：竖直方向有向下的重力加速度；基准情境1 s时正确位移约12.32 m。"
+        },
+        {
+          "label": "D",
+          "text": "概念混淆：最高点只满足瞬时速度v=0，重力仍使加速度为−g。"
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "竖直方向有向下的重力加速度；基准情境1 s时正确位移约12.32 m。\n知识库校验证据：情境：基准；代入错误式：v<sub>0</sub>·sin(θ)·t；校验参照值：4.999999999999998。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 1,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "y = v<sub>0</sub>·sin(θ)·t",
+      "trap_test": {
+        "scenario": "基准",
+        "expr": "v_0*sin(theta)*t",
+        "ref": 4.999999999999998
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-mdl-38-3",
+      "point_id": "mdl-38",
+      "point_title": "斜抛运动：分运动、最高点与射程",
+      "chapter": "第二十三章 · 常用物理模型与分阶段分析",
+      "stem": "【第二十三章 · 常用物理模型与分阶段分析 · 斜抛运动：分运动、最高点与射程】学生的错误做法：把等高落回的射程公式用于高度不同的落点。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "数值代入：相对速度从3 m/s匀减到零，应使用平均值1.5 m/s；错误式漏掉二分之一，使所需板长加倍。"
+        },
+        {
+          "label": "B",
+          "text": "概念混淆：飞行时间取决于竖直方向的实际位移条件；只有等高落回时才可直接用本卡的总飞行时间和射程公式。"
+        },
+        {
+          "label": "C",
+          "text": "数值代入：接触生热只等于摩擦力乘相对路程；本例热量16 J，电机额外功32 J，两者不能混为同一量。"
+        },
+        {
+          "label": "D",
+          "text": "数值代入：斜面重力沿向下方向的分量不可漏掉；本例错误加速度8 m/s²，正确为2 m/s²，二者量纲完全相同。"
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "飞行时间取决于竖直方向的实际位移条件；只有等高落回时才可直接用本卡的总飞行时间和射程公式。",
+      "error_type": "概念混淆",
+      "judging": "teacher",
+      "source_error_index": 2,
+      "source_caught_by": "人工审核",
+      "wrong_expr": null,
+      "trap_test": null,
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-mdl-39-1",
+      "point_id": "mdl-39",
+      "point_title": "蹦极与绳索缓冲模型",
+      "chapter": "第二十三章 · 常用物理模型与分阶段分析",
+      "stem": "【第二十三章 · 常用物理模型与分阶段分析 · 蹦极与绳索缓冲模型】学生的错误做法：把变弹力做功误写为末弹力乘伸长（错误表达式：x<sub>max</sub> = (m·g+√(m²·g²+4·k·m·g·L))/(2·k)）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "数值代入：这相当于用末弹力乘总伸长，漏掉力—位移图三角形的一半；会少算可达到的伸长，虽然二次方程的量纲仍完全正确。"
+        },
+        {
+          "label": "B",
+          "text": "概念混淆：最高点只满足瞬时速度v=0，重力仍使加速度为−g。"
+        },
+        {
+          "label": "C",
+          "text": "概念混淆：相对滑动消失后应重新判断受力；水平且无其他水平力时摩擦可为零，不会无限加速。"
+        },
+        {
+          "label": "D",
+          "text": "概念混淆：滑动加速度使用动摩擦因数，共速能否保持使用最大静摩擦条件；两者需分别给出或明确近似。"
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "这相当于用末弹力乘总伸长，漏掉力—位移图三角形的一半；会少算可达到的伸长，虽然二次方程的量纲仍完全正确。\n知识库校验证据：情境：基准；代入错误式：(m·g+√(m²·g²+4·k·m·g·L))/(2·k)；校验参照值：4。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 0,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "x<sub>max</sub> = (m·g+√(m²·g²+4·k·m·g·L))/(2·k)",
+      "trap_test": {
+        "scenario": "基准",
+        "expr": "(m*g+sqrt(m^2*g^2+4*k*m*g*L))/(2*k)",
+        "ref": 4
+      },
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    },
+    {
+      "id": "diagnostic-mdl-39-2",
+      "point_id": "mdl-39",
+      "point_title": "蹦极与绳索缓冲模型",
+      "chapter": "第二十三章 · 常用物理模型与分阶段分析",
+      "stem": "【第二十三章 · 常用物理模型与分阶段分析 · 蹦极与绳索缓冲模型】学生的错误做法：认为最低点速度最大且加速度为零。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "数值代入：接触生热只等于摩擦力乘相对路程；本例热量16 J，电机额外功32 J，两者不能混为同一量。"
+        },
+        {
+          "label": "B",
+          "text": "数值代入：斜面重力沿向下方向的分量不可漏掉；本例错误加速度8 m/s²，正确为2 m/s²，二者量纲完全相同。"
+        },
+        {
+          "label": "C",
+          "text": "数值代入：相对速度从3 m/s匀减到零，应使用平均值1.5 m/s；错误式漏掉二分之一，使所需板长加倍。"
+        },
+        {
+          "label": "D",
+          "text": "概念混淆：最低点是位移转向处，速度暂时为零而弹力大于重力；最大速度在较早的合力为零处，速度极值与位移极值不是同一条件。"
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "最低点是位移转向处，速度暂时为零而弹力大于重力；最大速度在较早的合力为零处，速度极值与位移极值不是同一条件。",
+      "error_type": "概念混淆",
+      "judging": "teacher",
+      "source_error_index": 1,
+      "source_caught_by": "人工审核",
+      "wrong_expr": null,
+      "trap_test": null,
+      "review": {
+        "confidence": "medium",
+        "checks": {
+          "answer_unique": true,
+          "distractors_plausible": true,
+          "stem_clear": true,
+          "no_cross_segment": true
+        },
+        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+      }
+    }
+  ],
+  "skipped": [],
+  "source_records": {
+    "diagnostic-mdl-01-1": {
+      "error": {
+        "wrong": "把摩擦热写成物块获得的动能两倍",
+        "wrong_expr": "Q = 2*mu*m*g*s_rel",
+        "why": "接触生热只等于摩擦力乘相对路程；本例热量16 J，电机额外功32 J，两者不能混为同一量。",
+        "caught_by": "数值代入",
+        "trap_test": {
+          "scenario": "基准",
+          "expr": "2*mu*m*g*s_rel",
+          "ref": 16
+        }
+      },
+      "title": "水平传送带：共速、位移与摩擦生热",
+      "chapter": "第二十三章 · 常用物理模型与分阶段分析"
+    },
+    "diagnostic-mdl-01-2": {
+      "error": {
+        "wrong": "认为达到带速后一定继续受滑动摩擦",
+        "why": "相对滑动消失后应重新判断受力；水平且无其他水平力时摩擦可为零，不会无限加速。",
+        "caught_by": "人工审核"
+      },
+      "title": "水平传送带：共速、位移与摩擦生热",
+      "chapter": "第二十三章 · 常用物理模型与分阶段分析"
+    },
+    "diagnostic-mdl-02-1": {
+      "error": {
+        "wrong": "忽略重力分量直接使用水平带加速度",
+        "wrong_expr": "a = mu*g*cos(theta)",
+        "why": "斜面重力沿向下方向的分量不可漏掉；本例错误加速度8 m/s²，正确为2 m/s²，二者量纲完全相同。",
+        "caught_by": "数值代入",
+        "trap_test": {
+          "scenario": "基准",
+          "expr": "mu*g*cos(theta)",
+          "ref": 2
+        }
+      },
+      "title": "倾斜传送带：摩擦方向与共速条件",
+      "chapter": "第二十三章 · 常用物理模型与分阶段分析"
+    },
+    "diagnostic-mdl-02-2": {
+      "error": {
+        "wrong": "把静摩擦因数与动摩擦因数混为同一条件",
+        "why": "滑动加速度使用动摩擦因数，共速能否保持使用最大静摩擦条件；两者需分别给出或明确近似。",
+        "caught_by": "人工审核"
+      },
+      "title": "倾斜传送带：摩擦方向与共速条件",
+      "chapter": "第二十三章 · 常用物理模型与分阶段分析"
+    },
+    "diagnostic-mdl-03-1": {
+      "error": {
+        "wrong": "把相对滑程当成相对初速乘全部时间",
+        "wrong_expr": "s_rel = (v1-v2)*t",
+        "why": "相对速度从3 m/s匀减到零，应使用平均值1.5 m/s；错误式漏掉二分之一，使所需板长加倍。",
+        "caught_by": "数值代入",
+        "trap_test": {
+          "scenario": "基准",
+          "expr": "(v1-v2)*t",
+          "ref": 1.9285714285714286
+        }
+      },
+      "title": "滑块—木板：地面摩擦与相对滑程",
+      "chapter": "第二十三章 · 常用物理模型与分阶段分析"
+    },
+    "diagnostic-mdl-03-2": {
+      "error": {
+        "wrong": "有地面摩擦仍使用系统动量守恒",
+        "why": "地面摩擦对块板系统有外冲量，必须用总动量变化等于外冲量或分别用牛顿定律。",
+        "caught_by": "人工审核"
+      },
+      "title": "滑块—木板：地面摩擦与相对滑程",
+      "chapter": "第二十三章 · 常用物理模型与分阶段分析"
+    },
+    "diagnostic-mdl-04-1": {
+      "error": {
+        "wrong": "把稳定速度的阻力因子多乘二",
+        "wrong_expr": "v_max = P/(2*f_r)",
+        "why": "稳定时牵引力恰好平衡阻力，功率全部用于克服该阻力；多乘二使本例稳定速度从30错成15 m/s。",
+        "caught_by": "数值代入",
+        "trap_test": {
+          "scenario": "基准",
+          "expr": "P/(2*f_r)",
+          "ref": 30
+        }
+      },
+      "title": "机车启动：匀加速、恒功率与速度上限",
+      "chapter": "第二十三章 · 常用物理模型与分阶段分析"
+    },
+    "diagnostic-mdl-04-2": {
+      "error": {
+        "wrong": "从零速直接使用牵引力等于功率除速度",
+        "why": "零速表达无定义，实际牵引力有限；需要给出启动限制或先处理恒牵引力、恒加速度阶段。",
+        "caught_by": "人工审核"
+      },
+      "title": "机车启动：匀加速、恒功率与速度上限",
+      "chapter": "第二十三章 · 常用物理模型与分阶段分析"
+    },
+    "diagnostic-mdl-05-1": {
+      "error": {
+        "wrong": "漏掉二分之一使追近距离加倍",
+        "wrong_expr": "d_c = v_rel^2/a_r",
+        "why": "相对速度匀减至零，平均相对速度是初值的一半；本例临界距离4 m，漏系数后变成8 m。",
+        "caught_by": "数值代入",
+        "trap_test": {
+          "scenario": "基准",
+          "expr": "v_rel^2/a_r",
+          "ref": 4
+        }
+      },
+      "title": "追及与相遇：最近距离和安全临界",
+      "chapter": "第二十三章 · 常用物理模型与分阶段分析"
+    },
+    "diagnostic-mdl-05-2": {
+      "error": {
+        "wrong": "把两车速度相等误判为已经相遇",
+        "why": "速度相等只说明间距变化率为零，位置是否相同必须另比较；最近时刻可以仍有明显间距。",
+        "caught_by": "人工审核"
+      },
+      "title": "追及与相遇：最近距离和安全临界",
+      "chapter": "第二十三章 · 常用物理模型与分阶段分析"
+    },
+    "diagnostic-mdl-06-1": {
+      "error": {
+        "wrong": "忘记乙端速度投影",
+        "wrong_expr": "v_A = v_B/cos(alpha)",
+        "why": "乙端速度与绳方向不平行时，全部速度不等于绳长变化率；本例会由1.6错为2.0 m/s。",
+        "caught_by": "数值代入",
+        "trap_test": {
+          "scenario": "基准",
+          "expr": "v_B/cos(alpha)",
+          "ref": 1.6
+        }
+      },
+      "title": "绳杆关联：速度投影、几何约束与能量",
+      "chapter": "第二十三章 · 常用物理模型与分阶段分析"
+    },
+    "diagnostic-mdl-06-2": {
+      "error": {
+        "wrong": "把所有关联运动的速度式直接改写成同形式加速度式",
+        "why": "连接方向改变会产生额外几何项，必须从长度条件重新处理；不能忽略角度变化。",
+        "caught_by": "人工审核"
+      },
+      "title": "绳杆关联：速度投影、几何约束与能量",
+      "chapter": "第二十三章 · 常用物理模型与分阶段分析"
+    },
+    "diagnostic-mdl-07-1": {
+      "error": {
+        "wrong": "把相对行走距离直接当成人的对岸位移",
+        "wrong_expr": "x_b = m*L/M",
+        "why": "相对位移包含船的反向移动；本例错误船位移1.25 m，正确1 m，因此不能只除以船质量。",
+        "caught_by": "数值代入",
+        "trap_test": {
+          "scenario": "基准",
+          "expr": "m*L/M",
+          "ref": 1
+        }
+      },
+      "title": "人船模型：质心与对岸、相对位移",
+      "chapter": "第二十三章 · 常用物理模型与分阶段分析"
+    },
+    "diagnostic-mdl-07-2": {
+      "error": {
+        "wrong": "有岸边拉绳仍认为系统质心不动",
+        "why": "固定在岸的绳会提供水平外力，质心位置不变的前提被破坏，需要把该外力纳入分析。",
+        "caught_by": "人工审核"
+      },
+      "title": "人船模型：质心与对岸、相对位移",
+      "chapter": "第二十三章 · 常用物理模型与分阶段分析"
+    },
+    "diagnostic-mdl-08-1": {
+      "error": {
+        "wrong": "把碰撞损失机械能算成初末动能之和",
+        "wrong_expr": "Q = 0.5*m*v_0^2+0.5*(m+M)*v^2",
+        "why": "损失是初动能减末动能，末动能仍保存在整体平动中；加号会得到50.5 J而不是49.5 J。",
+        "caught_by": "数值代入",
+        "trap_test": {
+          "scenario": "基准",
+          "expr": "0.5*m*v_0^2+0.5*(m+M)*v^2",
+          "ref": 49.5
+        }
+      },
+      "title": "子弹—木块：动量、相对穿入与能量损失",
+      "chapter": "第二十三章 · 常用物理模型与分阶段分析"
+    },
+    "diagnostic-mdl-08-2": {
+      "error": {
+        "wrong": "用子弹对地位移代替穿入深度",
+        "why": "木块在碰撞过程中移动，摩擦损耗取两者相对位移；固定木块是另一种边界条件。",
+        "caught_by": "人工审核"
+      },
+      "title": "子弹—木块：动量、相对穿入与能量损失",
+      "chapter": "第二十三章 · 常用物理模型与分阶段分析"
+    },
+    "diagnostic-mdl-09-1": {
+      "error": {
+        "wrong": "顶部临界速度漏掉根号",
+        "wrong_expr": "v_min = g*r",
+        "why": "速度平方才等于gr，速度应为其平方根；该错式量纲已不符，但还应通过临界受力复核。",
+        "caught_by": "数值代入",
+        "trap_test": {
+          "scenario": "基准",
+          "expr": "g*r",
+          "ref": 3.1622776601683795
+        }
+      },
+      "title": "竖直圆周运动：轻绳顶部与临界条件",
+      "chapter": "第二十三章 · 常用物理模型与分阶段分析"
+    },
+    "diagnostic-mdl-09-2": {
+      "error": {
+        "wrong": "把负张力当成绳能推物体",
+        "why": "绳松弛后物体不再沿原圆轨道运动，应切换到抛体阶段或按杆模型重算。",
+        "caught_by": "人工审核"
+      },
+      "title": "竖直圆周运动：轻绳顶部与临界条件",
+      "chapter": "第二十三章 · 常用物理模型与分阶段分析"
+    },
+    "diagnostic-mdl-10-1": {
+      "error": {
+        "wrong": "把杆当成只拉不推的轻绳",
+        "wrong_expr": "F_top = abs(m*(v_top^2/r-g))",
+        "why": "绝对值掩盖约束方向；本例杆需要反向推力6 N，单侧轻绳不能提供这个力，结果应是绳松而非张力6 N。",
+        "caught_by": "数值代入",
+        "trap_test": {
+          "scenario": "基准",
+          "expr": "abs(m*(v_top^2/r-g))",
+          "ref": -6
+        }
+      },
+      "title": "细杆、轻绳与单侧轨道的约束区别",
+      "chapter": "第二十三章 · 常用物理模型与分阶段分析"
+    },
+    "diagnostic-mdl-10-2": {
+      "error": {
+        "wrong": "对任意单侧轨道都照抄同一接触力不等式",
+        "why": "接触法线方向取决于物体位于轨道哪一侧，需先从几何和受力图确定允许符号。",
+        "caught_by": "人工审核"
+      },
+      "title": "细杆、轻绳与单侧轨道的约束区别",
+      "chapter": "第二十三章 · 常用物理模型与分阶段分析"
+    },
+    "diagnostic-mdl-11-1": {
+      "error": {
+        "wrong": "将竖直方向的余弦写成正弦",
+        "wrong_expr": "T_s = m*g/sin(theta)",
+        "why": "角度从竖直量起，竖直分量是T cosθ；本例错误张力为16.67 N而正确为12.5 N。",
+        "caught_by": "数值代入",
+        "trap_test": {
+          "scenario": "基准",
+          "expr": "m*g/sin(theta)",
+          "ref": 12.5
+        }
+      },
+      "title": "圆锥摆：绳长、张力与转速",
+      "chapter": "第二十三章 · 常用物理模型与分阶段分析"
+    },
+    "diagnostic-mdl-11-2": {
+      "error": {
+        "wrong": "把圆周半径误写为绳长",
+        "why": "摆绳斜置，水平半径是L sinθ；直接以L作为半径会高估向心尺度。",
+        "caught_by": "人工审核"
+      },
+      "title": "圆锥摆：绳长、张力与转速",
+      "chapter": "第二十三章 · 常用物理模型与分阶段分析"
+    },
+    "diagnostic-mdl-12-1": {
+      "error": {
+        "wrong": "漏掉密度公式中的3",
+        "wrong_expr": "rho = g/(4*pi*G*R)",
+        "why": "球体体积为4πR³/3，系数3必须保留；该式量纲仍为密度但数值小三倍。",
+        "caught_by": "数值代入",
+        "trap_test": {
+          "scenario": "基准",
+          "expr": "g/(4*pi*G*R)",
+          "ref": 5592.463403902268
+        }
+      },
+      "title": "黄金代换：地表重力、轨道速度与天体密度",
+      "chapter": "第二十三章 · 常用物理模型与分阶段分析"
+    },
+    "diagnostic-mdl-12-2": {
+      "error": {
+        "wrong": "把地球的g与另一星球的质量半径混用",
+        "why": "g=GM/R²只对相同天体成立；混合参数会使代换失去物理依据。",
+        "caught_by": "人工审核"
+      },
+      "title": "黄金代换：地表重力、轨道速度与天体密度",
+      "chapter": "第二十三章 · 常用物理模型与分阶段分析"
+    },
+    "diagnostic-mdl-13-1": {
+      "error": {
+        "wrong": "把椭圆机械能的半长轴换成瞬时半径",
+        "wrong_expr": "E = -G*M*m/(2*r1)",
+        "why": "椭圆总能量由半长轴决定，瞬时半径用于势能但不能取代能量式中的a；错误给−2.50125×10⁷ J而正确为−1.6675×10⁷ J。",
+        "caught_by": "数值代入",
+        "trap_test": {
+          "scenario": "基准",
+          "expr": "-G*M*m/(2*r1)",
+          "ref": -16675000
+        }
+      },
+      "title": "圆轨道变轨：转移椭圆、速度增量与能量",
+      "chapter": "第二十三章 · 常用物理模型与分阶段分析"
+    },
+    "diagnostic-mdl-13-2": {
+      "error": {
+        "wrong": "认为进入更高稳定轨道后速率必然更大",
+        "why": "圆轨道速度随半径增大而降低；转移过程中近地点速度会先提高，远地点再调节。",
+        "caught_by": "人工审核"
+      },
+      "title": "圆轨道变轨：转移椭圆、速度增量与能量",
+      "chapter": "第二十三章 · 常用物理模型与分阶段分析"
+    },
+    "diagnostic-mdl-14-1": {
+      "error": {
+        "wrong": "只用第一颗恒星质量计算周期",
+        "wrong_expr": "T_b = 2*pi*sqrt(L^3/(G*m1))",
+        "why": "引力由两星共同质量关系决定，周期使用m1+m2；本例错误周期约1.405×10⁷ s而正确约8.886×10⁶ s。",
+        "caught_by": "数值代入",
+        "trap_test": {
+          "scenario": "基准",
+          "expr": "2*pi*sqrt(L^3/(G*m1))",
+          "ref": 8885765.876316732
+        }
+      },
+      "title": "双星系统：质心、轨道半径与周期",
+      "chapter": "第二十三章 · 常用物理模型与分阶段分析"
+    },
+    "diagnostic-mdl-14-2": {
+      "error": {
+        "wrong": "把星间距当成其中一颗星的质心轨道半径",
+        "why": "质量不等时质心偏向较重恒星；应先用质量比确定各自的质心轨道半径。",
+        "caught_by": "人工审核"
+      },
+      "title": "双星系统：质心、轨道半径与周期",
+      "chapter": "第二十三章 · 常用物理模型与分阶段分析"
+    },
+    "diagnostic-mdl-15-1": {
+      "error": {
+        "wrong": "把弹簧力全部当作块2的接触力",
+        "wrong_expr": "N = F_s",
+        "why": "部分弹簧力用于加速块1；本例接触力为6 N而弹簧力为10 N，需对整组和单块分别列式。",
+        "caught_by": "数值代入",
+        "trap_test": {
+          "scenario": "基准",
+          "expr": "F_s",
+          "ref": 6
+        }
+      },
+      "title": "弹簧推块与接触分离：法向力条件",
+      "chapter": "第二十三章 · 常用物理模型与分阶段分析"
+    },
+    "diagnostic-mdl-15-2": {
+      "error": {
+        "wrong": "认为所有分离都只能发生在弹簧力等于零时",
+        "why": "一般接触失效以法向力降为零为判断；弹簧仍受拉、其他约束或剪断瞬间都可能改变力和加速度关系。",
+        "caught_by": "人工审核"
+      },
+      "title": "弹簧推块与接触分离：法向力条件",
+      "chapter": "第二十三章 · 常用物理模型与分阶段分析"
+    },
+    "diagnostic-mdl-16-1": {
+      "error": {
+        "wrong": "把势能极大点判为稳定平衡",
+        "wrong_expr": "F = 4*alpha*x*(x^2/l^2-1)/l^2",
+        "why": "力方向与势能梯度应相反；符号写反会把稳定点的回复力变成发散力，量纲检查不能发现。",
+        "caught_by": "数值代入",
+        "trap_test": {
+          "scenario": "基准",
+          "expr": "4*alpha*x*(x^2/l^2-1)/l^2",
+          "ref": 1.5
+        }
+      },
+      "title": "势能极值、稳定平衡与回复力",
+      "chapter": "第二十三章 · 常用物理模型与分阶段分析"
+    },
+    "diagnostic-mdl-16-2": {
+      "error": {
+        "wrong": "从势能曲线上读出局部极小就断言系统一定静止",
+        "why": "稳定只表示小扰动后存在回复趋势；若有足够动能，系统仍可越过势垒或持续振动。",
+        "caught_by": "人工审核"
+      },
+      "title": "势能极值、稳定平衡与回复力",
+      "chapter": "第二十三章 · 常用物理模型与分阶段分析"
+    },
+    "diagnostic-mdl-17-1": {
+      "error": {
+        "wrong": "漏掉杆的反电动势",
+        "wrong_expr": "I = (E_s+B*L*v)/R_t",
+        "why": "运动杆的感应电动势在本接线方向上抵消电源，本例错式给6 A而正确4 A；方向仍需按电路图核实。",
+        "caught_by": "数值代入",
+        "trap_test": {
+          "scenario": "基准",
+          "expr": "(E_s+B*L*v)/R_t",
+          "ref": 4
+        }
+      },
+      "title": "有电源导电杆：反电动势、电流与受力",
+      "chapter": "第二十三章 · 常用物理模型与分阶段分析"
+    },
+    "diagnostic-mdl-17-2": {
+      "error": {
+        "wrong": "用手左右换导轨而保留电流符号不变",
+        "why": "导轨位置、磁场方向或电源极性改变会改变安培力方向，应重新按右手定则判定。",
+        "caught_by": "人工审核"
+      },
+      "title": "有电源导电杆：反电动势、电流与受力",
+      "chapter": "第二十三章 · 常用物理模型与分阶段分析"
+    },
+    "diagnostic-mdl-18-1": {
+      "error": {
+        "wrong": "把电流写成电容电压除以导线电阻并当作零电阻稳态",
+        "wrong_expr": "I = C_cap*B*L*v",
+        "why": "理想电容没有直流稳态电流；该关系描述匹配电荷而非随时流动的电流，本例匀速匹配时电流为0。",
+        "caught_by": "数值代入",
+        "trap_test": {
+          "scenario": "基准",
+          "expr": "C_cap*B*L*v",
+          "ref": 0
+        }
+      },
+      "title": "电容器与导电杆：充电约束和有效惯性",
+      "chapter": "第二十三章 · 常用物理模型与分阶段分析"
+    },
+    "diagnostic-mdl-18-2": {
+      "error": {
+        "wrong": "无外力的匹配状态仍断言导电杆具有非零恒加速度",
+        "why": "能量和受力均要求无净外力时匀速；非零加速度必须说明外力或暂态电路条件。",
+        "caught_by": "人工审核"
+      },
+      "title": "电容器与导电杆：充电约束和有效惯性",
+      "chapter": "第二十三章 · 常用物理模型与分阶段分析"
+    },
+    "diagnostic-mdl-19-1": {
+      "error": {
+        "wrong": "认为线圈全在匀强磁场时也持续有切割电流",
+        "wrong_expr": "E_i = B*L*v",
+        "why": "磁场区域有限时，线圈完整处于均匀场内磁通保持不变，边界不被切割，本情境感应电动势为零；此式仅适用于跨边界的有效导体。",
+        "caught_by": "数值代入",
+        "trap_test": {
+          "scenario": "基准",
+          "expr": "B*L*v",
+          "ref": 0
+        }
+      },
+      "title": "线圈进出磁场：电流方向、电荷与能量",
+      "chapter": "第二十三章 · 常用物理模型与分阶段分析"
+    },
+    "diagnostic-mdl-19-2": {
+      "error": {
+        "wrong": "进场和出场的电流方向写成相同",
+        "why": "磁通变化方向相反，楞次定律要求感应电流方向反转。 应按每一阶段的磁通变化方向分别使用楞次定律，不能沿用上一阶段的电流方向。",
+        "caught_by": "人工审核"
+      },
+      "title": "线圈进出磁场：电流方向、电荷与能量",
+      "chapter": "第二十三章 · 常用物理模型与分阶段分析"
+    },
+    "diagnostic-mdl-20-1": {
+      "error": {
+        "wrong": "忽略轨道半径与磁区半径共同决定的几何关系",
+        "wrong_expr": "s = 2*R_m",
+        "why": "弦长一般不等于磁区直径；本例交点弦长4.8 m而磁区直径6 m，粒子路径受两圆交点限制。",
+        "caught_by": "数值代入",
+        "trap_test": {
+          "scenario": "基准",
+          "expr": "2*R_m",
+          "ref": 4.8
+        }
+      },
+      "title": "圆形磁场区域：粒子轨迹与弦长",
+      "chapter": "第二十三章 · 常用物理模型与分阶段分析"
+    },
+    "diagnostic-mdl-20-2": {
+      "error": {
+        "wrong": "将任意斜入射都套用法向入射弦长式",
+        "why": "入射角变化会改变粒子轨道圆心位置和交点，需重新作几何分析。 入射角变化会改变轨迹圆心和边界交点，必须重画几何关系再求弦长。",
+        "caught_by": "人工审核"
+      },
+      "title": "圆形磁场区域：粒子轨迹与弦长",
+      "chapter": "第二十三章 · 常用物理模型与分阶段分析"
+    },
+    "diagnostic-mdl-21-1": {
+      "error": {
+        "wrong": "把速度选择速度写成B/E",
+        "wrong_expr": "v_0 = B/E",
+        "why": "平衡关系为qE=qvB，因此v=E/B；错式不仅量纲不符，数值也不对应平衡速度。",
+        "caught_by": "数值代入",
+        "trap_test": {
+          "scenario": "基准",
+          "expr": "B/E",
+          "ref": 3
+        }
+      },
+      "title": "电场、磁场与重力：受力抵消和速度选择",
+      "chapter": "第二十三章 · 常用物理模型与分阶段分析"
+    },
+    "diagnostic-mdl-21-2": {
+      "error": {
+        "wrong": "忽略电荷正负而直接断言偏转方向",
+        "why": "正负电荷的电力和洛伦兹力方向相反，须结合实际方向逐项判断。 先确定速度与磁场夹角，再结合电荷正负逐项判断电力和洛伦兹力方向。",
+        "caught_by": "人工审核"
+      },
+      "title": "电场、磁场与重力：受力抵消和速度选择",
+      "chapter": "第二十三章 · 常用物理模型与分阶段分析"
+    },
+    "diagnostic-mdl-22-1": {
+      "error": {
+        "wrong": "把线路损失写成输送功率乘线路电阻",
+        "wrong_expr": "Delta_P = P*R",
+        "why": "功率损失应为I²R，且需先以U估计电流；本例数值结果需经单位和线路电流复核。",
+        "caught_by": "数值代入",
+        "trap_test": {
+          "scenario": "基准",
+          "expr": "P*R",
+          "ref": 1000
+        }
+      },
+      "title": "变压器与远距离输电：变比、降压和线路损失",
+      "chapter": "第二十三章 · 常用物理模型与分阶段分析"
+    },
+    "diagnostic-mdl-22-2": {
+      "error": {
+        "wrong": "认为理想变压器能提高电压同时保持次级电流不变",
+        "why": "理想功率守恒要求电压比与电流比反向变化；升压需降低电流。 理想功率守恒要求电压比与电流比反向变化；升压且负载不变时次级电流会减小。",
+        "caught_by": "人工审核"
+      },
+      "title": "变压器与远距离输电：变比、降压和线路损失",
+      "chapter": "第二十三章 · 常用物理模型与分阶段分析"
+    },
+    "diagnostic-mdl-23-1": {
+      "error": {
+        "wrong": "把电容值直接相加后仍取原电压",
+        "wrong_expr": "U_p = U1",
+        "why": "电荷固定而总电容变大，电压必下降；本例共同电压4 V，不能仍为10 V。",
+        "caught_by": "数值代入",
+        "trap_test": {
+          "scenario": "基准",
+          "expr": "U1",
+          "ref": 4
+        }
+      },
+      "title": "电容器并联：电荷再分配与能量损失",
+      "chapter": "第二十三章 · 常用物理模型与分阶段分析"
+    },
+    "diagnostic-mdl-23-2": {
+      "error": {
+        "wrong": "认为电容并联瞬间没有电流也没有能量转换",
+        "why": "电荷重新分配需经历暂态；理想化瞬时连接省略的过程仍要由非理想电路解释。",
+        "caught_by": "人工审核"
+      },
+      "title": "电容器并联：电荷再分配与能量损失",
+      "chapter": "第二十三章 · 常用物理模型与分阶段分析"
+    },
+    "diagnostic-mdl-24-1": {
+      "error": {
+        "wrong": "把速度时间图的纵坐标直接当成位移",
+        "wrong_expr": "dx = v_avg",
+        "why": "速度时间图面积才是位移；还缺一个时间因子，本例2 s内3 m/s对应6 m位移。",
+        "caught_by": "数值代入",
+        "trap_test": {
+          "scenario": "基准",
+          "expr": "v_avg",
+          "ref": 6
+        }
+      },
+      "title": "物理图像：斜率、面积与分段读数",
+      "chapter": "第二十三章 · 常用物理模型与分阶段分析"
+    },
+    "diagnostic-mdl-24-2": {
+      "error": {
+        "wrong": "位置时间曲线斜率直接称为加速度",
+        "why": "其斜率是速度；加速度对应速度时间图斜率，需先辨认图轴。 还应结合纵、横轴所代表的物理量与单位核实斜率含义，不能只看曲线外形。",
+        "caught_by": "人工审核"
+      },
+      "title": "物理图像：斜率、面积与分段读数",
+      "chapter": "第二十三章 · 常用物理模型与分阶段分析"
+    },
+    "diagnostic-mdl-25-1": {
+      "error": {
+        "wrong": "把水平绳力在切断后仍保留",
+        "wrong_expr": "a_x = (F_s*sin(theta)+T_h)/m",
+        "why": "切绳后水平绳张力立即消失；本例不能继续把7.5 N绳力算进水平合力。",
+        "caught_by": "数值代入",
+        "trap_test": {
+          "scenario": "基准",
+          "expr": "(F_s*sin(theta)+T_h)/m",
+          "ref": 7.5
+        }
+      },
+      "title": "细绳、弹簧与轻杆：切断瞬间的受力",
+      "chapter": "第二十三章 · 常用物理模型与分阶段分析"
+    },
+    "diagnostic-mdl-25-2": {
+      "error": {
+        "wrong": "声称“任何弹簧力在任何切断操作中都不能突变”",
+        "why": "完整理想弹簧的形变量连续时弹力连续；切断弹簧本身、冲击、质量不可忽略或刚性连接瞬变时需按具体模型判断。",
+        "caught_by": "人工审核"
+      },
+      "title": "细绳、弹簧与轻杆：切断瞬间的受力",
+      "chapter": "第二十三章 · 常用物理模型与分阶段分析"
+    },
+    "diagnostic-mdl-26-1": {
+      "error": {
+        "wrong": "只考虑加速度变化而忘记弦长也同时改变",
+        "wrong_expr": "t_c = sqrt(2*R/a_c)",
+        "why": "下滑时间同时取决于路径长度和加速度；本例θ=60°时该错式为0.632? 本卡正确式为0.632 s，需改用模型区分错误。",
+        "caught_by": "数值代入",
+        "trap_test": {
+          "scenario": "基准",
+          "expr": "sqrt(2*R/a_c)",
+          "ref": 0.6324555320336759
+        }
+      },
+      "title": "等时圆（弦轨道下滑时间相同）",
+      "chapter": "第二十三章 · 常用物理模型与分阶段分析"
+    },
+    "diagnostic-mdl-26-2": {
+      "error": {
+        "wrong": "把摩擦滚动小球也当成质点滑动",
+        "why": "转动动能会改变平动加速度；有滚动或摩擦需重新列平动与转动方程。",
+        "caught_by": "人工审核"
+      },
+      "title": "等时圆（弦轨道下滑时间相同）",
+      "chapter": "第二十三章 · 常用物理模型与分阶段分析"
+    },
+    "diagnostic-mdl-27-1": {
+      "error": {
+        "wrong": "把最大静摩擦固定写成mu_s*m*g",
+        "wrong_expr": "f_s = mu_s*m*g",
+        "why": "斜拉会减小支持力；本例最大摩擦约6.50 N，而μmg=8 N，量纲相同但物理量不同。",
+        "caught_by": "数值代入",
+        "trap_test": {
+          "scenario": "基准",
+          "expr": "mu_s*m*g",
+          "ref": 6.49906
+        }
+      },
+      "title": "多力平衡、斜拉与静摩擦临界",
+      "chapter": "第二十三章 · 常用物理模型与分阶段分析"
+    },
+    "diagnostic-mdl-27-2": {
+      "error": {
+        "wrong": "将动态平衡误解成物体静止",
+        "why": "合力为零只推出加速度为零，物体可以保持非零恒定速度。 例如物体可沿水平面以恒定速度运动；合力为零只表示加速度为零。",
+        "caught_by": "人工审核"
+      },
+      "title": "多力平衡、斜拉与静摩擦临界",
+      "chapter": "第二十三章 · 常用物理模型与分阶段分析"
+    },
+    "diagnostic-mdl-28-1": {
+      "error": {
+        "wrong": "把较重一端加速度直接写成g",
+        "wrong_expr": "a_p = g",
+        "why": "轻绳另一端也运动并受张力，不是自由落体；本例加速度2而非10 m/s²。",
+        "caught_by": "数值代入",
+        "trap_test": {
+          "scenario": "基准",
+          "expr": "g",
+          "ref": 2
+        }
+      },
+      "title": "定滑轮、动滑轮与滑轮组约束",
+      "chapter": "第二十三章 · 常用物理模型与分阶段分析"
+    },
+    "diagnostic-mdl-28-2": {
+      "error": {
+        "wrong": "动滑轮无条件提供一半拉力",
+        "why": "只有绳段数量、方向和滑轮质量等都满足理想条件时才成立；移动支点和多滑轮要重新约束。",
+        "caught_by": "人工审核"
+      },
+      "title": "定滑轮、动滑轮与滑轮组约束",
+      "chapter": "第二十三章 · 常用物理模型与分阶段分析"
+    },
+    "diagnostic-mdl-29-1": {
+      "error": {
+        "wrong": "忽略压缩做功的负号",
+        "wrong_expr": "W = abs(0.5*(p1+p2)*(V2-V1))",
+        "why": "绝对值把气体对外做功和外界对气体做功混为一谈；本例膨胀为正，反向压缩应为负。",
+        "caught_by": "数值代入",
+        "trap_test": {
+          "scenario": "压缩情境",
+          "expr": "abs(0.5*(p1+p2)*(V2-V1))",
+          "ref": -300
+        }
+      },
+      "title": "气体p-V图：等压、等容与曲线下面积",
+      "chapter": "第二十三章 · 常用物理模型与分阶段分析"
+    },
+    "diagnostic-mdl-29-2": {
+      "error": {
+        "wrong": "不同p-V路径只凭相同端点便断言做功相同",
+        "why": "做功取决于整个过程路径；不同曲线下的面积一般不同。 只有各路径的有向面积相同，净功才相同；不同曲线下的面积一般不同。",
+        "caught_by": "人工审核"
+      },
+      "title": "气体p-V图：等压、等容与曲线下面积",
+      "chapter": "第二十三章 · 常用物理模型与分阶段分析"
+    },
+    "diagnostic-mdl-30-1": {
+      "error": {
+        "wrong": "把相邻节点间距写成整波长",
+        "wrong_expr": "d_n = λ_w",
+        "why": "一个完整波长含两个相邻节点间隔；本例节点间距0.10 m而波长0.20 m。",
+        "caught_by": "数值代入",
+        "trap_test": {
+          "scenario": "基准",
+          "expr": "λ_w",
+          "ref": 0.1
+        }
+      },
+      "title": "驻波与薄膜干涉：边界、节点和相位反转",
+      "chapter": "第二十三章 · 常用物理模型与分阶段分析"
+    },
+    "diagnostic-mdl-30-2": {
+      "error": {
+        "wrong": "不判反射相位就直接使用同一薄膜干涉级次",
+        "why": "反射相位变化会使增强和减弱条件互换或偏半波长，必须先辨认界面折射率关系。",
+        "caught_by": "人工审核"
+      },
+      "title": "驻波与薄膜干涉：边界、节点和相位反转",
+      "chapter": "第二十三章 · 常用物理模型与分阶段分析"
+    },
+    "diagnostic-mdl-31-1": {
+      "error": {
+        "wrong": "把电压表串联或电流表并联",
+        "wrong_expr": "R_x = U_x*I_x",
+        "why": "电表接法改变电路拓扑，不能靠公式修正；电压表应并联、电流表应串联，错误接法可能短路或无合理读数。",
+        "caught_by": "数值代入",
+        "trap_test": {
+          "scenario": "基准",
+          "expr": "U_x*I_x",
+          "ref": 5
+        }
+      },
+      "title": "电学实验读表：电表接法、内阻与故障判断",
+      "chapter": "第二十三章 · 常用物理模型与分阶段分析"
+    },
+    "diagnostic-mdl-31-2": {
+      "error": {
+        "wrong": "电阻档接在带电电路中直接测量",
+        "why": "欧姆档内部自带电源，外部带电会损坏仪表或读数错误，必须断电并按仪器规程操作。",
+        "caught_by": "人工审核"
+      },
+      "title": "电学实验读表：电表接法、内阻与故障判断",
+      "chapter": "第二十三章 · 常用物理模型与分阶段分析"
+    },
+    "diagnostic-mdl-32-1": {
+      "error": {
+        "wrong": "把支持力误当成mg",
+        "wrong_expr": "a_s = g*(sin(theta)-mu_k)",
+        "why": "支持力为mg cosθ，摩擦力还需乘cosθ；漏余弦会使本例加速度由3.268错成3.0 m/s²。",
+        "caught_by": "数值代入",
+        "trap_test": {
+          "scenario": "基准",
+          "expr": "g*(sin(theta)-mu_k)",
+          "ref": 3.267949192431123
+        }
+      },
+      "title": "斜面滑块：摩擦、临界与分段运动",
+      "chapter": "第二十三章 · 常用物理模型与分阶段分析"
+    },
+    "diagnostic-mdl-32-2": {
+      "error": {
+        "wrong": "看到下滑公式为负就断言物体会自行沿斜面向上加速",
+        "why": "静止物体需先检验静摩擦条件；动摩擦模型不能决定静止状态是否启动。",
+        "caught_by": "人工审核"
+      },
+      "title": "斜面滑块：摩擦、临界与分段运动",
+      "chapter": "第二十三章 · 常用物理模型与分阶段分析"
+    },
+    "diagnostic-mdl-32-3": {
+      "error": {
+        "wrong": "把斜面临界静摩擦因数误写成cotθ",
+        "wrong_expr": "mu_s_min = cos(theta)/sin(theta)",
+        "why": "临界条件来自沿斜面重力分量等于最大静摩擦，得到μ_s=tanθ；cotθ会给出相反的角度依赖。",
+        "caught_by": "数值代入",
+        "trap_test": {
+          "scenario": "基准",
+          "expr": "cos(theta)/sin(theta)",
+          "ref": 0.5773502691896257
+        }
+      },
+      "title": "斜面滑块：摩擦、临界与分段运动",
+      "chapter": "第二十三章 · 常用物理模型与分阶段分析"
+    },
+    "diagnostic-mdl-33-1": {
+      "error": {
+        "wrong": "用悬挂重物重力除斜面块质量求加速度",
+        "wrong_expr": "a = m2*g/m1",
+        "why": "还需加速两个物体且斜面重力分量反向；本例正确加速度2.5而非10 m/s²。",
+        "caught_by": "数值代入",
+        "trap_test": {
+          "scenario": "基准",
+          "expr": "m2*g/m1",
+          "ref": 2.5
+        }
+      },
+      "title": "斜面—滑轮组合：约束方向与共同加速度",
+      "chapter": "第二十三章 · 常用物理模型与分阶段分析"
+    },
+    "diagnostic-mdl-33-2": {
+      "error": {
+        "wrong": "认为理想轻绳张力等于悬挂重物重力",
+        "why": "悬挂重物加速下落时绳张力小于重力；应使用m2(g−a)。 只有加速度为零时二者才相等；悬挂物加速下落时须列牛顿第二定律。",
+        "caught_by": "人工审核"
+      },
+      "title": "斜面—滑轮组合：约束方向与共同加速度",
+      "chapter": "第二十三章 · 常用物理模型与分阶段分析"
+    },
+    "diagnostic-mdl-34-1": {
+      "error": {
+        "wrong": "开关接通后仍将并联电阻写成直接相加",
+        "wrong_expr": "R = R1+R2",
+        "why": "并联等效电阻小于任一支路电阻；本例应为2 Ω而非9 Ω，端电压和干路电流随之改变。",
+        "caught_by": "数值代入",
+        "trap_test": {
+          "scenario": "基准",
+          "expr": "R1+R2",
+          "ref": 2
+        }
+      },
+      "title": "电阻网络开关：等效电阻与端电压动态",
+      "chapter": "第二十三章 · 常用物理模型与分阶段分析"
+    },
+    "diagnostic-mdl-34-2": {
+      "error": {
+        "wrong": "端电压变化时仍假设电源内阻压降不变",
+        "why": "内阻压降随总电流变化；负载切换后需重新求总电流与端电压。 内阻压降等于Ir，负载切换改变总电流后，该压降也会随之改变。",
+        "caught_by": "人工审核"
+      },
+      "title": "电阻网络开关：等效电阻与端电压动态",
+      "chapter": "第二十三章 · 常用物理模型与分阶段分析"
+    },
+    "diagnostic-mdl-35-1": {
+      "error": {
+        "wrong": "认为物体到达最高点后加速度为零",
+        "why": "最高点只满足瞬时速度v=0，重力仍使加速度为−g。 最高点只是速度瞬时为零，重力仍存在，物体随后会反向加速下落。",
+        "caught_by": "人工审核"
+      },
+      "title": "竖直上抛：最高点与返回分段",
+      "chapter": "第二十三章 · 常用物理模型与分阶段分析"
+    },
+    "diagnostic-mdl-35-2": {
+      "error": {
+        "wrong": "把竖直上抛速度写成随时间增加",
+        "wrong_expr": "v_t = v_0+g*t",
+        "why": "向上为正时重力加速度为负；上升速度应随时间减小。 向上取正时重力加速度为负；上升期间速度逐渐减小，到最高点才变为零。",
+        "caught_by": "数值代入",
+        "trap_test": {
+          "scenario": "基准",
+          "expr": "v_0+g*t",
+          "ref": 10
+        }
+      },
+      "title": "竖直上抛：最高点与返回分段",
+      "chapter": "第二十三章 · 常用物理模型与分阶段分析"
+    },
+    "diagnostic-mdl-36-1": {
+      "error": {
+        "wrong": "木板加速度只计摩擦，漏计自身重力",
+        "wrong_expr": "a_p = mu_k*m_b*g*cos(theta)/M",
+        "why": "木板与斜面光滑只表示没有斜面摩擦，木板自身的重力沿面分量仍在；漏计会将5.577错算成0.577，并把相对运动的加速方向判反。",
+        "caught_by": "数值代入",
+        "trap_test": {
+          "scenario": "标准情境",
+          "expr": "mu_k*m_b*g*cos(theta)/M",
+          "ref": 5.577350269189625
+        }
+      },
+      "title": "斜面板块：相对运动与板长临界",
+      "chapter": "第二十三章 · 常用物理模型与分阶段分析"
+    },
+    "diagnostic-mdl-36-2": {
+      "error": {
+        "wrong": "两者从相对静止一起释放，仍按固定斜面的临界角判定滑块自行下滑",
+        "why": "自由木板与滑块同受重力沿面加速度，初始相对静止时无需摩擦就能共同运动；固定斜面静摩擦临界不适用于这个可自由滑动的木板模型。",
+        "caught_by": "人工审核"
+      },
+      "title": "斜面板块：相对运动与板长临界",
+      "chapter": "第二十三章 · 常用物理模型与分阶段分析"
+    },
+    "diagnostic-mdl-37-1": {
+      "error": {
+        "wrong": "认为水平速度会因重力随时间增加",
+        "wrong_expr": "v_x = v_0+g*t",
+        "why": "重力竖直向下，水平方向没有加速度；水平速度保持不变。基准情境中正确水平速度为10 m/s，错误式给出20 m/s。",
+        "caught_by": "数值代入",
+        "trap_test": {
+          "scenario": "基准",
+          "expr": "v_0+g*t",
+          "ref": 10
+        }
+      },
+      "title": "平抛运动：分运动、轨迹与落地条件",
+      "chapter": "第二十三章 · 常用物理模型与分阶段分析"
+    },
+    "diagnostic-mdl-37-2": {
+      "error": {
+        "wrong": "把平抛运动的竖直方向当作匀速运动",
+        "wrong_expr": "y = 0",
+        "why": "竖直方向受重力作用，位移随时间按平方增长；基准情境抛出1 s后已下落5 m。",
+        "caught_by": "数值代入",
+        "trap_test": {
+          "scenario": "基准",
+          "expr": "0",
+          "ref": 5
+        }
+      },
+      "title": "平抛运动：分运动、轨迹与落地条件",
+      "chapter": "第二十三章 · 常用物理模型与分阶段分析"
+    },
+    "diagnostic-mdl-37-3": {
+      "error": {
+        "wrong": "水平和竖直分运动使用不同的时间",
+        "why": "两个方向是同一物体的分运动，必须使用同一个经过时间；不能分别选择不同的时刻拼成轨迹。",
+        "caught_by": "人工审核"
+      },
+      "title": "平抛运动：分运动、轨迹与落地条件",
+      "chapter": "第二十三章 · 常用物理模型与分阶段分析"
+    },
+    "diagnostic-mdl-38-1": {
+      "error": {
+        "wrong": "把重力加速度也加到水平速度分量上",
+        "wrong_expr": "v_x = v_0*cos(theta)+g*t",
+        "why": "重力只有竖直分量，水平速度保持v0 cosθ；基准情境的正确值约17.32 m/s。",
+        "caught_by": "数值代入",
+        "trap_test": {
+          "scenario": "基准",
+          "expr": "v_0*cos(theta)+g*t",
+          "ref": 17.320508075688775
+        }
+      },
+      "title": "斜抛运动：分运动、最高点与射程",
+      "chapter": "第二十三章 · 常用物理模型与分阶段分析"
+    },
+    "diagnostic-mdl-38-2": {
+      "error": {
+        "wrong": "把斜抛的竖直位移写成没有重力项",
+        "wrong_expr": "y = v_0*sin(theta)*t",
+        "why": "竖直方向有向下的重力加速度；基准情境1 s时正确位移约12.32 m。",
+        "caught_by": "数值代入",
+        "trap_test": {
+          "scenario": "基准",
+          "expr": "v_0*sin(theta)*t",
+          "ref": 4.999999999999998
+        }
+      },
+      "title": "斜抛运动：分运动、最高点与射程",
+      "chapter": "第二十三章 · 常用物理模型与分阶段分析"
+    },
+    "diagnostic-mdl-38-3": {
+      "error": {
+        "wrong": "把等高落回的射程公式用于高度不同的落点",
+        "why": "飞行时间取决于竖直方向的实际位移条件；只有等高落回时才可直接用本卡的总飞行时间和射程公式。",
+        "caught_by": "人工审核"
+      },
+      "title": "斜抛运动：分运动、最高点与射程",
+      "chapter": "第二十三章 · 常用物理模型与分阶段分析"
+    },
+    "diagnostic-mdl-39-1": {
+      "error": {
+        "wrong": "把变弹力做功误写为末弹力乘伸长",
+        "wrong_expr": "x_max = (m*g+sqrt(m^2*g^2+4*k*m*g*L))/(2*k)",
+        "why": "这相当于用末弹力乘总伸长，漏掉力—位移图三角形的一半；会少算可达到的伸长，虽然二次方程的量纲仍完全正确。",
+        "caught_by": "数值代入",
+        "trap_test": {
+          "scenario": "基准",
+          "expr": "(m*g+sqrt(m^2*g^2+4*k*m*g*L))/(2*k)",
+          "ref": 4
+        }
+      },
+      "title": "蹦极与绳索缓冲模型",
+      "chapter": "第二十三章 · 常用物理模型与分阶段分析"
+    },
+    "diagnostic-mdl-39-2": {
+      "error": {
+        "wrong": "认为最低点速度最大且加速度为零",
+        "why": "最低点是位移转向处，速度暂时为零而弹力大于重力；最大速度在较早的合力为零处，速度极值与位移极值不是同一条件。",
+        "caught_by": "人工审核"
+      },
+      "title": "蹦极与绳索缓冲模型",
+      "chapter": "第二十三章 · 常用物理模型与分阶段分析"
+    }
+  }
+}
