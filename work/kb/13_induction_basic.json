@@ -116,11 +116,11 @@
             {
               "type": "consistency",
               "scenario": "磁通量增大",
-              "expr": "abs(Phi2 - Phi1)/Delta_t",
-              "with": "ind-01|磁通量变化量",
-              "with_expr": "abs(Delta_Phi)/Delta_t",
-              "target": "磁通量变化率",
-              "note": "直接用初末磁通量和先求 Delta_Phi 再除以时间，两条路径都得到 3.0 V。"
+              "with": "ind-01|磁通量变化率的大小",
+              "with_expr": "abs(Phi2-Phi1)/Delta_t",
+              "target": "磁通量变化率的大小",
+              "note": "本公式直接求r_Phi；参考端显式关系为abs(Phi2-Phi1)/Delta_t。两端使用同一情境和阶段，只核对该关系；with字段仅定位来源，不代表调用另一条被覆盖的公式。",
+              "verification_kind": "独立关系核对"
             },
             {
               "type": "scan",
@@ -148,6 +148,9 @@
             "scenario": "磁通量不变",
             "expr": "Phi2",
             "ref": 0.0
+          },
+          "diagnostic": {
+            "style": "物理结论与步骤辨析"
           }
         },
         {
@@ -159,6 +162,9 @@
             "scenario": "磁通量增大",
             "expr": "Phi1 - Phi2",
             "ref": 0.24
+          },
+          "diagnostic": {
+            "style": "物理结论与步骤辨析"
           }
         }
       ],
@@ -183,7 +189,8 @@
         "电磁感应",
         "产生条件",
         "磁通量变化"
-      ]
+      ],
+      "learning_scope": "高中"
     },
     {
       "id": "ind-02",
@@ -298,11 +305,12 @@
             {
               "type": "consistency",
               "scenario": "正向磁通量增加",
-              "expr": "E_signed/R",
-              "with": "ind-02|单匝线圈的楞次负号",
+              "with": "ind-02|有符号感应电流",
               "with_expr": "-Delta_Phi/(Delta_t*R)",
-              "target": "带方向的感应电流",
-              "note": "先依法拉第定律求 E_signed 再用欧姆定律，与直接合并两式都得 −0.5 A。"
+              "target": "按回路正方向计的感应电流",
+              "note": "本公式直接求I_signed；参考端显式关系为-Delta_Phi/(Delta_t*R)。两端使用同一情境和阶段，只核对该关系；with字段仅定位来源，不代表调用另一条被覆盖的公式。",
+              "verification_kind": "独立关系核对",
+              "tol": 1e-06
             },
             {
               "type": "scan",
@@ -324,7 +332,10 @@
         {
           "wrong": "认为感应磁场方向永远与原磁场方向相反",
           "why": "原磁通量减少时，感应磁场应与原磁场同向以阻碍减少。这是方向判断，公式校验无法完整表示空间方向，需人工审核。",
-          "caught_by": "人工审核"
+          "caught_by": "人工审核",
+          "diagnostic": {
+            "style": "物理结论与步骤辨析"
+          }
         },
         {
           "wrong": "漏掉楞次定律的负号，写成 E_signed=Delta_Phi/Delta_t",
@@ -335,6 +346,9 @@
             "scenario": "正向磁通量增加",
             "expr": "Delta_Phi/Delta_t",
             "ref": -2.0
+          },
+          "diagnostic": {
+            "style": "物理结论与步骤辨析"
           }
         }
       ],
@@ -360,7 +374,8 @@
         "楞次定律",
         "右手定则",
         "感应电流方向"
-      ]
+      ],
+      "learning_scope": "高中"
     },
     {
       "id": "ind-03",
@@ -486,11 +501,11 @@
             {
               "type": "consistency",
               "scenario": "磁场均匀增强",
-              "expr": "n*S*abs(B2 - B1)/Delta_t",
-              "with": "ind-03|法拉第定律的平均值",
+              "with": "ind-03|匀强磁场垂直线圈时的感应电动势",
               "with_expr": "n*abs(Delta_Phi)/Delta_t",
-              "target": "磁场变化产生的平均感应电动势",
-              "note": "先由 Delta_Phi=S(B2−B1)=0.004 Wb 再用通式，与直接展开计算均得 4.0 V。"
+              "target": "线圈感应电动势的平均大小",
+              "note": "本公式直接求E_avg；参考端显式关系为n*abs(Delta_Phi)/Delta_t。两端使用同一情境和阶段，只核对该关系；with字段仅定位来源，不代表调用另一条被覆盖的公式。",
+              "verification_kind": "独立关系核对"
             },
             {
               "type": "scan",
@@ -518,6 +533,9 @@
             "scenario": "多匝线圈",
             "expr": "abs(Delta_Phi)/Delta_t",
             "ref": 12.0
+          },
+          "diagnostic": {
+            "style": "物理结论与步骤辨析"
           }
         },
         {
@@ -532,6 +550,9 @@
             "rhs_dim": "M·L^2·T^-1·I^-1",
             "expect": "mismatch",
             "note": "实际量纲检查得到等号左边为M·L^2·T^-3·I^-1、右边为M·L^2·T^-1·I^-1；两边不是同一物理量，因此该等式不成立。"
+          },
+          "diagnostic": {
+            "style": "物理结论与步骤辨析"
           }
         }
       ],
@@ -560,7 +581,8 @@
         "法拉第定律",
         "磁通量变化率",
         "线圈匝数"
-      ]
+      ],
+      "learning_scope": "高中"
     },
     {
       "id": "ind-04",
@@ -675,11 +697,11 @@
             {
               "type": "consistency",
               "scenario": "垂直切割",
-              "expr": "B*L*v*sin(theta)",
-              "with": "ind-04|垂直切割的动生电动势",
+              "with": "ind-04|斜向切割的动生电动势",
               "with_expr": "B*L*v",
-              "target": "垂直切割时的动生电动势",
-              "note": "theta=90° 时 sin theta=1，通式与垂直切割公式都得到 2.4 V。"
+              "target": "导体棒两端的动生电动势",
+              "note": "本公式直接求E_move；参考端显式关系为B*L*v。两端使用同一情境和阶段，只核对该关系；with字段仅定位来源，不代表调用另一条被覆盖的公式。",
+              "verification_kind": "独立关系核对"
             },
             {
               "type": "scan",
@@ -707,6 +729,9 @@
             "scenario": "斜向切割",
             "expr": "B*L*v",
             "ref": 1.2
+          },
+          "diagnostic": {
+            "style": "物理结论与步骤辨析"
           }
         },
         {
@@ -718,6 +743,9 @@
             "scenario": "斜向切割",
             "expr": "B*L*v*cos(theta)",
             "ref": 1.2
+          },
+          "diagnostic": {
+            "style": "物理结论与步骤辨析"
           }
         }
       ],
@@ -744,7 +772,8 @@
         "切割磁感线",
         "动生电动势",
         "右手定则"
-      ]
+      ],
+      "learning_scope": "高中"
     },
     {
       "id": "ind-05",
@@ -854,11 +883,12 @@
             {
               "type": "consistency",
               "scenario": "两种效应同向",
-              "expr": "(E_i + E_move)*q",
-              "with": "ind-05|感生与动生电动势的代数叠加",
-              "with_expr": "E_total*q",
-              "target": "两种感应机制对电荷做的总功",
-              "note": "先合成电动势再乘电荷量与分别计入两种电动势，均得 0.10 J。"
+              "with": "ind-05|电动势与非静电力做功",
+              "with_expr": "(E_i+E_move)*q",
+              "target": "非静电力搬运电荷所做的功",
+              "note": "本公式直接求W_source；参考端显式关系为(E_i+E_move)*q。两端使用同一情境和阶段，只核对该关系；with字段仅定位来源，不代表调用另一条被覆盖的公式。",
+              "verification_kind": "独立关系核对",
+              "tol": 1e-06
             },
             {
               "type": "scan",
@@ -886,6 +916,9 @@
             "scenario": "两种效应反向",
             "expr": "E_i + abs(E_move)",
             "ref": 1.0
+          },
+          "diagnostic": {
+            "style": "物理结论与步骤辨析"
           }
         },
         {
@@ -900,6 +933,9 @@
             "rhs_dim": "M·L^2·T^-4·I^-2",
             "expect": "mismatch",
             "note": "实际量纲检查得到等号左边为M·L^2·T^-2、右边为M·L^2·T^-4·I^-2；两边不是同一物理量，因此该等式不成立。"
+          },
+          "diagnostic": {
+            "style": "物理结论与步骤辨析"
           }
         }
       ],
@@ -924,7 +960,8 @@
         "感生电动势",
         "动生电动势",
         "电动势叠加"
-      ]
+      ],
+      "learning_scope": "高中"
     },
     {
       "id": "ind-06",
@@ -1012,11 +1049,12 @@
             {
               "type": "consistency",
               "scenario": "闭合感应回路",
-              "expr": "E_emf/R_total",
-              "with": "ind-03|法拉第定律的平均值",
+              "with": "ind-06|感应电流的欧姆定律",
               "with_expr": "n*abs(Delta_Phi)/(Delta_t*R_total)",
-              "target": "闭合回路的平均感应电流",
-              "note": "先求 E_emf=20×0.04/0.20=4.0 V 再除电阻，与合并法拉第定律和欧姆定律均得 0.8 A。"
+              "target": "闭合回路中的平均感应电流大小",
+              "note": "本公式直接求I；参考端显式关系为n*abs(Delta_Phi)/(Delta_t*R_total)。两端使用同一情境和阶段，只核对该关系；with字段仅定位来源，不代表调用另一条被覆盖的公式。",
+              "verification_kind": "独立关系核对",
+              "tol": 1e-06
             },
             {
               "type": "scan",
@@ -1052,11 +1090,12 @@
             {
               "type": "consistency",
               "scenario": "闭合感应回路",
-              "expr": "I*Delta_t",
               "with": "ind-06|一次磁通量变化通过的电荷量",
-              "with_expr": "n*abs(Delta_Phi)/R_total",
-              "target": "磁通量变化期间通过的电荷量",
-              "note": "由电流乘时间得 0.8×0.20=0.16 C，与法拉第定律消去时间后的结果相同。"
+              "with_expr": "I*Delta_t",
+              "target": "磁通量变化期间通过回路截面的电荷量",
+              "note": "本公式直接求q；参考端显式关系为I*Delta_t。两端使用同一情境和阶段，只核对该关系；with字段仅定位来源，不代表调用另一条被覆盖的公式。",
+              "verification_kind": "独立关系核对",
+              "tol": 1e-06
             },
             {
               "type": "scan",
@@ -1079,7 +1118,10 @@
         {
           "wrong": "断路时因为电流为零，就认为感应电动势也为零",
           "why": "感应电动势由磁通量变化率决定，是否形成电流还取决于回路是否闭合。断路可有非零电动势而无持续电流，需结合电路状态人工审核。",
-          "caught_by": "人工审核"
+          "caught_by": "人工审核",
+          "diagnostic": {
+            "style": "物理结论与步骤辨析"
+          }
         },
         {
           "wrong": "计算多匝线圈通过的电荷量时漏乘匝数 n，写成 q=abs(Delta_Phi)/R_total",
@@ -1090,6 +1132,9 @@
             "scenario": "闭合感应回路",
             "expr": "abs(Delta_Phi)/R_total",
             "ref": 0.16
+          },
+          "diagnostic": {
+            "style": "物理结论与步骤辨析"
           }
         }
       ],
@@ -1115,7 +1160,8 @@
         "感应电流",
         "闭合电路",
         "感应电荷量"
-      ]
+      ],
+      "learning_scope": "高中"
     }
   ]
 }

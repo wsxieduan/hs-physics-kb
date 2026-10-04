@@ -8,27 +8,19 @@
       "point_id": "dyn-01",
       "point_title": "弹力与胡克定律",
       "chapter": "第二章 · 相互作用与牛顿运动定律",
-      "stem": "【第二章 · 相互作用与牛顿运动定律 · 弹力与胡克定律】学生的错误做法：把胡克定律记成 F = k / x（乘法记成除法）（错误表达式：F = k/x）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "stem": "在“弹力与胡克定律”中，在弹簧的弹性限度内，弹簧的弹力。弹力的大小的单位为N。下列哪一表达式的量纲与该目标量一致？",
       "options": [
         {
           "label": "A",
-          "text": "数值代入：★ 这条错写法的量纲完全正确（两个力相乘再乘纯数，仍是 N），量纲检查抓不到。"
+          "text": "F = k/x"
         },
         {
           "label": "B",
-          "text": "数值代入：★ 这类错误量纲完全一致（都是「纯数乘一个力」，结果还是 N），量纲检查一点用都没有。"
-        },
-        {
-          "label": "C",
-          "text": "数值代入：量纲完全正确，量纲检查抓不到。"
-        },
-        {
-          "label": "D",
-          "text": "量纲一致性：写成除法后 k/x 的量纲变成 N/m²，与力的单位 N 完全不同，量纲检查立刻拦住。"
+          "text": "F = k·x"
         }
       ],
-      "correct_answer": "D",
-      "explanation": "写成除法后 k/x 的量纲变成 N/m²，与力的单位 N 完全不同，量纲检查立刻拦住。\n知识库校验证据：被测错误式：F = k/x；左式量纲：M·L·T⁻²；右式量纲：M·L⁻¹·T⁻²；左右量纲不匹配；量纲校验说明：实际量纲检查得到等号左边为M·L·T⁻²、右边为M·L⁻¹·T⁻²；两边不是同一物理量，因此该等式不成立。；变化方向要求：mismatch；检验说明：实际量纲检查得到等号左边为M·L·T⁻²、右边为M·L⁻¹·T⁻²；两边不是同一物理量，因此该等式不成立。。",
+      "correct_answer": "B",
+      "explanation": "写成除法后 k/x 的量纲变成 N/m²，与力的单位 N 完全不同，量纲检查立刻拦住。\n知识点条件：胡克定律里最容易踩的坑是 x —— 它是「形变量」，即弹簧被拉伸或被压缩的长度，是变化量而不是弹簧的总长度。弹簧被拉长到什么程度，弹力就对应到那个程度，跟原长无关。另外要注意它的适用范围：形变必须在这个弹簧的弹性限度内，超过之后就拉不回来，也不再成正比。\n推导依据：弹簧受拉力 F 时被拉长 x，实验测出两者成正比，比例系数记为 k。；写成等式就是 F = k x。k 越大表示把弹簧拉长同样的长度需要越大的力，即弹簧越硬。；检核量纲：k 的单位是 N/m，与 x 的单位 m 相乘后得到 N，正好是力的单位。\n卡片公式各自的适用条件（不是本题共同前提）：\n胡克定律：在弹簧的弹性限度内，弹簧的弹力\n由弹力求形变量：移项所得，弹性限度内",
       "error_type": "量纲一致性",
       "judging": "auto",
       "source_error_index": 0,
@@ -42,15 +34,42 @@
         "expect": "mismatch",
         "note": "实际量纲检查得到等号左边为M·L·T^-2、右边为M·L^-1·T^-2；两边不是同一物理量，因此该等式不成立。"
       },
+      "level": "基础",
+      "learning_scope": "高中",
+      "answer_evidence": {
+        "kind": "dimension",
+        "target": "F",
+        "correct_expression": "F = k*x",
+        "distractor_expression": "F = k/x",
+        "target_dimension": "M·L·T^-2",
+        "distractor_dimension": "M·L^-1·T^-2"
+      },
       "review": {
         "confidence": "medium",
-        "checks": {
-          "answer_unique": true,
-          "distractors_plausible": true,
-          "stem_clear": true,
-          "no_cross_segment": true
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": true,
+          "no_answer_leak_in_options": true
         },
-        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。"
       }
     },
     {
@@ -58,27 +77,19 @@
       "point_id": "dyn-01",
       "point_title": "弹力与胡克定律",
       "chapter": "第二章 · 相互作用与牛顿运动定律",
-      "stem": "【第二章 · 相互作用与牛顿运动定律 · 弹力与胡克定律】学生的错误做法：把弹簧形变后的总长度当成形变量，写成 F = kL（错误表达式：F = k·L<sub>总</sub>）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "stem": "在“弹力与胡克定律”的模型下，k（劲度系数（弹簧的「软硬」程度））=200 N/m；x（形变量（拉伸或压缩的长度，不是弹簧总长））=0.05 m；L<sub>总</sub>（弹簧形变后的总长度）=0.15 m。条件：在弹簧的弹性限度内，弹簧的弹力。求弹力的大小（F）。这些数值是设计示例。",
       "options": [
         {
           "label": "A",
-          "text": "量纲一致性：写成除法后量纲变成 kg²·m/s²，与力的量纲对不上，量纲检查当场拦住。"
+          "text": "10 N"
         },
         {
           "label": "B",
-          "text": "概念混淆：滑动摩擦力的确与「相对运动」方向相反，但静摩擦力可以和运动方向相同 —— 例如随传送带一起加速的物体，正是静摩擦力在推它前进。"
-        },
-        {
-          "label": "C",
-          "text": "数值代入：胡克定律中的 x 是总长度与原长之差，不是总长度。"
-        },
-        {
-          "label": "D",
-          "text": "量纲一致性：写成除法后量纲变成 kg·s²/m，与力的量纲完全不同，量纲检查直接拦住。"
+          "text": "30 N"
         }
       ],
-      "correct_answer": "C",
-      "explanation": "胡克定律中的 x 是总长度与原长之差，不是总长度。错误式与正确式量纲完全相同，量纲检查抓不到；本情境中误代 0.15 m 会得到 30 N，正确形变量 0.05 m 对应 10 N。\n知识库校验证据：情境：拉伸弹簧；代入错误式：k·L<sub>总</sub>；校验参照值：10.0。",
+      "correct_answer": "A",
+      "explanation": "使用胡克定律：k·x，代入得10 N。另一结果来自k·L<sub>总</sub>，算得30 N。\n胡克定律中的 x 是总长度与原长之差，不是总长度。错误式与正确式量纲完全相同，量纲检查抓不到；本情境中误代 0.15 m 会得到 30 N，正确形变量 0.05 m 对应 10 N。\n知识点条件：胡克定律里最容易踩的坑是 x —— 它是「形变量」，即弹簧被拉伸或被压缩的长度，是变化量而不是弹簧的总长度。弹簧被拉长到什么程度，弹力就对应到那个程度，跟原长无关。另外要注意它的适用范围：形变必须在这个弹簧的弹性限度内，超过之后就拉不回来，也不再成正比。\n推导依据：弹簧受拉力 F 时被拉长 x，实验测出两者成正比，比例系数记为 k。；写成等式就是 F = k x。k 越大表示把弹簧拉长同样的长度需要越大的力，即弹簧越硬。；检核量纲：k 的单位是 N/m，与 x 的单位 m 相乘后得到 N，正好是力的单位。\n卡片公式各自的适用条件（不是本题共同前提）：\n胡克定律：在弹簧的弹性限度内，弹簧的弹力\n由弹力求形变量：移项所得，弹性限度内",
       "error_type": "数值代入",
       "judging": "auto",
       "source_error_index": 1,
@@ -89,15 +100,58 @@
         "expr": "k*L_total",
         "ref": 10.0
       },
+      "level": "基础",
+      "learning_scope": "高中",
+      "answer_evidence": {
+        "kind": "numeric",
+        "scenario": "拉伸弹簧",
+        "parameters": {
+          "k": 200,
+          "x": 0.05,
+          "F": 10,
+          "L_0": 0.1,
+          "L_total": 0.15
+        },
+        "target": "F",
+        "unit": "N",
+        "reference": 10.0,
+        "correct_proof": {
+          "expression": "k*x",
+          "formula": "胡克定律",
+          "value": 10.0,
+          "when": "在弹簧的弹性限度内，弹簧的弹力"
+        },
+        "distractor_expression": "k*L_total",
+        "distractor_value": 30.0,
+        "dimension_matches": true,
+        "independent_evaluation": true
+      },
       "review": {
         "confidence": "medium",
-        "checks": {
-          "answer_unique": true,
-          "distractors_plausible": true,
-          "stem_clear": true,
-          "no_cross_segment": true
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": true,
+          "no_answer_leak_in_options": true
         },
-        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。"
       }
     },
     {
@@ -105,27 +159,19 @@
       "point_id": "dyn-02",
       "point_title": "重力",
       "chapter": "第二章 · 相互作用与牛顿运动定律",
-      "stem": "【第二章 · 相互作用与牛顿运动定律 · 重力】学生的错误做法：把重力写成 G = m / g（错误表达式：G = m/g）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "stem": "在“重力”中，任何物体，在地球表面附近。重力的大小的单位为N。下列哪一表达式的量纲与该目标量一致？",
       "options": [
         {
           "label": "A",
-          "text": "数值代入：量纲完全正确，量纲检查抓不到。"
+          "text": "G = m/g"
         },
         {
           "label": "B",
-          "text": "量纲一致性：写成除法后量纲变成 kg·s²/m，与力的量纲完全不同，量纲检查直接拦住。"
-        },
-        {
-          "label": "C",
-          "text": "数值代入：★ 这条错写法的量纲完全正确（两个力相乘再乘纯数，仍是 N），量纲检查抓不到。"
-        },
-        {
-          "label": "D",
-          "text": "数值代入：★ 这类错误量纲完全一致（都是「纯数乘一个力」，结果还是 N），量纲检查一点用都没有。"
+          "text": "G = m·g"
         }
       ],
       "correct_answer": "B",
-      "explanation": "写成除法后量纲变成 kg·s²/m，与力的量纲完全不同，量纲检查直接拦住。同时它也会让「月球上重力变大」这种荒谬结论出现，方向检查也能抓到。\n知识库校验证据：被测错误式：G = m/g；左式量纲：M·L·T⁻²；右式量纲：M·L⁻¹·T²；左右量纲不匹配；量纲校验说明：实际量纲检查得到等号左边为M·L·T⁻²、右边为M·L⁻¹·T²；两边不是同一物理量，因此该等式不成立。；变化方向要求：mismatch；检验说明：实际量纲检查得到等号左边为M·L·T⁻²、右边为M·L⁻¹·T²；两边不是同一物理量，因此该等式不成立。。",
+      "explanation": "写成除法后量纲变成 kg·s²/m，与力的量纲完全不同，量纲检查直接拦住。同时它也会让「月球上重力变大」这种荒谬结论出现，方向检查也能抓到。\n知识点条件：注意 g 的两张面孔：作为自由落体的加速度，它的单位写 m/s²；作为重力的比例系数，它的单位写 N/kg。两者数值相同、物理含义相通，但写成 N/kg 更能体现「每千克受到多少牛的力」。重力的大小只与质量和当地 g 有关，与物体的运动状态、是否被其他力支持都无关——一个在空中自由下落的物体和一个静止放在桌上的物体，受的重力一样大。\n推导依据：实验证明，在地球表面同一地点，物体受到的重力与它的质量成正比。；把比例系数记为 g，写成等式就是 G = m g。；检核量纲：质量的量纲 M 乘上加速度的量纲 L/T²，得到 M·L/T²，正是力的量纲。；因此 g 既可以看作自由落体的加速度，也可以看作每千克物体受到的重力。\n卡片公式各自的适用条件（不是本题共同前提）：\n重力的大小：任何物体，在地球表面附近",
       "error_type": "量纲一致性",
       "judging": "auto",
       "source_error_index": 0,
@@ -139,15 +185,42 @@
         "expect": "mismatch",
         "note": "实际量纲检查得到等号左边为M·L·T^-2、右边为M·L^-1·T^2；两边不是同一物理量，因此该等式不成立。"
       },
+      "level": "基础",
+      "learning_scope": "高中",
+      "answer_evidence": {
+        "kind": "dimension",
+        "target": "G",
+        "correct_expression": "G = m*g",
+        "distractor_expression": "G = m/g",
+        "target_dimension": "M·L·T^-2",
+        "distractor_dimension": "M·L^-1·T^2"
+      },
       "review": {
         "confidence": "medium",
-        "checks": {
-          "answer_unique": true,
-          "distractors_plausible": true,
-          "stem_clear": true,
-          "no_cross_segment": true
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": true,
+          "no_answer_leak_in_options": true
         },
-        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。"
       }
     },
     {
@@ -155,27 +228,19 @@
       "point_id": "dyn-02",
       "point_title": "重力",
       "chapter": "第二章 · 相互作用与牛顿运动定律",
-      "stem": "【第二章 · 相互作用与牛顿运动定律 · 重力】学生的错误做法：已使用月球重力加速度后，又把结果额外除以 6（错误表达式：G = m·g/6）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "stem": "在“重力”的模型下，m（物体的质量）=2 kg；g（重力加速度（也写作 N/kg））=1.6 m/s²。条件：任何物体，在地球表面附近。求重力的大小（G）。这些数值是设计示例。",
       "options": [
         {
           "label": "A",
-          "text": "数值代入：月球情境里的 g = 1.6 m/s² 已经体现了约为地球六分之一，再除以 6 属于重复折算。"
+          "text": "0.533333 N"
         },
         {
           "label": "B",
-          "text": "量纲一致性：写成除法后 k/x 的量纲变成 N/m²，与力的单位 N 完全不同，量纲检查立刻拦住。"
-        },
-        {
-          "label": "C",
-          "text": "量纲一致性：写成除法后量纲变成 kg²·m/s²，与力的量纲对不上，量纲检查当场拦住。"
-        },
-        {
-          "label": "D",
-          "text": "概念混淆：滑动摩擦力的确与「相对运动」方向相反，但静摩擦力可以和运动方向相同 —— 例如随传送带一起加速的物体，正是静摩擦力在推它前进。"
+          "text": "3.2 N"
         }
       ],
-      "correct_answer": "A",
-      "explanation": "月球情境里的 g = 1.6 m/s² 已经体现了约为地球六分之一，再除以 6 属于重复折算。错误式与正确式量纲完全相同，只能靠数值代入发现：会算成约 0.533 N，而正确值是 3.2 N。\n知识库校验证据：情境：月球表面；代入错误式：m·g/6；校验参照值：3.2。",
+      "correct_answer": "B",
+      "explanation": "使用重力的大小：m·g，代入得3.2 N。另一结果来自m·g/6，算得0.533333 N。\n月球情境里的 g = 1.6 m/s² 已经体现了约为地球六分之一，再除以 6 属于重复折算。错误式与正确式量纲完全相同，只能靠数值代入发现：会算成约 0.533 N，而正确值是 3.2 N。\n知识点条件：注意 g 的两张面孔：作为自由落体的加速度，它的单位写 m/s²；作为重力的比例系数，它的单位写 N/kg。两者数值相同、物理含义相通，但写成 N/kg 更能体现「每千克受到多少牛的力」。重力的大小只与质量和当地 g 有关，与物体的运动状态、是否被其他力支持都无关——一个在空中自由下落的物体和一个静止放在桌上的物体，受的重力一样大。\n推导依据：实验证明，在地球表面同一地点，物体受到的重力与它的质量成正比。；把比例系数记为 g，写成等式就是 G = m g。；检核量纲：质量的量纲 M 乘上加速度的量纲 L/T²，得到 M·L/T²，正是力的量纲。；因此 g 既可以看作自由落体的加速度，也可以看作每千克物体受到的重力。\n卡片公式各自的适用条件（不是本题共同前提）：\n重力的大小：任何物体，在地球表面附近",
       "error_type": "数值代入",
       "judging": "auto",
       "source_error_index": 1,
@@ -186,15 +251,56 @@
         "expr": "m*g/6",
         "ref": 3.2
       },
+      "level": "基础",
+      "learning_scope": "高中",
+      "answer_evidence": {
+        "kind": "numeric",
+        "scenario": "月球表面",
+        "parameters": {
+          "m": 2,
+          "g": 1.6,
+          "a": 1.6
+        },
+        "target": "G",
+        "unit": "N",
+        "reference": 3.2,
+        "correct_proof": {
+          "expression": "m*g",
+          "formula": "重力的大小",
+          "value": 3.2,
+          "when": "任何物体，在地球表面附近"
+        },
+        "distractor_expression": "m*g/6",
+        "distractor_value": 0.5333333333333333,
+        "dimension_matches": true,
+        "independent_evaluation": true
+      },
       "review": {
         "confidence": "medium",
-        "checks": {
-          "answer_unique": true,
-          "distractors_plausible": true,
-          "stem_clear": true,
-          "no_cross_segment": true
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": true,
+          "no_answer_leak_in_options": true
         },
-        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。"
       }
     },
     {
@@ -202,42 +308,59 @@
       "point_id": "dyn-02",
       "point_title": "重力",
       "chapter": "第二章 · 相互作用与牛顿运动定律",
-      "stem": "【第二章 · 相互作用与牛顿运动定律 · 重力】学生的错误做法：以为物体越重下落越快、或者说「重力大的物体先落地」。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "stem": "关于“重力”，判断这一说法是否成立，并说明依据：\n忽略空气阻力，在同一地点自由落体的加速度与物体质量无关。",
       "options": [
         {
           "label": "A",
-          "text": "量纲一致性：写成除法后 k/x 的量纲变成 N/m²，与力的单位 N 完全不同，量纲检查立刻拦住。"
+          "text": "该说法不成立。"
         },
         {
           "label": "B",
-          "text": "数值代入：★ 这条错写法的量纲完全正确（两个力相乘再乘纯数，仍是 N），量纲检查抓不到。"
-        },
-        {
-          "label": "C",
-          "text": "数值代入：★ 这类错误量纲完全一致（都是「纯数乘一个力」，结果还是 N），量纲检查一点用都没有。"
-        },
-        {
-          "label": "D",
-          "text": "概念混淆：重力确实与质量成正比，但加速度 a = G / m = g 与质量无关，所有物体下落加速度相同。"
+          "text": "该说法成立。"
         }
       ],
-      "correct_answer": "D",
-      "explanation": "重力确实与质量成正比，但加速度 a = G / m = g 与质量无关，所有物体下落加速度相同。这是第一章自由落体已经纠正过的错误，在这里以「误把重力当加速度」的形式再次出现。属于概念性错误，标注人工审核。",
+      "correct_answer": "B",
+      "explanation": "重力确实与质量成正比，但加速度 a = G / m = g 与质量无关，所有物体下落加速度相同。这是第一章自由落体已经纠正过的错误，在这里以「误把重力当加速度」的形式再次出现。属于概念性错误，标注人工审核。\n知识点条件：注意 g 的两张面孔：作为自由落体的加速度，它的单位写 m/s²；作为重力的比例系数，它的单位写 N/kg。两者数值相同、物理含义相通，但写成 N/kg 更能体现「每千克受到多少牛的力」。重力的大小只与质量和当地 g 有关，与物体的运动状态、是否被其他力支持都无关——一个在空中自由下落的物体和一个静止放在桌上的物体，受的重力一样大。\n推导依据：实验证明，在地球表面同一地点，物体受到的重力与它的质量成正比。；把比例系数记为 g，写成等式就是 G = m g。；检核量纲：质量的量纲 M 乘上加速度的量纲 L/T²，得到 M·L/T²，正是力的量纲。；因此 g 既可以看作自由落体的加速度，也可以看作每千克物体受到的重力。\n卡片公式各自的适用条件（不是本题共同前提）：\n重力的大小：任何物体，在地球表面附近",
       "error_type": "概念混淆",
       "judging": "teacher",
       "source_error_index": 2,
       "source_caught_by": "人工审核",
       "wrong_expr": null,
       "trap_test": null,
+      "level": "基础",
+      "learning_scope": "高中",
+      "answer_evidence": {
+        "kind": "teacher",
+        "claim_source": "执行方明确命题",
+        "reference_only": true,
+        "reason": "概念、操作或无法建立完整定量证据，教师确认条件与结论。"
+      },
       "review": {
         "confidence": "medium",
-        "checks": {
-          "answer_unique": true,
-          "distractors_plausible": true,
-          "stem_clear": true,
-          "no_cross_segment": true
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": false,
+          "no_answer_leak_in_options": true
         },
-        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。"
       }
     },
     {
@@ -245,27 +368,19 @@
       "point_id": "dyn-03",
       "point_title": "摩擦力",
       "chapter": "第二章 · 相互作用与牛顿运动定律",
-      "stem": "【第二章 · 相互作用与牛顿运动定律 · 摩擦力】学生的错误做法：用静摩擦力公式去算「没被推动」的情形，即认为静摩擦力等于 μF<sub>N</sub>（错误表达式：f = μ·F<sub>N</sub>）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "stem": "在“摩擦力”的模型下，μ（动摩擦因数（无量纲））=0.3 ；F<sub>N</sub>（接触面间的正压力）=19.6 N；F（水平推力（用于求静摩擦力））=1 N。条件：物体静止时，静摩擦力由平衡条件决定，与正压力无关。求摩擦力的大小（f）。这些数值是设计示例。",
       "options": [
         {
           "label": "A",
-          "text": "量纲一致性：写成除法后量纲变成 kg·s²/m，与力的量纲完全不同，量纲检查直接拦住。"
+          "text": "1 N"
         },
         {
           "label": "B",
-          "text": "量纲一致性：写成除法后量纲变成 kg²·m/s²，与力的量纲对不上，量纲检查当场拦住。"
-        },
-        {
-          "label": "C",
-          "text": "数值代入：★ 这条错写法的量纲完全正确（两个力相乘再乘纯数，仍是 N），量纲检查抓不到。"
-        },
-        {
-          "label": "D",
-          "text": "量纲一致性：写成除法后 k/x 的量纲变成 N/m²，与力的单位 N 完全不同，量纲检查立刻拦住。"
+          "text": "5.88 N"
         }
       ],
-      "correct_answer": "C",
-      "explanation": "★ 这条错写法的量纲完全正确（两个力相乘再乘纯数，仍是 N），量纲检查抓不到。要抓住它必须靠数值代入：物体被 1 N 的水平力推着却没动，静摩擦力只有 1 N；按公式算却得到 5.88 N —— 那个数其实是最大静摩擦力的量级，不是实际受到的摩擦力。\n知识库校验证据：情境：静摩擦未推动；代入错误式：μ·F<sub>N</sub>；校验参照值：1.0。",
+      "correct_answer": "A",
+      "explanation": "使用静止物体的静摩擦力：F，代入得1 N。另一结果来自μ·F<sub>N</sub>，算得5.88 N。\n★ 这条错写法的量纲完全正确（两个力相乘再乘纯数，仍是 N），量纲检查抓不到。要抓住它必须靠数值代入：物体被 1 N 的水平力推着却没动，静摩擦力只有 1 N；按公式算却得到 5.88 N —— 那个数其实是最大静摩擦力的量级，不是实际受到的摩擦力。\n知识点条件：这里有一条极其重要的分界线：滑动摩擦力可以用公式 f = μ F<sub>N</sub> 直接算，而静摩擦力不能。静摩擦力的大小由平衡条件或牛顿第二定律决定——你用力推但没推动，静摩擦力就等于你的推力；推得越用力，它越大，直到超过最大静摩擦力才被推动。所以「静摩擦力等于 μF<sub>N</sub>」是一个用起来很顺、但完全错误的说法，本页专门为它设了一道检查。\n推导依据：滑动摩擦力的方向沿接触面，与相对运动方向相反，大小由实验测定。；实验发现它与接触面间的正压力成正比，比例系数记为 μ，于是有 f = μ F<sub>N</sub>。；μ 是一个纯数（无量纲），只由两个接触面的材料与粗糙程度决定，与接触面积无关。；静摩擦力不走这条路径：物体没动，说明受力平衡，静摩擦力必须等于推它的那个力。；所以解静摩擦类问题时，先判断物体动不动，再选公式 —— 顺序错了就会得到荒谬答案。\n卡片公式各自的适用条件（不是本题共同前提）：\n滑动摩擦力：物体已经发生相对滑动时，才能用这条\n静止物体的静摩擦力：物体静止时，静摩擦力由平衡条件决定，与正压力无关",
       "error_type": "数值代入",
       "judging": "auto",
       "source_error_index": 0,
@@ -276,15 +391,58 @@
         "expr": "mu*F_N",
         "ref": 1.0
       },
+      "level": "进阶",
+      "learning_scope": "高中",
+      "answer_evidence": {
+        "kind": "numeric",
+        "scenario": "静摩擦未推动",
+        "parameters": {
+          "mu": 0.3,
+          "F_N": 19.6,
+          "F": 1,
+          "m": 2,
+          "g": 9.8
+        },
+        "target": "f",
+        "unit": "N",
+        "reference": 1.0,
+        "correct_proof": {
+          "expression": "F",
+          "formula": "静止物体的静摩擦力",
+          "value": 1,
+          "when": "物体静止时，静摩擦力由平衡条件决定，与正压力无关"
+        },
+        "distractor_expression": "mu*F_N",
+        "distractor_value": 5.88,
+        "dimension_matches": true,
+        "independent_evaluation": true
+      },
       "review": {
         "confidence": "medium",
-        "checks": {
-          "answer_unique": true,
-          "distractors_plausible": true,
-          "stem_clear": true,
-          "no_cross_segment": true
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": true,
+          "no_answer_leak_in_options": true
         },
-        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。"
       }
     },
     {
@@ -292,42 +450,59 @@
       "point_id": "dyn-03",
       "point_title": "摩擦力",
       "chapter": "第二章 · 相互作用与牛顿运动定律",
-      "stem": "【第二章 · 相互作用与牛顿运动定律 · 摩擦力】学生的错误做法：认为摩擦力总是阻碍物体运动，因此摩擦力的方向一定与运动方向相反。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "stem": "关于“摩擦力”，判断这一说法是否成立，并说明依据：\n滑动摩擦力的确与「相对运动」方向相反，但静摩擦力可以和运动方向相同 —— 例如随传送带一起加速的物体，正是静摩擦力在推它前进。",
       "options": [
         {
           "label": "A",
-          "text": "数值代入：★ 这类错误量纲完全一致（都是「纯数乘一个力」，结果还是 N），量纲检查一点用都没有。"
+          "text": "该说法成立。"
         },
         {
           "label": "B",
-          "text": "概念混淆：滑动摩擦力的确与「相对运动」方向相反，但静摩擦力可以和运动方向相同 —— 例如随传送带一起加速的物体，正是静摩擦力在推它前进。"
-        },
-        {
-          "label": "C",
-          "text": "量纲一致性：写成除法后 k/x 的量纲变成 N/m²，与力的单位 N 完全不同，量纲检查立刻拦住。"
-        },
-        {
-          "label": "D",
-          "text": "量纲一致性：写成除法后量纲变成 kg·s²/m，与力的量纲完全不同，量纲检查直接拦住。"
+          "text": "该说法不成立。"
         }
       ],
-      "correct_answer": "B",
-      "explanation": "滑动摩擦力的确与「相对运动」方向相反，但静摩擦力可以和运动方向相同 —— 例如随传送带一起加速的物体，正是静摩擦力在推它前进。说「阻碍运动方向」不准确，准确说法是「阻碍相对运动（或相对运动趋势）」。这类表述错误不体现为公式写错，标注人工审核。",
+      "correct_answer": "A",
+      "explanation": "滑动摩擦力的确与「相对运动」方向相反，但静摩擦力可以和运动方向相同 —— 例如随传送带一起加速的物体，正是静摩擦力在推它前进。说「阻碍运动方向」不准确，准确说法是「阻碍相对运动（或相对运动趋势）」。这类表述错误不体现为公式写错，标注人工审核。\n知识点条件：这里有一条极其重要的分界线：滑动摩擦力可以用公式 f = μ F<sub>N</sub> 直接算，而静摩擦力不能。静摩擦力的大小由平衡条件或牛顿第二定律决定——你用力推但没推动，静摩擦力就等于你的推力；推得越用力，它越大，直到超过最大静摩擦力才被推动。所以「静摩擦力等于 μF<sub>N</sub>」是一个用起来很顺、但完全错误的说法，本页专门为它设了一道检查。\n推导依据：滑动摩擦力的方向沿接触面，与相对运动方向相反，大小由实验测定。；实验发现它与接触面间的正压力成正比，比例系数记为 μ，于是有 f = μ F<sub>N</sub>。；μ 是一个纯数（无量纲），只由两个接触面的材料与粗糙程度决定，与接触面积无关。；静摩擦力不走这条路径：物体没动，说明受力平衡，静摩擦力必须等于推它的那个力。；所以解静摩擦类问题时，先判断物体动不动，再选公式 —— 顺序错了就会得到荒谬答案。\n卡片公式各自的适用条件（不是本题共同前提）：\n滑动摩擦力：物体已经发生相对滑动时，才能用这条\n静止物体的静摩擦力：物体静止时，静摩擦力由平衡条件决定，与正压力无关",
       "error_type": "概念混淆",
       "judging": "teacher",
       "source_error_index": 1,
       "source_caught_by": "人工审核",
       "wrong_expr": null,
       "trap_test": null,
+      "level": "进阶",
+      "learning_scope": "高中",
+      "answer_evidence": {
+        "kind": "teacher",
+        "claim_source": "why",
+        "reference_only": true,
+        "reason": "概念、操作或无法建立完整定量证据，教师确认条件与结论。"
+      },
       "review": {
         "confidence": "medium",
-        "checks": {
-          "answer_unique": true,
-          "distractors_plausible": true,
-          "stem_clear": true,
-          "no_cross_segment": true
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": false,
+          "no_answer_leak_in_options": true
         },
-        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。"
       }
     },
     {
@@ -335,27 +510,19 @@
       "point_id": "dyn-04",
       "point_title": "力的合成与分解（正交分解）",
       "chapter": "第二章 · 相互作用与牛顿运动定律",
-      "stem": "【第二章 · 相互作用与牛顿运动定律 · 力的合成与分解（正交分解）】学生的错误做法：把 cos 和 sin 记反，写成 F<sub>x</sub> = F sin θ、F<sub>y</sub> = F cos θ（错误表达式：F<sub>x</sub> = F·sin(θ)）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "stem": "在“力的合成与分解（正交分解）”的模型下，F（被分解的那个力（合力）的大小）=10 N；θ（力与水平方向的夹角（弧度））=0.643501 rad。条件：θ 是力与水平方向的夹角。求水平方向的分力（F<sub>x</sub>）。这些数值是设计示例。",
       "options": [
         {
           "label": "A",
-          "text": "数值代入：★ 这类错误量纲完全一致（都是「纯数乘一个力」，结果还是 N），量纲检查一点用都没有。"
+          "text": "6 N"
         },
         {
           "label": "B",
-          "text": "量纲一致性：写成除法后 k/x 的量纲变成 N/m²，与力的单位 N 完全不同，量纲检查立刻拦住。"
-        },
-        {
-          "label": "C",
-          "text": "量纲一致性：写成除法后量纲变成 kg·s²/m，与力的量纲完全不同，量纲检查直接拦住。"
-        },
-        {
-          "label": "D",
-          "text": "量纲一致性：写成除法后量纲变成 kg²·m/s²，与力的量纲对不上，量纲检查当场拦住。"
+          "text": "8 N"
         }
       ],
-      "correct_answer": "A",
-      "explanation": "★ 这类错误量纲完全一致（都是「纯数乘一个力」，结果还是 N），量纲检查一点用都没有。数值代入才暴露：θ ≈ 36.87° 时算出 6 N，而水平分量应该是 8 N —— 两个分量正好互换了。\n知识库校验证据：情境：斜向拉力；代入错误式：F·sin(θ)；校验参照值：8.0。",
+      "correct_answer": "B",
+      "explanation": "使用水平方向的分力：F·cos(θ)，代入得8 N。另一结果来自F·sin(θ)，算得6 N。\n★ 这类错误量纲完全一致（都是「纯数乘一个力」，结果还是 N），量纲检查一点用都没有。数值代入才暴露：θ ≈ 36.87° 时算出 6 N，而水平分量应该是 8 N —— 两个分量正好互换了。\n知识点条件：正交分解是高中力学最重要的计算工具，几乎所有复杂受力问题都靠它降维打击——把一个斜着的力换成水平和竖直两个方向上的力，然后每个方向各写一次平衡或牛顿第二定律。两个最容易混淆的点：一是 cos 和 sin 谁配谁（取决于 θ 是从哪个轴量起的）；二是合力不等于两个分力直接相加，因为它们是矢量，要用勾股定理再开方。\n推导依据：力是矢量，合成遵守平行四边形定则：以两个分力为邻边作平行四边形，对角线就是合力。；若两个分力互相垂直，平行四边形退化成矩形，对角线的长度由勾股定理给出：F = √(F<sub>x</sub>² + F<sub>y</sub>²)。；分解是合成的逆运算。把 F 沿互相垂直的两个方向拆分，由直角三角形可读出两直角边。；若 θ 从水平轴量起，则邻边（水平分量）是 F cos θ，对边（竖直分量）是 F sin θ。；检核恒等式：把两个分量平方相加，得 F²(cos²θ + sin²θ) = F²，正好回到 F —— 这说明分解没有丢东西，也没多出来。\n卡片公式各自的适用条件（不是本题共同前提）：\n水平方向的分力：θ 是力与水平方向的夹角\n竖直方向的分力：θ 是力与水平方向的夹角\n由两个分力求合力：两个分力互相垂直时",
       "error_type": "数值代入",
       "judging": "auto",
       "source_error_index": 0,
@@ -366,15 +533,57 @@
         "expr": "F*sin(theta)",
         "ref": 8.0
       },
+      "level": "进阶",
+      "learning_scope": "高中",
+      "answer_evidence": {
+        "kind": "numeric",
+        "scenario": "斜向拉力",
+        "parameters": {
+          "F": 10,
+          "theta": 0.6435011088,
+          "F_x": 8,
+          "F_y": 6
+        },
+        "target": "F_x",
+        "unit": "N",
+        "reference": 8.0,
+        "correct_proof": {
+          "expression": "F*cos(theta)",
+          "formula": "水平方向的分力",
+          "value": 7.999999999959706,
+          "when": "θ 是力与水平方向的夹角"
+        },
+        "distractor_expression": "F*sin(theta)",
+        "distractor_value": 6.000000000053724,
+        "dimension_matches": true,
+        "independent_evaluation": true
+      },
       "review": {
         "confidence": "medium",
-        "checks": {
-          "answer_unique": true,
-          "distractors_plausible": true,
-          "stem_clear": true,
-          "no_cross_segment": true
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": true,
+          "no_answer_leak_in_options": true
         },
-        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。"
       }
     },
     {
@@ -382,27 +591,19 @@
       "point_id": "dyn-04",
       "point_title": "力的合成与分解（正交分解）",
       "chapter": "第二章 · 相互作用与牛顿运动定律",
-      "stem": "【第二章 · 相互作用与牛顿运动定律 · 力的合成与分解（正交分解）】学生的错误做法：直接把两个分力相加求合力，写成 F = F<sub>x</sub> + F<sub>y</sub>（错误表达式：F = F<sub>x</sub> + F<sub>y</sub>）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "stem": "在“力的合成与分解（正交分解）”的模型下，F<sub>x</sub>（水平方向的分力）=8 N；F<sub>y</sub>（竖直方向的分力）=6 N。条件：两个分力互相垂直时。求被分解的那个力（合力）的大小（F）。这些数值是设计示例。",
       "options": [
         {
           "label": "A",
-          "text": "量纲一致性：写成除法后 k/x 的量纲变成 N/m²，与力的单位 N 完全不同，量纲检查立刻拦住。"
+          "text": "10 N"
         },
         {
           "label": "B",
-          "text": "量纲一致性：写成除法后量纲变成 kg·s²/m，与力的量纲完全不同，量纲检查直接拦住。"
-        },
-        {
-          "label": "C",
-          "text": "量纲一致性：写成除法后量纲变成 kg²·m/s²，与力的量纲对不上，量纲检查当场拦住。"
-        },
-        {
-          "label": "D",
-          "text": "数值代入：★ 又一个量纲拦不住的错误：力加力还是力，量纲永远正确。"
+          "text": "14 N"
         }
       ],
-      "correct_answer": "D",
-      "explanation": "★ 又一个量纲拦不住的错误：力加力还是力，量纲永远正确。数值代入才暴露：8 + 6 = 14 N，而真正的合力是 10 N。差的那 4 N 就是矢量合成与代数相加的区别。\n知识库校验证据：情境：斜向拉力；代入错误式：F<sub>x</sub> + F<sub>y</sub>；校验参照值：10.0。",
+      "correct_answer": "A",
+      "explanation": "使用由两个分力求合力：√(F<sub>x</sub>² + F<sub>y</sub>²)，代入得10 N。另一结果来自F<sub>x</sub> + F<sub>y</sub>，算得14 N。\n★ 又一个量纲拦不住的错误：力加力还是力，量纲永远正确。数值代入才暴露：8 + 6 = 14 N，而真正的合力是 10 N。差的那 4 N 就是矢量合成与代数相加的区别。\n知识点条件：正交分解是高中力学最重要的计算工具，几乎所有复杂受力问题都靠它降维打击——把一个斜着的力换成水平和竖直两个方向上的力，然后每个方向各写一次平衡或牛顿第二定律。两个最容易混淆的点：一是 cos 和 sin 谁配谁（取决于 θ 是从哪个轴量起的）；二是合力不等于两个分力直接相加，因为它们是矢量，要用勾股定理再开方。\n推导依据：力是矢量，合成遵守平行四边形定则：以两个分力为邻边作平行四边形，对角线就是合力。；若两个分力互相垂直，平行四边形退化成矩形，对角线的长度由勾股定理给出：F = √(F<sub>x</sub>² + F<sub>y</sub>²)。；分解是合成的逆运算。把 F 沿互相垂直的两个方向拆分，由直角三角形可读出两直角边。；若 θ 从水平轴量起，则邻边（水平分量）是 F cos θ，对边（竖直分量）是 F sin θ。；检核恒等式：把两个分量平方相加，得 F²(cos²θ + sin²θ) = F²，正好回到 F —— 这说明分解没有丢东西，也没多出来。\n卡片公式各自的适用条件（不是本题共同前提）：\n水平方向的分力：θ 是力与水平方向的夹角\n竖直方向的分力：θ 是力与水平方向的夹角\n由两个分力求合力：两个分力互相垂直时",
       "error_type": "数值代入",
       "judging": "auto",
       "source_error_index": 1,
@@ -413,15 +614,57 @@
         "expr": "F_x + F_y",
         "ref": 10.0
       },
+      "level": "进阶",
+      "learning_scope": "高中",
+      "answer_evidence": {
+        "kind": "numeric",
+        "scenario": "斜向拉力",
+        "parameters": {
+          "F": 10,
+          "theta": 0.6435011088,
+          "F_x": 8,
+          "F_y": 6
+        },
+        "target": "F",
+        "unit": "N",
+        "reference": 10.0,
+        "correct_proof": {
+          "expression": "sqrt(F_x^2 + F_y^2)",
+          "formula": "由两个分力求合力",
+          "value": 10.0,
+          "when": "两个分力互相垂直时"
+        },
+        "distractor_expression": "F_x + F_y",
+        "distractor_value": 14.0,
+        "dimension_matches": true,
+        "independent_evaluation": true
+      },
       "review": {
         "confidence": "medium",
-        "checks": {
-          "answer_unique": true,
-          "distractors_plausible": true,
-          "stem_clear": true,
-          "no_cross_segment": true
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": true,
+          "no_answer_leak_in_options": true
         },
-        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。"
       }
     },
     {
@@ -429,27 +672,19 @@
       "point_id": "dyn-05",
       "point_title": "牛顿第二定律",
       "chapter": "第二章 · 相互作用与牛顿运动定律",
-      "stem": "【第二章 · 相互作用与牛顿运动定律 · 牛顿第二定律】学生的错误做法：把牛顿第二定律记成 F = m / a（错误表达式：F<sub>合</sub> = m/a）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "stem": "在“牛顿第二定律”中，宏观低速物体的运动，F<sub>合</sub> 是所有外力的矢量和。物体受到的合外力的单位为N。下列哪一表达式的量纲与该目标量一致？",
       "options": [
         {
           "label": "A",
-          "text": "数值代入：★ 这类错误量纲完全一致（都是「纯数乘一个力」，结果还是 N），量纲检查一点用都没有。"
+          "text": "F<sub>合</sub> = m·a"
         },
         {
           "label": "B",
-          "text": "数值代入：量纲完全正确，量纲检查抓不到。"
-        },
-        {
-          "label": "C",
-          "text": "量纲一致性：写成除法后量纲变成 kg²·m/s²，与力的量纲对不上，量纲检查当场拦住。"
-        },
-        {
-          "label": "D",
-          "text": "数值代入：★ 这条错写法的量纲完全正确（两个力相乘再乘纯数，仍是 N），量纲检查抓不到。"
+          "text": "F<sub>合</sub> = m/a"
         }
       ],
-      "correct_answer": "C",
-      "explanation": "写成除法后量纲变成 kg²·m/s²，与力的量纲对不上，量纲检查当场拦住。\n知识库校验证据：被测错误式：F<sub>合</sub> = m/a；左式量纲：M·L·T⁻²；右式量纲：M·L⁻¹·T²；左右量纲不匹配；量纲校验说明：实际量纲检查得到等号左边为M·L·T⁻²、右边为M·L⁻¹·T²；两边不是同一物理量，因此该等式不成立。；变化方向要求：mismatch；检验说明：实际量纲检查得到等号左边为M·L·T⁻²、右边为M·L⁻¹·T²；两边不是同一物理量，因此该等式不成立。。",
+      "correct_answer": "A",
+      "explanation": "写成除法后量纲变成 kg²·m/s²，与力的量纲对不上，量纲检查当场拦住。\n知识点条件：这条式子是整个高中力学的枢纽。它有三个必须记牢的限定：第一，F 是合力而不是某一个力，漏掉任何一个力都会算错加速度——这是本知识点专门设了一道检查去抓的错误；第二，a 的方向永远和合力方向一致，与速度方向无关；第三，a 与 F 是瞬时对应的，力一变，加速度立刻跟着变。\n推导依据：实验：保持质量不变，改变拉力，测出加速度 —— a 与 F 成正比。；保持拉力不变，改变质量，测出加速度 —— a 与 m 成反比。；两式合并：a ∝ F / m，引入比例系数并取国际单位制，系数为 1，于是 F = m a。；检核量纲：kg × m/s² = M·L/T²，正是力的量纲 N，与左边一致。；反过来 a = F / m：合力方向就是加速度方向，这一点在公式里体现为两者同号。\n卡片公式各自的适用条件（不是本题共同前提）：\n牛顿第二定律：宏观低速物体的运动，F<sub>合</sub> 是所有外力的矢量和\n水平方向的合力：水平面上被拉动的物体，水平方向受两个力",
       "error_type": "量纲一致性",
       "judging": "auto",
       "source_error_index": 0,
@@ -463,15 +698,42 @@
         "expect": "mismatch",
         "note": "实际量纲检查得到等号左边为M·L·T^-2、右边为M·L^-1·T^2；两边不是同一物理量，因此该等式不成立。"
       },
+      "level": "基础",
+      "learning_scope": "高中",
+      "answer_evidence": {
+        "kind": "dimension",
+        "target": "F_net",
+        "correct_expression": "F_net = m*a",
+        "distractor_expression": "F_net = m/a",
+        "target_dimension": "M·L·T^-2",
+        "distractor_dimension": "M·L^-1·T^2"
+      },
       "review": {
         "confidence": "medium",
-        "checks": {
-          "answer_unique": true,
-          "distractors_plausible": true,
-          "stem_clear": true,
-          "no_cross_segment": true
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": true,
+          "no_answer_leak_in_options": true
         },
-        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。"
       }
     },
     {
@@ -479,27 +741,19 @@
       "point_id": "dyn-05",
       "point_title": "牛顿第二定律",
       "chapter": "第二章 · 相互作用与牛顿运动定律",
-      "stem": "【第二章 · 相互作用与牛顿运动定律 · 牛顿第二定律】学生的错误做法：用牛顿第二定律时只用拉力当合力，忘掉摩擦力（错误表达式：a = F<sub>拉</sub>/m）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "stem": "在“牛顿第二定律”的模型下，F<sub>拉</sub>（水平方向施加的拉力）=10 N；f（摩擦力）=4 N；m（物体的质量）=2 kg。条件：物体加速度的大小与所受合外力成正比、与质量成反比，加速度的方向与合外力方向相同。写成等式即 F<sub>合</sub> = m a，其中 F<sub>合</sub> 是物体受到的<strong>所有</strong>外力的矢量和。。求加速度（a）。这些数值是设计示例。",
       "options": [
         {
           "label": "A",
-          "text": "概念混淆：滑动摩擦力的确与「相对运动」方向相反，但静摩擦力可以和运动方向相同 —— 例如随传送带一起加速的物体，正是静摩擦力在推它前进。"
+          "text": "5 m/s²"
         },
         {
           "label": "B",
-          "text": "数值代入：★ 量纲完全正确（N/kg 正是 m/s²），量纲检查抓不到。"
-        },
-        {
-          "label": "C",
-          "text": "量纲一致性：写成除法后 k/x 的量纲变成 N/m²，与力的单位 N 完全不同，量纲检查立刻拦住。"
-        },
-        {
-          "label": "D",
-          "text": "量纲一致性：写成除法后量纲变成 kg·s²/m，与力的量纲完全不同，量纲检查直接拦住。"
+          "text": "3 m/s²"
         }
       ],
       "correct_answer": "B",
-      "explanation": "★ 量纲完全正确（N/kg 正是 m/s²），量纲检查抓不到。数值代入才暴露：直接用 10 ÷ 2 得 5 m/s²，而真实加速度是 (10 − 4) ÷ 2 = 3 m/s²。这是牛顿第二定律在实际题目里最高频的错误 —— 公式背得滚瓜烂熟，但「合力」漏了一个力。\n知识库校验证据：情境：水平面加速；代入错误式：F<sub>拉</sub>/m；校验参照值：3.0。",
+      "explanation": "使用本卡物理关系的等价变形或明确边界条件：(F<sub>拉</sub>-f)/m，代入得3 m/s²。另一结果来自F<sub>拉</sub>/m，算得5 m/s²。\n★ 量纲完全正确（N/kg 正是 m/s²），量纲检查抓不到。数值代入才暴露：直接用 10 ÷ 2 得 5 m/s²，而真实加速度是 (10 − 4) ÷ 2 = 3 m/s²。这是牛顿第二定律在实际题目里最高频的错误 —— 公式背得滚瓜烂熟，但「合力」漏了一个力。\n知识点条件：这条式子是整个高中力学的枢纽。它有三个必须记牢的限定：第一，F 是合力而不是某一个力，漏掉任何一个力都会算错加速度——这是本知识点专门设了一道检查去抓的错误；第二，a 的方向永远和合力方向一致，与速度方向无关；第三，a 与 F 是瞬时对应的，力一变，加速度立刻跟着变。\n推导依据：实验：保持质量不变，改变拉力，测出加速度 —— a 与 F 成正比。；保持拉力不变，改变质量，测出加速度 —— a 与 m 成反比。；两式合并：a ∝ F / m，引入比例系数并取国际单位制，系数为 1，于是 F = m a。；检核量纲：kg × m/s² = M·L/T²，正是力的量纲 N，与左边一致。；反过来 a = F / m：合力方向就是加速度方向，这一点在公式里体现为两者同号。\n卡片公式各自的适用条件（不是本题共同前提）：\n牛顿第二定律：宏观低速物体的运动，F<sub>合</sub> 是所有外力的矢量和\n水平方向的合力：水平面上被拉动的物体，水平方向受两个力",
       "error_type": "数值代入",
       "judging": "auto",
       "source_error_index": 1,
@@ -510,15 +764,132 @@
         "expr": "F_push/m",
         "ref": 3.0
       },
+      "level": "基础",
+      "learning_scope": "高中",
+      "answer_evidence": {
+        "kind": "numeric",
+        "scenario": "水平面加速",
+        "parameters": {
+          "F_push": 10,
+          "f": 4,
+          "m": 2,
+          "a": 3
+        },
+        "target": "a",
+        "unit": "m/s^2",
+        "reference": 3.0,
+        "correct_proof": {
+          "expression": "(F_push-f)/m",
+          "formula": "本卡物理关系的等价变形或明确边界条件",
+          "value": 3.0,
+          "when": "物体加速度的大小与所受合外力成正比、与质量成反比，加速度的方向与合外力方向相同。写成等式即 F_合 = m a，其中 F_合 是物体受到的**所有**外力的矢量和。"
+        },
+        "distractor_expression": "F_push/m",
+        "distractor_value": 5.0,
+        "dimension_matches": true,
+        "independent_evaluation": true
+      },
       "review": {
         "confidence": "medium",
-        "checks": {
-          "answer_unique": true,
-          "distractors_plausible": true,
-          "stem_clear": true,
-          "no_cross_segment": true
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": true,
+          "no_answer_leak_in_options": true
         },
-        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。"
+      }
+    },
+    {
+      "id": "diagnostic-dyn-06-1",
+      "point_id": "dyn-06",
+      "point_title": "牛顿第三定律",
+      "chapter": "第二章 · 相互作用与牛顿运动定律",
+      "stem": "在“牛顿第三定律”的模型下，F<sub>BA</sub>（B 对 A 的反作用力）=-5 N。条件：任何两个相互作用的物体之间，与运动状态无关。求A 对 B 的作用力（取正方向为正）（F<sub>AB</sub>）。这些数值是设计示例。",
+      "options": [
+        {
+          "label": "A",
+          "text": "-5 N"
+        },
+        {
+          "label": "B",
+          "text": "5 N"
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "使用作用力与反作用力：-F<sub>BA</sub>，代入得5 N。另一结果来自F<sub>BA</sub>，算得-5 N。\n量纲完全正确，量纲检查抓不到。这一条由校验器自动实测：把错误写法原样代进情境（F<sub>AB</sub> = 5 N、F<sub>BA</sub> = −5 N），算出等号左边是 5、右边是 −5，两边对不上，于是被判为不通过。整个过程不需要人提供参考值。\n知识点条件：第三定律说的两句话最容易记，也最容易用错。第一条：它和「平衡力」不是一回事——作用力与反作用力分别作用在两个不同的物体上，永远不能相互抵消，能抵消的只有作用在同一物体上的平衡力。第二条：大小相等与运动状态无关——马拉车车也拉马，两者大小永远相等，车能被拉动是因为马受到的来自地面的摩擦力大于车受到的阻力，而不是因为马「拉得比车拉它更用力」。\n推导依据：由大量实验总结得出：物体之间的相互作用总是成对出现。；这一对力有四个特征：作用在两个不同物体上；大小相等；方向相反；沿同一条直线。；把两个力沿同一条直线取同向为正方向，则方向相反体现为符号相反，于是 F<sub>AB</sub> = −F<sub>BA</sub>。；与牛顿第二定律配合使用时的关键区别：作用力与反作用力分别作用在两个物体上，受力分析时不能把它们画在同一个物体上，也不能相互抵消。\n卡片公式各自的适用条件（不是本题共同前提）：\n作用力与反作用力：任何两个相互作用的物体之间，与运动状态无关",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 0,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "F<sub>AB</sub> = F<sub>BA</sub>",
+      "trap_test": null,
+      "level": "基础",
+      "learning_scope": "高中",
+      "answer_evidence": {
+        "kind": "numeric",
+        "scenario": "互相推挤",
+        "parameters": {
+          "F_AB": 5,
+          "F_BA": -5
+        },
+        "target": "F_AB",
+        "unit": "N",
+        "reference": 5,
+        "correct_proof": {
+          "expression": "-F_BA",
+          "formula": "作用力与反作用力",
+          "value": 5,
+          "when": "任何两个相互作用的物体之间，与运动状态无关"
+        },
+        "distractor_expression": "F_BA",
+        "distractor_value": -5.0,
+        "dimension_matches": true,
+        "independent_evaluation": true
+      },
+      "review": {
+        "confidence": "medium",
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": true,
+          "no_answer_leak_in_options": true
+        },
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。"
       }
     },
     {
@@ -526,42 +897,59 @@
       "point_id": "dyn-06",
       "point_title": "牛顿第三定律",
       "chapter": "第二章 · 相互作用与牛顿运动定律",
-      "stem": "【第二章 · 相互作用与牛顿运动定律 · 牛顿第三定律】学生的错误做法：把作用力与反作用力当成一对平衡力，认为它们可以相互抵消。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "stem": "关于“牛顿第三定律”，判断这一说法是否成立，并说明依据：\n将作用力与反作用力视为一对平衡力，认为它们可以相互抵消。",
       "options": [
         {
           "label": "A",
-          "text": "量纲一致性：写成除法后 k/x 的量纲变成 N/m²，与力的单位 N 完全不同，量纲检查立刻拦住。"
+          "text": "该说法不成立。"
         },
         {
           "label": "B",
-          "text": "量纲一致性：写成除法后量纲变成 kg·s²/m，与力的量纲完全不同，量纲检查直接拦住。"
-        },
-        {
-          "label": "C",
-          "text": "数值代入：★ 这条错写法的量纲完全正确（两个力相乘再乘纯数，仍是 N），量纲检查抓不到。"
-        },
-        {
-          "label": "D",
-          "text": "概念混淆：平衡力作用在<strong>同一个</strong>物体上，作用力与反作用力分别作用在两个物体上，永远不能抵消。"
+          "text": "该说法成立。"
         }
       ],
-      "correct_answer": "D",
-      "explanation": "平衡力作用在<strong>同一个</strong>物体上，作用力与反作用力分别作用在两个物体上，永远不能抵消。这条错误不体现为公式写错，而是受力分析时把它们画到了同一个物体上，公式类检查无法覆盖，标注人工审核。",
+      "correct_answer": "A",
+      "explanation": "平衡力作用在<strong>同一个</strong>物体上，作用力与反作用力分别作用在两个物体上，永远不能抵消。这条错误不体现为公式写错，而是受力分析时把它们画到了同一个物体上，公式类检查无法覆盖，标注人工审核。\n知识点条件：第三定律说的两句话最容易记，也最容易用错。第一条：它和「平衡力」不是一回事——作用力与反作用力分别作用在两个不同的物体上，永远不能相互抵消，能抵消的只有作用在同一物体上的平衡力。第二条：大小相等与运动状态无关——马拉车车也拉马，两者大小永远相等，车能被拉动是因为马受到的来自地面的摩擦力大于车受到的阻力，而不是因为马「拉得比车拉它更用力」。\n推导依据：由大量实验总结得出：物体之间的相互作用总是成对出现。；这一对力有四个特征：作用在两个不同物体上；大小相等；方向相反；沿同一条直线。；把两个力沿同一条直线取同向为正方向，则方向相反体现为符号相反，于是 F<sub>AB</sub> = −F<sub>BA</sub>。；与牛顿第二定律配合使用时的关键区别：作用力与反作用力分别作用在两个物体上，受力分析时不能把它们画在同一个物体上，也不能相互抵消。\n卡片公式各自的适用条件（不是本题共同前提）：\n作用力与反作用力：任何两个相互作用的物体之间，与运动状态无关",
       "error_type": "概念混淆",
       "judging": "teacher",
       "source_error_index": 1,
       "source_caught_by": "人工审核",
       "wrong_expr": null,
       "trap_test": null,
+      "level": "基础",
+      "learning_scope": "高中",
+      "answer_evidence": {
+        "kind": "teacher",
+        "claim_source": "wrong",
+        "reference_only": true,
+        "reason": "概念、操作或无法建立完整定量证据，教师确认条件与结论。"
+      },
       "review": {
         "confidence": "medium",
-        "checks": {
-          "answer_unique": true,
-          "distractors_plausible": true,
-          "stem_clear": true,
-          "no_cross_segment": true
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": false,
+          "no_answer_leak_in_options": true
         },
-        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。"
       }
     },
     {
@@ -569,27 +957,19 @@
       "point_id": "dyn-07",
       "point_title": "超重与失重",
       "chapter": "第二章 · 相互作用与牛顿运动定律",
-      "stem": "【第二章 · 相互作用与牛顿运动定律 · 超重与失重】学生的错误做法：向上加速时误用减号（错误表达式：F<sub>N</sub> = m·(g-a)）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "stem": "在“超重与失重”的模型下，m（物体质量）=50 kg；g（当地重力加速度，取10）=10 m/s²；a（竖直加速度，向上为正）=2 m/s²。条件：竖直向上为正，人与秤保持接触，a不能使支持力为负。求台秤对人的支持力，即视重（F<sub>N</sub>）。这些数值是设计示例。",
       "options": [
         {
           "label": "A",
-          "text": "量纲一致性：写成除法后量纲变成 kg·s²/m，与力的量纲完全不同，量纲检查直接拦住。"
+          "text": "600 N"
         },
         {
           "label": "B",
-          "text": "量纲一致性：写成除法后量纲变成 kg²·m/s²，与力的量纲对不上，量纲检查当场拦住。"
-        },
-        {
-          "label": "C",
-          "text": "数值代入：减号适用于以向下加速度大小描述的失重情形；本卡已取向上为正，再减会使视重变化方向颠倒，量纲却仍正确。"
-        },
-        {
-          "label": "D",
-          "text": "量纲一致性：写成除法后 k/x 的量纲变成 N/m²，与力的单位 N 完全不同，量纲检查立刻拦住。"
+          "text": "400 N"
         }
       ],
-      "correct_answer": "C",
-      "explanation": "减号适用于以向下加速度大小描述的失重情形；本卡已取向上为正，再减会使视重变化方向颠倒，量纲却仍正确。\n知识库校验证据：情境：向上加速；代入错误式：m·(g-a)；校验参照值：600。",
+      "correct_answer": "A",
+      "explanation": "使用竖直运动的视重：m·(g+a)，代入得600 N。另一结果来自m·(g-a)，算得400 N。\n减号适用于以向下加速度大小描述的失重情形；本卡已取向上为正，再减会使视重变化方向颠倒，量纲却仍正确。\n知识点条件：重力由质量与当地重力加速度决定，并不因电梯上升或下降而自行改变。加速上升、减速下降时加速度向上，视重增大；加速下降、减速上升时加速度向下，视重减小。自由落体时支持力为零但重力仍在；无约束的台秤不能给出负的支持力读数。\n推导依据：先画重力和支持力，不把运动方向当作加速度方向。；向上取正，列支持力减重力等于质量乘带符号的加速度。；将四类运动按速度变化判断加速度方向；向下减速也是向上加速度。；代入自由落体加速度为负的重力加速度，支持力恰好为零。\n卡片公式各自的适用条件（不是本题共同前提）：\n重力：质量与当地重力加速度固定\n竖直运动的视重：竖直向上为正，人与秤保持接触，a不能使支持力为负",
       "error_type": "数值代入",
       "judging": "auto",
       "source_error_index": 0,
@@ -600,15 +980,58 @@
         "expr": "m*(g-a)",
         "ref": 600
       },
+      "level": "进阶",
+      "learning_scope": "高中",
+      "answer_evidence": {
+        "kind": "numeric",
+        "scenario": "向上加速",
+        "parameters": {
+          "m": 50,
+          "g": 10,
+          "a": 2,
+          "F_N": 600,
+          "G": 500
+        },
+        "target": "F_N",
+        "unit": "N",
+        "reference": 600,
+        "correct_proof": {
+          "expression": "m*(g+a)",
+          "formula": "竖直运动的视重",
+          "value": 600,
+          "when": "竖直向上为正，人与秤保持接触，a不能使支持力为负"
+        },
+        "distractor_expression": "m*(g-a)",
+        "distractor_value": 400.0,
+        "dimension_matches": true,
+        "independent_evaluation": true
+      },
       "review": {
         "confidence": "medium",
-        "checks": {
-          "answer_unique": true,
-          "distractors_plausible": true,
-          "stem_clear": true,
-          "no_cross_segment": true
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": true,
+          "no_answer_leak_in_options": true
         },
-        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。"
       }
     },
     {
@@ -616,42 +1039,59 @@
       "point_id": "dyn-07",
       "point_title": "超重与失重",
       "chapter": "第二章 · 相互作用与牛顿运动定律",
-      "stem": "【第二章 · 相互作用与牛顿运动定律 · 超重与失重】学生的错误做法：只要正在下降就认为失重，或认为失重时没有重力。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "stem": "关于“超重与失重”，判断这一说法是否成立，并说明依据：\n只要正在下降就认为失重，或认为失重时没有重力。",
       "options": [
         {
           "label": "A",
-          "text": "数值代入：★ 这条错写法的量纲完全正确（两个力相乘再乘纯数，仍是 N），量纲检查抓不到。"
+          "text": "该说法不成立。"
         },
         {
           "label": "B",
-          "text": "概念混淆：下降时若速度减小，加速度实际向上，台秤示数会增大；自由落体中重力仍作用，只是支持力消失，不能混淆视重和重力。"
-        },
-        {
-          "label": "C",
-          "text": "量纲一致性：写成除法后 k/x 的量纲变成 N/m²，与力的单位 N 完全不同，量纲检查立刻拦住。"
-        },
-        {
-          "label": "D",
-          "text": "量纲一致性：写成除法后量纲变成 kg·s²/m，与力的量纲完全不同，量纲检查直接拦住。"
+          "text": "该说法成立。"
         }
       ],
-      "correct_answer": "B",
-      "explanation": "下降时若速度减小，加速度实际向上，台秤示数会增大；自由落体中重力仍作用，只是支持力消失，不能混淆视重和重力。",
+      "correct_answer": "A",
+      "explanation": "下降时若速度减小，加速度实际向上，台秤示数会增大；自由落体中重力仍作用，只是支持力消失，不能混淆视重和重力。\n知识点条件：重力由质量与当地重力加速度决定，并不因电梯上升或下降而自行改变。加速上升、减速下降时加速度向上，视重增大；加速下降、减速上升时加速度向下，视重减小。自由落体时支持力为零但重力仍在；无约束的台秤不能给出负的支持力读数。\n推导依据：先画重力和支持力，不把运动方向当作加速度方向。；向上取正，列支持力减重力等于质量乘带符号的加速度。；将四类运动按速度变化判断加速度方向；向下减速也是向上加速度。；代入自由落体加速度为负的重力加速度，支持力恰好为零。\n卡片公式各自的适用条件（不是本题共同前提）：\n重力：质量与当地重力加速度固定\n竖直运动的视重：竖直向上为正，人与秤保持接触，a不能使支持力为负",
       "error_type": "概念混淆",
       "judging": "teacher",
       "source_error_index": 1,
       "source_caught_by": "人工审核",
       "wrong_expr": null,
       "trap_test": null,
+      "level": "进阶",
+      "learning_scope": "高中",
+      "answer_evidence": {
+        "kind": "teacher",
+        "claim_source": "wrong",
+        "reference_only": true,
+        "reason": "概念、操作或无法建立完整定量证据，教师确认条件与结论。"
+      },
       "review": {
         "confidence": "medium",
-        "checks": {
-          "answer_unique": true,
-          "distractors_plausible": true,
-          "stem_clear": true,
-          "no_cross_segment": true
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": false,
+          "no_answer_leak_in_options": true
         },
-        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。"
       }
     },
     {
@@ -659,27 +1099,19 @@
       "point_id": "dyn-08",
       "point_title": "斜面自锁与摩擦角",
       "chapter": "第二章 · 相互作用与牛顿运动定律",
-      "stem": "【第二章 · 相互作用与牛顿运动定律 · 斜面自锁与摩擦角】学生的错误做法：把摩擦角直接等于摩擦系数（错误表达式：φ = μ）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "stem": "在“斜面自锁与摩擦角”的模型下，μ（最大静摩擦系数）=0.75 1。条件：静摩擦达到最大时，接触合力与法线夹角。求摩擦角（φ）。这些数值是设计示例。",
       "options": [
         {
           "label": "A",
-          "text": "数值代入：摩擦系数是两力大小比，摩擦角是该比的反正切；只有非常小的角才可能近似相同，直接把0.75当弧度并不满足临界力三角形。"
+          "text": "0.75 rad"
         },
         {
           "label": "B",
-          "text": "量纲一致性：写成除法后 k/x 的量纲变成 N/m²，与力的单位 N 完全不同，量纲检查立刻拦住。"
-        },
-        {
-          "label": "C",
-          "text": "量纲一致性：写成除法后量纲变成 kg·s²/m，与力的量纲完全不同，量纲检查直接拦住。"
-        },
-        {
-          "label": "D",
-          "text": "量纲一致性：写成除法后量纲变成 kg²·m/s²，与力的量纲对不上，量纲检查当场拦住。"
+          "text": "0.643501 rad"
         }
       ],
-      "correct_answer": "A",
-      "explanation": "摩擦系数是两力大小比，摩擦角是该比的反正切；只有非常小的角才可能近似相同，直接把0.75当弧度并不满足临界力三角形。\n知识库校验证据：情境：临界；代入错误式：μ；校验参照值：0.6435011087932844。",
+      "correct_answer": "B",
+      "explanation": "使用摩擦角：atan(μ)，代入得0.643501 rad。另一结果来自μ，算得0.75 rad。\n摩擦系数是两力大小比，摩擦角是该比的反正切；只有非常小的角才可能近似相同，直接把0.75当弧度并不满足临界力三角形。\n知识点条件：重力沿斜面的分量决定维持静止所需摩擦力，垂直斜面的分量决定支持力；前者不超过最大静摩擦即能静止。这里的自锁条件针对无额外推拉力的重力滑动模型，不表示无论多大或何方向的外力都无法推动物体。施加倾斜外力会同时改变沿面分量和支持力，必须重新作受力分析。\n推导依据：画重力、支持力及沿面向上的静摩擦，不把摩擦力自动设为最大值。；沿面静止时静摩擦等于重力沿面分量，支持力由垂直方向平衡给出。；将所需静摩擦不超过最大值的条件除以正支持力，得到斜面倾角不超过摩擦角。；若施加额外外力，重新分解其两个分量；只有新的力与约束关系满足条件，才能继续谈自锁。\n卡片公式各自的适用条件（不是本题共同前提）：\n摩擦角：静摩擦达到最大时，接触合力与法线夹角\n静止所需摩擦力：仅受重力、支持力和静摩擦，斜面固定\n斜面的支持力：无其他垂直斜面的力与加速度\n静止所需最小系数：重力滑动模型；实际静摩擦系数不小于此值才可静止",
       "error_type": "数值代入",
       "judging": "auto",
       "source_error_index": 0,
@@ -690,15 +1122,58 @@
         "expr": "mu",
         "ref": 0.6435011087932844
       },
+      "level": "进阶",
+      "learning_scope": "高中",
+      "answer_evidence": {
+        "kind": "numeric",
+        "scenario": "临界",
+        "parameters": {
+          "mu": 0.75,
+          "theta": 0.6435011087932844,
+          "m": 2,
+          "g": 10,
+          "N": 16
+        },
+        "target": "phi",
+        "unit": "rad",
+        "reference": 0.6435011087932844,
+        "correct_proof": {
+          "expression": "atan(mu)",
+          "formula": "摩擦角",
+          "value": 0.6435011087932844,
+          "when": "静摩擦达到最大时，接触合力与法线夹角"
+        },
+        "distractor_expression": "mu",
+        "distractor_value": 0.75,
+        "dimension_matches": true,
+        "independent_evaluation": true
+      },
       "review": {
         "confidence": "medium",
-        "checks": {
-          "answer_unique": true,
-          "distractors_plausible": true,
-          "stem_clear": true,
-          "no_cross_segment": true
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": true,
+          "no_answer_leak_in_options": true
         },
-        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。"
       }
     },
     {
@@ -706,42 +1181,59 @@
       "point_id": "dyn-08",
       "point_title": "斜面自锁与摩擦角",
       "chapter": "第二章 · 相互作用与牛顿运动定律",
-      "stem": "【第二章 · 相互作用与牛顿运动定律 · 斜面自锁与摩擦角】学生的错误做法：自锁就说明任意方向任意大的推力也无法运动。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "stem": "关于“斜面自锁与摩擦角”，判断这一说法是否成立，并说明依据：\n斜面上物体因重力不能自行下滑，并不表示沿斜面施加任意大的外力仍不能使其运动。",
       "options": [
         {
           "label": "A",
-          "text": "量纲一致性：写成除法后 k/x 的量纲变成 N/m²，与力的单位 N 完全不同，量纲检查立刻拦住。"
+          "text": "该说法不成立。"
         },
         {
           "label": "B",
-          "text": "量纲一致性：写成除法后量纲变成 kg·s²/m，与力的量纲完全不同，量纲检查直接拦住。"
-        },
-        {
-          "label": "C",
-          "text": "数值代入：★ 这条错写法的量纲完全正确（两个力相乘再乘纯数，仍是 N），量纲检查抓不到。"
-        },
-        {
-          "label": "D",
-          "text": "概念混淆：当前条件仅描述重力使物体沿斜面下滑时的静止边界，外力方向会改变支持力和所需摩擦；沿面足够大推拉力仍可破坏静止。"
+          "text": "该说法成立。"
         }
       ],
-      "correct_answer": "D",
-      "explanation": "当前条件仅描述重力使物体沿斜面下滑时的静止边界，外力方向会改变支持力和所需摩擦；沿面足够大推拉力仍可破坏静止。",
+      "correct_answer": "B",
+      "explanation": "当前条件仅描述重力使物体沿斜面下滑时的静止边界，外力方向会改变支持力和所需摩擦；沿面足够大推拉力仍可破坏静止。\n知识点条件：重力沿斜面的分量决定维持静止所需摩擦力，垂直斜面的分量决定支持力；前者不超过最大静摩擦即能静止。这里的自锁条件针对无额外推拉力的重力滑动模型，不表示无论多大或何方向的外力都无法推动物体。施加倾斜外力会同时改变沿面分量和支持力，必须重新作受力分析。\n推导依据：画重力、支持力及沿面向上的静摩擦，不把摩擦力自动设为最大值。；沿面静止时静摩擦等于重力沿面分量，支持力由垂直方向平衡给出。；将所需静摩擦不超过最大值的条件除以正支持力，得到斜面倾角不超过摩擦角。；若施加额外外力，重新分解其两个分量；只有新的力与约束关系满足条件，才能继续谈自锁。\n卡片公式各自的适用条件（不是本题共同前提）：\n摩擦角：静摩擦达到最大时，接触合力与法线夹角\n静止所需摩擦力：仅受重力、支持力和静摩擦，斜面固定\n斜面的支持力：无其他垂直斜面的力与加速度\n静止所需最小系数：重力滑动模型；实际静摩擦系数不小于此值才可静止",
       "error_type": "概念混淆",
       "judging": "teacher",
       "source_error_index": 1,
       "source_caught_by": "人工审核",
       "wrong_expr": null,
       "trap_test": null,
+      "level": "进阶",
+      "learning_scope": "高中",
+      "answer_evidence": {
+        "kind": "teacher",
+        "claim_source": "执行方明确命题",
+        "reference_only": true,
+        "reason": "概念、操作或无法建立完整定量证据，教师确认条件与结论。"
+      },
       "review": {
         "confidence": "medium",
-        "checks": {
-          "answer_unique": true,
-          "distractors_plausible": true,
-          "stem_clear": true,
-          "no_cross_segment": true
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": false,
+          "no_answer_leak_in_options": true
         },
-        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。"
       }
     },
     {
@@ -749,27 +1241,19 @@
       "point_id": "dyn-09",
       "point_title": "牛顿第一定律与惯性",
       "chapter": "第二章 · 相互作用与牛顿运动定律",
-      "stem": "【第二章 · 相互作用与牛顿运动定律 · 牛顿第一定律与惯性】学生的错误做法：把方向相反的两个力直接相加为合力（错误表达式：F = F<sub>1</sub>+F<sub>2</sub>）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "stem": "在“牛顿第一定律与惯性”的模型下，F<sub>1</sub>（向右作用力大小）=10 N；F<sub>2</sub>（向左作用力大小）=10 N。条件：仅有共线反向的两力，F<sub>1</sub>、F<sub>2</sub>为非负大小，取F<sub>1</sub>方向为正。。求同一直线上合力（F）。这些数值是设计示例。",
       "options": [
         {
           "label": "A",
-          "text": "量纲一致性：写成除法后量纲变成 kg·s²/m，与力的量纲完全不同，量纲检查直接拦住。"
+          "text": "0 N"
         },
         {
           "label": "B",
-          "text": "量纲一致性：写成除法后量纲变成 kg²·m/s²，与力的量纲对不上，量纲检查当场拦住。"
-        },
-        {
-          "label": "C",
-          "text": "数值代入：规定右为正，向左的力取负；两个10 N合力为零，不是20 N。"
-        },
-        {
-          "label": "D",
-          "text": "量纲一致性：写成除法后 k/x 的量纲变成 N/m²，与力的单位 N 完全不同，量纲检查立刻拦住。"
+          "text": "20 N"
         }
       ],
-      "correct_answer": "C",
-      "explanation": "规定右为正，向左的力取负；两个10 N合力为零，不是20 N。物体可能静止，也可能以原速度匀速运动。\n知识库校验证据：情境：静止平衡；代入错误式：F<sub>1</sub>+F<sub>2</sub>；校验参照值：0。",
+      "correct_answer": "A",
+      "explanation": "使用反向两力的合力：F<sub>1</sub>-F<sub>2</sub>，代入得0 N。另一结果来自F<sub>1</sub>+F<sub>2</sub>，算得20 N。\n规定右为正，向左的力取负；两个10 N合力为零，不是20 N。物体可能静止，也可能以原速度匀速运动。\n知识点条件：伽利略通过减小阻力的实验与理想推理提出运动可以持续，笛卡尔强调直线运动，牛顿形成第一定律。力改变速度而非维持速度，合力零不等于每个力都为零。静止和匀速直线运动取决于初始状态，第一定律还给出惯性参考系概念，不能说它只是第二定律令合力为零的代数特例。以下平衡与速度读数用于量化例子，不宣称靠两次测量证明定律。\n推导依据：合力20-20=0 N，加速度为零。；初速度并非零，因此保持向右3 m/s，不会自动停止。；伽利略通过减小阻力的实验与理想推理提出运动可以持续，笛卡尔强调直线运动，牛顿形成第一定律。\n卡片公式各自的适用条件（不是本题共同前提）：\n反向两力的合力：仅有共线反向的两力，F<sub>1</sub>、F<sub>2</sub>为非负大小，取F<sub>1</sub>方向为正。\n平衡例子的加速度核对：惯性参考系，m&gt;0；F是物体所受合力的有向分量，不是任意单个力。",
       "error_type": "数值代入",
       "judging": "auto",
       "source_error_index": 0,
@@ -780,15 +1264,61 @@
         "expr": "F1+F2",
         "ref": 0
       },
+      "level": "基础",
+      "learning_scope": "高中",
+      "answer_evidence": {
+        "kind": "numeric",
+        "scenario": "静止平衡",
+        "parameters": {
+          "F1": 10,
+          "F2": 10,
+          "F": 0,
+          "a": 0,
+          "m": 2,
+          "v1": 0,
+          "v2": 0,
+          "t": 2
+        },
+        "target": "F",
+        "unit": "N",
+        "reference": 0,
+        "correct_proof": {
+          "expression": "F1-F2",
+          "formula": "反向两力的合力",
+          "value": 0,
+          "when": "仅有共线反向的两力，F1、F2为非负大小，取F1方向为正。"
+        },
+        "distractor_expression": "F1+F2",
+        "distractor_value": 20.0,
+        "dimension_matches": true,
+        "independent_evaluation": true
+      },
       "review": {
         "confidence": "medium",
-        "checks": {
-          "answer_unique": true,
-          "distractors_plausible": true,
-          "stem_clear": true,
-          "no_cross_segment": true
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": true,
+          "no_answer_leak_in_options": true
         },
-        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。"
       }
     },
     {
@@ -796,42 +1326,59 @@
       "point_id": "dyn-09",
       "point_title": "牛顿第一定律与惯性",
       "chapter": "第二章 · 相互作用与牛顿运动定律",
-      "stem": "【第二章 · 相互作用与牛顿运动定律 · 牛顿第一定律与惯性】学生的错误做法：运动越快惯性越大，或说惯性力把物体推向前。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "stem": "关于“牛顿第一定律与惯性”，判断这一说法是否成立，并说明依据：\n运动越快惯性越大，或说惯性力把物体推向前。",
       "options": [
         {
           "label": "A",
-          "text": "数值代入：★ 这条错写法的量纲完全正确（两个力相乘再乘纯数，仍是 N），量纲检查抓不到。"
+          "text": "该说法不成立。"
         },
         {
           "label": "B",
-          "text": "概念混淆：经典力学的惯性由质量衡量，与速度大小无关；惯性是性质，不能在受力图中凭空添加惯性力。"
-        },
-        {
-          "label": "C",
-          "text": "量纲一致性：写成除法后 k/x 的量纲变成 N/m²，与力的单位 N 完全不同，量纲检查立刻拦住。"
-        },
-        {
-          "label": "D",
-          "text": "量纲一致性：写成除法后量纲变成 kg·s²/m，与力的量纲完全不同，量纲检查直接拦住。"
+          "text": "该说法成立。"
         }
       ],
-      "correct_answer": "B",
-      "explanation": "经典力学的惯性由质量衡量，与速度大小无关；惯性是性质，不能在受力图中凭空添加惯性力。非惯性系的惯性力概念不属于本卡分析。",
+      "correct_answer": "A",
+      "explanation": "经典力学的惯性由质量衡量，与速度大小无关；惯性是性质，不能在受力图中凭空添加惯性力。非惯性系的惯性力概念不属于本卡分析。\n知识点条件：伽利略通过减小阻力的实验与理想推理提出运动可以持续，笛卡尔强调直线运动，牛顿形成第一定律。力改变速度而非维持速度，合力零不等于每个力都为零。静止和匀速直线运动取决于初始状态，第一定律还给出惯性参考系概念，不能说它只是第二定律令合力为零的代数特例。以下平衡与速度读数用于量化例子，不宣称靠两次测量证明定律。\n推导依据：合力20-20=0 N，加速度为零。；初速度并非零，因此保持向右3 m/s，不会自动停止。；伽利略通过减小阻力的实验与理想推理提出运动可以持续，笛卡尔强调直线运动，牛顿形成第一定律。\n卡片公式各自的适用条件（不是本题共同前提）：\n反向两力的合力：仅有共线反向的两力，F<sub>1</sub>、F<sub>2</sub>为非负大小，取F<sub>1</sub>方向为正。\n平衡例子的加速度核对：惯性参考系，m&gt;0；F是物体所受合力的有向分量，不是任意单个力。",
       "error_type": "概念混淆",
       "judging": "teacher",
       "source_error_index": 1,
       "source_caught_by": "人工审核",
       "wrong_expr": null,
       "trap_test": null,
+      "level": "基础",
+      "learning_scope": "高中",
+      "answer_evidence": {
+        "kind": "teacher",
+        "claim_source": "wrong",
+        "reference_only": true,
+        "reason": "概念、操作或无法建立完整定量证据，教师确认条件与结论。"
+      },
       "review": {
         "confidence": "medium",
-        "checks": {
-          "answer_unique": true,
-          "distractors_plausible": true,
-          "stem_clear": true,
-          "no_cross_segment": true
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": false,
+          "no_answer_leak_in_options": true
         },
-        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。"
       }
     },
     {
@@ -839,27 +1386,19 @@
       "point_id": "dyn-10",
       "point_title": "理想实验与伽利略斜面思想",
       "chapter": "第二章 · 相互作用与牛顿运动定律",
-      "stem": "【第二章 · 相互作用与牛顿运动定律 · 理想实验与伽利略斜面思想】学生的错误做法：有阻力损失时把损失能量加到回升高度上（错误表达式：h<sub>2</sub> = h<sub>1</sub>+W<sub>损</sub>/(m·g)）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "stem": "在“理想实验与伽利略斜面思想”的模型下，h<sub>1</sub>（初始高度）=0.5 m；W<sub>损</sub>（耗散能量）=2 J；m（小球质量）=2 kg；g（重力加速度）=10 m/s²。条件：起点和回升最高点动能均为零，仅重力与耗散作用；W<sub>损</sub>≥0且不超过m·g·h<sub>1</sub>，高度用同一零势能面。。求回升高度（h<sub>2</sub>）。这些数值是设计示例。",
       "options": [
         {
           "label": "A",
-          "text": "数值代入：耗散减少可恢复的机械能，必须从初势能扣除；2 J损失使高度少0.1 m，不能回升到0.6 m。"
+          "text": "0.6 m"
         },
         {
           "label": "B",
-          "text": "量纲一致性：写成除法后 k/x 的量纲变成 N/m²，与力的单位 N 完全不同，量纲检查立刻拦住。"
-        },
-        {
-          "label": "C",
-          "text": "量纲一致性：写成除法后量纲变成 kg·s²/m，与力的量纲完全不同，量纲检查直接拦住。"
-        },
-        {
-          "label": "D",
-          "text": "量纲一致性：写成除法后量纲变成 kg²·m/s²，与力的量纲对不上，量纲检查当场拦住。"
+          "text": "0.4 m"
         }
       ],
-      "correct_answer": "A",
-      "explanation": "耗散减少可恢复的机械能，必须从初势能扣除；2 J损失使高度少0.1 m，不能回升到0.6 m。\n知识库校验证据：情境：有损失；代入错误式：h<sub>1</sub>+W<sub>损</sub>/(m·g)；校验参照值：0.4。",
+      "correct_answer": "B",
+      "explanation": "使用损失后的回升高度：h<sub>1</sub>-W<sub>损</sub>/(m·g)，代入得0.4 m。另一结果来自h<sub>1</sub>+W<sub>损</sub>/(m·g)，算得0.6 m。\n耗散减少可恢复的机械能，必须从初势能扣除；2 J损失使高度少0.1 m，不能回升到0.6 m。\n知识点条件：小球沿一个斜面下滑后沿另一个斜面上升，实际阻力导致回升高度略低；减小阻力使回升高度接近原高度。理想无阻力模型中回到原高度，第二斜面倾角越小需走越长距离；推至水平时无法靠升高达到该高度，运动会持续。这不是实际造出完全无阻力装置，也不能把有限观测直接当作无限时间证据。下面以能量损失账目解释高度差，逻辑推理本身仍需审查前提。\n推导依据：初势能10 J，有损失后剩8 J，对应0.4 m。；无损失时保留10 J，回到0.5 m；改变斜面角度不改变理想回升高度。；小球沿一个斜面下滑后沿另一个斜面上升，实际阻力导致回升高度略低；减小阻力使回升高度接近原高度。\n卡片公式各自的适用条件（不是本题共同前提）：\n损失后的回升高度：起点和回升最高点动能均为零，仅重力与耗散作用；W<sub>损</sub>≥0且不超过m·g·h<sub>1</sub>，高度用同一零势能面。\n回升势能：近地面g近似恒定，h<sub>2</sub>相对选定零势能面；这是回升最高点的重力势能。",
       "error_type": "数值代入",
       "judging": "auto",
       "source_error_index": 0,
@@ -870,15 +1409,59 @@
         "expr": "h1+W_loss/(m*g)",
         "ref": 0.4
       },
+      "level": "基础",
+      "learning_scope": "高中",
+      "answer_evidence": {
+        "kind": "numeric",
+        "scenario": "有损失",
+        "parameters": {
+          "h1": 0.5,
+          "h2": 0.4,
+          "W_loss": 2,
+          "m": 2,
+          "g": 10,
+          "E": 8
+        },
+        "target": "h2",
+        "unit": "m",
+        "reference": 0.4,
+        "correct_proof": {
+          "expression": "h1-W_loss/(m*g)",
+          "formula": "损失后的回升高度",
+          "value": 0.4,
+          "when": "起点和回升最高点动能均为零，仅重力与耗散作用；W_loss≥0且不超过m*g*h1，高度用同一零势能面。"
+        },
+        "distractor_expression": "h1+W_loss/(m*g)",
+        "distractor_value": 0.6,
+        "dimension_matches": true,
+        "independent_evaluation": true
+      },
       "review": {
         "confidence": "medium",
-        "checks": {
-          "answer_unique": true,
-          "distractors_plausible": true,
-          "stem_clear": true,
-          "no_cross_segment": true
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": true,
+          "no_answer_leak_in_options": true
         },
-        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。"
       }
     },
     {
@@ -886,330 +1469,3831 @@
       "point_id": "dyn-10",
       "point_title": "理想实验与伽利略斜面思想",
       "chapter": "第二章 · 相互作用与牛顿运动定律",
-      "stem": "【第二章 · 相互作用与牛顿运动定律 · 理想实验与伽利略斜面思想】学生的错误做法：理想实验就是不用事实依据的猜想，或认为实物能完全没有阻力。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "stem": "关于“理想实验与伽利略斜面思想”，判断这一说法是否成立，并说明依据：\n推理必须基于事实和可说明的理想条件，逐步外推并说明极限。",
       "options": [
         {
           "label": "A",
-          "text": "量纲一致性：写成除法后 k/x 的量纲变成 N/m²，与力的单位 N 完全不同，量纲检查立刻拦住。"
+          "text": "该说法成立。"
         },
         {
           "label": "B",
-          "text": "量纲一致性：写成除法后量纲变成 kg·s²/m，与力的量纲完全不同，量纲检查直接拦住。"
-        },
-        {
-          "label": "C",
-          "text": "数值代入：★ 这条错写法的量纲完全正确（两个力相乘再乘纯数，仍是 N），量纲检查抓不到。"
-        },
-        {
-          "label": "D",
-          "text": "概念混淆：推理必须基于事实和可说明的理想条件，逐步外推并说明极限；理想模型与真实装置之间仍有阻力和测量误差。"
+          "text": "该说法不成立。"
         }
       ],
-      "correct_answer": "D",
-      "explanation": "推理必须基于事实和可说明的理想条件，逐步外推并说明极限；理想模型与真实装置之间仍有阻力和测量误差。",
+      "correct_answer": "A",
+      "explanation": "推理必须基于事实和可说明的理想条件，逐步外推并说明极限；理想模型与真实装置之间仍有阻力和测量误差。\n知识点条件：小球沿一个斜面下滑后沿另一个斜面上升，实际阻力导致回升高度略低；减小阻力使回升高度接近原高度。理想无阻力模型中回到原高度，第二斜面倾角越小需走越长距离；推至水平时无法靠升高达到该高度，运动会持续。这不是实际造出完全无阻力装置，也不能把有限观测直接当作无限时间证据。下面以能量损失账目解释高度差，逻辑推理本身仍需审查前提。\n推导依据：初势能10 J，有损失后剩8 J，对应0.4 m。；无损失时保留10 J，回到0.5 m；改变斜面角度不改变理想回升高度。；小球沿一个斜面下滑后沿另一个斜面上升，实际阻力导致回升高度略低；减小阻力使回升高度接近原高度。\n卡片公式各自的适用条件（不是本题共同前提）：\n损失后的回升高度：起点和回升最高点动能均为零，仅重力与耗散作用；W<sub>损</sub>≥0且不超过m·g·h<sub>1</sub>，高度用同一零势能面。\n回升势能：近地面g近似恒定，h<sub>2</sub>相对选定零势能面；这是回升最高点的重力势能。",
       "error_type": "概念混淆",
       "judging": "teacher",
       "source_error_index": 1,
       "source_caught_by": "人工审核",
       "wrong_expr": null,
       "trap_test": null,
+      "level": "基础",
+      "learning_scope": "高中",
+      "answer_evidence": {
+        "kind": "teacher",
+        "claim_source": "why",
+        "reference_only": true,
+        "reason": "概念、操作或无法建立完整定量证据，教师确认条件与结论。"
+      },
       "review": {
         "confidence": "medium",
-        "checks": {
-          "answer_unique": true,
-          "distractors_plausible": true,
-          "stem_clear": true,
-          "no_cross_segment": true
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": false,
+          "no_answer_leak_in_options": true
         },
-        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。"
       }
     }
   ],
-  "skipped": [
-    {
-      "point_id": "dyn-06",
-      "point_title": "牛顿第三定律",
-      "source_error_index": 0,
-      "reason": "自动判定条目没有 trap_test 可执行证据；不把校验标签代替实测证据。"
-    }
-  ],
+  "skipped": [],
   "source_records": {
     "diagnostic-dyn-01-1": {
-      "error": {
-        "wrong": "把胡克定律记成 F = k / x（乘法记成除法）",
-        "why": "写成除法后 k/x 的量纲变成 N/m²，与力的单位 N 完全不同，量纲检查立刻拦住。",
-        "wrong_expr": "F = k/x",
-        "caught_by": "量纲一致性",
-        "trap_test": {
-          "kind": "dimension",
-          "target": "F = k/x",
-          "lhs_dim": "M·L·T^-2",
-          "rhs_dim": "M·L^-1·T^-2",
-          "expect": "mismatch",
-          "note": "实际量纲检查得到等号左边为M·L·T^-2、右边为M·L^-1·T^-2；两边不是同一物理量，因此该等式不成立。"
-        }
+      "point": {
+        "id": "dyn-01",
+        "title": "弹力与胡克定律",
+        "level": "基础",
+        "definition": "发生弹性形变的物体，会对使它形变的物体产生弹力。对弹簧而言，弹力的大小与形变量成正比：F = k x。k 叫劲度系数，单位是 N/m，由弹簧本身决定。",
+        "meaning": "胡克定律里最容易踩的坑是 x —— 它是「形变量」，即弹簧被拉伸或被压缩的长度，是变化量而不是弹簧的总长度。弹簧被拉长到什么程度，弹力就对应到那个程度，跟原长无关。另外要注意它的适用范围：形变必须在这个弹簧的弹性限度内，超过之后就拉不回来，也不再成正比。",
+        "symbols": {
+          "F": {
+            "desc": "弹力的大小",
+            "unit": "N"
+          },
+          "k": {
+            "desc": "劲度系数（弹簧的「软硬」程度）",
+            "unit": "N/m"
+          },
+          "x": {
+            "desc": "形变量（拉伸或压缩的长度，不是弹簧总长）",
+            "unit": "m"
+          },
+          "L_0": {
+            "desc": "弹簧原长",
+            "unit": "m"
+          },
+          "L_total": {
+            "desc": "弹簧形变后的总长度",
+            "unit": "m"
+          },
+          "m": {
+            "desc": "悬挂物体的质量",
+            "unit": "kg"
+          },
+          "g": {
+            "desc": "重力加速度",
+            "unit": "m/s^2"
+          }
+        },
+        "scenarios": {
+          "拉伸弹簧": {
+            "k": 200,
+            "x": 0.05,
+            "F": 10,
+            "L_0": 0.1,
+            "L_total": 0.15
+          },
+          "悬挂平衡": {
+            "k": 196,
+            "x": 0.05,
+            "F": 9.8,
+            "m": 1,
+            "g": 9.8
+          }
+        },
+        "formulas": [
+          {
+            "name": "胡克定律",
+            "expr": "F = k*x",
+            "when": "在弹簧的弹性限度内，弹簧的弹力",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "拉伸弹簧",
+                "expr": "k*x",
+                "ref": 10.0,
+                "note": "200 N/m × 0.05 m = 10 N（手工独立算）"
+              },
+              {
+                "type": "direction",
+                "scenario": "拉伸弹簧",
+                "var": "x",
+                "lo": 0.02,
+                "hi": 0.1,
+                "expr": "k*x",
+                "expect": "up",
+                "note": "同一个弹簧，形变量越大弹力越大"
+              },
+              {
+                "type": "direction",
+                "scenario": "拉伸弹簧",
+                "var": "k",
+                "lo": 100,
+                "hi": 400,
+                "expr": "k*x",
+                "expect": "up",
+                "note": "同样的形变量，弹簧越硬（劲度系数越大）弹力越大"
+              },
+              {
+                "type": "consistency",
+                "scenario": "悬挂平衡",
+                "with": "dyn-01|胡克定律",
+                "with_expr": "m*g",
+                "target": "弹力的大小",
+                "note": "本公式直接求F；参考端显式关系为m*g。两端使用同一情境和阶段，只核对该关系；with字段仅定位来源，不代表调用另一条被覆盖的公式。",
+                "verification_kind": "独立关系核对"
+              },
+              {
+                "type": "scan",
+                "scenario": "拉伸弹簧",
+                "var": "x",
+                "lo": 0,
+                "hi": 1
+              }
+            ]
+          },
+          {
+            "name": "由弹力求形变量",
+            "expr": "x = F/k",
+            "when": "移项所得，弹性限度内",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "拉伸弹簧",
+                "expr": "F/k",
+                "ref": 0.05,
+                "note": "10 N ÷ 200 N/m = 0.05 m，回到最初的形变量"
+              },
+              {
+                "type": "direction",
+                "scenario": "拉伸弹簧",
+                "var": "k",
+                "lo": 100,
+                "hi": 400,
+                "expr": "F/k",
+                "expect": "down",
+                "note": "同样的弹力，弹簧越硬形变量越小"
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "弹簧受拉力 F 时被拉长 x，实验测出两者成正比，比例系数记为 k。",
+          "写成等式就是 F = k x。k 越大表示把弹簧拉长同样的长度需要越大的力，即弹簧越硬。",
+          "检核量纲：k 的单位是 N/m，与 x 的单位 m 相乘后得到 N，正好是力的单位。"
+        ],
+        "errors": [
+          {
+            "wrong": "把胡克定律记成 F = k / x（乘法记成除法）",
+            "why": "写成除法后 k/x 的量纲变成 N/m²，与力的单位 N 完全不同，量纲检查立刻拦住。",
+            "wrong_expr": "F = k/x",
+            "caught_by": "量纲一致性",
+            "trap_test": {
+              "kind": "dimension",
+              "target": "F = k/x",
+              "lhs_dim": "M·L·T^-2",
+              "rhs_dim": "M·L^-1·T^-2",
+              "expect": "mismatch",
+              "note": "实际量纲检查得到等号左边为M·L·T^-2、右边为M·L^-1·T^-2；两边不是同一物理量，因此该等式不成立。"
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "把弹簧形变后的总长度当成形变量，写成 F = kL",
+            "wrong_expr": "F = k*L_total",
+            "why": "胡克定律中的 x 是总长度与原长之差，不是总长度。错误式与正确式量纲完全相同，量纲检查抓不到；本情境中误代 0.15 m 会得到 30 N，正确形变量 0.05 m 对应 10 N。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "拉伸弹簧",
+              "expr": "k*L_total",
+              "ref": 10.0
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "一根原长 10 cm 的弹簧，受到 10 N 的拉力时长度变为 15 cm。求这根弹簧的劲度系数。",
+          "solution": [
+            "形变量是长度变化量，不是总长度：x = 15 cm − 10 cm = 5 cm = 0.05 m。",
+            "由胡克定律 F = k x 得 k = F / x。",
+            "代入：k = 10 / 0.05 = 200 N/m。"
+          ],
+          "answer": "劲度系数为 200 N/m。"
+        },
+        "prereq": [],
+        "next": [
+          "dyn-02",
+          "exp-08"
+        ],
+        "tags": [
+          "相互作用",
+          "弹力",
+          "胡克定律"
+        ],
+        "learning_scope": "高中"
       },
-      "title": "弹力与胡克定律",
+      "error_index": 0,
       "chapter": "第二章 · 相互作用与牛顿运动定律"
     },
     "diagnostic-dyn-01-2": {
-      "error": {
-        "wrong": "把弹簧形变后的总长度当成形变量，写成 F = kL",
-        "wrong_expr": "F = k*L_total",
-        "why": "胡克定律中的 x 是总长度与原长之差，不是总长度。错误式与正确式量纲完全相同，量纲检查抓不到；本情境中误代 0.15 m 会得到 30 N，正确形变量 0.05 m 对应 10 N。",
-        "caught_by": "数值代入",
-        "trap_test": {
-          "scenario": "拉伸弹簧",
-          "expr": "k*L_total",
-          "ref": 10.0
-        }
+      "point": {
+        "id": "dyn-01",
+        "title": "弹力与胡克定律",
+        "level": "基础",
+        "definition": "发生弹性形变的物体，会对使它形变的物体产生弹力。对弹簧而言，弹力的大小与形变量成正比：F = k x。k 叫劲度系数，单位是 N/m，由弹簧本身决定。",
+        "meaning": "胡克定律里最容易踩的坑是 x —— 它是「形变量」，即弹簧被拉伸或被压缩的长度，是变化量而不是弹簧的总长度。弹簧被拉长到什么程度，弹力就对应到那个程度，跟原长无关。另外要注意它的适用范围：形变必须在这个弹簧的弹性限度内，超过之后就拉不回来，也不再成正比。",
+        "symbols": {
+          "F": {
+            "desc": "弹力的大小",
+            "unit": "N"
+          },
+          "k": {
+            "desc": "劲度系数（弹簧的「软硬」程度）",
+            "unit": "N/m"
+          },
+          "x": {
+            "desc": "形变量（拉伸或压缩的长度，不是弹簧总长）",
+            "unit": "m"
+          },
+          "L_0": {
+            "desc": "弹簧原长",
+            "unit": "m"
+          },
+          "L_total": {
+            "desc": "弹簧形变后的总长度",
+            "unit": "m"
+          },
+          "m": {
+            "desc": "悬挂物体的质量",
+            "unit": "kg"
+          },
+          "g": {
+            "desc": "重力加速度",
+            "unit": "m/s^2"
+          }
+        },
+        "scenarios": {
+          "拉伸弹簧": {
+            "k": 200,
+            "x": 0.05,
+            "F": 10,
+            "L_0": 0.1,
+            "L_total": 0.15
+          },
+          "悬挂平衡": {
+            "k": 196,
+            "x": 0.05,
+            "F": 9.8,
+            "m": 1,
+            "g": 9.8
+          }
+        },
+        "formulas": [
+          {
+            "name": "胡克定律",
+            "expr": "F = k*x",
+            "when": "在弹簧的弹性限度内，弹簧的弹力",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "拉伸弹簧",
+                "expr": "k*x",
+                "ref": 10.0,
+                "note": "200 N/m × 0.05 m = 10 N（手工独立算）"
+              },
+              {
+                "type": "direction",
+                "scenario": "拉伸弹簧",
+                "var": "x",
+                "lo": 0.02,
+                "hi": 0.1,
+                "expr": "k*x",
+                "expect": "up",
+                "note": "同一个弹簧，形变量越大弹力越大"
+              },
+              {
+                "type": "direction",
+                "scenario": "拉伸弹簧",
+                "var": "k",
+                "lo": 100,
+                "hi": 400,
+                "expr": "k*x",
+                "expect": "up",
+                "note": "同样的形变量，弹簧越硬（劲度系数越大）弹力越大"
+              },
+              {
+                "type": "consistency",
+                "scenario": "悬挂平衡",
+                "with": "dyn-01|胡克定律",
+                "with_expr": "m*g",
+                "target": "弹力的大小",
+                "note": "本公式直接求F；参考端显式关系为m*g。两端使用同一情境和阶段，只核对该关系；with字段仅定位来源，不代表调用另一条被覆盖的公式。",
+                "verification_kind": "独立关系核对"
+              },
+              {
+                "type": "scan",
+                "scenario": "拉伸弹簧",
+                "var": "x",
+                "lo": 0,
+                "hi": 1
+              }
+            ]
+          },
+          {
+            "name": "由弹力求形变量",
+            "expr": "x = F/k",
+            "when": "移项所得，弹性限度内",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "拉伸弹簧",
+                "expr": "F/k",
+                "ref": 0.05,
+                "note": "10 N ÷ 200 N/m = 0.05 m，回到最初的形变量"
+              },
+              {
+                "type": "direction",
+                "scenario": "拉伸弹簧",
+                "var": "k",
+                "lo": 100,
+                "hi": 400,
+                "expr": "F/k",
+                "expect": "down",
+                "note": "同样的弹力，弹簧越硬形变量越小"
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "弹簧受拉力 F 时被拉长 x，实验测出两者成正比，比例系数记为 k。",
+          "写成等式就是 F = k x。k 越大表示把弹簧拉长同样的长度需要越大的力，即弹簧越硬。",
+          "检核量纲：k 的单位是 N/m，与 x 的单位 m 相乘后得到 N，正好是力的单位。"
+        ],
+        "errors": [
+          {
+            "wrong": "把胡克定律记成 F = k / x（乘法记成除法）",
+            "why": "写成除法后 k/x 的量纲变成 N/m²，与力的单位 N 完全不同，量纲检查立刻拦住。",
+            "wrong_expr": "F = k/x",
+            "caught_by": "量纲一致性",
+            "trap_test": {
+              "kind": "dimension",
+              "target": "F = k/x",
+              "lhs_dim": "M·L·T^-2",
+              "rhs_dim": "M·L^-1·T^-2",
+              "expect": "mismatch",
+              "note": "实际量纲检查得到等号左边为M·L·T^-2、右边为M·L^-1·T^-2；两边不是同一物理量，因此该等式不成立。"
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "把弹簧形变后的总长度当成形变量，写成 F = kL",
+            "wrong_expr": "F = k*L_total",
+            "why": "胡克定律中的 x 是总长度与原长之差，不是总长度。错误式与正确式量纲完全相同，量纲检查抓不到；本情境中误代 0.15 m 会得到 30 N，正确形变量 0.05 m 对应 10 N。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "拉伸弹簧",
+              "expr": "k*L_total",
+              "ref": 10.0
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "一根原长 10 cm 的弹簧，受到 10 N 的拉力时长度变为 15 cm。求这根弹簧的劲度系数。",
+          "solution": [
+            "形变量是长度变化量，不是总长度：x = 15 cm − 10 cm = 5 cm = 0.05 m。",
+            "由胡克定律 F = k x 得 k = F / x。",
+            "代入：k = 10 / 0.05 = 200 N/m。"
+          ],
+          "answer": "劲度系数为 200 N/m。"
+        },
+        "prereq": [],
+        "next": [
+          "dyn-02",
+          "exp-08"
+        ],
+        "tags": [
+          "相互作用",
+          "弹力",
+          "胡克定律"
+        ],
+        "learning_scope": "高中"
       },
-      "title": "弹力与胡克定律",
+      "error_index": 1,
       "chapter": "第二章 · 相互作用与牛顿运动定律"
     },
     "diagnostic-dyn-02-1": {
-      "error": {
-        "wrong": "把重力写成 G = m / g",
-        "why": "写成除法后量纲变成 kg·s²/m，与力的量纲完全不同，量纲检查直接拦住。同时它也会让「月球上重力变大」这种荒谬结论出现，方向检查也能抓到。",
-        "wrong_expr": "G = m/g",
-        "caught_by": "量纲一致性",
-        "trap_test": {
-          "kind": "dimension",
-          "target": "G = m/g",
-          "lhs_dim": "M·L·T^-2",
-          "rhs_dim": "M·L^-1·T^2",
-          "expect": "mismatch",
-          "note": "实际量纲检查得到等号左边为M·L·T^-2、右边为M·L^-1·T^2；两边不是同一物理量，因此该等式不成立。"
-        }
+      "point": {
+        "id": "dyn-02",
+        "title": "重力",
+        "level": "基础",
+        "definition": "由于地球的吸引而使物体受到的力叫重力，大小 G = m g，方向竖直向下，作用点叫重心。g 在同一地点对所有物体都相同，通常取 9.8 N/kg，粗略计算取 10 N/kg。",
+        "meaning": "注意 g 的两张面孔：作为自由落体的加速度，它的单位写 m/s²；作为重力的比例系数，它的单位写 N/kg。两者数值相同、物理含义相通，但写成 N/kg 更能体现「每千克受到多少牛的力」。重力的大小只与质量和当地 g 有关，与物体的运动状态、是否被其他力支持都无关——一个在空中自由下落的物体和一个静止放在桌上的物体，受的重力一样大。",
+        "symbols": {
+          "G": {
+            "desc": "重力的大小",
+            "unit": "N"
+          },
+          "m": {
+            "desc": "物体的质量",
+            "unit": "kg"
+          },
+          "g": {
+            "desc": "重力加速度（也写作 N/kg）",
+            "unit": "m/s^2"
+          },
+          "a": {
+            "desc": "物体自由落体时的加速度",
+            "unit": "m/s^2"
+          }
+        },
+        "scenarios": {
+          "地球表面": {
+            "m": 2,
+            "g": 9.8,
+            "a": 9.8
+          },
+          "月球表面": {
+            "m": 2,
+            "g": 1.6,
+            "a": 1.6
+          }
+        },
+        "formulas": [
+          {
+            "name": "重力的大小",
+            "expr": "G = m*g",
+            "when": "任何物体，在地球表面附近",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "地球表面",
+                "expr": "m*g",
+                "ref": 19.6,
+                "note": "2 kg × 9.8 N/kg = 19.6 N（手工独立算）"
+              },
+              {
+                "type": "numeric",
+                "scenario": "月球表面",
+                "expr": "m*g",
+                "ref": 3.2,
+                "note": "同样 2 kg 的物体，在月球上只有 3.2 N —— 质量没变，重力变小了"
+              },
+              {
+                "type": "direction",
+                "scenario": "地球表面",
+                "var": "m",
+                "lo": 1,
+                "hi": 5,
+                "expr": "m*g",
+                "expect": "up",
+                "note": "同一地点，质量越大重力越大"
+              },
+              {
+                "type": "direction",
+                "scenario": "地球表面",
+                "var": "g",
+                "lo": 1.6,
+                "hi": 9.8,
+                "expr": "m*g",
+                "expect": "up",
+                "note": "同一质量的物体，重力加速度越大重力越大"
+              },
+              {
+                "type": "consistency",
+                "scenario": "地球表面",
+                "with": "dyn-02|重力的大小",
+                "with_expr": "m*a",
+                "target": "重力的大小",
+                "note": "本公式直接求G；参考端显式关系为m*a。两端使用同一情境和阶段，只核对该关系；with字段仅定位来源，不代表调用另一条被覆盖的公式。",
+                "verification_kind": "独立关系核对"
+              },
+              {
+                "type": "scan",
+                "scenario": "地球表面",
+                "var": "m",
+                "lo": 0,
+                "hi": 100
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "实验证明，在地球表面同一地点，物体受到的重力与它的质量成正比。",
+          "把比例系数记为 g，写成等式就是 G = m g。",
+          "检核量纲：质量的量纲 M 乘上加速度的量纲 L/T²，得到 M·L/T²，正是力的量纲。",
+          "因此 g 既可以看作自由落体的加速度，也可以看作每千克物体受到的重力。"
+        ],
+        "errors": [
+          {
+            "wrong": "把重力写成 G = m / g",
+            "why": "写成除法后量纲变成 kg·s²/m，与力的量纲完全不同，量纲检查直接拦住。同时它也会让「月球上重力变大」这种荒谬结论出现，方向检查也能抓到。",
+            "wrong_expr": "G = m/g",
+            "caught_by": "量纲一致性",
+            "trap_test": {
+              "kind": "dimension",
+              "target": "G = m/g",
+              "lhs_dim": "M·L·T^-2",
+              "rhs_dim": "M·L^-1·T^2",
+              "expect": "mismatch",
+              "note": "实际量纲检查得到等号左边为M·L·T^-2、右边为M·L^-1·T^2；两边不是同一物理量，因此该等式不成立。"
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "已使用月球重力加速度后，又把结果额外除以 6",
+            "wrong_expr": "G = m*g/6",
+            "why": "月球情境里的 g = 1.6 m/s² 已经体现了约为地球六分之一，再除以 6 属于重复折算。错误式与正确式量纲完全相同，只能靠数值代入发现：会算成约 0.533 N，而正确值是 3.2 N。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "月球表面",
+              "expr": "m*g/6",
+              "ref": 3.2
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "以为物体越重下落越快、或者说「重力大的物体先落地」",
+            "why": "重力确实与质量成正比，但加速度 a = G / m = g 与质量无关，所有物体下落加速度相同。这是第一章自由落体已经纠正过的错误，在这里以「误把重力当加速度」的形式再次出现。属于概念性错误，标注人工审核。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "质量2 kg的物体在地球表面g取9.8 N/kg、月球表面g取1.6 N/kg，求它在两处所受的重力。",
+          "solution": [
+            "在地球表面：G = m g = 2 × 9.8 = 19.6 N。",
+            "在月球表面：G = m g = 2 × 1.6 = 3.2 N。",
+            "两处的质量都是 2 kg，没有变化；变化的是重力加速度，所以重力变成了原来的约六分之一。"
+          ],
+          "answer": "地球表面 19.6 N；月球表面 3.2 N。"
+        },
+        "prereq": [
+          "dyn-01"
+        ],
+        "next": [
+          "dyn-03",
+          "mdl-21"
+        ],
+        "tags": [
+          "相互作用",
+          "重力",
+          "重力加速度"
+        ],
+        "learning_scope": "高中"
       },
-      "title": "重力",
+      "error_index": 0,
       "chapter": "第二章 · 相互作用与牛顿运动定律"
     },
     "diagnostic-dyn-02-2": {
-      "error": {
-        "wrong": "已使用月球重力加速度后，又把结果额外除以 6",
-        "wrong_expr": "G = m*g/6",
-        "why": "月球情境里的 g = 1.6 m/s² 已经体现了约为地球六分之一，再除以 6 属于重复折算。错误式与正确式量纲完全相同，只能靠数值代入发现：会算成约 0.533 N，而正确值是 3.2 N。",
-        "caught_by": "数值代入",
-        "trap_test": {
-          "scenario": "月球表面",
-          "expr": "m*g/6",
-          "ref": 3.2
-        }
+      "point": {
+        "id": "dyn-02",
+        "title": "重力",
+        "level": "基础",
+        "definition": "由于地球的吸引而使物体受到的力叫重力，大小 G = m g，方向竖直向下，作用点叫重心。g 在同一地点对所有物体都相同，通常取 9.8 N/kg，粗略计算取 10 N/kg。",
+        "meaning": "注意 g 的两张面孔：作为自由落体的加速度，它的单位写 m/s²；作为重力的比例系数，它的单位写 N/kg。两者数值相同、物理含义相通，但写成 N/kg 更能体现「每千克受到多少牛的力」。重力的大小只与质量和当地 g 有关，与物体的运动状态、是否被其他力支持都无关——一个在空中自由下落的物体和一个静止放在桌上的物体，受的重力一样大。",
+        "symbols": {
+          "G": {
+            "desc": "重力的大小",
+            "unit": "N"
+          },
+          "m": {
+            "desc": "物体的质量",
+            "unit": "kg"
+          },
+          "g": {
+            "desc": "重力加速度（也写作 N/kg）",
+            "unit": "m/s^2"
+          },
+          "a": {
+            "desc": "物体自由落体时的加速度",
+            "unit": "m/s^2"
+          }
+        },
+        "scenarios": {
+          "地球表面": {
+            "m": 2,
+            "g": 9.8,
+            "a": 9.8
+          },
+          "月球表面": {
+            "m": 2,
+            "g": 1.6,
+            "a": 1.6
+          }
+        },
+        "formulas": [
+          {
+            "name": "重力的大小",
+            "expr": "G = m*g",
+            "when": "任何物体，在地球表面附近",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "地球表面",
+                "expr": "m*g",
+                "ref": 19.6,
+                "note": "2 kg × 9.8 N/kg = 19.6 N（手工独立算）"
+              },
+              {
+                "type": "numeric",
+                "scenario": "月球表面",
+                "expr": "m*g",
+                "ref": 3.2,
+                "note": "同样 2 kg 的物体，在月球上只有 3.2 N —— 质量没变，重力变小了"
+              },
+              {
+                "type": "direction",
+                "scenario": "地球表面",
+                "var": "m",
+                "lo": 1,
+                "hi": 5,
+                "expr": "m*g",
+                "expect": "up",
+                "note": "同一地点，质量越大重力越大"
+              },
+              {
+                "type": "direction",
+                "scenario": "地球表面",
+                "var": "g",
+                "lo": 1.6,
+                "hi": 9.8,
+                "expr": "m*g",
+                "expect": "up",
+                "note": "同一质量的物体，重力加速度越大重力越大"
+              },
+              {
+                "type": "consistency",
+                "scenario": "地球表面",
+                "with": "dyn-02|重力的大小",
+                "with_expr": "m*a",
+                "target": "重力的大小",
+                "note": "本公式直接求G；参考端显式关系为m*a。两端使用同一情境和阶段，只核对该关系；with字段仅定位来源，不代表调用另一条被覆盖的公式。",
+                "verification_kind": "独立关系核对"
+              },
+              {
+                "type": "scan",
+                "scenario": "地球表面",
+                "var": "m",
+                "lo": 0,
+                "hi": 100
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "实验证明，在地球表面同一地点，物体受到的重力与它的质量成正比。",
+          "把比例系数记为 g，写成等式就是 G = m g。",
+          "检核量纲：质量的量纲 M 乘上加速度的量纲 L/T²，得到 M·L/T²，正是力的量纲。",
+          "因此 g 既可以看作自由落体的加速度，也可以看作每千克物体受到的重力。"
+        ],
+        "errors": [
+          {
+            "wrong": "把重力写成 G = m / g",
+            "why": "写成除法后量纲变成 kg·s²/m，与力的量纲完全不同，量纲检查直接拦住。同时它也会让「月球上重力变大」这种荒谬结论出现，方向检查也能抓到。",
+            "wrong_expr": "G = m/g",
+            "caught_by": "量纲一致性",
+            "trap_test": {
+              "kind": "dimension",
+              "target": "G = m/g",
+              "lhs_dim": "M·L·T^-2",
+              "rhs_dim": "M·L^-1·T^2",
+              "expect": "mismatch",
+              "note": "实际量纲检查得到等号左边为M·L·T^-2、右边为M·L^-1·T^2；两边不是同一物理量，因此该等式不成立。"
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "已使用月球重力加速度后，又把结果额外除以 6",
+            "wrong_expr": "G = m*g/6",
+            "why": "月球情境里的 g = 1.6 m/s² 已经体现了约为地球六分之一，再除以 6 属于重复折算。错误式与正确式量纲完全相同，只能靠数值代入发现：会算成约 0.533 N，而正确值是 3.2 N。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "月球表面",
+              "expr": "m*g/6",
+              "ref": 3.2
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "以为物体越重下落越快、或者说「重力大的物体先落地」",
+            "why": "重力确实与质量成正比，但加速度 a = G / m = g 与质量无关，所有物体下落加速度相同。这是第一章自由落体已经纠正过的错误，在这里以「误把重力当加速度」的形式再次出现。属于概念性错误，标注人工审核。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "质量2 kg的物体在地球表面g取9.8 N/kg、月球表面g取1.6 N/kg，求它在两处所受的重力。",
+          "solution": [
+            "在地球表面：G = m g = 2 × 9.8 = 19.6 N。",
+            "在月球表面：G = m g = 2 × 1.6 = 3.2 N。",
+            "两处的质量都是 2 kg，没有变化；变化的是重力加速度，所以重力变成了原来的约六分之一。"
+          ],
+          "answer": "地球表面 19.6 N；月球表面 3.2 N。"
+        },
+        "prereq": [
+          "dyn-01"
+        ],
+        "next": [
+          "dyn-03",
+          "mdl-21"
+        ],
+        "tags": [
+          "相互作用",
+          "重力",
+          "重力加速度"
+        ],
+        "learning_scope": "高中"
       },
-      "title": "重力",
+      "error_index": 1,
       "chapter": "第二章 · 相互作用与牛顿运动定律"
     },
     "diagnostic-dyn-02-3": {
-      "error": {
-        "wrong": "以为物体越重下落越快、或者说「重力大的物体先落地」",
-        "why": "重力确实与质量成正比，但加速度 a = G / m = g 与质量无关，所有物体下落加速度相同。这是第一章自由落体已经纠正过的错误，在这里以「误把重力当加速度」的形式再次出现。属于概念性错误，标注人工审核。",
-        "caught_by": "人工审核"
+      "point": {
+        "id": "dyn-02",
+        "title": "重力",
+        "level": "基础",
+        "definition": "由于地球的吸引而使物体受到的力叫重力，大小 G = m g，方向竖直向下，作用点叫重心。g 在同一地点对所有物体都相同，通常取 9.8 N/kg，粗略计算取 10 N/kg。",
+        "meaning": "注意 g 的两张面孔：作为自由落体的加速度，它的单位写 m/s²；作为重力的比例系数，它的单位写 N/kg。两者数值相同、物理含义相通，但写成 N/kg 更能体现「每千克受到多少牛的力」。重力的大小只与质量和当地 g 有关，与物体的运动状态、是否被其他力支持都无关——一个在空中自由下落的物体和一个静止放在桌上的物体，受的重力一样大。",
+        "symbols": {
+          "G": {
+            "desc": "重力的大小",
+            "unit": "N"
+          },
+          "m": {
+            "desc": "物体的质量",
+            "unit": "kg"
+          },
+          "g": {
+            "desc": "重力加速度（也写作 N/kg）",
+            "unit": "m/s^2"
+          },
+          "a": {
+            "desc": "物体自由落体时的加速度",
+            "unit": "m/s^2"
+          }
+        },
+        "scenarios": {
+          "地球表面": {
+            "m": 2,
+            "g": 9.8,
+            "a": 9.8
+          },
+          "月球表面": {
+            "m": 2,
+            "g": 1.6,
+            "a": 1.6
+          }
+        },
+        "formulas": [
+          {
+            "name": "重力的大小",
+            "expr": "G = m*g",
+            "when": "任何物体，在地球表面附近",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "地球表面",
+                "expr": "m*g",
+                "ref": 19.6,
+                "note": "2 kg × 9.8 N/kg = 19.6 N（手工独立算）"
+              },
+              {
+                "type": "numeric",
+                "scenario": "月球表面",
+                "expr": "m*g",
+                "ref": 3.2,
+                "note": "同样 2 kg 的物体，在月球上只有 3.2 N —— 质量没变，重力变小了"
+              },
+              {
+                "type": "direction",
+                "scenario": "地球表面",
+                "var": "m",
+                "lo": 1,
+                "hi": 5,
+                "expr": "m*g",
+                "expect": "up",
+                "note": "同一地点，质量越大重力越大"
+              },
+              {
+                "type": "direction",
+                "scenario": "地球表面",
+                "var": "g",
+                "lo": 1.6,
+                "hi": 9.8,
+                "expr": "m*g",
+                "expect": "up",
+                "note": "同一质量的物体，重力加速度越大重力越大"
+              },
+              {
+                "type": "consistency",
+                "scenario": "地球表面",
+                "with": "dyn-02|重力的大小",
+                "with_expr": "m*a",
+                "target": "重力的大小",
+                "note": "本公式直接求G；参考端显式关系为m*a。两端使用同一情境和阶段，只核对该关系；with字段仅定位来源，不代表调用另一条被覆盖的公式。",
+                "verification_kind": "独立关系核对"
+              },
+              {
+                "type": "scan",
+                "scenario": "地球表面",
+                "var": "m",
+                "lo": 0,
+                "hi": 100
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "实验证明，在地球表面同一地点，物体受到的重力与它的质量成正比。",
+          "把比例系数记为 g，写成等式就是 G = m g。",
+          "检核量纲：质量的量纲 M 乘上加速度的量纲 L/T²，得到 M·L/T²，正是力的量纲。",
+          "因此 g 既可以看作自由落体的加速度，也可以看作每千克物体受到的重力。"
+        ],
+        "errors": [
+          {
+            "wrong": "把重力写成 G = m / g",
+            "why": "写成除法后量纲变成 kg·s²/m，与力的量纲完全不同，量纲检查直接拦住。同时它也会让「月球上重力变大」这种荒谬结论出现，方向检查也能抓到。",
+            "wrong_expr": "G = m/g",
+            "caught_by": "量纲一致性",
+            "trap_test": {
+              "kind": "dimension",
+              "target": "G = m/g",
+              "lhs_dim": "M·L·T^-2",
+              "rhs_dim": "M·L^-1·T^2",
+              "expect": "mismatch",
+              "note": "实际量纲检查得到等号左边为M·L·T^-2、右边为M·L^-1·T^2；两边不是同一物理量，因此该等式不成立。"
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "已使用月球重力加速度后，又把结果额外除以 6",
+            "wrong_expr": "G = m*g/6",
+            "why": "月球情境里的 g = 1.6 m/s² 已经体现了约为地球六分之一，再除以 6 属于重复折算。错误式与正确式量纲完全相同，只能靠数值代入发现：会算成约 0.533 N，而正确值是 3.2 N。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "月球表面",
+              "expr": "m*g/6",
+              "ref": 3.2
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "以为物体越重下落越快、或者说「重力大的物体先落地」",
+            "why": "重力确实与质量成正比，但加速度 a = G / m = g 与质量无关，所有物体下落加速度相同。这是第一章自由落体已经纠正过的错误，在这里以「误把重力当加速度」的形式再次出现。属于概念性错误，标注人工审核。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "质量2 kg的物体在地球表面g取9.8 N/kg、月球表面g取1.6 N/kg，求它在两处所受的重力。",
+          "solution": [
+            "在地球表面：G = m g = 2 × 9.8 = 19.6 N。",
+            "在月球表面：G = m g = 2 × 1.6 = 3.2 N。",
+            "两处的质量都是 2 kg，没有变化；变化的是重力加速度，所以重力变成了原来的约六分之一。"
+          ],
+          "answer": "地球表面 19.6 N；月球表面 3.2 N。"
+        },
+        "prereq": [
+          "dyn-01"
+        ],
+        "next": [
+          "dyn-03",
+          "mdl-21"
+        ],
+        "tags": [
+          "相互作用",
+          "重力",
+          "重力加速度"
+        ],
+        "learning_scope": "高中"
       },
-      "title": "重力",
+      "error_index": 2,
       "chapter": "第二章 · 相互作用与牛顿运动定律"
     },
     "diagnostic-dyn-03-1": {
-      "error": {
-        "wrong": "用静摩擦力公式去算「没被推动」的情形，即认为静摩擦力等于 μF_N",
-        "wrong_expr": "f = mu*F_N",
-        "why": "★ 这条错写法的量纲完全正确（两个力相乘再乘纯数，仍是 N），量纲检查抓不到。要抓住它必须靠数值代入：物体被 1 N 的水平力推着却没动，静摩擦力只有 1 N；按公式算却得到 5.88 N —— 那个数其实是最大静摩擦力的量级，不是实际受到的摩擦力。",
-        "caught_by": "数值代入",
-        "trap_test": {
-          "scenario": "静摩擦未推动",
-          "expr": "mu*F_N",
-          "ref": 1.0
-        }
+      "point": {
+        "id": "dyn-03",
+        "title": "摩擦力",
+        "level": "进阶",
+        "definition": "两个相互接触的物体之间有相对运动趋势或相对运动时，接触面上会产生阻碍相对运动的力。滑动的物体受到滑动摩擦力，大小 f = μ F_N，其中 μ 是动摩擦因数，F_N 是接触面间的正压力。",
+        "meaning": "这里有一条极其重要的分界线：滑动摩擦力可以用公式 f = μ F_N 直接算，而静摩擦力不能。静摩擦力的大小由平衡条件或牛顿第二定律决定——你用力推但没推动，静摩擦力就等于你的推力；推得越用力，它越大，直到超过最大静摩擦力才被推动。所以「静摩擦力等于 μF_N」是一个用起来很顺、但完全错误的说法，本页专门为它设了一道检查。",
+        "symbols": {
+          "f": {
+            "desc": "摩擦力的大小",
+            "unit": "N"
+          },
+          "mu": {
+            "desc": "动摩擦因数（无量纲）",
+            "unit": ""
+          },
+          "F_N": {
+            "desc": "接触面间的正压力",
+            "unit": "N"
+          },
+          "F": {
+            "desc": "水平推力（用于求静摩擦力）",
+            "unit": "N"
+          },
+          "m": {
+            "desc": "水平面上物体的质量",
+            "unit": "kg"
+          },
+          "g": {
+            "desc": "重力加速度",
+            "unit": "m/s^2"
+          }
+        },
+        "scenarios": {
+          "滑动摩擦": {
+            "mu": 0.3,
+            "F_N": 19.6,
+            "F": 10,
+            "m": 2,
+            "g": 9.8
+          },
+          "静摩擦未推动": {
+            "mu": 0.3,
+            "F_N": 19.6,
+            "F": 1,
+            "m": 2,
+            "g": 9.8
+          }
+        },
+        "formulas": [
+          {
+            "name": "滑动摩擦力",
+            "expr": "f = mu*F_N",
+            "when": "物体已经发生相对滑动时，才能用这条",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "滑动摩擦",
+                "expr": "mu*F_N",
+                "ref": 5.88,
+                "note": "0.3 × 19.6 N = 5.88 N（手工独立算）"
+              },
+              {
+                "type": "direction",
+                "scenario": "滑动摩擦",
+                "var": "F_N",
+                "lo": 9.8,
+                "hi": 39.2,
+                "expr": "mu*F_N",
+                "expect": "up",
+                "note": "接触面压得越紧，滑动摩擦力越大"
+              },
+              {
+                "type": "direction",
+                "scenario": "滑动摩擦",
+                "var": "mu",
+                "lo": 0.1,
+                "hi": 0.6,
+                "expr": "mu*F_N",
+                "expect": "up",
+                "note": "接触面越粗糙（动摩擦因数越大），滑动摩擦力越大"
+              },
+              {
+                "type": "consistency",
+                "scenario": "滑动摩擦",
+                "with": "dyn-03|滑动摩擦力",
+                "with_expr": "mu*(m*g)",
+                "target": "摩擦力的大小",
+                "note": "本公式直接求f；参考端显式关系为mu*(m*g)。两端使用同一情境和阶段，只核对该关系；with字段仅定位来源，不代表调用另一条被覆盖的公式。",
+                "verification_kind": "独立关系核对"
+              },
+              {
+                "type": "scan",
+                "scenario": "滑动摩擦",
+                "var": "F_N",
+                "lo": 0,
+                "hi": 500
+              }
+            ]
+          },
+          {
+            "name": "静止物体的静摩擦力",
+            "expr": "f = F",
+            "when": "物体静止时，静摩擦力由平衡条件决定，与正压力无关",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "静摩擦未推动",
+                "expr": "F",
+                "ref": 1.0,
+                "note": "用 1 N 的水平力推物体而物体未动，静摩擦力就是 1 N"
+              },
+              {
+                "type": "direction",
+                "scenario": "静摩擦未推动",
+                "var": "F",
+                "lo": 1,
+                "hi": 5,
+                "expr": "F",
+                "expect": "up",
+                "note": "推力越大，静摩擦力跟着变大 —— 所以在没被推动之前，静摩擦力是一个「被动」的力"
+              },
+              {
+                "type": "scan",
+                "scenario": "静摩擦未推动",
+                "var": "F",
+                "lo": 0,
+                "hi": 5.8
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "滑动摩擦力的方向沿接触面，与相对运动方向相反，大小由实验测定。",
+          "实验发现它与接触面间的正压力成正比，比例系数记为 μ，于是有 f = μ F_N。",
+          "μ 是一个纯数（无量纲），只由两个接触面的材料与粗糙程度决定，与接触面积无关。",
+          "静摩擦力不走这条路径：物体没动，说明受力平衡，静摩擦力必须等于推它的那个力。",
+          "所以解静摩擦类问题时，先判断物体动不动，再选公式 —— 顺序错了就会得到荒谬答案。"
+        ],
+        "errors": [
+          {
+            "wrong": "用静摩擦力公式去算「没被推动」的情形，即认为静摩擦力等于 μF_N",
+            "wrong_expr": "f = mu*F_N",
+            "why": "★ 这条错写法的量纲完全正确（两个力相乘再乘纯数，仍是 N），量纲检查抓不到。要抓住它必须靠数值代入：物体被 1 N 的水平力推着却没动，静摩擦力只有 1 N；按公式算却得到 5.88 N —— 那个数其实是最大静摩擦力的量级，不是实际受到的摩擦力。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "静摩擦未推动",
+              "expr": "mu*F_N",
+              "ref": 1.0
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "认为摩擦力总是阻碍物体运动，因此摩擦力的方向一定与运动方向相反",
+            "why": "滑动摩擦力的确与「相对运动」方向相反，但静摩擦力可以和运动方向相同 —— 例如随传送带一起加速的物体，正是静摩擦力在推它前进。说「阻碍运动方向」不准确，准确说法是「阻碍相对运动（或相对运动趋势）」。这类表述错误不体现为公式写错，标注人工审核。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "质量2 kg的物体原来静止在水平桌面上，动摩擦因数0.3，g=9.8 N/kg。用1 N水平力推时仍静止；再改用10 N水平力且已滑动。分别求两种情况下受到的摩擦力。",
+          "solution": [
+            "竖直方向平衡，F_N=m*g=2×9.8=19.6 N。",
+            "第一种情况题干已说明仍静止，水平平衡得到静摩擦力1 N；不能从动摩擦因数直接推出最大静摩擦力。",
+            "第二种情况题干已说明滑动，f=mu*F_N=0.3×19.6=5.88 N，方向与相对滑动方向相反。"
+          ],
+          "answer": "1 N 推力时摩擦力的实际大小是 1 N（静摩擦，物体未动）；10 N 推力时摩擦力是 5.88 N（滑动摩擦）。"
+        },
+        "prereq": [
+          "dyn-02"
+        ],
+        "next": [
+          "dyn-04",
+          "mdl-01",
+          "dyn-08"
+        ],
+        "tags": [
+          "相互作用",
+          "摩擦力",
+          "静摩擦",
+          "滑动摩擦"
+        ],
+        "learning_scope": "高中"
       },
-      "title": "摩擦力",
+      "error_index": 0,
       "chapter": "第二章 · 相互作用与牛顿运动定律"
     },
     "diagnostic-dyn-03-2": {
-      "error": {
-        "wrong": "认为摩擦力总是阻碍物体运动，因此摩擦力的方向一定与运动方向相反",
-        "why": "滑动摩擦力的确与「相对运动」方向相反，但静摩擦力可以和运动方向相同 —— 例如随传送带一起加速的物体，正是静摩擦力在推它前进。说「阻碍运动方向」不准确，准确说法是「阻碍相对运动（或相对运动趋势）」。这类表述错误不体现为公式写错，标注人工审核。",
-        "caught_by": "人工审核"
+      "point": {
+        "id": "dyn-03",
+        "title": "摩擦力",
+        "level": "进阶",
+        "definition": "两个相互接触的物体之间有相对运动趋势或相对运动时，接触面上会产生阻碍相对运动的力。滑动的物体受到滑动摩擦力，大小 f = μ F_N，其中 μ 是动摩擦因数，F_N 是接触面间的正压力。",
+        "meaning": "这里有一条极其重要的分界线：滑动摩擦力可以用公式 f = μ F_N 直接算，而静摩擦力不能。静摩擦力的大小由平衡条件或牛顿第二定律决定——你用力推但没推动，静摩擦力就等于你的推力；推得越用力，它越大，直到超过最大静摩擦力才被推动。所以「静摩擦力等于 μF_N」是一个用起来很顺、但完全错误的说法，本页专门为它设了一道检查。",
+        "symbols": {
+          "f": {
+            "desc": "摩擦力的大小",
+            "unit": "N"
+          },
+          "mu": {
+            "desc": "动摩擦因数（无量纲）",
+            "unit": ""
+          },
+          "F_N": {
+            "desc": "接触面间的正压力",
+            "unit": "N"
+          },
+          "F": {
+            "desc": "水平推力（用于求静摩擦力）",
+            "unit": "N"
+          },
+          "m": {
+            "desc": "水平面上物体的质量",
+            "unit": "kg"
+          },
+          "g": {
+            "desc": "重力加速度",
+            "unit": "m/s^2"
+          }
+        },
+        "scenarios": {
+          "滑动摩擦": {
+            "mu": 0.3,
+            "F_N": 19.6,
+            "F": 10,
+            "m": 2,
+            "g": 9.8
+          },
+          "静摩擦未推动": {
+            "mu": 0.3,
+            "F_N": 19.6,
+            "F": 1,
+            "m": 2,
+            "g": 9.8
+          }
+        },
+        "formulas": [
+          {
+            "name": "滑动摩擦力",
+            "expr": "f = mu*F_N",
+            "when": "物体已经发生相对滑动时，才能用这条",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "滑动摩擦",
+                "expr": "mu*F_N",
+                "ref": 5.88,
+                "note": "0.3 × 19.6 N = 5.88 N（手工独立算）"
+              },
+              {
+                "type": "direction",
+                "scenario": "滑动摩擦",
+                "var": "F_N",
+                "lo": 9.8,
+                "hi": 39.2,
+                "expr": "mu*F_N",
+                "expect": "up",
+                "note": "接触面压得越紧，滑动摩擦力越大"
+              },
+              {
+                "type": "direction",
+                "scenario": "滑动摩擦",
+                "var": "mu",
+                "lo": 0.1,
+                "hi": 0.6,
+                "expr": "mu*F_N",
+                "expect": "up",
+                "note": "接触面越粗糙（动摩擦因数越大），滑动摩擦力越大"
+              },
+              {
+                "type": "consistency",
+                "scenario": "滑动摩擦",
+                "with": "dyn-03|滑动摩擦力",
+                "with_expr": "mu*(m*g)",
+                "target": "摩擦力的大小",
+                "note": "本公式直接求f；参考端显式关系为mu*(m*g)。两端使用同一情境和阶段，只核对该关系；with字段仅定位来源，不代表调用另一条被覆盖的公式。",
+                "verification_kind": "独立关系核对"
+              },
+              {
+                "type": "scan",
+                "scenario": "滑动摩擦",
+                "var": "F_N",
+                "lo": 0,
+                "hi": 500
+              }
+            ]
+          },
+          {
+            "name": "静止物体的静摩擦力",
+            "expr": "f = F",
+            "when": "物体静止时，静摩擦力由平衡条件决定，与正压力无关",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "静摩擦未推动",
+                "expr": "F",
+                "ref": 1.0,
+                "note": "用 1 N 的水平力推物体而物体未动，静摩擦力就是 1 N"
+              },
+              {
+                "type": "direction",
+                "scenario": "静摩擦未推动",
+                "var": "F",
+                "lo": 1,
+                "hi": 5,
+                "expr": "F",
+                "expect": "up",
+                "note": "推力越大，静摩擦力跟着变大 —— 所以在没被推动之前，静摩擦力是一个「被动」的力"
+              },
+              {
+                "type": "scan",
+                "scenario": "静摩擦未推动",
+                "var": "F",
+                "lo": 0,
+                "hi": 5.8
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "滑动摩擦力的方向沿接触面，与相对运动方向相反，大小由实验测定。",
+          "实验发现它与接触面间的正压力成正比，比例系数记为 μ，于是有 f = μ F_N。",
+          "μ 是一个纯数（无量纲），只由两个接触面的材料与粗糙程度决定，与接触面积无关。",
+          "静摩擦力不走这条路径：物体没动，说明受力平衡，静摩擦力必须等于推它的那个力。",
+          "所以解静摩擦类问题时，先判断物体动不动，再选公式 —— 顺序错了就会得到荒谬答案。"
+        ],
+        "errors": [
+          {
+            "wrong": "用静摩擦力公式去算「没被推动」的情形，即认为静摩擦力等于 μF_N",
+            "wrong_expr": "f = mu*F_N",
+            "why": "★ 这条错写法的量纲完全正确（两个力相乘再乘纯数，仍是 N），量纲检查抓不到。要抓住它必须靠数值代入：物体被 1 N 的水平力推着却没动，静摩擦力只有 1 N；按公式算却得到 5.88 N —— 那个数其实是最大静摩擦力的量级，不是实际受到的摩擦力。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "静摩擦未推动",
+              "expr": "mu*F_N",
+              "ref": 1.0
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "认为摩擦力总是阻碍物体运动，因此摩擦力的方向一定与运动方向相反",
+            "why": "滑动摩擦力的确与「相对运动」方向相反，但静摩擦力可以和运动方向相同 —— 例如随传送带一起加速的物体，正是静摩擦力在推它前进。说「阻碍运动方向」不准确，准确说法是「阻碍相对运动（或相对运动趋势）」。这类表述错误不体现为公式写错，标注人工审核。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "质量2 kg的物体原来静止在水平桌面上，动摩擦因数0.3，g=9.8 N/kg。用1 N水平力推时仍静止；再改用10 N水平力且已滑动。分别求两种情况下受到的摩擦力。",
+          "solution": [
+            "竖直方向平衡，F_N=m*g=2×9.8=19.6 N。",
+            "第一种情况题干已说明仍静止，水平平衡得到静摩擦力1 N；不能从动摩擦因数直接推出最大静摩擦力。",
+            "第二种情况题干已说明滑动，f=mu*F_N=0.3×19.6=5.88 N，方向与相对滑动方向相反。"
+          ],
+          "answer": "1 N 推力时摩擦力的实际大小是 1 N（静摩擦，物体未动）；10 N 推力时摩擦力是 5.88 N（滑动摩擦）。"
+        },
+        "prereq": [
+          "dyn-02"
+        ],
+        "next": [
+          "dyn-04",
+          "mdl-01",
+          "dyn-08"
+        ],
+        "tags": [
+          "相互作用",
+          "摩擦力",
+          "静摩擦",
+          "滑动摩擦"
+        ],
+        "learning_scope": "高中"
       },
-      "title": "摩擦力",
+      "error_index": 1,
       "chapter": "第二章 · 相互作用与牛顿运动定律"
     },
     "diagnostic-dyn-04-1": {
-      "error": {
-        "wrong": "把 cos 和 sin 记反，写成 F_x = F sin θ、F_y = F cos θ",
-        "wrong_expr": "F_x = F*sin(theta)",
-        "why": "★ 这类错误量纲完全一致（都是「纯数乘一个力」，结果还是 N），量纲检查一点用都没有。数值代入才暴露：θ ≈ 36.87° 时算出 6 N，而水平分量应该是 8 N —— 两个分量正好互换了。",
-        "caught_by": "数值代入",
-        "trap_test": {
-          "scenario": "斜向拉力",
-          "expr": "F*sin(theta)",
-          "ref": 8.0
-        }
+      "point": {
+        "id": "dyn-04",
+        "title": "力的合成与分解（正交分解）",
+        "level": "进阶",
+        "definition": "求几个力的合力叫力的合成，把合力按某个方向拆成几个分力叫力的分解。正交分解是把一个力拆成互相垂直的两个分量：F_x = F cos θ，F_y = F sin θ；反过来由分量求大小则用 F = √(F_x² + F_y²)。",
+        "meaning": "正交分解是高中力学最重要的计算工具，几乎所有复杂受力问题都靠它降维打击——把一个斜着的力换成水平和竖直两个方向上的力，然后每个方向各写一次平衡或牛顿第二定律。两个最容易混淆的点：一是 cos 和 sin 谁配谁（取决于 θ 是从哪个轴量起的）；二是合力不等于两个分力直接相加，因为它们是矢量，要用勾股定理再开方。",
+        "symbols": {
+          "F": {
+            "desc": "被分解的那个力（合力）的大小",
+            "unit": "N"
+          },
+          "F_x": {
+            "desc": "水平方向的分力",
+            "unit": "N"
+          },
+          "F_y": {
+            "desc": "竖直方向的分力",
+            "unit": "N"
+          },
+          "theta": {
+            "desc": "力与水平方向的夹角（弧度）",
+            "unit": "rad"
+          }
+        },
+        "scenarios": {
+          "斜向拉力": {
+            "F": 10,
+            "theta": 0.6435011088,
+            "F_x": 8,
+            "F_y": 6
+          }
+        },
+        "formulas": [
+          {
+            "name": "水平方向的分力",
+            "expr": "F_x = F*cos(theta)",
+            "when": "θ 是力与水平方向的夹角",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "斜向拉力",
+                "expr": "F*cos(theta)",
+                "ref": 8.0,
+                "note": "θ ≈ 36.87°（cos θ = 0.8），10 × 0.8 = 8 N（手工独立算）"
+              },
+              {
+                "type": "direction",
+                "scenario": "斜向拉力",
+                "var": "theta",
+                "lo": 0,
+                "hi": 1.5707963268,
+                "expr": "F*cos(theta)",
+                "expect": "down",
+                "note": "θ 由 0 增大到 90°，水平分量由 F 一直减到 0"
+              },
+              {
+                "type": "consistency",
+                "scenario": "斜向拉力",
+                "with": "dyn-04|水平方向的分力",
+                "with_expr": "sqrt(F^2-F_y^2)",
+                "target": "水平方向的分力",
+                "note": "本公式直接求F_x；参考端显式关系为sqrt(F^2-F_y^2)。两端使用同一情境和阶段，只核对该关系；with字段仅定位来源，不代表调用另一条被覆盖的公式。",
+                "verification_kind": "独立关系核对"
+              },
+              {
+                "type": "scan",
+                "scenario": "斜向拉力",
+                "var": "theta",
+                "lo": 0,
+                "hi": 1.5707963268
+              }
+            ]
+          },
+          {
+            "name": "竖直方向的分力",
+            "expr": "F_y = F*sin(theta)",
+            "when": "θ 是力与水平方向的夹角",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "斜向拉力",
+                "expr": "F*sin(theta)",
+                "ref": 6.0,
+                "note": "θ ≈ 36.87°（sin θ = 0.6），10 × 0.6 = 6 N（手工独立算）"
+              },
+              {
+                "type": "direction",
+                "scenario": "斜向拉力",
+                "var": "theta",
+                "lo": 0,
+                "hi": 1.5707963268,
+                "expr": "F*sin(theta)",
+                "expect": "up",
+                "note": "θ 由 0 增大到 90°，竖直分量由 0 一直增到 F"
+              },
+              {
+                "type": "scan",
+                "scenario": "斜向拉力",
+                "var": "theta",
+                "lo": 0,
+                "hi": 1.5707963268
+              }
+            ]
+          },
+          {
+            "name": "由两个分力求合力",
+            "expr": "F = sqrt(F_x^2 + F_y^2)",
+            "when": "两个分力互相垂直时",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "斜向拉力",
+                "expr": "sqrt(F_x^2 + F_y^2)",
+                "ref": 10.0,
+                "note": "√(8² + 6²) = √100 = 10 N，回到最初的合力大小"
+              },
+              {
+                "type": "compare",
+                "scenario": "斜向拉力",
+                "expr": "sqrt(F_x^2 + F_y^2)",
+                "op": "<",
+                "vs": "F_x + F_y",
+                "note": "★ 合力一定小于两个分力的算术和：10 < 14。力是矢量，不能直接相加 —— 这条不等式就是「不能直接相加」的机器化表述"
+              },
+              {
+                "type": "compare",
+                "scenario": "斜向拉力",
+                "expr": "sqrt((F*cos(theta))^2 + (F*sin(theta))^2)",
+                "op": "==",
+                "vs": "F",
+                "note": "把两个分量的公式代回勾股式，得 √(64 + 36) = 10 N，与原力完全相同 —— 这一条同时验证了分解公式、合成公式，以及 sin²θ + cos²θ = 1"
+              },
+              {
+                "type": "scan",
+                "scenario": "斜向拉力",
+                "var": "theta",
+                "lo": 0,
+                "hi": 1.5707963268
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "力是矢量，合成遵守平行四边形定则：以两个分力为邻边作平行四边形，对角线就是合力。",
+          "若两个分力互相垂直，平行四边形退化成矩形，对角线的长度由勾股定理给出：F = √(F_x² + F_y²)。",
+          "分解是合成的逆运算。把 F 沿互相垂直的两个方向拆分，由直角三角形可读出两直角边。",
+          "若 θ 从水平轴量起，则邻边（水平分量）是 F cos θ，对边（竖直分量）是 F sin θ。",
+          "检核恒等式：把两个分量平方相加，得 F²(cos²θ + sin²θ) = F²，正好回到 F —— 这说明分解没有丢东西，也没多出来。"
+        ],
+        "errors": [
+          {
+            "wrong": "把 cos 和 sin 记反，写成 F_x = F sin θ、F_y = F cos θ",
+            "wrong_expr": "F_x = F*sin(theta)",
+            "why": "★ 这类错误量纲完全一致（都是「纯数乘一个力」，结果还是 N），量纲检查一点用都没有。数值代入才暴露：θ ≈ 36.87° 时算出 6 N，而水平分量应该是 8 N —— 两个分量正好互换了。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "斜向拉力",
+              "expr": "F*sin(theta)",
+              "ref": 8.0
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "直接把两个分力相加求合力，写成 F = F_x + F_y",
+            "wrong_expr": "F = F_x + F_y",
+            "why": "★ 又一个量纲拦不住的错误：力加力还是力，量纲永远正确。数值代入才暴露：8 + 6 = 14 N，而真正的合力是 10 N。差的那 4 N 就是矢量合成与代数相加的区别。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "斜向拉力",
+              "expr": "F_x + F_y",
+              "ref": 10.0
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "一个 10 N 的力与水平方向成 36.87° 角斜向上拉物体。求这个力在水平方向和竖直方向的分力。（已知 cos 36.87° = 0.8，sin 36.87° = 0.6）",
+          "solution": [
+            "把力沿水平方向和竖直方向正交分解。",
+            "水平分量：F_x = F cos θ = 10 × 0.8 = 8 N。",
+            "竖直分量：F_y = F sin θ = 10 × 0.6 = 6 N。",
+            "验算：√(8² + 6²) = √100 = 10 N，与原来的力相等，说明分解没有出错。"
+          ],
+          "answer": "水平分力 8 N，竖直分力 6 N。"
+        },
+        "prereq": [
+          "dyn-03"
+        ],
+        "next": [
+          "dyn-05",
+          "mdl-27"
+        ],
+        "tags": [
+          "相互作用",
+          "正交分解",
+          "矢量合成"
+        ],
+        "learning_scope": "高中"
       },
-      "title": "力的合成与分解（正交分解）",
+      "error_index": 0,
       "chapter": "第二章 · 相互作用与牛顿运动定律"
     },
     "diagnostic-dyn-04-2": {
-      "error": {
-        "wrong": "直接把两个分力相加求合力，写成 F = F_x + F_y",
-        "wrong_expr": "F = F_x + F_y",
-        "why": "★ 又一个量纲拦不住的错误：力加力还是力，量纲永远正确。数值代入才暴露：8 + 6 = 14 N，而真正的合力是 10 N。差的那 4 N 就是矢量合成与代数相加的区别。",
-        "caught_by": "数值代入",
-        "trap_test": {
-          "scenario": "斜向拉力",
-          "expr": "F_x + F_y",
-          "ref": 10.0
-        }
+      "point": {
+        "id": "dyn-04",
+        "title": "力的合成与分解（正交分解）",
+        "level": "进阶",
+        "definition": "求几个力的合力叫力的合成，把合力按某个方向拆成几个分力叫力的分解。正交分解是把一个力拆成互相垂直的两个分量：F_x = F cos θ，F_y = F sin θ；反过来由分量求大小则用 F = √(F_x² + F_y²)。",
+        "meaning": "正交分解是高中力学最重要的计算工具，几乎所有复杂受力问题都靠它降维打击——把一个斜着的力换成水平和竖直两个方向上的力，然后每个方向各写一次平衡或牛顿第二定律。两个最容易混淆的点：一是 cos 和 sin 谁配谁（取决于 θ 是从哪个轴量起的）；二是合力不等于两个分力直接相加，因为它们是矢量，要用勾股定理再开方。",
+        "symbols": {
+          "F": {
+            "desc": "被分解的那个力（合力）的大小",
+            "unit": "N"
+          },
+          "F_x": {
+            "desc": "水平方向的分力",
+            "unit": "N"
+          },
+          "F_y": {
+            "desc": "竖直方向的分力",
+            "unit": "N"
+          },
+          "theta": {
+            "desc": "力与水平方向的夹角（弧度）",
+            "unit": "rad"
+          }
+        },
+        "scenarios": {
+          "斜向拉力": {
+            "F": 10,
+            "theta": 0.6435011088,
+            "F_x": 8,
+            "F_y": 6
+          }
+        },
+        "formulas": [
+          {
+            "name": "水平方向的分力",
+            "expr": "F_x = F*cos(theta)",
+            "when": "θ 是力与水平方向的夹角",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "斜向拉力",
+                "expr": "F*cos(theta)",
+                "ref": 8.0,
+                "note": "θ ≈ 36.87°（cos θ = 0.8），10 × 0.8 = 8 N（手工独立算）"
+              },
+              {
+                "type": "direction",
+                "scenario": "斜向拉力",
+                "var": "theta",
+                "lo": 0,
+                "hi": 1.5707963268,
+                "expr": "F*cos(theta)",
+                "expect": "down",
+                "note": "θ 由 0 增大到 90°，水平分量由 F 一直减到 0"
+              },
+              {
+                "type": "consistency",
+                "scenario": "斜向拉力",
+                "with": "dyn-04|水平方向的分力",
+                "with_expr": "sqrt(F^2-F_y^2)",
+                "target": "水平方向的分力",
+                "note": "本公式直接求F_x；参考端显式关系为sqrt(F^2-F_y^2)。两端使用同一情境和阶段，只核对该关系；with字段仅定位来源，不代表调用另一条被覆盖的公式。",
+                "verification_kind": "独立关系核对"
+              },
+              {
+                "type": "scan",
+                "scenario": "斜向拉力",
+                "var": "theta",
+                "lo": 0,
+                "hi": 1.5707963268
+              }
+            ]
+          },
+          {
+            "name": "竖直方向的分力",
+            "expr": "F_y = F*sin(theta)",
+            "when": "θ 是力与水平方向的夹角",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "斜向拉力",
+                "expr": "F*sin(theta)",
+                "ref": 6.0,
+                "note": "θ ≈ 36.87°（sin θ = 0.6），10 × 0.6 = 6 N（手工独立算）"
+              },
+              {
+                "type": "direction",
+                "scenario": "斜向拉力",
+                "var": "theta",
+                "lo": 0,
+                "hi": 1.5707963268,
+                "expr": "F*sin(theta)",
+                "expect": "up",
+                "note": "θ 由 0 增大到 90°，竖直分量由 0 一直增到 F"
+              },
+              {
+                "type": "scan",
+                "scenario": "斜向拉力",
+                "var": "theta",
+                "lo": 0,
+                "hi": 1.5707963268
+              }
+            ]
+          },
+          {
+            "name": "由两个分力求合力",
+            "expr": "F = sqrt(F_x^2 + F_y^2)",
+            "when": "两个分力互相垂直时",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "斜向拉力",
+                "expr": "sqrt(F_x^2 + F_y^2)",
+                "ref": 10.0,
+                "note": "√(8² + 6²) = √100 = 10 N，回到最初的合力大小"
+              },
+              {
+                "type": "compare",
+                "scenario": "斜向拉力",
+                "expr": "sqrt(F_x^2 + F_y^2)",
+                "op": "<",
+                "vs": "F_x + F_y",
+                "note": "★ 合力一定小于两个分力的算术和：10 < 14。力是矢量，不能直接相加 —— 这条不等式就是「不能直接相加」的机器化表述"
+              },
+              {
+                "type": "compare",
+                "scenario": "斜向拉力",
+                "expr": "sqrt((F*cos(theta))^2 + (F*sin(theta))^2)",
+                "op": "==",
+                "vs": "F",
+                "note": "把两个分量的公式代回勾股式，得 √(64 + 36) = 10 N，与原力完全相同 —— 这一条同时验证了分解公式、合成公式，以及 sin²θ + cos²θ = 1"
+              },
+              {
+                "type": "scan",
+                "scenario": "斜向拉力",
+                "var": "theta",
+                "lo": 0,
+                "hi": 1.5707963268
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "力是矢量，合成遵守平行四边形定则：以两个分力为邻边作平行四边形，对角线就是合力。",
+          "若两个分力互相垂直，平行四边形退化成矩形，对角线的长度由勾股定理给出：F = √(F_x² + F_y²)。",
+          "分解是合成的逆运算。把 F 沿互相垂直的两个方向拆分，由直角三角形可读出两直角边。",
+          "若 θ 从水平轴量起，则邻边（水平分量）是 F cos θ，对边（竖直分量）是 F sin θ。",
+          "检核恒等式：把两个分量平方相加，得 F²(cos²θ + sin²θ) = F²，正好回到 F —— 这说明分解没有丢东西，也没多出来。"
+        ],
+        "errors": [
+          {
+            "wrong": "把 cos 和 sin 记反，写成 F_x = F sin θ、F_y = F cos θ",
+            "wrong_expr": "F_x = F*sin(theta)",
+            "why": "★ 这类错误量纲完全一致（都是「纯数乘一个力」，结果还是 N），量纲检查一点用都没有。数值代入才暴露：θ ≈ 36.87° 时算出 6 N，而水平分量应该是 8 N —— 两个分量正好互换了。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "斜向拉力",
+              "expr": "F*sin(theta)",
+              "ref": 8.0
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "直接把两个分力相加求合力，写成 F = F_x + F_y",
+            "wrong_expr": "F = F_x + F_y",
+            "why": "★ 又一个量纲拦不住的错误：力加力还是力，量纲永远正确。数值代入才暴露：8 + 6 = 14 N，而真正的合力是 10 N。差的那 4 N 就是矢量合成与代数相加的区别。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "斜向拉力",
+              "expr": "F_x + F_y",
+              "ref": 10.0
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "一个 10 N 的力与水平方向成 36.87° 角斜向上拉物体。求这个力在水平方向和竖直方向的分力。（已知 cos 36.87° = 0.8，sin 36.87° = 0.6）",
+          "solution": [
+            "把力沿水平方向和竖直方向正交分解。",
+            "水平分量：F_x = F cos θ = 10 × 0.8 = 8 N。",
+            "竖直分量：F_y = F sin θ = 10 × 0.6 = 6 N。",
+            "验算：√(8² + 6²) = √100 = 10 N，与原来的力相等，说明分解没有出错。"
+          ],
+          "answer": "水平分力 8 N，竖直分力 6 N。"
+        },
+        "prereq": [
+          "dyn-03"
+        ],
+        "next": [
+          "dyn-05",
+          "mdl-27"
+        ],
+        "tags": [
+          "相互作用",
+          "正交分解",
+          "矢量合成"
+        ],
+        "learning_scope": "高中"
       },
-      "title": "力的合成与分解（正交分解）",
+      "error_index": 1,
       "chapter": "第二章 · 相互作用与牛顿运动定律"
     },
     "diagnostic-dyn-05-1": {
-      "error": {
-        "wrong": "把牛顿第二定律记成 F = m / a",
-        "why": "写成除法后量纲变成 kg²·m/s²，与力的量纲对不上，量纲检查当场拦住。",
-        "wrong_expr": "F_net = m/a",
-        "caught_by": "量纲一致性",
-        "trap_test": {
-          "kind": "dimension",
-          "target": "F_net = m/a",
-          "lhs_dim": "M·L·T^-2",
-          "rhs_dim": "M·L^-1·T^2",
-          "expect": "mismatch",
-          "note": "实际量纲检查得到等号左边为M·L·T^-2、右边为M·L^-1·T^2；两边不是同一物理量，因此该等式不成立。"
-        }
+      "point": {
+        "id": "dyn-05",
+        "title": "牛顿第二定律",
+        "level": "基础",
+        "definition": "物体加速度的大小与所受合外力成正比、与质量成反比，加速度的方向与合外力方向相同。写成等式即 F_合 = m a，其中 F_合 是物体受到的**所有**外力的矢量和。",
+        "meaning": "这条式子是整个高中力学的枢纽。它有三个必须记牢的限定：第一，F 是合力而不是某一个力，漏掉任何一个力都会算错加速度——这是本知识点专门设了一道检查去抓的错误；第二，a 的方向永远和合力方向一致，与速度方向无关；第三，a 与 F 是瞬时对应的，力一变，加速度立刻跟着变。",
+        "symbols": {
+          "F_net": {
+            "desc": "物体受到的合外力",
+            "unit": "N"
+          },
+          "m": {
+            "desc": "物体的质量",
+            "unit": "kg"
+          },
+          "a": {
+            "desc": "加速度",
+            "unit": "m/s^2"
+          },
+          "F_push": {
+            "desc": "水平方向施加的拉力",
+            "unit": "N"
+          },
+          "f": {
+            "desc": "摩擦力",
+            "unit": "N"
+          }
+        },
+        "scenarios": {
+          "水平面加速": {
+            "F_push": 10,
+            "f": 4,
+            "m": 2,
+            "a": 3
+          },
+          "自由下落": {
+            "m": 2,
+            "a": 9.8,
+            "F_net": 19.6
+          }
+        },
+        "formulas": [
+          {
+            "name": "牛顿第二定律",
+            "expr": "F_net = m*a",
+            "when": "宏观低速物体的运动，F_合 是所有外力的矢量和",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "自由下落",
+                "expr": "m*a",
+                "ref": 19.6,
+                "note": "2 kg 的物体自由下落，加速度为 g = 9.8 m/s²，合力（即重力）19.6 N（手工独立算）"
+              },
+              {
+                "type": "numeric",
+                "scenario": "水平面加速",
+                "expr": "m*a",
+                "ref": 6.0,
+                "note": "2 kg 的物体加速度 3 m/s²，合力应为 6 N —— 而水平拉力是 10 N，说明减去 4 N 摩擦力正好剩 6 N"
+              },
+              {
+                "type": "direction",
+                "scenario": "自由下落",
+                "var": "m",
+                "lo": 1,
+                "hi": 5,
+                "expr": "m*a",
+                "expect": "up",
+                "note": "同样的加速度，质量越大需要的合力越大"
+              },
+              {
+                "type": "direction",
+                "scenario": "水平面加速",
+                "var": "f",
+                "lo": 1,
+                "hi": 9,
+                "expr": "(F_push - f)/m",
+                "expect": "down",
+                "note": "摩擦力越大，剩下的合力越小，加速度越小"
+              },
+              {
+                "type": "consistency",
+                "scenario": "水平面加速",
+                "with": "dyn-05|牛顿第二定律",
+                "with_expr": "F_push - f",
+                "target": "物体受到的合外力",
+                "note": "本公式直接求F_net；参考端显式关系为F_push - f。两端使用同一情境和阶段，只核对该关系；with字段仅定位来源，不代表调用另一条被覆盖的公式。",
+                "verification_kind": "独立关系核对"
+              },
+              {
+                "type": "scan",
+                "scenario": "水平面加速",
+                "var": "m",
+                "lo": 0.5,
+                "hi": 50
+              }
+            ]
+          },
+          {
+            "name": "水平方向的合力",
+            "expr": "F_net = F_push - f",
+            "when": "水平面上被拉动的物体，水平方向受两个力",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "水平面加速",
+                "expr": "F_push - f",
+                "ref": 6.0,
+                "note": "10 N − 4 N = 6 N（手工独立算）"
+              },
+              {
+                "type": "direction",
+                "scenario": "水平面加速",
+                "var": "F_push",
+                "lo": 6,
+                "hi": 20,
+                "expr": "F_push - f",
+                "expect": "up",
+                "note": "摩擦力一定时，拉力越大合力越大"
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "实验：保持质量不变，改变拉力，测出加速度 —— a 与 F 成正比。",
+          "保持拉力不变，改变质量，测出加速度 —— a 与 m 成反比。",
+          "两式合并：a ∝ F / m，引入比例系数并取国际单位制，系数为 1，于是 F = m a。",
+          "检核量纲：kg × m/s² = M·L/T²，正是力的量纲 N，与左边一致。",
+          "反过来 a = F / m：合力方向就是加速度方向，这一点在公式里体现为两者同号。"
+        ],
+        "errors": [
+          {
+            "wrong": "把牛顿第二定律记成 F = m / a",
+            "why": "写成除法后量纲变成 kg²·m/s²，与力的量纲对不上，量纲检查当场拦住。",
+            "wrong_expr": "F_net = m/a",
+            "caught_by": "量纲一致性",
+            "trap_test": {
+              "kind": "dimension",
+              "target": "F_net = m/a",
+              "lhs_dim": "M·L·T^-2",
+              "rhs_dim": "M·L^-1·T^2",
+              "expect": "mismatch",
+              "note": "实际量纲检查得到等号左边为M·L·T^-2、右边为M·L^-1·T^2；两边不是同一物理量，因此该等式不成立。"
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "用牛顿第二定律时只用拉力当合力，忘掉摩擦力",
+            "wrong_expr": "a = F_push/m",
+            "why": "★ 量纲完全正确（N/kg 正是 m/s²），量纲检查抓不到。数值代入才暴露：直接用 10 ÷ 2 得 5 m/s²，而真实加速度是 (10 − 4) ÷ 2 = 3 m/s²。这是牛顿第二定律在实际题目里最高频的错误 —— 公式背得滚瓜烂熟，但「合力」漏了一个力。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "水平面加速",
+              "expr": "F_push/m",
+              "ref": 3.0
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "质量为 2 kg 的物体放在水平面上，用 10 N 的水平拉力拉动，同时受到 4 N 的摩擦力。求物体的加速度。",
+          "solution": [
+            "先明确物体受到的水平方向的两个力：拉力 F_push = 10 N 向前，摩擦力 f = 4 N 向后。",
+            "求水平方向的合力：F_合 = F_push − f = 10 − 4 = 6 N。",
+            "由牛顿第二定律 a = F_合 / m = 6 / 2 = 3 m/s²。",
+            "方向与合力方向相同，即与拉力方向相同。",
+            "常见错误是不减摩擦力，直接用 10 ÷ 2 = 5 m/s² —— 那等于假设物体不受摩擦力。"
+          ],
+          "answer": "加速度为 3 m/s²，方向与拉力方向相同。"
+        },
+        "prereq": [
+          "dyn-04"
+        ],
+        "next": [
+          "dyn-06",
+          "mdl-03",
+          "met-01",
+          "dyn-07"
+        ],
+        "tags": [
+          "牛顿运动定律",
+          "合力",
+          "核心公式"
+        ],
+        "learning_scope": "高中"
       },
-      "title": "牛顿第二定律",
+      "error_index": 0,
       "chapter": "第二章 · 相互作用与牛顿运动定律"
     },
     "diagnostic-dyn-05-2": {
-      "error": {
-        "wrong": "用牛顿第二定律时只用拉力当合力，忘掉摩擦力",
-        "wrong_expr": "a = F_push/m",
-        "why": "★ 量纲完全正确（N/kg 正是 m/s²），量纲检查抓不到。数值代入才暴露：直接用 10 ÷ 2 得 5 m/s²，而真实加速度是 (10 − 4) ÷ 2 = 3 m/s²。这是牛顿第二定律在实际题目里最高频的错误 —— 公式背得滚瓜烂熟，但「合力」漏了一个力。",
-        "caught_by": "数值代入",
-        "trap_test": {
-          "scenario": "水平面加速",
-          "expr": "F_push/m",
-          "ref": 3.0
-        }
+      "point": {
+        "id": "dyn-05",
+        "title": "牛顿第二定律",
+        "level": "基础",
+        "definition": "物体加速度的大小与所受合外力成正比、与质量成反比，加速度的方向与合外力方向相同。写成等式即 F_合 = m a，其中 F_合 是物体受到的**所有**外力的矢量和。",
+        "meaning": "这条式子是整个高中力学的枢纽。它有三个必须记牢的限定：第一，F 是合力而不是某一个力，漏掉任何一个力都会算错加速度——这是本知识点专门设了一道检查去抓的错误；第二，a 的方向永远和合力方向一致，与速度方向无关；第三，a 与 F 是瞬时对应的，力一变，加速度立刻跟着变。",
+        "symbols": {
+          "F_net": {
+            "desc": "物体受到的合外力",
+            "unit": "N"
+          },
+          "m": {
+            "desc": "物体的质量",
+            "unit": "kg"
+          },
+          "a": {
+            "desc": "加速度",
+            "unit": "m/s^2"
+          },
+          "F_push": {
+            "desc": "水平方向施加的拉力",
+            "unit": "N"
+          },
+          "f": {
+            "desc": "摩擦力",
+            "unit": "N"
+          }
+        },
+        "scenarios": {
+          "水平面加速": {
+            "F_push": 10,
+            "f": 4,
+            "m": 2,
+            "a": 3
+          },
+          "自由下落": {
+            "m": 2,
+            "a": 9.8,
+            "F_net": 19.6
+          }
+        },
+        "formulas": [
+          {
+            "name": "牛顿第二定律",
+            "expr": "F_net = m*a",
+            "when": "宏观低速物体的运动，F_合 是所有外力的矢量和",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "自由下落",
+                "expr": "m*a",
+                "ref": 19.6,
+                "note": "2 kg 的物体自由下落，加速度为 g = 9.8 m/s²，合力（即重力）19.6 N（手工独立算）"
+              },
+              {
+                "type": "numeric",
+                "scenario": "水平面加速",
+                "expr": "m*a",
+                "ref": 6.0,
+                "note": "2 kg 的物体加速度 3 m/s²，合力应为 6 N —— 而水平拉力是 10 N，说明减去 4 N 摩擦力正好剩 6 N"
+              },
+              {
+                "type": "direction",
+                "scenario": "自由下落",
+                "var": "m",
+                "lo": 1,
+                "hi": 5,
+                "expr": "m*a",
+                "expect": "up",
+                "note": "同样的加速度，质量越大需要的合力越大"
+              },
+              {
+                "type": "direction",
+                "scenario": "水平面加速",
+                "var": "f",
+                "lo": 1,
+                "hi": 9,
+                "expr": "(F_push - f)/m",
+                "expect": "down",
+                "note": "摩擦力越大，剩下的合力越小，加速度越小"
+              },
+              {
+                "type": "consistency",
+                "scenario": "水平面加速",
+                "with": "dyn-05|牛顿第二定律",
+                "with_expr": "F_push - f",
+                "target": "物体受到的合外力",
+                "note": "本公式直接求F_net；参考端显式关系为F_push - f。两端使用同一情境和阶段，只核对该关系；with字段仅定位来源，不代表调用另一条被覆盖的公式。",
+                "verification_kind": "独立关系核对"
+              },
+              {
+                "type": "scan",
+                "scenario": "水平面加速",
+                "var": "m",
+                "lo": 0.5,
+                "hi": 50
+              }
+            ]
+          },
+          {
+            "name": "水平方向的合力",
+            "expr": "F_net = F_push - f",
+            "when": "水平面上被拉动的物体，水平方向受两个力",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "水平面加速",
+                "expr": "F_push - f",
+                "ref": 6.0,
+                "note": "10 N − 4 N = 6 N（手工独立算）"
+              },
+              {
+                "type": "direction",
+                "scenario": "水平面加速",
+                "var": "F_push",
+                "lo": 6,
+                "hi": 20,
+                "expr": "F_push - f",
+                "expect": "up",
+                "note": "摩擦力一定时，拉力越大合力越大"
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "实验：保持质量不变，改变拉力，测出加速度 —— a 与 F 成正比。",
+          "保持拉力不变，改变质量，测出加速度 —— a 与 m 成反比。",
+          "两式合并：a ∝ F / m，引入比例系数并取国际单位制，系数为 1，于是 F = m a。",
+          "检核量纲：kg × m/s² = M·L/T²，正是力的量纲 N，与左边一致。",
+          "反过来 a = F / m：合力方向就是加速度方向，这一点在公式里体现为两者同号。"
+        ],
+        "errors": [
+          {
+            "wrong": "把牛顿第二定律记成 F = m / a",
+            "why": "写成除法后量纲变成 kg²·m/s²，与力的量纲对不上，量纲检查当场拦住。",
+            "wrong_expr": "F_net = m/a",
+            "caught_by": "量纲一致性",
+            "trap_test": {
+              "kind": "dimension",
+              "target": "F_net = m/a",
+              "lhs_dim": "M·L·T^-2",
+              "rhs_dim": "M·L^-1·T^2",
+              "expect": "mismatch",
+              "note": "实际量纲检查得到等号左边为M·L·T^-2、右边为M·L^-1·T^2；两边不是同一物理量，因此该等式不成立。"
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "用牛顿第二定律时只用拉力当合力，忘掉摩擦力",
+            "wrong_expr": "a = F_push/m",
+            "why": "★ 量纲完全正确（N/kg 正是 m/s²），量纲检查抓不到。数值代入才暴露：直接用 10 ÷ 2 得 5 m/s²，而真实加速度是 (10 − 4) ÷ 2 = 3 m/s²。这是牛顿第二定律在实际题目里最高频的错误 —— 公式背得滚瓜烂熟，但「合力」漏了一个力。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "水平面加速",
+              "expr": "F_push/m",
+              "ref": 3.0
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "质量为 2 kg 的物体放在水平面上，用 10 N 的水平拉力拉动，同时受到 4 N 的摩擦力。求物体的加速度。",
+          "solution": [
+            "先明确物体受到的水平方向的两个力：拉力 F_push = 10 N 向前，摩擦力 f = 4 N 向后。",
+            "求水平方向的合力：F_合 = F_push − f = 10 − 4 = 6 N。",
+            "由牛顿第二定律 a = F_合 / m = 6 / 2 = 3 m/s²。",
+            "方向与合力方向相同，即与拉力方向相同。",
+            "常见错误是不减摩擦力，直接用 10 ÷ 2 = 5 m/s² —— 那等于假设物体不受摩擦力。"
+          ],
+          "answer": "加速度为 3 m/s²，方向与拉力方向相同。"
+        },
+        "prereq": [
+          "dyn-04"
+        ],
+        "next": [
+          "dyn-06",
+          "mdl-03",
+          "met-01",
+          "dyn-07"
+        ],
+        "tags": [
+          "牛顿运动定律",
+          "合力",
+          "核心公式"
+        ],
+        "learning_scope": "高中"
       },
-      "title": "牛顿第二定律",
+      "error_index": 1,
       "chapter": "第二章 · 相互作用与牛顿运动定律"
     },
     "diagnostic-dyn-06-1": {
-      "error": {
-        "wrong": "把作用力与反作用力写成同方向，漏掉「方向相反」这一条（F_AB = F_BA）",
-        "wrong_expr": "F_AB = F_BA",
-        "why": "量纲完全正确，量纲检查抓不到。这一条由校验器自动实测：把错误写法原样代进情境（F_AB = 5 N、F_BA = −5 N），算出等号左边是 5、右边是 −5，两边对不上，于是被判为不通过。整个过程不需要人提供参考值。",
-        "caught_by": "数值代入"
+      "point": {
+        "id": "dyn-06",
+        "title": "牛顿第三定律",
+        "level": "基础",
+        "definition": "两个物体之间的作用力与反作用力总是大小相等、方向相反、作用在同一条直线上。若把 A 对 B 的力记作 F_AB，B 对 A 的力记作 F_BA，则 F_AB = −F_BA。",
+        "meaning": "第三定律说的两句话最容易记，也最容易用错。第一条：它和「平衡力」不是一回事——作用力与反作用力分别作用在两个不同的物体上，永远不能相互抵消，能抵消的只有作用在同一物体上的平衡力。第二条：大小相等与运动状态无关——马拉车车也拉马，两者大小永远相等，车能被拉动是因为马受到的来自地面的摩擦力大于车受到的阻力，而不是因为马「拉得比车拉它更用力」。",
+        "symbols": {
+          "F_AB": {
+            "desc": "A 对 B 的作用力（取正方向为正）",
+            "unit": "N"
+          },
+          "F_BA": {
+            "desc": "B 对 A 的反作用力",
+            "unit": "N"
+          },
+          "m_A": {
+            "desc": "A 的质量",
+            "unit": "kg"
+          },
+          "m_B": {
+            "desc": "B 的质量",
+            "unit": "kg"
+          },
+          "a_A": {
+            "desc": "A 的加速度（沿 A 对 B 施力方向为正）",
+            "unit": "m/s^2"
+          },
+          "a_B": {
+            "desc": "B 的加速度（沿 A 对 B 施力方向为正）",
+            "unit": "m/s^2"
+          }
+        },
+        "scenarios": {
+          "互相推挤": {
+            "F_AB": 5,
+            "F_BA": -5
+          },
+          "滑板互推": {
+            "F_AB": 120,
+            "F_BA": -120,
+            "m_A": 60,
+            "m_B": 40,
+            "a_A": -2,
+            "a_B": 3
+          }
+        },
+        "formulas": [
+          {
+            "name": "作用力与反作用力",
+            "expr": "F_AB = -F_BA",
+            "when": "任何两个相互作用的物体之间，与运动状态无关",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "互相推挤",
+                "expr": "F_AB + F_BA",
+                "ref": 0.0,
+                "note": "约定沿同一直线取正方向后，作用力与反作用力的代数和恒为零：5 + (−5) = 0（手工独立算）"
+              },
+              {
+                "type": "numeric",
+                "scenario": "互相推挤",
+                "expr": "-F_BA",
+                "ref": 5.0,
+                "note": "反作用力为 −5 N，取相反数得到作用力 5 N，与情境给定值一致"
+              },
+              {
+                "type": "compare",
+                "scenario": "互相推挤",
+                "expr": "abs(F_AB)",
+                "op": "==",
+                "vs": "abs(F_BA)",
+                "note": "取绝对值后两者相等：|5| = |−5| = 5。无论物体是运动还是静止、质量是多是少，这条永远成立"
+              },
+              {
+                "type": "consistency",
+                "scenario": "滑板互推",
+                "with": "dyn-06|作用力与反作用力",
+                "with_expr": "m_B*a_B",
+                "target": "A 对 B 的作用力（取正方向为正）",
+                "note": "本公式直接求F_AB；参考端显式关系为m_B*a_B。两端使用同一情境和阶段，只核对该关系；with字段仅定位来源，不代表调用另一条被覆盖的公式。",
+                "verification_kind": "独立关系核对"
+              },
+              {
+                "type": "direction",
+                "scenario": "互相推挤",
+                "var": "F_AB",
+                "lo": 2,
+                "hi": 10,
+                "expr": "-F_AB",
+                "expect": "down",
+                "note": "作用力增大时，反作用力同步增大，方向相反（这里量化的是一维方向上的代数值）"
+              },
+              {
+                "type": "scan",
+                "scenario": "互相推挤",
+                "var": "F_AB",
+                "lo": -100,
+                "hi": 100
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "由大量实验总结得出：物体之间的相互作用总是成对出现。",
+          "这一对力有四个特征：作用在两个不同物体上；大小相等；方向相反；沿同一条直线。",
+          "把两个力沿同一条直线取同向为正方向，则方向相反体现为符号相反，于是 F_AB = −F_BA。",
+          "与牛顿第二定律配合使用时的关键区别：作用力与反作用力分别作用在两个物体上，受力分析时不能把它们画在同一个物体上，也不能相互抵消。"
+        ],
+        "errors": [
+          {
+            "wrong": "把作用力与反作用力写成同方向，漏掉「方向相反」这一条（F_AB = F_BA）",
+            "wrong_expr": "F_AB = F_BA",
+            "why": "量纲完全正确，量纲检查抓不到。这一条由校验器自动实测：把错误写法原样代进情境（F_AB = 5 N、F_BA = −5 N），算出等号左边是 5、右边是 −5，两边对不上，于是被判为不通过。整个过程不需要人提供参考值。",
+            "caught_by": "数值代入",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "把作用力与反作用力当成一对平衡力，认为它们可以相互抵消",
+            "why": "平衡力作用在**同一个**物体上，作用力与反作用力分别作用在两个物体上，永远不能抵消。这条错误不体现为公式写错，而是受力分析时把它们画到了同一个物体上，公式类检查无法覆盖，标注人工审核。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "甲、乙两人各站在一块滑板上，甲用力推了乙一下，两人都向后运动。已知甲的质量为 60 kg、乙为 40 kg，甲推乙的力为 120 N。求乙受到甲的推力和甲受到乙的推力，并比较两人的加速度大小。",
+          "solution": [
+            "由牛顿第三定律，甲推乙的力与乙推甲的力大小相等、方向相反。",
+            "所以甲受到的推力也是 120 N，方向与甲推乙的方向相反。",
+            "由 a = F / m，甲的质量大，加速度小：a_甲 = 120 / 60 = 2 m/s²。",
+            "乙的质量小，加速度大：a_乙 = 120 / 40 = 3 m/s²。",
+            "两人的推力完全相同，加速度不同——差别来自质量，不是来自「谁的力更大」。"
+          ],
+          "answer": "两者都是 120 N，方向相反；甲加速度 2 m/s²，乙加速度 3 m/s²。"
+        },
+        "prereq": [
+          "dyn-05"
+        ],
+        "next": [
+          "mdl-28"
+        ],
+        "tags": [
+          "牛顿运动定律",
+          "相互作用",
+          "平衡力辨析"
+        ],
+        "learning_scope": "高中"
       },
-      "title": "牛顿第三定律",
+      "error_index": 0,
       "chapter": "第二章 · 相互作用与牛顿运动定律"
     },
     "diagnostic-dyn-06-2": {
-      "error": {
-        "wrong": "把作用力与反作用力当成一对平衡力，认为它们可以相互抵消",
-        "why": "平衡力作用在**同一个**物体上，作用力与反作用力分别作用在两个物体上，永远不能抵消。这条错误不体现为公式写错，而是受力分析时把它们画到了同一个物体上，公式类检查无法覆盖，标注人工审核。",
-        "caught_by": "人工审核"
+      "point": {
+        "id": "dyn-06",
+        "title": "牛顿第三定律",
+        "level": "基础",
+        "definition": "两个物体之间的作用力与反作用力总是大小相等、方向相反、作用在同一条直线上。若把 A 对 B 的力记作 F_AB，B 对 A 的力记作 F_BA，则 F_AB = −F_BA。",
+        "meaning": "第三定律说的两句话最容易记，也最容易用错。第一条：它和「平衡力」不是一回事——作用力与反作用力分别作用在两个不同的物体上，永远不能相互抵消，能抵消的只有作用在同一物体上的平衡力。第二条：大小相等与运动状态无关——马拉车车也拉马，两者大小永远相等，车能被拉动是因为马受到的来自地面的摩擦力大于车受到的阻力，而不是因为马「拉得比车拉它更用力」。",
+        "symbols": {
+          "F_AB": {
+            "desc": "A 对 B 的作用力（取正方向为正）",
+            "unit": "N"
+          },
+          "F_BA": {
+            "desc": "B 对 A 的反作用力",
+            "unit": "N"
+          },
+          "m_A": {
+            "desc": "A 的质量",
+            "unit": "kg"
+          },
+          "m_B": {
+            "desc": "B 的质量",
+            "unit": "kg"
+          },
+          "a_A": {
+            "desc": "A 的加速度（沿 A 对 B 施力方向为正）",
+            "unit": "m/s^2"
+          },
+          "a_B": {
+            "desc": "B 的加速度（沿 A 对 B 施力方向为正）",
+            "unit": "m/s^2"
+          }
+        },
+        "scenarios": {
+          "互相推挤": {
+            "F_AB": 5,
+            "F_BA": -5
+          },
+          "滑板互推": {
+            "F_AB": 120,
+            "F_BA": -120,
+            "m_A": 60,
+            "m_B": 40,
+            "a_A": -2,
+            "a_B": 3
+          }
+        },
+        "formulas": [
+          {
+            "name": "作用力与反作用力",
+            "expr": "F_AB = -F_BA",
+            "when": "任何两个相互作用的物体之间，与运动状态无关",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "互相推挤",
+                "expr": "F_AB + F_BA",
+                "ref": 0.0,
+                "note": "约定沿同一直线取正方向后，作用力与反作用力的代数和恒为零：5 + (−5) = 0（手工独立算）"
+              },
+              {
+                "type": "numeric",
+                "scenario": "互相推挤",
+                "expr": "-F_BA",
+                "ref": 5.0,
+                "note": "反作用力为 −5 N，取相反数得到作用力 5 N，与情境给定值一致"
+              },
+              {
+                "type": "compare",
+                "scenario": "互相推挤",
+                "expr": "abs(F_AB)",
+                "op": "==",
+                "vs": "abs(F_BA)",
+                "note": "取绝对值后两者相等：|5| = |−5| = 5。无论物体是运动还是静止、质量是多是少，这条永远成立"
+              },
+              {
+                "type": "consistency",
+                "scenario": "滑板互推",
+                "with": "dyn-06|作用力与反作用力",
+                "with_expr": "m_B*a_B",
+                "target": "A 对 B 的作用力（取正方向为正）",
+                "note": "本公式直接求F_AB；参考端显式关系为m_B*a_B。两端使用同一情境和阶段，只核对该关系；with字段仅定位来源，不代表调用另一条被覆盖的公式。",
+                "verification_kind": "独立关系核对"
+              },
+              {
+                "type": "direction",
+                "scenario": "互相推挤",
+                "var": "F_AB",
+                "lo": 2,
+                "hi": 10,
+                "expr": "-F_AB",
+                "expect": "down",
+                "note": "作用力增大时，反作用力同步增大，方向相反（这里量化的是一维方向上的代数值）"
+              },
+              {
+                "type": "scan",
+                "scenario": "互相推挤",
+                "var": "F_AB",
+                "lo": -100,
+                "hi": 100
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "由大量实验总结得出：物体之间的相互作用总是成对出现。",
+          "这一对力有四个特征：作用在两个不同物体上；大小相等；方向相反；沿同一条直线。",
+          "把两个力沿同一条直线取同向为正方向，则方向相反体现为符号相反，于是 F_AB = −F_BA。",
+          "与牛顿第二定律配合使用时的关键区别：作用力与反作用力分别作用在两个物体上，受力分析时不能把它们画在同一个物体上，也不能相互抵消。"
+        ],
+        "errors": [
+          {
+            "wrong": "把作用力与反作用力写成同方向，漏掉「方向相反」这一条（F_AB = F_BA）",
+            "wrong_expr": "F_AB = F_BA",
+            "why": "量纲完全正确，量纲检查抓不到。这一条由校验器自动实测：把错误写法原样代进情境（F_AB = 5 N、F_BA = −5 N），算出等号左边是 5、右边是 −5，两边对不上，于是被判为不通过。整个过程不需要人提供参考值。",
+            "caught_by": "数值代入",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "把作用力与反作用力当成一对平衡力，认为它们可以相互抵消",
+            "why": "平衡力作用在**同一个**物体上，作用力与反作用力分别作用在两个物体上，永远不能抵消。这条错误不体现为公式写错，而是受力分析时把它们画到了同一个物体上，公式类检查无法覆盖，标注人工审核。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "甲、乙两人各站在一块滑板上，甲用力推了乙一下，两人都向后运动。已知甲的质量为 60 kg、乙为 40 kg，甲推乙的力为 120 N。求乙受到甲的推力和甲受到乙的推力，并比较两人的加速度大小。",
+          "solution": [
+            "由牛顿第三定律，甲推乙的力与乙推甲的力大小相等、方向相反。",
+            "所以甲受到的推力也是 120 N，方向与甲推乙的方向相反。",
+            "由 a = F / m，甲的质量大，加速度小：a_甲 = 120 / 60 = 2 m/s²。",
+            "乙的质量小，加速度大：a_乙 = 120 / 40 = 3 m/s²。",
+            "两人的推力完全相同，加速度不同——差别来自质量，不是来自「谁的力更大」。"
+          ],
+          "answer": "两者都是 120 N，方向相反；甲加速度 2 m/s²，乙加速度 3 m/s²。"
+        },
+        "prereq": [
+          "dyn-05"
+        ],
+        "next": [
+          "mdl-28"
+        ],
+        "tags": [
+          "牛顿运动定律",
+          "相互作用",
+          "平衡力辨析"
+        ],
+        "learning_scope": "高中"
       },
-      "title": "牛顿第三定律",
+      "error_index": 1,
       "chapter": "第二章 · 相互作用与牛顿运动定律"
     },
     "diagnostic-dyn-07-1": {
-      "error": {
-        "wrong": "向上加速时误用减号",
-        "wrong_expr": "F_N = m*(g-a)",
-        "why": "减号适用于以向下加速度大小描述的失重情形；本卡已取向上为正，再减会使视重变化方向颠倒，量纲却仍正确。",
-        "caught_by": "数值代入",
-        "trap_test": {
-          "scenario": "向上加速",
-          "expr": "m*(g-a)",
-          "ref": 600
-        }
+      "point": {
+        "id": "dyn-07",
+        "title": "超重与失重",
+        "level": "进阶",
+        "definition": "超重与失重描述称重装置的示数相对重力的变化。取竖直向上为正，支持力满足 F_N = m*(g+a)，其中 a 是有正负号的竖直加速度，而不是速度。",
+        "meaning": "重力由质量与当地重力加速度决定，并不因电梯上升或下降而自行改变。加速上升、减速下降时加速度向上，视重增大；加速下降、减速上升时加速度向下，视重减小。自由落体时支持力为零但重力仍在；无约束的台秤不能给出负的支持力读数。",
+        "symbols": {
+          "F_N": {
+            "unit": "N",
+            "desc": "台秤对人的支持力，即视重"
+          },
+          "G": {
+            "unit": "N",
+            "desc": "物体所受重力"
+          },
+          "m": {
+            "unit": "kg",
+            "desc": "物体质量"
+          },
+          "g": {
+            "unit": "m/s^2",
+            "desc": "当地重力加速度，取10"
+          },
+          "a": {
+            "unit": "m/s^2",
+            "desc": "竖直加速度，向上为正"
+          }
+        },
+        "scenarios": {
+          "向上加速": {
+            "m": 50,
+            "g": 10,
+            "a": 2,
+            "F_N": 600,
+            "G": 500
+          },
+          "向下加速": {
+            "m": 50,
+            "g": 10,
+            "a": -2,
+            "F_N": 400,
+            "G": 500
+          },
+          "自由落体": {
+            "m": 50,
+            "g": 10,
+            "a": -10,
+            "F_N": 0,
+            "G": 500
+          }
+        },
+        "formulas": [
+          {
+            "name": "重力",
+            "expr": "G = m*g",
+            "when": "质量与当地重力加速度固定",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "向上加速",
+                "ref": 500,
+                "note": "50 kg乘10 m/s²，重力始终为500 N"
+              }
+            ]
+          },
+          {
+            "name": "竖直运动的视重",
+            "expr": "F_N = m*(g+a)",
+            "when": "竖直向上为正，人与秤保持接触，a不能使支持力为负",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "向上加速",
+                "ref": 600,
+                "note": "由合力100 N向上，再加重力500 N得600 N"
+              },
+              {
+                "type": "numeric",
+                "scenario": "向下加速",
+                "ref": 400,
+                "note": "合力100 N向下，支持力比重力小100 N"
+              },
+              {
+                "type": "numeric",
+                "scenario": "自由落体",
+                "ref": 0,
+                "note": "自由下落不需要接触力，重力独自提供加速度"
+              },
+              {
+                "type": "scan",
+                "scenario": "向上加速",
+                "var": "a",
+                "lo": -10,
+                "hi": 10,
+                "n": 17,
+                "note": "扫描接触模型允许的范围，端点完全失重"
+              },
+              {
+                "type": "consistency",
+                "scenario": "向上加速",
+                "with": "dyn-07|竖直运动的视重",
+                "with_expr": "G+m*a",
+                "target": "台秤对人的支持力，即视重",
+                "note": "本公式直接求F_N；参考端显式关系为G+m*a。两端使用同一情境和阶段，只核对该关系；with字段仅定位来源，不代表调用另一条被覆盖的公式。",
+                "verification_kind": "独立关系核对"
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "先画重力和支持力，不把运动方向当作加速度方向。",
+          "向上取正，列支持力减重力等于质量乘带符号的加速度。",
+          "将四类运动按速度变化判断加速度方向；向下减速也是向上加速度。",
+          "代入自由落体加速度为负的重力加速度，支持力恰好为零。"
+        ],
+        "errors": [
+          {
+            "wrong": "向上加速时误用减号",
+            "wrong_expr": "F_N = m*(g-a)",
+            "why": "减号适用于以向下加速度大小描述的失重情形；本卡已取向上为正，再减会使视重变化方向颠倒，量纲却仍正确。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "向上加速",
+              "expr": "m*(g-a)",
+              "ref": 600
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "只要正在下降就认为失重，或认为失重时没有重力",
+            "why": "下降时若速度减小，加速度实际向上，台秤示数会增大；自由落体中重力仍作用，只是支持力消失，不能混淆视重和重力。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "质量50 kg的人在电梯中，重力加速度取10 m/s²。先向上加速2 m/s²，再以相同大小向上减速，求两次示数。",
+          "solution": [
+            "向上加速时支持力为50×(10+2)=600 N。",
+            "向上减速时加速度向下，带符号为−2 m/s²，支持力为50×(10−2)=400 N。"
+          ],
+          "answer": "向上加速时示数600 N，向上减速时示数400 N。"
+        },
+        "prereq": [
+          "dyn-05",
+          "kine-07"
+        ],
+        "next": [
+          "mdl-09"
+        ],
+        "tags": [
+          "超重",
+          "失重",
+          "视重",
+          "电梯"
+        ],
+        "learning_scope": "高中"
       },
-      "title": "超重与失重",
+      "error_index": 0,
       "chapter": "第二章 · 相互作用与牛顿运动定律"
     },
     "diagnostic-dyn-07-2": {
-      "error": {
-        "wrong": "只要正在下降就认为失重，或认为失重时没有重力",
-        "why": "下降时若速度减小，加速度实际向上，台秤示数会增大；自由落体中重力仍作用，只是支持力消失，不能混淆视重和重力。",
-        "caught_by": "人工审核"
+      "point": {
+        "id": "dyn-07",
+        "title": "超重与失重",
+        "level": "进阶",
+        "definition": "超重与失重描述称重装置的示数相对重力的变化。取竖直向上为正，支持力满足 F_N = m*(g+a)，其中 a 是有正负号的竖直加速度，而不是速度。",
+        "meaning": "重力由质量与当地重力加速度决定，并不因电梯上升或下降而自行改变。加速上升、减速下降时加速度向上，视重增大；加速下降、减速上升时加速度向下，视重减小。自由落体时支持力为零但重力仍在；无约束的台秤不能给出负的支持力读数。",
+        "symbols": {
+          "F_N": {
+            "unit": "N",
+            "desc": "台秤对人的支持力，即视重"
+          },
+          "G": {
+            "unit": "N",
+            "desc": "物体所受重力"
+          },
+          "m": {
+            "unit": "kg",
+            "desc": "物体质量"
+          },
+          "g": {
+            "unit": "m/s^2",
+            "desc": "当地重力加速度，取10"
+          },
+          "a": {
+            "unit": "m/s^2",
+            "desc": "竖直加速度，向上为正"
+          }
+        },
+        "scenarios": {
+          "向上加速": {
+            "m": 50,
+            "g": 10,
+            "a": 2,
+            "F_N": 600,
+            "G": 500
+          },
+          "向下加速": {
+            "m": 50,
+            "g": 10,
+            "a": -2,
+            "F_N": 400,
+            "G": 500
+          },
+          "自由落体": {
+            "m": 50,
+            "g": 10,
+            "a": -10,
+            "F_N": 0,
+            "G": 500
+          }
+        },
+        "formulas": [
+          {
+            "name": "重力",
+            "expr": "G = m*g",
+            "when": "质量与当地重力加速度固定",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "向上加速",
+                "ref": 500,
+                "note": "50 kg乘10 m/s²，重力始终为500 N"
+              }
+            ]
+          },
+          {
+            "name": "竖直运动的视重",
+            "expr": "F_N = m*(g+a)",
+            "when": "竖直向上为正，人与秤保持接触，a不能使支持力为负",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "向上加速",
+                "ref": 600,
+                "note": "由合力100 N向上，再加重力500 N得600 N"
+              },
+              {
+                "type": "numeric",
+                "scenario": "向下加速",
+                "ref": 400,
+                "note": "合力100 N向下，支持力比重力小100 N"
+              },
+              {
+                "type": "numeric",
+                "scenario": "自由落体",
+                "ref": 0,
+                "note": "自由下落不需要接触力，重力独自提供加速度"
+              },
+              {
+                "type": "scan",
+                "scenario": "向上加速",
+                "var": "a",
+                "lo": -10,
+                "hi": 10,
+                "n": 17,
+                "note": "扫描接触模型允许的范围，端点完全失重"
+              },
+              {
+                "type": "consistency",
+                "scenario": "向上加速",
+                "with": "dyn-07|竖直运动的视重",
+                "with_expr": "G+m*a",
+                "target": "台秤对人的支持力，即视重",
+                "note": "本公式直接求F_N；参考端显式关系为G+m*a。两端使用同一情境和阶段，只核对该关系；with字段仅定位来源，不代表调用另一条被覆盖的公式。",
+                "verification_kind": "独立关系核对"
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "先画重力和支持力，不把运动方向当作加速度方向。",
+          "向上取正，列支持力减重力等于质量乘带符号的加速度。",
+          "将四类运动按速度变化判断加速度方向；向下减速也是向上加速度。",
+          "代入自由落体加速度为负的重力加速度，支持力恰好为零。"
+        ],
+        "errors": [
+          {
+            "wrong": "向上加速时误用减号",
+            "wrong_expr": "F_N = m*(g-a)",
+            "why": "减号适用于以向下加速度大小描述的失重情形；本卡已取向上为正，再减会使视重变化方向颠倒，量纲却仍正确。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "向上加速",
+              "expr": "m*(g-a)",
+              "ref": 600
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "只要正在下降就认为失重，或认为失重时没有重力",
+            "why": "下降时若速度减小，加速度实际向上，台秤示数会增大；自由落体中重力仍作用，只是支持力消失，不能混淆视重和重力。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "质量50 kg的人在电梯中，重力加速度取10 m/s²。先向上加速2 m/s²，再以相同大小向上减速，求两次示数。",
+          "solution": [
+            "向上加速时支持力为50×(10+2)=600 N。",
+            "向上减速时加速度向下，带符号为−2 m/s²，支持力为50×(10−2)=400 N。"
+          ],
+          "answer": "向上加速时示数600 N，向上减速时示数400 N。"
+        },
+        "prereq": [
+          "dyn-05",
+          "kine-07"
+        ],
+        "next": [
+          "mdl-09"
+        ],
+        "tags": [
+          "超重",
+          "失重",
+          "视重",
+          "电梯"
+        ],
+        "learning_scope": "高中"
       },
-      "title": "超重与失重",
+      "error_index": 1,
       "chapter": "第二章 · 相互作用与牛顿运动定律"
     },
     "diagnostic-dyn-08-1": {
-      "error": {
-        "wrong": "把摩擦角直接等于摩擦系数",
-        "wrong_expr": "phi = mu",
-        "why": "摩擦系数是两力大小比，摩擦角是该比的反正切；只有非常小的角才可能近似相同，直接把0.75当弧度并不满足临界力三角形。",
-        "caught_by": "数值代入",
-        "trap_test": {
-          "scenario": "临界",
-          "expr": "mu",
-          "ref": 0.6435011087932844
-        }
+      "point": {
+        "id": "dyn-08",
+        "title": "斜面自锁与摩擦角",
+        "level": "进阶",
+        "definition": "摩擦角描述最大静摩擦下接触合力偏离法线的角，phi = atan(mu)。只受重力且位于固定斜面的物体，斜面倾角不超过摩擦角时可在静摩擦帮助下保持静止。",
+        "meaning": "重力沿斜面的分量决定维持静止所需摩擦力，垂直斜面的分量决定支持力；前者不超过最大静摩擦即能静止。这里的自锁条件针对无额外推拉力的重力滑动模型，不表示无论多大或何方向的外力都无法推动物体。施加倾斜外力会同时改变沿面分量和支持力，必须重新作受力分析。",
+        "symbols": {
+          "phi": {
+            "unit": "rad",
+            "desc": "摩擦角"
+          },
+          "mu": {
+            "unit": "1",
+            "desc": "最大静摩擦系数"
+          },
+          "theta": {
+            "unit": "rad",
+            "desc": "斜面倾角"
+          },
+          "m": {
+            "unit": "kg",
+            "desc": "物体质量"
+          },
+          "g": {
+            "unit": "m/s^2",
+            "desc": "重力加速度，取10"
+          },
+          "N": {
+            "unit": "N",
+            "desc": "斜面对物体的支持力"
+          },
+          "f": {
+            "unit": "N",
+            "desc": "维持重力静止所需的静摩擦力大小"
+          },
+          "mu_c": {
+            "unit": "1",
+            "desc": "给定斜面角能静止所需的最小静摩擦系数"
+          }
+        },
+        "scenarios": {
+          "临界": {
+            "mu": 0.75,
+            "theta": 0.6435011087932844,
+            "m": 2,
+            "g": 10,
+            "N": 16
+          }
+        },
+        "formulas": [
+          {
+            "name": "摩擦角",
+            "expr": "phi = atan(mu)",
+            "when": "静摩擦达到最大时，接触合力与法线夹角",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "临界",
+                "ref": 0.6435011087932844,
+                "note": "最大摩擦与支持力比为3/4，摩擦角反正切0.75"
+              },
+              {
+                "type": "scan",
+                "scenario": "临界",
+                "var": "mu",
+                "lo": 0,
+                "hi": 2,
+                "n": 17,
+                "note": "无摩擦时角为零，非负有限系数对应小于直角的摩擦角"
+              }
+            ]
+          },
+          {
+            "name": "静止所需摩擦力",
+            "expr": "f = m*g*sin(theta)",
+            "when": "仅受重力、支持力和静摩擦，斜面固定",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "临界",
+                "ref": 12,
+                "note": "重力20 N沿面分量占3/5，所需静摩擦12 N"
+              },
+              {
+                "type": "consistency",
+                "scenario": "临界",
+                "with": "dyn-08|静止所需摩擦力",
+                "with_expr": "mu*N",
+                "target": "维持重力静止所需的静摩擦力大小",
+                "note": "本公式直接求f；参考端显式关系为mu*N。两端使用同一情境和阶段，只核对该关系；with字段仅定位来源，不代表调用另一条被覆盖的公式。",
+                "verification_kind": "独立关系核对"
+              }
+            ]
+          },
+          {
+            "name": "斜面的支持力",
+            "expr": "N = m*g*cos(theta)",
+            "when": "无其他垂直斜面的力与加速度",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "临界",
+                "ref": 16,
+                "note": "重力20 N垂直面分量占4/5，支持力16 N"
+              }
+            ]
+          },
+          {
+            "name": "静止所需最小系数",
+            "expr": "mu_c = tan(theta)",
+            "when": "重力滑动模型；实际静摩擦系数不小于此值才可静止",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "临界",
+                "ref": 0.75,
+                "note": "所需摩擦12 N除支持力16 N，最小系数0.75"
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "画重力、支持力及沿面向上的静摩擦，不把摩擦力自动设为最大值。",
+          "沿面静止时静摩擦等于重力沿面分量，支持力由垂直方向平衡给出。",
+          "将所需静摩擦不超过最大值的条件除以正支持力，得到斜面倾角不超过摩擦角。",
+          "若施加额外外力，重新分解其两个分量；只有新的力与约束关系满足条件，才能继续谈自锁。"
+        ],
+        "errors": [
+          {
+            "wrong": "把摩擦角直接等于摩擦系数",
+            "wrong_expr": "phi = mu",
+            "why": "摩擦系数是两力大小比，摩擦角是该比的反正切；只有非常小的角才可能近似相同，直接把0.75当弧度并不满足临界力三角形。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "临界",
+              "expr": "mu",
+              "ref": 0.6435011087932844
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "自锁就说明任意方向任意大的推力也无法运动",
+            "why": "当前条件仅描述重力使物体沿斜面下滑时的静止边界，外力方向会改变支持力和所需摩擦；沿面足够大推拉力仍可破坏静止。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "质量2 kg物体静置在倾角约36.87°的斜面上，最大静摩擦系数0.75，取重力加速度10 m/s²，判断是否刚好自锁。",
+          "solution": [
+            "重力沿面分量12 N，垂直面分量16 N，维持静止需要12 N静摩擦。",
+            "最大静摩擦0.75×16=12 N，恰好等于需要值；斜面角等于摩擦角。"
+          ],
+          "answer": "恰好处于静止与下滑的临界；静摩擦12 N，支持力16 N。"
+        },
+        "prereq": [
+          "dyn-02",
+          "dyn-03"
+        ],
+        "next": [
+          "mdl-27",
+          "mdl-32"
+        ],
+        "tags": [
+          "自锁",
+          "摩擦角",
+          "静摩擦临界"
+        ],
+        "learning_scope": "高中"
       },
-      "title": "斜面自锁与摩擦角",
+      "error_index": 0,
       "chapter": "第二章 · 相互作用与牛顿运动定律"
     },
     "diagnostic-dyn-08-2": {
-      "error": {
-        "wrong": "自锁就说明任意方向任意大的推力也无法运动",
-        "why": "当前条件仅描述重力使物体沿斜面下滑时的静止边界，外力方向会改变支持力和所需摩擦；沿面足够大推拉力仍可破坏静止。",
-        "caught_by": "人工审核"
+      "point": {
+        "id": "dyn-08",
+        "title": "斜面自锁与摩擦角",
+        "level": "进阶",
+        "definition": "摩擦角描述最大静摩擦下接触合力偏离法线的角，phi = atan(mu)。只受重力且位于固定斜面的物体，斜面倾角不超过摩擦角时可在静摩擦帮助下保持静止。",
+        "meaning": "重力沿斜面的分量决定维持静止所需摩擦力，垂直斜面的分量决定支持力；前者不超过最大静摩擦即能静止。这里的自锁条件针对无额外推拉力的重力滑动模型，不表示无论多大或何方向的外力都无法推动物体。施加倾斜外力会同时改变沿面分量和支持力，必须重新作受力分析。",
+        "symbols": {
+          "phi": {
+            "unit": "rad",
+            "desc": "摩擦角"
+          },
+          "mu": {
+            "unit": "1",
+            "desc": "最大静摩擦系数"
+          },
+          "theta": {
+            "unit": "rad",
+            "desc": "斜面倾角"
+          },
+          "m": {
+            "unit": "kg",
+            "desc": "物体质量"
+          },
+          "g": {
+            "unit": "m/s^2",
+            "desc": "重力加速度，取10"
+          },
+          "N": {
+            "unit": "N",
+            "desc": "斜面对物体的支持力"
+          },
+          "f": {
+            "unit": "N",
+            "desc": "维持重力静止所需的静摩擦力大小"
+          },
+          "mu_c": {
+            "unit": "1",
+            "desc": "给定斜面角能静止所需的最小静摩擦系数"
+          }
+        },
+        "scenarios": {
+          "临界": {
+            "mu": 0.75,
+            "theta": 0.6435011087932844,
+            "m": 2,
+            "g": 10,
+            "N": 16
+          }
+        },
+        "formulas": [
+          {
+            "name": "摩擦角",
+            "expr": "phi = atan(mu)",
+            "when": "静摩擦达到最大时，接触合力与法线夹角",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "临界",
+                "ref": 0.6435011087932844,
+                "note": "最大摩擦与支持力比为3/4，摩擦角反正切0.75"
+              },
+              {
+                "type": "scan",
+                "scenario": "临界",
+                "var": "mu",
+                "lo": 0,
+                "hi": 2,
+                "n": 17,
+                "note": "无摩擦时角为零，非负有限系数对应小于直角的摩擦角"
+              }
+            ]
+          },
+          {
+            "name": "静止所需摩擦力",
+            "expr": "f = m*g*sin(theta)",
+            "when": "仅受重力、支持力和静摩擦，斜面固定",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "临界",
+                "ref": 12,
+                "note": "重力20 N沿面分量占3/5，所需静摩擦12 N"
+              },
+              {
+                "type": "consistency",
+                "scenario": "临界",
+                "with": "dyn-08|静止所需摩擦力",
+                "with_expr": "mu*N",
+                "target": "维持重力静止所需的静摩擦力大小",
+                "note": "本公式直接求f；参考端显式关系为mu*N。两端使用同一情境和阶段，只核对该关系；with字段仅定位来源，不代表调用另一条被覆盖的公式。",
+                "verification_kind": "独立关系核对"
+              }
+            ]
+          },
+          {
+            "name": "斜面的支持力",
+            "expr": "N = m*g*cos(theta)",
+            "when": "无其他垂直斜面的力与加速度",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "临界",
+                "ref": 16,
+                "note": "重力20 N垂直面分量占4/5，支持力16 N"
+              }
+            ]
+          },
+          {
+            "name": "静止所需最小系数",
+            "expr": "mu_c = tan(theta)",
+            "when": "重力滑动模型；实际静摩擦系数不小于此值才可静止",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "临界",
+                "ref": 0.75,
+                "note": "所需摩擦12 N除支持力16 N，最小系数0.75"
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "画重力、支持力及沿面向上的静摩擦，不把摩擦力自动设为最大值。",
+          "沿面静止时静摩擦等于重力沿面分量，支持力由垂直方向平衡给出。",
+          "将所需静摩擦不超过最大值的条件除以正支持力，得到斜面倾角不超过摩擦角。",
+          "若施加额外外力，重新分解其两个分量；只有新的力与约束关系满足条件，才能继续谈自锁。"
+        ],
+        "errors": [
+          {
+            "wrong": "把摩擦角直接等于摩擦系数",
+            "wrong_expr": "phi = mu",
+            "why": "摩擦系数是两力大小比，摩擦角是该比的反正切；只有非常小的角才可能近似相同，直接把0.75当弧度并不满足临界力三角形。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "临界",
+              "expr": "mu",
+              "ref": 0.6435011087932844
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "自锁就说明任意方向任意大的推力也无法运动",
+            "why": "当前条件仅描述重力使物体沿斜面下滑时的静止边界，外力方向会改变支持力和所需摩擦；沿面足够大推拉力仍可破坏静止。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "质量2 kg物体静置在倾角约36.87°的斜面上，最大静摩擦系数0.75，取重力加速度10 m/s²，判断是否刚好自锁。",
+          "solution": [
+            "重力沿面分量12 N，垂直面分量16 N，维持静止需要12 N静摩擦。",
+            "最大静摩擦0.75×16=12 N，恰好等于需要值；斜面角等于摩擦角。"
+          ],
+          "answer": "恰好处于静止与下滑的临界；静摩擦12 N，支持力16 N。"
+        },
+        "prereq": [
+          "dyn-02",
+          "dyn-03"
+        ],
+        "next": [
+          "mdl-27",
+          "mdl-32"
+        ],
+        "tags": [
+          "自锁",
+          "摩擦角",
+          "静摩擦临界"
+        ],
+        "learning_scope": "高中"
       },
-      "title": "斜面自锁与摩擦角",
+      "error_index": 1,
       "chapter": "第二章 · 相互作用与牛顿运动定律"
     },
     "diagnostic-dyn-09-1": {
-      "error": {
-        "wrong": "把方向相反的两个力直接相加为合力。",
-        "wrong_expr": "F = F1+F2",
-        "why": "规定右为正，向左的力取负；两个10 N合力为零，不是20 N。物体可能静止，也可能以原速度匀速运动。",
-        "caught_by": "数值代入",
-        "trap_test": {
-          "scenario": "静止平衡",
-          "expr": "F1+F2",
-          "ref": 0
-        }
+      "point": {
+        "id": "dyn-09",
+        "title": "牛顿第一定律与惯性",
+        "level": "基础",
+        "definition": "在惯性参考系中，物体不受力或所受合力为零时保持静止或匀速直线运动。惯性是物体保持原有运动状态的性质，在经典力学中以质量衡量，并不是一种力。",
+        "meaning": "伽利略通过减小阻力的实验与理想推理提出运动可以持续，笛卡尔强调直线运动，牛顿形成第一定律。力改变速度而非维持速度，合力零不等于每个力都为零。静止和匀速直线运动取决于初始状态，第一定律还给出惯性参考系概念，不能说它只是第二定律令合力为零的代数特例。以下平衡与速度读数用于量化例子，不宣称靠两次测量证明定律。",
+        "symbols": {
+          "F": {
+            "desc": "同一直线上合力",
+            "unit": "N"
+          },
+          "F1": {
+            "desc": "向右作用力大小",
+            "unit": "N"
+          },
+          "F2": {
+            "desc": "向左作用力大小",
+            "unit": "N"
+          },
+          "a": {
+            "desc": "该方向加速度",
+            "unit": "m/s^2"
+          },
+          "m": {
+            "desc": "物体质量",
+            "unit": "kg"
+          },
+          "v1": {
+            "desc": "初速度",
+            "unit": "m/s"
+          },
+          "v2": {
+            "desc": "独立测得末速度",
+            "unit": "m/s"
+          },
+          "t": {
+            "desc": "观测间隔",
+            "unit": "s"
+          }
+        },
+        "scenarios": {
+          "静止平衡": {
+            "F1": 10,
+            "F2": 10,
+            "F": 0,
+            "a": 0,
+            "m": 2,
+            "v1": 0,
+            "v2": 0,
+            "t": 2
+          },
+          "运动平衡": {
+            "F1": 20,
+            "F2": 20,
+            "F": 0,
+            "a": 0,
+            "m": 4,
+            "v1": 3,
+            "v2": 3,
+            "t": 2
+          }
+        },
+        "formulas": [
+          {
+            "name": "反向两力的合力",
+            "expr": "F = F1-F2",
+            "when": "仅有共线反向的两力，F1、F2为非负大小，取F1方向为正。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "静止平衡",
+                "ref": 0,
+                "note": "左右10 N相互平衡。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "运动平衡",
+                "ref": 0,
+                "note": "左右20 N相互平衡。"
+              },
+              {
+                "type": "scan",
+                "scenario": "静止平衡",
+                "var": "F2",
+                "lo": 0,
+                "hi": 20,
+                "note": "扫描本条适用范围内的参数，奇点和越量程操作不在有效范围内。"
+              }
+            ]
+          },
+          {
+            "name": "平衡例子的加速度核对",
+            "expr": "a = F/m",
+            "when": "惯性参考系，m>0；F是物体所受合力的有向分量，不是任意单个力。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "静止平衡",
+                "ref": 0,
+                "note": "正质量且合力零。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "运动平衡",
+                "ref": 0,
+                "note": "匀速例子加速度为零。"
+              },
+              {
+                "type": "consistency",
+                "scenario": "运动平衡",
+                "with": "dyn-09|平衡例子的加速度核对",
+                "with_expr": "(v2-v1)/t",
+                "note": "本公式直接求a；参考端显式关系为(v2-v1)/t。两端使用同一情境和阶段，只核对该关系；with字段仅定位来源，不代表调用另一条被覆盖的公式。",
+                "target": "该方向加速度",
+                "verification_kind": "独立关系核对"
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "合力20-20=0 N，加速度为零。",
+          "初速度并非零，因此保持向右3 m/s，不会自动停止。",
+          "伽利略通过减小阻力的实验与理想推理提出运动可以持续，笛卡尔强调直线运动，牛顿形成第一定律。"
+        ],
+        "errors": [
+          {
+            "wrong": "把方向相反的两个力直接相加为合力。",
+            "wrong_expr": "F = F1+F2",
+            "why": "规定右为正，向左的力取负；两个10 N合力为零，不是20 N。物体可能静止，也可能以原速度匀速运动。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "静止平衡",
+              "expr": "F1+F2",
+              "ref": 0
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "运动越快惯性越大，或说惯性力把物体推向前。",
+            "why": "经典力学的惯性由质量衡量，与速度大小无关；惯性是性质，不能在受力图中凭空添加惯性力。非惯性系的惯性力概念不属于本卡分析。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "4 kg物体原来向右3 m/s，向右20 N与向左20 N平衡，在惯性系中2 s后速度如何？",
+          "solution": [
+            "合力20-20=0 N，加速度为零。",
+            "初速度并非零，因此保持向右3 m/s，不会自动停止。"
+          ],
+          "answer": "仍以3 m/s向右作匀速直线运动。"
+        },
+        "prereq": [],
+        "next": [
+          "dyn-05",
+          "dyn-10"
+        ],
+        "tags": [
+          "牛顿第一定律与惯性",
+          "条件与边界",
+          "实验与证据"
+        ],
+        "core": [
+          {
+            "title": "牛顿第一定律与惯性：方法与边界",
+            "text": "伽利略通过减小阻力的实验与理想推理提出运动可以持续，笛卡尔强调直线运动，牛顿形成第一定律。力改变速度而非维持速度，合力零不等于每个力都为零。静止和匀速直线运动取决于初始状态，第一定律还给出惯性参考系概念，不能说它只是第二定律令合力为零的代数特例。以下平衡与速度读数用于量化例子，不宣称靠两次测量证明定律。"
+          }
+        ],
+        "learning_scope": "高中"
       },
-      "title": "牛顿第一定律与惯性",
+      "error_index": 0,
       "chapter": "第二章 · 相互作用与牛顿运动定律"
     },
     "diagnostic-dyn-09-2": {
-      "error": {
-        "wrong": "运动越快惯性越大，或说惯性力把物体推向前。",
-        "why": "经典力学的惯性由质量衡量，与速度大小无关；惯性是性质，不能在受力图中凭空添加惯性力。非惯性系的惯性力概念不属于本卡分析。",
-        "caught_by": "人工审核"
+      "point": {
+        "id": "dyn-09",
+        "title": "牛顿第一定律与惯性",
+        "level": "基础",
+        "definition": "在惯性参考系中，物体不受力或所受合力为零时保持静止或匀速直线运动。惯性是物体保持原有运动状态的性质，在经典力学中以质量衡量，并不是一种力。",
+        "meaning": "伽利略通过减小阻力的实验与理想推理提出运动可以持续，笛卡尔强调直线运动，牛顿形成第一定律。力改变速度而非维持速度，合力零不等于每个力都为零。静止和匀速直线运动取决于初始状态，第一定律还给出惯性参考系概念，不能说它只是第二定律令合力为零的代数特例。以下平衡与速度读数用于量化例子，不宣称靠两次测量证明定律。",
+        "symbols": {
+          "F": {
+            "desc": "同一直线上合力",
+            "unit": "N"
+          },
+          "F1": {
+            "desc": "向右作用力大小",
+            "unit": "N"
+          },
+          "F2": {
+            "desc": "向左作用力大小",
+            "unit": "N"
+          },
+          "a": {
+            "desc": "该方向加速度",
+            "unit": "m/s^2"
+          },
+          "m": {
+            "desc": "物体质量",
+            "unit": "kg"
+          },
+          "v1": {
+            "desc": "初速度",
+            "unit": "m/s"
+          },
+          "v2": {
+            "desc": "独立测得末速度",
+            "unit": "m/s"
+          },
+          "t": {
+            "desc": "观测间隔",
+            "unit": "s"
+          }
+        },
+        "scenarios": {
+          "静止平衡": {
+            "F1": 10,
+            "F2": 10,
+            "F": 0,
+            "a": 0,
+            "m": 2,
+            "v1": 0,
+            "v2": 0,
+            "t": 2
+          },
+          "运动平衡": {
+            "F1": 20,
+            "F2": 20,
+            "F": 0,
+            "a": 0,
+            "m": 4,
+            "v1": 3,
+            "v2": 3,
+            "t": 2
+          }
+        },
+        "formulas": [
+          {
+            "name": "反向两力的合力",
+            "expr": "F = F1-F2",
+            "when": "仅有共线反向的两力，F1、F2为非负大小，取F1方向为正。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "静止平衡",
+                "ref": 0,
+                "note": "左右10 N相互平衡。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "运动平衡",
+                "ref": 0,
+                "note": "左右20 N相互平衡。"
+              },
+              {
+                "type": "scan",
+                "scenario": "静止平衡",
+                "var": "F2",
+                "lo": 0,
+                "hi": 20,
+                "note": "扫描本条适用范围内的参数，奇点和越量程操作不在有效范围内。"
+              }
+            ]
+          },
+          {
+            "name": "平衡例子的加速度核对",
+            "expr": "a = F/m",
+            "when": "惯性参考系，m>0；F是物体所受合力的有向分量，不是任意单个力。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "静止平衡",
+                "ref": 0,
+                "note": "正质量且合力零。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "运动平衡",
+                "ref": 0,
+                "note": "匀速例子加速度为零。"
+              },
+              {
+                "type": "consistency",
+                "scenario": "运动平衡",
+                "with": "dyn-09|平衡例子的加速度核对",
+                "with_expr": "(v2-v1)/t",
+                "note": "本公式直接求a；参考端显式关系为(v2-v1)/t。两端使用同一情境和阶段，只核对该关系；with字段仅定位来源，不代表调用另一条被覆盖的公式。",
+                "target": "该方向加速度",
+                "verification_kind": "独立关系核对"
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "合力20-20=0 N，加速度为零。",
+          "初速度并非零，因此保持向右3 m/s，不会自动停止。",
+          "伽利略通过减小阻力的实验与理想推理提出运动可以持续，笛卡尔强调直线运动，牛顿形成第一定律。"
+        ],
+        "errors": [
+          {
+            "wrong": "把方向相反的两个力直接相加为合力。",
+            "wrong_expr": "F = F1+F2",
+            "why": "规定右为正，向左的力取负；两个10 N合力为零，不是20 N。物体可能静止，也可能以原速度匀速运动。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "静止平衡",
+              "expr": "F1+F2",
+              "ref": 0
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "运动越快惯性越大，或说惯性力把物体推向前。",
+            "why": "经典力学的惯性由质量衡量，与速度大小无关；惯性是性质，不能在受力图中凭空添加惯性力。非惯性系的惯性力概念不属于本卡分析。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "4 kg物体原来向右3 m/s，向右20 N与向左20 N平衡，在惯性系中2 s后速度如何？",
+          "solution": [
+            "合力20-20=0 N，加速度为零。",
+            "初速度并非零，因此保持向右3 m/s，不会自动停止。"
+          ],
+          "answer": "仍以3 m/s向右作匀速直线运动。"
+        },
+        "prereq": [],
+        "next": [
+          "dyn-05",
+          "dyn-10"
+        ],
+        "tags": [
+          "牛顿第一定律与惯性",
+          "条件与边界",
+          "实验与证据"
+        ],
+        "core": [
+          {
+            "title": "牛顿第一定律与惯性：方法与边界",
+            "text": "伽利略通过减小阻力的实验与理想推理提出运动可以持续，笛卡尔强调直线运动，牛顿形成第一定律。力改变速度而非维持速度，合力零不等于每个力都为零。静止和匀速直线运动取决于初始状态，第一定律还给出惯性参考系概念，不能说它只是第二定律令合力为零的代数特例。以下平衡与速度读数用于量化例子，不宣称靠两次测量证明定律。"
+          }
+        ],
+        "learning_scope": "高中"
       },
-      "title": "牛顿第一定律与惯性",
+      "error_index": 1,
       "chapter": "第二章 · 相互作用与牛顿运动定律"
     },
     "diagnostic-dyn-10-1": {
-      "error": {
-        "wrong": "有阻力损失时把损失能量加到回升高度上。",
-        "wrong_expr": "h2 = h1+W_loss/(m*g)",
-        "why": "耗散减少可恢复的机械能，必须从初势能扣除；2 J损失使高度少0.1 m，不能回升到0.6 m。",
-        "caught_by": "数值代入",
-        "trap_test": {
-          "scenario": "有损失",
-          "expr": "h1+W_loss/(m*g)",
-          "ref": 0.4
-        }
+      "point": {
+        "id": "dyn-10",
+        "title": "理想实验与伽利略斜面思想",
+        "level": "基础",
+        "definition": "理想实验在可检验事实基础上，逐步排除次要因素并逻辑推演理想极限。伽利略斜面思想通过减小阻力、比较上升高度，推及无阻力水平运动可以持续。",
+        "meaning": "小球沿一个斜面下滑后沿另一个斜面上升，实际阻力导致回升高度略低；减小阻力使回升高度接近原高度。理想无阻力模型中回到原高度，第二斜面倾角越小需走越长距离；推至水平时无法靠升高达到该高度，运动会持续。这不是实际造出完全无阻力装置，也不能把有限观测直接当作无限时间证据。下面以能量损失账目解释高度差，逻辑推理本身仍需审查前提。",
+        "symbols": {
+          "h2": {
+            "desc": "回升高度",
+            "unit": "m"
+          },
+          "h1": {
+            "desc": "初始高度",
+            "unit": "m"
+          },
+          "W_loss": {
+            "desc": "耗散能量",
+            "unit": "J"
+          },
+          "m": {
+            "desc": "小球质量",
+            "unit": "kg"
+          },
+          "g": {
+            "desc": "重力加速度",
+            "unit": "m/s^2"
+          },
+          "E": {
+            "desc": "回升势能",
+            "unit": "J"
+          }
+        },
+        "scenarios": {
+          "有损失": {
+            "h1": 0.5,
+            "h2": 0.4,
+            "W_loss": 2,
+            "m": 2,
+            "g": 10,
+            "E": 8
+          },
+          "理想无损失": {
+            "h1": 0.5,
+            "h2": 0.5,
+            "W_loss": 0,
+            "m": 2,
+            "g": 10,
+            "E": 10
+          }
+        },
+        "formulas": [
+          {
+            "name": "损失后的回升高度",
+            "expr": "h2 = h1-W_loss/(m*g)",
+            "when": "起点和回升最高点动能均为零，仅重力与耗散作用；W_loss≥0且不超过m*g*h1，高度用同一零势能面。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "有损失",
+                "ref": 0.4,
+                "note": "初势能10 J减耗散2 J，回升0.4 m。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "理想无损失",
+                "ref": 0.5,
+                "note": "无耗散则回原高度。"
+              },
+              {
+                "type": "scan",
+                "scenario": "有损失",
+                "var": "W_loss",
+                "lo": 0,
+                "hi": 10,
+                "note": "扫描本条适用范围内的参数，奇点和越量程操作不在有效范围内。"
+              },
+              {
+                "type": "consistency",
+                "scenario": "有损失",
+                "with": "dyn-10|损失后的回升高度",
+                "with_expr": "h2",
+                "note": "直接求本公式输出，与情境中另列的h2设计基准核对；数据是设计示例，不是实测。用于核对定义、反算或边界值，不宣称不同物理原理互证。",
+                "target": "回升高度",
+                "verification_kind": "独立设计情境数据核对",
+                "tol": 1e-06
+              }
+            ]
+          },
+          {
+            "name": "回升势能",
+            "expr": "E = m*g*h2",
+            "when": "近地面g近似恒定，h2相对选定零势能面；这是回升最高点的重力势能。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "有损失",
+                "ref": 8,
+                "note": "回升势能8 J。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "理想无损失",
+                "ref": 10,
+                "note": "回升势能10 J。"
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "初势能10 J，有损失后剩8 J，对应0.4 m。",
+          "无损失时保留10 J，回到0.5 m；改变斜面角度不改变理想回升高度。",
+          "小球沿一个斜面下滑后沿另一个斜面上升，实际阻力导致回升高度略低；减小阻力使回升高度接近原高度。"
+        ],
+        "errors": [
+          {
+            "wrong": "有阻力损失时把损失能量加到回升高度上。",
+            "wrong_expr": "h2 = h1+W_loss/(m*g)",
+            "why": "耗散减少可恢复的机械能，必须从初势能扣除；2 J损失使高度少0.1 m，不能回升到0.6 m。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "有损失",
+              "expr": "h1+W_loss/(m*g)",
+              "ref": 0.4
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "理想实验就是不用事实依据的猜想，或认为实物能完全没有阻力。",
+            "why": "推理必须基于事实和可说明的理想条件，逐步外推并说明极限；理想模型与真实装置之间仍有阻力和测量误差。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "2 kg球从0.5 m高度静止出发，回升前损失2 J，忽略转动，g取10；比较有损失和无损失高度。",
+          "solution": [
+            "初势能10 J，有损失后剩8 J，对应0.4 m。",
+            "无损失时保留10 J，回到0.5 m；改变斜面角度不改变理想回升高度。"
+          ],
+          "answer": "有损失0.4 m，理想无损失0.5 m。"
+        },
+        "prereq": [
+          "dyn-09"
+        ],
+        "next": [
+          "ene-06"
+        ],
+        "tags": [
+          "理想实验与伽利略斜面思想",
+          "条件与边界",
+          "实验与证据"
+        ],
+        "core": [
+          {
+            "title": "理想实验与伽利略斜面思想：方法与边界",
+            "text": "小球沿一个斜面下滑后沿另一个斜面上升，实际阻力导致回升高度略低；减小阻力使回升高度接近原高度。理想无阻力模型中回到原高度，第二斜面倾角越小需走越长距离；推至水平时无法靠升高达到该高度，运动会持续。这不是实际造出完全无阻力装置，也不能把有限观测直接当作无限时间证据。下面以能量损失账目解释高度差，逻辑推理本身仍需审查前提。"
+          }
+        ],
+        "learning_scope": "高中"
       },
-      "title": "理想实验与伽利略斜面思想",
+      "error_index": 0,
       "chapter": "第二章 · 相互作用与牛顿运动定律"
     },
     "diagnostic-dyn-10-2": {
-      "error": {
-        "wrong": "理想实验就是不用事实依据的猜想，或认为实物能完全没有阻力。",
-        "why": "推理必须基于事实和可说明的理想条件，逐步外推并说明极限；理想模型与真实装置之间仍有阻力和测量误差。",
-        "caught_by": "人工审核"
+      "point": {
+        "id": "dyn-10",
+        "title": "理想实验与伽利略斜面思想",
+        "level": "基础",
+        "definition": "理想实验在可检验事实基础上，逐步排除次要因素并逻辑推演理想极限。伽利略斜面思想通过减小阻力、比较上升高度，推及无阻力水平运动可以持续。",
+        "meaning": "小球沿一个斜面下滑后沿另一个斜面上升，实际阻力导致回升高度略低；减小阻力使回升高度接近原高度。理想无阻力模型中回到原高度，第二斜面倾角越小需走越长距离；推至水平时无法靠升高达到该高度，运动会持续。这不是实际造出完全无阻力装置，也不能把有限观测直接当作无限时间证据。下面以能量损失账目解释高度差，逻辑推理本身仍需审查前提。",
+        "symbols": {
+          "h2": {
+            "desc": "回升高度",
+            "unit": "m"
+          },
+          "h1": {
+            "desc": "初始高度",
+            "unit": "m"
+          },
+          "W_loss": {
+            "desc": "耗散能量",
+            "unit": "J"
+          },
+          "m": {
+            "desc": "小球质量",
+            "unit": "kg"
+          },
+          "g": {
+            "desc": "重力加速度",
+            "unit": "m/s^2"
+          },
+          "E": {
+            "desc": "回升势能",
+            "unit": "J"
+          }
+        },
+        "scenarios": {
+          "有损失": {
+            "h1": 0.5,
+            "h2": 0.4,
+            "W_loss": 2,
+            "m": 2,
+            "g": 10,
+            "E": 8
+          },
+          "理想无损失": {
+            "h1": 0.5,
+            "h2": 0.5,
+            "W_loss": 0,
+            "m": 2,
+            "g": 10,
+            "E": 10
+          }
+        },
+        "formulas": [
+          {
+            "name": "损失后的回升高度",
+            "expr": "h2 = h1-W_loss/(m*g)",
+            "when": "起点和回升最高点动能均为零，仅重力与耗散作用；W_loss≥0且不超过m*g*h1，高度用同一零势能面。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "有损失",
+                "ref": 0.4,
+                "note": "初势能10 J减耗散2 J，回升0.4 m。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "理想无损失",
+                "ref": 0.5,
+                "note": "无耗散则回原高度。"
+              },
+              {
+                "type": "scan",
+                "scenario": "有损失",
+                "var": "W_loss",
+                "lo": 0,
+                "hi": 10,
+                "note": "扫描本条适用范围内的参数，奇点和越量程操作不在有效范围内。"
+              },
+              {
+                "type": "consistency",
+                "scenario": "有损失",
+                "with": "dyn-10|损失后的回升高度",
+                "with_expr": "h2",
+                "note": "直接求本公式输出，与情境中另列的h2设计基准核对；数据是设计示例，不是实测。用于核对定义、反算或边界值，不宣称不同物理原理互证。",
+                "target": "回升高度",
+                "verification_kind": "独立设计情境数据核对",
+                "tol": 1e-06
+              }
+            ]
+          },
+          {
+            "name": "回升势能",
+            "expr": "E = m*g*h2",
+            "when": "近地面g近似恒定，h2相对选定零势能面；这是回升最高点的重力势能。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "有损失",
+                "ref": 8,
+                "note": "回升势能8 J。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "理想无损失",
+                "ref": 10,
+                "note": "回升势能10 J。"
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "初势能10 J，有损失后剩8 J，对应0.4 m。",
+          "无损失时保留10 J，回到0.5 m；改变斜面角度不改变理想回升高度。",
+          "小球沿一个斜面下滑后沿另一个斜面上升，实际阻力导致回升高度略低；减小阻力使回升高度接近原高度。"
+        ],
+        "errors": [
+          {
+            "wrong": "有阻力损失时把损失能量加到回升高度上。",
+            "wrong_expr": "h2 = h1+W_loss/(m*g)",
+            "why": "耗散减少可恢复的机械能，必须从初势能扣除；2 J损失使高度少0.1 m，不能回升到0.6 m。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "有损失",
+              "expr": "h1+W_loss/(m*g)",
+              "ref": 0.4
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "理想实验就是不用事实依据的猜想，或认为实物能完全没有阻力。",
+            "why": "推理必须基于事实和可说明的理想条件，逐步外推并说明极限；理想模型与真实装置之间仍有阻力和测量误差。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "2 kg球从0.5 m高度静止出发，回升前损失2 J，忽略转动，g取10；比较有损失和无损失高度。",
+          "solution": [
+            "初势能10 J，有损失后剩8 J，对应0.4 m。",
+            "无损失时保留10 J，回到0.5 m；改变斜面角度不改变理想回升高度。"
+          ],
+          "answer": "有损失0.4 m，理想无损失0.5 m。"
+        },
+        "prereq": [
+          "dyn-09"
+        ],
+        "next": [
+          "ene-06"
+        ],
+        "tags": [
+          "理想实验与伽利略斜面思想",
+          "条件与边界",
+          "实验与证据"
+        ],
+        "core": [
+          {
+            "title": "理想实验与伽利略斜面思想：方法与边界",
+            "text": "小球沿一个斜面下滑后沿另一个斜面上升，实际阻力导致回升高度略低；减小阻力使回升高度接近原高度。理想无阻力模型中回到原高度，第二斜面倾角越小需走越长距离；推至水平时无法靠升高达到该高度，运动会持续。这不是实际造出完全无阻力装置，也不能把有限观测直接当作无限时间证据。下面以能量损失账目解释高度差，逻辑推理本身仍需审查前提。"
+          }
+        ],
+        "learning_scope": "高中"
       },
-      "title": "理想实验与伽利略斜面思想",
+      "error_index": 1,
       "chapter": "第二章 · 相互作用与牛顿运动定律"
     }
-  }
+  },
+  "generator_version": "2026-10-04-条件过程返工-8"
 }

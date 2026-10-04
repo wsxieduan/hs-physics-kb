@@ -65,6 +65,7 @@ def pick_error(p):
     return errs[0] if errs else None
 
 
+@BS.card_symbols()
 def render_card(p, segment_nav=None):
     """一张知识点卡片：一屏看完。"""
     segment_nav = segment_nav or {}
@@ -80,6 +81,9 @@ def render_card(p, segment_nav=None):
              '<span class="kp-id">%s</span></div>'
              % (E(p.get("title", p["id"])), E(p["id"])))
 
+    # 内容难度和课程范围分别说明，避免把基础难度误当初中必学。
+    L.append('<p class="one">难度：%s · 范围：%s</p>' % (E(p.get("level", "基础")), E(p.get("learning_scope", "高中"))))
+
     # 一句话
     L.append('<p class="one">%s</p>' % prose(first_sentence(p.get("definition", ""))))
 
@@ -87,7 +91,7 @@ def render_card(p, segment_nav=None):
     for f in p.get("formulas", []):
         L.append('<div class="fbox">')
         L.append('<div class="f-name">%s</div>' % prose(f.get("name", "")))
-        L.append(BS.mathml_block(f.get("mathml", "")))
+        L.append('<div class="formula-scroll">'+BS.mathml_block(f.get("mathml", ""))+'</div>')
         if f.get("when"):
             L.append('<div class="f-when">适用：%s</div>' % prose(f["when"]))
         L.append('</div>')
@@ -122,12 +126,12 @@ def render_card(p, segment_nav=None):
         #   光是这一项就能占 200 KB 以上。而「符号速查」视图里已经有一套完整的
         #   数学排版了 —— 卡片里只需要「能认出这个符号叫什么」就够。
         L.append('<details><summary>看符号表（%d 个）</summary>' % len(syms))
-        L.append('<table class="syms"><tbody>')
+        L.append('<div class="table-scroll"><table class="syms"><tbody>')
         for s in syms:
             L.append('<tr><td class="sym">%s</td><td>%s</td><td class="u">%s</td></tr>'
                      % (prose(s.get("name", "")), prose(s.get("desc", "")),
                         prose(s.get("unit", "")) or "—"))
-        L.append('</tbody></table></details>')
+        L.append('</tbody></table></div></details>')
 
     if quiz_href:
         # 练习链接用知识点 id 直达同一知识点的典型例题，并携带返回主知识库的位置。
@@ -155,7 +159,7 @@ def render_formula_index(groups):
             L.append('<div class="vp">%s</div>' % E(p.get("title", p["id"])))
             for f in p.get("formulas", []):
                 L.append('<div class="vf">%s%s</div>'
-                         % (BS.mathml_block(f.get("mathml", "")),
+                         % ('<div class="formula-scroll">'+BS.mathml_block(f.get("mathml", ""),p["id"])+'</div>',
                             ('<div class="vw">适用：%s</div>' % prose(f["when"])) if f.get("when") else ""))
     L.append('</section>')
     return "".join(L)
@@ -168,7 +172,7 @@ def render_symbol_index(groups):
         for p in pts:
             for s in p.get("symbols", []):
                 base = (s.get("name", "") or "").split("_")[0] or s.get("name", "")
-                base_map.setdefault(base, []).append((s, p.get("title", p["id"])))
+                base_map.setdefault(base, []).append((s, p.get("title", p["id"]), p["id"]))
 
     def key(b):
         greek = bool(b) and ("\u0370" <= b[0] <= "\u03ff")
@@ -179,24 +183,24 @@ def render_symbol_index(groups):
          '<p class="lead">同一字母打头的排在一起，方便对照。同名同单位的合并成一行。</p>']
     for base in sorted(base_map, key=key):
         merged, order = {}, []
-        for s, ptitle in base_map[base]:
-            k = (s.get("name", ""), s.get("unit", ""))
+        for s, ptitle, pid in base_map[base]:
+            k = (s.get("name", ""), s.get("unit", ""), BS.display_mathml(s.get("mathml", ""),pid), s.get("desc", ""))
             if k not in merged:
-                merged[k] = {"s": s, "pts": []}
+                merged[k] = {"s": s, "pts": [], "pid": pid}
                 order.append(k)
             if ptitle not in merged[k]["pts"]:
                 merged[k]["pts"].append(ptitle)
         # 标题用显示符号（α / Δ），不再印机器名 alpha / Delta
         L.append('<h3 class="vsb">%s<span class="n">%d 个</span></h3>' % (prose(base), len(order)))
         for k in sorted(order, key=lambda x: x[0]):
-            nm, _u = k
+            nm, _u, _display, _desc = k
             s = merged[k]["s"]
             pts = merged[k]["pts"]
             where = pts[0] if len(pts) == 1 else "%s 等 %d 处" % (pts[0], len(pts))
             L.append('<div class="vsrow"><span class="vss">%s</span>'
                      '<span class="vsd">%s</span><span class="vsu">%s</span>'
                      '<span class="vsf">%s</span></div>'
-                     % (BS.mathml_inline(s.get("mathml", "")), prose(s.get("desc", "")),
+                     % (BS.mathml_inline(s.get("mathml", ""),merged[k]["pid"]), prose(s.get("desc", "")),
                         prose(s.get("unit", "")) or "—", E(where)))
     L.append('</section>')
     return "".join(L)
@@ -278,6 +282,12 @@ body:not([data-view="point"]) .chips{display:none}
 .segment-switchbar a.segment-quiz{margin-left:auto;border-color:#bdccf4;background:#f4f7ff;color:var(--blue)}
 .kp-practice{margin-top:12px}.kp-practice a{display:inline-flex;padding:5px 12px;border:1px solid #bdccf4;border-radius:999px;color:var(--blue);font-size:12px;text-decoration:none}.kp-practice a:hover{background:#edf3ff}
 footer{max-width:900px;margin:0 auto;padding:0 16px 40px;color:var(--ink3);font-size:12.5px;line-height:1.9}
+/* 数学表达式保持字号，在自己的区域内横向滚动。 */
+.formula-scroll,.table-scroll{max-width:100%;overflow-x:auto}
+.kp,.fbox,.vf,.vsrow{min-width:0}.kp-head{flex-wrap:wrap}.kp-head h3{min-width:0;overflow-wrap:anywhere}
+.one,.stem,.ans,.steps,.f-when,.trap-y,.vsd,.vsf{overflow-wrap:anywhere}
+@media(max-width:760px){.vsrow{grid-template-columns:78px minmax(0,1fr) 70px}.vsf{display:block;grid-column:1/-1;text-align:left}}
+
 """
 
 
@@ -291,6 +301,9 @@ def build(kb_dir, out_path, segment_nav=None):
             print("  ✘", i)
         return 1
     report = KB.run_physics_checks(chapters, id_map)
+    for _, ch in chapters:
+        for source in ch["points"]:
+            report[source["id"]]["learning_scope"] = source.get("learning_scope", "高中")
 
     groups = []
     for _fname, ch in chapters:

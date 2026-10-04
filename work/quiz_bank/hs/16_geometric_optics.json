@@ -8,27 +8,19 @@
       "point_id": "opt-01",
       "point_title": "光的反射定律",
       "chapter": "第十六章 · 几何光学",
-      "stem": "【第十六章 · 几何光学 · 光的反射定律】学生的错误做法：把反射角写成入射角的两倍：θ<sub>r</sub> = 2 θ<sub>i</sub>（错误表达式：θ<sub>r</sub> = 2·θ<sub>i</sub>）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "stem": "在“光的反射定律”的模型下，θ<sub>i</sub>（入射角，相对法线测量）=0.523599 rad。条件：镜面反射和漫反射中的每一条光线，角度均相对法线测量。求反射角，相对法线测量（θ<sub>r</sub>）。这些数值是设计示例。",
       "options": [
         {
           "label": "A",
-          "text": "数值代入：错误式在空气射入玻璃时给出 0.9，而正确值是 0.4；它还错误预言进入高折射率介质会偏离法线。"
+          "text": "1.0472 rad"
         },
         {
           "label": "B",
-          "text": "数值代入：玻璃中光速小于真空光速，写反会得到 2/3，小于 1；正确折射率是 1.5。"
-        },
-        {
-          "label": "C",
-          "text": "数值代入：因为 n1 &gt; n2，写反后得到 1.0714，大于正弦值上限 1，物理上不可能；正确值为 14/15。"
-        },
-        {
-          "label": "D",
-          "text": "数值代入：反射角本身等于入射角；某些转镜问题中出现的两倍关系，指的是反射光线转过的角度。"
+          "text": "0.523599 rad"
         }
       ],
-      "correct_answer": "D",
-      "explanation": "反射角本身等于入射角；某些转镜问题中出现的两倍关系，指的是反射光线转过的角度。30° 入射时错误式给出 60°。\n知识库校验证据：情境：三十度入射；代入错误式：2·θ<sub>i</sub>；校验参照值：0.5235987756。",
+      "correct_answer": "B",
+      "explanation": "使用反射角等于入射角：θ<sub>i</sub>，代入得0.523599 rad。另一结果来自2·θ<sub>i</sub>，算得1.0472 rad。\n反射角本身等于入射角；某些转镜问题中出现的两倍关系，指的是反射光线转过的角度。30° 入射时错误式给出 60°。\n知识点条件：入射角和反射角都从法线量起，不是从镜面量起。反射定律与光的可逆性相容：把反射光线反向作为入射光线，光会沿原路返回。平面镜成像的物距和像距相等，像是光线反向延长线相交形成的虚像。\n推导依据：实验改变入射光线方向并测角，发现反射光线始终与入射光线分居法线两侧，且 θ<sub>r</sub> = θ<sub>i</sub>。；平面镜后并没有真实光线会聚；把进入眼睛的反射光线反向延长，延长线在镜后相交，形成虚像。；由反射定律作两条特殊光线，可证明像点与物点关于镜面对称，所以 d<sub>i</sub> = d<sub>o</sub>。\n卡片公式各自的适用条件（不是本题共同前提）：\n反射角等于入射角：镜面反射和漫反射中的每一条光线，角度均相对法线测量\n平面镜物距与像距：平面镜成像，物距和像距均取到镜面的垂直距离大小\n平面镜物像间距：物体与虚像分居平面镜两侧，距离均取正值",
       "error_type": "数值代入",
       "judging": "auto",
       "source_error_index": 0,
@@ -39,15 +31,55 @@
         "expr": "2*theta_i",
         "ref": 0.5235987756
       },
+      "level": "基础",
+      "learning_scope": "高中",
+      "answer_evidence": {
+        "kind": "numeric",
+        "scenario": "三十度入射",
+        "parameters": {
+          "theta_i": 0.5235987756,
+          "theta_r": 0.5235987756
+        },
+        "target": "theta_r",
+        "unit": "rad",
+        "reference": 0.5235987756,
+        "correct_proof": {
+          "expression": "theta_i",
+          "formula": "反射角等于入射角",
+          "value": 0.5235987756,
+          "when": "镜面反射和漫反射中的每一条光线，角度均相对法线测量"
+        },
+        "distractor_expression": "2*theta_i",
+        "distractor_value": 1.0471975512,
+        "dimension_matches": true,
+        "independent_evaluation": true
+      },
       "review": {
         "confidence": "medium",
-        "checks": {
-          "answer_unique": true,
-          "distractors_plausible": true,
-          "stem_clear": true,
-          "no_cross_segment": true
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": true,
+          "no_answer_leak_in_options": true
         },
-        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。"
       }
     },
     {
@@ -55,27 +87,19 @@
       "point_id": "opt-01",
       "point_title": "光的反射定律",
       "chapter": "第十六章 · 几何光学",
-      "stem": "【第十六章 · 几何光学 · 光的反射定律】学生的错误做法：认为平面镜像距是物距的两倍：d<sub>i</sub> = 2 d<sub>o</sub>（错误表达式：d<sub>i</sub> = 2·d<sub>o</sub>）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "stem": "在“光的反射定律”的模型下，d<sub>o</sub>（物体到平面镜的垂直距离）=2 m。条件：平面镜成像，物距和像距均取到镜面的垂直距离大小。求虚像到平面镜的垂直距离（d<sub>i</sub>）。这些数值是设计示例。",
       "options": [
         {
           "label": "A",
-          "text": "数值代入：玻璃中光速小于真空光速，写反会得到 2/3，小于 1；正确折射率是 1.5。"
+          "text": "2 m"
         },
         {
           "label": "B",
-          "text": "数值代入：因为 n1 &gt; n2，写反后得到 1.0714，大于正弦值上限 1，物理上不可能；正确值为 14/15。"
-        },
-        {
-          "label": "C",
-          "text": "数值代入：物与像之间的距离才是 2 d<sub>o</sub>；像到镜面的距离仍等于物到镜面的距离。"
-        },
-        {
-          "label": "D",
-          "text": "数值代入：错误式在空气射入玻璃时给出 0.9，而正确值是 0.4；它还错误预言进入高折射率介质会偏离法线。"
+          "text": "4 m"
         }
       ],
-      "correct_answer": "C",
-      "explanation": "物与像之间的距离才是 2 d<sub>o</sub>；像到镜面的距离仍等于物到镜面的距离。物距 2 m 时错误式给出 4 m。\n知识库校验证据：情境：平面镜成像；代入错误式：2·d<sub>o</sub>；校验参照值：2.0。",
+      "correct_answer": "A",
+      "explanation": "使用平面镜物距与像距：d<sub>o</sub>，代入得2 m。另一结果来自2·d<sub>o</sub>，算得4 m。\n物与像之间的距离才是 2 d<sub>o</sub>；像到镜面的距离仍等于物到镜面的距离。物距 2 m 时错误式给出 4 m。\n知识点条件：入射角和反射角都从法线量起，不是从镜面量起。反射定律与光的可逆性相容：把反射光线反向作为入射光线，光会沿原路返回。平面镜成像的物距和像距相等，像是光线反向延长线相交形成的虚像。\n推导依据：实验改变入射光线方向并测角，发现反射光线始终与入射光线分居法线两侧，且 θ<sub>r</sub> = θ<sub>i</sub>。；平面镜后并没有真实光线会聚；把进入眼睛的反射光线反向延长，延长线在镜后相交，形成虚像。；由反射定律作两条特殊光线，可证明像点与物点关于镜面对称，所以 d<sub>i</sub> = d<sub>o</sub>。\n卡片公式各自的适用条件（不是本题共同前提）：\n反射角等于入射角：镜面反射和漫反射中的每一条光线，角度均相对法线测量\n平面镜物距与像距：平面镜成像，物距和像距均取到镜面的垂直距离大小\n平面镜物像间距：物体与虚像分居平面镜两侧，距离均取正值",
       "error_type": "数值代入",
       "judging": "auto",
       "source_error_index": 1,
@@ -86,15 +110,56 @@
         "expr": "2*d_o",
         "ref": 2.0
       },
+      "level": "基础",
+      "learning_scope": "高中",
+      "answer_evidence": {
+        "kind": "numeric",
+        "scenario": "平面镜成像",
+        "parameters": {
+          "d_o": 2.0,
+          "d_i": 2.0,
+          "D_oi": 4.0
+        },
+        "target": "d_i",
+        "unit": "m",
+        "reference": 2.0,
+        "correct_proof": {
+          "expression": "d_o",
+          "formula": "平面镜物距与像距",
+          "value": 2.0,
+          "when": "平面镜成像，物距和像距均取到镜面的垂直距离大小"
+        },
+        "distractor_expression": "2*d_o",
+        "distractor_value": 4.0,
+        "dimension_matches": true,
+        "independent_evaluation": true
+      },
       "review": {
         "confidence": "medium",
-        "checks": {
-          "answer_unique": true,
-          "distractors_plausible": true,
-          "stem_clear": true,
-          "no_cross_segment": true
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": true,
+          "no_answer_leak_in_options": true
         },
-        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。"
       }
     },
     {
@@ -102,27 +167,19 @@
       "point_id": "opt-02",
       "point_title": "光的折射与折射定律",
       "chapter": "第十六章 · 几何光学",
-      "stem": "【第十六章 · 几何光学 · 光的折射与折射定律】学生的错误做法：把折射率比例颠倒，写成 s<sub>r</sub> = n2 s<sub>i</sub> / n1（错误表达式：s<sub>r</sub> = n2·s<sub>i</sub>/n1）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "stem": "在“光的折射与折射定律”的模型下，n1（入射介质的折射率）=1 1；n2（折射介质的折射率）=1.5 1；s<sub>i</sub>（入射角 i 的正弦值）=0.6 1。条件：已知两侧折射率和入射角，且确有折射光线。求折射角 r 的正弦值（s<sub>r</sub>）。这些数值是设计示例。",
       "options": [
         {
           "label": "A",
-          "text": "数值代入：因为 n1 &gt; n2，写反后得到 1.0714，大于正弦值上限 1，物理上不可能；正确值为 14/15。"
+          "text": "0.9 1"
         },
         {
           "label": "B",
-          "text": "数值代入：错误式在空气射入玻璃时给出 0.9，而正确值是 0.4；它还错误预言进入高折射率介质会偏离法线。"
-        },
-        {
-          "label": "C",
-          "text": "数值代入：反射角本身等于入射角；某些转镜问题中出现的两倍关系，指的是反射光线转过的角度。"
-        },
-        {
-          "label": "D",
-          "text": "数值代入：玻璃中光速小于真空光速，写反会得到 2/3，小于 1；正确折射率是 1.5。"
+          "text": "0.4 1"
         }
       ],
       "correct_answer": "B",
-      "explanation": "错误式在空气射入玻璃时给出 0.9，而正确值是 0.4；它还错误预言进入高折射率介质会偏离法线。\n知识库校验证据：情境：空气射入玻璃；代入错误式：n2·s<sub>i</sub>/n1；校验参照值：0.4。",
+      "explanation": "使用由入射条件求折射角正弦：n1·s<sub>i</sub>/n2，代入得0.4 1。另一结果来自n2·s<sub>i</sub>/n1，算得0.9 1。\n错误式在空气射入玻璃时给出 0.9，而正确值是 0.4；它还错误预言进入高折射率介质会偏离法线。\n知识点条件：判断偏向法线还是偏离法线，要比较两种介质的折射率：进入折射率更大的介质时，折射角更小，光线偏向法线；进入折射率更小的介质时则偏离法线。正入射时角度为零，方向不偏折，但传播速度仍会改变。\n推导依据：实验表明，对给定的两种介质，入射角正弦与折射角正弦的比值保持不变。；把介质性质用折射率表示，可写成 n1 sin i = n2 sin r。；用 s<sub>i</sub> 和 s<sub>r</sub> 记录两个正弦值，移项得到 s<sub>r</sub> = n1 s<sub>i</sub> / n2；当 n2 &gt; n1 时，s<sub>r</sub> &lt; s<sub>i</sub>，因此折射光偏向法线。\n卡片公式各自的适用条件（不是本题共同前提）：\n由折射角求第二介质折射率：光由折射率 n1 的均匀介质射向折射率 n2 的均匀介质\n由入射条件求折射角正弦：已知两侧折射率和入射角，且确有折射光线",
       "error_type": "数值代入",
       "judging": "auto",
       "source_error_index": 0,
@@ -133,15 +190,57 @@
         "expr": "n2*s_i/n1",
         "ref": 0.4
       },
+      "level": "基础",
+      "learning_scope": "高中",
+      "answer_evidence": {
+        "kind": "numeric",
+        "scenario": "空气射入玻璃",
+        "parameters": {
+          "n1": 1.0,
+          "n2": 1.5,
+          "s_i": 0.6,
+          "s_r": 0.4
+        },
+        "target": "s_r",
+        "unit": "1",
+        "reference": 0.4,
+        "correct_proof": {
+          "expression": "n1*s_i/n2",
+          "formula": "由入射条件求折射角正弦",
+          "value": 0.39999999999999997,
+          "when": "已知两侧折射率和入射角，且确有折射光线"
+        },
+        "distractor_expression": "n2*s_i/n1",
+        "distractor_value": 0.8999999999999999,
+        "dimension_matches": true,
+        "independent_evaluation": true
+      },
       "review": {
         "confidence": "medium",
-        "checks": {
-          "answer_unique": true,
-          "distractors_plausible": true,
-          "stem_clear": true,
-          "no_cross_segment": true
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": true,
+          "no_answer_leak_in_options": true
         },
-        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。"
       }
     },
     {
@@ -149,27 +248,19 @@
       "point_id": "opt-02",
       "point_title": "光的折射与折射定律",
       "chapter": "第十六章 · 几何光学",
-      "stem": "【第十六章 · 几何光学 · 光的折射与折射定律】学生的错误做法：认为折射角总等于入射角，写成 s<sub>r</sub> = s<sub>i</sub>（错误表达式：s<sub>r</sub> = s<sub>i</sub>）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "stem": "在“光的折射与折射定律”的模型下，n1（入射介质的折射率）=1 1；n2（折射介质的折射率）=1.5 1；s<sub>i</sub>（入射角 i 的正弦值）=0.6 1。条件：已知两侧折射率和入射角，且确有折射光线。求折射角 r 的正弦值（s<sub>r</sub>）。这些数值是设计示例。",
       "options": [
         {
           "label": "A",
-          "text": "数值代入：只有两侧折射率相同或正入射等特殊情形才不改变方向。"
+          "text": "0.4 1"
         },
         {
           "label": "B",
-          "text": "数值代入：反射角本身等于入射角；某些转镜问题中出现的两倍关系，指的是反射光线转过的角度。"
-        },
-        {
-          "label": "C",
-          "text": "数值代入：玻璃中光速小于真空光速，写反会得到 2/3，小于 1；正确折射率是 1.5。"
-        },
-        {
-          "label": "D",
-          "text": "数值代入：因为 n1 &gt; n2，写反后得到 1.0714，大于正弦值上限 1，物理上不可能；正确值为 14/15。"
+          "text": "0.6 1"
         }
       ],
       "correct_answer": "A",
-      "explanation": "只有两侧折射率相同或正入射等特殊情形才不改变方向。本情境错误式给出 0.6，正确值为 0.4。\n知识库校验证据：情境：空气射入玻璃；代入错误式：s<sub>i</sub>；校验参照值：0.4。",
+      "explanation": "使用由入射条件求折射角正弦：n1·s<sub>i</sub>/n2，代入得0.4 1。另一结果来自s<sub>i</sub>，算得0.6 1。\n只有两侧折射率相同或正入射等特殊情形才不改变方向。本情境错误式给出 0.6，正确值为 0.4。\n知识点条件：判断偏向法线还是偏离法线，要比较两种介质的折射率：进入折射率更大的介质时，折射角更小，光线偏向法线；进入折射率更小的介质时则偏离法线。正入射时角度为零，方向不偏折，但传播速度仍会改变。\n推导依据：实验表明，对给定的两种介质，入射角正弦与折射角正弦的比值保持不变。；把介质性质用折射率表示，可写成 n1 sin i = n2 sin r。；用 s<sub>i</sub> 和 s<sub>r</sub> 记录两个正弦值，移项得到 s<sub>r</sub> = n1 s<sub>i</sub> / n2；当 n2 &gt; n1 时，s<sub>r</sub> &lt; s<sub>i</sub>，因此折射光偏向法线。\n卡片公式各自的适用条件（不是本题共同前提）：\n由折射角求第二介质折射率：光由折射率 n1 的均匀介质射向折射率 n2 的均匀介质\n由入射条件求折射角正弦：已知两侧折射率和入射角，且确有折射光线",
       "error_type": "数值代入",
       "judging": "auto",
       "source_error_index": 1,
@@ -180,15 +271,57 @@
         "expr": "s_i",
         "ref": 0.4
       },
+      "level": "基础",
+      "learning_scope": "高中",
+      "answer_evidence": {
+        "kind": "numeric",
+        "scenario": "空气射入玻璃",
+        "parameters": {
+          "n1": 1.0,
+          "n2": 1.5,
+          "s_i": 0.6,
+          "s_r": 0.4
+        },
+        "target": "s_r",
+        "unit": "1",
+        "reference": 0.4,
+        "correct_proof": {
+          "expression": "n1*s_i/n2",
+          "formula": "由入射条件求折射角正弦",
+          "value": 0.39999999999999997,
+          "when": "已知两侧折射率和入射角，且确有折射光线"
+        },
+        "distractor_expression": "s_i",
+        "distractor_value": 0.6,
+        "dimension_matches": true,
+        "independent_evaluation": true
+      },
       "review": {
         "confidence": "medium",
-        "checks": {
-          "answer_unique": true,
-          "distractors_plausible": true,
-          "stem_clear": true,
-          "no_cross_segment": true
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": true,
+          "no_answer_leak_in_options": true
         },
-        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。"
       }
     },
     {
@@ -196,27 +329,19 @@
       "point_id": "opt-03",
       "point_title": "折射率与光速的关系",
       "chapter": "第十六章 · 几何光学",
-      "stem": "【第十六章 · 几何光学 · 折射率与光速的关系】学生的错误做法：把折射率写反为 n = v/c（错误表达式：n = v/c）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "stem": "在“折射率与光速的关系”的模型下，c（真空中的光速）=3e+08 m/s；v（光在介质中的传播速度）=2e+08 m/s。条件：比较真空光速与光在均匀介质中的速度。求介质的绝对折射率（n）。这些数值是设计示例。",
       "options": [
         {
           "label": "A",
-          "text": "数值代入：反射角本身等于入射角；某些转镜问题中出现的两倍关系，指的是反射光线转过的角度。"
+          "text": "1.5 1"
         },
         {
           "label": "B",
-          "text": "数值代入：错误式在空气射入玻璃时给出 0.9，而正确值是 0.4；它还错误预言进入高折射率介质会偏离法线。"
-        },
-        {
-          "label": "C",
-          "text": "数值代入：因为 n1 &gt; n2，写反后得到 1.0714，大于正弦值上限 1，物理上不可能；正确值为 14/15。"
-        },
-        {
-          "label": "D",
-          "text": "数值代入：玻璃中光速小于真空光速，写反会得到 2/3，小于 1；正确折射率是 1.5。"
+          "text": "0.666667 1"
         }
       ],
-      "correct_answer": "D",
-      "explanation": "玻璃中光速小于真空光速，写反会得到 2/3，小于 1；正确折射率是 1.5。两式量纲都正确，只能靠数值和物理范围抓住。\n知识库校验证据：情境：玻璃中的光；代入错误式：v/c；校验参照值：1.5。",
+      "correct_answer": "A",
+      "explanation": "使用绝对折射率：c/v，代入得1.5 1。另一结果来自v/c，算得0.666667 1。\n玻璃中光速小于真空光速，写反会得到 2/3，小于 1；正确折射率是 1.5。两式量纲都正确，只能靠数值和物理范围抓住。\n知识点条件：折射率没有单位，表示介质使光速降低的程度。真空中 n = 1，普通透明介质的 n 通常大于 1。跨越分界面时由光源决定的频率连续不变，所以 v = f·λ（λ 与 L<sub>m</sub> 同指介质中波长） 中速度的变化必须由波长变化来配合。\n推导依据：绝对折射率按定义为 n = c/v，两种速度单位相同，因此 n 是无量纲量。；光跨过静止分界面时频率 f 不变；分别写出真空中 c = f L<sub>0</sub> 和介质中 v = f L<sub>m</sub>。；两式相除得 c/v = L<sub>0</sub>/L<sub>m</sub> = n，因此 L<sub>m</sub> = L<sub>0</sub>/n。\n卡片公式各自的适用条件（不是本题共同前提）：\n绝对折射率：比较真空光速与光在均匀介质中的速度\n介质中的波长：光从真空进入介质，频率保持不变",
       "error_type": "数值代入",
       "judging": "auto",
       "source_error_index": 0,
@@ -227,15 +352,58 @@
         "expr": "v/c",
         "ref": 1.5
       },
+      "level": "基础",
+      "learning_scope": "高中",
+      "answer_evidence": {
+        "kind": "numeric",
+        "scenario": "玻璃中的光",
+        "parameters": {
+          "n": 1.5,
+          "c": 300000000,
+          "v": 200000000,
+          "L_0": 6e-07,
+          "L_m": 4e-07
+        },
+        "target": "n",
+        "unit": "1",
+        "reference": 1.5,
+        "correct_proof": {
+          "expression": "c/v",
+          "formula": "绝对折射率",
+          "value": 1.5,
+          "when": "比较真空光速与光在均匀介质中的速度"
+        },
+        "distractor_expression": "v/c",
+        "distractor_value": 0.6666666666666666,
+        "dimension_matches": true,
+        "independent_evaluation": true
+      },
       "review": {
         "confidence": "medium",
-        "checks": {
-          "answer_unique": true,
-          "distractors_plausible": true,
-          "stem_clear": true,
-          "no_cross_segment": true
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": true,
+          "no_answer_leak_in_options": true
         },
-        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。"
       }
     },
     {
@@ -243,46 +411,82 @@
       "point_id": "opt-03",
       "point_title": "折射率与光速的关系",
       "chapter": "第十六章 · 几何光学",
-      "stem": "【第十六章 · 几何光学 · 折射率与光速的关系】学生的错误做法：认为进入介质后波长增大，写成 L<sub>m</sub> = n L<sub>0</sub>（错误表达式：n·L<sub>0</sub>/L<sub>m</sub> = 1）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "stem": "在“折射率与光速的关系”的模型下，n（介质的绝对折射率）=1.5 1；L<sub>0</sub>（真空中的波长）=6e-07 m。条件：光从真空进入介质，频率保持不变。求介质中的波长（L<sub>m</sub>）。这些数值是设计示例。",
       "options": [
         {
           "label": "A",
-          "text": "数值代入：错误式在空气射入玻璃时给出 0.9，而正确值是 0.4；它还错误预言进入高折射率介质会偏离法线。"
+          "text": "4e-07 m"
         },
         {
           "label": "B",
-          "text": "数值代入：因为 n1 &gt; n2，写反后得到 1.0714，大于正弦值上限 1，物理上不可能；正确值为 14/15。"
-        },
-        {
-          "label": "C",
-          "text": "数值代入：频率不变而速度降低，波长应缩短。"
-        },
-        {
-          "label": "D",
-          "text": "数值代入：反射角本身等于入射角；某些转镜问题中出现的两倍关系，指的是反射光线转过的角度。"
+          "text": "9e-07 m"
         }
       ],
-      "correct_answer": "C",
-      "explanation": "频率不变而速度降低，波长应缩短。错误式给出 900 nm，正确值为 400 nm。\n知识库校验证据：情境：玻璃中的光；代入错误式：n·L<sub>0</sub>/L<sub>m</sub>；校验参照值：1.0。",
+      "correct_answer": "A",
+      "explanation": "使用介质中的波长：L<sub>0</sub>/n，代入得4e-07 m。另一结果来自n·L<sub>0</sub>，算得9e-07 m。\n频率不变而速度降低，波长应缩短。错误式给出 900 nm，正确值为 400 nm。\n知识点条件：折射率没有单位，表示介质使光速降低的程度。真空中 n = 1，普通透明介质的 n 通常大于 1。跨越分界面时由光源决定的频率连续不变，所以 v = f·λ（λ 与 L<sub>m</sub> 同指介质中波长） 中速度的变化必须由波长变化来配合。\n推导依据：绝对折射率按定义为 n = c/v，两种速度单位相同，因此 n 是无量纲量。；光跨过静止分界面时频率 f 不变；分别写出真空中 c = f L<sub>0</sub> 和介质中 v = f L<sub>m</sub>。；两式相除得 c/v = L<sub>0</sub>/L<sub>m</sub> = n，因此 L<sub>m</sub> = L<sub>0</sub>/n。\n卡片公式各自的适用条件（不是本题共同前提）：\n绝对折射率：比较真空光速与光在均匀介质中的速度\n介质中的波长：光从真空进入介质，频率保持不变",
       "error_type": "数值代入",
       "judging": "auto",
       "source_error_index": 1,
       "source_caught_by": "数值代入",
-      "wrong_expr": "n·L<sub>0</sub>/L<sub>m</sub> = 1",
+      "wrong_expr": "L<sub>m</sub> = n·L<sub>0</sub>",
       "trap_test": {
         "scenario": "玻璃中的光",
-        "expr": "n*L_0/L_m",
-        "ref": 1.0
+        "expr": "n*L_0",
+        "ref": 4e-07,
+        "tol": 4e-13
+      },
+      "level": "基础",
+      "learning_scope": "高中",
+      "answer_evidence": {
+        "kind": "numeric",
+        "scenario": "玻璃中的光",
+        "parameters": {
+          "n": 1.5,
+          "c": 300000000,
+          "v": 200000000,
+          "L_0": 6e-07,
+          "L_m": 4e-07
+        },
+        "target": "L_m",
+        "unit": "m",
+        "reference": 4e-07,
+        "correct_proof": {
+          "expression": "L_0/n",
+          "formula": "介质中的波长",
+          "value": 4e-07,
+          "when": "光从真空进入介质，频率保持不变"
+        },
+        "distractor_expression": "n*L_0",
+        "distractor_value": 9e-07,
+        "dimension_matches": true,
+        "independent_evaluation": true
       },
       "review": {
         "confidence": "medium",
-        "checks": {
-          "answer_unique": true,
-          "distractors_plausible": true,
-          "stem_clear": true,
-          "no_cross_segment": true
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": true,
+          "no_answer_leak_in_options": true
         },
-        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。"
       }
     },
     {
@@ -290,27 +494,19 @@
       "point_id": "opt-04",
       "point_title": "全反射与临界角",
       "chapter": "第十六章 · 几何光学",
-      "stem": "【第十六章 · 几何光学 · 全反射与临界角】学生的错误做法：把临界角关系写反为 s<sub>C</sub> = n1/n2（错误表达式：s<sub>C</sub> = n1/n2）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "stem": "在“全反射与临界角”的模型下，n1（入射侧或光纤纤芯的折射率）=1.5 1；n2（折射侧或光纤包层的折射率）=1.4 1。条件：光由 n1 较大的介质射向 n2 较小的介质，且 n1 &gt; n2。求临界角 C 的正弦值（s<sub>C</sub>）。这些数值是设计示例。",
       "options": [
         {
           "label": "A",
-          "text": "数值代入：玻璃中光速小于真空光速，写反会得到 2/3，小于 1；正确折射率是 1.5。"
+          "text": "0.933333 1"
         },
         {
           "label": "B",
-          "text": "数值代入：因为 n1 &gt; n2，写反后得到 1.0714，大于正弦值上限 1，物理上不可能；正确值为 14/15。"
-        },
-        {
-          "label": "C",
-          "text": "数值代入：反射角本身等于入射角；某些转镜问题中出现的两倍关系，指的是反射光线转过的角度。"
-        },
-        {
-          "label": "D",
-          "text": "数值代入：错误式在空气射入玻璃时给出 0.9，而正确值是 0.4；它还错误预言进入高折射率介质会偏离法线。"
+          "text": "1.07143 1"
         }
       ],
-      "correct_answer": "B",
-      "explanation": "因为 n1 &gt; n2，写反后得到 1.0714，大于正弦值上限 1，物理上不可能；正确值为 14/15。\n知识库校验证据：情境：纤芯与包层；代入错误式：n1/n2；校验参照值：0.9333333333333333。",
+      "correct_answer": "A",
+      "explanation": "使用临界角的正弦：n2/n1，代入得0.933333 1。另一结果来自n1/n2，算得1.07143 1。\n因为 n1 &gt; n2，写反后得到 1.0714，大于正弦值上限 1，物理上不可能；正确值为 14/15。\n知识点条件：全反射有两个缺一不可的条件：必须从光密介质射向光疏介质，即 n1 &gt; n2；入射角还必须大于临界角 C。等于 C 时折射光沿界面传播，尚未完全消失。光纤利用纤芯折射率高于包层，使光在界面多次全反射。\n推导依据：临界状态下折射光沿界面传播，折射角为 90°，所以折射定律给出 n1 s<sub>C</sub> = n2。；移项得到 s<sub>C</sub> = n2/n1。只有 n1 &gt; n2 时右边小于 1，临界角才存在。；阶跃型光纤在空气中的数值孔径可由入射端折射和纤芯—包层界面的全反射条件联立得到 NA = √(n1²−n2²)。\n卡片公式各自的适用条件（不是本题共同前提）：\n临界角的正弦：光由 n1 较大的介质射向 n2 较小的介质，且 n1 &gt; n2\n光纤数值孔径：光从空气耦合进入阶跃型光纤，纤芯折射率 n1 大于包层折射率 n2",
       "error_type": "数值代入",
       "judging": "auto",
       "source_error_index": 0,
@@ -321,15 +517,57 @@
         "expr": "n1/n2",
         "ref": 0.9333333333333333
       },
+      "level": "进阶",
+      "learning_scope": "高中",
+      "answer_evidence": {
+        "kind": "numeric",
+        "scenario": "纤芯与包层",
+        "parameters": {
+          "n1": 1.5,
+          "n2": 1.4,
+          "s_C": 0.9333333333333333,
+          "NA": 0.5385164807134505
+        },
+        "target": "s_C",
+        "unit": "1",
+        "reference": 0.9333333333333333,
+        "correct_proof": {
+          "expression": "n2/n1",
+          "formula": "临界角的正弦",
+          "value": 0.9333333333333332,
+          "when": "光由 n1 较大的介质射向 n2 较小的介质，且 n1 > n2"
+        },
+        "distractor_expression": "n1/n2",
+        "distractor_value": 1.0714285714285714,
+        "dimension_matches": true,
+        "independent_evaluation": true
+      },
       "review": {
         "confidence": "medium",
-        "checks": {
-          "answer_unique": true,
-          "distractors_plausible": true,
-          "stem_clear": true,
-          "no_cross_segment": true
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": true,
+          "no_answer_leak_in_options": true
         },
-        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。"
       }
     },
     {
@@ -337,27 +575,19 @@
       "point_id": "opt-04",
       "point_title": "全反射与临界角",
       "chapter": "第十六章 · 几何光学",
-      "stem": "【第十六章 · 几何光学 · 全反射与临界角】学生的错误做法：数值孔径漏掉平方根，写成 NA = n1² − n2²（错误表达式：NA = n1² - n2²）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "stem": "在“全反射与临界角”的模型下，n1（入射侧或光纤纤芯的折射率）=1.5 1；n2（折射侧或光纤包层的折射率）=1.4 1。条件：光从空气耦合进入阶跃型光纤，纤芯折射率 n1 大于包层折射率 n2。求光纤的数值孔径（NA）。这些数值是设计示例。",
       "options": [
         {
           "label": "A",
-          "text": "数值代入：错误式给出 0.29，正确值应为 √(0.29) 约 0.538516。"
+          "text": "0.29 1"
         },
         {
           "label": "B",
-          "text": "数值代入：反射角本身等于入射角；某些转镜问题中出现的两倍关系，指的是反射光线转过的角度。"
-        },
-        {
-          "label": "C",
-          "text": "数值代入：错误式在空气射入玻璃时给出 0.9，而正确值是 0.4；它还错误预言进入高折射率介质会偏离法线。"
-        },
-        {
-          "label": "D",
-          "text": "数值代入：玻璃中光速小于真空光速，写反会得到 2/3，小于 1；正确折射率是 1.5。"
+          "text": "0.538516 1"
         }
       ],
-      "correct_answer": "A",
-      "explanation": "错误式给出 0.29，正确值应为 √(0.29) 约 0.538516。量纲都是无量纲，必须数值检验。\n知识库校验证据：情境：纤芯与包层；代入错误式：n1² - n2²；校验参照值：0.5385164807134505。",
+      "correct_answer": "B",
+      "explanation": "使用光纤数值孔径：√(n1² - n2²)，代入得0.538516 1。另一结果来自n1² - n2²，算得0.29 1。\n错误式给出 0.29，正确值应为 √(0.29) 约 0.538516。量纲都是无量纲，必须数值检验。\n知识点条件：全反射有两个缺一不可的条件：必须从光密介质射向光疏介质，即 n1 &gt; n2；入射角还必须大于临界角 C。等于 C 时折射光沿界面传播，尚未完全消失。光纤利用纤芯折射率高于包层，使光在界面多次全反射。\n推导依据：临界状态下折射光沿界面传播，折射角为 90°，所以折射定律给出 n1 s<sub>C</sub> = n2。；移项得到 s<sub>C</sub> = n2/n1。只有 n1 &gt; n2 时右边小于 1，临界角才存在。；阶跃型光纤在空气中的数值孔径可由入射端折射和纤芯—包层界面的全反射条件联立得到 NA = √(n1²−n2²)。\n卡片公式各自的适用条件（不是本题共同前提）：\n临界角的正弦：光由 n1 较大的介质射向 n2 较小的介质，且 n1 &gt; n2\n光纤数值孔径：光从空气耦合进入阶跃型光纤，纤芯折射率 n1 大于包层折射率 n2",
       "error_type": "数值代入",
       "judging": "auto",
       "source_error_index": 1,
@@ -368,15 +598,57 @@
         "expr": "n1^2 - n2^2",
         "ref": 0.5385164807134505
       },
+      "level": "进阶",
+      "learning_scope": "高中",
+      "answer_evidence": {
+        "kind": "numeric",
+        "scenario": "纤芯与包层",
+        "parameters": {
+          "n1": 1.5,
+          "n2": 1.4,
+          "s_C": 0.9333333333333333,
+          "NA": 0.5385164807134505
+        },
+        "target": "NA",
+        "unit": "1",
+        "reference": 0.5385164807134505,
+        "correct_proof": {
+          "expression": "sqrt(n1^2 - n2^2)",
+          "formula": "光纤数值孔径",
+          "value": 0.5385164807134506,
+          "when": "光从空气耦合进入阶跃型光纤，纤芯折射率 n1 大于包层折射率 n2"
+        },
+        "distractor_expression": "n1^2 - n2^2",
+        "distractor_value": 0.29000000000000026,
+        "dimension_matches": true,
+        "independent_evaluation": true
+      },
       "review": {
         "confidence": "medium",
-        "checks": {
-          "answer_unique": true,
-          "distractors_plausible": true,
-          "stem_clear": true,
-          "no_cross_segment": true
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": true,
+          "no_answer_leak_in_options": true
         },
-        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。"
       }
     },
     {
@@ -384,27 +656,19 @@
       "point_id": "opt-05",
       "point_title": "光的色散",
       "chapter": "第十六章 · 几何光学",
-      "stem": "【第十六章 · 几何光学 · 光的色散】学生的错误做法：薄棱镜偏向角漏掉减 1，写成 Δb = n<sub>b</sub> A（错误表达式：Δb = n<sub>b</sub>·A）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "stem": "在“光的色散”的模型下，n<sub>b</sub>（棱镜对蓝光的折射率）=1.53 1；A（薄棱镜的顶角）=0.1 rad。条件：棱镜顶角和入射、折射角均较小，可采用小角近似。求蓝光通过薄棱镜后的偏向角（Δb）。这些数值是设计示例。",
       "options": [
         {
           "label": "A",
-          "text": "数值代入：反射角本身等于入射角；某些转镜问题中出现的两倍关系，指的是反射光线转过的角度。"
+          "text": "0.053 rad"
         },
         {
           "label": "B",
-          "text": "数值代入：错误式在空气射入玻璃时给出 0.9，而正确值是 0.4；它还错误预言进入高折射率介质会偏离法线。"
-        },
-        {
-          "label": "C",
-          "text": "数值代入：玻璃中光速小于真空光速，写反会得到 2/3，小于 1；正确折射率是 1.5。"
-        },
-        {
-          "label": "D",
-          "text": "数值代入：错误式给出 1.53×0.1 = 0.153 rad，正确小角近似值为 0.053 rad。"
+          "text": "0.153 rad"
         }
       ],
-      "correct_answer": "D",
-      "explanation": "错误式给出 1.53×0.1 = 0.153 rad，正确小角近似值为 0.053 rad。两式量纲相同，数值检验才能发现。\n知识库校验证据：情境：薄棱镜色散；代入错误式：n<sub>b</sub>·A；校验参照值：0.053。",
+      "correct_answer": "A",
+      "explanation": "使用薄棱镜对蓝光的偏向角：(n<sub>b</sub> - 1)·A，代入得0.053 rad。另一结果来自n<sub>b</sub>·A，算得0.153 rad。\n错误式给出 1.53×0.1 = 0.153 rad，正确小角近似值为 0.053 rad。两式量纲相同，数值检验才能发现。\n知识点条件：色散来自折射率随光的频率或真空波长而变化，不是不同颜色在真空中的光速不同。薄棱镜近似下，折射率差会直接转化为角分离：蓝光折射率更大，所以蓝光偏向角更大，蓝红两光的夹角与 n<sub>b</sub>−n<sub>r</sub> 成正比。\n推导依据：对顶角很小的棱镜，把折射定律作小角近似，可得单色光偏向角等于 (n−1)A。；蓝光偏向角为 Δb = (n<sub>b</sub>−1)A，红光偏向角为 Δr = (n<sub>r</sub>−1)A。；两式相减，得到色散角 Δ<sub>分离</sub> = Δb−Δr = (n<sub>b</sub>−n<sub>r</sub>)A。普通玻璃中 n<sub>b</sub> &gt; n<sub>r</sub>，所以蓝光偏折更大。\n卡片公式各自的适用条件（不是本题共同前提）：\n薄棱镜对蓝光的偏向角：棱镜顶角和入射、折射角均较小，可采用小角近似\n薄棱镜的色散角：同一薄棱镜分开蓝光和红光，采用小角近似且 n<sub>b</sub> &gt; n<sub>r</sub>",
       "error_type": "数值代入",
       "judging": "auto",
       "source_error_index": 0,
@@ -415,15 +679,59 @@
         "expr": "n_b*A",
         "ref": 0.053
       },
+      "level": "进阶",
+      "learning_scope": "高中",
+      "answer_evidence": {
+        "kind": "numeric",
+        "scenario": "薄棱镜色散",
+        "parameters": {
+          "n_b": 1.53,
+          "n_r": 1.51,
+          "A": 0.1,
+          "delta_b": 0.053,
+          "delta_r": 0.051,
+          "delta_sep": 0.002
+        },
+        "target": "delta_b",
+        "unit": "rad",
+        "reference": 0.053,
+        "correct_proof": {
+          "expression": "(n_b - 1)*A",
+          "formula": "薄棱镜对蓝光的偏向角",
+          "value": 0.053000000000000005,
+          "when": "棱镜顶角和入射、折射角均较小，可采用小角近似"
+        },
+        "distractor_expression": "n_b*A",
+        "distractor_value": 0.15300000000000002,
+        "dimension_matches": true,
+        "independent_evaluation": true
+      },
       "review": {
         "confidence": "medium",
-        "checks": {
-          "answer_unique": true,
-          "distractors_plausible": true,
-          "stem_clear": true,
-          "no_cross_segment": true
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": true,
+          "no_answer_leak_in_options": true
         },
-        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。"
       }
     },
     {
@@ -431,27 +739,19 @@
       "point_id": "opt-05",
       "point_title": "光的色散",
       "chapter": "第十六章 · 几何光学",
-      "stem": "【第十六章 · 几何光学 · 光的色散】学生的错误做法：把折射率差顺序写反，认为红光比蓝光偏折更大（错误表达式：Δ<sub>分离</sub> = (n<sub>r</sub> - n<sub>b</sub>)·A）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "stem": "在“光的色散”的模型下，n<sub>b</sub>（棱镜对蓝光的折射率）=1.53 1；n<sub>r</sub>（棱镜对红光的折射率）=1.51 1；A（薄棱镜的顶角）=0.1 rad。条件：同一薄棱镜分开蓝光和红光，采用小角近似且 n<sub>b</sub> &gt; n<sub>r</sub>。求蓝光与红光出射方向的角分离（Δ<sub>分离</sub>）。这些数值是设计示例。",
       "options": [
         {
           "label": "A",
-          "text": "数值代入：错误式在空气射入玻璃时给出 0.9，而正确值是 0.4；它还错误预言进入高折射率介质会偏离法线。"
+          "text": "0.002 rad"
         },
         {
           "label": "B",
-          "text": "数值代入：玻璃中光速小于真空光速，写反会得到 2/3，小于 1；正确折射率是 1.5。"
-        },
-        {
-          "label": "C",
-          "text": "数值代入：错误式得到 −0.002 rad，不但符号相反，也违背普通玻璃中蓝光折射率更大、偏折更强的事实。"
-        },
-        {
-          "label": "D",
-          "text": "数值代入：反射角本身等于入射角；某些转镜问题中出现的两倍关系，指的是反射光线转过的角度。"
+          "text": "-0.002 rad"
         }
       ],
-      "correct_answer": "C",
-      "explanation": "错误式得到 −0.002 rad，不但符号相反，也违背普通玻璃中蓝光折射率更大、偏折更强的事实。\n知识库校验证据：情境：薄棱镜色散；代入错误式：(n<sub>r</sub> - n<sub>b</sub>)·A；校验参照值：0.002。",
+      "correct_answer": "A",
+      "explanation": "使用薄棱镜的色散角：(n<sub>b</sub> - n<sub>r</sub>)·A，代入得0.002 rad。另一结果来自(n<sub>r</sub> - n<sub>b</sub>)·A，算得-0.002 rad。\n错误式得到 −0.002 rad，不但符号相反，也违背普通玻璃中蓝光折射率更大、偏折更强的事实。\n知识点条件：色散来自折射率随光的频率或真空波长而变化，不是不同颜色在真空中的光速不同。薄棱镜近似下，折射率差会直接转化为角分离：蓝光折射率更大，所以蓝光偏向角更大，蓝红两光的夹角与 n<sub>b</sub>−n<sub>r</sub> 成正比。\n推导依据：对顶角很小的棱镜，把折射定律作小角近似，可得单色光偏向角等于 (n−1)A。；蓝光偏向角为 Δb = (n<sub>b</sub>−1)A，红光偏向角为 Δr = (n<sub>r</sub>−1)A。；两式相减，得到色散角 Δ<sub>分离</sub> = Δb−Δr = (n<sub>b</sub>−n<sub>r</sub>)A。普通玻璃中 n<sub>b</sub> &gt; n<sub>r</sub>，所以蓝光偏折更大。\n卡片公式各自的适用条件（不是本题共同前提）：\n薄棱镜对蓝光的偏向角：棱镜顶角和入射、折射角均较小，可采用小角近似\n薄棱镜的色散角：同一薄棱镜分开蓝光和红光，采用小角近似且 n<sub>b</sub> &gt; n<sub>r</sub>",
       "error_type": "数值代入",
       "judging": "auto",
       "source_error_index": 1,
@@ -462,15 +762,59 @@
         "expr": "(n_r - n_b)*A",
         "ref": 0.002
       },
+      "level": "进阶",
+      "learning_scope": "高中",
+      "answer_evidence": {
+        "kind": "numeric",
+        "scenario": "薄棱镜色散",
+        "parameters": {
+          "n_b": 1.53,
+          "n_r": 1.51,
+          "A": 0.1,
+          "delta_b": 0.053,
+          "delta_r": 0.051,
+          "delta_sep": 0.002
+        },
+        "target": "delta_sep",
+        "unit": "rad",
+        "reference": 0.002,
+        "correct_proof": {
+          "expression": "(n_b - n_r)*A",
+          "formula": "薄棱镜的色散角",
+          "value": 0.0020000000000000018,
+          "when": "同一薄棱镜分开蓝光和红光，采用小角近似且 n_b > n_r"
+        },
+        "distractor_expression": "(n_r - n_b)*A",
+        "distractor_value": -0.0020000000000000018,
+        "dimension_matches": true,
+        "independent_evaluation": true
+      },
       "review": {
         "confidence": "medium",
-        "checks": {
-          "answer_unique": true,
-          "distractors_plausible": true,
-          "stem_clear": true,
-          "no_cross_segment": true
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": true,
+          "no_answer_leak_in_options": true
         },
-        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。"
       }
     },
     {
@@ -478,27 +822,19 @@
       "point_id": "opt-06",
       "point_title": "光导纤维与全反射的应用",
       "chapter": "第十六章 · 几何光学",
-      "stem": "【第十六章 · 几何光学 · 光导纤维与全反射的应用】学生的错误做法：把芯层和包层折射率平方相加求数值孔径（错误表达式：A = √(n1²+n2²)）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "stem": "在“光导纤维与全反射的应用”的模型下，n1（纤芯折射率）=1.5 1；n2（包层折射率）=1.2 1。条件：直阶跃光纤的子午光线模型。求光纤数值孔径（A）。这些数值是设计示例。",
       "options": [
         {
           "label": "A",
-          "text": "数值代入：错误式在空气射入玻璃时给出 0.9，而正确值是 0.4；它还错误预言进入高折射率介质会偏离法线。"
+          "text": "1.92094 1"
         },
         {
           "label": "B",
-          "text": "数值代入：光纤入口接受条件来自全反射和入口折射的联合限制，应该取平方差；相加虽量纲一致却会得到过大的孔径和非法接受角。"
-        },
-        {
-          "label": "C",
-          "text": "概念混淆：入口必须满足接受角限制，芯层边界必须满足全反射角度条件；折射率结构本身不能保证所有光线被导引。"
-        },
-        {
-          "label": "D",
-          "text": "数值代入：反射角本身等于入射角；某些转镜问题中出现的两倍关系，指的是反射光线转过的角度。"
+          "text": "0.9 1"
         }
       ],
       "correct_answer": "B",
-      "explanation": "光纤入口接受条件来自全反射和入口折射的联合限制，应该取平方差；相加虽量纲一致却会得到过大的孔径和非法接受角。\n知识库校验证据：情境：直纤维；代入错误式：√(n1²+n2²)；校验参照值：0.9。",
+      "explanation": "使用光纤数值孔径：√(n1²-n2²)，代入得0.9 1。另一结果来自√(n1²+n2²)，算得1.92094 1。\n光纤入口接受条件来自全反射和入口折射的联合限制，应该取平方差；相加虽量纲一致却会得到过大的孔径和非法接受角。\n知识点条件：全反射要求从高折射率介质射向低折射率介质且入射角超过临界角。纤芯内相对界面法线的角和入口相对轴线的角不是同一个角，本卡只分析直纤维中的子午光线；数值孔径的角度公式还要求入口介质折射率给定。弯曲、吸收和波导模式会带来实际损耗，不能声称真实光纤传输零损失。\n推导依据：先比较芯层和包层折射率，确认具备全反射的介质方向。；由芯层边界求临界角，把侧面法线角换算为纤维轴线角。；再用入口折射定律连接轴线角与外部入射角，得到接受角；实际光纤不能只依赖光线几何估算损耗。\n卡片公式各自的适用条件（不是本题共同前提）：\n芯层边界临界角：纤芯折射率大于包层，角度相对界面法线\n光纤数值孔径：直阶跃光纤的子午光线模型\n入口最大接受角：孔径不大于入口介质折射率，忽略波导模式与弯曲",
       "error_type": "数值代入",
       "judging": "auto",
       "source_error_index": 0,
@@ -509,15 +845,58 @@
         "expr": "sqrt(n1^2+n2^2)",
         "ref": 0.9
       },
+      "level": "拓展",
+      "learning_scope": "高中",
+      "answer_evidence": {
+        "kind": "numeric",
+        "scenario": "直纤维",
+        "parameters": {
+          "n1": 1.5,
+          "n2": 1.2,
+          "n_0": 1,
+          "theta_c": 0.9272952180016123,
+          "alpha_max": 1.1197695149986342
+        },
+        "target": "A",
+        "unit": "1",
+        "reference": 0.9,
+        "correct_proof": {
+          "expression": "sqrt(n1^2-n2^2)",
+          "formula": "光纤数值孔径",
+          "value": 0.9,
+          "when": "直阶跃光纤的子午光线模型"
+        },
+        "distractor_expression": "sqrt(n1^2+n2^2)",
+        "distractor_value": 1.9209372712298547,
+        "dimension_matches": true,
+        "independent_evaluation": true
+      },
       "review": {
         "confidence": "medium",
-        "checks": {
-          "answer_unique": true,
-          "distractors_plausible": true,
-          "stem_clear": true,
-          "no_cross_segment": true
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": true,
+          "no_answer_leak_in_options": true
         },
-        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。"
       }
     },
     {
@@ -525,44 +904,2292 @@
       "point_id": "opt-06",
       "point_title": "光导纤维与全反射的应用",
       "chapter": "第十六章 · 几何光学",
-      "stem": "【第十六章 · 几何光学 · 光导纤维与全反射的应用】学生的错误做法：认为光纤任何入射角都能全反射传播。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "stem": "关于“光导纤维与全反射的应用”，判断这一说法是否成立，并说明依据：\n光纤任何入射角都能全反射传播。",
       "options": [
         {
           "label": "A",
-          "text": "概念混淆：入口必须满足接受角限制，芯层边界必须满足全反射角度条件；折射率结构本身不能保证所有光线被导引。"
+          "text": "该说法不成立。"
         },
         {
           "label": "B",
-          "text": "数值代入：反射角本身等于入射角；某些转镜问题中出现的两倍关系，指的是反射光线转过的角度。"
-        },
-        {
-          "label": "C",
-          "text": "数值代入：错误式在空气射入玻璃时给出 0.9，而正确值是 0.4；它还错误预言进入高折射率介质会偏离法线。"
-        },
-        {
-          "label": "D",
-          "text": "数值代入：玻璃中光速小于真空光速，写反会得到 2/3，小于 1；正确折射率是 1.5。"
+          "text": "该说法成立。"
         }
       ],
       "correct_answer": "A",
-      "explanation": "入口必须满足接受角限制，芯层边界必须满足全反射角度条件；折射率结构本身不能保证所有光线被导引。",
+      "explanation": "入口必须满足接受角限制，芯层边界必须满足全反射角度条件；折射率结构本身不能保证所有光线被导引。\n知识点条件：全反射要求从高折射率介质射向低折射率介质且入射角超过临界角。纤芯内相对界面法线的角和入口相对轴线的角不是同一个角，本卡只分析直纤维中的子午光线；数值孔径的角度公式还要求入口介质折射率给定。弯曲、吸收和波导模式会带来实际损耗，不能声称真实光纤传输零损失。\n推导依据：先比较芯层和包层折射率，确认具备全反射的介质方向。；由芯层边界求临界角，把侧面法线角换算为纤维轴线角。；再用入口折射定律连接轴线角与外部入射角，得到接受角；实际光纤不能只依赖光线几何估算损耗。\n卡片公式各自的适用条件（不是本题共同前提）：\n芯层边界临界角：纤芯折射率大于包层，角度相对界面法线\n光纤数值孔径：直阶跃光纤的子午光线模型\n入口最大接受角：孔径不大于入口介质折射率，忽略波导模式与弯曲",
       "error_type": "概念混淆",
       "judging": "teacher",
       "source_error_index": 1,
       "source_caught_by": "人工审核",
       "wrong_expr": null,
       "trap_test": null,
+      "level": "拓展",
+      "learning_scope": "高中",
+      "answer_evidence": {
+        "kind": "teacher",
+        "claim_source": "wrong",
+        "reference_only": true,
+        "reason": "概念、操作或无法建立完整定量证据，教师确认条件与结论。"
+      },
       "review": {
         "confidence": "medium",
-        "checks": {
-          "answer_unique": true,
-          "distractors_plausible": true,
-          "stem_clear": true,
-          "no_cross_segment": true
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": false,
+          "no_answer_leak_in_options": true
         },
-        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。"
       }
     }
   ],
-  "skipped": []
+  "skipped": [],
+  "source_records": {
+    "diagnostic-opt-01-1": {
+      "point": {
+        "id": "opt-01",
+        "title": "光的反射定律",
+        "level": "基础",
+        "definition": "光射到两种介质的分界面后返回原介质，叫光的反射。反射光线、入射光线和法线在同一平面内，反射光线与入射光线分居法线两侧，反射角 theta_r 等于入射角 theta_i。平面镜所成的像与物关于镜面对称。",
+        "meaning": "入射角和反射角都从法线量起，不是从镜面量起。反射定律与光的可逆性相容：把反射光线反向作为入射光线，光会沿原路返回。平面镜成像的物距和像距相等，像是光线反向延长线相交形成的虚像。",
+        "symbols": {
+          "theta_i": {
+            "desc": "入射角，相对法线测量",
+            "unit": "rad"
+          },
+          "theta_r": {
+            "desc": "反射角，相对法线测量",
+            "unit": "rad"
+          },
+          "d_o": {
+            "desc": "物体到平面镜的垂直距离",
+            "unit": "m"
+          },
+          "d_i": {
+            "desc": "虚像到平面镜的垂直距离",
+            "unit": "m"
+          },
+          "D_oi": {
+            "desc": "物体与虚像之间的距离",
+            "unit": "m"
+          }
+        },
+        "scenarios": {
+          "三十度入射": {
+            "theta_i": 0.5235987756,
+            "theta_r": 0.5235987756
+          },
+          "平面镜成像": {
+            "d_o": 2.0,
+            "d_i": 2.0,
+            "D_oi": 4.0
+          }
+        },
+        "formulas": [
+          {
+            "name": "反射角等于入射角",
+            "expr": "theta_r = theta_i",
+            "when": "镜面反射和漫反射中的每一条光线，角度均相对法线测量",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "三十度入射",
+                "expr": "theta_i",
+                "ref": 0.5235987756,
+                "note": "30° 换算为弧度是 pi/6，约为 0.5235987756 rad（独立按角度换算）"
+              },
+              {
+                "type": "compare",
+                "scenario": "三十度入射",
+                "expr": "theta_r",
+                "op": "==",
+                "vs": "theta_i",
+                "note": "反射角与入射角逐值相等，均为 30°"
+              },
+              {
+                "type": "direction",
+                "scenario": "三十度入射",
+                "var": "theta_i",
+                "lo": 0.1,
+                "hi": 1.2,
+                "expr": "theta_i",
+                "expect": "up",
+                "note": "转动入射光使入射角增大，反射角随之等量增大"
+              },
+              {
+                "type": "scan",
+                "scenario": "三十度入射",
+                "var": "theta_i",
+                "lo": 0,
+                "hi": 1.5707963268
+              }
+            ]
+          },
+          {
+            "name": "平面镜物距与像距",
+            "expr": "d_i = d_o",
+            "when": "平面镜成像，物距和像距均取到镜面的垂直距离大小",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "平面镜成像",
+                "expr": "d_o",
+                "ref": 2.0,
+                "note": "物体距镜面 2.0 m，按轴对称作图，像在镜后 2.0 m（独立几何作图）"
+              },
+              {
+                "type": "compare",
+                "scenario": "平面镜成像",
+                "expr": "d_i",
+                "op": "==",
+                "vs": "d_o",
+                "note": "平面镜的像与物关于镜面对称，两侧垂直距离相等"
+              },
+              {
+                "type": "direction",
+                "scenario": "平面镜成像",
+                "var": "d_o",
+                "lo": 0.2,
+                "hi": 5.0,
+                "expr": "d_o",
+                "expect": "up",
+                "note": "物体远离镜面时，像也以相同幅度远离镜面"
+              },
+              {
+                "type": "scan",
+                "scenario": "平面镜成像",
+                "var": "d_o",
+                "lo": 0,
+                "hi": 100
+              }
+            ]
+          },
+          {
+            "name": "平面镜物像间距",
+            "expr": "D_oi = d_o + d_i",
+            "when": "物体与虚像分居平面镜两侧，距离均取正值",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "平面镜成像",
+                "expr": "d_o + d_i",
+                "ref": 4.0,
+                "note": "物体和虚像分别距镜面 2.0 m，物像间距为 2.0+2.0 = 4.0 m（独立线段相加）"
+              },
+              {
+                "type": "direction",
+                "scenario": "平面镜成像",
+                "var": "d_o",
+                "lo": 0.2,
+                "hi": 5.0,
+                "expr": "2*d_o",
+                "expect": "up",
+                "note": "由镜面对称关系，物体远离镜面时物像间距按物距的两倍增大"
+              },
+              {
+                "type": "consistency",
+                "scenario": "平面镜成像",
+                "with": "opt-01|平面镜物像间距",
+                "with_expr": "2*d_o",
+                "target": "物体与虚像之间的距离",
+                "note": "本公式直接求D_oi；参考端显式关系为2*d_o。两端使用同一情境和阶段，只核对该关系；with字段仅定位来源，不代表调用另一条被覆盖的公式。",
+                "verification_kind": "独立关系核对"
+              },
+              {
+                "type": "scan",
+                "scenario": "平面镜成像",
+                "var": "d_i",
+                "lo": 0,
+                "hi": 100
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "实验改变入射光线方向并测角，发现反射光线始终与入射光线分居法线两侧，且 theta_r = theta_i。",
+          "平面镜后并没有真实光线会聚；把进入眼睛的反射光线反向延长，延长线在镜后相交，形成虚像。",
+          "由反射定律作两条特殊光线，可证明像点与物点关于镜面对称，所以 d_i = d_o。"
+        ],
+        "errors": [
+          {
+            "wrong": "把反射角写成入射角的两倍：theta_r = 2 theta_i",
+            "wrong_expr": "theta_r = 2*theta_i",
+            "why": "反射角本身等于入射角；某些转镜问题中出现的两倍关系，指的是反射光线转过的角度。30° 入射时错误式给出 60°。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "三十度入射",
+              "expr": "2*theta_i",
+              "ref": 0.5235987756
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "认为平面镜像距是物距的两倍：d_i = 2 d_o",
+            "wrong_expr": "d_i = 2*d_o",
+            "why": "物与像之间的距离才是 2 d_o；像到镜面的距离仍等于物到镜面的距离。物距 2 m 时错误式给出 4 m。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "平面镜成像",
+              "expr": "2*d_o",
+              "ref": 2.0
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "一束光以 30° 的入射角射到平面镜上；一个物体同时放在镜前 2.0 m 处。求反射角和像距。",
+          "solution": [
+            "入射角相对法线测量，已知 theta_i = 30°。",
+            "由反射定律 theta_r = theta_i，反射角为 30°。",
+            "平面镜成像时像与物关于镜面对称，因此 d_i = d_o = 2.0 m。"
+          ],
+          "answer": "反射角为 30°；像在镜后 2.0 m 处。"
+        },
+        "prereq": [],
+        "next": [
+          "opt-02"
+        ],
+        "tags": [
+          "几何光学",
+          "反射定律",
+          "平面镜成像"
+        ],
+        "learning_scope": "高中"
+      },
+      "error_index": 0,
+      "chapter": "第十六章 · 几何光学"
+    },
+    "diagnostic-opt-01-2": {
+      "point": {
+        "id": "opt-01",
+        "title": "光的反射定律",
+        "level": "基础",
+        "definition": "光射到两种介质的分界面后返回原介质，叫光的反射。反射光线、入射光线和法线在同一平面内，反射光线与入射光线分居法线两侧，反射角 theta_r 等于入射角 theta_i。平面镜所成的像与物关于镜面对称。",
+        "meaning": "入射角和反射角都从法线量起，不是从镜面量起。反射定律与光的可逆性相容：把反射光线反向作为入射光线，光会沿原路返回。平面镜成像的物距和像距相等，像是光线反向延长线相交形成的虚像。",
+        "symbols": {
+          "theta_i": {
+            "desc": "入射角，相对法线测量",
+            "unit": "rad"
+          },
+          "theta_r": {
+            "desc": "反射角，相对法线测量",
+            "unit": "rad"
+          },
+          "d_o": {
+            "desc": "物体到平面镜的垂直距离",
+            "unit": "m"
+          },
+          "d_i": {
+            "desc": "虚像到平面镜的垂直距离",
+            "unit": "m"
+          },
+          "D_oi": {
+            "desc": "物体与虚像之间的距离",
+            "unit": "m"
+          }
+        },
+        "scenarios": {
+          "三十度入射": {
+            "theta_i": 0.5235987756,
+            "theta_r": 0.5235987756
+          },
+          "平面镜成像": {
+            "d_o": 2.0,
+            "d_i": 2.0,
+            "D_oi": 4.0
+          }
+        },
+        "formulas": [
+          {
+            "name": "反射角等于入射角",
+            "expr": "theta_r = theta_i",
+            "when": "镜面反射和漫反射中的每一条光线，角度均相对法线测量",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "三十度入射",
+                "expr": "theta_i",
+                "ref": 0.5235987756,
+                "note": "30° 换算为弧度是 pi/6，约为 0.5235987756 rad（独立按角度换算）"
+              },
+              {
+                "type": "compare",
+                "scenario": "三十度入射",
+                "expr": "theta_r",
+                "op": "==",
+                "vs": "theta_i",
+                "note": "反射角与入射角逐值相等，均为 30°"
+              },
+              {
+                "type": "direction",
+                "scenario": "三十度入射",
+                "var": "theta_i",
+                "lo": 0.1,
+                "hi": 1.2,
+                "expr": "theta_i",
+                "expect": "up",
+                "note": "转动入射光使入射角增大，反射角随之等量增大"
+              },
+              {
+                "type": "scan",
+                "scenario": "三十度入射",
+                "var": "theta_i",
+                "lo": 0,
+                "hi": 1.5707963268
+              }
+            ]
+          },
+          {
+            "name": "平面镜物距与像距",
+            "expr": "d_i = d_o",
+            "when": "平面镜成像，物距和像距均取到镜面的垂直距离大小",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "平面镜成像",
+                "expr": "d_o",
+                "ref": 2.0,
+                "note": "物体距镜面 2.0 m，按轴对称作图，像在镜后 2.0 m（独立几何作图）"
+              },
+              {
+                "type": "compare",
+                "scenario": "平面镜成像",
+                "expr": "d_i",
+                "op": "==",
+                "vs": "d_o",
+                "note": "平面镜的像与物关于镜面对称，两侧垂直距离相等"
+              },
+              {
+                "type": "direction",
+                "scenario": "平面镜成像",
+                "var": "d_o",
+                "lo": 0.2,
+                "hi": 5.0,
+                "expr": "d_o",
+                "expect": "up",
+                "note": "物体远离镜面时，像也以相同幅度远离镜面"
+              },
+              {
+                "type": "scan",
+                "scenario": "平面镜成像",
+                "var": "d_o",
+                "lo": 0,
+                "hi": 100
+              }
+            ]
+          },
+          {
+            "name": "平面镜物像间距",
+            "expr": "D_oi = d_o + d_i",
+            "when": "物体与虚像分居平面镜两侧，距离均取正值",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "平面镜成像",
+                "expr": "d_o + d_i",
+                "ref": 4.0,
+                "note": "物体和虚像分别距镜面 2.0 m，物像间距为 2.0+2.0 = 4.0 m（独立线段相加）"
+              },
+              {
+                "type": "direction",
+                "scenario": "平面镜成像",
+                "var": "d_o",
+                "lo": 0.2,
+                "hi": 5.0,
+                "expr": "2*d_o",
+                "expect": "up",
+                "note": "由镜面对称关系，物体远离镜面时物像间距按物距的两倍增大"
+              },
+              {
+                "type": "consistency",
+                "scenario": "平面镜成像",
+                "with": "opt-01|平面镜物像间距",
+                "with_expr": "2*d_o",
+                "target": "物体与虚像之间的距离",
+                "note": "本公式直接求D_oi；参考端显式关系为2*d_o。两端使用同一情境和阶段，只核对该关系；with字段仅定位来源，不代表调用另一条被覆盖的公式。",
+                "verification_kind": "独立关系核对"
+              },
+              {
+                "type": "scan",
+                "scenario": "平面镜成像",
+                "var": "d_i",
+                "lo": 0,
+                "hi": 100
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "实验改变入射光线方向并测角，发现反射光线始终与入射光线分居法线两侧，且 theta_r = theta_i。",
+          "平面镜后并没有真实光线会聚；把进入眼睛的反射光线反向延长，延长线在镜后相交，形成虚像。",
+          "由反射定律作两条特殊光线，可证明像点与物点关于镜面对称，所以 d_i = d_o。"
+        ],
+        "errors": [
+          {
+            "wrong": "把反射角写成入射角的两倍：theta_r = 2 theta_i",
+            "wrong_expr": "theta_r = 2*theta_i",
+            "why": "反射角本身等于入射角；某些转镜问题中出现的两倍关系，指的是反射光线转过的角度。30° 入射时错误式给出 60°。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "三十度入射",
+              "expr": "2*theta_i",
+              "ref": 0.5235987756
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "认为平面镜像距是物距的两倍：d_i = 2 d_o",
+            "wrong_expr": "d_i = 2*d_o",
+            "why": "物与像之间的距离才是 2 d_o；像到镜面的距离仍等于物到镜面的距离。物距 2 m 时错误式给出 4 m。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "平面镜成像",
+              "expr": "2*d_o",
+              "ref": 2.0
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "一束光以 30° 的入射角射到平面镜上；一个物体同时放在镜前 2.0 m 处。求反射角和像距。",
+          "solution": [
+            "入射角相对法线测量，已知 theta_i = 30°。",
+            "由反射定律 theta_r = theta_i，反射角为 30°。",
+            "平面镜成像时像与物关于镜面对称，因此 d_i = d_o = 2.0 m。"
+          ],
+          "answer": "反射角为 30°；像在镜后 2.0 m 处。"
+        },
+        "prereq": [],
+        "next": [
+          "opt-02"
+        ],
+        "tags": [
+          "几何光学",
+          "反射定律",
+          "平面镜成像"
+        ],
+        "learning_scope": "高中"
+      },
+      "error_index": 1,
+      "chapter": "第十六章 · 几何光学"
+    },
+    "diagnostic-opt-02-1": {
+      "point": {
+        "id": "opt-02",
+        "title": "光的折射与折射定律",
+        "level": "基础",
+        "definition": "光从一种介质斜射入另一种介质时，传播方向通常发生改变，这叫折射。折射定律写成 n1 sin i = n2 sin r。本知识点用 s_i 和 s_r 分别记录入射角与折射角的正弦值，两个角都相对法线测量。",
+        "meaning": "判断偏向法线还是偏离法线，要比较两种介质的折射率：进入折射率更大的介质时，折射角更小，光线偏向法线；进入折射率更小的介质时则偏离法线。正入射时角度为零，方向不偏折，但传播速度仍会改变。",
+        "symbols": {
+          "n1": {
+            "desc": "入射介质的折射率",
+            "unit": "1"
+          },
+          "n2": {
+            "desc": "折射介质的折射率",
+            "unit": "1"
+          },
+          "s_i": {
+            "desc": "入射角 i 的正弦值",
+            "unit": "1"
+          },
+          "s_r": {
+            "desc": "折射角 r 的正弦值",
+            "unit": "1"
+          }
+        },
+        "scenarios": {
+          "空气射入玻璃": {
+            "n1": 1.0,
+            "n2": 1.5,
+            "s_i": 0.6,
+            "s_r": 0.4
+          }
+        },
+        "formulas": [
+          {
+            "name": "由折射角求第二介质折射率",
+            "expr": "n2 = n1*s_i/s_r",
+            "when": "光由折射率 n1 的均匀介质射向折射率 n2 的均匀介质",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "空气射入玻璃",
+                "expr": "n1*s_i/s_r",
+                "ref": 1.5,
+                "note": "1.0×0.6÷0.4 = 1.5，与玻璃折射率相符（独立分步除法）"
+              },
+              {
+                "type": "compare",
+                "scenario": "空气射入玻璃",
+                "expr": "n1*s_i",
+                "op": "==",
+                "vs": "n2*s_r",
+                "note": "分界面两侧的 n sin(theta) 相等：两边均为 0.6"
+              },
+              {
+                "type": "direction",
+                "scenario": "空气射入玻璃",
+                "var": "s_i",
+                "lo": 0.1,
+                "hi": 0.9,
+                "expr": "n1*s_i/s_r",
+                "expect": "up",
+                "note": "其余条件不变时，入射角正弦越大，由比值反推的第二介质折射率越大"
+              },
+              {
+                "type": "scan",
+                "scenario": "空气射入玻璃",
+                "var": "s_r",
+                "lo": 0.05,
+                "hi": 1
+              }
+            ]
+          },
+          {
+            "name": "由入射条件求折射角正弦",
+            "expr": "s_r = n1*s_i/n2",
+            "when": "已知两侧折射率和入射角，且确有折射光线",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "空气射入玻璃",
+                "expr": "n1*s_i/n2",
+                "ref": 0.4,
+                "note": "先算 1.0 × 0.6 = 0.6，再除以 1.5，得到 0.4（独立算术）"
+              },
+              {
+                "type": "direction",
+                "scenario": "空气射入玻璃",
+                "var": "n2",
+                "lo": 1.1,
+                "hi": 2.0,
+                "expr": "n1*s_i/n2",
+                "expect": "down",
+                "note": "入射条件不变，第二介质折射率越大，折射角正弦越小，越偏向法线"
+              },
+              {
+                "type": "compare",
+                "scenario": "空气射入玻璃",
+                "expr": "s_r",
+                "op": "<",
+                "vs": "s_i",
+                "note": "从空气进入玻璃时 0.4 < 0.6，所以折射角小于入射角"
+              },
+              {
+                "type": "consistency",
+                "scenario": "空气射入玻璃",
+                "with": "opt-02|由入射条件求折射角正弦",
+                "with_expr": "s_r",
+                "target": "折射角 r 的正弦值",
+                "note": "直接求本公式输出，与情境中另列的s_r设计基准核对；数据是设计示例，不是实测。用于核对定义、反算或边界值，不宣称不同物理原理互证。",
+                "verification_kind": "独立设计情境数据核对",
+                "tol": 1e-06
+              },
+              {
+                "type": "scan",
+                "scenario": "空气射入玻璃",
+                "var": "n2",
+                "lo": 1.01,
+                "hi": 3.0
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "实验表明，对给定的两种介质，入射角正弦与折射角正弦的比值保持不变。",
+          "把介质性质用折射率表示，可写成 n1 sin i = n2 sin r。",
+          "用 s_i 和 s_r 记录两个正弦值，移项得到 s_r = n1 s_i / n2；当 n2 > n1 时，s_r < s_i，因此折射光偏向法线。"
+        ],
+        "errors": [
+          {
+            "wrong": "把折射率比例颠倒，写成 s_r = n2 s_i / n1",
+            "wrong_expr": "s_r = n2*s_i/n1",
+            "why": "错误式在空气射入玻璃时给出 0.9，而正确值是 0.4；它还错误预言进入高折射率介质会偏离法线。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "空气射入玻璃",
+              "expr": "n2*s_i/n1",
+              "ref": 0.4
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "认为折射角总等于入射角，写成 s_r = s_i",
+            "wrong_expr": "s_r = s_i",
+            "why": "只有两侧折射率相同或正入射等特殊情形才不改变方向。本情境错误式给出 0.6，正确值为 0.4。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "空气射入玻璃",
+              "expr": "s_i",
+              "ref": 0.4
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "光从空气射入折射率为 1.5 的玻璃，入射角的正弦值为 0.6。求折射角的正弦值，并判断光线向哪边偏折。",
+          "solution": [
+            "空气折射率近似取 n1 = 1.0，玻璃折射率 n2 = 1.5。",
+            "由折射定律 s_r = n1 s_i / n2。",
+            "代入得 s_r = 1.0 × 0.6 / 1.5 = 0.4。",
+            "0.4 < 0.6，折射角小于入射角，光线偏向法线。"
+          ],
+          "answer": "折射角的正弦值为 0.4，光线偏向法线。"
+        },
+        "prereq": [
+          "opt-01"
+        ],
+        "next": [
+          "opt-03",
+          "exp-19"
+        ],
+        "tags": [
+          "几何光学",
+          "折射定律",
+          "斯涅尔定律"
+        ],
+        "learning_scope": "高中"
+      },
+      "error_index": 0,
+      "chapter": "第十六章 · 几何光学"
+    },
+    "diagnostic-opt-02-2": {
+      "point": {
+        "id": "opt-02",
+        "title": "光的折射与折射定律",
+        "level": "基础",
+        "definition": "光从一种介质斜射入另一种介质时，传播方向通常发生改变，这叫折射。折射定律写成 n1 sin i = n2 sin r。本知识点用 s_i 和 s_r 分别记录入射角与折射角的正弦值，两个角都相对法线测量。",
+        "meaning": "判断偏向法线还是偏离法线，要比较两种介质的折射率：进入折射率更大的介质时，折射角更小，光线偏向法线；进入折射率更小的介质时则偏离法线。正入射时角度为零，方向不偏折，但传播速度仍会改变。",
+        "symbols": {
+          "n1": {
+            "desc": "入射介质的折射率",
+            "unit": "1"
+          },
+          "n2": {
+            "desc": "折射介质的折射率",
+            "unit": "1"
+          },
+          "s_i": {
+            "desc": "入射角 i 的正弦值",
+            "unit": "1"
+          },
+          "s_r": {
+            "desc": "折射角 r 的正弦值",
+            "unit": "1"
+          }
+        },
+        "scenarios": {
+          "空气射入玻璃": {
+            "n1": 1.0,
+            "n2": 1.5,
+            "s_i": 0.6,
+            "s_r": 0.4
+          }
+        },
+        "formulas": [
+          {
+            "name": "由折射角求第二介质折射率",
+            "expr": "n2 = n1*s_i/s_r",
+            "when": "光由折射率 n1 的均匀介质射向折射率 n2 的均匀介质",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "空气射入玻璃",
+                "expr": "n1*s_i/s_r",
+                "ref": 1.5,
+                "note": "1.0×0.6÷0.4 = 1.5，与玻璃折射率相符（独立分步除法）"
+              },
+              {
+                "type": "compare",
+                "scenario": "空气射入玻璃",
+                "expr": "n1*s_i",
+                "op": "==",
+                "vs": "n2*s_r",
+                "note": "分界面两侧的 n sin(theta) 相等：两边均为 0.6"
+              },
+              {
+                "type": "direction",
+                "scenario": "空气射入玻璃",
+                "var": "s_i",
+                "lo": 0.1,
+                "hi": 0.9,
+                "expr": "n1*s_i/s_r",
+                "expect": "up",
+                "note": "其余条件不变时，入射角正弦越大，由比值反推的第二介质折射率越大"
+              },
+              {
+                "type": "scan",
+                "scenario": "空气射入玻璃",
+                "var": "s_r",
+                "lo": 0.05,
+                "hi": 1
+              }
+            ]
+          },
+          {
+            "name": "由入射条件求折射角正弦",
+            "expr": "s_r = n1*s_i/n2",
+            "when": "已知两侧折射率和入射角，且确有折射光线",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "空气射入玻璃",
+                "expr": "n1*s_i/n2",
+                "ref": 0.4,
+                "note": "先算 1.0 × 0.6 = 0.6，再除以 1.5，得到 0.4（独立算术）"
+              },
+              {
+                "type": "direction",
+                "scenario": "空气射入玻璃",
+                "var": "n2",
+                "lo": 1.1,
+                "hi": 2.0,
+                "expr": "n1*s_i/n2",
+                "expect": "down",
+                "note": "入射条件不变，第二介质折射率越大，折射角正弦越小，越偏向法线"
+              },
+              {
+                "type": "compare",
+                "scenario": "空气射入玻璃",
+                "expr": "s_r",
+                "op": "<",
+                "vs": "s_i",
+                "note": "从空气进入玻璃时 0.4 < 0.6，所以折射角小于入射角"
+              },
+              {
+                "type": "consistency",
+                "scenario": "空气射入玻璃",
+                "with": "opt-02|由入射条件求折射角正弦",
+                "with_expr": "s_r",
+                "target": "折射角 r 的正弦值",
+                "note": "直接求本公式输出，与情境中另列的s_r设计基准核对；数据是设计示例，不是实测。用于核对定义、反算或边界值，不宣称不同物理原理互证。",
+                "verification_kind": "独立设计情境数据核对",
+                "tol": 1e-06
+              },
+              {
+                "type": "scan",
+                "scenario": "空气射入玻璃",
+                "var": "n2",
+                "lo": 1.01,
+                "hi": 3.0
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "实验表明，对给定的两种介质，入射角正弦与折射角正弦的比值保持不变。",
+          "把介质性质用折射率表示，可写成 n1 sin i = n2 sin r。",
+          "用 s_i 和 s_r 记录两个正弦值，移项得到 s_r = n1 s_i / n2；当 n2 > n1 时，s_r < s_i，因此折射光偏向法线。"
+        ],
+        "errors": [
+          {
+            "wrong": "把折射率比例颠倒，写成 s_r = n2 s_i / n1",
+            "wrong_expr": "s_r = n2*s_i/n1",
+            "why": "错误式在空气射入玻璃时给出 0.9，而正确值是 0.4；它还错误预言进入高折射率介质会偏离法线。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "空气射入玻璃",
+              "expr": "n2*s_i/n1",
+              "ref": 0.4
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "认为折射角总等于入射角，写成 s_r = s_i",
+            "wrong_expr": "s_r = s_i",
+            "why": "只有两侧折射率相同或正入射等特殊情形才不改变方向。本情境错误式给出 0.6，正确值为 0.4。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "空气射入玻璃",
+              "expr": "s_i",
+              "ref": 0.4
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "光从空气射入折射率为 1.5 的玻璃，入射角的正弦值为 0.6。求折射角的正弦值，并判断光线向哪边偏折。",
+          "solution": [
+            "空气折射率近似取 n1 = 1.0，玻璃折射率 n2 = 1.5。",
+            "由折射定律 s_r = n1 s_i / n2。",
+            "代入得 s_r = 1.0 × 0.6 / 1.5 = 0.4。",
+            "0.4 < 0.6，折射角小于入射角，光线偏向法线。"
+          ],
+          "answer": "折射角的正弦值为 0.4，光线偏向法线。"
+        },
+        "prereq": [
+          "opt-01"
+        ],
+        "next": [
+          "opt-03",
+          "exp-19"
+        ],
+        "tags": [
+          "几何光学",
+          "折射定律",
+          "斯涅尔定律"
+        ],
+        "learning_scope": "高中"
+      },
+      "error_index": 1,
+      "chapter": "第十六章 · 几何光学"
+    },
+    "diagnostic-opt-03-1": {
+      "point": {
+        "id": "opt-03",
+        "title": "折射率与光速的关系",
+        "level": "基础",
+        "definition": "介质的绝对折射率 n 等于真空光速 c 与光在该介质中速度 v 的比值，即 n = c/v。光从真空进入介质时频率不变，速度和波长同时变小，因此介质中波长 L_m = L_0/n。",
+        "meaning": "折射率没有单位，表示介质使光速降低的程度。真空中 n = 1，普通透明介质的 n 通常大于 1。跨越分界面时由光源决定的频率连续不变，所以 v = f*lambda（lambda 与 L_m 同指介质中波长） 中速度的变化必须由波长变化来配合。",
+        "symbols": {
+          "n": {
+            "desc": "介质的绝对折射率",
+            "unit": "1"
+          },
+          "c": {
+            "desc": "真空中的光速",
+            "unit": "m/s"
+          },
+          "v": {
+            "desc": "光在介质中的传播速度",
+            "unit": "m/s"
+          },
+          "L_0": {
+            "desc": "真空中的波长",
+            "unit": "m"
+          },
+          "L_m": {
+            "desc": "介质中的波长",
+            "unit": "m"
+          },
+          "lambda": {
+            "desc": "波速关系 v=f*lambda 中的介质波长，与本卡 L_m 是同一物理量",
+            "unit": "m"
+          },
+          "f": {
+            "desc": "光跨过静止分界面时保持不变的频率",
+            "unit": "Hz"
+          }
+        },
+        "scenarios": {
+          "玻璃中的光": {
+            "n": 1.5,
+            "c": 300000000,
+            "v": 200000000,
+            "L_0": 6e-07,
+            "L_m": 4e-07
+          }
+        },
+        "formulas": [
+          {
+            "name": "绝对折射率",
+            "expr": "n = c/v",
+            "when": "比较真空光速与光在均匀介质中的速度",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "玻璃中的光",
+                "expr": "c/v",
+                "ref": 1.5,
+                "note": "3.0×10^8 除以 2.0×10^8，指数相消，系数 3÷2 = 1.5"
+              },
+              {
+                "type": "direction",
+                "scenario": "玻璃中的光",
+                "var": "v",
+                "lo": 150000000,
+                "hi": 300000000,
+                "expr": "c/v",
+                "expect": "down",
+                "note": "真空光速一定，介质中的光速越大，折射率越小"
+              },
+              {
+                "type": "compare",
+                "scenario": "玻璃中的光",
+                "expr": "c",
+                "op": ">",
+                "vs": "v",
+                "note": "玻璃中光速 2.0×10^8 m/s 小于真空光速 3.0×10^8 m/s"
+              },
+              {
+                "type": "scan",
+                "scenario": "玻璃中的光",
+                "var": "v",
+                "lo": 100000000,
+                "hi": 300000000
+              }
+            ]
+          },
+          {
+            "name": "介质中的波长",
+            "expr": "L_m = L_0/n",
+            "when": "光从真空进入介质，频率保持不变",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "玻璃中的光",
+                "expr": "L_0/n",
+                "ref": 4e-07,
+                "note": "600 nm 除以 1.5 得 400 nm，即 4.0×10^-7 m（独立单位换算） 本项采用参考物理量百万分之一的绝对容差，零值和十倍数量级错误不能通过。",
+                "tol": 3.9999999999999996e-13
+              },
+              {
+                "type": "direction",
+                "scenario": "玻璃中的光",
+                "var": "n",
+                "lo": 1.0,
+                "hi": 2.5,
+                "expr": "L_0/n",
+                "expect": "down",
+                "note": "频率不变时，折射率越大，介质中波长越短"
+              },
+              {
+                "type": "compare",
+                "scenario": "玻璃中的光",
+                "expr": "L_m",
+                "op": "<",
+                "vs": "L_0",
+                "note": "普通玻璃折射率大于 1，因此介质中波长 400 nm 小于真空中 600 nm"
+              },
+              {
+                "type": "consistency",
+                "scenario": "玻璃中的光",
+                "with": "opt-03|介质中的波长",
+                "with_expr": "L_0*v/c",
+                "target": "介质中的波长",
+                "note": "本公式直接求L_m；参考端显式关系为L_0*v/c。两端使用同一情境和阶段，只核对该关系；with字段仅定位来源，不代表调用另一条被覆盖的公式。",
+                "verification_kind": "独立关系核对",
+                "tol": 4e-12
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "绝对折射率按定义为 n = c/v，两种速度单位相同，因此 n 是无量纲量。",
+          "光跨过静止分界面时频率 f 不变；分别写出真空中 c = f L_0 和介质中 v = f L_m。",
+          "两式相除得 c/v = L_0/L_m = n，因此 L_m = L_0/n。"
+        ],
+        "errors": [
+          {
+            "wrong": "把折射率写反为 n = v/c",
+            "wrong_expr": "n = v/c",
+            "why": "玻璃中光速小于真空光速，写反会得到 2/3，小于 1；正确折射率是 1.5。两式量纲都正确，只能靠数值和物理范围抓住。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "玻璃中的光",
+              "expr": "v/c",
+              "ref": 1.5
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "认为进入介质后波长增大，写成 L_m = n L_0",
+            "wrong_expr": "L_m = n*L_0",
+            "why": "频率不变而速度降低，波长应缩短。错误式给出 900 nm，正确值为 400 nm。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "玻璃中的光",
+              "expr": "n*L_0",
+              "ref": 4e-07,
+              "tol": 4e-13
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "某玻璃的折射率为 1.5，一束真空波长为 600 nm 的单色光进入玻璃。取 c = 3.0×10^8 m/s，求光在玻璃中的速度和波长。",
+          "solution": [
+            "由 n = c/v 得 v = c/n = 3.0×10^8 / 1.5 = 2.0×10^8 m/s。",
+            "光进入玻璃时频率不变，所以 L_m = L_0/n。",
+            "L_m = 600 nm / 1.5 = 400 nm。"
+          ],
+          "answer": "光速为 2.0×10^8 m/s，玻璃中波长为 400 nm。"
+        },
+        "prereq": [
+          "opt-02"
+        ],
+        "next": [
+          "opt-04"
+        ],
+        "tags": [
+          "几何光学",
+          "折射率",
+          "光速",
+          "波长"
+        ],
+        "learning_scope": "高中"
+      },
+      "error_index": 0,
+      "chapter": "第十六章 · 几何光学"
+    },
+    "diagnostic-opt-03-2": {
+      "point": {
+        "id": "opt-03",
+        "title": "折射率与光速的关系",
+        "level": "基础",
+        "definition": "介质的绝对折射率 n 等于真空光速 c 与光在该介质中速度 v 的比值，即 n = c/v。光从真空进入介质时频率不变，速度和波长同时变小，因此介质中波长 L_m = L_0/n。",
+        "meaning": "折射率没有单位，表示介质使光速降低的程度。真空中 n = 1，普通透明介质的 n 通常大于 1。跨越分界面时由光源决定的频率连续不变，所以 v = f*lambda（lambda 与 L_m 同指介质中波长） 中速度的变化必须由波长变化来配合。",
+        "symbols": {
+          "n": {
+            "desc": "介质的绝对折射率",
+            "unit": "1"
+          },
+          "c": {
+            "desc": "真空中的光速",
+            "unit": "m/s"
+          },
+          "v": {
+            "desc": "光在介质中的传播速度",
+            "unit": "m/s"
+          },
+          "L_0": {
+            "desc": "真空中的波长",
+            "unit": "m"
+          },
+          "L_m": {
+            "desc": "介质中的波长",
+            "unit": "m"
+          },
+          "lambda": {
+            "desc": "波速关系 v=f*lambda 中的介质波长，与本卡 L_m 是同一物理量",
+            "unit": "m"
+          },
+          "f": {
+            "desc": "光跨过静止分界面时保持不变的频率",
+            "unit": "Hz"
+          }
+        },
+        "scenarios": {
+          "玻璃中的光": {
+            "n": 1.5,
+            "c": 300000000,
+            "v": 200000000,
+            "L_0": 6e-07,
+            "L_m": 4e-07
+          }
+        },
+        "formulas": [
+          {
+            "name": "绝对折射率",
+            "expr": "n = c/v",
+            "when": "比较真空光速与光在均匀介质中的速度",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "玻璃中的光",
+                "expr": "c/v",
+                "ref": 1.5,
+                "note": "3.0×10^8 除以 2.0×10^8，指数相消，系数 3÷2 = 1.5"
+              },
+              {
+                "type": "direction",
+                "scenario": "玻璃中的光",
+                "var": "v",
+                "lo": 150000000,
+                "hi": 300000000,
+                "expr": "c/v",
+                "expect": "down",
+                "note": "真空光速一定，介质中的光速越大，折射率越小"
+              },
+              {
+                "type": "compare",
+                "scenario": "玻璃中的光",
+                "expr": "c",
+                "op": ">",
+                "vs": "v",
+                "note": "玻璃中光速 2.0×10^8 m/s 小于真空光速 3.0×10^8 m/s"
+              },
+              {
+                "type": "scan",
+                "scenario": "玻璃中的光",
+                "var": "v",
+                "lo": 100000000,
+                "hi": 300000000
+              }
+            ]
+          },
+          {
+            "name": "介质中的波长",
+            "expr": "L_m = L_0/n",
+            "when": "光从真空进入介质，频率保持不变",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "玻璃中的光",
+                "expr": "L_0/n",
+                "ref": 4e-07,
+                "note": "600 nm 除以 1.5 得 400 nm，即 4.0×10^-7 m（独立单位换算） 本项采用参考物理量百万分之一的绝对容差，零值和十倍数量级错误不能通过。",
+                "tol": 3.9999999999999996e-13
+              },
+              {
+                "type": "direction",
+                "scenario": "玻璃中的光",
+                "var": "n",
+                "lo": 1.0,
+                "hi": 2.5,
+                "expr": "L_0/n",
+                "expect": "down",
+                "note": "频率不变时，折射率越大，介质中波长越短"
+              },
+              {
+                "type": "compare",
+                "scenario": "玻璃中的光",
+                "expr": "L_m",
+                "op": "<",
+                "vs": "L_0",
+                "note": "普通玻璃折射率大于 1，因此介质中波长 400 nm 小于真空中 600 nm"
+              },
+              {
+                "type": "consistency",
+                "scenario": "玻璃中的光",
+                "with": "opt-03|介质中的波长",
+                "with_expr": "L_0*v/c",
+                "target": "介质中的波长",
+                "note": "本公式直接求L_m；参考端显式关系为L_0*v/c。两端使用同一情境和阶段，只核对该关系；with字段仅定位来源，不代表调用另一条被覆盖的公式。",
+                "verification_kind": "独立关系核对",
+                "tol": 4e-12
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "绝对折射率按定义为 n = c/v，两种速度单位相同，因此 n 是无量纲量。",
+          "光跨过静止分界面时频率 f 不变；分别写出真空中 c = f L_0 和介质中 v = f L_m。",
+          "两式相除得 c/v = L_0/L_m = n，因此 L_m = L_0/n。"
+        ],
+        "errors": [
+          {
+            "wrong": "把折射率写反为 n = v/c",
+            "wrong_expr": "n = v/c",
+            "why": "玻璃中光速小于真空光速，写反会得到 2/3，小于 1；正确折射率是 1.5。两式量纲都正确，只能靠数值和物理范围抓住。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "玻璃中的光",
+              "expr": "v/c",
+              "ref": 1.5
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "认为进入介质后波长增大，写成 L_m = n L_0",
+            "wrong_expr": "L_m = n*L_0",
+            "why": "频率不变而速度降低，波长应缩短。错误式给出 900 nm，正确值为 400 nm。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "玻璃中的光",
+              "expr": "n*L_0",
+              "ref": 4e-07,
+              "tol": 4e-13
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "某玻璃的折射率为 1.5，一束真空波长为 600 nm 的单色光进入玻璃。取 c = 3.0×10^8 m/s，求光在玻璃中的速度和波长。",
+          "solution": [
+            "由 n = c/v 得 v = c/n = 3.0×10^8 / 1.5 = 2.0×10^8 m/s。",
+            "光进入玻璃时频率不变，所以 L_m = L_0/n。",
+            "L_m = 600 nm / 1.5 = 400 nm。"
+          ],
+          "answer": "光速为 2.0×10^8 m/s，玻璃中波长为 400 nm。"
+        },
+        "prereq": [
+          "opt-02"
+        ],
+        "next": [
+          "opt-04"
+        ],
+        "tags": [
+          "几何光学",
+          "折射率",
+          "光速",
+          "波长"
+        ],
+        "learning_scope": "高中"
+      },
+      "error_index": 1,
+      "chapter": "第十六章 · 几何光学"
+    },
+    "diagnostic-opt-04-1": {
+      "point": {
+        "id": "opt-04",
+        "title": "全反射与临界角",
+        "level": "进阶",
+        "definition": "光从折射率较大的介质射向折射率较小的介质，并且入射角大于临界角时，折射光完全消失，只剩反射光，这叫全反射。临界状态下折射角为 90°，所以临界角正弦值 s_C = n2/n1。光纤的集光能力还可用数值孔径 NA = sqrt(n1^2 - n2^2) 描述。",
+        "meaning": "全反射有两个缺一不可的条件：必须从光密介质射向光疏介质，即 n1 > n2；入射角还必须大于临界角 C。等于 C 时折射光沿界面传播，尚未完全消失。光纤利用纤芯折射率高于包层，使光在界面多次全反射。",
+        "symbols": {
+          "n1": {
+            "desc": "入射侧或光纤纤芯的折射率",
+            "unit": "1"
+          },
+          "n2": {
+            "desc": "折射侧或光纤包层的折射率",
+            "unit": "1"
+          },
+          "s_C": {
+            "desc": "临界角 C 的正弦值",
+            "unit": "1"
+          },
+          "NA": {
+            "desc": "光纤的数值孔径",
+            "unit": "1"
+          }
+        },
+        "scenarios": {
+          "纤芯与包层": {
+            "n1": 1.5,
+            "n2": 1.4,
+            "s_C": 0.9333333333333333,
+            "NA": 0.5385164807134505
+          }
+        },
+        "formulas": [
+          {
+            "name": "临界角的正弦",
+            "expr": "s_C = n2/n1",
+            "when": "光由 n1 较大的介质射向 n2 较小的介质，且 n1 > n2",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "纤芯与包层",
+                "expr": "n2/n1",
+                "ref": 0.9333333333333333,
+                "note": "1.4/1.5 = 14/15，循环小数为 0.933333，已用独立分数化简"
+              },
+              {
+                "type": "direction",
+                "scenario": "纤芯与包层",
+                "var": "n2",
+                "lo": 1.0,
+                "hi": 1.49,
+                "expr": "n2/n1",
+                "expect": "up",
+                "note": "纤芯折射率不变时，包层折射率越接近纤芯，临界角的正弦越大"
+              },
+              {
+                "type": "compare",
+                "scenario": "纤芯与包层",
+                "expr": "s_C",
+                "op": "<",
+                "vs": "1",
+                "note": "n2 < n1 保证 s_C < 1，临界角存在"
+              },
+              {
+                "type": "scan",
+                "scenario": "纤芯与包层",
+                "var": "n2",
+                "lo": 0.1,
+                "hi": 1.49
+              }
+            ]
+          },
+          {
+            "name": "光纤数值孔径",
+            "expr": "NA = sqrt(n1^2 - n2^2)",
+            "when": "光从空气耦合进入阶跃型光纤，纤芯折射率 n1 大于包层折射率 n2",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "纤芯与包层",
+                "expr": "sqrt(n1^2 - n2^2)",
+                "ref": 0.5385164807134505,
+                "note": "1.5²−1.4² = 2.25−1.96 = 0.29，平方根约为 0.538516，已用独立平方差计算"
+              },
+              {
+                "type": "direction",
+                "scenario": "纤芯与包层",
+                "var": "n2",
+                "lo": 1.0,
+                "hi": 1.49,
+                "expr": "sqrt(n1^2 - n2^2)",
+                "expect": "down",
+                "note": "纤芯折射率不变时，包层折射率升高会减小数值孔径"
+              },
+              {
+                "type": "compare",
+                "scenario": "纤芯与包层",
+                "expr": "NA",
+                "op": "<",
+                "vs": "n1",
+                "note": "平方根中减去了正数 n2²，所以 NA 小于 n1"
+              },
+              {
+                "type": "consistency",
+                "scenario": "纤芯与包层",
+                "with": "opt-04|光纤数值孔径",
+                "with_expr": "n1*sqrt(1 - s_C^2)",
+                "target": "光纤的数值孔径",
+                "note": "本公式直接求NA；参考端显式关系为n1*sqrt(1 - s_C^2)。两端使用同一情境和阶段，只核对该关系；with字段仅定位来源，不代表调用另一条被覆盖的公式。",
+                "verification_kind": "独立关系核对",
+                "tol": 1e-06
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "临界状态下折射光沿界面传播，折射角为 90°，所以折射定律给出 n1 s_C = n2。",
+          "移项得到 s_C = n2/n1。只有 n1 > n2 时右边小于 1，临界角才存在。",
+          "阶跃型光纤在空气中的数值孔径可由入射端折射和纤芯—包层界面的全反射条件联立得到 NA = sqrt(n1²−n2²)。"
+        ],
+        "errors": [
+          {
+            "wrong": "把临界角关系写反为 s_C = n1/n2",
+            "wrong_expr": "s_C = n1/n2",
+            "why": "因为 n1 > n2，写反后得到 1.0714，大于正弦值上限 1，物理上不可能；正确值为 14/15。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "纤芯与包层",
+              "expr": "n1/n2",
+              "ref": 0.9333333333333333
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "数值孔径漏掉平方根，写成 NA = n1² − n2²",
+            "wrong_expr": "NA = n1^2 - n2^2",
+            "why": "错误式给出 0.29，正确值应为 sqrt(0.29) 约 0.538516。量纲都是无量纲，必须数值检验。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "纤芯与包层",
+              "expr": "n1^2 - n2^2",
+              "ref": 0.5385164807134505
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "某阶跃型光纤的纤芯折射率为 1.5，包层折射率为 1.4。求纤芯射向包层时临界角正弦值和光纤数值孔径。",
+          "solution": [
+            "纤芯折射率较大，满足形成全反射的介质方向条件。",
+            "s_C = n2/n1 = 1.4/1.5 = 14/15，约为 0.9333。",
+            "NA = sqrt(n1²−n2²) = sqrt(2.25−1.96) = sqrt(0.29)，约为 0.5385。"
+          ],
+          "answer": "临界角正弦值约为 0.9333；数值孔径约为 0.5385。"
+        },
+        "prereq": [
+          "opt-02",
+          "opt-03"
+        ],
+        "next": [
+          "opt-05",
+          "opt-06"
+        ],
+        "tags": [
+          "几何光学",
+          "全反射",
+          "临界角",
+          "光纤"
+        ],
+        "learning_scope": "高中"
+      },
+      "error_index": 0,
+      "chapter": "第十六章 · 几何光学"
+    },
+    "diagnostic-opt-04-2": {
+      "point": {
+        "id": "opt-04",
+        "title": "全反射与临界角",
+        "level": "进阶",
+        "definition": "光从折射率较大的介质射向折射率较小的介质，并且入射角大于临界角时，折射光完全消失，只剩反射光，这叫全反射。临界状态下折射角为 90°，所以临界角正弦值 s_C = n2/n1。光纤的集光能力还可用数值孔径 NA = sqrt(n1^2 - n2^2) 描述。",
+        "meaning": "全反射有两个缺一不可的条件：必须从光密介质射向光疏介质，即 n1 > n2；入射角还必须大于临界角 C。等于 C 时折射光沿界面传播，尚未完全消失。光纤利用纤芯折射率高于包层，使光在界面多次全反射。",
+        "symbols": {
+          "n1": {
+            "desc": "入射侧或光纤纤芯的折射率",
+            "unit": "1"
+          },
+          "n2": {
+            "desc": "折射侧或光纤包层的折射率",
+            "unit": "1"
+          },
+          "s_C": {
+            "desc": "临界角 C 的正弦值",
+            "unit": "1"
+          },
+          "NA": {
+            "desc": "光纤的数值孔径",
+            "unit": "1"
+          }
+        },
+        "scenarios": {
+          "纤芯与包层": {
+            "n1": 1.5,
+            "n2": 1.4,
+            "s_C": 0.9333333333333333,
+            "NA": 0.5385164807134505
+          }
+        },
+        "formulas": [
+          {
+            "name": "临界角的正弦",
+            "expr": "s_C = n2/n1",
+            "when": "光由 n1 较大的介质射向 n2 较小的介质，且 n1 > n2",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "纤芯与包层",
+                "expr": "n2/n1",
+                "ref": 0.9333333333333333,
+                "note": "1.4/1.5 = 14/15，循环小数为 0.933333，已用独立分数化简"
+              },
+              {
+                "type": "direction",
+                "scenario": "纤芯与包层",
+                "var": "n2",
+                "lo": 1.0,
+                "hi": 1.49,
+                "expr": "n2/n1",
+                "expect": "up",
+                "note": "纤芯折射率不变时，包层折射率越接近纤芯，临界角的正弦越大"
+              },
+              {
+                "type": "compare",
+                "scenario": "纤芯与包层",
+                "expr": "s_C",
+                "op": "<",
+                "vs": "1",
+                "note": "n2 < n1 保证 s_C < 1，临界角存在"
+              },
+              {
+                "type": "scan",
+                "scenario": "纤芯与包层",
+                "var": "n2",
+                "lo": 0.1,
+                "hi": 1.49
+              }
+            ]
+          },
+          {
+            "name": "光纤数值孔径",
+            "expr": "NA = sqrt(n1^2 - n2^2)",
+            "when": "光从空气耦合进入阶跃型光纤，纤芯折射率 n1 大于包层折射率 n2",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "纤芯与包层",
+                "expr": "sqrt(n1^2 - n2^2)",
+                "ref": 0.5385164807134505,
+                "note": "1.5²−1.4² = 2.25−1.96 = 0.29，平方根约为 0.538516，已用独立平方差计算"
+              },
+              {
+                "type": "direction",
+                "scenario": "纤芯与包层",
+                "var": "n2",
+                "lo": 1.0,
+                "hi": 1.49,
+                "expr": "sqrt(n1^2 - n2^2)",
+                "expect": "down",
+                "note": "纤芯折射率不变时，包层折射率升高会减小数值孔径"
+              },
+              {
+                "type": "compare",
+                "scenario": "纤芯与包层",
+                "expr": "NA",
+                "op": "<",
+                "vs": "n1",
+                "note": "平方根中减去了正数 n2²，所以 NA 小于 n1"
+              },
+              {
+                "type": "consistency",
+                "scenario": "纤芯与包层",
+                "with": "opt-04|光纤数值孔径",
+                "with_expr": "n1*sqrt(1 - s_C^2)",
+                "target": "光纤的数值孔径",
+                "note": "本公式直接求NA；参考端显式关系为n1*sqrt(1 - s_C^2)。两端使用同一情境和阶段，只核对该关系；with字段仅定位来源，不代表调用另一条被覆盖的公式。",
+                "verification_kind": "独立关系核对",
+                "tol": 1e-06
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "临界状态下折射光沿界面传播，折射角为 90°，所以折射定律给出 n1 s_C = n2。",
+          "移项得到 s_C = n2/n1。只有 n1 > n2 时右边小于 1，临界角才存在。",
+          "阶跃型光纤在空气中的数值孔径可由入射端折射和纤芯—包层界面的全反射条件联立得到 NA = sqrt(n1²−n2²)。"
+        ],
+        "errors": [
+          {
+            "wrong": "把临界角关系写反为 s_C = n1/n2",
+            "wrong_expr": "s_C = n1/n2",
+            "why": "因为 n1 > n2，写反后得到 1.0714，大于正弦值上限 1，物理上不可能；正确值为 14/15。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "纤芯与包层",
+              "expr": "n1/n2",
+              "ref": 0.9333333333333333
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "数值孔径漏掉平方根，写成 NA = n1² − n2²",
+            "wrong_expr": "NA = n1^2 - n2^2",
+            "why": "错误式给出 0.29，正确值应为 sqrt(0.29) 约 0.538516。量纲都是无量纲，必须数值检验。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "纤芯与包层",
+              "expr": "n1^2 - n2^2",
+              "ref": 0.5385164807134505
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "某阶跃型光纤的纤芯折射率为 1.5，包层折射率为 1.4。求纤芯射向包层时临界角正弦值和光纤数值孔径。",
+          "solution": [
+            "纤芯折射率较大，满足形成全反射的介质方向条件。",
+            "s_C = n2/n1 = 1.4/1.5 = 14/15，约为 0.9333。",
+            "NA = sqrt(n1²−n2²) = sqrt(2.25−1.96) = sqrt(0.29)，约为 0.5385。"
+          ],
+          "answer": "临界角正弦值约为 0.9333；数值孔径约为 0.5385。"
+        },
+        "prereq": [
+          "opt-02",
+          "opt-03"
+        ],
+        "next": [
+          "opt-05",
+          "opt-06"
+        ],
+        "tags": [
+          "几何光学",
+          "全反射",
+          "临界角",
+          "光纤"
+        ],
+        "learning_scope": "高中"
+      },
+      "error_index": 1,
+      "chapter": "第十六章 · 几何光学"
+    },
+    "diagnostic-opt-05-1": {
+      "point": {
+        "id": "opt-05",
+        "title": "光的色散",
+        "level": "进阶",
+        "definition": "复色光通过棱镜等介质后分解成不同颜色的光，叫光的色散。普通透明介质中蓝光折射率通常大于红光，因此蓝光偏折更明显。对顶角 A 很小的薄棱镜，偏向角近似等于 (n−1)A。",
+        "meaning": "色散来自折射率随光的频率或真空波长而变化，不是不同颜色在真空中的光速不同。薄棱镜近似下，折射率差会直接转化为角分离：蓝光折射率更大，所以蓝光偏向角更大，蓝红两光的夹角与 n_b−n_r 成正比。",
+        "symbols": {
+          "n_b": {
+            "desc": "棱镜对蓝光的折射率",
+            "unit": "1"
+          },
+          "n_r": {
+            "desc": "棱镜对红光的折射率",
+            "unit": "1"
+          },
+          "A": {
+            "desc": "薄棱镜的顶角",
+            "unit": "rad"
+          },
+          "delta_b": {
+            "desc": "蓝光通过薄棱镜后的偏向角",
+            "unit": "rad"
+          },
+          "delta_r": {
+            "desc": "红光通过薄棱镜后的偏向角",
+            "unit": "rad"
+          },
+          "delta_sep": {
+            "desc": "蓝光与红光出射方向的角分离",
+            "unit": "rad"
+          }
+        },
+        "scenarios": {
+          "薄棱镜色散": {
+            "n_b": 1.53,
+            "n_r": 1.51,
+            "A": 0.1,
+            "delta_b": 0.053,
+            "delta_r": 0.051,
+            "delta_sep": 0.002
+          }
+        },
+        "formulas": [
+          {
+            "name": "薄棱镜对蓝光的偏向角",
+            "expr": "delta_b = (n_b - 1)*A",
+            "when": "棱镜顶角和入射、折射角均较小，可采用小角近似",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "薄棱镜色散",
+                "expr": "(n_b - 1)*A",
+                "ref": 0.053,
+                "note": "(1.53−1)×0.1 = 0.53×0.1 = 0.053 rad（独立小数乘法）"
+              },
+              {
+                "type": "direction",
+                "scenario": "薄棱镜色散",
+                "var": "n_b",
+                "lo": 1.1,
+                "hi": 1.8,
+                "expr": "(n_b - 1)*A",
+                "expect": "up",
+                "note": "棱镜顶角一定时，折射率越大，偏向角越大"
+              },
+              {
+                "type": "compare",
+                "scenario": "薄棱镜色散",
+                "expr": "delta_b",
+                "op": ">",
+                "vs": "delta_r",
+                "note": "蓝光折射率 1.53 大于红光 1.51，因此蓝光偏向角 0.053 rad 大于红光 0.051 rad"
+              },
+              {
+                "type": "scan",
+                "scenario": "薄棱镜色散",
+                "var": "A",
+                "lo": 0,
+                "hi": 0.2
+              }
+            ]
+          },
+          {
+            "name": "薄棱镜的色散角",
+            "expr": "delta_sep = (n_b - n_r)*A",
+            "when": "同一薄棱镜分开蓝光和红光，采用小角近似且 n_b > n_r",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "薄棱镜色散",
+                "expr": "(n_b - n_r)*A",
+                "ref": 0.002,
+                "note": "(1.53−1.51)×0.1 = 0.02×0.1 = 0.002 rad（独立相减再相乘）"
+              },
+              {
+                "type": "direction",
+                "scenario": "薄棱镜色散",
+                "var": "n_b",
+                "lo": 1.52,
+                "hi": 1.7,
+                "expr": "(n_b - n_r)*A",
+                "expect": "up",
+                "note": "红光折射率和顶角不变时，蓝光折射率越大，蓝红分离越明显"
+              },
+              {
+                "type": "consistency",
+                "scenario": "薄棱镜色散",
+                "with": "opt-05|薄棱镜的色散角",
+                "with_expr": "delta_b-delta_r",
+                "target": "蓝光与红光出射方向的角分离",
+                "note": "本公式直接求delta_sep；参考端显式关系为delta_b-delta_r。两端使用同一情境和阶段，只核对该关系；with字段仅定位来源，不代表调用另一条被覆盖的公式。",
+                "verification_kind": "独立关系核对",
+                "tol": 2.000000000000002e-08
+              },
+              {
+                "type": "scan",
+                "scenario": "薄棱镜色散",
+                "var": "A",
+                "lo": 0,
+                "hi": 0.2
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "对顶角很小的棱镜，把折射定律作小角近似，可得单色光偏向角等于 (n−1)A。",
+          "蓝光偏向角为 delta_b = (n_b−1)A，红光偏向角为 delta_r = (n_r−1)A。",
+          "两式相减，得到色散角 delta_sep = delta_b−delta_r = (n_b−n_r)A。普通玻璃中 n_b > n_r，所以蓝光偏折更大。"
+        ],
+        "errors": [
+          {
+            "wrong": "薄棱镜偏向角漏掉减 1，写成 delta_b = n_b A",
+            "wrong_expr": "delta_b = n_b*A",
+            "why": "错误式给出 1.53×0.1 = 0.153 rad，正确小角近似值为 0.053 rad。两式量纲相同，数值检验才能发现。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "薄棱镜色散",
+              "expr": "n_b*A",
+              "ref": 0.053
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "把折射率差顺序写反，认为红光比蓝光偏折更大",
+            "wrong_expr": "delta_sep = (n_r - n_b)*A",
+            "why": "错误式得到 −0.002 rad，不但符号相反，也违背普通玻璃中蓝光折射率更大、偏折更强的事实。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "薄棱镜色散",
+              "expr": "(n_r - n_b)*A",
+              "ref": 0.002
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "一薄棱镜顶角 A = 0.1 rad，对蓝光和红光的折射率分别为 1.53 和 1.51。用薄棱镜近似求两色光各自的偏向角及角分离。",
+          "solution": [
+            "蓝光偏向角 delta_b = (1.53−1)×0.1 = 0.053 rad。",
+            "红光偏向角 delta_r = (1.51−1)×0.1 = 0.051 rad。",
+            "角分离 delta_sep = delta_b−delta_r = 0.002 rad，也可由 (1.53−1.51)×0.1 直接得到。"
+          ],
+          "answer": "蓝光偏向 0.053 rad，红光偏向 0.051 rad，角分离为 0.002 rad。"
+        },
+        "prereq": [
+          "opt-02",
+          "opt-03"
+        ],
+        "next": [],
+        "tags": [
+          "几何光学",
+          "色散",
+          "薄棱镜",
+          "折射率"
+        ],
+        "learning_scope": "高中"
+      },
+      "error_index": 0,
+      "chapter": "第十六章 · 几何光学"
+    },
+    "diagnostic-opt-05-2": {
+      "point": {
+        "id": "opt-05",
+        "title": "光的色散",
+        "level": "进阶",
+        "definition": "复色光通过棱镜等介质后分解成不同颜色的光，叫光的色散。普通透明介质中蓝光折射率通常大于红光，因此蓝光偏折更明显。对顶角 A 很小的薄棱镜，偏向角近似等于 (n−1)A。",
+        "meaning": "色散来自折射率随光的频率或真空波长而变化，不是不同颜色在真空中的光速不同。薄棱镜近似下，折射率差会直接转化为角分离：蓝光折射率更大，所以蓝光偏向角更大，蓝红两光的夹角与 n_b−n_r 成正比。",
+        "symbols": {
+          "n_b": {
+            "desc": "棱镜对蓝光的折射率",
+            "unit": "1"
+          },
+          "n_r": {
+            "desc": "棱镜对红光的折射率",
+            "unit": "1"
+          },
+          "A": {
+            "desc": "薄棱镜的顶角",
+            "unit": "rad"
+          },
+          "delta_b": {
+            "desc": "蓝光通过薄棱镜后的偏向角",
+            "unit": "rad"
+          },
+          "delta_r": {
+            "desc": "红光通过薄棱镜后的偏向角",
+            "unit": "rad"
+          },
+          "delta_sep": {
+            "desc": "蓝光与红光出射方向的角分离",
+            "unit": "rad"
+          }
+        },
+        "scenarios": {
+          "薄棱镜色散": {
+            "n_b": 1.53,
+            "n_r": 1.51,
+            "A": 0.1,
+            "delta_b": 0.053,
+            "delta_r": 0.051,
+            "delta_sep": 0.002
+          }
+        },
+        "formulas": [
+          {
+            "name": "薄棱镜对蓝光的偏向角",
+            "expr": "delta_b = (n_b - 1)*A",
+            "when": "棱镜顶角和入射、折射角均较小，可采用小角近似",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "薄棱镜色散",
+                "expr": "(n_b - 1)*A",
+                "ref": 0.053,
+                "note": "(1.53−1)×0.1 = 0.53×0.1 = 0.053 rad（独立小数乘法）"
+              },
+              {
+                "type": "direction",
+                "scenario": "薄棱镜色散",
+                "var": "n_b",
+                "lo": 1.1,
+                "hi": 1.8,
+                "expr": "(n_b - 1)*A",
+                "expect": "up",
+                "note": "棱镜顶角一定时，折射率越大，偏向角越大"
+              },
+              {
+                "type": "compare",
+                "scenario": "薄棱镜色散",
+                "expr": "delta_b",
+                "op": ">",
+                "vs": "delta_r",
+                "note": "蓝光折射率 1.53 大于红光 1.51，因此蓝光偏向角 0.053 rad 大于红光 0.051 rad"
+              },
+              {
+                "type": "scan",
+                "scenario": "薄棱镜色散",
+                "var": "A",
+                "lo": 0,
+                "hi": 0.2
+              }
+            ]
+          },
+          {
+            "name": "薄棱镜的色散角",
+            "expr": "delta_sep = (n_b - n_r)*A",
+            "when": "同一薄棱镜分开蓝光和红光，采用小角近似且 n_b > n_r",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "薄棱镜色散",
+                "expr": "(n_b - n_r)*A",
+                "ref": 0.002,
+                "note": "(1.53−1.51)×0.1 = 0.02×0.1 = 0.002 rad（独立相减再相乘）"
+              },
+              {
+                "type": "direction",
+                "scenario": "薄棱镜色散",
+                "var": "n_b",
+                "lo": 1.52,
+                "hi": 1.7,
+                "expr": "(n_b - n_r)*A",
+                "expect": "up",
+                "note": "红光折射率和顶角不变时，蓝光折射率越大，蓝红分离越明显"
+              },
+              {
+                "type": "consistency",
+                "scenario": "薄棱镜色散",
+                "with": "opt-05|薄棱镜的色散角",
+                "with_expr": "delta_b-delta_r",
+                "target": "蓝光与红光出射方向的角分离",
+                "note": "本公式直接求delta_sep；参考端显式关系为delta_b-delta_r。两端使用同一情境和阶段，只核对该关系；with字段仅定位来源，不代表调用另一条被覆盖的公式。",
+                "verification_kind": "独立关系核对",
+                "tol": 2.000000000000002e-08
+              },
+              {
+                "type": "scan",
+                "scenario": "薄棱镜色散",
+                "var": "A",
+                "lo": 0,
+                "hi": 0.2
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "对顶角很小的棱镜，把折射定律作小角近似，可得单色光偏向角等于 (n−1)A。",
+          "蓝光偏向角为 delta_b = (n_b−1)A，红光偏向角为 delta_r = (n_r−1)A。",
+          "两式相减，得到色散角 delta_sep = delta_b−delta_r = (n_b−n_r)A。普通玻璃中 n_b > n_r，所以蓝光偏折更大。"
+        ],
+        "errors": [
+          {
+            "wrong": "薄棱镜偏向角漏掉减 1，写成 delta_b = n_b A",
+            "wrong_expr": "delta_b = n_b*A",
+            "why": "错误式给出 1.53×0.1 = 0.153 rad，正确小角近似值为 0.053 rad。两式量纲相同，数值检验才能发现。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "薄棱镜色散",
+              "expr": "n_b*A",
+              "ref": 0.053
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "把折射率差顺序写反，认为红光比蓝光偏折更大",
+            "wrong_expr": "delta_sep = (n_r - n_b)*A",
+            "why": "错误式得到 −0.002 rad，不但符号相反，也违背普通玻璃中蓝光折射率更大、偏折更强的事实。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "薄棱镜色散",
+              "expr": "(n_r - n_b)*A",
+              "ref": 0.002
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "一薄棱镜顶角 A = 0.1 rad，对蓝光和红光的折射率分别为 1.53 和 1.51。用薄棱镜近似求两色光各自的偏向角及角分离。",
+          "solution": [
+            "蓝光偏向角 delta_b = (1.53−1)×0.1 = 0.053 rad。",
+            "红光偏向角 delta_r = (1.51−1)×0.1 = 0.051 rad。",
+            "角分离 delta_sep = delta_b−delta_r = 0.002 rad，也可由 (1.53−1.51)×0.1 直接得到。"
+          ],
+          "answer": "蓝光偏向 0.053 rad，红光偏向 0.051 rad，角分离为 0.002 rad。"
+        },
+        "prereq": [
+          "opt-02",
+          "opt-03"
+        ],
+        "next": [],
+        "tags": [
+          "几何光学",
+          "色散",
+          "薄棱镜",
+          "折射率"
+        ],
+        "learning_scope": "高中"
+      },
+      "error_index": 1,
+      "chapter": "第十六章 · 几何光学"
+    },
+    "diagnostic-opt-06-1": {
+      "point": {
+        "id": "opt-06",
+        "title": "光导纤维与全反射的应用",
+        "level": "拓展",
+        "definition": "阶跃型光纤的纤芯折射率高于包层，适当入射的光可在芯层边界全反射并沿纤维传播。光线模型中，入射接受角由纤芯与包层的折射率差决定。",
+        "meaning": "全反射要求从高折射率介质射向低折射率介质且入射角超过临界角。纤芯内相对界面法线的角和入口相对轴线的角不是同一个角，本卡只分析直纤维中的子午光线；数值孔径的角度公式还要求入口介质折射率给定。弯曲、吸收和波导模式会带来实际损耗，不能声称真实光纤传输零损失。",
+        "symbols": {
+          "n1": {
+            "unit": "1",
+            "desc": "纤芯折射率"
+          },
+          "n2": {
+            "unit": "1",
+            "desc": "包层折射率"
+          },
+          "n_0": {
+            "unit": "1",
+            "desc": "入口介质折射率"
+          },
+          "theta_c": {
+            "unit": "rad",
+            "desc": "纤芯到包层的临界入射角，相对法线"
+          },
+          "alpha_max": {
+            "unit": "rad",
+            "desc": "入口相对纤维轴线的最大接受角"
+          },
+          "A": {
+            "unit": "1",
+            "desc": "光纤数值孔径"
+          }
+        },
+        "scenarios": {
+          "直纤维": {
+            "n1": 1.5,
+            "n2": 1.2,
+            "n_0": 1,
+            "theta_c": 0.9272952180016123,
+            "alpha_max": 1.1197695149986342
+          }
+        },
+        "formulas": [
+          {
+            "name": "芯层边界临界角",
+            "expr": "theta_c = asin(n2/n1)",
+            "when": "纤芯折射率大于包层，角度相对界面法线",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "直纤维",
+                "ref": 0.9272952180016123,
+                "note": "包层与芯层折射率比为4/5，临界角约53.1301度"
+              },
+              {
+                "type": "scan",
+                "scenario": "直纤维",
+                "var": "n2",
+                "lo": 1,
+                "hi": 1.49,
+                "n": 17,
+                "note": "保持包层折射率严格小于纤芯"
+              }
+            ]
+          },
+          {
+            "name": "光纤数值孔径",
+            "expr": "A = sqrt(n1^2-n2^2)",
+            "when": "直阶跃光纤的子午光线模型",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "直纤维",
+                "ref": 0.9,
+                "note": "折射率平方差为2.25−1.44=0.81，平方根为0.9"
+              }
+            ]
+          },
+          {
+            "name": "入口最大接受角",
+            "expr": "alpha_max = asin(sqrt(n1^2-n2^2)/n_0)",
+            "when": "孔径不大于入口介质折射率，忽略波导模式与弯曲",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "直纤维",
+                "ref": 1.1197695149986342,
+                "note": "入口正弦为0.9，接受角约64.1581度"
+              },
+              {
+                "type": "consistency",
+                "scenario": "直纤维",
+                "with_expr": "asin(n1*cos(theta_c)/n_0)",
+                "target": "入口相对纤维轴线的最大接受角",
+                "note": "本公式直接求alpha_max；参考端显式关系为asin(n1*cos(theta_c)/n_0)。两端使用同一情境和阶段，只核对该关系；with字段仅定位来源，不代表调用另一条被覆盖的公式。",
+                "with": "opt-06|入口最大接受角",
+                "verification_kind": "独立关系核对"
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "先比较芯层和包层折射率，确认具备全反射的介质方向。",
+          "由芯层边界求临界角，把侧面法线角换算为纤维轴线角。",
+          "再用入口折射定律连接轴线角与外部入射角，得到接受角；实际光纤不能只依赖光线几何估算损耗。"
+        ],
+        "errors": [
+          {
+            "wrong": "把芯层和包层折射率平方相加求数值孔径",
+            "wrong_expr": "A = sqrt(n1^2+n2^2)",
+            "why": "光纤入口接受条件来自全反射和入口折射的联合限制，应该取平方差；相加虽量纲一致却会得到过大的孔径和非法接受角。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "直纤维",
+              "expr": "sqrt(n1^2+n2^2)",
+              "ref": 0.9
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "认为光纤任何入射角都能全反射传播",
+            "why": "入口必须满足接受角限制，芯层边界必须满足全反射角度条件；折射率结构本身不能保证所有光线被导引。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "直阶跃光纤芯层折射率1.5、包层1.2，入口介质为空气，求数值孔径及最大接受角。",
+          "solution": [
+            "芯层与包层折射率平方差0.81，数值孔径0.9。",
+            "空气入口折射率取1，最大接受角为反正弦0.9，约64.158度。"
+          ],
+          "answer": "数值孔径0.9，最大接受角约64.16度；限于理想子午光线模型。"
+        },
+        "prereq": [
+          "opt-02",
+          "opt-04"
+        ],
+        "next": [
+          "exp-19"
+        ],
+        "tags": [
+          "光导纤维",
+          "全反射",
+          "数值孔径"
+        ],
+        "learning_scope": "高中"
+      },
+      "error_index": 0,
+      "chapter": "第十六章 · 几何光学"
+    },
+    "diagnostic-opt-06-2": {
+      "point": {
+        "id": "opt-06",
+        "title": "光导纤维与全反射的应用",
+        "level": "拓展",
+        "definition": "阶跃型光纤的纤芯折射率高于包层，适当入射的光可在芯层边界全反射并沿纤维传播。光线模型中，入射接受角由纤芯与包层的折射率差决定。",
+        "meaning": "全反射要求从高折射率介质射向低折射率介质且入射角超过临界角。纤芯内相对界面法线的角和入口相对轴线的角不是同一个角，本卡只分析直纤维中的子午光线；数值孔径的角度公式还要求入口介质折射率给定。弯曲、吸收和波导模式会带来实际损耗，不能声称真实光纤传输零损失。",
+        "symbols": {
+          "n1": {
+            "unit": "1",
+            "desc": "纤芯折射率"
+          },
+          "n2": {
+            "unit": "1",
+            "desc": "包层折射率"
+          },
+          "n_0": {
+            "unit": "1",
+            "desc": "入口介质折射率"
+          },
+          "theta_c": {
+            "unit": "rad",
+            "desc": "纤芯到包层的临界入射角，相对法线"
+          },
+          "alpha_max": {
+            "unit": "rad",
+            "desc": "入口相对纤维轴线的最大接受角"
+          },
+          "A": {
+            "unit": "1",
+            "desc": "光纤数值孔径"
+          }
+        },
+        "scenarios": {
+          "直纤维": {
+            "n1": 1.5,
+            "n2": 1.2,
+            "n_0": 1,
+            "theta_c": 0.9272952180016123,
+            "alpha_max": 1.1197695149986342
+          }
+        },
+        "formulas": [
+          {
+            "name": "芯层边界临界角",
+            "expr": "theta_c = asin(n2/n1)",
+            "when": "纤芯折射率大于包层，角度相对界面法线",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "直纤维",
+                "ref": 0.9272952180016123,
+                "note": "包层与芯层折射率比为4/5，临界角约53.1301度"
+              },
+              {
+                "type": "scan",
+                "scenario": "直纤维",
+                "var": "n2",
+                "lo": 1,
+                "hi": 1.49,
+                "n": 17,
+                "note": "保持包层折射率严格小于纤芯"
+              }
+            ]
+          },
+          {
+            "name": "光纤数值孔径",
+            "expr": "A = sqrt(n1^2-n2^2)",
+            "when": "直阶跃光纤的子午光线模型",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "直纤维",
+                "ref": 0.9,
+                "note": "折射率平方差为2.25−1.44=0.81，平方根为0.9"
+              }
+            ]
+          },
+          {
+            "name": "入口最大接受角",
+            "expr": "alpha_max = asin(sqrt(n1^2-n2^2)/n_0)",
+            "when": "孔径不大于入口介质折射率，忽略波导模式与弯曲",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "直纤维",
+                "ref": 1.1197695149986342,
+                "note": "入口正弦为0.9，接受角约64.1581度"
+              },
+              {
+                "type": "consistency",
+                "scenario": "直纤维",
+                "with_expr": "asin(n1*cos(theta_c)/n_0)",
+                "target": "入口相对纤维轴线的最大接受角",
+                "note": "本公式直接求alpha_max；参考端显式关系为asin(n1*cos(theta_c)/n_0)。两端使用同一情境和阶段，只核对该关系；with字段仅定位来源，不代表调用另一条被覆盖的公式。",
+                "with": "opt-06|入口最大接受角",
+                "verification_kind": "独立关系核对"
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "先比较芯层和包层折射率，确认具备全反射的介质方向。",
+          "由芯层边界求临界角，把侧面法线角换算为纤维轴线角。",
+          "再用入口折射定律连接轴线角与外部入射角，得到接受角；实际光纤不能只依赖光线几何估算损耗。"
+        ],
+        "errors": [
+          {
+            "wrong": "把芯层和包层折射率平方相加求数值孔径",
+            "wrong_expr": "A = sqrt(n1^2+n2^2)",
+            "why": "光纤入口接受条件来自全反射和入口折射的联合限制，应该取平方差；相加虽量纲一致却会得到过大的孔径和非法接受角。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "直纤维",
+              "expr": "sqrt(n1^2+n2^2)",
+              "ref": 0.9
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "认为光纤任何入射角都能全反射传播",
+            "why": "入口必须满足接受角限制，芯层边界必须满足全反射角度条件；折射率结构本身不能保证所有光线被导引。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "直阶跃光纤芯层折射率1.5、包层1.2，入口介质为空气，求数值孔径及最大接受角。",
+          "solution": [
+            "芯层与包层折射率平方差0.81，数值孔径0.9。",
+            "空气入口折射率取1，最大接受角为反正弦0.9，约64.158度。"
+          ],
+          "answer": "数值孔径0.9，最大接受角约64.16度；限于理想子午光线模型。"
+        },
+        "prereq": [
+          "opt-02",
+          "opt-04"
+        ],
+        "next": [
+          "exp-19"
+        ],
+        "tags": [
+          "光导纤维",
+          "全反射",
+          "数值孔径"
+        ],
+        "learning_scope": "高中"
+      },
+      "error_index": 1,
+      "chapter": "第十六章 · 几何光学"
+    }
+  },
+  "generator_version": "2026-10-04-条件过程返工-8"
 }

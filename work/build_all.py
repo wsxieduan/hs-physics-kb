@@ -186,7 +186,7 @@ def write_review_checklist(path, banks):
                 groups[confidence].append((bank.get("segment", ""), question, review))
     lines = [
         "# 诊断题自审清单", "",
-        "只列出置信度不是 high 的题目。答案倾向来自原知识库 `caught_by` 映射；教师点评题仍需教师确认，不进入系统正确率。", "",
+        "列出全部742道题的执行方复查及教师待审状态。数值题有逐题计算证据，量纲题有目标量纲证据；这些都不代替教学审核。教师点评题不进入系统正确率。", "",
     ]
     for confidence, title in (("low", "低置信度"), ("medium", "中置信度")):
         rows = groups[confidence]
@@ -197,14 +197,14 @@ def write_review_checklist(path, banks):
         for segment, question, review in rows:
             note = review.get("note") or "复核标记：" + ", ".join(
                 name for name, ok in review.get("checks", {}).items() if not ok)
-            lines.append("- `%s` · %s（%s，%s）：%s；倾向答案：**%s**。" % (
+            lines.append("- `%s` · %s（%s，%s）：%s；来源防线：**%s**。" % (
                 question.get("id", ""), question.get("point_title", ""),
                 segment, question.get("chapter", ""), note, question.get("error_type", "")))
         lines.append("")
     lines.extend(["## 置信度口径", "",
-                  "- `high`：四个标签各不相同，题干、答案唯一性、同章干扰项与学段边界检查均通过。",
-                  "- `medium`：本章类别不足四类，选项以同章其他错误的类别和原解释区分；答案仍按完整选项唯一匹配，但教学区分度建议抽查。",
-                  "- `low`：题干可读性或学段边界自检未通过，建议优先人工查看。", ""])
+                  "- `high`：本轮不使用；没有教师签署不宣称教学审核通过。",
+                  "- `medium`：已完成执行方结构复查及可用的机器证据复算，教师仍须确认条件、答案唯一性和区分度。",
+                  "- `low`：未完成执行方复查的题目应优先处理；本轮未冒用审核结论。", ""])
     write_text(path, "\n".join(lines))
     return {key: len(value) for key, value in groups.items()}
 
@@ -311,7 +311,7 @@ def audit_question_types(questions):
         error_type = question.get("error_type")
         if judging == "auto" and source_type != error_type:
             failures.append((question.get("id"), source_type, error_type))
-        elif judging == "teacher" and (source_type != "人工审核" or error_type != "概念混淆"):
+        elif judging == "teacher" and not (source_type == "人工审核" or question.get("review", {}).get("requires_teacher")):
             failures.append((question.get("id"), source_type, error_type))
     if failures:
         raise RuntimeError("题目来源类型映射不一致：%s" % failures[:20])
@@ -534,17 +534,14 @@ def main():
                          if rebuilt_questions.get(question_id) != old]
     missing_questions = [question_id for question_id in previous_questions
                         if question_id not in rebuilt_questions]
-    allowed_updates = {qid for bank in junior_banks for qid in bank.get("updated_ids", [])}
-    # 高中本批仅同步等时圆题干标题；新增题没有旧对象，另计新增。
-    hs_authorized = {'dyn-09','dyn-10','kine-09','met-07','ac-07','mol-05','mol-06','mdl-26'}
-    allowed_updates.update(q['id'] for bank in hs_banks for q in bank.get('questions', [])
-                           if q['point_id'] in hs_authorized and q['id'] in bank.get('updated_ids', []))
+    # 来源驱动的刷新对两学段同等适用，无历史新增编号白名单。
+    allowed_updates = {qid for bank in hs_banks + junior_banks for qid in bank.get("updated_ids", [])}
     unexpected_changes = [qid for qid in changed_questions if qid not in allowed_updates]
     if unexpected_changes or missing_questions:
         raise RuntimeError("诊断题仅能随授权来源变化同步；未登记变化=%s，缺失=%s" %
                            (unexpected_changes[:20], missing_questions[:20]))
-    preserved_question_count = len(previous_questions)
-    new_question_count = len(rebuilt_questions) - preserved_question_count
+    preserved_question_count = len(previous_questions) - len(changed_questions)
+    new_question_count = len(rebuilt_questions) - len(previous_questions)
     audit_question_types(diagnostic_data["questions"])
     all_banks = hs_banks + junior_banks
     review_counts = write_review_checklist(
@@ -603,7 +600,7 @@ def main():
     # 把已经整理好的覆盖证据与交付说明随整合包带走，避免说明指向缺失文件。
     # 它们由执行方维护；此处只复制，不把旧报告当作本次校验结论。
     for filename in ("初中覆盖前后台账.md", "初中分节覆盖记录.json", "初中修补交付说明.md",
-                     "第四批补录交付说明.md", "第四批补录清单.md"):
+                     "第四批补录交付说明.md", "第四批补录清单.md", "本轮互证与条件返工说明.md"):
         source = os.path.join(outputs_dir, filename)
         if os.path.isfile(source):
             copy_output(source, os.path.join(package_dir, filename))
@@ -655,7 +652,7 @@ def main():
 
     lines = [
         "## 第四批：量纲类错误执行证据（2026-09-29）", "",
-        "本批仅在知识库错误条目中新增 `trap_test` 字段；不改 `wrong`、`why`、`wrong_expr`、`caught_by`、符号表或校验引擎。每条证据都由 `physkit.expr` 与 `physkit.checks.check_dimension` 实际执行得出。", "",
+        "本节保留量纲证据统计位置，数据按当前源重算。已有内容返工会同步修改说明、错误项和题库；冻结校验引擎保持只读。量纲证据由 `physkit.expr` 与 `physkit.checks.check_dimension` 实际执行得出。", "",
         "### 量纲证据回填统计", "",
         "| 学段 | 本批待测（缺少 trap_test） | 新增 dimension 证据 | 正式引擎无法判定 | 原有其他形态 trap_test 保留 |",
         "|---|---:|---:|---:|---:|",
@@ -679,8 +676,7 @@ def main():
         lines.append("无。")
 
     lines.extend(["", "### 诊断题变化与类型占比", "",
-                  "生成前的 %d 道已验收题逐题保留原 JSON 对象，字段未重写；本批新增 %d 道机器判定题，全库现有 %d 道。" % (
-                      displayed_preserved, displayed_added, len(diagnostic_data["questions"])), "",
+                  "当前全库 %d 道诊断题。来源快照和规则版本均相同才保留原对象；来源或规则变化时按原ID更新。规则迁移及修改前后数量见本轮返工说明，保留ID不代表教学验收。" % len(diagnostic_data["questions"]), "",
                   "| 学段 | 机器题总数 | 数值代入 | 量纲一致性 | 数值代入占比 |", "|---|---:|---:|---:|---:|"])
     for segment, total, numeric in (("高中", hs_auto, numeric_hs),
                                     ("初中", junior_auto, numeric_junior)):
@@ -698,10 +694,10 @@ def main():
                       100.0 * numeric_junior / (junior_auto - dimension_audit["初中"]["filled"]),
                       numeric_junior, junior_auto, 100.0 * numeric_junior / junior_auto), "",
                   "### 校验与范围", "",
-                  "- 高中原知识库：%d/%d 项检查通过；初中：%d/%d 项检查通过。知识点内容与原有校验结论未变。" % (
+                  "- 高中当前知识库：%d/%d 项检查通过；初中：%d/%d 项检查通过。自动通过只证明对应检查，不代表所有内容已经教学审核。" % (
                       hs_stats["pass"], hs_stats["checks"], junior_stats["pass"], junior_stats["checks"]),
                   "- 新增量纲 trap_test 均已再次由正式引擎复算并核对 `target`、左右量纲和 `expect`；有任一不一致时构建会中止。",
-                  "- 旧诊断题题型映射逐条复核：机器题 `source_caught_by == error_type`；教师题 `source_caught_by == 人工审核`。",
+                  "- 判分依据见每题 answer_evidence；部分定量或量纲题因操作条件仍采用教师点评。不能仅根据源 caught_by 推断选择题教学质量。",
                   "- 自审清单当前列出 low %d、medium %d 道；所有非 high 题目逐条列在 `outputs/诊断题自审清单.md`。" % (
                       review_counts["low"], review_counts["medium"]),
                   "- 离线包 %d 个 HTML 页面：%s；本地文件断链 %d、片段锚点缺失 %d、外部网页链接 %d。" % (
@@ -712,7 +708,7 @@ def main():
                       page_audit["external_links"]),
                   "- 构建生成两学段页面与题库；跨学段线索按当前源文件生成复核清单，新增线索仍待教师确认分级。",
                   "- 冻结质检：%s；质检方原有 `outputs/质检报告.md` 未被覆盖。" % qc_summary,
-                  "- 尚未据此宣称完成真实师生试用；本地浏览器点按测试需在可启动浏览器的环境另行完成。", ""])
+                  "- 浏览器测试与真实师生试用分开记录；当前互证、条件、例题及离线回归见本轮互证与条件返工说明及互证修复证据；深化返工说明保留为上一轮历史。", ""])
     section = "\n".join(lines)
     section_marker = "## 第四批：量纲类错误执行证据"
     history = previous_report
@@ -739,7 +735,7 @@ def main():
         "跨学段学习线索 %d 组 / %d 条单项；新增线索的教学分级待教师复核。" % (
             mapping_count, sum(len(pair.get("junior", [])) for pair in crosswalk.get("pairs", []))),
         "诊断题共 %d 题；教师点评题不参与机器自动判定。" % len(diagnostic_data["questions"]),
-        "本次按初中来源变化同步 %d 道既有题；其他题目保留答案与字段。" % len(changed_questions),
+        "本次构建按两学段来源变化同步 %d 道既有题；其他题目保留答案与字段。" % len(changed_questions),
         "冻结质检：%s。质检方原报告未被覆盖。" % qc_summary,
         "具体内容改动、实际浏览器回归和来源查证见 `work/本批报告.md` 与 `work/交接单.json`。", "",
         "## 历史构建记录", "",

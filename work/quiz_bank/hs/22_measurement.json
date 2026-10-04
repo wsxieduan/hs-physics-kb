@@ -8,27 +8,19 @@
       "point_id": "exp-01",
       "point_title": "打点计时器、纸带与计数点",
       "chapter": "第二十二章 · 测量工具、数据处理与实验基础",
-      "stem": "【第二十二章 · 测量工具、数据处理与实验基础 · 打点计时器、纸带与计数点】学生的错误做法：把五个间隔误认为六个间隔（错误表达式：T<sub>c</sub> = (n+1)/f）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "stem": "在“打点计时器、纸带与计数点”的模型下，f（实际打点频率）=50 Hz；n（两个计数点之间的原始时间间隔个数）=5 1；T<sub>0</sub>（相邻原始点的时间间隔）=0.02 s。条件：相邻计数点之间有 n 个打点时间间隔。求计数点的时间间隔（T<sub>c</sub>）。这些数值是设计示例。",
       "options": [
         {
           "label": "A",
-          "text": "概念混淆：有阻力变化、拉动不均匀或点迹模糊时，位移差未必恒定，应先检查数据而不是用公式强行拟合。"
+          "text": "0.12 s"
         },
         {
           "label": "B",
-          "text": "概念混淆：两次遮光持续时间不是物体从第一门到第二门的通行时间，使用速度变化率时需记录正确的时刻差。"
-        },
-        {
-          "label": "C",
-          "text": "概念混淆：导轨倾斜、气流、碰撞器固定部件和残余摩擦都可能造成外冲量，必须通过调平和数据差值检验。"
-        },
-        {
-          "label": "D",
-          "text": "数值代入：数到两端六个点不等于经历六个时间间隔；该错误量纲正确，却使本例计数周期从0.10 s错成0.12 s。"
+          "text": "0.1 s"
         }
       ],
-      "correct_answer": "D",
-      "explanation": "数到两端六个点不等于经历六个时间间隔；该错误量纲正确，却使本例计数周期从0.10 s错成0.12 s。\n知识库校验证据：情境：基准；代入错误式：(n+1)/f；校验参照值：0.1。",
+      "correct_answer": "B",
+      "explanation": "使用计数周期：n·T<sub>0</sub>，代入得0.1 s。另一结果来自(n+1)/f，算得0.12 s。\n数到两端六个点不等于经历六个时间间隔；该错误量纲正确，却使本例计数周期从0.10 s错成0.12 s。\n知识点条件：电磁打点计时器和电火花计时器的供电方式不同，应按仪器铭牌接线；常见电磁型使用低压交流，常见电火花型使用交流市电，不能混接。交流频率为50 Hz且每周期打一点时，原始点间隔为0.02 s；数点时必须数间隔，六个点只含五个间隔。\n推导依据：按仪器说明确认型号、供电和打点频率，先通电使打点稳定，再释放或拉动纸带。；选清晰且运动状态合适的一段，标记计数点并写明每组包含几个原始时间间隔。；由每秒打点次数求相邻点间隔，再乘计数间隔个数；测位移时从点中心读数。\n卡片公式各自的适用条件（不是本题共同前提）：\n相邻打点周期：打点计时器实际打点频率为 f；不是隔若干点的计数周期\n计数周期：相邻计数点之间有 n 个打点时间间隔",
       "error_type": "数值代入",
       "judging": "auto",
       "source_error_index": 0,
@@ -39,15 +31,57 @@
         "expr": "(n+1)/f",
         "ref": 0.1
       },
+      "level": "进阶",
+      "learning_scope": "高中",
+      "answer_evidence": {
+        "kind": "numeric",
+        "scenario": "基准",
+        "parameters": {
+          "f": 50,
+          "n": 5,
+          "T_0": 0.02,
+          "T_c": 0.1
+        },
+        "target": "T_c",
+        "unit": "s",
+        "reference": 0.1,
+        "correct_proof": {
+          "expression": "n*T_0",
+          "formula": "计数周期",
+          "value": 0.1,
+          "when": "相邻计数点之间有 n 个打点时间间隔"
+        },
+        "distractor_expression": "(n+1)/f",
+        "distractor_value": 0.12,
+        "dimension_matches": true,
+        "independent_evaluation": true
+      },
       "review": {
         "confidence": "medium",
-        "checks": {
-          "answer_unique": true,
-          "distractors_plausible": true,
-          "stem_clear": true,
-          "no_cross_segment": true
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": true,
+          "no_answer_leak_in_options": true
         },
-        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。"
       }
     },
     {
@@ -55,42 +89,59 @@
       "point_id": "exp-01",
       "point_title": "打点计时器、纸带与计数点",
       "chapter": "第二十二章 · 测量工具、数据处理与实验基础",
-      "stem": "【第二十二章 · 测量工具、数据处理与实验基础 · 打点计时器、纸带与计数点】学生的错误做法：未核对型号便把所有计时器接到同一种电源。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "stem": "关于“打点计时器、纸带与计数点”，判断这一说法是否成立，并说明依据：\n供电要求随型号变化，必须核对铭牌与接线说明。",
       "options": [
         {
           "label": "A",
-          "text": "数值代入：一次遮光对应条宽而非两倍条宽；错误式仍有速度量纲，本例错误值为2.0 m/s而正确值为1.0 m/s。"
+          "text": "该说法成立。"
         },
         {
           "label": "B",
-          "text": "数值代入：动量是矢量，反弹方向与所选正方向相反；把负速度改成其大小会算出0.28而不是0.20 kg·m/s。"
-        },
-        {
-          "label": "C",
-          "text": "概念混淆：供电要求随型号变化，必须核对铭牌与接线说明；计时公式无法识别接线是否安全、纸带是否卡住。"
-        },
-        {
-          "label": "D",
-          "text": "数值代入：两组平均速度的时间中心相隔两个计数周期；漏掉这个间隔因子会使加速度加倍，量纲检查无法发现。"
+          "text": "该说法不成立。"
         }
       ],
-      "correct_answer": "C",
-      "explanation": "供电要求随型号变化，必须核对铭牌与接线说明；计时公式无法识别接线是否安全、纸带是否卡住。",
+      "correct_answer": "A",
+      "explanation": "供电要求随型号变化，必须核对铭牌与接线说明；计时公式无法识别接线是否安全、纸带是否卡住。\n知识点条件：电磁打点计时器和电火花计时器的供电方式不同，应按仪器铭牌接线；常见电磁型使用低压交流，常见电火花型使用交流市电，不能混接。交流频率为50 Hz且每周期打一点时，原始点间隔为0.02 s；数点时必须数间隔，六个点只含五个间隔。\n推导依据：按仪器说明确认型号、供电和打点频率，先通电使打点稳定，再释放或拉动纸带。；选清晰且运动状态合适的一段，标记计数点并写明每组包含几个原始时间间隔。；由每秒打点次数求相邻点间隔，再乘计数间隔个数；测位移时从点中心读数。\n卡片公式各自的适用条件（不是本题共同前提）：\n相邻打点周期：打点计时器实际打点频率为 f；不是隔若干点的计数周期\n计数周期：相邻计数点之间有 n 个打点时间间隔",
       "error_type": "概念混淆",
       "judging": "teacher",
       "source_error_index": 1,
       "source_caught_by": "人工审核",
       "wrong_expr": null,
       "trap_test": null,
+      "level": "进阶",
+      "learning_scope": "高中",
+      "answer_evidence": {
+        "kind": "teacher",
+        "claim_source": "why",
+        "reference_only": true,
+        "reason": "概念、操作或无法建立完整定量证据，教师确认条件与结论。"
+      },
       "review": {
         "confidence": "medium",
-        "checks": {
-          "answer_unique": true,
-          "distractors_plausible": true,
-          "stem_clear": true,
-          "no_cross_segment": true
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": false,
+          "no_answer_leak_in_options": true
         },
-        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。"
       }
     },
     {
@@ -98,27 +149,19 @@
       "point_id": "exp-02",
       "point_title": "纸带瞬时速度、逐差法与运动检验",
       "chapter": "第二十二章 · 测量工具、数据处理与实验基础",
-      "stem": "【第二十二章 · 测量工具、数据处理与实验基础 · 纸带瞬时速度、逐差法与运动检验】学生的错误做法：逐差时把分母写成两倍周期平方（错误表达式：a = ((x<sub>3</sub>+x<sub>4</sub>)-(x<sub>1</sub>+x<sub>2</sub>))/(2·T<sub>c</sub>²)）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "stem": "在“纸带瞬时速度、逐差法与运动检验”的模型下，x<sub>1</sub>（第一等时段位移）=0.03 m；x<sub>2</sub>（第二等时段位移）=0.05 m；x<sub>3</sub>（第三等时段位移）=0.07 m；x<sub>4</sub>（第四等时段位移）=0.09 m；T<sub>c</sub>（计数周期）=0.1 s。条件：四个连续等时位移；运动应近似匀变速。求加速度（a）。这些数值是设计示例。",
       "options": [
         {
           "label": "A",
-          "text": "概念混淆：导轨倾斜、气流、碰撞器固定部件和残余摩擦都可能造成外冲量，必须通过调平和数据差值检验。"
+          "text": "2 m/s²"
         },
         {
           "label": "B",
-          "text": "数值代入：两组平均速度的时间中心相隔两个计数周期；漏掉这个间隔因子会使加速度加倍，量纲检查无法发现。"
-        },
-        {
-          "label": "C",
-          "text": "概念混淆：供电要求随型号变化，必须核对铭牌与接线说明；计时公式无法识别接线是否安全、纸带是否卡住。"
-        },
-        {
-          "label": "D",
-          "text": "概念混淆：两次遮光持续时间不是物体从第一门到第二门的通行时间，使用速度变化率时需记录正确的时刻差。"
+          "text": "4 m/s²"
         }
       ],
-      "correct_answer": "B",
-      "explanation": "两组平均速度的时间中心相隔两个计数周期；漏掉这个间隔因子会使加速度加倍，量纲检查无法发现。\n知识库校验证据：情境：基准；代入错误式：((x<sub>3</sub>+x<sub>4</sub>)-(x<sub>1</sub>+x<sub>2</sub>))/(2·T<sub>c</sub>²)；校验参照值：2。",
+      "correct_answer": "A",
+      "explanation": "使用四段逐差加速度：((x<sub>3</sub>+x<sub>4</sub>)-(x<sub>1</sub>+x<sub>2</sub>))/(4·T<sub>c</sub>²)，代入得2 m/s²。另一结果来自((x<sub>3</sub>+x<sub>4</sub>)-(x<sub>1</sub>+x<sub>2</sub>))/(2·T<sub>c</sub>²)，算得4 m/s²。\n两组平均速度的时间中心相隔两个计数周期；漏掉这个间隔因子会使加速度加倍，量纲检查无法发现。\n知识点条件：先检查相邻位移之差是否在测量误差范围内近似相等，再使用匀变速公式。逐差法利用较长位移减小相对读数误差，但它不会自动消除计时频率错误或纸带阻力。计数周期必须采用计数点间隔，不能一律填原始打点周期；非匀变速时中心平均速度只能作为近似。\n推导依据：依次测四段连续等时位移，保留原始记录和长度单位。；第二计数点前后两段总位移除以两个计数周期，得到该点速度。；将后两段之和减前两段之和；两组段中心时刻相差两个周期，因此分母是四倍周期平方。；再比较相邻位移差和速度随时间的直线趋势，检查模型是否合理。\n卡片公式各自的适用条件（不是本题共同前提）：\n中间计数点速度：匀变速直线运动或时间足够短，用该点前后两段位移的平均速度\n四段逐差加速度：四个连续等时位移；运动应近似匀变速\n相邻位移差：相邻等时段内的位移差，带符号",
       "error_type": "数值代入",
       "judging": "auto",
       "source_error_index": 0,
@@ -129,15 +172,59 @@
         "expr": "((x3+x4)-(x1+x2))/(2*T_c^2)",
         "ref": 2
       },
+      "level": "进阶",
+      "learning_scope": "高中",
+      "answer_evidence": {
+        "kind": "numeric",
+        "scenario": "基准",
+        "parameters": {
+          "x1": 0.03,
+          "x2": 0.05,
+          "x3": 0.07,
+          "x4": 0.09,
+          "T_c": 0.1,
+          "a": 2
+        },
+        "target": "a",
+        "unit": "m/s^2",
+        "reference": 2,
+        "correct_proof": {
+          "expression": "((x3+x4)-(x1+x2))/(4*T_c^2)",
+          "formula": "四段逐差加速度",
+          "value": 1.9999999999999996,
+          "when": "四个连续等时位移；运动应近似匀变速"
+        },
+        "distractor_expression": "((x3+x4)-(x1+x2))/(2*T_c^2)",
+        "distractor_value": 3.999999999999999,
+        "dimension_matches": true,
+        "independent_evaluation": true
+      },
       "review": {
         "confidence": "medium",
-        "checks": {
-          "answer_unique": true,
-          "distractors_plausible": true,
-          "stem_clear": true,
-          "no_cross_segment": true
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": true,
+          "no_answer_leak_in_options": true
         },
-        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。"
       }
     },
     {
@@ -145,42 +232,59 @@
       "point_id": "exp-02",
       "point_title": "纸带瞬时速度、逐差法与运动检验",
       "chapter": "第二十二章 · 测量工具、数据处理与实验基础",
-      "stem": "【第二十二章 · 测量工具、数据处理与实验基础 · 纸带瞬时速度、逐差法与运动检验】学生的错误做法：不检验运动性质就把所有纸带都按匀变速处理。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "stem": "关于“纸带瞬时速度、逐差法与运动检验”，判断这一说法是否成立，并说明依据：\n不检验运动性质就把所有纸带都按匀变速处理。",
       "options": [
         {
           "label": "A",
-          "text": "概念混淆：有阻力变化、拉动不均匀或点迹模糊时，位移差未必恒定，应先检查数据而不是用公式强行拟合。"
+          "text": "该说法成立。"
         },
         {
           "label": "B",
-          "text": "数值代入：数到两端六个点不等于经历六个时间间隔；该错误量纲正确，却使本例计数周期从0.10 s错成0.12 s。"
-        },
-        {
-          "label": "C",
-          "text": "数值代入：一次遮光对应条宽而非两倍条宽；错误式仍有速度量纲，本例错误值为2.0 m/s而正确值为1.0 m/s。"
-        },
-        {
-          "label": "D",
-          "text": "数值代入：动量是矢量，反弹方向与所选正方向相反；把负速度改成其大小会算出0.28而不是0.20 kg·m/s。"
+          "text": "该说法不成立。"
         }
       ],
-      "correct_answer": "A",
-      "explanation": "有阻力变化、拉动不均匀或点迹模糊时，位移差未必恒定，应先检查数据而不是用公式强行拟合。",
+      "correct_answer": "B",
+      "explanation": "有阻力变化、拉动不均匀或点迹模糊时，位移差未必恒定，应先检查数据而不是用公式强行拟合。\n知识点条件：先检查相邻位移之差是否在测量误差范围内近似相等，再使用匀变速公式。逐差法利用较长位移减小相对读数误差，但它不会自动消除计时频率错误或纸带阻力。计数周期必须采用计数点间隔，不能一律填原始打点周期；非匀变速时中心平均速度只能作为近似。\n推导依据：依次测四段连续等时位移，保留原始记录和长度单位。；第二计数点前后两段总位移除以两个计数周期，得到该点速度。；将后两段之和减前两段之和；两组段中心时刻相差两个周期，因此分母是四倍周期平方。；再比较相邻位移差和速度随时间的直线趋势，检查模型是否合理。\n卡片公式各自的适用条件（不是本题共同前提）：\n中间计数点速度：匀变速直线运动或时间足够短，用该点前后两段位移的平均速度\n四段逐差加速度：四个连续等时位移；运动应近似匀变速\n相邻位移差：相邻等时段内的位移差，带符号",
       "error_type": "概念混淆",
       "judging": "teacher",
       "source_error_index": 1,
       "source_caught_by": "人工审核",
       "wrong_expr": null,
       "trap_test": null,
+      "level": "进阶",
+      "learning_scope": "高中",
+      "answer_evidence": {
+        "kind": "teacher",
+        "claim_source": "wrong",
+        "reference_only": true,
+        "reason": "概念、操作或无法建立完整定量证据，教师确认条件与结论。"
+      },
       "review": {
         "confidence": "medium",
-        "checks": {
-          "answer_unique": true,
-          "distractors_plausible": true,
-          "stem_clear": true,
-          "no_cross_segment": true
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": false,
+          "no_answer_leak_in_options": true
         },
-        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。"
       }
     },
     {
@@ -188,27 +292,19 @@
       "point_id": "exp-03",
       "point_title": "光电门、遮光条与速度测量",
       "chapter": "第二十二章 · 测量工具、数据处理与实验基础",
-      "stem": "【第二十二章 · 测量工具、数据处理与实验基础 · 光电门、遮光条与速度测量】学生的错误做法：把条宽误乘二再计算速度（错误表达式：v<sub>1</sub> = 2·d/t<sub>1</sub>）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "stem": "在“光电门、遮光条与速度测量”的模型下，d（遮光条有效宽度）=0.01 m；t<sub>1</sub>（第一门遮光时间）=0.01 s。条件：遮光条有效宽度沿运动方向；遮光期间平均速度。求第一门近似瞬时速度（v<sub>1</sub>）。这些数值是设计示例。",
       "options": [
         {
           "label": "A",
-          "text": "概念混淆：供电要求随型号变化，必须核对铭牌与接线说明；计时公式无法识别接线是否安全、纸带是否卡住。"
+          "text": "1 m/s"
         },
         {
           "label": "B",
-          "text": "概念混淆：有阻力变化、拉动不均匀或点迹模糊时，位移差未必恒定，应先检查数据而不是用公式强行拟合。"
-        },
-        {
-          "label": "C",
-          "text": "概念混淆：导轨倾斜、气流、碰撞器固定部件和残余摩擦都可能造成外冲量，必须通过调平和数据差值检验。"
-        },
-        {
-          "label": "D",
-          "text": "数值代入：一次遮光对应条宽而非两倍条宽；错误式仍有速度量纲，本例错误值为2.0 m/s而正确值为1.0 m/s。"
+          "text": "2 m/s"
         }
       ],
-      "correct_answer": "D",
-      "explanation": "一次遮光对应条宽而非两倍条宽；错误式仍有速度量纲，本例错误值为2.0 m/s而正确值为1.0 m/s。\n知识库校验证据：情境：基准；代入错误式：2·d/t<sub>1</sub>；校验参照值：1。",
+      "correct_answer": "A",
+      "explanation": "使用遮光平均速度：d/t<sub>1</sub>，代入得1 m/s。另一结果来自2·d/t<sub>1</sub>，算得2 m/s。\n一次遮光对应条宽而非两倍条宽；错误式仍有速度量纲，本例错误值为2.0 m/s而正确值为1.0 m/s。\n知识点条件：测量前应检查条宽、条面与运动方向、门的计时模式和两门间距。条宽越小，瞬时近似通常越好，但计时相对误差可能变大。一个光电门的一次遮光只能给出局部平均速度，不能据此恢复任意完整轨迹；两门求加速度还需匀变速和门处速度近似成立。\n推导依据：用合适仪器测条宽，调节光束，使遮光边缘与运动方向一致。；逐次记录遮光时间并计算局部平均速度；必要时重复测量。；匀变速情况下用两门速度平方差与门距求加速度，也可用两个速度对应时刻之差独立核对。\n卡片公式各自的适用条件（不是本题共同前提）：\n遮光平均速度：遮光条有效宽度沿运动方向；遮光期间平均速度\n第二门平均速度：同一遮光条通过第二门\n两门加速度估计：两门速度可近似瞬时速度，门距为 x，运动匀变速",
       "error_type": "数值代入",
       "judging": "auto",
       "source_error_index": 0,
@@ -219,15 +315,60 @@
         "expr": "2*d/t1",
         "ref": 1
       },
+      "level": "进阶",
+      "learning_scope": "高中",
+      "answer_evidence": {
+        "kind": "numeric",
+        "scenario": "基准",
+        "parameters": {
+          "d": 0.01,
+          "t1": 0.01,
+          "t2": 0.005,
+          "v1": 1,
+          "v2": 2,
+          "x": 0.5,
+          "dt": 0.3333333333333333
+        },
+        "target": "v1",
+        "unit": "m/s",
+        "reference": 1,
+        "correct_proof": {
+          "expression": "d/t1",
+          "formula": "遮光平均速度",
+          "value": 1.0,
+          "when": "遮光条有效宽度沿运动方向；遮光期间平均速度"
+        },
+        "distractor_expression": "2*d/t1",
+        "distractor_value": 2.0,
+        "dimension_matches": true,
+        "independent_evaluation": true
+      },
       "review": {
         "confidence": "medium",
-        "checks": {
-          "answer_unique": true,
-          "distractors_plausible": true,
-          "stem_clear": true,
-          "no_cross_segment": true
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": true,
+          "no_answer_leak_in_options": true
         },
-        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。"
       }
     },
     {
@@ -235,42 +376,59 @@
       "point_id": "exp-03",
       "point_title": "光电门、遮光条与速度测量",
       "chapter": "第二十二章 · 测量工具、数据处理与实验基础",
-      "stem": "【第二十二章 · 测量工具、数据处理与实验基础 · 光电门、遮光条与速度测量】学生的错误做法：把两个遮光持续时间之差当作两门运动时间。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "stem": "关于“光电门、遮光条与速度测量”，判断这一说法是否成立，并说明依据：\n两次遮光持续时间不是物体从第一门到第二门的通行时间，使用速度变化率时需记录正确的时刻差。",
       "options": [
         {
           "label": "A",
-          "text": "数值代入：两组平均速度的时间中心相隔两个计数周期；漏掉这个间隔因子会使加速度加倍，量纲检查无法发现。"
+          "text": "该说法不成立。"
         },
         {
           "label": "B",
-          "text": "数值代入：动量是矢量，反弹方向与所选正方向相反；把负速度改成其大小会算出0.28而不是0.20 kg·m/s。"
-        },
-        {
-          "label": "C",
-          "text": "概念混淆：两次遮光持续时间不是物体从第一门到第二门的通行时间，使用速度变化率时需记录正确的时刻差。"
-        },
-        {
-          "label": "D",
-          "text": "数值代入：数到两端六个点不等于经历六个时间间隔；该错误量纲正确，却使本例计数周期从0.10 s错成0.12 s。"
+          "text": "该说法成立。"
         }
       ],
-      "correct_answer": "C",
-      "explanation": "两次遮光持续时间不是物体从第一门到第二门的通行时间，使用速度变化率时需记录正确的时刻差。",
+      "correct_answer": "B",
+      "explanation": "两次遮光持续时间不是物体从第一门到第二门的通行时间，使用速度变化率时需记录正确的时刻差。\n知识点条件：测量前应检查条宽、条面与运动方向、门的计时模式和两门间距。条宽越小，瞬时近似通常越好，但计时相对误差可能变大。一个光电门的一次遮光只能给出局部平均速度，不能据此恢复任意完整轨迹；两门求加速度还需匀变速和门处速度近似成立。\n推导依据：用合适仪器测条宽，调节光束，使遮光边缘与运动方向一致。；逐次记录遮光时间并计算局部平均速度；必要时重复测量。；匀变速情况下用两门速度平方差与门距求加速度，也可用两个速度对应时刻之差独立核对。\n卡片公式各自的适用条件（不是本题共同前提）：\n遮光平均速度：遮光条有效宽度沿运动方向；遮光期间平均速度\n第二门平均速度：同一遮光条通过第二门\n两门加速度估计：两门速度可近似瞬时速度，门距为 x，运动匀变速",
       "error_type": "概念混淆",
       "judging": "teacher",
       "source_error_index": 1,
       "source_caught_by": "人工审核",
       "wrong_expr": null,
       "trap_test": null,
+      "level": "进阶",
+      "learning_scope": "高中",
+      "answer_evidence": {
+        "kind": "teacher",
+        "claim_source": "why",
+        "reference_only": true,
+        "reason": "概念、操作或无法建立完整定量证据，教师确认条件与结论。"
+      },
       "review": {
         "confidence": "medium",
-        "checks": {
-          "answer_unique": true,
-          "distractors_plausible": true,
-          "stem_clear": true,
-          "no_cross_segment": true
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": false,
+          "no_answer_leak_in_options": true
         },
-        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。"
       }
     },
     {
@@ -278,46 +436,82 @@
       "point_id": "exp-04",
       "point_title": "气垫导轨、碰撞与动量验证",
       "chapter": "第二十二章 · 测量工具、数据处理与实验基础",
-      "stem": "【第二十二章 · 测量工具、数据处理与实验基础 · 气垫导轨、碰撞与动量验证】学生的错误做法：把反弹速度按正值相加（错误表达式：p<sub>p</sub> = m1·(-v<sub>1</sub>′)+m2·v<sub>2</sub>′）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "stem": "在“气垫导轨、碰撞与动量验证”的模型下，m1（第一滑块质量）=0.2 kg；m2（第二滑块质量）=0.3 kg；v<sub>1</sub>′（第一滑块碰后有向速度）=-0.2 m/s；v<sub>2</sub>′（第二滑块碰后有向速度）=0.8 m/s。条件：与碰前采用同一正方向和相同系统。求碰后总动量（p′）。这些数值是设计示例。",
       "options": [
         {
           "label": "A",
-          "text": "概念混淆：两次遮光持续时间不是物体从第一门到第二门的通行时间，使用速度变化率时需记录正确的时刻差。"
+          "text": "0.2 kg·m/s"
         },
         {
           "label": "B",
-          "text": "数值代入：动量是矢量，反弹方向与所选正方向相反；把负速度改成其大小会算出0.28而不是0.20 kg·m/s。"
-        },
-        {
-          "label": "C",
-          "text": "概念混淆：供电要求随型号变化，必须核对铭牌与接线说明；计时公式无法识别接线是否安全、纸带是否卡住。"
-        },
-        {
-          "label": "D",
-          "text": "概念混淆：有阻力变化、拉动不均匀或点迹模糊时，位移差未必恒定，应先检查数据而不是用公式强行拟合。"
+          "text": "0.28 kg·m/s"
         }
       ],
-      "correct_answer": "B",
-      "explanation": "动量是矢量，反弹方向与所选正方向相反；把负速度改成其大小会算出0.28而不是0.20 kg·m/s。\n知识库校验证据：情境：基准；代入错误式：m<sub>1</sub>·(-v<sub>1</sub>_p)+m<sub>2</sub>·v<sub>2</sub>_p；校验参照值：0.2。",
+      "correct_answer": "A",
+      "explanation": "使用碰后总动量：m1·v<sub>1</sub>′+m2·v<sub>2</sub>′，代入得0.2 kg·m/s。另一结果来自m1·(-v<sub>1</sub>′)+m2·v<sub>2</sub>′，算得0.28 kg·m/s。\n动量是矢量，反弹方向与所选正方向相反；把负速度改成其大小会算出0.28而不是0.20 kg·m/s。\n知识点条件：先通气并调平，检查单滑块运动是否近似匀速，再用光电门测碰前后速度，选同一个水平正方向。磁性或弹性碰撞器影响动能是否守恒，粘连碰撞仍可守恒动量；气垫不等于没有外力。质量乘位移的比例只能用于初始总动量为零且比较同一时间内的位移等特殊情形，不能替代一般碰撞公式。\n推导依据：调平、通气、核对质量和遮光条宽度；用空载滑行排查明显外力。；记录碰前后各滑块速度，反向运动的速度填写负值。；分别求总动量，比较差值与测量不确定度；必要时做粘连和非粘连碰撞。；斜槽平抛验证法还必须保证相同离桌高度、入射球质量条件和碰撞位置，射程才可替代水平速度。\n卡片公式各自的适用条件（不是本题共同前提）：\n碰前总动量：选定正方向；速度使用带符号数值\n碰后总动量：与碰前采用同一正方向和相同系统",
       "error_type": "数值代入",
       "judging": "auto",
       "source_error_index": 0,
       "source_caught_by": "数值代入",
-      "wrong_expr": "p<sub>p</sub> = m1·(-v<sub>1</sub>′)+m2·v<sub>2</sub>′",
+      "wrong_expr": "p′ = m1·(-v<sub>1</sub>′)+m2·v<sub>2</sub>′",
       "trap_test": {
         "scenario": "基准",
         "expr": "m1*(-v1_p)+m2*v2_p",
         "ref": 0.2
       },
+      "level": "进阶",
+      "learning_scope": "高中",
+      "answer_evidence": {
+        "kind": "numeric",
+        "scenario": "基准",
+        "parameters": {
+          "m1": 0.2,
+          "m2": 0.3,
+          "v1": 1,
+          "v2": 0,
+          "v1_p": -0.2,
+          "v2_p": 0.8
+        },
+        "target": "p_p",
+        "unit": "kg*m/s",
+        "reference": 0.2,
+        "correct_proof": {
+          "expression": "m1*v1_p+m2*v2_p",
+          "formula": "碰后总动量",
+          "value": 0.19999999999999998,
+          "when": "与碰前采用同一正方向和相同系统"
+        },
+        "distractor_expression": "m1*(-v1_p)+m2*v2_p",
+        "distractor_value": 0.28,
+        "dimension_matches": true,
+        "independent_evaluation": true
+      },
       "review": {
         "confidence": "medium",
-        "checks": {
-          "answer_unique": true,
-          "distractors_plausible": true,
-          "stem_clear": true,
-          "no_cross_segment": true
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": true,
+          "no_answer_leak_in_options": true
         },
-        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。"
       }
     },
     {
@@ -325,42 +519,59 @@
       "point_id": "exp-04",
       "point_title": "气垫导轨、碰撞与动量验证",
       "chapter": "第二十二章 · 测量工具、数据处理与实验基础",
-      "stem": "【第二十二章 · 测量工具、数据处理与实验基础 · 气垫导轨、碰撞与动量验证】学生的错误做法：认为气垫导轨上任何过程都绝对没有外力。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "stem": "关于“气垫导轨、碰撞与动量验证”，判断这一说法是否成立，并说明依据：\n导轨倾斜、气流、碰撞器固定部件和残余摩擦都可能造成外冲量，必须通过调平和数据差值检验。",
       "options": [
         {
           "label": "A",
-          "text": "概念混淆：导轨倾斜、气流、碰撞器固定部件和残余摩擦都可能造成外冲量，必须通过调平和数据差值检验。"
+          "text": "该说法成立。"
         },
         {
           "label": "B",
-          "text": "数值代入：数到两端六个点不等于经历六个时间间隔；该错误量纲正确，却使本例计数周期从0.10 s错成0.12 s。"
-        },
-        {
-          "label": "C",
-          "text": "数值代入：两组平均速度的时间中心相隔两个计数周期；漏掉这个间隔因子会使加速度加倍，量纲检查无法发现。"
-        },
-        {
-          "label": "D",
-          "text": "数值代入：一次遮光对应条宽而非两倍条宽；错误式仍有速度量纲，本例错误值为2.0 m/s而正确值为1.0 m/s。"
+          "text": "该说法不成立。"
         }
       ],
       "correct_answer": "A",
-      "explanation": "导轨倾斜、气流、碰撞器固定部件和残余摩擦都可能造成外冲量，必须通过调平和数据差值检验。",
+      "explanation": "导轨倾斜、气流、碰撞器固定部件和残余摩擦都可能造成外冲量，必须通过调平和数据差值检验。\n知识点条件：先通气并调平，检查单滑块运动是否近似匀速，再用光电门测碰前后速度，选同一个水平正方向。磁性或弹性碰撞器影响动能是否守恒，粘连碰撞仍可守恒动量；气垫不等于没有外力。质量乘位移的比例只能用于初始总动量为零且比较同一时间内的位移等特殊情形，不能替代一般碰撞公式。\n推导依据：调平、通气、核对质量和遮光条宽度；用空载滑行排查明显外力。；记录碰前后各滑块速度，反向运动的速度填写负值。；分别求总动量，比较差值与测量不确定度；必要时做粘连和非粘连碰撞。；斜槽平抛验证法还必须保证相同离桌高度、入射球质量条件和碰撞位置，射程才可替代水平速度。\n卡片公式各自的适用条件（不是本题共同前提）：\n碰前总动量：选定正方向；速度使用带符号数值\n碰后总动量：与碰前采用同一正方向和相同系统",
       "error_type": "概念混淆",
       "judging": "teacher",
       "source_error_index": 1,
       "source_caught_by": "人工审核",
       "wrong_expr": null,
       "trap_test": null,
+      "level": "进阶",
+      "learning_scope": "高中",
+      "answer_evidence": {
+        "kind": "teacher",
+        "claim_source": "why",
+        "reference_only": true,
+        "reason": "概念、操作或无法建立完整定量证据，教师确认条件与结论。"
+      },
       "review": {
         "confidence": "medium",
-        "checks": {
-          "answer_unique": true,
-          "distractors_plausible": true,
-          "stem_clear": true,
-          "no_cross_segment": true
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": false,
+          "no_answer_leak_in_options": true
         },
-        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。"
       }
     },
     {
@@ -368,46 +579,82 @@
       "point_id": "exp-05",
       "point_title": "游标卡尺的读数与零误差",
       "chapter": "第二十二章 · 测量工具、数据处理与实验基础",
-      "stem": "【第二十二章 · 测量工具、数据处理与实验基础 · 游标卡尺的读数与零误差】学生的错误做法：把对齐序号多读一格（错误表达式：L = L<sub>m</sub>ain+(n+1)·δ-z）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "stem": "在“游标卡尺的读数与零误差”的模型下，δ（游标分度值）=2e-05 m；L<sub>主尺</sub>（游标零线左侧的主尺整格读数）=0.012 m；n（对齐游标刻线序号）=16 1；z（有符号零点示数）=0 m。条件：主尺读数、对齐游标序号和有符号零点示数。求零点修正后的长度（L）。这些数值是设计示例。",
       "options": [
         {
           "label": "A",
-          "text": "概念混淆：供电要求随型号变化，必须核对铭牌与接线说明；计时公式无法识别接线是否安全、纸带是否卡住。"
+          "text": "0.01232 m"
         },
         {
           "label": "B",
-          "text": "概念混淆：有阻力变化、拉动不均匀或点迹模糊时，位移差未必恒定，应先检查数据而不是用公式强行拟合。"
-        },
-        {
-          "label": "C",
-          "text": "概念混淆：两次遮光持续时间不是物体从第一门到第二门的通行时间，使用速度变化率时需记录正确的时刻差。"
-        },
-        {
-          "label": "D",
-          "text": "数值代入：序号从游标零线开始计算；错读一格会偏移一个分度值，本例从12.32 mm变成12.34 mm。"
+          "text": "0.01234 m"
         }
       ],
-      "correct_answer": "D",
-      "explanation": "序号从游标零线开始计算；错读一格会偏移一个分度值，本例从12.32 mm变成12.34 mm。\n知识库校验证据：情境：基准；代入错误式：L<sub>m</sub>ain+(n+1)·δ-z；校验参照值：0.01232。",
+      "correct_answer": "A",
+      "explanation": "使用游标读数与零点修正：L<sub>主尺</sub>+n·δ-z，代入得0.01232 m。另一结果来自L<sub>主尺</sub>+(n+1)·δ-z，算得0.01234 m。\n序号从游标零线开始计算；错读一格会偏移一个分度值，本例从12.32 mm变成12.34 mm。\n知识点条件：常见10、20、50分游标的分度值分别为0.1、0.05、0.02 mm，读到仪器规定的分度，不再随意估出一位。主尺读数取游标零刻线左侧已越过的刻度；游标读数取对齐刻线序号乘分度值。闭合时示数为正，测量值应减去它；负零误差则减去负数。测不同位置可发现物体形状和夹持影响。\n推导依据：清洁测量面，轻合量爪检查零点，确认游标分格数。；用正确量爪或深度杆测量，避免倾斜和过大夹紧力。；先读主尺，再读游标对齐格，最后减有符号零点示数。\n卡片公式各自的适用条件（不是本题共同前提）：\n游标分度值：游标 N 格总长等于主尺 N−1 格；主尺分度 b\n游标读数与零点修正：主尺读数、对齐游标序号和有符号零点示数",
       "error_type": "数值代入",
       "judging": "auto",
       "source_error_index": 0,
       "source_caught_by": "数值代入",
-      "wrong_expr": "L = L<sub>m</sub>ain+(n+1)·δ-z",
+      "wrong_expr": "L = L<sub>主尺</sub>+(n+1)·δ-z",
       "trap_test": {
         "scenario": "基准",
         "expr": "L_main+(n+1)*delta-z",
         "ref": 0.01232
       },
+      "level": "进阶",
+      "learning_scope": "高中",
+      "answer_evidence": {
+        "kind": "numeric",
+        "scenario": "基准",
+        "parameters": {
+          "b": 0.001,
+          "N": 50,
+          "delta": 2e-05,
+          "L_main": 0.012,
+          "n": 16,
+          "z": 0
+        },
+        "target": "L",
+        "unit": "m",
+        "reference": 0.01232,
+        "correct_proof": {
+          "expression": "L_main+n*delta-z",
+          "formula": "游标读数与零点修正",
+          "value": 0.012320000000000001,
+          "when": "主尺读数、对齐游标序号和有符号零点示数"
+        },
+        "distractor_expression": "L_main+(n+1)*delta-z",
+        "distractor_value": 0.01234,
+        "dimension_matches": true,
+        "independent_evaluation": true
+      },
       "review": {
         "confidence": "medium",
-        "checks": {
-          "answer_unique": true,
-          "distractors_plausible": true,
-          "stem_clear": true,
-          "no_cross_segment": true
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": true,
+          "no_answer_leak_in_options": true
         },
-        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。"
       }
     },
     {
@@ -415,42 +662,59 @@
       "point_id": "exp-05",
       "point_title": "游标卡尺的读数与零误差",
       "chapter": "第二十二章 · 测量工具、数据处理与实验基础",
-      "stem": "【第二十二章 · 测量工具、数据处理与实验基础 · 游标卡尺的读数与零误差】学生的错误做法：给游标读数任意追加一个估读数字。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "stem": "关于“游标卡尺的读数与零误差”，判断这一说法是否成立，并说明依据：\n标准游标读数按对齐格和分度值形成，不能把刻度尺的估读规则直接套到游标。",
       "options": [
         {
           "label": "A",
-          "text": "数值代入：两组平均速度的时间中心相隔两个计数周期；漏掉这个间隔因子会使加速度加倍，量纲检查无法发现。"
+          "text": "该说法不成立。"
         },
         {
           "label": "B",
-          "text": "数值代入：一次遮光对应条宽而非两倍条宽；错误式仍有速度量纲，本例错误值为2.0 m/s而正确值为1.0 m/s。"
-        },
-        {
-          "label": "C",
-          "text": "概念混淆：标准游标读数按对齐格和分度值形成，不能把刻度尺的估读规则直接套到游标；报告位数需与仪器规格一致。"
-        },
-        {
-          "label": "D",
-          "text": "数值代入：数到两端六个点不等于经历六个时间间隔；该错误量纲正确，却使本例计数周期从0.10 s错成0.12 s。"
+          "text": "该说法成立。"
         }
       ],
-      "correct_answer": "C",
-      "explanation": "标准游标读数按对齐格和分度值形成，不能把刻度尺的估读规则直接套到游标；报告位数需与仪器规格一致。",
+      "correct_answer": "B",
+      "explanation": "标准游标读数按对齐格和分度值形成，不能把刻度尺的估读规则直接套到游标；报告位数需与仪器规格一致。\n知识点条件：常见10、20、50分游标的分度值分别为0.1、0.05、0.02 mm，读到仪器规定的分度，不再随意估出一位。主尺读数取游标零刻线左侧已越过的刻度；游标读数取对齐刻线序号乘分度值。闭合时示数为正，测量值应减去它；负零误差则减去负数。测不同位置可发现物体形状和夹持影响。\n推导依据：清洁测量面，轻合量爪检查零点，确认游标分格数。；用正确量爪或深度杆测量，避免倾斜和过大夹紧力。；先读主尺，再读游标对齐格，最后减有符号零点示数。\n卡片公式各自的适用条件（不是本题共同前提）：\n游标分度值：游标 N 格总长等于主尺 N−1 格；主尺分度 b\n游标读数与零点修正：主尺读数、对齐游标序号和有符号零点示数",
       "error_type": "概念混淆",
       "judging": "teacher",
       "source_error_index": 1,
       "source_caught_by": "人工审核",
       "wrong_expr": null,
       "trap_test": null,
+      "level": "进阶",
+      "learning_scope": "高中",
+      "answer_evidence": {
+        "kind": "teacher",
+        "claim_source": "why",
+        "reference_only": true,
+        "reason": "概念、操作或无法建立完整定量证据，教师确认条件与结论。"
+      },
       "review": {
         "confidence": "medium",
-        "checks": {
-          "answer_unique": true,
-          "distractors_plausible": true,
-          "stem_clear": true,
-          "no_cross_segment": true
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": false,
+          "no_answer_leak_in_options": true
         },
-        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。"
       }
     },
     {
@@ -458,27 +722,19 @@
       "point_id": "exp-06",
       "point_title": "螺旋测微器、半毫米线与估读",
       "chapter": "第二十二章 · 测量工具、数据处理与实验基础",
-      "stem": "【第二十二章 · 测量工具、数据处理与实验基础 · 螺旋测微器、半毫米线与估读】学生的错误做法：把半毫米线漏读（错误表达式：L = L<sub>s</sub>-h+n·δ-z）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "stem": "在“螺旋测微器、半毫米线与估读”的模型下，h（螺距）=0.0005 m；δ（分度值）=1e-05 m；L<sub>s</sub>（固定刻度读数）=0.0055 m；n（可动刻度读数含估读位）=23.6 1；z（有符号零点示数）=0 m。条件：固定套筒包含已露出的半毫米刻度；n 可含估读位。求校正长度（L）。这些数值是设计示例。",
       "options": [
         {
           "label": "A",
-          "text": "概念混淆：两次遮光持续时间不是物体从第一门到第二门的通行时间，使用速度变化率时需记录正确的时刻差。"
+          "text": "0.005236 m"
         },
         {
           "label": "B",
-          "text": "数值代入：固定套筒已露出的半毫米属于实际位移，漏掉它会造成0.5 mm的系统性偏差，不能靠多次平均消除。"
-        },
-        {
-          "label": "C",
-          "text": "概念混淆：供电要求随型号变化，必须核对铭牌与接线说明；计时公式无法识别接线是否安全、纸带是否卡住。"
-        },
-        {
-          "label": "D",
-          "text": "概念混淆：有阻力变化、拉动不均匀或点迹模糊时，位移差未必恒定，应先检查数据而不是用公式强行拟合。"
+          "text": "0.005736 m"
         }
       ],
       "correct_answer": "B",
-      "explanation": "固定套筒已露出的半毫米属于实际位移，漏掉它会造成0.5 mm的系统性偏差，不能靠多次平均消除。\n知识库校验证据：情境：基准；代入错误式：L<sub>f</sub>ixed-h+n·δ-z；校验参照值：0.005736。",
+      "explanation": "使用螺旋测微器读数：L<sub>s</sub>+n·δ-z，代入得0.005736 m。另一结果来自L<sub>s</sub>-h+n·δ-z，算得0.005236 m。\n固定套筒已露出的半毫米属于实际位移，漏掉它会造成0.5 mm的系统性偏差，不能靠多次平均消除。\n知识点条件：测量前检查零点，使用棘轮或测力装置保持夹持力适当。固定刻度不能漏掉已露出的半毫米线；常见机械测微器在可动刻度上估读到0.001 mm，最终位数仍以仪器说明和教学记录要求为准。数字测微器应直接按其显示分辨率记录，不能额外编造数字。\n推导依据：轻合测量面测零点，确认螺距和一周格数。；转棘轮使测杆接触被测物，先看固定刻度的整毫米和半毫米。；读可动刻度并按仪器规定估读，最后减去有符号零点示数。\n卡片公式各自的适用条件（不是本题共同前提）：\n测微器分度值：螺距为 h，每周有 N 个旋转刻度\n螺旋测微器读数：固定套筒包含已露出的半毫米刻度；n 可含估读位",
       "error_type": "数值代入",
       "judging": "auto",
       "source_error_index": 0,
@@ -489,15 +745,59 @@
         "expr": "L_s-h+n*delta-z",
         "ref": 0.005736
       },
-      "review": {
-        "confidence": "low",
-        "checks": {
-          "answer_unique": true,
-          "distractors_plausible": true,
-          "stem_clear": false,
-          "no_cross_segment": true
+      "level": "进阶",
+      "learning_scope": "高中",
+      "answer_evidence": {
+        "kind": "numeric",
+        "scenario": "基准",
+        "parameters": {
+          "h": 0.0005,
+          "N": 50,
+          "delta": 1e-05,
+          "L_s": 0.0055,
+          "n": 23.6,
+          "z": 0
         },
-        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。；来源错误描述较短或解释信息有限，题干可能需要教师补充情境。"
+        "target": "L",
+        "unit": "m",
+        "reference": 0.005736,
+        "correct_proof": {
+          "expression": "L_s+n*delta-z",
+          "formula": "螺旋测微器读数",
+          "value": 0.005736,
+          "when": "固定套筒包含已露出的半毫米刻度；n 可含估读位"
+        },
+        "distractor_expression": "L_s-h+n*delta-z",
+        "distractor_value": 0.005235999999999999,
+        "dimension_matches": true,
+        "independent_evaluation": true
+      },
+      "review": {
+        "confidence": "medium",
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": true,
+          "no_answer_leak_in_options": true
+        },
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。"
       }
     },
     {
@@ -505,70 +805,79 @@
       "point_id": "exp-06",
       "point_title": "螺旋测微器、半毫米线与估读",
       "chapter": "第二十二章 · 测量工具、数据处理与实验基础",
-      "stem": "【第二十二章 · 测量工具、数据处理与实验基础 · 螺旋测微器、半毫米线与估读】学生的错误做法：直接转套筒夹紧并用力压缩被测物。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "stem": "关于“螺旋测微器、半毫米线与估读”，判断这一说法是否成立，并说明依据：\n直接转套筒夹紧并用力压缩被测物。",
       "options": [
         {
           "label": "A",
-          "text": "概念混淆：夹持力过大会改变软物体尺寸或损伤仪器，公式校验不能检查测力装置是否正确使用。"
+          "text": "该说法成立。"
         },
         {
           "label": "B",
-          "text": "数值代入：数到两端六个点不等于经历六个时间间隔；该错误量纲正确，却使本例计数周期从0.10 s错成0.12 s。"
-        },
-        {
-          "label": "C",
-          "text": "数值代入：两组平均速度的时间中心相隔两个计数周期；漏掉这个间隔因子会使加速度加倍，量纲检查无法发现。"
-        },
-        {
-          "label": "D",
-          "text": "数值代入：一次遮光对应条宽而非两倍条宽；错误式仍有速度量纲，本例错误值为2.0 m/s而正确值为1.0 m/s。"
+          "text": "该说法不成立。"
         }
       ],
-      "correct_answer": "A",
-      "explanation": "夹持力过大会改变软物体尺寸或损伤仪器，公式校验不能检查测力装置是否正确使用。",
+      "correct_answer": "B",
+      "explanation": "夹持力过大会改变软物体尺寸或损伤仪器，公式校验不能检查测力装置是否正确使用。\n知识点条件：测量前检查零点，使用棘轮或测力装置保持夹持力适当。固定刻度不能漏掉已露出的半毫米线；常见机械测微器在可动刻度上估读到0.001 mm，最终位数仍以仪器说明和教学记录要求为准。数字测微器应直接按其显示分辨率记录，不能额外编造数字。\n推导依据：轻合测量面测零点，确认螺距和一周格数。；转棘轮使测杆接触被测物，先看固定刻度的整毫米和半毫米。；读可动刻度并按仪器规定估读，最后减去有符号零点示数。\n卡片公式各自的适用条件（不是本题共同前提）：\n测微器分度值：螺距为 h，每周有 N 个旋转刻度\n螺旋测微器读数：固定套筒包含已露出的半毫米刻度；n 可含估读位",
       "error_type": "概念混淆",
       "judging": "teacher",
       "source_error_index": 1,
       "source_caught_by": "人工审核",
       "wrong_expr": null,
       "trap_test": null,
+      "level": "进阶",
+      "learning_scope": "高中",
+      "answer_evidence": {
+        "kind": "teacher",
+        "claim_source": "wrong",
+        "reference_only": true,
+        "reason": "概念、操作或无法建立完整定量证据，教师确认条件与结论。"
+      },
       "review": {
         "confidence": "medium",
-        "checks": {
-          "answer_unique": true,
-          "distractors_plausible": true,
-          "stem_clear": true,
-          "no_cross_segment": true
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": false,
+          "no_answer_leak_in_options": true
         },
-        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。"
       }
     },
     {
       "id": "diagnostic-exp-07-1",
       "point_id": "exp-07",
-      "point_title": "有效数字、估读与误差传播",
+      "point_title": "刻度尺读数、有效数字与误差传播",
       "chapter": "第二十二章 · 测量工具、数据处理与实验基础",
-      "stem": "【第二十二章 · 测量工具、数据处理与实验基础 · 有效数字、估读与误差传播】学生的错误做法：认为相减时最大误差限也相减（错误表达式：D<sub>s</sub> = D<sub>y</sub>-D<sub>x</sub>）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "stem": "在“刻度尺读数、有效数字与误差传播”的模型下，D<sub>x</sub>（第一长度的最大误差限）=0.001 m；D<sub>y</sub>（第二长度的最大误差限）=0.002 m。条件：独立与否均可作为一阶保守上界；不等同标准不确定度。求差值的一阶最大误差限（D<sub>s</sub>）。这些数值是设计示例。",
       "options": [
         {
           "label": "A",
-          "text": "概念混淆：供电要求随型号变化，必须核对铭牌与接线说明；计时公式无法识别接线是否安全、纸带是否卡住。"
+          "text": "0.003 m"
         },
         {
           "label": "B",
-          "text": "概念混淆：有阻力变化、拉动不均匀或点迹模糊时，位移差未必恒定，应先检查数据而不是用公式强行拟合。"
-        },
-        {
-          "label": "C",
-          "text": "概念混淆：两次遮光持续时间不是物体从第一门到第二门的通行时间，使用速度变化率时需记录正确的时刻差。"
-        },
-        {
-          "label": "D",
-          "text": "数值代入：两个测量误差可能方向相反，使差值误差扩大；保守上界应相加，本例0.003 m而不是0.001 m。"
+          "text": "0.001 m"
         }
       ],
-      "correct_answer": "D",
-      "explanation": "两个测量误差可能方向相反，使差值误差扩大；保守上界应相加，本例0.003 m而不是0.001 m。\n知识库校验证据：情境：基准；代入错误式：D<sub>y</sub>-D<sub>x</sub>；校验参照值：0.003。",
+      "correct_answer": "A",
+      "explanation": "使用差值的最大误差限：D<sub>x</sub>+D<sub>y</sub>，代入得0.003 m。另一结果来自D<sub>y</sub>-D<sub>x</sub>，算得0.001 m。\n两个测量误差可能方向相反，使差值误差扩大；保守上界应相加，本例0.003 m而不是0.001 m。\n知识点条件：刻度尺一般按刻线间距合理估读，游标卡尺按游标分度读数，机械测微器通常再估读一位；具体仍以仪器和记录要求为准。加减结果的小数位受绝对精度较差者限制，乘除结果的有效位数受相对精度限制，中间计算多留几位，最后统一舍入。最坏情况误差限通常相加，互不相关标准不确定度按平方和开方，重复平均不能消除共同零点偏差。 使用刻度尺时记录分度值、单位和两端坐标；读数视线垂直刻面以减小视差。所需精度超过刻度尺分辨能力时，改用游标卡尺或螺旋测微器，并进行零点修正。\n推导依据：记录仪器类型、单位、分度值和零点，保留所有可合理读出的数字。；加减时追踪绝对误差，乘除时将微小相对误差一阶展开；有效位数只作简化的报告规则。；明确给出的精度是误差限还是标准不确定度；前者用最坏情况上界，后者独立时用平方和开方。；先保留计算位数，最后将不确定度取合适位数，结果末位与其对齐。；刻度尺两端读数相减得到长度；先统一单位，再按分度值和估读规则报告有效位数。\n卡片公式各自的适用条件（不是本题共同前提）：\n差值的最大误差限：独立与否均可作为一阶保守上界；不等同标准不确定度\n乘积的最大误差限近似：正长度乘积，小相对误差，一阶最坏情况上界\n独立量差值的标准不确定度：两输入互不相关；否则必须包含协方差项\n刻度尺两端读数求长度：刻度尺零刻线未与物体起点重合时，长度取末端与起点坐标之差",
       "error_type": "数值代入",
       "judging": "auto",
       "source_error_index": 0,
@@ -579,58 +888,122 @@
         "expr": "D_y-D_x",
         "ref": 0.003
       },
+      "level": "进阶",
+      "learning_scope": "高中",
+      "answer_evidence": {
+        "kind": "numeric",
+        "scenario": "基准",
+        "parameters": {
+          "x": 0.2,
+          "y": 0.3,
+          "D_x": 0.001,
+          "D_y": 0.002,
+          "u_x": 0.001,
+          "u_y": 0.002,
+          "x1": 0.235,
+          "x2": 0.598,
+          "L_r": 0.363
+        },
+        "target": "D_s",
+        "unit": "m",
+        "reference": 0.003,
+        "correct_proof": {
+          "expression": "D_x+D_y",
+          "formula": "差值的最大误差限",
+          "value": 0.003,
+          "when": "独立与否均可作为一阶保守上界；不等同标准不确定度"
+        },
+        "distractor_expression": "D_y-D_x",
+        "distractor_value": 0.001,
+        "dimension_matches": true,
+        "independent_evaluation": true
+      },
       "review": {
         "confidence": "medium",
-        "checks": {
-          "answer_unique": true,
-          "distractors_plausible": true,
-          "stem_clear": true,
-          "no_cross_segment": true
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": true,
+          "no_answer_leak_in_options": true
         },
-        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。"
       }
     },
     {
       "id": "diagnostic-exp-07-2",
       "point_id": "exp-07",
-      "point_title": "有效数字、估读与误差传播",
+      "point_title": "刻度尺读数、有效数字与误差传播",
       "chapter": "第二十二章 · 测量工具、数据处理与实验基础",
-      "stem": "【第二十二章 · 测量工具、数据处理与实验基础 · 有效数字、估读与误差传播】学生的错误做法：把平方和开方当成所有误差的万能规则。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "stem": "关于“刻度尺读数、有效数字与误差传播”，判断这一说法是否成立，并说明依据：\n将平方和开方视为所有误差的万能规则。",
       "options": [
         {
           "label": "A",
-          "text": "数值代入：两组平均速度的时间中心相隔两个计数周期；漏掉这个间隔因子会使加速度加倍，量纲检查无法发现。"
+          "text": "该说法不成立。"
         },
         {
           "label": "B",
-          "text": "数值代入：一次遮光对应条宽而非两倍条宽；错误式仍有速度量纲，本例错误值为2.0 m/s而正确值为1.0 m/s。"
-        },
-        {
-          "label": "C",
-          "text": "概念混淆：只有明确使用标准不确定度、满足一阶近似并处理相关性时才能使用该规则；系统偏差与误差限需要不同处理。"
-        },
-        {
-          "label": "D",
-          "text": "数值代入：数到两端六个点不等于经历六个时间间隔；该错误量纲正确，却使本例计数周期从0.10 s错成0.12 s。"
+          "text": "该说法成立。"
         }
       ],
-      "correct_answer": "C",
-      "explanation": "只有明确使用标准不确定度、满足一阶近似并处理相关性时才能使用该规则；系统偏差与误差限需要不同处理。",
+      "correct_answer": "A",
+      "explanation": "只有明确使用标准不确定度、满足一阶近似并处理相关性时才能使用该规则；系统偏差与误差限需要不同处理。\n知识点条件：刻度尺一般按刻线间距合理估读，游标卡尺按游标分度读数，机械测微器通常再估读一位；具体仍以仪器和记录要求为准。加减结果的小数位受绝对精度较差者限制，乘除结果的有效位数受相对精度限制，中间计算多留几位，最后统一舍入。最坏情况误差限通常相加，互不相关标准不确定度按平方和开方，重复平均不能消除共同零点偏差。 使用刻度尺时记录分度值、单位和两端坐标；读数视线垂直刻面以减小视差。所需精度超过刻度尺分辨能力时，改用游标卡尺或螺旋测微器，并进行零点修正。\n推导依据：记录仪器类型、单位、分度值和零点，保留所有可合理读出的数字。；加减时追踪绝对误差，乘除时将微小相对误差一阶展开；有效位数只作简化的报告规则。；明确给出的精度是误差限还是标准不确定度；前者用最坏情况上界，后者独立时用平方和开方。；先保留计算位数，最后将不确定度取合适位数，结果末位与其对齐。；刻度尺两端读数相减得到长度；先统一单位，再按分度值和估读规则报告有效位数。\n卡片公式各自的适用条件（不是本题共同前提）：\n差值的最大误差限：独立与否均可作为一阶保守上界；不等同标准不确定度\n乘积的最大误差限近似：正长度乘积，小相对误差，一阶最坏情况上界\n独立量差值的标准不确定度：两输入互不相关；否则必须包含协方差项\n刻度尺两端读数求长度：刻度尺零刻线未与物体起点重合时，长度取末端与起点坐标之差",
       "error_type": "概念混淆",
       "judging": "teacher",
       "source_error_index": 1,
       "source_caught_by": "人工审核",
       "wrong_expr": null,
       "trap_test": null,
+      "level": "进阶",
+      "learning_scope": "高中",
+      "answer_evidence": {
+        "kind": "teacher",
+        "claim_source": "wrong",
+        "reference_only": true,
+        "reason": "概念、操作或无法建立完整定量证据，教师确认条件与结论。"
+      },
       "review": {
         "confidence": "medium",
-        "checks": {
-          "answer_unique": true,
-          "distractors_plausible": true,
-          "stem_clear": true,
-          "no_cross_segment": true
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": false,
+          "no_answer_leak_in_options": true
         },
-        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。"
       }
     },
     {
@@ -638,27 +1011,19 @@
       "point_id": "exp-07",
       "point_title": "刻度尺读数、有效数字与误差传播",
       "chapter": "第二十二章 · 测量工具、数据处理与实验基础",
-      "stem": "【第二十二章 · 测量工具、数据处理与实验基础 · 刻度尺读数、有效数字与误差传播】学生的错误做法：默认物体从零刻线开始而直接读末端刻度（错误表达式：L<sub>r</sub> = x<sub>2</sub>）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "stem": "在“刻度尺读数、有效数字与误差传播”的模型下，x<sub>1</sub>（物体起点在刻度尺上的坐标）=0.235 m；x<sub>2</sub>（物体终点在刻度尺上的坐标）=0.598 m。条件：刻度尺零刻线未与物体起点重合时，长度取末端与起点坐标之差。求由两端坐标差得到的长度（L<sub>r</sub>）。这些数值是设计示例。",
       "options": [
         {
           "label": "A",
-          "text": "概念混淆：两次遮光持续时间不是物体从第一门到第二门的通行时间，使用速度变化率时需记录正确的时刻差。"
+          "text": "0.598 m"
         },
         {
           "label": "B",
-          "text": "数值代入：物体起点不在零刻线时应作坐标差；本例直接读末端会把0.598 m误作长度，正确值为0.363 m。"
-        },
-        {
-          "label": "C",
-          "text": "概念混淆：供电要求随型号变化，必须核对铭牌与接线说明；计时公式无法识别接线是否安全、纸带是否卡住。"
-        },
-        {
-          "label": "D",
-          "text": "概念混淆：有阻力变化、拉动不均匀或点迹模糊时，位移差未必恒定，应先检查数据而不是用公式强行拟合。"
+          "text": "0.363 m"
         }
       ],
       "correct_answer": "B",
-      "explanation": "物体起点不在零刻线时应作坐标差；本例直接读末端会把0.598 m误作长度，正确值为0.363 m。\n知识库校验证据：情境：基准；代入错误式：x<sub>2</sub>；校验参照值：0.363。",
+      "explanation": "使用刻度尺两端读数求长度：x<sub>2</sub>-x<sub>1</sub>，代入得0.363 m。另一结果来自x<sub>2</sub>，算得0.598 m。\n物体起点不在零刻线时应作坐标差；本例直接读末端会把0.598 m误作长度，正确值为0.363 m。\n知识点条件：刻度尺一般按刻线间距合理估读，游标卡尺按游标分度读数，机械测微器通常再估读一位；具体仍以仪器和记录要求为准。加减结果的小数位受绝对精度较差者限制，乘除结果的有效位数受相对精度限制，中间计算多留几位，最后统一舍入。最坏情况误差限通常相加，互不相关标准不确定度按平方和开方，重复平均不能消除共同零点偏差。 使用刻度尺时记录分度值、单位和两端坐标；读数视线垂直刻面以减小视差。所需精度超过刻度尺分辨能力时，改用游标卡尺或螺旋测微器，并进行零点修正。\n推导依据：记录仪器类型、单位、分度值和零点，保留所有可合理读出的数字。；加减时追踪绝对误差，乘除时将微小相对误差一阶展开；有效位数只作简化的报告规则。；明确给出的精度是误差限还是标准不确定度；前者用最坏情况上界，后者独立时用平方和开方。；先保留计算位数，最后将不确定度取合适位数，结果末位与其对齐。；刻度尺两端读数相减得到长度；先统一单位，再按分度值和估读规则报告有效位数。\n卡片公式各自的适用条件（不是本题共同前提）：\n差值的最大误差限：独立与否均可作为一阶保守上界；不等同标准不确定度\n乘积的最大误差限近似：正长度乘积，小相对误差，一阶最坏情况上界\n独立量差值的标准不确定度：两输入互不相关；否则必须包含协方差项\n刻度尺两端读数求长度：刻度尺零刻线未与物体起点重合时，长度取末端与起点坐标之差",
       "error_type": "数值代入",
       "judging": "auto",
       "source_error_index": 2,
@@ -669,17 +1034,2541 @@
         "expr": "x2",
         "ref": 0.363
       },
+      "level": "进阶",
+      "learning_scope": "高中",
+      "answer_evidence": {
+        "kind": "numeric",
+        "scenario": "基准",
+        "parameters": {
+          "x": 0.2,
+          "y": 0.3,
+          "D_x": 0.001,
+          "D_y": 0.002,
+          "u_x": 0.001,
+          "u_y": 0.002,
+          "x1": 0.235,
+          "x2": 0.598,
+          "L_r": 0.363
+        },
+        "target": "L_r",
+        "unit": "m",
+        "reference": 0.363,
+        "correct_proof": {
+          "expression": "x2-x1",
+          "formula": "刻度尺两端读数求长度",
+          "value": 0.363,
+          "when": "刻度尺零刻线未与物体起点重合时，长度取末端与起点坐标之差"
+        },
+        "distractor_expression": "x2",
+        "distractor_value": 0.598,
+        "dimension_matches": true,
+        "independent_evaluation": true
+      },
       "review": {
         "confidence": "medium",
-        "checks": {
-          "answer_unique": true,
-          "distractors_plausible": true,
-          "stem_clear": true,
-          "no_cross_segment": true
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": true,
+          "no_answer_leak_in_options": true
         },
-        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。"
       }
     }
   ],
-  "skipped": []
+  "skipped": [],
+  "source_records": {
+    "diagnostic-exp-01-1": {
+      "point": {
+        "id": "exp-01",
+        "title": "打点计时器、纸带与计数点",
+        "level": "进阶",
+        "definition": "打点计时器在纸带上按近似相等时间间隔留下点迹。点迹间距表示该时间内位移，计数点是为了处理数据而从原始点迹中按固定间隔选取的点。",
+        "meaning": "电磁打点计时器和电火花计时器的供电方式不同，应按仪器铭牌接线；常见电磁型使用低压交流，常见电火花型使用交流市电，不能混接。交流频率为50 Hz且每周期打一点时，原始点间隔为0.02 s；数点时必须数间隔，六个点只含五个间隔。",
+        "symbols": {
+          "T_0": {
+            "unit": "s",
+            "desc": "相邻原始点的时间间隔"
+          },
+          "f": {
+            "unit": "Hz",
+            "desc": "实际打点频率"
+          },
+          "T_c": {
+            "unit": "s",
+            "desc": "计数点的时间间隔"
+          },
+          "n": {
+            "unit": "1",
+            "desc": "两个计数点之间的原始时间间隔个数"
+          }
+        },
+        "scenarios": {
+          "基准": {
+            "f": 50,
+            "n": 5,
+            "T_0": 0.02,
+            "T_c": 0.1
+          }
+        },
+        "formulas": [
+          {
+            "name": "相邻打点周期",
+            "expr": "T_0 = 1/f",
+            "when": "打点计时器实际打点频率为 f；不是隔若干点的计数周期",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "基准",
+                "ref": 0.02,
+                "note": "每秒50次，相邻两点间隔1÷50=0.020 s"
+              },
+              {
+                "type": "scan",
+                "scenario": "基准",
+                "var": "f",
+                "lo": 1,
+                "hi": 1000,
+                "n": 17,
+                "note": "频率必须为正；频率为零不能形成计时记录"
+              }
+            ]
+          },
+          {
+            "name": "计数周期",
+            "expr": "T_c = n*T_0",
+            "when": "相邻计数点之间有 n 个打点时间间隔",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "基准",
+                "ref": 0.1,
+                "note": "每隔5个时间间隔选点，5×0.020=0.100 s"
+              },
+              {
+                "type": "consistency",
+                "scenario": "基准",
+                "with": "exp-01|计数周期",
+                "with_expr": "n/f",
+                "target": "计数点的时间间隔",
+                "note": "本公式直接求T_c；参考端显式关系为n/f。两端使用同一情境和阶段，只核对该关系；with字段仅定位来源，不代表调用另一条被覆盖的公式。",
+                "verification_kind": "独立关系核对",
+                "tol": 1e-06
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "按仪器说明确认型号、供电和打点频率，先通电使打点稳定，再释放或拉动纸带。",
+          "选清晰且运动状态合适的一段，标记计数点并写明每组包含几个原始时间间隔。",
+          "由每秒打点次数求相邻点间隔，再乘计数间隔个数；测位移时从点中心读数。"
+        ],
+        "errors": [
+          {
+            "wrong": "把五个间隔误认为六个间隔",
+            "wrong_expr": "T_c = (n+1)/f",
+            "why": "数到两端六个点不等于经历六个时间间隔；该错误量纲正确，却使本例计数周期从0.10 s错成0.12 s。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "基准",
+              "expr": "(n+1)/f",
+              "ref": 0.1
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "未核对型号便把所有计时器接到同一种电源",
+            "why": "供电要求随型号变化，必须核对铭牌与接线说明；计时公式无法识别接线是否安全、纸带是否卡住。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "50 Hz计时器每隔五个原始时间间隔取一个计数点，求原始点周期和计数周期。",
+          "solution": [
+            "每秒50个时间间隔，所以原始点周期为0.020 s。",
+            "两个计数点相隔五个原始时间间隔，周期为0.100 s。"
+          ],
+          "answer": "原始点周期0.020 s；计数周期0.100 s。"
+        },
+        "prereq": [
+          "kine-03",
+          "kine-04"
+        ],
+        "next": [
+          "exp-02"
+        ],
+        "tags": [
+          "打点计时器",
+          "纸带",
+          "计数点",
+          "时间间隔"
+        ],
+        "learning_scope": "高中"
+      },
+      "error_index": 0,
+      "chapter": "第二十二章 · 测量工具、数据处理与实验基础"
+    },
+    "diagnostic-exp-01-2": {
+      "point": {
+        "id": "exp-01",
+        "title": "打点计时器、纸带与计数点",
+        "level": "进阶",
+        "definition": "打点计时器在纸带上按近似相等时间间隔留下点迹。点迹间距表示该时间内位移，计数点是为了处理数据而从原始点迹中按固定间隔选取的点。",
+        "meaning": "电磁打点计时器和电火花计时器的供电方式不同，应按仪器铭牌接线；常见电磁型使用低压交流，常见电火花型使用交流市电，不能混接。交流频率为50 Hz且每周期打一点时，原始点间隔为0.02 s；数点时必须数间隔，六个点只含五个间隔。",
+        "symbols": {
+          "T_0": {
+            "unit": "s",
+            "desc": "相邻原始点的时间间隔"
+          },
+          "f": {
+            "unit": "Hz",
+            "desc": "实际打点频率"
+          },
+          "T_c": {
+            "unit": "s",
+            "desc": "计数点的时间间隔"
+          },
+          "n": {
+            "unit": "1",
+            "desc": "两个计数点之间的原始时间间隔个数"
+          }
+        },
+        "scenarios": {
+          "基准": {
+            "f": 50,
+            "n": 5,
+            "T_0": 0.02,
+            "T_c": 0.1
+          }
+        },
+        "formulas": [
+          {
+            "name": "相邻打点周期",
+            "expr": "T_0 = 1/f",
+            "when": "打点计时器实际打点频率为 f；不是隔若干点的计数周期",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "基准",
+                "ref": 0.02,
+                "note": "每秒50次，相邻两点间隔1÷50=0.020 s"
+              },
+              {
+                "type": "scan",
+                "scenario": "基准",
+                "var": "f",
+                "lo": 1,
+                "hi": 1000,
+                "n": 17,
+                "note": "频率必须为正；频率为零不能形成计时记录"
+              }
+            ]
+          },
+          {
+            "name": "计数周期",
+            "expr": "T_c = n*T_0",
+            "when": "相邻计数点之间有 n 个打点时间间隔",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "基准",
+                "ref": 0.1,
+                "note": "每隔5个时间间隔选点，5×0.020=0.100 s"
+              },
+              {
+                "type": "consistency",
+                "scenario": "基准",
+                "with": "exp-01|计数周期",
+                "with_expr": "n/f",
+                "target": "计数点的时间间隔",
+                "note": "本公式直接求T_c；参考端显式关系为n/f。两端使用同一情境和阶段，只核对该关系；with字段仅定位来源，不代表调用另一条被覆盖的公式。",
+                "verification_kind": "独立关系核对",
+                "tol": 1e-06
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "按仪器说明确认型号、供电和打点频率，先通电使打点稳定，再释放或拉动纸带。",
+          "选清晰且运动状态合适的一段，标记计数点并写明每组包含几个原始时间间隔。",
+          "由每秒打点次数求相邻点间隔，再乘计数间隔个数；测位移时从点中心读数。"
+        ],
+        "errors": [
+          {
+            "wrong": "把五个间隔误认为六个间隔",
+            "wrong_expr": "T_c = (n+1)/f",
+            "why": "数到两端六个点不等于经历六个时间间隔；该错误量纲正确，却使本例计数周期从0.10 s错成0.12 s。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "基准",
+              "expr": "(n+1)/f",
+              "ref": 0.1
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "未核对型号便把所有计时器接到同一种电源",
+            "why": "供电要求随型号变化，必须核对铭牌与接线说明；计时公式无法识别接线是否安全、纸带是否卡住。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "50 Hz计时器每隔五个原始时间间隔取一个计数点，求原始点周期和计数周期。",
+          "solution": [
+            "每秒50个时间间隔，所以原始点周期为0.020 s。",
+            "两个计数点相隔五个原始时间间隔，周期为0.100 s。"
+          ],
+          "answer": "原始点周期0.020 s；计数周期0.100 s。"
+        },
+        "prereq": [
+          "kine-03",
+          "kine-04"
+        ],
+        "next": [
+          "exp-02"
+        ],
+        "tags": [
+          "打点计时器",
+          "纸带",
+          "计数点",
+          "时间间隔"
+        ],
+        "learning_scope": "高中"
+      },
+      "error_index": 1,
+      "chapter": "第二十二章 · 测量工具、数据处理与实验基础"
+    },
+    "diagnostic-exp-02-1": {
+      "point": {
+        "id": "exp-02",
+        "title": "纸带瞬时速度、逐差法与运动检验",
+        "level": "进阶",
+        "definition": "在匀变速直线运动中，一段时间的平均速度等于中间时刻的瞬时速度。纸带数据可由相邻等时位移估计速度，由多段位移逐差估计加速度并检验匀变速假设。",
+        "meaning": "先检查相邻位移之差是否在测量误差范围内近似相等，再使用匀变速公式。逐差法利用较长位移减小相对读数误差，但它不会自动消除计时频率错误或纸带阻力。计数周期必须采用计数点间隔，不能一律填原始打点周期；非匀变速时中心平均速度只能作为近似。",
+        "symbols": {
+          "v2": {
+            "unit": "m/s",
+            "desc": "第二计数点的瞬时速度"
+          },
+          "x1": {
+            "unit": "m",
+            "desc": "第一等时段位移"
+          },
+          "x2": {
+            "unit": "m",
+            "desc": "第二等时段位移"
+          },
+          "x3": {
+            "unit": "m",
+            "desc": "第三等时段位移"
+          },
+          "x4": {
+            "unit": "m",
+            "desc": "第四等时段位移"
+          },
+          "T_c": {
+            "unit": "s",
+            "desc": "计数周期"
+          },
+          "a": {
+            "unit": "m/s^2",
+            "desc": "加速度"
+          },
+          "dx": {
+            "unit": "m",
+            "desc": "相邻等时位移差"
+          }
+        },
+        "scenarios": {
+          "基准": {
+            "x1": 0.03,
+            "x2": 0.05,
+            "x3": 0.07,
+            "x4": 0.09,
+            "T_c": 0.1,
+            "a": 2
+          }
+        },
+        "formulas": [
+          {
+            "name": "中间计数点速度",
+            "expr": "v2 = (x2+x3)/(2*T_c)",
+            "when": "匀变速直线运动或时间足够短，用该点前后两段位移的平均速度",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "基准",
+                "ref": 0.6,
+                "note": "前后位移0.05+0.07=0.12 m，总时间0.20 s，速度0.60 m/s"
+              }
+            ]
+          },
+          {
+            "name": "四段逐差加速度",
+            "expr": "a = ((x3+x4)-(x1+x2))/(4*T_c^2)",
+            "when": "四个连续等时位移；运动应近似匀变速",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "基准",
+                "ref": 2,
+                "note": "后两段与前两段之差0.16-0.08=0.08 m；分母0.04 s²，得到2.0 m/s²"
+              },
+              {
+                "type": "consistency",
+                "scenario": "基准",
+                "with": "exp-02|四段逐差加速度",
+                "with_expr": "a",
+                "target": "加速度",
+                "note": "直接求本公式输出，与情境中另列的a设计基准核对；数据是设计示例，不是实测。用于核对定义、反算或边界值，不宣称不同物理原理互证。",
+                "verification_kind": "独立设计情境数据核对"
+              },
+              {
+                "type": "scan",
+                "scenario": "基准",
+                "var": "T_c",
+                "lo": 0.01,
+                "hi": 1,
+                "n": 17,
+                "note": "周期为正；扫描数值稳定性，不声称固定纸带在不同周期仍是同一次运动"
+              }
+            ]
+          },
+          {
+            "name": "相邻位移差",
+            "expr": "dx = a*T_c^2",
+            "when": "相邻等时段内的位移差，带符号",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "基准",
+                "ref": 0.02,
+                "note": "2.0×0.10²=0.020 m"
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "依次测四段连续等时位移，保留原始记录和长度单位。",
+          "第二计数点前后两段总位移除以两个计数周期，得到该点速度。",
+          "将后两段之和减前两段之和；两组段中心时刻相差两个周期，因此分母是四倍周期平方。",
+          "再比较相邻位移差和速度随时间的直线趋势，检查模型是否合理。"
+        ],
+        "errors": [
+          {
+            "wrong": "逐差时把分母写成两倍周期平方",
+            "wrong_expr": "a = ((x3+x4)-(x1+x2))/(2*T_c^2)",
+            "why": "两组平均速度的时间中心相隔两个计数周期；漏掉这个间隔因子会使加速度加倍，量纲检查无法发现。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "基准",
+              "expr": "((x3+x4)-(x1+x2))/(2*T_c^2)",
+              "ref": 2
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "不检验运动性质就把所有纸带都按匀变速处理",
+            "why": "有阻力变化、拉动不均匀或点迹模糊时，位移差未必恒定，应先检查数据而不是用公式强行拟合。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "设计纸带数据：计数点依次编号0～4，相邻时间0.10 s，四段位移0→1、1→2、2→3、3→4分别为3、5、7、9 cm。假定近似匀加速，求第2计数点速度和加速度。",
+          "solution": [
+            "长度换成米；第二点速度为(0.05+0.07)/0.20=0.60 m/s。",
+            "逐差分子为0.07+0.09-0.03-0.05=0.08 m，除以0.04 s²得2.0 m/s²。"
+          ],
+          "answer": "第二点速度0.60 m/s，加速度2.0 m/s²。"
+        },
+        "prereq": [
+          "exp-01",
+          "kine-02"
+        ],
+        "next": [
+          "exp-10"
+        ],
+        "tags": [
+          "逐差法",
+          "纸带速度",
+          "匀变速实验"
+        ],
+        "learning_scope": "高中"
+      },
+      "error_index": 0,
+      "chapter": "第二十二章 · 测量工具、数据处理与实验基础"
+    },
+    "diagnostic-exp-02-2": {
+      "point": {
+        "id": "exp-02",
+        "title": "纸带瞬时速度、逐差法与运动检验",
+        "level": "进阶",
+        "definition": "在匀变速直线运动中，一段时间的平均速度等于中间时刻的瞬时速度。纸带数据可由相邻等时位移估计速度，由多段位移逐差估计加速度并检验匀变速假设。",
+        "meaning": "先检查相邻位移之差是否在测量误差范围内近似相等，再使用匀变速公式。逐差法利用较长位移减小相对读数误差，但它不会自动消除计时频率错误或纸带阻力。计数周期必须采用计数点间隔，不能一律填原始打点周期；非匀变速时中心平均速度只能作为近似。",
+        "symbols": {
+          "v2": {
+            "unit": "m/s",
+            "desc": "第二计数点的瞬时速度"
+          },
+          "x1": {
+            "unit": "m",
+            "desc": "第一等时段位移"
+          },
+          "x2": {
+            "unit": "m",
+            "desc": "第二等时段位移"
+          },
+          "x3": {
+            "unit": "m",
+            "desc": "第三等时段位移"
+          },
+          "x4": {
+            "unit": "m",
+            "desc": "第四等时段位移"
+          },
+          "T_c": {
+            "unit": "s",
+            "desc": "计数周期"
+          },
+          "a": {
+            "unit": "m/s^2",
+            "desc": "加速度"
+          },
+          "dx": {
+            "unit": "m",
+            "desc": "相邻等时位移差"
+          }
+        },
+        "scenarios": {
+          "基准": {
+            "x1": 0.03,
+            "x2": 0.05,
+            "x3": 0.07,
+            "x4": 0.09,
+            "T_c": 0.1,
+            "a": 2
+          }
+        },
+        "formulas": [
+          {
+            "name": "中间计数点速度",
+            "expr": "v2 = (x2+x3)/(2*T_c)",
+            "when": "匀变速直线运动或时间足够短，用该点前后两段位移的平均速度",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "基准",
+                "ref": 0.6,
+                "note": "前后位移0.05+0.07=0.12 m，总时间0.20 s，速度0.60 m/s"
+              }
+            ]
+          },
+          {
+            "name": "四段逐差加速度",
+            "expr": "a = ((x3+x4)-(x1+x2))/(4*T_c^2)",
+            "when": "四个连续等时位移；运动应近似匀变速",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "基准",
+                "ref": 2,
+                "note": "后两段与前两段之差0.16-0.08=0.08 m；分母0.04 s²，得到2.0 m/s²"
+              },
+              {
+                "type": "consistency",
+                "scenario": "基准",
+                "with": "exp-02|四段逐差加速度",
+                "with_expr": "a",
+                "target": "加速度",
+                "note": "直接求本公式输出，与情境中另列的a设计基准核对；数据是设计示例，不是实测。用于核对定义、反算或边界值，不宣称不同物理原理互证。",
+                "verification_kind": "独立设计情境数据核对"
+              },
+              {
+                "type": "scan",
+                "scenario": "基准",
+                "var": "T_c",
+                "lo": 0.01,
+                "hi": 1,
+                "n": 17,
+                "note": "周期为正；扫描数值稳定性，不声称固定纸带在不同周期仍是同一次运动"
+              }
+            ]
+          },
+          {
+            "name": "相邻位移差",
+            "expr": "dx = a*T_c^2",
+            "when": "相邻等时段内的位移差，带符号",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "基准",
+                "ref": 0.02,
+                "note": "2.0×0.10²=0.020 m"
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "依次测四段连续等时位移，保留原始记录和长度单位。",
+          "第二计数点前后两段总位移除以两个计数周期，得到该点速度。",
+          "将后两段之和减前两段之和；两组段中心时刻相差两个周期，因此分母是四倍周期平方。",
+          "再比较相邻位移差和速度随时间的直线趋势，检查模型是否合理。"
+        ],
+        "errors": [
+          {
+            "wrong": "逐差时把分母写成两倍周期平方",
+            "wrong_expr": "a = ((x3+x4)-(x1+x2))/(2*T_c^2)",
+            "why": "两组平均速度的时间中心相隔两个计数周期；漏掉这个间隔因子会使加速度加倍，量纲检查无法发现。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "基准",
+              "expr": "((x3+x4)-(x1+x2))/(2*T_c^2)",
+              "ref": 2
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "不检验运动性质就把所有纸带都按匀变速处理",
+            "why": "有阻力变化、拉动不均匀或点迹模糊时，位移差未必恒定，应先检查数据而不是用公式强行拟合。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "设计纸带数据：计数点依次编号0～4，相邻时间0.10 s，四段位移0→1、1→2、2→3、3→4分别为3、5、7、9 cm。假定近似匀加速，求第2计数点速度和加速度。",
+          "solution": [
+            "长度换成米；第二点速度为(0.05+0.07)/0.20=0.60 m/s。",
+            "逐差分子为0.07+0.09-0.03-0.05=0.08 m，除以0.04 s²得2.0 m/s²。"
+          ],
+          "answer": "第二点速度0.60 m/s，加速度2.0 m/s²。"
+        },
+        "prereq": [
+          "exp-01",
+          "kine-02"
+        ],
+        "next": [
+          "exp-10"
+        ],
+        "tags": [
+          "逐差法",
+          "纸带速度",
+          "匀变速实验"
+        ],
+        "learning_scope": "高中"
+      },
+      "error_index": 1,
+      "chapter": "第二十二章 · 测量工具、数据处理与实验基础"
+    },
+    "diagnostic-exp-03-1": {
+      "point": {
+        "id": "exp-03",
+        "title": "光电门、遮光条与速度测量",
+        "level": "进阶",
+        "definition": "光电门记录遮光条经过光束的持续时间。遮光条沿运动方向的有效宽度除以遮光时间，得到遮光期间的平均速度；宽度足够小时可近似门处瞬时速度。",
+        "meaning": "测量前应检查条宽、条面与运动方向、门的计时模式和两门间距。条宽越小，瞬时近似通常越好，但计时相对误差可能变大。一个光电门的一次遮光只能给出局部平均速度，不能据此恢复任意完整轨迹；两门求加速度还需匀变速和门处速度近似成立。",
+        "symbols": {
+          "d": {
+            "unit": "m",
+            "desc": "遮光条有效宽度"
+          },
+          "t1": {
+            "unit": "s",
+            "desc": "第一门遮光时间"
+          },
+          "t2": {
+            "unit": "s",
+            "desc": "第二门遮光时间"
+          },
+          "v1": {
+            "unit": "m/s",
+            "desc": "第一门近似瞬时速度"
+          },
+          "v2": {
+            "unit": "m/s",
+            "desc": "第二门近似瞬时速度"
+          },
+          "x": {
+            "unit": "m",
+            "desc": "门间距离"
+          },
+          "dt": {
+            "unit": "s",
+            "desc": "两门速度对应时刻之差"
+          },
+          "a": {
+            "unit": "m/s^2",
+            "desc": "两门间加速度"
+          }
+        },
+        "scenarios": {
+          "基准": {
+            "d": 0.01,
+            "t1": 0.01,
+            "t2": 0.005,
+            "v1": 1,
+            "v2": 2,
+            "x": 0.5,
+            "dt": 0.3333333333333333
+          }
+        },
+        "formulas": [
+          {
+            "name": "遮光平均速度",
+            "expr": "v1 = d/t1",
+            "when": "遮光条有效宽度沿运动方向；遮光期间平均速度",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "基准",
+                "ref": 1,
+                "note": "宽度0.010 m除以0.010 s，得到1.0 m/s"
+              },
+              {
+                "type": "scan",
+                "scenario": "基准",
+                "var": "t1",
+                "lo": 0.0001,
+                "hi": 0.1,
+                "n": 17,
+                "note": "遮光时间为正；过短时受计时分辨率和条宽误差限制"
+              }
+            ]
+          },
+          {
+            "name": "第二门平均速度",
+            "expr": "v2 = d/t2",
+            "when": "同一遮光条通过第二门",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "基准",
+                "ref": 2,
+                "note": "0.010 m除以0.005 s，得到2.0 m/s"
+              }
+            ]
+          },
+          {
+            "name": "两门加速度估计",
+            "expr": "a = (v2^2-v1^2)/(2*x)",
+            "when": "两门速度可近似瞬时速度，门距为 x，运动匀变速",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "基准",
+                "ref": 3,
+                "note": "速度平方差4-1=3 m²/s²，门距两倍为1.0 m，得3.0 m/s²"
+              },
+              {
+                "type": "consistency",
+                "scenario": "基准",
+                "with": "exp-03|两门加速度估计",
+                "with_expr": "(v2-v1)/dt",
+                "target": "两门间加速度",
+                "note": "本公式直接求a；参考端显式关系为(v2-v1)/dt。两端使用同一情境和阶段，只核对该关系；with字段仅定位来源，不代表调用另一条被覆盖的公式。",
+                "verification_kind": "独立关系核对"
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "用合适仪器测条宽，调节光束，使遮光边缘与运动方向一致。",
+          "逐次记录遮光时间并计算局部平均速度；必要时重复测量。",
+          "匀变速情况下用两门速度平方差与门距求加速度，也可用两个速度对应时刻之差独立核对。"
+        ],
+        "errors": [
+          {
+            "wrong": "把条宽误乘二再计算速度",
+            "wrong_expr": "v1 = 2*d/t1",
+            "why": "一次遮光对应条宽而非两倍条宽；错误式仍有速度量纲，本例错误值为2.0 m/s而正确值为1.0 m/s。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "基准",
+              "expr": "2*d/t1",
+              "ref": 1
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "把两个遮光持续时间之差当作两门运动时间",
+            "why": "两次遮光持续时间不是物体从第一门到第二门的通行时间，使用速度变化率时需记录正确的时刻差。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "设计光电门数据：挡光条宽1.0 cm，两门遮光时间分别10 ms、5 ms，门距0.50 m；条宽远小于门距，运动近似匀加速，用短时平均速度近似门处瞬时速度，估算两门速度和加速度。",
+          "solution": [
+            "两个局部速度近似为0.01/0.010=1.0 m/s及0.01/0.005=2.0 m/s。",
+            "匀加速近似下a=(v2²−v1²)/(2s)=(4−1)/(2×0.50)=3.0 m/s²；由同一组数据反算通行时间2s/(v1+v2)=1/3 s，不能称为独立实测时间。"
+          ],
+          "answer": "两门速度1.0、2.0 m/s；加速度约3.0 m/s²。"
+        },
+        "prereq": [
+          "exp-02",
+          "kine-01",
+          "kine-05"
+        ],
+        "next": [
+          "exp-04"
+        ],
+        "tags": [
+          "光电门",
+          "遮光条",
+          "瞬时速度测量"
+        ],
+        "learning_scope": "高中"
+      },
+      "error_index": 0,
+      "chapter": "第二十二章 · 测量工具、数据处理与实验基础"
+    },
+    "diagnostic-exp-03-2": {
+      "point": {
+        "id": "exp-03",
+        "title": "光电门、遮光条与速度测量",
+        "level": "进阶",
+        "definition": "光电门记录遮光条经过光束的持续时间。遮光条沿运动方向的有效宽度除以遮光时间，得到遮光期间的平均速度；宽度足够小时可近似门处瞬时速度。",
+        "meaning": "测量前应检查条宽、条面与运动方向、门的计时模式和两门间距。条宽越小，瞬时近似通常越好，但计时相对误差可能变大。一个光电门的一次遮光只能给出局部平均速度，不能据此恢复任意完整轨迹；两门求加速度还需匀变速和门处速度近似成立。",
+        "symbols": {
+          "d": {
+            "unit": "m",
+            "desc": "遮光条有效宽度"
+          },
+          "t1": {
+            "unit": "s",
+            "desc": "第一门遮光时间"
+          },
+          "t2": {
+            "unit": "s",
+            "desc": "第二门遮光时间"
+          },
+          "v1": {
+            "unit": "m/s",
+            "desc": "第一门近似瞬时速度"
+          },
+          "v2": {
+            "unit": "m/s",
+            "desc": "第二门近似瞬时速度"
+          },
+          "x": {
+            "unit": "m",
+            "desc": "门间距离"
+          },
+          "dt": {
+            "unit": "s",
+            "desc": "两门速度对应时刻之差"
+          },
+          "a": {
+            "unit": "m/s^2",
+            "desc": "两门间加速度"
+          }
+        },
+        "scenarios": {
+          "基准": {
+            "d": 0.01,
+            "t1": 0.01,
+            "t2": 0.005,
+            "v1": 1,
+            "v2": 2,
+            "x": 0.5,
+            "dt": 0.3333333333333333
+          }
+        },
+        "formulas": [
+          {
+            "name": "遮光平均速度",
+            "expr": "v1 = d/t1",
+            "when": "遮光条有效宽度沿运动方向；遮光期间平均速度",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "基准",
+                "ref": 1,
+                "note": "宽度0.010 m除以0.010 s，得到1.0 m/s"
+              },
+              {
+                "type": "scan",
+                "scenario": "基准",
+                "var": "t1",
+                "lo": 0.0001,
+                "hi": 0.1,
+                "n": 17,
+                "note": "遮光时间为正；过短时受计时分辨率和条宽误差限制"
+              }
+            ]
+          },
+          {
+            "name": "第二门平均速度",
+            "expr": "v2 = d/t2",
+            "when": "同一遮光条通过第二门",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "基准",
+                "ref": 2,
+                "note": "0.010 m除以0.005 s，得到2.0 m/s"
+              }
+            ]
+          },
+          {
+            "name": "两门加速度估计",
+            "expr": "a = (v2^2-v1^2)/(2*x)",
+            "when": "两门速度可近似瞬时速度，门距为 x，运动匀变速",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "基准",
+                "ref": 3,
+                "note": "速度平方差4-1=3 m²/s²，门距两倍为1.0 m，得3.0 m/s²"
+              },
+              {
+                "type": "consistency",
+                "scenario": "基准",
+                "with": "exp-03|两门加速度估计",
+                "with_expr": "(v2-v1)/dt",
+                "target": "两门间加速度",
+                "note": "本公式直接求a；参考端显式关系为(v2-v1)/dt。两端使用同一情境和阶段，只核对该关系；with字段仅定位来源，不代表调用另一条被覆盖的公式。",
+                "verification_kind": "独立关系核对"
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "用合适仪器测条宽，调节光束，使遮光边缘与运动方向一致。",
+          "逐次记录遮光时间并计算局部平均速度；必要时重复测量。",
+          "匀变速情况下用两门速度平方差与门距求加速度，也可用两个速度对应时刻之差独立核对。"
+        ],
+        "errors": [
+          {
+            "wrong": "把条宽误乘二再计算速度",
+            "wrong_expr": "v1 = 2*d/t1",
+            "why": "一次遮光对应条宽而非两倍条宽；错误式仍有速度量纲，本例错误值为2.0 m/s而正确值为1.0 m/s。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "基准",
+              "expr": "2*d/t1",
+              "ref": 1
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "把两个遮光持续时间之差当作两门运动时间",
+            "why": "两次遮光持续时间不是物体从第一门到第二门的通行时间，使用速度变化率时需记录正确的时刻差。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "设计光电门数据：挡光条宽1.0 cm，两门遮光时间分别10 ms、5 ms，门距0.50 m；条宽远小于门距，运动近似匀加速，用短时平均速度近似门处瞬时速度，估算两门速度和加速度。",
+          "solution": [
+            "两个局部速度近似为0.01/0.010=1.0 m/s及0.01/0.005=2.0 m/s。",
+            "匀加速近似下a=(v2²−v1²)/(2s)=(4−1)/(2×0.50)=3.0 m/s²；由同一组数据反算通行时间2s/(v1+v2)=1/3 s，不能称为独立实测时间。"
+          ],
+          "answer": "两门速度1.0、2.0 m/s；加速度约3.0 m/s²。"
+        },
+        "prereq": [
+          "exp-02",
+          "kine-01",
+          "kine-05"
+        ],
+        "next": [
+          "exp-04"
+        ],
+        "tags": [
+          "光电门",
+          "遮光条",
+          "瞬时速度测量"
+        ],
+        "learning_scope": "高中"
+      },
+      "error_index": 1,
+      "chapter": "第二十二章 · 测量工具、数据处理与实验基础"
+    },
+    "diagnostic-exp-04-1": {
+      "point": {
+        "id": "exp-04",
+        "title": "气垫导轨、碰撞与动量验证",
+        "level": "进阶",
+        "definition": "气垫导轨通过气膜减小滑块与导轨的接触摩擦。将导轨调至水平并测量滑块质量和碰撞前后的有向速度，可检验短时间内系统总动量是否近似守恒。",
+        "meaning": "先通气并调平，检查单滑块运动是否近似匀速，再用光电门测碰前后速度，选同一个水平正方向。磁性或弹性碰撞器影响动能是否守恒，粘连碰撞仍可守恒动量；气垫不等于没有外力。质量乘位移的比例只能用于初始总动量为零且比较同一时间内的位移等特殊情形，不能替代一般碰撞公式。",
+        "symbols": {
+          "m1": {
+            "unit": "kg",
+            "desc": "第一滑块质量"
+          },
+          "m2": {
+            "unit": "kg",
+            "desc": "第二滑块质量"
+          },
+          "v1": {
+            "unit": "m/s",
+            "desc": "第一滑块碰前有向速度"
+          },
+          "v2": {
+            "unit": "m/s",
+            "desc": "第二滑块碰前有向速度"
+          },
+          "v1_p": {
+            "unit": "m/s",
+            "desc": "第一滑块碰后有向速度"
+          },
+          "v2_p": {
+            "unit": "m/s",
+            "desc": "第二滑块碰后有向速度"
+          },
+          "p_i": {
+            "unit": "kg*m/s",
+            "desc": "碰前总动量"
+          },
+          "p_p": {
+            "unit": "kg*m/s",
+            "desc": "碰后总动量"
+          }
+        },
+        "scenarios": {
+          "基准": {
+            "m1": 0.2,
+            "m2": 0.3,
+            "v1": 1,
+            "v2": 0,
+            "v1_p": -0.2,
+            "v2_p": 0.8
+          }
+        },
+        "formulas": [
+          {
+            "name": "碰前总动量",
+            "expr": "p_i = m1*v1+m2*v2",
+            "when": "选定正方向；速度使用带符号数值",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "基准",
+                "ref": 0.2,
+                "note": "0.20×1.0+0.30×0=0.20 kg·m/s"
+              }
+            ]
+          },
+          {
+            "name": "碰后总动量",
+            "expr": "p_p = m1*v1_p+m2*v2_p",
+            "when": "与碰前采用同一正方向和相同系统",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "基准",
+                "ref": 0.2,
+                "note": "0.20×(-0.20)+0.30×0.80=-0.04+0.24=0.20 kg·m/s"
+              },
+              {
+                "type": "consistency",
+                "scenario": "基准",
+                "with": "exp-04|碰后总动量",
+                "with_expr": "m1*v1+m2*v2",
+                "target": "碰后总动量",
+                "note": "本公式直接求p_p；参考端显式关系为m1*v1+m2*v2。两端使用同一情境和阶段，只核对该关系；with字段仅定位来源，不代表调用另一条被覆盖的公式。",
+                "verification_kind": "独立关系核对",
+                "tol": 1e-06
+              },
+              {
+                "type": "scan",
+                "scenario": "基准",
+                "var": "v1_p",
+                "lo": -2,
+                "hi": 2,
+                "n": 17,
+                "note": "有向速度可正可负；扫描仅检验计算稳定性，不声称任意速度组合均守恒"
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "调平、通气、核对质量和遮光条宽度；用空载滑行排查明显外力。",
+          "记录碰前后各滑块速度，反向运动的速度填写负值。",
+          "分别求总动量，比较差值与测量不确定度；必要时做粘连和非粘连碰撞。",
+          "斜槽平抛验证法还必须保证相同离桌高度、入射球质量条件和碰撞位置，射程才可替代水平速度。"
+        ],
+        "errors": [
+          {
+            "wrong": "把反弹速度按正值相加",
+            "wrong_expr": "p_p = m1*(-v1_p)+m2*v2_p",
+            "why": "动量是矢量，反弹方向与所选正方向相反；把负速度改成其大小会算出0.28而不是0.20 kg·m/s。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "基准",
+              "expr": "m1*(-v1_p)+m2*v2_p",
+              "ref": 0.2
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "认为气垫导轨上任何过程都绝对没有外力",
+            "why": "导轨倾斜、气流、碰撞器固定部件和残余摩擦都可能造成外冲量，必须通过调平和数据差值检验。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "0.20 kg滑块以1.0 m/s碰0.30 kg静止滑块，碰后速度为−0.20和0.80 m/s，验证总动量。",
+          "solution": [
+            "碰前总动量为0.20 kg·m/s。",
+            "碰后总动量为−0.04+0.24=0.20 kg·m/s，与碰前相同。"
+          ],
+          "answer": "此组数据碰前后总动量均为0.20 kg·m/s。"
+        },
+        "prereq": [
+          "mom-03",
+          "mom-04"
+        ],
+        "next": [
+          "mom-06"
+        ],
+        "tags": [
+          "气垫导轨",
+          "动量守恒实验",
+          "碰撞",
+          "有向速度"
+        ],
+        "learning_scope": "高中"
+      },
+      "error_index": 0,
+      "chapter": "第二十二章 · 测量工具、数据处理与实验基础"
+    },
+    "diagnostic-exp-04-2": {
+      "point": {
+        "id": "exp-04",
+        "title": "气垫导轨、碰撞与动量验证",
+        "level": "进阶",
+        "definition": "气垫导轨通过气膜减小滑块与导轨的接触摩擦。将导轨调至水平并测量滑块质量和碰撞前后的有向速度，可检验短时间内系统总动量是否近似守恒。",
+        "meaning": "先通气并调平，检查单滑块运动是否近似匀速，再用光电门测碰前后速度，选同一个水平正方向。磁性或弹性碰撞器影响动能是否守恒，粘连碰撞仍可守恒动量；气垫不等于没有外力。质量乘位移的比例只能用于初始总动量为零且比较同一时间内的位移等特殊情形，不能替代一般碰撞公式。",
+        "symbols": {
+          "m1": {
+            "unit": "kg",
+            "desc": "第一滑块质量"
+          },
+          "m2": {
+            "unit": "kg",
+            "desc": "第二滑块质量"
+          },
+          "v1": {
+            "unit": "m/s",
+            "desc": "第一滑块碰前有向速度"
+          },
+          "v2": {
+            "unit": "m/s",
+            "desc": "第二滑块碰前有向速度"
+          },
+          "v1_p": {
+            "unit": "m/s",
+            "desc": "第一滑块碰后有向速度"
+          },
+          "v2_p": {
+            "unit": "m/s",
+            "desc": "第二滑块碰后有向速度"
+          },
+          "p_i": {
+            "unit": "kg*m/s",
+            "desc": "碰前总动量"
+          },
+          "p_p": {
+            "unit": "kg*m/s",
+            "desc": "碰后总动量"
+          }
+        },
+        "scenarios": {
+          "基准": {
+            "m1": 0.2,
+            "m2": 0.3,
+            "v1": 1,
+            "v2": 0,
+            "v1_p": -0.2,
+            "v2_p": 0.8
+          }
+        },
+        "formulas": [
+          {
+            "name": "碰前总动量",
+            "expr": "p_i = m1*v1+m2*v2",
+            "when": "选定正方向；速度使用带符号数值",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "基准",
+                "ref": 0.2,
+                "note": "0.20×1.0+0.30×0=0.20 kg·m/s"
+              }
+            ]
+          },
+          {
+            "name": "碰后总动量",
+            "expr": "p_p = m1*v1_p+m2*v2_p",
+            "when": "与碰前采用同一正方向和相同系统",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "基准",
+                "ref": 0.2,
+                "note": "0.20×(-0.20)+0.30×0.80=-0.04+0.24=0.20 kg·m/s"
+              },
+              {
+                "type": "consistency",
+                "scenario": "基准",
+                "with": "exp-04|碰后总动量",
+                "with_expr": "m1*v1+m2*v2",
+                "target": "碰后总动量",
+                "note": "本公式直接求p_p；参考端显式关系为m1*v1+m2*v2。两端使用同一情境和阶段，只核对该关系；with字段仅定位来源，不代表调用另一条被覆盖的公式。",
+                "verification_kind": "独立关系核对",
+                "tol": 1e-06
+              },
+              {
+                "type": "scan",
+                "scenario": "基准",
+                "var": "v1_p",
+                "lo": -2,
+                "hi": 2,
+                "n": 17,
+                "note": "有向速度可正可负；扫描仅检验计算稳定性，不声称任意速度组合均守恒"
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "调平、通气、核对质量和遮光条宽度；用空载滑行排查明显外力。",
+          "记录碰前后各滑块速度，反向运动的速度填写负值。",
+          "分别求总动量，比较差值与测量不确定度；必要时做粘连和非粘连碰撞。",
+          "斜槽平抛验证法还必须保证相同离桌高度、入射球质量条件和碰撞位置，射程才可替代水平速度。"
+        ],
+        "errors": [
+          {
+            "wrong": "把反弹速度按正值相加",
+            "wrong_expr": "p_p = m1*(-v1_p)+m2*v2_p",
+            "why": "动量是矢量，反弹方向与所选正方向相反；把负速度改成其大小会算出0.28而不是0.20 kg·m/s。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "基准",
+              "expr": "m1*(-v1_p)+m2*v2_p",
+              "ref": 0.2
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "认为气垫导轨上任何过程都绝对没有外力",
+            "why": "导轨倾斜、气流、碰撞器固定部件和残余摩擦都可能造成外冲量，必须通过调平和数据差值检验。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "0.20 kg滑块以1.0 m/s碰0.30 kg静止滑块，碰后速度为−0.20和0.80 m/s，验证总动量。",
+          "solution": [
+            "碰前总动量为0.20 kg·m/s。",
+            "碰后总动量为−0.04+0.24=0.20 kg·m/s，与碰前相同。"
+          ],
+          "answer": "此组数据碰前后总动量均为0.20 kg·m/s。"
+        },
+        "prereq": [
+          "mom-03",
+          "mom-04"
+        ],
+        "next": [
+          "mom-06"
+        ],
+        "tags": [
+          "气垫导轨",
+          "动量守恒实验",
+          "碰撞",
+          "有向速度"
+        ],
+        "learning_scope": "高中"
+      },
+      "error_index": 1,
+      "chapter": "第二十二章 · 测量工具、数据处理与实验基础"
+    },
+    "diagnostic-exp-05-1": {
+      "point": {
+        "id": "exp-05",
+        "title": "游标卡尺的读数与零误差",
+        "level": "进阶",
+        "definition": "游标卡尺利用主尺与游标尺每格长度的微小差异读出长度，可测外径、内径与深度。应先确定主尺分度、游标规格和零点示数，再按对齐格读数。",
+        "meaning": "常见10、20、50分游标的分度值分别为0.1、0.05、0.02 mm，读到仪器规定的分度，不再随意估出一位。主尺读数取游标零刻线左侧已越过的刻度；游标读数取对齐刻线序号乘分度值。闭合时示数为正，测量值应减去它；负零误差则减去负数。测不同位置可发现物体形状和夹持影响。",
+        "symbols": {
+          "delta": {
+            "unit": "m",
+            "desc": "游标分度值"
+          },
+          "b": {
+            "unit": "m",
+            "desc": "主尺最小分度"
+          },
+          "N": {
+            "unit": "1",
+            "desc": "游标分格数"
+          },
+          "L_main": {
+            "unit": "m",
+            "desc": "游标零线左侧的主尺整格读数"
+          },
+          "n": {
+            "unit": "1",
+            "desc": "对齐游标刻线序号"
+          },
+          "z": {
+            "unit": "m",
+            "desc": "有符号零点示数"
+          },
+          "L": {
+            "unit": "m",
+            "desc": "零点修正后的长度"
+          }
+        },
+        "scenarios": {
+          "基准": {
+            "b": 0.001,
+            "N": 50,
+            "delta": 2e-05,
+            "L_main": 0.012,
+            "n": 16,
+            "z": 0
+          }
+        },
+        "formulas": [
+          {
+            "name": "游标分度值",
+            "expr": "delta = b/N",
+            "when": "游标 N 格总长等于主尺 N−1 格；主尺分度 b",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "基准",
+                "ref": 2e-05,
+                "note": "主尺分度0.001 m，50分游标分度为0.001÷50=0.000020 m"
+              }
+            ]
+          },
+          {
+            "name": "游标读数与零点修正",
+            "expr": "L = L_main+n*delta-z",
+            "when": "主尺读数、对齐游标序号和有符号零点示数",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "基准",
+                "ref": 0.01232,
+                "note": "主尺12 mm加16×0.02 mm，再减零误差0，得到12.32 mm"
+              },
+              {
+                "type": "consistency",
+                "scenario": "基准",
+                "with": "exp-05|游标读数与零点修正",
+                "with_expr": "L_main+n*(b-b*(N-1)/N)-z",
+                "target": "零点修正后的长度",
+                "note": "本公式直接求L；参考端显式关系为L_main+n*(b-b*(N-1)/N)-z。两端使用同一情境和阶段，只核对该关系；with字段仅定位来源，不代表调用另一条被覆盖的公式。",
+                "verification_kind": "独立关系核对",
+                "tol": 1.2320000000000002e-07
+              },
+              {
+                "type": "scan",
+                "scenario": "基准",
+                "var": "n",
+                "lo": 0,
+                "hi": 49,
+                "n": 17,
+                "note": "50分游标序号应取整数；连续扫描只检查表达式有限性"
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "清洁测量面，轻合量爪检查零点，确认游标分格数。",
+          "用正确量爪或深度杆测量，避免倾斜和过大夹紧力。",
+          "先读主尺，再读游标对齐格，最后减有符号零点示数。"
+        ],
+        "errors": [
+          {
+            "wrong": "把对齐序号多读一格",
+            "wrong_expr": "L = L_main+(n+1)*delta-z",
+            "why": "序号从游标零线开始计算；错读一格会偏移一个分度值，本例从12.32 mm变成12.34 mm。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "基准",
+              "expr": "L_main+(n+1)*delta-z",
+              "ref": 0.01232
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "给游标读数任意追加一个估读数字",
+            "why": "标准游标读数按对齐格和分度值形成，不能把刻度尺的估读规则直接套到游标；报告位数需与仪器规格一致。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "50分游标主尺分度1 mm，主尺读数12 mm，第16格对齐，零误差为零，求长度。",
+          "solution": [
+            "分度值为1/50=0.02 mm。",
+            "长度为12+16×0.02=12.32 mm。"
+          ],
+          "answer": "长度为12.32 mm。"
+        },
+        "prereq": [
+          "exp-07"
+        ],
+        "next": [
+          "exp-06",
+          "exp-15"
+        ],
+        "tags": [
+          "游标卡尺",
+          "长度测量",
+          "零误差"
+        ],
+        "learning_scope": "高中"
+      },
+      "error_index": 0,
+      "chapter": "第二十二章 · 测量工具、数据处理与实验基础"
+    },
+    "diagnostic-exp-05-2": {
+      "point": {
+        "id": "exp-05",
+        "title": "游标卡尺的读数与零误差",
+        "level": "进阶",
+        "definition": "游标卡尺利用主尺与游标尺每格长度的微小差异读出长度，可测外径、内径与深度。应先确定主尺分度、游标规格和零点示数，再按对齐格读数。",
+        "meaning": "常见10、20、50分游标的分度值分别为0.1、0.05、0.02 mm，读到仪器规定的分度，不再随意估出一位。主尺读数取游标零刻线左侧已越过的刻度；游标读数取对齐刻线序号乘分度值。闭合时示数为正，测量值应减去它；负零误差则减去负数。测不同位置可发现物体形状和夹持影响。",
+        "symbols": {
+          "delta": {
+            "unit": "m",
+            "desc": "游标分度值"
+          },
+          "b": {
+            "unit": "m",
+            "desc": "主尺最小分度"
+          },
+          "N": {
+            "unit": "1",
+            "desc": "游标分格数"
+          },
+          "L_main": {
+            "unit": "m",
+            "desc": "游标零线左侧的主尺整格读数"
+          },
+          "n": {
+            "unit": "1",
+            "desc": "对齐游标刻线序号"
+          },
+          "z": {
+            "unit": "m",
+            "desc": "有符号零点示数"
+          },
+          "L": {
+            "unit": "m",
+            "desc": "零点修正后的长度"
+          }
+        },
+        "scenarios": {
+          "基准": {
+            "b": 0.001,
+            "N": 50,
+            "delta": 2e-05,
+            "L_main": 0.012,
+            "n": 16,
+            "z": 0
+          }
+        },
+        "formulas": [
+          {
+            "name": "游标分度值",
+            "expr": "delta = b/N",
+            "when": "游标 N 格总长等于主尺 N−1 格；主尺分度 b",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "基准",
+                "ref": 2e-05,
+                "note": "主尺分度0.001 m，50分游标分度为0.001÷50=0.000020 m"
+              }
+            ]
+          },
+          {
+            "name": "游标读数与零点修正",
+            "expr": "L = L_main+n*delta-z",
+            "when": "主尺读数、对齐游标序号和有符号零点示数",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "基准",
+                "ref": 0.01232,
+                "note": "主尺12 mm加16×0.02 mm，再减零误差0，得到12.32 mm"
+              },
+              {
+                "type": "consistency",
+                "scenario": "基准",
+                "with": "exp-05|游标读数与零点修正",
+                "with_expr": "L_main+n*(b-b*(N-1)/N)-z",
+                "target": "零点修正后的长度",
+                "note": "本公式直接求L；参考端显式关系为L_main+n*(b-b*(N-1)/N)-z。两端使用同一情境和阶段，只核对该关系；with字段仅定位来源，不代表调用另一条被覆盖的公式。",
+                "verification_kind": "独立关系核对",
+                "tol": 1.2320000000000002e-07
+              },
+              {
+                "type": "scan",
+                "scenario": "基准",
+                "var": "n",
+                "lo": 0,
+                "hi": 49,
+                "n": 17,
+                "note": "50分游标序号应取整数；连续扫描只检查表达式有限性"
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "清洁测量面，轻合量爪检查零点，确认游标分格数。",
+          "用正确量爪或深度杆测量，避免倾斜和过大夹紧力。",
+          "先读主尺，再读游标对齐格，最后减有符号零点示数。"
+        ],
+        "errors": [
+          {
+            "wrong": "把对齐序号多读一格",
+            "wrong_expr": "L = L_main+(n+1)*delta-z",
+            "why": "序号从游标零线开始计算；错读一格会偏移一个分度值，本例从12.32 mm变成12.34 mm。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "基准",
+              "expr": "L_main+(n+1)*delta-z",
+              "ref": 0.01232
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "给游标读数任意追加一个估读数字",
+            "why": "标准游标读数按对齐格和分度值形成，不能把刻度尺的估读规则直接套到游标；报告位数需与仪器规格一致。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "50分游标主尺分度1 mm，主尺读数12 mm，第16格对齐，零误差为零，求长度。",
+          "solution": [
+            "分度值为1/50=0.02 mm。",
+            "长度为12+16×0.02=12.32 mm。"
+          ],
+          "answer": "长度为12.32 mm。"
+        },
+        "prereq": [
+          "exp-07"
+        ],
+        "next": [
+          "exp-06",
+          "exp-15"
+        ],
+        "tags": [
+          "游标卡尺",
+          "长度测量",
+          "零误差"
+        ],
+        "learning_scope": "高中"
+      },
+      "error_index": 1,
+      "chapter": "第二十二章 · 测量工具、数据处理与实验基础"
+    },
+    "diagnostic-exp-06-1": {
+      "point": {
+        "id": "exp-06",
+        "title": "螺旋测微器、半毫米线与估读",
+        "level": "进阶",
+        "definition": "螺旋测微器把旋转角度转化为测杆沿轴线的微小位移。读数由固定套筒刻度、可动刻度及零点修正组成，常见螺距0.5 mm、每周50格的仪器分度值为0.01 mm。",
+        "meaning": "测量前检查零点，使用棘轮或测力装置保持夹持力适当。固定刻度不能漏掉已露出的半毫米线；常见机械测微器在可动刻度上估读到0.001 mm，最终位数仍以仪器说明和教学记录要求为准。数字测微器应直接按其显示分辨率记录，不能额外编造数字。",
+        "symbols": {
+          "h": {
+            "unit": "m",
+            "desc": "螺距"
+          },
+          "N": {
+            "unit": "1",
+            "desc": "一周旋转刻度格数"
+          },
+          "delta": {
+            "unit": "m",
+            "desc": "分度值"
+          },
+          "L_s": {
+            "unit": "m",
+            "desc": "固定刻度读数"
+          },
+          "n": {
+            "unit": "1",
+            "desc": "可动刻度读数含估读位"
+          },
+          "z": {
+            "unit": "m",
+            "desc": "有符号零点示数"
+          },
+          "L": {
+            "unit": "m",
+            "desc": "校正长度"
+          }
+        },
+        "scenarios": {
+          "基准": {
+            "h": 0.0005,
+            "N": 50,
+            "delta": 1e-05,
+            "L_s": 0.0055,
+            "n": 23.6,
+            "z": 0
+          }
+        },
+        "formulas": [
+          {
+            "name": "测微器分度值",
+            "expr": "delta = h/N",
+            "when": "螺距为 h，每周有 N 个旋转刻度",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "基准",
+                "ref": 1e-05,
+                "note": "螺距0.0005 m除以50得0.00001 m，即0.01 mm"
+              }
+            ]
+          },
+          {
+            "name": "螺旋测微器读数",
+            "expr": "L = L_s+n*delta-z",
+            "when": "固定套筒包含已露出的半毫米刻度；n 可含估读位",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "基准",
+                "ref": 0.005736,
+                "note": "固定刻度5.5 mm加23.6×0.01 mm，减零误差0，得到5.736 mm"
+              },
+              {
+                "type": "consistency",
+                "scenario": "基准",
+                "with": "exp-06|螺旋测微器读数",
+                "with_expr": "L_s+h*n/N-z",
+                "target": "校正长度",
+                "note": "本公式直接求L；参考端显式关系为L_s+h*n/N-z。两端使用同一情境和阶段，只核对该关系；with字段仅定位来源，不代表调用另一条被覆盖的公式。",
+                "verification_kind": "独立关系核对",
+                "tol": 5.7360000000000005e-08
+              },
+              {
+                "type": "scan",
+                "scenario": "基准",
+                "var": "n",
+                "lo": 0,
+                "hi": 50,
+                "n": 17,
+                "note": "旋转刻度可估读；跨一整周时必须同步更新固定刻度，不能重复计入"
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "轻合测量面测零点，确认螺距和一周格数。",
+          "转棘轮使测杆接触被测物，先看固定刻度的整毫米和半毫米。",
+          "读可动刻度并按仪器规定估读，最后减去有符号零点示数。"
+        ],
+        "errors": [
+          {
+            "wrong": "把半毫米线漏读",
+            "wrong_expr": "L = L_s-h+n*delta-z",
+            "why": "固定套筒已露出的半毫米属于实际位移，漏掉它会造成0.5 mm的系统性偏差，不能靠多次平均消除。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "基准",
+              "expr": "L_s-h+n*delta-z",
+              "ref": 0.005736
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "直接转套筒夹紧并用力压缩被测物",
+            "why": "夹持力过大会改变软物体尺寸或损伤仪器，公式校验不能检查测力装置是否正确使用。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "螺距0.5 mm、50格测微器固定刻度5.5 mm，可动刻度23.6格，零误差为零，求长度。",
+          "solution": [
+            "每格0.01 mm，可动读数0.236 mm。",
+            "固定刻度已含半毫米，总长度5.5+0.236=5.736 mm。"
+          ],
+          "answer": "校正长度为5.736 mm。"
+        },
+        "prereq": [
+          "exp-05",
+          "exp-07"
+        ],
+        "next": [
+          "exp-15"
+        ],
+        "tags": [
+          "螺旋测微器",
+          "估读",
+          "半毫米刻度"
+        ],
+        "learning_scope": "高中"
+      },
+      "error_index": 0,
+      "chapter": "第二十二章 · 测量工具、数据处理与实验基础"
+    },
+    "diagnostic-exp-06-2": {
+      "point": {
+        "id": "exp-06",
+        "title": "螺旋测微器、半毫米线与估读",
+        "level": "进阶",
+        "definition": "螺旋测微器把旋转角度转化为测杆沿轴线的微小位移。读数由固定套筒刻度、可动刻度及零点修正组成，常见螺距0.5 mm、每周50格的仪器分度值为0.01 mm。",
+        "meaning": "测量前检查零点，使用棘轮或测力装置保持夹持力适当。固定刻度不能漏掉已露出的半毫米线；常见机械测微器在可动刻度上估读到0.001 mm，最终位数仍以仪器说明和教学记录要求为准。数字测微器应直接按其显示分辨率记录，不能额外编造数字。",
+        "symbols": {
+          "h": {
+            "unit": "m",
+            "desc": "螺距"
+          },
+          "N": {
+            "unit": "1",
+            "desc": "一周旋转刻度格数"
+          },
+          "delta": {
+            "unit": "m",
+            "desc": "分度值"
+          },
+          "L_s": {
+            "unit": "m",
+            "desc": "固定刻度读数"
+          },
+          "n": {
+            "unit": "1",
+            "desc": "可动刻度读数含估读位"
+          },
+          "z": {
+            "unit": "m",
+            "desc": "有符号零点示数"
+          },
+          "L": {
+            "unit": "m",
+            "desc": "校正长度"
+          }
+        },
+        "scenarios": {
+          "基准": {
+            "h": 0.0005,
+            "N": 50,
+            "delta": 1e-05,
+            "L_s": 0.0055,
+            "n": 23.6,
+            "z": 0
+          }
+        },
+        "formulas": [
+          {
+            "name": "测微器分度值",
+            "expr": "delta = h/N",
+            "when": "螺距为 h，每周有 N 个旋转刻度",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "基准",
+                "ref": 1e-05,
+                "note": "螺距0.0005 m除以50得0.00001 m，即0.01 mm"
+              }
+            ]
+          },
+          {
+            "name": "螺旋测微器读数",
+            "expr": "L = L_s+n*delta-z",
+            "when": "固定套筒包含已露出的半毫米刻度；n 可含估读位",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "基准",
+                "ref": 0.005736,
+                "note": "固定刻度5.5 mm加23.6×0.01 mm，减零误差0，得到5.736 mm"
+              },
+              {
+                "type": "consistency",
+                "scenario": "基准",
+                "with": "exp-06|螺旋测微器读数",
+                "with_expr": "L_s+h*n/N-z",
+                "target": "校正长度",
+                "note": "本公式直接求L；参考端显式关系为L_s+h*n/N-z。两端使用同一情境和阶段，只核对该关系；with字段仅定位来源，不代表调用另一条被覆盖的公式。",
+                "verification_kind": "独立关系核对",
+                "tol": 5.7360000000000005e-08
+              },
+              {
+                "type": "scan",
+                "scenario": "基准",
+                "var": "n",
+                "lo": 0,
+                "hi": 50,
+                "n": 17,
+                "note": "旋转刻度可估读；跨一整周时必须同步更新固定刻度，不能重复计入"
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "轻合测量面测零点，确认螺距和一周格数。",
+          "转棘轮使测杆接触被测物，先看固定刻度的整毫米和半毫米。",
+          "读可动刻度并按仪器规定估读，最后减去有符号零点示数。"
+        ],
+        "errors": [
+          {
+            "wrong": "把半毫米线漏读",
+            "wrong_expr": "L = L_s-h+n*delta-z",
+            "why": "固定套筒已露出的半毫米属于实际位移，漏掉它会造成0.5 mm的系统性偏差，不能靠多次平均消除。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "基准",
+              "expr": "L_s-h+n*delta-z",
+              "ref": 0.005736
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "直接转套筒夹紧并用力压缩被测物",
+            "why": "夹持力过大会改变软物体尺寸或损伤仪器，公式校验不能检查测力装置是否正确使用。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "螺距0.5 mm、50格测微器固定刻度5.5 mm，可动刻度23.6格，零误差为零，求长度。",
+          "solution": [
+            "每格0.01 mm，可动读数0.236 mm。",
+            "固定刻度已含半毫米，总长度5.5+0.236=5.736 mm。"
+          ],
+          "answer": "校正长度为5.736 mm。"
+        },
+        "prereq": [
+          "exp-05",
+          "exp-07"
+        ],
+        "next": [
+          "exp-15"
+        ],
+        "tags": [
+          "螺旋测微器",
+          "估读",
+          "半毫米刻度"
+        ],
+        "learning_scope": "高中"
+      },
+      "error_index": 1,
+      "chapter": "第二十二章 · 测量工具、数据处理与实验基础"
+    },
+    "diagnostic-exp-07-1": {
+      "point": {
+        "id": "exp-07",
+        "title": "刻度尺读数、有效数字与误差传播",
+        "level": "进阶",
+        "definition": "测量结果由数值、单位和精度信息共同组成。用刻度尺测长度时，应读取物体两端对应的刻度并作差，不能默认物体一端正好在零刻线。有效数字须与仪器分辨率和不确定度匹配。",
+        "meaning": "刻度尺一般按刻线间距合理估读，游标卡尺按游标分度读数，机械测微器通常再估读一位；具体仍以仪器和记录要求为准。加减结果的小数位受绝对精度较差者限制，乘除结果的有效位数受相对精度限制，中间计算多留几位，最后统一舍入。最坏情况误差限通常相加，互不相关标准不确定度按平方和开方，重复平均不能消除共同零点偏差。 使用刻度尺时记录分度值、单位和两端坐标；读数视线垂直刻面以减小视差。所需精度超过刻度尺分辨能力时，改用游标卡尺或螺旋测微器，并进行零点修正。",
+        "symbols": {
+          "x": {
+            "unit": "m",
+            "desc": "第一正长度"
+          },
+          "y": {
+            "unit": "m",
+            "desc": "第二正长度"
+          },
+          "D_x": {
+            "unit": "m",
+            "desc": "第一长度的最大误差限"
+          },
+          "D_y": {
+            "unit": "m",
+            "desc": "第二长度的最大误差限"
+          },
+          "D_s": {
+            "unit": "m",
+            "desc": "差值的一阶最大误差限"
+          },
+          "D_A": {
+            "unit": "m^2",
+            "desc": "乘积的一阶最大误差限"
+          },
+          "u_x": {
+            "unit": "m",
+            "desc": "第一长度标准不确定度"
+          },
+          "u_y": {
+            "unit": "m",
+            "desc": "第二长度标准不确定度"
+          },
+          "u_s": {
+            "unit": "m",
+            "desc": "差值标准不确定度"
+          },
+          "x1": {
+            "unit": "m",
+            "desc": "物体起点在刻度尺上的坐标"
+          },
+          "x2": {
+            "unit": "m",
+            "desc": "物体终点在刻度尺上的坐标"
+          },
+          "L_r": {
+            "unit": "m",
+            "desc": "由两端坐标差得到的长度"
+          }
+        },
+        "scenarios": {
+          "基准": {
+            "x": 0.2,
+            "y": 0.3,
+            "D_x": 0.001,
+            "D_y": 0.002,
+            "u_x": 0.001,
+            "u_y": 0.002,
+            "x1": 0.235,
+            "x2": 0.598,
+            "L_r": 0.363
+          }
+        },
+        "formulas": [
+          {
+            "name": "差值的最大误差限",
+            "expr": "D_s = D_x+D_y",
+            "when": "独立与否均可作为一阶保守上界；不等同标准不确定度",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "基准",
+                "ref": 0.003,
+                "note": "两个误差限0.001和0.002 m相加为0.003 m"
+              }
+            ]
+          },
+          {
+            "name": "乘积的最大误差限近似",
+            "expr": "D_A = y*D_x+x*D_y",
+            "when": "正长度乘积，小相对误差，一阶最坏情况上界",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "基准",
+                "ref": 0.0007,
+                "note": "0.30×0.001+0.20×0.002=0.0007 m²"
+              },
+              {
+                "type": "consistency",
+                "scenario": "基准",
+                "with": "exp-07|乘积的最大误差限近似",
+                "with_expr": "x*y*(D_x/x+D_y/y)",
+                "target": "乘积的一阶最大误差限",
+                "note": "直接求本公式结果，与另一种计算写法x*y*(D_x/x+D_y/y)核对；用于检查系数、漏项和计算实现。两端来自同一物理关系，不宣称不同物理原理互证。",
+                "verification_kind": "同一关系的计算实现核对",
+                "tol": 7.000000000000001e-09
+              }
+            ]
+          },
+          {
+            "name": "独立量差值的标准不确定度",
+            "expr": "u_s = sqrt(u_x^2+u_y^2)",
+            "when": "两输入互不相关；否则必须包含协方差项",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "基准",
+                "ref": 0.00223606797749979,
+                "note": "平方和为5×10⁻⁶ m²，开方得0.002236... m"
+              },
+              {
+                "type": "scan",
+                "scenario": "基准",
+                "var": "u_x",
+                "lo": 0,
+                "hi": 0.01,
+                "n": 17,
+                "note": "标准不确定度非负；扫描包含零，排除负值"
+              }
+            ]
+          },
+          {
+            "name": "刻度尺两端读数求长度",
+            "expr": "L_r = x2-x1",
+            "when": "刻度尺零刻线未与物体起点重合时，长度取末端与起点坐标之差",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "基准",
+                "ref": 0.363,
+                "note": "0.598 m−0.235 m=0.363 m；记录时保持同一单位。"
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "记录仪器类型、单位、分度值和零点，保留所有可合理读出的数字。",
+          "加减时追踪绝对误差，乘除时将微小相对误差一阶展开；有效位数只作简化的报告规则。",
+          "明确给出的精度是误差限还是标准不确定度；前者用最坏情况上界，后者独立时用平方和开方。",
+          "先保留计算位数，最后将不确定度取合适位数，结果末位与其对齐。",
+          "刻度尺两端读数相减得到长度；先统一单位，再按分度值和估读规则报告有效位数。"
+        ],
+        "errors": [
+          {
+            "wrong": "认为相减时最大误差限也相减",
+            "wrong_expr": "D_s = D_y-D_x",
+            "why": "两个测量误差可能方向相反，使差值误差扩大；保守上界应相加，本例0.003 m而不是0.001 m。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "基准",
+              "expr": "D_y-D_x",
+              "ref": 0.003
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "把平方和开方当成所有误差的万能规则",
+            "why": "只有明确使用标准不确定度、满足一阶近似并处理相关性时才能使用该规则；系统偏差与误差限需要不同处理。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "默认物体从零刻线开始而直接读末端刻度",
+            "wrong_expr": "L_r = x2",
+            "why": "物体起点不在零刻线时应作坐标差；本例直接读末端会把0.598 m误作长度，正确值为0.363 m。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "基准",
+              "expr": "x2",
+              "ref": 0.363
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "两长度为0.200和0.300 m，最大误差限为0.001和0.002 m；求差值、乘积的误差限近似。",
+          "solution": [
+            "差值的最大误差限为0.001+0.002=0.003 m。",
+            "乘积为0.0600 m²，一阶误差限为0.300×0.001+0.200×0.002=0.0007 m²。"
+          ],
+          "answer": "差值误差限0.003 m；乘积一阶误差限0.0007 m²。"
+        },
+        "prereq": [
+          "kine-01"
+        ],
+        "next": [
+          "exp-05",
+          "exp-06"
+        ],
+        "tags": [
+          "有效数字",
+          "误差传播",
+          "不确定度",
+          "估读"
+        ],
+        "learning_scope": "高中"
+      },
+      "error_index": 0,
+      "chapter": "第二十二章 · 测量工具、数据处理与实验基础"
+    },
+    "diagnostic-exp-07-2": {
+      "point": {
+        "id": "exp-07",
+        "title": "刻度尺读数、有效数字与误差传播",
+        "level": "进阶",
+        "definition": "测量结果由数值、单位和精度信息共同组成。用刻度尺测长度时，应读取物体两端对应的刻度并作差，不能默认物体一端正好在零刻线。有效数字须与仪器分辨率和不确定度匹配。",
+        "meaning": "刻度尺一般按刻线间距合理估读，游标卡尺按游标分度读数，机械测微器通常再估读一位；具体仍以仪器和记录要求为准。加减结果的小数位受绝对精度较差者限制，乘除结果的有效位数受相对精度限制，中间计算多留几位，最后统一舍入。最坏情况误差限通常相加，互不相关标准不确定度按平方和开方，重复平均不能消除共同零点偏差。 使用刻度尺时记录分度值、单位和两端坐标；读数视线垂直刻面以减小视差。所需精度超过刻度尺分辨能力时，改用游标卡尺或螺旋测微器，并进行零点修正。",
+        "symbols": {
+          "x": {
+            "unit": "m",
+            "desc": "第一正长度"
+          },
+          "y": {
+            "unit": "m",
+            "desc": "第二正长度"
+          },
+          "D_x": {
+            "unit": "m",
+            "desc": "第一长度的最大误差限"
+          },
+          "D_y": {
+            "unit": "m",
+            "desc": "第二长度的最大误差限"
+          },
+          "D_s": {
+            "unit": "m",
+            "desc": "差值的一阶最大误差限"
+          },
+          "D_A": {
+            "unit": "m^2",
+            "desc": "乘积的一阶最大误差限"
+          },
+          "u_x": {
+            "unit": "m",
+            "desc": "第一长度标准不确定度"
+          },
+          "u_y": {
+            "unit": "m",
+            "desc": "第二长度标准不确定度"
+          },
+          "u_s": {
+            "unit": "m",
+            "desc": "差值标准不确定度"
+          },
+          "x1": {
+            "unit": "m",
+            "desc": "物体起点在刻度尺上的坐标"
+          },
+          "x2": {
+            "unit": "m",
+            "desc": "物体终点在刻度尺上的坐标"
+          },
+          "L_r": {
+            "unit": "m",
+            "desc": "由两端坐标差得到的长度"
+          }
+        },
+        "scenarios": {
+          "基准": {
+            "x": 0.2,
+            "y": 0.3,
+            "D_x": 0.001,
+            "D_y": 0.002,
+            "u_x": 0.001,
+            "u_y": 0.002,
+            "x1": 0.235,
+            "x2": 0.598,
+            "L_r": 0.363
+          }
+        },
+        "formulas": [
+          {
+            "name": "差值的最大误差限",
+            "expr": "D_s = D_x+D_y",
+            "when": "独立与否均可作为一阶保守上界；不等同标准不确定度",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "基准",
+                "ref": 0.003,
+                "note": "两个误差限0.001和0.002 m相加为0.003 m"
+              }
+            ]
+          },
+          {
+            "name": "乘积的最大误差限近似",
+            "expr": "D_A = y*D_x+x*D_y",
+            "when": "正长度乘积，小相对误差，一阶最坏情况上界",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "基准",
+                "ref": 0.0007,
+                "note": "0.30×0.001+0.20×0.002=0.0007 m²"
+              },
+              {
+                "type": "consistency",
+                "scenario": "基准",
+                "with": "exp-07|乘积的最大误差限近似",
+                "with_expr": "x*y*(D_x/x+D_y/y)",
+                "target": "乘积的一阶最大误差限",
+                "note": "直接求本公式结果，与另一种计算写法x*y*(D_x/x+D_y/y)核对；用于检查系数、漏项和计算实现。两端来自同一物理关系，不宣称不同物理原理互证。",
+                "verification_kind": "同一关系的计算实现核对",
+                "tol": 7.000000000000001e-09
+              }
+            ]
+          },
+          {
+            "name": "独立量差值的标准不确定度",
+            "expr": "u_s = sqrt(u_x^2+u_y^2)",
+            "when": "两输入互不相关；否则必须包含协方差项",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "基准",
+                "ref": 0.00223606797749979,
+                "note": "平方和为5×10⁻⁶ m²，开方得0.002236... m"
+              },
+              {
+                "type": "scan",
+                "scenario": "基准",
+                "var": "u_x",
+                "lo": 0,
+                "hi": 0.01,
+                "n": 17,
+                "note": "标准不确定度非负；扫描包含零，排除负值"
+              }
+            ]
+          },
+          {
+            "name": "刻度尺两端读数求长度",
+            "expr": "L_r = x2-x1",
+            "when": "刻度尺零刻线未与物体起点重合时，长度取末端与起点坐标之差",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "基准",
+                "ref": 0.363,
+                "note": "0.598 m−0.235 m=0.363 m；记录时保持同一单位。"
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "记录仪器类型、单位、分度值和零点，保留所有可合理读出的数字。",
+          "加减时追踪绝对误差，乘除时将微小相对误差一阶展开；有效位数只作简化的报告规则。",
+          "明确给出的精度是误差限还是标准不确定度；前者用最坏情况上界，后者独立时用平方和开方。",
+          "先保留计算位数，最后将不确定度取合适位数，结果末位与其对齐。",
+          "刻度尺两端读数相减得到长度；先统一单位，再按分度值和估读规则报告有效位数。"
+        ],
+        "errors": [
+          {
+            "wrong": "认为相减时最大误差限也相减",
+            "wrong_expr": "D_s = D_y-D_x",
+            "why": "两个测量误差可能方向相反，使差值误差扩大；保守上界应相加，本例0.003 m而不是0.001 m。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "基准",
+              "expr": "D_y-D_x",
+              "ref": 0.003
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "把平方和开方当成所有误差的万能规则",
+            "why": "只有明确使用标准不确定度、满足一阶近似并处理相关性时才能使用该规则；系统偏差与误差限需要不同处理。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "默认物体从零刻线开始而直接读末端刻度",
+            "wrong_expr": "L_r = x2",
+            "why": "物体起点不在零刻线时应作坐标差；本例直接读末端会把0.598 m误作长度，正确值为0.363 m。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "基准",
+              "expr": "x2",
+              "ref": 0.363
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "两长度为0.200和0.300 m，最大误差限为0.001和0.002 m；求差值、乘积的误差限近似。",
+          "solution": [
+            "差值的最大误差限为0.001+0.002=0.003 m。",
+            "乘积为0.0600 m²，一阶误差限为0.300×0.001+0.200×0.002=0.0007 m²。"
+          ],
+          "answer": "差值误差限0.003 m；乘积一阶误差限0.0007 m²。"
+        },
+        "prereq": [
+          "kine-01"
+        ],
+        "next": [
+          "exp-05",
+          "exp-06"
+        ],
+        "tags": [
+          "有效数字",
+          "误差传播",
+          "不确定度",
+          "估读"
+        ],
+        "learning_scope": "高中"
+      },
+      "error_index": 1,
+      "chapter": "第二十二章 · 测量工具、数据处理与实验基础"
+    },
+    "diagnostic-exp-07-3": {
+      "point": {
+        "id": "exp-07",
+        "title": "刻度尺读数、有效数字与误差传播",
+        "level": "进阶",
+        "definition": "测量结果由数值、单位和精度信息共同组成。用刻度尺测长度时，应读取物体两端对应的刻度并作差，不能默认物体一端正好在零刻线。有效数字须与仪器分辨率和不确定度匹配。",
+        "meaning": "刻度尺一般按刻线间距合理估读，游标卡尺按游标分度读数，机械测微器通常再估读一位；具体仍以仪器和记录要求为准。加减结果的小数位受绝对精度较差者限制，乘除结果的有效位数受相对精度限制，中间计算多留几位，最后统一舍入。最坏情况误差限通常相加，互不相关标准不确定度按平方和开方，重复平均不能消除共同零点偏差。 使用刻度尺时记录分度值、单位和两端坐标；读数视线垂直刻面以减小视差。所需精度超过刻度尺分辨能力时，改用游标卡尺或螺旋测微器，并进行零点修正。",
+        "symbols": {
+          "x": {
+            "unit": "m",
+            "desc": "第一正长度"
+          },
+          "y": {
+            "unit": "m",
+            "desc": "第二正长度"
+          },
+          "D_x": {
+            "unit": "m",
+            "desc": "第一长度的最大误差限"
+          },
+          "D_y": {
+            "unit": "m",
+            "desc": "第二长度的最大误差限"
+          },
+          "D_s": {
+            "unit": "m",
+            "desc": "差值的一阶最大误差限"
+          },
+          "D_A": {
+            "unit": "m^2",
+            "desc": "乘积的一阶最大误差限"
+          },
+          "u_x": {
+            "unit": "m",
+            "desc": "第一长度标准不确定度"
+          },
+          "u_y": {
+            "unit": "m",
+            "desc": "第二长度标准不确定度"
+          },
+          "u_s": {
+            "unit": "m",
+            "desc": "差值标准不确定度"
+          },
+          "x1": {
+            "unit": "m",
+            "desc": "物体起点在刻度尺上的坐标"
+          },
+          "x2": {
+            "unit": "m",
+            "desc": "物体终点在刻度尺上的坐标"
+          },
+          "L_r": {
+            "unit": "m",
+            "desc": "由两端坐标差得到的长度"
+          }
+        },
+        "scenarios": {
+          "基准": {
+            "x": 0.2,
+            "y": 0.3,
+            "D_x": 0.001,
+            "D_y": 0.002,
+            "u_x": 0.001,
+            "u_y": 0.002,
+            "x1": 0.235,
+            "x2": 0.598,
+            "L_r": 0.363
+          }
+        },
+        "formulas": [
+          {
+            "name": "差值的最大误差限",
+            "expr": "D_s = D_x+D_y",
+            "when": "独立与否均可作为一阶保守上界；不等同标准不确定度",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "基准",
+                "ref": 0.003,
+                "note": "两个误差限0.001和0.002 m相加为0.003 m"
+              }
+            ]
+          },
+          {
+            "name": "乘积的最大误差限近似",
+            "expr": "D_A = y*D_x+x*D_y",
+            "when": "正长度乘积，小相对误差，一阶最坏情况上界",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "基准",
+                "ref": 0.0007,
+                "note": "0.30×0.001+0.20×0.002=0.0007 m²"
+              },
+              {
+                "type": "consistency",
+                "scenario": "基准",
+                "with": "exp-07|乘积的最大误差限近似",
+                "with_expr": "x*y*(D_x/x+D_y/y)",
+                "target": "乘积的一阶最大误差限",
+                "note": "直接求本公式结果，与另一种计算写法x*y*(D_x/x+D_y/y)核对；用于检查系数、漏项和计算实现。两端来自同一物理关系，不宣称不同物理原理互证。",
+                "verification_kind": "同一关系的计算实现核对",
+                "tol": 7.000000000000001e-09
+              }
+            ]
+          },
+          {
+            "name": "独立量差值的标准不确定度",
+            "expr": "u_s = sqrt(u_x^2+u_y^2)",
+            "when": "两输入互不相关；否则必须包含协方差项",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "基准",
+                "ref": 0.00223606797749979,
+                "note": "平方和为5×10⁻⁶ m²，开方得0.002236... m"
+              },
+              {
+                "type": "scan",
+                "scenario": "基准",
+                "var": "u_x",
+                "lo": 0,
+                "hi": 0.01,
+                "n": 17,
+                "note": "标准不确定度非负；扫描包含零，排除负值"
+              }
+            ]
+          },
+          {
+            "name": "刻度尺两端读数求长度",
+            "expr": "L_r = x2-x1",
+            "when": "刻度尺零刻线未与物体起点重合时，长度取末端与起点坐标之差",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "基准",
+                "ref": 0.363,
+                "note": "0.598 m−0.235 m=0.363 m；记录时保持同一单位。"
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "记录仪器类型、单位、分度值和零点，保留所有可合理读出的数字。",
+          "加减时追踪绝对误差，乘除时将微小相对误差一阶展开；有效位数只作简化的报告规则。",
+          "明确给出的精度是误差限还是标准不确定度；前者用最坏情况上界，后者独立时用平方和开方。",
+          "先保留计算位数，最后将不确定度取合适位数，结果末位与其对齐。",
+          "刻度尺两端读数相减得到长度；先统一单位，再按分度值和估读规则报告有效位数。"
+        ],
+        "errors": [
+          {
+            "wrong": "认为相减时最大误差限也相减",
+            "wrong_expr": "D_s = D_y-D_x",
+            "why": "两个测量误差可能方向相反，使差值误差扩大；保守上界应相加，本例0.003 m而不是0.001 m。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "基准",
+              "expr": "D_y-D_x",
+              "ref": 0.003
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "把平方和开方当成所有误差的万能规则",
+            "why": "只有明确使用标准不确定度、满足一阶近似并处理相关性时才能使用该规则；系统偏差与误差限需要不同处理。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "默认物体从零刻线开始而直接读末端刻度",
+            "wrong_expr": "L_r = x2",
+            "why": "物体起点不在零刻线时应作坐标差；本例直接读末端会把0.598 m误作长度，正确值为0.363 m。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "基准",
+              "expr": "x2",
+              "ref": 0.363
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "两长度为0.200和0.300 m，最大误差限为0.001和0.002 m；求差值、乘积的误差限近似。",
+          "solution": [
+            "差值的最大误差限为0.001+0.002=0.003 m。",
+            "乘积为0.0600 m²，一阶误差限为0.300×0.001+0.200×0.002=0.0007 m²。"
+          ],
+          "answer": "差值误差限0.003 m；乘积一阶误差限0.0007 m²。"
+        },
+        "prereq": [
+          "kine-01"
+        ],
+        "next": [
+          "exp-05",
+          "exp-06"
+        ],
+        "tags": [
+          "有效数字",
+          "误差传播",
+          "不确定度",
+          "估读"
+        ],
+        "learning_scope": "高中"
+      },
+      "error_index": 2,
+      "chapter": "第二十二章 · 测量工具、数据处理与实验基础"
+    }
+  },
+  "generator_version": "2026-10-04-条件过程返工-8"
 }

@@ -8,42 +8,59 @@
       "point_id": "ac-01",
       "point_title": "交变电流的产生",
       "chapter": "第十五章 · 交变电流",
-      "stem": "【第十五章 · 交变电流 · 交变电流的产生】学生的错误做法：认为磁通量最大时，感应电动势也最大。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "stem": "关于“交变电流的产生”，判断这一说法是否成立，并说明依据：\n感应电动势取决于磁通量的变化率，不取决于磁通量本身。",
       "options": [
         {
           "label": "A",
-          "text": "数值代入：错误式量纲正确，只能靠数值实测抓住：峰值 141.421 V 时会算出 70.711 V，正确有效值是 100 V。"
+          "text": "该说法成立。"
         },
         {
           "label": "B",
-          "text": "数值代入：量纲正确但数值错误：该降压情境会算出 0.2 A，正确值是 5.0 A；正确关系由功率守恒决定，电流与匝数成反比。"
-        },
-        {
-          "label": "C",
-          "text": "数值代入：输电电压主要加在用户负载和输电系统上，不是全部加在输电线电阻上。"
-        },
-        {
-          "label": "D",
-          "text": "概念混淆：感应电动势取决于磁通量的变化率，不取决于磁通量本身。"
+          "text": "该说法不成立。"
         }
       ],
-      "correct_answer": "D",
-      "explanation": "感应电动势取决于磁通量的变化率，不取决于磁通量本身。磁通量处在最大值时瞬时变化率为零，电动势也为零。这个相位判断需要结合图像人工审核。",
+      "correct_answer": "A",
+      "explanation": "感应电动势取决于磁通量的变化率，不取决于磁通量本身。磁通量处在最大值时瞬时变化率为零，电动势也为零。这个相位判断需要结合图像人工审核。\n知识点条件：产生交变电流的本质仍是电磁感应。线圈平面与磁场垂直时磁通量最大，但磁通量变化率为零，感应电动势反而为零；线圈平面与磁场平行时磁通量为零，但变化率最大，电动势达到峰值。峰值随匝数、磁场强度、线圈面积和转速增大而增大。\n推导依据：线圈转动时，磁通量可写成 Φ=B·S<sub>线圈</sub>·cos(ω·t)。；由法拉第电磁感应定律，感应电动势与磁通量对时间的变化率有关；对余弦函数求变化率得到正弦变化。；N<sub>匝</sub> 匝串联线圈的电动势相加，峰值为 E<sub>m</sub>=N<sub>匝</sub>·B·S<sub>线圈</sub>·ω。；转动一周相位增加 2·π，因此 ω=2·π·f，移项得 f=ω/(2·π)。\n卡片公式各自的适用条件（不是本题共同前提）：\n旋转线圈电动势峰值：N<sub>匝</sub> 匝线圈在匀强磁场中绕垂直于磁场的轴匀速转动，线圈面积和磁场均匀\n角速度与频率的关系：线圈做匀速圆周转动，ω 用 rad/s 表示",
       "error_type": "概念混淆",
       "judging": "teacher",
       "source_error_index": 0,
       "source_caught_by": "人工审核",
       "wrong_expr": null,
       "trap_test": null,
+      "level": "基础",
+      "learning_scope": "高中",
+      "answer_evidence": {
+        "kind": "teacher",
+        "claim_source": "why",
+        "reference_only": true,
+        "reason": "概念、操作或无法建立完整定量证据，教师确认条件与结论。"
+      },
       "review": {
         "confidence": "medium",
-        "checks": {
-          "answer_unique": true,
-          "distractors_plausible": true,
-          "stem_clear": true,
-          "no_cross_segment": true
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": false,
+          "no_answer_leak_in_options": true
         },
-        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。"
       }
     },
     {
@@ -51,27 +68,19 @@
       "point_id": "ac-01",
       "point_title": "交变电流的产生",
       "chapter": "第十五章 · 交变电流",
-      "stem": "【第十五章 · 交变电流 · 交变电流的产生】学生的错误做法：计算多匝线圈的峰值时漏乘匝数，写成 E<sub>m</sub>=B·S<sub>线圈</sub>·ω（错误表达式：E<sub>m</sub> = B·S<sub>线圈</sub>·ω）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "stem": "在“交变电流的产生”的模型下，N<sub>匝</sub>（串联线圈匝数）=100 1；B（匀强磁场的磁感应强度）=0.5 T；S<sub>线圈</sub>（每匝线圈的有效面积）=0.02 m²；ω（线圈转动的角速度）=100 rad/s。条件：N<sub>匝</sub> 匝线圈在匀强磁场中绕垂直于磁场的轴匀速转动，线圈面积和磁场均匀。求正弦式交变电动势的峰值（E<sub>m</sub>）。这些数值是设计示例。",
       "options": [
         {
           "label": "A",
-          "text": "概念混淆：√(2) 关系只适用于正弦式交变电流；其他波形必须由相同发热效果定义有效值。"
+          "text": "100 V"
         },
         {
           "label": "B",
-          "text": "概念混淆：稳定直流建立后磁通量不再变化，副线圈没有持续感应电动势；原线圈还可能因电流过大而发热损坏。"
-        },
-        {
-          "label": "C",
-          "text": "数值代入：匝数是无量纲量，漏掉它后量纲仍然完全正确，量纲检查抓不到。"
-        },
-        {
-          "label": "D",
-          "text": "概念混淆：只有从电压过零且沿正方向增大的时刻开始计时，初相位才为零。"
+          "text": "1 V"
         }
       ],
-      "correct_answer": "C",
-      "explanation": "匝数是无量纲量，漏掉它后量纲仍然完全正确，量纲检查抓不到。此情境错误式只得到 1 V，100 匝串联线圈的正确峰值是 100 V。\n知识库校验证据：情境：匀速转动线圈；代入错误式：B·S<sub>线圈</sub>·ω；校验参照值：100.0。",
+      "correct_answer": "A",
+      "explanation": "使用旋转线圈电动势峰值：N<sub>匝</sub>·B·S<sub>线圈</sub>·ω，代入得100 V。另一结果来自B·S<sub>线圈</sub>·ω，算得1 V。\n匝数是无量纲量，漏掉它后量纲仍然完全正确，量纲检查抓不到。此情境错误式只得到 1 V，100 匝串联线圈的正确峰值是 100 V。\n知识点条件：产生交变电流的本质仍是电磁感应。线圈平面与磁场垂直时磁通量最大，但磁通量变化率为零，感应电动势反而为零；线圈平面与磁场平行时磁通量为零，但变化率最大，电动势达到峰值。峰值随匝数、磁场强度、线圈面积和转速增大而增大。\n推导依据：线圈转动时，磁通量可写成 Φ=B·S<sub>线圈</sub>·cos(ω·t)。；由法拉第电磁感应定律，感应电动势与磁通量对时间的变化率有关；对余弦函数求变化率得到正弦变化。；N<sub>匝</sub> 匝串联线圈的电动势相加，峰值为 E<sub>m</sub>=N<sub>匝</sub>·B·S<sub>线圈</sub>·ω。；转动一周相位增加 2·π，因此 ω=2·π·f，移项得 f=ω/(2·π)。\n卡片公式各自的适用条件（不是本题共同前提）：\n旋转线圈电动势峰值：N<sub>匝</sub> 匝线圈在匀强磁场中绕垂直于磁场的轴匀速转动，线圈面积和磁场均匀\n角速度与频率的关系：线圈做匀速圆周转动，ω 用 rad/s 表示",
       "error_type": "数值代入",
       "judging": "auto",
       "source_error_index": 1,
@@ -82,15 +91,59 @@
         "expr": "B*S_coil*omega",
         "ref": 100.0
       },
+      "level": "基础",
+      "learning_scope": "高中",
+      "answer_evidence": {
+        "kind": "numeric",
+        "scenario": "匀速转动线圈",
+        "parameters": {
+          "E_m": 100.0,
+          "N_turn": 100,
+          "B": 0.5,
+          "S_coil": 0.02,
+          "omega": 100.0,
+          "f": 15.9154943092
+        },
+        "target": "E_m",
+        "unit": "V",
+        "reference": 100.0,
+        "correct_proof": {
+          "expression": "N_turn*B*S_coil*omega",
+          "formula": "旋转线圈电动势峰值",
+          "value": 100.0,
+          "when": "N_turn 匝线圈在匀强磁场中绕垂直于磁场的轴匀速转动，线圈面积和磁场均匀"
+        },
+        "distractor_expression": "B*S_coil*omega",
+        "distractor_value": 1.0,
+        "dimension_matches": true,
+        "independent_evaluation": true
+      },
       "review": {
         "confidence": "medium",
-        "checks": {
-          "answer_unique": true,
-          "distractors_plausible": true,
-          "stem_clear": true,
-          "no_cross_segment": true
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": true,
+          "no_answer_leak_in_options": true
         },
-        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。"
       }
     },
     {
@@ -98,27 +151,19 @@
       "point_id": "ac-02",
       "point_title": "交变电流的峰值、有效值、周期与频率",
       "chapter": "第十五章 · 交变电流",
-      "stem": "【第十五章 · 交变电流 · 交变电流的峰值、有效值、周期与频率】学生的错误做法：把正弦交变电压的有效值当成峰值的一半，写成 U<sub>有效</sub>=U<sub>m</sub>/2（错误表达式：U<sub>有效</sub> = U<sub>m</sub>/2）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "stem": "在“交变电流的峰值、有效值、周期与频率”的模型下，U<sub>m</sub>（正弦交变电压的峰值）=141.421 V。条件：电压随时间按正弦规律变化。求正弦交变电压的有效值（U<sub>有效</sub>）。这些数值是设计示例。",
       "options": [
         {
           "label": "A",
-          "text": "概念混淆：稳定直流建立后磁通量不再变化，副线圈没有持续感应电动势；原线圈还可能因电流过大而发热损坏。"
+          "text": "70.7107 V"
         },
         {
           "label": "B",
-          "text": "数值代入：错误式量纲正确，只能靠数值实测抓住：峰值 141.421 V 时会算出 70.711 V，正确有效值是 100 V。"
-        },
-        {
-          "label": "C",
-          "text": "概念混淆：感应电动势取决于磁通量的变化率，不取决于磁通量本身。"
-        },
-        {
-          "label": "D",
-          "text": "概念混淆：只有从电压过零且沿正方向增大的时刻开始计时，初相位才为零。"
+          "text": "100 V"
         }
       ],
       "correct_answer": "B",
-      "explanation": "错误式量纲正确，只能靠数值实测抓住：峰值 141.421 V 时会算出 70.711 V，正确有效值是 100 V。\n知识库校验证据：情境：正弦交流用电器；代入错误式：U<sub>m</sub>/2；校验参照值：100.0。",
+      "explanation": "使用正弦交变电压的有效值：U<sub>m</sub>/√(2)，代入得100 V。另一结果来自U<sub>m</sub>/2，算得70.7107 V。\n错误式量纲正确，只能靠数值实测抓住：峰值 141.421 V 时会算出 70.711 V，正确有效值是 100 V。\n知识点条件：有效值不是一段时间内瞬时值的算术平均；正弦交变电流一周期的代数平均值为零，却仍能持续发热。只有正弦式交变电流的峰值与有效值之间才是 √(2) 倍关系，方波等其他波形必须依据发热效果另算。电器铭牌、电压表和电流表的交流示数通常采用有效值。\n推导依据：让正弦交变电流与某一直流分别通过同一电阻，在相同时间内产生相同热量，这一直流数值定义为交变电流的有效值。；正弦电流平方在一个周期内的平均值是峰值平方的一半，因此 I<sub>有效</sub>²=I<sub>m</sub>²/2。；取非负平方根得到 I<sub>有效</sub>=I<sub>m</sub>/√(2)，电压同理得到 U<sub>有效</sub>=U<sub>m</sub>/√(2)。；这一结论依赖正弦波形，不能不加判断地用于任意周期电流。\n卡片公式各自的适用条件（不是本题共同前提）：\n正弦交变电压的有效值：电压随时间按正弦规律变化\n正弦交变电流的有效值：电流随时间按正弦规律变化",
       "error_type": "数值代入",
       "judging": "auto",
       "source_error_index": 0,
@@ -129,15 +174,57 @@
         "expr": "U_m/2",
         "ref": 100.0
       },
+      "level": "基础",
+      "learning_scope": "高中",
+      "answer_evidence": {
+        "kind": "numeric",
+        "scenario": "正弦交流用电器",
+        "parameters": {
+          "U_eff": 100.0,
+          "U_m": 141.4213562373,
+          "I_eff": 2.0,
+          "I_m": 2.8284271247
+        },
+        "target": "U_eff",
+        "unit": "V",
+        "reference": 100.0,
+        "correct_proof": {
+          "expression": "U_m/sqrt(2)",
+          "formula": "正弦交变电压的有效值",
+          "value": 99.99999999999326,
+          "when": "电压随时间按正弦规律变化"
+        },
+        "distractor_expression": "U_m/2",
+        "distractor_value": 70.71067811865,
+        "dimension_matches": true,
+        "independent_evaluation": true
+      },
       "review": {
         "confidence": "medium",
-        "checks": {
-          "answer_unique": true,
-          "distractors_plausible": true,
-          "stem_clear": true,
-          "no_cross_segment": true
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": true,
+          "no_answer_leak_in_options": true
         },
-        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。"
       }
     },
     {
@@ -145,42 +232,59 @@
       "point_id": "ac-02",
       "point_title": "交变电流的峰值、有效值、周期与频率",
       "chapter": "第十五章 · 交变电流",
-      "stem": "【第十五章 · 交变电流 · 交变电流的峰值、有效值、周期与频率】学生的错误做法：认为任何周期交变电流都满足有效值等于峰值除以 √(2)。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "stem": "关于“交变电流的峰值、有效值、周期与频率”，判断这一说法是否成立，并说明依据：\n任何周期交变电流都满足有效值等于峰值除以 √(2)。",
       "options": [
         {
           "label": "A",
-          "text": "概念混淆：√(2) 关系只适用于正弦式交变电流；其他波形必须由相同发热效果定义有效值。"
+          "text": "该说法成立。"
         },
         {
           "label": "B",
-          "text": "数值代入：量纲正确但数值错误：该降压情境会算出 0.2 A，正确值是 5.0 A；正确关系由功率守恒决定，电流与匝数成反比。"
-        },
-        {
-          "label": "C",
-          "text": "数值代入：输电电压主要加在用户负载和输电系统上，不是全部加在输电线电阻上。"
-        },
-        {
-          "label": "D",
-          "text": "数值代入：多出的 2 没有量纲，所以错误式量纲完全正确。"
+          "text": "该说法不成立。"
         }
       ],
-      "correct_answer": "A",
-      "explanation": "√(2) 关系只适用于正弦式交变电流；其他波形必须由相同发热效果定义有效值。这是适用条件判断，标注人工审核。",
+      "correct_answer": "B",
+      "explanation": "√(2) 关系只适用于正弦式交变电流；其他波形必须由相同发热效果定义有效值。这是适用条件判断，标注人工审核。\n知识点条件：有效值不是一段时间内瞬时值的算术平均；正弦交变电流一周期的代数平均值为零，却仍能持续发热。只有正弦式交变电流的峰值与有效值之间才是 √(2) 倍关系，方波等其他波形必须依据发热效果另算。电器铭牌、电压表和电流表的交流示数通常采用有效值。\n推导依据：让正弦交变电流与某一直流分别通过同一电阻，在相同时间内产生相同热量，这一直流数值定义为交变电流的有效值。；正弦电流平方在一个周期内的平均值是峰值平方的一半，因此 I<sub>有效</sub>²=I<sub>m</sub>²/2。；取非负平方根得到 I<sub>有效</sub>=I<sub>m</sub>/√(2)，电压同理得到 U<sub>有效</sub>=U<sub>m</sub>/√(2)。；这一结论依赖正弦波形，不能不加判断地用于任意周期电流。\n卡片公式各自的适用条件（不是本题共同前提）：\n正弦交变电压的有效值：电压随时间按正弦规律变化\n正弦交变电流的有效值：电流随时间按正弦规律变化",
       "error_type": "概念混淆",
       "judging": "teacher",
       "source_error_index": 1,
       "source_caught_by": "人工审核",
       "wrong_expr": null,
       "trap_test": null,
+      "level": "基础",
+      "learning_scope": "高中",
+      "answer_evidence": {
+        "kind": "teacher",
+        "claim_source": "wrong",
+        "reference_only": true,
+        "reason": "概念、操作或无法建立完整定量证据，教师确认条件与结论。"
+      },
       "review": {
         "confidence": "medium",
-        "checks": {
-          "answer_unique": true,
-          "distractors_plausible": true,
-          "stem_clear": true,
-          "no_cross_segment": true
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": false,
+          "no_answer_leak_in_options": true
         },
-        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。"
       }
     },
     {
@@ -188,42 +292,59 @@
       "point_id": "ac-03",
       "point_title": "正弦式交变电流的表达式与图像",
       "chapter": "第十五章 · 交变电流",
-      "stem": "【第十五章 · 交变电流 · 正弦式交变电流的表达式与图像】学生的错误做法：把任意计时起点都写成 u=U<sub>m</sub>·sin(ω·t)，忽略初相位。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "stem": "关于“正弦式交变电流的表达式与图像”，判断这一说法是否成立，并说明依据：\n只有从电压过零且沿正方向增大的时刻开始计时，初相位才为零。",
       "options": [
         {
           "label": "A",
-          "text": "数值代入：错误式量纲正确，只能靠数值实测抓住：峰值 141.421 V 时会算出 70.711 V，正确有效值是 100 V。"
+          "text": "该说法不成立。"
         },
         {
           "label": "B",
-          "text": "数值代入：量纲正确但数值错误：该降压情境会算出 0.2 A，正确值是 5.0 A；正确关系由功率守恒决定，电流与匝数成反比。"
-        },
-        {
-          "label": "C",
-          "text": "数值代入：输电电压主要加在用户负载和输电系统上，不是全部加在输电线电阻上。"
-        },
-        {
-          "label": "D",
-          "text": "概念混淆：只有从电压过零且沿正方向增大的时刻开始计时，初相位才为零。"
+          "text": "该说法成立。"
         }
       ],
-      "correct_answer": "D",
-      "explanation": "只有从电压过零且沿正方向增大的时刻开始计时，初相位才为零。换起点后应写入相应初相位，这需要结合题图人工判断。",
+      "correct_answer": "B",
+      "explanation": "只有从电压过零且沿正方向增大的时刻开始计时，初相位才为零。换起点后应写入相应初相位，这需要结合题图人工判断。\n知识点条件：表达式、图像和线圈位置描述的是同一个周期过程。读图时要区分瞬时值与峰值：纵坐标 u 是某一时刻的电压，U<sub>m</sub> 是整条曲线能达到的最大绝对值。若计时起点改变，表达式还需加入初相位；本知识点选择初相位为零的标准情形。\n推导依据：线圈匀速转动时，相位随时间均匀增加，初相位为零时 φ=ω·t。；旋转线圈产生的感应电动势按相位的正弦变化，因此 u=U<sub>m</sub>·sin(φ)。；代入 φ=ω·t 得 u=U<sub>m</sub>·sin(ω·t)。；当相位依次为 0、π/2、π、3·π/2、2·π 时，瞬时值依次为 0、U<sub>m</sub>、0、-U<sub>m</sub>、0。\n卡片公式各自的适用条件（不是本题共同前提）：\n正弦交变电压的瞬时值：从电压过零且沿正方向增大的时刻开始计时，初相位为零\n相位随时间的变化：角频率保持不变且初相位取零",
       "error_type": "概念混淆",
       "judging": "teacher",
       "source_error_index": 0,
       "source_caught_by": "人工审核",
       "wrong_expr": null,
       "trap_test": null,
+      "level": "基础",
+      "learning_scope": "高中",
+      "answer_evidence": {
+        "kind": "teacher",
+        "claim_source": "why",
+        "reference_only": true,
+        "reason": "概念、操作或无法建立完整定量证据，教师确认条件与结论。"
+      },
       "review": {
         "confidence": "medium",
-        "checks": {
-          "answer_unique": true,
-          "distractors_plausible": true,
-          "stem_clear": true,
-          "no_cross_segment": true
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": false,
+          "no_answer_leak_in_options": true
         },
-        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。"
       }
     },
     {
@@ -231,27 +352,19 @@
       "point_id": "ac-03",
       "point_title": "正弦式交变电流的表达式与图像",
       "chapter": "第十五章 · 交变电流",
-      "stem": "【第十五章 · 交变电流 · 正弦式交变电流的表达式与图像】学生的错误做法：把零相位的正弦表达式误写成余弦式 u=U<sub>m</sub>·cos(ω·t)（错误表达式：u = U<sub>m</sub>·cos(ω·t)）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "stem": "在“正弦式交变电流的表达式与图像”的模型下，U<sub>m</sub>（交变电压峰值）=100 V；ω（角频率）=314.159 rad/s；t（从规定零相位时刻开始的时间）=0.005 s。条件：从电压过零且沿正方向增大的时刻开始计时，初相位为零。求t 时刻交变电压的瞬时值（u）。这些数值是设计示例。",
       "options": [
         {
           "label": "A",
-          "text": "概念混淆：√(2) 关系只适用于正弦式交变电流；其他波形必须由相同发热效果定义有效值。"
+          "text": "100 V"
         },
         {
           "label": "B",
-          "text": "概念混淆：稳定直流建立后磁通量不再变化，副线圈没有持续感应电动势；原线圈还可能因电流过大而发热损坏。"
-        },
-        {
-          "label": "C",
-          "text": "数值代入：正弦与余弦的量纲完全相同，量纲检查无法发现相位错位。"
-        },
-        {
-          "label": "D",
-          "text": "概念混淆：感应电动势取决于磁通量的变化率，不取决于磁通量本身。"
+          "text": "-1.03412e-11 V"
         }
       ],
-      "correct_answer": "C",
-      "explanation": "正弦与余弦的量纲完全相同，量纲检查无法发现相位错位。四分之一周期时错误式给出 0 V，而正确瞬时值为 100 V。\n知识库校验证据：情境：四分之一周期；代入错误式：U<sub>m</sub>·cos(ω·t)；校验参照值：100.0。",
+      "correct_answer": "A",
+      "explanation": "使用正弦交变电压的瞬时值：U<sub>m</sub>·sin(ω·t)，代入得100 V。另一结果来自U<sub>m</sub>·cos(ω·t)，算得-1.03412e-11 V。\n正弦与余弦的量纲完全相同，量纲检查无法发现相位错位。四分之一周期时错误式给出 0 V，而正确瞬时值为 100 V。\n知识点条件：表达式、图像和线圈位置描述的是同一个周期过程。读图时要区分瞬时值与峰值：纵坐标 u 是某一时刻的电压，U<sub>m</sub> 是整条曲线能达到的最大绝对值。若计时起点改变，表达式还需加入初相位；本知识点选择初相位为零的标准情形。\n推导依据：线圈匀速转动时，相位随时间均匀增加，初相位为零时 φ=ω·t。；旋转线圈产生的感应电动势按相位的正弦变化，因此 u=U<sub>m</sub>·sin(φ)。；代入 φ=ω·t 得 u=U<sub>m</sub>·sin(ω·t)。；当相位依次为 0、π/2、π、3·π/2、2·π 时，瞬时值依次为 0、U<sub>m</sub>、0、-U<sub>m</sub>、0。\n卡片公式各自的适用条件（不是本题共同前提）：\n正弦交变电压的瞬时值：从电压过零且沿正方向增大的时刻开始计时，初相位为零\n相位随时间的变化：角频率保持不变且初相位取零",
       "error_type": "数值代入",
       "judging": "auto",
       "source_error_index": 1,
@@ -262,15 +375,58 @@
         "expr": "U_m*cos(omega*t)",
         "ref": 100.0
       },
+      "level": "基础",
+      "learning_scope": "高中",
+      "answer_evidence": {
+        "kind": "numeric",
+        "scenario": "四分之一周期",
+        "parameters": {
+          "u": 100.0,
+          "U_m": 100.0,
+          "omega": 314.159265359,
+          "t": 0.005,
+          "phi": 1.5707963268
+        },
+        "target": "u",
+        "unit": "V",
+        "reference": 100.0,
+        "correct_proof": {
+          "expression": "U_m*sin(omega*t)",
+          "formula": "正弦交变电压的瞬时值",
+          "value": 100.0,
+          "when": "从电压过零且沿正方向增大的时刻开始计时，初相位为零"
+        },
+        "distractor_expression": "U_m*cos(omega*t)",
+        "distractor_value": -1.0341155355510722e-11,
+        "dimension_matches": true,
+        "independent_evaluation": true
+      },
       "review": {
         "confidence": "medium",
-        "checks": {
-          "answer_unique": true,
-          "distractors_plausible": true,
-          "stem_clear": true,
-          "no_cross_segment": true
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": true,
+          "no_answer_leak_in_options": true
         },
-        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。"
       }
     },
     {
@@ -278,27 +434,19 @@
       "point_id": "ac-04",
       "point_title": "理想变压器",
       "chapter": "第十五章 · 交变电流",
-      "stem": "【第十五章 · 交变电流 · 理想变压器】学生的错误做法：认为理想变压器的电流也与匝数成正比，写成 I<sub>2</sub>=I<sub>1</sub>·N2/N1（错误表达式：I<sub>2</sub> = I<sub>1</sub>·N2/N1）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "stem": "在“理想变压器”的模型下，N1（原线圈匝数）=1000 1；N2（副线圈匝数）=200 1；I<sub>1</sub>（原线圈电流的有效值）=1 A。条件：理想变压器带有负载，输入功率等于输出功率。求副线圈电流的有效值（I<sub>2</sub>）。这些数值是设计示例。",
       "options": [
         {
           "label": "A",
-          "text": "概念混淆：√(2) 关系只适用于正弦式交变电流；其他波形必须由相同发热效果定义有效值。"
+          "text": "0.2 A"
         },
         {
           "label": "B",
-          "text": "数值代入：量纲正确但数值错误：该降压情境会算出 0.2 A，正确值是 5.0 A；正确关系由功率守恒决定，电流与匝数成反比。"
-        },
-        {
-          "label": "C",
-          "text": "概念混淆：感应电动势取决于磁通量的变化率，不取决于磁通量本身。"
-        },
-        {
-          "label": "D",
-          "text": "概念混淆：只有从电压过零且沿正方向增大的时刻开始计时，初相位才为零。"
+          "text": "5 A"
         }
       ],
       "correct_answer": "B",
-      "explanation": "量纲正确但数值错误：该降压情境会算出 0.2 A，正确值是 5.0 A；正确关系由功率守恒决定，电流与匝数成反比。\n知识库校验证据：情境：理想降压变压器；代入错误式：I<sub>1</sub>·N2/N1；校验参照值：5.0。",
+      "explanation": "使用理想变压器的电流关系：I<sub>1</sub>·N1/N2，代入得5 A。另一结果来自I<sub>1</sub>·N2/N1，算得0.2 A。\n量纲正确但数值错误：该降压情境会算出 0.2 A，正确值是 5.0 A；正确关系由功率守恒决定，电流与匝数成反比。\n知识点条件：变压器改变交变电压和电流，却不凭空创造能量。副线圈匝数少于原线圈时降压但增流；副线圈匝数多时升压但减流。电压比只由匝数比决定，而原线圈电流还会随副线圈负载改变。稳定直流不能产生持续变化的磁通量，因此普通变压器不能用稳定直流正常变压。\n推导依据：理想铁芯使原、副线圈每匝经历相同的磁通量变化率。；由法拉第定律，线圈电压与匝数成正比，因此 U<sub>1</sub>/U<sub>2</sub>=N1/N2。；理想变压器无能量损耗，输入功率等于输出功率：U<sub>1</sub>·I<sub>1</sub>=U<sub>2</sub>·I<sub>2</sub>。；把电压比代入功率关系，得到 I<sub>1</sub>/I<sub>2</sub>=N2/N1，即电流与匝数成反比。\n卡片公式各自的适用条件（不是本题共同前提）：\n理想变压器的电压关系：理想变压器正常接入交变电流，原副线圈磁通量变化相同\n理想变压器的电流关系：理想变压器带有负载，输入功率等于输出功率",
       "error_type": "数值代入",
       "judging": "auto",
       "source_error_index": 0,
@@ -309,15 +457,59 @@
         "expr": "I1*N2/N1",
         "ref": 5.0
       },
+      "level": "基础",
+      "learning_scope": "高中",
+      "answer_evidence": {
+        "kind": "numeric",
+        "scenario": "理想降压变压器",
+        "parameters": {
+          "U1": 220.0,
+          "U2": 44.0,
+          "N1": 1000,
+          "N2": 200,
+          "I1": 1.0,
+          "I2": 5.0
+        },
+        "target": "I2",
+        "unit": "A",
+        "reference": 5.0,
+        "correct_proof": {
+          "expression": "I1*N1/N2",
+          "formula": "理想变压器的电流关系",
+          "value": 5.0,
+          "when": "理想变压器带有负载，输入功率等于输出功率"
+        },
+        "distractor_expression": "I1*N2/N1",
+        "distractor_value": 0.2,
+        "dimension_matches": true,
+        "independent_evaluation": true
+      },
       "review": {
         "confidence": "medium",
-        "checks": {
-          "answer_unique": true,
-          "distractors_plausible": true,
-          "stem_clear": true,
-          "no_cross_segment": true
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": true,
+          "no_answer_leak_in_options": true
         },
-        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。"
       }
     },
     {
@@ -325,42 +517,59 @@
       "point_id": "ac-04",
       "point_title": "理想变压器",
       "chapter": "第十五章 · 交变电流",
-      "stem": "【第十五章 · 交变电流 · 理想变压器】学生的错误做法：把稳定直流接入普通变压器，认为仍能持续得到按匝数比变化的电压。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "stem": "关于“理想变压器”，判断这一说法是否成立，并说明依据：\n稳定直流建立后磁通量不再变化，副线圈没有持续感应电动势。",
       "options": [
         {
           "label": "A",
-          "text": "概念混淆：稳定直流建立后磁通量不再变化，副线圈没有持续感应电动势；原线圈还可能因电流过大而发热损坏。"
+          "text": "该说法不成立。"
         },
         {
           "label": "B",
-          "text": "数值代入：错误式量纲正确，只能靠数值实测抓住：峰值 141.421 V 时会算出 70.711 V，正确有效值是 100 V。"
-        },
-        {
-          "label": "C",
-          "text": "数值代入：输电电压主要加在用户负载和输电系统上，不是全部加在输电线电阻上。"
-        },
-        {
-          "label": "D",
-          "text": "数值代入：多出的 2 没有量纲，所以错误式量纲完全正确。"
+          "text": "该说法成立。"
         }
       ],
-      "correct_answer": "A",
-      "explanation": "稳定直流建立后磁通量不再变化，副线圈没有持续感应电动势；原线圈还可能因电流过大而发热损坏。这是适用条件判断，需人工审核。",
+      "correct_answer": "B",
+      "explanation": "稳定直流建立后磁通量不再变化，副线圈没有持续感应电动势；原线圈还可能因电流过大而发热损坏。这是适用条件判断，需人工审核。\n知识点条件：变压器改变交变电压和电流，却不凭空创造能量。副线圈匝数少于原线圈时降压但增流；副线圈匝数多时升压但减流。电压比只由匝数比决定，而原线圈电流还会随副线圈负载改变。稳定直流不能产生持续变化的磁通量，因此普通变压器不能用稳定直流正常变压。\n推导依据：理想铁芯使原、副线圈每匝经历相同的磁通量变化率。；由法拉第定律，线圈电压与匝数成正比，因此 U<sub>1</sub>/U<sub>2</sub>=N1/N2。；理想变压器无能量损耗，输入功率等于输出功率：U<sub>1</sub>·I<sub>1</sub>=U<sub>2</sub>·I<sub>2</sub>。；把电压比代入功率关系，得到 I<sub>1</sub>/I<sub>2</sub>=N2/N1，即电流与匝数成反比。\n卡片公式各自的适用条件（不是本题共同前提）：\n理想变压器的电压关系：理想变压器正常接入交变电流，原副线圈磁通量变化相同\n理想变压器的电流关系：理想变压器带有负载，输入功率等于输出功率",
       "error_type": "概念混淆",
       "judging": "teacher",
       "source_error_index": 1,
       "source_caught_by": "人工审核",
       "wrong_expr": null,
       "trap_test": null,
+      "level": "基础",
+      "learning_scope": "高中",
+      "answer_evidence": {
+        "kind": "teacher",
+        "claim_source": "why",
+        "reference_only": true,
+        "reason": "概念、操作或无法建立完整定量证据，教师确认条件与结论。"
+      },
       "review": {
         "confidence": "medium",
-        "checks": {
-          "answer_unique": true,
-          "distractors_plausible": true,
-          "stem_clear": true,
-          "no_cross_segment": true
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": false,
+          "no_answer_leak_in_options": true
         },
-        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。"
       }
     },
     {
@@ -368,27 +577,19 @@
       "point_id": "ac-05",
       "point_title": "远距离输电",
       "chapter": "第十五章 · 交变电流",
-      "stem": "【第十五章 · 交变电流 · 远距离输电】学生的错误做法：用输送电压直接除以线路电阻来求输电线电流，写成 I=U<sub>送</sub>/R（错误表达式：I = U<sub>送</sub>/R）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "stem": "在“远距离输电”的模型下，P<sub>送</sub>（输电系统要输送的有功功率）=1e+06 W；U<sub>送</sub>（输电电压的有效值）=100000 V；R（两根输电线的总电阻）=20 Ω。条件：用有效值描述且功率因数按高中理想模型取 1，U<sub>送</sub> 大于零。求输电线中的电流有效值（I）。这些数值是设计示例。",
       "options": [
         {
           "label": "A",
-          "text": "概念混淆：感应电动势取决于磁通量的变化率，不取决于磁通量本身。"
+          "text": "10 A"
         },
         {
           "label": "B",
-          "text": "概念混淆：只有从电压过零且沿正方向增大的时刻开始计时，初相位才为零。"
-        },
-        {
-          "label": "C",
-          "text": "概念混淆：√(2) 关系只适用于正弦式交变电流；其他波形必须由相同发热效果定义有效值。"
-        },
-        {
-          "label": "D",
-          "text": "数值代入：输电电压主要加在用户负载和输电系统上，不是全部加在输电线电阻上。"
+          "text": "5000 A"
         }
       ],
-      "correct_answer": "D",
-      "explanation": "输电电压主要加在用户负载和输电系统上，不是全部加在输电线电阻上。高压输电情境中错误式得 5000 A，而由输送功率确定的正确电流仅 10 A。\n知识库校验证据：情境：高压输电；代入错误式：U<sub>送</sub>/R；校验参照值：10.0。",
+      "correct_answer": "A",
+      "explanation": "使用输电线电流：P<sub>送</sub>/U<sub>送</sub>，代入得10 A。另一结果来自U<sub>送</sub>/R，算得5000 A。\n输电电压主要加在用户负载和输电系统上，不是全部加在输电线电阻上。高压输电情境中错误式得 5000 A，而由输送功率确定的正确电流仅 10 A。\n知识点条件：高压输电降低的是线路损耗，不是把电能“放大”。当输送功率一定时，电压提高到原来的 k 倍，电流降为 1/k，线路损耗降为 1/k²。减小线路电阻也能降损耗，但增加导线截面积会大量耗费金属，所以用变压器升高交流电压更经济。\n推导依据：在高中理想模型中，输送功率写成 P<sub>送</sub>=U<sub>送</sub>·I，移项得 I=P<sub>送</sub>/U<sub>送</sub>。；输电线可看作电阻，焦耳热功率为 ΔP=I²·R。；代入电流关系得 ΔP=P<sub>送</sub>²·R/U<sub>送</sub>²。；因此输送功率和线路电阻不变时，损耗与输电电压的平方成反比，这就是高压输电的定量依据。\n卡片公式各自的适用条件（不是本题共同前提）：\n输电线电流：用有效值描述且功率因数按高中理想模型取 1，U<sub>送</sub> 大于零\n输电线热损耗功率：以输电电流有效值计算两根输电线总电阻上的焦耳热功率",
       "error_type": "数值代入",
       "judging": "auto",
       "source_error_index": 0,
@@ -399,15 +600,58 @@
         "expr": "U_send/R",
         "ref": 10.0
       },
+      "level": "进阶",
+      "learning_scope": "高中",
+      "answer_evidence": {
+        "kind": "numeric",
+        "scenario": "高压输电",
+        "parameters": {
+          "P_send": 1000000.0,
+          "U_send": 100000.0,
+          "I": 10.0,
+          "R": 20.0,
+          "Delta_P": 2000.0
+        },
+        "target": "I",
+        "unit": "A",
+        "reference": 10.0,
+        "correct_proof": {
+          "expression": "P_send/U_send",
+          "formula": "输电线电流",
+          "value": 10.0,
+          "when": "用有效值描述且功率因数按高中理想模型取 1，U_send 大于零"
+        },
+        "distractor_expression": "U_send/R",
+        "distractor_value": 5000.0,
+        "dimension_matches": true,
+        "independent_evaluation": true
+      },
       "review": {
         "confidence": "medium",
-        "checks": {
-          "answer_unique": true,
-          "distractors_plausible": true,
-          "stem_clear": true,
-          "no_cross_segment": true
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": true,
+          "no_answer_leak_in_options": true
         },
-        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。"
       }
     },
     {
@@ -415,27 +659,19 @@
       "point_id": "ac-05",
       "point_title": "远距离输电",
       "chapter": "第十五章 · 交变电流",
-      "stem": "【第十五章 · 交变电流 · 远距离输电】学生的错误做法：认为输电电压提高两倍，线路损耗只减为一半（错误表达式：ΔP = P<sub>送</sub>·R/U<sub>送</sub>）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "stem": "在“远距离输电”中，以输电电流有效值计算两根输电线总电阻上的焦耳热功率。输电线因发热损失的功率的单位为W。下列哪一表达式的量纲与该目标量一致？",
       "options": [
         {
           "label": "A",
-          "text": "数值代入：错误式量纲正确，只能靠数值实测抓住：峰值 141.421 V 时会算出 70.711 V，正确有效值是 100 V。"
+          "text": "ΔP = P<sub>送</sub>·R/U<sub>送</sub>"
         },
         {
           "label": "B",
-          "text": "概念混淆：只有从电压过零且沿正方向增大的时刻开始计时，初相位才为零。"
-        },
-        {
-          "label": "C",
-          "text": "量纲一致性：功率一定时电流与电压成反比，而损耗又与电流平方成正比，所以电压加倍时损耗应降为四分之一。"
-        },
-        {
-          "label": "D",
-          "text": "概念混淆：感应电动势取决于磁通量的变化率，不取决于磁通量本身。"
+          "text": "ΔP = I²·R"
         }
       ],
-      "correct_answer": "C",
-      "explanation": "功率一定时电流与电压成反比，而损耗又与电流平方成正比，所以电压加倍时损耗应降为四分之一。错误式还存在量纲不一致。\n知识库校验证据：被测错误式：ΔP = P<sub>送</sub>·R/U<sub>送</sub>；左式量纲：M·L²·T⁻³；右式量纲：M·L²·T⁻³·I⁻¹；左右量纲不匹配；量纲校验说明：实际量纲检查得到等号左边为M·L²·T⁻³、右边为M·L²·T⁻³·I⁻¹；两边不是同一物理量，因此该等式不成立。；变化方向要求：mismatch；检验说明：实际量纲检查得到等号左边为M·L²·T⁻³、右边为M·L²·T⁻³·I⁻¹；两边不是同一物理量，因此该等式不成立。。",
+      "correct_answer": "B",
+      "explanation": "功率一定时电流与电压成反比，而损耗又与电流平方成正比，所以电压加倍时损耗应降为四分之一。错误式还存在量纲不一致。\n知识点条件：高压输电降低的是线路损耗，不是把电能“放大”。当输送功率一定时，电压提高到原来的 k 倍，电流降为 1/k，线路损耗降为 1/k²。减小线路电阻也能降损耗，但增加导线截面积会大量耗费金属，所以用变压器升高交流电压更经济。\n推导依据：在高中理想模型中，输送功率写成 P<sub>送</sub>=U<sub>送</sub>·I，移项得 I=P<sub>送</sub>/U<sub>送</sub>。；输电线可看作电阻，焦耳热功率为 ΔP=I²·R。；代入电流关系得 ΔP=P<sub>送</sub>²·R/U<sub>送</sub>²。；因此输送功率和线路电阻不变时，损耗与输电电压的平方成反比，这就是高压输电的定量依据。\n卡片公式各自的适用条件（不是本题共同前提）：\n输电线电流：用有效值描述且功率因数按高中理想模型取 1，U<sub>送</sub> 大于零\n输电线热损耗功率：以输电电流有效值计算两根输电线总电阻上的焦耳热功率",
       "error_type": "量纲一致性",
       "judging": "auto",
       "source_error_index": 1,
@@ -449,15 +685,42 @@
         "expect": "mismatch",
         "note": "实际量纲检查得到等号左边为M·L^2·T^-3、右边为M·L^2·T^-3·I^-1；两边不是同一物理量，因此该等式不成立。"
       },
+      "level": "进阶",
+      "learning_scope": "高中",
+      "answer_evidence": {
+        "kind": "dimension",
+        "target": "Delta_P",
+        "correct_expression": "Delta_P = I^2*R",
+        "distractor_expression": "Delta_P = P_send*R/U_send",
+        "target_dimension": "M·L^2·T^-3",
+        "distractor_dimension": "M·L^2·T^-3·I^-1"
+      },
       "review": {
         "confidence": "medium",
-        "checks": {
-          "answer_unique": true,
-          "distractors_plausible": true,
-          "stem_clear": true,
-          "no_cross_segment": true
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": true,
+          "no_answer_leak_in_options": true
         },
-        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。"
       }
     },
     {
@@ -465,27 +728,19 @@
       "point_id": "ac-06",
       "point_title": "电感与电容对交变电流的影响",
       "chapter": "第十五章 · 交变电流",
-      "stem": "【第十五章 · 交变电流 · 电感与电容对交变电流的影响】学生的错误做法：把感抗公式多乘一个系数 2，写成 X<sub>L</sub>=2·ω·L（错误表达式：X<sub>L</sub> = 2·ω·L）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "stem": "在“电感与电容对交变电流的影响”的模型下，ω（交变电流的角频率）=314.159 rad/s；L（电感器的自感系数）=0.2 H。条件：理想电感接入角频率为 ω 的正弦式交变电流。求理想电感对正弦交流的感抗（X<sub>L</sub>）。这些数值是设计示例。",
       "options": [
         {
           "label": "A",
-          "text": "概念混淆：√(2) 关系只适用于正弦式交变电流；其他波形必须由相同发热效果定义有效值。"
+          "text": "62.8319 Ω"
         },
         {
           "label": "B",
-          "text": "数值代入：多出的 2 没有量纲，所以错误式量纲完全正确。"
-        },
-        {
-          "label": "C",
-          "text": "概念混淆：感应电动势取决于磁通量的变化率，不取决于磁通量本身。"
-        },
-        {
-          "label": "D",
-          "text": "概念混淆：只有从电压过零且沿正方向增大的时刻开始计时，初相位才为零。"
+          "text": "125.664 Ω"
         }
       ],
-      "correct_answer": "B",
-      "explanation": "多出的 2 没有量纲，所以错误式量纲完全正确。工频情境中它会算出约 125.66 Ω，正确感抗约为 62.83 Ω，只能靠数值代入抓住。\n知识库校验证据：情境：工频电抗；代入错误式：2·ω·L；校验参照值：62.8318530718。",
+      "correct_answer": "A",
+      "explanation": "使用理想电感的感抗：ω·L，代入得62.8319 Ω。另一结果来自2·ω·L，算得125.664 Ω。\n多出的 2 没有量纲，所以错误式量纲完全正确。工频情境中它会算出约 125.66 Ω，正确感抗约为 62.83 Ω，只能靠数值代入抓住。\n知识点条件：电感具有“通直流、阻交流，通低频、阻高频”的趋势；电容在稳定直流电路中充电后相当于断路，却能让变化电流通过，表现为“隔直流、通交流，通高频、阻低频”。这里的“通”和“阻”都是相对说法，实际电流还取决于电路连接、电阻以及电源电压。\n推导依据：电感中的电流变化会产生自感电动势，变化越快，自感作用越强，因此感抗随角频率增大。；对正弦交流定量分析得到 X<sub>L</sub>=ω·L。；电容两端电压变化时持续充放电；频率越高，单位时间内充放电越频繁，交流越容易通过。；对正弦交流定量分析得到 X<sub>C</sub>=1/(ω·C<sub>容</sub>)，它与角频率和电容均成反比。\n卡片公式各自的适用条件（不是本题共同前提）：\n理想电感的感抗：理想电感接入角频率为 ω 的正弦式交变电流\n理想电容的容抗：理想电容接入角频率为 ω 的正弦式交变电流，ω 和 C<sub>容</sub> 均大于零",
       "error_type": "数值代入",
       "judging": "auto",
       "source_error_index": 0,
@@ -496,15 +751,58 @@
         "expr": "2*omega*L",
         "ref": 62.8318530718
       },
+      "level": "进阶",
+      "learning_scope": "高中",
+      "answer_evidence": {
+        "kind": "numeric",
+        "scenario": "工频电抗",
+        "parameters": {
+          "X_L": 62.8318530718,
+          "X_C": 31.8309886184,
+          "omega": 314.159265359,
+          "L": 0.2,
+          "C_cap": 0.0001
+        },
+        "target": "X_L",
+        "unit": "ohm",
+        "reference": 62.8318530718,
+        "correct_proof": {
+          "expression": "omega*L",
+          "formula": "理想电感的感抗",
+          "value": 62.831853071800005,
+          "when": "理想电感接入角频率为 omega 的正弦式交变电流"
+        },
+        "distractor_expression": "2*omega*L",
+        "distractor_value": 125.66370614360001,
+        "dimension_matches": true,
+        "independent_evaluation": true
+      },
       "review": {
         "confidence": "medium",
-        "checks": {
-          "answer_unique": true,
-          "distractors_plausible": true,
-          "stem_clear": true,
-          "no_cross_segment": true
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": true,
+          "no_answer_leak_in_options": true
         },
-        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。"
       }
     },
     {
@@ -512,27 +810,19 @@
       "point_id": "ac-06",
       "point_title": "电感与电容对交变电流的影响",
       "chapter": "第十五章 · 交变电流",
-      "stem": "【第十五章 · 交变电流 · 电感与电容对交变电流的影响】学生的错误做法：认为电容像普通电阻一样，频率越高阻碍越强，写成 X<sub>C</sub>=ω·C<sub>容</sub>（错误表达式：X<sub>C</sub> = ω·C<sub>容</sub>）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "stem": "在“电感与电容对交变电流的影响”中，理想电容接入角频率为 ω 的正弦式交变电流，ω 和 C<sub>容</sub> 均大于零。理想电容对正弦交流的容抗的单位为Ω。下列哪一表达式的量纲与该目标量一致？",
       "options": [
         {
           "label": "A",
-          "text": "量纲一致性：正确容抗与角频率成反比；频率加倍时容抗应从约 31.83 Ω 减至约 15.92 Ω。"
+          "text": "X<sub>C</sub> = ω·C<sub>容</sub>"
         },
         {
           "label": "B",
-          "text": "概念混淆：感应电动势取决于磁通量的变化率，不取决于磁通量本身。"
-        },
-        {
-          "label": "C",
-          "text": "数值代入：错误式量纲正确，只能靠数值实测抓住：峰值 141.421 V 时会算出 70.711 V，正确有效值是 100 V。"
-        },
-        {
-          "label": "D",
-          "text": "概念混淆：只有从电压过零且沿正方向增大的时刻开始计时，初相位才为零。"
+          "text": "X<sub>C</sub> = 1/(ω·C<sub>容</sub>)"
         }
       ],
-      "correct_answer": "A",
-      "explanation": "正确容抗与角频率成反比；频率加倍时容抗应从约 31.83 Ω 减至约 15.92 Ω。错误式量纲也不是欧姆。\n知识库校验证据：被测错误式：X<sub>C</sub> = ω·C<sub>容</sub>；左式量纲：M·L²·T⁻³·I⁻²；右式量纲：M⁻¹·L⁻²·T³·I²；左右量纲不匹配；量纲校验说明：实际量纲检查得到等号左边为M·L²·T⁻³·I⁻²、右边为M⁻¹·L⁻²·T³·I²；两边不是同一物理量，因此该等式不成立。；变化方向要求：mismatch；检验说明：实际量纲检查得到等号左边为M·L²·T⁻³·I⁻²、右边为M⁻¹·L⁻²·T³·I²；两边不是同一物理量，因此该等式不成立。。",
+      "correct_answer": "B",
+      "explanation": "正确容抗与角频率成反比；频率加倍时容抗应从约 31.83 Ω 减至约 15.92 Ω。错误式量纲也不是欧姆。\n知识点条件：电感具有“通直流、阻交流，通低频、阻高频”的趋势；电容在稳定直流电路中充电后相当于断路，却能让变化电流通过，表现为“隔直流、通交流，通高频、阻低频”。这里的“通”和“阻”都是相对说法，实际电流还取决于电路连接、电阻以及电源电压。\n推导依据：电感中的电流变化会产生自感电动势，变化越快，自感作用越强，因此感抗随角频率增大。；对正弦交流定量分析得到 X<sub>L</sub>=ω·L。；电容两端电压变化时持续充放电；频率越高，单位时间内充放电越频繁，交流越容易通过。；对正弦交流定量分析得到 X<sub>C</sub>=1/(ω·C<sub>容</sub>)，它与角频率和电容均成反比。\n卡片公式各自的适用条件（不是本题共同前提）：\n理想电感的感抗：理想电感接入角频率为 ω 的正弦式交变电流\n理想电容的容抗：理想电容接入角频率为 ω 的正弦式交变电流，ω 和 C<sub>容</sub> 均大于零",
       "error_type": "量纲一致性",
       "judging": "auto",
       "source_error_index": 1,
@@ -546,15 +836,42 @@
         "expect": "mismatch",
         "note": "实际量纲检查得到等号左边为M·L^2·T^-3·I^-2、右边为M^-1·L^-2·T^3·I^2；两边不是同一物理量，因此该等式不成立。"
       },
+      "level": "进阶",
+      "learning_scope": "高中",
+      "answer_evidence": {
+        "kind": "dimension",
+        "target": "X_C",
+        "correct_expression": "X_C = 1/(omega*C_cap)",
+        "distractor_expression": "X_C = omega*C_cap",
+        "target_dimension": "M·L^2·T^-3·I^-2",
+        "distractor_dimension": "M^-1·L^-2·T^3·I^2"
+      },
       "review": {
         "confidence": "medium",
-        "checks": {
-          "answer_unique": true,
-          "distractors_plausible": true,
-          "stem_clear": true,
-          "no_cross_segment": true
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": true,
+          "no_answer_leak_in_options": true
         },
-        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。"
       }
     },
     {
@@ -562,27 +879,19 @@
       "point_id": "ac-07",
       "point_title": "LC振荡电路：周期、相位与能量",
       "chapter": "第十五章 · 交变电流",
-      "stem": "【第十五章 · 交变电流 · LC振荡电路：周期、相位与能量】学生的错误做法：LC周期遗漏二倍圆周率中的二，周期算成一半（错误表达式：T = π·√(L·C)）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "stem": "在“LC振荡电路：周期、相位与能量”的模型下，L（电感）=0.1 H；C（电容）=1e-05 F。条件：理想电感和电容构成自由LC振荡回路，L、C&gt;0，忽略电阻损耗、辐射及外部驱动。。求理想振荡周期（T）。这些数值是设计示例。",
       "options": [
         {
           "label": "A",
-          "text": "概念混淆：感应电动势取决于磁通量的变化率，不取决于磁通量本身。"
+          "text": "0.00628319 s"
         },
         {
           "label": "B",
-          "text": "概念混淆：只有从电压过零且沿正方向增大的时刻开始计时，初相位才为零。"
-        },
-        {
-          "label": "C",
-          "text": "概念混淆：√(2) 关系只适用于正弦式交变电流；其他波形必须由相同发热效果定义有效值。"
-        },
-        {
-          "label": "D",
-          "text": "数值代入：角频率的倒数还须乘完整2π，不能写π√(LC)；该参数周期约6.283 ms，错式约3.142 ms。"
+          "text": "0.00314159 s"
         }
       ],
-      "correct_answer": "D",
-      "explanation": "角频率的倒数还须乘完整2π，不能写π√(LC)；该参数周期约6.283 ms，错式约3.142 ms。\n知识库校验证据：情境：电感甲；代入错误式：π·√(L·C)；校验参照值：0.006283185307179586。",
+      "correct_answer": "A",
+      "explanation": "使用理想LC周期：2·π·√(L·C)，代入得0.00628319 s。另一结果来自π·√(L·C)，算得0.00314159 s。\n角频率的倒数还须乘完整2π，不能写π√(LC)；该参数周期约6.283 ms，错式约3.142 ms。\n知识点条件：电容充电最大时电流为零，电容电场能最大；电容电荷为零时电流大小最大，磁场能最大。以电流流入选定正极板为正，电流为该板电荷的时间导数；取起始电荷最大，则电荷按余弦、电流按负正弦变化，两者相差四分之一周期。放电方向定义为正时电流符号相反，应说明约定。理想总能量守恒；实际电阻使能量耗散并形成阻尼，不能用无损模型断言真实振幅不变。\n推导依据：周期为2π×0.001 s≈6.283 ms，初始电流零、电场能0.5 mJ。；四分之一周期后电荷零、电流大小0.1 A，磁场能0.5 mJ。；电容充电最大时电流为零，电容电场能最大；电容电荷为零时电流大小最大，磁场能最大。\n卡片公式各自的适用条件（不是本题共同前提）：\n理想LC周期：理想电感和电容构成自由LC振荡回路，L、C&gt;0，忽略电阻损耗、辐射及外部驱动。\nLC角频率：同一理想自由LC回路，L、C恒定且为正，角频率单位rad/s。\n最大电场能：q<sub>0</sub>为该LC回路电容电荷量的振幅，C&gt;0；电流为零的电能最大阶段。\n最大磁场能：I<sub>0</sub>为同一LC回路电流振幅；电容电荷为零的磁能最大阶段，忽略损耗。",
       "error_type": "数值代入",
       "judging": "auto",
       "source_error_index": 0,
@@ -593,15 +902,61 @@
         "expr": "pi*sqrt(L*C)",
         "ref": 0.006283185307179586
       },
+      "level": "基础",
+      "learning_scope": "高中",
+      "answer_evidence": {
+        "kind": "numeric",
+        "scenario": "电感甲",
+        "parameters": {
+          "L": 0.1,
+          "C": 1e-05,
+          "q0": 0.0001,
+          "I0": 0.1,
+          "T": 0.006283185307179586,
+          "omega": 1000,
+          "Ee": 0.0005,
+          "Em": 0.0005
+        },
+        "target": "T",
+        "unit": "s",
+        "reference": 0.006283185307179586,
+        "correct_proof": {
+          "expression": "2*pi*sqrt(L*C)",
+          "formula": "理想LC周期",
+          "value": 0.006283185307179587,
+          "when": "理想电感和电容构成自由LC振荡回路，L、C>0，忽略电阻损耗、辐射及外部驱动。"
+        },
+        "distractor_expression": "pi*sqrt(L*C)",
+        "distractor_value": 0.0031415926535897933,
+        "dimension_matches": true,
+        "independent_evaluation": true
+      },
       "review": {
         "confidence": "medium",
-        "checks": {
-          "answer_unique": true,
-          "distractors_plausible": true,
-          "stem_clear": true,
-          "no_cross_segment": true
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": true,
+          "no_answer_leak_in_options": true
         },
-        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。"
       }
     },
     {
@@ -609,232 +964,2802 @@
       "point_id": "ac-07",
       "point_title": "LC振荡电路：周期、相位与能量",
       "chapter": "第十五章 · 交变电流",
-      "stem": "【第十五章 · 交变电流 · LC振荡电路：周期、相位与能量】学生的错误做法：电容电荷最大时电流也最大，或实际有电阻仍永远等幅。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "stem": "关于“LC振荡电路：周期、相位与能量”，判断这一说法是否成立，并说明依据：\n电荷极值处时间导数零，电流此时零。",
       "options": [
         {
           "label": "A",
-          "text": "数值代入：量纲正确但数值错误：该降压情境会算出 0.2 A，正确值是 5.0 A；正确关系由功率守恒决定，电流与匝数成反比。"
+          "text": "该说法不成立。"
         },
         {
           "label": "B",
-          "text": "数值代入：输电电压主要加在用户负载和输电系统上，不是全部加在输电线电阻上。"
-        },
-        {
-          "label": "C",
-          "text": "概念混淆：电荷极值处时间导数零，电流此时零；真实电阻产生热损失而衰减。"
-        },
-        {
-          "label": "D",
-          "text": "数值代入：错误式量纲正确，只能靠数值实测抓住：峰值 141.421 V 时会算出 70.711 V，正确有效值是 100 V。"
+          "text": "该说法成立。"
         }
       ],
-      "correct_answer": "C",
-      "explanation": "电荷极值处时间导数零，电流此时零；真实电阻产生热损失而衰减。相位符号还取决于选定电荷极板及电流方向。",
+      "correct_answer": "B",
+      "explanation": "电荷极值处时间导数零，电流此时零；真实电阻产生热损失而衰减。相位符号还取决于选定电荷极板及电流方向。\n知识点条件：电容充电最大时电流为零，电容电场能最大；电容电荷为零时电流大小最大，磁场能最大。以电流流入选定正极板为正，电流为该板电荷的时间导数；取起始电荷最大，则电荷按余弦、电流按负正弦变化，两者相差四分之一周期。放电方向定义为正时电流符号相反，应说明约定。理想总能量守恒；实际电阻使能量耗散并形成阻尼，不能用无损模型断言真实振幅不变。\n推导依据：周期为2π×0.001 s≈6.283 ms，初始电流零、电场能0.5 mJ。；四分之一周期后电荷零、电流大小0.1 A，磁场能0.5 mJ。；电容充电最大时电流为零，电容电场能最大；电容电荷为零时电流大小最大，磁场能最大。\n卡片公式各自的适用条件（不是本题共同前提）：\n理想LC周期：理想电感和电容构成自由LC振荡回路，L、C&gt;0，忽略电阻损耗、辐射及外部驱动。\nLC角频率：同一理想自由LC回路，L、C恒定且为正，角频率单位rad/s。\n最大电场能：q<sub>0</sub>为该LC回路电容电荷量的振幅，C&gt;0；电流为零的电能最大阶段。\n最大磁场能：I<sub>0</sub>为同一LC回路电流振幅；电容电荷为零的磁能最大阶段，忽略损耗。",
       "error_type": "概念混淆",
       "judging": "teacher",
       "source_error_index": 1,
       "source_caught_by": "人工审核",
       "wrong_expr": null,
       "trap_test": null,
+      "level": "基础",
+      "learning_scope": "高中",
+      "answer_evidence": {
+        "kind": "teacher",
+        "claim_source": "why",
+        "reference_only": true,
+        "reason": "概念、操作或无法建立完整定量证据，教师确认条件与结论。"
+      },
       "review": {
         "confidence": "medium",
-        "checks": {
-          "answer_unique": true,
-          "distractors_plausible": true,
-          "stem_clear": true,
-          "no_cross_segment": true
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": false,
+          "no_answer_leak_in_options": true
         },
-        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。"
       }
     }
   ],
   "skipped": [],
   "source_records": {
     "diagnostic-ac-01-1": {
-      "error": {
-        "wrong": "认为磁通量最大时，感应电动势也最大",
-        "why": "感应电动势取决于磁通量的变化率，不取决于磁通量本身。磁通量处在最大值时瞬时变化率为零，电动势也为零。这个相位判断需要结合图像人工审核。",
-        "caught_by": "人工审核"
+      "point": {
+        "id": "ac-01",
+        "title": "交变电流的产生",
+        "level": "基础",
+        "definition": "矩形线圈在匀强磁场中绕垂直于磁场的轴匀速转动时，穿过线圈的磁通量周期性变化，产生正弦式交变电动势。N 匝线圈的电动势峰值为 E_m=N*B*S*omega，转动角速度与频率满足 f=omega/(2*pi)。",
+        "meaning": "产生交变电流的本质仍是电磁感应。线圈平面与磁场垂直时磁通量最大，但磁通量变化率为零，感应电动势反而为零；线圈平面与磁场平行时磁通量为零，但变化率最大，电动势达到峰值。峰值随匝数、磁场强度、线圈面积和转速增大而增大。",
+        "symbols": {
+          "E_m": {
+            "desc": "正弦式交变电动势的峰值",
+            "unit": "V"
+          },
+          "N_turn": {
+            "desc": "串联线圈匝数",
+            "unit": "1"
+          },
+          "B": {
+            "desc": "匀强磁场的磁感应强度",
+            "unit": "T_"
+          },
+          "S_coil": {
+            "desc": "每匝线圈的有效面积",
+            "unit": "m^2"
+          },
+          "omega": {
+            "desc": "线圈转动的角速度",
+            "unit": "rad/s"
+          },
+          "f": {
+            "desc": "交变电流的频率",
+            "unit": "Hz"
+          },
+          "Phi": {
+            "desc": "穿过单匝线圈的磁通量",
+            "unit": "Wb"
+          }
+        },
+        "scenarios": {
+          "匀速转动线圈": {
+            "E_m": 100.0,
+            "N_turn": 100,
+            "B": 0.5,
+            "S_coil": 0.02,
+            "omega": 100.0,
+            "f": 15.9154943092
+          },
+          "转速加倍": {
+            "E_m": 200.0,
+            "N_turn": 100,
+            "B": 0.5,
+            "S_coil": 0.02,
+            "omega": 200.0,
+            "f": 31.8309886184
+          }
+        },
+        "formulas": [
+          {
+            "name": "旋转线圈电动势峰值",
+            "expr": "E_m = N_turn*B*S_coil*omega",
+            "when": "N_turn 匝线圈在匀强磁场中绕垂直于磁场的轴匀速转动，线圈面积和磁场均匀",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "匀速转动线圈",
+                "expr": "N_turn*B*S_coil*omega",
+                "ref": 100.0,
+                "note": "100×0.50×0.020×100=100 V，四个因子分步相乘独立核算。"
+              },
+              {
+                "type": "direction",
+                "scenario": "匀速转动线圈",
+                "var": "omega",
+                "lo": 10,
+                "hi": 500,
+                "expr": "N_turn*B*S_coil*omega",
+                "expect": "up",
+                "note": "其他量不变时，线圈转得越快，磁通量变化率越大，峰值越大。"
+              },
+              {
+                "type": "direction",
+                "scenario": "匀速转动线圈",
+                "var": "S_coil",
+                "lo": 0.001,
+                "hi": 0.1,
+                "expr": "N_turn*B*S_coil*omega",
+                "expect": "up",
+                "note": "匝数与转速不变时，每匝面积越大，电动势峰值越大。"
+              },
+              {
+                "type": "scan",
+                "scenario": "匀速转动线圈",
+                "var": "omega",
+                "lo": 0,
+                "hi": 1000000
+              }
+            ]
+          },
+          {
+            "name": "角速度与频率的关系",
+            "expr": "f = omega/(2*pi)",
+            "when": "线圈做匀速圆周转动，omega 用 rad/s 表示",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "匀速转动线圈",
+                "expr": "omega/(2*pi)",
+                "ref": 15.9154943092,
+                "note": "100÷(2π)≈15.9155 Hz。"
+              },
+              {
+                "type": "direction",
+                "scenario": "匀速转动线圈",
+                "var": "omega",
+                "lo": 1,
+                "hi": 1000,
+                "expr": "omega/(2*pi)",
+                "expect": "up",
+                "note": "角速度越大，每秒完成的周期数越多。"
+              },
+              {
+                "type": "consistency",
+                "scenario": "转速加倍",
+                "with": "ac-01|角速度与频率的关系",
+                "with_expr": "f",
+                "target": "交变电流的频率",
+                "note": "直接求本公式输出，与情境中另列的f设计基准核对；数据是设计示例，不是实测。用于核对定义、反算或边界值，不宣称不同物理原理互证。",
+                "verification_kind": "独立设计情境数据核对"
+              },
+              {
+                "type": "scan",
+                "scenario": "匀速转动线圈",
+                "var": "omega",
+                "lo": 0,
+                "hi": 1000000
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "线圈转动时，磁通量可写成 Phi=B*S_coil*cos(omega*t)。",
+          "由法拉第电磁感应定律，感应电动势与磁通量对时间的变化率有关；对余弦函数求变化率得到正弦变化。",
+          "N_turn 匝串联线圈的电动势相加，峰值为 E_m=N_turn*B*S_coil*omega。",
+          "转动一周相位增加 2*pi，因此 omega=2*pi*f，移项得 f=omega/(2*pi)。"
+        ],
+        "errors": [
+          {
+            "wrong": "认为磁通量最大时，感应电动势也最大",
+            "why": "感应电动势取决于磁通量的变化率，不取决于磁通量本身。磁通量处在最大值时瞬时变化率为零，电动势也为零。这个相位判断需要结合图像人工审核。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "计算多匝线圈的峰值时漏乘匝数，写成 E_m=B*S_coil*omega",
+            "wrong_expr": "E_m = B*S_coil*omega",
+            "why": "匝数是无量纲量，漏掉它后量纲仍然完全正确，量纲检查抓不到。此情境错误式只得到 1 V，100 匝串联线圈的正确峰值是 100 V。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "匀速转动线圈",
+              "expr": "B*S_coil*omega",
+              "ref": 100.0
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "100匝线圈在0.50 T匀强磁场中匀速转动，每匝面积0.020 m²，角速度100 rad/s；转轴位于线圈平面内且垂直磁场。求感应电动势峰值和频率。",
+          "solution": [
+            "由 E_m=N_turn*B*S_coil*omega。",
+            "E_m=100×0.50×0.020×100=100 V。",
+            "f=omega/(2*pi)=100/(2*pi)≈15.9 Hz。"
+          ],
+          "answer": "电动势峰值为 100 V，频率约为 15.9 Hz。"
+        },
+        "prereq": [
+          "ind-03"
+        ],
+        "next": [
+          "ac-02",
+          "ac-03"
+        ],
+        "tags": [
+          "交变电流",
+          "旋转线圈",
+          "峰值",
+          "频率"
+        ],
+        "learning_scope": "高中"
       },
-      "title": "交变电流的产生",
+      "error_index": 0,
       "chapter": "第十五章 · 交变电流"
     },
     "diagnostic-ac-01-2": {
-      "error": {
-        "wrong": "计算多匝线圈的峰值时漏乘匝数，写成 E_m=B*S_coil*omega",
-        "wrong_expr": "E_m = B*S_coil*omega",
-        "why": "匝数是无量纲量，漏掉它后量纲仍然完全正确，量纲检查抓不到。此情境错误式只得到 1 V，100 匝串联线圈的正确峰值是 100 V。",
-        "caught_by": "数值代入",
-        "trap_test": {
-          "scenario": "匀速转动线圈",
-          "expr": "B*S_coil*omega",
-          "ref": 100.0
-        }
+      "point": {
+        "id": "ac-01",
+        "title": "交变电流的产生",
+        "level": "基础",
+        "definition": "矩形线圈在匀强磁场中绕垂直于磁场的轴匀速转动时，穿过线圈的磁通量周期性变化，产生正弦式交变电动势。N 匝线圈的电动势峰值为 E_m=N*B*S*omega，转动角速度与频率满足 f=omega/(2*pi)。",
+        "meaning": "产生交变电流的本质仍是电磁感应。线圈平面与磁场垂直时磁通量最大，但磁通量变化率为零，感应电动势反而为零；线圈平面与磁场平行时磁通量为零，但变化率最大，电动势达到峰值。峰值随匝数、磁场强度、线圈面积和转速增大而增大。",
+        "symbols": {
+          "E_m": {
+            "desc": "正弦式交变电动势的峰值",
+            "unit": "V"
+          },
+          "N_turn": {
+            "desc": "串联线圈匝数",
+            "unit": "1"
+          },
+          "B": {
+            "desc": "匀强磁场的磁感应强度",
+            "unit": "T_"
+          },
+          "S_coil": {
+            "desc": "每匝线圈的有效面积",
+            "unit": "m^2"
+          },
+          "omega": {
+            "desc": "线圈转动的角速度",
+            "unit": "rad/s"
+          },
+          "f": {
+            "desc": "交变电流的频率",
+            "unit": "Hz"
+          },
+          "Phi": {
+            "desc": "穿过单匝线圈的磁通量",
+            "unit": "Wb"
+          }
+        },
+        "scenarios": {
+          "匀速转动线圈": {
+            "E_m": 100.0,
+            "N_turn": 100,
+            "B": 0.5,
+            "S_coil": 0.02,
+            "omega": 100.0,
+            "f": 15.9154943092
+          },
+          "转速加倍": {
+            "E_m": 200.0,
+            "N_turn": 100,
+            "B": 0.5,
+            "S_coil": 0.02,
+            "omega": 200.0,
+            "f": 31.8309886184
+          }
+        },
+        "formulas": [
+          {
+            "name": "旋转线圈电动势峰值",
+            "expr": "E_m = N_turn*B*S_coil*omega",
+            "when": "N_turn 匝线圈在匀强磁场中绕垂直于磁场的轴匀速转动，线圈面积和磁场均匀",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "匀速转动线圈",
+                "expr": "N_turn*B*S_coil*omega",
+                "ref": 100.0,
+                "note": "100×0.50×0.020×100=100 V，四个因子分步相乘独立核算。"
+              },
+              {
+                "type": "direction",
+                "scenario": "匀速转动线圈",
+                "var": "omega",
+                "lo": 10,
+                "hi": 500,
+                "expr": "N_turn*B*S_coil*omega",
+                "expect": "up",
+                "note": "其他量不变时，线圈转得越快，磁通量变化率越大，峰值越大。"
+              },
+              {
+                "type": "direction",
+                "scenario": "匀速转动线圈",
+                "var": "S_coil",
+                "lo": 0.001,
+                "hi": 0.1,
+                "expr": "N_turn*B*S_coil*omega",
+                "expect": "up",
+                "note": "匝数与转速不变时，每匝面积越大，电动势峰值越大。"
+              },
+              {
+                "type": "scan",
+                "scenario": "匀速转动线圈",
+                "var": "omega",
+                "lo": 0,
+                "hi": 1000000
+              }
+            ]
+          },
+          {
+            "name": "角速度与频率的关系",
+            "expr": "f = omega/(2*pi)",
+            "when": "线圈做匀速圆周转动，omega 用 rad/s 表示",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "匀速转动线圈",
+                "expr": "omega/(2*pi)",
+                "ref": 15.9154943092,
+                "note": "100÷(2π)≈15.9155 Hz。"
+              },
+              {
+                "type": "direction",
+                "scenario": "匀速转动线圈",
+                "var": "omega",
+                "lo": 1,
+                "hi": 1000,
+                "expr": "omega/(2*pi)",
+                "expect": "up",
+                "note": "角速度越大，每秒完成的周期数越多。"
+              },
+              {
+                "type": "consistency",
+                "scenario": "转速加倍",
+                "with": "ac-01|角速度与频率的关系",
+                "with_expr": "f",
+                "target": "交变电流的频率",
+                "note": "直接求本公式输出，与情境中另列的f设计基准核对；数据是设计示例，不是实测。用于核对定义、反算或边界值，不宣称不同物理原理互证。",
+                "verification_kind": "独立设计情境数据核对"
+              },
+              {
+                "type": "scan",
+                "scenario": "匀速转动线圈",
+                "var": "omega",
+                "lo": 0,
+                "hi": 1000000
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "线圈转动时，磁通量可写成 Phi=B*S_coil*cos(omega*t)。",
+          "由法拉第电磁感应定律，感应电动势与磁通量对时间的变化率有关；对余弦函数求变化率得到正弦变化。",
+          "N_turn 匝串联线圈的电动势相加，峰值为 E_m=N_turn*B*S_coil*omega。",
+          "转动一周相位增加 2*pi，因此 omega=2*pi*f，移项得 f=omega/(2*pi)。"
+        ],
+        "errors": [
+          {
+            "wrong": "认为磁通量最大时，感应电动势也最大",
+            "why": "感应电动势取决于磁通量的变化率，不取决于磁通量本身。磁通量处在最大值时瞬时变化率为零，电动势也为零。这个相位判断需要结合图像人工审核。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "计算多匝线圈的峰值时漏乘匝数，写成 E_m=B*S_coil*omega",
+            "wrong_expr": "E_m = B*S_coil*omega",
+            "why": "匝数是无量纲量，漏掉它后量纲仍然完全正确，量纲检查抓不到。此情境错误式只得到 1 V，100 匝串联线圈的正确峰值是 100 V。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "匀速转动线圈",
+              "expr": "B*S_coil*omega",
+              "ref": 100.0
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "100匝线圈在0.50 T匀强磁场中匀速转动，每匝面积0.020 m²，角速度100 rad/s；转轴位于线圈平面内且垂直磁场。求感应电动势峰值和频率。",
+          "solution": [
+            "由 E_m=N_turn*B*S_coil*omega。",
+            "E_m=100×0.50×0.020×100=100 V。",
+            "f=omega/(2*pi)=100/(2*pi)≈15.9 Hz。"
+          ],
+          "answer": "电动势峰值为 100 V，频率约为 15.9 Hz。"
+        },
+        "prereq": [
+          "ind-03"
+        ],
+        "next": [
+          "ac-02",
+          "ac-03"
+        ],
+        "tags": [
+          "交变电流",
+          "旋转线圈",
+          "峰值",
+          "频率"
+        ],
+        "learning_scope": "高中"
       },
-      "title": "交变电流的产生",
+      "error_index": 1,
       "chapter": "第十五章 · 交变电流"
     },
     "diagnostic-ac-02-1": {
-      "error": {
-        "wrong": "把正弦交变电压的有效值当成峰值的一半，写成 U_eff=U_m/2",
-        "wrong_expr": "U_eff = U_m/2",
-        "why": "错误式量纲正确，只能靠数值实测抓住：峰值 141.421 V 时会算出 70.711 V，正确有效值是 100 V。",
-        "caught_by": "数值代入",
-        "trap_test": {
-          "scenario": "正弦交流用电器",
-          "expr": "U_m/2",
-          "ref": 100.0
-        }
+      "point": {
+        "id": "ac-02",
+        "title": "交变电流的峰值、有效值、周期与频率",
+        "level": "基础",
+        "definition": "交变电流在一个周期内方向和大小都可能改变。正弦式交变电压、电流的有效值分别为 U_eff=U_m/sqrt(2)、I_eff=I_m/sqrt(2)。有效值依据相同时间内与直流产生相同焦耳热来定义；日常所说的交流电压和电流通常指有效值。",
+        "meaning": "有效值不是一段时间内瞬时值的算术平均；正弦交变电流一周期的代数平均值为零，却仍能持续发热。只有正弦式交变电流的峰值与有效值之间才是 sqrt(2) 倍关系，方波等其他波形必须依据发热效果另算。电器铭牌、电压表和电流表的交流示数通常采用有效值。",
+        "symbols": {
+          "U_eff": {
+            "desc": "正弦交变电压的有效值",
+            "unit": "V"
+          },
+          "U_m": {
+            "desc": "正弦交变电压的峰值",
+            "unit": "V"
+          },
+          "I_eff": {
+            "desc": "正弦交变电流的有效值",
+            "unit": "A"
+          },
+          "I_m": {
+            "desc": "正弦交变电流的峰值",
+            "unit": "A"
+          }
+        },
+        "scenarios": {
+          "正弦交流用电器": {
+            "U_eff": 100.0,
+            "U_m": 141.4213562373,
+            "I_eff": 2.0,
+            "I_m": 2.8284271247
+          },
+          "峰值加倍": {
+            "U_eff": 200.0,
+            "U_m": 282.8427124746,
+            "I_eff": 4.0,
+            "I_m": 5.6568542495
+          }
+        },
+        "formulas": [
+          {
+            "name": "正弦交变电压的有效值",
+            "expr": "U_eff = U_m/sqrt(2)",
+            "when": "电压随时间按正弦规律变化",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "正弦交流用电器",
+                "expr": "U_m/sqrt(2)",
+                "ref": 100.0,
+                "note": "141.421356…÷sqrt(2)=100 V。"
+              },
+              {
+                "type": "direction",
+                "scenario": "正弦交流用电器",
+                "var": "U_m",
+                "lo": 0,
+                "hi": 1000,
+                "expr": "U_m/sqrt(2)",
+                "expect": "up",
+                "note": "同为正弦波时，峰值越大，有效值越大。"
+              },
+              {
+                "type": "compare",
+                "scenario": "正弦交流用电器",
+                "expr": "U_m/sqrt(2)",
+                "op": "<",
+                "vs": "U_m",
+                "note": "非零正弦电压的有效值小于峰值。"
+              },
+              {
+                "type": "scan",
+                "scenario": "正弦交流用电器",
+                "var": "U_m",
+                "lo": 0,
+                "hi": 1000000
+              }
+            ]
+          },
+          {
+            "name": "正弦交变电流的有效值",
+            "expr": "I_eff = I_m/sqrt(2)",
+            "when": "电流随时间按正弦规律变化",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "正弦交流用电器",
+                "expr": "I_m/sqrt(2)",
+                "ref": 2.0,
+                "note": "2.828427…÷sqrt(2)=2.0 A。"
+              },
+              {
+                "type": "direction",
+                "scenario": "正弦交流用电器",
+                "var": "I_m",
+                "lo": 0,
+                "hi": 100,
+                "expr": "I_m/sqrt(2)",
+                "expect": "up",
+                "note": "同为正弦波时，电流峰值越大，有效值越大。"
+              },
+              {
+                "type": "consistency",
+                "scenario": "正弦交流用电器",
+                "with": "ac-02|正弦交变电流的有效值",
+                "with_expr": "I_eff",
+                "target": "正弦交变电流的有效值",
+                "note": "直接求本公式输出，与情境中另列的I_eff设计基准核对；数据是设计示例，不是实测。用于核对定义、反算或边界值，不宣称不同物理原理互证。",
+                "verification_kind": "独立设计情境数据核对"
+              },
+              {
+                "type": "scan",
+                "scenario": "正弦交流用电器",
+                "var": "I_m",
+                "lo": 0,
+                "hi": 1000000
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "让正弦交变电流与某一直流分别通过同一电阻，在相同时间内产生相同热量，这一直流数值定义为交变电流的有效值。",
+          "正弦电流平方在一个周期内的平均值是峰值平方的一半，因此 I_eff²=I_m²/2。",
+          "取非负平方根得到 I_eff=I_m/sqrt(2)，电压同理得到 U_eff=U_m/sqrt(2)。",
+          "这一结论依赖正弦波形，不能不加判断地用于任意周期电流。"
+        ],
+        "errors": [
+          {
+            "wrong": "把正弦交变电压的有效值当成峰值的一半，写成 U_eff=U_m/2",
+            "wrong_expr": "U_eff = U_m/2",
+            "why": "错误式量纲正确，只能靠数值实测抓住：峰值 141.421 V 时会算出 70.711 V，正确有效值是 100 V。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "正弦交流用电器",
+              "expr": "U_m/2",
+              "ref": 100.0
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "认为任何周期交变电流都满足有效值等于峰值除以 sqrt(2)",
+            "why": "sqrt(2) 关系只适用于正弦式交变电流；其他波形必须由相同发热效果定义有效值。这是适用条件判断，标注人工审核。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "某正弦式交变电压峰值为 141.4 V，电流峰值为 2.83 A。求电压和电流的有效值。",
+          "solution": [
+            "正弦电压有效值 U_eff=U_m/sqrt(2)。",
+            "U_eff≈141.4÷1.414≈100 V。",
+            "正弦电流有效值 I_eff=I_m/sqrt(2)≈2.83÷1.414≈2.00 A。"
+          ],
+          "answer": "电压有效值约为 100 V，电流有效值约为 2.00 A。"
+        },
+        "prereq": [
+          "ac-01",
+          "dc-04"
+        ],
+        "next": [
+          "ac-03",
+          "ac-04"
+        ],
+        "tags": [
+          "有效值",
+          "峰值",
+          "正弦交流"
+        ],
+        "learning_scope": "高中"
       },
-      "title": "交变电流的峰值、有效值、周期与频率",
+      "error_index": 0,
       "chapter": "第十五章 · 交变电流"
     },
     "diagnostic-ac-02-2": {
-      "error": {
-        "wrong": "认为任何周期交变电流都满足有效值等于峰值除以 sqrt(2)",
-        "why": "sqrt(2) 关系只适用于正弦式交变电流；其他波形必须由相同发热效果定义有效值。这是适用条件判断，标注人工审核。",
-        "caught_by": "人工审核"
+      "point": {
+        "id": "ac-02",
+        "title": "交变电流的峰值、有效值、周期与频率",
+        "level": "基础",
+        "definition": "交变电流在一个周期内方向和大小都可能改变。正弦式交变电压、电流的有效值分别为 U_eff=U_m/sqrt(2)、I_eff=I_m/sqrt(2)。有效值依据相同时间内与直流产生相同焦耳热来定义；日常所说的交流电压和电流通常指有效值。",
+        "meaning": "有效值不是一段时间内瞬时值的算术平均；正弦交变电流一周期的代数平均值为零，却仍能持续发热。只有正弦式交变电流的峰值与有效值之间才是 sqrt(2) 倍关系，方波等其他波形必须依据发热效果另算。电器铭牌、电压表和电流表的交流示数通常采用有效值。",
+        "symbols": {
+          "U_eff": {
+            "desc": "正弦交变电压的有效值",
+            "unit": "V"
+          },
+          "U_m": {
+            "desc": "正弦交变电压的峰值",
+            "unit": "V"
+          },
+          "I_eff": {
+            "desc": "正弦交变电流的有效值",
+            "unit": "A"
+          },
+          "I_m": {
+            "desc": "正弦交变电流的峰值",
+            "unit": "A"
+          }
+        },
+        "scenarios": {
+          "正弦交流用电器": {
+            "U_eff": 100.0,
+            "U_m": 141.4213562373,
+            "I_eff": 2.0,
+            "I_m": 2.8284271247
+          },
+          "峰值加倍": {
+            "U_eff": 200.0,
+            "U_m": 282.8427124746,
+            "I_eff": 4.0,
+            "I_m": 5.6568542495
+          }
+        },
+        "formulas": [
+          {
+            "name": "正弦交变电压的有效值",
+            "expr": "U_eff = U_m/sqrt(2)",
+            "when": "电压随时间按正弦规律变化",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "正弦交流用电器",
+                "expr": "U_m/sqrt(2)",
+                "ref": 100.0,
+                "note": "141.421356…÷sqrt(2)=100 V。"
+              },
+              {
+                "type": "direction",
+                "scenario": "正弦交流用电器",
+                "var": "U_m",
+                "lo": 0,
+                "hi": 1000,
+                "expr": "U_m/sqrt(2)",
+                "expect": "up",
+                "note": "同为正弦波时，峰值越大，有效值越大。"
+              },
+              {
+                "type": "compare",
+                "scenario": "正弦交流用电器",
+                "expr": "U_m/sqrt(2)",
+                "op": "<",
+                "vs": "U_m",
+                "note": "非零正弦电压的有效值小于峰值。"
+              },
+              {
+                "type": "scan",
+                "scenario": "正弦交流用电器",
+                "var": "U_m",
+                "lo": 0,
+                "hi": 1000000
+              }
+            ]
+          },
+          {
+            "name": "正弦交变电流的有效值",
+            "expr": "I_eff = I_m/sqrt(2)",
+            "when": "电流随时间按正弦规律变化",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "正弦交流用电器",
+                "expr": "I_m/sqrt(2)",
+                "ref": 2.0,
+                "note": "2.828427…÷sqrt(2)=2.0 A。"
+              },
+              {
+                "type": "direction",
+                "scenario": "正弦交流用电器",
+                "var": "I_m",
+                "lo": 0,
+                "hi": 100,
+                "expr": "I_m/sqrt(2)",
+                "expect": "up",
+                "note": "同为正弦波时，电流峰值越大，有效值越大。"
+              },
+              {
+                "type": "consistency",
+                "scenario": "正弦交流用电器",
+                "with": "ac-02|正弦交变电流的有效值",
+                "with_expr": "I_eff",
+                "target": "正弦交变电流的有效值",
+                "note": "直接求本公式输出，与情境中另列的I_eff设计基准核对；数据是设计示例，不是实测。用于核对定义、反算或边界值，不宣称不同物理原理互证。",
+                "verification_kind": "独立设计情境数据核对"
+              },
+              {
+                "type": "scan",
+                "scenario": "正弦交流用电器",
+                "var": "I_m",
+                "lo": 0,
+                "hi": 1000000
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "让正弦交变电流与某一直流分别通过同一电阻，在相同时间内产生相同热量，这一直流数值定义为交变电流的有效值。",
+          "正弦电流平方在一个周期内的平均值是峰值平方的一半，因此 I_eff²=I_m²/2。",
+          "取非负平方根得到 I_eff=I_m/sqrt(2)，电压同理得到 U_eff=U_m/sqrt(2)。",
+          "这一结论依赖正弦波形，不能不加判断地用于任意周期电流。"
+        ],
+        "errors": [
+          {
+            "wrong": "把正弦交变电压的有效值当成峰值的一半，写成 U_eff=U_m/2",
+            "wrong_expr": "U_eff = U_m/2",
+            "why": "错误式量纲正确，只能靠数值实测抓住：峰值 141.421 V 时会算出 70.711 V，正确有效值是 100 V。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "正弦交流用电器",
+              "expr": "U_m/2",
+              "ref": 100.0
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "认为任何周期交变电流都满足有效值等于峰值除以 sqrt(2)",
+            "why": "sqrt(2) 关系只适用于正弦式交变电流；其他波形必须由相同发热效果定义有效值。这是适用条件判断，标注人工审核。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "某正弦式交变电压峰值为 141.4 V，电流峰值为 2.83 A。求电压和电流的有效值。",
+          "solution": [
+            "正弦电压有效值 U_eff=U_m/sqrt(2)。",
+            "U_eff≈141.4÷1.414≈100 V。",
+            "正弦电流有效值 I_eff=I_m/sqrt(2)≈2.83÷1.414≈2.00 A。"
+          ],
+          "answer": "电压有效值约为 100 V，电流有效值约为 2.00 A。"
+        },
+        "prereq": [
+          "ac-01",
+          "dc-04"
+        ],
+        "next": [
+          "ac-03",
+          "ac-04"
+        ],
+        "tags": [
+          "有效值",
+          "峰值",
+          "正弦交流"
+        ],
+        "learning_scope": "高中"
       },
-      "title": "交变电流的峰值、有效值、周期与频率",
+      "error_index": 1,
       "chapter": "第十五章 · 交变电流"
     },
     "diagnostic-ac-03-1": {
-      "error": {
-        "wrong": "把任意计时起点都写成 u=U_m*sin(omega*t)，忽略初相位",
-        "why": "只有从电压过零且沿正方向增大的时刻开始计时，初相位才为零。换起点后应写入相应初相位，这需要结合题图人工判断。",
-        "caught_by": "人工审核"
+      "point": {
+        "id": "ac-03",
+        "title": "正弦式交变电流的表达式与图像",
+        "level": "基础",
+        "definition": "若从电压由零沿正方向增大的时刻开始计时，正弦式交变电压可写成 u=U_m*sin(omega*t)。其中相位 phi=omega*t 决定该时刻在一个周期中的位置；图像的振幅是 U_m，相邻同向重复状态的时间间隔是周期。",
+        "meaning": "表达式、图像和线圈位置描述的是同一个周期过程。读图时要区分瞬时值与峰值：纵坐标 u 是某一时刻的电压，U_m 是整条曲线能达到的最大绝对值。若计时起点改变，表达式还需加入初相位；本知识点选择初相位为零的标准情形。",
+        "symbols": {
+          "u": {
+            "desc": "t 时刻交变电压的瞬时值",
+            "unit": "V"
+          },
+          "U_m": {
+            "desc": "交变电压峰值",
+            "unit": "V"
+          },
+          "omega": {
+            "desc": "角频率",
+            "unit": "rad/s"
+          },
+          "t": {
+            "desc": "从规定零相位时刻开始的时间",
+            "unit": "s"
+          },
+          "phi": {
+            "desc": "相位",
+            "unit": "rad"
+          }
+        },
+        "scenarios": {
+          "四分之一周期": {
+            "u": 100.0,
+            "U_m": 100.0,
+            "omega": 314.159265359,
+            "t": 0.005,
+            "phi": 1.5707963268
+          },
+          "半周期": {
+            "u": 0.0,
+            "U_m": 100.0,
+            "omega": 314.159265359,
+            "t": 0.01,
+            "phi": 3.1415926536
+          }
+        },
+        "formulas": [
+          {
+            "name": "正弦交变电压的瞬时值",
+            "expr": "u = U_m*sin(omega*t)",
+            "when": "从电压过零且沿正方向增大的时刻开始计时，初相位为零",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "四分之一周期",
+                "expr": "U_m*sin(omega*t)",
+                "ref": 100.0,
+                "note": "50 Hz 时四分之一周期为 0.005 s，相位为 π/2，sin(π/2)=1，所以 u=100 V。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "半周期",
+                "expr": "U_m*sin(omega*t)",
+                "ref": 0.0,
+                "note": "0.010 s 对应相位 π，sin(π)=0，瞬时电压回到零。"
+              },
+              {
+                "type": "direction",
+                "scenario": "四分之一周期",
+                "var": "t",
+                "lo": 0,
+                "hi": 0.005,
+                "expr": "U_m*sin(omega*t)",
+                "expect": "up",
+                "note": "从零相位到四分之一周期，正弦电压由 0 单调升至峰值。"
+              },
+              {
+                "type": "scan",
+                "scenario": "四分之一周期",
+                "var": "t",
+                "lo": 0,
+                "hi": 0.02
+              }
+            ]
+          },
+          {
+            "name": "相位随时间的变化",
+            "expr": "phi = omega*t",
+            "when": "角频率保持不变且初相位取零",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "四分之一周期",
+                "expr": "omega*t",
+                "ref": 1.5707963268,
+                "note": "314.159265…×0.005≈1.570796 rad，即 π/2。"
+              },
+              {
+                "type": "direction",
+                "scenario": "四分之一周期",
+                "var": "t",
+                "lo": 0,
+                "hi": 0.02,
+                "expr": "omega*t",
+                "expect": "up",
+                "note": "角频率为正时，时间推进，相位持续增大。"
+              },
+              {
+                "type": "consistency",
+                "scenario": "四分之一周期",
+                "with": "ac-03|相位随时间的变化",
+                "with_expr": "phi",
+                "target": "相位",
+                "note": "直接求本公式输出，与情境中另列的phi设计基准核对；数据是设计示例，不是实测。用于核对定义、反算或边界值，不宣称不同物理原理互证。",
+                "verification_kind": "独立设计情境数据核对"
+              },
+              {
+                "type": "scan",
+                "scenario": "四分之一周期",
+                "var": "t",
+                "lo": 0,
+                "hi": 1000000
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "线圈匀速转动时，相位随时间均匀增加，初相位为零时 phi=omega*t。",
+          "旋转线圈产生的感应电动势按相位的正弦变化，因此 u=U_m*sin(phi)。",
+          "代入 phi=omega*t 得 u=U_m*sin(omega*t)。",
+          "当相位依次为 0、pi/2、pi、3*pi/2、2*pi 时，瞬时值依次为 0、U_m、0、-U_m、0。"
+        ],
+        "errors": [
+          {
+            "wrong": "把任意计时起点都写成 u=U_m*sin(omega*t)，忽略初相位",
+            "why": "只有从电压过零且沿正方向增大的时刻开始计时，初相位才为零。换起点后应写入相应初相位，这需要结合题图人工判断。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "把零相位的正弦表达式误写成余弦式 u=U_m*cos(omega*t)",
+            "wrong_expr": "u = U_m*cos(omega*t)",
+            "why": "正弦与余弦的量纲完全相同，量纲检查无法发现相位错位。四分之一周期时错误式给出 0 V，而正确瞬时值为 100 V。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "四分之一周期",
+              "expr": "U_m*cos(omega*t)",
+              "ref": 100.0
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "某正弦交变电压 u=100*sin(100*pi*t) V。从计时开始经过 0.005 s，求相位和瞬时电压。",
+          "solution": [
+            "角频率 omega=100*pi rad/s。",
+            "相位 phi=omega*t=100*pi×0.005=pi/2。",
+            "u=100*sin(pi/2)=100 V。"
+          ],
+          "answer": "相位为 pi/2 rad，瞬时电压为 100 V。"
+        },
+        "prereq": [
+          "ac-01",
+          "ac-02"
+        ],
+        "next": [
+          "ac-04"
+        ],
+        "tags": [
+          "瞬时值",
+          "正弦图像",
+          "相位"
+        ],
+        "learning_scope": "高中"
       },
-      "title": "正弦式交变电流的表达式与图像",
+      "error_index": 0,
       "chapter": "第十五章 · 交变电流"
     },
     "diagnostic-ac-03-2": {
-      "error": {
-        "wrong": "把零相位的正弦表达式误写成余弦式 u=U_m*cos(omega*t)",
-        "wrong_expr": "u = U_m*cos(omega*t)",
-        "why": "正弦与余弦的量纲完全相同，量纲检查无法发现相位错位。四分之一周期时错误式给出 0 V，而正确瞬时值为 100 V。",
-        "caught_by": "数值代入",
-        "trap_test": {
-          "scenario": "四分之一周期",
-          "expr": "U_m*cos(omega*t)",
-          "ref": 100.0
-        }
+      "point": {
+        "id": "ac-03",
+        "title": "正弦式交变电流的表达式与图像",
+        "level": "基础",
+        "definition": "若从电压由零沿正方向增大的时刻开始计时，正弦式交变电压可写成 u=U_m*sin(omega*t)。其中相位 phi=omega*t 决定该时刻在一个周期中的位置；图像的振幅是 U_m，相邻同向重复状态的时间间隔是周期。",
+        "meaning": "表达式、图像和线圈位置描述的是同一个周期过程。读图时要区分瞬时值与峰值：纵坐标 u 是某一时刻的电压，U_m 是整条曲线能达到的最大绝对值。若计时起点改变，表达式还需加入初相位；本知识点选择初相位为零的标准情形。",
+        "symbols": {
+          "u": {
+            "desc": "t 时刻交变电压的瞬时值",
+            "unit": "V"
+          },
+          "U_m": {
+            "desc": "交变电压峰值",
+            "unit": "V"
+          },
+          "omega": {
+            "desc": "角频率",
+            "unit": "rad/s"
+          },
+          "t": {
+            "desc": "从规定零相位时刻开始的时间",
+            "unit": "s"
+          },
+          "phi": {
+            "desc": "相位",
+            "unit": "rad"
+          }
+        },
+        "scenarios": {
+          "四分之一周期": {
+            "u": 100.0,
+            "U_m": 100.0,
+            "omega": 314.159265359,
+            "t": 0.005,
+            "phi": 1.5707963268
+          },
+          "半周期": {
+            "u": 0.0,
+            "U_m": 100.0,
+            "omega": 314.159265359,
+            "t": 0.01,
+            "phi": 3.1415926536
+          }
+        },
+        "formulas": [
+          {
+            "name": "正弦交变电压的瞬时值",
+            "expr": "u = U_m*sin(omega*t)",
+            "when": "从电压过零且沿正方向增大的时刻开始计时，初相位为零",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "四分之一周期",
+                "expr": "U_m*sin(omega*t)",
+                "ref": 100.0,
+                "note": "50 Hz 时四分之一周期为 0.005 s，相位为 π/2，sin(π/2)=1，所以 u=100 V。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "半周期",
+                "expr": "U_m*sin(omega*t)",
+                "ref": 0.0,
+                "note": "0.010 s 对应相位 π，sin(π)=0，瞬时电压回到零。"
+              },
+              {
+                "type": "direction",
+                "scenario": "四分之一周期",
+                "var": "t",
+                "lo": 0,
+                "hi": 0.005,
+                "expr": "U_m*sin(omega*t)",
+                "expect": "up",
+                "note": "从零相位到四分之一周期，正弦电压由 0 单调升至峰值。"
+              },
+              {
+                "type": "scan",
+                "scenario": "四分之一周期",
+                "var": "t",
+                "lo": 0,
+                "hi": 0.02
+              }
+            ]
+          },
+          {
+            "name": "相位随时间的变化",
+            "expr": "phi = omega*t",
+            "when": "角频率保持不变且初相位取零",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "四分之一周期",
+                "expr": "omega*t",
+                "ref": 1.5707963268,
+                "note": "314.159265…×0.005≈1.570796 rad，即 π/2。"
+              },
+              {
+                "type": "direction",
+                "scenario": "四分之一周期",
+                "var": "t",
+                "lo": 0,
+                "hi": 0.02,
+                "expr": "omega*t",
+                "expect": "up",
+                "note": "角频率为正时，时间推进，相位持续增大。"
+              },
+              {
+                "type": "consistency",
+                "scenario": "四分之一周期",
+                "with": "ac-03|相位随时间的变化",
+                "with_expr": "phi",
+                "target": "相位",
+                "note": "直接求本公式输出，与情境中另列的phi设计基准核对；数据是设计示例，不是实测。用于核对定义、反算或边界值，不宣称不同物理原理互证。",
+                "verification_kind": "独立设计情境数据核对"
+              },
+              {
+                "type": "scan",
+                "scenario": "四分之一周期",
+                "var": "t",
+                "lo": 0,
+                "hi": 1000000
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "线圈匀速转动时，相位随时间均匀增加，初相位为零时 phi=omega*t。",
+          "旋转线圈产生的感应电动势按相位的正弦变化，因此 u=U_m*sin(phi)。",
+          "代入 phi=omega*t 得 u=U_m*sin(omega*t)。",
+          "当相位依次为 0、pi/2、pi、3*pi/2、2*pi 时，瞬时值依次为 0、U_m、0、-U_m、0。"
+        ],
+        "errors": [
+          {
+            "wrong": "把任意计时起点都写成 u=U_m*sin(omega*t)，忽略初相位",
+            "why": "只有从电压过零且沿正方向增大的时刻开始计时，初相位才为零。换起点后应写入相应初相位，这需要结合题图人工判断。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "把零相位的正弦表达式误写成余弦式 u=U_m*cos(omega*t)",
+            "wrong_expr": "u = U_m*cos(omega*t)",
+            "why": "正弦与余弦的量纲完全相同，量纲检查无法发现相位错位。四分之一周期时错误式给出 0 V，而正确瞬时值为 100 V。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "四分之一周期",
+              "expr": "U_m*cos(omega*t)",
+              "ref": 100.0
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "某正弦交变电压 u=100*sin(100*pi*t) V。从计时开始经过 0.005 s，求相位和瞬时电压。",
+          "solution": [
+            "角频率 omega=100*pi rad/s。",
+            "相位 phi=omega*t=100*pi×0.005=pi/2。",
+            "u=100*sin(pi/2)=100 V。"
+          ],
+          "answer": "相位为 pi/2 rad，瞬时电压为 100 V。"
+        },
+        "prereq": [
+          "ac-01",
+          "ac-02"
+        ],
+        "next": [
+          "ac-04"
+        ],
+        "tags": [
+          "瞬时值",
+          "正弦图像",
+          "相位"
+        ],
+        "learning_scope": "高中"
       },
-      "title": "正弦式交变电流的表达式与图像",
+      "error_index": 1,
       "chapter": "第十五章 · 交变电流"
     },
     "diagnostic-ac-04-1": {
-      "error": {
-        "wrong": "认为理想变压器的电流也与匝数成正比，写成 I2=I1*N2/N1",
-        "wrong_expr": "I2 = I1*N2/N1",
-        "why": "量纲正确但数值错误：该降压情境会算出 0.2 A，正确值是 5.0 A；正确关系由功率守恒决定，电流与匝数成反比。",
-        "caught_by": "数值代入",
-        "trap_test": {
-          "scenario": "理想降压变压器",
-          "expr": "I1*N2/N1",
-          "ref": 5.0
-        }
+      "point": {
+        "id": "ac-04",
+        "title": "理想变压器",
+        "level": "基础",
+        "definition": "理想变压器忽略漏磁、线圈电阻和铁芯能量损耗。原、副线圈电压之比等于匝数之比，即 U1/U2=N1/N2；输入功率等于输出功率，因此电流与匝数成反比，可写成 I2=I1*N1/N2。",
+        "meaning": "变压器改变交变电压和电流，却不凭空创造能量。副线圈匝数少于原线圈时降压但增流；副线圈匝数多时升压但减流。电压比只由匝数比决定，而原线圈电流还会随副线圈负载改变。稳定直流不能产生持续变化的磁通量，因此普通变压器不能用稳定直流正常变压。",
+        "symbols": {
+          "U1": {
+            "desc": "原线圈两端交变电压的有效值",
+            "unit": "V"
+          },
+          "U2": {
+            "desc": "副线圈两端交变电压的有效值",
+            "unit": "V"
+          },
+          "N1": {
+            "desc": "原线圈匝数",
+            "unit": "1"
+          },
+          "N2": {
+            "desc": "副线圈匝数",
+            "unit": "1"
+          },
+          "I1": {
+            "desc": "原线圈电流的有效值",
+            "unit": "A"
+          },
+          "I2": {
+            "desc": "副线圈电流的有效值",
+            "unit": "A"
+          }
+        },
+        "scenarios": {
+          "理想降压变压器": {
+            "U1": 220.0,
+            "U2": 44.0,
+            "N1": 1000,
+            "N2": 200,
+            "I1": 1.0,
+            "I2": 5.0
+          },
+          "副线圈匝数加倍": {
+            "U1": 220.0,
+            "U2": 88.0,
+            "N1": 1000,
+            "N2": 400,
+            "I1": 1.0,
+            "I2": 2.5
+          }
+        },
+        "formulas": [
+          {
+            "name": "理想变压器的电压关系",
+            "expr": "U2 = U1*N2/N1",
+            "when": "理想变压器正常接入交变电流，原副线圈磁通量变化相同",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "理想降压变压器",
+                "expr": "U1*N2/N1",
+                "ref": 44.0,
+                "note": "220×200÷1000=44 V。"
+              },
+              {
+                "type": "direction",
+                "scenario": "理想降压变压器",
+                "var": "N2",
+                "lo": 100,
+                "hi": 2000,
+                "expr": "U1*N2/N1",
+                "expect": "up",
+                "note": "原线圈条件不变时，副线圈匝数越多，副边电压越高。"
+              },
+              {
+                "type": "compare",
+                "scenario": "理想降压变压器",
+                "expr": "U2",
+                "op": "<",
+                "vs": "U1",
+                "note": "该情境 N2<N1，因此副边电压低于原边电压。"
+              },
+              {
+                "type": "scan",
+                "scenario": "理想降压变压器",
+                "var": "N2",
+                "lo": 1,
+                "hi": 1000000
+              }
+            ]
+          },
+          {
+            "name": "理想变压器的电流关系",
+            "expr": "I2 = I1*N1/N2",
+            "when": "理想变压器带有负载，输入功率等于输出功率",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "理想降压变压器",
+                "expr": "I1*N1/N2",
+                "ref": 5.0,
+                "note": "1.0×1000÷200=5.0 A。"
+              },
+              {
+                "type": "direction",
+                "scenario": "理想降压变压器",
+                "var": "N2",
+                "lo": 100,
+                "hi": 2000,
+                "expr": "I1*N1/N2",
+                "expect": "down",
+                "note": "输入电流固定时，副线圈匝数越多，副边电流越小。"
+              },
+              {
+                "type": "consistency",
+                "scenario": "理想降压变压器",
+                "with": "ac-04|理想变压器的电流关系",
+                "with_expr": "U1*I1/U2",
+                "target": "副线圈电流的有效值",
+                "note": "本公式直接求I2；参考端显式关系为U1*I1/U2。两端使用同一情境和阶段，只核对该关系；with字段仅定位来源，不代表调用另一条被覆盖的公式。",
+                "verification_kind": "独立关系核对"
+              },
+              {
+                "type": "scan",
+                "scenario": "理想降压变压器",
+                "var": "N2",
+                "lo": 1,
+                "hi": 1000000
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "理想铁芯使原、副线圈每匝经历相同的磁通量变化率。",
+          "由法拉第定律，线圈电压与匝数成正比，因此 U1/U2=N1/N2。",
+          "理想变压器无能量损耗，输入功率等于输出功率：U1*I1=U2*I2。",
+          "把电压比代入功率关系，得到 I1/I2=N2/N1，即电流与匝数成反比。"
+        ],
+        "errors": [
+          {
+            "wrong": "认为理想变压器的电流也与匝数成正比，写成 I2=I1*N2/N1",
+            "wrong_expr": "I2 = I1*N2/N1",
+            "why": "量纲正确但数值错误：该降压情境会算出 0.2 A，正确值是 5.0 A；正确关系由功率守恒决定，电流与匝数成反比。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "理想降压变压器",
+              "expr": "I1*N2/N1",
+              "ref": 5.0
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "把稳定直流接入普通变压器，认为仍能持续得到按匝数比变化的电压",
+            "why": "稳定直流建立后磁通量不再变化，副线圈没有持续感应电动势；原线圈还可能因电流过大而发热损坏。这是适用条件判断，需人工审核。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "理想变压器原线圈 1000 匝，接 220 V 交变电压；副线圈 200 匝，负载电流为 5.0 A。求副线圈电压和原线圈电流。",
+          "solution": [
+            "U2=U1*N2/N1=220×200÷1000=44 V。",
+            "理想变压器功率守恒，或直接用 I2=I1*N1/N2。",
+            "I1=I2*N2/N1=5.0×200÷1000=1.0 A。",
+            "验算：220×1.0=44×5.0=220 W。"
+          ],
+          "answer": "副线圈电压为 44 V，原线圈电流为 1.0 A。"
+        },
+        "prereq": [
+          "ind-03",
+          "ac-02"
+        ],
+        "next": [
+          "ac-05",
+          "exp-22"
+        ],
+        "tags": [
+          "变压器",
+          "匝数比",
+          "功率守恒"
+        ],
+        "learning_scope": "高中"
       },
-      "title": "理想变压器",
+      "error_index": 0,
       "chapter": "第十五章 · 交变电流"
     },
     "diagnostic-ac-04-2": {
-      "error": {
-        "wrong": "把稳定直流接入普通变压器，认为仍能持续得到按匝数比变化的电压",
-        "why": "稳定直流建立后磁通量不再变化，副线圈没有持续感应电动势；原线圈还可能因电流过大而发热损坏。这是适用条件判断，需人工审核。",
-        "caught_by": "人工审核"
+      "point": {
+        "id": "ac-04",
+        "title": "理想变压器",
+        "level": "基础",
+        "definition": "理想变压器忽略漏磁、线圈电阻和铁芯能量损耗。原、副线圈电压之比等于匝数之比，即 U1/U2=N1/N2；输入功率等于输出功率，因此电流与匝数成反比，可写成 I2=I1*N1/N2。",
+        "meaning": "变压器改变交变电压和电流，却不凭空创造能量。副线圈匝数少于原线圈时降压但增流；副线圈匝数多时升压但减流。电压比只由匝数比决定，而原线圈电流还会随副线圈负载改变。稳定直流不能产生持续变化的磁通量，因此普通变压器不能用稳定直流正常变压。",
+        "symbols": {
+          "U1": {
+            "desc": "原线圈两端交变电压的有效值",
+            "unit": "V"
+          },
+          "U2": {
+            "desc": "副线圈两端交变电压的有效值",
+            "unit": "V"
+          },
+          "N1": {
+            "desc": "原线圈匝数",
+            "unit": "1"
+          },
+          "N2": {
+            "desc": "副线圈匝数",
+            "unit": "1"
+          },
+          "I1": {
+            "desc": "原线圈电流的有效值",
+            "unit": "A"
+          },
+          "I2": {
+            "desc": "副线圈电流的有效值",
+            "unit": "A"
+          }
+        },
+        "scenarios": {
+          "理想降压变压器": {
+            "U1": 220.0,
+            "U2": 44.0,
+            "N1": 1000,
+            "N2": 200,
+            "I1": 1.0,
+            "I2": 5.0
+          },
+          "副线圈匝数加倍": {
+            "U1": 220.0,
+            "U2": 88.0,
+            "N1": 1000,
+            "N2": 400,
+            "I1": 1.0,
+            "I2": 2.5
+          }
+        },
+        "formulas": [
+          {
+            "name": "理想变压器的电压关系",
+            "expr": "U2 = U1*N2/N1",
+            "when": "理想变压器正常接入交变电流，原副线圈磁通量变化相同",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "理想降压变压器",
+                "expr": "U1*N2/N1",
+                "ref": 44.0,
+                "note": "220×200÷1000=44 V。"
+              },
+              {
+                "type": "direction",
+                "scenario": "理想降压变压器",
+                "var": "N2",
+                "lo": 100,
+                "hi": 2000,
+                "expr": "U1*N2/N1",
+                "expect": "up",
+                "note": "原线圈条件不变时，副线圈匝数越多，副边电压越高。"
+              },
+              {
+                "type": "compare",
+                "scenario": "理想降压变压器",
+                "expr": "U2",
+                "op": "<",
+                "vs": "U1",
+                "note": "该情境 N2<N1，因此副边电压低于原边电压。"
+              },
+              {
+                "type": "scan",
+                "scenario": "理想降压变压器",
+                "var": "N2",
+                "lo": 1,
+                "hi": 1000000
+              }
+            ]
+          },
+          {
+            "name": "理想变压器的电流关系",
+            "expr": "I2 = I1*N1/N2",
+            "when": "理想变压器带有负载，输入功率等于输出功率",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "理想降压变压器",
+                "expr": "I1*N1/N2",
+                "ref": 5.0,
+                "note": "1.0×1000÷200=5.0 A。"
+              },
+              {
+                "type": "direction",
+                "scenario": "理想降压变压器",
+                "var": "N2",
+                "lo": 100,
+                "hi": 2000,
+                "expr": "I1*N1/N2",
+                "expect": "down",
+                "note": "输入电流固定时，副线圈匝数越多，副边电流越小。"
+              },
+              {
+                "type": "consistency",
+                "scenario": "理想降压变压器",
+                "with": "ac-04|理想变压器的电流关系",
+                "with_expr": "U1*I1/U2",
+                "target": "副线圈电流的有效值",
+                "note": "本公式直接求I2；参考端显式关系为U1*I1/U2。两端使用同一情境和阶段，只核对该关系；with字段仅定位来源，不代表调用另一条被覆盖的公式。",
+                "verification_kind": "独立关系核对"
+              },
+              {
+                "type": "scan",
+                "scenario": "理想降压变压器",
+                "var": "N2",
+                "lo": 1,
+                "hi": 1000000
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "理想铁芯使原、副线圈每匝经历相同的磁通量变化率。",
+          "由法拉第定律，线圈电压与匝数成正比，因此 U1/U2=N1/N2。",
+          "理想变压器无能量损耗，输入功率等于输出功率：U1*I1=U2*I2。",
+          "把电压比代入功率关系，得到 I1/I2=N2/N1，即电流与匝数成反比。"
+        ],
+        "errors": [
+          {
+            "wrong": "认为理想变压器的电流也与匝数成正比，写成 I2=I1*N2/N1",
+            "wrong_expr": "I2 = I1*N2/N1",
+            "why": "量纲正确但数值错误：该降压情境会算出 0.2 A，正确值是 5.0 A；正确关系由功率守恒决定，电流与匝数成反比。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "理想降压变压器",
+              "expr": "I1*N2/N1",
+              "ref": 5.0
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "把稳定直流接入普通变压器，认为仍能持续得到按匝数比变化的电压",
+            "why": "稳定直流建立后磁通量不再变化，副线圈没有持续感应电动势；原线圈还可能因电流过大而发热损坏。这是适用条件判断，需人工审核。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "理想变压器原线圈 1000 匝，接 220 V 交变电压；副线圈 200 匝，负载电流为 5.0 A。求副线圈电压和原线圈电流。",
+          "solution": [
+            "U2=U1*N2/N1=220×200÷1000=44 V。",
+            "理想变压器功率守恒，或直接用 I2=I1*N1/N2。",
+            "I1=I2*N2/N1=5.0×200÷1000=1.0 A。",
+            "验算：220×1.0=44×5.0=220 W。"
+          ],
+          "answer": "副线圈电压为 44 V，原线圈电流为 1.0 A。"
+        },
+        "prereq": [
+          "ind-03",
+          "ac-02"
+        ],
+        "next": [
+          "ac-05",
+          "exp-22"
+        ],
+        "tags": [
+          "变压器",
+          "匝数比",
+          "功率守恒"
+        ],
+        "learning_scope": "高中"
       },
-      "title": "理想变压器",
+      "error_index": 1,
       "chapter": "第十五章 · 交变电流"
     },
     "diagnostic-ac-05-1": {
-      "error": {
-        "wrong": "用输送电压直接除以线路电阻来求输电线电流，写成 I=U_send/R",
-        "wrong_expr": "I = U_send/R",
-        "why": "输电电压主要加在用户负载和输电系统上，不是全部加在输电线电阻上。高压输电情境中错误式得 5000 A，而由输送功率确定的正确电流仅 10 A。",
-        "caught_by": "数值代入",
-        "trap_test": {
-          "scenario": "高压输电",
-          "expr": "U_send/R",
-          "ref": 10.0
-        }
+      "point": {
+        "id": "ac-05",
+        "title": "远距离输电",
+        "level": "进阶",
+        "definition": "输送功率 P_send 和输电电压 U_send 确定时，线路电流 I=P_send/U_send。输电线有电阻 R，线路上的热损耗功率为 Delta_P=I^2*R。因此远距离输电先升高电压来减小电流，到用户附近再降压使用。",
+        "meaning": "高压输电降低的是线路损耗，不是把电能“放大”。当输送功率一定时，电压提高到原来的 k 倍，电流降为 1/k，线路损耗降为 1/k²。减小线路电阻也能降损耗，但增加导线截面积会大量耗费金属，所以用变压器升高交流电压更经济。",
+        "symbols": {
+          "P_send": {
+            "desc": "输电系统要输送的有功功率",
+            "unit": "W"
+          },
+          "U_send": {
+            "desc": "输电电压的有效值",
+            "unit": "V"
+          },
+          "I": {
+            "desc": "输电线中的电流有效值",
+            "unit": "A"
+          },
+          "R": {
+            "desc": "两根输电线的总电阻",
+            "unit": "ohm"
+          },
+          "Delta_P": {
+            "desc": "输电线因发热损失的功率",
+            "unit": "W"
+          }
+        },
+        "scenarios": {
+          "高压输电": {
+            "P_send": 1000000.0,
+            "U_send": 100000.0,
+            "I": 10.0,
+            "R": 20.0,
+            "Delta_P": 2000.0
+          },
+          "电压减半": {
+            "P_send": 1000000.0,
+            "U_send": 50000.0,
+            "I": 20.0,
+            "R": 20.0,
+            "Delta_P": 8000.0
+          }
+        },
+        "formulas": [
+          {
+            "name": "输电线电流",
+            "expr": "I = P_send/U_send",
+            "when": "用有效值描述且功率因数按高中理想模型取 1，U_send 大于零",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "高压输电",
+                "expr": "P_send/U_send",
+                "ref": 10.0,
+                "note": "1,000,000 W÷100,000 V=10 A。"
+              },
+              {
+                "type": "direction",
+                "scenario": "高压输电",
+                "var": "U_send",
+                "lo": 10000,
+                "hi": 500000,
+                "expr": "P_send/U_send",
+                "expect": "down",
+                "note": "输送功率固定时，电压越高，线路电流越小。"
+              },
+              {
+                "type": "direction",
+                "scenario": "高压输电",
+                "var": "P_send",
+                "lo": 100000,
+                "hi": 5000000,
+                "expr": "P_send/U_send",
+                "expect": "up",
+                "note": "输电电压固定时，要输送的功率越大，线路电流越大。"
+              },
+              {
+                "type": "scan",
+                "scenario": "高压输电",
+                "var": "U_send",
+                "lo": 1,
+                "hi": 1000000000
+              }
+            ]
+          },
+          {
+            "name": "输电线热损耗功率",
+            "expr": "Delta_P = I^2*R",
+            "when": "以输电电流有效值计算两根输电线总电阻上的焦耳热功率",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "高压输电",
+                "expr": "I^2*R",
+                "ref": 2000.0,
+                "note": "10²×20=2000 W。"
+              },
+              {
+                "type": "direction",
+                "scenario": "高压输电",
+                "var": "I",
+                "lo": 0,
+                "hi": 100,
+                "expr": "I^2*R",
+                "expect": "up",
+                "note": "线路电阻一定时，电流越大，发热损耗按平方增大。"
+              },
+              {
+                "type": "consistency",
+                "scenario": "高压输电",
+                "with": "ac-05|输电线热损耗功率",
+                "with_expr": "P_send^2*R/U_send^2",
+                "target": "输电线因发热损失的功率",
+                "note": "本公式直接求Delta_P；参考端显式关系为P_send^2*R/U_send^2。两端使用同一情境和阶段，只核对该关系；with字段仅定位来源，不代表调用另一条被覆盖的公式。",
+                "verification_kind": "独立关系核对"
+              },
+              {
+                "type": "scan",
+                "scenario": "高压输电",
+                "var": "I",
+                "lo": 0,
+                "hi": 1000000
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "在高中理想模型中，输送功率写成 P_send=U_send*I，移项得 I=P_send/U_send。",
+          "输电线可看作电阻，焦耳热功率为 Delta_P=I²*R。",
+          "代入电流关系得 Delta_P=P_send²*R/U_send²。",
+          "因此输送功率和线路电阻不变时，损耗与输电电压的平方成反比，这就是高压输电的定量依据。"
+        ],
+        "errors": [
+          {
+            "wrong": "用输送电压直接除以线路电阻来求输电线电流，写成 I=U_send/R",
+            "wrong_expr": "I = U_send/R",
+            "why": "输电电压主要加在用户负载和输电系统上，不是全部加在输电线电阻上。高压输电情境中错误式得 5000 A，而由输送功率确定的正确电流仅 10 A。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "高压输电",
+              "expr": "U_send/R",
+              "ref": 10.0
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "认为输电电压提高两倍，线路损耗只减为一半",
+            "wrong_expr": "Delta_P = P_send*R/U_send",
+            "why": "功率一定时电流与电压成反比，而损耗又与电流平方成正比，所以电压加倍时损耗应降为四分之一。错误式还存在量纲不一致。",
+            "caught_by": "量纲一致性",
+            "trap_test": {
+              "kind": "dimension",
+              "target": "Delta_P = P_send*R/U_send",
+              "lhs_dim": "M·L^2·T^-3",
+              "rhs_dim": "M·L^2·T^-3·I^-1",
+              "expect": "mismatch",
+              "note": "实际量纲检查得到等号左边为M·L^2·T^-3、右边为M·L^2·T^-3·I^-1；两边不是同一物理量，因此该等式不成立。"
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "某线路输送功率 1.0 MW，输电电压 100 kV，两根输电线总电阻为 20 Ω。求线路电流与损耗功率；若电压降为 50 kV，损耗变为多少？",
+          "solution": [
+            "100 kV 时 I=P_send/U_send=1,000,000÷100,000=10 A。",
+            "Delta_P=I²*R=10²×20=2000 W。",
+            "电压降为 50 kV 时，电流加倍为 20 A。",
+            "新损耗为 20²×20=8000 W，是原来的四倍。"
+          ],
+          "answer": "100 kV 时电流为 10 A、损耗 2000 W；50 kV 时损耗增至 8000 W。"
+        },
+        "prereq": [
+          "dc-04",
+          "ac-04"
+        ],
+        "next": [
+          "mdl-22"
+        ],
+        "tags": [
+          "远距离输电",
+          "高压输电",
+          "线路损耗"
+        ],
+        "learning_scope": "高中"
       },
-      "title": "远距离输电",
+      "error_index": 0,
       "chapter": "第十五章 · 交变电流"
     },
     "diagnostic-ac-05-2": {
-      "error": {
-        "wrong": "认为输电电压提高两倍，线路损耗只减为一半",
-        "wrong_expr": "Delta_P = P_send*R/U_send",
-        "why": "功率一定时电流与电压成反比，而损耗又与电流平方成正比，所以电压加倍时损耗应降为四分之一。错误式还存在量纲不一致。",
-        "caught_by": "量纲一致性",
-        "trap_test": {
-          "kind": "dimension",
-          "target": "Delta_P = P_send*R/U_send",
-          "lhs_dim": "M·L^2·T^-3",
-          "rhs_dim": "M·L^2·T^-3·I^-1",
-          "expect": "mismatch",
-          "note": "实际量纲检查得到等号左边为M·L^2·T^-3、右边为M·L^2·T^-3·I^-1；两边不是同一物理量，因此该等式不成立。"
-        }
+      "point": {
+        "id": "ac-05",
+        "title": "远距离输电",
+        "level": "进阶",
+        "definition": "输送功率 P_send 和输电电压 U_send 确定时，线路电流 I=P_send/U_send。输电线有电阻 R，线路上的热损耗功率为 Delta_P=I^2*R。因此远距离输电先升高电压来减小电流，到用户附近再降压使用。",
+        "meaning": "高压输电降低的是线路损耗，不是把电能“放大”。当输送功率一定时，电压提高到原来的 k 倍，电流降为 1/k，线路损耗降为 1/k²。减小线路电阻也能降损耗，但增加导线截面积会大量耗费金属，所以用变压器升高交流电压更经济。",
+        "symbols": {
+          "P_send": {
+            "desc": "输电系统要输送的有功功率",
+            "unit": "W"
+          },
+          "U_send": {
+            "desc": "输电电压的有效值",
+            "unit": "V"
+          },
+          "I": {
+            "desc": "输电线中的电流有效值",
+            "unit": "A"
+          },
+          "R": {
+            "desc": "两根输电线的总电阻",
+            "unit": "ohm"
+          },
+          "Delta_P": {
+            "desc": "输电线因发热损失的功率",
+            "unit": "W"
+          }
+        },
+        "scenarios": {
+          "高压输电": {
+            "P_send": 1000000.0,
+            "U_send": 100000.0,
+            "I": 10.0,
+            "R": 20.0,
+            "Delta_P": 2000.0
+          },
+          "电压减半": {
+            "P_send": 1000000.0,
+            "U_send": 50000.0,
+            "I": 20.0,
+            "R": 20.0,
+            "Delta_P": 8000.0
+          }
+        },
+        "formulas": [
+          {
+            "name": "输电线电流",
+            "expr": "I = P_send/U_send",
+            "when": "用有效值描述且功率因数按高中理想模型取 1，U_send 大于零",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "高压输电",
+                "expr": "P_send/U_send",
+                "ref": 10.0,
+                "note": "1,000,000 W÷100,000 V=10 A。"
+              },
+              {
+                "type": "direction",
+                "scenario": "高压输电",
+                "var": "U_send",
+                "lo": 10000,
+                "hi": 500000,
+                "expr": "P_send/U_send",
+                "expect": "down",
+                "note": "输送功率固定时，电压越高，线路电流越小。"
+              },
+              {
+                "type": "direction",
+                "scenario": "高压输电",
+                "var": "P_send",
+                "lo": 100000,
+                "hi": 5000000,
+                "expr": "P_send/U_send",
+                "expect": "up",
+                "note": "输电电压固定时，要输送的功率越大，线路电流越大。"
+              },
+              {
+                "type": "scan",
+                "scenario": "高压输电",
+                "var": "U_send",
+                "lo": 1,
+                "hi": 1000000000
+              }
+            ]
+          },
+          {
+            "name": "输电线热损耗功率",
+            "expr": "Delta_P = I^2*R",
+            "when": "以输电电流有效值计算两根输电线总电阻上的焦耳热功率",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "高压输电",
+                "expr": "I^2*R",
+                "ref": 2000.0,
+                "note": "10²×20=2000 W。"
+              },
+              {
+                "type": "direction",
+                "scenario": "高压输电",
+                "var": "I",
+                "lo": 0,
+                "hi": 100,
+                "expr": "I^2*R",
+                "expect": "up",
+                "note": "线路电阻一定时，电流越大，发热损耗按平方增大。"
+              },
+              {
+                "type": "consistency",
+                "scenario": "高压输电",
+                "with": "ac-05|输电线热损耗功率",
+                "with_expr": "P_send^2*R/U_send^2",
+                "target": "输电线因发热损失的功率",
+                "note": "本公式直接求Delta_P；参考端显式关系为P_send^2*R/U_send^2。两端使用同一情境和阶段，只核对该关系；with字段仅定位来源，不代表调用另一条被覆盖的公式。",
+                "verification_kind": "独立关系核对"
+              },
+              {
+                "type": "scan",
+                "scenario": "高压输电",
+                "var": "I",
+                "lo": 0,
+                "hi": 1000000
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "在高中理想模型中，输送功率写成 P_send=U_send*I，移项得 I=P_send/U_send。",
+          "输电线可看作电阻，焦耳热功率为 Delta_P=I²*R。",
+          "代入电流关系得 Delta_P=P_send²*R/U_send²。",
+          "因此输送功率和线路电阻不变时，损耗与输电电压的平方成反比，这就是高压输电的定量依据。"
+        ],
+        "errors": [
+          {
+            "wrong": "用输送电压直接除以线路电阻来求输电线电流，写成 I=U_send/R",
+            "wrong_expr": "I = U_send/R",
+            "why": "输电电压主要加在用户负载和输电系统上，不是全部加在输电线电阻上。高压输电情境中错误式得 5000 A，而由输送功率确定的正确电流仅 10 A。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "高压输电",
+              "expr": "U_send/R",
+              "ref": 10.0
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "认为输电电压提高两倍，线路损耗只减为一半",
+            "wrong_expr": "Delta_P = P_send*R/U_send",
+            "why": "功率一定时电流与电压成反比，而损耗又与电流平方成正比，所以电压加倍时损耗应降为四分之一。错误式还存在量纲不一致。",
+            "caught_by": "量纲一致性",
+            "trap_test": {
+              "kind": "dimension",
+              "target": "Delta_P = P_send*R/U_send",
+              "lhs_dim": "M·L^2·T^-3",
+              "rhs_dim": "M·L^2·T^-3·I^-1",
+              "expect": "mismatch",
+              "note": "实际量纲检查得到等号左边为M·L^2·T^-3、右边为M·L^2·T^-3·I^-1；两边不是同一物理量，因此该等式不成立。"
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "某线路输送功率 1.0 MW，输电电压 100 kV，两根输电线总电阻为 20 Ω。求线路电流与损耗功率；若电压降为 50 kV，损耗变为多少？",
+          "solution": [
+            "100 kV 时 I=P_send/U_send=1,000,000÷100,000=10 A。",
+            "Delta_P=I²*R=10²×20=2000 W。",
+            "电压降为 50 kV 时，电流加倍为 20 A。",
+            "新损耗为 20²×20=8000 W，是原来的四倍。"
+          ],
+          "answer": "100 kV 时电流为 10 A、损耗 2000 W；50 kV 时损耗增至 8000 W。"
+        },
+        "prereq": [
+          "dc-04",
+          "ac-04"
+        ],
+        "next": [
+          "mdl-22"
+        ],
+        "tags": [
+          "远距离输电",
+          "高压输电",
+          "线路损耗"
+        ],
+        "learning_scope": "高中"
       },
-      "title": "远距离输电",
+      "error_index": 1,
       "chapter": "第十五章 · 交变电流"
     },
     "diagnostic-ac-06-1": {
-      "error": {
-        "wrong": "把感抗公式多乘一个系数 2，写成 X_L=2*omega*L",
-        "wrong_expr": "X_L = 2*omega*L",
-        "why": "多出的 2 没有量纲，所以错误式量纲完全正确。工频情境中它会算出约 125.66 Ω，正确感抗约为 62.83 Ω，只能靠数值代入抓住。",
-        "caught_by": "数值代入",
-        "trap_test": {
-          "scenario": "工频电抗",
-          "expr": "2*omega*L",
-          "ref": 62.8318530718
-        }
+      "point": {
+        "id": "ac-06",
+        "title": "电感与电容对交变电流的影响",
+        "level": "进阶",
+        "definition": "电感和电容都会影响交变电流。理想电感对正弦交流的感抗为 X_L=omega*L，频率越高阻碍越强；理想电容的容抗为 X_C=1/(omega*C_cap)，频率越高阻碍越弱。它们的单位都为欧姆。",
+        "meaning": "电感具有“通直流、阻交流，通低频、阻高频”的趋势；电容在稳定直流电路中充电后相当于断路，却能让变化电流通过，表现为“隔直流、通交流，通高频、阻低频”。这里的“通”和“阻”都是相对说法，实际电流还取决于电路连接、电阻以及电源电压。",
+        "symbols": {
+          "X_L": {
+            "desc": "理想电感对正弦交流的感抗",
+            "unit": "ohm"
+          },
+          "X_C": {
+            "desc": "理想电容对正弦交流的容抗",
+            "unit": "ohm"
+          },
+          "omega": {
+            "desc": "交变电流的角频率",
+            "unit": "rad/s"
+          },
+          "L": {
+            "desc": "电感器的自感系数",
+            "unit": "H"
+          },
+          "C_cap": {
+            "desc": "电容器的电容",
+            "unit": "F"
+          }
+        },
+        "scenarios": {
+          "工频电抗": {
+            "X_L": 62.8318530718,
+            "X_C": 31.8309886184,
+            "omega": 314.159265359,
+            "L": 0.2,
+            "C_cap": 0.0001
+          },
+          "频率加倍": {
+            "X_L": 125.6637061436,
+            "X_C": 15.9154943092,
+            "omega": 628.318530718,
+            "L": 0.2,
+            "C_cap": 0.0001
+          }
+        },
+        "formulas": [
+          {
+            "name": "理想电感的感抗",
+            "expr": "X_L = omega*L",
+            "when": "理想电感接入角频率为 omega 的正弦式交变电流",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "工频电抗",
+                "expr": "omega*L",
+                "ref": 62.8318530718,
+                "note": "314.159265…×0.20≈62.8319 Ω。"
+              },
+              {
+                "type": "direction",
+                "scenario": "工频电抗",
+                "var": "omega",
+                "lo": 1,
+                "hi": 10000,
+                "expr": "omega*L",
+                "expect": "up",
+                "note": "电感一定时，频率越高，感抗越大。"
+              },
+              {
+                "type": "direction",
+                "scenario": "工频电抗",
+                "var": "L",
+                "lo": 0.001,
+                "hi": 10,
+                "expr": "omega*L",
+                "expect": "up",
+                "note": "频率一定时，自感系数越大，感抗越大。"
+              },
+              {
+                "type": "consistency",
+                "scenario": "工频电抗",
+                "with": "ac-06|理想电感的感抗",
+                "with_expr": "L/(C_cap*X_C)",
+                "target": "理想电感对正弦交流的感抗",
+                "note": "本公式直接求X_L；参考端显式关系为L/(C_cap*X_C)。两端使用同一情境和阶段，只核对该关系；with字段仅定位来源，不代表调用另一条被覆盖的公式。",
+                "verification_kind": "独立关系核对"
+              },
+              {
+                "type": "scan",
+                "scenario": "工频电抗",
+                "var": "omega",
+                "lo": 0,
+                "hi": 1000000
+              }
+            ]
+          },
+          {
+            "name": "理想电容的容抗",
+            "expr": "X_C = 1/(omega*C_cap)",
+            "when": "理想电容接入角频率为 omega 的正弦式交变电流，omega 和 C_cap 均大于零",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "工频电抗",
+                "expr": "1/(omega*C_cap)",
+                "ref": 31.8309886184,
+                "note": "1÷(314.159265…×0.00010)≈31.8310 Ω。"
+              },
+              {
+                "type": "direction",
+                "scenario": "工频电抗",
+                "var": "omega",
+                "lo": 1,
+                "hi": 10000,
+                "expr": "1/(omega*C_cap)",
+                "expect": "down",
+                "note": "电容一定时，频率越高，容抗越小。"
+              },
+              {
+                "type": "direction",
+                "scenario": "工频电抗",
+                "var": "C_cap",
+                "lo": 1e-06,
+                "hi": 0.01,
+                "expr": "1/(omega*C_cap)",
+                "expect": "down",
+                "note": "频率一定时，电容越大，容抗越小。"
+              },
+              {
+                "type": "scan",
+                "scenario": "工频电抗",
+                "var": "omega",
+                "lo": 0.001,
+                "hi": 1000000
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "电感中的电流变化会产生自感电动势，变化越快，自感作用越强，因此感抗随角频率增大。",
+          "对正弦交流定量分析得到 X_L=omega*L。",
+          "电容两端电压变化时持续充放电；频率越高，单位时间内充放电越频繁，交流越容易通过。",
+          "对正弦交流定量分析得到 X_C=1/(omega*C_cap)，它与角频率和电容均成反比。"
+        ],
+        "errors": [
+          {
+            "wrong": "把感抗公式多乘一个系数 2，写成 X_L=2*omega*L",
+            "wrong_expr": "X_L = 2*omega*L",
+            "why": "多出的 2 没有量纲，所以错误式量纲完全正确。工频情境中它会算出约 125.66 Ω，正确感抗约为 62.83 Ω，只能靠数值代入抓住。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "工频电抗",
+              "expr": "2*omega*L",
+              "ref": 62.8318530718
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "认为电容像普通电阻一样，频率越高阻碍越强，写成 X_C=omega*C_cap",
+            "wrong_expr": "X_C = omega*C_cap",
+            "why": "正确容抗与角频率成反比；频率加倍时容抗应从约 31.83 Ω 减至约 15.92 Ω。错误式量纲也不是欧姆。",
+            "caught_by": "量纲一致性",
+            "trap_test": {
+              "kind": "dimension",
+              "target": "X_C = omega*C_cap",
+              "lhs_dim": "M·L^2·T^-3·I^-2",
+              "rhs_dim": "M^-1·L^-2·T^3·I^2",
+              "expect": "mismatch",
+              "note": "实际量纲检查得到等号左边为M·L^2·T^-3·I^-2、右边为M^-1·L^-2·T^3·I^2；两边不是同一物理量，因此该等式不成立。"
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "角频率为 100*pi rad/s 的正弦交流分别接入 0.20 H 理想电感和 100 μF 理想电容。求感抗和容抗，并说明频率加倍后的变化。",
+          "solution": [
+            "X_L=omega*L=100*pi×0.20=20*pi≈62.83 Ω。",
+            "100 μF=1.0×10^-4 F，X_C=1/(omega*C_cap)。",
+            "X_C=1/(100*pi×1.0×10^-4)≈31.83 Ω。",
+            "频率加倍时，感抗加倍为约 125.66 Ω，容抗减半为约 15.92 Ω。"
+          ],
+          "answer": "感抗约 62.83 Ω，容抗约 31.83 Ω；频率加倍后感抗加倍、容抗减半。"
+        },
+        "prereq": [
+          "iad-01",
+          "cap-01",
+          "ac-03"
+        ],
+        "next": [],
+        "tags": [
+          "感抗",
+          "容抗",
+          "频率响应"
+        ],
+        "learning_scope": "高中"
       },
-      "title": "电感与电容对交变电流的影响",
+      "error_index": 0,
       "chapter": "第十五章 · 交变电流"
     },
     "diagnostic-ac-06-2": {
-      "error": {
-        "wrong": "认为电容像普通电阻一样，频率越高阻碍越强，写成 X_C=omega*C_cap",
-        "wrong_expr": "X_C = omega*C_cap",
-        "why": "正确容抗与角频率成反比；频率加倍时容抗应从约 31.83 Ω 减至约 15.92 Ω。错误式量纲也不是欧姆。",
-        "caught_by": "量纲一致性",
-        "trap_test": {
-          "kind": "dimension",
-          "target": "X_C = omega*C_cap",
-          "lhs_dim": "M·L^2·T^-3·I^-2",
-          "rhs_dim": "M^-1·L^-2·T^3·I^2",
-          "expect": "mismatch",
-          "note": "实际量纲检查得到等号左边为M·L^2·T^-3·I^-2、右边为M^-1·L^-2·T^3·I^2；两边不是同一物理量，因此该等式不成立。"
-        }
+      "point": {
+        "id": "ac-06",
+        "title": "电感与电容对交变电流的影响",
+        "level": "进阶",
+        "definition": "电感和电容都会影响交变电流。理想电感对正弦交流的感抗为 X_L=omega*L，频率越高阻碍越强；理想电容的容抗为 X_C=1/(omega*C_cap)，频率越高阻碍越弱。它们的单位都为欧姆。",
+        "meaning": "电感具有“通直流、阻交流，通低频、阻高频”的趋势；电容在稳定直流电路中充电后相当于断路，却能让变化电流通过，表现为“隔直流、通交流，通高频、阻低频”。这里的“通”和“阻”都是相对说法，实际电流还取决于电路连接、电阻以及电源电压。",
+        "symbols": {
+          "X_L": {
+            "desc": "理想电感对正弦交流的感抗",
+            "unit": "ohm"
+          },
+          "X_C": {
+            "desc": "理想电容对正弦交流的容抗",
+            "unit": "ohm"
+          },
+          "omega": {
+            "desc": "交变电流的角频率",
+            "unit": "rad/s"
+          },
+          "L": {
+            "desc": "电感器的自感系数",
+            "unit": "H"
+          },
+          "C_cap": {
+            "desc": "电容器的电容",
+            "unit": "F"
+          }
+        },
+        "scenarios": {
+          "工频电抗": {
+            "X_L": 62.8318530718,
+            "X_C": 31.8309886184,
+            "omega": 314.159265359,
+            "L": 0.2,
+            "C_cap": 0.0001
+          },
+          "频率加倍": {
+            "X_L": 125.6637061436,
+            "X_C": 15.9154943092,
+            "omega": 628.318530718,
+            "L": 0.2,
+            "C_cap": 0.0001
+          }
+        },
+        "formulas": [
+          {
+            "name": "理想电感的感抗",
+            "expr": "X_L = omega*L",
+            "when": "理想电感接入角频率为 omega 的正弦式交变电流",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "工频电抗",
+                "expr": "omega*L",
+                "ref": 62.8318530718,
+                "note": "314.159265…×0.20≈62.8319 Ω。"
+              },
+              {
+                "type": "direction",
+                "scenario": "工频电抗",
+                "var": "omega",
+                "lo": 1,
+                "hi": 10000,
+                "expr": "omega*L",
+                "expect": "up",
+                "note": "电感一定时，频率越高，感抗越大。"
+              },
+              {
+                "type": "direction",
+                "scenario": "工频电抗",
+                "var": "L",
+                "lo": 0.001,
+                "hi": 10,
+                "expr": "omega*L",
+                "expect": "up",
+                "note": "频率一定时，自感系数越大，感抗越大。"
+              },
+              {
+                "type": "consistency",
+                "scenario": "工频电抗",
+                "with": "ac-06|理想电感的感抗",
+                "with_expr": "L/(C_cap*X_C)",
+                "target": "理想电感对正弦交流的感抗",
+                "note": "本公式直接求X_L；参考端显式关系为L/(C_cap*X_C)。两端使用同一情境和阶段，只核对该关系；with字段仅定位来源，不代表调用另一条被覆盖的公式。",
+                "verification_kind": "独立关系核对"
+              },
+              {
+                "type": "scan",
+                "scenario": "工频电抗",
+                "var": "omega",
+                "lo": 0,
+                "hi": 1000000
+              }
+            ]
+          },
+          {
+            "name": "理想电容的容抗",
+            "expr": "X_C = 1/(omega*C_cap)",
+            "when": "理想电容接入角频率为 omega 的正弦式交变电流，omega 和 C_cap 均大于零",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "工频电抗",
+                "expr": "1/(omega*C_cap)",
+                "ref": 31.8309886184,
+                "note": "1÷(314.159265…×0.00010)≈31.8310 Ω。"
+              },
+              {
+                "type": "direction",
+                "scenario": "工频电抗",
+                "var": "omega",
+                "lo": 1,
+                "hi": 10000,
+                "expr": "1/(omega*C_cap)",
+                "expect": "down",
+                "note": "电容一定时，频率越高，容抗越小。"
+              },
+              {
+                "type": "direction",
+                "scenario": "工频电抗",
+                "var": "C_cap",
+                "lo": 1e-06,
+                "hi": 0.01,
+                "expr": "1/(omega*C_cap)",
+                "expect": "down",
+                "note": "频率一定时，电容越大，容抗越小。"
+              },
+              {
+                "type": "scan",
+                "scenario": "工频电抗",
+                "var": "omega",
+                "lo": 0.001,
+                "hi": 1000000
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "电感中的电流变化会产生自感电动势，变化越快，自感作用越强，因此感抗随角频率增大。",
+          "对正弦交流定量分析得到 X_L=omega*L。",
+          "电容两端电压变化时持续充放电；频率越高，单位时间内充放电越频繁，交流越容易通过。",
+          "对正弦交流定量分析得到 X_C=1/(omega*C_cap)，它与角频率和电容均成反比。"
+        ],
+        "errors": [
+          {
+            "wrong": "把感抗公式多乘一个系数 2，写成 X_L=2*omega*L",
+            "wrong_expr": "X_L = 2*omega*L",
+            "why": "多出的 2 没有量纲，所以错误式量纲完全正确。工频情境中它会算出约 125.66 Ω，正确感抗约为 62.83 Ω，只能靠数值代入抓住。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "工频电抗",
+              "expr": "2*omega*L",
+              "ref": 62.8318530718
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "认为电容像普通电阻一样，频率越高阻碍越强，写成 X_C=omega*C_cap",
+            "wrong_expr": "X_C = omega*C_cap",
+            "why": "正确容抗与角频率成反比；频率加倍时容抗应从约 31.83 Ω 减至约 15.92 Ω。错误式量纲也不是欧姆。",
+            "caught_by": "量纲一致性",
+            "trap_test": {
+              "kind": "dimension",
+              "target": "X_C = omega*C_cap",
+              "lhs_dim": "M·L^2·T^-3·I^-2",
+              "rhs_dim": "M^-1·L^-2·T^3·I^2",
+              "expect": "mismatch",
+              "note": "实际量纲检查得到等号左边为M·L^2·T^-3·I^-2、右边为M^-1·L^-2·T^3·I^2；两边不是同一物理量，因此该等式不成立。"
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "角频率为 100*pi rad/s 的正弦交流分别接入 0.20 H 理想电感和 100 μF 理想电容。求感抗和容抗，并说明频率加倍后的变化。",
+          "solution": [
+            "X_L=omega*L=100*pi×0.20=20*pi≈62.83 Ω。",
+            "100 μF=1.0×10^-4 F，X_C=1/(omega*C_cap)。",
+            "X_C=1/(100*pi×1.0×10^-4)≈31.83 Ω。",
+            "频率加倍时，感抗加倍为约 125.66 Ω，容抗减半为约 15.92 Ω。"
+          ],
+          "answer": "感抗约 62.83 Ω，容抗约 31.83 Ω；频率加倍后感抗加倍、容抗减半。"
+        },
+        "prereq": [
+          "iad-01",
+          "cap-01",
+          "ac-03"
+        ],
+        "next": [],
+        "tags": [
+          "感抗",
+          "容抗",
+          "频率响应"
+        ],
+        "learning_scope": "高中"
       },
-      "title": "电感与电容对交变电流的影响",
+      "error_index": 1,
       "chapter": "第十五章 · 交变电流"
     },
     "diagnostic-ac-07-1": {
-      "error": {
-        "wrong": "LC周期遗漏二倍圆周率中的二，周期算成一半。",
-        "wrong_expr": "T = pi*sqrt(L*C)",
-        "why": "角频率的倒数还须乘完整2π，不能写π√(LC)；该参数周期约6.283 ms，错式约3.142 ms。",
-        "caught_by": "数值代入",
-        "trap_test": {
-          "scenario": "电感甲",
-          "expr": "pi*sqrt(L*C)",
-          "ref": 0.006283185307179586
-        }
+      "point": {
+        "id": "ac-07",
+        "title": "LC振荡电路：周期、相位与能量",
+        "level": "基础",
+        "definition": "理想电感与电容组成的闭合回路可在电场能和磁场能之间周期交换。忽略电阻及辐射、采用线性元件时，振荡周期为二倍圆周率乘电感电容乘积的平方根。",
+        "meaning": "电容充电最大时电流为零，电容电场能最大；电容电荷为零时电流大小最大，磁场能最大。以电流流入选定正极板为正，电流为该板电荷的时间导数；取起始电荷最大，则电荷按余弦、电流按负正弦变化，两者相差四分之一周期。放电方向定义为正时电流符号相反，应说明约定。理想总能量守恒；实际电阻使能量耗散并形成阻尼，不能用无损模型断言真实振幅不变。",
+        "symbols": {
+          "T": {
+            "desc": "理想振荡周期",
+            "unit": "s"
+          },
+          "omega": {
+            "desc": "角频率",
+            "unit": "rad/s"
+          },
+          "L": {
+            "desc": "电感",
+            "unit": "H"
+          },
+          "C": {
+            "desc": "电容",
+            "unit": "F"
+          },
+          "q0": {
+            "desc": "极板最大电荷量",
+            "unit": "C"
+          },
+          "I0": {
+            "desc": "最大电流大小",
+            "unit": "A"
+          },
+          "Ee": {
+            "desc": "最大电场能",
+            "unit": "J"
+          },
+          "Em": {
+            "desc": "最大磁场能",
+            "unit": "J"
+          }
+        },
+        "scenarios": {
+          "电感甲": {
+            "L": 0.1,
+            "C": 1e-05,
+            "q0": 0.0001,
+            "I0": 0.1,
+            "T": 0.006283185307179586,
+            "omega": 1000,
+            "Ee": 0.0005,
+            "Em": 0.0005
+          },
+          "电感乙": {
+            "L": 0.4,
+            "C": 1e-05,
+            "q0": 0.0001,
+            "I0": 0.05,
+            "T": 0.012566370614359171,
+            "omega": 500,
+            "Ee": 0.0005,
+            "Em": 0.0005
+          }
+        },
+        "formulas": [
+          {
+            "name": "理想LC周期",
+            "expr": "T = 2*pi*sqrt(L*C)",
+            "when": "理想电感和电容构成自由LC振荡回路，L、C>0，忽略电阻损耗、辐射及外部驱动。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "电感甲",
+                "ref": 0.006283185307179586,
+                "note": "0.1 H与10 μF对应约6.283 ms。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "电感乙",
+                "ref": 0.012566370614359171,
+                "note": "电感增至四倍，周期变二倍。"
+              },
+              {
+                "type": "scan",
+                "scenario": "电感甲",
+                "var": "L",
+                "lo": 0.01,
+                "hi": 1,
+                "note": "扫描本条适用范围内的参数，奇点和越量程操作不在有效范围内。"
+              },
+              {
+                "type": "consistency",
+                "scenario": "电感甲",
+                "with": "ac-07|理想LC周期",
+                "with_expr": "2*pi/omega",
+                "note": "本公式直接求T；参考端显式关系为2*pi/omega。两端使用同一情境和阶段，只核对该关系；with字段仅定位来源，不代表调用另一条被覆盖的公式。",
+                "target": "理想振荡周期",
+                "verification_kind": "独立关系核对",
+                "tol": 6.283185307179588e-08
+              }
+            ]
+          },
+          {
+            "name": "LC角频率",
+            "expr": "omega = 1/sqrt(L*C)",
+            "when": "同一理想自由LC回路，L、C恒定且为正，角频率单位rad/s。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "电感甲",
+                "ref": 1000,
+                "note": "角频率1000 rad/s。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "电感乙",
+                "ref": 500,
+                "note": "角频率500 rad/s。"
+              }
+            ]
+          },
+          {
+            "name": "最大电场能",
+            "expr": "Ee = q0^2/(2*C)",
+            "when": "q0为该LC回路电容电荷量的振幅，C>0；电流为零的电能最大阶段。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "电感甲",
+                "ref": 0.0005,
+                "note": "最大电荷100 μC、电容10 μF。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "电感乙",
+                "ref": 0.0005,
+                "note": "同初始电荷与电容。"
+              },
+              {
+                "type": "consistency",
+                "scenario": "电感甲",
+                "with": "ac-07|最大电场能",
+                "with_expr": "L*I0^2/2",
+                "note": "本公式直接求Ee；参考端显式关系为L*I0^2/2。两端使用同一情境和阶段，只核对该关系；with字段仅定位来源，不代表调用另一条被覆盖的公式。",
+                "target": "最大电场能",
+                "verification_kind": "独立关系核对",
+                "tol": 5.000000000000002e-09
+              }
+            ]
+          },
+          {
+            "name": "最大磁场能",
+            "expr": "Em = L*I0^2/2",
+            "when": "I0为同一LC回路电流振幅；电容电荷为零的磁能最大阶段，忽略损耗。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "电感甲",
+                "ref": 0.0005,
+                "note": "0.1 H、0.1 A。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "电感乙",
+                "ref": 0.0005,
+                "note": "0.4 H、0.05 A。"
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "周期为2π×0.001 s≈6.283 ms，初始电流零、电场能0.5 mJ。",
+          "四分之一周期后电荷零、电流大小0.1 A，磁场能0.5 mJ。",
+          "电容充电最大时电流为零，电容电场能最大；电容电荷为零时电流大小最大，磁场能最大。"
+        ],
+        "errors": [
+          {
+            "wrong": "LC周期遗漏二倍圆周率中的二，周期算成一半。",
+            "wrong_expr": "T = pi*sqrt(L*C)",
+            "why": "角频率的倒数还须乘完整2π，不能写π√(LC)；该参数周期约6.283 ms，错式约3.142 ms。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "电感甲",
+              "expr": "pi*sqrt(L*C)",
+              "ref": 0.006283185307179586
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "电容电荷最大时电流也最大，或实际有电阻仍永远等幅。",
+            "why": "电荷极值处时间导数零，电流此时零；真实电阻产生热损失而衰减。相位符号还取决于选定电荷极板及电流方向。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "理想LC电路L=0.1 H、C=10 μF，初始电荷100 μC，比较初始与四分之一周期状态。",
+          "solution": [
+            "周期为2π×0.001 s≈6.283 ms，初始电流零、电场能0.5 mJ。",
+            "四分之一周期后电荷零、电流大小0.1 A，磁场能0.5 mJ。"
+          ],
+          "answer": "周期约6.283 ms，能量由电场转入磁场而总量保持0.5 mJ。"
+        },
+        "prereq": [
+          "cap-01",
+          "iad-01"
+        ],
+        "next": [
+          "ac-06"
+        ],
+        "tags": [
+          "LC振荡电路：周期、相位与能量",
+          "条件与边界",
+          "实验与证据"
+        ],
+        "core": [
+          {
+            "title": "LC振荡电路：周期、相位与能量：方法与边界",
+            "text": "电容充电最大时电流为零，电容电场能最大；电容电荷为零时电流大小最大，磁场能最大。以电流流入选定正极板为正，电流为该板电荷的时间导数；取起始电荷最大，则电荷按余弦、电流按负正弦变化，两者相差四分之一周期。放电方向定义为正时电流符号相反，应说明约定。理想总能量守恒；实际电阻使能量耗散并形成阻尼，不能用无损模型断言真实振幅不变。"
+          }
+        ],
+        "learning_scope": "高中"
       },
-      "title": "LC振荡电路：周期、相位与能量",
+      "error_index": 0,
       "chapter": "第十五章 · 交变电流"
     },
     "diagnostic-ac-07-2": {
-      "error": {
-        "wrong": "电容电荷最大时电流也最大，或实际有电阻仍永远等幅。",
-        "why": "电荷极值处时间导数零，电流此时零；真实电阻产生热损失而衰减。相位符号还取决于选定电荷极板及电流方向。",
-        "caught_by": "人工审核"
+      "point": {
+        "id": "ac-07",
+        "title": "LC振荡电路：周期、相位与能量",
+        "level": "基础",
+        "definition": "理想电感与电容组成的闭合回路可在电场能和磁场能之间周期交换。忽略电阻及辐射、采用线性元件时，振荡周期为二倍圆周率乘电感电容乘积的平方根。",
+        "meaning": "电容充电最大时电流为零，电容电场能最大；电容电荷为零时电流大小最大，磁场能最大。以电流流入选定正极板为正，电流为该板电荷的时间导数；取起始电荷最大，则电荷按余弦、电流按负正弦变化，两者相差四分之一周期。放电方向定义为正时电流符号相反，应说明约定。理想总能量守恒；实际电阻使能量耗散并形成阻尼，不能用无损模型断言真实振幅不变。",
+        "symbols": {
+          "T": {
+            "desc": "理想振荡周期",
+            "unit": "s"
+          },
+          "omega": {
+            "desc": "角频率",
+            "unit": "rad/s"
+          },
+          "L": {
+            "desc": "电感",
+            "unit": "H"
+          },
+          "C": {
+            "desc": "电容",
+            "unit": "F"
+          },
+          "q0": {
+            "desc": "极板最大电荷量",
+            "unit": "C"
+          },
+          "I0": {
+            "desc": "最大电流大小",
+            "unit": "A"
+          },
+          "Ee": {
+            "desc": "最大电场能",
+            "unit": "J"
+          },
+          "Em": {
+            "desc": "最大磁场能",
+            "unit": "J"
+          }
+        },
+        "scenarios": {
+          "电感甲": {
+            "L": 0.1,
+            "C": 1e-05,
+            "q0": 0.0001,
+            "I0": 0.1,
+            "T": 0.006283185307179586,
+            "omega": 1000,
+            "Ee": 0.0005,
+            "Em": 0.0005
+          },
+          "电感乙": {
+            "L": 0.4,
+            "C": 1e-05,
+            "q0": 0.0001,
+            "I0": 0.05,
+            "T": 0.012566370614359171,
+            "omega": 500,
+            "Ee": 0.0005,
+            "Em": 0.0005
+          }
+        },
+        "formulas": [
+          {
+            "name": "理想LC周期",
+            "expr": "T = 2*pi*sqrt(L*C)",
+            "when": "理想电感和电容构成自由LC振荡回路，L、C>0，忽略电阻损耗、辐射及外部驱动。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "电感甲",
+                "ref": 0.006283185307179586,
+                "note": "0.1 H与10 μF对应约6.283 ms。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "电感乙",
+                "ref": 0.012566370614359171,
+                "note": "电感增至四倍，周期变二倍。"
+              },
+              {
+                "type": "scan",
+                "scenario": "电感甲",
+                "var": "L",
+                "lo": 0.01,
+                "hi": 1,
+                "note": "扫描本条适用范围内的参数，奇点和越量程操作不在有效范围内。"
+              },
+              {
+                "type": "consistency",
+                "scenario": "电感甲",
+                "with": "ac-07|理想LC周期",
+                "with_expr": "2*pi/omega",
+                "note": "本公式直接求T；参考端显式关系为2*pi/omega。两端使用同一情境和阶段，只核对该关系；with字段仅定位来源，不代表调用另一条被覆盖的公式。",
+                "target": "理想振荡周期",
+                "verification_kind": "独立关系核对",
+                "tol": 6.283185307179588e-08
+              }
+            ]
+          },
+          {
+            "name": "LC角频率",
+            "expr": "omega = 1/sqrt(L*C)",
+            "when": "同一理想自由LC回路，L、C恒定且为正，角频率单位rad/s。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "电感甲",
+                "ref": 1000,
+                "note": "角频率1000 rad/s。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "电感乙",
+                "ref": 500,
+                "note": "角频率500 rad/s。"
+              }
+            ]
+          },
+          {
+            "name": "最大电场能",
+            "expr": "Ee = q0^2/(2*C)",
+            "when": "q0为该LC回路电容电荷量的振幅，C>0；电流为零的电能最大阶段。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "电感甲",
+                "ref": 0.0005,
+                "note": "最大电荷100 μC、电容10 μF。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "电感乙",
+                "ref": 0.0005,
+                "note": "同初始电荷与电容。"
+              },
+              {
+                "type": "consistency",
+                "scenario": "电感甲",
+                "with": "ac-07|最大电场能",
+                "with_expr": "L*I0^2/2",
+                "note": "本公式直接求Ee；参考端显式关系为L*I0^2/2。两端使用同一情境和阶段，只核对该关系；with字段仅定位来源，不代表调用另一条被覆盖的公式。",
+                "target": "最大电场能",
+                "verification_kind": "独立关系核对",
+                "tol": 5.000000000000002e-09
+              }
+            ]
+          },
+          {
+            "name": "最大磁场能",
+            "expr": "Em = L*I0^2/2",
+            "when": "I0为同一LC回路电流振幅；电容电荷为零的磁能最大阶段，忽略损耗。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "电感甲",
+                "ref": 0.0005,
+                "note": "0.1 H、0.1 A。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "电感乙",
+                "ref": 0.0005,
+                "note": "0.4 H、0.05 A。"
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "周期为2π×0.001 s≈6.283 ms，初始电流零、电场能0.5 mJ。",
+          "四分之一周期后电荷零、电流大小0.1 A，磁场能0.5 mJ。",
+          "电容充电最大时电流为零，电容电场能最大；电容电荷为零时电流大小最大，磁场能最大。"
+        ],
+        "errors": [
+          {
+            "wrong": "LC周期遗漏二倍圆周率中的二，周期算成一半。",
+            "wrong_expr": "T = pi*sqrt(L*C)",
+            "why": "角频率的倒数还须乘完整2π，不能写π√(LC)；该参数周期约6.283 ms，错式约3.142 ms。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "电感甲",
+              "expr": "pi*sqrt(L*C)",
+              "ref": 0.006283185307179586
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "电容电荷最大时电流也最大，或实际有电阻仍永远等幅。",
+            "why": "电荷极值处时间导数零，电流此时零；真实电阻产生热损失而衰减。相位符号还取决于选定电荷极板及电流方向。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "理想LC电路L=0.1 H、C=10 μF，初始电荷100 μC，比较初始与四分之一周期状态。",
+          "solution": [
+            "周期为2π×0.001 s≈6.283 ms，初始电流零、电场能0.5 mJ。",
+            "四分之一周期后电荷零、电流大小0.1 A，磁场能0.5 mJ。"
+          ],
+          "answer": "周期约6.283 ms，能量由电场转入磁场而总量保持0.5 mJ。"
+        },
+        "prereq": [
+          "cap-01",
+          "iad-01"
+        ],
+        "next": [
+          "ac-06"
+        ],
+        "tags": [
+          "LC振荡电路：周期、相位与能量",
+          "条件与边界",
+          "实验与证据"
+        ],
+        "core": [
+          {
+            "title": "LC振荡电路：周期、相位与能量：方法与边界",
+            "text": "电容充电最大时电流为零，电容电场能最大；电容电荷为零时电流大小最大，磁场能最大。以电流流入选定正极板为正，电流为该板电荷的时间导数；取起始电荷最大，则电荷按余弦、电流按负正弦变化，两者相差四分之一周期。放电方向定义为正时电流符号相反，应说明约定。理想总能量守恒；实际电阻使能量耗散并形成阻尼，不能用无损模型断言真实振幅不变。"
+          }
+        ],
+        "learning_scope": "高中"
       },
-      "title": "LC振荡电路：周期、相位与能量",
+      "error_index": 1,
       "chapter": "第十五章 · 交变电流"
     }
-  }
+  },
+  "generator_version": "2026-10-04-条件过程返工-8"
 }

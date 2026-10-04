@@ -16,7 +16,8 @@ if HERE not in sys.path:
     sys.path.insert(0, HERE)
 
 from physkit import kb as KB
-from prose_math import render as prose
+from prose_math import render as prose, symbol_context
+from 诊断题重构 import make_question, GENERATOR_VERSION
 
 
 DIAGNOSTIC_TYPES = {
@@ -80,247 +81,37 @@ def _diagnostic_excerpt(text, limit=90):
 
 
 def make_diagnostic_bank(kb_dir, output_path, segment="高中", source_filename=None):
-    """按指定章节生成诊断题；选项只取同章真实错误记录，缺证据时记为跳过。"""
-    # 来源未变的题保留原对象；来源或干扰项变化时仅刷新受影响题。
-    previous_questions = {}
+    """两学段统一来源同步；题目改变必须来自解释、情境或题目目标的实际变化。"""
     old_bank = {}
     if os.path.isfile(output_path):
-        try:
-            with open(output_path, "r", encoding="utf-8") as handle:
-                old_bank = json.load(handle)
-            previous_questions = {
-                question["id"]: question
-                for question in old_bank.get("questions", [])
-                if isinstance(question, dict) and question.get("id")
-            }
-        except (OSError, ValueError, TypeError):
-            previous_questions = {}
-    chapters = KB.load_kb(kb_dir)
-    source = next(((filename, chapter) for filename, chapter in chapters
-                   if (os.path.basename(filename) == source_filename if source_filename
-                       else os.path.basename(filename).startswith("01_"))), None)
-    if source is None:
-        raise ValueError("找不到指定章节 JSON，无法生成诊断题：%s" % source_filename)
-    filename, chapter = source
-    # 本批只授权七个新增点及等时圆标题；其他高中章节与旧题原样保留。
-    new_hs_ids = {'dyn-09', 'dyn-10', 'kine-09', 'met-07', 'ac-07', 'mol-05', 'mol-06'}
-    if segment == "高中" and old_bank:
-        source_ids = {point['id'] for point in chapter.get('points', [])}
-        rename_needed = any(q.get('point_id') == 'mdl-26' and
-                            q.get('point_title') != '等时圆（弦轨道下滑时间相同）'
-                            for q in previous_questions.values())
-        present = {q.get('point_id') for q in previous_questions.values()}
-        source_changed = any(old_bank.get('source_records', {}).get(q['id']) !=
-                             {'error': p['errors'][q['source_error_index']], 'title': p['title'],
-                              'chapter': chapter['chapter']}
-                             for p in chapter.get('points', []) if p['id'] in new_hs_ids
-                             for q in previous_questions.values() if q['point_id'] == p['id'])
-        if not ((source_ids & new_hs_ids) - present) and not rename_needed and not source_changed:
-            return old_bank
-    errors = []
-    for point in chapter.get("points", []):
-        for index, error in enumerate(point.get("errors", [])):
-            caught_by = error.get("caught_by", "人工审核")
-            if caught_by not in DIAGNOSTIC_TYPES:
-                raise ValueError("%s出现未登记的错误类型：%s" % (segment, caught_by))
-            errors.append({
-                "point_id": point["id"], "point_title": point["title"],
-                "chapter": chapter.get("chapter", "未命名章节"),
-                "source_error_index": index, "source": error,
-                "error_type": DIAGNOSTIC_TYPES[caught_by],
-                "judging": "teacher" if caught_by == "人工审核" else "auto",
-            })
-
-    # 五种错误标签只从源校验名派生；同章标签不足四类时，选项补充源条目的原始解释。
-    available_types = [name for name in TYPE_ORDER
-                       if any(item["error_type"] == name for item in errors)]
-    questions, skipped = [], []
-    preserved_count = 0
-    updated_ids = []
-    source_records = {}
-    def visible(value):
-        # 兼容历史上下标排版差异；正文语义、错误实测和来源标签分别核对。
-        return re.sub(r'[\s_。；;，,]', '', html.unescape(re.sub(r'<[^>]*>', '', str(value or ''))))
-    for number, item in enumerate(errors):
-        error = item["source"]
-        correct_type = item["error_type"]
-        question_id = "diagnostic-%s-%d" % (
-            item["point_id"], item["source_error_index"] + 1)
-        snapshot = {"error": error, "title": item["point_title"], "chapter": item["chapter"]}
-        source_records[question_id] = snapshot
-        old = previous_questions.get(question_id)
-        if old and segment == '高中' and item['point_id'] not in new_hs_ids:
-            # 标题修订不重排选项，不重造答案；其他旧题字段逐项不变。
-            if item['point_id'] == 'mdl-26' and old.get('point_title') != item['point_title']:
-                old_title = old['point_title']
-                old = dict(old)
-                old['point_title'] = item['point_title']
-                old['stem'] = old['stem'].replace(old_title, item['point_title'], 1)
-                updated_ids.append(question_id)
-            questions.append(old)
-            preserved_count += 1
-            continue
-        if old:
-            previous = old_bank.get("source_records", {}).get(question_id)
-            same = (previous == snapshot) if previous else (
-                visible(prose(error.get("wrong", ""))) in visible(old.get("stem"))
-                and visible(prose(error.get("why", ""))) in visible(old.get("explanation"))
-                and old.get("trap_test") == error.get("trap_test")
-                and old.get("source_caught_by") == error.get("caught_by", "人工审核")
-                and old.get("point_title") == item["point_title"])
-            # 旧题的干扰项也可能引用被修改的解释；失效来源不能原样保留。
-            pool = {visible(prose('%s：%s' % (e['error_type'], _diagnostic_excerpt(e['source'].get('why', ''))))) for e in errors}
-            same = same and all(visible(o['text']) in pool or visible(o['text']) in {visible(t) for t in TYPE_ORDER} for o in old.get('options', []))
-            if same:
-                questions.append(old);preserved_count += 1;continue
-            updated_ids.append(question_id)
-        wrong = error.get("wrong", "")
-        wrong_expr = error.get("wrong_expr")
-        if not str(wrong).strip() or not str(error.get("why", "")).strip():
-            skipped.append({"point_id": item["point_id"], "point_title": item["point_title"],
-                            "source_error_index": item["source_error_index"],
-                            "reason": "来源缺少错误做法或解释，无法形成自足题干。"})
-            continue
-        if item["judging"] == "auto" and not error.get("trap_test"):
-            skipped.append({"point_id": item["point_id"], "point_title": item["point_title"],
-                            "source_error_index": item["source_error_index"],
-                            "reason": "自动判定条目没有 trap_test 可执行证据；不把校验标签代替实测证据。"})
-            continue
-
-        # 题干带上章节和知识点，避免不同知识点复用同一条常见错误时看起来重复。
-        wrong_text = str(wrong).strip()
-        if wrong_text.endswith(("。", "；", ";")):
-            wrong_text = wrong_text[:-1]
-        stem = "【%s · %s】学生的错误做法：%s" % (
-            item["chapter"], item["point_title"], wrong_text)
-        if wrong_expr:
-            stem += "（错误表达式：%s）" % wrong_expr
-        if not stem.endswith(("。", "！", "？", "!", "?", "；", ";")):
-            stem += "。"
-
-        choices = []
-        if len(available_types) >= 4:
-            # 四种类别都真实出现在本章时，保持已验收样板的纯类别选项样式。
-            others = [name for name in available_types if name != correct_type]
-            chosen_others = [others[(number + i) % len(others)] for i in range(3)]
-            option_texts = [correct_type] + chosen_others
-            offset = number % 4
-            option_texts = option_texts[offset:] + option_texts[:offset]
-            choices = [{"text": label, "source": None} for label in option_texts]
-            correct_text = correct_type
-            stem += "这条错误属于哪一类？"
-        else:
-            # 类别不足四种时，用同章其他真实错误的类别+原解释构成可区分选项。
-            ranked = []
-            for candidate in errors:
-                if candidate is item:
-                    continue
-                why = _diagnostic_excerpt(candidate["source"].get("why", ""))
-                if not why:
-                    continue
-                category = candidate["error_type"]
-                # 优先不同类别，再优先来自另一个知识点，避免明显重复的干扰项。
-                ranked.append((category == correct_type,
-                               candidate["point_id"] == item["point_id"],
-                               candidate["source_error_index"], candidate, why))
-            ranked.sort(key=lambda row: (row[0], row[1], row[2], row[3]["point_id"]))
-            seen = set()
-            for _same_type, _same_point, _index, candidate, why in ranked:
-                text = "%s：%s" % (candidate["error_type"], why)
-                if text == "%s：%s" % (correct_type, _diagnostic_excerpt(error.get("why", ""))):
-                    continue
-                if text in seen:
-                    continue
-                seen.add(text)
-                choices.append({"text": text, "source": candidate})
-                if len(choices) == 3:
-                    break
-            if len(choices) < 3:
-                skipped.append({"point_id": item["point_id"], "point_title": item["point_title"],
-                                "source_error_index": item["source_error_index"],
-                                "reason": "同章无法提供三个互不重复、且有来源解释的干扰项。"})
-                continue
-            correct_text = "%s：%s" % (correct_type, _diagnostic_excerpt(error.get("why", "")))
-            choices.append({"text": correct_text, "source": item})
-            # 固定轮换排列，避免正确答案总落在同一个位置。
-            offset = number % 4
-            choices = choices[offset:] + choices[:offset]
-            stem += "以下哪项“错误类别 + 判断依据”最符合题干中的做法？"
-
-        # 题干与选项都过一遍排版器：诊断题直接复用了知识库「常见错误」的原文，
-        # 里面满是 v_0 / q_1q_2 / omega 这类机器写法，不走这一步就会原样印给读者。
-        # 只影响显示，判定用的还是下面 checked_text 里的原始文本。
-        options = [{"label": chr(ord("A") + i), "text": prose(option["text"])}
-                   for i, option in enumerate(choices)]
-        correct_text = prose(correct_text)
-        # 刷新题干或依据时，尽量保留原题答案位置，避免无关的答案重排。
-        if old and old.get('error_type') == correct_type:
-            previous_label = old.get('correct_answer')
-            target_index = ord(previous_label) - ord('A') if previous_label in ('A','B','C','D') else -1
-            found_index = next((i for i,o in enumerate(options) if o['text'] == correct_text), -1)
-            if target_index >= 0 and found_index >= 0:
-                options[target_index]['text'], options[found_index]['text'] = options[found_index]['text'], options[target_index]['text']
-        matching = [option["label"] for option in options if option["text"] == correct_text]
-        if len(options) != 4 or len(matching) != 1 or len({o["text"] for o in options}) != 4:
-            skipped.append({"point_id": item["point_id"], "point_title": item["point_title"],
-                            "source_error_index": item["source_error_index"],
-                            "reason": "选项无法保证四项互异且唯一匹配正确答案。"})
-            continue
-
-        other_segment_terms = (r"高中|高一|高二|高三" if segment == "初中"
-                               else r"初中|初一|初二|初三")
-        checked_text = " ".join([stem, error.get("why", "")] + [o["text"] for o in options])
-        no_cross_segment = not re.search(other_segment_terms, checked_text)
-        all_type_unique = len({
-            (option.get("source") or {}).get("error_type", option["text"])
-            for option in choices
-        }) == 4
-        checks = {
-            "answer_unique": len(matching) == 1,
-            "distractors_plausible": all(option.get("source") is not None or len(available_types) >= 4
-                                           for option in choices),
-            "stem_clear": len(str(wrong).strip()) >= 8 and len(str(error.get("why", "")).strip()) >= 12,
-            "no_cross_segment": no_cross_segment,
-        }
-        note_parts = []
-        if not all_type_unique:
-            note_parts.append("本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。")
-        if not checks["stem_clear"]:
-            note_parts.append("来源错误描述较短或解释信息有限，题干可能需要教师补充情境。")
-        if not no_cross_segment:
-            note_parts.append("来源文字出现另一学段字样；虽沿用本学段原始错误记录，仍需核对边界。")
-        confidence = "high" if all(checks.values()) and all_type_unique else (
-            "low" if not checks["answer_unique"] or not checks["stem_clear"] or not no_cross_segment else "medium")
-        review = {"confidence": confidence, "checks": checks,
-                  "note": "；".join(note_parts)}
-        questions.append({
-            "id": question_id,
-            "point_id": item["point_id"], "point_title": item["point_title"],
-            "chapter": item["chapter"], "stem": prose(stem), "options": options,
-            "correct_answer": matching[0], "explanation": prose(diagnostic_explanation(error)),
-            "error_type": correct_type, "judging": item["judging"],
-            "source_error_index": item["source_error_index"],
-            "source_caught_by": error.get("caught_by", "人工审核"),
-            "wrong_expr": prose(wrong_expr) if wrong_expr else wrong_expr,
-            "trap_test": error.get("trap_test"), "review": review,
-        })
-    bank = {"segment": segment, "chapter": chapter.get("chapter", "未命名章节"),
-            "source_file": os.path.basename(filename), "questions": questions,
-            "skipped": skipped, "source_records": source_records}
-    parent = os.path.dirname(os.path.abspath(output_path))
-    os.makedirs(parent, exist_ok=True)
+        with open(output_path, encoding="utf-8") as handle:
+            old_bank = json.load(handle)
+    old_questions = {q["id"]: q for q in old_bank.get("questions", [])}
+    filename, chapter = next((f, c) for f, c in KB.load_kb(kb_dir)
+                             if f == source_filename or (not source_filename and f.startswith("01_")))
+    questions, skipped, records, updated = [], [], {}, []
+    preserved = 0
+    for point in chapter["points"]:
+        for i, error in enumerate(point.get("errors", [])):
+            qid = "diagnostic-%s-%d" % (point["id"], i+1)
+            # 完整源卡覆盖推导、公式、适用条件、情境和解释；规则版本独立迁移。
+            snapshot = {"point": point, "error_index": i, "chapter": chapter["chapter"]}
+            records[qid] = snapshot
+            old = old_questions.get(qid)
+            if old and old_bank.get("generator_version") == GENERATOR_VERSION and old_bank.get("source_records", {}).get(qid) == snapshot:
+                questions.append(old); preserved += 1; continue
+            if old: updated.append(qid)
+            if not error.get("wrong") or not error.get("why"):
+                skipped.append({"point_id": point["id"], "source_error_index": i,
+                                "reason": "缺少物理错误或更正依据，待教师补充。"}); continue
+            questions.append(make_question(point,error,i,chapter["chapter"],segment))
+    bank = {"segment": segment, "chapter": chapter["chapter"], "source_file": filename,
+            "questions": questions, "skipped": skipped, "source_records": records, "generator_version": GENERATOR_VERSION}
+    os.makedirs(os.path.dirname(os.path.abspath(output_path)), exist_ok=True)
     with open(output_path, "w", encoding="utf-8", newline="\n") as handle:
-        json.dump(bank, handle, ensure_ascii=False, indent=2)
-        handle.write("\n")
-    auto_count = sum(1 for q in questions if q["judging"] == "auto")
-    teacher_count = len(questions) - auto_count
-    print("已生成%s诊断题：%s，%d 题（自动判定 %d，教师点评 %d，跳过 %d）" %
-          (segment, chapter.get("chapter", "未命名章节"), len(questions),
-           auto_count, teacher_count, len(skipped)))
-    if preserved_count:
-        print("  保留上一版已验收题目：%d 道，原字段未重写。" % preserved_count)
-    # 只供本次构建对账，不写入题库，重复构建应无额外变化。
-    bank["updated_ids"] = updated_ids
+        json.dump(bank, handle, ensure_ascii=False, indent=2); handle.write("\n")
+    print("%s题库 %s：%d题，保留%d，刷新%d" % (segment, filename, len(questions), preserved, len(updated)))
+    bank["updated_ids"] = updated
     return bank
 
 
@@ -463,7 +254,7 @@ SCRIPT = r"""
     if(position>=deck.length){showResults();return;}
     current=deck[position];
     document.getElementById('question-number').textContent='第 '+(position+1)+' / '+deck.length+' 题';
-    document.getElementById('question-chapter').textContent=current.chapter+' · '+current.title;
+    document.getElementById('question-chapter').textContent=current.chapter+' · '+current.title+' · 难度：'+current.level+' · 范围：'+current.learning_scope;
     var pointLink=document.getElementById('question-kp-link');pointLink.href=bank.mainPage+'#'+encodeURIComponent(current.id);pointLink.textContent='回看知识点：'+current.title;
     document.getElementById('question-stem').innerHTML=current.stem;
     var solution=document.getElementById('question-solution');solution.innerHTML='';
@@ -523,6 +314,37 @@ SCRIPT = r"""
     saved={version:1,attempts:[]};setStorageNotice(saveSaved());
     if(!progressPanel.classList.contains('hidden'))renderProgress();
   });
+  // 导入导出只处理本学段例题自评记录，先完整验证再合并，错误文件不覆盖旧记录。
+  var transferNotice=document.getElementById('transfer-notice');
+  function validateRecords(value){
+    if(!value||value.format!=='物理知识库学习记录'||value.version!==1||value.segment!==bank.segment||!Array.isArray(value.attempts)||value.attempts.length>1500)throw Error('文件格式、学段或记录数量不符合要求。');
+    return value.attempts.map(function(r){
+      var q=r&&bank.questions.find(function(q){return q.id===r.id;});
+      if(!q||!['mastered','stuck','wrong'].includes(r.outcome)||typeof r.at!=='string'||r.at.length>40||!Number.isFinite(Date.parse(r.at)))throw Error('记录含未知知识点、无效自评或日期。');
+      return {id:q.id,title:q.title,chapter:q.chapter,outcome:r.outcome,at:new Date(r.at).toISOString()};
+    });
+  }
+  function exportValue(){return {format:'物理知识库学习记录',version:1,segment:bank.segment,attempts:saved.attempts};}
+  document.getElementById('export-progress').addEventListener('click',function(){
+    var value=exportValue(),url=URL.createObjectURL(new Blob([JSON.stringify(value,null,2)],{type:'application/json;charset=utf-8'})),a=document.createElement('a');
+    a.href=url;a.download='学习记录_'+bank.segment+'_'+new Date().toISOString().slice(0,10)+'.json';document.body.appendChild(a);a.click();a.remove();setTimeout(function(){URL.revokeObjectURL(url);},1000);
+    transferNotice.textContent='已导出本学段 '+saved.attempts.length+' 次例题自评记录。文件保存在本机，不上传。';
+  });
+  var fileInput=document.getElementById('import-progress-file');
+  document.getElementById('import-progress').addEventListener('click',function(){fileInput.click();});
+  fileInput.addEventListener('change',async function(){
+    var file=this.files[0];if(!file)return;
+    try{
+      if(file.size>768*1024)throw Error('文件过大；请选择本页导出的轻量记录文件。');
+      var incoming=validateRecords(JSON.parse(await file.text())),seen=new Set(),previous=saved;
+      var merged=saved.attempts.concat(incoming).filter(function(r){var key=r.id+'|'+r.outcome+'|'+r.at;if(seen.has(key))return false;seen.add(key);return true;}).sort(function(a,b){return Date.parse(a.at)-Date.parse(b.at);});
+      saved={version:1,attempts:merged.slice(-1500)};
+      if(!saveSaved()){saved=previous;throw Error('当前浏览器不能保存，原记录保留。');}
+      transferNotice.textContent='导入完成：合并后 '+saved.attempts.length+' 次自评；重复记录已去重'+(merged.length>1500?'，保留最近1500次':'')+'。';
+      setStorageNotice(true);if(!progressPanel.classList.contains('hidden'))renderProgress();
+    }catch(e){transferNotice.textContent='导入失败：'+e.message+' 原有记录未改变。';}
+    finally{this.value='';}
+  });
   loadSaved();setStorageNotice(storageReady);
 })();
 """
@@ -560,7 +382,7 @@ DIAGNOSTIC_SCRIPT = r"""
     var isDiagnostic=value==='diagnostic';
     exampleIds.forEach(function(id){show(id,!isDiagnostic);});
     show('diagnostic-panel',isDiagnostic);
-    ['start','progress','clear-progress','storage-notice'].forEach(function(id){show(id,!isDiagnostic);});
+    ['start','progress','clear-progress','storage-notice','export-progress','import-progress','transfer-notice'].forEach(function(id){show(id,!isDiagnostic);});
     modeButtons.forEach(function(button){button.setAttribute('aria-pressed',String(button.getAttribute('data-mode')===value));});
     if(isDiagnostic&&!data.questions.length){
       show('diagnostic-intro',true);show('diagnostic-question',false);show('diagnostic-results',false);
@@ -619,7 +441,7 @@ DIAGNOSTIC_SCRIPT = r"""
   function renderDiagnostic(){
     current=deck[position];selected=null;
     setText('diagnostic-number','第 '+(position+1)+' / '+deck.length+' 题');
-    setText('diagnostic-origin',current.chapter+' · '+current.point_title+' · '+(current.judging==='auto'?'机器判定题':'教师点评题 · 参考答案需教师确认'));
+    setText('diagnostic-origin',current.chapter+' · '+current.point_title+' · 难度：'+current.level+' · 范围：'+current.learning_scope+' · '+(current.judging==='auto'?'机器判定题':'教师点评题 · 参考答案需教师确认'));
     setHTML('diagnostic-stem',current.stem);
     var options=node('diagnostic-options');options.innerHTML='';
     current.options.forEach(function(option){
@@ -644,14 +466,14 @@ DIAGNOSTIC_SCRIPT = r"""
     if(current.judging==='teacher'){
       session.push({judging:'teacher'});
       feedback.className='diag-feedback teacher';
-      feedback.textContent='已记录你的选择。这是一道教师点评题，系统不判对错。参考归类：'+current.error_type+'（待教师确认）。';
+      feedback.textContent='已记录你的选择。这是一道教师点评题，系统不判对错。参考选项：'+current.correct_answer+'（条件和结论待教师确认）。';
     }else{
       var correct=selected===current.correct_answer;
       session.push({judging:'auto',correct:correct});
       feedback.className='diag-feedback '+(correct?'correct':'incorrect');
-      feedback.textContent=(correct?'回答正确。':'这次没有选中。')+' 系统分类：'+current.error_type+'。';
+      feedback.textContent=(correct?'回答正确。':'这次没有选中。')+' 参考选项：'+current.correct_answer+'；请对照下方计算依据。';
     }
-    var explanation='错误做法：'+(current.wrong_expr||current.stem)+'\n\n解析：'+current.explanation;
+    var explanation='参考解析（教学质量待教师复核）：'+current.explanation;
     if(current.judging==='teacher')explanation+='\n\n教师确认前，本题不计入系统正确率。';
     setParagraphs('diagnostic-explanation',explanation);
     show('diagnostic-explanation-wrap',true);show('diagnostic-feedback',true);
@@ -731,10 +553,11 @@ def build(kb_dir, segment, main_page, output_path, diagnostic_path=None):
                 "id": point["id"],
                 "title": point["title"],
                 "chapter": chapter_name,
+                "level": point.get("level", "基础"), "learning_scope": point.get("learning_scope", segment),
                 # 正文排版器会先转义原始文本，再补充受控的数学上下标标签。
-                "stem": prose(example.get("stem", "")),
-                "solution": [prose(line) for line in example.get("solution", [])],
-                "answer": prose(example.get("answer", "")),
+                "stem": prose(example.get("stem", ""), point_id=point["id"]),
+                "solution": [prose(line, point_id=point["id"]) for line in example.get("solution", [])],
+                "answer": prose(example.get("answer", ""), point_id=point["id"]),
             })
 
     diagnostics = load_diagnostic_banks(diagnostic_path)
@@ -781,8 +604,8 @@ def build(kb_dir, segment, main_page, output_path, diagnostic_path=None):
 <div><label for="chapter-select">章节</label><select id="chapter-select"><option value="all">整册</option></select></div>
 <div><label for="point-select">知识点</label><select id="point-select"><option value="all">全部知识点</option></select></div>
 <div><label for="amount-select">本组题量</label><select id="amount-select"><option value="10">10 题</option><option value="20">20 题</option><option value="all">练完所选范围</option></select></div>
-</div><div class="actions"><button id="start" class="button primary">开始练习</button><button id="progress" class="button">查看本机记录</button><button id="clear-progress" class="button">清除记录</button></div>
-<p class="hint">例题随机抽取；诊断按来源顺序练习。章节、知识点和题量对两种模式都有效。记录保存在当前浏览器。</p><p id="storage-notice" class="hint" role="status"></p></section><div id="example-mode">
+</div><div class="actions"><button id="start" class="button primary">开始练习</button><button id="progress" class="button">查看本机记录</button><button id="clear-progress" class="button">清除记录</button><button id="export-progress" class="button">导出记录</button><button id="import-progress" class="button">导入记录</button><input id="import-progress-file" type="file" accept=".json,application/json" hidden></div>
+<p class="hint">例题随机抽取；诊断按来源顺序练习。章节、知识点和题量对两种模式都有效。记录保存在当前浏览器。</p><p id="storage-notice" class="hint" role="status"></p><p id="transfer-notice" class="hint" role="status"></p><p class="hint">导入导出本学段例题自评记录；离线合并、去重，最多保留最近1500次。教师点评不作为系统成绩。</p></section><div id="example-mode">
 <section id="question-panel" class="panel hidden"><div id="question-number" class="question-meta"></div><div id="question-chapter" class="question-meta"></div>
 <div class="inline-links"><a id="question-kp-link" href="%(main)s">回看知识点</a></div><div id="question-stem" class="stem"></div><div class="actions"><button id="show-answer" class="button primary">查看解析与答案</button><button id="skip" class="button">跳过本题</button></div>
 <div id="solution-box" class="solution hidden"><b>解析</b><div id="question-solution"></div></div><div id="answer-box" class="answer hidden"><b>答案</b><div id="question-answer"></div></div>

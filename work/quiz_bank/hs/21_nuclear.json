@@ -8,27 +8,19 @@
       "point_id": "nuc-01",
       "point_title": "原子核的组成与同位素",
       "chapter": "第二十一章 · 原子核与核能",
-      "stem": "【第二十一章 · 原子核与核能 · 原子核的组成与同位素】学生的错误做法：把质量数当成质子数，写成 A=Z（错误表达式：A = Z）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "stem": "在“原子核的组成与同位素”的模型下，Z（质子数（也叫核电荷数））=6 1；N（中子数）=6 1。条件：对任何原子核都成立，与核是否稳定无关。求质量数，即核内核子总数（A）。这些数值是设计示例。",
       "options": [
         {
           "label": "A",
-          "text": "概念混淆：γ 射线是光子，没有质量数也没有电荷；放出 γ 只是把核从激发态降到低能态，质量数与质子数都不变。"
+          "text": "12 1"
         },
         {
           "label": "B",
-          "text": "概念混淆：核反应中守恒的是质量数与电荷数；静质量会按 E=Δm·c² 转化为能量放出去，质量亏损是真实的物理效应。"
-        },
-        {
-          "label": "C",
-          "text": "概念混淆：稳定性要看比结合能，不是质量数。"
-        },
-        {
-          "label": "D",
-          "text": "数值代入：质量数是质子数与中子数之和，不是质子数。"
+          "text": "6 1"
         }
       ],
-      "correct_answer": "D",
-      "explanation": "质量数是质子数与中子数之和，不是质子数。碳12 按这个写法会得到 6，而正确值是 12。\n知识库校验证据：情境：碳12；代入错误式：Z；校验参照值：12。",
+      "correct_answer": "A",
+      "explanation": "使用质量数与核电荷数的关系：Z + N，代入得12 1。另一结果来自Z，算得6 1。\n质量数是质子数与中子数之和，不是质子数。碳12 按这个写法会得到 6，而正确值是 12。\n知识点条件：Z 相当于元素的「身份证」：Z 相同就是同一种元素，化学性质几乎只由 Z 与核外电子决定。N 不同则核的稳定性、放射性可能差别很大，这就是同位素。要注意 A 只表示核子个数，不是原子质量，也不是质子数。\n推导依据：质量数的定义：A 等于核内质子数与中子数之和。；由 A=Z+N 移项得 N=A−Z，所以只要知道质量数和质子数，就能求出中子数。；实验测得核半径与质量数的立方根成正比（原子核近似实心球），故写成 R=r<sub>0</sub>·A<sup>1/3</sup>。\n卡片公式各自的适用条件（不是本题共同前提）：\n质量数与核电荷数的关系：对任何原子核都成立，与核是否稳定无关\n核半径的立方根规律：把核近似看成实心球；r<sub>0</sub> 取 1.2×10⁻¹⁵ m 量级",
       "error_type": "数值代入",
       "judging": "auto",
       "source_error_index": 0,
@@ -39,15 +31,58 @@
         "expr": "Z",
         "ref": 12
       },
+      "level": "基础",
+      "learning_scope": "高中",
+      "answer_evidence": {
+        "kind": "numeric",
+        "scenario": "碳12",
+        "parameters": {
+          "Z": 6,
+          "N": 6,
+          "A": 12,
+          "r_0": 1.2e-15,
+          "R": 2.747e-15
+        },
+        "target": "A",
+        "unit": "1",
+        "reference": 12,
+        "correct_proof": {
+          "expression": "Z + N",
+          "formula": "质量数与核电荷数的关系",
+          "value": 12,
+          "when": "对任何原子核都成立，与核是否稳定无关"
+        },
+        "distractor_expression": "Z",
+        "distractor_value": 6.0,
+        "dimension_matches": true,
+        "independent_evaluation": true
+      },
       "review": {
         "confidence": "medium",
-        "checks": {
-          "answer_unique": true,
-          "distractors_plausible": true,
-          "stem_clear": true,
-          "no_cross_segment": true
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": true,
+          "no_answer_leak_in_options": true
         },
-        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。"
       }
     },
     {
@@ -55,42 +90,59 @@
       "point_id": "nuc-01",
       "point_title": "原子核的组成与同位素",
       "chapter": "第二十一章 · 原子核与核能",
-      "stem": "【第二十一章 · 原子核与核能 · 原子核的组成与同位素】学生的错误做法：把核半径写成与质量数成正比（R=r<sub>0</sub>·A）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "stem": "关于“原子核的组成与同位素”，判断这一说法是否成立，并说明依据：\n把核半径写成与质量数成正比（R=r<sub>0</sub>·A）。",
       "options": [
         {
           "label": "A",
-          "text": "数值代入：半衰期是「剩一半」而不是「减一半」。"
+          "text": "该说法成立。"
         },
         {
           "label": "B",
-          "text": "数值代入：要代的是<strong>亏损的那部分质量</strong>，不是总质量。"
-        },
-        {
-          "label": "C",
-          "text": "概念混淆：量纲虽然对得上（都是长度），但函数关系错了：核半径只按质量数的<strong>立方根</strong>增长。"
-        },
-        {
-          "label": "D",
-          "text": "数值代入：α 粒子含 2 个质子和 2 个中子，共 4 个核子，质量数应减 4。"
+          "text": "该说法不成立。"
         }
       ],
-      "correct_answer": "C",
-      "explanation": "量纲虽然对得上（都是长度），但函数关系错了：核半径只按质量数的<strong>立方根</strong>增长。碳12 会算出 1.44×10⁻¹⁴ m，而正确值约 2.75×10⁻¹⁵ m，差了五倍多。此条依赖极小量级（10⁻¹⁵）的比较，机器实测抓不稳，故列人工审核。",
+      "correct_answer": "B",
+      "explanation": "量纲虽然对得上（都是长度），但函数关系错了：核半径只按质量数的<strong>立方根</strong>增长。碳12 会算出 1.44×10⁻¹⁴ m，而正确值约 2.75×10⁻¹⁵ m，差了五倍多。此条依赖极小量级（10⁻¹⁵）的比较，机器实测抓不稳，故列人工审核。\n知识点条件：Z 相当于元素的「身份证」：Z 相同就是同一种元素，化学性质几乎只由 Z 与核外电子决定。N 不同则核的稳定性、放射性可能差别很大，这就是同位素。要注意 A 只表示核子个数，不是原子质量，也不是质子数。\n推导依据：质量数的定义：A 等于核内质子数与中子数之和。；由 A=Z+N 移项得 N=A−Z，所以只要知道质量数和质子数，就能求出中子数。；实验测得核半径与质量数的立方根成正比（原子核近似实心球），故写成 R=r<sub>0</sub>·A<sup>1/3</sup>。\n卡片公式各自的适用条件（不是本题共同前提）：\n质量数与核电荷数的关系：对任何原子核都成立，与核是否稳定无关\n核半径的立方根规律：把核近似看成实心球；r<sub>0</sub> 取 1.2×10⁻¹⁵ m 量级",
       "error_type": "概念混淆",
       "judging": "teacher",
       "source_error_index": 1,
       "source_caught_by": "人工审核",
       "wrong_expr": null,
       "trap_test": null,
+      "level": "基础",
+      "learning_scope": "高中",
+      "answer_evidence": {
+        "kind": "teacher",
+        "claim_source": "wrong",
+        "reference_only": true,
+        "reason": "概念、操作或无法建立完整定量证据，教师确认条件与结论。"
+      },
       "review": {
         "confidence": "medium",
-        "checks": {
-          "answer_unique": true,
-          "distractors_plausible": true,
-          "stem_clear": true,
-          "no_cross_segment": true
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": false,
+          "no_answer_leak_in_options": true
         },
-        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。"
       }
     },
     {
@@ -98,27 +150,19 @@
       "point_id": "nuc-01",
       "point_title": "原子核的组成与同位素",
       "chapter": "第二十一章 · 原子核与核能",
-      "stem": "【第二十一章 · 原子核与核能 · 原子核的组成与同位素】学生的错误做法：认为质量数总等于质子数的两倍，写成 A=2Z（错误表达式：A = 2·Z）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "stem": "在“原子核的组成与同位素”的模型下，Z（质子数（也叫核电荷数））=92 1；N（中子数）=146 1。条件：对任何原子核都成立，与核是否稳定无关。求质量数，即核内核子总数（A）。这些数值是设计示例。",
       "options": [
         {
           "label": "A",
-          "text": "概念混淆：稳定性要看比结合能，不是质量数。"
+          "text": "184 1"
         },
         {
           "label": "B",
-          "text": "数值代入：只有质子数恰好等于中子数时才碰巧成立（如碳12）。"
-        },
-        {
-          "label": "C",
-          "text": "概念混淆：γ 射线是光子，没有质量数也没有电荷；放出 γ 只是把核从激发态降到低能态，质量数与质子数都不变。"
-        },
-        {
-          "label": "D",
-          "text": "概念混淆：核反应中守恒的是质量数与电荷数；静质量会按 E=Δm·c² 转化为能量放出去，质量亏损是真实的物理效应。"
+          "text": "238 1"
         }
       ],
       "correct_answer": "B",
-      "explanation": "只有质子数恰好等于中子数时才碰巧成立（如碳12）。铀238 就不成立：2×92=184，而 A=238——多出来的 54 个全是中子。\n知识库校验证据：情境：铀238；代入错误式：2·Z；校验参照值：238。",
+      "explanation": "使用质量数与核电荷数的关系：Z + N，代入得238 1。另一结果来自2·Z，算得184 1。\n只有质子数恰好等于中子数时才碰巧成立（如碳12）。铀238 就不成立：2×92=184，而 A=238——多出来的 54 个全是中子。\n知识点条件：Z 相当于元素的「身份证」：Z 相同就是同一种元素，化学性质几乎只由 Z 与核外电子决定。N 不同则核的稳定性、放射性可能差别很大，这就是同位素。要注意 A 只表示核子个数，不是原子质量，也不是质子数。\n推导依据：质量数的定义：A 等于核内质子数与中子数之和。；由 A=Z+N 移项得 N=A−Z，所以只要知道质量数和质子数，就能求出中子数。；实验测得核半径与质量数的立方根成正比（原子核近似实心球），故写成 R=r<sub>0</sub>·A<sup>1/3</sup>。\n卡片公式各自的适用条件（不是本题共同前提）：\n质量数与核电荷数的关系：对任何原子核都成立，与核是否稳定无关\n核半径的立方根规律：把核近似看成实心球；r<sub>0</sub> 取 1.2×10⁻¹⁵ m 量级",
       "error_type": "数值代入",
       "judging": "auto",
       "source_error_index": 2,
@@ -129,15 +173,58 @@
         "expr": "2*Z",
         "ref": 238
       },
+      "level": "基础",
+      "learning_scope": "高中",
+      "answer_evidence": {
+        "kind": "numeric",
+        "scenario": "铀238",
+        "parameters": {
+          "Z": 92,
+          "N": 146,
+          "A": 238,
+          "r_0": 1.2e-15,
+          "R": 7.44e-15
+        },
+        "target": "A",
+        "unit": "1",
+        "reference": 238,
+        "correct_proof": {
+          "expression": "Z + N",
+          "formula": "质量数与核电荷数的关系",
+          "value": 238,
+          "when": "对任何原子核都成立，与核是否稳定无关"
+        },
+        "distractor_expression": "2*Z",
+        "distractor_value": 184.0,
+        "dimension_matches": true,
+        "independent_evaluation": true
+      },
       "review": {
         "confidence": "medium",
-        "checks": {
-          "answer_unique": true,
-          "distractors_plausible": true,
-          "stem_clear": true,
-          "no_cross_segment": true
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": true,
+          "no_answer_leak_in_options": true
         },
-        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。"
       }
     },
     {
@@ -145,42 +232,59 @@
       "point_id": "nuc-01",
       "point_title": "原子核的组成与同位素",
       "chapter": "第二十一章 · 原子核与核能",
-      "stem": "【第二十一章 · 原子核与核能 · 原子核的组成与同位素】学生的错误做法：把同位素说成「质子数不同的原子」。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "stem": "关于“原子核的组成与同位素”，判断这一说法是否成立，并说明依据：\n把同位素说成「质子数不同的原子」。",
       "options": [
         {
           "label": "A",
-          "text": "概念混淆：同位素是质子数相同、中子数不同；质子数不同就是不同的元素了。"
+          "text": "该说法成立。"
         },
         {
           "label": "B",
-          "text": "数值代入：α 粒子含 2 个质子和 2 个中子，共 4 个核子，质量数应减 4。"
-        },
-        {
-          "label": "C",
-          "text": "数值代入：半衰期是「剩一半」而不是「减一半」。"
-        },
-        {
-          "label": "D",
-          "text": "数值代入：要代的是<strong>亏损的那部分质量</strong>，不是总质量。"
+          "text": "该说法不成立。"
         }
       ],
-      "correct_answer": "A",
-      "explanation": "同位素是质子数相同、中子数不同；质子数不同就是不同的元素了。这条只能靠人判。",
+      "correct_answer": "B",
+      "explanation": "同位素是质子数相同、中子数不同；质子数不同就是不同的元素了。这条只能靠人判。\n知识点条件：Z 相当于元素的「身份证」：Z 相同就是同一种元素，化学性质几乎只由 Z 与核外电子决定。N 不同则核的稳定性、放射性可能差别很大，这就是同位素。要注意 A 只表示核子个数，不是原子质量，也不是质子数。\n推导依据：质量数的定义：A 等于核内质子数与中子数之和。；由 A=Z+N 移项得 N=A−Z，所以只要知道质量数和质子数，就能求出中子数。；实验测得核半径与质量数的立方根成正比（原子核近似实心球），故写成 R=r<sub>0</sub>·A<sup>1/3</sup>。\n卡片公式各自的适用条件（不是本题共同前提）：\n质量数与核电荷数的关系：对任何原子核都成立，与核是否稳定无关\n核半径的立方根规律：把核近似看成实心球；r<sub>0</sub> 取 1.2×10⁻¹⁵ m 量级",
       "error_type": "概念混淆",
       "judging": "teacher",
       "source_error_index": 3,
       "source_caught_by": "人工审核",
       "wrong_expr": null,
       "trap_test": null,
+      "level": "基础",
+      "learning_scope": "高中",
+      "answer_evidence": {
+        "kind": "teacher",
+        "claim_source": "wrong",
+        "reference_only": true,
+        "reason": "概念、操作或无法建立完整定量证据，教师确认条件与结论。"
+      },
       "review": {
         "confidence": "medium",
-        "checks": {
-          "answer_unique": true,
-          "distractors_plausible": true,
-          "stem_clear": true,
-          "no_cross_segment": true
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": false,
+          "no_answer_leak_in_options": true
         },
-        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。"
       }
     },
     {
@@ -188,27 +292,19 @@
       "point_id": "nuc-02",
       "point_title": "放射性衰变（α、β、γ）",
       "chapter": "第二十一章 · 原子核与核能",
-      "stem": "【第二十一章 · 原子核与核能 · 放射性衰变（α、β、γ）】学生的错误做法：一次 α 衰变只让质量数减 2（错误表达式：A2 = A1 - 2）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "stem": "在“放射性衰变（α、β、γ）”的模型下，A1（衰变前的质量数）=238 1；n<sub>α</sub>（发生的 α 衰变次数）=1 1。条件：只发生 α 衰变；每放出一个 α 粒子带走 4 个核子。求衰变后的质量数（A2）。这些数值是设计示例。",
       "options": [
         {
           "label": "A",
-          "text": "概念混淆：量纲虽然对得上（都是长度），但函数关系错了：核半径只按质量数的<strong>立方根</strong>增长。"
+          "text": "234 1"
         },
         {
           "label": "B",
-          "text": "概念混淆：核反应中守恒的是质量数与电荷数；静质量会按 E=Δm·c² 转化为能量放出去，质量亏损是真实的物理效应。"
-        },
-        {
-          "label": "C",
-          "text": "概念混淆：稳定性要看比结合能，不是质量数。"
-        },
-        {
-          "label": "D",
-          "text": "数值代入：α 粒子含 2 个质子和 2 个中子，共 4 个核子，质量数应减 4。"
+          "text": "236 1"
         }
       ],
-      "correct_answer": "D",
-      "explanation": "α 粒子含 2 个质子和 2 个中子，共 4 个核子，质量数应减 4。铀238 会算成 236，而正确是 234。\n知识库校验证据：情境：铀238一次α衰变；代入错误式：A1 - 2；校验参照值：234。",
+      "correct_answer": "A",
+      "explanation": "使用n 次 α 衰变后的质量数：A1 - 4·n<sub>α</sub>，代入得234 1。另一结果来自A1 - 2，算得236 1。\nα 粒子含 2 个质子和 2 个中子，共 4 个核子，质量数应减 4。铀238 会算成 236，而正确是 234。\n知识点条件：三种衰变要连在一起记：α 是「掉一个氦核」，β 是「中子换质子」，γ 是「把多余的能量以光子形式吐出来」。判断衰变次数一律用两条守恒：质量数守恒、电荷数守恒。α 衰变 n 次就减 4n 和 2n；β 衰变 n 次质量数不变、质子数加 n。\n推导依据：α 粒子就是氦核，质量数 4、电荷数 2；放出一个就带走 4 个核子和 2 个单位的正电荷。；所以质量数每次减 4，质子数每次减 2，两者都是线性变化：减 4n 与减 2n。；检验守恒：衰变前后「质子数 + 中子数」应当都等于质量数，两个结果对上才说明次数没算错。\n卡片公式各自的适用条件（不是本题共同前提）：\nn 次 α 衰变后的质量数：只发生 α 衰变；每放出一个 α 粒子带走 4 个核子\nn 次 α 衰变后的中子数：只发生 α 衰变；α 粒子含 2 个中子",
       "error_type": "数值代入",
       "judging": "auto",
       "source_error_index": 0,
@@ -219,15 +315,60 @@
         "expr": "A1 - 2",
         "ref": 234
       },
+      "level": "基础",
+      "learning_scope": "高中",
+      "answer_evidence": {
+        "kind": "numeric",
+        "scenario": "铀238一次α衰变",
+        "parameters": {
+          "A1": 238,
+          "Z1": 92,
+          "N1": 146,
+          "n_alpha": 1,
+          "A2": 234,
+          "Z2": 90,
+          "N2": 144
+        },
+        "target": "A2",
+        "unit": "1",
+        "reference": 234,
+        "correct_proof": {
+          "expression": "A1 - 4*n_alpha",
+          "formula": "n 次 α 衰变后的质量数",
+          "value": 234,
+          "when": "只发生 α 衰变；每放出一个 α 粒子带走 4 个核子"
+        },
+        "distractor_expression": "A1 - 2",
+        "distractor_value": 236.0,
+        "dimension_matches": true,
+        "independent_evaluation": true
+      },
       "review": {
         "confidence": "medium",
-        "checks": {
-          "answer_unique": true,
-          "distractors_plausible": true,
-          "stem_clear": true,
-          "no_cross_segment": true
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": true,
+          "no_answer_leak_in_options": true
         },
-        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。"
       }
     },
     {
@@ -235,42 +376,59 @@
       "point_id": "nuc-02",
       "point_title": "放射性衰变（α、β、γ）",
       "chapter": "第二十一章 · 原子核与核能",
-      "stem": "【第二十一章 · 原子核与核能 · 放射性衰变（α、β、γ）】学生的错误做法：认为 γ 衰变会改变质量数与质子数。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "stem": "关于“放射性衰变（α、β、γ）”，判断这一说法是否成立，并说明依据：\n γ 衰变会改变质量数与质子数。",
       "options": [
         {
           "label": "A",
-          "text": "数值代入：半衰期是「剩一半」而不是「减一半」。"
+          "text": "该说法不成立。"
         },
         {
           "label": "B",
-          "text": "数值代入：要代的是<strong>亏损的那部分质量</strong>，不是总质量。"
-        },
-        {
-          "label": "C",
-          "text": "概念混淆：γ 射线是光子，没有质量数也没有电荷；放出 γ 只是把核从激发态降到低能态，质量数与质子数都不变。"
-        },
-        {
-          "label": "D",
-          "text": "数值代入：质量数是质子数与中子数之和，不是质子数。"
+          "text": "该说法成立。"
         }
       ],
-      "correct_answer": "C",
-      "explanation": "γ 射线是光子，没有质量数也没有电荷；放出 γ 只是把核从激发态降到低能态，质量数与质子数都不变。",
+      "correct_answer": "A",
+      "explanation": "γ 射线是光子，没有质量数也没有电荷；放出 γ 只是把核从激发态降到低能态，质量数与质子数都不变。\n知识点条件：三种衰变要连在一起记：α 是「掉一个氦核」，β 是「中子换质子」，γ 是「把多余的能量以光子形式吐出来」。判断衰变次数一律用两条守恒：质量数守恒、电荷数守恒。α 衰变 n 次就减 4n 和 2n；β 衰变 n 次质量数不变、质子数加 n。\n推导依据：α 粒子就是氦核，质量数 4、电荷数 2；放出一个就带走 4 个核子和 2 个单位的正电荷。；所以质量数每次减 4，质子数每次减 2，两者都是线性变化：减 4n 与减 2n。；检验守恒：衰变前后「质子数 + 中子数」应当都等于质量数，两个结果对上才说明次数没算错。\n卡片公式各自的适用条件（不是本题共同前提）：\nn 次 α 衰变后的质量数：只发生 α 衰变；每放出一个 α 粒子带走 4 个核子\nn 次 α 衰变后的中子数：只发生 α 衰变；α 粒子含 2 个中子",
       "error_type": "概念混淆",
       "judging": "teacher",
       "source_error_index": 1,
       "source_caught_by": "人工审核",
       "wrong_expr": null,
       "trap_test": null,
+      "level": "基础",
+      "learning_scope": "高中",
+      "answer_evidence": {
+        "kind": "teacher",
+        "claim_source": "wrong",
+        "reference_only": true,
+        "reason": "概念、操作或无法建立完整定量证据，教师确认条件与结论。"
+      },
       "review": {
         "confidence": "medium",
-        "checks": {
-          "answer_unique": true,
-          "distractors_plausible": true,
-          "stem_clear": true,
-          "no_cross_segment": true
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": false,
+          "no_answer_leak_in_options": true
         },
-        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。"
       }
     },
     {
@@ -278,27 +436,19 @@
       "point_id": "nuc-03",
       "point_title": "半衰期",
       "chapter": "第二十一章 · 原子核与核能",
-      "stem": "【第二十一章 · 原子核与核能 · 半衰期】学生的错误做法：以为每过一个半衰期就少一半（线性递减），写成 N=N<sub>0</sub>·(1−n/2)（错误表达式：N = N<sub>0</sub>·(1 - n<sub>1/2</sub>/2)）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "stem": "在“半衰期”的模型下，N<sub>0</sub>（初始时刻未衰变的核数）=800 1；n<sub>1/2</sub>（经历的半衰期个数）=3 1；t（经历的时间）=15 s；k<sub>衰变</sub>（衰变常量，表示单位时间内衰变的概率）=0.138629 s⁻¹。条件：写成指数衰减形式，便于用衰变常量做连续计算。求经过 t 时间后未衰变的核数（N）。这些数值是设计示例。",
       "options": [
         {
           "label": "A",
-          "text": "概念混淆：核反应中守恒的是质量数与电荷数；静质量会按 E=Δm·c² 转化为能量放出去，质量亏损是真实的物理效应。"
+          "text": "-400 1"
         },
         {
           "label": "B",
-          "text": "数值代入：半衰期是「剩一半」而不是「减一半」。"
-        },
-        {
-          "label": "C",
-          "text": "概念混淆：量纲虽然对得上（都是长度），但函数关系错了：核半径只按质量数的<strong>立方根</strong>增长。"
-        },
-        {
-          "label": "D",
-          "text": "概念混淆：γ 射线是光子，没有质量数也没有电荷；放出 γ 只是把核从激发态降到低能态，质量数与质子数都不变。"
+          "text": "100 1"
         }
       ],
       "correct_answer": "B",
-      "explanation": "半衰期是「剩一半」而不是「减一半」。N<sub>0</sub>=800、n=3 时错误式给出 −400，明显荒谬；正确值是 100。\n知识库校验证据：情境：三个半衰期；代入错误式：N<sub>0</sub>·(1 - n<sub>1/2</sub>/2)；校验参照值：100。",
+      "explanation": "使用剩余核数与时间的关系：N<sub>0</sub>·exp(-k<sub>衰变</sub>·t)，代入得100 1。另一结果来自N<sub>0</sub>·(1 - n<sub>1/2</sub>/2)，算得-400 1。\n半衰期是「剩一半」而不是「减一半」。N<sub>0</sub>=800、n=3 时错误式给出 −400，明显荒谬；正确值是 100。\n知识点条件：半衰期是<strong>大量原子核</strong>的统计规律，不是单个核的「倒计时」。它只由核本身决定，和温度、压强、化学状态都无关——因为核外条件根本影响不到核内部。经过 n 个半衰期剩 (1/2)ⁿ，永远不为零，所以「衰变完」只是近似说法。\n推导依据：按定义，每过一个半衰期剩余核数乘 1/2，所以经过 n 个半衰期剩 N<sub>0</sub>·(1/2)ⁿ。；把「过了多久」换算成「过了几个半衰期」用 n=t/T，于是 N=N<sub>0</sub>·(1/2)<sup>t/T</sup>。；把 (1/2)<sup>t/T</sup> 写成指数形式 exp(−k·t)，其中 k=ln2/T 叫衰变常量；两种写法完全等价，指数形式更方便做连续计算。\n卡片公式各自的适用条件（不是本题共同前提）：\n半衰期个数与时间的关系：把实际时间换算成「过了几个半衰期」，便于按整数倍心算\n剩余核数与时间的关系：写成指数衰减形式，便于用衰变常量做连续计算",
       "error_type": "数值代入",
       "judging": "auto",
       "source_error_index": 0,
@@ -309,15 +459,59 @@
         "expr": "N_0*(1 - n_half/2)",
         "ref": 100
       },
+      "level": "基础",
+      "learning_scope": "高中",
+      "answer_evidence": {
+        "kind": "numeric",
+        "scenario": "三个半衰期",
+        "parameters": {
+          "N_0": 800,
+          "n_half": 3,
+          "N": 100,
+          "T_half": 5,
+          "t": 15,
+          "k_decay": 0.13862943611198905
+        },
+        "target": "N",
+        "unit": "1",
+        "reference": 100,
+        "correct_proof": {
+          "expression": "N_0*exp(-k_decay*t)",
+          "formula": "剩余核数与时间的关系",
+          "value": 100.00000000000003,
+          "when": "写成指数衰减形式，便于用衰变常量做连续计算"
+        },
+        "distractor_expression": "N_0*(1 - n_half/2)",
+        "distractor_value": -400.0,
+        "dimension_matches": true,
+        "independent_evaluation": true
+      },
       "review": {
         "confidence": "medium",
-        "checks": {
-          "answer_unique": true,
-          "distractors_plausible": true,
-          "stem_clear": true,
-          "no_cross_segment": true
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": true,
+          "no_answer_leak_in_options": true
         },
-        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。"
       }
     },
     {
@@ -325,46 +519,66 @@
       "point_id": "nuc-03",
       "point_title": "半衰期",
       "chapter": "第二十一章 · 原子核与核能",
-      "stem": "【第二十一章 · 原子核与核能 · 半衰期】学生的错误做法：把衰变常量 k 与半衰期 T 当成正比关系（k∝T）（错误表达式：k<sub>衰变</sub> = T<sub>1/2</sub>）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "stem": "关于“半衰期”，判断这一说法是否成立，并说明依据：\n将衰变常量 k 与半衰期 T 视为正比关系（k∝T）。",
       "options": [
         {
           "label": "A",
-          "text": "数值代入：k=ln2/T，二者是<strong>反比</strong>：半衰期越长，单位时间内衰变的概率越小。"
+          "text": "该说法不成立。"
         },
         {
           "label": "B",
-          "text": "概念混淆：量纲虽然对得上（都是长度），但函数关系错了：核半径只按质量数的<strong>立方根</strong>增长。"
-        },
-        {
-          "label": "C",
-          "text": "概念混淆：γ 射线是光子，没有质量数也没有电荷；放出 γ 只是把核从激发态降到低能态，质量数与质子数都不变。"
-        },
-        {
-          "label": "D",
-          "text": "概念混淆：核反应中守恒的是质量数与电荷数；静质量会按 E=Δm·c² 转化为能量放出去，质量亏损是真实的物理效应。"
+          "text": "该说法成立。"
         }
       ],
       "correct_answer": "A",
-      "explanation": "k=ln2/T，二者是<strong>反比</strong>：半衰期越长，单位时间内衰变的概率越小。本情境 k≈0.1386 s⁻¹，而 T=5 s，相差悬殊。\n知识库校验证据：情境：三个半衰期；代入错误式：T<sub>1/2</sub>；校验参照值：0.13862943611198905。",
-      "error_type": "数值代入",
-      "judging": "auto",
+      "explanation": "k=ln2/T，二者是<strong>反比</strong>：半衰期越长，单位时间内衰变的概率越小。本情境 k≈0.1386 s⁻¹，而 T=5 s，相差悬殊。\n知识点条件：半衰期是<strong>大量原子核</strong>的统计规律，不是单个核的「倒计时」。它只由核本身决定，和温度、压强、化学状态都无关——因为核外条件根本影响不到核内部。经过 n 个半衰期剩 (1/2)ⁿ，永远不为零，所以「衰变完」只是近似说法。\n推导依据：按定义，每过一个半衰期剩余核数乘 1/2，所以经过 n 个半衰期剩 N<sub>0</sub>·(1/2)ⁿ。；把「过了多久」换算成「过了几个半衰期」用 n=t/T，于是 N=N<sub>0</sub>·(1/2)<sup>t/T</sup>。；把 (1/2)<sup>t/T</sup> 写成指数形式 exp(−k·t)，其中 k=ln2/T 叫衰变常量；两种写法完全等价，指数形式更方便做连续计算。\n卡片公式各自的适用条件（不是本题共同前提）：\n半衰期个数与时间的关系：把实际时间换算成「过了几个半衰期」，便于按整数倍心算\n剩余核数与时间的关系：写成指数衰减形式，便于用衰变常量做连续计算",
+      "error_type": "量纲一致性",
+      "judging": "teacher",
       "source_error_index": 1,
-      "source_caught_by": "数值代入",
+      "source_caught_by": "量纲一致性",
       "wrong_expr": "k<sub>衰变</sub> = T<sub>1/2</sub>",
       "trap_test": {
-        "scenario": "三个半衰期",
-        "expr": "T_half",
-        "ref": 0.13862943611198905
+        "kind": "dimension",
+        "target": "k_decay = T_half",
+        "expect": "mismatch",
+        "lhs_dim": "T^-1",
+        "rhs_dim": "T",
+        "note": "正式引擎验证量纲不一致；不计作同量纲错误数值实测。"
+      },
+      "level": "基础",
+      "learning_scope": "高中",
+      "answer_evidence": {
+        "kind": "teacher",
+        "claim_source": "wrong",
+        "reference_only": true,
+        "reason": "概念、操作或无法建立完整定量证据，教师确认条件与结论。"
       },
       "review": {
         "confidence": "medium",
-        "checks": {
-          "answer_unique": true,
-          "distractors_plausible": true,
-          "stem_clear": true,
-          "no_cross_segment": true
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": false,
+          "no_answer_leak_in_options": true
         },
-        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。"
       }
     },
     {
@@ -372,42 +586,59 @@
       "point_id": "nuc-03",
       "point_title": "半衰期",
       "chapter": "第二十一章 · 原子核与核能",
-      "stem": "【第二十一章 · 原子核与核能 · 半衰期】学生的错误做法：认为半衰期可以描述某一个原子核何时衰变。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "stem": "关于“半衰期”，判断这一说法是否成立，并说明依据：\n半衰期可以描述某一个原子核何时衰变。",
       "options": [
         {
           "label": "A",
-          "text": "数值代入：质量数是质子数与中子数之和，不是质子数。"
+          "text": "该说法不成立。"
         },
         {
           "label": "B",
-          "text": "数值代入：α 粒子含 2 个质子和 2 个中子，共 4 个核子，质量数应减 4。"
-        },
-        {
-          "label": "C",
-          "text": "数值代入：要代的是<strong>亏损的那部分质量</strong>，不是总质量。"
-        },
-        {
-          "label": "D",
-          "text": "概念混淆：半衰期是大量核的统计规律；对单个核只能给出衰变概率，不能预言它具体何时衰变。"
+          "text": "该说法成立。"
         }
       ],
-      "correct_answer": "D",
-      "explanation": "半衰期是大量核的统计规律；对单个核只能给出衰变概率，不能预言它具体何时衰变。",
+      "correct_answer": "A",
+      "explanation": "半衰期是大量核的统计规律；对单个核只能给出衰变概率，不能预言它具体何时衰变。\n知识点条件：半衰期是<strong>大量原子核</strong>的统计规律，不是单个核的「倒计时」。它只由核本身决定，和温度、压强、化学状态都无关——因为核外条件根本影响不到核内部。经过 n 个半衰期剩 (1/2)ⁿ，永远不为零，所以「衰变完」只是近似说法。\n推导依据：按定义，每过一个半衰期剩余核数乘 1/2，所以经过 n 个半衰期剩 N<sub>0</sub>·(1/2)ⁿ。；把「过了多久」换算成「过了几个半衰期」用 n=t/T，于是 N=N<sub>0</sub>·(1/2)<sup>t/T</sup>。；把 (1/2)<sup>t/T</sup> 写成指数形式 exp(−k·t)，其中 k=ln2/T 叫衰变常量；两种写法完全等价，指数形式更方便做连续计算。\n卡片公式各自的适用条件（不是本题共同前提）：\n半衰期个数与时间的关系：把实际时间换算成「过了几个半衰期」，便于按整数倍心算\n剩余核数与时间的关系：写成指数衰减形式，便于用衰变常量做连续计算",
       "error_type": "概念混淆",
       "judging": "teacher",
       "source_error_index": 2,
       "source_caught_by": "人工审核",
       "wrong_expr": null,
       "trap_test": null,
+      "level": "基础",
+      "learning_scope": "高中",
+      "answer_evidence": {
+        "kind": "teacher",
+        "claim_source": "wrong",
+        "reference_only": true,
+        "reason": "概念、操作或无法建立完整定量证据，教师确认条件与结论。"
+      },
       "review": {
         "confidence": "medium",
-        "checks": {
-          "answer_unique": true,
-          "distractors_plausible": true,
-          "stem_clear": true,
-          "no_cross_segment": true
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": false,
+          "no_answer_leak_in_options": true
         },
-        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。"
       }
     },
     {
@@ -415,27 +646,19 @@
       "point_id": "nuc-04",
       "point_title": "核反应方程与质能方程",
       "chapter": "第二十一章 · 原子核与核能",
-      "stem": "【第二十一章 · 原子核与核能 · 核反应方程与质能方程】学生的错误做法：质能方程里代反应前的总质量，写成 E=m<sub>前</sub>·c²（错误表达式：E = m<sub>前</sub>·c²）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "stem": "在“核反应方程与质能方程”的模型下，m<sub>前</sub>（反应前所有粒子静质量之和）=0.14207 kg；Δm（质量亏损）=0.00018 kg；c（真空中的光速，约 3.0×10⁸ m/s）=3e+08 m/s。条件：Δm 取质量亏损（正数），算出来的是释放的能量。求反应释放的能量（E）。这些数值是设计示例。",
       "options": [
         {
           "label": "A",
-          "text": "概念混淆：γ 射线是光子，没有质量数也没有电荷；放出 γ 只是把核从激发态降到低能态，质量数与质子数都不变。"
+          "text": "1.27863e+16 J"
         },
         {
           "label": "B",
-          "text": "概念混淆：稳定性要看比结合能，不是质量数。"
-        },
-        {
-          "label": "C",
-          "text": "数值代入：要代的是<strong>亏损的那部分质量</strong>，不是总质量。"
-        },
-        {
-          "label": "D",
-          "text": "概念混淆：量纲虽然对得上（都是长度），但函数关系错了：核半径只按质量数的<strong>立方根</strong>增长。"
+          "text": "1.62e+13 J"
         }
       ],
-      "correct_answer": "C",
-      "explanation": "要代的是<strong>亏损的那部分质量</strong>，不是总质量。按错误式会得到 0.14207×(3.0×10⁸)²≈1.28×10¹⁶ J，而正确值是 1.62×10¹³ J——放大了近三个数量级。\n知识库校验证据：情境：每摩尔裂变；代入错误式：m<sub>前</sub>·c²；校验参照值：16200000000000.0。",
+      "correct_answer": "B",
+      "explanation": "使用质能方程：Δm·c²，代入得1.62e+13 J。另一结果来自m<sub>前</sub>·c²，算得1.27863e+16 J。\n要代的是<strong>亏损的那部分质量</strong>，不是总质量。按错误式会得到 0.14207×(3.0×10⁸)²≈1.28×10¹⁶ J，而正确值是 1.62×10¹³ J——放大了近三个数量级。\n知识点条件：这里最容易搞混的是「哪个质量守恒」：守恒的是质量数与电荷数，静质量本身并不守恒。用 E=Δm·c² 时必须代<strong>亏损的那部分质量</strong>，不能代反应前的总质量——后者会算出大好几个数量级的结果。正因为 c² 是 9×10¹⁶ 这样的大数，极小的质量亏损对应极大的能量，这是核能远超化学能的根本原因。\n推导依据：先写核反应方程，用「质量数守恒、电荷数守恒」把两边的核配平。；把反应前后所有粒子的静质量分别求和，两者之差就是质量亏损 Δm。；由质能方程 E=Δm·c² 把亏损的质量换算成释放的能量；因为 c²≈9×10¹⁶，微小亏损对应巨大能量。\n卡片公式各自的适用条件（不是本题共同前提）：\n质量亏损：反应前总静质量减反应后总静质量，差值为正表示放能\n质能方程：Δm 取质量亏损（正数），算出来的是释放的能量",
       "error_type": "数值代入",
       "judging": "auto",
       "source_error_index": 0,
@@ -446,15 +669,58 @@
         "expr": "m_before*c^2",
         "ref": 16200000000000.0
       },
+      "level": "进阶",
+      "learning_scope": "高中",
+      "answer_evidence": {
+        "kind": "numeric",
+        "scenario": "每摩尔裂变",
+        "parameters": {
+          "m_before": 0.14207,
+          "m_after": 0.14189,
+          "delta_m": 0.00018,
+          "c": 300000000.0,
+          "E": 16200000000000.0
+        },
+        "target": "E",
+        "unit": "J",
+        "reference": 16200000000000.0,
+        "correct_proof": {
+          "expression": "delta_m*c^2",
+          "formula": "质能方程",
+          "value": 16200000000000.002,
+          "when": "Δm 取质量亏损（正数），算出来的是释放的能量"
+        },
+        "distractor_expression": "m_before*c^2",
+        "distractor_value": 1.27863e+16,
+        "dimension_matches": true,
+        "independent_evaluation": true
+      },
       "review": {
         "confidence": "medium",
-        "checks": {
-          "answer_unique": true,
-          "distractors_plausible": true,
-          "stem_clear": true,
-          "no_cross_segment": true
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": true,
+          "no_answer_leak_in_options": true
         },
-        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。"
       }
     },
     {
@@ -462,42 +728,59 @@
       "point_id": "nuc-04",
       "point_title": "核反应方程与质能方程",
       "chapter": "第二十一章 · 原子核与核能",
-      "stem": "【第二十一章 · 原子核与核能 · 核反应方程与质能方程】学生的错误做法：认为核反应中静质量守恒，把质量亏损当成测量误差。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "stem": "关于“核反应方程与质能方程”，判断这一说法是否成立，并说明依据：\n核反应中静质量守恒，把质量亏损当成测量误差。",
       "options": [
         {
           "label": "A",
-          "text": "数值代入：半衰期是「剩一半」而不是「减一半」。"
+          "text": "该说法不成立。"
         },
         {
           "label": "B",
-          "text": "概念混淆：核反应中守恒的是质量数与电荷数；静质量会按 E=Δm·c² 转化为能量放出去，质量亏损是真实的物理效应。"
-        },
-        {
-          "label": "C",
-          "text": "数值代入：质量数是质子数与中子数之和，不是质子数。"
-        },
-        {
-          "label": "D",
-          "text": "数值代入：α 粒子含 2 个质子和 2 个中子，共 4 个核子，质量数应减 4。"
+          "text": "该说法成立。"
         }
       ],
-      "correct_answer": "B",
-      "explanation": "核反应中守恒的是质量数与电荷数；静质量会按 E=Δm·c² 转化为能量放出去，质量亏损是真实的物理效应。",
+      "correct_answer": "A",
+      "explanation": "核反应中守恒的是质量数与电荷数；静质量会按 E=Δm·c² 转化为能量放出去，质量亏损是真实的物理效应。\n知识点条件：这里最容易搞混的是「哪个质量守恒」：守恒的是质量数与电荷数，静质量本身并不守恒。用 E=Δm·c² 时必须代<strong>亏损的那部分质量</strong>，不能代反应前的总质量——后者会算出大好几个数量级的结果。正因为 c² 是 9×10¹⁶ 这样的大数，极小的质量亏损对应极大的能量，这是核能远超化学能的根本原因。\n推导依据：先写核反应方程，用「质量数守恒、电荷数守恒」把两边的核配平。；把反应前后所有粒子的静质量分别求和，两者之差就是质量亏损 Δm。；由质能方程 E=Δm·c² 把亏损的质量换算成释放的能量；因为 c²≈9×10¹⁶，微小亏损对应巨大能量。\n卡片公式各自的适用条件（不是本题共同前提）：\n质量亏损：反应前总静质量减反应后总静质量，差值为正表示放能\n质能方程：Δm 取质量亏损（正数），算出来的是释放的能量",
       "error_type": "概念混淆",
       "judging": "teacher",
       "source_error_index": 1,
       "source_caught_by": "人工审核",
       "wrong_expr": null,
       "trap_test": null,
+      "level": "进阶",
+      "learning_scope": "高中",
+      "answer_evidence": {
+        "kind": "teacher",
+        "claim_source": "wrong",
+        "reference_only": true,
+        "reason": "概念、操作或无法建立完整定量证据，教师确认条件与结论。"
+      },
       "review": {
         "confidence": "medium",
-        "checks": {
-          "answer_unique": true,
-          "distractors_plausible": true,
-          "stem_clear": true,
-          "no_cross_segment": true
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": false,
+          "no_answer_leak_in_options": true
         },
-        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。"
       }
     },
     {
@@ -505,27 +788,19 @@
       "point_id": "nuc-05",
       "point_title": "核裂变与核聚变（含结合能）",
       "chapter": "第二十一章 · 原子核与核能",
-      "stem": "【第二十一章 · 原子核与核能 · 核裂变与核聚变（含结合能）】学生的错误做法：把比结合能写成结合能乘以质量数（错误表达式：e<sub>b</sub> = E<sub>b</sub>·A）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "stem": "在“核裂变与核聚变（含结合能）”的模型下，A（质量数）=4 1；E<sub>b</sub>（原子核的结合能）=2.709e+12 J。条件：比较不同核的稳定性时必须用它，不能直接比结合能总量。求按 1 mol 原子核折算后，每个核子平均分摊的结合能（e<sub>b</sub>）。这些数值是设计示例。",
       "options": [
         {
           "label": "A",
-          "text": "数值代入：比结合能是「每个核子平均分摊到的结合能」，应当除以质量数而不是乘。"
+          "text": "6.7725e+11 J"
         },
         {
           "label": "B",
-          "text": "概念混淆：量纲虽然对得上（都是长度），但函数关系错了：核半径只按质量数的<strong>立方根</strong>增长。"
-        },
-        {
-          "label": "C",
-          "text": "概念混淆：γ 射线是光子，没有质量数也没有电荷；放出 γ 只是把核从激发态降到低能态，质量数与质子数都不变。"
-        },
-        {
-          "label": "D",
-          "text": "概念混淆：核反应中守恒的是质量数与电荷数；静质量会按 E=Δm·c² 转化为能量放出去，质量亏损是真实的物理效应。"
+          "text": "1.0836e+13 J"
         }
       ],
       "correct_answer": "A",
-      "explanation": "比结合能是「每个核子平均分摊到的结合能」，应当除以质量数而不是乘。按错误式会得到 2.709×10¹²×4≈1.08×10¹³ J，而正确是 6.7725×10¹¹ J。\n知识库校验证据：情境：每摩尔氦4；代入错误式：E<sub>b</sub>·A；校验参照值：677250000000.0。",
+      "explanation": "使用比结合能：E<sub>b</sub>/A，代入得6.7725e+11 J。另一结果来自E<sub>b</sub>·A，算得1.0836e+13 J。\n比结合能是「每个核子平均分摊到的结合能」，应当除以质量数而不是乘。按错误式会得到 2.709×10¹²×4≈1.08×10¹³ J，而正确是 6.7725×10¹¹ J。\n知识点条件：判断一个核稳定不稳定，看的是<strong>比结合能</strong>而不是结合能总量。比结合能在铁附近最大（约 8.8 MeV 每核子），两端都更小；所以特别重的核（如铀）裂开、特别轻的核（如氘氚）合起来，产物都更靠近铁，比结合能升高，差额就以能量形式放出来。这就是「裂变与聚变都能发电」的同一句解释。\n推导依据：核子单独存在时的总质量，比它们结合成原子核之后的质量大，差值就是质量亏损。；按质能方程，这份亏损对应的能量就是结合能 E<sub>b</sub>=Δm·c²。；把结合能除以质量数，得到每个核子平均分摊的能量，即比结合能 e<sub>b</sub>=E<sub>b</sub>/A；它是比较核稳定性的正确标准。\n卡片公式各自的适用条件（不是本题共同前提）：\n结合能：Δm 取「单独核子总质量 − 原子核质量」，算出的就是结合能\n比结合能：比较不同核的稳定性时必须用它，不能直接比结合能总量",
       "error_type": "数值代入",
       "judging": "auto",
       "source_error_index": 0,
@@ -536,15 +811,58 @@
         "expr": "E_b*A",
         "ref": 677250000000.0
       },
+      "level": "进阶",
+      "learning_scope": "高中",
+      "answer_evidence": {
+        "kind": "numeric",
+        "scenario": "每摩尔氦4",
+        "parameters": {
+          "A": 4,
+          "delta_m": 3.01e-05,
+          "c": 300000000.0,
+          "E_b": 2709000000000.0,
+          "e_b": 677250000000.0
+        },
+        "target": "e_b",
+        "unit": "J",
+        "reference": 677250000000.0,
+        "correct_proof": {
+          "expression": "E_b/A",
+          "formula": "比结合能",
+          "value": 677250000000.0,
+          "when": "比较不同核的稳定性时必须用它，不能直接比结合能总量"
+        },
+        "distractor_expression": "E_b*A",
+        "distractor_value": 10836000000000.0,
+        "dimension_matches": true,
+        "independent_evaluation": true
+      },
       "review": {
         "confidence": "medium",
-        "checks": {
-          "answer_unique": true,
-          "distractors_plausible": true,
-          "stem_clear": true,
-          "no_cross_segment": true
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": true,
+          "no_answer_leak_in_options": true
         },
-        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。"
       }
     },
     {
@@ -552,44 +870,2528 @@
       "point_id": "nuc-05",
       "point_title": "核裂变与核聚变（含结合能）",
       "chapter": "第二十一章 · 原子核与核能",
-      "stem": "【第二十一章 · 原子核与核能 · 核裂变与核聚变（含结合能）】学生的错误做法：认为质量数越大的核一定越稳定。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "stem": "关于“核裂变与核聚变（含结合能）”，判断这一说法是否成立，并说明依据：\n稳定性要看比结合能，不是质量数。",
       "options": [
         {
           "label": "A",
-          "text": "数值代入：质量数是质子数与中子数之和，不是质子数。"
+          "text": "该说法成立。"
         },
         {
           "label": "B",
-          "text": "数值代入：α 粒子含 2 个质子和 2 个中子，共 4 个核子，质量数应减 4。"
-        },
-        {
-          "label": "C",
-          "text": "数值代入：半衰期是「剩一半」而不是「减一半」。"
-        },
-        {
-          "label": "D",
-          "text": "概念混淆：稳定性要看比结合能，不是质量数。"
+          "text": "该说法不成立。"
         }
       ],
-      "correct_answer": "D",
-      "explanation": "稳定性要看比结合能，不是质量数。比结合能在铁附近最大，比铁更重或更轻的核都更不稳定——这正是重核裂变、轻核聚变都能放能的原因。",
+      "correct_answer": "A",
+      "explanation": "稳定性要看比结合能，不是质量数。比结合能在铁附近最大，比铁更重或更轻的核都更不稳定——这正是重核裂变、轻核聚变都能放能的原因。\n知识点条件：判断一个核稳定不稳定，看的是<strong>比结合能</strong>而不是结合能总量。比结合能在铁附近最大（约 8.8 MeV 每核子），两端都更小；所以特别重的核（如铀）裂开、特别轻的核（如氘氚）合起来，产物都更靠近铁，比结合能升高，差额就以能量形式放出来。这就是「裂变与聚变都能发电」的同一句解释。\n推导依据：核子单独存在时的总质量，比它们结合成原子核之后的质量大，差值就是质量亏损。；按质能方程，这份亏损对应的能量就是结合能 E<sub>b</sub>=Δm·c²。；把结合能除以质量数，得到每个核子平均分摊的能量，即比结合能 e<sub>b</sub>=E<sub>b</sub>/A；它是比较核稳定性的正确标准。\n卡片公式各自的适用条件（不是本题共同前提）：\n结合能：Δm 取「单独核子总质量 − 原子核质量」，算出的就是结合能\n比结合能：比较不同核的稳定性时必须用它，不能直接比结合能总量",
       "error_type": "概念混淆",
       "judging": "teacher",
       "source_error_index": 1,
       "source_caught_by": "人工审核",
       "wrong_expr": null,
       "trap_test": null,
+      "level": "进阶",
+      "learning_scope": "高中",
+      "answer_evidence": {
+        "kind": "teacher",
+        "claim_source": "why",
+        "reference_only": true,
+        "reason": "概念、操作或无法建立完整定量证据，教师确认条件与结论。"
+      },
       "review": {
         "confidence": "medium",
-        "checks": {
-          "answer_unique": true,
-          "distractors_plausible": true,
-          "stem_clear": true,
-          "no_cross_segment": true
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": false,
+          "no_answer_leak_in_options": true
         },
-        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。"
       }
     }
   ],
-  "skipped": []
+  "skipped": [],
+  "source_records": {
+    "diagnostic-nuc-01-1": {
+      "point": {
+        "id": "nuc-01",
+        "title": "原子核的组成与同位素",
+        "level": "基础",
+        "definition": "原子核由质子和中子组成，二者统称核子。质子数 Z 决定元素种类，中子数 N 决定同位素；质量数 A=Z+N 是核内核子的总数。",
+        "meaning": "Z 相当于元素的「身份证」：Z 相同就是同一种元素，化学性质几乎只由 Z 与核外电子决定。N 不同则核的稳定性、放射性可能差别很大，这就是同位素。要注意 A 只表示核子个数，不是原子质量，也不是质子数。",
+        "symbols": {
+          "Z": {
+            "desc": "质子数（也叫核电荷数）",
+            "unit": "1"
+          },
+          "N": {
+            "desc": "中子数",
+            "unit": "1"
+          },
+          "A": {
+            "desc": "质量数，即核内核子总数",
+            "unit": "1"
+          },
+          "R": {
+            "desc": "原子核半径",
+            "unit": "m"
+          },
+          "r_0": {
+            "desc": "核半径常量，约 1.2×10⁻¹⁵ m",
+            "unit": "m"
+          }
+        },
+        "scenarios": {
+          "碳12": {
+            "Z": 6,
+            "N": 6,
+            "A": 12,
+            "r_0": 1.2e-15,
+            "R": 2.747e-15
+          },
+          "铀238": {
+            "Z": 92,
+            "N": 146,
+            "A": 238,
+            "r_0": 1.2e-15,
+            "R": 7.44e-15
+          }
+        },
+        "formulas": [
+          {
+            "name": "质量数与核电荷数的关系",
+            "expr": "A = Z + N",
+            "when": "对任何原子核都成立，与核是否稳定无关",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "碳12",
+                "expr": "Z+N",
+                "ref": 12,
+                "note": "6 个质子加 6 个中子，核子总数为 12。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "铀238",
+                "expr": "Z+N",
+                "ref": 238,
+                "note": "92 个质子加 146 个中子，核子总数为 238。"
+              },
+              {
+                "type": "compare",
+                "scenario": "碳12",
+                "expr": "Z+N",
+                "op": ">",
+                "vs": "Z",
+                "note": "只要核内有中子（N>0），质量数就必定大于质子数：12 > 6。"
+              },
+              {
+                "type": "consistency",
+                "scenario": "碳12",
+                "with": "nuc-01|质量数与核电荷数的关系",
+                "with_expr": "A",
+                "target": "质量数，即核内核子总数",
+                "note": "直接求本公式输出，与情境中另列的A设计基准核对；数据是设计示例，不是实测。用于核对定义、反算或边界值，不宣称不同物理原理互证。",
+                "verification_kind": "独立设计情境数据核对"
+              }
+            ]
+          },
+          {
+            "name": "核半径的立方根规律",
+            "expr": "R = r_0*A^(1/3)",
+            "when": "把核近似看成实心球；r_0 取 1.2×10⁻¹⁵ m 量级",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "碳12",
+                "expr": "r_0*A^(1/3)",
+                "ref": 2.747e-15,
+                "tol": 1e-18,
+                "note": "12 的立方根约 2.289，乘 1.2×10⁻¹⁵ 得约 2.75×10⁻¹⁵ m。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "铀238",
+                "expr": "r_0*A^(1/3)",
+                "ref": 7.44e-15,
+                "tol": 1e-17,
+                "note": "238 的立方根约 6.196，乘 1.2×10⁻¹⁵ 得约 7.44×10⁻¹⁵ m。"
+              },
+              {
+                "type": "direction",
+                "scenario": "碳12",
+                "var": "A",
+                "lo": 1,
+                "hi": 250,
+                "expr": "r_0*A^(1/3)",
+                "expect": "up",
+                "note": "质量数越大，核半径越大——但只按立方根增长，所以重核并不会大很多。"
+              },
+              {
+                "type": "scan",
+                "scenario": "碳12",
+                "var": "A",
+                "lo": 1,
+                "hi": 250
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "质量数的定义：A 等于核内质子数与中子数之和。",
+          "由 A=Z+N 移项得 N=A−Z，所以只要知道质量数和质子数，就能求出中子数。",
+          "实验测得核半径与质量数的立方根成正比（原子核近似实心球），故写成 R=r_0·A^(1/3)。"
+        ],
+        "errors": [
+          {
+            "wrong": "把质量数当成质子数，写成 A=Z",
+            "wrong_expr": "A = Z",
+            "why": "质量数是质子数与中子数之和，不是质子数。碳12 按这个写法会得到 6，而正确值是 12。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "碳12",
+              "expr": "Z",
+              "ref": 12
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "把核半径写成与质量数成正比（R=r_0·A）",
+            "why": "量纲虽然对得上（都是长度），但函数关系错了：核半径只按质量数的**立方根**增长。碳12 会算出 1.44×10⁻¹⁴ m，而正确值约 2.75×10⁻¹⁵ m，差了五倍多。此条依赖极小量级（10⁻¹⁵）的比较，机器实测抓不稳，故列人工审核。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "认为质量数总等于质子数的两倍，写成 A=2Z",
+            "wrong_expr": "A = 2*Z",
+            "why": "只有质子数恰好等于中子数时才碰巧成立（如碳12）。铀238 就不成立：2×92=184，而 A=238——多出来的 54 个全是中子。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "铀238",
+              "expr": "2*Z",
+              "ref": 238
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "把同位素说成「质子数不同的原子」",
+            "why": "同位素是质子数相同、中子数不同；质子数不同就是不同的元素了。这条只能靠人判。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "碳12 的原子核含 6 个质子。求它的质量数与中子数；若取 r_0=1.2×10⁻¹⁵ m，估算它的核半径。",
+          "solution": [
+            "A = Z + N = 6 + 6 = 12",
+            "N = A − Z = 12 − 6 = 6",
+            "R = r_0·A^(1/3) = 1.2×10⁻¹⁵ × 12^(1/3) ≈ 2.75×10⁻¹⁵ m"
+          ],
+          "answer": "质量数 12，中子数 6，核半径约 2.75×10⁻¹⁵ m。"
+        },
+        "prereq": [],
+        "next": [],
+        "tags": [
+          "原子核",
+          "同位素"
+        ],
+        "learning_scope": "高中"
+      },
+      "error_index": 0,
+      "chapter": "第二十一章 · 原子核与核能"
+    },
+    "diagnostic-nuc-01-2": {
+      "point": {
+        "id": "nuc-01",
+        "title": "原子核的组成与同位素",
+        "level": "基础",
+        "definition": "原子核由质子和中子组成，二者统称核子。质子数 Z 决定元素种类，中子数 N 决定同位素；质量数 A=Z+N 是核内核子的总数。",
+        "meaning": "Z 相当于元素的「身份证」：Z 相同就是同一种元素，化学性质几乎只由 Z 与核外电子决定。N 不同则核的稳定性、放射性可能差别很大，这就是同位素。要注意 A 只表示核子个数，不是原子质量，也不是质子数。",
+        "symbols": {
+          "Z": {
+            "desc": "质子数（也叫核电荷数）",
+            "unit": "1"
+          },
+          "N": {
+            "desc": "中子数",
+            "unit": "1"
+          },
+          "A": {
+            "desc": "质量数，即核内核子总数",
+            "unit": "1"
+          },
+          "R": {
+            "desc": "原子核半径",
+            "unit": "m"
+          },
+          "r_0": {
+            "desc": "核半径常量，约 1.2×10⁻¹⁵ m",
+            "unit": "m"
+          }
+        },
+        "scenarios": {
+          "碳12": {
+            "Z": 6,
+            "N": 6,
+            "A": 12,
+            "r_0": 1.2e-15,
+            "R": 2.747e-15
+          },
+          "铀238": {
+            "Z": 92,
+            "N": 146,
+            "A": 238,
+            "r_0": 1.2e-15,
+            "R": 7.44e-15
+          }
+        },
+        "formulas": [
+          {
+            "name": "质量数与核电荷数的关系",
+            "expr": "A = Z + N",
+            "when": "对任何原子核都成立，与核是否稳定无关",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "碳12",
+                "expr": "Z+N",
+                "ref": 12,
+                "note": "6 个质子加 6 个中子，核子总数为 12。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "铀238",
+                "expr": "Z+N",
+                "ref": 238,
+                "note": "92 个质子加 146 个中子，核子总数为 238。"
+              },
+              {
+                "type": "compare",
+                "scenario": "碳12",
+                "expr": "Z+N",
+                "op": ">",
+                "vs": "Z",
+                "note": "只要核内有中子（N>0），质量数就必定大于质子数：12 > 6。"
+              },
+              {
+                "type": "consistency",
+                "scenario": "碳12",
+                "with": "nuc-01|质量数与核电荷数的关系",
+                "with_expr": "A",
+                "target": "质量数，即核内核子总数",
+                "note": "直接求本公式输出，与情境中另列的A设计基准核对；数据是设计示例，不是实测。用于核对定义、反算或边界值，不宣称不同物理原理互证。",
+                "verification_kind": "独立设计情境数据核对"
+              }
+            ]
+          },
+          {
+            "name": "核半径的立方根规律",
+            "expr": "R = r_0*A^(1/3)",
+            "when": "把核近似看成实心球；r_0 取 1.2×10⁻¹⁵ m 量级",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "碳12",
+                "expr": "r_0*A^(1/3)",
+                "ref": 2.747e-15,
+                "tol": 1e-18,
+                "note": "12 的立方根约 2.289，乘 1.2×10⁻¹⁵ 得约 2.75×10⁻¹⁵ m。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "铀238",
+                "expr": "r_0*A^(1/3)",
+                "ref": 7.44e-15,
+                "tol": 1e-17,
+                "note": "238 的立方根约 6.196，乘 1.2×10⁻¹⁵ 得约 7.44×10⁻¹⁵ m。"
+              },
+              {
+                "type": "direction",
+                "scenario": "碳12",
+                "var": "A",
+                "lo": 1,
+                "hi": 250,
+                "expr": "r_0*A^(1/3)",
+                "expect": "up",
+                "note": "质量数越大，核半径越大——但只按立方根增长，所以重核并不会大很多。"
+              },
+              {
+                "type": "scan",
+                "scenario": "碳12",
+                "var": "A",
+                "lo": 1,
+                "hi": 250
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "质量数的定义：A 等于核内质子数与中子数之和。",
+          "由 A=Z+N 移项得 N=A−Z，所以只要知道质量数和质子数，就能求出中子数。",
+          "实验测得核半径与质量数的立方根成正比（原子核近似实心球），故写成 R=r_0·A^(1/3)。"
+        ],
+        "errors": [
+          {
+            "wrong": "把质量数当成质子数，写成 A=Z",
+            "wrong_expr": "A = Z",
+            "why": "质量数是质子数与中子数之和，不是质子数。碳12 按这个写法会得到 6，而正确值是 12。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "碳12",
+              "expr": "Z",
+              "ref": 12
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "把核半径写成与质量数成正比（R=r_0·A）",
+            "why": "量纲虽然对得上（都是长度），但函数关系错了：核半径只按质量数的**立方根**增长。碳12 会算出 1.44×10⁻¹⁴ m，而正确值约 2.75×10⁻¹⁵ m，差了五倍多。此条依赖极小量级（10⁻¹⁵）的比较，机器实测抓不稳，故列人工审核。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "认为质量数总等于质子数的两倍，写成 A=2Z",
+            "wrong_expr": "A = 2*Z",
+            "why": "只有质子数恰好等于中子数时才碰巧成立（如碳12）。铀238 就不成立：2×92=184，而 A=238——多出来的 54 个全是中子。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "铀238",
+              "expr": "2*Z",
+              "ref": 238
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "把同位素说成「质子数不同的原子」",
+            "why": "同位素是质子数相同、中子数不同；质子数不同就是不同的元素了。这条只能靠人判。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "碳12 的原子核含 6 个质子。求它的质量数与中子数；若取 r_0=1.2×10⁻¹⁵ m，估算它的核半径。",
+          "solution": [
+            "A = Z + N = 6 + 6 = 12",
+            "N = A − Z = 12 − 6 = 6",
+            "R = r_0·A^(1/3) = 1.2×10⁻¹⁵ × 12^(1/3) ≈ 2.75×10⁻¹⁵ m"
+          ],
+          "answer": "质量数 12，中子数 6，核半径约 2.75×10⁻¹⁵ m。"
+        },
+        "prereq": [],
+        "next": [],
+        "tags": [
+          "原子核",
+          "同位素"
+        ],
+        "learning_scope": "高中"
+      },
+      "error_index": 1,
+      "chapter": "第二十一章 · 原子核与核能"
+    },
+    "diagnostic-nuc-01-3": {
+      "point": {
+        "id": "nuc-01",
+        "title": "原子核的组成与同位素",
+        "level": "基础",
+        "definition": "原子核由质子和中子组成，二者统称核子。质子数 Z 决定元素种类，中子数 N 决定同位素；质量数 A=Z+N 是核内核子的总数。",
+        "meaning": "Z 相当于元素的「身份证」：Z 相同就是同一种元素，化学性质几乎只由 Z 与核外电子决定。N 不同则核的稳定性、放射性可能差别很大，这就是同位素。要注意 A 只表示核子个数，不是原子质量，也不是质子数。",
+        "symbols": {
+          "Z": {
+            "desc": "质子数（也叫核电荷数）",
+            "unit": "1"
+          },
+          "N": {
+            "desc": "中子数",
+            "unit": "1"
+          },
+          "A": {
+            "desc": "质量数，即核内核子总数",
+            "unit": "1"
+          },
+          "R": {
+            "desc": "原子核半径",
+            "unit": "m"
+          },
+          "r_0": {
+            "desc": "核半径常量，约 1.2×10⁻¹⁵ m",
+            "unit": "m"
+          }
+        },
+        "scenarios": {
+          "碳12": {
+            "Z": 6,
+            "N": 6,
+            "A": 12,
+            "r_0": 1.2e-15,
+            "R": 2.747e-15
+          },
+          "铀238": {
+            "Z": 92,
+            "N": 146,
+            "A": 238,
+            "r_0": 1.2e-15,
+            "R": 7.44e-15
+          }
+        },
+        "formulas": [
+          {
+            "name": "质量数与核电荷数的关系",
+            "expr": "A = Z + N",
+            "when": "对任何原子核都成立，与核是否稳定无关",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "碳12",
+                "expr": "Z+N",
+                "ref": 12,
+                "note": "6 个质子加 6 个中子，核子总数为 12。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "铀238",
+                "expr": "Z+N",
+                "ref": 238,
+                "note": "92 个质子加 146 个中子，核子总数为 238。"
+              },
+              {
+                "type": "compare",
+                "scenario": "碳12",
+                "expr": "Z+N",
+                "op": ">",
+                "vs": "Z",
+                "note": "只要核内有中子（N>0），质量数就必定大于质子数：12 > 6。"
+              },
+              {
+                "type": "consistency",
+                "scenario": "碳12",
+                "with": "nuc-01|质量数与核电荷数的关系",
+                "with_expr": "A",
+                "target": "质量数，即核内核子总数",
+                "note": "直接求本公式输出，与情境中另列的A设计基准核对；数据是设计示例，不是实测。用于核对定义、反算或边界值，不宣称不同物理原理互证。",
+                "verification_kind": "独立设计情境数据核对"
+              }
+            ]
+          },
+          {
+            "name": "核半径的立方根规律",
+            "expr": "R = r_0*A^(1/3)",
+            "when": "把核近似看成实心球；r_0 取 1.2×10⁻¹⁵ m 量级",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "碳12",
+                "expr": "r_0*A^(1/3)",
+                "ref": 2.747e-15,
+                "tol": 1e-18,
+                "note": "12 的立方根约 2.289，乘 1.2×10⁻¹⁵ 得约 2.75×10⁻¹⁵ m。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "铀238",
+                "expr": "r_0*A^(1/3)",
+                "ref": 7.44e-15,
+                "tol": 1e-17,
+                "note": "238 的立方根约 6.196，乘 1.2×10⁻¹⁵ 得约 7.44×10⁻¹⁵ m。"
+              },
+              {
+                "type": "direction",
+                "scenario": "碳12",
+                "var": "A",
+                "lo": 1,
+                "hi": 250,
+                "expr": "r_0*A^(1/3)",
+                "expect": "up",
+                "note": "质量数越大，核半径越大——但只按立方根增长，所以重核并不会大很多。"
+              },
+              {
+                "type": "scan",
+                "scenario": "碳12",
+                "var": "A",
+                "lo": 1,
+                "hi": 250
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "质量数的定义：A 等于核内质子数与中子数之和。",
+          "由 A=Z+N 移项得 N=A−Z，所以只要知道质量数和质子数，就能求出中子数。",
+          "实验测得核半径与质量数的立方根成正比（原子核近似实心球），故写成 R=r_0·A^(1/3)。"
+        ],
+        "errors": [
+          {
+            "wrong": "把质量数当成质子数，写成 A=Z",
+            "wrong_expr": "A = Z",
+            "why": "质量数是质子数与中子数之和，不是质子数。碳12 按这个写法会得到 6，而正确值是 12。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "碳12",
+              "expr": "Z",
+              "ref": 12
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "把核半径写成与质量数成正比（R=r_0·A）",
+            "why": "量纲虽然对得上（都是长度），但函数关系错了：核半径只按质量数的**立方根**增长。碳12 会算出 1.44×10⁻¹⁴ m，而正确值约 2.75×10⁻¹⁵ m，差了五倍多。此条依赖极小量级（10⁻¹⁵）的比较，机器实测抓不稳，故列人工审核。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "认为质量数总等于质子数的两倍，写成 A=2Z",
+            "wrong_expr": "A = 2*Z",
+            "why": "只有质子数恰好等于中子数时才碰巧成立（如碳12）。铀238 就不成立：2×92=184，而 A=238——多出来的 54 个全是中子。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "铀238",
+              "expr": "2*Z",
+              "ref": 238
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "把同位素说成「质子数不同的原子」",
+            "why": "同位素是质子数相同、中子数不同；质子数不同就是不同的元素了。这条只能靠人判。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "碳12 的原子核含 6 个质子。求它的质量数与中子数；若取 r_0=1.2×10⁻¹⁵ m，估算它的核半径。",
+          "solution": [
+            "A = Z + N = 6 + 6 = 12",
+            "N = A − Z = 12 − 6 = 6",
+            "R = r_0·A^(1/3) = 1.2×10⁻¹⁵ × 12^(1/3) ≈ 2.75×10⁻¹⁵ m"
+          ],
+          "answer": "质量数 12，中子数 6，核半径约 2.75×10⁻¹⁵ m。"
+        },
+        "prereq": [],
+        "next": [],
+        "tags": [
+          "原子核",
+          "同位素"
+        ],
+        "learning_scope": "高中"
+      },
+      "error_index": 2,
+      "chapter": "第二十一章 · 原子核与核能"
+    },
+    "diagnostic-nuc-01-4": {
+      "point": {
+        "id": "nuc-01",
+        "title": "原子核的组成与同位素",
+        "level": "基础",
+        "definition": "原子核由质子和中子组成，二者统称核子。质子数 Z 决定元素种类，中子数 N 决定同位素；质量数 A=Z+N 是核内核子的总数。",
+        "meaning": "Z 相当于元素的「身份证」：Z 相同就是同一种元素，化学性质几乎只由 Z 与核外电子决定。N 不同则核的稳定性、放射性可能差别很大，这就是同位素。要注意 A 只表示核子个数，不是原子质量，也不是质子数。",
+        "symbols": {
+          "Z": {
+            "desc": "质子数（也叫核电荷数）",
+            "unit": "1"
+          },
+          "N": {
+            "desc": "中子数",
+            "unit": "1"
+          },
+          "A": {
+            "desc": "质量数，即核内核子总数",
+            "unit": "1"
+          },
+          "R": {
+            "desc": "原子核半径",
+            "unit": "m"
+          },
+          "r_0": {
+            "desc": "核半径常量，约 1.2×10⁻¹⁵ m",
+            "unit": "m"
+          }
+        },
+        "scenarios": {
+          "碳12": {
+            "Z": 6,
+            "N": 6,
+            "A": 12,
+            "r_0": 1.2e-15,
+            "R": 2.747e-15
+          },
+          "铀238": {
+            "Z": 92,
+            "N": 146,
+            "A": 238,
+            "r_0": 1.2e-15,
+            "R": 7.44e-15
+          }
+        },
+        "formulas": [
+          {
+            "name": "质量数与核电荷数的关系",
+            "expr": "A = Z + N",
+            "when": "对任何原子核都成立，与核是否稳定无关",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "碳12",
+                "expr": "Z+N",
+                "ref": 12,
+                "note": "6 个质子加 6 个中子，核子总数为 12。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "铀238",
+                "expr": "Z+N",
+                "ref": 238,
+                "note": "92 个质子加 146 个中子，核子总数为 238。"
+              },
+              {
+                "type": "compare",
+                "scenario": "碳12",
+                "expr": "Z+N",
+                "op": ">",
+                "vs": "Z",
+                "note": "只要核内有中子（N>0），质量数就必定大于质子数：12 > 6。"
+              },
+              {
+                "type": "consistency",
+                "scenario": "碳12",
+                "with": "nuc-01|质量数与核电荷数的关系",
+                "with_expr": "A",
+                "target": "质量数，即核内核子总数",
+                "note": "直接求本公式输出，与情境中另列的A设计基准核对；数据是设计示例，不是实测。用于核对定义、反算或边界值，不宣称不同物理原理互证。",
+                "verification_kind": "独立设计情境数据核对"
+              }
+            ]
+          },
+          {
+            "name": "核半径的立方根规律",
+            "expr": "R = r_0*A^(1/3)",
+            "when": "把核近似看成实心球；r_0 取 1.2×10⁻¹⁵ m 量级",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "碳12",
+                "expr": "r_0*A^(1/3)",
+                "ref": 2.747e-15,
+                "tol": 1e-18,
+                "note": "12 的立方根约 2.289，乘 1.2×10⁻¹⁵ 得约 2.75×10⁻¹⁵ m。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "铀238",
+                "expr": "r_0*A^(1/3)",
+                "ref": 7.44e-15,
+                "tol": 1e-17,
+                "note": "238 的立方根约 6.196，乘 1.2×10⁻¹⁵ 得约 7.44×10⁻¹⁵ m。"
+              },
+              {
+                "type": "direction",
+                "scenario": "碳12",
+                "var": "A",
+                "lo": 1,
+                "hi": 250,
+                "expr": "r_0*A^(1/3)",
+                "expect": "up",
+                "note": "质量数越大，核半径越大——但只按立方根增长，所以重核并不会大很多。"
+              },
+              {
+                "type": "scan",
+                "scenario": "碳12",
+                "var": "A",
+                "lo": 1,
+                "hi": 250
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "质量数的定义：A 等于核内质子数与中子数之和。",
+          "由 A=Z+N 移项得 N=A−Z，所以只要知道质量数和质子数，就能求出中子数。",
+          "实验测得核半径与质量数的立方根成正比（原子核近似实心球），故写成 R=r_0·A^(1/3)。"
+        ],
+        "errors": [
+          {
+            "wrong": "把质量数当成质子数，写成 A=Z",
+            "wrong_expr": "A = Z",
+            "why": "质量数是质子数与中子数之和，不是质子数。碳12 按这个写法会得到 6，而正确值是 12。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "碳12",
+              "expr": "Z",
+              "ref": 12
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "把核半径写成与质量数成正比（R=r_0·A）",
+            "why": "量纲虽然对得上（都是长度），但函数关系错了：核半径只按质量数的**立方根**增长。碳12 会算出 1.44×10⁻¹⁴ m，而正确值约 2.75×10⁻¹⁵ m，差了五倍多。此条依赖极小量级（10⁻¹⁵）的比较，机器实测抓不稳，故列人工审核。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "认为质量数总等于质子数的两倍，写成 A=2Z",
+            "wrong_expr": "A = 2*Z",
+            "why": "只有质子数恰好等于中子数时才碰巧成立（如碳12）。铀238 就不成立：2×92=184，而 A=238——多出来的 54 个全是中子。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "铀238",
+              "expr": "2*Z",
+              "ref": 238
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "把同位素说成「质子数不同的原子」",
+            "why": "同位素是质子数相同、中子数不同；质子数不同就是不同的元素了。这条只能靠人判。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "碳12 的原子核含 6 个质子。求它的质量数与中子数；若取 r_0=1.2×10⁻¹⁵ m，估算它的核半径。",
+          "solution": [
+            "A = Z + N = 6 + 6 = 12",
+            "N = A − Z = 12 − 6 = 6",
+            "R = r_0·A^(1/3) = 1.2×10⁻¹⁵ × 12^(1/3) ≈ 2.75×10⁻¹⁵ m"
+          ],
+          "answer": "质量数 12，中子数 6，核半径约 2.75×10⁻¹⁵ m。"
+        },
+        "prereq": [],
+        "next": [],
+        "tags": [
+          "原子核",
+          "同位素"
+        ],
+        "learning_scope": "高中"
+      },
+      "error_index": 3,
+      "chapter": "第二十一章 · 原子核与核能"
+    },
+    "diagnostic-nuc-02-1": {
+      "point": {
+        "id": "nuc-02",
+        "title": "放射性衰变（α、β、γ）",
+        "level": "基础",
+        "definition": "α 衰变放出 α 粒子（即氦核，含 2 个质子和 2 个中子），故质量数减 4、质子数减 2；β 衰变是核内一个中子变成质子并放出一个电子，故质量数不变、质子数加 1；γ 衰变只放出光子，质量数与质子数都不变。",
+        "meaning": "三种衰变要连在一起记：α 是「掉一个氦核」，β 是「中子换质子」，γ 是「把多余的能量以光子形式吐出来」。判断衰变次数一律用两条守恒：质量数守恒、电荷数守恒。α 衰变 n 次就减 4n 和 2n；β 衰变 n 次质量数不变、质子数加 n。",
+        "symbols": {
+          "A1": {
+            "desc": "衰变前的质量数",
+            "unit": "1"
+          },
+          "Z1": {
+            "desc": "衰变前的质子数",
+            "unit": "1"
+          },
+          "N1": {
+            "desc": "衰变前的中子数",
+            "unit": "1"
+          },
+          "n_alpha": {
+            "desc": "发生的 α 衰变次数",
+            "unit": "1"
+          },
+          "A2": {
+            "desc": "衰变后的质量数",
+            "unit": "1"
+          },
+          "Z2": {
+            "desc": "衰变后的质子数",
+            "unit": "1"
+          },
+          "N2": {
+            "desc": "衰变后的中子数",
+            "unit": "1"
+          }
+        },
+        "scenarios": {
+          "铀238三次α衰变": {
+            "A1": 238,
+            "Z1": 92,
+            "N1": 146,
+            "n_alpha": 3,
+            "A2": 226,
+            "Z2": 86,
+            "N2": 140
+          },
+          "铀238一次α衰变": {
+            "A1": 238,
+            "Z1": 92,
+            "N1": 146,
+            "n_alpha": 1,
+            "A2": 234,
+            "Z2": 90,
+            "N2": 144
+          },
+          "镭226一次α衰变": {
+            "A1": 226,
+            "Z1": 88,
+            "N1": 138,
+            "n_alpha": 1,
+            "A2": 222,
+            "Z2": 86,
+            "N2": 136
+          }
+        },
+        "formulas": [
+          {
+            "name": "n 次 α 衰变后的质量数",
+            "expr": "A2 = A1 - 4*n_alpha",
+            "when": "只发生 α 衰变；每放出一个 α 粒子带走 4 个核子",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "铀238三次α衰变",
+                "expr": "A1 - 4*n_alpha",
+                "ref": 226,
+                "note": "238 减去 4×3 得 226。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "镭226一次α衰变",
+                "expr": "A1 - 4*n_alpha",
+                "ref": 222,
+                "note": "226 减去 4 得 222。"
+              },
+              {
+                "type": "compare",
+                "scenario": "铀238三次α衰变",
+                "expr": "A1 - 4*n_alpha",
+                "op": "<",
+                "vs": "A1",
+                "note": "只要发生至少一次 α 衰变，质量数必定变小：226 < 238。"
+              },
+              {
+                "type": "scan",
+                "scenario": "铀238三次α衰变",
+                "var": "n_alpha",
+                "lo": 0,
+                "hi": 20
+              }
+            ]
+          },
+          {
+            "name": "n 次 α 衰变后的中子数",
+            "expr": "N2 = N1 - 2*n_alpha",
+            "when": "只发生 α 衰变；α 粒子含 2 个中子",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "铀238三次α衰变",
+                "expr": "N1 - 2*n_alpha",
+                "ref": 140,
+                "note": "146 减去 2×3 得 140。"
+              },
+              {
+                "type": "direction",
+                "scenario": "铀238三次α衰变",
+                "var": "n_alpha",
+                "lo": 0,
+                "hi": 20,
+                "expr": "N1 - 2*n_alpha",
+                "expect": "down",
+                "note": "α 衰变次数越多，剩下的中子越少。"
+              },
+              {
+                "type": "scan",
+                "scenario": "铀238三次α衰变",
+                "var": "n_alpha",
+                "lo": 0,
+                "hi": 20
+              },
+              {
+                "type": "consistency",
+                "scenario": "铀238三次α衰变",
+                "with": "nuc-02|n 次 α 衰变后的中子数",
+                "with_expr": "A1-4*n_alpha-(Z1-2*n_alpha)",
+                "target": "衰变后的中子数",
+                "note": "本公式直接求N2；参考端显式关系为A1-4*n_alpha-(Z1-2*n_alpha)。两端使用同一情境和阶段，只核对该关系；with字段仅定位来源，不代表调用另一条被覆盖的公式。",
+                "verification_kind": "独立关系核对"
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "α 粒子就是氦核，质量数 4、电荷数 2；放出一个就带走 4 个核子和 2 个单位的正电荷。",
+          "所以质量数每次减 4，质子数每次减 2，两者都是线性变化：减 4n 与减 2n。",
+          "检验守恒：衰变前后「质子数 + 中子数」应当都等于质量数，两个结果对上才说明次数没算错。"
+        ],
+        "errors": [
+          {
+            "wrong": "一次 α 衰变只让质量数减 2",
+            "wrong_expr": "A2 = A1 - 2",
+            "why": "α 粒子含 2 个质子和 2 个中子，共 4 个核子，质量数应减 4。铀238 会算成 236，而正确是 234。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "铀238一次α衰变",
+              "expr": "A1 - 2",
+              "ref": 234
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "认为 γ 衰变会改变质量数与质子数",
+            "why": "γ 射线是光子，没有质量数也没有电荷；放出 γ 只是把核从激发态降到低能态，质量数与质子数都不变。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "铀238核含92个质子，连续经过3次α衰变，期间无其他衰变，求末态质量数、质子数和中子数。",
+          "solution": [
+            "每次 α 衰变质量数减 4：A = 238 − 4×3 = 226",
+            "每次 α 衰变质子数减 2：Z = 92 − 2×3 = 86",
+            "每次 α 衰变中子数减 2：N = 146 − 2×3 = 140，验算 86+140=226 ✓"
+          ],
+          "answer": "质量数 226，质子数 86，中子数 140。"
+        },
+        "prereq": [],
+        "next": [],
+        "tags": [
+          "放射性",
+          "衰变"
+        ],
+        "learning_scope": "高中"
+      },
+      "error_index": 0,
+      "chapter": "第二十一章 · 原子核与核能"
+    },
+    "diagnostic-nuc-02-2": {
+      "point": {
+        "id": "nuc-02",
+        "title": "放射性衰变（α、β、γ）",
+        "level": "基础",
+        "definition": "α 衰变放出 α 粒子（即氦核，含 2 个质子和 2 个中子），故质量数减 4、质子数减 2；β 衰变是核内一个中子变成质子并放出一个电子，故质量数不变、质子数加 1；γ 衰变只放出光子，质量数与质子数都不变。",
+        "meaning": "三种衰变要连在一起记：α 是「掉一个氦核」，β 是「中子换质子」，γ 是「把多余的能量以光子形式吐出来」。判断衰变次数一律用两条守恒：质量数守恒、电荷数守恒。α 衰变 n 次就减 4n 和 2n；β 衰变 n 次质量数不变、质子数加 n。",
+        "symbols": {
+          "A1": {
+            "desc": "衰变前的质量数",
+            "unit": "1"
+          },
+          "Z1": {
+            "desc": "衰变前的质子数",
+            "unit": "1"
+          },
+          "N1": {
+            "desc": "衰变前的中子数",
+            "unit": "1"
+          },
+          "n_alpha": {
+            "desc": "发生的 α 衰变次数",
+            "unit": "1"
+          },
+          "A2": {
+            "desc": "衰变后的质量数",
+            "unit": "1"
+          },
+          "Z2": {
+            "desc": "衰变后的质子数",
+            "unit": "1"
+          },
+          "N2": {
+            "desc": "衰变后的中子数",
+            "unit": "1"
+          }
+        },
+        "scenarios": {
+          "铀238三次α衰变": {
+            "A1": 238,
+            "Z1": 92,
+            "N1": 146,
+            "n_alpha": 3,
+            "A2": 226,
+            "Z2": 86,
+            "N2": 140
+          },
+          "铀238一次α衰变": {
+            "A1": 238,
+            "Z1": 92,
+            "N1": 146,
+            "n_alpha": 1,
+            "A2": 234,
+            "Z2": 90,
+            "N2": 144
+          },
+          "镭226一次α衰变": {
+            "A1": 226,
+            "Z1": 88,
+            "N1": 138,
+            "n_alpha": 1,
+            "A2": 222,
+            "Z2": 86,
+            "N2": 136
+          }
+        },
+        "formulas": [
+          {
+            "name": "n 次 α 衰变后的质量数",
+            "expr": "A2 = A1 - 4*n_alpha",
+            "when": "只发生 α 衰变；每放出一个 α 粒子带走 4 个核子",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "铀238三次α衰变",
+                "expr": "A1 - 4*n_alpha",
+                "ref": 226,
+                "note": "238 减去 4×3 得 226。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "镭226一次α衰变",
+                "expr": "A1 - 4*n_alpha",
+                "ref": 222,
+                "note": "226 减去 4 得 222。"
+              },
+              {
+                "type": "compare",
+                "scenario": "铀238三次α衰变",
+                "expr": "A1 - 4*n_alpha",
+                "op": "<",
+                "vs": "A1",
+                "note": "只要发生至少一次 α 衰变，质量数必定变小：226 < 238。"
+              },
+              {
+                "type": "scan",
+                "scenario": "铀238三次α衰变",
+                "var": "n_alpha",
+                "lo": 0,
+                "hi": 20
+              }
+            ]
+          },
+          {
+            "name": "n 次 α 衰变后的中子数",
+            "expr": "N2 = N1 - 2*n_alpha",
+            "when": "只发生 α 衰变；α 粒子含 2 个中子",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "铀238三次α衰变",
+                "expr": "N1 - 2*n_alpha",
+                "ref": 140,
+                "note": "146 减去 2×3 得 140。"
+              },
+              {
+                "type": "direction",
+                "scenario": "铀238三次α衰变",
+                "var": "n_alpha",
+                "lo": 0,
+                "hi": 20,
+                "expr": "N1 - 2*n_alpha",
+                "expect": "down",
+                "note": "α 衰变次数越多，剩下的中子越少。"
+              },
+              {
+                "type": "scan",
+                "scenario": "铀238三次α衰变",
+                "var": "n_alpha",
+                "lo": 0,
+                "hi": 20
+              },
+              {
+                "type": "consistency",
+                "scenario": "铀238三次α衰变",
+                "with": "nuc-02|n 次 α 衰变后的中子数",
+                "with_expr": "A1-4*n_alpha-(Z1-2*n_alpha)",
+                "target": "衰变后的中子数",
+                "note": "本公式直接求N2；参考端显式关系为A1-4*n_alpha-(Z1-2*n_alpha)。两端使用同一情境和阶段，只核对该关系；with字段仅定位来源，不代表调用另一条被覆盖的公式。",
+                "verification_kind": "独立关系核对"
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "α 粒子就是氦核，质量数 4、电荷数 2；放出一个就带走 4 个核子和 2 个单位的正电荷。",
+          "所以质量数每次减 4，质子数每次减 2，两者都是线性变化：减 4n 与减 2n。",
+          "检验守恒：衰变前后「质子数 + 中子数」应当都等于质量数，两个结果对上才说明次数没算错。"
+        ],
+        "errors": [
+          {
+            "wrong": "一次 α 衰变只让质量数减 2",
+            "wrong_expr": "A2 = A1 - 2",
+            "why": "α 粒子含 2 个质子和 2 个中子，共 4 个核子，质量数应减 4。铀238 会算成 236，而正确是 234。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "铀238一次α衰变",
+              "expr": "A1 - 2",
+              "ref": 234
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "认为 γ 衰变会改变质量数与质子数",
+            "why": "γ 射线是光子，没有质量数也没有电荷；放出 γ 只是把核从激发态降到低能态，质量数与质子数都不变。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "铀238核含92个质子，连续经过3次α衰变，期间无其他衰变，求末态质量数、质子数和中子数。",
+          "solution": [
+            "每次 α 衰变质量数减 4：A = 238 − 4×3 = 226",
+            "每次 α 衰变质子数减 2：Z = 92 − 2×3 = 86",
+            "每次 α 衰变中子数减 2：N = 146 − 2×3 = 140，验算 86+140=226 ✓"
+          ],
+          "answer": "质量数 226，质子数 86，中子数 140。"
+        },
+        "prereq": [],
+        "next": [],
+        "tags": [
+          "放射性",
+          "衰变"
+        ],
+        "learning_scope": "高中"
+      },
+      "error_index": 1,
+      "chapter": "第二十一章 · 原子核与核能"
+    },
+    "diagnostic-nuc-03-1": {
+      "point": {
+        "id": "nuc-03",
+        "title": "半衰期",
+        "level": "基础",
+        "definition": "半衰期 T 是放射性元素有一半原子核发生衰变所需的时间。每经过一个半衰期，剩余未衰变的核数就减为原来的一半，写成 N=N_0·(1/2)^(t/T)。",
+        "meaning": "半衰期是**大量原子核**的统计规律，不是单个核的「倒计时」。它只由核本身决定，和温度、压强、化学状态都无关——因为核外条件根本影响不到核内部。经过 n 个半衰期剩 (1/2)^n，永远不为零，所以「衰变完」只是近似说法。",
+        "symbols": {
+          "N_0": {
+            "desc": "初始时刻未衰变的核数",
+            "unit": "1"
+          },
+          "N": {
+            "desc": "经过 t 时间后未衰变的核数",
+            "unit": "1"
+          },
+          "T_half": {
+            "desc": "半衰期",
+            "unit": "s"
+          },
+          "t": {
+            "desc": "经历的时间",
+            "unit": "s"
+          },
+          "n_half": {
+            "desc": "经历的半衰期个数",
+            "unit": "1"
+          },
+          "k_decay": {
+            "desc": "衰变常量，表示单位时间内衰变的概率",
+            "unit": "s^-1"
+          }
+        },
+        "scenarios": {
+          "三个半衰期": {
+            "N_0": 800,
+            "n_half": 3,
+            "N": 100,
+            "T_half": 5,
+            "t": 15,
+            "k_decay": 0.13862943611198905
+          },
+          "五个半衰期": {
+            "N_0": 800,
+            "n_half": 5,
+            "N": 25,
+            "T_half": 5,
+            "t": 25,
+            "k_decay": 0.13862943611198905
+          }
+        },
+        "formulas": [
+          {
+            "name": "半衰期个数与时间的关系",
+            "expr": "n_half = t/T_half",
+            "when": "把实际时间换算成「过了几个半衰期」，便于按整数倍心算",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "三个半衰期",
+                "expr": "t/T_half",
+                "ref": 3,
+                "note": "15 s 除以 5 s 得 3 个半衰期。"
+              },
+              {
+                "type": "direction",
+                "scenario": "三个半衰期",
+                "var": "t",
+                "lo": 0,
+                "hi": 50,
+                "expr": "t/T_half",
+                "expect": "up",
+                "note": "时间越长，经历过的半衰期个数越多。"
+              },
+              {
+                "type": "scan",
+                "scenario": "三个半衰期",
+                "var": "t",
+                "lo": 0,
+                "hi": 50
+              }
+            ]
+          },
+          {
+            "name": "剩余核数与时间的关系",
+            "expr": "N = N_0*exp(-k_decay*t)",
+            "when": "写成指数衰减形式，便于用衰变常量做连续计算",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "三个半衰期",
+                "expr": "N_0*exp(-k_decay*t)",
+                "ref": 100,
+                "note": "k=ln2/T≈0.13863 s⁻¹，乘 15 s 得 2.0794，取指数得 0.125，再乘 800 得 100。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "五个半衰期",
+                "expr": "N_0*exp(-k_decay*t)",
+                "ref": 25,
+                "note": "乘 25 s 得 3.4657，取指数得 0.03125，再乘 800 得 25。"
+              },
+              {
+                "type": "direction",
+                "scenario": "三个半衰期",
+                "var": "t",
+                "lo": 0,
+                "hi": 50,
+                "expr": "N_0*exp(-k_decay*t)",
+                "expect": "down",
+                "note": "时间越长，剩余核数越少，但永远大于零——指数衰减不会真正归零。"
+              },
+              {
+                "type": "scan",
+                "scenario": "三个半衰期",
+                "var": "t",
+                "lo": 0,
+                "hi": 50
+              },
+              {
+                "type": "consistency",
+                "scenario": "三个半衰期",
+                "with": "nuc-03|剩余核数与时间的关系",
+                "with_expr": "N_0*exp(-ln(2)*n_half)",
+                "target": "经过 t 时间后未衰变的核数",
+                "note": "本公式直接求N；参考端显式关系为N_0*exp(-ln(2)*n_half)。两端使用同一情境和阶段，只核对该关系；with字段仅定位来源，不代表调用另一条被覆盖的公式。",
+                "verification_kind": "独立关系核对"
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "按定义，每过一个半衰期剩余核数乘 1/2，所以经过 n 个半衰期剩 N_0·(1/2)^n。",
+          "把「过了多久」换算成「过了几个半衰期」用 n=t/T，于是 N=N_0·(1/2)^(t/T)。",
+          "把 (1/2)^(t/T) 写成指数形式 exp(−k·t)，其中 k=ln2/T 叫衰变常量；两种写法完全等价，指数形式更方便做连续计算。"
+        ],
+        "errors": [
+          {
+            "wrong": "以为每过一个半衰期就少一半（线性递减），写成 N=N_0·(1−n/2)",
+            "wrong_expr": "N = N_0*(1 - n_half/2)",
+            "why": "半衰期是「剩一半」而不是「减一半」。N_0=800、n=3 时错误式给出 −400，明显荒谬；正确值是 100。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "三个半衰期",
+              "expr": "N_0*(1 - n_half/2)",
+              "ref": 100
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "把衰变常量 k 与半衰期 T 当成正比关系（k∝T）",
+            "wrong_expr": "k_decay = T_half",
+            "why": "k=ln2/T，二者是**反比**：半衰期越长，单位时间内衰变的概率越小。本情境 k≈0.1386 s⁻¹，而 T=5 s，相差悬殊。",
+            "caught_by": "量纲一致性",
+            "trap_test": {
+              "kind": "dimension",
+              "target": "k_decay = T_half",
+              "expect": "mismatch",
+              "lhs_dim": "T^-1",
+              "rhs_dim": "T",
+              "note": "正式引擎验证量纲不一致；不计作同量纲错误数值实测。"
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "认为半衰期可以描述某一个原子核何时衰变",
+            "why": "半衰期是大量核的统计规律；对单个核只能给出衰变概率，不能预言它具体何时衰变。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "某放射性样品原有 800 个未衰变的核，半衰期为 5 s。经过 15 s 后还剩多少个？",
+          "solution": [
+            "先换算半衰期个数：n = t/T = 15/5 = 3",
+            "再代入衰减式：N = N_0×(1/2)^n = 800×(1/2)³ = 100"
+          ],
+          "answer": "还剩 100 个未衰变的核。"
+        },
+        "prereq": [],
+        "next": [],
+        "tags": [
+          "半衰期",
+          "统计规律"
+        ],
+        "learning_scope": "高中"
+      },
+      "error_index": 0,
+      "chapter": "第二十一章 · 原子核与核能"
+    },
+    "diagnostic-nuc-03-2": {
+      "point": {
+        "id": "nuc-03",
+        "title": "半衰期",
+        "level": "基础",
+        "definition": "半衰期 T 是放射性元素有一半原子核发生衰变所需的时间。每经过一个半衰期，剩余未衰变的核数就减为原来的一半，写成 N=N_0·(1/2)^(t/T)。",
+        "meaning": "半衰期是**大量原子核**的统计规律，不是单个核的「倒计时」。它只由核本身决定，和温度、压强、化学状态都无关——因为核外条件根本影响不到核内部。经过 n 个半衰期剩 (1/2)^n，永远不为零，所以「衰变完」只是近似说法。",
+        "symbols": {
+          "N_0": {
+            "desc": "初始时刻未衰变的核数",
+            "unit": "1"
+          },
+          "N": {
+            "desc": "经过 t 时间后未衰变的核数",
+            "unit": "1"
+          },
+          "T_half": {
+            "desc": "半衰期",
+            "unit": "s"
+          },
+          "t": {
+            "desc": "经历的时间",
+            "unit": "s"
+          },
+          "n_half": {
+            "desc": "经历的半衰期个数",
+            "unit": "1"
+          },
+          "k_decay": {
+            "desc": "衰变常量，表示单位时间内衰变的概率",
+            "unit": "s^-1"
+          }
+        },
+        "scenarios": {
+          "三个半衰期": {
+            "N_0": 800,
+            "n_half": 3,
+            "N": 100,
+            "T_half": 5,
+            "t": 15,
+            "k_decay": 0.13862943611198905
+          },
+          "五个半衰期": {
+            "N_0": 800,
+            "n_half": 5,
+            "N": 25,
+            "T_half": 5,
+            "t": 25,
+            "k_decay": 0.13862943611198905
+          }
+        },
+        "formulas": [
+          {
+            "name": "半衰期个数与时间的关系",
+            "expr": "n_half = t/T_half",
+            "when": "把实际时间换算成「过了几个半衰期」，便于按整数倍心算",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "三个半衰期",
+                "expr": "t/T_half",
+                "ref": 3,
+                "note": "15 s 除以 5 s 得 3 个半衰期。"
+              },
+              {
+                "type": "direction",
+                "scenario": "三个半衰期",
+                "var": "t",
+                "lo": 0,
+                "hi": 50,
+                "expr": "t/T_half",
+                "expect": "up",
+                "note": "时间越长，经历过的半衰期个数越多。"
+              },
+              {
+                "type": "scan",
+                "scenario": "三个半衰期",
+                "var": "t",
+                "lo": 0,
+                "hi": 50
+              }
+            ]
+          },
+          {
+            "name": "剩余核数与时间的关系",
+            "expr": "N = N_0*exp(-k_decay*t)",
+            "when": "写成指数衰减形式，便于用衰变常量做连续计算",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "三个半衰期",
+                "expr": "N_0*exp(-k_decay*t)",
+                "ref": 100,
+                "note": "k=ln2/T≈0.13863 s⁻¹，乘 15 s 得 2.0794，取指数得 0.125，再乘 800 得 100。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "五个半衰期",
+                "expr": "N_0*exp(-k_decay*t)",
+                "ref": 25,
+                "note": "乘 25 s 得 3.4657，取指数得 0.03125，再乘 800 得 25。"
+              },
+              {
+                "type": "direction",
+                "scenario": "三个半衰期",
+                "var": "t",
+                "lo": 0,
+                "hi": 50,
+                "expr": "N_0*exp(-k_decay*t)",
+                "expect": "down",
+                "note": "时间越长，剩余核数越少，但永远大于零——指数衰减不会真正归零。"
+              },
+              {
+                "type": "scan",
+                "scenario": "三个半衰期",
+                "var": "t",
+                "lo": 0,
+                "hi": 50
+              },
+              {
+                "type": "consistency",
+                "scenario": "三个半衰期",
+                "with": "nuc-03|剩余核数与时间的关系",
+                "with_expr": "N_0*exp(-ln(2)*n_half)",
+                "target": "经过 t 时间后未衰变的核数",
+                "note": "本公式直接求N；参考端显式关系为N_0*exp(-ln(2)*n_half)。两端使用同一情境和阶段，只核对该关系；with字段仅定位来源，不代表调用另一条被覆盖的公式。",
+                "verification_kind": "独立关系核对"
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "按定义，每过一个半衰期剩余核数乘 1/2，所以经过 n 个半衰期剩 N_0·(1/2)^n。",
+          "把「过了多久」换算成「过了几个半衰期」用 n=t/T，于是 N=N_0·(1/2)^(t/T)。",
+          "把 (1/2)^(t/T) 写成指数形式 exp(−k·t)，其中 k=ln2/T 叫衰变常量；两种写法完全等价，指数形式更方便做连续计算。"
+        ],
+        "errors": [
+          {
+            "wrong": "以为每过一个半衰期就少一半（线性递减），写成 N=N_0·(1−n/2)",
+            "wrong_expr": "N = N_0*(1 - n_half/2)",
+            "why": "半衰期是「剩一半」而不是「减一半」。N_0=800、n=3 时错误式给出 −400，明显荒谬；正确值是 100。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "三个半衰期",
+              "expr": "N_0*(1 - n_half/2)",
+              "ref": 100
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "把衰变常量 k 与半衰期 T 当成正比关系（k∝T）",
+            "wrong_expr": "k_decay = T_half",
+            "why": "k=ln2/T，二者是**反比**：半衰期越长，单位时间内衰变的概率越小。本情境 k≈0.1386 s⁻¹，而 T=5 s，相差悬殊。",
+            "caught_by": "量纲一致性",
+            "trap_test": {
+              "kind": "dimension",
+              "target": "k_decay = T_half",
+              "expect": "mismatch",
+              "lhs_dim": "T^-1",
+              "rhs_dim": "T",
+              "note": "正式引擎验证量纲不一致；不计作同量纲错误数值实测。"
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "认为半衰期可以描述某一个原子核何时衰变",
+            "why": "半衰期是大量核的统计规律；对单个核只能给出衰变概率，不能预言它具体何时衰变。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "某放射性样品原有 800 个未衰变的核，半衰期为 5 s。经过 15 s 后还剩多少个？",
+          "solution": [
+            "先换算半衰期个数：n = t/T = 15/5 = 3",
+            "再代入衰减式：N = N_0×(1/2)^n = 800×(1/2)³ = 100"
+          ],
+          "answer": "还剩 100 个未衰变的核。"
+        },
+        "prereq": [],
+        "next": [],
+        "tags": [
+          "半衰期",
+          "统计规律"
+        ],
+        "learning_scope": "高中"
+      },
+      "error_index": 1,
+      "chapter": "第二十一章 · 原子核与核能"
+    },
+    "diagnostic-nuc-03-3": {
+      "point": {
+        "id": "nuc-03",
+        "title": "半衰期",
+        "level": "基础",
+        "definition": "半衰期 T 是放射性元素有一半原子核发生衰变所需的时间。每经过一个半衰期，剩余未衰变的核数就减为原来的一半，写成 N=N_0·(1/2)^(t/T)。",
+        "meaning": "半衰期是**大量原子核**的统计规律，不是单个核的「倒计时」。它只由核本身决定，和温度、压强、化学状态都无关——因为核外条件根本影响不到核内部。经过 n 个半衰期剩 (1/2)^n，永远不为零，所以「衰变完」只是近似说法。",
+        "symbols": {
+          "N_0": {
+            "desc": "初始时刻未衰变的核数",
+            "unit": "1"
+          },
+          "N": {
+            "desc": "经过 t 时间后未衰变的核数",
+            "unit": "1"
+          },
+          "T_half": {
+            "desc": "半衰期",
+            "unit": "s"
+          },
+          "t": {
+            "desc": "经历的时间",
+            "unit": "s"
+          },
+          "n_half": {
+            "desc": "经历的半衰期个数",
+            "unit": "1"
+          },
+          "k_decay": {
+            "desc": "衰变常量，表示单位时间内衰变的概率",
+            "unit": "s^-1"
+          }
+        },
+        "scenarios": {
+          "三个半衰期": {
+            "N_0": 800,
+            "n_half": 3,
+            "N": 100,
+            "T_half": 5,
+            "t": 15,
+            "k_decay": 0.13862943611198905
+          },
+          "五个半衰期": {
+            "N_0": 800,
+            "n_half": 5,
+            "N": 25,
+            "T_half": 5,
+            "t": 25,
+            "k_decay": 0.13862943611198905
+          }
+        },
+        "formulas": [
+          {
+            "name": "半衰期个数与时间的关系",
+            "expr": "n_half = t/T_half",
+            "when": "把实际时间换算成「过了几个半衰期」，便于按整数倍心算",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "三个半衰期",
+                "expr": "t/T_half",
+                "ref": 3,
+                "note": "15 s 除以 5 s 得 3 个半衰期。"
+              },
+              {
+                "type": "direction",
+                "scenario": "三个半衰期",
+                "var": "t",
+                "lo": 0,
+                "hi": 50,
+                "expr": "t/T_half",
+                "expect": "up",
+                "note": "时间越长，经历过的半衰期个数越多。"
+              },
+              {
+                "type": "scan",
+                "scenario": "三个半衰期",
+                "var": "t",
+                "lo": 0,
+                "hi": 50
+              }
+            ]
+          },
+          {
+            "name": "剩余核数与时间的关系",
+            "expr": "N = N_0*exp(-k_decay*t)",
+            "when": "写成指数衰减形式，便于用衰变常量做连续计算",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "三个半衰期",
+                "expr": "N_0*exp(-k_decay*t)",
+                "ref": 100,
+                "note": "k=ln2/T≈0.13863 s⁻¹，乘 15 s 得 2.0794，取指数得 0.125，再乘 800 得 100。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "五个半衰期",
+                "expr": "N_0*exp(-k_decay*t)",
+                "ref": 25,
+                "note": "乘 25 s 得 3.4657，取指数得 0.03125，再乘 800 得 25。"
+              },
+              {
+                "type": "direction",
+                "scenario": "三个半衰期",
+                "var": "t",
+                "lo": 0,
+                "hi": 50,
+                "expr": "N_0*exp(-k_decay*t)",
+                "expect": "down",
+                "note": "时间越长，剩余核数越少，但永远大于零——指数衰减不会真正归零。"
+              },
+              {
+                "type": "scan",
+                "scenario": "三个半衰期",
+                "var": "t",
+                "lo": 0,
+                "hi": 50
+              },
+              {
+                "type": "consistency",
+                "scenario": "三个半衰期",
+                "with": "nuc-03|剩余核数与时间的关系",
+                "with_expr": "N_0*exp(-ln(2)*n_half)",
+                "target": "经过 t 时间后未衰变的核数",
+                "note": "本公式直接求N；参考端显式关系为N_0*exp(-ln(2)*n_half)。两端使用同一情境和阶段，只核对该关系；with字段仅定位来源，不代表调用另一条被覆盖的公式。",
+                "verification_kind": "独立关系核对"
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "按定义，每过一个半衰期剩余核数乘 1/2，所以经过 n 个半衰期剩 N_0·(1/2)^n。",
+          "把「过了多久」换算成「过了几个半衰期」用 n=t/T，于是 N=N_0·(1/2)^(t/T)。",
+          "把 (1/2)^(t/T) 写成指数形式 exp(−k·t)，其中 k=ln2/T 叫衰变常量；两种写法完全等价，指数形式更方便做连续计算。"
+        ],
+        "errors": [
+          {
+            "wrong": "以为每过一个半衰期就少一半（线性递减），写成 N=N_0·(1−n/2)",
+            "wrong_expr": "N = N_0*(1 - n_half/2)",
+            "why": "半衰期是「剩一半」而不是「减一半」。N_0=800、n=3 时错误式给出 −400，明显荒谬；正确值是 100。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "三个半衰期",
+              "expr": "N_0*(1 - n_half/2)",
+              "ref": 100
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "把衰变常量 k 与半衰期 T 当成正比关系（k∝T）",
+            "wrong_expr": "k_decay = T_half",
+            "why": "k=ln2/T，二者是**反比**：半衰期越长，单位时间内衰变的概率越小。本情境 k≈0.1386 s⁻¹，而 T=5 s，相差悬殊。",
+            "caught_by": "量纲一致性",
+            "trap_test": {
+              "kind": "dimension",
+              "target": "k_decay = T_half",
+              "expect": "mismatch",
+              "lhs_dim": "T^-1",
+              "rhs_dim": "T",
+              "note": "正式引擎验证量纲不一致；不计作同量纲错误数值实测。"
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "认为半衰期可以描述某一个原子核何时衰变",
+            "why": "半衰期是大量核的统计规律；对单个核只能给出衰变概率，不能预言它具体何时衰变。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "某放射性样品原有 800 个未衰变的核，半衰期为 5 s。经过 15 s 后还剩多少个？",
+          "solution": [
+            "先换算半衰期个数：n = t/T = 15/5 = 3",
+            "再代入衰减式：N = N_0×(1/2)^n = 800×(1/2)³ = 100"
+          ],
+          "answer": "还剩 100 个未衰变的核。"
+        },
+        "prereq": [],
+        "next": [],
+        "tags": [
+          "半衰期",
+          "统计规律"
+        ],
+        "learning_scope": "高中"
+      },
+      "error_index": 2,
+      "chapter": "第二十一章 · 原子核与核能"
+    },
+    "diagnostic-nuc-04-1": {
+      "point": {
+        "id": "nuc-04",
+        "title": "核反应方程与质能方程",
+        "level": "进阶",
+        "definition": "核反应前后质量数守恒、电荷数守恒。但反应后的总静质量比反应前小，差值称为质量亏损 Δm；亏损的质量按 E=Δm·c² 转化为释放的能量。",
+        "meaning": "这里最容易搞混的是「哪个质量守恒」：守恒的是质量数与电荷数，静质量本身并不守恒。用 E=Δm·c² 时必须代**亏损的那部分质量**，不能代反应前的总质量——后者会算出大好几个数量级的结果。正因为 c² 是 9×10¹⁶ 这样的大数，极小的质量亏损对应极大的能量，这是核能远超化学能的根本原因。",
+        "symbols": {
+          "m_before": {
+            "desc": "反应前所有粒子静质量之和",
+            "unit": "kg"
+          },
+          "m_after": {
+            "desc": "反应后所有粒子静质量之和",
+            "unit": "kg"
+          },
+          "delta_m": {
+            "desc": "质量亏损",
+            "unit": "kg"
+          },
+          "c": {
+            "desc": "真空中的光速，约 3.0×10⁸ m/s",
+            "unit": "m/s"
+          },
+          "E": {
+            "desc": "反应释放的能量",
+            "unit": "J"
+          }
+        },
+        "scenarios": {
+          "每摩尔裂变": {
+            "m_before": 0.14207,
+            "m_after": 0.14189,
+            "delta_m": 0.00018,
+            "c": 300000000.0,
+            "E": 16200000000000.0
+          },
+          "每摩尔聚变": {
+            "m_before": 0.003028,
+            "m_after": 0.003016,
+            "delta_m": 1.2e-05,
+            "c": 300000000.0,
+            "E": 1080000000000.0
+          }
+        },
+        "formulas": [
+          {
+            "name": "质量亏损",
+            "expr": "delta_m = m_before - m_after",
+            "when": "反应前总静质量减反应后总静质量，差值为正表示放能",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "每摩尔裂变",
+                "expr": "m_before - m_after",
+                "ref": 0.00018,
+                "note": "1 mol 铀核裂变前后总静质量相差 0.14207−0.14189=1.8×10⁻⁴ kg。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "每摩尔聚变",
+                "expr": "m_before - m_after",
+                "ref": 1.2e-05,
+                "note": "1 mol 聚变前后相差 0.003028−0.003016=1.2×10⁻⁵ kg。"
+              },
+              {
+                "type": "compare",
+                "scenario": "每摩尔裂变",
+                "expr": "m_before - m_after",
+                "op": ">",
+                "vs": "0",
+                "note": "按 1 mol 铀核计，放能反应的质量亏损为正：1.8×10⁻⁴ kg > 0。"
+              },
+              {
+                "type": "scan",
+                "scenario": "每摩尔裂变",
+                "var": "m_after",
+                "lo": 0.1418,
+                "hi": 0.1421
+              }
+            ]
+          },
+          {
+            "name": "质能方程",
+            "expr": "E = delta_m*c^2",
+            "when": "Δm 取质量亏损（正数），算出来的是释放的能量",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "每摩尔裂变",
+                "expr": "delta_m*c^2",
+                "ref": 16200000000000.0,
+                "note": "1.8×10⁻⁴ 乘 (3.0×10⁸)² 得 1.62×10¹³ J —— 这就是 1 mol 铀裂变放出的能量。"
+              },
+              {
+                "type": "direction",
+                "scenario": "每摩尔裂变",
+                "var": "delta_m",
+                "lo": 0.0001,
+                "hi": 0.001,
+                "expr": "delta_m*c^2",
+                "expect": "up",
+                "note": "质量亏损越大，释放的能量越多——能量与亏损成正比。"
+              },
+              {
+                "type": "scan",
+                "scenario": "每摩尔裂变",
+                "var": "delta_m",
+                "lo": 1e-05,
+                "hi": 0.001
+              },
+              {
+                "type": "consistency",
+                "scenario": "每摩尔裂变",
+                "with": "nuc-04|质能方程",
+                "with_expr": "(m_before - m_after)*c^2",
+                "target": "反应释放的能量",
+                "note": "本公式直接求E；参考端显式关系为(m_before - m_after)*c^2。两端使用同一情境和阶段，只核对该关系；with字段仅定位来源，不代表调用另一条被覆盖的公式。",
+                "verification_kind": "独立关系核对"
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "先写核反应方程，用「质量数守恒、电荷数守恒」把两边的核配平。",
+          "把反应前后所有粒子的静质量分别求和，两者之差就是质量亏损 Δm。",
+          "由质能方程 E=Δm·c² 把亏损的质量换算成释放的能量；因为 c²≈9×10¹⁶，微小亏损对应巨大能量。"
+        ],
+        "errors": [
+          {
+            "wrong": "质能方程里代反应前的总质量，写成 E=m_before·c²",
+            "wrong_expr": "E = m_before*c^2",
+            "why": "要代的是**亏损的那部分质量**，不是总质量。按错误式会得到 0.14207×(3.0×10⁸)²≈1.28×10¹⁶ J，而正确值是 1.62×10¹³ J——放大了近三个数量级。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "每摩尔裂变",
+              "expr": "m_before*c^2",
+              "ref": 16200000000000.0
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "认为核反应中静质量守恒，把质量亏损当成测量误差",
+            "why": "核反应中守恒的是质量数与电荷数；静质量会按 E=Δm·c² 转化为能量放出去，质量亏损是真实的物理效应。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "1 mol 铀核裂变时，反应前后粒子总静质量分别为 0.14207 kg 与 0.14189 kg。取 c=3.0×10⁸ m/s，求质量亏损与释放的总能量。",
+          "solution": [
+            "Δm = m前 − m后 = 0.14207 − 0.14189 = 1.8×10⁻⁴ kg",
+            "E = Δm·c² = 1.8×10⁻⁴ × (3.0×10⁸)² = 1.8×10⁻⁴ × 9.0×10¹⁶ = 1.62×10¹³ J"
+          ],
+          "answer": "质量亏损 1.8×10⁻⁴ kg，1 mol 铀核裂变释放能量约 1.62×10¹³ J。"
+        },
+        "prereq": [],
+        "next": [],
+        "tags": [
+          "质能方程",
+          "核反应"
+        ],
+        "learning_scope": "高中"
+      },
+      "error_index": 0,
+      "chapter": "第二十一章 · 原子核与核能"
+    },
+    "diagnostic-nuc-04-2": {
+      "point": {
+        "id": "nuc-04",
+        "title": "核反应方程与质能方程",
+        "level": "进阶",
+        "definition": "核反应前后质量数守恒、电荷数守恒。但反应后的总静质量比反应前小，差值称为质量亏损 Δm；亏损的质量按 E=Δm·c² 转化为释放的能量。",
+        "meaning": "这里最容易搞混的是「哪个质量守恒」：守恒的是质量数与电荷数，静质量本身并不守恒。用 E=Δm·c² 时必须代**亏损的那部分质量**，不能代反应前的总质量——后者会算出大好几个数量级的结果。正因为 c² 是 9×10¹⁶ 这样的大数，极小的质量亏损对应极大的能量，这是核能远超化学能的根本原因。",
+        "symbols": {
+          "m_before": {
+            "desc": "反应前所有粒子静质量之和",
+            "unit": "kg"
+          },
+          "m_after": {
+            "desc": "反应后所有粒子静质量之和",
+            "unit": "kg"
+          },
+          "delta_m": {
+            "desc": "质量亏损",
+            "unit": "kg"
+          },
+          "c": {
+            "desc": "真空中的光速，约 3.0×10⁸ m/s",
+            "unit": "m/s"
+          },
+          "E": {
+            "desc": "反应释放的能量",
+            "unit": "J"
+          }
+        },
+        "scenarios": {
+          "每摩尔裂变": {
+            "m_before": 0.14207,
+            "m_after": 0.14189,
+            "delta_m": 0.00018,
+            "c": 300000000.0,
+            "E": 16200000000000.0
+          },
+          "每摩尔聚变": {
+            "m_before": 0.003028,
+            "m_after": 0.003016,
+            "delta_m": 1.2e-05,
+            "c": 300000000.0,
+            "E": 1080000000000.0
+          }
+        },
+        "formulas": [
+          {
+            "name": "质量亏损",
+            "expr": "delta_m = m_before - m_after",
+            "when": "反应前总静质量减反应后总静质量，差值为正表示放能",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "每摩尔裂变",
+                "expr": "m_before - m_after",
+                "ref": 0.00018,
+                "note": "1 mol 铀核裂变前后总静质量相差 0.14207−0.14189=1.8×10⁻⁴ kg。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "每摩尔聚变",
+                "expr": "m_before - m_after",
+                "ref": 1.2e-05,
+                "note": "1 mol 聚变前后相差 0.003028−0.003016=1.2×10⁻⁵ kg。"
+              },
+              {
+                "type": "compare",
+                "scenario": "每摩尔裂变",
+                "expr": "m_before - m_after",
+                "op": ">",
+                "vs": "0",
+                "note": "按 1 mol 铀核计，放能反应的质量亏损为正：1.8×10⁻⁴ kg > 0。"
+              },
+              {
+                "type": "scan",
+                "scenario": "每摩尔裂变",
+                "var": "m_after",
+                "lo": 0.1418,
+                "hi": 0.1421
+              }
+            ]
+          },
+          {
+            "name": "质能方程",
+            "expr": "E = delta_m*c^2",
+            "when": "Δm 取质量亏损（正数），算出来的是释放的能量",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "每摩尔裂变",
+                "expr": "delta_m*c^2",
+                "ref": 16200000000000.0,
+                "note": "1.8×10⁻⁴ 乘 (3.0×10⁸)² 得 1.62×10¹³ J —— 这就是 1 mol 铀裂变放出的能量。"
+              },
+              {
+                "type": "direction",
+                "scenario": "每摩尔裂变",
+                "var": "delta_m",
+                "lo": 0.0001,
+                "hi": 0.001,
+                "expr": "delta_m*c^2",
+                "expect": "up",
+                "note": "质量亏损越大，释放的能量越多——能量与亏损成正比。"
+              },
+              {
+                "type": "scan",
+                "scenario": "每摩尔裂变",
+                "var": "delta_m",
+                "lo": 1e-05,
+                "hi": 0.001
+              },
+              {
+                "type": "consistency",
+                "scenario": "每摩尔裂变",
+                "with": "nuc-04|质能方程",
+                "with_expr": "(m_before - m_after)*c^2",
+                "target": "反应释放的能量",
+                "note": "本公式直接求E；参考端显式关系为(m_before - m_after)*c^2。两端使用同一情境和阶段，只核对该关系；with字段仅定位来源，不代表调用另一条被覆盖的公式。",
+                "verification_kind": "独立关系核对"
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "先写核反应方程，用「质量数守恒、电荷数守恒」把两边的核配平。",
+          "把反应前后所有粒子的静质量分别求和，两者之差就是质量亏损 Δm。",
+          "由质能方程 E=Δm·c² 把亏损的质量换算成释放的能量；因为 c²≈9×10¹⁶，微小亏损对应巨大能量。"
+        ],
+        "errors": [
+          {
+            "wrong": "质能方程里代反应前的总质量，写成 E=m_before·c²",
+            "wrong_expr": "E = m_before*c^2",
+            "why": "要代的是**亏损的那部分质量**，不是总质量。按错误式会得到 0.14207×(3.0×10⁸)²≈1.28×10¹⁶ J，而正确值是 1.62×10¹³ J——放大了近三个数量级。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "每摩尔裂变",
+              "expr": "m_before*c^2",
+              "ref": 16200000000000.0
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "认为核反应中静质量守恒，把质量亏损当成测量误差",
+            "why": "核反应中守恒的是质量数与电荷数；静质量会按 E=Δm·c² 转化为能量放出去，质量亏损是真实的物理效应。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "1 mol 铀核裂变时，反应前后粒子总静质量分别为 0.14207 kg 与 0.14189 kg。取 c=3.0×10⁸ m/s，求质量亏损与释放的总能量。",
+          "solution": [
+            "Δm = m前 − m后 = 0.14207 − 0.14189 = 1.8×10⁻⁴ kg",
+            "E = Δm·c² = 1.8×10⁻⁴ × (3.0×10⁸)² = 1.8×10⁻⁴ × 9.0×10¹⁶ = 1.62×10¹³ J"
+          ],
+          "answer": "质量亏损 1.8×10⁻⁴ kg，1 mol 铀核裂变释放能量约 1.62×10¹³ J。"
+        },
+        "prereq": [],
+        "next": [],
+        "tags": [
+          "质能方程",
+          "核反应"
+        ],
+        "learning_scope": "高中"
+      },
+      "error_index": 1,
+      "chapter": "第二十一章 · 原子核与核能"
+    },
+    "diagnostic-nuc-05-1": {
+      "point": {
+        "id": "nuc-05",
+        "title": "核裂变与核聚变（含结合能）",
+        "level": "进阶",
+        "definition": "把核子结合成原子核时放出的能量叫结合能 E_b；它除以质量数得到每个核子平均分摊的结合能，叫比结合能 e_b=E_b/A。重核裂变与轻核聚变都向比结合能更大的方向走，所以都能放出能量。",
+        "meaning": "判断一个核稳定不稳定，看的是**比结合能**而不是结合能总量。比结合能在铁附近最大（约 8.8 MeV 每核子），两端都更小；所以特别重的核（如铀）裂开、特别轻的核（如氘氚）合起来，产物都更靠近铁，比结合能升高，差额就以能量形式放出来。这就是「裂变与聚变都能发电」的同一句解释。",
+        "symbols": {
+          "A": {
+            "desc": "质量数",
+            "unit": "1"
+          },
+          "delta_m": {
+            "desc": "质量亏损",
+            "unit": "kg"
+          },
+          "c": {
+            "desc": "真空中的光速",
+            "unit": "m/s"
+          },
+          "E_b": {
+            "desc": "原子核的结合能",
+            "unit": "J"
+          },
+          "e_b": {
+            "desc": "按 1 mol 原子核折算后，每个核子平均分摊的结合能",
+            "unit": "J"
+          }
+        },
+        "scenarios": {
+          "每摩尔氦4": {
+            "A": 4,
+            "delta_m": 3.01e-05,
+            "c": 300000000.0,
+            "E_b": 2709000000000.0,
+            "e_b": 677250000000.0
+          },
+          "每摩尔铁56": {
+            "A": 56,
+            "delta_m": 0.00052976,
+            "c": 300000000.0,
+            "E_b": 47678400000000.0,
+            "e_b": 851400000000.0
+          }
+        },
+        "formulas": [
+          {
+            "name": "结合能",
+            "expr": "E_b = delta_m*c^2",
+            "when": "Δm 取「单独核子总质量 − 原子核质量」，算出的就是结合能",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "每摩尔氦4",
+                "expr": "delta_m*c^2",
+                "ref": 2709000000000.0,
+                "note": "3.01×10⁻⁵ 乘 9.0×10¹⁶ 得 2.709×10¹² J —— 1 mol 氦核的结合能。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "每摩尔铁56",
+                "expr": "delta_m*c^2",
+                "ref": 47678400000000.0,
+                "note": "5.2976×10⁻⁴ 乘 9.0×10¹⁶ 得 4.768×10¹³ J。"
+              },
+              {
+                "type": "direction",
+                "scenario": "每摩尔氦4",
+                "var": "delta_m",
+                "lo": 1e-05,
+                "hi": 0.001,
+                "expr": "delta_m*c^2",
+                "expect": "up",
+                "note": "质量亏损越大，结合能越大。"
+              },
+              {
+                "type": "scan",
+                "scenario": "每摩尔氦4",
+                "var": "delta_m",
+                "lo": 1e-05,
+                "hi": 0.001
+              }
+            ]
+          },
+          {
+            "name": "比结合能",
+            "expr": "e_b = E_b/A",
+            "when": "比较不同核的稳定性时必须用它，不能直接比结合能总量",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "每摩尔氦4",
+                "expr": "E_b/A",
+                "ref": 677250000000.0,
+                "note": "2.709×10¹² 除以 4 得 6.7725×10¹¹ J。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "每摩尔铁56",
+                "expr": "E_b/A",
+                "ref": 851400000000.0,
+                "note": "4.76784×10¹³ 除以 56 得 8.514×10¹¹ J，比氦4 更大，说明铁更稳定。"
+              },
+              {
+                "type": "direction",
+                "scenario": "每摩尔氦4",
+                "var": "A",
+                "lo": 2,
+                "hi": 250,
+                "expr": "E_b/A",
+                "expect": "down",
+                "note": "结合能固定时，质量数越大，平均到每个核子的结合能越小。"
+              },
+              {
+                "type": "scan",
+                "scenario": "每摩尔氦4",
+                "var": "A",
+                "lo": 2,
+                "hi": 250
+              },
+              {
+                "type": "consistency",
+                "scenario": "每摩尔氦4",
+                "with": "nuc-05|比结合能",
+                "with_expr": "delta_m*c^2/A",
+                "target": "按 1 mol 原子核折算后，每个核子平均分摊的结合能",
+                "note": "本公式直接求e_b；参考端显式关系为delta_m*c^2/A。两端使用同一情境和阶段，只核对该关系；with字段仅定位来源，不代表调用另一条被覆盖的公式。",
+                "verification_kind": "独立关系核对"
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "核子单独存在时的总质量，比它们结合成原子核之后的质量大，差值就是质量亏损。",
+          "按质能方程，这份亏损对应的能量就是结合能 E_b=Δm·c²。",
+          "把结合能除以质量数，得到每个核子平均分摊的能量，即比结合能 e_b=E_b/A；它是比较核稳定性的正确标准。"
+        ],
+        "errors": [
+          {
+            "wrong": "把比结合能写成结合能乘以质量数",
+            "wrong_expr": "e_b = E_b*A",
+            "why": "比结合能是「每个核子平均分摊到的结合能」，应当除以质量数而不是乘。按错误式会得到 2.709×10¹²×4≈1.08×10¹³ J，而正确是 6.7725×10¹¹ J。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "每摩尔氦4",
+              "expr": "E_b*A",
+              "ref": 677250000000.0
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "认为质量数越大的核一定越稳定",
+            "why": "稳定性要看比结合能，不是质量数。比结合能在铁附近最大，比铁更重或更轻的核都更不稳定——这正是重核裂变、轻核聚变都能放能的原因。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "1 mol 氦4 核的结合能为 2.709×10¹² J，质量数为 4。求它的比结合能，并与铁56（约 8.514×10¹¹ J 每核子，按 1 mol 计）比较谁更稳定。",
+          "solution": [
+            "比结合能 = 结合能 ÷ 质量数",
+            "e_b = 2.709×10¹² ÷ 4 = 6.7725×10¹¹ J",
+            "铁56 的比结合能 8.514×10¹¹ J 更大，所以铁56 比氦4 更稳定"
+          ],
+          "answer": "氦4 的比结合能约 6.7725×10¹¹ J（按 1 mol 计）；铁56 更大，因而更稳定。"
+        },
+        "prereq": [],
+        "next": [],
+        "tags": [
+          "结合能",
+          "裂变",
+          "聚变"
+        ],
+        "learning_scope": "高中"
+      },
+      "error_index": 0,
+      "chapter": "第二十一章 · 原子核与核能"
+    },
+    "diagnostic-nuc-05-2": {
+      "point": {
+        "id": "nuc-05",
+        "title": "核裂变与核聚变（含结合能）",
+        "level": "进阶",
+        "definition": "把核子结合成原子核时放出的能量叫结合能 E_b；它除以质量数得到每个核子平均分摊的结合能，叫比结合能 e_b=E_b/A。重核裂变与轻核聚变都向比结合能更大的方向走，所以都能放出能量。",
+        "meaning": "判断一个核稳定不稳定，看的是**比结合能**而不是结合能总量。比结合能在铁附近最大（约 8.8 MeV 每核子），两端都更小；所以特别重的核（如铀）裂开、特别轻的核（如氘氚）合起来，产物都更靠近铁，比结合能升高，差额就以能量形式放出来。这就是「裂变与聚变都能发电」的同一句解释。",
+        "symbols": {
+          "A": {
+            "desc": "质量数",
+            "unit": "1"
+          },
+          "delta_m": {
+            "desc": "质量亏损",
+            "unit": "kg"
+          },
+          "c": {
+            "desc": "真空中的光速",
+            "unit": "m/s"
+          },
+          "E_b": {
+            "desc": "原子核的结合能",
+            "unit": "J"
+          },
+          "e_b": {
+            "desc": "按 1 mol 原子核折算后，每个核子平均分摊的结合能",
+            "unit": "J"
+          }
+        },
+        "scenarios": {
+          "每摩尔氦4": {
+            "A": 4,
+            "delta_m": 3.01e-05,
+            "c": 300000000.0,
+            "E_b": 2709000000000.0,
+            "e_b": 677250000000.0
+          },
+          "每摩尔铁56": {
+            "A": 56,
+            "delta_m": 0.00052976,
+            "c": 300000000.0,
+            "E_b": 47678400000000.0,
+            "e_b": 851400000000.0
+          }
+        },
+        "formulas": [
+          {
+            "name": "结合能",
+            "expr": "E_b = delta_m*c^2",
+            "when": "Δm 取「单独核子总质量 − 原子核质量」，算出的就是结合能",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "每摩尔氦4",
+                "expr": "delta_m*c^2",
+                "ref": 2709000000000.0,
+                "note": "3.01×10⁻⁵ 乘 9.0×10¹⁶ 得 2.709×10¹² J —— 1 mol 氦核的结合能。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "每摩尔铁56",
+                "expr": "delta_m*c^2",
+                "ref": 47678400000000.0,
+                "note": "5.2976×10⁻⁴ 乘 9.0×10¹⁶ 得 4.768×10¹³ J。"
+              },
+              {
+                "type": "direction",
+                "scenario": "每摩尔氦4",
+                "var": "delta_m",
+                "lo": 1e-05,
+                "hi": 0.001,
+                "expr": "delta_m*c^2",
+                "expect": "up",
+                "note": "质量亏损越大，结合能越大。"
+              },
+              {
+                "type": "scan",
+                "scenario": "每摩尔氦4",
+                "var": "delta_m",
+                "lo": 1e-05,
+                "hi": 0.001
+              }
+            ]
+          },
+          {
+            "name": "比结合能",
+            "expr": "e_b = E_b/A",
+            "when": "比较不同核的稳定性时必须用它，不能直接比结合能总量",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "每摩尔氦4",
+                "expr": "E_b/A",
+                "ref": 677250000000.0,
+                "note": "2.709×10¹² 除以 4 得 6.7725×10¹¹ J。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "每摩尔铁56",
+                "expr": "E_b/A",
+                "ref": 851400000000.0,
+                "note": "4.76784×10¹³ 除以 56 得 8.514×10¹¹ J，比氦4 更大，说明铁更稳定。"
+              },
+              {
+                "type": "direction",
+                "scenario": "每摩尔氦4",
+                "var": "A",
+                "lo": 2,
+                "hi": 250,
+                "expr": "E_b/A",
+                "expect": "down",
+                "note": "结合能固定时，质量数越大，平均到每个核子的结合能越小。"
+              },
+              {
+                "type": "scan",
+                "scenario": "每摩尔氦4",
+                "var": "A",
+                "lo": 2,
+                "hi": 250
+              },
+              {
+                "type": "consistency",
+                "scenario": "每摩尔氦4",
+                "with": "nuc-05|比结合能",
+                "with_expr": "delta_m*c^2/A",
+                "target": "按 1 mol 原子核折算后，每个核子平均分摊的结合能",
+                "note": "本公式直接求e_b；参考端显式关系为delta_m*c^2/A。两端使用同一情境和阶段，只核对该关系；with字段仅定位来源，不代表调用另一条被覆盖的公式。",
+                "verification_kind": "独立关系核对"
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "核子单独存在时的总质量，比它们结合成原子核之后的质量大，差值就是质量亏损。",
+          "按质能方程，这份亏损对应的能量就是结合能 E_b=Δm·c²。",
+          "把结合能除以质量数，得到每个核子平均分摊的能量，即比结合能 e_b=E_b/A；它是比较核稳定性的正确标准。"
+        ],
+        "errors": [
+          {
+            "wrong": "把比结合能写成结合能乘以质量数",
+            "wrong_expr": "e_b = E_b*A",
+            "why": "比结合能是「每个核子平均分摊到的结合能」，应当除以质量数而不是乘。按错误式会得到 2.709×10¹²×4≈1.08×10¹³ J，而正确是 6.7725×10¹¹ J。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "每摩尔氦4",
+              "expr": "E_b*A",
+              "ref": 677250000000.0
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "认为质量数越大的核一定越稳定",
+            "why": "稳定性要看比结合能，不是质量数。比结合能在铁附近最大，比铁更重或更轻的核都更不稳定——这正是重核裂变、轻核聚变都能放能的原因。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "1 mol 氦4 核的结合能为 2.709×10¹² J，质量数为 4。求它的比结合能，并与铁56（约 8.514×10¹¹ J 每核子，按 1 mol 计）比较谁更稳定。",
+          "solution": [
+            "比结合能 = 结合能 ÷ 质量数",
+            "e_b = 2.709×10¹² ÷ 4 = 6.7725×10¹¹ J",
+            "铁56 的比结合能 8.514×10¹¹ J 更大，所以铁56 比氦4 更稳定"
+          ],
+          "answer": "氦4 的比结合能约 6.7725×10¹¹ J（按 1 mol 计）；铁56 更大，因而更稳定。"
+        },
+        "prereq": [],
+        "next": [],
+        "tags": [
+          "结合能",
+          "裂变",
+          "聚变"
+        ],
+        "learning_scope": "高中"
+      },
+      "error_index": 1,
+      "chapter": "第二十一章 · 原子核与核能"
+    }
+  },
+  "generator_version": "2026-10-04-条件过程返工-8"
 }

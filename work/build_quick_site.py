@@ -18,7 +18,7 @@ if HERE not in sys.path:
     sys.path.insert(0, HERE)
 
 from physkit import kb as KB
-from prose_math import render as base_prose, display_mathml
+from prose_math import render as base_prose, display_mathml, symbol_context
 from build_site import render_learning
 
 
@@ -99,40 +99,41 @@ def make_payload(chapters, report, segment="高中"):
             if not point["ok"]:
                 raise ValueError("知识点未通过物理校验：" + point["id"])
 
-            formulas = [
-                [prose(f.get("name", "")), readable_mathml(f.get("mathml", "")),
-                 prose(f.get("when", ""))]
-                for f in point.get("formulas", [])
-            ]
-            symbols = [
-                [prose(s.get("name", "")), prose(s.get("desc", "")),
-                 prose(s.get("unit", "")) or "—"]
-                for s in point.get("symbols", [])
-            ]
-            errors_source = point.get("errors", [])
-            errors_source = sorted(
-                errors_source,
-                key=lambda error: 0 if error.get("caught_by") == "数值代入" else 1,
-            )
-            errors = [
-                [prose(e.get("wrong", "")), prose(e.get("why", ""))]
-                for e in errors_source
-            ]
-            example = point.get("example") or {}
-            # 数组比重复写 JSON 字段名更小；浏览器里的注释解释每个位置。
-            item = [
-                point["id"], prose(point["title"]), prose(first_sentence(point.get("definition"))),
-                formulas, symbols, errors, prose(point.get("meaning", "")),
-                [prose(x) for x in point.get("derivation", [])],
-                [prose(example.get("stem", "")),
-                 [prose(x) for x in example.get("solution", [])],
-                 prose(example.get("answer", ""))],
-                list(point.get("prereq") or []), list(point.get("next") or []),
-                [prose(x) for x in point.get("tags", [])], len(groups),
-                render_learning(source), source.get("level", "基础"), source.get("learning_scope", segment),
-            ]
-            points.append(item)
-            chapter_ids.append(len(points) - 1)
+            with symbol_context(point["id"]):
+                formulas = [
+                    [prose(f.get("name", "")), readable_mathml(f.get("mathml", "")),
+                     prose(f.get("when", ""))]
+                    for f in point.get("formulas", [])
+                ]
+                symbols = [
+                    [prose(s.get("name", "")), prose(s.get("desc", "")),
+                     prose(s.get("unit", "")) or "—"]
+                    for s in point.get("symbols", [])
+                ]
+                errors_source = point.get("errors", [])
+                errors_source = sorted(
+                    errors_source,
+                    key=lambda error: 0 if error.get("caught_by") == "数值代入" else 1,
+                )
+                errors = [
+                    [prose(e.get("wrong", "")), prose(e.get("why", ""))]
+                    for e in errors_source
+                ]
+                example = point.get("example") or {}
+                # 数组比重复写 JSON 字段名更小；浏览器里的注释解释每个位置。
+                item = [
+                    point["id"], prose(point["title"]), prose(first_sentence(point.get("definition"))),
+                    formulas, symbols, errors, prose(point.get("meaning", "")),
+                    [prose(x) for x in point.get("derivation", [])],
+                    [prose(example.get("stem", "")),
+                     [prose(x) for x in example.get("solution", [])],
+                     prose(example.get("answer", ""))],
+                    list(point.get("prereq") or []), list(point.get("next") or []),
+                    [prose(x) for x in point.get("tags", [])], len(groups),
+                    render_learning(source), source.get("level", "基础"), source.get("learning_scope", segment),
+                ]
+                points.append(item)
+                chapter_ids.append(len(points) - 1)
         groups.append([chapter_name, domain_of(order, segment), order, chapter_ids])
     return {"g": groups, "p": points}
 
@@ -142,16 +143,21 @@ CSS = r'''
 *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#f7f8fa;color:var(--ink);font:15px/1.65 system-ui,-apple-system,"Microsoft YaHei",sans-serif}button,input,select{font:inherit}button{cursor:pointer}a{color:var(--brand)}
 .appbar{position:sticky;top:0;z-index:20;background:#fff;border-bottom:1px solid var(--line)}.appbar-inner{max-width:1120px;margin:auto;padding:11px 18px;display:flex;align-items:center;gap:24px}.brand{white-space:nowrap;font-size:17px;font-weight:750}.brand i{display:inline-grid;place-items:center;width:32px;height:32px;margin-right:8px;border-radius:10px;background:var(--brand);color:#fff;font-style:normal}.nav{display:flex;gap:5px;margin-left:auto}.nav button{border:0;background:none;border-radius:9px;padding:7px 11px;color:#4f5c72;white-space:nowrap}.nav button.active,.nav button:hover{background:#edf3ff;color:var(--brand);font-weight:700}.old-link{font-size:13px;text-decoration:none;white-space:nowrap;border-left:1px solid var(--line);padding-left:15px}
 .intro{text-align:center;max-width:820px;margin:auto;padding:42px 16px 29px}.eyebrow{font-weight:700;color:var(--brand);font-size:13px;letter-spacing:.08em}.intro h1{font-size:clamp(30px,5vw,47px);line-height:1.2;margin:7px 0 6px}.intro p{color:var(--muted);font-size:16px;margin:0 0 22px}.search{display:flex;align-items:center;gap:9px;text-align:left;background:#fff;border:1px solid #d4deee;border-radius:14px;padding:0 14px;box-shadow:0 8px 28px #1e32520b}.search span{color:var(--brand);font-size:21px}.search input{border:0;outline:0;width:100%;min-width:0;padding:13px 2px;background:transparent}.intro .counts{color:var(--muted);font-size:13px;margin-top:10px}
-.filters{position:sticky;top:55px;z-index:15;background:#f7f8faed;border-bottom:1px solid var(--line)}.filters-inner{max-width:1120px;margin:auto;padding:10px 18px;display:flex;gap:7px;align-items:center;overflow-x:auto}.filter{border:1px solid var(--line);background:#fff;border-radius:999px;padding:5px 12px;white-space:nowrap}.filter.active{color:var(--brand);background:#edf3ff;border-color:#b3c6f5;font-weight:700}.filters select{margin-left:auto;background:#fff;border:1px solid var(--line);border-radius:8px;padding:6px 9px;min-width:170px}.count{font-size:12px;color:var(--muted);white-space:nowrap}
+.filters{position:sticky;top:var(--appbar-height,55px);z-index:15;background:#f7f8faed;border-bottom:1px solid var(--line)}.filters-inner{max-width:1120px;margin:auto;padding:10px 18px;display:flex;gap:7px;align-items:center;overflow-x:auto}.filter{border:1px solid var(--line);background:#fff;border-radius:999px;padding:5px 12px;white-space:nowrap}.filter.active{color:var(--brand);background:#edf3ff;border-color:#b3c6f5;font-weight:700}.filters select{margin-left:auto;background:#fff;border:1px solid var(--line);border-radius:8px;padding:6px 9px;min-width:170px}.count{font-size:12px;color:var(--muted);white-space:nowrap}
 main{max-width:1120px;margin:auto;padding:24px 16px 70px}.list{max-width:900px;margin:auto;display:grid;gap:16px}.card,.index-card,.symbol-card,.map-domain{background:#fff;border:1px solid var(--line);border-radius:15px;box-shadow:0 4px 14px #1e325208}.card{padding:21px 24px;scroll-margin-top:125px}.path{font-size:12px;font-weight:700;color:var(--brand)}.card h2{font-size:22px;line-height:1.35;margin:3px 0 10px}.definition{border-left:3px solid #bed0f8;padding-left:12px;margin:0 0 18px;color:#3c4a61}.block{margin-top:17px}.block h3,.relations h3{font-size:13px;color:#52617a;margin:0 0 8px}.formulas{display:grid;grid-template-columns:repeat(auto-fit,minmax(245px,1fr));gap:8px}.formula{min-width:0;padding:10px 12px;border:1px solid #dfebff;background:#f8faff;border-radius:10px}.formula-name{font-weight:700;font-size:13px}.math{overflow-x:auto;font-size:21px;text-align:center;padding:6px 0}.math math{margin:auto}.when{border-top:1px dashed #d4e1f8;padding-top:6px;font-size:12px;color:var(--muted)}.symbols{border:1px solid var(--line);border-radius:9px;overflow:hidden}.sym-row{display:grid;grid-template-columns:80px minmax(0,1fr) 90px;gap:8px;border-top:1px solid var(--line);padding:5px 10px;font-size:13px}.sym-row:first-child{border:0}.sym-row.head{background:var(--soft);color:var(--muted);font-weight:700}.sym-name{font-size:16px}.sym-unit{color:var(--muted)}.error{border-left:3px solid #f59e0b;background:#fff8ed;border-radius:7px;padding:8px 10px;margin-top:6px}.error b{color:var(--error)}.error p{margin:3px 0 0;color:#6b4b35;font-size:13px}.relations{margin-top:17px}.relation-line{display:flex;gap:7px;align-items:center;flex-wrap:wrap;margin-top:5px}.relation-line span{font-size:12px;color:var(--muted)}.relation-line button,.source,.map-point{border:0;border-radius:6px;padding:3px 7px;background:#edf3ff;color:var(--brand);font-size:12px}.relation-line button:hover,.source:hover,.map-point:hover{text-decoration:underline}.learning{margin:12px 0;overflow-wrap:anywhere}.learning h4{color:var(--brand);margin:8px 0}.learning p{margin:6px 0}.learning summary{cursor:pointer;color:var(--brand)}.learning svg{display:block}.deep{margin-top:17px;border-top:1px solid var(--line);padding-top:11px}.deep summary{color:var(--brand);font-weight:700;cursor:pointer}.deep-content{color:#435066}.deep-content h3{font-size:14px;margin:15px 0 4px}.deep-content p{margin:0}.deep-content ol{padding-left:21px;margin:5px 0}.deep-content li{margin:4px 0}.answer{color:#1d4d9b;font-weight:700}
 .index-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:12px}.index-card{padding:15px}.index-card h2{font-size:16px;margin:7px 0}.index-card .when{border-top:0;margin:4px 0 0}.symbol-grid{display:grid;gap:7px;max-width:900px;margin:auto}.symbol-card{display:grid;grid-template-columns:100px minmax(0,1fr) 100px 160px;gap:10px;align-items:center;padding:9px 13px}.symbol-card .sym-name{font-size:20px}.symbol-card p{margin:0}.symbol-card .source{text-align:left;background:none}.map-title{text-align:center;margin:0 0 20px}.map-title h2{margin:0}.map-title p{color:var(--muted);margin:5px 0}.map-root{width:max-content;margin:0 auto 20px;border-radius:10px;background:var(--ink);color:#fff;padding:9px 18px;font-weight:700}.map-domain{padding:16px;margin:12px 0;border-left:4px solid var(--brand)}.map-domain h2{font-size:19px;margin:0 0 10px}.map-domain h2 small{color:var(--muted);font-weight:400;font-size:12px;margin-left:10px}.map-chapters{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:8px}.map-chapter{border:1px solid var(--line);border-radius:9px;padding:10px}.map-chapter button:first-child{width:100%;text-align:left;border:0;background:none;font-weight:700;padding:0 0 6px}.map-chapter button:first-child:hover{color:var(--brand)}.map-points{display:flex;flex-wrap:wrap;gap:4px}.map-point{background:#fff;border:1px solid var(--line);color:#4d5b71}.empty{text-align:center;color:var(--muted);padding:60px 0}footer{background:#fff;border-top:1px solid var(--line);padding:20px;text-align:center;color:var(--muted);font-size:12px}
 @media(max-width:650px){.appbar-inner{gap:7px;padding:8px 10px}.brand{font-size:15px}.brand i{width:27px;height:27px;margin-right:5px}.nav{min-width:0;overflow-x:auto}.nav button{padding:6px 8px}.old-link{display:none}.intro{padding:30px 14px 20px}.intro h1{font-size:32px}.filters{top:44px}.filters-inner{padding:8px 10px}.filters select{min-width:145px}.count{display:none}main{padding:13px 10px 55px}.card{padding:16px 13px}.card h2{font-size:20px}.formulas{grid-template-columns:minmax(0,1fr)}.sym-row{grid-template-columns:65px minmax(0,1fr) 68px;padding:5px 7px}.symbol-card{grid-template-columns:70px minmax(0,1fr) 75px}.symbol-card .source{grid-column:2/4}.map-chapters{grid-template-columns:1fr}}
 .segment-switchbar{background:#fff;border-bottom:1px solid var(--line);padding:8px 18px}.segment-switchbar-inner{max-width:1120px;margin:auto;display:flex;align-items:center;gap:8px;flex-wrap:wrap}.segment-switchbar span{font-size:12px;color:var(--muted)}.segment-switchbar a{border:1px solid var(--line);border-radius:999px;padding:4px 11px;font-size:12px;text-decoration:none}.segment-switchbar a[aria-current="page"]{background:var(--brand);border-color:var(--brand);color:#fff}.segment-switchbar a.segment-quiz{margin-left:auto;background:#f4f7ff;border-color:#bdccf4}
-.card-practice{margin-top:12px}.card-practice a{display:inline-flex;border:1px solid #bdccf4;border-radius:999px;padding:5px 12px;color:var(--brand);font-size:12px}.card-practice a:hover{background:#edf3ff;text-decoration:none}
+.search-hit button{border:0;border-bottom:1px solid currentColor;background:transparent;color:var(--brand);font:inherit;padding:1px 3px}.card-practice{margin-top:12px}.card-practice a{display:inline-flex;border:1px solid #bdccf4;border-radius:999px;padding:5px 12px;color:var(--brand);font-size:12px}.card-practice a:hover{background:#edf3ff;text-decoration:none}
+/* 导航换行保证窄屏按钮可见；卡片中的长内容在本地滚动。 */
+@media(max-width:600px){.nav{flex-wrap:wrap;overflow:visible}.appbar-inner{flex-wrap:wrap}.formulas{grid-template-columns:minmax(0,1fr)}}
+.card,.index-card,.symbol-card,.map-domain{min-width:0}.sym-row{grid-template-columns:70px minmax(0,1fr) 80px}.sym-row>div{min-width:0;overflow-wrap:anywhere}
+.card p,.deep-content li,.when{overflow-wrap:anywhere}
+
 '''
 
 
-# 数据数组的索引：知识点 [编号,标题,一句定义,公式,符号,错误,物理意义,推导,例题,前置,后续,标签,章节序号]。
+# 数据数组的索引：知识点 [编号,标题,一句定义,公式,符号,错误,物理意义,推导,例题,前置,后续,标签,章节序号,核心与实验正文,内容难度,学段范围]。
 # 公式 [名称,MathML,适用条件]；符号 [教材写法,含义,单位]。所有文本已经由 Python 安全转义。
 JS = r'''
 (()=>{'use strict';
@@ -180,31 +186,47 @@ function formulaHTML(f){return '<div class="formula"><div class="formula-name">'
 function symbolHTML(s){return '<div class="sym-row"><div class="sym-name">'+s[0]+'</div><div>'+s[1]+'</div><div class="sym-unit">'+s[2]+'</div></div>'}
 function errorHTML(e){return '<div class="error"><b>'+e[0]+'</b><p>'+e[1]+'</p></div>'}
 function relationHTML(p,i){const before=p[9].map(id=>pointIndex.get(id)).filter(x=>x!==undefined),after=p[10].map(id=>pointIndex.get(id)).filter(x=>x!==undefined);const row=(label,list)=>list.length?'<div class="relation-line"><span>'+label+'</span>'+list.map(j=>'<button data-go="'+j+'">'+points[j][1]+'</button>').join('')+'</div>':'';return before.length||after.length?'<section class="relations"><h3>知识关系</h3>'+row('先理解',before)+row('接着看',after)+'</section>':''}
-function pointHTML(i){const p=points[i],g=groups[p[12]],more=p[5].length>2?'<details class="more-errors"><summary>查看其余 '+(p[5].length-2)+' 条常见错误</summary>'+p[5].slice(2).map(errorHTML).join('')+'</details>':'';return '<article class="card" id="'+p[0]+'">'+(query?'<p class="search-hit">命中：'+hits(i).join('、')+'</p>':'')+'<div class="path">难度：'+text(p[14])+' · 范围：'+text(p[15])+' · '+g[1]+' · '+text(groupName(p[12]))+'</div><h2>'+p[1]+'</h2><p class="definition">'+p[2]+'</p>'+p[13]+'<section class="block"><h3>公式与适用范围</h3><div class="formulas">'+p[3].map(formulaHTML).join('')+'</div></section><section class="block"><h3>容易出错</h3>'+p[5].slice(0,2).map(errorHTML).join('')+more+'</section><section class="block"><h3>符号与单位</h3><div class="symbols"><div class="sym-row head"><div>符号</div><div>含义</div><div>单位</div></div>'+p[4].map(symbolHTML).join('')+'</div></section>'+relationHTML(p,i)+'<details class="deep" data-deep="'+i+'"><summary>深入理解：物理意义、推导和例题</summary><div class="deep-content"></div></details><div class="card-practice"><a href="'+QUIZ_HREF+'#mode=example&amp;point='+encodeURIComponent(p[0])+'&amp;source='+encodeURIComponent(SEGMENT_ROOT+'速查版')+'&amp;return='+encodeURIComponent(RETURN_PAGE+'#'+p[0])+'">练这道题 ↗</a></div></article>'}
+function pointHTML(i){const p=points[i],g=groups[p[12]],more=p[5].length>2?'<details class="more-errors"><summary>查看其余 '+(p[5].length-2)+' 条常见错误</summary>'+p[5].slice(2).map(errorHTML).join('')+'</details>':'';return '<article class="card" id="'+p[0]+'">'+(query?'<p class="search-hit">命中：'+hits(i).map(label=>'<button data-hit-point="'+i+'" data-hit-label="'+label+'">'+label+'</button>').join('、')+'</p>':'')+'<div class="path">难度：'+text(p[14])+' · 范围：'+text(p[15])+' · '+g[1]+' · '+text(groupName(p[12]))+'</div><h2>'+p[1]+'</h2><p class="definition">'+p[2]+'</p>'+p[13]+'<section class="block"><h3>公式与适用范围</h3><div class="formulas">'+p[3].map(formulaHTML).join('')+'</div></section><section class="block"><h3>容易出错</h3>'+p[5].slice(0,2).map(errorHTML).join('')+more+'</section><section class="block"><h3>符号与单位</h3><div class="symbols"><div class="sym-row head"><div>符号</div><div>含义</div><div>单位</div></div>'+p[4].map(symbolHTML).join('')+'</div></section>'+relationHTML(p,i)+'<details class="deep" data-deep="'+i+'"><summary>深入理解：物理意义、推导和例题</summary><div class="deep-content"></div></details><div class="card-practice"><a href="'+QUIZ_HREF+'#mode=example&amp;point='+encodeURIComponent(p[0])+'&amp;source='+encodeURIComponent(SEGMENT_ROOT+'速查版')+'&amp;return='+encodeURIComponent(RETURN_PAGE+'#'+p[0])+'">练这道题 ↗</a></div></article>'}
 function deepHTML(p){const ex=p[8];return '<h3>物理意义</h3><p>'+p[6]+'</p>'+(p[7].length?'<h3>推导要点</h3><ol>'+p[7].map(x=>'<li>'+x+'</li>').join('')+'</ol>':'')+(ex[0]?'<h3>典型例题</h3><p>'+ex[0]+'</p><ol>'+ex[1].map(x=>'<li>'+x+'</li>').join('')+'</ol><p class="answer">答案：'+ex[2]+'</p>':'')}
 function renderPoints(){const ids=points.map((_,i)=>i).filter(matchPoint);viewBox.className='list';viewBox.innerHTML=ids.map(pointHTML).join('');if(query)ids.forEach(i=>{const card=document.getElementById(points[i][0]);if(hits(i).some(x=>['物理意义','推导','例题'].includes(x))){const d=card.querySelector('.deep');d.querySelector('.deep-content').innerHTML=deepHTML(points[i]);d.querySelector('.deep-content').dataset.loaded='1';d.open=true}card.querySelectorAll('details.learning,details.more-errors').forEach(d=>{if(clean(strip(d.innerHTML)).includes(query))d.open=true})});return ids.length}
 function renderFormulas(){const rows=formulas.filter(row=>matchPoint(row[0])&&(!query||row[2].includes(query)));viewBox.className='index-grid';viewBox.innerHTML=rows.map(([i,k])=>'<article class="index-card"><button class="source" data-go="'+i+'">'+points[i][1]+'</button><h2>'+points[i][3][k][0]+'</h2>'+formulaHTML(points[i][3][k])+'</article>').join('');return rows.length}
 function renderSymbols(){const rows=symbols.filter(([s,ids])=>ids.some(matchPoint)&&(!query||clean([strip(s[0]),strip(s[1]),strip(s[2]),...ids.map(i=>strip(points[i][1]))].join(' ')).includes(query)));viewBox.className='symbol-grid';viewBox.innerHTML=rows.map(([s,ids])=>{const target=ids.find(matchPoint);return '<article class="symbol-card"><div class="sym-name">'+s[0]+'</div><p>'+s[1]+'</p><div class="sym-unit">'+s[2]+'</div><button class="source" data-go="'+target+'">'+points[target][1]+(ids.length>1?' 等'+ids.length+'处':'')+'</button></article>'}).join('');return rows.length}
 function renderMap(){const gs=groups.map((g,i)=>[g,i]).filter(([g])=>(domain==='全部'||g[1]===domain)&&(chapterName==='全部'||g[0]===chapterName));const domains=[...new Set(gs.map(([g])=>g[1]))];viewBox.className='';viewBox.innerHTML='<div class="map-title"><h2>知识脉络</h2><p>按领域与章节串联知识点；章节顺序是学习建议，点击可打开速查卡。</p></div><div class="map-root">'+SEGMENT_ROOT+'</div>'+domains.map(d=>'<section class="map-domain"><h2>'+d+'<small>'+gs.filter(([g])=>g[1]===d).length+'章</small></h2><div class="map-chapters">'+gs.filter(([g])=>g[1]===d).map(([g,gi])=>'<div class="map-chapter"><button data-chapter-go="'+gi+'">'+text(groupName(gi))+' →</button><div class="map-points">'+g[3].map(i=>'<button class="map-point" data-go="'+i+'">'+points[i][1]+'</button>').join('')+'</div></div>').join('')+'</div></section>').join('');return gs.length}
 function render(){document.querySelectorAll('.nav button').forEach(b=>b.classList.toggle('active',b.dataset.view===view));let count=view==='points'?renderPoints():view==='formulas'?renderFormulas():view==='symbols'?renderSymbols():renderMap();counter.textContent=view==='map'?'知识脉络':'显示 '+count+' 项';document.getElementById('empty').hidden=count>0}
-document.querySelectorAll('.nav button').forEach(b=>b.addEventListener('click',()=>{view=b.dataset.view;history.pushState(null,'','#'+view);render();window.scrollTo(0,0)}));
-document.querySelectorAll('.filter').forEach(b=>b.addEventListener('click',()=>{domain=b.dataset.domain;document.querySelectorAll('.filter').forEach(x=>x.classList.toggle('active',x===b));render()}));
-chapter.addEventListener('change',()=>{chapterName=chapter.value;render()});search.addEventListener('input',()=>{query=clean(search.value);if(query&&view==='map'){view='points';history.replaceState(null,'','#points')}render()});
-document.addEventListener('keydown',e=>{if(e.key==='/'&&document.activeElement!==search){e.preventDefault();search.focus()}});
-document.addEventListener('toggle',e=>{const d=e.target;if(d.matches&&d.matches('details[data-deep]')&&d.open){const slot=d.querySelector('.deep-content');if(!slot.dataset.loaded){slot.innerHTML=deepHTML(points[Number(d.dataset.deep)]);slot.dataset.loaded='1'}}},true);
-document.addEventListener('click',e=>{const go=e.target.closest('[data-go]');if(go){const i=Number(go.dataset.go);history.pushState(null,'','#'+encodeURIComponent(points[i][0]));restorePoint();return}const ch=e.target.closest('[data-chapter-go]');if(ch){view='points';chapterName=groups[Number(ch.dataset.chapterGo)][0];chapter.value=chapterName;render();window.scrollTo(0,0)}});
-render();
-// 从练习页回看时，知识点编号是阅读定位，不是视图名称。
+// 每一条浏览历史保存搜索、筛选、视图、展开项和滚动位置；复制链接仍只携带知识点编号。
+let restoring=false,scrollTimer,readingHash=location.hash,restorationRun=0;
+history.scrollRestoration='manual';
+// 吸顶导航换行后同步高度，筛选栏仍在导航下方可操作。
+new ResizeObserver(()=>document.documentElement.style.setProperty('--appbar-height',document.querySelector('.appbar').offsetHeight+'px')).observe(document.querySelector('.appbar'));
+function readingState(){return {version:1,segment:SEGMENT_ROOT,hash:location.hash,view,domain,chapterName,search:search.value,scrollY:window.scrollY,details:[...viewBox.querySelectorAll('details')].map((d,i)=>[i,d.open])}}
+// 后退已改变地址而页面尚未恢复时，不把旧页面的延迟滚动回调写进新历史条目。
+function saveReading(hash){if(restoring||location.hash!==readingHash)return;const state=readingState();if(hash!==undefined)state.hash=hash;history.replaceState({quickReading:state},'',hash===undefined?location.href:hash);readingHash=location.hash}
+function loadDeep(d){const slot=d.querySelector('.deep-content');if(slot&&!slot.dataset.loaded){slot.innerHTML=deepHTML(points[Number(d.dataset.deep)]);slot.dataset.loaded='1'}}
+function setFilters(){search.value=search.value||'';chapter.value=chapterName;document.querySelectorAll('.filter').forEach(b=>b.classList.toggle('active',b.dataset.domain===domain))}
 function restorePoint(){
+  const run=++restorationRun;readingHash=location.hash;
   let id;try{id=decodeURIComponent(location.hash.slice(1))}catch(e){return}
-  if(pointIndex.has(id)){
-    view='points';domain='全部';chapterName='全部';query='';search.value='';chapter.value='全部';
-    document.querySelectorAll('.filter').forEach(b=>b.classList.toggle('active',b.dataset.domain==='全部'));
-    render();requestAnimationFrame(()=>{const card=document.getElementById(id);if(card)card.scrollIntoView({behavior:'instant',block:'start'})});
-  }else if(!id||['points','formulas','symbols','map'].includes(id)){view=id||'points';domain='全部';chapterName='全部';query='';search.value='';chapter.value='全部';render()}
+  const state=history.state&&history.state.quickReading;
+  const valid=state&&state.version===1&&state.segment===SEGMENT_ROOT&&state.hash===location.hash;
+  restoring=true;
+  if(valid){view=state.view;domain=state.domain;chapterName=state.chapterName;search.value=state.search;query=clean(state.search)}
+  else {view=pointIndex.has(id)?'points':(['points','formulas','symbols','map'].includes(id)?id:'points');domain='全部';chapterName='全部';search.value='';query=''}
+  setFilters();render();
+  if(valid){const ds=[...viewBox.querySelectorAll('details')];(state.details||[]).forEach(([i,open])=>{if(ds[i]){if(open&&ds[i].matches('[data-deep]'))loadDeep(ds[i]);ds[i].open=open}})}
+  requestAnimationFrame(()=>{if(run!==restorationRun)return;if(valid)window.scrollTo({top:state.scrollY||0,behavior:'instant'});else {const card=document.getElementById(id);if(card)card.scrollIntoView({behavior:'instant',block:'start'});else window.scrollTo({top:0,behavior:'instant'})}requestAnimationFrame(()=>{if(run!==restorationRun)return;restoring=false;saveReading()})});
 }
-// 首次渲染及浏览器恢复页面完成后定位；返回阅读位置无需长距离平滑动画。
-restorePoint();window.addEventListener('load',restorePoint);window.addEventListener('hashchange',restorePoint);window.addEventListener('popstate',restorePoint);
+function goPoint(i,origin){if(origin)saveReading('#'+origin.id);else saveReading();history.pushState(null,'','#'+encodeURIComponent(points[i][0]));restorePoint()}
+document.querySelectorAll('.nav button').forEach(b=>b.addEventListener('click',()=>{saveReading();++restorationRun;restoring=false;view=b.dataset.view;history.pushState(null,'','#'+view);readingHash=location.hash;render();window.scrollTo({top:0,behavior:'instant'});saveReading()}));
+document.querySelectorAll('.filter').forEach(b=>b.addEventListener('click',()=>{domain=b.dataset.domain;setFilters();render();saveReading()}));
+chapter.addEventListener('change',()=>{chapterName=chapter.value;render();saveReading()});
+search.addEventListener('input',()=>{query=clean(search.value);if(query&&view==='map')view='points';render();saveReading()});
+window.addEventListener('scroll',()=>{clearTimeout(scrollTimer);scrollTimer=setTimeout(()=>saveReading(),100)},{passive:true});
+window.addEventListener('pagehide',()=>saveReading());
+document.addEventListener('keydown',e=>{if(e.key==='/'&&document.activeElement!==search){e.preventDefault();search.focus()}});
+document.addEventListener('toggle',e=>{const d=e.target;if(d.matches&&d.matches('details[data-deep]')&&d.open){loadDeep(d)}if(d.matches&&d.matches('details'))saveReading()},true);
+// 点击命中位置直接定位到相应正文，不让例题命中停留在卡片顶部。
+document.addEventListener('click',e=>{const hit=e.target.closest('[data-hit-point]');if(hit){const card=document.getElementById(points[Number(hit.dataset.hitPoint)][0]),label=hit.dataset.hitLabel;const heading=label==='易错点'?'容易出错':label;const target=(label==='核心正文'?[...card.querySelectorAll('.learning')].find(x=>clean(strip(x.innerHTML)).includes(query)):null)||[...card.querySelectorAll('h3,h2')].find(x=>x.textContent.includes(heading))||card.querySelector('.learning')||card;target.style.scrollMarginTop='140px';target.scrollIntoView({behavior:'instant',block:'start'});saveReading();return}const go=e.target.closest('[data-go]');if(go){const i=Number(go.dataset.go);const origin=go.closest('.card');goPoint(i,origin);return}const ch=e.target.closest('[data-chapter-go]');if(ch){view='points';chapterName=groups[Number(ch.dataset.chapterGo)][0];chapter.value=chapterName;render();window.scrollTo({top:0,behavior:'instant'});saveReading()}});
+restorePoint();window.addEventListener('hashchange',restorePoint);window.addEventListener('popstate',restorePoint);
 })();
 '''
 

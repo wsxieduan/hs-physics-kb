@@ -235,6 +235,27 @@ def _spec_ast(spec, default_ast, key="expr"):
     return EX.parse(text)
 
 
+def _tolerance(ref, tol):
+    """算出「算得的值和参考值之间允许差多少」。
+
+    原来直接写 tol * max(1, |ref|)：|ref| 小于 1 时 max 取 1，等于给了 tol 的绝对容差。
+    ★ 这会出事：被检量本身比 tol 还小的时候，容差比答案还大 ——
+      例如参考值是 1e-6 m、tol 用默认 1e-6，容差就是 1e-6，
+      于是把结果改成 0（差 1e-6）也照样判「相符」，检查形同虚设。
+
+    补一道底线：容差不得超过参考值的一半，免得容差把答案整个吞掉。
+    ref 为 0 是「理论零」（例如完全失重的视重、对称位置的合场强），
+    此时没有「参考值的比例」可谈，仍按原来的绝对容差走。
+
+    只收紧极端情况：正常量级下 tol*|ref| 远小于 0.5*|ref|，本函数不起任何作用，
+    因此不会误伤任何一条既有检查（全库 1083 条数值检查实测零新增失败）。
+    """
+    limit = tol * max(1.0, abs(ref))
+    if ref != 0:
+        limit = min(limit, 0.5 * abs(ref))
+    return limit
+
+
 def check_numeric(fname, ast_lhs, ast_rhs, lhs_var, symbols, spec):
     scenario_name = spec.get("scenario")
     values = spec["_scenario_values"]
@@ -262,7 +283,7 @@ def check_numeric(fname, ast_lhs, ast_rhs, lhs_var, symbols, spec):
     if got is None:
         return CheckResult("numeric", fname, False, "算出来没有数值")
 
-    if abs(got - ref) <= tol * max(1.0, abs(ref)):
+    if abs(got - ref) <= _tolerance(ref, tol):
         return CheckResult(
             "numeric", fname, True,
             "情境「%s」：算得 %s = %.6g，独立参考值 %.6g，相符"
@@ -401,7 +422,7 @@ def check_consistency(fname, ast_rhs, symbols, spec, other_formulas):
     else:
         who = "「%s」" % other_name
 
-    if abs(a - b) <= tol * max(1.0, abs(a)):
+    if abs(a - b) <= _tolerance(a, tol):
         return CheckResult(
             "consistency", fname, True,
             "同一情境下「%s」：本式算得 %.6g，%s 算得 %.6g，完全吻合"

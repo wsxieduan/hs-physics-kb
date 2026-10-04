@@ -8,46 +8,68 @@
       "point_id": "qz-01",
       "point_title": "黑体辐射与能量量子化",
       "chapter": "第二十章 · 波粒二象性与原子结构",
-      "stem": "【第二十章 · 波粒二象性与原子结构 · 黑体辐射与能量量子化】学生的错误做法：把光子能量写成与频率成反比（错误表达式：E = h/ν）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "stem": "在“黑体辐射与能量量子化”中，任何单色光都成立；E 是单个光子的能量。一个光子的能量的单位为eV。下列哪一表达式的量纲与该目标量一致？",
       "options": [
         {
           "label": "A",
-          "text": "概念混淆：能否打出电子只取决于单个光子的能量 hν 是否超过 W。"
+          "text": "E = h/ν"
         },
         {
           "label": "B",
-          "text": "概念混淆：两者描述的是同一束光的不同侧面，通过 E=hν 与 ν=c/λ 可以互相换算，并不矛盾。"
-        },
-        {
-          "label": "C",
-          "text": "概念混淆：宏观物体<strong>有</strong>波动性，只是波长小到无法观测（0.02 kg 小球约 10⁻³² m）。"
-        },
-        {
-          "label": "D",
-          "text": "数值代入：频率越高光子能量越大，是正比。"
+          "text": "E = h·ν"
         }
       ],
-      "correct_answer": "D",
-      "explanation": "频率越高光子能量越大，是正比。按错误式红光只得到 8.28×10⁻³⁰ eV，而正确值是 2.07 eV——差了 30 个数量级。\n知识库校验证据：情境：红光量子；代入错误式：h/ν；校验参照值：2.07。",
-      "error_type": "数值代入",
+      "correct_answer": "B",
+      "explanation": "频率越高光子能量越大，是正比。按错误式红光只得到 8.28×10⁻³⁰ eV，而正确值是 2.07 eV——差了 30 个数量级。\n知识点条件：「能量不连续」是整章的地基。经典理论算出的黑体辐射曲线在短波处会趋向无穷大，与实验完全不符——这个矛盾叫「紫外灾难」。普朗克引入能量量子化后，理论曲线才与实验吻合。随后在光子模型中，hν 表示<strong>一个光子</strong>的能量，n 个同频光子的总能量就是 n·hν。这样既保留了量子化的核心，也区分了普朗克的能量子假设与爱因斯坦的光子解释。\n推导依据：实验测出的黑体辐射曲线在短波处会掉下来，而经典理论预言它会趋于无穷——这个矛盾必须先解决。；普朗克假设：吸收和发射的能量只能是一份一份的，每一份的大小与频率成正比，记作 hν。；于是 n 个光子的总能量就是 n·hν，能量只能在「份」的基础上累加，不能连续变化。\n卡片公式各自的适用条件（不是本题共同前提）：\n光子能量与频率的关系：任何单色光都成立；E 是单个光子的能量\nn 个光子的总能量：单色光，且每个光子的能量相同",
+      "error_type": "量纲一致性",
       "judging": "auto",
       "source_error_index": 0,
-      "source_caught_by": "数值代入",
+      "source_caught_by": "量纲一致性",
       "wrong_expr": "E = h/ν",
       "trap_test": {
-        "scenario": "红光量子",
-        "expr": "h/nu",
-        "ref": 2.07
+        "kind": "dimension",
+        "target": "E = h/nu",
+        "expect": "mismatch",
+        "lhs_dim": "M·L^2·T^-2",
+        "rhs_dim": "M·L^2",
+        "note": "正式引擎验证量纲不一致；不计作同量纲错误数值实测。"
+      },
+      "level": "进阶",
+      "learning_scope": "高中",
+      "answer_evidence": {
+        "kind": "dimension",
+        "target": "E",
+        "correct_expression": "E = h*nu",
+        "distractor_expression": "E = h/nu",
+        "target_dimension": "M·L^2·T^-2",
+        "distractor_dimension": "M·L^2"
       },
       "review": {
         "confidence": "medium",
-        "checks": {
-          "answer_unique": true,
-          "distractors_plausible": true,
-          "stem_clear": true,
-          "no_cross_segment": true
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": true,
+          "no_answer_leak_in_options": true
         },
-        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。"
       }
     },
     {
@@ -55,42 +77,142 @@
       "point_id": "qz-01",
       "point_title": "黑体辐射与能量量子化",
       "chapter": "第二十章 · 波粒二象性与原子结构",
-      "stem": "【第二十章 · 波粒二象性与原子结构 · 黑体辐射与能量量子化】学生的错误做法：认为光释放或吸收的能量可以连续变化。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "stem": "关于“黑体辐射与能量量子化”，判断这一说法是否成立，并说明依据：\n频率固定的振子与光交换能量时，交换量可以连续取任意数值。",
       "options": [
         {
           "label": "A",
-          "text": "数值代入：两者是反比。"
+          "text": "该说法成立。"
         },
         {
           "label": "B",
-          "text": "数值代入：动量是 mv，动能才是 ½mv²。"
-        },
-        {
-          "label": "C",
-          "text": "概念混淆：这正是被黑体辐射实验否掉的经典图像。"
-        },
-        {
-          "label": "D",
-          "text": "数值代入：hν 是吸收到的能量，W 是必须付出的，剩下才是动能，所以是「收入减支出」。"
+          "text": "该说法不成立。"
         }
       ],
-      "correct_answer": "C",
-      "explanation": "这正是被黑体辐射实验否掉的经典图像。能量是一份一份的，「一份」就是 hν。这一条是观念性错误，无法用公式检查，只能靠人判。",
+      "correct_answer": "B",
+      "explanation": "这正是被黑体辐射实验否掉的经典图像。能量是一份一份的，「一份」就是 hν。这一条是观念性错误，无法用公式检查，只能靠人判。\n知识点条件：「能量不连续」是整章的地基。经典理论算出的黑体辐射曲线在短波处会趋向无穷大，与实验完全不符——这个矛盾叫「紫外灾难」。普朗克引入能量量子化后，理论曲线才与实验吻合。随后在光子模型中，hν 表示<strong>一个光子</strong>的能量，n 个同频光子的总能量就是 n·hν。这样既保留了量子化的核心，也区分了普朗克的能量子假设与爱因斯坦的光子解释。\n推导依据：实验测出的黑体辐射曲线在短波处会掉下来，而经典理论预言它会趋于无穷——这个矛盾必须先解决。；普朗克假设：吸收和发射的能量只能是一份一份的，每一份的大小与频率成正比，记作 hν。；于是 n 个光子的总能量就是 n·hν，能量只能在「份」的基础上累加，不能连续变化。\n卡片公式各自的适用条件（不是本题共同前提）：\n光子能量与频率的关系：任何单色光都成立；E 是单个光子的能量\nn 个光子的总能量：单色光，且每个光子的能量相同",
       "error_type": "概念混淆",
       "judging": "teacher",
       "source_error_index": 1,
       "source_caught_by": "人工审核",
       "wrong_expr": null,
       "trap_test": null,
+      "level": "进阶",
+      "learning_scope": "高中",
+      "answer_evidence": {
+        "kind": "teacher",
+        "claim_source": "执行方明确命题",
+        "reference_only": true,
+        "reason": "概念、操作或无法建立完整定量证据，教师确认条件与结论。"
+      },
       "review": {
         "confidence": "medium",
-        "checks": {
-          "answer_unique": true,
-          "distractors_plausible": true,
-          "stem_clear": true,
-          "no_cross_segment": true
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": false,
+          "no_answer_leak_in_options": true
         },
-        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。"
+      }
+    },
+    {
+      "id": "diagnostic-qz-01-3",
+      "point_id": "qz-01",
+      "point_title": "黑体辐射与能量量子化",
+      "chapter": "第二十章 · 波粒二象性与原子结构",
+      "stem": "在“黑体辐射与能量量子化”的模型下，E（一个光子的能量）=2.07 eV；n<sub>光子</sub>（光子个数）=2 1。条件：单色光，且每个光子的能量相同。求n 个光子的总能量（E<sub>总</sub>）。这些数值是设计示例。",
+      "options": [
+        {
+          "label": "A",
+          "text": "4.14 eV"
+        },
+        {
+          "label": "B",
+          "text": "2.07 eV"
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "使用n 个光子的总能量：n<sub>光子</sub>·E，代入得4.14 eV。另一结果来自E，算得2.07 eV。\n两个光子总能量2×2.07=4.14 eV，遗漏数量会算成2.07 eV。\n知识点条件：「能量不连续」是整章的地基。经典理论算出的黑体辐射曲线在短波处会趋向无穷大，与实验完全不符——这个矛盾叫「紫外灾难」。普朗克引入能量量子化后，理论曲线才与实验吻合。随后在光子模型中，hν 表示<strong>一个光子</strong>的能量，n 个同频光子的总能量就是 n·hν。这样既保留了量子化的核心，也区分了普朗克的能量子假设与爱因斯坦的光子解释。\n推导依据：实验测出的黑体辐射曲线在短波处会掉下来，而经典理论预言它会趋于无穷——这个矛盾必须先解决。；普朗克假设：吸收和发射的能量只能是一份一份的，每一份的大小与频率成正比，记作 hν。；于是 n 个光子的总能量就是 n·hν，能量只能在「份」的基础上累加，不能连续变化。\n卡片公式各自的适用条件（不是本题共同前提）：\n光子能量与频率的关系：任何单色光都成立；E 是单个光子的能量\nn 个光子的总能量：单色光，且每个光子的能量相同",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 2,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "E<sub>总</sub> = E",
+      "trap_test": {
+        "scenario": "红光量子",
+        "expr": "E",
+        "ref": 4.14,
+        "tol": 1e-06
+      },
+      "level": "进阶",
+      "learning_scope": "高中",
+      "answer_evidence": {
+        "kind": "numeric",
+        "scenario": "红光量子",
+        "parameters": {
+          "h": 4.14e-15,
+          "nu": 500000000000000.0,
+          "E": 2.07,
+          "n_photon": 2,
+          "E_total": 4.14
+        },
+        "target": "E_total",
+        "unit": "eV",
+        "reference": 4.14,
+        "correct_proof": {
+          "expression": "n_photon*E",
+          "formula": "n 个光子的总能量",
+          "value": 4.14,
+          "when": "单色光，且每个光子的能量相同"
+        },
+        "distractor_expression": "E",
+        "distractor_value": 2.07,
+        "dimension_matches": true,
+        "independent_evaluation": true
+      },
+      "review": {
+        "confidence": "medium",
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": true,
+          "no_answer_leak_in_options": true
+        },
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。"
       }
     },
     {
@@ -98,46 +220,81 @@
       "point_id": "qz-02",
       "point_title": "光电效应与爱因斯坦光电方程",
       "chapter": "第二十章 · 波粒二象性与原子结构",
-      "stem": "【第二十章 · 波粒二象性与原子结构 · 光电效应与爱因斯坦光电方程】学生的错误做法：把光电方程写成 Ek = W - h·ν（减反了）（错误表达式：W - h·ν）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "stem": "在“光电效应与爱因斯坦光电方程”的模型下，h（普朗克常量）=4.14e-15 eV·s；ν（入射光的频率）=7.5e+14 Hz；W（金属的逸出功）=2.29 eV。条件：入射光频率大于截止频率时才有光电子；E<sub>k</sub> 取最大值。求光电子的最大初动能（E<sub>k</sub>）。这些数值是设计示例。",
       "options": [
         {
           "label": "A",
-          "text": "概念混淆：宏观物体<strong>有</strong>波动性，只是波长小到无法观测（0.02 kg 小球约 10⁻³² m）。"
+          "text": "0.815 eV"
         },
         {
           "label": "B",
-          "text": "数值代入：hν 是吸收到的能量，W 是必须付出的，剩下才是动能，所以是「收入减支出」。"
-        },
-        {
-          "label": "C",
-          "text": "概念混淆：这正是被黑体辐射实验否掉的经典图像。"
-        },
-        {
-          "label": "D",
-          "text": "概念混淆：两者描述的是同一束光的不同侧面，通过 E=hν 与 ν=c/λ 可以互相换算，并不矛盾。"
+          "text": "-0.815 eV"
         }
       ],
-      "correct_answer": "B",
-      "explanation": "hν 是吸收到的能量，W 是必须付出的，剩下才是动能，所以是「收入减支出」。按错误式会得到 −0.815 eV，动能不可能为负。\n知识库校验证据：情境：钠紫光照射；代入错误式：W - h·ν；校验参照值：0.815。",
+      "correct_answer": "A",
+      "explanation": "使用爱因斯坦光电方程：h·ν - W，代入得0.815 eV。另一结果来自W - h·ν，算得-0.815 eV。\nhν 是吸收到的能量，W 是必须付出的，剩下才是动能，所以是「收入减支出」。按错误式会得到 −0.815 eV，动能不可能为负。\n知识点条件：这条式子一次解释了光电效应全部「反常」现象。其一，能否打出电子只取决于<strong>单个光子</strong>的能量是否够大（hν&gt;W），与光强无关；增大光强只是让光子<strong>变多</strong>，所以光电流变大但截止频率不变。其二，出现光电子几乎不需要时间，因为能量是整份被一个电子一次性吸收的，不存在「慢慢攒」的过程。其三，E<sub>k</sub> 与 ν 是<strong>线性关系</strong>，图线斜率就是 h。\n推导依据：一个电子要离开金属，至少得付出逸出功 W。；电子一次性吸收一个光子的能量 hν，付掉逸出功后剩下的全部变成初动能，所以 E<sub>k</sub>=hν−W。；令 E<sub>k</sub>=0 解出恰好能发生光电效应的频率，即截止频率 ν₀=W/h；频率低于它，无论光多强都打不出电子。\n卡片公式各自的适用条件（不是本题共同前提）：\n爱因斯坦光电方程：入射光频率大于截止频率时才有光电子；E<sub>k</sub> 取最大值\n截止频率：令 E<sub>k</sub>=0 解出，即恰好能发生光电效应的最低频率",
       "error_type": "数值代入",
       "judging": "auto",
       "source_error_index": 0,
       "source_caught_by": "数值代入",
-      "wrong_expr": "W - h·ν",
+      "wrong_expr": "E<sub>k</sub> = W-h·ν",
       "trap_test": {
         "scenario": "钠紫光照射",
         "expr": "W - h*nu",
         "ref": 0.815
       },
+      "level": "进阶",
+      "learning_scope": "高中",
+      "answer_evidence": {
+        "kind": "numeric",
+        "scenario": "钠紫光照射",
+        "parameters": {
+          "h": 4.14e-15,
+          "nu": 750000000000000.0,
+          "W": 2.29,
+          "Ek": 0.815,
+          "nu_0": 553140096618357.44
+        },
+        "target": "Ek",
+        "unit": "eV",
+        "reference": 0.815,
+        "correct_proof": {
+          "expression": "h*nu - W",
+          "formula": "爱因斯坦光电方程",
+          "value": 0.815,
+          "when": "入射光频率大于截止频率时才有光电子；Ek 取最大值"
+        },
+        "distractor_expression": "W - h*nu",
+        "distractor_value": -0.815,
+        "dimension_matches": true,
+        "independent_evaluation": true
+      },
       "review": {
         "confidence": "medium",
-        "checks": {
-          "answer_unique": true,
-          "distractors_plausible": true,
-          "stem_clear": true,
-          "no_cross_segment": true
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": true,
+          "no_answer_leak_in_options": true
         },
-        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。"
       }
     },
     {
@@ -145,42 +302,59 @@
       "point_id": "qz-02",
       "point_title": "光电效应与爱因斯坦光电方程",
       "chapter": "第二十章 · 波粒二象性与原子结构",
-      "stem": "【第二十章 · 波粒二象性与原子结构 · 光电效应与爱因斯坦光电方程】学生的错误做法：认为只要光足够强，低于截止频率的光也能打出光电子。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "stem": "关于“光电效应与爱因斯坦光电方程”，判断这一说法是否成立，并说明依据：\n在单光子光电效应模型中，频率低于截止频率的光不能仅靠增加光强使金属发射光电子。",
       "options": [
         {
           "label": "A",
-          "text": "概念混淆：能否打出电子只取决于单个光子的能量 hν 是否超过 W。"
+          "text": "该说法不成立。"
         },
         {
           "label": "B",
-          "text": "数值代入：频率越高光子能量越大，是正比。"
-        },
-        {
-          "label": "C",
-          "text": "数值代入：两者是反比。"
-        },
-        {
-          "label": "D",
-          "text": "数值代入：动量是 mv，动能才是 ½mv²。"
+          "text": "该说法成立。"
         }
       ],
-      "correct_answer": "A",
-      "explanation": "能否打出电子只取决于单个光子的能量 hν 是否超过 W。光强变大只是光子数变多，每个光子的能量并没有变大。这是光电效应最核心的概念性结论，公式抓不到。",
+      "correct_answer": "B",
+      "explanation": "能否打出电子只取决于单个光子的能量 hν 是否超过 W。光强变大只是光子数变多，每个光子的能量并没有变大。这是光电效应最核心的概念性结论，公式抓不到。\n知识点条件：这条式子一次解释了光电效应全部「反常」现象。其一，能否打出电子只取决于<strong>单个光子</strong>的能量是否够大（hν&gt;W），与光强无关；增大光强只是让光子<strong>变多</strong>，所以光电流变大但截止频率不变。其二，出现光电子几乎不需要时间，因为能量是整份被一个电子一次性吸收的，不存在「慢慢攒」的过程。其三，E<sub>k</sub> 与 ν 是<strong>线性关系</strong>，图线斜率就是 h。\n推导依据：一个电子要离开金属，至少得付出逸出功 W。；电子一次性吸收一个光子的能量 hν，付掉逸出功后剩下的全部变成初动能，所以 E<sub>k</sub>=hν−W。；令 E<sub>k</sub>=0 解出恰好能发生光电效应的频率，即截止频率 ν₀=W/h；频率低于它，无论光多强都打不出电子。\n卡片公式各自的适用条件（不是本题共同前提）：\n爱因斯坦光电方程：入射光频率大于截止频率时才有光电子；E<sub>k</sub> 取最大值\n截止频率：令 E<sub>k</sub>=0 解出，即恰好能发生光电效应的最低频率",
       "error_type": "概念混淆",
       "judging": "teacher",
       "source_error_index": 1,
       "source_caught_by": "人工审核",
       "wrong_expr": null,
       "trap_test": null,
+      "level": "进阶",
+      "learning_scope": "高中",
+      "answer_evidence": {
+        "kind": "teacher",
+        "claim_source": "执行方明确命题",
+        "reference_only": true,
+        "reason": "概念、操作或无法建立完整定量证据，教师确认条件与结论。"
+      },
       "review": {
         "confidence": "medium",
-        "checks": {
-          "answer_unique": true,
-          "distractors_plausible": true,
-          "stem_clear": true,
-          "no_cross_segment": true
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": false,
+          "no_answer_leak_in_options": true
         },
-        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。"
       }
     },
     {
@@ -188,46 +362,68 @@
       "point_id": "qz-03",
       "point_title": "光的波粒二象性",
       "chapter": "第二十章 · 波粒二象性与原子结构",
-      "stem": "【第二十章 · 波粒二象性与原子结构 · 光的波粒二象性】学生的错误做法：把波长与频率记成正比，写成 ν = c·λ（错误表达式：ν = c·λ）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "stem": "在“光的波粒二象性”中，光在真空中传播；波长越短频率越高。光的频率的单位为Hz。下列哪一表达式的量纲与该目标量一致？",
       "options": [
         {
           "label": "A",
-          "text": "概念混淆：这正是被黑体辐射实验否掉的经典图像。"
+          "text": "ν = c·λ"
         },
         {
           "label": "B",
-          "text": "概念混淆：能否打出电子只取决于单个光子的能量 hν 是否超过 W。"
-        },
-        {
-          "label": "C",
-          "text": "概念混淆：宏观物体<strong>有</strong>波动性，只是波长小到无法观测（0.02 kg 小球约 10⁻³² m）。"
-        },
-        {
-          "label": "D",
-          "text": "数值代入：两者是反比。"
+          "text": "ν = c/λ"
         }
       ],
-      "correct_answer": "D",
-      "explanation": "两者是反比。按错误式，5.0×10⁻⁷ m 的绿光会算出 150 Hz，而正确值是 6.0×10¹⁴ Hz。\n知识库校验证据：情境：绿光；代入错误式：c·λ；校验参照值：600000000000000.0。",
-      "error_type": "数值代入",
+      "correct_answer": "B",
+      "explanation": "两者是反比。按错误式，5.0×10⁻⁷ m 的绿光会算出 150 Hz，而正确值是 6.0×10¹⁴ Hz。\n知识点条件：「二象性」不是「有时是波有时是粒子」这么含糊。准确的说是：光在传播、干涉、衍射时用波动规律描述最方便，在与物质交换能量时用光子模型最方便，两套描述通过 E=hν 与 ν=c/λ 联立起来。判断该用哪一套的粗略标准是：看你在追问「往哪儿走」还是「交出多少能量」。\n推导依据：波动描述给出波长与频率的关系：一个周期内波前进一个波长，所以 ν=c/λ。；粒子描述给出能量与频率的关系：E=hν。；把两式联立消去 ν，就得到 E=hc/λ —— 波长越短，单个光子的能量越高，这也是紫外光比红光更「厉害」的原因。\n卡片公式各自的适用条件（不是本题共同前提）：\n波长与频率的关系：光在真空中传播；波长越短频率越高\n光子的能量：与上一条联立，就把「波」的波长换算成了「粒子」的能量",
+      "error_type": "量纲一致性",
       "judging": "auto",
       "source_error_index": 0,
-      "source_caught_by": "数值代入",
+      "source_caught_by": "量纲一致性",
       "wrong_expr": "ν = c·λ",
       "trap_test": {
-        "scenario": "绿光",
-        "expr": "c*lambda",
-        "ref": 600000000000000.0
+        "kind": "dimension",
+        "target": "nu = c*lambda",
+        "expect": "mismatch",
+        "lhs_dim": "T^-1",
+        "rhs_dim": "L^2·T^-1",
+        "note": "正式引擎验证量纲不一致；不计作同量纲错误数值实测。"
+      },
+      "level": "基础",
+      "learning_scope": "高中",
+      "answer_evidence": {
+        "kind": "dimension",
+        "target": "nu",
+        "correct_expression": "nu = c/lambda",
+        "distractor_expression": "nu = c*lambda",
+        "target_dimension": "T^-1",
+        "distractor_dimension": "L^2·T^-1"
       },
       "review": {
         "confidence": "medium",
-        "checks": {
-          "answer_unique": true,
-          "distractors_plausible": true,
-          "stem_clear": true,
-          "no_cross_segment": true
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": true,
+          "no_answer_leak_in_options": true
         },
-        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。"
       }
     },
     {
@@ -235,42 +431,142 @@
       "point_id": "qz-03",
       "point_title": "光的波粒二象性",
       "chapter": "第二十章 · 波粒二象性与原子结构",
-      "stem": "【第二十章 · 波粒二象性与原子结构 · 光的波粒二象性】学生的错误做法：认为「干涉说明光是波、光电效应说明光是粒子」，两者互相矛盾。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "stem": "关于“光的波粒二象性”，判断这一说法是否成立，并说明依据：\n「干涉说明光是波、光电效应说明光是粒子」，两者互相矛盾。",
       "options": [
         {
           "label": "A",
-          "text": "数值代入：hν 是吸收到的能量，W 是必须付出的，剩下才是动能，所以是「收入减支出」。"
+          "text": "该说法成立。"
         },
         {
           "label": "B",
-          "text": "数值代入：动量是 mv，动能才是 ½mv²。"
-        },
-        {
-          "label": "C",
-          "text": "概念混淆：两者描述的是同一束光的不同侧面，通过 E=hν 与 ν=c/λ 可以互相换算，并不矛盾。"
-        },
-        {
-          "label": "D",
-          "text": "数值代入：频率越高光子能量越大，是正比。"
+          "text": "该说法不成立。"
         }
       ],
-      "correct_answer": "C",
-      "explanation": "两者描述的是同一束光的不同侧面，通过 E=hν 与 ν=c/λ 可以互相换算，并不矛盾。这是观念性理解，公式检查不了。",
+      "correct_answer": "B",
+      "explanation": "两者描述的是同一束光的不同侧面，通过 E=hν 与 ν=c/λ 可以互相换算，并不矛盾。这是观念性理解，公式检查不了。\n知识点条件：「二象性」不是「有时是波有时是粒子」这么含糊。准确的说是：光在传播、干涉、衍射时用波动规律描述最方便，在与物质交换能量时用光子模型最方便，两套描述通过 E=hν 与 ν=c/λ 联立起来。判断该用哪一套的粗略标准是：看你在追问「往哪儿走」还是「交出多少能量」。\n推导依据：波动描述给出波长与频率的关系：一个周期内波前进一个波长，所以 ν=c/λ。；粒子描述给出能量与频率的关系：E=hν。；把两式联立消去 ν，就得到 E=hc/λ —— 波长越短，单个光子的能量越高，这也是紫外光比红光更「厉害」的原因。\n卡片公式各自的适用条件（不是本题共同前提）：\n波长与频率的关系：光在真空中传播；波长越短频率越高\n光子的能量：与上一条联立，就把「波」的波长换算成了「粒子」的能量",
       "error_type": "概念混淆",
       "judging": "teacher",
       "source_error_index": 1,
       "source_caught_by": "人工审核",
       "wrong_expr": null,
       "trap_test": null,
+      "level": "基础",
+      "learning_scope": "高中",
+      "answer_evidence": {
+        "kind": "teacher",
+        "claim_source": "wrong",
+        "reference_only": true,
+        "reason": "概念、操作或无法建立完整定量证据，教师确认条件与结论。"
+      },
       "review": {
         "confidence": "medium",
-        "checks": {
-          "answer_unique": true,
-          "distractors_plausible": true,
-          "stem_clear": true,
-          "no_cross_segment": true
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": false,
+          "no_answer_leak_in_options": true
         },
-        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。"
+      }
+    },
+    {
+      "id": "diagnostic-qz-03-3",
+      "point_id": "qz-03",
+      "point_title": "光的波粒二象性",
+      "chapter": "第二十章 · 波粒二象性与原子结构",
+      "stem": "在“光的波粒二象性”的模型下，ν（光的频率）=6e+14 Hz；h（普朗克常量）=4.14e-15 eV·s。条件：与上一条联立，就把「波」的波长换算成了「粒子」的能量。求单个光子的能量（E）。这些数值是设计示例。",
+      "options": [
+        {
+          "label": "A",
+          "text": "2.484 eV"
+        },
+        {
+          "label": "B",
+          "text": "4.968 eV"
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "使用光子的能量：h·ν，代入得2.484 eV。另一结果来自2·h·ν，算得4.968 eV。\n频率6×10¹⁴ Hz的单光子能量2.484 eV；两个总能量4.968 eV不是单个能量。\n知识点条件：「二象性」不是「有时是波有时是粒子」这么含糊。准确的说是：光在传播、干涉、衍射时用波动规律描述最方便，在与物质交换能量时用光子模型最方便，两套描述通过 E=hν 与 ν=c/λ 联立起来。判断该用哪一套的粗略标准是：看你在追问「往哪儿走」还是「交出多少能量」。\n推导依据：波动描述给出波长与频率的关系：一个周期内波前进一个波长，所以 ν=c/λ。；粒子描述给出能量与频率的关系：E=hν。；把两式联立消去 ν，就得到 E=hc/λ —— 波长越短，单个光子的能量越高，这也是紫外光比红光更「厉害」的原因。\n卡片公式各自的适用条件（不是本题共同前提）：\n波长与频率的关系：光在真空中传播；波长越短频率越高\n光子的能量：与上一条联立，就把「波」的波长换算成了「粒子」的能量",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 2,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "E = 2·h·ν",
+      "trap_test": {
+        "scenario": "绿光",
+        "expr": "2*h*nu",
+        "ref": 2.484,
+        "tol": 1e-06
+      },
+      "level": "基础",
+      "learning_scope": "高中",
+      "answer_evidence": {
+        "kind": "numeric",
+        "scenario": "绿光",
+        "parameters": {
+          "c": 300000000.0,
+          "lambda": 5e-07,
+          "nu": 600000000000000.0,
+          "h": 4.14e-15,
+          "E": 2.484
+        },
+        "target": "E",
+        "unit": "eV",
+        "reference": 2.484,
+        "correct_proof": {
+          "expression": "h*nu",
+          "formula": "光子的能量",
+          "value": 2.484,
+          "when": "与上一条联立，就把「波」的波长换算成了「粒子」的能量"
+        },
+        "distractor_expression": "2*h*nu",
+        "distractor_value": 4.968,
+        "dimension_matches": true,
+        "independent_evaluation": true
+      },
+      "review": {
+        "confidence": "medium",
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": true,
+          "no_answer_leak_in_options": true
+        },
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。"
       }
     },
     {
@@ -278,46 +574,68 @@
       "point_id": "qz-04",
       "point_title": "物质波（德布罗意波长）",
       "chapter": "第二十章 · 波粒二象性与原子结构",
-      "stem": "【第二十章 · 波粒二象性与原子结构 · 物质波（德布罗意波长）】学生的错误做法：把动量写成 m·v²（与动能记混）（错误表达式：p = m·v²）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "stem": "在“物质波（德布罗意波长）”中，速度远小于光速的非相对论情形。粒子的动量的单位为kg·m/s。下列哪一表达式的量纲与该目标量一致？",
       "options": [
         {
           "label": "A",
-          "text": "概念混淆：两者描述的是同一束光的不同侧面，通过 E=hν 与 ν=c/λ 可以互相换算，并不矛盾。"
+          "text": "p = m·v"
         },
         {
           "label": "B",
-          "text": "数值代入：动量是 mv，动能才是 ½mv²。"
-        },
-        {
-          "label": "C",
-          "text": "概念混淆：这正是被黑体辐射实验否掉的经典图像。"
-        },
-        {
-          "label": "D",
-          "text": "概念混淆：能否打出电子只取决于单个光子的能量 hν 是否超过 W。"
+          "text": "p = m·v²"
         }
       ],
-      "correct_answer": "B",
-      "explanation": "动量是 mv，动能才是 ½mv²。按错误式小球会得到 0.18 kg·m/s，而正确值是 0.06 kg·m/s。\n知识库校验证据：情境：宏观小球；代入错误式：m·v²；校验参照值：0.06。",
-      "error_type": "数值代入",
+      "correct_answer": "A",
+      "explanation": "动量是 mv，动能才是 ½mv²。按错误式小球会得到 0.18 kg·m/s，而正确值是 0.06 kg·m/s。\n知识点条件：这条式子把「粒子」和「波」的关系推广到了实物。要看清它为什么在宏观世界完全看不出来：h 只有 6.63×10⁻³⁴ 量级，一个 0.02 kg 的小球即使以 3 m/s 运动，波长也只有 10⁻³² m —— 比原子核还小 17 个数量级，任何实验都测不到。而电子的质量小到 10⁻³¹ kg，波长就落到了 10⁻¹⁰ m 量级，恰好与原子的尺度相当，于是能被晶体衍射实验证实。\n推导依据：先把粒子的动量写出来：p=mv。；德布罗意假设实物粒子也满足 h 与 p 的对应关系，即 λ=h/p。；代入数值估算量级：宏观物体的波长在 10⁻³² m 附近，远小于任何可测尺度，所以日常生活中完全观察不到波动性。\n卡片公式各自的适用条件（不是本题共同前提）：\n动量：速度远小于光速的非相对论情形\n德布罗意波长：任何实物粒子都成立；p 越大波长越短",
+      "error_type": "量纲一致性",
       "judging": "auto",
       "source_error_index": 0,
-      "source_caught_by": "数值代入",
+      "source_caught_by": "量纲一致性",
       "wrong_expr": "p = m·v²",
       "trap_test": {
-        "scenario": "宏观小球",
-        "expr": "m*v^2",
-        "ref": 0.06
+        "kind": "dimension",
+        "target": "p = m*v^2",
+        "expect": "mismatch",
+        "lhs_dim": "M·L·T^-1",
+        "rhs_dim": "M·L^2·T^-2",
+        "note": "正式引擎验证量纲不一致；不计作同量纲错误数值实测。"
+      },
+      "level": "进阶",
+      "learning_scope": "高中",
+      "answer_evidence": {
+        "kind": "dimension",
+        "target": "p",
+        "correct_expression": "p = m*v",
+        "distractor_expression": "p = m*v^2",
+        "target_dimension": "M·L·T^-1",
+        "distractor_dimension": "M·L^2·T^-2"
       },
       "review": {
         "confidence": "medium",
-        "checks": {
-          "answer_unique": true,
-          "distractors_plausible": true,
-          "stem_clear": true,
-          "no_cross_segment": true
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": true,
+          "no_answer_leak_in_options": true
         },
-        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。"
       }
     },
     {
@@ -325,42 +643,143 @@
       "point_id": "qz-04",
       "point_title": "物质波（德布罗意波长）",
       "chapter": "第二十章 · 波粒二象性与原子结构",
-      "stem": "【第二十章 · 波粒二象性与原子结构 · 物质波（德布罗意波长）】学生的错误做法：认为宏观物体没有波动性，所以德布罗意假设是错的。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "stem": "关于“物质波（德布罗意波长）”，判断这一说法是否成立，并说明依据：\n宏观物体没有波动性，所以德布罗意假设是错的。",
       "options": [
         {
           "label": "A",
-          "text": "概念混淆：宏观物体<strong>有</strong>波动性，只是波长小到无法观测（0.02 kg 小球约 10⁻³² m）。"
+          "text": "该说法不成立。"
         },
         {
           "label": "B",
-          "text": "数值代入：频率越高光子能量越大，是正比。"
-        },
-        {
-          "label": "C",
-          "text": "数值代入：hν 是吸收到的能量，W 是必须付出的，剩下才是动能，所以是「收入减支出」。"
-        },
-        {
-          "label": "D",
-          "text": "数值代入：两者是反比。"
+          "text": "该说法成立。"
         }
       ],
       "correct_answer": "A",
-      "explanation": "宏观物体<strong>有</strong>波动性，只是波长小到无法观测（0.02 kg 小球约 10⁻³² m）。「测不到」不等于「不存在」——这条要靠人判。",
+      "explanation": "宏观物体<strong>有</strong>波动性，只是波长小到无法观测（0.02 kg 小球约 10⁻³² m）。「测不到」不等于「不存在」——这条要靠人判。\n知识点条件：这条式子把「粒子」和「波」的关系推广到了实物。要看清它为什么在宏观世界完全看不出来：h 只有 6.63×10⁻³⁴ 量级，一个 0.02 kg 的小球即使以 3 m/s 运动，波长也只有 10⁻³² m —— 比原子核还小 17 个数量级，任何实验都测不到。而电子的质量小到 10⁻³¹ kg，波长就落到了 10⁻¹⁰ m 量级，恰好与原子的尺度相当，于是能被晶体衍射实验证实。\n推导依据：先把粒子的动量写出来：p=mv。；德布罗意假设实物粒子也满足 h 与 p 的对应关系，即 λ=h/p。；代入数值估算量级：宏观物体的波长在 10⁻³² m 附近，远小于任何可测尺度，所以日常生活中完全观察不到波动性。\n卡片公式各自的适用条件（不是本题共同前提）：\n动量：速度远小于光速的非相对论情形\n德布罗意波长：任何实物粒子都成立；p 越大波长越短",
       "error_type": "概念混淆",
       "judging": "teacher",
       "source_error_index": 1,
       "source_caught_by": "人工审核",
       "wrong_expr": null,
       "trap_test": null,
+      "level": "进阶",
+      "learning_scope": "高中",
+      "answer_evidence": {
+        "kind": "teacher",
+        "claim_source": "wrong",
+        "reference_only": true,
+        "reason": "概念、操作或无法建立完整定量证据，教师确认条件与结论。"
+      },
       "review": {
         "confidence": "medium",
-        "checks": {
-          "answer_unique": true,
-          "distractors_plausible": true,
-          "stem_clear": true,
-          "no_cross_segment": true
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": false,
+          "no_answer_leak_in_options": true
         },
-        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。"
+      }
+    },
+    {
+      "id": "diagnostic-qz-04-3",
+      "point_id": "qz-04",
+      "point_title": "物质波（德布罗意波长）",
+      "chapter": "第二十章 · 波粒二象性与原子结构",
+      "stem": "在“物质波（德布罗意波长）”的模型下，h（普朗克常量）=6.63e-34 J·s；p（粒子的动量）=0.2 kg·m/s；p<sub>旧</sub>（误用另一小球的旧动量）=0.06 kg·m/s。条件：任何实物粒子都成立；p 越大波长越短。求德布罗意波长（λ）。这些数值是设计示例。",
+      "options": [
+        {
+          "label": "A",
+          "text": "1.105e-32 m"
+        },
+        {
+          "label": "B",
+          "text": "3.315e-33 m"
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "使用德布罗意波长：h/p，代入得3.315e-33 m。另一结果来自h/p<sub>旧</sub>，算得1.105e-32 m。\n较重小球动量0.2 kg·m/s，波长3.315×10⁻³³ m；沿用0.06的动量会得到1.105×10⁻³² m。\n知识点条件：这条式子把「粒子」和「波」的关系推广到了实物。要看清它为什么在宏观世界完全看不出来：h 只有 6.63×10⁻³⁴ 量级，一个 0.02 kg 的小球即使以 3 m/s 运动，波长也只有 10⁻³² m —— 比原子核还小 17 个数量级，任何实验都测不到。而电子的质量小到 10⁻³¹ kg，波长就落到了 10⁻¹⁰ m 量级，恰好与原子的尺度相当，于是能被晶体衍射实验证实。\n推导依据：先把粒子的动量写出来：p=mv。；德布罗意假设实物粒子也满足 h 与 p 的对应关系，即 λ=h/p。；代入数值估算量级：宏观物体的波长在 10⁻³² m 附近，远小于任何可测尺度，所以日常生活中完全观察不到波动性。\n卡片公式各自的适用条件（不是本题共同前提）：\n动量：速度远小于光速的非相对论情形\n德布罗意波长：任何实物粒子都成立；p 越大波长越短",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 2,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "λ = h/p<sub>旧</sub>",
+      "trap_test": {
+        "scenario": "较重小球",
+        "expr": "h/p_old",
+        "ref": 3.315e-33,
+        "tol": 3.3149999999999996e-39
+      },
+      "level": "进阶",
+      "learning_scope": "高中",
+      "answer_evidence": {
+        "kind": "numeric",
+        "scenario": "较重小球",
+        "parameters": {
+          "h": 6.63e-34,
+          "m": 0.05,
+          "v": 4.0,
+          "p": 0.2,
+          "lambda_db": 3.315e-33,
+          "p_old": 0.06
+        },
+        "target": "lambda_db",
+        "unit": "m",
+        "reference": 3.315e-33,
+        "correct_proof": {
+          "expression": "h/p",
+          "formula": "德布罗意波长",
+          "value": 3.315e-33,
+          "when": "任何实物粒子都成立；p 越大波长越短"
+        },
+        "distractor_expression": "h/p_old",
+        "distractor_value": 1.105e-32,
+        "dimension_matches": true,
+        "independent_evaluation": true
+      },
+      "review": {
+        "confidence": "medium",
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": true,
+          "no_answer_leak_in_options": true
+        },
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。"
       }
     },
     {
@@ -368,46 +787,68 @@
       "point_id": "qz-05",
       "point_title": "原子的核式结构模型",
       "chapter": "第二十章 · 波粒二象性与原子结构",
-      "stem": "【第二十章 · 波粒二象性与原子结构 · 原子的核式结构模型】学生的错误做法：把库仑力写成与距离成反比（漏掉平方）（错误表达式：F = k<sub>e</sub>·q1·q2/r）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "stem": "在“原子的核式结构模型”中，α 粒子仍在原子核外时，可把它与金核近似看作点电荷；进入核内后不能沿用本式。α 粒子受到的库仑斥力的单位为N。下列哪一表达式的量纲与该目标量一致？",
       "options": [
         {
           "label": "A",
-          "text": "概念混淆：这正是被黑体辐射实验否掉的经典图像。"
+          "text": "F = k<sub>e</sub>·q<sub>1</sub>·q<sub>2</sub>/r"
         },
         {
           "label": "B",
-          "text": "概念混淆：能否打出电子只取决于单个光子的能量 hν 是否超过 W。"
-        },
-        {
-          "label": "C",
-          "text": "概念混淆：两者描述的是同一束光的不同侧面，通过 E=hν 与 ν=c/λ 可以互相换算，并不矛盾。"
-        },
-        {
-          "label": "D",
-          "text": "数值代入：是平方反比。"
+          "text": "F = k<sub>e</sub>·q<sub>1</sub>·q<sub>2</sub>/r²"
         }
       ],
-      "correct_answer": "D",
-      "explanation": "是平方反比。漏掉平方后同一个情境只得到约 7.28×10⁻¹³ N，而正确值约为 14.6 N，量级完全错误。\n知识库校验证据：情境：α 粒子抵近金核；代入错误式：k<sub>e</sub>·q1·q2/r；校验参照值：14.56128。",
-      "error_type": "数值代入",
+      "correct_answer": "B",
+      "explanation": "是平方反比。漏掉平方后同一个情境只得到约 7.28×10⁻¹³ N，而正确值约为 14.6 N，量级完全错误。\n知识点条件：这个模型的证据全在「绝大多数穿过去、极少数被弹回来」这句现象描述里。大多数 α 粒子几乎不偏转，说明原子内部绝大部分是空的；极少数被大角度甚至原路弹回，说明存在一个质量大、电荷集中、体积极小的核。核半径约 10⁻¹⁵ m，而原子半径约 10⁻¹⁰ m，相差五个数量级。本例取几十飞米的核外距离，既能展示迅速增强的斥力，也不把金核错误地当成在核内仍适用的点电荷。\n推导依据：α 粒子带正电，金核也带正电，两者之间的作用是库仑斥力。；把电荷量与距离代入库仑定律 F=kq1q<sub>2</sub>/r²，算出在核尺度上的斥力量级。；由于力与距离平方成反比，α 粒子越靠近核，受到的斥力增长越快，因此在极近距离上会被大幅度甚至原路弹回——这正是散射实验中那些大角度偏转的来源。\n卡片公式各自的适用条件（不是本题共同前提）：\n库仑力与距离的关系：α 粒子仍在原子核外时，可把它与金核近似看作点电荷；进入核内后不能沿用本式\n距离减半时库仑力的变化：电荷量不变，只改变距离时的比例关系",
+      "error_type": "量纲一致性",
       "judging": "auto",
       "source_error_index": 0,
-      "source_caught_by": "数值代入",
-      "wrong_expr": "F = k<sub>e</sub>·q1·q2/r",
+      "source_caught_by": "量纲一致性",
+      "wrong_expr": "F = k<sub>e</sub>·q<sub>1</sub>·q<sub>2</sub>/r",
       "trap_test": {
-        "scenario": "α 粒子抵近金核",
-        "expr": "k_e*q1*q2/r",
-        "ref": 14.56128
+        "kind": "dimension",
+        "target": "F = k_e*q1*q2/r",
+        "expect": "mismatch",
+        "lhs_dim": "M·L·T^-2",
+        "rhs_dim": "M·L^2·T^-2",
+        "note": "正式引擎验证量纲不一致；不计作同量纲错误数值实测。"
+      },
+      "level": "基础",
+      "learning_scope": "高中",
+      "answer_evidence": {
+        "kind": "dimension",
+        "target": "F",
+        "correct_expression": "F = k_e*q1*q2/r^2",
+        "distractor_expression": "F = k_e*q1*q2/r",
+        "target_dimension": "M·L·T^-2",
+        "distractor_dimension": "M·L^2·T^-2"
       },
       "review": {
         "confidence": "medium",
-        "checks": {
-          "answer_unique": true,
-          "distractors_plausible": true,
-          "stem_clear": true,
-          "no_cross_segment": true
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": true,
+          "no_answer_leak_in_options": true
         },
-        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。"
       }
     },
     {
@@ -415,42 +856,146 @@
       "point_id": "qz-05",
       "point_title": "原子的核式结构模型",
       "chapter": "第二十章 · 波粒二象性与原子结构",
-      "stem": "【第二十章 · 波粒二象性与原子结构 · 原子的核式结构模型】学生的错误做法：认为 α 粒子大角度偏转是因为撞上了核外电子。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "stem": "关于“原子的核式结构模型”，判断这一说法是否成立，并说明依据：\n电子质量只有 α 粒子的约 1/7300，撞上电子不可能让 α 粒子大幅偏转。",
       "options": [
         {
           "label": "A",
-          "text": "数值代入：hν 是吸收到的能量，W 是必须付出的，剩下才是动能，所以是「收入减支出」。"
+          "text": "该说法不成立。"
         },
         {
           "label": "B",
-          "text": "数值代入：两者是反比。"
-        },
-        {
-          "label": "C",
-          "text": "概念混淆：电子质量只有 α 粒子的约 1/7300，撞上电子不可能让 α 粒子大幅偏转。"
-        },
-        {
-          "label": "D",
-          "text": "数值代入：频率越高光子能量越大，是正比。"
+          "text": "该说法成立。"
         }
       ],
-      "correct_answer": "C",
-      "explanation": "电子质量只有 α 粒子的约 1/7300，撞上电子不可能让 α 粒子大幅偏转。能被弹回的只能是质量大、电荷集中的核。这是概念性判断，公式检查不到。",
+      "correct_answer": "B",
+      "explanation": "电子质量只有 α 粒子的约 1/7300，撞上电子不可能让 α 粒子大幅偏转。能被弹回的只能是质量大、电荷集中的核。这是概念性判断，公式检查不到。\n知识点条件：这个模型的证据全在「绝大多数穿过去、极少数被弹回来」这句现象描述里。大多数 α 粒子几乎不偏转，说明原子内部绝大部分是空的；极少数被大角度甚至原路弹回，说明存在一个质量大、电荷集中、体积极小的核。核半径约 10⁻¹⁵ m，而原子半径约 10⁻¹⁰ m，相差五个数量级。本例取几十飞米的核外距离，既能展示迅速增强的斥力，也不把金核错误地当成在核内仍适用的点电荷。\n推导依据：α 粒子带正电，金核也带正电，两者之间的作用是库仑斥力。；把电荷量与距离代入库仑定律 F=kq1q<sub>2</sub>/r²，算出在核尺度上的斥力量级。；由于力与距离平方成反比，α 粒子越靠近核，受到的斥力增长越快，因此在极近距离上会被大幅度甚至原路弹回——这正是散射实验中那些大角度偏转的来源。\n卡片公式各自的适用条件（不是本题共同前提）：\n库仑力与距离的关系：α 粒子仍在原子核外时，可把它与金核近似看作点电荷；进入核内后不能沿用本式\n距离减半时库仑力的变化：电荷量不变，只改变距离时的比例关系",
       "error_type": "概念混淆",
       "judging": "teacher",
       "source_error_index": 1,
       "source_caught_by": "人工审核",
       "wrong_expr": null,
       "trap_test": null,
+      "level": "基础",
+      "learning_scope": "高中",
+      "answer_evidence": {
+        "kind": "teacher",
+        "claim_source": "why",
+        "reference_only": true,
+        "reason": "概念、操作或无法建立完整定量证据，教师确认条件与结论。"
+      },
       "review": {
         "confidence": "medium",
-        "checks": {
-          "answer_unique": true,
-          "distractors_plausible": true,
-          "stem_clear": true,
-          "no_cross_segment": true
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": false,
+          "no_answer_leak_in_options": true
         },
-        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。"
+      }
+    },
+    {
+      "id": "diagnostic-qz-05-3",
+      "point_id": "qz-05",
+      "point_title": "原子的核式结构模型",
+      "chapter": "第二十章 · 波粒二象性与原子结构",
+      "stem": "在“原子的核式结构模型”的模型下，r1（初始距离）=5e-14 m；r2（靠近后的距离）=2.5e-14 m；F<sub>1</sub>（初始距离下的库仑力）=14.5613 N。条件：电荷量不变，只改变距离时的比例关系。求靠近后的库仑力（F<sub>2</sub>）。这些数值是设计示例。",
+      "options": [
+        {
+          "label": "A",
+          "text": "29.1226 N"
+        },
+        {
+          "label": "B",
+          "text": "58.2451 N"
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "使用距离减半时库仑力的变化：F<sub>1</sub>·(r1/r2)²，代入得58.2451 N。另一结果来自F<sub>1</sub>·(r1/r2)，算得29.1226 N。\n平方反比使距离减半、力增四倍，应58.24512 N，线性比例只得29.12256 N。\n知识点条件：这个模型的证据全在「绝大多数穿过去、极少数被弹回来」这句现象描述里。大多数 α 粒子几乎不偏转，说明原子内部绝大部分是空的；极少数被大角度甚至原路弹回，说明存在一个质量大、电荷集中、体积极小的核。核半径约 10⁻¹⁵ m，而原子半径约 10⁻¹⁰ m，相差五个数量级。本例取几十飞米的核外距离，既能展示迅速增强的斥力，也不把金核错误地当成在核内仍适用的点电荷。\n推导依据：α 粒子带正电，金核也带正电，两者之间的作用是库仑斥力。；把电荷量与距离代入库仑定律 F=kq1q<sub>2</sub>/r²，算出在核尺度上的斥力量级。；由于力与距离平方成反比，α 粒子越靠近核，受到的斥力增长越快，因此在极近距离上会被大幅度甚至原路弹回——这正是散射实验中那些大角度偏转的来源。\n卡片公式各自的适用条件（不是本题共同前提）：\n库仑力与距离的关系：α 粒子仍在原子核外时，可把它与金核近似看作点电荷；进入核内后不能沿用本式\n距离减半时库仑力的变化：电荷量不变，只改变距离时的比例关系",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 2,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "F<sub>2</sub> = F<sub>1</sub>·(r1/r2)",
+      "trap_test": {
+        "scenario": "α 粒子抵近金核",
+        "expr": "F1*(r1/r2)",
+        "ref": 58.24512,
+        "tol": 1e-06
+      },
+      "level": "基础",
+      "learning_scope": "高中",
+      "answer_evidence": {
+        "kind": "numeric",
+        "scenario": "α 粒子抵近金核",
+        "parameters": {
+          "k_e": 9000000000.0,
+          "q1": 3.2e-19,
+          "q2": 1.264e-17,
+          "r": 5e-14,
+          "F": 14.56128,
+          "r1": 5e-14,
+          "r2": 2.5e-14,
+          "F1": 14.56128,
+          "F2": 58.24512
+        },
+        "target": "F2",
+        "unit": "N",
+        "reference": 58.24512,
+        "correct_proof": {
+          "expression": "F1*(r1/r2)^2",
+          "formula": "距离减半时库仑力的变化",
+          "value": 58.24512,
+          "when": "电荷量不变，只改变距离时的比例关系"
+        },
+        "distractor_expression": "F1*(r1/r2)",
+        "distractor_value": 29.12256,
+        "dimension_matches": true,
+        "independent_evaluation": true
+      },
+      "review": {
+        "confidence": "medium",
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": true,
+          "no_answer_leak_in_options": true
+        },
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。"
       }
     },
     {
@@ -458,27 +1003,19 @@
       "point_id": "qz-06",
       "point_title": "玻尔模型与氢原子能级",
       "chapter": "第二十章 · 波粒二象性与原子结构",
-      "stem": "【第二十章 · 波粒二象性与原子结构 · 玻尔模型与氢原子能级】学生的错误做法：把能级公式写成 E<sub>n</sub> = E<sub>1</sub>/n（漏掉平方）（错误表达式：E<sub>n</sub> = E<sub>1</sub>/n）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "stem": "在“玻尔模型与氢原子能级”的模型下，E<sub>1</sub>（基态能量（n=1），氢原子约为 −13.6 eV）=-13.6 eV；n（量子数（能级序号））=2 1。条件：氢原子（单电子体系）；n 取正整数 1、2、3…。求第 n 个能级的能量（E<sub>n</sub>）。这些数值是设计示例。",
       "options": [
         {
           "label": "A",
-          "text": "概念混淆：两者描述的是同一束光的不同侧面，通过 E=hν 与 ν=c/λ 可以互相换算，并不矛盾。"
+          "text": "-6.8 eV"
         },
         {
           "label": "B",
-          "text": "数值代入：是 n² 而不是 n。"
-        },
-        {
-          "label": "C",
-          "text": "概念混淆：这正是被黑体辐射实验否掉的经典图像。"
-        },
-        {
-          "label": "D",
-          "text": "概念混淆：能否打出电子只取决于单个光子的能量 hν 是否超过 W。"
+          "text": "-3.4 eV"
         }
       ],
       "correct_answer": "B",
-      "explanation": "是 n² 而不是 n。按错误式第二能级会得到 −6.8 eV，而正确值是 −3.4 eV——两条式子给出的谱线位置完全不同。\n知识库校验证据：情境：第二能级；代入错误式：E<sub>1</sub>/n；校验参照值：-3.4。",
+      "explanation": "使用氢原子能级公式：E<sub>1</sub>/n²，代入得-3.4 eV。另一结果来自E<sub>1</sub>/n，算得-6.8 eV。\n是 n² 而不是 n。按错误式第二能级会得到 −6.8 eV，而正确值是 −3.4 eV——两条式子给出的谱线位置完全不同。\n知识点条件：「能级」是能量量子化在原子上的具体表现：原子不能停在任意能量上，只能待在几条固定的「台阶」上。这解释了两件事：一是原子发光不是连续光谱，而是一条条分离的谱线；二是每条谱线对应一次确定的跃迁，所以谱线位置可以用来反推能级结构。要注意 E<sub>1</sub> 是<strong>负值</strong>，能级越高（n 越大）越接近零，这说明原子被「束缚」着——要把电子完全拉出来，需要给它 13.6 eV。\n推导依据：玻尔假设原子的能量只能取分立值，对氢原子可以归纳为 E<sub>n</sub>=E<sub>1</sub>/n²。；把 n=1 代入得基态 −13.6 eV，n=2 得 −3.4 eV，可见能级越高、能量越接近零。；跃迁时能量守恒：两个能级之差要么变成一个光子的能量放出去（往下跳），要么由吸收的光子补上（往上跳），这就是谱线位置能反推能级的原因。\n卡片公式各自的适用条件（不是本题共同前提）：\n氢原子能级公式：氢原子（单电子体系）；n 取正整数 1、2、3…\n能级跃迁放出的光子能量：从高能级向低能级跃迁时放出光子；反向则吸收",
       "error_type": "数值代入",
       "judging": "auto",
       "source_error_index": 0,
@@ -489,15 +1026,59 @@
         "expr": "E1/n_level",
         "ref": -3.4
       },
+      "level": "进阶",
+      "learning_scope": "高中",
+      "answer_evidence": {
+        "kind": "numeric",
+        "scenario": "第二能级",
+        "parameters": {
+          "E1": -13.6,
+          "n_level": 2,
+          "E_n": -3.4,
+          "E_high": -3.4,
+          "E_low": -13.6,
+          "Delta_E": 10.2
+        },
+        "target": "E_n",
+        "unit": "eV",
+        "reference": -3.4,
+        "correct_proof": {
+          "expression": "E1/n_level^2",
+          "formula": "氢原子能级公式",
+          "value": -3.4,
+          "when": "氢原子（单电子体系）；n_level 取正整数 1、2、3…"
+        },
+        "distractor_expression": "E1/n_level",
+        "distractor_value": -6.8,
+        "dimension_matches": true,
+        "independent_evaluation": true
+      },
       "review": {
         "confidence": "medium",
-        "checks": {
-          "answer_unique": true,
-          "distractors_plausible": true,
-          "stem_clear": true,
-          "no_cross_segment": true
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": true,
+          "no_answer_leak_in_options": true
         },
-        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。"
       }
     },
     {
@@ -505,42 +1086,59 @@
       "point_id": "qz-06",
       "point_title": "玻尔模型与氢原子能级",
       "chapter": "第二十章 · 波粒二象性与原子结构",
-      "stem": "【第二十章 · 波粒二象性与原子结构 · 玻尔模型与氢原子能级】学生的错误做法：认为原子可以处于任意能量的状态。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "stem": "关于“玻尔模型与氢原子能级”，判断这一说法是否成立，并说明依据：\n原子可以处于任意能量的状态。",
       "options": [
         {
           "label": "A",
-          "text": "概念混淆：能级是分立的，原子只能待在这几条固定的「台阶」上，这也是原子光谱是一条条分离谱线而不是连续光谱的根本原因。"
+          "text": "该说法不成立。"
         },
         {
           "label": "B",
-          "text": "数值代入：频率越高光子能量越大，是正比。"
-        },
-        {
-          "label": "C",
-          "text": "数值代入：hν 是吸收到的能量，W 是必须付出的，剩下才是动能，所以是「收入减支出」。"
-        },
-        {
-          "label": "D",
-          "text": "数值代入：两者是反比。"
+          "text": "该说法成立。"
         }
       ],
       "correct_answer": "A",
-      "explanation": "能级是分立的，原子只能待在这几条固定的「台阶」上，这也是原子光谱是一条条分离谱线而不是连续光谱的根本原因。属观念性错误，公式检查不了。",
+      "explanation": "能级是分立的，原子只能待在这几条固定的「台阶」上，这也是原子光谱是一条条分离谱线而不是连续光谱的根本原因。属观念性错误，公式检查不了。\n知识点条件：「能级」是能量量子化在原子上的具体表现：原子不能停在任意能量上，只能待在几条固定的「台阶」上。这解释了两件事：一是原子发光不是连续光谱，而是一条条分离的谱线；二是每条谱线对应一次确定的跃迁，所以谱线位置可以用来反推能级结构。要注意 E<sub>1</sub> 是<strong>负值</strong>，能级越高（n 越大）越接近零，这说明原子被「束缚」着——要把电子完全拉出来，需要给它 13.6 eV。\n推导依据：玻尔假设原子的能量只能取分立值，对氢原子可以归纳为 E<sub>n</sub>=E<sub>1</sub>/n²。；把 n=1 代入得基态 −13.6 eV，n=2 得 −3.4 eV，可见能级越高、能量越接近零。；跃迁时能量守恒：两个能级之差要么变成一个光子的能量放出去（往下跳），要么由吸收的光子补上（往上跳），这就是谱线位置能反推能级的原因。\n卡片公式各自的适用条件（不是本题共同前提）：\n氢原子能级公式：氢原子（单电子体系）；n 取正整数 1、2、3…\n能级跃迁放出的光子能量：从高能级向低能级跃迁时放出光子；反向则吸收",
       "error_type": "概念混淆",
       "judging": "teacher",
       "source_error_index": 1,
       "source_caught_by": "人工审核",
       "wrong_expr": null,
       "trap_test": null,
+      "level": "进阶",
+      "learning_scope": "高中",
+      "answer_evidence": {
+        "kind": "teacher",
+        "claim_source": "wrong",
+        "reference_only": true,
+        "reason": "概念、操作或无法建立完整定量证据，教师确认条件与结论。"
+      },
       "review": {
         "confidence": "medium",
-        "checks": {
-          "answer_unique": true,
-          "distractors_plausible": true,
-          "stem_clear": true,
-          "no_cross_segment": true
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": false,
+          "no_answer_leak_in_options": true
         },
-        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。"
       }
     },
     {
@@ -548,27 +1146,19 @@
       "point_id": "qz-07",
       "point_title": "遏止电压与光电效应图像",
       "chapter": "第二十章 · 波粒二象性与原子结构",
-      "stem": "【第二十章 · 波粒二象性与原子结构 · 遏止电压与光电效应图像】学生的错误做法：把全部光子能量都当成最大电子动能（错误表达式：U<sub>c</sub> = h·ν/e）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "stem": "在“遏止电压与光电效应图像”的模型下，e（元电荷大小）=1.6e-19 C；h（普朗克常量）=6.63e-34 J·s；ν（入射光频率）=1e+15 Hz；W（金属逸出功）=3.315e-19 J。条件：频率不低于截止频率，U<sub>c</sub>取反向遏止电压大小。求遏止电压的非负大小（U<sub>c</sub>）。这些数值是设计示例。",
       "options": [
         {
           "label": "A",
-          "text": "概念混淆：这正是被黑体辐射实验否掉的经典图像。"
+          "text": "2.07187 V"
         },
         {
           "label": "B",
-          "text": "概念混淆：能否打出电子只取决于单个光子的能量 hν 是否超过 W。"
-        },
-        {
-          "label": "C",
-          "text": "概念混淆：两者描述的是同一束光的不同侧面，通过 E=hν 与 ν=c/λ 可以互相换算，并不矛盾。"
-        },
-        {
-          "label": "D",
-          "text": "数值代入：电子必须先克服逸出功离开金属，全部光子能量并不都转化为初动能；漏减逸出功会把本例遏止电压加倍，量纲无法发现。"
+          "text": "4.14375 V"
         }
       ],
-      "correct_answer": "D",
-      "explanation": "电子必须先克服逸出功离开金属，全部光子能量并不都转化为初动能；漏减逸出功会把本例遏止电压加倍，量纲无法发现。\n知识库校验证据：情境：基准；代入错误式：h·ν/e；校验参照值：2.071875。",
+      "correct_answer": "A",
+      "explanation": "使用遏止电压大小：(h·ν-W)/e，代入得2.07187 V。另一结果来自h·ν/e，算得4.14375 V。\n电子必须先克服逸出功离开金属，全部光子能量并不都转化为初动能；漏减逸出功会把本例遏止电压加倍，量纲无法发现。\n知识点条件：光电效应图像要先看横纵轴和电压符号约定。以遏止电压大小为纵轴时斜率为正，纵截距的外推值为负，但实际低于截止频率时没有光电子，不能赋予负的遏止电压。固定频率和金属、收集条件不变且在线性响应范围内，光强主要改变饱和电流，不改变最大初动能和遏止电压。\n推导依据：用光子能量减逸出功求最大初动能，不把金属逸出功忽略。；遏止时反向电场做功大小等于最大初动能，除元电荷得到遏止电压大小。；把遏止电压整理成频率的一次函数，读出斜率、横截距和外推纵截距。；改变光强与改变频率分开讨论；只有频率决定单个光子能量，饱和电流还取决于收集与响应条件。\n卡片公式各自的适用条件（不是本题共同前提）：\n遏止电压大小：频率不低于截止频率，U<sub>c</sub>取反向遏止电压大小\n光电图像斜率：以频率为横轴、遏止电压大小为纵轴，光电发射区的直线斜率\n截止频率：单光子光电效应，金属逸出功固定\n图像外推纵截距：仅为直线的数学外推截距，不代表零频率可以发生光电效应",
       "error_type": "数值代入",
       "judging": "auto",
       "source_error_index": 0,
@@ -579,15 +1169,58 @@
         "expr": "h*nu/e",
         "ref": 2.071875
       },
+      "level": "进阶",
+      "learning_scope": "高中",
+      "answer_evidence": {
+        "kind": "numeric",
+        "scenario": "基准",
+        "parameters": {
+          "e": 1.6e-19,
+          "h": 6.63e-34,
+          "nu": 1000000000000000,
+          "W": 3.315e-19,
+          "U_c": 2.071875
+        },
+        "target": "U_c",
+        "unit": "V",
+        "reference": 2.071875,
+        "correct_proof": {
+          "expression": "(h*nu-W)/e",
+          "formula": "遏止电压大小",
+          "value": 2.071875,
+          "when": "频率不低于截止频率，U_c取反向遏止电压大小"
+        },
+        "distractor_expression": "h*nu/e",
+        "distractor_value": 4.14375,
+        "dimension_matches": true,
+        "independent_evaluation": true
+      },
       "review": {
         "confidence": "medium",
-        "checks": {
-          "answer_unique": true,
-          "distractors_plausible": true,
-          "stem_clear": true,
-          "no_cross_segment": true
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": true,
+          "no_answer_leak_in_options": true
         },
-        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。"
       }
     },
     {
@@ -595,42 +1228,59 @@
       "point_id": "qz-07",
       "point_title": "遏止电压与光电效应图像",
       "chapter": "第二十章 · 波粒二象性与原子结构",
-      "stem": "【第二十章 · 波粒二象性与原子结构 · 遏止电压与光电效应图像】学生的错误做法：光强翻倍就认为遏止电压也翻倍。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "stem": "关于“遏止电压与光电效应图像”，判断这一说法是否成立，并说明依据：\n在单光子线性光电响应且频率固定时，每个光子能量不变，最大初动能不变。",
       "options": [
         {
           "label": "A",
-          "text": "数值代入：hν 是吸收到的能量，W 是必须付出的，剩下才是动能，所以是「收入减支出」。"
+          "text": "该说法成立。"
         },
         {
           "label": "B",
-          "text": "数值代入：两者是反比。"
-        },
-        {
-          "label": "C",
-          "text": "概念混淆：在单光子线性光电响应且频率固定时，每个光子能量不变，最大初动能不变；增加的是到达的光子数及可收集电子数，不是遏止电压。"
-        },
-        {
-          "label": "D",
-          "text": "数值代入：频率越高光子能量越大，是正比。"
+          "text": "该说法不成立。"
         }
       ],
-      "correct_answer": "C",
-      "explanation": "在单光子线性光电响应且频率固定时，每个光子能量不变，最大初动能不变；增加的是到达的光子数及可收集电子数，不是遏止电压。",
+      "correct_answer": "A",
+      "explanation": "在单光子线性光电响应且频率固定时，每个光子能量不变，最大初动能不变；增加的是到达的光子数及可收集电子数，不是遏止电压。\n知识点条件：光电效应图像要先看横纵轴和电压符号约定。以遏止电压大小为纵轴时斜率为正，纵截距的外推值为负，但实际低于截止频率时没有光电子，不能赋予负的遏止电压。固定频率和金属、收集条件不变且在线性响应范围内，光强主要改变饱和电流，不改变最大初动能和遏止电压。\n推导依据：用光子能量减逸出功求最大初动能，不把金属逸出功忽略。；遏止时反向电场做功大小等于最大初动能，除元电荷得到遏止电压大小。；把遏止电压整理成频率的一次函数，读出斜率、横截距和外推纵截距。；改变光强与改变频率分开讨论；只有频率决定单个光子能量，饱和电流还取决于收集与响应条件。\n卡片公式各自的适用条件（不是本题共同前提）：\n遏止电压大小：频率不低于截止频率，U<sub>c</sub>取反向遏止电压大小\n光电图像斜率：以频率为横轴、遏止电压大小为纵轴，光电发射区的直线斜率\n截止频率：单光子光电效应，金属逸出功固定\n图像外推纵截距：仅为直线的数学外推截距，不代表零频率可以发生光电效应",
       "error_type": "概念混淆",
       "judging": "teacher",
       "source_error_index": 1,
       "source_caught_by": "人工审核",
       "wrong_expr": null,
       "trap_test": null,
+      "level": "进阶",
+      "learning_scope": "高中",
+      "answer_evidence": {
+        "kind": "teacher",
+        "claim_source": "why",
+        "reference_only": true,
+        "reason": "概念、操作或无法建立完整定量证据，教师确认条件与结论。"
+      },
       "review": {
         "confidence": "medium",
-        "checks": {
-          "answer_unique": true,
-          "distractors_plausible": true,
-          "stem_clear": true,
-          "no_cross_segment": true
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": false,
+          "no_answer_leak_in_options": true
         },
-        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。"
       }
     },
     {
@@ -638,27 +1288,19 @@
       "point_id": "qz-08",
       "point_title": "康普顿效应",
       "chapter": "第二十章 · 波粒二象性与原子结构",
-      "stem": "【第二十章 · 波粒二象性与原子结构 · 康普顿效应】学生的错误做法：反向散射把归一化波长变化误当成一（错误表达式：z = 1）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "stem": "在“康普顿效应”的模型下，θ（光子散射角）=3.14159 rad。条件：初始静止自由电子散射，角度在零至π之间。求波长增量除康普顿波长（z）。这些数值是设计示例。",
       "options": [
         {
           "label": "A",
-          "text": "概念混淆：两者描述的是同一束光的不同侧面，通过 E=hν 与 ν=c/λ 可以互相换算，并不矛盾。"
+          "text": "1 1"
         },
         {
           "label": "B",
-          "text": "数值代入：反向散射的余弦为负一，正确增量是两倍康普顿波长；归一化后可以让数值防线真实识别系数错误，而非把皮米变化当零。"
-        },
-        {
-          "label": "C",
-          "text": "概念混淆：这正是被黑体辐射实验否掉的经典图像。"
-        },
-        {
-          "label": "D",
-          "text": "概念混淆：能否打出电子只取决于单个光子的能量 hν 是否超过 W。"
+          "text": "2 1"
         }
       ],
       "correct_answer": "B",
-      "explanation": "反向散射的余弦为负一，正确增量是两倍康普顿波长；归一化后可以让数值防线真实识别系数错误，而非把皮米变化当零。\n知识库校验证据：情境：反向；代入错误式：1；校验参照值：2。",
+      "explanation": "使用归一化波长增量：1-cos(θ)，代入得2 1。另一结果来自1，算得1 1。\n反向散射的余弦为负一，正确增量是两倍康普顿波长；归一化后可以让数值防线真实识别系数错误，而非把皮米变化当零。\n知识点条件：本卡使用初始静止的自由电子或束缚可忽略的近似，不是任意物质中任意光的通用波长变化公式。散射角是入射光子与出射光子方向的夹角；正向散射不发生波长变化，反向变化最大。电子反冲必须用相对论能量与动量关系处理，不能仅凭普通低速动能公式推导全部结果。\n推导依据：先限定初始静止自由电子，并明确定义光子散射角。；联立总能量守恒、两方向动量守恒及电子相对论能量关系，消去反冲电子量得到波长位移。；用零角和反向散射检查边界，再用光子能量差求反冲动能；微观长度和能量采用专用严格容差。\n卡片公式各自的适用条件（不是本题共同前提）：\n电子康普顿波长：电子质量为静质量，所用常量来自SI数值\n归一化波长增量：初始静止自由电子散射，角度在零至π之间\n散射光子波长：同一自由电子散射条件\n反冲电子动能：能量守恒，电子初始静止且忽略束缚",
       "error_type": "数值代入",
       "judging": "auto",
       "source_error_index": 0,
@@ -669,15 +1311,60 @@
         "expr": "1",
         "ref": 2
       },
+      "level": "拓展",
+      "learning_scope": "高中",
+      "answer_evidence": {
+        "kind": "numeric",
+        "scenario": "反向",
+        "parameters": {
+          "h": 6.62607015e-34,
+          "m": 9.1093837139e-31,
+          "c": 299792458,
+          "l_c": 2.426310235380317e-12,
+          "lambda": 2.426310235380317e-12,
+          "l_p": 7.278930706140951e-12,
+          "theta": 3.141592653589793
+        },
+        "target": "z",
+        "unit": "1",
+        "reference": 2,
+        "correct_proof": {
+          "expression": "1-cos(theta)",
+          "formula": "归一化波长增量",
+          "value": 2.0,
+          "when": "初始静止自由电子散射，角度在零至π之间"
+        },
+        "distractor_expression": "1",
+        "distractor_value": 1.0,
+        "dimension_matches": true,
+        "independent_evaluation": true
+      },
       "review": {
         "confidence": "medium",
-        "checks": {
-          "answer_unique": true,
-          "distractors_plausible": true,
-          "stem_clear": true,
-          "no_cross_segment": true
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": true,
+          "no_answer_leak_in_options": true
         },
-        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。"
       }
     },
     {
@@ -685,44 +1372,3867 @@
       "point_id": "qz-08",
       "point_title": "康普顿效应",
       "chapter": "第二十章 · 波粒二象性与原子结构",
-      "stem": "【第二十章 · 波粒二象性与原子结构 · 康普顿效应】学生的错误做法：把电子反冲当成任意低速经典碰撞。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "stem": "关于“康普顿效应”，判断这一说法是否成立，并说明依据：\n高能光子的散射可使电子反冲达到相对论范围。",
       "options": [
         {
           "label": "A",
-          "text": "概念混淆：高能光子的散射可使电子反冲达到相对论范围；低速动能近似不能无条件用于康普顿效应的完整推导，应检查能量尺度。"
+          "text": "该说法不成立。"
         },
         {
           "label": "B",
-          "text": "数值代入：频率越高光子能量越大，是正比。"
-        },
-        {
-          "label": "C",
-          "text": "数值代入：hν 是吸收到的能量，W 是必须付出的，剩下才是动能，所以是「收入减支出」。"
-        },
-        {
-          "label": "D",
-          "text": "数值代入：两者是反比。"
+          "text": "该说法成立。"
         }
       ],
-      "correct_answer": "A",
-      "explanation": "高能光子的散射可使电子反冲达到相对论范围；低速动能近似不能无条件用于康普顿效应的完整推导，应检查能量尺度。",
+      "correct_answer": "B",
+      "explanation": "高能光子的散射可使电子反冲达到相对论范围；低速动能近似不能无条件用于康普顿效应的完整推导，应检查能量尺度。\n知识点条件：本卡使用初始静止的自由电子或束缚可忽略的近似，不是任意物质中任意光的通用波长变化公式。散射角是入射光子与出射光子方向的夹角；正向散射不发生波长变化，反向变化最大。电子反冲必须用相对论能量与动量关系处理，不能仅凭普通低速动能公式推导全部结果。\n推导依据：先限定初始静止自由电子，并明确定义光子散射角。；联立总能量守恒、两方向动量守恒及电子相对论能量关系，消去反冲电子量得到波长位移。；用零角和反向散射检查边界，再用光子能量差求反冲动能；微观长度和能量采用专用严格容差。\n卡片公式各自的适用条件（不是本题共同前提）：\n电子康普顿波长：电子质量为静质量，所用常量来自SI数值\n归一化波长增量：初始静止自由电子散射，角度在零至π之间\n散射光子波长：同一自由电子散射条件\n反冲电子动能：能量守恒，电子初始静止且忽略束缚",
       "error_type": "概念混淆",
       "judging": "teacher",
       "source_error_index": 1,
       "source_caught_by": "人工审核",
       "wrong_expr": null,
       "trap_test": null,
+      "level": "拓展",
+      "learning_scope": "高中",
+      "answer_evidence": {
+        "kind": "teacher",
+        "claim_source": "why",
+        "reference_only": true,
+        "reason": "概念、操作或无法建立完整定量证据，教师确认条件与结论。"
+      },
       "review": {
         "confidence": "medium",
-        "checks": {
-          "answer_unique": true,
-          "distractors_plausible": true,
-          "stem_clear": true,
-          "no_cross_segment": true
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": false,
+          "no_answer_leak_in_options": true
         },
-        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。"
       }
     }
   ],
-  "skipped": []
+  "skipped": [],
+  "source_records": {
+    "diagnostic-qz-01-1": {
+      "point": {
+        "id": "qz-01",
+        "title": "黑体辐射与能量量子化",
+        "level": "进阶",
+        "definition": "普朗克提出：物体吸收或发射能量时不是连续进行的，而是一份一份的，每一份能量子的大小与频率成正比，写作 ε=hν，其中 h 叫普朗克常量。爱因斯坦进一步把光看成一份份光量子，也就是光子。",
+        "meaning": "「能量不连续」是整章的地基。经典理论算出的黑体辐射曲线在短波处会趋向无穷大，与实验完全不符——这个矛盾叫「紫外灾难」。普朗克引入能量量子化后，理论曲线才与实验吻合。随后在光子模型中，hν 表示**一个光子**的能量，n 个同频光子的总能量就是 n·hν。这样既保留了量子化的核心，也区分了普朗克的能量子假设与爱因斯坦的光子解释。",
+        "symbols": {
+          "h": {
+            "desc": "普朗克常量",
+            "unit": "eV*s"
+          },
+          "nu": {
+            "desc": "光的频率",
+            "unit": "Hz"
+          },
+          "E": {
+            "desc": "一个光子的能量",
+            "unit": "eV"
+          },
+          "n_photon": {
+            "desc": "光子个数",
+            "unit": "1"
+          },
+          "E_total": {
+            "desc": "n 个光子的总能量",
+            "unit": "eV"
+          }
+        },
+        "scenarios": {
+          "红光量子": {
+            "h": 4.14e-15,
+            "nu": 500000000000000.0,
+            "E": 2.07,
+            "n_photon": 2,
+            "E_total": 4.14
+          },
+          "紫光量子": {
+            "h": 4.14e-15,
+            "nu": 750000000000000.0,
+            "E": 3.105,
+            "n_photon": 2,
+            "E_total": 6.21
+          }
+        },
+        "formulas": [
+          {
+            "name": "光子能量与频率的关系",
+            "expr": "E = h*nu",
+            "when": "任何单色光都成立；E 是单个光子的能量",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "红光量子",
+                "expr": "h*nu",
+                "ref": 2.07,
+                "note": "4.14×10⁻¹⁵ eV·s 乘 5.0×10¹⁴ Hz 得 2.07 eV。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "紫光量子",
+                "expr": "h*nu",
+                "ref": 3.105,
+                "note": "4.14×10⁻¹⁵ 乘 7.5×10¹⁴ 得 3.105 eV，比红光更「贵」。"
+              },
+              {
+                "type": "direction",
+                "scenario": "红光量子",
+                "var": "nu",
+                "lo": 100000000000000.0,
+                "hi": 1000000000000000.0,
+                "expr": "h*nu",
+                "expect": "up",
+                "note": "频率越高，单个光子的能量越大——这正是紫光比红光更容易引起光电效应的原因。"
+              },
+              {
+                "type": "scan",
+                "scenario": "红光量子",
+                "var": "nu",
+                "lo": 100000000000000.0,
+                "hi": 1000000000000000.0
+              }
+            ]
+          },
+          {
+            "name": "n 个光子的总能量",
+            "expr": "E_total = n_photon*E",
+            "when": "单色光，且每个光子的能量相同",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "红光量子",
+                "expr": "n_photon*E",
+                "ref": 4.14,
+                "note": "两个红光光子共 2×2.07=4.14 eV。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "紫光量子",
+                "expr": "n_photon*E",
+                "ref": 6.21,
+                "note": "两个紫光光子共 2×3.105=6.21 eV。"
+              },
+              {
+                "type": "compare",
+                "scenario": "红光量子",
+                "expr": "n_photon*E",
+                "op": ">",
+                "vs": "E",
+                "note": "光子数大于 1 时，总能量必定大于单个光子的能量：4.14 > 2.07。"
+              },
+              {
+                "type": "consistency",
+                "scenario": "红光量子",
+                "with": "qz-01|n 个光子的总能量",
+                "with_expr": "n_photon*h*nu",
+                "target": "n 个光子的总能量",
+                "note": "本公式直接求E_total；参考端显式关系为n_photon*h*nu。两端使用同一情境和阶段，只核对该关系；with字段仅定位来源，不代表调用另一条被覆盖的公式。",
+                "verification_kind": "独立关系核对"
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "实验测出的黑体辐射曲线在短波处会掉下来，而经典理论预言它会趋于无穷——这个矛盾必须先解决。",
+          "普朗克假设：吸收和发射的能量只能是一份一份的，每一份的大小与频率成正比，记作 hν。",
+          "于是 n 个光子的总能量就是 n·hν，能量只能在「份」的基础上累加，不能连续变化。"
+        ],
+        "errors": [
+          {
+            "wrong": "把光子能量写成与频率成反比",
+            "wrong_expr": "E = h/nu",
+            "why": "频率越高光子能量越大，是正比。按错误式红光只得到 8.28×10⁻³⁰ eV，而正确值是 2.07 eV——差了 30 个数量级。",
+            "caught_by": "量纲一致性",
+            "trap_test": {
+              "kind": "dimension",
+              "target": "E = h/nu",
+              "expect": "mismatch",
+              "lhs_dim": "M·L^2·T^-2",
+              "rhs_dim": "M·L^2",
+              "note": "正式引擎验证量纲不一致；不计作同量纲错误数值实测。"
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "认为光释放或吸收的能量可以连续变化",
+            "why": "这正是被黑体辐射实验否掉的经典图像。能量是一份一份的，「一份」就是 hν。这一条是观念性错误，无法用公式检查，只能靠人判。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "把两个同频光子的总能量仍当成单光子能量。",
+            "wrong_expr": "E_total = E",
+            "why": "两个光子总能量2×2.07=4.14 eV，遗漏数量会算成2.07 eV。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "红光量子",
+              "expr": "E",
+              "ref": 4.14,
+              "tol": 1e-06
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "某红光的频率为 5.0×10¹⁴ Hz。取 h=4.14×10⁻¹⁵ eV·s，求一个光子的能量；再求 3 个这样的光子总共有多少能量。",
+          "solution": [
+            "E = hν = 4.14×10⁻¹⁵ × 5.0×10¹⁴ = 2.07 eV",
+            "三个光子：E_total = 3 × 2.07 = 6.21 eV"
+          ],
+          "answer": "单光子能量 2.07 eV，三个光子共 6.21 eV。"
+        },
+        "prereq": [],
+        "next": [],
+        "tags": [
+          "量子化",
+          "普朗克常量"
+        ],
+        "learning_scope": "高中"
+      },
+      "error_index": 0,
+      "chapter": "第二十章 · 波粒二象性与原子结构"
+    },
+    "diagnostic-qz-01-2": {
+      "point": {
+        "id": "qz-01",
+        "title": "黑体辐射与能量量子化",
+        "level": "进阶",
+        "definition": "普朗克提出：物体吸收或发射能量时不是连续进行的，而是一份一份的，每一份能量子的大小与频率成正比，写作 ε=hν，其中 h 叫普朗克常量。爱因斯坦进一步把光看成一份份光量子，也就是光子。",
+        "meaning": "「能量不连续」是整章的地基。经典理论算出的黑体辐射曲线在短波处会趋向无穷大，与实验完全不符——这个矛盾叫「紫外灾难」。普朗克引入能量量子化后，理论曲线才与实验吻合。随后在光子模型中，hν 表示**一个光子**的能量，n 个同频光子的总能量就是 n·hν。这样既保留了量子化的核心，也区分了普朗克的能量子假设与爱因斯坦的光子解释。",
+        "symbols": {
+          "h": {
+            "desc": "普朗克常量",
+            "unit": "eV*s"
+          },
+          "nu": {
+            "desc": "光的频率",
+            "unit": "Hz"
+          },
+          "E": {
+            "desc": "一个光子的能量",
+            "unit": "eV"
+          },
+          "n_photon": {
+            "desc": "光子个数",
+            "unit": "1"
+          },
+          "E_total": {
+            "desc": "n 个光子的总能量",
+            "unit": "eV"
+          }
+        },
+        "scenarios": {
+          "红光量子": {
+            "h": 4.14e-15,
+            "nu": 500000000000000.0,
+            "E": 2.07,
+            "n_photon": 2,
+            "E_total": 4.14
+          },
+          "紫光量子": {
+            "h": 4.14e-15,
+            "nu": 750000000000000.0,
+            "E": 3.105,
+            "n_photon": 2,
+            "E_total": 6.21
+          }
+        },
+        "formulas": [
+          {
+            "name": "光子能量与频率的关系",
+            "expr": "E = h*nu",
+            "when": "任何单色光都成立；E 是单个光子的能量",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "红光量子",
+                "expr": "h*nu",
+                "ref": 2.07,
+                "note": "4.14×10⁻¹⁵ eV·s 乘 5.0×10¹⁴ Hz 得 2.07 eV。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "紫光量子",
+                "expr": "h*nu",
+                "ref": 3.105,
+                "note": "4.14×10⁻¹⁵ 乘 7.5×10¹⁴ 得 3.105 eV，比红光更「贵」。"
+              },
+              {
+                "type": "direction",
+                "scenario": "红光量子",
+                "var": "nu",
+                "lo": 100000000000000.0,
+                "hi": 1000000000000000.0,
+                "expr": "h*nu",
+                "expect": "up",
+                "note": "频率越高，单个光子的能量越大——这正是紫光比红光更容易引起光电效应的原因。"
+              },
+              {
+                "type": "scan",
+                "scenario": "红光量子",
+                "var": "nu",
+                "lo": 100000000000000.0,
+                "hi": 1000000000000000.0
+              }
+            ]
+          },
+          {
+            "name": "n 个光子的总能量",
+            "expr": "E_total = n_photon*E",
+            "when": "单色光，且每个光子的能量相同",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "红光量子",
+                "expr": "n_photon*E",
+                "ref": 4.14,
+                "note": "两个红光光子共 2×2.07=4.14 eV。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "紫光量子",
+                "expr": "n_photon*E",
+                "ref": 6.21,
+                "note": "两个紫光光子共 2×3.105=6.21 eV。"
+              },
+              {
+                "type": "compare",
+                "scenario": "红光量子",
+                "expr": "n_photon*E",
+                "op": ">",
+                "vs": "E",
+                "note": "光子数大于 1 时，总能量必定大于单个光子的能量：4.14 > 2.07。"
+              },
+              {
+                "type": "consistency",
+                "scenario": "红光量子",
+                "with": "qz-01|n 个光子的总能量",
+                "with_expr": "n_photon*h*nu",
+                "target": "n 个光子的总能量",
+                "note": "本公式直接求E_total；参考端显式关系为n_photon*h*nu。两端使用同一情境和阶段，只核对该关系；with字段仅定位来源，不代表调用另一条被覆盖的公式。",
+                "verification_kind": "独立关系核对"
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "实验测出的黑体辐射曲线在短波处会掉下来，而经典理论预言它会趋于无穷——这个矛盾必须先解决。",
+          "普朗克假设：吸收和发射的能量只能是一份一份的，每一份的大小与频率成正比，记作 hν。",
+          "于是 n 个光子的总能量就是 n·hν，能量只能在「份」的基础上累加，不能连续变化。"
+        ],
+        "errors": [
+          {
+            "wrong": "把光子能量写成与频率成反比",
+            "wrong_expr": "E = h/nu",
+            "why": "频率越高光子能量越大，是正比。按错误式红光只得到 8.28×10⁻³⁰ eV，而正确值是 2.07 eV——差了 30 个数量级。",
+            "caught_by": "量纲一致性",
+            "trap_test": {
+              "kind": "dimension",
+              "target": "E = h/nu",
+              "expect": "mismatch",
+              "lhs_dim": "M·L^2·T^-2",
+              "rhs_dim": "M·L^2",
+              "note": "正式引擎验证量纲不一致；不计作同量纲错误数值实测。"
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "认为光释放或吸收的能量可以连续变化",
+            "why": "这正是被黑体辐射实验否掉的经典图像。能量是一份一份的，「一份」就是 hν。这一条是观念性错误，无法用公式检查，只能靠人判。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "把两个同频光子的总能量仍当成单光子能量。",
+            "wrong_expr": "E_total = E",
+            "why": "两个光子总能量2×2.07=4.14 eV，遗漏数量会算成2.07 eV。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "红光量子",
+              "expr": "E",
+              "ref": 4.14,
+              "tol": 1e-06
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "某红光的频率为 5.0×10¹⁴ Hz。取 h=4.14×10⁻¹⁵ eV·s，求一个光子的能量；再求 3 个这样的光子总共有多少能量。",
+          "solution": [
+            "E = hν = 4.14×10⁻¹⁵ × 5.0×10¹⁴ = 2.07 eV",
+            "三个光子：E_total = 3 × 2.07 = 6.21 eV"
+          ],
+          "answer": "单光子能量 2.07 eV，三个光子共 6.21 eV。"
+        },
+        "prereq": [],
+        "next": [],
+        "tags": [
+          "量子化",
+          "普朗克常量"
+        ],
+        "learning_scope": "高中"
+      },
+      "error_index": 1,
+      "chapter": "第二十章 · 波粒二象性与原子结构"
+    },
+    "diagnostic-qz-01-3": {
+      "point": {
+        "id": "qz-01",
+        "title": "黑体辐射与能量量子化",
+        "level": "进阶",
+        "definition": "普朗克提出：物体吸收或发射能量时不是连续进行的，而是一份一份的，每一份能量子的大小与频率成正比，写作 ε=hν，其中 h 叫普朗克常量。爱因斯坦进一步把光看成一份份光量子，也就是光子。",
+        "meaning": "「能量不连续」是整章的地基。经典理论算出的黑体辐射曲线在短波处会趋向无穷大，与实验完全不符——这个矛盾叫「紫外灾难」。普朗克引入能量量子化后，理论曲线才与实验吻合。随后在光子模型中，hν 表示**一个光子**的能量，n 个同频光子的总能量就是 n·hν。这样既保留了量子化的核心，也区分了普朗克的能量子假设与爱因斯坦的光子解释。",
+        "symbols": {
+          "h": {
+            "desc": "普朗克常量",
+            "unit": "eV*s"
+          },
+          "nu": {
+            "desc": "光的频率",
+            "unit": "Hz"
+          },
+          "E": {
+            "desc": "一个光子的能量",
+            "unit": "eV"
+          },
+          "n_photon": {
+            "desc": "光子个数",
+            "unit": "1"
+          },
+          "E_total": {
+            "desc": "n 个光子的总能量",
+            "unit": "eV"
+          }
+        },
+        "scenarios": {
+          "红光量子": {
+            "h": 4.14e-15,
+            "nu": 500000000000000.0,
+            "E": 2.07,
+            "n_photon": 2,
+            "E_total": 4.14
+          },
+          "紫光量子": {
+            "h": 4.14e-15,
+            "nu": 750000000000000.0,
+            "E": 3.105,
+            "n_photon": 2,
+            "E_total": 6.21
+          }
+        },
+        "formulas": [
+          {
+            "name": "光子能量与频率的关系",
+            "expr": "E = h*nu",
+            "when": "任何单色光都成立；E 是单个光子的能量",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "红光量子",
+                "expr": "h*nu",
+                "ref": 2.07,
+                "note": "4.14×10⁻¹⁵ eV·s 乘 5.0×10¹⁴ Hz 得 2.07 eV。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "紫光量子",
+                "expr": "h*nu",
+                "ref": 3.105,
+                "note": "4.14×10⁻¹⁵ 乘 7.5×10¹⁴ 得 3.105 eV，比红光更「贵」。"
+              },
+              {
+                "type": "direction",
+                "scenario": "红光量子",
+                "var": "nu",
+                "lo": 100000000000000.0,
+                "hi": 1000000000000000.0,
+                "expr": "h*nu",
+                "expect": "up",
+                "note": "频率越高，单个光子的能量越大——这正是紫光比红光更容易引起光电效应的原因。"
+              },
+              {
+                "type": "scan",
+                "scenario": "红光量子",
+                "var": "nu",
+                "lo": 100000000000000.0,
+                "hi": 1000000000000000.0
+              }
+            ]
+          },
+          {
+            "name": "n 个光子的总能量",
+            "expr": "E_total = n_photon*E",
+            "when": "单色光，且每个光子的能量相同",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "红光量子",
+                "expr": "n_photon*E",
+                "ref": 4.14,
+                "note": "两个红光光子共 2×2.07=4.14 eV。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "紫光量子",
+                "expr": "n_photon*E",
+                "ref": 6.21,
+                "note": "两个紫光光子共 2×3.105=6.21 eV。"
+              },
+              {
+                "type": "compare",
+                "scenario": "红光量子",
+                "expr": "n_photon*E",
+                "op": ">",
+                "vs": "E",
+                "note": "光子数大于 1 时，总能量必定大于单个光子的能量：4.14 > 2.07。"
+              },
+              {
+                "type": "consistency",
+                "scenario": "红光量子",
+                "with": "qz-01|n 个光子的总能量",
+                "with_expr": "n_photon*h*nu",
+                "target": "n 个光子的总能量",
+                "note": "本公式直接求E_total；参考端显式关系为n_photon*h*nu。两端使用同一情境和阶段，只核对该关系；with字段仅定位来源，不代表调用另一条被覆盖的公式。",
+                "verification_kind": "独立关系核对"
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "实验测出的黑体辐射曲线在短波处会掉下来，而经典理论预言它会趋于无穷——这个矛盾必须先解决。",
+          "普朗克假设：吸收和发射的能量只能是一份一份的，每一份的大小与频率成正比，记作 hν。",
+          "于是 n 个光子的总能量就是 n·hν，能量只能在「份」的基础上累加，不能连续变化。"
+        ],
+        "errors": [
+          {
+            "wrong": "把光子能量写成与频率成反比",
+            "wrong_expr": "E = h/nu",
+            "why": "频率越高光子能量越大，是正比。按错误式红光只得到 8.28×10⁻³⁰ eV，而正确值是 2.07 eV——差了 30 个数量级。",
+            "caught_by": "量纲一致性",
+            "trap_test": {
+              "kind": "dimension",
+              "target": "E = h/nu",
+              "expect": "mismatch",
+              "lhs_dim": "M·L^2·T^-2",
+              "rhs_dim": "M·L^2",
+              "note": "正式引擎验证量纲不一致；不计作同量纲错误数值实测。"
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "认为光释放或吸收的能量可以连续变化",
+            "why": "这正是被黑体辐射实验否掉的经典图像。能量是一份一份的，「一份」就是 hν。这一条是观念性错误，无法用公式检查，只能靠人判。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "把两个同频光子的总能量仍当成单光子能量。",
+            "wrong_expr": "E_total = E",
+            "why": "两个光子总能量2×2.07=4.14 eV，遗漏数量会算成2.07 eV。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "红光量子",
+              "expr": "E",
+              "ref": 4.14,
+              "tol": 1e-06
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "某红光的频率为 5.0×10¹⁴ Hz。取 h=4.14×10⁻¹⁵ eV·s，求一个光子的能量；再求 3 个这样的光子总共有多少能量。",
+          "solution": [
+            "E = hν = 4.14×10⁻¹⁵ × 5.0×10¹⁴ = 2.07 eV",
+            "三个光子：E_total = 3 × 2.07 = 6.21 eV"
+          ],
+          "answer": "单光子能量 2.07 eV，三个光子共 6.21 eV。"
+        },
+        "prereq": [],
+        "next": [],
+        "tags": [
+          "量子化",
+          "普朗克常量"
+        ],
+        "learning_scope": "高中"
+      },
+      "error_index": 2,
+      "chapter": "第二十章 · 波粒二象性与原子结构"
+    },
+    "diagnostic-qz-02-1": {
+      "point": {
+        "id": "qz-02",
+        "title": "光电效应与爱因斯坦光电方程",
+        "level": "进阶",
+        "definition": "光照射到金属表面时电子被击出，叫光电效应。爱因斯坦给出的方程是 Ek=hν−W，其中 W 叫逸出功，是电子离开金属所需的最小能量，Ek 是光电子离开时的最大初动能。",
+        "meaning": "这条式子一次解释了光电效应全部「反常」现象。其一，能否打出电子只取决于**单个光子**的能量是否够大（hν>W），与光强无关；增大光强只是让光子**变多**，所以光电流变大但截止频率不变。其二，出现光电子几乎不需要时间，因为能量是整份被一个电子一次性吸收的，不存在「慢慢攒」的过程。其三，Ek 与 ν 是**线性关系**，图线斜率就是 h。",
+        "symbols": {
+          "h": {
+            "desc": "普朗克常量",
+            "unit": "eV*s"
+          },
+          "nu": {
+            "desc": "入射光的频率",
+            "unit": "Hz"
+          },
+          "W": {
+            "desc": "金属的逸出功",
+            "unit": "eV"
+          },
+          "Ek": {
+            "desc": "光电子的最大初动能",
+            "unit": "eV"
+          },
+          "nu_0": {
+            "desc": "截止频率（恰好能打出电子的最低频率）",
+            "unit": "Hz"
+          }
+        },
+        "scenarios": {
+          "钠紫光照射": {
+            "h": 4.14e-15,
+            "nu": 750000000000000.0,
+            "W": 2.29,
+            "Ek": 0.815,
+            "nu_0": 553140096618357.44
+          },
+          "钠蓝光照射": {
+            "h": 4.14e-15,
+            "nu": 650000000000000.0,
+            "W": 2.29,
+            "Ek": 0.401,
+            "nu_0": 553140096618357.44
+          }
+        },
+        "formulas": [
+          {
+            "name": "爱因斯坦光电方程",
+            "expr": "Ek = h*nu - W",
+            "when": "入射光频率大于截止频率时才有光电子；Ek 取最大值",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "钠紫光照射",
+                "expr": "h*nu - W",
+                "ref": 0.815,
+                "note": "4.14×10⁻¹⁵ 乘 7.5×10¹⁴ 得 3.105 eV，减去逸出功 2.29 eV，余 0.815 eV。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "钠蓝光照射",
+                "expr": "h*nu - W",
+                "ref": 0.401,
+                "note": "6.5×10¹⁴ Hz 时 hν=2.691 eV，减去 2.29 eV 余 0.401 eV。"
+              },
+              {
+                "type": "direction",
+                "scenario": "钠紫光照射",
+                "var": "nu",
+                "lo": 700000000000000.0,
+                "hi": 800000000000000.0,
+                "expr": "h*nu - W",
+                "expect": "up",
+                "note": "逸出功不变时，频率越高，光电子最大初动能越大——这就是图线斜率为 h 的含义。"
+              },
+              {
+                "type": "scan",
+                "scenario": "钠紫光照射",
+                "var": "nu",
+                "lo": 700000000000000.0,
+                "hi": 800000000000000.0
+              }
+            ]
+          },
+          {
+            "name": "截止频率",
+            "expr": "nu_0 = W/h",
+            "when": "令 Ek=0 解出，即恰好能发生光电效应的最低频率",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "钠紫光照射",
+                "expr": "W/h",
+                "ref": 553140096618357.44,
+                "note": "2.29 eV 除以 4.14×10⁻¹⁵ eV·s 得 5.53×10¹⁴ Hz。"
+              },
+              {
+                "type": "scan",
+                "scenario": "钠紫光照射",
+                "var": "W",
+                "lo": 2.0,
+                "hi": 3.0
+              },
+              {
+                "type": "compare",
+                "scenario": "钠紫光照射",
+                "expr": "h*nu - W",
+                "op": ">",
+                "vs": "0",
+                "note": "入射频率高于截止频率，所以 hν−W>0，确实能打出光电子：0.815 > 0。"
+              },
+              {
+                "type": "consistency",
+                "scenario": "钠紫光照射",
+                "with": "qz-02|截止频率",
+                "with_expr": "nu_0",
+                "target": "截止频率（恰好能打出电子的最低频率）",
+                "note": "直接求本公式输出，与情境中另列的nu_0设计基准核对；数据是设计示例，不是实测。用于核对定义、反算或边界值，不宣称不同物理原理互证。",
+                "verification_kind": "独立设计情境数据核对"
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "一个电子要离开金属，至少得付出逸出功 W。",
+          "电子一次性吸收一个光子的能量 hν，付掉逸出功后剩下的全部变成初动能，所以 Ek=hν−W。",
+          "令 Ek=0 解出恰好能发生光电效应的频率，即截止频率 ν₀=W/h；频率低于它，无论光多强都打不出电子。"
+        ],
+        "errors": [
+          {
+            "wrong": "把光电方程写成 Ek = W - h*nu（减反了）",
+            "wrong_expr": "Ek = W-h*nu",
+            "why": "hν 是吸收到的能量，W 是必须付出的，剩下才是动能，所以是「收入减支出」。按错误式会得到 −0.815 eV，动能不可能为负。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "钠紫光照射",
+              "expr": "W - h*nu",
+              "ref": 0.815
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "认为只要光足够强，低于截止频率的光也能打出光电子",
+            "why": "能否打出电子只取决于单个光子的能量 hν 是否超过 W。光强变大只是光子数变多，每个光子的能量并没有变大。这是光电效应最核心的概念性结论，公式抓不到。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "用频率 7.5×10¹⁴ Hz 的紫光照射钠，钠的逸出功为 2.29 eV。取 h=4.14×10⁻¹⁵ eV·s，求光电子的最大初动能；并求钠的截止频率。",
+          "solution": [
+            "先算单光子能量：hν = 4.14×10⁻¹⁵ × 7.5×10¹⁴ = 3.105 eV",
+            "Ek = hν − W = 3.105 − 2.29 = 0.815 eV",
+            "截止频率：ν₀ = W/h = 2.29 ÷ 4.14×10⁻¹⁵ = 5.53×10¹⁴ Hz"
+          ],
+          "answer": "最大初动能 0.815 eV；截止频率约 5.53×10¹⁴ Hz。"
+        },
+        "prereq": [],
+        "next": [
+          "qz-07"
+        ],
+        "tags": [
+          "光电效应",
+          "逸出功"
+        ],
+        "learning_scope": "高中"
+      },
+      "error_index": 0,
+      "chapter": "第二十章 · 波粒二象性与原子结构"
+    },
+    "diagnostic-qz-02-2": {
+      "point": {
+        "id": "qz-02",
+        "title": "光电效应与爱因斯坦光电方程",
+        "level": "进阶",
+        "definition": "光照射到金属表面时电子被击出，叫光电效应。爱因斯坦给出的方程是 Ek=hν−W，其中 W 叫逸出功，是电子离开金属所需的最小能量，Ek 是光电子离开时的最大初动能。",
+        "meaning": "这条式子一次解释了光电效应全部「反常」现象。其一，能否打出电子只取决于**单个光子**的能量是否够大（hν>W），与光强无关；增大光强只是让光子**变多**，所以光电流变大但截止频率不变。其二，出现光电子几乎不需要时间，因为能量是整份被一个电子一次性吸收的，不存在「慢慢攒」的过程。其三，Ek 与 ν 是**线性关系**，图线斜率就是 h。",
+        "symbols": {
+          "h": {
+            "desc": "普朗克常量",
+            "unit": "eV*s"
+          },
+          "nu": {
+            "desc": "入射光的频率",
+            "unit": "Hz"
+          },
+          "W": {
+            "desc": "金属的逸出功",
+            "unit": "eV"
+          },
+          "Ek": {
+            "desc": "光电子的最大初动能",
+            "unit": "eV"
+          },
+          "nu_0": {
+            "desc": "截止频率（恰好能打出电子的最低频率）",
+            "unit": "Hz"
+          }
+        },
+        "scenarios": {
+          "钠紫光照射": {
+            "h": 4.14e-15,
+            "nu": 750000000000000.0,
+            "W": 2.29,
+            "Ek": 0.815,
+            "nu_0": 553140096618357.44
+          },
+          "钠蓝光照射": {
+            "h": 4.14e-15,
+            "nu": 650000000000000.0,
+            "W": 2.29,
+            "Ek": 0.401,
+            "nu_0": 553140096618357.44
+          }
+        },
+        "formulas": [
+          {
+            "name": "爱因斯坦光电方程",
+            "expr": "Ek = h*nu - W",
+            "when": "入射光频率大于截止频率时才有光电子；Ek 取最大值",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "钠紫光照射",
+                "expr": "h*nu - W",
+                "ref": 0.815,
+                "note": "4.14×10⁻¹⁵ 乘 7.5×10¹⁴ 得 3.105 eV，减去逸出功 2.29 eV，余 0.815 eV。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "钠蓝光照射",
+                "expr": "h*nu - W",
+                "ref": 0.401,
+                "note": "6.5×10¹⁴ Hz 时 hν=2.691 eV，减去 2.29 eV 余 0.401 eV。"
+              },
+              {
+                "type": "direction",
+                "scenario": "钠紫光照射",
+                "var": "nu",
+                "lo": 700000000000000.0,
+                "hi": 800000000000000.0,
+                "expr": "h*nu - W",
+                "expect": "up",
+                "note": "逸出功不变时，频率越高，光电子最大初动能越大——这就是图线斜率为 h 的含义。"
+              },
+              {
+                "type": "scan",
+                "scenario": "钠紫光照射",
+                "var": "nu",
+                "lo": 700000000000000.0,
+                "hi": 800000000000000.0
+              }
+            ]
+          },
+          {
+            "name": "截止频率",
+            "expr": "nu_0 = W/h",
+            "when": "令 Ek=0 解出，即恰好能发生光电效应的最低频率",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "钠紫光照射",
+                "expr": "W/h",
+                "ref": 553140096618357.44,
+                "note": "2.29 eV 除以 4.14×10⁻¹⁵ eV·s 得 5.53×10¹⁴ Hz。"
+              },
+              {
+                "type": "scan",
+                "scenario": "钠紫光照射",
+                "var": "W",
+                "lo": 2.0,
+                "hi": 3.0
+              },
+              {
+                "type": "compare",
+                "scenario": "钠紫光照射",
+                "expr": "h*nu - W",
+                "op": ">",
+                "vs": "0",
+                "note": "入射频率高于截止频率，所以 hν−W>0，确实能打出光电子：0.815 > 0。"
+              },
+              {
+                "type": "consistency",
+                "scenario": "钠紫光照射",
+                "with": "qz-02|截止频率",
+                "with_expr": "nu_0",
+                "target": "截止频率（恰好能打出电子的最低频率）",
+                "note": "直接求本公式输出，与情境中另列的nu_0设计基准核对；数据是设计示例，不是实测。用于核对定义、反算或边界值，不宣称不同物理原理互证。",
+                "verification_kind": "独立设计情境数据核对"
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "一个电子要离开金属，至少得付出逸出功 W。",
+          "电子一次性吸收一个光子的能量 hν，付掉逸出功后剩下的全部变成初动能，所以 Ek=hν−W。",
+          "令 Ek=0 解出恰好能发生光电效应的频率，即截止频率 ν₀=W/h；频率低于它，无论光多强都打不出电子。"
+        ],
+        "errors": [
+          {
+            "wrong": "把光电方程写成 Ek = W - h*nu（减反了）",
+            "wrong_expr": "Ek = W-h*nu",
+            "why": "hν 是吸收到的能量，W 是必须付出的，剩下才是动能，所以是「收入减支出」。按错误式会得到 −0.815 eV，动能不可能为负。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "钠紫光照射",
+              "expr": "W - h*nu",
+              "ref": 0.815
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "认为只要光足够强，低于截止频率的光也能打出光电子",
+            "why": "能否打出电子只取决于单个光子的能量 hν 是否超过 W。光强变大只是光子数变多，每个光子的能量并没有变大。这是光电效应最核心的概念性结论，公式抓不到。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "用频率 7.5×10¹⁴ Hz 的紫光照射钠，钠的逸出功为 2.29 eV。取 h=4.14×10⁻¹⁵ eV·s，求光电子的最大初动能；并求钠的截止频率。",
+          "solution": [
+            "先算单光子能量：hν = 4.14×10⁻¹⁵ × 7.5×10¹⁴ = 3.105 eV",
+            "Ek = hν − W = 3.105 − 2.29 = 0.815 eV",
+            "截止频率：ν₀ = W/h = 2.29 ÷ 4.14×10⁻¹⁵ = 5.53×10¹⁴ Hz"
+          ],
+          "answer": "最大初动能 0.815 eV；截止频率约 5.53×10¹⁴ Hz。"
+        },
+        "prereq": [],
+        "next": [
+          "qz-07"
+        ],
+        "tags": [
+          "光电效应",
+          "逸出功"
+        ],
+        "learning_scope": "高中"
+      },
+      "error_index": 1,
+      "chapter": "第二十章 · 波粒二象性与原子结构"
+    },
+    "diagnostic-qz-03-1": {
+      "point": {
+        "id": "qz-03",
+        "title": "光的波粒二象性",
+        "level": "基础",
+        "definition": "光既有波动性（能发生干涉、衍射）又有粒子性（能发生光电效应），二者不是互相否定，而是光在不同情境下表现出的不同侧面，这叫波粒二象性。描述粒子性的两个基本量是能量 E=hν 与频率 ν=c/λ。",
+        "meaning": "「二象性」不是「有时是波有时是粒子」这么含糊。准确的说是：光在传播、干涉、衍射时用波动规律描述最方便，在与物质交换能量时用光子模型最方便，两套描述通过 E=hν 与 ν=c/λ 联立起来。判断该用哪一套的粗略标准是：看你在追问「往哪儿走」还是「交出多少能量」。",
+        "symbols": {
+          "c": {
+            "desc": "真空中的光速",
+            "unit": "m/s"
+          },
+          "lambda": {
+            "desc": "光的波长",
+            "unit": "m"
+          },
+          "nu": {
+            "desc": "光的频率",
+            "unit": "Hz"
+          },
+          "h": {
+            "desc": "普朗克常量",
+            "unit": "eV*s"
+          },
+          "E": {
+            "desc": "单个光子的能量",
+            "unit": "eV"
+          }
+        },
+        "scenarios": {
+          "绿光": {
+            "c": 300000000.0,
+            "lambda": 5e-07,
+            "nu": 600000000000000.0,
+            "h": 4.14e-15,
+            "E": 2.484
+          },
+          "蓝光": {
+            "c": 300000000.0,
+            "lambda": 4.5e-07,
+            "nu": 666666666666666.8,
+            "h": 4.14e-15,
+            "E": 2.76
+          }
+        },
+        "formulas": [
+          {
+            "name": "波长与频率的关系",
+            "expr": "nu = c/lambda",
+            "when": "光在真空中传播；波长越短频率越高",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "绿光",
+                "expr": "c/lambda",
+                "ref": 600000000000000.0,
+                "note": "3.0×10⁸ 除以 5.0×10⁻⁷ 得 6.0×10¹⁴ Hz。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "蓝光",
+                "expr": "c/lambda",
+                "ref": 666666666666666.8,
+                "note": "波长缩短到 4.5×10⁻⁷ m，频率升到约 6.67×10¹⁴ Hz。"
+              },
+              {
+                "type": "direction",
+                "scenario": "绿光",
+                "var": "lambda",
+                "lo": 4e-07,
+                "hi": 7e-07,
+                "expr": "c/lambda",
+                "expect": "down",
+                "note": "光速不变时，波长越长频率越低——两者是反比，不是正比。"
+              },
+              {
+                "type": "scan",
+                "scenario": "绿光",
+                "var": "lambda",
+                "lo": 4e-07,
+                "hi": 7e-07
+              }
+            ]
+          },
+          {
+            "name": "光子的能量",
+            "expr": "E = h*nu",
+            "when": "与上一条联立，就把「波」的波长换算成了「粒子」的能量",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "绿光",
+                "expr": "h*nu",
+                "ref": 2.484,
+                "note": "4.14×10⁻¹⁵ 乘 6.0×10¹⁴ 得 2.484 eV。"
+              },
+              {
+                "type": "scan",
+                "scenario": "绿光",
+                "var": "nu",
+                "lo": 500000000000000.0,
+                "hi": 700000000000000.0
+              },
+              {
+                "type": "compare",
+                "scenario": "绿光",
+                "expr": "h*nu",
+                "op": ">",
+                "vs": "0",
+                "note": "光子能量是正值：2.484 > 0。"
+              },
+              {
+                "type": "consistency",
+                "scenario": "绿光",
+                "with": "qz-03|光子的能量",
+                "with_expr": "h*c/lambda",
+                "target": "单个光子的能量",
+                "note": "本公式直接求E；参考端显式关系为h*c/lambda。两端使用同一情境和阶段，只核对该关系；with字段仅定位来源，不代表调用另一条被覆盖的公式。",
+                "verification_kind": "独立关系核对"
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "波动描述给出波长与频率的关系：一个周期内波前进一个波长，所以 ν=c/λ。",
+          "粒子描述给出能量与频率的关系：E=hν。",
+          "把两式联立消去 ν，就得到 E=hc/λ —— 波长越短，单个光子的能量越高，这也是紫外光比红光更「厉害」的原因。"
+        ],
+        "errors": [
+          {
+            "wrong": "把波长与频率记成正比，写成 nu = c*lambda",
+            "wrong_expr": "nu = c*lambda",
+            "why": "两者是反比。按错误式，5.0×10⁻⁷ m 的绿光会算出 150 Hz，而正确值是 6.0×10¹⁴ Hz。",
+            "caught_by": "量纲一致性",
+            "trap_test": {
+              "kind": "dimension",
+              "target": "nu = c*lambda",
+              "expect": "mismatch",
+              "lhs_dim": "T^-1",
+              "rhs_dim": "L^2·T^-1",
+              "note": "正式引擎验证量纲不一致；不计作同量纲错误数值实测。"
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "认为「干涉说明光是波、光电效应说明光是粒子」，两者互相矛盾",
+            "why": "两者描述的是同一束光的不同侧面，通过 E=hν 与 ν=c/λ 可以互相换算，并不矛盾。这是观念性理解，公式检查不了。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "把两个同频光子的总能量当一个光子的能量。",
+            "wrong_expr": "E = 2*h*nu",
+            "why": "频率6×10¹⁴ Hz的单光子能量2.484 eV；两个总能量4.968 eV不是单个能量。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "绿光",
+              "expr": "2*h*nu",
+              "ref": 2.484,
+              "tol": 1e-06
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "某绿光在真空中的波长为 5.0×10⁻⁷ m。取 c=3.0×10⁸ m/s、h=4.14×10⁻¹⁵ eV·s，求它的频率与单个光子的能量。",
+          "solution": [
+            "ν = c/λ = 3.0×10⁸ ÷ 5.0×10⁻⁷ = 6.0×10¹⁴ Hz",
+            "E = hν = 4.14×10⁻¹⁵ × 6.0×10¹⁴ = 2.484 ≈ 2.48 eV"
+          ],
+          "answer": "频率 6.0×10¹⁴ Hz，单光子能量约 2.48 eV。"
+        },
+        "prereq": [],
+        "next": [
+          "qz-08"
+        ],
+        "tags": [
+          "波粒二象性",
+          "光子"
+        ],
+        "learning_scope": "高中"
+      },
+      "error_index": 0,
+      "chapter": "第二十章 · 波粒二象性与原子结构"
+    },
+    "diagnostic-qz-03-2": {
+      "point": {
+        "id": "qz-03",
+        "title": "光的波粒二象性",
+        "level": "基础",
+        "definition": "光既有波动性（能发生干涉、衍射）又有粒子性（能发生光电效应），二者不是互相否定，而是光在不同情境下表现出的不同侧面，这叫波粒二象性。描述粒子性的两个基本量是能量 E=hν 与频率 ν=c/λ。",
+        "meaning": "「二象性」不是「有时是波有时是粒子」这么含糊。准确的说是：光在传播、干涉、衍射时用波动规律描述最方便，在与物质交换能量时用光子模型最方便，两套描述通过 E=hν 与 ν=c/λ 联立起来。判断该用哪一套的粗略标准是：看你在追问「往哪儿走」还是「交出多少能量」。",
+        "symbols": {
+          "c": {
+            "desc": "真空中的光速",
+            "unit": "m/s"
+          },
+          "lambda": {
+            "desc": "光的波长",
+            "unit": "m"
+          },
+          "nu": {
+            "desc": "光的频率",
+            "unit": "Hz"
+          },
+          "h": {
+            "desc": "普朗克常量",
+            "unit": "eV*s"
+          },
+          "E": {
+            "desc": "单个光子的能量",
+            "unit": "eV"
+          }
+        },
+        "scenarios": {
+          "绿光": {
+            "c": 300000000.0,
+            "lambda": 5e-07,
+            "nu": 600000000000000.0,
+            "h": 4.14e-15,
+            "E": 2.484
+          },
+          "蓝光": {
+            "c": 300000000.0,
+            "lambda": 4.5e-07,
+            "nu": 666666666666666.8,
+            "h": 4.14e-15,
+            "E": 2.76
+          }
+        },
+        "formulas": [
+          {
+            "name": "波长与频率的关系",
+            "expr": "nu = c/lambda",
+            "when": "光在真空中传播；波长越短频率越高",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "绿光",
+                "expr": "c/lambda",
+                "ref": 600000000000000.0,
+                "note": "3.0×10⁸ 除以 5.0×10⁻⁷ 得 6.0×10¹⁴ Hz。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "蓝光",
+                "expr": "c/lambda",
+                "ref": 666666666666666.8,
+                "note": "波长缩短到 4.5×10⁻⁷ m，频率升到约 6.67×10¹⁴ Hz。"
+              },
+              {
+                "type": "direction",
+                "scenario": "绿光",
+                "var": "lambda",
+                "lo": 4e-07,
+                "hi": 7e-07,
+                "expr": "c/lambda",
+                "expect": "down",
+                "note": "光速不变时，波长越长频率越低——两者是反比，不是正比。"
+              },
+              {
+                "type": "scan",
+                "scenario": "绿光",
+                "var": "lambda",
+                "lo": 4e-07,
+                "hi": 7e-07
+              }
+            ]
+          },
+          {
+            "name": "光子的能量",
+            "expr": "E = h*nu",
+            "when": "与上一条联立，就把「波」的波长换算成了「粒子」的能量",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "绿光",
+                "expr": "h*nu",
+                "ref": 2.484,
+                "note": "4.14×10⁻¹⁵ 乘 6.0×10¹⁴ 得 2.484 eV。"
+              },
+              {
+                "type": "scan",
+                "scenario": "绿光",
+                "var": "nu",
+                "lo": 500000000000000.0,
+                "hi": 700000000000000.0
+              },
+              {
+                "type": "compare",
+                "scenario": "绿光",
+                "expr": "h*nu",
+                "op": ">",
+                "vs": "0",
+                "note": "光子能量是正值：2.484 > 0。"
+              },
+              {
+                "type": "consistency",
+                "scenario": "绿光",
+                "with": "qz-03|光子的能量",
+                "with_expr": "h*c/lambda",
+                "target": "单个光子的能量",
+                "note": "本公式直接求E；参考端显式关系为h*c/lambda。两端使用同一情境和阶段，只核对该关系；with字段仅定位来源，不代表调用另一条被覆盖的公式。",
+                "verification_kind": "独立关系核对"
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "波动描述给出波长与频率的关系：一个周期内波前进一个波长，所以 ν=c/λ。",
+          "粒子描述给出能量与频率的关系：E=hν。",
+          "把两式联立消去 ν，就得到 E=hc/λ —— 波长越短，单个光子的能量越高，这也是紫外光比红光更「厉害」的原因。"
+        ],
+        "errors": [
+          {
+            "wrong": "把波长与频率记成正比，写成 nu = c*lambda",
+            "wrong_expr": "nu = c*lambda",
+            "why": "两者是反比。按错误式，5.0×10⁻⁷ m 的绿光会算出 150 Hz，而正确值是 6.0×10¹⁴ Hz。",
+            "caught_by": "量纲一致性",
+            "trap_test": {
+              "kind": "dimension",
+              "target": "nu = c*lambda",
+              "expect": "mismatch",
+              "lhs_dim": "T^-1",
+              "rhs_dim": "L^2·T^-1",
+              "note": "正式引擎验证量纲不一致；不计作同量纲错误数值实测。"
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "认为「干涉说明光是波、光电效应说明光是粒子」，两者互相矛盾",
+            "why": "两者描述的是同一束光的不同侧面，通过 E=hν 与 ν=c/λ 可以互相换算，并不矛盾。这是观念性理解，公式检查不了。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "把两个同频光子的总能量当一个光子的能量。",
+            "wrong_expr": "E = 2*h*nu",
+            "why": "频率6×10¹⁴ Hz的单光子能量2.484 eV；两个总能量4.968 eV不是单个能量。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "绿光",
+              "expr": "2*h*nu",
+              "ref": 2.484,
+              "tol": 1e-06
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "某绿光在真空中的波长为 5.0×10⁻⁷ m。取 c=3.0×10⁸ m/s、h=4.14×10⁻¹⁵ eV·s，求它的频率与单个光子的能量。",
+          "solution": [
+            "ν = c/λ = 3.0×10⁸ ÷ 5.0×10⁻⁷ = 6.0×10¹⁴ Hz",
+            "E = hν = 4.14×10⁻¹⁵ × 6.0×10¹⁴ = 2.484 ≈ 2.48 eV"
+          ],
+          "answer": "频率 6.0×10¹⁴ Hz，单光子能量约 2.48 eV。"
+        },
+        "prereq": [],
+        "next": [
+          "qz-08"
+        ],
+        "tags": [
+          "波粒二象性",
+          "光子"
+        ],
+        "learning_scope": "高中"
+      },
+      "error_index": 1,
+      "chapter": "第二十章 · 波粒二象性与原子结构"
+    },
+    "diagnostic-qz-03-3": {
+      "point": {
+        "id": "qz-03",
+        "title": "光的波粒二象性",
+        "level": "基础",
+        "definition": "光既有波动性（能发生干涉、衍射）又有粒子性（能发生光电效应），二者不是互相否定，而是光在不同情境下表现出的不同侧面，这叫波粒二象性。描述粒子性的两个基本量是能量 E=hν 与频率 ν=c/λ。",
+        "meaning": "「二象性」不是「有时是波有时是粒子」这么含糊。准确的说是：光在传播、干涉、衍射时用波动规律描述最方便，在与物质交换能量时用光子模型最方便，两套描述通过 E=hν 与 ν=c/λ 联立起来。判断该用哪一套的粗略标准是：看你在追问「往哪儿走」还是「交出多少能量」。",
+        "symbols": {
+          "c": {
+            "desc": "真空中的光速",
+            "unit": "m/s"
+          },
+          "lambda": {
+            "desc": "光的波长",
+            "unit": "m"
+          },
+          "nu": {
+            "desc": "光的频率",
+            "unit": "Hz"
+          },
+          "h": {
+            "desc": "普朗克常量",
+            "unit": "eV*s"
+          },
+          "E": {
+            "desc": "单个光子的能量",
+            "unit": "eV"
+          }
+        },
+        "scenarios": {
+          "绿光": {
+            "c": 300000000.0,
+            "lambda": 5e-07,
+            "nu": 600000000000000.0,
+            "h": 4.14e-15,
+            "E": 2.484
+          },
+          "蓝光": {
+            "c": 300000000.0,
+            "lambda": 4.5e-07,
+            "nu": 666666666666666.8,
+            "h": 4.14e-15,
+            "E": 2.76
+          }
+        },
+        "formulas": [
+          {
+            "name": "波长与频率的关系",
+            "expr": "nu = c/lambda",
+            "when": "光在真空中传播；波长越短频率越高",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "绿光",
+                "expr": "c/lambda",
+                "ref": 600000000000000.0,
+                "note": "3.0×10⁸ 除以 5.0×10⁻⁷ 得 6.0×10¹⁴ Hz。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "蓝光",
+                "expr": "c/lambda",
+                "ref": 666666666666666.8,
+                "note": "波长缩短到 4.5×10⁻⁷ m，频率升到约 6.67×10¹⁴ Hz。"
+              },
+              {
+                "type": "direction",
+                "scenario": "绿光",
+                "var": "lambda",
+                "lo": 4e-07,
+                "hi": 7e-07,
+                "expr": "c/lambda",
+                "expect": "down",
+                "note": "光速不变时，波长越长频率越低——两者是反比，不是正比。"
+              },
+              {
+                "type": "scan",
+                "scenario": "绿光",
+                "var": "lambda",
+                "lo": 4e-07,
+                "hi": 7e-07
+              }
+            ]
+          },
+          {
+            "name": "光子的能量",
+            "expr": "E = h*nu",
+            "when": "与上一条联立，就把「波」的波长换算成了「粒子」的能量",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "绿光",
+                "expr": "h*nu",
+                "ref": 2.484,
+                "note": "4.14×10⁻¹⁵ 乘 6.0×10¹⁴ 得 2.484 eV。"
+              },
+              {
+                "type": "scan",
+                "scenario": "绿光",
+                "var": "nu",
+                "lo": 500000000000000.0,
+                "hi": 700000000000000.0
+              },
+              {
+                "type": "compare",
+                "scenario": "绿光",
+                "expr": "h*nu",
+                "op": ">",
+                "vs": "0",
+                "note": "光子能量是正值：2.484 > 0。"
+              },
+              {
+                "type": "consistency",
+                "scenario": "绿光",
+                "with": "qz-03|光子的能量",
+                "with_expr": "h*c/lambda",
+                "target": "单个光子的能量",
+                "note": "本公式直接求E；参考端显式关系为h*c/lambda。两端使用同一情境和阶段，只核对该关系；with字段仅定位来源，不代表调用另一条被覆盖的公式。",
+                "verification_kind": "独立关系核对"
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "波动描述给出波长与频率的关系：一个周期内波前进一个波长，所以 ν=c/λ。",
+          "粒子描述给出能量与频率的关系：E=hν。",
+          "把两式联立消去 ν，就得到 E=hc/λ —— 波长越短，单个光子的能量越高，这也是紫外光比红光更「厉害」的原因。"
+        ],
+        "errors": [
+          {
+            "wrong": "把波长与频率记成正比，写成 nu = c*lambda",
+            "wrong_expr": "nu = c*lambda",
+            "why": "两者是反比。按错误式，5.0×10⁻⁷ m 的绿光会算出 150 Hz，而正确值是 6.0×10¹⁴ Hz。",
+            "caught_by": "量纲一致性",
+            "trap_test": {
+              "kind": "dimension",
+              "target": "nu = c*lambda",
+              "expect": "mismatch",
+              "lhs_dim": "T^-1",
+              "rhs_dim": "L^2·T^-1",
+              "note": "正式引擎验证量纲不一致；不计作同量纲错误数值实测。"
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "认为「干涉说明光是波、光电效应说明光是粒子」，两者互相矛盾",
+            "why": "两者描述的是同一束光的不同侧面，通过 E=hν 与 ν=c/λ 可以互相换算，并不矛盾。这是观念性理解，公式检查不了。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "把两个同频光子的总能量当一个光子的能量。",
+            "wrong_expr": "E = 2*h*nu",
+            "why": "频率6×10¹⁴ Hz的单光子能量2.484 eV；两个总能量4.968 eV不是单个能量。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "绿光",
+              "expr": "2*h*nu",
+              "ref": 2.484,
+              "tol": 1e-06
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "某绿光在真空中的波长为 5.0×10⁻⁷ m。取 c=3.0×10⁸ m/s、h=4.14×10⁻¹⁵ eV·s，求它的频率与单个光子的能量。",
+          "solution": [
+            "ν = c/λ = 3.0×10⁸ ÷ 5.0×10⁻⁷ = 6.0×10¹⁴ Hz",
+            "E = hν = 4.14×10⁻¹⁵ × 6.0×10¹⁴ = 2.484 ≈ 2.48 eV"
+          ],
+          "answer": "频率 6.0×10¹⁴ Hz，单光子能量约 2.48 eV。"
+        },
+        "prereq": [],
+        "next": [
+          "qz-08"
+        ],
+        "tags": [
+          "波粒二象性",
+          "光子"
+        ],
+        "learning_scope": "高中"
+      },
+      "error_index": 2,
+      "chapter": "第二十章 · 波粒二象性与原子结构"
+    },
+    "diagnostic-qz-04-1": {
+      "point": {
+        "id": "qz-04",
+        "title": "物质波（德布罗意波长）",
+        "level": "进阶",
+        "definition": "德布罗意提出：不仅光有波粒二象性，实物粒子也有。动量为 p 的粒子对应一个波长，写作 lambda_db=h/p。这就是物质波（德布罗意波）。",
+        "meaning": "这条式子把「粒子」和「波」的关系推广到了实物。要看清它为什么在宏观世界完全看不出来：h 只有 6.63×10⁻³⁴ 量级，一个 0.02 kg 的小球即使以 3 m/s 运动，波长也只有 10⁻³² m —— 比原子核还小 17 个数量级，任何实验都测不到。而电子的质量小到 10⁻³¹ kg，波长就落到了 10⁻¹⁰ m 量级，恰好与原子的尺度相当，于是能被晶体衍射实验证实。",
+        "symbols": {
+          "h": {
+            "desc": "普朗克常量",
+            "unit": "J*s"
+          },
+          "p": {
+            "desc": "粒子的动量",
+            "unit": "kg*m/s"
+          },
+          "lambda_db": {
+            "desc": "德布罗意波长",
+            "unit": "m"
+          },
+          "m": {
+            "desc": "粒子质量",
+            "unit": "kg"
+          },
+          "v": {
+            "desc": "粒子速度",
+            "unit": "m/s"
+          },
+          "p_old": {
+            "desc": "误用另一小球的旧动量",
+            "unit": "kg*m/s"
+          }
+        },
+        "scenarios": {
+          "宏观小球": {
+            "h": 6.63e-34,
+            "m": 0.02,
+            "v": 3.0,
+            "p": 0.06,
+            "lambda_db": 1.105e-32
+          },
+          "较重小球": {
+            "h": 6.63e-34,
+            "m": 0.05,
+            "v": 4.0,
+            "p": 0.2,
+            "lambda_db": 3.315e-33,
+            "p_old": 0.06
+          }
+        },
+        "formulas": [
+          {
+            "name": "动量",
+            "expr": "p = m*v",
+            "when": "速度远小于光速的非相对论情形",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "宏观小球",
+                "expr": "m*v",
+                "ref": 0.06,
+                "note": "0.02 kg 乘 3.0 m/s 得 0.06 kg·m/s。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "较重小球",
+                "expr": "m*v",
+                "ref": 0.2,
+                "note": "0.05 kg 乘 4.0 m/s 得 0.2 kg·m/s。"
+              },
+              {
+                "type": "direction",
+                "scenario": "宏观小球",
+                "var": "v",
+                "lo": 1,
+                "hi": 10,
+                "expr": "m*v",
+                "expect": "up",
+                "note": "质量不变时，速度越大动量越大。"
+              },
+              {
+                "type": "scan",
+                "scenario": "宏观小球",
+                "var": "v",
+                "lo": 1,
+                "hi": 10
+              }
+            ]
+          },
+          {
+            "name": "德布罗意波长",
+            "expr": "lambda_db = h/p",
+            "when": "任何实物粒子都成立；p 越大波长越短",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "宏观小球",
+                "expr": "h/p",
+                "ref": 1.105e-32,
+                "tol": 1e-34,
+                "note": "6.63×10⁻³⁴ 除以 0.06 得约 1.105×10⁻³² m。这个量级远小于校验器默认的绝对容差，所以本条显式声明了更小的 tol。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "较重小球",
+                "expr": "h/p",
+                "ref": 3.315e-33,
+                "tol": 1e-34,
+                "note": "6.63×10⁻³⁴ 除以 0.2 得约 3.315×10⁻³³ m，比上一个更短。"
+              },
+              {
+                "type": "scan",
+                "scenario": "宏观小球",
+                "var": "p",
+                "lo": 0.05,
+                "hi": 0.25
+              },
+              {
+                "type": "consistency",
+                "scenario": "宏观小球",
+                "with": "qz-04|德布罗意波长",
+                "with_expr": "h/(m*v)",
+                "tol": 1.1050000000000001e-37,
+                "target": "德布罗意波长",
+                "note": "本公式直接求lambda_db；参考端显式关系为h/(m*v)。两端使用同一情境和阶段，只核对该关系；with字段仅定位来源，不代表调用另一条被覆盖的公式。",
+                "verification_kind": "独立关系核对"
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "先把粒子的动量写出来：p=mv。",
+          "德布罗意假设实物粒子也满足 h 与 p 的对应关系，即 λ=h/p。",
+          "代入数值估算量级：宏观物体的波长在 10⁻³² m 附近，远小于任何可测尺度，所以日常生活中完全观察不到波动性。"
+        ],
+        "errors": [
+          {
+            "wrong": "把动量写成 m*v^2（与动能记混）",
+            "wrong_expr": "p = m*v^2",
+            "why": "动量是 mv，动能才是 ½mv²。按错误式小球会得到 0.18 kg·m/s，而正确值是 0.06 kg·m/s。",
+            "caught_by": "量纲一致性",
+            "trap_test": {
+              "kind": "dimension",
+              "target": "p = m*v^2",
+              "expect": "mismatch",
+              "lhs_dim": "M·L·T^-1",
+              "rhs_dim": "M·L^2·T^-2",
+              "note": "正式引擎验证量纲不一致；不计作同量纲错误数值实测。"
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "认为宏观物体没有波动性，所以德布罗意假设是错的",
+            "why": "宏观物体**有**波动性，只是波长小到无法观测（0.02 kg 小球约 10⁻³² m）。「测不到」不等于「不存在」——这条要靠人判。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "动量改变后仍使用另一小球的旧动量求波长。",
+            "wrong_expr": "lambda_db = h/p_old",
+            "why": "较重小球动量0.2 kg·m/s，波长3.315×10⁻³³ m；沿用0.06的动量会得到1.105×10⁻³² m。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "较重小球",
+              "expr": "h/p_old",
+              "ref": 3.315e-33,
+              "tol": 3.3149999999999996e-39
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "一个质量 0.02 kg 的小球以 3.0 m/s 运动。取 h=6.63×10⁻³⁴ J·s，求它的动量与德布罗意波长，并说明为什么日常看不到它的波动性。",
+          "solution": [
+            "p = mv = 0.02 × 3.0 = 0.06 kg·m/s",
+            "λ = h/p = 6.63×10⁻³⁴ ÷ 0.06 ≈ 1.1×10⁻³² m",
+            "这个波长比原子核还小十几个数量级，没有任何实验能测到，所以宏观物体的波动性表现不出来"
+          ],
+          "answer": "动量 0.06 kg·m/s，德布罗意波长约 1.1×10⁻³² m，远小于可测尺度。"
+        },
+        "prereq": [],
+        "next": [],
+        "tags": [
+          "德布罗意波",
+          "物质波"
+        ],
+        "learning_scope": "高中"
+      },
+      "error_index": 0,
+      "chapter": "第二十章 · 波粒二象性与原子结构"
+    },
+    "diagnostic-qz-04-2": {
+      "point": {
+        "id": "qz-04",
+        "title": "物质波（德布罗意波长）",
+        "level": "进阶",
+        "definition": "德布罗意提出：不仅光有波粒二象性，实物粒子也有。动量为 p 的粒子对应一个波长，写作 lambda_db=h/p。这就是物质波（德布罗意波）。",
+        "meaning": "这条式子把「粒子」和「波」的关系推广到了实物。要看清它为什么在宏观世界完全看不出来：h 只有 6.63×10⁻³⁴ 量级，一个 0.02 kg 的小球即使以 3 m/s 运动，波长也只有 10⁻³² m —— 比原子核还小 17 个数量级，任何实验都测不到。而电子的质量小到 10⁻³¹ kg，波长就落到了 10⁻¹⁰ m 量级，恰好与原子的尺度相当，于是能被晶体衍射实验证实。",
+        "symbols": {
+          "h": {
+            "desc": "普朗克常量",
+            "unit": "J*s"
+          },
+          "p": {
+            "desc": "粒子的动量",
+            "unit": "kg*m/s"
+          },
+          "lambda_db": {
+            "desc": "德布罗意波长",
+            "unit": "m"
+          },
+          "m": {
+            "desc": "粒子质量",
+            "unit": "kg"
+          },
+          "v": {
+            "desc": "粒子速度",
+            "unit": "m/s"
+          },
+          "p_old": {
+            "desc": "误用另一小球的旧动量",
+            "unit": "kg*m/s"
+          }
+        },
+        "scenarios": {
+          "宏观小球": {
+            "h": 6.63e-34,
+            "m": 0.02,
+            "v": 3.0,
+            "p": 0.06,
+            "lambda_db": 1.105e-32
+          },
+          "较重小球": {
+            "h": 6.63e-34,
+            "m": 0.05,
+            "v": 4.0,
+            "p": 0.2,
+            "lambda_db": 3.315e-33,
+            "p_old": 0.06
+          }
+        },
+        "formulas": [
+          {
+            "name": "动量",
+            "expr": "p = m*v",
+            "when": "速度远小于光速的非相对论情形",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "宏观小球",
+                "expr": "m*v",
+                "ref": 0.06,
+                "note": "0.02 kg 乘 3.0 m/s 得 0.06 kg·m/s。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "较重小球",
+                "expr": "m*v",
+                "ref": 0.2,
+                "note": "0.05 kg 乘 4.0 m/s 得 0.2 kg·m/s。"
+              },
+              {
+                "type": "direction",
+                "scenario": "宏观小球",
+                "var": "v",
+                "lo": 1,
+                "hi": 10,
+                "expr": "m*v",
+                "expect": "up",
+                "note": "质量不变时，速度越大动量越大。"
+              },
+              {
+                "type": "scan",
+                "scenario": "宏观小球",
+                "var": "v",
+                "lo": 1,
+                "hi": 10
+              }
+            ]
+          },
+          {
+            "name": "德布罗意波长",
+            "expr": "lambda_db = h/p",
+            "when": "任何实物粒子都成立；p 越大波长越短",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "宏观小球",
+                "expr": "h/p",
+                "ref": 1.105e-32,
+                "tol": 1e-34,
+                "note": "6.63×10⁻³⁴ 除以 0.06 得约 1.105×10⁻³² m。这个量级远小于校验器默认的绝对容差，所以本条显式声明了更小的 tol。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "较重小球",
+                "expr": "h/p",
+                "ref": 3.315e-33,
+                "tol": 1e-34,
+                "note": "6.63×10⁻³⁴ 除以 0.2 得约 3.315×10⁻³³ m，比上一个更短。"
+              },
+              {
+                "type": "scan",
+                "scenario": "宏观小球",
+                "var": "p",
+                "lo": 0.05,
+                "hi": 0.25
+              },
+              {
+                "type": "consistency",
+                "scenario": "宏观小球",
+                "with": "qz-04|德布罗意波长",
+                "with_expr": "h/(m*v)",
+                "tol": 1.1050000000000001e-37,
+                "target": "德布罗意波长",
+                "note": "本公式直接求lambda_db；参考端显式关系为h/(m*v)。两端使用同一情境和阶段，只核对该关系；with字段仅定位来源，不代表调用另一条被覆盖的公式。",
+                "verification_kind": "独立关系核对"
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "先把粒子的动量写出来：p=mv。",
+          "德布罗意假设实物粒子也满足 h 与 p 的对应关系，即 λ=h/p。",
+          "代入数值估算量级：宏观物体的波长在 10⁻³² m 附近，远小于任何可测尺度，所以日常生活中完全观察不到波动性。"
+        ],
+        "errors": [
+          {
+            "wrong": "把动量写成 m*v^2（与动能记混）",
+            "wrong_expr": "p = m*v^2",
+            "why": "动量是 mv，动能才是 ½mv²。按错误式小球会得到 0.18 kg·m/s，而正确值是 0.06 kg·m/s。",
+            "caught_by": "量纲一致性",
+            "trap_test": {
+              "kind": "dimension",
+              "target": "p = m*v^2",
+              "expect": "mismatch",
+              "lhs_dim": "M·L·T^-1",
+              "rhs_dim": "M·L^2·T^-2",
+              "note": "正式引擎验证量纲不一致；不计作同量纲错误数值实测。"
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "认为宏观物体没有波动性，所以德布罗意假设是错的",
+            "why": "宏观物体**有**波动性，只是波长小到无法观测（0.02 kg 小球约 10⁻³² m）。「测不到」不等于「不存在」——这条要靠人判。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "动量改变后仍使用另一小球的旧动量求波长。",
+            "wrong_expr": "lambda_db = h/p_old",
+            "why": "较重小球动量0.2 kg·m/s，波长3.315×10⁻³³ m；沿用0.06的动量会得到1.105×10⁻³² m。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "较重小球",
+              "expr": "h/p_old",
+              "ref": 3.315e-33,
+              "tol": 3.3149999999999996e-39
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "一个质量 0.02 kg 的小球以 3.0 m/s 运动。取 h=6.63×10⁻³⁴ J·s，求它的动量与德布罗意波长，并说明为什么日常看不到它的波动性。",
+          "solution": [
+            "p = mv = 0.02 × 3.0 = 0.06 kg·m/s",
+            "λ = h/p = 6.63×10⁻³⁴ ÷ 0.06 ≈ 1.1×10⁻³² m",
+            "这个波长比原子核还小十几个数量级，没有任何实验能测到，所以宏观物体的波动性表现不出来"
+          ],
+          "answer": "动量 0.06 kg·m/s，德布罗意波长约 1.1×10⁻³² m，远小于可测尺度。"
+        },
+        "prereq": [],
+        "next": [],
+        "tags": [
+          "德布罗意波",
+          "物质波"
+        ],
+        "learning_scope": "高中"
+      },
+      "error_index": 1,
+      "chapter": "第二十章 · 波粒二象性与原子结构"
+    },
+    "diagnostic-qz-04-3": {
+      "point": {
+        "id": "qz-04",
+        "title": "物质波（德布罗意波长）",
+        "level": "进阶",
+        "definition": "德布罗意提出：不仅光有波粒二象性，实物粒子也有。动量为 p 的粒子对应一个波长，写作 lambda_db=h/p。这就是物质波（德布罗意波）。",
+        "meaning": "这条式子把「粒子」和「波」的关系推广到了实物。要看清它为什么在宏观世界完全看不出来：h 只有 6.63×10⁻³⁴ 量级，一个 0.02 kg 的小球即使以 3 m/s 运动，波长也只有 10⁻³² m —— 比原子核还小 17 个数量级，任何实验都测不到。而电子的质量小到 10⁻³¹ kg，波长就落到了 10⁻¹⁰ m 量级，恰好与原子的尺度相当，于是能被晶体衍射实验证实。",
+        "symbols": {
+          "h": {
+            "desc": "普朗克常量",
+            "unit": "J*s"
+          },
+          "p": {
+            "desc": "粒子的动量",
+            "unit": "kg*m/s"
+          },
+          "lambda_db": {
+            "desc": "德布罗意波长",
+            "unit": "m"
+          },
+          "m": {
+            "desc": "粒子质量",
+            "unit": "kg"
+          },
+          "v": {
+            "desc": "粒子速度",
+            "unit": "m/s"
+          },
+          "p_old": {
+            "desc": "误用另一小球的旧动量",
+            "unit": "kg*m/s"
+          }
+        },
+        "scenarios": {
+          "宏观小球": {
+            "h": 6.63e-34,
+            "m": 0.02,
+            "v": 3.0,
+            "p": 0.06,
+            "lambda_db": 1.105e-32
+          },
+          "较重小球": {
+            "h": 6.63e-34,
+            "m": 0.05,
+            "v": 4.0,
+            "p": 0.2,
+            "lambda_db": 3.315e-33,
+            "p_old": 0.06
+          }
+        },
+        "formulas": [
+          {
+            "name": "动量",
+            "expr": "p = m*v",
+            "when": "速度远小于光速的非相对论情形",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "宏观小球",
+                "expr": "m*v",
+                "ref": 0.06,
+                "note": "0.02 kg 乘 3.0 m/s 得 0.06 kg·m/s。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "较重小球",
+                "expr": "m*v",
+                "ref": 0.2,
+                "note": "0.05 kg 乘 4.0 m/s 得 0.2 kg·m/s。"
+              },
+              {
+                "type": "direction",
+                "scenario": "宏观小球",
+                "var": "v",
+                "lo": 1,
+                "hi": 10,
+                "expr": "m*v",
+                "expect": "up",
+                "note": "质量不变时，速度越大动量越大。"
+              },
+              {
+                "type": "scan",
+                "scenario": "宏观小球",
+                "var": "v",
+                "lo": 1,
+                "hi": 10
+              }
+            ]
+          },
+          {
+            "name": "德布罗意波长",
+            "expr": "lambda_db = h/p",
+            "when": "任何实物粒子都成立；p 越大波长越短",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "宏观小球",
+                "expr": "h/p",
+                "ref": 1.105e-32,
+                "tol": 1e-34,
+                "note": "6.63×10⁻³⁴ 除以 0.06 得约 1.105×10⁻³² m。这个量级远小于校验器默认的绝对容差，所以本条显式声明了更小的 tol。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "较重小球",
+                "expr": "h/p",
+                "ref": 3.315e-33,
+                "tol": 1e-34,
+                "note": "6.63×10⁻³⁴ 除以 0.2 得约 3.315×10⁻³³ m，比上一个更短。"
+              },
+              {
+                "type": "scan",
+                "scenario": "宏观小球",
+                "var": "p",
+                "lo": 0.05,
+                "hi": 0.25
+              },
+              {
+                "type": "consistency",
+                "scenario": "宏观小球",
+                "with": "qz-04|德布罗意波长",
+                "with_expr": "h/(m*v)",
+                "tol": 1.1050000000000001e-37,
+                "target": "德布罗意波长",
+                "note": "本公式直接求lambda_db；参考端显式关系为h/(m*v)。两端使用同一情境和阶段，只核对该关系；with字段仅定位来源，不代表调用另一条被覆盖的公式。",
+                "verification_kind": "独立关系核对"
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "先把粒子的动量写出来：p=mv。",
+          "德布罗意假设实物粒子也满足 h 与 p 的对应关系，即 λ=h/p。",
+          "代入数值估算量级：宏观物体的波长在 10⁻³² m 附近，远小于任何可测尺度，所以日常生活中完全观察不到波动性。"
+        ],
+        "errors": [
+          {
+            "wrong": "把动量写成 m*v^2（与动能记混）",
+            "wrong_expr": "p = m*v^2",
+            "why": "动量是 mv，动能才是 ½mv²。按错误式小球会得到 0.18 kg·m/s，而正确值是 0.06 kg·m/s。",
+            "caught_by": "量纲一致性",
+            "trap_test": {
+              "kind": "dimension",
+              "target": "p = m*v^2",
+              "expect": "mismatch",
+              "lhs_dim": "M·L·T^-1",
+              "rhs_dim": "M·L^2·T^-2",
+              "note": "正式引擎验证量纲不一致；不计作同量纲错误数值实测。"
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "认为宏观物体没有波动性，所以德布罗意假设是错的",
+            "why": "宏观物体**有**波动性，只是波长小到无法观测（0.02 kg 小球约 10⁻³² m）。「测不到」不等于「不存在」——这条要靠人判。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "动量改变后仍使用另一小球的旧动量求波长。",
+            "wrong_expr": "lambda_db = h/p_old",
+            "why": "较重小球动量0.2 kg·m/s，波长3.315×10⁻³³ m；沿用0.06的动量会得到1.105×10⁻³² m。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "较重小球",
+              "expr": "h/p_old",
+              "ref": 3.315e-33,
+              "tol": 3.3149999999999996e-39
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "一个质量 0.02 kg 的小球以 3.0 m/s 运动。取 h=6.63×10⁻³⁴ J·s，求它的动量与德布罗意波长，并说明为什么日常看不到它的波动性。",
+          "solution": [
+            "p = mv = 0.02 × 3.0 = 0.06 kg·m/s",
+            "λ = h/p = 6.63×10⁻³⁴ ÷ 0.06 ≈ 1.1×10⁻³² m",
+            "这个波长比原子核还小十几个数量级，没有任何实验能测到，所以宏观物体的波动性表现不出来"
+          ],
+          "answer": "动量 0.06 kg·m/s，德布罗意波长约 1.1×10⁻³² m，远小于可测尺度。"
+        },
+        "prereq": [],
+        "next": [],
+        "tags": [
+          "德布罗意波",
+          "物质波"
+        ],
+        "learning_scope": "高中"
+      },
+      "error_index": 2,
+      "chapter": "第二十章 · 波粒二象性与原子结构"
+    },
+    "diagnostic-qz-05-1": {
+      "point": {
+        "id": "qz-05",
+        "title": "原子的核式结构模型",
+        "level": "基础",
+        "definition": "卢瑟福根据 α 粒子散射实验提出：原子的正电荷和几乎全部质量集中在一个极小的核里，电子在核外空间运动。α 粒子在原子核外靠近核时受到库仑斥力 F=k_e·q1·q2/r^2，这是它发生大角度偏转的直接原因。",
+        "meaning": "这个模型的证据全在「绝大多数穿过去、极少数被弹回来」这句现象描述里。大多数 α 粒子几乎不偏转，说明原子内部绝大部分是空的；极少数被大角度甚至原路弹回，说明存在一个质量大、电荷集中、体积极小的核。核半径约 10⁻¹⁵ m，而原子半径约 10⁻¹⁰ m，相差五个数量级。本例取几十飞米的核外距离，既能展示迅速增强的斥力，也不把金核错误地当成在核内仍适用的点电荷。",
+        "symbols": {
+          "k_e": {
+            "desc": "静电力常量",
+            "unit": "N*m^2/C^2"
+          },
+          "q1": {
+            "desc": "α 粒子的电荷量",
+            "unit": "C"
+          },
+          "q2": {
+            "desc": "金核的电荷量",
+            "unit": "C"
+          },
+          "r": {
+            "desc": "α 粒子与核中心的距离",
+            "unit": "m"
+          },
+          "F": {
+            "desc": "α 粒子受到的库仑斥力",
+            "unit": "N"
+          },
+          "r1": {
+            "desc": "初始距离",
+            "unit": "m"
+          },
+          "r2": {
+            "desc": "靠近后的距离",
+            "unit": "m"
+          },
+          "F1": {
+            "desc": "初始距离下的库仑力",
+            "unit": "N"
+          },
+          "F2": {
+            "desc": "靠近后的库仑力",
+            "unit": "N"
+          }
+        },
+        "scenarios": {
+          "α 粒子抵近金核": {
+            "k_e": 9000000000.0,
+            "q1": 3.2e-19,
+            "q2": 1.264e-17,
+            "r": 5e-14,
+            "F": 14.56128,
+            "r1": 5e-14,
+            "r2": 2.5e-14,
+            "F1": 14.56128,
+            "F2": 58.24512
+          },
+          "α 粒子远离金核": {
+            "k_e": 9000000000.0,
+            "q1": 3.2e-19,
+            "q2": 1.264e-17,
+            "r": 1e-13,
+            "F": 3.64032
+          }
+        },
+        "formulas": [
+          {
+            "name": "库仑力与距离的关系",
+            "expr": "F = k_e*q1*q2/r^2",
+            "when": "α 粒子仍在原子核外时，可把它与金核近似看作点电荷；进入核内后不能沿用本式",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "α 粒子抵近金核",
+                "expr": "k_e*q1*q2/r^2",
+                "ref": 14.56128,
+                "note": "在 5.0×10⁻¹⁴ m（50 fm）的核外近距离，库仑斥力约 14.6 N，足以显著改变微观 α 粒子的运动方向。"
+              },
+              {
+                "type": "direction",
+                "scenario": "α 粒子抵近金核",
+                "var": "r",
+                "lo": 2.5e-14,
+                "hi": 1e-13,
+                "expr": "k_e*q1*q2/r^2",
+                "expect": "down",
+                "note": "距离越远，库仑斥力越小——按平方反比衰减。"
+              },
+              {
+                "type": "scan",
+                "scenario": "α 粒子抵近金核",
+                "var": "r",
+                "lo": 2.5e-14,
+                "hi": 1e-13
+              },
+              {
+                "type": "numeric",
+                "scenario": "α 粒子远离金核",
+                "expr": "k_e*q1*q2/r^2",
+                "ref": 3.64032,
+                "note": "把距离拉到 1.0×10⁻¹³ m（100 fm），斥力降到约 3.64 N——距离加倍，力变为四分之一。"
+              }
+            ]
+          },
+          {
+            "name": "距离减半时库仑力的变化",
+            "expr": "F2 = F1*(r1/r2)^2",
+            "when": "电荷量不变，只改变距离时的比例关系",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "α 粒子抵近金核",
+                "expr": "F1*(r1/r2)^2",
+                "ref": 58.24512,
+                "note": "距离减半，力变为原来的 4 倍：14.56128×4=58.24512 N。"
+              },
+              {
+                "type": "compare",
+                "scenario": "α 粒子抵近金核",
+                "expr": "F1*(r1/r2)^2",
+                "op": ">",
+                "vs": "F1",
+                "note": "靠近时斥力变大：58.24512 > 14.56128。"
+              },
+              {
+                "type": "scan",
+                "scenario": "α 粒子抵近金核",
+                "var": "r2",
+                "lo": 2e-14,
+                "hi": 5e-14
+              },
+              {
+                "type": "consistency",
+                "scenario": "α 粒子抵近金核",
+                "with": "qz-05|距离减半时库仑力的变化",
+                "with_expr": "k_e*q1*q2/r2^2",
+                "target": "靠近后的库仑力",
+                "note": "本公式直接求F2；参考端显式关系为k_e*q1*q2/r2^2。两端使用同一情境和阶段，只核对该关系；with字段仅定位来源，不代表调用另一条被覆盖的公式。",
+                "verification_kind": "独立关系核对"
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "α 粒子带正电，金核也带正电，两者之间的作用是库仑斥力。",
+          "把电荷量与距离代入库仑定律 F=kq1q2/r²，算出在核尺度上的斥力量级。",
+          "由于力与距离平方成反比，α 粒子越靠近核，受到的斥力增长越快，因此在极近距离上会被大幅度甚至原路弹回——这正是散射实验中那些大角度偏转的来源。"
+        ],
+        "errors": [
+          {
+            "wrong": "把库仑力写成与距离成反比（漏掉平方）",
+            "wrong_expr": "F = k_e*q1*q2/r",
+            "why": "是平方反比。漏掉平方后同一个情境只得到约 7.28×10⁻¹³ N，而正确值约为 14.6 N，量级完全错误。",
+            "caught_by": "量纲一致性",
+            "trap_test": {
+              "kind": "dimension",
+              "target": "F = k_e*q1*q2/r",
+              "expect": "mismatch",
+              "lhs_dim": "M·L·T^-2",
+              "rhs_dim": "M·L^2·T^-2",
+              "note": "正式引擎验证量纲不一致；不计作同量纲错误数值实测。"
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "认为 α 粒子大角度偏转是因为撞上了核外电子",
+            "why": "电子质量只有 α 粒子的约 1/7300，撞上电子不可能让 α 粒子大幅偏转。能被弹回的只能是质量大、电荷集中的核。这是概念性判断，公式检查不到。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "距离减半后只认为库仑力增大两倍。",
+            "wrong_expr": "F2 = F1*(r1/r2)",
+            "why": "平方反比使距离减半、力增四倍，应58.24512 N，线性比例只得29.12256 N。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "α 粒子抵近金核",
+              "expr": "F1*(r1/r2)",
+              "ref": 58.24512,
+              "tol": 1e-06
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "α 粒子（电荷量 3.2×10⁻¹⁹ C）在金核外抵近到 5.0×10⁻¹⁴ m，金核电荷量为 1.264×10⁻¹⁷ C。取 k_e=9.0×10⁹ N·m²/C²，求它受到的库仑斥力。",
+          "solution": [
+            "F = k_e·q1·q2/r²",
+            "F = 9.0×10⁹ × 3.2×10⁻¹⁹ × 1.264×10⁻¹⁷ ÷ (5.0×10⁻¹⁴)²",
+            "F = 3.6403×10⁻²⁶ ÷ 2.5×10⁻²⁷ ≈ 14.6 N"
+          ],
+          "answer": "库仑斥力约 14.6 N。对单个微观 α 粒子而言，这已经是足以造成显著偏转的强作用。"
+        },
+        "prereq": [],
+        "next": [],
+        "tags": [
+          "核式结构",
+          "库仑力"
+        ],
+        "learning_scope": "高中"
+      },
+      "error_index": 0,
+      "chapter": "第二十章 · 波粒二象性与原子结构"
+    },
+    "diagnostic-qz-05-2": {
+      "point": {
+        "id": "qz-05",
+        "title": "原子的核式结构模型",
+        "level": "基础",
+        "definition": "卢瑟福根据 α 粒子散射实验提出：原子的正电荷和几乎全部质量集中在一个极小的核里，电子在核外空间运动。α 粒子在原子核外靠近核时受到库仑斥力 F=k_e·q1·q2/r^2，这是它发生大角度偏转的直接原因。",
+        "meaning": "这个模型的证据全在「绝大多数穿过去、极少数被弹回来」这句现象描述里。大多数 α 粒子几乎不偏转，说明原子内部绝大部分是空的；极少数被大角度甚至原路弹回，说明存在一个质量大、电荷集中、体积极小的核。核半径约 10⁻¹⁵ m，而原子半径约 10⁻¹⁰ m，相差五个数量级。本例取几十飞米的核外距离，既能展示迅速增强的斥力，也不把金核错误地当成在核内仍适用的点电荷。",
+        "symbols": {
+          "k_e": {
+            "desc": "静电力常量",
+            "unit": "N*m^2/C^2"
+          },
+          "q1": {
+            "desc": "α 粒子的电荷量",
+            "unit": "C"
+          },
+          "q2": {
+            "desc": "金核的电荷量",
+            "unit": "C"
+          },
+          "r": {
+            "desc": "α 粒子与核中心的距离",
+            "unit": "m"
+          },
+          "F": {
+            "desc": "α 粒子受到的库仑斥力",
+            "unit": "N"
+          },
+          "r1": {
+            "desc": "初始距离",
+            "unit": "m"
+          },
+          "r2": {
+            "desc": "靠近后的距离",
+            "unit": "m"
+          },
+          "F1": {
+            "desc": "初始距离下的库仑力",
+            "unit": "N"
+          },
+          "F2": {
+            "desc": "靠近后的库仑力",
+            "unit": "N"
+          }
+        },
+        "scenarios": {
+          "α 粒子抵近金核": {
+            "k_e": 9000000000.0,
+            "q1": 3.2e-19,
+            "q2": 1.264e-17,
+            "r": 5e-14,
+            "F": 14.56128,
+            "r1": 5e-14,
+            "r2": 2.5e-14,
+            "F1": 14.56128,
+            "F2": 58.24512
+          },
+          "α 粒子远离金核": {
+            "k_e": 9000000000.0,
+            "q1": 3.2e-19,
+            "q2": 1.264e-17,
+            "r": 1e-13,
+            "F": 3.64032
+          }
+        },
+        "formulas": [
+          {
+            "name": "库仑力与距离的关系",
+            "expr": "F = k_e*q1*q2/r^2",
+            "when": "α 粒子仍在原子核外时，可把它与金核近似看作点电荷；进入核内后不能沿用本式",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "α 粒子抵近金核",
+                "expr": "k_e*q1*q2/r^2",
+                "ref": 14.56128,
+                "note": "在 5.0×10⁻¹⁴ m（50 fm）的核外近距离，库仑斥力约 14.6 N，足以显著改变微观 α 粒子的运动方向。"
+              },
+              {
+                "type": "direction",
+                "scenario": "α 粒子抵近金核",
+                "var": "r",
+                "lo": 2.5e-14,
+                "hi": 1e-13,
+                "expr": "k_e*q1*q2/r^2",
+                "expect": "down",
+                "note": "距离越远，库仑斥力越小——按平方反比衰减。"
+              },
+              {
+                "type": "scan",
+                "scenario": "α 粒子抵近金核",
+                "var": "r",
+                "lo": 2.5e-14,
+                "hi": 1e-13
+              },
+              {
+                "type": "numeric",
+                "scenario": "α 粒子远离金核",
+                "expr": "k_e*q1*q2/r^2",
+                "ref": 3.64032,
+                "note": "把距离拉到 1.0×10⁻¹³ m（100 fm），斥力降到约 3.64 N——距离加倍，力变为四分之一。"
+              }
+            ]
+          },
+          {
+            "name": "距离减半时库仑力的变化",
+            "expr": "F2 = F1*(r1/r2)^2",
+            "when": "电荷量不变，只改变距离时的比例关系",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "α 粒子抵近金核",
+                "expr": "F1*(r1/r2)^2",
+                "ref": 58.24512,
+                "note": "距离减半，力变为原来的 4 倍：14.56128×4=58.24512 N。"
+              },
+              {
+                "type": "compare",
+                "scenario": "α 粒子抵近金核",
+                "expr": "F1*(r1/r2)^2",
+                "op": ">",
+                "vs": "F1",
+                "note": "靠近时斥力变大：58.24512 > 14.56128。"
+              },
+              {
+                "type": "scan",
+                "scenario": "α 粒子抵近金核",
+                "var": "r2",
+                "lo": 2e-14,
+                "hi": 5e-14
+              },
+              {
+                "type": "consistency",
+                "scenario": "α 粒子抵近金核",
+                "with": "qz-05|距离减半时库仑力的变化",
+                "with_expr": "k_e*q1*q2/r2^2",
+                "target": "靠近后的库仑力",
+                "note": "本公式直接求F2；参考端显式关系为k_e*q1*q2/r2^2。两端使用同一情境和阶段，只核对该关系；with字段仅定位来源，不代表调用另一条被覆盖的公式。",
+                "verification_kind": "独立关系核对"
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "α 粒子带正电，金核也带正电，两者之间的作用是库仑斥力。",
+          "把电荷量与距离代入库仑定律 F=kq1q2/r²，算出在核尺度上的斥力量级。",
+          "由于力与距离平方成反比，α 粒子越靠近核，受到的斥力增长越快，因此在极近距离上会被大幅度甚至原路弹回——这正是散射实验中那些大角度偏转的来源。"
+        ],
+        "errors": [
+          {
+            "wrong": "把库仑力写成与距离成反比（漏掉平方）",
+            "wrong_expr": "F = k_e*q1*q2/r",
+            "why": "是平方反比。漏掉平方后同一个情境只得到约 7.28×10⁻¹³ N，而正确值约为 14.6 N，量级完全错误。",
+            "caught_by": "量纲一致性",
+            "trap_test": {
+              "kind": "dimension",
+              "target": "F = k_e*q1*q2/r",
+              "expect": "mismatch",
+              "lhs_dim": "M·L·T^-2",
+              "rhs_dim": "M·L^2·T^-2",
+              "note": "正式引擎验证量纲不一致；不计作同量纲错误数值实测。"
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "认为 α 粒子大角度偏转是因为撞上了核外电子",
+            "why": "电子质量只有 α 粒子的约 1/7300，撞上电子不可能让 α 粒子大幅偏转。能被弹回的只能是质量大、电荷集中的核。这是概念性判断，公式检查不到。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "距离减半后只认为库仑力增大两倍。",
+            "wrong_expr": "F2 = F1*(r1/r2)",
+            "why": "平方反比使距离减半、力增四倍，应58.24512 N，线性比例只得29.12256 N。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "α 粒子抵近金核",
+              "expr": "F1*(r1/r2)",
+              "ref": 58.24512,
+              "tol": 1e-06
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "α 粒子（电荷量 3.2×10⁻¹⁹ C）在金核外抵近到 5.0×10⁻¹⁴ m，金核电荷量为 1.264×10⁻¹⁷ C。取 k_e=9.0×10⁹ N·m²/C²，求它受到的库仑斥力。",
+          "solution": [
+            "F = k_e·q1·q2/r²",
+            "F = 9.0×10⁹ × 3.2×10⁻¹⁹ × 1.264×10⁻¹⁷ ÷ (5.0×10⁻¹⁴)²",
+            "F = 3.6403×10⁻²⁶ ÷ 2.5×10⁻²⁷ ≈ 14.6 N"
+          ],
+          "answer": "库仑斥力约 14.6 N。对单个微观 α 粒子而言，这已经是足以造成显著偏转的强作用。"
+        },
+        "prereq": [],
+        "next": [],
+        "tags": [
+          "核式结构",
+          "库仑力"
+        ],
+        "learning_scope": "高中"
+      },
+      "error_index": 1,
+      "chapter": "第二十章 · 波粒二象性与原子结构"
+    },
+    "diagnostic-qz-05-3": {
+      "point": {
+        "id": "qz-05",
+        "title": "原子的核式结构模型",
+        "level": "基础",
+        "definition": "卢瑟福根据 α 粒子散射实验提出：原子的正电荷和几乎全部质量集中在一个极小的核里，电子在核外空间运动。α 粒子在原子核外靠近核时受到库仑斥力 F=k_e·q1·q2/r^2，这是它发生大角度偏转的直接原因。",
+        "meaning": "这个模型的证据全在「绝大多数穿过去、极少数被弹回来」这句现象描述里。大多数 α 粒子几乎不偏转，说明原子内部绝大部分是空的；极少数被大角度甚至原路弹回，说明存在一个质量大、电荷集中、体积极小的核。核半径约 10⁻¹⁵ m，而原子半径约 10⁻¹⁰ m，相差五个数量级。本例取几十飞米的核外距离，既能展示迅速增强的斥力，也不把金核错误地当成在核内仍适用的点电荷。",
+        "symbols": {
+          "k_e": {
+            "desc": "静电力常量",
+            "unit": "N*m^2/C^2"
+          },
+          "q1": {
+            "desc": "α 粒子的电荷量",
+            "unit": "C"
+          },
+          "q2": {
+            "desc": "金核的电荷量",
+            "unit": "C"
+          },
+          "r": {
+            "desc": "α 粒子与核中心的距离",
+            "unit": "m"
+          },
+          "F": {
+            "desc": "α 粒子受到的库仑斥力",
+            "unit": "N"
+          },
+          "r1": {
+            "desc": "初始距离",
+            "unit": "m"
+          },
+          "r2": {
+            "desc": "靠近后的距离",
+            "unit": "m"
+          },
+          "F1": {
+            "desc": "初始距离下的库仑力",
+            "unit": "N"
+          },
+          "F2": {
+            "desc": "靠近后的库仑力",
+            "unit": "N"
+          }
+        },
+        "scenarios": {
+          "α 粒子抵近金核": {
+            "k_e": 9000000000.0,
+            "q1": 3.2e-19,
+            "q2": 1.264e-17,
+            "r": 5e-14,
+            "F": 14.56128,
+            "r1": 5e-14,
+            "r2": 2.5e-14,
+            "F1": 14.56128,
+            "F2": 58.24512
+          },
+          "α 粒子远离金核": {
+            "k_e": 9000000000.0,
+            "q1": 3.2e-19,
+            "q2": 1.264e-17,
+            "r": 1e-13,
+            "F": 3.64032
+          }
+        },
+        "formulas": [
+          {
+            "name": "库仑力与距离的关系",
+            "expr": "F = k_e*q1*q2/r^2",
+            "when": "α 粒子仍在原子核外时，可把它与金核近似看作点电荷；进入核内后不能沿用本式",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "α 粒子抵近金核",
+                "expr": "k_e*q1*q2/r^2",
+                "ref": 14.56128,
+                "note": "在 5.0×10⁻¹⁴ m（50 fm）的核外近距离，库仑斥力约 14.6 N，足以显著改变微观 α 粒子的运动方向。"
+              },
+              {
+                "type": "direction",
+                "scenario": "α 粒子抵近金核",
+                "var": "r",
+                "lo": 2.5e-14,
+                "hi": 1e-13,
+                "expr": "k_e*q1*q2/r^2",
+                "expect": "down",
+                "note": "距离越远，库仑斥力越小——按平方反比衰减。"
+              },
+              {
+                "type": "scan",
+                "scenario": "α 粒子抵近金核",
+                "var": "r",
+                "lo": 2.5e-14,
+                "hi": 1e-13
+              },
+              {
+                "type": "numeric",
+                "scenario": "α 粒子远离金核",
+                "expr": "k_e*q1*q2/r^2",
+                "ref": 3.64032,
+                "note": "把距离拉到 1.0×10⁻¹³ m（100 fm），斥力降到约 3.64 N——距离加倍，力变为四分之一。"
+              }
+            ]
+          },
+          {
+            "name": "距离减半时库仑力的变化",
+            "expr": "F2 = F1*(r1/r2)^2",
+            "when": "电荷量不变，只改变距离时的比例关系",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "α 粒子抵近金核",
+                "expr": "F1*(r1/r2)^2",
+                "ref": 58.24512,
+                "note": "距离减半，力变为原来的 4 倍：14.56128×4=58.24512 N。"
+              },
+              {
+                "type": "compare",
+                "scenario": "α 粒子抵近金核",
+                "expr": "F1*(r1/r2)^2",
+                "op": ">",
+                "vs": "F1",
+                "note": "靠近时斥力变大：58.24512 > 14.56128。"
+              },
+              {
+                "type": "scan",
+                "scenario": "α 粒子抵近金核",
+                "var": "r2",
+                "lo": 2e-14,
+                "hi": 5e-14
+              },
+              {
+                "type": "consistency",
+                "scenario": "α 粒子抵近金核",
+                "with": "qz-05|距离减半时库仑力的变化",
+                "with_expr": "k_e*q1*q2/r2^2",
+                "target": "靠近后的库仑力",
+                "note": "本公式直接求F2；参考端显式关系为k_e*q1*q2/r2^2。两端使用同一情境和阶段，只核对该关系；with字段仅定位来源，不代表调用另一条被覆盖的公式。",
+                "verification_kind": "独立关系核对"
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "α 粒子带正电，金核也带正电，两者之间的作用是库仑斥力。",
+          "把电荷量与距离代入库仑定律 F=kq1q2/r²，算出在核尺度上的斥力量级。",
+          "由于力与距离平方成反比，α 粒子越靠近核，受到的斥力增长越快，因此在极近距离上会被大幅度甚至原路弹回——这正是散射实验中那些大角度偏转的来源。"
+        ],
+        "errors": [
+          {
+            "wrong": "把库仑力写成与距离成反比（漏掉平方）",
+            "wrong_expr": "F = k_e*q1*q2/r",
+            "why": "是平方反比。漏掉平方后同一个情境只得到约 7.28×10⁻¹³ N，而正确值约为 14.6 N，量级完全错误。",
+            "caught_by": "量纲一致性",
+            "trap_test": {
+              "kind": "dimension",
+              "target": "F = k_e*q1*q2/r",
+              "expect": "mismatch",
+              "lhs_dim": "M·L·T^-2",
+              "rhs_dim": "M·L^2·T^-2",
+              "note": "正式引擎验证量纲不一致；不计作同量纲错误数值实测。"
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "认为 α 粒子大角度偏转是因为撞上了核外电子",
+            "why": "电子质量只有 α 粒子的约 1/7300，撞上电子不可能让 α 粒子大幅偏转。能被弹回的只能是质量大、电荷集中的核。这是概念性判断，公式检查不到。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "距离减半后只认为库仑力增大两倍。",
+            "wrong_expr": "F2 = F1*(r1/r2)",
+            "why": "平方反比使距离减半、力增四倍，应58.24512 N，线性比例只得29.12256 N。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "α 粒子抵近金核",
+              "expr": "F1*(r1/r2)",
+              "ref": 58.24512,
+              "tol": 1e-06
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "α 粒子（电荷量 3.2×10⁻¹⁹ C）在金核外抵近到 5.0×10⁻¹⁴ m，金核电荷量为 1.264×10⁻¹⁷ C。取 k_e=9.0×10⁹ N·m²/C²，求它受到的库仑斥力。",
+          "solution": [
+            "F = k_e·q1·q2/r²",
+            "F = 9.0×10⁹ × 3.2×10⁻¹⁹ × 1.264×10⁻¹⁷ ÷ (5.0×10⁻¹⁴)²",
+            "F = 3.6403×10⁻²⁶ ÷ 2.5×10⁻²⁷ ≈ 14.6 N"
+          ],
+          "answer": "库仑斥力约 14.6 N。对单个微观 α 粒子而言，这已经是足以造成显著偏转的强作用。"
+        },
+        "prereq": [],
+        "next": [],
+        "tags": [
+          "核式结构",
+          "库仑力"
+        ],
+        "learning_scope": "高中"
+      },
+      "error_index": 2,
+      "chapter": "第二十章 · 波粒二象性与原子结构"
+    },
+    "diagnostic-qz-06-1": {
+      "point": {
+        "id": "qz-06",
+        "title": "玻尔模型与氢原子能级",
+        "level": "进阶",
+        "definition": "玻尔提出：氢原子的能量只能取一系列特定的值，叫能级，第 n 个能级写作 E_n=E1/n^2，其中 E1 是基态能量。原子在能级之间跳跃时，会吸收或放出能量恰好等于两能级之差的光子。",
+        "meaning": "「能级」是能量量子化在原子上的具体表现：原子不能停在任意能量上，只能待在几条固定的「台阶」上。这解释了两件事：一是原子发光不是连续光谱，而是一条条分离的谱线；二是每条谱线对应一次确定的跃迁，所以谱线位置可以用来反推能级结构。要注意 E1 是**负值**，能级越高（n 越大）越接近零，这说明原子被「束缚」着——要把电子完全拉出来，需要给它 13.6 eV。",
+        "symbols": {
+          "E1": {
+            "desc": "基态能量（n=1），氢原子约为 −13.6 eV",
+            "unit": "eV"
+          },
+          "n_level": {
+            "desc": "量子数（能级序号）",
+            "unit": "1"
+          },
+          "E_n": {
+            "desc": "第 n 个能级的能量",
+            "unit": "eV"
+          },
+          "E_high": {
+            "desc": "较高能级的能量（跃迁前）",
+            "unit": "eV"
+          },
+          "E_low": {
+            "desc": "较低能级的能量（跃迁后）",
+            "unit": "eV"
+          },
+          "Delta_E": {
+            "desc": "跃迁放出的光子能量",
+            "unit": "eV"
+          }
+        },
+        "scenarios": {
+          "基态": {
+            "E1": -13.6,
+            "n_level": 1,
+            "E_n": -13.6,
+            "E_high": -13.6,
+            "E_low": -13.6,
+            "Delta_E": 0.0
+          },
+          "第二能级": {
+            "E1": -13.6,
+            "n_level": 2,
+            "E_n": -3.4,
+            "E_high": -3.4,
+            "E_low": -13.6,
+            "Delta_E": 10.2
+          }
+        },
+        "formulas": [
+          {
+            "name": "氢原子能级公式",
+            "expr": "E_n = E1/n_level^2",
+            "when": "氢原子（单电子体系）；n_level 取正整数 1、2、3…",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "基态",
+                "expr": "E1/n_level^2",
+                "ref": -13.6,
+                "note": "n=1 时就是基态能量 −13.6 eV。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "第二能级",
+                "expr": "E1/n_level^2",
+                "ref": -3.4,
+                "note": "−13.6 除以 2²=4，得 −3.4 eV。能级越高，能量越接近零。"
+              },
+              {
+                "type": "direction",
+                "scenario": "第二能级",
+                "var": "n_level",
+                "lo": 1,
+                "hi": 6,
+                "expr": "E1/n_level^2",
+                "expect": "up",
+                "note": "n 增大时能量从 −13.6 eV 向 0 靠近，在数轴上确实「变大」（往上）——这正是容易被直觉搞反的地方。"
+              },
+              {
+                "type": "scan",
+                "scenario": "第二能级",
+                "var": "n_level",
+                "lo": 1,
+                "hi": 6
+              }
+            ]
+          },
+          {
+            "name": "能级跃迁放出的光子能量",
+            "expr": "Delta_E = E_high - E_low",
+            "when": "从高能级向低能级跃迁时放出光子；反向则吸收",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "第二能级",
+                "expr": "E_high - E_low",
+                "ref": 10.2,
+                "note": "−3.4 − (−13.6) = 10.2 eV，这就是氢原子一条谱线对应的光子能量。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "基态",
+                "expr": "E_high - E_low",
+                "ref": 0.0,
+                "note": "停在同一个能级上不跃迁，能量差为零，不发光。"
+              },
+              {
+                "type": "direction",
+                "scenario": "第二能级",
+                "var": "E_high",
+                "lo": -13.6,
+                "hi": -3.4,
+                "expr": "E_high - E_low",
+                "expect": "up",
+                "note": "起点能级越高，放出的光子能量越大。"
+              },
+              {
+                "type": "consistency",
+                "scenario": "第二能级",
+                "with": "qz-06|能级跃迁放出的光子能量",
+                "with_expr": "E1/2^2 - E1/1^2",
+                "target": "跃迁放出的光子能量",
+                "note": "本公式直接求Delta_E；参考端显式关系为E1/2^2 - E1/1^2。两端使用同一情境和阶段，只核对该关系；with字段仅定位来源，不代表调用另一条被覆盖的公式。",
+                "verification_kind": "独立关系核对"
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "玻尔假设原子的能量只能取分立值，对氢原子可以归纳为 E_n=E1/n²。",
+          "把 n=1 代入得基态 −13.6 eV，n=2 得 −3.4 eV，可见能级越高、能量越接近零。",
+          "跃迁时能量守恒：两个能级之差要么变成一个光子的能量放出去（往下跳），要么由吸收的光子补上（往上跳），这就是谱线位置能反推能级的原因。"
+        ],
+        "errors": [
+          {
+            "wrong": "把能级公式写成 E_n = E1/n（漏掉平方）",
+            "wrong_expr": "E_n = E1/n_level",
+            "why": "是 n² 而不是 n。按错误式第二能级会得到 −6.8 eV，而正确值是 −3.4 eV——两条式子给出的谱线位置完全不同。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "第二能级",
+              "expr": "E1/n_level",
+              "ref": -3.4
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "认为原子可以处于任意能量的状态",
+            "why": "能级是分立的，原子只能待在这几条固定的「台阶」上，这也是原子光谱是一条条分离谱线而不是连续光谱的根本原因。属观念性错误，公式检查不了。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "氢原子的基态能量为 −13.6 eV。求第二能级的能量；并求电子从第二能级跃迁到基态时放出光子的能量。",
+          "solution": [
+            "n=2 时，E_n = E1/2² = −13.6 ÷ 4 = −3.4 eV",
+            "ΔE = E_high − E_low = −3.4 − (−13.6) = 10.2 eV",
+            "这个能量对应一条紫外谱线，谱线位置由 ΔE 唯一确定"
+          ],
+          "answer": "第二能级 −3.4 eV；跃迁放出光子能量 10.2 eV。"
+        },
+        "prereq": [],
+        "next": [],
+        "tags": [
+          "能级",
+          "玻尔模型",
+          "跃迁"
+        ],
+        "learning_scope": "高中"
+      },
+      "error_index": 0,
+      "chapter": "第二十章 · 波粒二象性与原子结构"
+    },
+    "diagnostic-qz-06-2": {
+      "point": {
+        "id": "qz-06",
+        "title": "玻尔模型与氢原子能级",
+        "level": "进阶",
+        "definition": "玻尔提出：氢原子的能量只能取一系列特定的值，叫能级，第 n 个能级写作 E_n=E1/n^2，其中 E1 是基态能量。原子在能级之间跳跃时，会吸收或放出能量恰好等于两能级之差的光子。",
+        "meaning": "「能级」是能量量子化在原子上的具体表现：原子不能停在任意能量上，只能待在几条固定的「台阶」上。这解释了两件事：一是原子发光不是连续光谱，而是一条条分离的谱线；二是每条谱线对应一次确定的跃迁，所以谱线位置可以用来反推能级结构。要注意 E1 是**负值**，能级越高（n 越大）越接近零，这说明原子被「束缚」着——要把电子完全拉出来，需要给它 13.6 eV。",
+        "symbols": {
+          "E1": {
+            "desc": "基态能量（n=1），氢原子约为 −13.6 eV",
+            "unit": "eV"
+          },
+          "n_level": {
+            "desc": "量子数（能级序号）",
+            "unit": "1"
+          },
+          "E_n": {
+            "desc": "第 n 个能级的能量",
+            "unit": "eV"
+          },
+          "E_high": {
+            "desc": "较高能级的能量（跃迁前）",
+            "unit": "eV"
+          },
+          "E_low": {
+            "desc": "较低能级的能量（跃迁后）",
+            "unit": "eV"
+          },
+          "Delta_E": {
+            "desc": "跃迁放出的光子能量",
+            "unit": "eV"
+          }
+        },
+        "scenarios": {
+          "基态": {
+            "E1": -13.6,
+            "n_level": 1,
+            "E_n": -13.6,
+            "E_high": -13.6,
+            "E_low": -13.6,
+            "Delta_E": 0.0
+          },
+          "第二能级": {
+            "E1": -13.6,
+            "n_level": 2,
+            "E_n": -3.4,
+            "E_high": -3.4,
+            "E_low": -13.6,
+            "Delta_E": 10.2
+          }
+        },
+        "formulas": [
+          {
+            "name": "氢原子能级公式",
+            "expr": "E_n = E1/n_level^2",
+            "when": "氢原子（单电子体系）；n_level 取正整数 1、2、3…",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "基态",
+                "expr": "E1/n_level^2",
+                "ref": -13.6,
+                "note": "n=1 时就是基态能量 −13.6 eV。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "第二能级",
+                "expr": "E1/n_level^2",
+                "ref": -3.4,
+                "note": "−13.6 除以 2²=4，得 −3.4 eV。能级越高，能量越接近零。"
+              },
+              {
+                "type": "direction",
+                "scenario": "第二能级",
+                "var": "n_level",
+                "lo": 1,
+                "hi": 6,
+                "expr": "E1/n_level^2",
+                "expect": "up",
+                "note": "n 增大时能量从 −13.6 eV 向 0 靠近，在数轴上确实「变大」（往上）——这正是容易被直觉搞反的地方。"
+              },
+              {
+                "type": "scan",
+                "scenario": "第二能级",
+                "var": "n_level",
+                "lo": 1,
+                "hi": 6
+              }
+            ]
+          },
+          {
+            "name": "能级跃迁放出的光子能量",
+            "expr": "Delta_E = E_high - E_low",
+            "when": "从高能级向低能级跃迁时放出光子；反向则吸收",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "第二能级",
+                "expr": "E_high - E_low",
+                "ref": 10.2,
+                "note": "−3.4 − (−13.6) = 10.2 eV，这就是氢原子一条谱线对应的光子能量。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "基态",
+                "expr": "E_high - E_low",
+                "ref": 0.0,
+                "note": "停在同一个能级上不跃迁，能量差为零，不发光。"
+              },
+              {
+                "type": "direction",
+                "scenario": "第二能级",
+                "var": "E_high",
+                "lo": -13.6,
+                "hi": -3.4,
+                "expr": "E_high - E_low",
+                "expect": "up",
+                "note": "起点能级越高，放出的光子能量越大。"
+              },
+              {
+                "type": "consistency",
+                "scenario": "第二能级",
+                "with": "qz-06|能级跃迁放出的光子能量",
+                "with_expr": "E1/2^2 - E1/1^2",
+                "target": "跃迁放出的光子能量",
+                "note": "本公式直接求Delta_E；参考端显式关系为E1/2^2 - E1/1^2。两端使用同一情境和阶段，只核对该关系；with字段仅定位来源，不代表调用另一条被覆盖的公式。",
+                "verification_kind": "独立关系核对"
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "玻尔假设原子的能量只能取分立值，对氢原子可以归纳为 E_n=E1/n²。",
+          "把 n=1 代入得基态 −13.6 eV，n=2 得 −3.4 eV，可见能级越高、能量越接近零。",
+          "跃迁时能量守恒：两个能级之差要么变成一个光子的能量放出去（往下跳），要么由吸收的光子补上（往上跳），这就是谱线位置能反推能级的原因。"
+        ],
+        "errors": [
+          {
+            "wrong": "把能级公式写成 E_n = E1/n（漏掉平方）",
+            "wrong_expr": "E_n = E1/n_level",
+            "why": "是 n² 而不是 n。按错误式第二能级会得到 −6.8 eV，而正确值是 −3.4 eV——两条式子给出的谱线位置完全不同。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "第二能级",
+              "expr": "E1/n_level",
+              "ref": -3.4
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "认为原子可以处于任意能量的状态",
+            "why": "能级是分立的，原子只能待在这几条固定的「台阶」上，这也是原子光谱是一条条分离谱线而不是连续光谱的根本原因。属观念性错误，公式检查不了。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "氢原子的基态能量为 −13.6 eV。求第二能级的能量；并求电子从第二能级跃迁到基态时放出光子的能量。",
+          "solution": [
+            "n=2 时，E_n = E1/2² = −13.6 ÷ 4 = −3.4 eV",
+            "ΔE = E_high − E_low = −3.4 − (−13.6) = 10.2 eV",
+            "这个能量对应一条紫外谱线，谱线位置由 ΔE 唯一确定"
+          ],
+          "answer": "第二能级 −3.4 eV；跃迁放出光子能量 10.2 eV。"
+        },
+        "prereq": [],
+        "next": [],
+        "tags": [
+          "能级",
+          "玻尔模型",
+          "跃迁"
+        ],
+        "learning_scope": "高中"
+      },
+      "error_index": 1,
+      "chapter": "第二十章 · 波粒二象性与原子结构"
+    },
+    "diagnostic-qz-07-1": {
+      "point": {
+        "id": "qz-07",
+        "title": "遏止电压与光电效应图像",
+        "level": "进阶",
+        "definition": "遏止电压的大小用于测量光电子最大初动能，满足 e*U_c = h*nu-W。超过截止频率后，遏止电压随频率线性增加，斜率为 h/e，横截距为金属截止频率。",
+        "meaning": "光电效应图像要先看横纵轴和电压符号约定。以遏止电压大小为纵轴时斜率为正，纵截距的外推值为负，但实际低于截止频率时没有光电子，不能赋予负的遏止电压。固定频率和金属、收集条件不变且在线性响应范围内，光强主要改变饱和电流，不改变最大初动能和遏止电压。",
+        "symbols": {
+          "e": {
+            "unit": "C",
+            "desc": "元电荷大小"
+          },
+          "h": {
+            "unit": "J*s",
+            "desc": "普朗克常量"
+          },
+          "nu": {
+            "unit": "Hz",
+            "desc": "入射光频率"
+          },
+          "W": {
+            "unit": "J",
+            "desc": "金属逸出功"
+          },
+          "U_c": {
+            "unit": "V",
+            "desc": "遏止电压的非负大小"
+          },
+          "nu_0": {
+            "unit": "Hz",
+            "desc": "金属截止频率"
+          },
+          "k": {
+            "unit": "V*s",
+            "desc": "遏止电压对频率的图像斜率"
+          },
+          "b": {
+            "unit": "V",
+            "desc": "直线外推到零频率的纵截距"
+          }
+        },
+        "scenarios": {
+          "基准": {
+            "e": 1.6e-19,
+            "h": 6.63e-34,
+            "nu": 1000000000000000,
+            "W": 3.315e-19,
+            "U_c": 2.071875
+          }
+        },
+        "formulas": [
+          {
+            "name": "遏止电压大小",
+            "expr": "U_c = (h*nu-W)/e",
+            "when": "频率不低于截止频率，U_c取反向遏止电压大小",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "基准",
+                "ref": 2.071875,
+                "note": "光子能量6.63×10^-19 J，扣逸出功得3.315×10^-19 J，再除元电荷为2.071875 V"
+              },
+              {
+                "type": "scan",
+                "scenario": "基准",
+                "var": "nu",
+                "lo": 500000000000000,
+                "hi": 2000000000000000,
+                "n": 17,
+                "note": "只扫描截止频率及以上，不给无光电子区域错误的负遏止电压"
+              },
+              {
+                "type": "consistency",
+                "scenario": "基准",
+                "with": "qz-07|遏止电压大小",
+                "with_expr": "U_c",
+                "target": "遏止电压的非负大小",
+                "note": "直接求本公式输出，与情境中另列的U_c设计基准核对；数据是设计示例，不是实测。用于核对定义、反算或边界值，不宣称不同物理原理互证。",
+                "tol": 1e-28,
+                "verification_kind": "独立设计情境数据核对"
+              }
+            ]
+          },
+          {
+            "name": "光电图像斜率",
+            "expr": "k = h/e",
+            "when": "以频率为横轴、遏止电压大小为纵轴，光电发射区的直线斜率",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "基准",
+                "ref": 4.14375e-15,
+                "note": "相同能量每元电荷的换算给每赫兹4.14375×10^-15 V",
+                "tol": 1e-24
+              }
+            ]
+          },
+          {
+            "name": "截止频率",
+            "expr": "nu_0 = W/h",
+            "when": "单光子光电效应，金属逸出功固定",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "基准",
+                "ref": 500000000000000,
+                "note": "逸出功恰是频率10^15 Hz光子能量一半，截止频率5×10^14 Hz"
+              }
+            ]
+          },
+          {
+            "name": "图像外推纵截距",
+            "expr": "b = -W/e",
+            "when": "仅为直线的数学外推截距，不代表零频率可以发生光电效应",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "基准",
+                "ref": -2.071875,
+                "note": "负逸出功除元电荷为−2.071875 V，实际低频区不适用直线发射模型"
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "用光子能量减逸出功求最大初动能，不把金属逸出功忽略。",
+          "遏止时反向电场做功大小等于最大初动能，除元电荷得到遏止电压大小。",
+          "把遏止电压整理成频率的一次函数，读出斜率、横截距和外推纵截距。",
+          "改变光强与改变频率分开讨论；只有频率决定单个光子能量，饱和电流还取决于收集与响应条件。"
+        ],
+        "errors": [
+          {
+            "wrong": "把全部光子能量都当成最大电子动能",
+            "wrong_expr": "U_c = h*nu/e",
+            "why": "电子必须先克服逸出功离开金属，全部光子能量并不都转化为初动能；漏减逸出功会把本例遏止电压加倍，量纲无法发现。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "基准",
+              "expr": "h*nu/e",
+              "ref": 2.071875
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "光强翻倍就认为遏止电压也翻倍",
+            "why": "在单光子线性光电响应且频率固定时，每个光子能量不变，最大初动能不变；增加的是到达的光子数及可收集电子数，不是遏止电压。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "普朗克常量取6.63×10^-34 J·s、元电荷1.6×10^-19 C，金属逸出功3.315×10^-19 J，入射频率10^15 Hz，求遏止电压和截止频率。",
+          "solution": [
+            "光子能量6.63×10^-19 J，最大电子动能为3.315×10^-19 J，遏止电压2.071875 V。",
+            "逸出功除普朗克常量得截止频率5×10^14 Hz；更强同频光不会改变该截止频率或遏止电压。"
+          ],
+          "answer": "遏止电压约2.072 V，截止频率5×10^14 Hz。"
+        },
+        "prereq": [
+          "qz-02",
+          "pot-02"
+        ],
+        "next": [
+          "qz-03",
+          "qz-06"
+        ],
+        "tags": [
+          "遏止电压",
+          "光电效应图像",
+          "截止频率"
+        ],
+        "learning_scope": "高中"
+      },
+      "error_index": 0,
+      "chapter": "第二十章 · 波粒二象性与原子结构"
+    },
+    "diagnostic-qz-07-2": {
+      "point": {
+        "id": "qz-07",
+        "title": "遏止电压与光电效应图像",
+        "level": "进阶",
+        "definition": "遏止电压的大小用于测量光电子最大初动能，满足 e*U_c = h*nu-W。超过截止频率后，遏止电压随频率线性增加，斜率为 h/e，横截距为金属截止频率。",
+        "meaning": "光电效应图像要先看横纵轴和电压符号约定。以遏止电压大小为纵轴时斜率为正，纵截距的外推值为负，但实际低于截止频率时没有光电子，不能赋予负的遏止电压。固定频率和金属、收集条件不变且在线性响应范围内，光强主要改变饱和电流，不改变最大初动能和遏止电压。",
+        "symbols": {
+          "e": {
+            "unit": "C",
+            "desc": "元电荷大小"
+          },
+          "h": {
+            "unit": "J*s",
+            "desc": "普朗克常量"
+          },
+          "nu": {
+            "unit": "Hz",
+            "desc": "入射光频率"
+          },
+          "W": {
+            "unit": "J",
+            "desc": "金属逸出功"
+          },
+          "U_c": {
+            "unit": "V",
+            "desc": "遏止电压的非负大小"
+          },
+          "nu_0": {
+            "unit": "Hz",
+            "desc": "金属截止频率"
+          },
+          "k": {
+            "unit": "V*s",
+            "desc": "遏止电压对频率的图像斜率"
+          },
+          "b": {
+            "unit": "V",
+            "desc": "直线外推到零频率的纵截距"
+          }
+        },
+        "scenarios": {
+          "基准": {
+            "e": 1.6e-19,
+            "h": 6.63e-34,
+            "nu": 1000000000000000,
+            "W": 3.315e-19,
+            "U_c": 2.071875
+          }
+        },
+        "formulas": [
+          {
+            "name": "遏止电压大小",
+            "expr": "U_c = (h*nu-W)/e",
+            "when": "频率不低于截止频率，U_c取反向遏止电压大小",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "基准",
+                "ref": 2.071875,
+                "note": "光子能量6.63×10^-19 J，扣逸出功得3.315×10^-19 J，再除元电荷为2.071875 V"
+              },
+              {
+                "type": "scan",
+                "scenario": "基准",
+                "var": "nu",
+                "lo": 500000000000000,
+                "hi": 2000000000000000,
+                "n": 17,
+                "note": "只扫描截止频率及以上，不给无光电子区域错误的负遏止电压"
+              },
+              {
+                "type": "consistency",
+                "scenario": "基准",
+                "with": "qz-07|遏止电压大小",
+                "with_expr": "U_c",
+                "target": "遏止电压的非负大小",
+                "note": "直接求本公式输出，与情境中另列的U_c设计基准核对；数据是设计示例，不是实测。用于核对定义、反算或边界值，不宣称不同物理原理互证。",
+                "tol": 1e-28,
+                "verification_kind": "独立设计情境数据核对"
+              }
+            ]
+          },
+          {
+            "name": "光电图像斜率",
+            "expr": "k = h/e",
+            "when": "以频率为横轴、遏止电压大小为纵轴，光电发射区的直线斜率",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "基准",
+                "ref": 4.14375e-15,
+                "note": "相同能量每元电荷的换算给每赫兹4.14375×10^-15 V",
+                "tol": 1e-24
+              }
+            ]
+          },
+          {
+            "name": "截止频率",
+            "expr": "nu_0 = W/h",
+            "when": "单光子光电效应，金属逸出功固定",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "基准",
+                "ref": 500000000000000,
+                "note": "逸出功恰是频率10^15 Hz光子能量一半，截止频率5×10^14 Hz"
+              }
+            ]
+          },
+          {
+            "name": "图像外推纵截距",
+            "expr": "b = -W/e",
+            "when": "仅为直线的数学外推截距，不代表零频率可以发生光电效应",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "基准",
+                "ref": -2.071875,
+                "note": "负逸出功除元电荷为−2.071875 V，实际低频区不适用直线发射模型"
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "用光子能量减逸出功求最大初动能，不把金属逸出功忽略。",
+          "遏止时反向电场做功大小等于最大初动能，除元电荷得到遏止电压大小。",
+          "把遏止电压整理成频率的一次函数，读出斜率、横截距和外推纵截距。",
+          "改变光强与改变频率分开讨论；只有频率决定单个光子能量，饱和电流还取决于收集与响应条件。"
+        ],
+        "errors": [
+          {
+            "wrong": "把全部光子能量都当成最大电子动能",
+            "wrong_expr": "U_c = h*nu/e",
+            "why": "电子必须先克服逸出功离开金属，全部光子能量并不都转化为初动能；漏减逸出功会把本例遏止电压加倍，量纲无法发现。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "基准",
+              "expr": "h*nu/e",
+              "ref": 2.071875
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "光强翻倍就认为遏止电压也翻倍",
+            "why": "在单光子线性光电响应且频率固定时，每个光子能量不变，最大初动能不变；增加的是到达的光子数及可收集电子数，不是遏止电压。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "普朗克常量取6.63×10^-34 J·s、元电荷1.6×10^-19 C，金属逸出功3.315×10^-19 J，入射频率10^15 Hz，求遏止电压和截止频率。",
+          "solution": [
+            "光子能量6.63×10^-19 J，最大电子动能为3.315×10^-19 J，遏止电压2.071875 V。",
+            "逸出功除普朗克常量得截止频率5×10^14 Hz；更强同频光不会改变该截止频率或遏止电压。"
+          ],
+          "answer": "遏止电压约2.072 V，截止频率5×10^14 Hz。"
+        },
+        "prereq": [
+          "qz-02",
+          "pot-02"
+        ],
+        "next": [
+          "qz-03",
+          "qz-06"
+        ],
+        "tags": [
+          "遏止电压",
+          "光电效应图像",
+          "截止频率"
+        ],
+        "learning_scope": "高中"
+      },
+      "error_index": 1,
+      "chapter": "第二十章 · 波粒二象性与原子结构"
+    },
+    "diagnostic-qz-08-1": {
+      "point": {
+        "id": "qz-08",
+        "title": "康普顿效应",
+        "level": "拓展",
+        "definition": "光子与初始静止的自由电子散射时，光子向电子传递能量与动量，散射后波长增加。波长增量取决于散射角，反向散射时增量达到两倍电子康普顿波长。",
+        "meaning": "本卡使用初始静止的自由电子或束缚可忽略的近似，不是任意物质中任意光的通用波长变化公式。散射角是入射光子与出射光子方向的夹角；正向散射不发生波长变化，反向变化最大。电子反冲必须用相对论能量与动量关系处理，不能仅凭普通低速动能公式推导全部结果。",
+        "symbols": {
+          "h": {
+            "unit": "J*s",
+            "desc": "普朗克常量"
+          },
+          "m": {
+            "unit": "kg",
+            "desc": "电子静质量"
+          },
+          "c": {
+            "unit": "m/s",
+            "desc": "真空光速"
+          },
+          "l_c": {
+            "unit": "m",
+            "desc": "电子康普顿波长"
+          },
+          "lambda": {
+            "unit": "m",
+            "desc": "入射光子波长"
+          },
+          "l_p": {
+            "unit": "m",
+            "desc": "散射光子波长"
+          },
+          "theta": {
+            "unit": "rad",
+            "desc": "光子散射角"
+          },
+          "z": {
+            "unit": "1",
+            "desc": "波长增量除康普顿波长"
+          },
+          "K": {
+            "unit": "J",
+            "desc": "电子反冲动能"
+          }
+        },
+        "scenarios": {
+          "反向": {
+            "h": 6.62607015e-34,
+            "m": 9.1093837139e-31,
+            "c": 299792458,
+            "l_c": 2.426310235380317e-12,
+            "lambda": 2.426310235380317e-12,
+            "l_p": 7.278930706140951e-12,
+            "theta": 3.141592653589793
+          }
+        },
+        "formulas": [
+          {
+            "name": "电子康普顿波长",
+            "expr": "l_c = h/(m*c)",
+            "when": "电子质量为静质量，所用常量来自SI数值",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "反向",
+                "ref": 2.426310235380317e-12,
+                "note": "用45位十进制运算将普朗克常量除电子静质量和光速，得到约2.42631皮米",
+                "tol": 1e-24
+              }
+            ]
+          },
+          {
+            "name": "归一化波长增量",
+            "expr": "z = 1-cos(theta)",
+            "when": "初始静止自由电子散射，角度在零至π之间",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "反向",
+                "ref": 2,
+                "note": "反向散射余弦为−1，波长增量为两倍康普顿波长"
+              },
+              {
+                "type": "scan",
+                "scenario": "反向",
+                "var": "theta",
+                "lo": 0,
+                "hi": 3.141592653589793,
+                "n": 17,
+                "note": "从正向零增量到反向最大两倍，避免微观绝对容差掩盖差别"
+              }
+            ]
+          },
+          {
+            "name": "散射光子波长",
+            "expr": "l_p = lambda+l_c*(1-cos(theta))",
+            "when": "同一自由电子散射条件",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "反向",
+                "ref": 7.278930706140951e-12,
+                "note": "入射一倍康普顿波长，反向增加两倍，总共三倍",
+                "tol": 1e-24
+              }
+            ]
+          },
+          {
+            "name": "反冲电子动能",
+            "expr": "K = h*c*(1/lambda-1/l_p)",
+            "when": "能量守恒，电子初始静止且忽略束缚",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "反向",
+                "ref": 5.4580705253123e-14,
+                "note": "入射光子能量等于电子静能，出射剩三分之一，因此反冲动能为静能的三分之二",
+                "tol": 1e-25
+              },
+              {
+                "type": "consistency",
+                "scenario": "反向",
+                "with_expr": "m*c^2*(sqrt(1+(l_c/lambda)^2+(l_c/l_p)^2-2*l_c^2*cos(theta)/(lambda*l_p))-1)",
+                "target": "电子反冲动能",
+                "note": "本公式直接求K；参考端显式关系为m*c^2*(sqrt(1+(l_c/lambda)^2+(l_c/l_p)^2-2*l_c^2*cos(theta)/(lambda*l_p))-1)。两端使用同一情境和阶段，只核对该关系；with字段仅定位来源，不代表调用另一条被覆盖的公式。",
+                "with": "qz-08|反冲电子动能",
+                "verification_kind": "独立关系核对",
+                "tol": 5.458070525312302e-19
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "先限定初始静止自由电子，并明确定义光子散射角。",
+          "联立总能量守恒、两方向动量守恒及电子相对论能量关系，消去反冲电子量得到波长位移。",
+          "用零角和反向散射检查边界，再用光子能量差求反冲动能；微观长度和能量采用专用严格容差。"
+        ],
+        "errors": [
+          {
+            "wrong": "反向散射把归一化波长变化误当成一",
+            "wrong_expr": "z = 1",
+            "why": "反向散射的余弦为负一，正确增量是两倍康普顿波长；归一化后可以让数值防线真实识别系数错误，而非把皮米变化当零。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "反向",
+              "expr": "1",
+              "ref": 2
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "把电子反冲当成任意低速经典碰撞",
+            "why": "高能光子的散射可使电子反冲达到相对论范围；低速动能近似不能无条件用于康普顿效应的完整推导，应检查能量尺度。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "入射光子波长等于电子康普顿波长，与初始静止自由电子发生反向散射，求出射波长倍数和反冲动能占电子静能的比例。",
+          "solution": [
+            "反向角为π，归一化波长增加二，出射波长为入射的三倍。",
+            "光子能量与波长成反比，出射能量剩初能量三分之一，电子得到静能的三分之二。"
+          ],
+          "answer": "出射波长为三倍电子康普顿波长，电子反冲动能为静能的三分之二。"
+        },
+        "prereq": [
+          "qz-03",
+          "qz-04"
+        ],
+        "next": [
+          "qz-06"
+        ],
+        "tags": [
+          "康普顿",
+          "光子动量",
+          "散射"
+        ],
+        "learning_scope": "高中"
+      },
+      "error_index": 0,
+      "chapter": "第二十章 · 波粒二象性与原子结构"
+    },
+    "diagnostic-qz-08-2": {
+      "point": {
+        "id": "qz-08",
+        "title": "康普顿效应",
+        "level": "拓展",
+        "definition": "光子与初始静止的自由电子散射时，光子向电子传递能量与动量，散射后波长增加。波长增量取决于散射角，反向散射时增量达到两倍电子康普顿波长。",
+        "meaning": "本卡使用初始静止的自由电子或束缚可忽略的近似，不是任意物质中任意光的通用波长变化公式。散射角是入射光子与出射光子方向的夹角；正向散射不发生波长变化，反向变化最大。电子反冲必须用相对论能量与动量关系处理，不能仅凭普通低速动能公式推导全部结果。",
+        "symbols": {
+          "h": {
+            "unit": "J*s",
+            "desc": "普朗克常量"
+          },
+          "m": {
+            "unit": "kg",
+            "desc": "电子静质量"
+          },
+          "c": {
+            "unit": "m/s",
+            "desc": "真空光速"
+          },
+          "l_c": {
+            "unit": "m",
+            "desc": "电子康普顿波长"
+          },
+          "lambda": {
+            "unit": "m",
+            "desc": "入射光子波长"
+          },
+          "l_p": {
+            "unit": "m",
+            "desc": "散射光子波长"
+          },
+          "theta": {
+            "unit": "rad",
+            "desc": "光子散射角"
+          },
+          "z": {
+            "unit": "1",
+            "desc": "波长增量除康普顿波长"
+          },
+          "K": {
+            "unit": "J",
+            "desc": "电子反冲动能"
+          }
+        },
+        "scenarios": {
+          "反向": {
+            "h": 6.62607015e-34,
+            "m": 9.1093837139e-31,
+            "c": 299792458,
+            "l_c": 2.426310235380317e-12,
+            "lambda": 2.426310235380317e-12,
+            "l_p": 7.278930706140951e-12,
+            "theta": 3.141592653589793
+          }
+        },
+        "formulas": [
+          {
+            "name": "电子康普顿波长",
+            "expr": "l_c = h/(m*c)",
+            "when": "电子质量为静质量，所用常量来自SI数值",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "反向",
+                "ref": 2.426310235380317e-12,
+                "note": "用45位十进制运算将普朗克常量除电子静质量和光速，得到约2.42631皮米",
+                "tol": 1e-24
+              }
+            ]
+          },
+          {
+            "name": "归一化波长增量",
+            "expr": "z = 1-cos(theta)",
+            "when": "初始静止自由电子散射，角度在零至π之间",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "反向",
+                "ref": 2,
+                "note": "反向散射余弦为−1，波长增量为两倍康普顿波长"
+              },
+              {
+                "type": "scan",
+                "scenario": "反向",
+                "var": "theta",
+                "lo": 0,
+                "hi": 3.141592653589793,
+                "n": 17,
+                "note": "从正向零增量到反向最大两倍，避免微观绝对容差掩盖差别"
+              }
+            ]
+          },
+          {
+            "name": "散射光子波长",
+            "expr": "l_p = lambda+l_c*(1-cos(theta))",
+            "when": "同一自由电子散射条件",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "反向",
+                "ref": 7.278930706140951e-12,
+                "note": "入射一倍康普顿波长，反向增加两倍，总共三倍",
+                "tol": 1e-24
+              }
+            ]
+          },
+          {
+            "name": "反冲电子动能",
+            "expr": "K = h*c*(1/lambda-1/l_p)",
+            "when": "能量守恒，电子初始静止且忽略束缚",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "反向",
+                "ref": 5.4580705253123e-14,
+                "note": "入射光子能量等于电子静能，出射剩三分之一，因此反冲动能为静能的三分之二",
+                "tol": 1e-25
+              },
+              {
+                "type": "consistency",
+                "scenario": "反向",
+                "with_expr": "m*c^2*(sqrt(1+(l_c/lambda)^2+(l_c/l_p)^2-2*l_c^2*cos(theta)/(lambda*l_p))-1)",
+                "target": "电子反冲动能",
+                "note": "本公式直接求K；参考端显式关系为m*c^2*(sqrt(1+(l_c/lambda)^2+(l_c/l_p)^2-2*l_c^2*cos(theta)/(lambda*l_p))-1)。两端使用同一情境和阶段，只核对该关系；with字段仅定位来源，不代表调用另一条被覆盖的公式。",
+                "with": "qz-08|反冲电子动能",
+                "verification_kind": "独立关系核对",
+                "tol": 5.458070525312302e-19
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "先限定初始静止自由电子，并明确定义光子散射角。",
+          "联立总能量守恒、两方向动量守恒及电子相对论能量关系，消去反冲电子量得到波长位移。",
+          "用零角和反向散射检查边界，再用光子能量差求反冲动能；微观长度和能量采用专用严格容差。"
+        ],
+        "errors": [
+          {
+            "wrong": "反向散射把归一化波长变化误当成一",
+            "wrong_expr": "z = 1",
+            "why": "反向散射的余弦为负一，正确增量是两倍康普顿波长；归一化后可以让数值防线真实识别系数错误，而非把皮米变化当零。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "反向",
+              "expr": "1",
+              "ref": 2
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "把电子反冲当成任意低速经典碰撞",
+            "why": "高能光子的散射可使电子反冲达到相对论范围；低速动能近似不能无条件用于康普顿效应的完整推导，应检查能量尺度。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "入射光子波长等于电子康普顿波长，与初始静止自由电子发生反向散射，求出射波长倍数和反冲动能占电子静能的比例。",
+          "solution": [
+            "反向角为π，归一化波长增加二，出射波长为入射的三倍。",
+            "光子能量与波长成反比，出射能量剩初能量三分之一，电子得到静能的三分之二。"
+          ],
+          "answer": "出射波长为三倍电子康普顿波长，电子反冲动能为静能的三分之二。"
+        },
+        "prereq": [
+          "qz-03",
+          "qz-04"
+        ],
+        "next": [
+          "qz-06"
+        ],
+        "tags": [
+          "康普顿",
+          "光子动量",
+          "散射"
+        ],
+        "learning_scope": "高中"
+      },
+      "error_index": 1,
+      "chapter": "第二十章 · 波粒二象性与原子结构"
+    }
+  },
+  "generator_version": "2026-10-04-条件过程返工-8"
 }

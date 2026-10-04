@@ -8,27 +8,19 @@
       "point_id": "mgas-01",
       "point_title": "分子动理论的基本内容与微观量估算",
       "chapter": "第十八章 · 分子动理论与气体",
-      "stem": "【第十八章 · 分子动理论与气体 · 分子动理论的基本内容与微观量估算】学生的错误做法：把分子数写成 N = V<sub>分子</sub>/V<sub>总</sub>（错误表达式：N = V<sub>分子</sub>/V<sub>总</sub>）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "stem": "在“分子动理论的基本内容与微观量估算”的模型下，V<sub>总</sub>（所有分子占据的总体积）=1e-08 m³；V<sub>分子</sub>（单个分子平均占据的体积）=1e-30 m³。条件：总体积可视为 N 个分子平均占据体积之和。求分子数目（N）。这些数值是设计示例。",
       "options": [
         {
           "label": "A",
-          "text": "概念混淆：内能还与分子数、物态和分子间势能等因素有关；温度只反映热运动的平均剧烈程度。"
+          "text": "1e+22 1"
         },
         {
           "label": "B",
-          "text": "量纲一致性：乘以体积后量纲变成能量乘体积，已经不是压强；而且错误式会预言容器越大压强越大，方向也相反。"
-        },
-        {
-          "label": "C",
-          "text": "概念混淆：保守力做正功时势能应减少。"
-        },
-        {
-          "label": "D",
-          "text": "数值代入：分子数应是总体积除以单分子体积。"
+          "text": "1e-22 1"
         }
       ],
-      "correct_answer": "D",
-      "explanation": "分子数应是总体积除以单分子体积。错误式在本情境得到 10⁻²²，而不是 10²²，量纲虽同为无量纲但数量级完全相反。\n知识库校验证据：情境：油膜估算；代入错误式：V<sub>分子</sub>/V<sub>总</sub>；校验参照值：1e+22。",
+      "correct_answer": "A",
+      "explanation": "使用由总体积估算分子数：V<sub>总</sub>/V<sub>分子</sub>，代入得1e+22 1。另一结果来自V<sub>分子</sub>/V<sub>总</sub>，算得1e-22 1。\n分子数应是总体积除以单分子体积。错误式在本情境得到 10⁻²²，而不是 10²²，量纲虽同为无量纲但数量级完全相反。\n知识点条件：微观粒子不能逐个直接计数，但可以用宏观总体积除以单个分子体积来估算数目。这里的立方体模型只是数量级估算，不表示真实分子一定是立方体；所得线度通常在 10⁻¹⁰ m 的数量级。布朗运动是悬浮微粒的无规则运动，它间接反映液体分子的热运动，不是液体分子本身的运动轨迹。\n推导依据：把宏观样品近似看成 N 个相同微观单元组成，总体积约为 N V<sub>分子</sub>。；将总体积关系变形，得到 N = V<sub>总</sub> / V<sub>分子</sub>。；若每个分子平均占据边长为 d 的小立方体，则 V<sub>分子</sub> = d³；该模型只用于数量级估算。\n卡片公式各自的适用条件（不是本题共同前提）：\n由总体积估算分子数：总体积可视为 N 个分子平均占据体积之和\n分子体积的立方体近似：只做数量级估算，把每个分子平均占据的空间近似为边长 d 的小立方体",
       "error_type": "数值代入",
       "judging": "auto",
       "source_error_index": 0,
@@ -39,15 +31,57 @@
         "expr": "V_molecule/V_total",
         "ref": 1e+22
       },
+      "level": "基础",
+      "learning_scope": "高中",
+      "answer_evidence": {
+        "kind": "numeric",
+        "scenario": "油膜估算",
+        "parameters": {
+          "V_total": 1e-08,
+          "V_molecule": 1e-30,
+          "N": 1e+22,
+          "d": 1e-10
+        },
+        "target": "N",
+        "unit": "1",
+        "reference": 1e+22,
+        "correct_proof": {
+          "expression": "V_total/V_molecule",
+          "formula": "由总体积估算分子数",
+          "value": 1e+22,
+          "when": "总体积可视为 N 个分子平均占据体积之和"
+        },
+        "distractor_expression": "V_molecule/V_total",
+        "distractor_value": 1e-22,
+        "dimension_matches": true,
+        "independent_evaluation": true
+      },
       "review": {
         "confidence": "medium",
-        "checks": {
-          "answer_unique": true,
-          "distractors_plausible": true,
-          "stem_clear": true,
-          "no_cross_segment": true
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": true,
+          "no_answer_leak_in_options": true
         },
-        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。"
       }
     },
     {
@@ -55,27 +89,19 @@
       "point_id": "mgas-01",
       "point_title": "分子动理论的基本内容与微观量估算",
       "chapter": "第十八章 · 分子动理论与气体",
-      "stem": "【第十八章 · 分子动理论与气体 · 分子动理论的基本内容与微观量估算】学生的错误做法：由分子线度估体积时写成 V<sub>分子</sub> = d²（错误表达式：V<sub>分子</sub> = d²）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "stem": "在“分子动理论的基本内容与微观量估算”中，只做数量级估算，把每个分子平均占据的空间近似为边长 d 的小立方体。单个分子平均占据的体积的单位为m³。下列哪一表达式的量纲与该目标量一致？",
       "options": [
         {
           "label": "A",
-          "text": "数值代入：两种温标零点不同。"
+          "text": "V<sub>分子</sub> = d²"
         },
         {
           "label": "B",
-          "text": "概念混淆：内能还与分子数、物态和分子间势能等因素有关；温度只反映热运动的平均剧烈程度。"
-        },
-        {
-          "label": "C",
-          "text": "量纲一致性：面积不是体积，d² 的量纲是 L²，而单分子体积的量纲是 L³。"
-        },
-        {
-          "label": "D",
-          "text": "数值代入：吸引与排斥方向相反，应作差而不是相加。"
+          "text": "V<sub>分子</sub> = d³"
         }
       ],
-      "correct_answer": "C",
-      "explanation": "面积不是体积，d² 的量纲是 L²，而单分子体积的量纲是 L³。\n知识库校验证据：被测错误式：V<sub>分子</sub> = d²；左式量纲：L³；右式量纲：L²；左右量纲不匹配；量纲校验说明：实际量纲检查得到等号左边为L³、右边为L²；两边不是同一物理量，因此该等式不成立。；变化方向要求：mismatch；检验说明：实际量纲检查得到等号左边为L³、右边为L²；两边不是同一物理量，因此该等式不成立。。",
+      "correct_answer": "B",
+      "explanation": "面积不是体积，d² 的量纲是 L²，而单分子体积的量纲是 L³。\n知识点条件：微观粒子不能逐个直接计数，但可以用宏观总体积除以单个分子体积来估算数目。这里的立方体模型只是数量级估算，不表示真实分子一定是立方体；所得线度通常在 10⁻¹⁰ m 的数量级。布朗运动是悬浮微粒的无规则运动，它间接反映液体分子的热运动，不是液体分子本身的运动轨迹。\n推导依据：把宏观样品近似看成 N 个相同微观单元组成，总体积约为 N V<sub>分子</sub>。；将总体积关系变形，得到 N = V<sub>总</sub> / V<sub>分子</sub>。；若每个分子平均占据边长为 d 的小立方体，则 V<sub>分子</sub> = d³；该模型只用于数量级估算。\n卡片公式各自的适用条件（不是本题共同前提）：\n由总体积估算分子数：总体积可视为 N 个分子平均占据体积之和\n分子体积的立方体近似：只做数量级估算，把每个分子平均占据的空间近似为边长 d 的小立方体",
       "error_type": "量纲一致性",
       "judging": "auto",
       "source_error_index": 1,
@@ -89,15 +115,42 @@
         "expect": "mismatch",
         "note": "实际量纲检查得到等号左边为L^3、右边为L^2；两边不是同一物理量，因此该等式不成立。"
       },
+      "level": "基础",
+      "learning_scope": "高中",
+      "answer_evidence": {
+        "kind": "dimension",
+        "target": "V_molecule",
+        "correct_expression": "V_molecule = d^3",
+        "distractor_expression": "V_molecule = d^2",
+        "target_dimension": "L^3",
+        "distractor_dimension": "L^2"
+      },
       "review": {
         "confidence": "medium",
-        "checks": {
-          "answer_unique": true,
-          "distractors_plausible": true,
-          "stem_clear": true,
-          "no_cross_segment": true
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": true,
+          "no_answer_leak_in_options": true
         },
-        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。"
       }
     },
     {
@@ -105,27 +158,19 @@
       "point_id": "mgas-02",
       "point_title": "分子间作用力与分子势能",
       "chapter": "第十八章 · 分子动理论与气体",
-      "stem": "【第十八章 · 分子动理论与气体 · 分子间作用力与分子势能】学生的错误做法：求分子间合力时把吸引与排斥的大小直接相加（错误表达式：F<sub>合</sub> = F<sub>斥</sub>+F<sub>引</sub>）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "stem": "在“分子间作用力与分子势能”的模型下，F<sub>斥</sub>（排斥作用的大小）=8e-09 N；F<sub>引</sub>（吸引作用的大小）=3e-09 N。条件：只比较同一直线上的排斥与吸引作用，并把间距增大方向取正。求沿分子间距增大方向的合力（F<sub>合</sub>）。这些数值是设计示例。",
       "options": [
         {
           "label": "A",
-          "text": "量纲一致性：面积不是体积，d² 的量纲是 L²，而单分子体积的量纲是 L³。"
+          "text": "5e-09 N"
         },
         {
           "label": "B",
-          "text": "数值代入：吸引与排斥方向相反，应作差而不是相加。"
-        },
-        {
-          "label": "C",
-          "text": "概念混淆：内能还与分子数、物态和分子间势能等因素有关；温度只反映热运动的平均剧烈程度。"
-        },
-        {
-          "label": "D",
-          "text": "量纲一致性：乘以体积后量纲变成能量乘体积，已经不是压强；而且错误式会预言容器越大压强越大，方向也相反。"
+          "text": "1.1e-08 N"
         }
       ],
-      "correct_answer": "B",
-      "explanation": "吸引与排斥方向相反，应作差而不是相加。两种写法量纲完全相同；把错误结果与正确合力作无量纲比值，本情境得到 2.2 而不是 1，可由数值代入抓住。\n知识库校验证据：情境：距离小于平衡距离；代入错误式：(F<sub>斥</sub>+F<sub>引</sub>)/F<sub>合</sub>；校验参照值：1.0。",
+      "correct_answer": "A",
+      "explanation": "使用分子间合力的一维表示：F<sub>斥</sub>-F<sub>引</sub>，代入得5e-09 N。另一结果来自F<sub>斥</sub>+F<sub>引</sub>，算得1.1e-08 N。\n吸引与排斥方向相反，应作差而不是相加。两种写法量纲完全相同；把错误结果与正确合力作无量纲比值，本情境得到 2.2 而不是 1，可由数值代入抓住。本情境直接以合力的牛顿数值比较，不把力与无量纲比值比较。\n知识点条件：在平衡距离附近，吸引与排斥大小相等，合力为零，分子势能最低。距离小于平衡距离时排斥占优，分子趋向分开；距离略大于平衡距离时吸引占优，分子趋向靠近。合力为零不等于分子间没有作用，而是两种作用恰好抵消。\n推导依据：分子间的合作用可视为排斥与吸引两种作用竞争的结果。；选定正方向后，同向量取正、反向量取负，所以 F<sub>合</sub> = F<sub>斥</sub> - F<sub>引</sub>。；分子力是保守力，保守力做正功时势能减少，做负功时势能增加，因此 ΔE<sub>p</sub> = -W<sub>分子</sub>。\n卡片公式各自的适用条件（不是本题共同前提）：\n分子间合力的一维表示：只比较同一直线上的排斥与吸引作用，并把间距增大方向取正\n分子力做功与势能变化：只考察分子力这一保守力做功所引起的分子势能变化",
       "error_type": "数值代入",
       "judging": "auto",
       "source_error_index": 0,
@@ -133,18 +178,60 @@
       "wrong_expr": "F<sub>合</sub> = F<sub>斥</sub>+F<sub>引</sub>",
       "trap_test": {
         "scenario": "距离小于平衡距离",
-        "expr": "(F_rep+F_attr)/F_net",
-        "ref": 1.0
+        "expr": "F_rep+F_attr",
+        "ref": 5e-09,
+        "tol": 5e-15
+      },
+      "level": "基础",
+      "learning_scope": "高中",
+      "answer_evidence": {
+        "kind": "numeric",
+        "scenario": "距离小于平衡距离",
+        "parameters": {
+          "F_rep": 8e-09,
+          "F_attr": 3e-09,
+          "F_net": 5e-09
+        },
+        "target": "F_net",
+        "unit": "N",
+        "reference": 5e-09,
+        "correct_proof": {
+          "expression": "F_rep-F_attr",
+          "formula": "分子间合力的一维表示",
+          "value": 5e-09,
+          "when": "只比较同一直线上的排斥与吸引作用，并把间距增大方向取正"
+        },
+        "distractor_expression": "F_rep+F_attr",
+        "distractor_value": 1.1000000000000001e-08,
+        "dimension_matches": true,
+        "independent_evaluation": true
       },
       "review": {
         "confidence": "medium",
-        "checks": {
-          "answer_unique": true,
-          "distractors_plausible": true,
-          "stem_clear": true,
-          "no_cross_segment": true
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": true,
+          "no_answer_leak_in_options": true
         },
-        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。"
       }
     },
     {
@@ -152,42 +239,59 @@
       "point_id": "mgas-02",
       "point_title": "分子间作用力与分子势能",
       "chapter": "第十八章 · 分子动理论与气体",
-      "stem": "【第十八章 · 分子动理论与气体 · 分子间作用力与分子势能】学生的错误做法：把势能变化写成 ΔE<sub>p</sub> = W<sub>分子</sub>（错误表达式：ΔE<sub>p</sub> = W<sub>分子</sub>）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "stem": "关于“分子间作用力与分子势能”，讨论条件：只考察分子力这一保守力做功所引起的分子势能变化。判断这一说法是否成立，并说明依据：\n保守力做正功时势能应减少。",
       "options": [
         {
           "label": "A",
-          "text": "概念混淆：保守力做正功时势能应减少。"
+          "text": "该说法不成立。"
         },
         {
           "label": "B",
-          "text": "数值代入：分子数应是总体积除以单分子体积。"
-        },
-        {
-          "label": "C",
-          "text": "数值代入：两种温标零点不同。"
-        },
-        {
-          "label": "D",
-          "text": "数值代入：等温时 p 与 V 成反比。"
+          "text": "该说法成立。"
         }
       ],
-      "correct_answer": "A",
-      "explanation": "保守力做正功时势能应减少。本情境错误式给出正的 2.5×10⁻²⁰ J，与正确的负值符号相反；该微观能量远小于陷阱测试的固定绝对容差，不能诚实声称会被自动抓住。",
+      "correct_answer": "B",
+      "explanation": "保守力做正功时势能应减少。本情境错误式给出正的 2.5×10⁻²⁰ J，与正确的负值符号相反；该微观能量远小于陷阱测试的固定绝对容差，不能诚实声称会被自动抓住。\n知识点条件：在平衡距离附近，吸引与排斥大小相等，合力为零，分子势能最低。距离小于平衡距离时排斥占优，分子趋向分开；距离略大于平衡距离时吸引占优，分子趋向靠近。合力为零不等于分子间没有作用，而是两种作用恰好抵消。\n推导依据：分子间的合作用可视为排斥与吸引两种作用竞争的结果。；选定正方向后，同向量取正、反向量取负，所以 F<sub>合</sub> = F<sub>斥</sub> - F<sub>引</sub>。；分子力是保守力，保守力做正功时势能减少，做负功时势能增加，因此 ΔE<sub>p</sub> = -W<sub>分子</sub>。\n卡片公式各自的适用条件（不是本题共同前提）：\n分子间合力的一维表示：只比较同一直线上的排斥与吸引作用，并把间距增大方向取正\n分子力做功与势能变化：只考察分子力这一保守力做功所引起的分子势能变化",
       "error_type": "概念混淆",
       "judging": "teacher",
       "source_error_index": 1,
       "source_caught_by": "人工审核",
       "wrong_expr": "ΔE<sub>p</sub> = W<sub>分子</sub>",
       "trap_test": null,
+      "level": "基础",
+      "learning_scope": "高中",
+      "answer_evidence": {
+        "kind": "teacher",
+        "claim_source": "why",
+        "reference_only": true,
+        "reason": "概念、操作或无法建立完整定量证据，教师确认条件与结论。"
+      },
       "review": {
         "confidence": "medium",
-        "checks": {
-          "answer_unique": true,
-          "distractors_plausible": true,
-          "stem_clear": true,
-          "no_cross_segment": true
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": false,
+          "no_answer_leak_in_options": true
         },
-        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。"
       }
     },
     {
@@ -195,27 +299,19 @@
       "point_id": "mgas-03",
       "point_title": "温度与温标",
       "chapter": "第十八章 · 分子动理论与气体",
-      "stem": "【第十八章 · 分子动理论与气体 · 温度与温标】学生的错误做法：把 26.85 ℃直接当成 26.85 K 代入气体定律（错误表达式：T = t<sub>C</sub>）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "stem": "在“温度与温标”的模型下，t<sub>C</sub>（摄氏温度的数值；换算时按与 K 等大的温度间隔处理）=26.85 K；T<sub>0</sub>（摄氏零度对应的热力学温度）=273.15 K。条件：把摄氏温度数值换算为开尔文温度，T<sub>0</sub> 取 273.15 K。求热力学温度（T）。这些数值是设计示例。",
       "options": [
         {
           "label": "A",
-          "text": "概念混淆：内能还与分子数、物态和分子间势能等因素有关；温度只反映热运动的平均剧烈程度。"
+          "text": "26.85 K"
         },
         {
           "label": "B",
-          "text": "量纲一致性：乘以体积后量纲变成能量乘体积，已经不是压强；而且错误式会预言容器越大压强越大，方向也相反。"
-        },
-        {
-          "label": "C",
-          "text": "量纲一致性：面积不是体积，d² 的量纲是 L²，而单分子体积的量纲是 L³。"
-        },
-        {
-          "label": "D",
-          "text": "数值代入：两种温标零点不同。"
+          "text": "300 K"
         }
       ],
-      "correct_answer": "D",
-      "explanation": "两种温标零点不同。本情境正确温度是 300 K，直接使用摄氏数值会把绝对温度低估十倍以上。\n知识库校验证据：情境：室温换算；代入错误式：t<sub>C</sub>；校验参照值：300.0。",
+      "correct_answer": "B",
+      "explanation": "使用摄氏温度换算为热力学温度：t<sub>C</sub>+T<sub>0</sub>，代入得300 K。另一结果来自t<sub>C</sub>，算得26.85 K。\n两种温标零点不同。本情境正确温度是 300 K，直接使用摄氏数值会把绝对温度低估十倍以上。\n知识点条件：温度是大量分子热运动剧烈程度的宏观标志。0 ℃不是热运动停止，绝对零度才是热力学温标的理论下限。摄氏温度可以为负，热力学温度不能低于 0 K；温度变为原来的两倍，必须针对开尔文数值而言，不能直接把摄氏温度数值乘二。\n推导依据：热力学温标与摄氏温标每一度的大小相同，只是零点不同。；摄氏零度对应 273.15 K，因此换算式为 T = t<sub>C</sub> + 273.15 K。；求温差时固定零点相减抵消，所以两种温标的温差数值相同。\n卡片公式各自的适用条件（不是本题共同前提）：\n摄氏温度换算为热力学温度：把摄氏温度数值换算为开尔文温度，T<sub>0</sub> 取 273.15 K\n热力学温度变化量：比较同一物体初、末状态的热力学温度",
       "error_type": "数值代入",
       "judging": "auto",
       "source_error_index": 0,
@@ -226,15 +322,56 @@
         "expr": "t_C",
         "ref": 300.0
       },
+      "level": "基础",
+      "learning_scope": "高中",
+      "answer_evidence": {
+        "kind": "numeric",
+        "scenario": "室温换算",
+        "parameters": {
+          "t_C": 26.85,
+          "T0": 273.15,
+          "T": 300.0
+        },
+        "target": "T",
+        "unit": "K",
+        "reference": 300.0,
+        "correct_proof": {
+          "expression": "t_C+T0",
+          "formula": "摄氏温度换算为热力学温度",
+          "value": 300.0,
+          "when": "把摄氏温度数值换算为开尔文温度，T0 取 273.15 K"
+        },
+        "distractor_expression": "t_C",
+        "distractor_value": 26.85,
+        "dimension_matches": true,
+        "independent_evaluation": true
+      },
       "review": {
         "confidence": "medium",
-        "checks": {
-          "answer_unique": true,
-          "distractors_plausible": true,
-          "stem_clear": true,
-          "no_cross_segment": true
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": true,
+          "no_answer_leak_in_options": true
         },
-        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。"
       }
     },
     {
@@ -242,46 +379,79 @@
       "point_id": "mgas-03",
       "point_title": "温度与温标",
       "chapter": "第十八章 · 分子动理论与气体",
-      "stem": "【第十八章 · 分子动理论与气体 · 温度与温标】学生的错误做法：换算时写成 T = t<sub>C</sub>-273.15（错误表达式：T = t<sub>C</sub>-T0）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "stem": "在“温度与温标”的模型下，t<sub>C</sub>（摄氏温度的数值；换算时按与 K 等大的温度间隔处理）=26.85 K；T<sub>0</sub>（摄氏零度对应的热力学温度）=273.15 K。条件：把摄氏温度数值换算为开尔文温度，T<sub>0</sub> 取 273.15 K。求热力学温度（T）。这些数值是设计示例。",
       "options": [
         {
           "label": "A",
-          "text": "量纲一致性：乘以体积后量纲变成能量乘体积，已经不是压强；而且错误式会预言容器越大压强越大，方向也相反。"
+          "text": "-246.3 K"
         },
         {
           "label": "B",
-          "text": "量纲一致性：面积不是体积，d² 的量纲是 L²，而单分子体积的量纲是 L³。"
-        },
-        {
-          "label": "C",
-          "text": "数值代入：应当加上零点偏移。"
-        },
-        {
-          "label": "D",
-          "text": "概念混淆：内能还与分子数、物态和分子间势能等因素有关；温度只反映热运动的平均剧烈程度。"
+          "text": "300 K"
         }
       ],
-      "correct_answer": "C",
-      "explanation": "应当加上零点偏移。本情境错误式得到 -246.3 K，不但数值错误，还违反热力学温度不得为负的物理限制。\n知识库校验证据：情境：室温换算；代入错误式：t<sub>C</sub>-T0；校验参照值：300.0。",
+      "correct_answer": "B",
+      "explanation": "使用摄氏温度换算为热力学温度：t<sub>C</sub>+T<sub>0</sub>，代入得300 K。另一结果来自t<sub>C</sub>-T<sub>0</sub>，算得-246.3 K。\n应当加上零点偏移。本情境错误式得到 -246.3 K，不但数值错误，还违反热力学温度不得为负的物理限制。\n知识点条件：温度是大量分子热运动剧烈程度的宏观标志。0 ℃不是热运动停止，绝对零度才是热力学温标的理论下限。摄氏温度可以为负，热力学温度不能低于 0 K；温度变为原来的两倍，必须针对开尔文数值而言，不能直接把摄氏温度数值乘二。\n推导依据：热力学温标与摄氏温标每一度的大小相同，只是零点不同。；摄氏零度对应 273.15 K，因此换算式为 T = t<sub>C</sub> + 273.15 K。；求温差时固定零点相减抵消，所以两种温标的温差数值相同。\n卡片公式各自的适用条件（不是本题共同前提）：\n摄氏温度换算为热力学温度：把摄氏温度数值换算为开尔文温度，T<sub>0</sub> 取 273.15 K\n热力学温度变化量：比较同一物体初、末状态的热力学温度",
       "error_type": "数值代入",
       "judging": "auto",
       "source_error_index": 1,
       "source_caught_by": "数值代入",
-      "wrong_expr": "T = t<sub>C</sub>-T0",
+      "wrong_expr": "T = t<sub>C</sub>-T<sub>0</sub>",
       "trap_test": {
         "scenario": "室温换算",
         "expr": "t_C-T0",
         "ref": 300.0
       },
+      "level": "基础",
+      "learning_scope": "高中",
+      "answer_evidence": {
+        "kind": "numeric",
+        "scenario": "室温换算",
+        "parameters": {
+          "t_C": 26.85,
+          "T0": 273.15,
+          "T": 300.0
+        },
+        "target": "T",
+        "unit": "K",
+        "reference": 300.0,
+        "correct_proof": {
+          "expression": "t_C+T0",
+          "formula": "摄氏温度换算为热力学温度",
+          "value": 300.0,
+          "when": "把摄氏温度数值换算为开尔文温度，T0 取 273.15 K"
+        },
+        "distractor_expression": "t_C-T0",
+        "distractor_value": -246.29999999999998,
+        "dimension_matches": true,
+        "independent_evaluation": true
+      },
       "review": {
         "confidence": "medium",
-        "checks": {
-          "answer_unique": true,
-          "distractors_plausible": true,
-          "stem_clear": true,
-          "no_cross_segment": true
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": true,
+          "no_answer_leak_in_options": true
         },
-        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。"
       }
     },
     {
@@ -289,42 +459,59 @@
       "point_id": "mgas-04",
       "point_title": "物体的内能与理想气体内能",
       "chapter": "第十八章 · 分子动理论与气体",
-      "stem": "【第十八章 · 分子动理论与气体 · 物体的内能与理想气体内能】学生的错误做法：认为温度相同的所有物体内能必定相同。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "stem": "关于“物体的内能与理想气体内能”，判断这一说法是否成立，并说明依据：\n温度相同的所有物体内能必定相同。",
       "options": [
         {
           "label": "A",
-          "text": "数值代入：两种温标零点不同。"
+          "text": "该说法不成立。"
         },
         {
           "label": "B",
-          "text": "概念混淆：内能还与分子数、物态和分子间势能等因素有关；温度只反映热运动的平均剧烈程度。"
-        },
-        {
-          "label": "C",
-          "text": "数值代入：分子数应是总体积除以单分子体积。"
-        },
-        {
-          "label": "D",
-          "text": "数值代入：吸引与排斥方向相反，应作差而不是相加。"
+          "text": "该说法成立。"
         }
       ],
-      "correct_answer": "B",
-      "explanation": "内能还与分子数、物态和分子间势能等因素有关；温度只反映热运动的平均剧烈程度。这是适用条件判断，需人工审核。",
+      "correct_answer": "A",
+      "explanation": "内能还与分子数、物态和分子间势能等因素有关；温度只反映热运动的平均剧烈程度。这是适用条件判断，需人工审核。\n知识点条件：温度反映分子平均动能，但内能还取决于物质的量和分子间势能，因此两个温度相同的物体内能未必相同。单原子理想气体的内能只由温度和分子数决定，与体积、压强分别取何值无关；这个结论不能直接套给液体、固体或有转动振动自由度的实际气体。\n推导依据：单原子理想气体每个分子的平均平动动能为 3k<sub>B</sub> T/2。；理想气体忽略分子间势能，N 个分子的总内能为 N 倍平均动能。；同一份气体的末态内能减初态内能，提取公因子后得到 ΔU = 3Nk<sub>B</sub>(T<sub>2</sub>-T<sub>1</sub>)/2。\n卡片公式各自的适用条件（不是本题共同前提）：\n单原子理想气体的内能：一定数量的单原子理想气体，分子平动自由度为三个\n单原子理想气体的内能变化：同一份单原子理想气体从温度 T<sub>1</sub> 变化到 T<sub>2</sub>",
       "error_type": "概念混淆",
       "judging": "teacher",
       "source_error_index": 0,
       "source_caught_by": "人工审核",
       "wrong_expr": null,
       "trap_test": null,
+      "level": "进阶",
+      "learning_scope": "高中",
+      "answer_evidence": {
+        "kind": "teacher",
+        "claim_source": "wrong",
+        "reference_only": true,
+        "reason": "概念、操作或无法建立完整定量证据，教师确认条件与结论。"
+      },
       "review": {
         "confidence": "medium",
-        "checks": {
-          "answer_unique": true,
-          "distractors_plausible": true,
-          "stem_clear": true,
-          "no_cross_segment": true
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": false,
+          "no_answer_leak_in_options": true
         },
-        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。"
       }
     },
     {
@@ -332,27 +519,19 @@
       "point_id": "mgas-04",
       "point_title": "物体的内能与理想气体内能",
       "chapter": "第十八章 · 分子动理论与气体",
-      "stem": "【第十八章 · 分子动理论与气体 · 物体的内能与理想气体内能】学生的错误做法：漏掉系数 3/2，写成 U = Nk<sub>B</sub> T（错误表达式：U = N·k<sub>B</sub>·T）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "stem": "在“物体的内能与理想气体内能”的模型下，N（气体分子数）=2e+23 1；k<sub>B</sub>（玻尔兹曼常量）=1.38e-23 J/K；T（热力学温度）=300 K。条件：一定数量的单原子理想气体，分子平动自由度为三个。求单原子理想气体的内能（U）。这些数值是设计示例。",
       "options": [
         {
           "label": "A",
-          "text": "数值代入：错误式量纲仍为能量，量纲检查抓不到。"
+          "text": "828 J"
         },
         {
           "label": "B",
-          "text": "量纲一致性：乘以体积后量纲变成能量乘体积，已经不是压强；而且错误式会预言容器越大压强越大，方向也相反。"
-        },
-        {
-          "label": "C",
-          "text": "量纲一致性：面积不是体积，d² 的量纲是 L²，而单分子体积的量纲是 L³。"
-        },
-        {
-          "label": "D",
-          "text": "概念混淆：保守力做正功时势能应减少。"
+          "text": "1242 J"
         }
       ],
-      "correct_answer": "A",
-      "explanation": "错误式量纲仍为能量，量纲检查抓不到。本情境只算得 828 J，而正确内能是 1242 J。\n知识库校验证据：情境：一份单原子理想气体；代入错误式：N·k<sub>B</sub>·T；校验参照值：1242.0。",
+      "correct_answer": "B",
+      "explanation": "使用单原子理想气体的内能：1.5·N·k<sub>B</sub>·T，代入得1242 J。另一结果来自N·k<sub>B</sub>·T，算得828 J。\n错误式量纲仍为能量，量纲检查抓不到。本情境只算得 828 J，而正确内能是 1242 J。\n知识点条件：温度反映分子平均动能，但内能还取决于物质的量和分子间势能，因此两个温度相同的物体内能未必相同。单原子理想气体的内能只由温度和分子数决定，与体积、压强分别取何值无关；这个结论不能直接套给液体、固体或有转动振动自由度的实际气体。\n推导依据：单原子理想气体每个分子的平均平动动能为 3k<sub>B</sub> T/2。；理想气体忽略分子间势能，N 个分子的总内能为 N 倍平均动能。；同一份气体的末态内能减初态内能，提取公因子后得到 ΔU = 3Nk<sub>B</sub>(T<sub>2</sub>-T<sub>1</sub>)/2。\n卡片公式各自的适用条件（不是本题共同前提）：\n单原子理想气体的内能：一定数量的单原子理想气体，分子平动自由度为三个\n单原子理想气体的内能变化：同一份单原子理想气体从温度 T<sub>1</sub> 变化到 T<sub>2</sub>",
       "error_type": "数值代入",
       "judging": "auto",
       "source_error_index": 1,
@@ -363,15 +542,57 @@
         "expr": "N*k_B*T",
         "ref": 1242.0
       },
+      "level": "进阶",
+      "learning_scope": "高中",
+      "answer_evidence": {
+        "kind": "numeric",
+        "scenario": "一份单原子理想气体",
+        "parameters": {
+          "N": 2e+23,
+          "k_B": 1.38e-23,
+          "T": 300.0,
+          "U": 1242.0
+        },
+        "target": "U",
+        "unit": "J",
+        "reference": 1242.0,
+        "correct_proof": {
+          "expression": "1.5*N*k_B*T",
+          "formula": "单原子理想气体的内能",
+          "value": 1242.0,
+          "when": "一定数量的单原子理想气体，分子平动自由度为三个"
+        },
+        "distractor_expression": "N*k_B*T",
+        "distractor_value": 827.9999999999999,
+        "dimension_matches": true,
+        "independent_evaluation": true
+      },
       "review": {
         "confidence": "medium",
-        "checks": {
-          "answer_unique": true,
-          "distractors_plausible": true,
-          "stem_clear": true,
-          "no_cross_segment": true
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": true,
+          "no_answer_leak_in_options": true
         },
-        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。"
       }
     },
     {
@@ -379,46 +600,82 @@
       "point_id": "mgas-05",
       "point_title": "气体实验定律",
       "chapter": "第十八章 · 分子动理论与气体",
-      "stem": "【第十八章 · 分子动理论与气体 · 气体实验定律】学生的错误做法：等温压缩时认为体积减半、压强也减半（错误表达式：p2 = p1·V2/V1）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "stem": "在“气体实验定律”的模型下，p<sub>1</sub>（初态压强）=100000 Pa；V<sub>1</sub>（初态体积）=0.006 m³；V<sub>2</sub>（末态体积）=0.003 m³。条件：一定质量的理想气体发生等温变化，且初末态均为平衡态。求末态压强（p<sub>2</sub>）。这些数值是设计示例。",
       "options": [
         {
           "label": "A",
-          "text": "概念混淆：内能还与分子数、物态和分子间势能等因素有关；温度只反映热运动的平均剧烈程度。"
+          "text": "200000 Pa"
         },
         {
           "label": "B",
-          "text": "量纲一致性：乘以体积后量纲变成能量乘体积，已经不是压强；而且错误式会预言容器越大压强越大，方向也相反。"
-        },
-        {
-          "label": "C",
-          "text": "量纲一致性：面积不是体积，d² 的量纲是 L²，而单分子体积的量纲是 L³。"
-        },
-        {
-          "label": "D",
-          "text": "数值代入：等温时 p 与 V 成反比。"
+          "text": "50000 Pa"
         }
       ],
-      "correct_answer": "D",
-      "explanation": "等温时 p 与 V 成反比。本情境错误式得到 5.0×10⁴ Pa，正确值应为 2.0×10⁵ Pa。\n知识库校验证据：情境：等温压缩；代入错误式：p1·V2/V1；校验参照值：200000.0。",
+      "correct_answer": "A",
+      "explanation": "使用玻意耳定律：p<sub>1</sub>·V<sub>1</sub>/V<sub>2</sub>，代入得200000 Pa。另一结果来自p<sub>1</sub>·V<sub>2</sub>/V<sub>1</sub>，算得50000 Pa。\n等温时 p 与 V 成反比。本情境错误式得到 5.0×10⁴ Pa，正确值应为 2.0×10⁵ Pa。\n知识点条件：三条实验定律各固定一个状态量：等温看 p 与 V，等压看 V 与 T，等容看 p 与 T。温度必须使用开尔文。压强与体积的反比不是说压强随体积均匀减少；例如体积减半，压强变为两倍。若漏气、发生液化或状态变化过快而未达到平衡，简单定律可能不再适用。\n推导依据：保持气体质量和温度不变，实验发现 pV 为常量，故 p<sub>1</sub>V<sub>1</sub>=p<sub>2</sub>V<sub>2</sub>。；保持气体质量和压强不变，实验发现 V/T 为常量，故 V<sub>1</sub>/T<sub>1</sub>=V<sub>2</sub>/T<sub>2</sub>。；保持气体质量和体积不变，实验发现 p/T 为常量，故 p<sub>1</sub>/T<sub>1</sub>=p<sub>2</sub>/T<sub>2</sub>。；三条关系中的 T 都是从绝对零度起算的热力学温度。\n卡片公式各自的适用条件（不是本题共同前提）：\n玻意耳定律：一定质量的理想气体发生等温变化，且初末态均为平衡态\n查理定律：一定质量的理想气体发生等压变化，温度使用开尔文\n盖-吕萨克定律：一定质量的理想气体发生等容变化，温度使用开尔文",
       "error_type": "数值代入",
       "judging": "auto",
       "source_error_index": 0,
       "source_caught_by": "数值代入",
-      "wrong_expr": "p2 = p1·V2/V1",
+      "wrong_expr": "p<sub>2</sub> = p<sub>1</sub>·V<sub>2</sub>/V<sub>1</sub>",
       "trap_test": {
         "scenario": "等温压缩",
         "expr": "p1*V2/V1",
         "ref": 200000.0
       },
+      "level": "基础",
+      "learning_scope": "高中",
+      "answer_evidence": {
+        "kind": "numeric",
+        "scenario": "等温压缩",
+        "parameters": {
+          "p1": 100000.0,
+          "V1": 0.006,
+          "p2": 200000.0,
+          "V2": 0.003,
+          "T1": 300.0,
+          "T2": 300.0
+        },
+        "target": "p2",
+        "unit": "Pa",
+        "reference": 200000.0,
+        "correct_proof": {
+          "expression": "p1*V1/V2",
+          "formula": "玻意耳定律",
+          "value": 200000.0,
+          "when": "一定质量的理想气体发生等温变化，且初末态均为平衡态"
+        },
+        "distractor_expression": "p1*V2/V1",
+        "distractor_value": 50000.0,
+        "dimension_matches": true,
+        "independent_evaluation": true
+      },
       "review": {
         "confidence": "medium",
-        "checks": {
-          "answer_unique": true,
-          "distractors_plausible": true,
-          "stem_clear": true,
-          "no_cross_segment": true
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": true,
+          "no_answer_leak_in_options": true
         },
-        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。"
       }
     },
     {
@@ -426,46 +683,82 @@
       "point_id": "mgas-05",
       "point_title": "气体实验定律",
       "chapter": "第十八章 · 分子动理论与气体",
-      "stem": "【第十八章 · 分子动理论与气体 · 气体实验定律】学生的错误做法：等压变化时把温度比写反，使用 V2 = V1·T1/T2（错误表达式：V2 = V1·T1/T2）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "stem": "在“气体实验定律”的模型下，V<sub>1</sub>（初态体积）=0.004 m³；T<sub>1</sub>（初态热力学温度）=320 K；T<sub>2</sub>（末态热力学温度）=400 K。条件：一定质量的理想气体发生等压变化，温度使用开尔文。求末态体积（V<sub>2</sub>）。这些数值是设计示例。",
       "options": [
         {
           "label": "A",
-          "text": "量纲一致性：乘以体积后量纲变成能量乘体积，已经不是压强；而且错误式会预言容器越大压强越大，方向也相反。"
+          "text": "0.005 m³"
         },
         {
           "label": "B",
-          "text": "量纲一致性：面积不是体积，d² 的量纲是 L²，而单分子体积的量纲是 L³。"
-        },
-        {
-          "label": "C",
-          "text": "数值代入：升温时体积应增大。"
-        },
-        {
-          "label": "D",
-          "text": "概念混淆：内能还与分子数、物态和分子间势能等因素有关；温度只反映热运动的平均剧烈程度。"
+          "text": "0.0032 m³"
         }
       ],
-      "correct_answer": "C",
-      "explanation": "升温时体积应增大。错误式算得 0.0032 m³，与正确的 0.005 m³ 相反。\n知识库校验证据：情境：等压升温；代入错误式：V1·T1/T2；校验参照值：0.005。",
+      "correct_answer": "A",
+      "explanation": "使用查理定律：V<sub>1</sub>·T<sub>2</sub>/T<sub>1</sub>，代入得0.005 m³。另一结果来自V<sub>1</sub>·T<sub>1</sub>/T<sub>2</sub>，算得0.0032 m³。\n升温时体积应增大。错误式算得 0.0032 m³，与正确的 0.005 m³ 相反。\n知识点条件：三条实验定律各固定一个状态量：等温看 p 与 V，等压看 V 与 T，等容看 p 与 T。温度必须使用开尔文。压强与体积的反比不是说压强随体积均匀减少；例如体积减半，压强变为两倍。若漏气、发生液化或状态变化过快而未达到平衡，简单定律可能不再适用。\n推导依据：保持气体质量和温度不变，实验发现 pV 为常量，故 p<sub>1</sub>V<sub>1</sub>=p<sub>2</sub>V<sub>2</sub>。；保持气体质量和压强不变，实验发现 V/T 为常量，故 V<sub>1</sub>/T<sub>1</sub>=V<sub>2</sub>/T<sub>2</sub>。；保持气体质量和体积不变，实验发现 p/T 为常量，故 p<sub>1</sub>/T<sub>1</sub>=p<sub>2</sub>/T<sub>2</sub>。；三条关系中的 T 都是从绝对零度起算的热力学温度。\n卡片公式各自的适用条件（不是本题共同前提）：\n玻意耳定律：一定质量的理想气体发生等温变化，且初末态均为平衡态\n查理定律：一定质量的理想气体发生等压变化，温度使用开尔文\n盖-吕萨克定律：一定质量的理想气体发生等容变化，温度使用开尔文",
       "error_type": "数值代入",
       "judging": "auto",
       "source_error_index": 1,
       "source_caught_by": "数值代入",
-      "wrong_expr": "V2 = V1·T1/T2",
+      "wrong_expr": "V<sub>2</sub> = V<sub>1</sub>·T<sub>1</sub>/T<sub>2</sub>",
       "trap_test": {
         "scenario": "等压升温",
         "expr": "V1*T1/T2",
         "ref": 0.005
       },
+      "level": "基础",
+      "learning_scope": "高中",
+      "answer_evidence": {
+        "kind": "numeric",
+        "scenario": "等压升温",
+        "parameters": {
+          "p1": 120000.0,
+          "p2": 120000.0,
+          "V1": 0.004,
+          "V2": 0.005,
+          "T1": 320.0,
+          "T2": 400.0
+        },
+        "target": "V2",
+        "unit": "m^3",
+        "reference": 0.005,
+        "correct_proof": {
+          "expression": "V1*T2/T1",
+          "formula": "查理定律",
+          "value": 0.005,
+          "when": "一定质量的理想气体发生等压变化，温度使用开尔文"
+        },
+        "distractor_expression": "V1*T1/T2",
+        "distractor_value": 0.0032,
+        "dimension_matches": true,
+        "independent_evaluation": true
+      },
       "review": {
         "confidence": "medium",
-        "checks": {
-          "answer_unique": true,
-          "distractors_plausible": true,
-          "stem_clear": true,
-          "no_cross_segment": true
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": true,
+          "no_answer_leak_in_options": true
         },
-        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。"
       }
     },
     {
@@ -473,27 +766,19 @@
       "point_id": "mgas-06",
       "point_title": "理想气体状态方程",
       "chapter": "第十八章 · 分子动理论与气体",
-      "stem": "【第十八章 · 分子动理论与气体 · 理想气体状态方程】学生的错误做法：把微观状态方程写成 p = N·k<sub>B</sub>·T·V（错误表达式：p = N·k<sub>B</sub>·T·V）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "stem": "在“理想气体状态方程”中，气体可视为理想气体，N 为容器内分子总数。气体压强的单位为Pa。下列哪一表达式的量纲与该目标量一致？",
       "options": [
         {
           "label": "A",
-          "text": "数值代入：两种温标零点不同。"
+          "text": "p = N·k<sub>B</sub>·T/V"
         },
         {
           "label": "B",
-          "text": "量纲一致性：乘以体积后量纲变成能量乘体积，已经不是压强；而且错误式会预言容器越大压强越大，方向也相反。"
-        },
-        {
-          "label": "C",
-          "text": "数值代入：分子数应是总体积除以单分子体积。"
-        },
-        {
-          "label": "D",
-          "text": "数值代入：吸引与排斥方向相反，应作差而不是相加。"
+          "text": "p = N·k<sub>B</sub>·T·V"
         }
       ],
-      "correct_answer": "B",
-      "explanation": "乘以体积后量纲变成能量乘体积，已经不是压强；而且错误式会预言容器越大压强越大，方向也相反。\n知识库校验证据：被测错误式：p = N·k<sub>B</sub>·T·V；左式量纲：M·L⁻¹·T⁻²；右式量纲：M·L⁵·T⁻²；左右量纲不匹配；量纲校验说明：实际量纲检查得到等号左边为M·L⁻¹·T⁻²、右边为M·L⁵·T⁻²；两边不是同一物理量，因此该等式不成立。；变化方向要求：mismatch；检验说明：实际量纲检查得到等号左边为M·L⁻¹·T⁻²、右边为M·L⁵·T⁻²；两边不是同一物理量，因此该等式不成立。。",
+      "correct_answer": "A",
+      "explanation": "乘以体积后量纲变成能量乘体积，已经不是压强；而且错误式会预言容器越大压强越大，方向也相反。\n知识点条件：状态方程只连接平衡态，不要求过程一定等温、等压或等容。给定气体质量不变时，三个状态量中知道两个的变化就能求第三个。微观式说明气体压强来源于大量分子对器壁的持续碰撞：分子数密度越大或温度越高，压强越大。实际气体在低密度、高温条件下更接近理想气体。\n推导依据：把玻意耳、查理和盖-吕萨克三条实验定律统一，可得一定质量气体的 pV/T 为常量。；比较初末两个平衡态，即得 p<sub>1</sub>V<sub>1</sub>/T<sub>1</sub> = p<sub>2</sub>V<sub>2</sub>/T<sub>2</sub>。；从分子碰撞的统计结果可写成 pV = Nk<sub>B</sub> T；固定 N 后，同样说明 pV/T 不变。\n卡片公式各自的适用条件（不是本题共同前提）：\n理想气体状态方程的微观形式：气体可视为理想气体，N 为容器内分子总数\n一定质量气体的两状态方程：同一份理想气体从一个平衡态变化到另一个平衡态",
       "error_type": "量纲一致性",
       "judging": "auto",
       "source_error_index": 0,
@@ -507,15 +792,42 @@
         "expect": "mismatch",
         "note": "实际量纲检查得到等号左边为M·L^-1·T^-2、右边为M·L^5·T^-2；两边不是同一物理量，因此该等式不成立。"
       },
+      "level": "进阶",
+      "learning_scope": "高中",
+      "answer_evidence": {
+        "kind": "dimension",
+        "target": "p",
+        "correct_expression": "p = N*k_B*T/V",
+        "distractor_expression": "p = N*k_B*T*V",
+        "target_dimension": "M·L^-1·T^-2",
+        "distractor_dimension": "M·L^5·T^-2"
+      },
       "review": {
         "confidence": "medium",
-        "checks": {
-          "answer_unique": true,
-          "distractors_plausible": true,
-          "stem_clear": true,
-          "no_cross_segment": true
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": true,
+          "no_answer_leak_in_options": true
         },
-        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。"
       }
     },
     {
@@ -523,27 +835,19 @@
       "point_id": "mgas-06",
       "point_title": "理想气体状态方程",
       "chapter": "第十八章 · 分子动理论与气体",
-      "stem": "【第十八章 · 分子动理论与气体 · 理想气体状态方程】学生的错误做法：把分子平动对压强的贡献重复计算，写成 p = 2N·k<sub>B</sub>·T/V（错误表达式：p = 2·N·k<sub>B</sub>·T/V）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "stem": "在“理想气体状态方程”的模型下，N（气体分子数）=2e+23 1；k<sub>B</sub>（玻尔兹曼常量）=1.38e-23 J/K；T（热力学温度）=300 K；V（气体体积）=0.00828 m³。条件：气体可视为理想气体，N 为容器内分子总数。求气体压强（p）。这些数值是设计示例。",
       "options": [
         {
           "label": "A",
-          "text": "数值代入：错误式与正确式量纲完全相同，量纲检查无法发现；在微观状态方程情境中会算出 2.0×10⁵ Pa，而独立参考值是 1.0×10⁵ Pa。"
+          "text": "100000 Pa"
         },
         {
           "label": "B",
-          "text": "概念混淆：内能还与分子数、物态和分子间势能等因素有关；温度只反映热运动的平均剧烈程度。"
-        },
-        {
-          "label": "C",
-          "text": "量纲一致性：面积不是体积，d² 的量纲是 L²，而单分子体积的量纲是 L³。"
-        },
-        {
-          "label": "D",
-          "text": "概念混淆：保守力做正功时势能应减少。"
+          "text": "200000 Pa"
         }
       ],
       "correct_answer": "A",
-      "explanation": "错误式与正确式量纲完全相同，量纲检查无法发现；在微观状态方程情境中会算出 2.0×10⁵ Pa，而独立参考值是 1.0×10⁵ Pa。\n知识库校验证据：情境：微观状态方程；代入错误式：2·N·k<sub>B</sub>·T/V；校验参照值：100000.0。",
+      "explanation": "使用理想气体状态方程的微观形式：N·k<sub>B</sub>·T/V，代入得100000 Pa。另一结果来自2·N·k<sub>B</sub>·T/V，算得200000 Pa。\n错误式与正确式量纲完全相同，量纲检查无法发现；在微观状态方程情境中会算出 2.0×10⁵ Pa，而独立参考值是 1.0×10⁵ Pa。\n知识点条件：状态方程只连接平衡态，不要求过程一定等温、等压或等容。给定气体质量不变时，三个状态量中知道两个的变化就能求第三个。微观式说明气体压强来源于大量分子对器壁的持续碰撞：分子数密度越大或温度越高，压强越大。实际气体在低密度、高温条件下更接近理想气体。\n推导依据：把玻意耳、查理和盖-吕萨克三条实验定律统一，可得一定质量气体的 pV/T 为常量。；比较初末两个平衡态，即得 p<sub>1</sub>V<sub>1</sub>/T<sub>1</sub> = p<sub>2</sub>V<sub>2</sub>/T<sub>2</sub>。；从分子碰撞的统计结果可写成 pV = Nk<sub>B</sub> T；固定 N 后，同样说明 pV/T 不变。\n卡片公式各自的适用条件（不是本题共同前提）：\n理想气体状态方程的微观形式：气体可视为理想气体，N 为容器内分子总数\n一定质量气体的两状态方程：同一份理想气体从一个平衡态变化到另一个平衡态",
       "error_type": "数值代入",
       "judging": "auto",
       "source_error_index": 1,
@@ -554,15 +858,58 @@
         "expr": "2*N*k_B*T/V",
         "ref": 100000.0
       },
+      "level": "进阶",
+      "learning_scope": "高中",
+      "answer_evidence": {
+        "kind": "numeric",
+        "scenario": "微观状态方程",
+        "parameters": {
+          "N": 2e+23,
+          "k_B": 1.38e-23,
+          "T": 300.0,
+          "V": 0.00828,
+          "p": 100000.0
+        },
+        "target": "p",
+        "unit": "Pa",
+        "reference": 100000.0,
+        "correct_proof": {
+          "expression": "N*k_B*T/V",
+          "formula": "理想气体状态方程的微观形式",
+          "value": 100000.0,
+          "when": "气体可视为理想气体，N 为容器内分子总数"
+        },
+        "distractor_expression": "2*N*k_B*T/V",
+        "distractor_value": 200000.0,
+        "dimension_matches": true,
+        "independent_evaluation": true
+      },
       "review": {
         "confidence": "medium",
-        "checks": {
-          "answer_unique": true,
-          "distractors_plausible": true,
-          "stem_clear": true,
-          "no_cross_segment": true
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": true,
+          "no_answer_leak_in_options": true
         },
-        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。"
       }
     },
     {
@@ -570,27 +917,19 @@
       "point_id": "mol-05",
       "point_title": "液晶：取向有序、流动性与显示",
       "chapter": "第十八章 · 分子动理论与气体",
-      "stem": "【第十八章 · 分子动理论与气体 · 液晶：取向有序、流动性与显示】学生的错误做法：透射比例把入射光功率除以透射功率（错误表达式：τ = P<sub>入</sub>/P<sub>出</sub>）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "stem": "在“液晶：取向有序、流动性与显示”的模型下，P<sub>入</sub>（入射光功率）=0.01 W；P<sub>出</sub>（透射光功率）=0.004 W。条件：入射、透射功率对应同一光束和同一时段，P<sub>入</sub>&gt;0；比例无量纲，不把所有未透射能量都视为吸收。。求该装置透射光功率比例（τ）。这些数值是设计示例。",
       "options": [
         {
           "label": "A",
-          "text": "概念混淆：内能还与分子数、物态和分子间势能等因素有关；温度只反映热运动的平均剧烈程度。"
+          "text": "2.5 1"
         },
         {
           "label": "B",
-          "text": "量纲一致性：乘以体积后量纲变成能量乘体积，已经不是压强；而且错误式会预言容器越大压强越大，方向也相反。"
-        },
-        {
-          "label": "C",
-          "text": "量纲一致性：面积不是体积，d² 的量纲是 L²，而单分子体积的量纲是 L³。"
-        },
-        {
-          "label": "D",
-          "text": "数值代入：比例是输出透射量占输入的份额，4/10为0.4，颠倒会变成2.5，不能当作无额外光源装置的透射比例。"
+          "text": "0.4 1"
         }
       ],
-      "correct_answer": "D",
-      "explanation": "比例是输出透射量占输入的份额，4/10为0.4，颠倒会变成2.5，不能当作无额外光源装置的透射比例。\n知识库校验证据：情境：状态甲；代入错误式：P<sub>入</sub>/P<sub>出</sub>；校验参照值：0.4。",
+      "correct_answer": "B",
+      "explanation": "使用光功率透射比例：P<sub>出</sub>/P<sub>入</sub>，代入得0.4 1。另一结果来自P<sub>入</sub>/P<sub>出</sub>，算得2.5 1。\n比例是输出透射量占输入的份额，4/10为0.4，颠倒会变成2.5，不能当作无额外光源装置的透射比例。\n知识点条件：液晶并非液态晶体碎屑，也不是所有方向均相同的普通液体。不同液晶相的有序形式不同，常见向列相分子长轴具有优先方向而位置不必形成固体晶格。显示装置改变分子取向和偏振光的传播，通常由背光或环境光提供光源，液晶层本身不因此成为发光源。温度和外场响应依材料及结构而定，不能说任何液晶加电都更亮。以下透射比例只是独立光功率读数的处理，不是液晶微观性质的数值证明。\n推导依据：比例分别为4/10=0.4和1/10=0.1。；两读数只比较该装置透射情况，光来自照明而非液晶自行发光。；液晶并非液态晶体碎屑，也不是所有方向均相同的普通液体。\n卡片公式各自的适用条件（不是本题共同前提）：\n光功率透射比例：入射、透射功率对应同一光束和同一时段，P<sub>入</sub>&gt;0；比例无量纲，不把所有未透射能量都视为吸收。\n各光通道能量账目：稳态无额外光源的被动装置，非透射量包含全部其他通道。",
       "error_type": "数值代入",
       "judging": "auto",
       "source_error_index": 0,
@@ -601,15 +940,57 @@
         "expr": "P_in/P_out",
         "ref": 0.4
       },
+      "level": "基础",
+      "learning_scope": "高中",
+      "answer_evidence": {
+        "kind": "numeric",
+        "scenario": "状态甲",
+        "parameters": {
+          "P_in": 0.01,
+          "P_out": 0.004,
+          "P_loss": 0.006,
+          "tau": 0.4
+        },
+        "target": "tau",
+        "unit": "1",
+        "reference": 0.4,
+        "correct_proof": {
+          "expression": "P_out/P_in",
+          "formula": "光功率透射比例",
+          "value": 0.4,
+          "when": "入射、透射功率对应同一光束和同一时段，P_in>0；比例无量纲，不把所有未透射能量都视为吸收。"
+        },
+        "distractor_expression": "P_in/P_out",
+        "distractor_value": 2.5,
+        "dimension_matches": true,
+        "independent_evaluation": true
+      },
       "review": {
         "confidence": "medium",
-        "checks": {
-          "answer_unique": true,
-          "distractors_plausible": true,
-          "stem_clear": true,
-          "no_cross_segment": true
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": true,
+          "no_answer_leak_in_options": true
         },
-        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。"
       }
     },
     {
@@ -617,42 +998,59 @@
       "point_id": "mol-05",
       "point_title": "液晶：取向有序、流动性与显示",
       "chapter": "第十八章 · 分子动理论与气体",
-      "stem": "【第十八章 · 分子动理论与气体 · 液晶：取向有序、流动性与显示】学生的错误做法：液晶屏幕发亮就说明液晶分子自己发光，或加电总会更亮。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "stem": "关于“液晶：取向有序、流动性与显示”，判断这一说法是否成立，并说明依据：\n光源通常是背光或环境光，液晶与偏振元件调制透光。",
       "options": [
         {
           "label": "A",
-          "text": "数值代入：吸引与排斥方向相反，应作差而不是相加。"
+          "text": "该说法不成立。"
         },
         {
           "label": "B",
-          "text": "数值代入：两种温标零点不同。"
-        },
-        {
-          "label": "C",
-          "text": "概念混淆：光源通常是背光或环境光，液晶与偏振元件调制透光；明暗变化取决于结构、取向和驱动，不能从一种结构推广所有液晶。"
-        },
-        {
-          "label": "D",
-          "text": "数值代入：分子数应是总体积除以单分子体积。"
+          "text": "该说法成立。"
         }
       ],
-      "correct_answer": "C",
-      "explanation": "光源通常是背光或环境光，液晶与偏振元件调制透光；明暗变化取决于结构、取向和驱动，不能从一种结构推广所有液晶。",
+      "correct_answer": "B",
+      "explanation": "光源通常是背光或环境光，液晶与偏振元件调制透光；明暗变化取决于结构、取向和驱动，不能从一种结构推广所有液晶。\n知识点条件：液晶并非液态晶体碎屑，也不是所有方向均相同的普通液体。不同液晶相的有序形式不同，常见向列相分子长轴具有优先方向而位置不必形成固体晶格。显示装置改变分子取向和偏振光的传播，通常由背光或环境光提供光源，液晶层本身不因此成为发光源。温度和外场响应依材料及结构而定，不能说任何液晶加电都更亮。以下透射比例只是独立光功率读数的处理，不是液晶微观性质的数值证明。\n推导依据：比例分别为4/10=0.4和1/10=0.1。；两读数只比较该装置透射情况，光来自照明而非液晶自行发光。；液晶并非液态晶体碎屑，也不是所有方向均相同的普通液体。\n卡片公式各自的适用条件（不是本题共同前提）：\n光功率透射比例：入射、透射功率对应同一光束和同一时段，P<sub>入</sub>&gt;0；比例无量纲，不把所有未透射能量都视为吸收。\n各光通道能量账目：稳态无额外光源的被动装置，非透射量包含全部其他通道。",
       "error_type": "概念混淆",
       "judging": "teacher",
       "source_error_index": 1,
       "source_caught_by": "人工审核",
       "wrong_expr": null,
       "trap_test": null,
+      "level": "基础",
+      "learning_scope": "高中",
+      "answer_evidence": {
+        "kind": "teacher",
+        "claim_source": "why",
+        "reference_only": true,
+        "reason": "概念、操作或无法建立完整定量证据，教师确认条件与结论。"
+      },
       "review": {
         "confidence": "medium",
-        "checks": {
-          "answer_unique": true,
-          "distractors_plausible": true,
-          "stem_clear": true,
-          "no_cross_segment": true
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": false,
+          "no_answer_leak_in_options": true
         },
-        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。"
       }
     },
     {
@@ -660,27 +1058,19 @@
       "point_id": "mol-06",
       "point_title": "毛细现象与浸润条件",
       "chapter": "第十八章 · 分子动理论与气体",
-      "stem": "【第十八章 · 分子动理论与气体 · 毛细现象与浸润条件】学生的错误做法：把给出的管内直径直接当公式中的半径（错误表达式：h = 2·σ·cos(θ)/(ρ·g·d)）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "stem": "在“毛细现象与浸润条件”的模型下，σ（表面张力系数）=0.072 N/m；θ（液体侧接触角）=1.0472 rad；ρ（液体密度）=1000 kg/m³；g（重力加速度）=10 m/s²；r（细圆管内半径）=0.0005 m；d（细圆管内直径）=0.001 m。条件：细圆管内液体静止，液面曲率由接触角决定；θ从液体一侧量取，忽略管径尺度的弯月面体积及蒸发。。求相对外液面有符号高度（h）。这些数值是设计示例。",
       "options": [
         {
           "label": "A",
-          "text": "量纲一致性：面积不是体积，d² 的量纲是 L²，而单分子体积的量纲是 L³。"
+          "text": "0.0072 m"
         },
         {
           "label": "B",
-          "text": "数值代入：公式分母为内半径，直径是它的两倍；错用1 mm而不是0.5 mm会把高度算成一半，即0.72 cm。"
-        },
-        {
-          "label": "C",
-          "text": "概念混淆：内能还与分子数、物态和分子间势能等因素有关；温度只反映热运动的平均剧烈程度。"
-        },
-        {
-          "label": "D",
-          "text": "量纲一致性：乘以体积后量纲变成能量乘体积，已经不是压强；而且错误式会预言容器越大压强越大，方向也相反。"
+          "text": "0.0144 m"
         }
       ],
       "correct_answer": "B",
-      "explanation": "公式分母为内半径，直径是它的两倍；错用1 mm而不是0.5 mm会把高度算成一半，即0.72 cm。\n知识库校验证据：情境：浸润设计；代入错误式：2·σ·cos(θ)/(ρ·g·d)；校验参照值：0.0144。",
+      "explanation": "使用圆管静态毛细高度：2·σ·cos(θ)/(ρ·g·r)，代入得0.0144 m。另一结果来自2·σ·cos(θ)/(ρ·g·d)，算得0.0072 m。\n公式分母为内半径，直径是它的两倍；错用1 mm而不是0.5 mm会把高度算成一半，即0.72 cm。\n知识点条件：表面张力在管口接触线处的竖直分量与液柱重量差平衡。圆管半径越小，理想静态毛细高度绝对值越大；半径不是直径。接触角从液体一侧测量，浸润角余弦为正使液面上升，不浸润为负使液面下降。模型忽略弯月面体积修正、动态流动和蒸发，要求细圆管、足够液体及稳定接触角。它不能说明细管越细流量一定越大，渗流阻力是另一问题。下面负高度表示相对外液面降低，不是负的实际管长。\n推导依据：半径为0.5 mm，接触角余弦为0.5。；2×0.072×0.5除(1000×10×0.0005)=0.0144 m。；表面张力在管口接触线处的竖直分量与液柱重量差平衡。\n卡片公式各自的适用条件（不是本题共同前提）：\n圆管静态毛细高度：细圆管内液体静止，液面曲率由接触角决定；θ从液体一侧量取，忽略管径尺度的弯月面体积及蒸发。\n接触线竖直张力：圆管半径r，表面张力σ沿圆周接触线作用；θ从液体一侧量取，向上为正。",
       "error_type": "数值代入",
       "judging": "auto",
       "source_error_index": 0,
@@ -691,15 +1081,61 @@
         "expr": "2*sigma*cos(theta)/(rho*g*d)",
         "ref": 0.0144
       },
+      "level": "基础",
+      "learning_scope": "高中",
+      "answer_evidence": {
+        "kind": "numeric",
+        "scenario": "浸润设计",
+        "parameters": {
+          "sigma": 0.072,
+          "theta": 1.0471975511965976,
+          "rho": 1000,
+          "g": 10,
+          "r": 0.0005,
+          "d": 0.001,
+          "h": 0.0144,
+          "F": 0.00011309733552923256
+        },
+        "target": "h",
+        "unit": "m",
+        "reference": 0.0144,
+        "correct_proof": {
+          "expression": "2*sigma*cos(theta)/(rho*g*r)",
+          "formula": "圆管静态毛细高度",
+          "value": 0.014400000000000001,
+          "when": "细圆管内液体静止，液面曲率由接触角决定；theta从液体一侧量取，忽略管径尺度的弯月面体积及蒸发。"
+        },
+        "distractor_expression": "2*sigma*cos(theta)/(rho*g*d)",
+        "distractor_value": 0.007200000000000001,
+        "dimension_matches": true,
+        "independent_evaluation": true
+      },
       "review": {
         "confidence": "medium",
-        "checks": {
-          "answer_unique": true,
-          "distractors_plausible": true,
-          "stem_clear": true,
-          "no_cross_segment": true
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": true,
+          "no_answer_leak_in_options": true
         },
-        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。"
       }
     },
     {
@@ -707,269 +1143,3144 @@
       "point_id": "mol-06",
       "point_title": "毛细现象与浸润条件",
       "chapter": "第十八章 · 分子动理论与气体",
-      "stem": "【第十八章 · 分子动理论与气体 · 毛细现象与浸润条件】学生的错误做法：所有液体在任何细管中都会上升，或毛细高度大就说明流量更大。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "stem": "关于“毛细现象与浸润条件”，判断这一说法是否成立，并说明依据：\n上升下降取决于浸润及接触角。",
       "options": [
         {
           "label": "A",
-          "text": "概念混淆：上升下降取决于浸润及接触角；静态高度与动态流量不同，流量还受黏性和阻力限制，不能从静态公式直接推出。"
+          "text": "该说法成立。"
         },
         {
           "label": "B",
-          "text": "数值代入：分子数应是总体积除以单分子体积。"
-        },
-        {
-          "label": "C",
-          "text": "数值代入：吸引与排斥方向相反，应作差而不是相加。"
-        },
-        {
-          "label": "D",
-          "text": "数值代入：两种温标零点不同。"
+          "text": "该说法不成立。"
         }
       ],
       "correct_answer": "A",
-      "explanation": "上升下降取决于浸润及接触角；静态高度与动态流量不同，流量还受黏性和阻力限制，不能从静态公式直接推出。",
+      "explanation": "上升下降取决于浸润及接触角；静态高度与动态流量不同，流量还受黏性和阻力限制，不能从静态公式直接推出。\n知识点条件：表面张力在管口接触线处的竖直分量与液柱重量差平衡。圆管半径越小，理想静态毛细高度绝对值越大；半径不是直径。接触角从液体一侧测量，浸润角余弦为正使液面上升，不浸润为负使液面下降。模型忽略弯月面体积修正、动态流动和蒸发，要求细圆管、足够液体及稳定接触角。它不能说明细管越细流量一定越大，渗流阻力是另一问题。下面负高度表示相对外液面降低，不是负的实际管长。\n推导依据：半径为0.5 mm，接触角余弦为0.5。；2×0.072×0.5除(1000×10×0.0005)=0.0144 m。；表面张力在管口接触线处的竖直分量与液柱重量差平衡。\n卡片公式各自的适用条件（不是本题共同前提）：\n圆管静态毛细高度：细圆管内液体静止，液面曲率由接触角决定；θ从液体一侧量取，忽略管径尺度的弯月面体积及蒸发。\n接触线竖直张力：圆管半径r，表面张力σ沿圆周接触线作用；θ从液体一侧量取，向上为正。",
       "error_type": "概念混淆",
       "judging": "teacher",
       "source_error_index": 1,
       "source_caught_by": "人工审核",
       "wrong_expr": null,
       "trap_test": null,
+      "level": "基础",
+      "learning_scope": "高中",
+      "answer_evidence": {
+        "kind": "teacher",
+        "claim_source": "why",
+        "reference_only": true,
+        "reason": "概念、操作或无法建立完整定量证据，教师确认条件与结论。"
+      },
       "review": {
         "confidence": "medium",
-        "checks": {
-          "answer_unique": true,
-          "distractors_plausible": true,
-          "stem_clear": true,
-          "no_cross_segment": true
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": false,
+          "no_answer_leak_in_options": true
         },
-        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。"
       }
     }
   ],
   "skipped": [],
   "source_records": {
     "diagnostic-mgas-01-1": {
-      "error": {
-        "wrong": "把分子数写成 N = V_molecule/V_total",
-        "wrong_expr": "N = V_molecule/V_total",
-        "why": "分子数应是总体积除以单分子体积。错误式在本情境得到 10^-22，而不是 10^22，量纲虽同为无量纲但数量级完全相反。",
-        "caught_by": "数值代入",
-        "trap_test": {
-          "scenario": "油膜估算",
-          "expr": "V_molecule/V_total",
-          "ref": 1e+22
-        }
+      "point": {
+        "id": "mgas-01",
+        "title": "分子动理论的基本内容与微观量估算",
+        "level": "基础",
+        "definition": "物质由大量分子组成，分子永不停息地做无规则运动，分子之间存在相互作用。油膜法等实验可以估算分子的线度；若把分子近似为紧密排列的小立方体，则单个分子占据的体积 V_molecule 约等于分子线度 d 的三次方。",
+        "meaning": "微观粒子不能逐个直接计数，但可以用宏观总体积除以单个分子体积来估算数目。这里的立方体模型只是数量级估算，不表示真实分子一定是立方体；所得线度通常在 10^-10 m 的数量级。布朗运动是悬浮微粒的无规则运动，它间接反映液体分子的热运动，不是液体分子本身的运动轨迹。",
+        "symbols": {
+          "V_total": {
+            "desc": "所有分子占据的总体积",
+            "unit": "m^3"
+          },
+          "V_molecule": {
+            "desc": "单个分子平均占据的体积",
+            "unit": "m^3"
+          },
+          "N": {
+            "desc": "分子数目",
+            "unit": "1"
+          },
+          "d": {
+            "desc": "分子线度的估计值",
+            "unit": "m"
+          }
+        },
+        "scenarios": {
+          "油膜估算": {
+            "V_total": 1e-08,
+            "V_molecule": 1e-30,
+            "N": 1e+22,
+            "d": 1e-10
+          }
+        },
+        "formulas": [
+          {
+            "name": "由总体积估算分子数",
+            "expr": "N = V_total/V_molecule",
+            "when": "总体积可视为 N 个分子平均占据体积之和",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "油膜估算",
+                "expr": "V_total/V_molecule",
+                "ref": 1e+22,
+                "note": "10^-8 除以 10^-30，指数相减得 10^22 个（独立按数量级计算）"
+              },
+              {
+                "type": "direction",
+                "scenario": "油膜估算",
+                "var": "V_total",
+                "lo": 1e-09,
+                "hi": 1e-07,
+                "expr": "V_total/V_molecule",
+                "expect": "up",
+                "note": "单分子体积一定时，总体积越大，包含的分子越多"
+              },
+              {
+                "type": "direction",
+                "scenario": "油膜估算",
+                "var": "V_molecule",
+                "lo": 1e-31,
+                "hi": 1e-29,
+                "expr": "V_total/V_molecule",
+                "expect": "down",
+                "note": "总体积一定时，单个分子占据体积越大，可容纳的分子数越少"
+              },
+              {
+                "type": "scan",
+                "scenario": "油膜估算",
+                "var": "V_total",
+                "lo": 1e-12,
+                "hi": 1e-06
+              }
+            ]
+          },
+          {
+            "name": "分子体积的立方体近似",
+            "expr": "V_molecule = d^3",
+            "when": "只做数量级估算，把每个分子平均占据的空间近似为边长 d 的小立方体",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "油膜估算",
+                "expr": "d^3",
+                "ref": 1e-30,
+                "tol": 1e-36,
+                "note": "(10^-10 m)^3 = 10^-30 m^3（独立按指数相乘计算）"
+              },
+              {
+                "type": "direction",
+                "scenario": "油膜估算",
+                "var": "d",
+                "lo": 1e-11,
+                "hi": 5e-10,
+                "expr": "d^3/V_molecule",
+                "expect": "up",
+                "note": "用单分子体积作尺度化后，分子线度越大，按立方关系估计的相对体积越大；无量纲比值避免微观量被默认绝对容差误判为不变"
+              },
+              {
+                "type": "consistency",
+                "scenario": "油膜估算",
+                "with": "mgas-01|分子体积的立方体近似",
+                "with_expr": "V_total/N",
+                "target": "单个分子平均占据的体积",
+                "tol": 1.0000000000000001e-35,
+                "note": "本公式直接求V_molecule；参考端显式关系为V_total/N。两端使用同一情境和阶段，只核对该关系；with字段仅定位来源，不代表调用另一条被覆盖的公式。",
+                "verification_kind": "独立关系核对"
+              },
+              {
+                "type": "scan",
+                "scenario": "油膜估算",
+                "var": "d",
+                "lo": 1e-12,
+                "hi": 1e-08
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "把宏观样品近似看成 N 个相同微观单元组成，总体积约为 N V_molecule。",
+          "将总体积关系变形，得到 N = V_total / V_molecule。",
+          "若每个分子平均占据边长为 d 的小立方体，则 V_molecule = d^3；该模型只用于数量级估算。"
+        ],
+        "errors": [
+          {
+            "wrong": "把分子数写成 N = V_molecule/V_total",
+            "wrong_expr": "N = V_molecule/V_total",
+            "why": "分子数应是总体积除以单分子体积。错误式在本情境得到 10^-22，而不是 10^22，量纲虽同为无量纲但数量级完全相反。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "油膜估算",
+              "expr": "V_molecule/V_total",
+              "ref": 1e+22
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "由分子线度估体积时写成 V_molecule = d^2",
+            "wrong_expr": "V_molecule = d^2",
+            "why": "面积不是体积，d^2 的量纲是 L^2，而单分子体积的量纲是 L^3。",
+            "caught_by": "量纲一致性",
+            "trap_test": {
+              "kind": "dimension",
+              "target": "V_molecule = d^2",
+              "lhs_dim": "L^3",
+              "rhs_dim": "L^2",
+              "expect": "mismatch",
+              "note": "实际量纲检查得到等号左边为L^3、右边为L^2；两边不是同一物理量，因此该等式不成立。"
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "某油滴形成单分子油膜，油的总体积为 1.0×10^-8 m^3。若估计一个分子平均占据 1.0×10^-30 m^3，求分子数，并估算分子线度。",
+          "solution": [
+            "分子数 N = V_total/V_molecule = 10^-8/10^-30 = 10^22。",
+            "把单分子占据空间近似为小立方体，V_molecule = d^3。",
+            "因为 (10^-10)^3 = 10^-30，所以 d = 1.0×10^-10 m。"
+          ],
+          "answer": "约有 1.0×10^22 个分子，分子线度约为 1.0×10^-10 m。"
+        },
+        "prereq": [],
+        "next": [
+          "mgas-02",
+          "exp-24"
+        ],
+        "tags": [
+          "分子动理论",
+          "油膜法",
+          "数量级估算",
+          "布朗运动"
+        ],
+        "learning_scope": "高中"
       },
-      "title": "分子动理论的基本内容与微观量估算",
+      "error_index": 0,
       "chapter": "第十八章 · 分子动理论与气体"
     },
     "diagnostic-mgas-01-2": {
-      "error": {
-        "wrong": "由分子线度估体积时写成 V_molecule = d^2",
-        "wrong_expr": "V_molecule = d^2",
-        "why": "面积不是体积，d^2 的量纲是 L^2，而单分子体积的量纲是 L^3。",
-        "caught_by": "量纲一致性",
-        "trap_test": {
-          "kind": "dimension",
-          "target": "V_molecule = d^2",
-          "lhs_dim": "L^3",
-          "rhs_dim": "L^2",
-          "expect": "mismatch",
-          "note": "实际量纲检查得到等号左边为L^3、右边为L^2；两边不是同一物理量，因此该等式不成立。"
-        }
+      "point": {
+        "id": "mgas-01",
+        "title": "分子动理论的基本内容与微观量估算",
+        "level": "基础",
+        "definition": "物质由大量分子组成，分子永不停息地做无规则运动，分子之间存在相互作用。油膜法等实验可以估算分子的线度；若把分子近似为紧密排列的小立方体，则单个分子占据的体积 V_molecule 约等于分子线度 d 的三次方。",
+        "meaning": "微观粒子不能逐个直接计数，但可以用宏观总体积除以单个分子体积来估算数目。这里的立方体模型只是数量级估算，不表示真实分子一定是立方体；所得线度通常在 10^-10 m 的数量级。布朗运动是悬浮微粒的无规则运动，它间接反映液体分子的热运动，不是液体分子本身的运动轨迹。",
+        "symbols": {
+          "V_total": {
+            "desc": "所有分子占据的总体积",
+            "unit": "m^3"
+          },
+          "V_molecule": {
+            "desc": "单个分子平均占据的体积",
+            "unit": "m^3"
+          },
+          "N": {
+            "desc": "分子数目",
+            "unit": "1"
+          },
+          "d": {
+            "desc": "分子线度的估计值",
+            "unit": "m"
+          }
+        },
+        "scenarios": {
+          "油膜估算": {
+            "V_total": 1e-08,
+            "V_molecule": 1e-30,
+            "N": 1e+22,
+            "d": 1e-10
+          }
+        },
+        "formulas": [
+          {
+            "name": "由总体积估算分子数",
+            "expr": "N = V_total/V_molecule",
+            "when": "总体积可视为 N 个分子平均占据体积之和",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "油膜估算",
+                "expr": "V_total/V_molecule",
+                "ref": 1e+22,
+                "note": "10^-8 除以 10^-30，指数相减得 10^22 个（独立按数量级计算）"
+              },
+              {
+                "type": "direction",
+                "scenario": "油膜估算",
+                "var": "V_total",
+                "lo": 1e-09,
+                "hi": 1e-07,
+                "expr": "V_total/V_molecule",
+                "expect": "up",
+                "note": "单分子体积一定时，总体积越大，包含的分子越多"
+              },
+              {
+                "type": "direction",
+                "scenario": "油膜估算",
+                "var": "V_molecule",
+                "lo": 1e-31,
+                "hi": 1e-29,
+                "expr": "V_total/V_molecule",
+                "expect": "down",
+                "note": "总体积一定时，单个分子占据体积越大，可容纳的分子数越少"
+              },
+              {
+                "type": "scan",
+                "scenario": "油膜估算",
+                "var": "V_total",
+                "lo": 1e-12,
+                "hi": 1e-06
+              }
+            ]
+          },
+          {
+            "name": "分子体积的立方体近似",
+            "expr": "V_molecule = d^3",
+            "when": "只做数量级估算，把每个分子平均占据的空间近似为边长 d 的小立方体",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "油膜估算",
+                "expr": "d^3",
+                "ref": 1e-30,
+                "tol": 1e-36,
+                "note": "(10^-10 m)^3 = 10^-30 m^3（独立按指数相乘计算）"
+              },
+              {
+                "type": "direction",
+                "scenario": "油膜估算",
+                "var": "d",
+                "lo": 1e-11,
+                "hi": 5e-10,
+                "expr": "d^3/V_molecule",
+                "expect": "up",
+                "note": "用单分子体积作尺度化后，分子线度越大，按立方关系估计的相对体积越大；无量纲比值避免微观量被默认绝对容差误判为不变"
+              },
+              {
+                "type": "consistency",
+                "scenario": "油膜估算",
+                "with": "mgas-01|分子体积的立方体近似",
+                "with_expr": "V_total/N",
+                "target": "单个分子平均占据的体积",
+                "tol": 1.0000000000000001e-35,
+                "note": "本公式直接求V_molecule；参考端显式关系为V_total/N。两端使用同一情境和阶段，只核对该关系；with字段仅定位来源，不代表调用另一条被覆盖的公式。",
+                "verification_kind": "独立关系核对"
+              },
+              {
+                "type": "scan",
+                "scenario": "油膜估算",
+                "var": "d",
+                "lo": 1e-12,
+                "hi": 1e-08
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "把宏观样品近似看成 N 个相同微观单元组成，总体积约为 N V_molecule。",
+          "将总体积关系变形，得到 N = V_total / V_molecule。",
+          "若每个分子平均占据边长为 d 的小立方体，则 V_molecule = d^3；该模型只用于数量级估算。"
+        ],
+        "errors": [
+          {
+            "wrong": "把分子数写成 N = V_molecule/V_total",
+            "wrong_expr": "N = V_molecule/V_total",
+            "why": "分子数应是总体积除以单分子体积。错误式在本情境得到 10^-22，而不是 10^22，量纲虽同为无量纲但数量级完全相反。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "油膜估算",
+              "expr": "V_molecule/V_total",
+              "ref": 1e+22
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "由分子线度估体积时写成 V_molecule = d^2",
+            "wrong_expr": "V_molecule = d^2",
+            "why": "面积不是体积，d^2 的量纲是 L^2，而单分子体积的量纲是 L^3。",
+            "caught_by": "量纲一致性",
+            "trap_test": {
+              "kind": "dimension",
+              "target": "V_molecule = d^2",
+              "lhs_dim": "L^3",
+              "rhs_dim": "L^2",
+              "expect": "mismatch",
+              "note": "实际量纲检查得到等号左边为L^3、右边为L^2；两边不是同一物理量，因此该等式不成立。"
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "某油滴形成单分子油膜，油的总体积为 1.0×10^-8 m^3。若估计一个分子平均占据 1.0×10^-30 m^3，求分子数，并估算分子线度。",
+          "solution": [
+            "分子数 N = V_total/V_molecule = 10^-8/10^-30 = 10^22。",
+            "把单分子占据空间近似为小立方体，V_molecule = d^3。",
+            "因为 (10^-10)^3 = 10^-30，所以 d = 1.0×10^-10 m。"
+          ],
+          "answer": "约有 1.0×10^22 个分子，分子线度约为 1.0×10^-10 m。"
+        },
+        "prereq": [],
+        "next": [
+          "mgas-02",
+          "exp-24"
+        ],
+        "tags": [
+          "分子动理论",
+          "油膜法",
+          "数量级估算",
+          "布朗运动"
+        ],
+        "learning_scope": "高中"
       },
-      "title": "分子动理论的基本内容与微观量估算",
+      "error_index": 1,
       "chapter": "第十八章 · 分子动理论与气体"
     },
     "diagnostic-mgas-02-1": {
-      "error": {
-        "wrong": "求分子间合力时把吸引与排斥的大小直接相加",
-        "wrong_expr": "F_net = F_rep+F_attr",
-        "why": "吸引与排斥方向相反，应作差而不是相加。两种写法量纲完全相同；把错误结果与正确合力作无量纲比值，本情境得到 2.2 而不是 1，可由数值代入抓住。",
-        "caught_by": "数值代入",
-        "trap_test": {
-          "scenario": "距离小于平衡距离",
-          "expr": "(F_rep+F_attr)/F_net",
-          "ref": 1.0
-        }
+      "point": {
+        "id": "mgas-02",
+        "title": "分子间作用力与分子势能",
+        "level": "基础",
+        "definition": "分子间同时存在吸引作用和排斥作用，两者都随距离减小而增强，但排斥作用在很近时增长得更快。把沿分子间距离增大的方向取为正，合力可用 F_net = F_rep - F_attr 表示；分子力做功与分子势能变化满足 delta_Ep = -W_molecular。",
+        "meaning": "在平衡距离附近，吸引与排斥大小相等，合力为零，分子势能最低。距离小于平衡距离时排斥占优，分子趋向分开；距离略大于平衡距离时吸引占优，分子趋向靠近。合力为零不等于分子间没有作用，而是两种作用恰好抵消。",
+        "symbols": {
+          "F_net": {
+            "desc": "沿分子间距增大方向的合力",
+            "unit": "N"
+          },
+          "F_rep": {
+            "desc": "排斥作用的大小",
+            "unit": "N"
+          },
+          "F_attr": {
+            "desc": "吸引作用的大小",
+            "unit": "N"
+          },
+          "delta_Ep": {
+            "desc": "分子势能的变化量",
+            "unit": "J"
+          },
+          "W_molecular": {
+            "desc": "分子力所做的功",
+            "unit": "J"
+          }
+        },
+        "scenarios": {
+          "距离小于平衡距离": {
+            "F_rep": 8e-09,
+            "F_attr": 3e-09,
+            "F_net": 5e-09
+          },
+          "分子力做正功": {
+            "W_molecular": 2.5e-20,
+            "delta_Ep": -2.5e-20
+          }
+        },
+        "formulas": [
+          {
+            "name": "分子间合力的一维表示",
+            "expr": "F_net = F_rep-F_attr",
+            "when": "只比较同一直线上的排斥与吸引作用，并把间距增大方向取正",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "距离小于平衡距离",
+                "expr": "F_rep-F_attr",
+                "ref": 5e-09,
+                "tol": 1e-15,
+                "note": "8.0×10^-9 减 3.0×10^-9 得 5.0×10^-9 N，方向使分子分开"
+              },
+              {
+                "type": "direction",
+                "scenario": "距离小于平衡距离",
+                "var": "F_rep",
+                "lo": 4e-09,
+                "hi": 1e-08,
+                "expr": "F_rep-F_attr",
+                "expect": "up",
+                "note": "吸引作用不变时，排斥作用越强，向外的合力越大"
+              },
+              {
+                "type": "direction",
+                "scenario": "距离小于平衡距离",
+                "var": "F_attr",
+                "lo": 1e-09,
+                "hi": 7e-09,
+                "expr": "F_rep-F_attr",
+                "expect": "down",
+                "note": "排斥作用不变时，吸引作用增强会使向外合力减小"
+              },
+              {
+                "type": "scan",
+                "scenario": "距离小于平衡距离",
+                "var": "F_rep",
+                "lo": 0,
+                "hi": 2e-08
+              }
+            ]
+          },
+          {
+            "name": "分子力做功与势能变化",
+            "expr": "delta_Ep = -W_molecular",
+            "when": "只考察分子力这一保守力做功所引起的分子势能变化",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "分子力做正功",
+                "expr": "-W_molecular",
+                "ref": -2.5e-20,
+                "tol": 1e-26,
+                "note": "分子力做 2.5×10^-20 J 正功，势能减少同样大小"
+              },
+              {
+                "type": "direction",
+                "scenario": "分子力做正功",
+                "var": "W_molecular",
+                "lo": -5e-20,
+                "hi": 5e-20,
+                "expr": "-W_molecular",
+                "expect": "down",
+                "note": "分子力做功由负变正时，势能变化由正变负"
+              },
+              {
+                "type": "consistency",
+                "scenario": "分子力做正功",
+                "with": "mgas-02|分子力做功与势能变化",
+                "with_expr": "delta_Ep",
+                "target": "分子势能的变化量",
+                "note": "直接求本公式输出，与情境中另列的delta_Ep设计基准核对；数据是设计示例，不是实测。用于核对定义、反算或边界值，不宣称不同物理原理互证。",
+                "verification_kind": "独立设计情境数据核对",
+                "tol": 2.5000000000000003e-25
+              },
+              {
+                "type": "scan",
+                "scenario": "分子力做正功",
+                "var": "W_molecular",
+                "lo": -1e-18,
+                "hi": 1e-18
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "分子间的合作用可视为排斥与吸引两种作用竞争的结果。",
+          "选定正方向后，同向量取正、反向量取负，所以 F_net = F_rep - F_attr。",
+          "分子力是保守力，保守力做正功时势能减少，做负功时势能增加，因此 delta_Ep = -W_molecular。"
+        ],
+        "errors": [
+          {
+            "wrong": "求分子间合力时把吸引与排斥的大小直接相加",
+            "wrong_expr": "F_net = F_rep+F_attr",
+            "why": "吸引与排斥方向相反，应作差而不是相加。两种写法量纲完全相同；把错误结果与正确合力作无量纲比值，本情境得到 2.2 而不是 1，可由数值代入抓住。本情境直接以合力的牛顿数值比较，不把力与无量纲比值比较。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "距离小于平衡距离",
+              "expr": "F_rep+F_attr",
+              "ref": 5e-09,
+              "tol": 5e-15
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "把势能变化写成 delta_Ep = W_molecular",
+            "wrong_expr": "delta_Ep = W_molecular",
+            "why": "保守力做正功时势能应减少。本情境错误式给出正的 2.5×10^-20 J，与正确的负值符号相反；该微观能量远小于陷阱测试的固定绝对容差，不能诚实声称会被自动抓住。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "两分子距离小于平衡距离，排斥作用大小为 8.0×10^-9 N，吸引作用大小为 3.0×10^-9 N。若随后分子力做正功 2.5×10^-20 J，求初始合力及分子势能变化。",
+          "solution": [
+            "取分子间距增大方向为正，F_net = F_rep-F_attr。",
+            "F_net = 8.0×10^-9-3.0×10^-9 = 5.0×10^-9 N，方向使分子分开。",
+            "delta_Ep = -W_molecular = -2.5×10^-20 J。"
+          ],
+          "answer": "合力为 5.0×10^-9 N，指向间距增大方向；分子势能减少 2.5×10^-20 J。"
+        },
+        "prereq": [
+          "mgas-01"
+        ],
+        "next": [
+          "mgas-03"
+        ],
+        "tags": [
+          "分子力",
+          "平衡距离",
+          "分子势能",
+          "保守力"
+        ],
+        "learning_scope": "高中"
       },
-      "title": "分子间作用力与分子势能",
+      "error_index": 0,
       "chapter": "第十八章 · 分子动理论与气体"
     },
     "diagnostic-mgas-02-2": {
-      "error": {
-        "wrong": "把势能变化写成 delta_Ep = W_molecular",
-        "wrong_expr": "delta_Ep = W_molecular",
-        "why": "保守力做正功时势能应减少。本情境错误式给出正的 2.5×10^-20 J，与正确的负值符号相反；该微观能量远小于陷阱测试的固定绝对容差，不能诚实声称会被自动抓住。",
-        "caught_by": "人工审核"
+      "point": {
+        "id": "mgas-02",
+        "title": "分子间作用力与分子势能",
+        "level": "基础",
+        "definition": "分子间同时存在吸引作用和排斥作用，两者都随距离减小而增强，但排斥作用在很近时增长得更快。把沿分子间距离增大的方向取为正，合力可用 F_net = F_rep - F_attr 表示；分子力做功与分子势能变化满足 delta_Ep = -W_molecular。",
+        "meaning": "在平衡距离附近，吸引与排斥大小相等，合力为零，分子势能最低。距离小于平衡距离时排斥占优，分子趋向分开；距离略大于平衡距离时吸引占优，分子趋向靠近。合力为零不等于分子间没有作用，而是两种作用恰好抵消。",
+        "symbols": {
+          "F_net": {
+            "desc": "沿分子间距增大方向的合力",
+            "unit": "N"
+          },
+          "F_rep": {
+            "desc": "排斥作用的大小",
+            "unit": "N"
+          },
+          "F_attr": {
+            "desc": "吸引作用的大小",
+            "unit": "N"
+          },
+          "delta_Ep": {
+            "desc": "分子势能的变化量",
+            "unit": "J"
+          },
+          "W_molecular": {
+            "desc": "分子力所做的功",
+            "unit": "J"
+          }
+        },
+        "scenarios": {
+          "距离小于平衡距离": {
+            "F_rep": 8e-09,
+            "F_attr": 3e-09,
+            "F_net": 5e-09
+          },
+          "分子力做正功": {
+            "W_molecular": 2.5e-20,
+            "delta_Ep": -2.5e-20
+          }
+        },
+        "formulas": [
+          {
+            "name": "分子间合力的一维表示",
+            "expr": "F_net = F_rep-F_attr",
+            "when": "只比较同一直线上的排斥与吸引作用，并把间距增大方向取正",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "距离小于平衡距离",
+                "expr": "F_rep-F_attr",
+                "ref": 5e-09,
+                "tol": 1e-15,
+                "note": "8.0×10^-9 减 3.0×10^-9 得 5.0×10^-9 N，方向使分子分开"
+              },
+              {
+                "type": "direction",
+                "scenario": "距离小于平衡距离",
+                "var": "F_rep",
+                "lo": 4e-09,
+                "hi": 1e-08,
+                "expr": "F_rep-F_attr",
+                "expect": "up",
+                "note": "吸引作用不变时，排斥作用越强，向外的合力越大"
+              },
+              {
+                "type": "direction",
+                "scenario": "距离小于平衡距离",
+                "var": "F_attr",
+                "lo": 1e-09,
+                "hi": 7e-09,
+                "expr": "F_rep-F_attr",
+                "expect": "down",
+                "note": "排斥作用不变时，吸引作用增强会使向外合力减小"
+              },
+              {
+                "type": "scan",
+                "scenario": "距离小于平衡距离",
+                "var": "F_rep",
+                "lo": 0,
+                "hi": 2e-08
+              }
+            ]
+          },
+          {
+            "name": "分子力做功与势能变化",
+            "expr": "delta_Ep = -W_molecular",
+            "when": "只考察分子力这一保守力做功所引起的分子势能变化",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "分子力做正功",
+                "expr": "-W_molecular",
+                "ref": -2.5e-20,
+                "tol": 1e-26,
+                "note": "分子力做 2.5×10^-20 J 正功，势能减少同样大小"
+              },
+              {
+                "type": "direction",
+                "scenario": "分子力做正功",
+                "var": "W_molecular",
+                "lo": -5e-20,
+                "hi": 5e-20,
+                "expr": "-W_molecular",
+                "expect": "down",
+                "note": "分子力做功由负变正时，势能变化由正变负"
+              },
+              {
+                "type": "consistency",
+                "scenario": "分子力做正功",
+                "with": "mgas-02|分子力做功与势能变化",
+                "with_expr": "delta_Ep",
+                "target": "分子势能的变化量",
+                "note": "直接求本公式输出，与情境中另列的delta_Ep设计基准核对；数据是设计示例，不是实测。用于核对定义、反算或边界值，不宣称不同物理原理互证。",
+                "verification_kind": "独立设计情境数据核对",
+                "tol": 2.5000000000000003e-25
+              },
+              {
+                "type": "scan",
+                "scenario": "分子力做正功",
+                "var": "W_molecular",
+                "lo": -1e-18,
+                "hi": 1e-18
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "分子间的合作用可视为排斥与吸引两种作用竞争的结果。",
+          "选定正方向后，同向量取正、反向量取负，所以 F_net = F_rep - F_attr。",
+          "分子力是保守力，保守力做正功时势能减少，做负功时势能增加，因此 delta_Ep = -W_molecular。"
+        ],
+        "errors": [
+          {
+            "wrong": "求分子间合力时把吸引与排斥的大小直接相加",
+            "wrong_expr": "F_net = F_rep+F_attr",
+            "why": "吸引与排斥方向相反，应作差而不是相加。两种写法量纲完全相同；把错误结果与正确合力作无量纲比值，本情境得到 2.2 而不是 1，可由数值代入抓住。本情境直接以合力的牛顿数值比较，不把力与无量纲比值比较。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "距离小于平衡距离",
+              "expr": "F_rep+F_attr",
+              "ref": 5e-09,
+              "tol": 5e-15
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "把势能变化写成 delta_Ep = W_molecular",
+            "wrong_expr": "delta_Ep = W_molecular",
+            "why": "保守力做正功时势能应减少。本情境错误式给出正的 2.5×10^-20 J，与正确的负值符号相反；该微观能量远小于陷阱测试的固定绝对容差，不能诚实声称会被自动抓住。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "两分子距离小于平衡距离，排斥作用大小为 8.0×10^-9 N，吸引作用大小为 3.0×10^-9 N。若随后分子力做正功 2.5×10^-20 J，求初始合力及分子势能变化。",
+          "solution": [
+            "取分子间距增大方向为正，F_net = F_rep-F_attr。",
+            "F_net = 8.0×10^-9-3.0×10^-9 = 5.0×10^-9 N，方向使分子分开。",
+            "delta_Ep = -W_molecular = -2.5×10^-20 J。"
+          ],
+          "answer": "合力为 5.0×10^-9 N，指向间距增大方向；分子势能减少 2.5×10^-20 J。"
+        },
+        "prereq": [
+          "mgas-01"
+        ],
+        "next": [
+          "mgas-03"
+        ],
+        "tags": [
+          "分子力",
+          "平衡距离",
+          "分子势能",
+          "保守力"
+        ],
+        "learning_scope": "高中"
       },
-      "title": "分子间作用力与分子势能",
+      "error_index": 1,
       "chapter": "第十八章 · 分子动理论与气体"
     },
     "diagnostic-mgas-03-1": {
-      "error": {
-        "wrong": "把 26.85 ℃直接当成 26.85 K 代入气体定律",
-        "wrong_expr": "T = t_C",
-        "why": "两种温标零点不同。本情境正确温度是 300 K，直接使用摄氏数值会把绝对温度低估十倍以上。",
-        "caught_by": "数值代入",
-        "trap_test": {
-          "scenario": "室温换算",
-          "expr": "t_C",
-          "ref": 300.0
-        }
+      "point": {
+        "id": "mgas-03",
+        "title": "温度与温标",
+        "level": "基础",
+        "definition": "热力学温度 T 与摄氏温度的数值 t_C 相差一个固定零点：T = t_C + T0，其中 T0 近似取 273.15 K。温度间隔的数值在两种温标中相同，所以 Delta_T = T2-T1。气体定律中的温度必须使用热力学温度。",
+        "meaning": "温度是大量分子热运动剧烈程度的宏观标志。0 ℃不是热运动停止，绝对零度才是热力学温标的理论下限。摄氏温度可以为负，热力学温度不能低于 0 K；温度变为原来的两倍，必须针对开尔文数值而言，不能直接把摄氏温度数值乘二。",
+        "symbols": {
+          "T": {
+            "desc": "热力学温度",
+            "unit": "K"
+          },
+          "t_C": {
+            "desc": "摄氏温度的数值；换算时按与 K 等大的温度间隔处理",
+            "unit": "K"
+          },
+          "T0": {
+            "desc": "摄氏零度对应的热力学温度",
+            "unit": "K"
+          },
+          "T1": {
+            "desc": "初态热力学温度",
+            "unit": "K"
+          },
+          "T2": {
+            "desc": "末态热力学温度",
+            "unit": "K"
+          },
+          "Delta_T": {
+            "desc": "温度变化量",
+            "unit": "K"
+          }
+        },
+        "scenarios": {
+          "室温换算": {
+            "t_C": 26.85,
+            "T0": 273.15,
+            "T": 300.0
+          },
+          "升温过程": {
+            "T1": 280.0,
+            "T2": 350.0,
+            "Delta_T": 70.0
+          }
+        },
+        "formulas": [
+          {
+            "name": "摄氏温度换算为热力学温度",
+            "expr": "T = t_C+T0",
+            "when": "把摄氏温度数值换算为开尔文温度，T0 取 273.15 K",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "室温换算",
+                "expr": "t_C+T0",
+                "ref": 300.0,
+                "note": "26.85 加 273.15 恰为 300.00 K（独立小数加法）"
+              },
+              {
+                "type": "direction",
+                "scenario": "室温换算",
+                "var": "t_C",
+                "lo": -273.15,
+                "hi": 100.0,
+                "expr": "t_C+T0",
+                "expect": "up",
+                "note": "摄氏温度越高，对应的热力学温度也越高"
+              },
+              {
+                "type": "compare",
+                "scenario": "室温换算",
+                "expr": "T",
+                "op": ">",
+                "vs": "t_C",
+                "note": "对同一状态，开尔文数值比摄氏数值大 273.15"
+              },
+              {
+                "type": "scan",
+                "scenario": "室温换算",
+                "var": "t_C",
+                "lo": -273.15,
+                "hi": 1000
+              }
+            ]
+          },
+          {
+            "name": "热力学温度变化量",
+            "expr": "Delta_T = T2-T1",
+            "when": "比较同一物体初、末状态的热力学温度",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "升温过程",
+                "expr": "T2-T1",
+                "ref": 70.0,
+                "note": "350 K 减 280 K 得 70 K，与摄氏温标上的 70 ℃温差数值相同"
+              },
+              {
+                "type": "direction",
+                "scenario": "升温过程",
+                "var": "T2",
+                "lo": 280.0,
+                "hi": 500.0,
+                "expr": "T2-T1",
+                "expect": "up",
+                "note": "初温一定时，末温越高，升温幅度越大"
+              },
+              {
+                "type": "consistency",
+                "scenario": "升温过程",
+                "with": "mgas-03|热力学温度变化量",
+                "with_expr": "Delta_T",
+                "target": "温度变化量",
+                "note": "直接求本公式输出，与情境中另列的Delta_T设计基准核对；数据是设计示例，不是实测。用于核对定义、反算或边界值，不宣称不同物理原理互证。",
+                "verification_kind": "独立设计情境数据核对"
+              },
+              {
+                "type": "scan",
+                "scenario": "升温过程",
+                "var": "T2",
+                "lo": 0,
+                "hi": 2000
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "热力学温标与摄氏温标每一度的大小相同，只是零点不同。",
+          "摄氏零度对应 273.15 K，因此换算式为 T = t_C + 273.15 K。",
+          "求温差时固定零点相减抵消，所以两种温标的温差数值相同。"
+        ],
+        "errors": [
+          {
+            "wrong": "把 26.85 ℃直接当成 26.85 K 代入气体定律",
+            "wrong_expr": "T = t_C",
+            "why": "两种温标零点不同。本情境正确温度是 300 K，直接使用摄氏数值会把绝对温度低估十倍以上。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "室温换算",
+              "expr": "t_C",
+              "ref": 300.0
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "换算时写成 T = t_C-273.15",
+            "wrong_expr": "T = t_C-T0",
+            "why": "应当加上零点偏移。本情境错误式得到 -246.3 K，不但数值错误，还违反热力学温度不得为负的物理限制。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "室温换算",
+              "expr": "t_C-T0",
+              "ref": 300.0
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "实验室温度为 26.85 ℃，将气体从 280 K 加热到 350 K。求室温对应的热力学温度和加热过程的温差。",
+          "solution": [
+            "T = t_C+273.15 = 26.85+273.15 = 300.00 K。",
+            "Delta_T = T2-T1 = 350-280 = 70 K。",
+            "温差也可说是 70 ℃，但代入气体状态关系的绝对温度必须写 280 K 和 350 K。"
+          ],
+          "answer": "室温为 300 K，加热过程的温差为 70 K。"
+        },
+        "prereq": [
+          "mgas-02"
+        ],
+        "next": [
+          "mgas-04"
+        ],
+        "tags": [
+          "热力学温度",
+          "摄氏温度",
+          "开尔文",
+          "温标换算"
+        ],
+        "learning_scope": "高中"
       },
-      "title": "温度与温标",
+      "error_index": 0,
       "chapter": "第十八章 · 分子动理论与气体"
     },
     "diagnostic-mgas-03-2": {
-      "error": {
-        "wrong": "换算时写成 T = t_C-273.15",
-        "wrong_expr": "T = t_C-T0",
-        "why": "应当加上零点偏移。本情境错误式得到 -246.3 K，不但数值错误，还违反热力学温度不得为负的物理限制。",
-        "caught_by": "数值代入",
-        "trap_test": {
-          "scenario": "室温换算",
-          "expr": "t_C-T0",
-          "ref": 300.0
-        }
+      "point": {
+        "id": "mgas-03",
+        "title": "温度与温标",
+        "level": "基础",
+        "definition": "热力学温度 T 与摄氏温度的数值 t_C 相差一个固定零点：T = t_C + T0，其中 T0 近似取 273.15 K。温度间隔的数值在两种温标中相同，所以 Delta_T = T2-T1。气体定律中的温度必须使用热力学温度。",
+        "meaning": "温度是大量分子热运动剧烈程度的宏观标志。0 ℃不是热运动停止，绝对零度才是热力学温标的理论下限。摄氏温度可以为负，热力学温度不能低于 0 K；温度变为原来的两倍，必须针对开尔文数值而言，不能直接把摄氏温度数值乘二。",
+        "symbols": {
+          "T": {
+            "desc": "热力学温度",
+            "unit": "K"
+          },
+          "t_C": {
+            "desc": "摄氏温度的数值；换算时按与 K 等大的温度间隔处理",
+            "unit": "K"
+          },
+          "T0": {
+            "desc": "摄氏零度对应的热力学温度",
+            "unit": "K"
+          },
+          "T1": {
+            "desc": "初态热力学温度",
+            "unit": "K"
+          },
+          "T2": {
+            "desc": "末态热力学温度",
+            "unit": "K"
+          },
+          "Delta_T": {
+            "desc": "温度变化量",
+            "unit": "K"
+          }
+        },
+        "scenarios": {
+          "室温换算": {
+            "t_C": 26.85,
+            "T0": 273.15,
+            "T": 300.0
+          },
+          "升温过程": {
+            "T1": 280.0,
+            "T2": 350.0,
+            "Delta_T": 70.0
+          }
+        },
+        "formulas": [
+          {
+            "name": "摄氏温度换算为热力学温度",
+            "expr": "T = t_C+T0",
+            "when": "把摄氏温度数值换算为开尔文温度，T0 取 273.15 K",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "室温换算",
+                "expr": "t_C+T0",
+                "ref": 300.0,
+                "note": "26.85 加 273.15 恰为 300.00 K（独立小数加法）"
+              },
+              {
+                "type": "direction",
+                "scenario": "室温换算",
+                "var": "t_C",
+                "lo": -273.15,
+                "hi": 100.0,
+                "expr": "t_C+T0",
+                "expect": "up",
+                "note": "摄氏温度越高，对应的热力学温度也越高"
+              },
+              {
+                "type": "compare",
+                "scenario": "室温换算",
+                "expr": "T",
+                "op": ">",
+                "vs": "t_C",
+                "note": "对同一状态，开尔文数值比摄氏数值大 273.15"
+              },
+              {
+                "type": "scan",
+                "scenario": "室温换算",
+                "var": "t_C",
+                "lo": -273.15,
+                "hi": 1000
+              }
+            ]
+          },
+          {
+            "name": "热力学温度变化量",
+            "expr": "Delta_T = T2-T1",
+            "when": "比较同一物体初、末状态的热力学温度",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "升温过程",
+                "expr": "T2-T1",
+                "ref": 70.0,
+                "note": "350 K 减 280 K 得 70 K，与摄氏温标上的 70 ℃温差数值相同"
+              },
+              {
+                "type": "direction",
+                "scenario": "升温过程",
+                "var": "T2",
+                "lo": 280.0,
+                "hi": 500.0,
+                "expr": "T2-T1",
+                "expect": "up",
+                "note": "初温一定时，末温越高，升温幅度越大"
+              },
+              {
+                "type": "consistency",
+                "scenario": "升温过程",
+                "with": "mgas-03|热力学温度变化量",
+                "with_expr": "Delta_T",
+                "target": "温度变化量",
+                "note": "直接求本公式输出，与情境中另列的Delta_T设计基准核对；数据是设计示例，不是实测。用于核对定义、反算或边界值，不宣称不同物理原理互证。",
+                "verification_kind": "独立设计情境数据核对"
+              },
+              {
+                "type": "scan",
+                "scenario": "升温过程",
+                "var": "T2",
+                "lo": 0,
+                "hi": 2000
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "热力学温标与摄氏温标每一度的大小相同，只是零点不同。",
+          "摄氏零度对应 273.15 K，因此换算式为 T = t_C + 273.15 K。",
+          "求温差时固定零点相减抵消，所以两种温标的温差数值相同。"
+        ],
+        "errors": [
+          {
+            "wrong": "把 26.85 ℃直接当成 26.85 K 代入气体定律",
+            "wrong_expr": "T = t_C",
+            "why": "两种温标零点不同。本情境正确温度是 300 K，直接使用摄氏数值会把绝对温度低估十倍以上。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "室温换算",
+              "expr": "t_C",
+              "ref": 300.0
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "换算时写成 T = t_C-273.15",
+            "wrong_expr": "T = t_C-T0",
+            "why": "应当加上零点偏移。本情境错误式得到 -246.3 K，不但数值错误，还违反热力学温度不得为负的物理限制。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "室温换算",
+              "expr": "t_C-T0",
+              "ref": 300.0
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "实验室温度为 26.85 ℃，将气体从 280 K 加热到 350 K。求室温对应的热力学温度和加热过程的温差。",
+          "solution": [
+            "T = t_C+273.15 = 26.85+273.15 = 300.00 K。",
+            "Delta_T = T2-T1 = 350-280 = 70 K。",
+            "温差也可说是 70 ℃，但代入气体状态关系的绝对温度必须写 280 K 和 350 K。"
+          ],
+          "answer": "室温为 300 K，加热过程的温差为 70 K。"
+        },
+        "prereq": [
+          "mgas-02"
+        ],
+        "next": [
+          "mgas-04"
+        ],
+        "tags": [
+          "热力学温度",
+          "摄氏温度",
+          "开尔文",
+          "温标换算"
+        ],
+        "learning_scope": "高中"
       },
-      "title": "温度与温标",
+      "error_index": 1,
       "chapter": "第十八章 · 分子动理论与气体"
     },
     "diagnostic-mgas-04-1": {
-      "error": {
-        "wrong": "认为温度相同的所有物体内能必定相同",
-        "why": "内能还与分子数、物态和分子间势能等因素有关；温度只反映热运动的平均剧烈程度。这是适用条件判断，需人工审核。",
-        "caught_by": "人工审核"
+      "point": {
+        "id": "mgas-04",
+        "title": "物体的内能与理想气体内能",
+        "level": "进阶",
+        "definition": "物体中所有分子热运动动能与分子势能的总和叫作物体的内能。对一定数量的单原子理想气体，忽略分子势能后，内能 U = 3Nk_B T/2；同一份气体的内能变化 delta_U = 3Nk_B(T2-T1)/2。",
+        "meaning": "温度反映分子平均动能，但内能还取决于物质的量和分子间势能，因此两个温度相同的物体内能未必相同。单原子理想气体的内能只由温度和分子数决定，与体积、压强分别取何值无关；这个结论不能直接套给液体、固体或有转动振动自由度的实际气体。",
+        "symbols": {
+          "U": {
+            "desc": "单原子理想气体的内能",
+            "unit": "J"
+          },
+          "delta_U": {
+            "desc": "内能变化量",
+            "unit": "J"
+          },
+          "N": {
+            "desc": "气体分子数",
+            "unit": "1"
+          },
+          "k_B": {
+            "desc": "玻尔兹曼常量",
+            "unit": "J/K"
+          },
+          "T": {
+            "desc": "热力学温度",
+            "unit": "K"
+          },
+          "T1": {
+            "desc": "初态热力学温度",
+            "unit": "K"
+          },
+          "T2": {
+            "desc": "末态热力学温度",
+            "unit": "K"
+          },
+          "delta_T": {
+            "desc": "升温过程的热力学温度变化量",
+            "unit": "K"
+          }
+        },
+        "scenarios": {
+          "一份单原子理想气体": {
+            "N": 2e+23,
+            "k_B": 1.38e-23,
+            "T": 300.0,
+            "U": 1242.0
+          },
+          "等量气体升温": {
+            "N": 2e+23,
+            "k_B": 1.38e-23,
+            "T1": 300.0,
+            "T2": 400.0,
+            "delta_U": 414.0
+          }
+        },
+        "formulas": [
+          {
+            "name": "单原子理想气体的内能",
+            "expr": "U = 1.5*N*k_B*T",
+            "when": "一定数量的单原子理想气体，分子平动自由度为三个",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "一份单原子理想气体",
+                "expr": "1.5*N*k_B*T",
+                "ref": 1242.0,
+                "note": "先算 2.0×10^23×1.38×10^-23=2.76，再乘 300 与 1.5，得 1242 J"
+              },
+              {
+                "type": "direction",
+                "scenario": "一份单原子理想气体",
+                "var": "T",
+                "lo": 100.0,
+                "hi": 1000.0,
+                "expr": "1.5*N*k_B*T",
+                "expect": "up",
+                "note": "分子数一定时，绝对温度越高，内能越大"
+              },
+              {
+                "type": "direction",
+                "scenario": "一份单原子理想气体",
+                "var": "N",
+                "lo": 1e+22,
+                "hi": 1e+24,
+                "expr": "1.5*N*k_B*T",
+                "expect": "up",
+                "note": "温度一定时，分子越多，总内能越大"
+              },
+              {
+                "type": "scan",
+                "scenario": "一份单原子理想气体",
+                "var": "T",
+                "lo": 0,
+                "hi": 5000
+              }
+            ]
+          },
+          {
+            "name": "单原子理想气体的内能变化",
+            "expr": "delta_U = 1.5*N*k_B*(T2-T1)",
+            "when": "同一份单原子理想气体从温度 T1 变化到 T2",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "等量气体升温",
+                "expr": "1.5*N*k_B*(T2-T1)",
+                "ref": 414.0,
+                "note": "温差 100 K；1.5×2.76×100 = 414 J（独立分步计算）"
+              },
+              {
+                "type": "direction",
+                "scenario": "等量气体升温",
+                "var": "T2",
+                "lo": 300.0,
+                "hi": 800.0,
+                "expr": "1.5*N*k_B*(T2-T1)",
+                "expect": "up",
+                "note": "初温不变时，末温越高，内能增加越多"
+              },
+              {
+                "type": "consistency",
+                "scenario": "等量气体升温",
+                "with": "mgas-04|单原子理想气体的内能变化",
+                "with_expr": "delta_U",
+                "target": "内能变化量",
+                "note": "直接求本公式输出，与情境中另列的delta_U设计基准核对；数据是设计示例，不是实测。用于核对定义、反算或边界值，不宣称不同物理原理互证。",
+                "verification_kind": "独立设计情境数据核对"
+              },
+              {
+                "type": "scan",
+                "scenario": "等量气体升温",
+                "var": "T2",
+                "lo": 0,
+                "hi": 5000
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "单原子理想气体每个分子的平均平动动能为 3k_B T/2。",
+          "理想气体忽略分子间势能，N 个分子的总内能为 N 倍平均动能。",
+          "同一份气体的末态内能减初态内能，提取公因子后得到 delta_U = 3Nk_B(T2-T1)/2。"
+        ],
+        "errors": [
+          {
+            "wrong": "认为温度相同的所有物体内能必定相同",
+            "why": "内能还与分子数、物态和分子间势能等因素有关；温度只反映热运动的平均剧烈程度。这是适用条件判断，需人工审核。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "漏掉系数 3/2，写成 U = Nk_B T",
+            "wrong_expr": "U = N*k_B*T",
+            "why": "错误式量纲仍为能量，量纲检查抓不到。本情境只算得 828 J，而正确内能是 1242 J。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "一份单原子理想气体",
+              "expr": "N*k_B*T",
+              "ref": 1242.0
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "一份单原子理想气体含 2.0×10^23 个分子，取 k_B=1.38×10^-23 J/K。求 300 K 时的内能，以及升温到 400 K 时内能的增加量。",
+          "solution": [
+            "U = 1.5Nk_B T = 1.5×2.0×10^23×1.38×10^-23×300 = 1242 J。",
+            "温差为 400-300 = 100 K。",
+            "delta_U = 1.5Nk_B delta_T = 1.5×2.76×100 = 414 J。"
+          ],
+          "answer": "300 K 时内能为 1242 J；升温后内能增加 414 J。"
+        },
+        "prereq": [
+          "mgas-03"
+        ],
+        "next": [
+          "mgas-05"
+        ],
+        "tags": [
+          "内能",
+          "理想气体",
+          "分子平均动能",
+          "玻尔兹曼常量"
+        ],
+        "learning_scope": "高中"
       },
-      "title": "物体的内能与理想气体内能",
+      "error_index": 0,
       "chapter": "第十八章 · 分子动理论与气体"
     },
     "diagnostic-mgas-04-2": {
-      "error": {
-        "wrong": "漏掉系数 3/2，写成 U = Nk_B T",
-        "wrong_expr": "U = N*k_B*T",
-        "why": "错误式量纲仍为能量，量纲检查抓不到。本情境只算得 828 J，而正确内能是 1242 J。",
-        "caught_by": "数值代入",
-        "trap_test": {
-          "scenario": "一份单原子理想气体",
-          "expr": "N*k_B*T",
-          "ref": 1242.0
-        }
+      "point": {
+        "id": "mgas-04",
+        "title": "物体的内能与理想气体内能",
+        "level": "进阶",
+        "definition": "物体中所有分子热运动动能与分子势能的总和叫作物体的内能。对一定数量的单原子理想气体，忽略分子势能后，内能 U = 3Nk_B T/2；同一份气体的内能变化 delta_U = 3Nk_B(T2-T1)/2。",
+        "meaning": "温度反映分子平均动能，但内能还取决于物质的量和分子间势能，因此两个温度相同的物体内能未必相同。单原子理想气体的内能只由温度和分子数决定，与体积、压强分别取何值无关；这个结论不能直接套给液体、固体或有转动振动自由度的实际气体。",
+        "symbols": {
+          "U": {
+            "desc": "单原子理想气体的内能",
+            "unit": "J"
+          },
+          "delta_U": {
+            "desc": "内能变化量",
+            "unit": "J"
+          },
+          "N": {
+            "desc": "气体分子数",
+            "unit": "1"
+          },
+          "k_B": {
+            "desc": "玻尔兹曼常量",
+            "unit": "J/K"
+          },
+          "T": {
+            "desc": "热力学温度",
+            "unit": "K"
+          },
+          "T1": {
+            "desc": "初态热力学温度",
+            "unit": "K"
+          },
+          "T2": {
+            "desc": "末态热力学温度",
+            "unit": "K"
+          },
+          "delta_T": {
+            "desc": "升温过程的热力学温度变化量",
+            "unit": "K"
+          }
+        },
+        "scenarios": {
+          "一份单原子理想气体": {
+            "N": 2e+23,
+            "k_B": 1.38e-23,
+            "T": 300.0,
+            "U": 1242.0
+          },
+          "等量气体升温": {
+            "N": 2e+23,
+            "k_B": 1.38e-23,
+            "T1": 300.0,
+            "T2": 400.0,
+            "delta_U": 414.0
+          }
+        },
+        "formulas": [
+          {
+            "name": "单原子理想气体的内能",
+            "expr": "U = 1.5*N*k_B*T",
+            "when": "一定数量的单原子理想气体，分子平动自由度为三个",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "一份单原子理想气体",
+                "expr": "1.5*N*k_B*T",
+                "ref": 1242.0,
+                "note": "先算 2.0×10^23×1.38×10^-23=2.76，再乘 300 与 1.5，得 1242 J"
+              },
+              {
+                "type": "direction",
+                "scenario": "一份单原子理想气体",
+                "var": "T",
+                "lo": 100.0,
+                "hi": 1000.0,
+                "expr": "1.5*N*k_B*T",
+                "expect": "up",
+                "note": "分子数一定时，绝对温度越高，内能越大"
+              },
+              {
+                "type": "direction",
+                "scenario": "一份单原子理想气体",
+                "var": "N",
+                "lo": 1e+22,
+                "hi": 1e+24,
+                "expr": "1.5*N*k_B*T",
+                "expect": "up",
+                "note": "温度一定时，分子越多，总内能越大"
+              },
+              {
+                "type": "scan",
+                "scenario": "一份单原子理想气体",
+                "var": "T",
+                "lo": 0,
+                "hi": 5000
+              }
+            ]
+          },
+          {
+            "name": "单原子理想气体的内能变化",
+            "expr": "delta_U = 1.5*N*k_B*(T2-T1)",
+            "when": "同一份单原子理想气体从温度 T1 变化到 T2",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "等量气体升温",
+                "expr": "1.5*N*k_B*(T2-T1)",
+                "ref": 414.0,
+                "note": "温差 100 K；1.5×2.76×100 = 414 J（独立分步计算）"
+              },
+              {
+                "type": "direction",
+                "scenario": "等量气体升温",
+                "var": "T2",
+                "lo": 300.0,
+                "hi": 800.0,
+                "expr": "1.5*N*k_B*(T2-T1)",
+                "expect": "up",
+                "note": "初温不变时，末温越高，内能增加越多"
+              },
+              {
+                "type": "consistency",
+                "scenario": "等量气体升温",
+                "with": "mgas-04|单原子理想气体的内能变化",
+                "with_expr": "delta_U",
+                "target": "内能变化量",
+                "note": "直接求本公式输出，与情境中另列的delta_U设计基准核对；数据是设计示例，不是实测。用于核对定义、反算或边界值，不宣称不同物理原理互证。",
+                "verification_kind": "独立设计情境数据核对"
+              },
+              {
+                "type": "scan",
+                "scenario": "等量气体升温",
+                "var": "T2",
+                "lo": 0,
+                "hi": 5000
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "单原子理想气体每个分子的平均平动动能为 3k_B T/2。",
+          "理想气体忽略分子间势能，N 个分子的总内能为 N 倍平均动能。",
+          "同一份气体的末态内能减初态内能，提取公因子后得到 delta_U = 3Nk_B(T2-T1)/2。"
+        ],
+        "errors": [
+          {
+            "wrong": "认为温度相同的所有物体内能必定相同",
+            "why": "内能还与分子数、物态和分子间势能等因素有关；温度只反映热运动的平均剧烈程度。这是适用条件判断，需人工审核。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "漏掉系数 3/2，写成 U = Nk_B T",
+            "wrong_expr": "U = N*k_B*T",
+            "why": "错误式量纲仍为能量，量纲检查抓不到。本情境只算得 828 J，而正确内能是 1242 J。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "一份单原子理想气体",
+              "expr": "N*k_B*T",
+              "ref": 1242.0
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "一份单原子理想气体含 2.0×10^23 个分子，取 k_B=1.38×10^-23 J/K。求 300 K 时的内能，以及升温到 400 K 时内能的增加量。",
+          "solution": [
+            "U = 1.5Nk_B T = 1.5×2.0×10^23×1.38×10^-23×300 = 1242 J。",
+            "温差为 400-300 = 100 K。",
+            "delta_U = 1.5Nk_B delta_T = 1.5×2.76×100 = 414 J。"
+          ],
+          "answer": "300 K 时内能为 1242 J；升温后内能增加 414 J。"
+        },
+        "prereq": [
+          "mgas-03"
+        ],
+        "next": [
+          "mgas-05"
+        ],
+        "tags": [
+          "内能",
+          "理想气体",
+          "分子平均动能",
+          "玻尔兹曼常量"
+        ],
+        "learning_scope": "高中"
       },
-      "title": "物体的内能与理想气体内能",
+      "error_index": 1,
       "chapter": "第十八章 · 分子动理论与气体"
     },
     "diagnostic-mgas-05-1": {
-      "error": {
-        "wrong": "等温压缩时认为体积减半、压强也减半",
-        "wrong_expr": "p2 = p1*V2/V1",
-        "why": "等温时 p 与 V 成反比。本情境错误式得到 5.0×10^4 Pa，正确值应为 2.0×10^5 Pa。",
-        "caught_by": "数值代入",
-        "trap_test": {
-          "scenario": "等温压缩",
-          "expr": "p1*V2/V1",
-          "ref": 200000.0
-        }
+      "point": {
+        "id": "mgas-05",
+        "title": "气体实验定律",
+        "level": "基础",
+        "definition": "一定质量的理想气体，在温度不变时满足玻意耳定律 p1V1=p2V2；在压强不变时满足查理定律 V1/T1=V2/T2；在体积不变时满足盖-吕萨克定律 p1/T1=p2/T2。三条定律都要求气体质量不变，并只比较平衡态。",
+        "meaning": "三条实验定律各固定一个状态量：等温看 p 与 V，等压看 V 与 T，等容看 p 与 T。温度必须使用开尔文。压强与体积的反比不是说压强随体积均匀减少；例如体积减半，压强变为两倍。若漏气、发生液化或状态变化过快而未达到平衡，简单定律可能不再适用。",
+        "symbols": {
+          "p1": {
+            "desc": "初态压强",
+            "unit": "Pa"
+          },
+          "p2": {
+            "desc": "末态压强",
+            "unit": "Pa"
+          },
+          "V1": {
+            "desc": "初态体积",
+            "unit": "m^3"
+          },
+          "V2": {
+            "desc": "末态体积",
+            "unit": "m^3"
+          },
+          "T1": {
+            "desc": "初态热力学温度",
+            "unit": "K"
+          },
+          "T2": {
+            "desc": "末态热力学温度",
+            "unit": "K"
+          }
+        },
+        "scenarios": {
+          "等温压缩": {
+            "p1": 100000.0,
+            "V1": 0.006,
+            "p2": 200000.0,
+            "V2": 0.003,
+            "T1": 300.0,
+            "T2": 300.0
+          },
+          "等压升温": {
+            "p1": 120000.0,
+            "p2": 120000.0,
+            "V1": 0.004,
+            "V2": 0.005,
+            "T1": 320.0,
+            "T2": 400.0
+          },
+          "等容升温": {
+            "p1": 100000.0,
+            "p2": 150000.0,
+            "V1": 0.005,
+            "V2": 0.005,
+            "T1": 300.0,
+            "T2": 450.0
+          }
+        },
+        "formulas": [
+          {
+            "name": "玻意耳定律",
+            "expr": "p2 = p1*V1/V2",
+            "when": "一定质量的理想气体发生等温变化，且初末态均为平衡态",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "等温压缩",
+                "expr": "p1*V1/V2",
+                "ref": 200000.0,
+                "note": "体积由 0.006 m^3 减半到 0.003 m^3，压强由 1.0×10^5 Pa 加倍为 2.0×10^5 Pa"
+              },
+              {
+                "type": "direction",
+                "scenario": "等温压缩",
+                "var": "V2",
+                "lo": 0.002,
+                "hi": 0.012,
+                "expr": "p1*V1/V2",
+                "expect": "down",
+                "note": "温度和气体质量不变时，末态体积越大，末态压强越小"
+              },
+              {
+                "type": "consistency",
+                "scenario": "等温压缩",
+                "with": "mgas-05|玻意耳定律",
+                "with_expr": "p2",
+                "target": "末态压强",
+                "note": "直接求本公式输出，与情境中另列的p2设计基准核对；数据是设计示例，不是实测。用于核对定义、反算或边界值，不宣称不同物理原理互证。",
+                "verification_kind": "独立设计情境数据核对"
+              },
+              {
+                "type": "scan",
+                "scenario": "等温压缩",
+                "var": "V2",
+                "lo": 0.0001,
+                "hi": 0.1
+              }
+            ]
+          },
+          {
+            "name": "查理定律",
+            "expr": "V2 = V1*T2/T1",
+            "when": "一定质量的理想气体发生等压变化，温度使用开尔文",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "等压升温",
+                "expr": "V1*T2/T1",
+                "ref": 0.005,
+                "note": "0.004×400÷320 = 0.005 m^3（先约分 400/320=1.25）"
+              },
+              {
+                "type": "direction",
+                "scenario": "等压升温",
+                "var": "T2",
+                "lo": 200.0,
+                "hi": 800.0,
+                "expr": "V1*T2/T1",
+                "expect": "up",
+                "note": "等压时热力学温度越高，气体体积越大"
+              },
+              {
+                "type": "compare",
+                "scenario": "等压升温",
+                "expr": "V1/T1",
+                "op": "==",
+                "vs": "V2/T2",
+                "note": "0.004/320 与 0.005/400 都等于 1.25×10^-5 m^3/K"
+              },
+              {
+                "type": "scan",
+                "scenario": "等压升温",
+                "var": "T2",
+                "lo": 1.0,
+                "hi": 2000.0
+              }
+            ]
+          },
+          {
+            "name": "盖-吕萨克定律",
+            "expr": "p2 = p1*T2/T1",
+            "when": "一定质量的理想气体发生等容变化，温度使用开尔文",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "等容升温",
+                "expr": "p1*T2/T1",
+                "ref": 150000.0,
+                "note": "1.0×10^5×450÷300 = 1.5×10^5 Pa"
+              },
+              {
+                "type": "direction",
+                "scenario": "等容升温",
+                "var": "T2",
+                "lo": 200.0,
+                "hi": 900.0,
+                "expr": "p1*T2/T1",
+                "expect": "up",
+                "note": "等容时热力学温度越高，气体压强越大"
+              },
+              {
+                "type": "compare",
+                "scenario": "等容升温",
+                "expr": "p1/T1",
+                "op": "==",
+                "vs": "p2/T2",
+                "note": "初末态的 p/T 都约为 333.33 Pa/K"
+              },
+              {
+                "type": "scan",
+                "scenario": "等容升温",
+                "var": "T2",
+                "lo": 1.0,
+                "hi": 2000.0
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "保持气体质量和温度不变，实验发现 pV 为常量，故 p1V1=p2V2。",
+          "保持气体质量和压强不变，实验发现 V/T 为常量，故 V1/T1=V2/T2。",
+          "保持气体质量和体积不变，实验发现 p/T 为常量，故 p1/T1=p2/T2。",
+          "三条关系中的 T 都是从绝对零度起算的热力学温度。"
+        ],
+        "errors": [
+          {
+            "wrong": "等温压缩时认为体积减半、压强也减半",
+            "wrong_expr": "p2 = p1*V2/V1",
+            "why": "等温时 p 与 V 成反比。本情境错误式得到 5.0×10^4 Pa，正确值应为 2.0×10^5 Pa。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "等温压缩",
+              "expr": "p1*V2/V1",
+              "ref": 200000.0
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "等压变化时把温度比写反，使用 V2 = V1*T1/T2",
+            "wrong_expr": "V2 = V1*T1/T2",
+            "why": "升温时体积应增大。错误式算得 0.0032 m^3，与正确的 0.005 m^3 相反。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "等压升温",
+              "expr": "V1*T1/T2",
+              "ref": 0.005
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "一定质量理想气体初态压强 1.0×10^5 Pa、体积 6.0 L、温度 300 K。先等温压缩到 3.0 L，再保持体积不变升温到 450 K。求两步后的压强。",
+          "solution": [
+            "等温压缩：p2 = p1V1/V2 = 1.0×10^5×6.0/3.0 = 2.0×10^5 Pa。",
+            "第二步等容，初温 300 K、末温 450 K。",
+            "p3 = p2T3/T2 = 2.0×10^5×450/300 = 3.0×10^5 Pa。"
+          ],
+          "answer": "等温压缩后压强为 2.0×10^5 Pa；等容升温后为 3.0×10^5 Pa。"
+        },
+        "prereq": [
+          "mgas-03"
+        ],
+        "next": [
+          "mgas-06",
+          "exp-25"
+        ],
+        "tags": [
+          "玻意耳定律",
+          "查理定律",
+          "盖-吕萨克定律",
+          "气体实验定律"
+        ],
+        "learning_scope": "高中"
       },
-      "title": "气体实验定律",
+      "error_index": 0,
       "chapter": "第十八章 · 分子动理论与气体"
     },
     "diagnostic-mgas-05-2": {
-      "error": {
-        "wrong": "等压变化时把温度比写反，使用 V2 = V1*T1/T2",
-        "wrong_expr": "V2 = V1*T1/T2",
-        "why": "升温时体积应增大。错误式算得 0.0032 m^3，与正确的 0.005 m^3 相反。",
-        "caught_by": "数值代入",
-        "trap_test": {
-          "scenario": "等压升温",
-          "expr": "V1*T1/T2",
-          "ref": 0.005
-        }
+      "point": {
+        "id": "mgas-05",
+        "title": "气体实验定律",
+        "level": "基础",
+        "definition": "一定质量的理想气体，在温度不变时满足玻意耳定律 p1V1=p2V2；在压强不变时满足查理定律 V1/T1=V2/T2；在体积不变时满足盖-吕萨克定律 p1/T1=p2/T2。三条定律都要求气体质量不变，并只比较平衡态。",
+        "meaning": "三条实验定律各固定一个状态量：等温看 p 与 V，等压看 V 与 T，等容看 p 与 T。温度必须使用开尔文。压强与体积的反比不是说压强随体积均匀减少；例如体积减半，压强变为两倍。若漏气、发生液化或状态变化过快而未达到平衡，简单定律可能不再适用。",
+        "symbols": {
+          "p1": {
+            "desc": "初态压强",
+            "unit": "Pa"
+          },
+          "p2": {
+            "desc": "末态压强",
+            "unit": "Pa"
+          },
+          "V1": {
+            "desc": "初态体积",
+            "unit": "m^3"
+          },
+          "V2": {
+            "desc": "末态体积",
+            "unit": "m^3"
+          },
+          "T1": {
+            "desc": "初态热力学温度",
+            "unit": "K"
+          },
+          "T2": {
+            "desc": "末态热力学温度",
+            "unit": "K"
+          }
+        },
+        "scenarios": {
+          "等温压缩": {
+            "p1": 100000.0,
+            "V1": 0.006,
+            "p2": 200000.0,
+            "V2": 0.003,
+            "T1": 300.0,
+            "T2": 300.0
+          },
+          "等压升温": {
+            "p1": 120000.0,
+            "p2": 120000.0,
+            "V1": 0.004,
+            "V2": 0.005,
+            "T1": 320.0,
+            "T2": 400.0
+          },
+          "等容升温": {
+            "p1": 100000.0,
+            "p2": 150000.0,
+            "V1": 0.005,
+            "V2": 0.005,
+            "T1": 300.0,
+            "T2": 450.0
+          }
+        },
+        "formulas": [
+          {
+            "name": "玻意耳定律",
+            "expr": "p2 = p1*V1/V2",
+            "when": "一定质量的理想气体发生等温变化，且初末态均为平衡态",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "等温压缩",
+                "expr": "p1*V1/V2",
+                "ref": 200000.0,
+                "note": "体积由 0.006 m^3 减半到 0.003 m^3，压强由 1.0×10^5 Pa 加倍为 2.0×10^5 Pa"
+              },
+              {
+                "type": "direction",
+                "scenario": "等温压缩",
+                "var": "V2",
+                "lo": 0.002,
+                "hi": 0.012,
+                "expr": "p1*V1/V2",
+                "expect": "down",
+                "note": "温度和气体质量不变时，末态体积越大，末态压强越小"
+              },
+              {
+                "type": "consistency",
+                "scenario": "等温压缩",
+                "with": "mgas-05|玻意耳定律",
+                "with_expr": "p2",
+                "target": "末态压强",
+                "note": "直接求本公式输出，与情境中另列的p2设计基准核对；数据是设计示例，不是实测。用于核对定义、反算或边界值，不宣称不同物理原理互证。",
+                "verification_kind": "独立设计情境数据核对"
+              },
+              {
+                "type": "scan",
+                "scenario": "等温压缩",
+                "var": "V2",
+                "lo": 0.0001,
+                "hi": 0.1
+              }
+            ]
+          },
+          {
+            "name": "查理定律",
+            "expr": "V2 = V1*T2/T1",
+            "when": "一定质量的理想气体发生等压变化，温度使用开尔文",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "等压升温",
+                "expr": "V1*T2/T1",
+                "ref": 0.005,
+                "note": "0.004×400÷320 = 0.005 m^3（先约分 400/320=1.25）"
+              },
+              {
+                "type": "direction",
+                "scenario": "等压升温",
+                "var": "T2",
+                "lo": 200.0,
+                "hi": 800.0,
+                "expr": "V1*T2/T1",
+                "expect": "up",
+                "note": "等压时热力学温度越高，气体体积越大"
+              },
+              {
+                "type": "compare",
+                "scenario": "等压升温",
+                "expr": "V1/T1",
+                "op": "==",
+                "vs": "V2/T2",
+                "note": "0.004/320 与 0.005/400 都等于 1.25×10^-5 m^3/K"
+              },
+              {
+                "type": "scan",
+                "scenario": "等压升温",
+                "var": "T2",
+                "lo": 1.0,
+                "hi": 2000.0
+              }
+            ]
+          },
+          {
+            "name": "盖-吕萨克定律",
+            "expr": "p2 = p1*T2/T1",
+            "when": "一定质量的理想气体发生等容变化，温度使用开尔文",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "等容升温",
+                "expr": "p1*T2/T1",
+                "ref": 150000.0,
+                "note": "1.0×10^5×450÷300 = 1.5×10^5 Pa"
+              },
+              {
+                "type": "direction",
+                "scenario": "等容升温",
+                "var": "T2",
+                "lo": 200.0,
+                "hi": 900.0,
+                "expr": "p1*T2/T1",
+                "expect": "up",
+                "note": "等容时热力学温度越高，气体压强越大"
+              },
+              {
+                "type": "compare",
+                "scenario": "等容升温",
+                "expr": "p1/T1",
+                "op": "==",
+                "vs": "p2/T2",
+                "note": "初末态的 p/T 都约为 333.33 Pa/K"
+              },
+              {
+                "type": "scan",
+                "scenario": "等容升温",
+                "var": "T2",
+                "lo": 1.0,
+                "hi": 2000.0
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "保持气体质量和温度不变，实验发现 pV 为常量，故 p1V1=p2V2。",
+          "保持气体质量和压强不变，实验发现 V/T 为常量，故 V1/T1=V2/T2。",
+          "保持气体质量和体积不变，实验发现 p/T 为常量，故 p1/T1=p2/T2。",
+          "三条关系中的 T 都是从绝对零度起算的热力学温度。"
+        ],
+        "errors": [
+          {
+            "wrong": "等温压缩时认为体积减半、压强也减半",
+            "wrong_expr": "p2 = p1*V2/V1",
+            "why": "等温时 p 与 V 成反比。本情境错误式得到 5.0×10^4 Pa，正确值应为 2.0×10^5 Pa。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "等温压缩",
+              "expr": "p1*V2/V1",
+              "ref": 200000.0
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "等压变化时把温度比写反，使用 V2 = V1*T1/T2",
+            "wrong_expr": "V2 = V1*T1/T2",
+            "why": "升温时体积应增大。错误式算得 0.0032 m^3，与正确的 0.005 m^3 相反。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "等压升温",
+              "expr": "V1*T1/T2",
+              "ref": 0.005
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "一定质量理想气体初态压强 1.0×10^5 Pa、体积 6.0 L、温度 300 K。先等温压缩到 3.0 L，再保持体积不变升温到 450 K。求两步后的压强。",
+          "solution": [
+            "等温压缩：p2 = p1V1/V2 = 1.0×10^5×6.0/3.0 = 2.0×10^5 Pa。",
+            "第二步等容，初温 300 K、末温 450 K。",
+            "p3 = p2T3/T2 = 2.0×10^5×450/300 = 3.0×10^5 Pa。"
+          ],
+          "answer": "等温压缩后压强为 2.0×10^5 Pa；等容升温后为 3.0×10^5 Pa。"
+        },
+        "prereq": [
+          "mgas-03"
+        ],
+        "next": [
+          "mgas-06",
+          "exp-25"
+        ],
+        "tags": [
+          "玻意耳定律",
+          "查理定律",
+          "盖-吕萨克定律",
+          "气体实验定律"
+        ],
+        "learning_scope": "高中"
       },
-      "title": "气体实验定律",
+      "error_index": 1,
       "chapter": "第十八章 · 分子动理论与气体"
     },
     "diagnostic-mgas-06-1": {
-      "error": {
-        "wrong": "把微观状态方程写成 p = N·k_B·T·V",
-        "wrong_expr": "p = N*k_B*T*V",
-        "why": "乘以体积后量纲变成能量乘体积，已经不是压强；而且错误式会预言容器越大压强越大，方向也相反。",
-        "caught_by": "量纲一致性",
-        "trap_test": {
-          "kind": "dimension",
-          "target": "p = N*k_B*T*V",
-          "lhs_dim": "M·L^-1·T^-2",
-          "rhs_dim": "M·L^5·T^-2",
-          "expect": "mismatch",
-          "note": "实际量纲检查得到等号左边为M·L^-1·T^-2、右边为M·L^5·T^-2；两边不是同一物理量，因此该等式不成立。"
-        }
+      "point": {
+        "id": "mgas-06",
+        "title": "理想气体状态方程",
+        "level": "进阶",
+        "definition": "一定质量的理想气体在任意两个平衡态之间满足 p1V1/T1 = p2V2/T2。若直接从微观粒子数描述同一状态，则 pV = Nk_B T。这两种写法把压强、体积和热力学温度统一在一个关系中。",
+        "meaning": "状态方程只连接平衡态，不要求过程一定等温、等压或等容。给定气体质量不变时，三个状态量中知道两个的变化就能求第三个。微观式说明气体压强来源于大量分子对器壁的持续碰撞：分子数密度越大或温度越高，压强越大。实际气体在低密度、高温条件下更接近理想气体。",
+        "symbols": {
+          "p": {
+            "desc": "气体压强",
+            "unit": "Pa"
+          },
+          "V": {
+            "desc": "气体体积",
+            "unit": "m^3"
+          },
+          "N": {
+            "desc": "气体分子数",
+            "unit": "1"
+          },
+          "k_B": {
+            "desc": "玻尔兹曼常量",
+            "unit": "J/K"
+          },
+          "T": {
+            "desc": "热力学温度",
+            "unit": "K"
+          },
+          "p1": {
+            "desc": "初态压强",
+            "unit": "Pa"
+          },
+          "p2": {
+            "desc": "末态压强",
+            "unit": "Pa"
+          },
+          "V1": {
+            "desc": "初态体积",
+            "unit": "m^3"
+          },
+          "V2": {
+            "desc": "末态体积",
+            "unit": "m^3"
+          },
+          "T1": {
+            "desc": "初态热力学温度",
+            "unit": "K"
+          },
+          "T2": {
+            "desc": "末态热力学温度",
+            "unit": "K"
+          }
+        },
+        "scenarios": {
+          "微观状态方程": {
+            "N": 2e+23,
+            "k_B": 1.38e-23,
+            "T": 300.0,
+            "V": 0.00828,
+            "p": 100000.0
+          },
+          "两状态综合变化": {
+            "p1": 100000.0,
+            "V1": 0.006,
+            "T1": 300.0,
+            "p2": 150000.0,
+            "V2": 0.004,
+            "T2": 300.0
+          }
+        },
+        "formulas": [
+          {
+            "name": "理想气体状态方程的微观形式",
+            "expr": "p = N*k_B*T/V",
+            "when": "气体可视为理想气体，N 为容器内分子总数",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "微观状态方程",
+                "expr": "N*k_B*T/V",
+                "ref": 100000.0,
+                "note": "Nk_BT = 2.0×10^23×1.38×10^-23×300 = 828 J；再除以 0.00828 m^3 得 1.0×10^5 Pa"
+              },
+              {
+                "type": "direction",
+                "scenario": "微观状态方程",
+                "var": "T",
+                "lo": 100.0,
+                "hi": 1000.0,
+                "expr": "N*k_B*T/V",
+                "expect": "up",
+                "note": "分子数和体积不变时，温度越高压强越大"
+              },
+              {
+                "type": "direction",
+                "scenario": "微观状态方程",
+                "var": "V",
+                "lo": 0.002,
+                "hi": 0.02,
+                "expr": "N*k_B*T/V",
+                "expect": "down",
+                "note": "分子数和温度不变时，体积越大，单位面积器壁受碰撞越稀疏，压强越小"
+              },
+              {
+                "type": "scan",
+                "scenario": "微观状态方程",
+                "var": "V",
+                "lo": 0.0001,
+                "hi": 1.0
+              }
+            ]
+          },
+          {
+            "name": "一定质量气体的两状态方程",
+            "expr": "p2 = p1*V1*T2/(T1*V2)",
+            "when": "同一份理想气体从一个平衡态变化到另一个平衡态",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "两状态综合变化",
+                "expr": "p1*V1*T2/(T1*V2)",
+                "ref": 150000.0,
+                "note": "温度相同可约去，1.0×10^5×0.006÷0.004 = 1.5×10^5 Pa"
+              },
+              {
+                "type": "direction",
+                "scenario": "两状态综合变化",
+                "var": "T2",
+                "lo": 150.0,
+                "hi": 600.0,
+                "expr": "p1*V1*T2/(T1*V2)",
+                "expect": "up",
+                "note": "其余状态量固定时，末态温度越高，末态压强越大"
+              },
+              {
+                "type": "consistency",
+                "scenario": "两状态综合变化",
+                "with": "mgas-06|一定质量气体的两状态方程",
+                "with_expr": "p2",
+                "target": "末态压强",
+                "note": "直接求本公式输出，与情境中另列的p2设计基准核对；数据是设计示例，不是实测。用于核对定义、反算或边界值，不宣称不同物理原理互证。",
+                "verification_kind": "独立设计情境数据核对"
+              },
+              {
+                "type": "scan",
+                "scenario": "两状态综合变化",
+                "var": "V2",
+                "lo": 0.0001,
+                "hi": 0.1
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "把玻意耳、查理和盖-吕萨克三条实验定律统一，可得一定质量气体的 pV/T 为常量。",
+          "比较初末两个平衡态，即得 p1V1/T1 = p2V2/T2。",
+          "从分子碰撞的统计结果可写成 pV = Nk_B T；固定 N 后，同样说明 pV/T 不变。"
+        ],
+        "errors": [
+          {
+            "wrong": "把微观状态方程写成 p = N·k_B·T·V",
+            "wrong_expr": "p = N*k_B*T*V",
+            "why": "乘以体积后量纲变成能量乘体积，已经不是压强；而且错误式会预言容器越大压强越大，方向也相反。",
+            "caught_by": "量纲一致性",
+            "trap_test": {
+              "kind": "dimension",
+              "target": "p = N*k_B*T*V",
+              "lhs_dim": "M·L^-1·T^-2",
+              "rhs_dim": "M·L^5·T^-2",
+              "expect": "mismatch",
+              "note": "实际量纲检查得到等号左边为M·L^-1·T^-2、右边为M·L^5·T^-2；两边不是同一物理量，因此该等式不成立。"
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "把分子平动对压强的贡献重复计算，写成 p = 2N·k_B·T/V",
+            "wrong_expr": "p = 2*N*k_B*T/V",
+            "why": "错误式与正确式量纲完全相同，量纲检查无法发现；在微观状态方程情境中会算出 2.0×10^5 Pa，而独立参考值是 1.0×10^5 Pa。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "微观状态方程",
+              "expr": "2*N*k_B*T/V",
+              "ref": 100000.0
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "含 2.0×10^23 个分子的理想气体，温度 300 K，体积 8.28×10^-3 m^3，取 k_B=1.38×10^-23 J/K。求气体压强。若保持温度不变把体积压缩为原来的三分之二，求新压强。",
+          "solution": [
+            "由 p = N·k_B·T/V，先算 N·k_B·T = 828 J。",
+            "p = 828/0.00828 = 1.0×10^5 Pa。",
+            "等温且分子数不变，体积变为原来的 2/3，压强变为原来的 3/2。",
+            "新压强为 1.5×10^5 Pa。"
+          ],
+          "answer": "初态压强为 1.0×10^5 Pa，压缩后为 1.5×10^5 Pa。"
+        },
+        "prereq": [
+          "mgas-05"
+        ],
+        "next": [],
+        "tags": [
+          "理想气体",
+          "状态方程",
+          "气体压强",
+          "微观解释"
+        ],
+        "learning_scope": "高中"
       },
-      "title": "理想气体状态方程",
+      "error_index": 0,
       "chapter": "第十八章 · 分子动理论与气体"
     },
     "diagnostic-mgas-06-2": {
-      "error": {
-        "wrong": "把分子平动对压强的贡献重复计算，写成 p = 2N·k_B·T/V",
-        "wrong_expr": "p = 2*N*k_B*T/V",
-        "why": "错误式与正确式量纲完全相同，量纲检查无法发现；在微观状态方程情境中会算出 2.0×10^5 Pa，而独立参考值是 1.0×10^5 Pa。",
-        "caught_by": "数值代入",
-        "trap_test": {
-          "scenario": "微观状态方程",
-          "expr": "2*N*k_B*T/V",
-          "ref": 100000.0
-        }
+      "point": {
+        "id": "mgas-06",
+        "title": "理想气体状态方程",
+        "level": "进阶",
+        "definition": "一定质量的理想气体在任意两个平衡态之间满足 p1V1/T1 = p2V2/T2。若直接从微观粒子数描述同一状态，则 pV = Nk_B T。这两种写法把压强、体积和热力学温度统一在一个关系中。",
+        "meaning": "状态方程只连接平衡态，不要求过程一定等温、等压或等容。给定气体质量不变时，三个状态量中知道两个的变化就能求第三个。微观式说明气体压强来源于大量分子对器壁的持续碰撞：分子数密度越大或温度越高，压强越大。实际气体在低密度、高温条件下更接近理想气体。",
+        "symbols": {
+          "p": {
+            "desc": "气体压强",
+            "unit": "Pa"
+          },
+          "V": {
+            "desc": "气体体积",
+            "unit": "m^3"
+          },
+          "N": {
+            "desc": "气体分子数",
+            "unit": "1"
+          },
+          "k_B": {
+            "desc": "玻尔兹曼常量",
+            "unit": "J/K"
+          },
+          "T": {
+            "desc": "热力学温度",
+            "unit": "K"
+          },
+          "p1": {
+            "desc": "初态压强",
+            "unit": "Pa"
+          },
+          "p2": {
+            "desc": "末态压强",
+            "unit": "Pa"
+          },
+          "V1": {
+            "desc": "初态体积",
+            "unit": "m^3"
+          },
+          "V2": {
+            "desc": "末态体积",
+            "unit": "m^3"
+          },
+          "T1": {
+            "desc": "初态热力学温度",
+            "unit": "K"
+          },
+          "T2": {
+            "desc": "末态热力学温度",
+            "unit": "K"
+          }
+        },
+        "scenarios": {
+          "微观状态方程": {
+            "N": 2e+23,
+            "k_B": 1.38e-23,
+            "T": 300.0,
+            "V": 0.00828,
+            "p": 100000.0
+          },
+          "两状态综合变化": {
+            "p1": 100000.0,
+            "V1": 0.006,
+            "T1": 300.0,
+            "p2": 150000.0,
+            "V2": 0.004,
+            "T2": 300.0
+          }
+        },
+        "formulas": [
+          {
+            "name": "理想气体状态方程的微观形式",
+            "expr": "p = N*k_B*T/V",
+            "when": "气体可视为理想气体，N 为容器内分子总数",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "微观状态方程",
+                "expr": "N*k_B*T/V",
+                "ref": 100000.0,
+                "note": "Nk_BT = 2.0×10^23×1.38×10^-23×300 = 828 J；再除以 0.00828 m^3 得 1.0×10^5 Pa"
+              },
+              {
+                "type": "direction",
+                "scenario": "微观状态方程",
+                "var": "T",
+                "lo": 100.0,
+                "hi": 1000.0,
+                "expr": "N*k_B*T/V",
+                "expect": "up",
+                "note": "分子数和体积不变时，温度越高压强越大"
+              },
+              {
+                "type": "direction",
+                "scenario": "微观状态方程",
+                "var": "V",
+                "lo": 0.002,
+                "hi": 0.02,
+                "expr": "N*k_B*T/V",
+                "expect": "down",
+                "note": "分子数和温度不变时，体积越大，单位面积器壁受碰撞越稀疏，压强越小"
+              },
+              {
+                "type": "scan",
+                "scenario": "微观状态方程",
+                "var": "V",
+                "lo": 0.0001,
+                "hi": 1.0
+              }
+            ]
+          },
+          {
+            "name": "一定质量气体的两状态方程",
+            "expr": "p2 = p1*V1*T2/(T1*V2)",
+            "when": "同一份理想气体从一个平衡态变化到另一个平衡态",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "两状态综合变化",
+                "expr": "p1*V1*T2/(T1*V2)",
+                "ref": 150000.0,
+                "note": "温度相同可约去，1.0×10^5×0.006÷0.004 = 1.5×10^5 Pa"
+              },
+              {
+                "type": "direction",
+                "scenario": "两状态综合变化",
+                "var": "T2",
+                "lo": 150.0,
+                "hi": 600.0,
+                "expr": "p1*V1*T2/(T1*V2)",
+                "expect": "up",
+                "note": "其余状态量固定时，末态温度越高，末态压强越大"
+              },
+              {
+                "type": "consistency",
+                "scenario": "两状态综合变化",
+                "with": "mgas-06|一定质量气体的两状态方程",
+                "with_expr": "p2",
+                "target": "末态压强",
+                "note": "直接求本公式输出，与情境中另列的p2设计基准核对；数据是设计示例，不是实测。用于核对定义、反算或边界值，不宣称不同物理原理互证。",
+                "verification_kind": "独立设计情境数据核对"
+              },
+              {
+                "type": "scan",
+                "scenario": "两状态综合变化",
+                "var": "V2",
+                "lo": 0.0001,
+                "hi": 0.1
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "把玻意耳、查理和盖-吕萨克三条实验定律统一，可得一定质量气体的 pV/T 为常量。",
+          "比较初末两个平衡态，即得 p1V1/T1 = p2V2/T2。",
+          "从分子碰撞的统计结果可写成 pV = Nk_B T；固定 N 后，同样说明 pV/T 不变。"
+        ],
+        "errors": [
+          {
+            "wrong": "把微观状态方程写成 p = N·k_B·T·V",
+            "wrong_expr": "p = N*k_B*T*V",
+            "why": "乘以体积后量纲变成能量乘体积，已经不是压强；而且错误式会预言容器越大压强越大，方向也相反。",
+            "caught_by": "量纲一致性",
+            "trap_test": {
+              "kind": "dimension",
+              "target": "p = N*k_B*T*V",
+              "lhs_dim": "M·L^-1·T^-2",
+              "rhs_dim": "M·L^5·T^-2",
+              "expect": "mismatch",
+              "note": "实际量纲检查得到等号左边为M·L^-1·T^-2、右边为M·L^5·T^-2；两边不是同一物理量，因此该等式不成立。"
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "把分子平动对压强的贡献重复计算，写成 p = 2N·k_B·T/V",
+            "wrong_expr": "p = 2*N*k_B*T/V",
+            "why": "错误式与正确式量纲完全相同，量纲检查无法发现；在微观状态方程情境中会算出 2.0×10^5 Pa，而独立参考值是 1.0×10^5 Pa。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "微观状态方程",
+              "expr": "2*N*k_B*T/V",
+              "ref": 100000.0
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "含 2.0×10^23 个分子的理想气体，温度 300 K，体积 8.28×10^-3 m^3，取 k_B=1.38×10^-23 J/K。求气体压强。若保持温度不变把体积压缩为原来的三分之二，求新压强。",
+          "solution": [
+            "由 p = N·k_B·T/V，先算 N·k_B·T = 828 J。",
+            "p = 828/0.00828 = 1.0×10^5 Pa。",
+            "等温且分子数不变，体积变为原来的 2/3，压强变为原来的 3/2。",
+            "新压强为 1.5×10^5 Pa。"
+          ],
+          "answer": "初态压强为 1.0×10^5 Pa，压缩后为 1.5×10^5 Pa。"
+        },
+        "prereq": [
+          "mgas-05"
+        ],
+        "next": [],
+        "tags": [
+          "理想气体",
+          "状态方程",
+          "气体压强",
+          "微观解释"
+        ],
+        "learning_scope": "高中"
       },
-      "title": "理想气体状态方程",
+      "error_index": 1,
       "chapter": "第十八章 · 分子动理论与气体"
     },
     "diagnostic-mol-05-1": {
-      "error": {
-        "wrong": "透射比例把入射光功率除以透射功率。",
-        "wrong_expr": "tau = P_in/P_out",
-        "why": "比例是输出透射量占输入的份额，4/10为0.4，颠倒会变成2.5，不能当作无额外光源装置的透射比例。",
-        "caught_by": "数值代入",
-        "trap_test": {
-          "scenario": "状态甲",
-          "expr": "P_in/P_out",
-          "ref": 0.4
-        }
+      "point": {
+        "id": "mol-05",
+        "title": "液晶：取向有序、流动性与显示",
+        "level": "基础",
+        "definition": "液晶是具有一定分子取向有序而仍能流动的物质状态，性质常有方向差异。某些液晶的取向受外电场影响，可配合偏振元件调节透光，用于显示。",
+        "meaning": "液晶并非液态晶体碎屑，也不是所有方向均相同的普通液体。不同液晶相的有序形式不同，常见向列相分子长轴具有优先方向而位置不必形成固体晶格。显示装置改变分子取向和偏振光的传播，通常由背光或环境光提供光源，液晶层本身不因此成为发光源。温度和外场响应依材料及结构而定，不能说任何液晶加电都更亮。以下透射比例只是独立光功率读数的处理，不是液晶微观性质的数值证明。",
+        "symbols": {
+          "tau": {
+            "desc": "该装置透射光功率比例",
+            "unit": "1"
+          },
+          "P_in": {
+            "desc": "入射光功率",
+            "unit": "W"
+          },
+          "P_out": {
+            "desc": "透射光功率",
+            "unit": "W"
+          },
+          "P_loss": {
+            "desc": "非透射各通道合计光功率",
+            "unit": "W"
+          }
+        },
+        "scenarios": {
+          "状态甲": {
+            "P_in": 0.01,
+            "P_out": 0.004,
+            "P_loss": 0.006,
+            "tau": 0.4
+          },
+          "状态乙": {
+            "P_in": 0.01,
+            "P_out": 0.001,
+            "P_loss": 0.009,
+            "tau": 0.1
+          }
+        },
+        "formulas": [
+          {
+            "name": "光功率透射比例",
+            "expr": "tau = P_out/P_in",
+            "when": "入射、透射功率对应同一光束和同一时段，P_in>0；比例无量纲，不把所有未透射能量都视为吸收。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "状态甲",
+                "ref": 0.4,
+                "note": "4 mW透射、10 mW入射。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "状态乙",
+                "ref": 0.1,
+                "note": "1 mW透射、10 mW入射。"
+              },
+              {
+                "type": "scan",
+                "scenario": "状态甲",
+                "var": "P_out",
+                "lo": 0,
+                "hi": 0.01,
+                "note": "扫描本条适用范围内的参数，奇点和越量程操作不在有效范围内。"
+              },
+              {
+                "type": "consistency",
+                "scenario": "状态甲",
+                "with": "mol-05|光功率透射比例",
+                "with_expr": "1-P_loss/P_in",
+                "note": "本公式直接求tau；参考端显式关系为1-P_loss/P_in。两端使用同一情境和阶段，只核对该关系；with字段仅定位来源，不代表调用另一条被覆盖的公式。",
+                "target": "该装置透射光功率比例",
+                "verification_kind": "独立关系核对",
+                "tol": 1e-06
+              }
+            ]
+          },
+          {
+            "name": "各光通道能量账目",
+            "expr": "P_in = P_out+P_loss",
+            "when": "稳态无额外光源的被动装置，非透射量包含全部其他通道。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "状态甲",
+                "ref": 0.01,
+                "note": "4 mW加6 mW。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "状态乙",
+                "ref": 0.01,
+                "note": "1 mW加9 mW。"
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "比例分别为4/10=0.4和1/10=0.1。",
+          "两读数只比较该装置透射情况，光来自照明而非液晶自行发光。",
+          "液晶并非液态晶体碎屑，也不是所有方向均相同的普通液体。"
+        ],
+        "errors": [
+          {
+            "wrong": "透射比例把入射光功率除以透射功率。",
+            "wrong_expr": "tau = P_in/P_out",
+            "why": "比例是输出透射量占输入的份额，4/10为0.4，颠倒会变成2.5，不能当作无额外光源装置的透射比例。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "状态甲",
+              "expr": "P_in/P_out",
+              "ref": 0.4
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "液晶屏幕发亮就说明液晶分子自己发光，或加电总会更亮。",
+            "why": "光源通常是背光或环境光，液晶与偏振元件调制透光；明暗变化取决于结构、取向和驱动，不能从一种结构推广所有液晶。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "设计显示光路入射10 mW，两个取向状态透射4 mW和1 mW，计算透射比例并说明亮度来源。",
+          "solution": [
+            "比例分别为4/10=0.4和1/10=0.1。",
+            "两读数只比较该装置透射情况，光来自照明而非液晶自行发光。"
+          ],
+          "answer": "透射比例40%与10%；液晶用于调制光。"
+        },
+        "prereq": [
+          "mgas-01",
+          "thermo-04"
+        ],
+        "next": [
+          "wop-03"
+        ],
+        "tags": [
+          "液晶：取向有序、流动性与显示",
+          "条件与边界",
+          "实验与证据"
+        ],
+        "core": [
+          {
+            "title": "液晶：取向有序、流动性与显示：方法与边界",
+            "text": "液晶并非液态晶体碎屑，也不是所有方向均相同的普通液体。不同液晶相的有序形式不同，常见向列相分子长轴具有优先方向而位置不必形成固体晶格。显示装置改变分子取向和偏振光的传播，通常由背光或环境光提供光源，液晶层本身不因此成为发光源。温度和外场响应依材料及结构而定，不能说任何液晶加电都更亮。以下透射比例只是独立光功率读数的处理，不是液晶微观性质的数值证明。"
+          }
+        ],
+        "learning_scope": "高中"
       },
-      "title": "液晶：取向有序、流动性与显示",
+      "error_index": 0,
       "chapter": "第十八章 · 分子动理论与气体"
     },
     "diagnostic-mol-05-2": {
-      "error": {
-        "wrong": "液晶屏幕发亮就说明液晶分子自己发光，或加电总会更亮。",
-        "why": "光源通常是背光或环境光，液晶与偏振元件调制透光；明暗变化取决于结构、取向和驱动，不能从一种结构推广所有液晶。",
-        "caught_by": "人工审核"
+      "point": {
+        "id": "mol-05",
+        "title": "液晶：取向有序、流动性与显示",
+        "level": "基础",
+        "definition": "液晶是具有一定分子取向有序而仍能流动的物质状态，性质常有方向差异。某些液晶的取向受外电场影响，可配合偏振元件调节透光，用于显示。",
+        "meaning": "液晶并非液态晶体碎屑，也不是所有方向均相同的普通液体。不同液晶相的有序形式不同，常见向列相分子长轴具有优先方向而位置不必形成固体晶格。显示装置改变分子取向和偏振光的传播，通常由背光或环境光提供光源，液晶层本身不因此成为发光源。温度和外场响应依材料及结构而定，不能说任何液晶加电都更亮。以下透射比例只是独立光功率读数的处理，不是液晶微观性质的数值证明。",
+        "symbols": {
+          "tau": {
+            "desc": "该装置透射光功率比例",
+            "unit": "1"
+          },
+          "P_in": {
+            "desc": "入射光功率",
+            "unit": "W"
+          },
+          "P_out": {
+            "desc": "透射光功率",
+            "unit": "W"
+          },
+          "P_loss": {
+            "desc": "非透射各通道合计光功率",
+            "unit": "W"
+          }
+        },
+        "scenarios": {
+          "状态甲": {
+            "P_in": 0.01,
+            "P_out": 0.004,
+            "P_loss": 0.006,
+            "tau": 0.4
+          },
+          "状态乙": {
+            "P_in": 0.01,
+            "P_out": 0.001,
+            "P_loss": 0.009,
+            "tau": 0.1
+          }
+        },
+        "formulas": [
+          {
+            "name": "光功率透射比例",
+            "expr": "tau = P_out/P_in",
+            "when": "入射、透射功率对应同一光束和同一时段，P_in>0；比例无量纲，不把所有未透射能量都视为吸收。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "状态甲",
+                "ref": 0.4,
+                "note": "4 mW透射、10 mW入射。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "状态乙",
+                "ref": 0.1,
+                "note": "1 mW透射、10 mW入射。"
+              },
+              {
+                "type": "scan",
+                "scenario": "状态甲",
+                "var": "P_out",
+                "lo": 0,
+                "hi": 0.01,
+                "note": "扫描本条适用范围内的参数，奇点和越量程操作不在有效范围内。"
+              },
+              {
+                "type": "consistency",
+                "scenario": "状态甲",
+                "with": "mol-05|光功率透射比例",
+                "with_expr": "1-P_loss/P_in",
+                "note": "本公式直接求tau；参考端显式关系为1-P_loss/P_in。两端使用同一情境和阶段，只核对该关系；with字段仅定位来源，不代表调用另一条被覆盖的公式。",
+                "target": "该装置透射光功率比例",
+                "verification_kind": "独立关系核对",
+                "tol": 1e-06
+              }
+            ]
+          },
+          {
+            "name": "各光通道能量账目",
+            "expr": "P_in = P_out+P_loss",
+            "when": "稳态无额外光源的被动装置，非透射量包含全部其他通道。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "状态甲",
+                "ref": 0.01,
+                "note": "4 mW加6 mW。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "状态乙",
+                "ref": 0.01,
+                "note": "1 mW加9 mW。"
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "比例分别为4/10=0.4和1/10=0.1。",
+          "两读数只比较该装置透射情况，光来自照明而非液晶自行发光。",
+          "液晶并非液态晶体碎屑，也不是所有方向均相同的普通液体。"
+        ],
+        "errors": [
+          {
+            "wrong": "透射比例把入射光功率除以透射功率。",
+            "wrong_expr": "tau = P_in/P_out",
+            "why": "比例是输出透射量占输入的份额，4/10为0.4，颠倒会变成2.5，不能当作无额外光源装置的透射比例。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "状态甲",
+              "expr": "P_in/P_out",
+              "ref": 0.4
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "液晶屏幕发亮就说明液晶分子自己发光，或加电总会更亮。",
+            "why": "光源通常是背光或环境光，液晶与偏振元件调制透光；明暗变化取决于结构、取向和驱动，不能从一种结构推广所有液晶。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "设计显示光路入射10 mW，两个取向状态透射4 mW和1 mW，计算透射比例并说明亮度来源。",
+          "solution": [
+            "比例分别为4/10=0.4和1/10=0.1。",
+            "两读数只比较该装置透射情况，光来自照明而非液晶自行发光。"
+          ],
+          "answer": "透射比例40%与10%；液晶用于调制光。"
+        },
+        "prereq": [
+          "mgas-01",
+          "thermo-04"
+        ],
+        "next": [
+          "wop-03"
+        ],
+        "tags": [
+          "液晶：取向有序、流动性与显示",
+          "条件与边界",
+          "实验与证据"
+        ],
+        "core": [
+          {
+            "title": "液晶：取向有序、流动性与显示：方法与边界",
+            "text": "液晶并非液态晶体碎屑，也不是所有方向均相同的普通液体。不同液晶相的有序形式不同，常见向列相分子长轴具有优先方向而位置不必形成固体晶格。显示装置改变分子取向和偏振光的传播，通常由背光或环境光提供光源，液晶层本身不因此成为发光源。温度和外场响应依材料及结构而定，不能说任何液晶加电都更亮。以下透射比例只是独立光功率读数的处理，不是液晶微观性质的数值证明。"
+          }
+        ],
+        "learning_scope": "高中"
       },
-      "title": "液晶：取向有序、流动性与显示",
+      "error_index": 1,
       "chapter": "第十八章 · 分子动理论与气体"
     },
     "diagnostic-mol-06-1": {
-      "error": {
-        "wrong": "把给出的管内直径直接当公式中的半径。",
-        "wrong_expr": "h = 2*sigma*cos(theta)/(rho*g*d)",
-        "why": "公式分母为内半径，直径是它的两倍；错用1 mm而不是0.5 mm会把高度算成一半，即0.72 cm。",
-        "caught_by": "数值代入",
-        "trap_test": {
-          "scenario": "浸润设计",
-          "expr": "2*sigma*cos(theta)/(rho*g*d)",
-          "ref": 0.0144
-        }
+      "point": {
+        "id": "mol-06",
+        "title": "毛细现象与浸润条件",
+        "level": "基础",
+        "definition": "细管中的液面相对外部液面上升或下降称毛细现象，方向取决于液体对管壁的浸润性。接触角小于九十度通常上升，大于九十度通常下降，理想近似高度与管半径成反比。",
+        "meaning": "表面张力在管口接触线处的竖直分量与液柱重量差平衡。圆管半径越小，理想静态毛细高度绝对值越大；半径不是直径。接触角从液体一侧测量，浸润角余弦为正使液面上升，不浸润为负使液面下降。模型忽略弯月面体积修正、动态流动和蒸发，要求细圆管、足够液体及稳定接触角。它不能说明细管越细流量一定越大，渗流阻力是另一问题。下面负高度表示相对外液面降低，不是负的实际管长。",
+        "symbols": {
+          "h": {
+            "desc": "相对外液面有符号高度",
+            "unit": "m"
+          },
+          "sigma": {
+            "desc": "表面张力系数",
+            "unit": "N/m"
+          },
+          "theta": {
+            "desc": "液体侧接触角",
+            "unit": "rad"
+          },
+          "rho": {
+            "desc": "液体密度",
+            "unit": "kg/m^3"
+          },
+          "g": {
+            "desc": "重力加速度",
+            "unit": "m/s^2"
+          },
+          "r": {
+            "desc": "细圆管内半径",
+            "unit": "m"
+          },
+          "d": {
+            "desc": "细圆管内直径",
+            "unit": "m"
+          },
+          "F": {
+            "desc": "表面张力有符号竖直合力",
+            "unit": "N"
+          }
+        },
+        "scenarios": {
+          "浸润设计": {
+            "sigma": 0.072,
+            "theta": 1.0471975511965976,
+            "rho": 1000,
+            "g": 10,
+            "r": 0.0005,
+            "d": 0.001,
+            "h": 0.0144,
+            "F": 0.00011309733552923256
+          },
+          "不浸润设计": {
+            "sigma": 0.072,
+            "theta": 2.0943951023931953,
+            "rho": 1000,
+            "g": 10,
+            "r": 0.0005,
+            "d": 0.001,
+            "h": -0.0144,
+            "F": -0.00011309733552923256
+          }
+        },
+        "formulas": [
+          {
+            "name": "圆管静态毛细高度",
+            "expr": "h = 2*sigma*cos(theta)/(rho*g*r)",
+            "when": "细圆管内液体静止，液面曲率由接触角决定；theta从液体一侧量取，忽略管径尺度的弯月面体积及蒸发。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "浸润设计",
+                "ref": 0.0144,
+                "note": "接触角60°，液面升高1.44 cm。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "不浸润设计",
+                "ref": -0.0144,
+                "note": "接触角120°，相对外液面降低1.44 cm。"
+              },
+              {
+                "type": "scan",
+                "scenario": "浸润设计",
+                "var": "r",
+                "lo": 0.0002,
+                "hi": 0.002,
+                "note": "扫描本条适用范围内的参数，奇点和越量程操作不在有效范围内。"
+              },
+              {
+                "type": "consistency",
+                "scenario": "浸润设计",
+                "with": "mol-06|圆管静态毛细高度",
+                "with_expr": "h",
+                "note": "直接求本公式输出，与情境中另列的h设计基准核对；数据是设计示例，不是实测。用于核对定义、反算或边界值，不宣称不同物理原理互证。",
+                "target": "相对外液面有符号高度",
+                "verification_kind": "独立设计情境数据核对",
+                "tol": 1.4400000000000002e-07
+              }
+            ]
+          },
+          {
+            "name": "接触线竖直张力",
+            "expr": "F = 2*pi*r*sigma*cos(theta)",
+            "when": "圆管半径r，表面张力sigma沿圆周接触线作用；theta从液体一侧量取，向上为正。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "浸润设计",
+                "ref": 0.00011309733552923256,
+                "note": "正号为向上分量。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "不浸润设计",
+                "ref": -0.00011309733552923256,
+                "note": "负号为向下分量。"
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "半径为0.5 mm，接触角余弦为0.5。",
+          "2×0.072×0.5除(1000×10×0.0005)=0.0144 m。",
+          "表面张力在管口接触线处的竖直分量与液柱重量差平衡。"
+        ],
+        "errors": [
+          {
+            "wrong": "把给出的管内直径直接当公式中的半径。",
+            "wrong_expr": "h = 2*sigma*cos(theta)/(rho*g*d)",
+            "why": "公式分母为内半径，直径是它的两倍；错用1 mm而不是0.5 mm会把高度算成一半，即0.72 cm。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "浸润设计",
+              "expr": "2*sigma*cos(theta)/(rho*g*d)",
+              "ref": 0.0144
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "所有液体在任何细管中都会上升，或毛细高度大就说明流量更大。",
+            "why": "上升下降取决于浸润及接触角；静态高度与动态流量不同，流量还受黏性和阻力限制，不能从静态公式直接推出。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "设计细圆管内径1 mm，表面张力0.072 N/m、接触角60°，密度1000 kg/m³、g取10，求理想上升高度。",
+          "solution": [
+            "半径为0.5 mm，接触角余弦为0.5。",
+            "2×0.072×0.5除(1000×10×0.0005)=0.0144 m。"
+          ],
+          "answer": "理想上升1.44 cm；其他材料接触角可能导致下降。"
+        },
+        "prereq": [
+          "thermo-04"
+        ],
+        "next": [
+          "mgas-02"
+        ],
+        "tags": [
+          "毛细现象与浸润条件",
+          "条件与边界",
+          "实验与证据"
+        ],
+        "core": [
+          {
+            "title": "毛细现象与浸润条件：方法与边界",
+            "text": "表面张力在管口接触线处的竖直分量与液柱重量差平衡。圆管半径越小，理想静态毛细高度绝对值越大；半径不是直径。接触角从液体一侧测量，浸润角余弦为正使液面上升，不浸润为负使液面下降。模型忽略弯月面体积修正、动态流动和蒸发，要求细圆管、足够液体及稳定接触角。它不能说明细管越细流量一定越大，渗流阻力是另一问题。下面负高度表示相对外液面降低，不是负的实际管长。"
+          }
+        ],
+        "learning_scope": "高中"
       },
-      "title": "毛细现象与浸润条件",
+      "error_index": 0,
       "chapter": "第十八章 · 分子动理论与气体"
     },
     "diagnostic-mol-06-2": {
-      "error": {
-        "wrong": "所有液体在任何细管中都会上升，或毛细高度大就说明流量更大。",
-        "why": "上升下降取决于浸润及接触角；静态高度与动态流量不同，流量还受黏性和阻力限制，不能从静态公式直接推出。",
-        "caught_by": "人工审核"
+      "point": {
+        "id": "mol-06",
+        "title": "毛细现象与浸润条件",
+        "level": "基础",
+        "definition": "细管中的液面相对外部液面上升或下降称毛细现象，方向取决于液体对管壁的浸润性。接触角小于九十度通常上升，大于九十度通常下降，理想近似高度与管半径成反比。",
+        "meaning": "表面张力在管口接触线处的竖直分量与液柱重量差平衡。圆管半径越小，理想静态毛细高度绝对值越大；半径不是直径。接触角从液体一侧测量，浸润角余弦为正使液面上升，不浸润为负使液面下降。模型忽略弯月面体积修正、动态流动和蒸发，要求细圆管、足够液体及稳定接触角。它不能说明细管越细流量一定越大，渗流阻力是另一问题。下面负高度表示相对外液面降低，不是负的实际管长。",
+        "symbols": {
+          "h": {
+            "desc": "相对外液面有符号高度",
+            "unit": "m"
+          },
+          "sigma": {
+            "desc": "表面张力系数",
+            "unit": "N/m"
+          },
+          "theta": {
+            "desc": "液体侧接触角",
+            "unit": "rad"
+          },
+          "rho": {
+            "desc": "液体密度",
+            "unit": "kg/m^3"
+          },
+          "g": {
+            "desc": "重力加速度",
+            "unit": "m/s^2"
+          },
+          "r": {
+            "desc": "细圆管内半径",
+            "unit": "m"
+          },
+          "d": {
+            "desc": "细圆管内直径",
+            "unit": "m"
+          },
+          "F": {
+            "desc": "表面张力有符号竖直合力",
+            "unit": "N"
+          }
+        },
+        "scenarios": {
+          "浸润设计": {
+            "sigma": 0.072,
+            "theta": 1.0471975511965976,
+            "rho": 1000,
+            "g": 10,
+            "r": 0.0005,
+            "d": 0.001,
+            "h": 0.0144,
+            "F": 0.00011309733552923256
+          },
+          "不浸润设计": {
+            "sigma": 0.072,
+            "theta": 2.0943951023931953,
+            "rho": 1000,
+            "g": 10,
+            "r": 0.0005,
+            "d": 0.001,
+            "h": -0.0144,
+            "F": -0.00011309733552923256
+          }
+        },
+        "formulas": [
+          {
+            "name": "圆管静态毛细高度",
+            "expr": "h = 2*sigma*cos(theta)/(rho*g*r)",
+            "when": "细圆管内液体静止，液面曲率由接触角决定；theta从液体一侧量取，忽略管径尺度的弯月面体积及蒸发。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "浸润设计",
+                "ref": 0.0144,
+                "note": "接触角60°，液面升高1.44 cm。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "不浸润设计",
+                "ref": -0.0144,
+                "note": "接触角120°，相对外液面降低1.44 cm。"
+              },
+              {
+                "type": "scan",
+                "scenario": "浸润设计",
+                "var": "r",
+                "lo": 0.0002,
+                "hi": 0.002,
+                "note": "扫描本条适用范围内的参数，奇点和越量程操作不在有效范围内。"
+              },
+              {
+                "type": "consistency",
+                "scenario": "浸润设计",
+                "with": "mol-06|圆管静态毛细高度",
+                "with_expr": "h",
+                "note": "直接求本公式输出，与情境中另列的h设计基准核对；数据是设计示例，不是实测。用于核对定义、反算或边界值，不宣称不同物理原理互证。",
+                "target": "相对外液面有符号高度",
+                "verification_kind": "独立设计情境数据核对",
+                "tol": 1.4400000000000002e-07
+              }
+            ]
+          },
+          {
+            "name": "接触线竖直张力",
+            "expr": "F = 2*pi*r*sigma*cos(theta)",
+            "when": "圆管半径r，表面张力sigma沿圆周接触线作用；theta从液体一侧量取，向上为正。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "浸润设计",
+                "ref": 0.00011309733552923256,
+                "note": "正号为向上分量。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "不浸润设计",
+                "ref": -0.00011309733552923256,
+                "note": "负号为向下分量。"
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "半径为0.5 mm，接触角余弦为0.5。",
+          "2×0.072×0.5除(1000×10×0.0005)=0.0144 m。",
+          "表面张力在管口接触线处的竖直分量与液柱重量差平衡。"
+        ],
+        "errors": [
+          {
+            "wrong": "把给出的管内直径直接当公式中的半径。",
+            "wrong_expr": "h = 2*sigma*cos(theta)/(rho*g*d)",
+            "why": "公式分母为内半径，直径是它的两倍；错用1 mm而不是0.5 mm会把高度算成一半，即0.72 cm。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "浸润设计",
+              "expr": "2*sigma*cos(theta)/(rho*g*d)",
+              "ref": 0.0144
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "所有液体在任何细管中都会上升，或毛细高度大就说明流量更大。",
+            "why": "上升下降取决于浸润及接触角；静态高度与动态流量不同，流量还受黏性和阻力限制，不能从静态公式直接推出。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "设计细圆管内径1 mm，表面张力0.072 N/m、接触角60°，密度1000 kg/m³、g取10，求理想上升高度。",
+          "solution": [
+            "半径为0.5 mm，接触角余弦为0.5。",
+            "2×0.072×0.5除(1000×10×0.0005)=0.0144 m。"
+          ],
+          "answer": "理想上升1.44 cm；其他材料接触角可能导致下降。"
+        },
+        "prereq": [
+          "thermo-04"
+        ],
+        "next": [
+          "mgas-02"
+        ],
+        "tags": [
+          "毛细现象与浸润条件",
+          "条件与边界",
+          "实验与证据"
+        ],
+        "core": [
+          {
+            "title": "毛细现象与浸润条件：方法与边界",
+            "text": "表面张力在管口接触线处的竖直分量与液柱重量差平衡。圆管半径越小，理想静态毛细高度绝对值越大；半径不是直径。接触角从液体一侧测量，浸润角余弦为正使液面上升，不浸润为负使液面下降。模型忽略弯月面体积修正、动态流动和蒸发，要求细圆管、足够液体及稳定接触角。它不能说明细管越细流量一定越大，渗流阻力是另一问题。下面负高度表示相对外液面降低，不是负的实际管长。"
+          }
+        ],
+        "learning_scope": "高中"
       },
-      "title": "毛细现象与浸润条件",
+      "error_index": 1,
       "chapter": "第十八章 · 分子动理论与气体"
     }
-  }
+  },
+  "generator_version": "2026-10-04-条件过程返工-8"
 }

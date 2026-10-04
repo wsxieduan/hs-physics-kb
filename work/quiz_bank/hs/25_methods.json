@@ -8,27 +8,19 @@
       "point_id": "met-01",
       "point_title": "整体法与隔离法（连接体）",
       "chapter": "第二十五章 · 解题方法与数学工具",
-      "stem": "【第二十五章 · 解题方法与数学工具 · 整体法与隔离法（连接体）】学生的错误做法：把轻绳拉力当成系统的另一份外力（错误表达式：a = (F+T)/(m1+m2)）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "stem": "在“整体法与隔离法（连接体）”的模型下，m1（被外力直接拉动的物体质量）=2 kg；m2（另一个物体质量）=3 kg；F（沿所选方向的系统外合力）=10 N；T（轻绳拉力）=6 N。条件：理想轻绳绷紧，两个物体沿同一直线具有相同加速度。求两个物体共有的加速度（a）。这些数值是设计示例。",
       "options": [
         {
           "label": "A",
-          "text": "概念混淆：水平电场会使合恒力倾斜，细绳的稳定方向也随之改变；最低势能点应沿合恒力方向确定，不再位于纯重力的几何最下方。"
+          "text": "3.2 m/s²"
         },
         {
           "label": "B",
-          "text": "概念混淆：电阻为正且可以相等是达到下界的必要条件；若某只电阻被限幅，代数下界未必可取，应回到可行区间检查端点。"
-        },
-        {
-          "label": "C",
-          "text": "概念混淆：首末平均只有当电流关于时间线性变化时才等于时间平均；曲线形状不同会给出不同面积，必须根据全过程或等效累积规律计算。"
-        },
-        {
-          "label": "D",
-          "text": "数值代入：拉力对两个物体的作用方向相反，是系统内力；整体列式再加一次拉力就重复计入作用，导致加速度偏大但量纲无误。"
+          "text": "2 m/s²"
         }
       ],
-      "correct_answer": "D",
-      "explanation": "拉力对两个物体的作用方向相反，是系统内力；整体列式再加一次拉力就重复计入作用，导致加速度偏大但量纲无误。\n知识库校验证据：情境：共加速；代入错误式：(F+T)/(m1+m2)；校验参照值：2。",
+      "correct_answer": "B",
+      "explanation": "使用共有加速度：F/(m1+m2)，代入得2 m/s²。另一结果来自(F+T)/(m1+m2)，算得3.2 m/s²。\n拉力对两个物体的作用方向相反，是系统内力；整体列式再加一次拉力就重复计入作用，导致加速度偏大但量纲无误。\n知识点条件：研究对象决定哪些力属于内力，但不会把不同物体的加速度自动变成相同。理想轻绳绷紧、刚性连接或无相对滑动等约束才可能给出共有加速度；遇到滑块、可伸长绳或分离阶段，要用同一惯性系中的系统牛顿第二定律，不能直接把总质量乘某个物体的加速度。\n推导依据：先列出系统边界，把物体间成对作用力从系统外力表中消去。；检查绳长、接触和滑动条件，只有确证共有加速度才能提出总质量乘该加速度。；整体算共有加速度，再隔离一个物体求绳拉力或接触力。；若约束失效或物体加速度不同，分别写质量乘各自加速度，再求和，而不是强行套整体简式。\n卡片公式各自的适用条件（不是本题共同前提）：\n共有加速度：理想轻绳绷紧，两个物体沿同一直线具有相同加速度\n隔离后的绳拉力：第二物体沿所选方向仅受绳拉力\n不同加速度的系统外力：同一惯性系、质量不变；所有量均为同方向分量",
       "error_type": "数值代入",
       "judging": "auto",
       "source_error_index": 0,
@@ -39,15 +31,62 @@
         "expr": "(F+T)/(m1+m2)",
         "ref": 2
       },
+      "level": "进阶",
+      "learning_scope": "高中",
+      "answer_evidence": {
+        "kind": "numeric",
+        "scenario": "共加速",
+        "parameters": {
+          "m1": 2,
+          "m2": 3,
+          "F": 10,
+          "a": 2,
+          "T": 6,
+          "a1": 2,
+          "a2": 2,
+          "W": 20,
+          "s": 2
+        },
+        "target": "a",
+        "unit": "m/s^2",
+        "reference": 2,
+        "correct_proof": {
+          "expression": "F/(m1+m2)",
+          "formula": "共有加速度",
+          "value": 2.0,
+          "when": "理想轻绳绷紧，两个物体沿同一直线具有相同加速度"
+        },
+        "distractor_expression": "(F+T)/(m1+m2)",
+        "distractor_value": 3.2,
+        "dimension_matches": true,
+        "independent_evaluation": true
+      },
       "review": {
         "confidence": "medium",
-        "checks": {
-          "answer_unique": true,
-          "distractors_plausible": true,
-          "stem_clear": true,
-          "no_cross_segment": true
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": true,
+          "no_answer_leak_in_options": true
         },
-        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。"
       }
     },
     {
@@ -55,42 +94,59 @@
       "point_id": "met-01",
       "point_title": "整体法与隔离法（连接体）",
       "chapter": "第二十五章 · 解题方法与数学工具",
-      "stem": "【第二十五章 · 解题方法与数学工具 · 整体法与隔离法（连接体）】学生的错误做法：任何连接体都把两个物体的加速度设成相等。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "stem": "关于“整体法与隔离法（连接体）”，判断这一说法是否成立，并说明依据：\n绳可能松弛、弹性连接可以伸长、接触面也可能滑动。",
       "options": [
         {
           "label": "A",
-          "text": "数值代入：等高斜抛的总飞行时间包含上升和下降两段；只算上升时间会少一半水平位移，量纲仍是长度，必须用实际运动核对系数。"
+          "text": "该说法不成立。"
         },
         {
           "label": "B",
-          "text": "数值代入：拉伸过程弹力从10 N变到30 N，末力不是全过程平均力；末力乘位移相当于取图像上矩形，会把真实梯形面积4 J高估成6 J。"
-        },
-        {
-          "label": "C",
-          "text": "概念混淆：绳可能松弛、弹性连接可以伸长、接触面也可能滑动；共有加速度来自具体约束而不是来自同时画在一张示意图上。"
-        },
-        {
-          "label": "D",
-          "text": "数值代入：水平与竖直加速度是互相垂直的矢量，直接相加只适用于同方向；本例会把12.5 m/s²误算成17.5 m/s²，量纲检查不能识别。"
+          "text": "该说法成立。"
         }
       ],
-      "correct_answer": "C",
-      "explanation": "绳可能松弛、弹性连接可以伸长、接触面也可能滑动；共有加速度来自具体约束而不是来自同时画在一张示意图上。",
+      "correct_answer": "B",
+      "explanation": "绳可能松弛、弹性连接可以伸长、接触面也可能滑动；共有加速度来自具体约束而不是来自同时画在一张示意图上。\n知识点条件：研究对象决定哪些力属于内力，但不会把不同物体的加速度自动变成相同。理想轻绳绷紧、刚性连接或无相对滑动等约束才可能给出共有加速度；遇到滑块、可伸长绳或分离阶段，要用同一惯性系中的系统牛顿第二定律，不能直接把总质量乘某个物体的加速度。\n推导依据：先列出系统边界，把物体间成对作用力从系统外力表中消去。；检查绳长、接触和滑动条件，只有确证共有加速度才能提出总质量乘该加速度。；整体算共有加速度，再隔离一个物体求绳拉力或接触力。；若约束失效或物体加速度不同，分别写质量乘各自加速度，再求和，而不是强行套整体简式。\n卡片公式各自的适用条件（不是本题共同前提）：\n共有加速度：理想轻绳绷紧，两个物体沿同一直线具有相同加速度\n隔离后的绳拉力：第二物体沿所选方向仅受绳拉力\n不同加速度的系统外力：同一惯性系、质量不变；所有量均为同方向分量",
       "error_type": "概念混淆",
       "judging": "teacher",
       "source_error_index": 1,
       "source_caught_by": "人工审核",
       "wrong_expr": null,
       "trap_test": null,
+      "level": "进阶",
+      "learning_scope": "高中",
+      "answer_evidence": {
+        "kind": "teacher",
+        "claim_source": "why",
+        "reference_only": true,
+        "reason": "概念、操作或无法建立完整定量证据，教师确认条件与结论。"
+      },
       "review": {
         "confidence": "medium",
-        "checks": {
-          "answer_unique": true,
-          "distractors_plausible": true,
-          "stem_clear": true,
-          "no_cross_segment": true
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": false,
+          "no_answer_leak_in_options": true
         },
-        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。"
       }
     },
     {
@@ -98,27 +154,19 @@
       "point_id": "met-02",
       "point_title": "等效重力场（复合场等效）",
       "chapter": "第二十五章 · 解题方法与数学工具",
-      "stem": "【第二十五章 · 解题方法与数学工具 · 等效重力场（复合场等效）】学生的错误做法：把等效加速度大小写成两分量直接相加（错误表达式：g<sub>e</sub> = g+abs(q·E/m)）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "stem": "在“等效重力场（复合场等效）”的模型下，g（当地重力加速度，取10）=10 m/s²；q（物体电荷量，含正负号）=1 C；E（水平方向电场强度，正向取向右）=15 V/m；m（物体质量）=2 kg。条件：电场水平且均匀，质量与电荷固定。求等效重力加速度大小（g<sub>e</sub>）。这些数值是设计示例。",
       "options": [
         {
           "label": "A",
-          "text": "概念混淆：首末平均只有当电流关于时间线性变化时才等于时间平均；曲线形状不同会给出不同面积，必须根据全过程或等效累积规律计算。"
+          "text": "17.5 m/s²"
         },
         {
           "label": "B",
-          "text": "数值代入：水平与竖直加速度是互相垂直的矢量，直接相加只适用于同方向；本例会把12.5 m/s²误算成17.5 m/s²，量纲检查不能识别。"
-        },
-        {
-          "label": "C",
-          "text": "概念混淆：绳可能松弛、弹性连接可以伸长、接触面也可能滑动；共有加速度来自具体约束而不是来自同时画在一张示意图上。"
-        },
-        {
-          "label": "D",
-          "text": "概念混淆：电阻为正且可以相等是达到下界的必要条件；若某只电阻被限幅，代数下界未必可取，应回到可行区间检查端点。"
+          "text": "12.5 m/s²"
         }
       ],
       "correct_answer": "B",
-      "explanation": "水平与竖直加速度是互相垂直的矢量，直接相加只适用于同方向；本例会把12.5 m/s²误算成17.5 m/s²，量纲检查不能识别。\n知识库校验证据：情境：基准；代入错误式：g+abs(q·E/m)；校验参照值：12.5。",
+      "explanation": "使用等效加速度：√(g²+(q·E/m)²)，代入得12.5 m/s²。另一结果来自g+abs(q·E/m)，算得17.5 m/s²。\n水平与竖直加速度是互相垂直的矢量，直接相加只适用于同方向；本例会把12.5 m/s²误算成17.5 m/s²，量纲检查不能识别。\n知识点条件：等效场方向取合恒力方向，而不是沿几何竖直。等效最低点是沿合恒力方向的圆周点，等效最高点在反方向；圆周运动、摆动及类抛体应改用这一方向分析。电场必须均匀、电荷不能改变，磁场的速度相关力也不能简单当作固定等效重力；倾角公式按电荷符号决定左右。\n推导依据：先分别画重力和电场力，注意电场力方向随电荷正负反转。；由合恒力定义等效加速度，水平场用直角三角形求大小和偏角。；旋转分析坐标轴，让等效竖直沿合恒力，而不改变真实轨迹的几何位置。；细绳圆周的临界最高点和单摆平衡最低点均按等效方向定位，再套相应有条件的公式。\n卡片公式各自的适用条件（不是本题共同前提）：\n等效加速度：电场水平且均匀，质量与电荷固定\n等效场偏角：重力向下、电场水平，取带符号的左右偏角\n等效最高点临界速度：细绳拉力在等效最高点恰好为零；不是任意圆周约束模型\n等效单摆的小振幅周期：轻绳单摆绕等效最低点小角度摆动，忽略阻力",
       "error_type": "数值代入",
       "judging": "auto",
       "source_error_index": 0,
@@ -129,15 +177,61 @@
         "expr": "g+abs(q*E/m)",
         "ref": 12.5
       },
+      "level": "拓展",
+      "learning_scope": "高中",
+      "answer_evidence": {
+        "kind": "numeric",
+        "scenario": "基准",
+        "parameters": {
+          "g": 10,
+          "q": 1,
+          "E": 15,
+          "m": 2,
+          "g_e": 12.5,
+          "theta": 0.6435011087932844,
+          "r": 2,
+          "l": 0.125
+        },
+        "target": "g_e",
+        "unit": "m/s^2",
+        "reference": 12.5,
+        "correct_proof": {
+          "expression": "sqrt(g^2+(q*E/m)^2)",
+          "formula": "等效加速度",
+          "value": 12.5,
+          "when": "电场水平且均匀，质量与电荷固定"
+        },
+        "distractor_expression": "g+abs(q*E/m)",
+        "distractor_value": 17.5,
+        "dimension_matches": true,
+        "independent_evaluation": true
+      },
       "review": {
         "confidence": "medium",
-        "checks": {
-          "answer_unique": true,
-          "distractors_plausible": true,
-          "stem_clear": true,
-          "no_cross_segment": true
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": true,
+          "no_answer_leak_in_options": true
         },
-        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。"
       }
     },
     {
@@ -145,42 +239,59 @@
       "point_id": "met-02",
       "point_title": "等效重力场（复合场等效）",
       "chapter": "第二十五章 · 解题方法与数学工具",
-      "stem": "【第二十五章 · 解题方法与数学工具 · 等效重力场（复合场等效）】学生的错误做法：把几何最低点直接当成等效最低点。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "stem": "关于“等效重力场（复合场等效）”，判断这一说法是否成立，并说明依据：\n水平电场会使合恒力倾斜，细绳的稳定方向也随之改变。",
       "options": [
         {
           "label": "A",
-          "text": "概念混淆：水平电场会使合恒力倾斜，细绳的稳定方向也随之改变；最低势能点应沿合恒力方向确定，不再位于纯重力的几何最下方。"
+          "text": "该说法不成立。"
         },
         {
           "label": "B",
-          "text": "数值代入：拉力对两个物体的作用方向相反，是系统内力；整体列式再加一次拉力就重复计入作用，导致加速度偏大但量纲无误。"
-        },
-        {
-          "label": "C",
-          "text": "数值代入：等高斜抛的总飞行时间包含上升和下降两段；只算上升时间会少一半水平位移，量纲仍是长度，必须用实际运动核对系数。"
-        },
-        {
-          "label": "D",
-          "text": "数值代入：拉伸过程弹力从10 N变到30 N，末力不是全过程平均力；末力乘位移相当于取图像上矩形，会把真实梯形面积4 J高估成6 J。"
+          "text": "该说法成立。"
         }
       ],
-      "correct_answer": "A",
-      "explanation": "水平电场会使合恒力倾斜，细绳的稳定方向也随之改变；最低势能点应沿合恒力方向确定，不再位于纯重力的几何最下方。",
+      "correct_answer": "B",
+      "explanation": "水平电场会使合恒力倾斜，细绳的稳定方向也随之改变；最低势能点应沿合恒力方向确定，不再位于纯重力的几何最下方。\n知识点条件：等效场方向取合恒力方向，而不是沿几何竖直。等效最低点是沿合恒力方向的圆周点，等效最高点在反方向；圆周运动、摆动及类抛体应改用这一方向分析。电场必须均匀、电荷不能改变，磁场的速度相关力也不能简单当作固定等效重力；倾角公式按电荷符号决定左右。\n推导依据：先分别画重力和电场力，注意电场力方向随电荷正负反转。；由合恒力定义等效加速度，水平场用直角三角形求大小和偏角。；旋转分析坐标轴，让等效竖直沿合恒力，而不改变真实轨迹的几何位置。；细绳圆周的临界最高点和单摆平衡最低点均按等效方向定位，再套相应有条件的公式。\n卡片公式各自的适用条件（不是本题共同前提）：\n等效加速度：电场水平且均匀，质量与电荷固定\n等效场偏角：重力向下、电场水平，取带符号的左右偏角\n等效最高点临界速度：细绳拉力在等效最高点恰好为零；不是任意圆周约束模型\n等效单摆的小振幅周期：轻绳单摆绕等效最低点小角度摆动，忽略阻力",
       "error_type": "概念混淆",
       "judging": "teacher",
       "source_error_index": 1,
       "source_caught_by": "人工审核",
       "wrong_expr": null,
       "trap_test": null,
+      "level": "拓展",
+      "learning_scope": "高中",
+      "answer_evidence": {
+        "kind": "teacher",
+        "claim_source": "why",
+        "reference_only": true,
+        "reason": "概念、操作或无法建立完整定量证据，教师确认条件与结论。"
+      },
       "review": {
         "confidence": "medium",
-        "checks": {
-          "answer_unique": true,
-          "distractors_plausible": true,
-          "stem_clear": true,
-          "no_cross_segment": true
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": false,
+          "no_answer_leak_in_options": true
         },
-        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。"
       }
     },
     {
@@ -188,27 +299,19 @@
       "point_id": "met-03",
       "point_title": "极值法：二次函数、均值不等式与几何法",
       "chapter": "第二十五章 · 解题方法与数学工具",
-      "stem": "【第二十五章 · 解题方法与数学工具 · 极值法：二次函数、均值不等式与几何法】学生的错误做法：斜抛最大射程漏除重力加速度并误保留二分之一（错误表达式：s<sub>max</sub> = v<sub>0</sub>²/(2·g)）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "stem": "在“极值法：二次函数、均值不等式与几何法”的模型下，v<sub>0</sub>（平地斜抛初速度大小）=10 m/s；g（重力加速度，取10）=10 m/s²。条件：无阻力、起落等高，仰角在零到直角之间。求平地斜抛最大射程（s<sub>max</sub>）。这些数值是设计示例。",
       "options": [
         {
           "label": "A",
-          "text": "概念混淆：绳可能松弛、弹性连接可以伸长、接触面也可能滑动；共有加速度来自具体约束而不是来自同时画在一张示意图上。"
+          "text": "10 m"
         },
         {
           "label": "B",
-          "text": "概念混淆：水平电场会使合恒力倾斜，细绳的稳定方向也随之改变；最低势能点应沿合恒力方向确定，不再位于纯重力的几何最下方。"
-        },
-        {
-          "label": "C",
-          "text": "概念混淆：首末平均只有当电流关于时间线性变化时才等于时间平均；曲线形状不同会给出不同面积，必须根据全过程或等效累积规律计算。"
-        },
-        {
-          "label": "D",
-          "text": "数值代入：等高斜抛的总飞行时间包含上升和下降两段；只算上升时间会少一半水平位移，量纲仍是长度，必须用实际运动核对系数。"
+          "text": "5 m"
         }
       ],
-      "correct_answer": "D",
-      "explanation": "等高斜抛的总飞行时间包含上升和下降两段；只算上升时间会少一半水平位移，量纲仍是长度，必须用实际运动核对系数。\n知识库校验证据：情境：斜抛；代入错误式：v<sub>0</sub>²/(2·g)；校验参照值：10。",
+      "correct_answer": "A",
+      "explanation": "使用斜抛射程上界：v<sub>0</sub>²/g，代入得10 m。另一结果来自v<sub>0</sub>²/(2·g)，算得5 m。\n等高斜抛的总飞行时间包含上升和下降两段；只算上升时间会少一半水平位移，量纲仍是长度，必须用实际运动核对系数。\n知识点条件：求极值前必须先列可行范围，不能只对代数式求导而忘记题设。二次函数常通过配方找顶点，均值不等式必须满足正数和等号条件，几何法则用长度、角度或速度矢量圆找边界。本卡给三个独立可手算场景，并把斜抛正弦上界和极值条件连回物理运动过程。\n推导依据：先从运动、能量或电路约束写出目标量，并列出变量允许范围。；二次间距函数配方后读出顶点，检查顶点时间是否真的落在研究阶段内。；两正电阻固定乘积时，平方差非负给出总电阻不小于两倍乘积平方根，等号要求两者相等。；几何最远点利用三角形边长上界；斜抛最大射程利用正弦不超过一，两者都要确认极值位置可实现。\n卡片公式各自的适用条件（不是本题共同前提）：\n斜抛射程上界：无阻力、起落等高，仰角在零到直角之间\n固定乘积的串联电阻下界：两电阻均为正、乘积固定；相等时达到下界\n圆周点距固定点的距离上界：固定点到圆心距离为D，轨迹为完整圆，最远点在中心连线延长线上\n二次间距配方后的最小值：相对加速度a为正，初始相对速度使间距减小，且顶点时刻在允许区间内",
       "error_type": "数值代入",
       "judging": "auto",
       "source_error_index": 0,
@@ -219,15 +322,56 @@
         "expr": "v_0^2/(2*g)",
         "ref": 10
       },
+      "level": "进阶",
+      "learning_scope": "高中",
+      "answer_evidence": {
+        "kind": "numeric",
+        "scenario": "斜抛",
+        "parameters": {
+          "v_0": 10,
+          "g": 10,
+          "theta": 0.7853981633974483
+        },
+        "target": "s_max",
+        "unit": "m",
+        "reference": 10,
+        "correct_proof": {
+          "expression": "v_0^2/g",
+          "formula": "斜抛射程上界",
+          "value": 10.0,
+          "when": "无阻力、起落等高，仰角在零到直角之间"
+        },
+        "distractor_expression": "v_0^2/(2*g)",
+        "distractor_value": 5.0,
+        "dimension_matches": true,
+        "independent_evaluation": true
+      },
       "review": {
         "confidence": "medium",
-        "checks": {
-          "answer_unique": true,
-          "distractors_plausible": true,
-          "stem_clear": true,
-          "no_cross_segment": true
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": true,
+          "no_answer_leak_in_options": true
         },
-        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。"
       }
     },
     {
@@ -235,42 +379,59 @@
       "point_id": "met-03",
       "point_title": "极值法：二次函数、均值不等式与几何法",
       "chapter": "第二十五章 · 解题方法与数学工具",
-      "stem": "【第二十五章 · 解题方法与数学工具 · 极值法：二次函数、均值不等式与几何法】学生的错误做法：均值不等式找出等号点后不检查题设范围。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "stem": "关于“极值法：二次函数、均值不等式与几何法”，判断这一说法是否成立，并说明依据：\n均值不等式找出等号点后不检查题设范围。",
       "options": [
         {
           "label": "A",
-          "text": "数值代入：水平与竖直加速度是互相垂直的矢量，直接相加只适用于同方向；本例会把12.5 m/s²误算成17.5 m/s²，量纲检查不能识别。"
+          "text": "该说法不成立。"
         },
         {
           "label": "B",
-          "text": "数值代入：拉伸过程弹力从10 N变到30 N，末力不是全过程平均力；末力乘位移相当于取图像上矩形，会把真实梯形面积4 J高估成6 J。"
-        },
-        {
-          "label": "C",
-          "text": "概念混淆：电阻为正且可以相等是达到下界的必要条件；若某只电阻被限幅，代数下界未必可取，应回到可行区间检查端点。"
-        },
-        {
-          "label": "D",
-          "text": "数值代入：拉力对两个物体的作用方向相反，是系统内力；整体列式再加一次拉力就重复计入作用，导致加速度偏大但量纲无误。"
+          "text": "该说法成立。"
         }
       ],
-      "correct_answer": "C",
-      "explanation": "电阻为正且可以相等是达到下界的必要条件；若某只电阻被限幅，代数下界未必可取，应回到可行区间检查端点。",
+      "correct_answer": "A",
+      "explanation": "电阻为正且可以相等是达到下界的必要条件；若某只电阻被限幅，代数下界未必可取，应回到可行区间检查端点。\n知识点条件：求极值前必须先列可行范围，不能只对代数式求导而忘记题设。二次函数常通过配方找顶点，均值不等式必须满足正数和等号条件，几何法则用长度、角度或速度矢量圆找边界。本卡给三个独立可手算场景，并把斜抛正弦上界和极值条件连回物理运动过程。\n推导依据：先从运动、能量或电路约束写出目标量，并列出变量允许范围。；二次间距函数配方后读出顶点，检查顶点时间是否真的落在研究阶段内。；两正电阻固定乘积时，平方差非负给出总电阻不小于两倍乘积平方根，等号要求两者相等。；几何最远点利用三角形边长上界；斜抛最大射程利用正弦不超过一，两者都要确认极值位置可实现。\n卡片公式各自的适用条件（不是本题共同前提）：\n斜抛射程上界：无阻力、起落等高，仰角在零到直角之间\n固定乘积的串联电阻下界：两电阻均为正、乘积固定；相等时达到下界\n圆周点距固定点的距离上界：固定点到圆心距离为D，轨迹为完整圆，最远点在中心连线延长线上\n二次间距配方后的最小值：相对加速度a为正，初始相对速度使间距减小，且顶点时刻在允许区间内",
       "error_type": "概念混淆",
       "judging": "teacher",
       "source_error_index": 1,
       "source_caught_by": "人工审核",
       "wrong_expr": null,
       "trap_test": null,
+      "level": "进阶",
+      "learning_scope": "高中",
+      "answer_evidence": {
+        "kind": "teacher",
+        "claim_source": "wrong",
+        "reference_only": true,
+        "reason": "概念、操作或无法建立完整定量证据，教师确认条件与结论。"
+      },
       "review": {
         "confidence": "medium",
-        "checks": {
-          "answer_unique": true,
-          "distractors_plausible": true,
-          "stem_clear": true,
-          "no_cross_segment": true
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": false,
+          "no_answer_leak_in_options": true
         },
-        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。"
       }
     },
     {
@@ -278,27 +439,19 @@
       "point_id": "met-04",
       "point_title": "微元法与累积量",
       "chapter": "第二十五章 · 解题方法与数学工具",
-      "stem": "【第二十五章 · 解题方法与数学工具 · 微元法与累积量】学生的错误做法：准静态拉伸用末弹力乘总位移（错误表达式：W = k·x<sub>2</sub>·(x<sub>2</sub>-x<sub>1</sub>)）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "stem": "在“微元法与累积量”的模型下，k（胡克弹簧劲度系数）=100 N/m；x<sub>1</sub>（初始伸长量）=0.1 m；x<sub>2</sub>（末态伸长量）=0.3 m。条件：准静态外力等于弹力大小，弹簧处于胡克定律适用范围。求缓慢拉伸时外力做功（W）。这些数值是设计示例。",
       "options": [
         {
           "label": "A",
-          "text": "概念混淆：电阻为正且可以相等是达到下界的必要条件；若某只电阻被限幅，代数下界未必可取，应回到可行区间检查端点。"
+          "text": "6 J"
         },
         {
           "label": "B",
-          "text": "数值代入：拉伸过程弹力从10 N变到30 N，末力不是全过程平均力；末力乘位移相当于取图像上矩形，会把真实梯形面积4 J高估成6 J。"
-        },
-        {
-          "label": "C",
-          "text": "概念混淆：绳可能松弛、弹性连接可以伸长、接触面也可能滑动；共有加速度来自具体约束而不是来自同时画在一张示意图上。"
-        },
-        {
-          "label": "D",
-          "text": "概念混淆：水平电场会使合恒力倾斜，细绳的稳定方向也随之改变；最低势能点应沿合恒力方向确定，不再位于纯重力的几何最下方。"
+          "text": "4 J"
         }
       ],
       "correct_answer": "B",
-      "explanation": "拉伸过程弹力从10 N变到30 N，末力不是全过程平均力；末力乘位移相当于取图像上矩形，会把真实梯形面积4 J高估成6 J。\n知识库校验证据：情境：弹簧；代入错误式：k·x<sub>2</sub>·(x<sub>2</sub>-x<sub>1</sub>)；校验参照值：4。",
+      "explanation": "使用线性弹簧做功的累积：½k·(x<sub>2</sub>²-x<sub>1</sub>²)，代入得4 J。另一结果来自k·x<sub>2</sub>·(x<sub>2</sub>-x<sub>1</sub>)，算得6 J。\n拉伸过程弹力从10 N变到30 N，末力不是全过程平均力；末力乘位移相当于取图像上矩形，会把真实梯形面积4 J高估成6 J。\n知识点条件：积分是累积思想的简写，不代表每个高中问题都必须用高等数学计算。线性变化可用图像面积或首末算术平均值精确求总量；非线性变化则要分段求和，不能机械取首末平均。感应电流累计成电荷时，磁通量总变化与恒电阻可以直接给出结果，但若电阻随时间改变就不能从累加式外提出。\n推导依据：把位移分成小段，每段用该处近似恒定的力乘小段位移，再把各段功累加。；对线性弹簧，力—位移图是直线，首末之间梯形面积给出精确功。；电荷是电流随时间的累积量；把法拉第定律与欧姆定律结合，恒电阻时总电荷由磁通总变化决定。；首末算术平均仅对所积变量的线性变化成立；电阻变化、自感或其他电源存在时必须保留实际电路过程。\n卡片公式各自的适用条件（不是本题共同前提）：\n线性弹簧做功的累积：准静态外力等于弹力大小，弹簧处于胡克定律适用范围\n线性弹力关于位移的平均值：弹力随位移线性变化，不能推广为任意变力的首末平均\n磁通累积求有符号电荷：回路正向和磁通正向遵循右手关系，无其他电动势，R固定且忽略自感",
       "error_type": "数值代入",
       "judging": "auto",
       "source_error_index": 0,
@@ -309,15 +462,56 @@
         "expr": "k*x2*(x2-x1)",
         "ref": 4
       },
+      "level": "拓展",
+      "learning_scope": "高中",
+      "answer_evidence": {
+        "kind": "numeric",
+        "scenario": "弹簧",
+        "parameters": {
+          "k": 100,
+          "x1": 0.1,
+          "x2": 0.3
+        },
+        "target": "W",
+        "unit": "J",
+        "reference": 4,
+        "correct_proof": {
+          "expression": "0.5*k*(x2^2-x1^2)",
+          "formula": "线性弹簧做功的累积",
+          "value": 3.9999999999999996,
+          "when": "准静态外力等于弹力大小，弹簧处于胡克定律适用范围"
+        },
+        "distractor_expression": "k*x2*(x2-x1)",
+        "distractor_value": 5.999999999999999,
+        "dimension_matches": true,
+        "independent_evaluation": true
+      },
       "review": {
         "confidence": "medium",
-        "checks": {
-          "answer_unique": true,
-          "distractors_plausible": true,
-          "stem_clear": true,
-          "no_cross_segment": true
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": true,
+          "no_answer_leak_in_options": true
         },
-        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。"
       }
     },
     {
@@ -325,42 +519,59 @@
       "point_id": "met-04",
       "point_title": "微元法与累积量",
       "chapter": "第二十五章 · 解题方法与数学工具",
-      "stem": "【第二十五章 · 解题方法与数学工具 · 微元法与累积量】学生的错误做法：对任何变化的电流都用首末电流算术平均求电荷。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "stem": "关于“微元法与累积量”，判断这一说法是否成立，并说明依据：\n对任何变化的电流都用首末电流算术平均求电荷。",
       "options": [
         {
           "label": "A",
-          "text": "概念混淆：首末平均只有当电流关于时间线性变化时才等于时间平均；曲线形状不同会给出不同面积，必须根据全过程或等效累积规律计算。"
+          "text": "该说法成立。"
         },
         {
           "label": "B",
-          "text": "数值代入：拉力对两个物体的作用方向相反，是系统内力；整体列式再加一次拉力就重复计入作用，导致加速度偏大但量纲无误。"
-        },
-        {
-          "label": "C",
-          "text": "数值代入：水平与竖直加速度是互相垂直的矢量，直接相加只适用于同方向；本例会把12.5 m/s²误算成17.5 m/s²，量纲检查不能识别。"
-        },
-        {
-          "label": "D",
-          "text": "数值代入：等高斜抛的总飞行时间包含上升和下降两段；只算上升时间会少一半水平位移，量纲仍是长度，必须用实际运动核对系数。"
+          "text": "该说法不成立。"
         }
       ],
-      "correct_answer": "A",
-      "explanation": "首末平均只有当电流关于时间线性变化时才等于时间平均；曲线形状不同会给出不同面积，必须根据全过程或等效累积规律计算。",
+      "correct_answer": "B",
+      "explanation": "首末平均只有当电流关于时间线性变化时才等于时间平均；曲线形状不同会给出不同面积，必须根据全过程或等效累积规律计算。\n知识点条件：积分是累积思想的简写，不代表每个高中问题都必须用高等数学计算。线性变化可用图像面积或首末算术平均值精确求总量；非线性变化则要分段求和，不能机械取首末平均。感应电流累计成电荷时，磁通量总变化与恒电阻可以直接给出结果，但若电阻随时间改变就不能从累加式外提出。\n推导依据：把位移分成小段，每段用该处近似恒定的力乘小段位移，再把各段功累加。；对线性弹簧，力—位移图是直线，首末之间梯形面积给出精确功。；电荷是电流随时间的累积量；把法拉第定律与欧姆定律结合，恒电阻时总电荷由磁通总变化决定。；首末算术平均仅对所积变量的线性变化成立；电阻变化、自感或其他电源存在时必须保留实际电路过程。\n卡片公式各自的适用条件（不是本题共同前提）：\n线性弹簧做功的累积：准静态外力等于弹力大小，弹簧处于胡克定律适用范围\n线性弹力关于位移的平均值：弹力随位移线性变化，不能推广为任意变力的首末平均\n磁通累积求有符号电荷：回路正向和磁通正向遵循右手关系，无其他电动势，R固定且忽略自感",
       "error_type": "概念混淆",
       "judging": "teacher",
       "source_error_index": 1,
       "source_caught_by": "人工审核",
       "wrong_expr": null,
       "trap_test": null,
+      "level": "拓展",
+      "learning_scope": "高中",
+      "answer_evidence": {
+        "kind": "teacher",
+        "claim_source": "wrong",
+        "reference_only": true,
+        "reason": "概念、操作或无法建立完整定量证据，教师确认条件与结论。"
+      },
       "review": {
         "confidence": "medium",
-        "checks": {
-          "answer_unique": true,
-          "distractors_plausible": true,
-          "stem_clear": true,
-          "no_cross_segment": true
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": false,
+          "no_answer_leak_in_options": true
         },
-        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。"
       }
     },
     {
@@ -368,27 +579,19 @@
       "point_id": "met-05",
       "point_title": "临界条件分析法",
       "chapter": "第二十五章 · 解题方法与数学工具",
-      "stem": "【第二十五章 · 解题方法与数学工具 · 临界条件分析法】学生的错误做法：最高点求拉力漏掉重力项（错误表达式：N = m·v²/r）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "stem": "在“临界条件分析法”的模型下，m（圆周物体质量）=2 kg；v（最高点速度）=5 m/s；r（圆周半径）=2.5 m；g（重力加速度，取10）=10 m/s²。条件：细绳或内轨，最高点重力与约束力均指向圆心，负值说明此模型无法维持。求最高点绳拉力或内轨支持力（N）。这些数值是设计示例。",
       "options": [
         {
           "label": "A",
-          "text": "概念混淆：绳可能松弛、弹性连接可以伸长、接触面也可能滑动；共有加速度来自具体约束而不是来自同时画在一张示意图上。"
+          "text": "0 N"
         },
         {
           "label": "B",
-          "text": "概念混淆：水平电场会使合恒力倾斜，细绳的稳定方向也随之改变；最低势能点应沿合恒力方向确定，不再位于纯重力的几何最下方。"
-        },
-        {
-          "label": "C",
-          "text": "概念混淆：电阻为正且可以相等是达到下界的必要条件；若某只电阻被限幅，代数下界未必可取，应回到可行区间检查端点。"
-        },
-        {
-          "label": "D",
-          "text": "数值代入：向心力是所有径向力的合力，不是额外一项独立力；重力已经贡献所需20 N，忽略它会把临界零拉力误算成20 N。"
+          "text": "20 N"
         }
       ],
-      "correct_answer": "D",
-      "explanation": "向心力是所有径向力的合力，不是额外一项独立力；重力已经贡献所需20 N，忽略它会把临界零拉力误算成20 N。\n知识库校验证据：情境：圆周；代入错误式：m·v²/r；校验参照值：0。",
+      "correct_answer": "A",
+      "explanation": "使用最高点约束力：m·v²/r-m·g，代入得0 N。另一结果来自m·v²/r，算得20 N。\n向心力是所有径向力的合力，不是额外一项独立力；重力已经贡献所需20 N，忽略它会把临界零拉力误算成20 N。\n知识点条件：临界不是一条统一的万能等式。支持力或绳拉力的零值对应约束失效，最大静摩擦对应将要相对滑动，光滑时间区间内的最小间距对应相对速度为零。恰好接触时最小间距为零，但相对加速度可以非零；若最小值在阶段端点，还不能盲目要求相对速度为零。\n推导依据：先判断变化的是接触、绳松紧、滑动还是两物体相遇，再选择对应边界量。；圆周最高点列向心方向的合力，约束力到零是细绳保持绷紧的临界。；静摩擦临界用最大静摩擦，未到边界时应由平衡或动力学求实际摩擦力。；相撞问题写间距随时间的函数，在允许时间区间比较内点极小值与端点；不要额外强加相对加速度为零。\n卡片公式各自的适用条件（不是本题共同前提）：\n最高点约束力：细绳或内轨，最高点重力与约束力均指向圆心，负值说明此模型无法维持\n最大静摩擦力：仅用于即将滑动的最大静摩擦边界，通常静摩擦可以更小\n最小间距：a为正，初速度使间距缩小，顶点时刻位于光滑研究区间内\n内部最小间距时刻：相对速度从负值变到零，阶段内的光滑极小值",
       "error_type": "数值代入",
       "judging": "auto",
       "source_error_index": 0,
@@ -399,15 +602,57 @@
         "expr": "m*v^2/r",
         "ref": 0
       },
+      "level": "进阶",
+      "learning_scope": "高中",
+      "answer_evidence": {
+        "kind": "numeric",
+        "scenario": "圆周",
+        "parameters": {
+          "m": 2,
+          "v": 5,
+          "r": 2.5,
+          "g": 10
+        },
+        "target": "N",
+        "unit": "N",
+        "reference": 0,
+        "correct_proof": {
+          "expression": "m*v^2/r-m*g",
+          "formula": "最高点约束力",
+          "value": 0.0,
+          "when": "细绳或内轨，最高点重力与约束力均指向圆心，负值说明此模型无法维持"
+        },
+        "distractor_expression": "m*v^2/r",
+        "distractor_value": 20.0,
+        "dimension_matches": true,
+        "independent_evaluation": true
+      },
       "review": {
         "confidence": "medium",
-        "checks": {
-          "answer_unique": true,
-          "distractors_plausible": true,
-          "stem_clear": true,
-          "no_cross_segment": true
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": true,
+          "no_answer_leak_in_options": true
         },
-        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。"
       }
     },
     {
@@ -415,42 +660,59 @@
       "point_id": "met-05",
       "point_title": "临界条件分析法",
       "chapter": "第二十五章 · 解题方法与数学工具",
-      "stem": "【第二十五章 · 解题方法与数学工具 · 临界条件分析法】学生的错误做法：恰好不相撞一律要求相对速度和相对加速度同时为零。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "stem": "关于“临界条件分析法”，判断这一说法是否成立，并说明依据：\n恰好不相撞一律要求相对速度和相对加速度同时为零。",
       "options": [
         {
           "label": "A",
-          "text": "数值代入：水平与竖直加速度是互相垂直的矢量，直接相加只适用于同方向；本例会把12.5 m/s²误算成17.5 m/s²，量纲检查不能识别。"
+          "text": "该说法不成立。"
         },
         {
           "label": "B",
-          "text": "数值代入：等高斜抛的总飞行时间包含上升和下降两段；只算上升时间会少一半水平位移，量纲仍是长度，必须用实际运动核对系数。"
-        },
-        {
-          "label": "C",
-          "text": "概念混淆：二次间距可以在相对加速度为正的时刻达到零的最小值，本卡明确给出反例；相对速度为零也是光滑内点极值的条件而非所有端点边界条件。"
-        },
-        {
-          "label": "D",
-          "text": "数值代入：拉力对两个物体的作用方向相反，是系统内力；整体列式再加一次拉力就重复计入作用，导致加速度偏大但量纲无误。"
+          "text": "该说法成立。"
         }
       ],
-      "correct_answer": "C",
-      "explanation": "二次间距可以在相对加速度为正的时刻达到零的最小值，本卡明确给出反例；相对速度为零也是光滑内点极值的条件而非所有端点边界条件。",
+      "correct_answer": "A",
+      "explanation": "二次间距可以在相对加速度为正的时刻达到零的最小值，本卡明确给出反例；相对速度为零也是光滑内点极值的条件而非所有端点边界条件。\n知识点条件：临界不是一条统一的万能等式。支持力或绳拉力的零值对应约束失效，最大静摩擦对应将要相对滑动，光滑时间区间内的最小间距对应相对速度为零。恰好接触时最小间距为零，但相对加速度可以非零；若最小值在阶段端点，还不能盲目要求相对速度为零。\n推导依据：先判断变化的是接触、绳松紧、滑动还是两物体相遇，再选择对应边界量。；圆周最高点列向心方向的合力，约束力到零是细绳保持绷紧的临界。；静摩擦临界用最大静摩擦，未到边界时应由平衡或动力学求实际摩擦力。；相撞问题写间距随时间的函数，在允许时间区间比较内点极小值与端点；不要额外强加相对加速度为零。\n卡片公式各自的适用条件（不是本题共同前提）：\n最高点约束力：细绳或内轨，最高点重力与约束力均指向圆心，负值说明此模型无法维持\n最大静摩擦力：仅用于即将滑动的最大静摩擦边界，通常静摩擦可以更小\n最小间距：a为正，初速度使间距缩小，顶点时刻位于光滑研究区间内\n内部最小间距时刻：相对速度从负值变到零，阶段内的光滑极小值",
       "error_type": "概念混淆",
       "judging": "teacher",
       "source_error_index": 1,
       "source_caught_by": "人工审核",
       "wrong_expr": null,
       "trap_test": null,
+      "level": "进阶",
+      "learning_scope": "高中",
+      "answer_evidence": {
+        "kind": "teacher",
+        "claim_source": "wrong",
+        "reference_only": true,
+        "reason": "概念、操作或无法建立完整定量证据，教师确认条件与结论。"
+      },
       "review": {
         "confidence": "medium",
-        "checks": {
-          "answer_unique": true,
-          "distractors_plausible": true,
-          "stem_clear": true,
-          "no_cross_segment": true
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": false,
+          "no_answer_leak_in_options": true
         },
-        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。"
       }
     },
     {
@@ -458,27 +720,19 @@
       "point_id": "met-06",
       "point_title": "极限检验与特殊值检验",
       "chapter": "第二十五章 · 解题方法与数学工具",
-      "stem": "【第二十五章 · 解题方法与数学工具 · 极限检验与特殊值检验】学生的错误做法：连接体质量误写成相减（错误表达式：a = F/(m1-m2)）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "stem": "在“极限检验与特殊值检验”的模型下，F（连接体沿运动方向的外合力）=10 N；m1（第一个物体质量）=2 kg；m2（第二个物体质量，可取零的理想极限）=3 kg。条件：共加速、光滑，第一物体质量严格为正。求光滑连接体共有加速度（a）。这些数值是设计示例。",
       "options": [
         {
           "label": "A",
-          "text": "概念混淆：电阻为正且可以相等是达到下界的必要条件；若某只电阻被限幅，代数下界未必可取，应回到可行区间检查端点。"
+          "text": "2 m/s²"
         },
         {
           "label": "B",
-          "text": "数值代入：两个物体共同加速时惯性质量应相加；相减不仅可能产生不合理负加速度，还会在两质量相等时造成无物理依据的除零。"
-        },
-        {
-          "label": "C",
-          "text": "概念混淆：绳可能松弛、弹性连接可以伸长、接触面也可能滑动；共有加速度来自具体约束而不是来自同时画在一张示意图上。"
-        },
-        {
-          "label": "D",
-          "text": "概念混淆：水平电场会使合恒力倾斜，细绳的稳定方向也随之改变；最低势能点应沿合恒力方向确定，不再位于纯重力的几何最下方。"
+          "text": "-10 m/s²"
         }
       ],
-      "correct_answer": "B",
-      "explanation": "两个物体共同加速时惯性质量应相加；相减不仅可能产生不合理负加速度，还会在两质量相等时造成无物理依据的除零。\n知识库校验证据：情境：连接体；代入错误式：F/(m1-m2)；校验参照值：2。",
+      "correct_answer": "A",
+      "explanation": "使用连接体一般加速度：F/(m1+m2)，代入得2 m/s²。另一结果来自F/(m1-m2)，算得-10 m/s²。\n两个物体共同加速时惯性质量应相加；相减不仅可能产生不合理负加速度，还会在两质量相等时造成无物理依据的除零。\n知识点条件：这种方法能发现符号、系数和函数方向错误，但不能替代推导，因为错误公式也可能在少数特殊值碰巧正确。必须保持模型的其余条件一致，避免质量为零造成除零、短路时忽略内阻、斜面接触消失等越界；无穷只能检查趋近趋势，不能把无穷当作普通有限数输入计算器。\n推导依据：选一组能凭物理直觉独立判断的极限或特殊值，先预测结论再代公式。；连接体让第二质量归零时保留第一质量，检验是否还原单物体加速度。；斜面倾角为零时检验沿面加速度是否归零；只在原接触约束允许时讨论直角端点。；外电阻逐渐增大，检查电流是否趋零，同时保持电动势和内阻不变；通过一般情形数值再防止特殊值碰巧掩盖错误。\n卡片公式各自的适用条件（不是本题共同前提）：\n连接体一般加速度：共加速、光滑，第一物体质量严格为正\n光滑斜面加速度：只受重力与支持力，斜面倾角从水平起算\n有限内阻电路电流：纯电阻外电路，内阻为正；开路通过外电阻增大的极限理解",
       "error_type": "数值代入",
       "judging": "auto",
       "source_error_index": 0,
@@ -489,15 +743,58 @@
         "expr": "F/(m1-m2)",
         "ref": 2
       },
+      "level": "进阶",
+      "learning_scope": "高中",
+      "answer_evidence": {
+        "kind": "numeric",
+        "scenario": "连接体",
+        "parameters": {
+          "F": 10,
+          "m1": 2,
+          "m2": 3,
+          "s": 2,
+          "W": 20
+        },
+        "target": "a",
+        "unit": "m/s^2",
+        "reference": 2,
+        "correct_proof": {
+          "expression": "F/(m1+m2)",
+          "formula": "连接体一般加速度",
+          "value": 2.0,
+          "when": "共加速、光滑，第一物体质量严格为正"
+        },
+        "distractor_expression": "F/(m1-m2)",
+        "distractor_value": -10.0,
+        "dimension_matches": true,
+        "independent_evaluation": true
+      },
       "review": {
         "confidence": "medium",
-        "checks": {
-          "answer_unique": true,
-          "distractors_plausible": true,
-          "stem_clear": true,
-          "no_cross_segment": true
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": true,
+          "no_answer_leak_in_options": true
         },
-        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。"
       }
     },
     {
@@ -505,42 +802,59 @@
       "point_id": "met-06",
       "point_title": "极限检验与特殊值检验",
       "chapter": "第二十五章 · 解题方法与数学工具",
-      "stem": "【第二十五章 · 解题方法与数学工具 · 极限检验与特殊值检验】学生的错误做法：几个特殊值通过就认定整个公式被证明。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "stem": "关于“极限检验与特殊值检验”，判断这一说法是否成立，并说明依据：\n几个特殊值通过就认定整个公式被证明。",
       "options": [
         {
           "label": "A",
-          "text": "概念混淆：不同函数可以在零值或某个角度上恰好相同；极限检验是反证和排错工具，仍须配合量纲、普通数值情形与物理推导进行确认。"
+          "text": "该说法成立。"
         },
         {
           "label": "B",
-          "text": "数值代入：拉力对两个物体的作用方向相反，是系统内力；整体列式再加一次拉力就重复计入作用，导致加速度偏大但量纲无误。"
-        },
-        {
-          "label": "C",
-          "text": "数值代入：水平与竖直加速度是互相垂直的矢量，直接相加只适用于同方向；本例会把12.5 m/s²误算成17.5 m/s²，量纲检查不能识别。"
-        },
-        {
-          "label": "D",
-          "text": "数值代入：等高斜抛的总飞行时间包含上升和下降两段；只算上升时间会少一半水平位移，量纲仍是长度，必须用实际运动核对系数。"
+          "text": "该说法不成立。"
         }
       ],
-      "correct_answer": "A",
-      "explanation": "不同函数可以在零值或某个角度上恰好相同；极限检验是反证和排错工具，仍须配合量纲、普通数值情形与物理推导进行确认。",
+      "correct_answer": "B",
+      "explanation": "不同函数可以在零值或某个角度上恰好相同；极限检验是反证和排错工具，仍须配合量纲、普通数值情形与物理推导进行确认。\n知识点条件：这种方法能发现符号、系数和函数方向错误，但不能替代推导，因为错误公式也可能在少数特殊值碰巧正确。必须保持模型的其余条件一致，避免质量为零造成除零、短路时忽略内阻、斜面接触消失等越界；无穷只能检查趋近趋势，不能把无穷当作普通有限数输入计算器。\n推导依据：选一组能凭物理直觉独立判断的极限或特殊值，先预测结论再代公式。；连接体让第二质量归零时保留第一质量，检验是否还原单物体加速度。；斜面倾角为零时检验沿面加速度是否归零；只在原接触约束允许时讨论直角端点。；外电阻逐渐增大，检查电流是否趋零，同时保持电动势和内阻不变；通过一般情形数值再防止特殊值碰巧掩盖错误。\n卡片公式各自的适用条件（不是本题共同前提）：\n连接体一般加速度：共加速、光滑，第一物体质量严格为正\n光滑斜面加速度：只受重力与支持力，斜面倾角从水平起算\n有限内阻电路电流：纯电阻外电路，内阻为正；开路通过外电阻增大的极限理解",
       "error_type": "概念混淆",
       "judging": "teacher",
       "source_error_index": 1,
       "source_caught_by": "人工审核",
       "wrong_expr": null,
       "trap_test": null,
+      "level": "进阶",
+      "learning_scope": "高中",
+      "answer_evidence": {
+        "kind": "teacher",
+        "claim_source": "wrong",
+        "reference_only": true,
+        "reason": "概念、操作或无法建立完整定量证据，教师确认条件与结论。"
+      },
       "review": {
         "confidence": "medium",
-        "checks": {
-          "answer_unique": true,
-          "distractors_plausible": true,
-          "stem_clear": true,
-          "no_cross_segment": true
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": false,
+          "no_answer_leak_in_options": true
         },
-        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。"
       }
     },
     {
@@ -548,27 +862,19 @@
       "point_id": "met-07",
       "point_title": "质点模型与参考系",
       "chapter": "第二十五章 · 解题方法与数学工具",
-      "stem": "【第二十五章 · 解题方法与数学工具 · 质点模型与参考系】学生的错误做法：换参考系时仍使用地面坐标，忘记减参考原点坐标（错误表达式：x = xo）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "stem": "在“质点模型与参考系”的模型下，xo（地面系物体坐标）=10 m；xr（地面系参考原点坐标）=3 m。条件：同一时刻在同向的一维坐标轴上，xo为物体坐标，xr为参考点坐标；x保留正负。。求相对参考系原点坐标（x）。这些数值是设计示例。",
       "options": [
         {
           "label": "A",
-          "text": "概念混淆：绳可能松弛、弹性连接可以伸长、接触面也可能滑动；共有加速度来自具体约束而不是来自同时画在一张示意图上。"
+          "text": "7 m"
         },
         {
           "label": "B",
-          "text": "概念混淆：水平电场会使合恒力倾斜，细绳的稳定方向也随之改变；最低势能点应沿合恒力方向确定，不再位于纯重力的几何最下方。"
-        },
-        {
-          "label": "C",
-          "text": "概念混淆：电阻为正且可以相等是达到下界的必要条件；若某只电阻被限幅，代数下界未必可取，应回到可行区间检查端点。"
-        },
-        {
-          "label": "D",
-          "text": "数值代入：地面坐标10 m而参考原点在3 m，相对坐标是7 m；位置变化须同时明确原点，不能把坐标当成绝对属性。"
+          "text": "10 m"
         }
       ],
-      "correct_answer": "D",
-      "explanation": "地面坐标10 m而参考原点在3 m，相对坐标是7 m；位置变化须同时明确原点，不能把坐标当成绝对属性。\n知识库校验证据：情境：同向移动；代入错误式：xo；校验参照值：7。",
+      "correct_answer": "A",
+      "explanation": "使用同向坐标轴下的相对位置：xo-xr，代入得7 m。另一结果来自xo，算得10 m。\n地面坐标10 m而参考原点在3 m，相对坐标是7 m；位置变化须同时明确原点，不能把坐标当成绝对属性。\n知识点条件：能否视为质点取决于研究问题：研究地球绕太阳的位置运动可作质点近似，研究地球自转或物体转动姿态不能这样处理。质点并非质量为零，也不是所有小物体都能忽略大小。参考系可以选地面、车厢或其他对象，但要说明；在经典低速且坐标轴同向的平动参考系中，位置和速度分别作差。加速参考系的动力学分析不能直接沿用惯性系受力规则。\n推导依据：位置10-3=7 m。；速度5-2=3 m/s；两者都相对于车厢原点。；能否视为质点取决于研究问题：研究地球绕太阳的位置运动可作质点近似，研究地球自转或物体转动姿态不能这样处理。\n卡片公式各自的适用条件（不是本题共同前提）：\n同向坐标轴下的相对位置：同一时刻在同向的一维坐标轴上，xo为物体坐标，xr为参考点坐标；x保留正负。\n相对平动速度：经典低速、同向坐标轴的平动参考系。",
       "error_type": "数值代入",
       "judging": "auto",
       "source_error_index": 0,
@@ -579,15 +885,60 @@
         "expr": "xo",
         "ref": 7
       },
+      "level": "基础",
+      "learning_scope": "高中",
+      "answer_evidence": {
+        "kind": "numeric",
+        "scenario": "同向移动",
+        "parameters": {
+          "xo": 10,
+          "xr": 3,
+          "x": 7,
+          "vo": 5,
+          "vr": 2,
+          "v": 3,
+          "d": 7
+        },
+        "target": "x",
+        "unit": "m",
+        "reference": 7,
+        "correct_proof": {
+          "expression": "xo-xr",
+          "formula": "同向坐标轴下的相对位置",
+          "value": 7,
+          "when": "同一时刻在同向的一维坐标轴上，xo为物体坐标，xr为参考点坐标；x保留正负。"
+        },
+        "distractor_expression": "xo",
+        "distractor_value": 10.0,
+        "dimension_matches": true,
+        "independent_evaluation": true
+      },
       "review": {
         "confidence": "medium",
-        "checks": {
-          "answer_unique": true,
-          "distractors_plausible": true,
-          "stem_clear": true,
-          "no_cross_segment": true
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": true,
+          "no_answer_leak_in_options": true
         },
-        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。"
       }
     },
     {
@@ -595,214 +946,2794 @@
       "point_id": "met-07",
       "point_title": "质点模型与参考系",
       "chapter": "第二十五章 · 解题方法与数学工具",
-      "stem": "【第二十五章 · 解题方法与数学工具 · 质点模型与参考系】学生的错误做法：地球很大所以任何问题都不能作质点，或者小物体永远可以。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "stem": "关于“质点模型与参考系”，判断这一说法是否成立，并说明依据：\n能否把物体当质点取决于尺寸和形状是否影响当前研究问题。",
       "options": [
         {
           "label": "A",
-          "text": "数值代入：水平与竖直加速度是互相垂直的矢量，直接相加只适用于同方向；本例会把12.5 m/s²误算成17.5 m/s²，量纲检查不能识别。"
+          "text": "该说法不成立。"
         },
         {
           "label": "B",
-          "text": "数值代入：等高斜抛的总飞行时间包含上升和下降两段；只算上升时间会少一半水平位移，量纲仍是长度，必须用实际运动核对系数。"
-        },
-        {
-          "label": "C",
-          "text": "概念混淆：大小是否影响所研究问题才是标准，轨道位置与转动姿态要求不同；模型必须保留质量并说明忽略的几何信息。"
-        },
-        {
-          "label": "D",
-          "text": "数值代入：拉力对两个物体的作用方向相反，是系统内力；整体列式再加一次拉力就重复计入作用，导致加速度偏大但量纲无误。"
+          "text": "该说法成立。"
         }
       ],
-      "correct_answer": "C",
-      "explanation": "大小是否影响所研究问题才是标准，轨道位置与转动姿态要求不同；模型必须保留质量并说明忽略的几何信息。",
+      "correct_answer": "B",
+      "explanation": "大小是否影响所研究问题才是标准，轨道位置与转动姿态要求不同；模型必须保留质量并说明忽略的几何信息。\n知识点条件：能否视为质点取决于研究问题：研究地球绕太阳的位置运动可作质点近似，研究地球自转或物体转动姿态不能这样处理。质点并非质量为零，也不是所有小物体都能忽略大小。参考系可以选地面、车厢或其他对象，但要说明；在经典低速且坐标轴同向的平动参考系中，位置和速度分别作差。加速参考系的动力学分析不能直接沿用惯性系受力规则。\n推导依据：位置10-3=7 m。；速度5-2=3 m/s；两者都相对于车厢原点。；能否视为质点取决于研究问题：研究地球绕太阳的位置运动可作质点近似，研究地球自转或物体转动姿态不能这样处理。\n卡片公式各自的适用条件（不是本题共同前提）：\n同向坐标轴下的相对位置：同一时刻在同向的一维坐标轴上，xo为物体坐标，xr为参考点坐标；x保留正负。\n相对平动速度：经典低速、同向坐标轴的平动参考系。",
       "error_type": "概念混淆",
       "judging": "teacher",
       "source_error_index": 1,
       "source_caught_by": "人工审核",
       "wrong_expr": null,
       "trap_test": null,
+      "level": "基础",
+      "learning_scope": "高中",
+      "answer_evidence": {
+        "kind": "teacher",
+        "claim_source": "执行方明确命题",
+        "reference_only": true,
+        "reason": "概念、操作或无法建立完整定量证据，教师确认条件与结论。"
+      },
       "review": {
         "confidence": "medium",
-        "checks": {
-          "answer_unique": true,
-          "distractors_plausible": true,
-          "stem_clear": true,
-          "no_cross_segment": true
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": false,
+          "no_answer_leak_in_options": true
         },
-        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。"
       }
     }
   ],
   "skipped": [],
   "source_records": {
     "diagnostic-met-01-1": {
-      "error": {
-        "wrong": "把轻绳拉力当成系统的另一份外力",
-        "wrong_expr": "a = (F+T)/(m1+m2)",
-        "why": "拉力对两个物体的作用方向相反，是系统内力；整体列式再加一次拉力就重复计入作用，导致加速度偏大但量纲无误。",
-        "caught_by": "数值代入",
-        "trap_test": {
-          "scenario": "共加速",
-          "expr": "(F+T)/(m1+m2)",
-          "ref": 2
-        }
+      "point": {
+        "id": "met-01",
+        "title": "整体法与隔离法（连接体）",
+        "level": "进阶",
+        "definition": "整体法把多个物体作为研究系统以消去内部作用，隔离法再研究其中一个物体求内力。共有加速度时 a = F/(m1+m2)，不共有时应分别累加质量乘各自加速度。",
+        "meaning": "研究对象决定哪些力属于内力，但不会把不同物体的加速度自动变成相同。理想轻绳绷紧、刚性连接或无相对滑动等约束才可能给出共有加速度；遇到滑块、可伸长绳或分离阶段，要用同一惯性系中的系统牛顿第二定律，不能直接把总质量乘某个物体的加速度。",
+        "symbols": {
+          "m1": {
+            "unit": "kg",
+            "desc": "被外力直接拉动的物体质量"
+          },
+          "m2": {
+            "unit": "kg",
+            "desc": "另一个物体质量"
+          },
+          "F": {
+            "unit": "N",
+            "desc": "沿所选方向的系统外合力"
+          },
+          "a": {
+            "unit": "m/s^2",
+            "desc": "两个物体共有的加速度"
+          },
+          "a1": {
+            "unit": "m/s^2",
+            "desc": "第一个物体的加速度分量"
+          },
+          "a2": {
+            "unit": "m/s^2",
+            "desc": "第二个物体的加速度分量"
+          },
+          "T": {
+            "unit": "N",
+            "desc": "轻绳拉力"
+          },
+          "W": {
+            "unit": "J",
+            "desc": "外合力做功"
+          },
+          "s": {
+            "unit": "m",
+            "desc": "共有位移"
+          }
+        },
+        "scenarios": {
+          "共加速": {
+            "m1": 2,
+            "m2": 3,
+            "F": 10,
+            "a": 2,
+            "T": 6,
+            "a1": 2,
+            "a2": 2,
+            "W": 20,
+            "s": 2
+          },
+          "不同加速": {
+            "m1": 2,
+            "m2": 3,
+            "F": 8,
+            "a1": 1,
+            "a2": 2
+          }
+        },
+        "formulas": [
+          {
+            "name": "共有加速度",
+            "expr": "a = F/(m1+m2)",
+            "when": "理想轻绳绷紧，两个物体沿同一直线具有相同加速度",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "共加速",
+                "ref": 2,
+                "note": "10 N外力推动总质量5 kg，加速度2 m/s²"
+              },
+              {
+                "type": "scan",
+                "scenario": "共加速",
+                "var": "m2",
+                "lo": 0,
+                "hi": 10,
+                "n": 17,
+                "note": "第二物体质量趋零时回到单个物体"
+              },
+              {
+                "type": "consistency",
+                "scenario": "共加速",
+                "with": "met-01|共有加速度",
+                "with_expr": "(F-T)/m1",
+                "target": "两个物体共有的加速度",
+                "note": "本公式直接求a；参考端显式关系为(F-T)/m1。两端使用同一情境和阶段，只核对该关系；with字段仅定位来源，不代表调用另一条被覆盖的公式。",
+                "verification_kind": "独立关系核对"
+              }
+            ]
+          },
+          {
+            "name": "隔离后的绳拉力",
+            "expr": "T = m2*a",
+            "when": "第二物体沿所选方向仅受绳拉力",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "共加速",
+                "ref": 6,
+                "note": "第二物体质量3 kg、加速度2 m/s²，拉力6 N"
+              }
+            ]
+          },
+          {
+            "name": "不同加速度的系统外力",
+            "expr": "F = m1*a1+m2*a2",
+            "when": "同一惯性系、质量不变；所有量均为同方向分量",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "不同加速",
+                "ref": 8,
+                "note": "两个物体动量变化率分别为2 N和6 N，总外力8 N"
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "先列出系统边界，把物体间成对作用力从系统外力表中消去。",
+          "检查绳长、接触和滑动条件，只有确证共有加速度才能提出总质量乘该加速度。",
+          "整体算共有加速度，再隔离一个物体求绳拉力或接触力。",
+          "若约束失效或物体加速度不同，分别写质量乘各自加速度，再求和，而不是强行套整体简式。"
+        ],
+        "errors": [
+          {
+            "wrong": "把轻绳拉力当成系统的另一份外力",
+            "wrong_expr": "a = (F+T)/(m1+m2)",
+            "why": "拉力对两个物体的作用方向相反，是系统内力；整体列式再加一次拉力就重复计入作用，导致加速度偏大但量纲无误。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "共加速",
+              "expr": "(F+T)/(m1+m2)",
+              "ref": 2
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "任何连接体都把两个物体的加速度设成相等",
+            "why": "绳可能松弛、弹性连接可以伸长、接触面也可能滑动；共有加速度来自具体约束而不是来自同时画在一张示意图上。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "光滑水平面上2 kg和3 kg两物体由轻绳连接，用10 N水平力拉2 kg物体，求加速度与绳拉力。",
+          "solution": [
+            "整体所受外力10 N，总质量5 kg，得到共有加速度2 m/s²。",
+            "隔离3 kg物体，其水平力仅为绳拉力，拉力3×2=6 N。"
+          ],
+          "answer": "共有加速度2 m/s²，轻绳拉力6 N。"
+        },
+        "prereq": [
+          "dyn-05",
+          "dyn-06"
+        ],
+        "next": [
+          "mdl-33",
+          "mdl-02"
+        ],
+        "tags": [
+          "整体法",
+          "隔离法",
+          "连接体",
+          "系统牛顿第二定律"
+        ],
+        "learning_scope": "高中"
       },
-      "title": "整体法与隔离法（连接体）",
+      "error_index": 0,
       "chapter": "第二十五章 · 解题方法与数学工具"
     },
     "diagnostic-met-01-2": {
-      "error": {
-        "wrong": "任何连接体都把两个物体的加速度设成相等",
-        "why": "绳可能松弛、弹性连接可以伸长、接触面也可能滑动；共有加速度来自具体约束而不是来自同时画在一张示意图上。",
-        "caught_by": "人工审核"
+      "point": {
+        "id": "met-01",
+        "title": "整体法与隔离法（连接体）",
+        "level": "进阶",
+        "definition": "整体法把多个物体作为研究系统以消去内部作用，隔离法再研究其中一个物体求内力。共有加速度时 a = F/(m1+m2)，不共有时应分别累加质量乘各自加速度。",
+        "meaning": "研究对象决定哪些力属于内力，但不会把不同物体的加速度自动变成相同。理想轻绳绷紧、刚性连接或无相对滑动等约束才可能给出共有加速度；遇到滑块、可伸长绳或分离阶段，要用同一惯性系中的系统牛顿第二定律，不能直接把总质量乘某个物体的加速度。",
+        "symbols": {
+          "m1": {
+            "unit": "kg",
+            "desc": "被外力直接拉动的物体质量"
+          },
+          "m2": {
+            "unit": "kg",
+            "desc": "另一个物体质量"
+          },
+          "F": {
+            "unit": "N",
+            "desc": "沿所选方向的系统外合力"
+          },
+          "a": {
+            "unit": "m/s^2",
+            "desc": "两个物体共有的加速度"
+          },
+          "a1": {
+            "unit": "m/s^2",
+            "desc": "第一个物体的加速度分量"
+          },
+          "a2": {
+            "unit": "m/s^2",
+            "desc": "第二个物体的加速度分量"
+          },
+          "T": {
+            "unit": "N",
+            "desc": "轻绳拉力"
+          },
+          "W": {
+            "unit": "J",
+            "desc": "外合力做功"
+          },
+          "s": {
+            "unit": "m",
+            "desc": "共有位移"
+          }
+        },
+        "scenarios": {
+          "共加速": {
+            "m1": 2,
+            "m2": 3,
+            "F": 10,
+            "a": 2,
+            "T": 6,
+            "a1": 2,
+            "a2": 2,
+            "W": 20,
+            "s": 2
+          },
+          "不同加速": {
+            "m1": 2,
+            "m2": 3,
+            "F": 8,
+            "a1": 1,
+            "a2": 2
+          }
+        },
+        "formulas": [
+          {
+            "name": "共有加速度",
+            "expr": "a = F/(m1+m2)",
+            "when": "理想轻绳绷紧，两个物体沿同一直线具有相同加速度",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "共加速",
+                "ref": 2,
+                "note": "10 N外力推动总质量5 kg，加速度2 m/s²"
+              },
+              {
+                "type": "scan",
+                "scenario": "共加速",
+                "var": "m2",
+                "lo": 0,
+                "hi": 10,
+                "n": 17,
+                "note": "第二物体质量趋零时回到单个物体"
+              },
+              {
+                "type": "consistency",
+                "scenario": "共加速",
+                "with": "met-01|共有加速度",
+                "with_expr": "(F-T)/m1",
+                "target": "两个物体共有的加速度",
+                "note": "本公式直接求a；参考端显式关系为(F-T)/m1。两端使用同一情境和阶段，只核对该关系；with字段仅定位来源，不代表调用另一条被覆盖的公式。",
+                "verification_kind": "独立关系核对"
+              }
+            ]
+          },
+          {
+            "name": "隔离后的绳拉力",
+            "expr": "T = m2*a",
+            "when": "第二物体沿所选方向仅受绳拉力",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "共加速",
+                "ref": 6,
+                "note": "第二物体质量3 kg、加速度2 m/s²，拉力6 N"
+              }
+            ]
+          },
+          {
+            "name": "不同加速度的系统外力",
+            "expr": "F = m1*a1+m2*a2",
+            "when": "同一惯性系、质量不变；所有量均为同方向分量",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "不同加速",
+                "ref": 8,
+                "note": "两个物体动量变化率分别为2 N和6 N，总外力8 N"
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "先列出系统边界，把物体间成对作用力从系统外力表中消去。",
+          "检查绳长、接触和滑动条件，只有确证共有加速度才能提出总质量乘该加速度。",
+          "整体算共有加速度，再隔离一个物体求绳拉力或接触力。",
+          "若约束失效或物体加速度不同，分别写质量乘各自加速度，再求和，而不是强行套整体简式。"
+        ],
+        "errors": [
+          {
+            "wrong": "把轻绳拉力当成系统的另一份外力",
+            "wrong_expr": "a = (F+T)/(m1+m2)",
+            "why": "拉力对两个物体的作用方向相反，是系统内力；整体列式再加一次拉力就重复计入作用，导致加速度偏大但量纲无误。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "共加速",
+              "expr": "(F+T)/(m1+m2)",
+              "ref": 2
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "任何连接体都把两个物体的加速度设成相等",
+            "why": "绳可能松弛、弹性连接可以伸长、接触面也可能滑动；共有加速度来自具体约束而不是来自同时画在一张示意图上。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "光滑水平面上2 kg和3 kg两物体由轻绳连接，用10 N水平力拉2 kg物体，求加速度与绳拉力。",
+          "solution": [
+            "整体所受外力10 N，总质量5 kg，得到共有加速度2 m/s²。",
+            "隔离3 kg物体，其水平力仅为绳拉力，拉力3×2=6 N。"
+          ],
+          "answer": "共有加速度2 m/s²，轻绳拉力6 N。"
+        },
+        "prereq": [
+          "dyn-05",
+          "dyn-06"
+        ],
+        "next": [
+          "mdl-33",
+          "mdl-02"
+        ],
+        "tags": [
+          "整体法",
+          "隔离法",
+          "连接体",
+          "系统牛顿第二定律"
+        ],
+        "learning_scope": "高中"
       },
-      "title": "整体法与隔离法（连接体）",
+      "error_index": 1,
       "chapter": "第二十五章 · 解题方法与数学工具"
     },
     "diagnostic-met-02-1": {
-      "error": {
-        "wrong": "把等效加速度大小写成两分量直接相加",
-        "wrong_expr": "g_e = g+abs(q*E/m)",
-        "why": "水平与竖直加速度是互相垂直的矢量，直接相加只适用于同方向；本例会把12.5 m/s²误算成17.5 m/s²，量纲检查不能识别。",
-        "caught_by": "数值代入",
-        "trap_test": {
-          "scenario": "基准",
-          "expr": "g+abs(q*E/m)",
-          "ref": 12.5
-        }
+      "point": {
+        "id": "met-02",
+        "title": "等效重力场（复合场等效）",
+        "level": "拓展",
+        "definition": "均匀重力场与匀强电场同时作用于质量、电荷固定的物体时，可把两恒力的矢量和除以质量，定义等效重力加速度。水平电场情形 g_e = sqrt(g^2+(q*E/m)^2)。",
+        "meaning": "等效场方向取合恒力方向，而不是沿几何竖直。等效最低点是沿合恒力方向的圆周点，等效最高点在反方向；圆周运动、摆动及类抛体应改用这一方向分析。电场必须均匀、电荷不能改变，磁场的速度相关力也不能简单当作固定等效重力；倾角公式按电荷符号决定左右。",
+        "symbols": {
+          "g_e": {
+            "unit": "m/s^2",
+            "desc": "等效重力加速度大小"
+          },
+          "g": {
+            "unit": "m/s^2",
+            "desc": "当地重力加速度，取10"
+          },
+          "q": {
+            "unit": "C",
+            "desc": "物体电荷量，含正负号"
+          },
+          "E": {
+            "unit": "V/m",
+            "desc": "水平方向电场强度，正向取向右"
+          },
+          "m": {
+            "unit": "kg",
+            "desc": "物体质量"
+          },
+          "theta": {
+            "unit": "rad",
+            "desc": "合恒力偏离竖直向下的带符号夹角"
+          },
+          "r": {
+            "unit": "m",
+            "desc": "竖直于等效场的圆周半径"
+          },
+          "v_c": {
+            "unit": "m/s",
+            "desc": "细绳模型等效最高点的临界速度"
+          },
+          "l": {
+            "unit": "m",
+            "desc": "小角度带电摆的摆长"
+          },
+          "T": {
+            "unit": "s",
+            "desc": "绕稳定方向小角度摆动的周期"
+          }
+        },
+        "scenarios": {
+          "基准": {
+            "g": 10,
+            "q": 1,
+            "E": 15,
+            "m": 2,
+            "g_e": 12.5,
+            "theta": 0.6435011087932844,
+            "r": 2,
+            "l": 0.125
+          }
+        },
+        "formulas": [
+          {
+            "name": "等效加速度",
+            "expr": "g_e = sqrt(g^2+(q*E/m)^2)",
+            "when": "电场水平且均匀，质量与电荷固定",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "基准",
+                "ref": 12.5,
+                "note": "竖直加速度10，水平加速度7.5，按三四五比例合成为12.5 m/s²"
+              },
+              {
+                "type": "scan",
+                "scenario": "基准",
+                "var": "E",
+                "lo": -30,
+                "hi": 30,
+                "n": 17,
+                "note": "包含零电场和场向反转，等效加速度大小非负"
+              },
+              {
+                "type": "consistency",
+                "scenario": "基准",
+                "with": "met-02|等效加速度",
+                "with_expr": "g/cos(theta)",
+                "target": "等效重力加速度大小",
+                "note": "本公式直接求g_e；参考端显式关系为g/cos(theta)。两端使用同一情境和阶段，只核对该关系；with字段仅定位来源，不代表调用另一条被覆盖的公式。",
+                "verification_kind": "独立关系核对"
+              }
+            ]
+          },
+          {
+            "name": "等效场偏角",
+            "expr": "theta = atan(q*E/(m*g))",
+            "when": "重力向下、电场水平，取带符号的左右偏角",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "基准",
+                "ref": 0.6435011087932844,
+                "note": "水平恒力15 N、重力20 N，偏角为反正切3/4"
+              }
+            ]
+          },
+          {
+            "name": "等效最高点临界速度",
+            "expr": "v_c = sqrt(g_e*r)",
+            "when": "细绳拉力在等效最高点恰好为零；不是任意圆周约束模型",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "基准",
+                "ref": 5,
+                "note": "合恒力恰好提供向心力，速度平方为12.5×2=25"
+              }
+            ]
+          },
+          {
+            "name": "等效单摆的小振幅周期",
+            "expr": "T = 2*pi*sqrt(l/g_e)",
+            "when": "轻绳单摆绕等效最低点小角度摆动，忽略阻力",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "基准",
+                "ref": 0.6283185307179586,
+                "note": "摆长与等效加速度比为0.01 s²，周期为0.2π s"
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "先分别画重力和电场力，注意电场力方向随电荷正负反转。",
+          "由合恒力定义等效加速度，水平场用直角三角形求大小和偏角。",
+          "旋转分析坐标轴，让等效竖直沿合恒力，而不改变真实轨迹的几何位置。",
+          "细绳圆周的临界最高点和单摆平衡最低点均按等效方向定位，再套相应有条件的公式。"
+        ],
+        "errors": [
+          {
+            "wrong": "把等效加速度大小写成两分量直接相加",
+            "wrong_expr": "g_e = g+abs(q*E/m)",
+            "why": "水平与竖直加速度是互相垂直的矢量，直接相加只适用于同方向；本例会把12.5 m/s²误算成17.5 m/s²，量纲检查不能识别。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "基准",
+              "expr": "g+abs(q*E/m)",
+              "ref": 12.5
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "把几何最低点直接当成等效最低点",
+            "why": "水平电场会使合恒力倾斜，细绳的稳定方向也随之改变；最低势能点应沿合恒力方向确定，不再位于纯重力的几何最下方。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "质量2 kg、带正电1 C的理想小球处于向右15 V/m匀强电场中，取重力加速度10 m/s²，求等效场及半径2 m圆周的临界最高点速度。",
+          "solution": [
+            "重力20 N、电场力15 N，合力25 N；等效加速度12.5 m/s²，方向向右偏离竖直约36.87°。",
+            "以合力反向确定等效最高点；细绳拉力恰为零时速度平方为12.5×2=25，临界速度5 m/s。"
+          ],
+          "answer": "等效加速度12.5 m/s²，向右偏36.87°；等效最高点临界速度5 m/s。"
+        },
+        "prereq": [
+          "ele-05",
+          "cir-04"
+        ],
+        "next": [
+          "mdl-11",
+          "mdl-21"
+        ],
+        "tags": [
+          "等效法",
+          "等效重力场",
+          "复合场",
+          "等效最低点"
+        ],
+        "learning_scope": "高中"
       },
-      "title": "等效重力场（复合场等效）",
+      "error_index": 0,
       "chapter": "第二十五章 · 解题方法与数学工具"
     },
     "diagnostic-met-02-2": {
-      "error": {
-        "wrong": "把几何最低点直接当成等效最低点",
-        "why": "水平电场会使合恒力倾斜，细绳的稳定方向也随之改变；最低势能点应沿合恒力方向确定，不再位于纯重力的几何最下方。",
-        "caught_by": "人工审核"
+      "point": {
+        "id": "met-02",
+        "title": "等效重力场（复合场等效）",
+        "level": "拓展",
+        "definition": "均匀重力场与匀强电场同时作用于质量、电荷固定的物体时，可把两恒力的矢量和除以质量，定义等效重力加速度。水平电场情形 g_e = sqrt(g^2+(q*E/m)^2)。",
+        "meaning": "等效场方向取合恒力方向，而不是沿几何竖直。等效最低点是沿合恒力方向的圆周点，等效最高点在反方向；圆周运动、摆动及类抛体应改用这一方向分析。电场必须均匀、电荷不能改变，磁场的速度相关力也不能简单当作固定等效重力；倾角公式按电荷符号决定左右。",
+        "symbols": {
+          "g_e": {
+            "unit": "m/s^2",
+            "desc": "等效重力加速度大小"
+          },
+          "g": {
+            "unit": "m/s^2",
+            "desc": "当地重力加速度，取10"
+          },
+          "q": {
+            "unit": "C",
+            "desc": "物体电荷量，含正负号"
+          },
+          "E": {
+            "unit": "V/m",
+            "desc": "水平方向电场强度，正向取向右"
+          },
+          "m": {
+            "unit": "kg",
+            "desc": "物体质量"
+          },
+          "theta": {
+            "unit": "rad",
+            "desc": "合恒力偏离竖直向下的带符号夹角"
+          },
+          "r": {
+            "unit": "m",
+            "desc": "竖直于等效场的圆周半径"
+          },
+          "v_c": {
+            "unit": "m/s",
+            "desc": "细绳模型等效最高点的临界速度"
+          },
+          "l": {
+            "unit": "m",
+            "desc": "小角度带电摆的摆长"
+          },
+          "T": {
+            "unit": "s",
+            "desc": "绕稳定方向小角度摆动的周期"
+          }
+        },
+        "scenarios": {
+          "基准": {
+            "g": 10,
+            "q": 1,
+            "E": 15,
+            "m": 2,
+            "g_e": 12.5,
+            "theta": 0.6435011087932844,
+            "r": 2,
+            "l": 0.125
+          }
+        },
+        "formulas": [
+          {
+            "name": "等效加速度",
+            "expr": "g_e = sqrt(g^2+(q*E/m)^2)",
+            "when": "电场水平且均匀，质量与电荷固定",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "基准",
+                "ref": 12.5,
+                "note": "竖直加速度10，水平加速度7.5，按三四五比例合成为12.5 m/s²"
+              },
+              {
+                "type": "scan",
+                "scenario": "基准",
+                "var": "E",
+                "lo": -30,
+                "hi": 30,
+                "n": 17,
+                "note": "包含零电场和场向反转，等效加速度大小非负"
+              },
+              {
+                "type": "consistency",
+                "scenario": "基准",
+                "with": "met-02|等效加速度",
+                "with_expr": "g/cos(theta)",
+                "target": "等效重力加速度大小",
+                "note": "本公式直接求g_e；参考端显式关系为g/cos(theta)。两端使用同一情境和阶段，只核对该关系；with字段仅定位来源，不代表调用另一条被覆盖的公式。",
+                "verification_kind": "独立关系核对"
+              }
+            ]
+          },
+          {
+            "name": "等效场偏角",
+            "expr": "theta = atan(q*E/(m*g))",
+            "when": "重力向下、电场水平，取带符号的左右偏角",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "基准",
+                "ref": 0.6435011087932844,
+                "note": "水平恒力15 N、重力20 N，偏角为反正切3/4"
+              }
+            ]
+          },
+          {
+            "name": "等效最高点临界速度",
+            "expr": "v_c = sqrt(g_e*r)",
+            "when": "细绳拉力在等效最高点恰好为零；不是任意圆周约束模型",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "基准",
+                "ref": 5,
+                "note": "合恒力恰好提供向心力，速度平方为12.5×2=25"
+              }
+            ]
+          },
+          {
+            "name": "等效单摆的小振幅周期",
+            "expr": "T = 2*pi*sqrt(l/g_e)",
+            "when": "轻绳单摆绕等效最低点小角度摆动，忽略阻力",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "基准",
+                "ref": 0.6283185307179586,
+                "note": "摆长与等效加速度比为0.01 s²，周期为0.2π s"
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "先分别画重力和电场力，注意电场力方向随电荷正负反转。",
+          "由合恒力定义等效加速度，水平场用直角三角形求大小和偏角。",
+          "旋转分析坐标轴，让等效竖直沿合恒力，而不改变真实轨迹的几何位置。",
+          "细绳圆周的临界最高点和单摆平衡最低点均按等效方向定位，再套相应有条件的公式。"
+        ],
+        "errors": [
+          {
+            "wrong": "把等效加速度大小写成两分量直接相加",
+            "wrong_expr": "g_e = g+abs(q*E/m)",
+            "why": "水平与竖直加速度是互相垂直的矢量，直接相加只适用于同方向；本例会把12.5 m/s²误算成17.5 m/s²，量纲检查不能识别。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "基准",
+              "expr": "g+abs(q*E/m)",
+              "ref": 12.5
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "把几何最低点直接当成等效最低点",
+            "why": "水平电场会使合恒力倾斜，细绳的稳定方向也随之改变；最低势能点应沿合恒力方向确定，不再位于纯重力的几何最下方。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "质量2 kg、带正电1 C的理想小球处于向右15 V/m匀强电场中，取重力加速度10 m/s²，求等效场及半径2 m圆周的临界最高点速度。",
+          "solution": [
+            "重力20 N、电场力15 N，合力25 N；等效加速度12.5 m/s²，方向向右偏离竖直约36.87°。",
+            "以合力反向确定等效最高点；细绳拉力恰为零时速度平方为12.5×2=25，临界速度5 m/s。"
+          ],
+          "answer": "等效加速度12.5 m/s²，向右偏36.87°；等效最高点临界速度5 m/s。"
+        },
+        "prereq": [
+          "ele-05",
+          "cir-04"
+        ],
+        "next": [
+          "mdl-11",
+          "mdl-21"
+        ],
+        "tags": [
+          "等效法",
+          "等效重力场",
+          "复合场",
+          "等效最低点"
+        ],
+        "learning_scope": "高中"
       },
-      "title": "等效重力场（复合场等效）",
+      "error_index": 1,
       "chapter": "第二十五章 · 解题方法与数学工具"
     },
     "diagnostic-met-03-1": {
-      "error": {
-        "wrong": "斜抛最大射程漏除重力加速度并误保留二分之一",
-        "wrong_expr": "s_max = v_0^2/(2*g)",
-        "why": "等高斜抛的总飞行时间包含上升和下降两段；只算上升时间会少一半水平位移，量纲仍是长度，必须用实际运动核对系数。",
-        "caught_by": "数值代入",
-        "trap_test": {
-          "scenario": "斜抛",
-          "expr": "v_0^2/(2*g)",
-          "ref": 10
-        }
+      "point": {
+        "id": "met-03",
+        "title": "极值法：二次函数、均值不等式与几何法",
+        "level": "进阶",
+        "definition": "极值法把物理约束化成可分析的函数或几何图形。平地斜抛最大射程为 s_max = v_0^2/g；固定电阻乘积时，用均值不等式求串联总电阻的最小值。",
+        "meaning": "求极值前必须先列可行范围，不能只对代数式求导而忘记题设。二次函数常通过配方找顶点，均值不等式必须满足正数和等号条件，几何法则用长度、角度或速度矢量圆找边界。本卡给三个独立可手算场景，并把斜抛正弦上界和极值条件连回物理运动过程。",
+        "symbols": {
+          "v_0": {
+            "unit": "m/s",
+            "desc": "平地斜抛初速度大小"
+          },
+          "g": {
+            "unit": "m/s^2",
+            "desc": "重力加速度，取10"
+          },
+          "theta": {
+            "unit": "rad",
+            "desc": "斜抛仰角"
+          },
+          "s_max": {
+            "unit": "m",
+            "desc": "平地斜抛最大射程"
+          },
+          "R1": {
+            "unit": "ohm",
+            "desc": "第一只可调电阻"
+          },
+          "R2": {
+            "unit": "ohm",
+            "desc": "第二只可调电阻"
+          },
+          "K": {
+            "unit": "ohm^2",
+            "desc": "两只正电阻固定的乘积"
+          },
+          "R_min": {
+            "unit": "ohm",
+            "desc": "串联总电阻的最小值"
+          },
+          "D": {
+            "unit": "m",
+            "desc": "固定观察点到圆心的距离"
+          },
+          "l": {
+            "unit": "m",
+            "desc": "转动物体的圆周半径"
+          },
+          "r_max": {
+            "unit": "m",
+            "desc": "转动物体离观察点的最大距离"
+          },
+          "u": {
+            "unit": "m/s",
+            "desc": "初始闭合相对速度"
+          },
+          "a": {
+            "unit": "m/s^2",
+            "desc": "使间距增大的相对加速度"
+          },
+          "d_0": {
+            "unit": "m",
+            "desc": "初始间距"
+          },
+          "d_min": {
+            "unit": "m",
+            "desc": "二次间距函数的最小值"
+          }
+        },
+        "scenarios": {
+          "斜抛": {
+            "v_0": 10,
+            "g": 10,
+            "theta": 0.7853981633974483
+          },
+          "电阻": {
+            "R1": 3,
+            "R2": 3,
+            "K": 9
+          },
+          "圆周": {
+            "D": 4,
+            "l": 2
+          },
+          "配方": {
+            "d_0": 5,
+            "u": 4,
+            "a": 2
+          }
+        },
+        "formulas": [
+          {
+            "name": "斜抛射程上界",
+            "expr": "s_max = v_0^2/g",
+            "when": "无阻力、起落等高，仰角在零到直角之间",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "斜抛",
+                "ref": 10,
+                "note": "45度时水平和竖直初速均为5√2 m/s，飞行时间√2 s，射程10 m"
+              },
+              {
+                "type": "scan",
+                "scenario": "斜抛",
+                "var": "v_0",
+                "lo": 0,
+                "hi": 30,
+                "n": 17,
+                "note": "初速度可为零，射程上界连续"
+              },
+              {
+                "type": "consistency",
+                "scenario": "斜抛",
+                "with": "met-03|斜抛射程上界",
+                "with_expr": "v_0*cos(theta)*(2*v_0*sin(theta)/g)",
+                "target": "平地斜抛最大射程",
+                "note": "本公式直接求s_max；参考端显式关系为v_0*cos(theta)*(2*v_0*sin(theta)/g)。两端使用同一情境和阶段，只核对该关系；with字段仅定位来源，不代表调用另一条被覆盖的公式。",
+                "verification_kind": "独立关系核对"
+              }
+            ]
+          },
+          {
+            "name": "固定乘积的串联电阻下界",
+            "expr": "R_min = 2*sqrt(K)",
+            "when": "两电阻均为正、乘积固定；相等时达到下界",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "电阻",
+                "ref": 6,
+                "note": "乘积9 ohm²时两电阻均3 ohm，总电阻最小6 ohm"
+              }
+            ]
+          },
+          {
+            "name": "圆周点距固定点的距离上界",
+            "expr": "r_max = D+l",
+            "when": "固定点到圆心距离为D，轨迹为完整圆，最远点在中心连线延长线上",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "圆周",
+                "ref": 6,
+                "note": "最远点位于观察点对侧，中心距离4 m再加半径2 m，得到6 m"
+              }
+            ]
+          },
+          {
+            "name": "二次间距配方后的最小值",
+            "expr": "d_min = d_0-u^2/(2*a)",
+            "when": "相对加速度a为正，初始相对速度使间距减小，且顶点时刻在允许区间内",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "配方",
+                "ref": 1,
+                "note": "间距5−4t+t²配方为(t−2)²+1，最小间距1 m"
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "先从运动、能量或电路约束写出目标量，并列出变量允许范围。",
+          "二次间距函数配方后读出顶点，检查顶点时间是否真的落在研究阶段内。",
+          "两正电阻固定乘积时，平方差非负给出总电阻不小于两倍乘积平方根，等号要求两者相等。",
+          "几何最远点利用三角形边长上界；斜抛最大射程利用正弦不超过一，两者都要确认极值位置可实现。"
+        ],
+        "errors": [
+          {
+            "wrong": "斜抛最大射程漏除重力加速度并误保留二分之一",
+            "wrong_expr": "s_max = v_0^2/(2*g)",
+            "why": "等高斜抛的总飞行时间包含上升和下降两段；只算上升时间会少一半水平位移，量纲仍是长度，必须用实际运动核对系数。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "斜抛",
+              "expr": "v_0^2/(2*g)",
+              "ref": 10
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "均值不等式找出等号点后不检查题设范围",
+            "why": "电阻为正且可以相等是达到下界的必要条件；若某只电阻被限幅，代数下界未必可取，应回到可行区间检查端点。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "初速度10 m/s的理想斜抛起落等高，重力加速度10 m/s²。另有两正电阻乘积9 ohm²，求最大射程和最小总电阻。",
+          "solution": [
+            "斜抛射程的角度因子最大为一，对应45°，最大射程10²/10=10 m。",
+            "两正电阻之和不小于两倍乘积平方根，即6 ohm；两者各3 ohm时取到。"
+          ],
+          "answer": "最大射程10 m；串联总电阻最小6 ohm。"
+        },
+        "prereq": [
+          "mdl-38",
+          "dc-02"
+        ],
+        "next": [
+          "met-05",
+          "dc-08"
+        ],
+        "tags": [
+          "极值法",
+          "配方法",
+          "均值不等式",
+          "几何法",
+          "速度矢量圆"
+        ],
+        "learning_scope": "高中"
       },
-      "title": "极值法：二次函数、均值不等式与几何法",
+      "error_index": 0,
       "chapter": "第二十五章 · 解题方法与数学工具"
     },
     "diagnostic-met-03-2": {
-      "error": {
-        "wrong": "均值不等式找出等号点后不检查题设范围",
-        "why": "电阻为正且可以相等是达到下界的必要条件；若某只电阻被限幅，代数下界未必可取，应回到可行区间检查端点。",
-        "caught_by": "人工审核"
+      "point": {
+        "id": "met-03",
+        "title": "极值法：二次函数、均值不等式与几何法",
+        "level": "进阶",
+        "definition": "极值法把物理约束化成可分析的函数或几何图形。平地斜抛最大射程为 s_max = v_0^2/g；固定电阻乘积时，用均值不等式求串联总电阻的最小值。",
+        "meaning": "求极值前必须先列可行范围，不能只对代数式求导而忘记题设。二次函数常通过配方找顶点，均值不等式必须满足正数和等号条件，几何法则用长度、角度或速度矢量圆找边界。本卡给三个独立可手算场景，并把斜抛正弦上界和极值条件连回物理运动过程。",
+        "symbols": {
+          "v_0": {
+            "unit": "m/s",
+            "desc": "平地斜抛初速度大小"
+          },
+          "g": {
+            "unit": "m/s^2",
+            "desc": "重力加速度，取10"
+          },
+          "theta": {
+            "unit": "rad",
+            "desc": "斜抛仰角"
+          },
+          "s_max": {
+            "unit": "m",
+            "desc": "平地斜抛最大射程"
+          },
+          "R1": {
+            "unit": "ohm",
+            "desc": "第一只可调电阻"
+          },
+          "R2": {
+            "unit": "ohm",
+            "desc": "第二只可调电阻"
+          },
+          "K": {
+            "unit": "ohm^2",
+            "desc": "两只正电阻固定的乘积"
+          },
+          "R_min": {
+            "unit": "ohm",
+            "desc": "串联总电阻的最小值"
+          },
+          "D": {
+            "unit": "m",
+            "desc": "固定观察点到圆心的距离"
+          },
+          "l": {
+            "unit": "m",
+            "desc": "转动物体的圆周半径"
+          },
+          "r_max": {
+            "unit": "m",
+            "desc": "转动物体离观察点的最大距离"
+          },
+          "u": {
+            "unit": "m/s",
+            "desc": "初始闭合相对速度"
+          },
+          "a": {
+            "unit": "m/s^2",
+            "desc": "使间距增大的相对加速度"
+          },
+          "d_0": {
+            "unit": "m",
+            "desc": "初始间距"
+          },
+          "d_min": {
+            "unit": "m",
+            "desc": "二次间距函数的最小值"
+          }
+        },
+        "scenarios": {
+          "斜抛": {
+            "v_0": 10,
+            "g": 10,
+            "theta": 0.7853981633974483
+          },
+          "电阻": {
+            "R1": 3,
+            "R2": 3,
+            "K": 9
+          },
+          "圆周": {
+            "D": 4,
+            "l": 2
+          },
+          "配方": {
+            "d_0": 5,
+            "u": 4,
+            "a": 2
+          }
+        },
+        "formulas": [
+          {
+            "name": "斜抛射程上界",
+            "expr": "s_max = v_0^2/g",
+            "when": "无阻力、起落等高，仰角在零到直角之间",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "斜抛",
+                "ref": 10,
+                "note": "45度时水平和竖直初速均为5√2 m/s，飞行时间√2 s，射程10 m"
+              },
+              {
+                "type": "scan",
+                "scenario": "斜抛",
+                "var": "v_0",
+                "lo": 0,
+                "hi": 30,
+                "n": 17,
+                "note": "初速度可为零，射程上界连续"
+              },
+              {
+                "type": "consistency",
+                "scenario": "斜抛",
+                "with": "met-03|斜抛射程上界",
+                "with_expr": "v_0*cos(theta)*(2*v_0*sin(theta)/g)",
+                "target": "平地斜抛最大射程",
+                "note": "本公式直接求s_max；参考端显式关系为v_0*cos(theta)*(2*v_0*sin(theta)/g)。两端使用同一情境和阶段，只核对该关系；with字段仅定位来源，不代表调用另一条被覆盖的公式。",
+                "verification_kind": "独立关系核对"
+              }
+            ]
+          },
+          {
+            "name": "固定乘积的串联电阻下界",
+            "expr": "R_min = 2*sqrt(K)",
+            "when": "两电阻均为正、乘积固定；相等时达到下界",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "电阻",
+                "ref": 6,
+                "note": "乘积9 ohm²时两电阻均3 ohm，总电阻最小6 ohm"
+              }
+            ]
+          },
+          {
+            "name": "圆周点距固定点的距离上界",
+            "expr": "r_max = D+l",
+            "when": "固定点到圆心距离为D，轨迹为完整圆，最远点在中心连线延长线上",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "圆周",
+                "ref": 6,
+                "note": "最远点位于观察点对侧，中心距离4 m再加半径2 m，得到6 m"
+              }
+            ]
+          },
+          {
+            "name": "二次间距配方后的最小值",
+            "expr": "d_min = d_0-u^2/(2*a)",
+            "when": "相对加速度a为正，初始相对速度使间距减小，且顶点时刻在允许区间内",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "配方",
+                "ref": 1,
+                "note": "间距5−4t+t²配方为(t−2)²+1，最小间距1 m"
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "先从运动、能量或电路约束写出目标量，并列出变量允许范围。",
+          "二次间距函数配方后读出顶点，检查顶点时间是否真的落在研究阶段内。",
+          "两正电阻固定乘积时，平方差非负给出总电阻不小于两倍乘积平方根，等号要求两者相等。",
+          "几何最远点利用三角形边长上界；斜抛最大射程利用正弦不超过一，两者都要确认极值位置可实现。"
+        ],
+        "errors": [
+          {
+            "wrong": "斜抛最大射程漏除重力加速度并误保留二分之一",
+            "wrong_expr": "s_max = v_0^2/(2*g)",
+            "why": "等高斜抛的总飞行时间包含上升和下降两段；只算上升时间会少一半水平位移，量纲仍是长度，必须用实际运动核对系数。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "斜抛",
+              "expr": "v_0^2/(2*g)",
+              "ref": 10
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "均值不等式找出等号点后不检查题设范围",
+            "why": "电阻为正且可以相等是达到下界的必要条件；若某只电阻被限幅，代数下界未必可取，应回到可行区间检查端点。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "初速度10 m/s的理想斜抛起落等高，重力加速度10 m/s²。另有两正电阻乘积9 ohm²，求最大射程和最小总电阻。",
+          "solution": [
+            "斜抛射程的角度因子最大为一，对应45°，最大射程10²/10=10 m。",
+            "两正电阻之和不小于两倍乘积平方根，即6 ohm；两者各3 ohm时取到。"
+          ],
+          "answer": "最大射程10 m；串联总电阻最小6 ohm。"
+        },
+        "prereq": [
+          "mdl-38",
+          "dc-02"
+        ],
+        "next": [
+          "met-05",
+          "dc-08"
+        ],
+        "tags": [
+          "极值法",
+          "配方法",
+          "均值不等式",
+          "几何法",
+          "速度矢量圆"
+        ],
+        "learning_scope": "高中"
       },
-      "title": "极值法：二次函数、均值不等式与几何法",
+      "error_index": 1,
       "chapter": "第二十五章 · 解题方法与数学工具"
     },
     "diagnostic-met-04-1": {
-      "error": {
-        "wrong": "准静态拉伸用末弹力乘总位移",
-        "wrong_expr": "W = k*x2*(x2-x1)",
-        "why": "拉伸过程弹力从10 N变到30 N，末力不是全过程平均力；末力乘位移相当于取图像上矩形，会把真实梯形面积4 J高估成6 J。",
-        "caught_by": "数值代入",
-        "trap_test": {
-          "scenario": "弹簧",
-          "expr": "k*x2*(x2-x1)",
-          "ref": 4
-        }
+      "point": {
+        "id": "met-04",
+        "title": "微元法与累积量",
+        "level": "拓展",
+        "definition": "微元法把随位置或时间变化的过程分成足够小的片段再累加。胡克弹簧从 x1 到 x2 的外力准静态做功为 W = 0.5*k*(x2^2-x1^2)，不能随意把末力乘总位移。",
+        "meaning": "积分是累积思想的简写，不代表每个高中问题都必须用高等数学计算。线性变化可用图像面积或首末算术平均值精确求总量；非线性变化则要分段求和，不能机械取首末平均。感应电流累计成电荷时，磁通量总变化与恒电阻可以直接给出结果，但若电阻随时间改变就不能从累加式外提出。",
+        "symbols": {
+          "k": {
+            "unit": "N/m",
+            "desc": "胡克弹簧劲度系数"
+          },
+          "x1": {
+            "unit": "m",
+            "desc": "初始伸长量"
+          },
+          "x2": {
+            "unit": "m",
+            "desc": "末态伸长量"
+          },
+          "W": {
+            "unit": "J",
+            "desc": "缓慢拉伸时外力做功"
+          },
+          "F_avg": {
+            "unit": "N",
+            "desc": "此线性弹力关于位移的平均大小"
+          },
+          "q": {
+            "unit": "C",
+            "desc": "有符号的累计电荷"
+          },
+          "Delta_Phi": {
+            "unit": "Wb",
+            "desc": "按固定正向定义的磁通量总变化"
+          },
+          "R": {
+            "unit": "ohm",
+            "desc": "回路固定总电阻"
+          },
+          "I": {
+            "unit": "A",
+            "desc": "按回路固定正向定义的感应电流"
+          },
+          "t": {
+            "unit": "s",
+            "desc": "时间变量"
+          }
+        },
+        "scenarios": {
+          "弹簧": {
+            "k": 100,
+            "x1": 0.1,
+            "x2": 0.3
+          },
+          "感应": {
+            "Delta_Phi": -6,
+            "R": 3
+          }
+        },
+        "formulas": [
+          {
+            "name": "线性弹簧做功的累积",
+            "expr": "W = 0.5*k*(x2^2-x1^2)",
+            "when": "准静态外力等于弹力大小，弹簧处于胡克定律适用范围",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "弹簧",
+                "ref": 4,
+                "note": "力由10 N线性增加至30 N，平均20 N乘0.2 m位移为4 J"
+              },
+              {
+                "type": "scan",
+                "scenario": "弹簧",
+                "var": "x2",
+                "lo": 0.1,
+                "hi": 0.5,
+                "n": 17,
+                "note": "保持拉伸末量不小于初量，只扫描胡克模型参数范围"
+              },
+              {
+                "type": "consistency",
+                "scenario": "弹簧",
+                "with": "met-04|线性弹簧做功的累积",
+                "with_expr": "((k*x1+k*x2)/2)*(x2-x1)",
+                "target": "缓慢拉伸时外力做功",
+                "note": "本公式直接求W；参考端显式关系为((k*x1+k*x2)/2)*(x2-x1)。两端使用同一情境和阶段，只核对该关系；with字段仅定位来源，不代表调用另一条被覆盖的公式。",
+                "verification_kind": "独立关系核对"
+              }
+            ]
+          },
+          {
+            "name": "线性弹力关于位移的平均值",
+            "expr": "F_avg = k*(x1+x2)/2",
+            "when": "弹力随位移线性变化，不能推广为任意变力的首末平均",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "弹簧",
+                "ref": 20,
+                "note": "首末力10 N与30 N的算术平均为20 N"
+              }
+            ]
+          },
+          {
+            "name": "磁通累积求有符号电荷",
+            "expr": "q = -Delta_Phi/R",
+            "when": "回路正向和磁通正向遵循右手关系，无其他电动势，R固定且忽略自感",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "感应",
+                "ref": 2,
+                "note": "磁通按正向减少6 Wb，感应电荷为正2 C"
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "把位移分成小段，每段用该处近似恒定的力乘小段位移，再把各段功累加。",
+          "对线性弹簧，力—位移图是直线，首末之间梯形面积给出精确功。",
+          "电荷是电流随时间的累积量；把法拉第定律与欧姆定律结合，恒电阻时总电荷由磁通总变化决定。",
+          "首末算术平均仅对所积变量的线性变化成立；电阻变化、自感或其他电源存在时必须保留实际电路过程。"
+        ],
+        "errors": [
+          {
+            "wrong": "准静态拉伸用末弹力乘总位移",
+            "wrong_expr": "W = k*x2*(x2-x1)",
+            "why": "拉伸过程弹力从10 N变到30 N，末力不是全过程平均力；末力乘位移相当于取图像上矩形，会把真实梯形面积4 J高估成6 J。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "弹簧",
+              "expr": "k*x2*(x2-x1)",
+              "ref": 4
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "对任何变化的电流都用首末电流算术平均求电荷",
+            "why": "首末平均只有当电流关于时间线性变化时才等于时间平均；曲线形状不同会给出不同面积，必须根据全过程或等效累积规律计算。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "劲度系数100 N/m的弹簧缓慢从伸长0.10 m拉到0.30 m，求外力做功并判断能否使用末力乘位移。",
+          "solution": [
+            "首末弹力为10 N、30 N，线性变化时关于位移的平均力为20 N。",
+            "位移增加0.20 m，梯形面积为20×0.20=4 J；末力乘位移给6 J，不正确。"
+          ],
+          "answer": "外力做功4 J；不能把末弹力30 N当成全过程平均力。"
+        },
+        "prereq": [
+          "ene-05",
+          "ind-06"
+        ],
+        "next": [
+          "mdl-19",
+          "iad-06"
+        ],
+        "tags": [
+          "微元法",
+          "累积量",
+          "变力做功",
+          "积分思想"
+        ],
+        "learning_scope": "高中"
       },
-      "title": "微元法与累积量",
+      "error_index": 0,
       "chapter": "第二十五章 · 解题方法与数学工具"
     },
     "diagnostic-met-04-2": {
-      "error": {
-        "wrong": "对任何变化的电流都用首末电流算术平均求电荷",
-        "why": "首末平均只有当电流关于时间线性变化时才等于时间平均；曲线形状不同会给出不同面积，必须根据全过程或等效累积规律计算。",
-        "caught_by": "人工审核"
+      "point": {
+        "id": "met-04",
+        "title": "微元法与累积量",
+        "level": "拓展",
+        "definition": "微元法把随位置或时间变化的过程分成足够小的片段再累加。胡克弹簧从 x1 到 x2 的外力准静态做功为 W = 0.5*k*(x2^2-x1^2)，不能随意把末力乘总位移。",
+        "meaning": "积分是累积思想的简写，不代表每个高中问题都必须用高等数学计算。线性变化可用图像面积或首末算术平均值精确求总量；非线性变化则要分段求和，不能机械取首末平均。感应电流累计成电荷时，磁通量总变化与恒电阻可以直接给出结果，但若电阻随时间改变就不能从累加式外提出。",
+        "symbols": {
+          "k": {
+            "unit": "N/m",
+            "desc": "胡克弹簧劲度系数"
+          },
+          "x1": {
+            "unit": "m",
+            "desc": "初始伸长量"
+          },
+          "x2": {
+            "unit": "m",
+            "desc": "末态伸长量"
+          },
+          "W": {
+            "unit": "J",
+            "desc": "缓慢拉伸时外力做功"
+          },
+          "F_avg": {
+            "unit": "N",
+            "desc": "此线性弹力关于位移的平均大小"
+          },
+          "q": {
+            "unit": "C",
+            "desc": "有符号的累计电荷"
+          },
+          "Delta_Phi": {
+            "unit": "Wb",
+            "desc": "按固定正向定义的磁通量总变化"
+          },
+          "R": {
+            "unit": "ohm",
+            "desc": "回路固定总电阻"
+          },
+          "I": {
+            "unit": "A",
+            "desc": "按回路固定正向定义的感应电流"
+          },
+          "t": {
+            "unit": "s",
+            "desc": "时间变量"
+          }
+        },
+        "scenarios": {
+          "弹簧": {
+            "k": 100,
+            "x1": 0.1,
+            "x2": 0.3
+          },
+          "感应": {
+            "Delta_Phi": -6,
+            "R": 3
+          }
+        },
+        "formulas": [
+          {
+            "name": "线性弹簧做功的累积",
+            "expr": "W = 0.5*k*(x2^2-x1^2)",
+            "when": "准静态外力等于弹力大小，弹簧处于胡克定律适用范围",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "弹簧",
+                "ref": 4,
+                "note": "力由10 N线性增加至30 N，平均20 N乘0.2 m位移为4 J"
+              },
+              {
+                "type": "scan",
+                "scenario": "弹簧",
+                "var": "x2",
+                "lo": 0.1,
+                "hi": 0.5,
+                "n": 17,
+                "note": "保持拉伸末量不小于初量，只扫描胡克模型参数范围"
+              },
+              {
+                "type": "consistency",
+                "scenario": "弹簧",
+                "with": "met-04|线性弹簧做功的累积",
+                "with_expr": "((k*x1+k*x2)/2)*(x2-x1)",
+                "target": "缓慢拉伸时外力做功",
+                "note": "本公式直接求W；参考端显式关系为((k*x1+k*x2)/2)*(x2-x1)。两端使用同一情境和阶段，只核对该关系；with字段仅定位来源，不代表调用另一条被覆盖的公式。",
+                "verification_kind": "独立关系核对"
+              }
+            ]
+          },
+          {
+            "name": "线性弹力关于位移的平均值",
+            "expr": "F_avg = k*(x1+x2)/2",
+            "when": "弹力随位移线性变化，不能推广为任意变力的首末平均",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "弹簧",
+                "ref": 20,
+                "note": "首末力10 N与30 N的算术平均为20 N"
+              }
+            ]
+          },
+          {
+            "name": "磁通累积求有符号电荷",
+            "expr": "q = -Delta_Phi/R",
+            "when": "回路正向和磁通正向遵循右手关系，无其他电动势，R固定且忽略自感",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "感应",
+                "ref": 2,
+                "note": "磁通按正向减少6 Wb，感应电荷为正2 C"
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "把位移分成小段，每段用该处近似恒定的力乘小段位移，再把各段功累加。",
+          "对线性弹簧，力—位移图是直线，首末之间梯形面积给出精确功。",
+          "电荷是电流随时间的累积量；把法拉第定律与欧姆定律结合，恒电阻时总电荷由磁通总变化决定。",
+          "首末算术平均仅对所积变量的线性变化成立；电阻变化、自感或其他电源存在时必须保留实际电路过程。"
+        ],
+        "errors": [
+          {
+            "wrong": "准静态拉伸用末弹力乘总位移",
+            "wrong_expr": "W = k*x2*(x2-x1)",
+            "why": "拉伸过程弹力从10 N变到30 N，末力不是全过程平均力；末力乘位移相当于取图像上矩形，会把真实梯形面积4 J高估成6 J。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "弹簧",
+              "expr": "k*x2*(x2-x1)",
+              "ref": 4
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "对任何变化的电流都用首末电流算术平均求电荷",
+            "why": "首末平均只有当电流关于时间线性变化时才等于时间平均；曲线形状不同会给出不同面积，必须根据全过程或等效累积规律计算。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "劲度系数100 N/m的弹簧缓慢从伸长0.10 m拉到0.30 m，求外力做功并判断能否使用末力乘位移。",
+          "solution": [
+            "首末弹力为10 N、30 N，线性变化时关于位移的平均力为20 N。",
+            "位移增加0.20 m，梯形面积为20×0.20=4 J；末力乘位移给6 J，不正确。"
+          ],
+          "answer": "外力做功4 J；不能把末弹力30 N当成全过程平均力。"
+        },
+        "prereq": [
+          "ene-05",
+          "ind-06"
+        ],
+        "next": [
+          "mdl-19",
+          "iad-06"
+        ],
+        "tags": [
+          "微元法",
+          "累积量",
+          "变力做功",
+          "积分思想"
+        ],
+        "learning_scope": "高中"
       },
-      "title": "微元法与累积量",
+      "error_index": 1,
       "chapter": "第二十五章 · 解题方法与数学工具"
     },
     "diagnostic-met-05-1": {
-      "error": {
-        "wrong": "最高点求拉力漏掉重力项",
-        "wrong_expr": "N = m*v^2/r",
-        "why": "向心力是所有径向力的合力，不是额外一项独立力；重力已经贡献所需20 N，忽略它会把临界零拉力误算成20 N。",
-        "caught_by": "数值代入",
-        "trap_test": {
-          "scenario": "圆周",
-          "expr": "m*v^2/r",
-          "ref": 0
-        }
+      "point": {
+        "id": "met-05",
+        "title": "临界条件分析法",
+        "level": "进阶",
+        "definition": "临界分析把即将发生的状态改变翻译为边界方程。细绳圆周最高点恰好不松弛时 N = 0；静摩擦恰到极限时 f = mu*N；相撞问题则要分析间距最小值。",
+        "meaning": "临界不是一条统一的万能等式。支持力或绳拉力的零值对应约束失效，最大静摩擦对应将要相对滑动，光滑时间区间内的最小间距对应相对速度为零。恰好接触时最小间距为零，但相对加速度可以非零；若最小值在阶段端点，还不能盲目要求相对速度为零。",
+        "symbols": {
+          "N": {
+            "unit": "N",
+            "desc": "最高点绳拉力或内轨支持力"
+          },
+          "m": {
+            "unit": "kg",
+            "desc": "圆周物体质量"
+          },
+          "v": {
+            "unit": "m/s",
+            "desc": "最高点速度"
+          },
+          "r": {
+            "unit": "m",
+            "desc": "圆周半径"
+          },
+          "g": {
+            "unit": "m/s^2",
+            "desc": "重力加速度，取10"
+          },
+          "mu": {
+            "unit": "1",
+            "desc": "最大静摩擦系数"
+          },
+          "f": {
+            "unit": "N",
+            "desc": "最大静摩擦力大小"
+          },
+          "d_0": {
+            "unit": "m",
+            "desc": "两物体初始间距"
+          },
+          "u": {
+            "unit": "m/s",
+            "desc": "初始使间距缩小的相对速度大小"
+          },
+          "a": {
+            "unit": "m/s^2",
+            "desc": "使间距增大的相对加速度"
+          },
+          "d_min": {
+            "unit": "m",
+            "desc": "研究阶段内的最小间距"
+          },
+          "t_c": {
+            "unit": "s",
+            "desc": "光滑区间内达到最小间距的时刻"
+          }
+        },
+        "scenarios": {
+          "圆周": {
+            "m": 2,
+            "v": 5,
+            "r": 2.5,
+            "g": 10
+          },
+          "摩擦": {
+            "m": 2,
+            "g": 10,
+            "mu": 0.5,
+            "N": 20
+          },
+          "临界接触": {
+            "d_0": 4,
+            "u": 4,
+            "a": 2,
+            "t_c": 2
+          }
+        },
+        "formulas": [
+          {
+            "name": "最高点约束力",
+            "expr": "N = m*v^2/r-m*g",
+            "when": "细绳或内轨，最高点重力与约束力均指向圆心，负值说明此模型无法维持",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "圆周",
+                "ref": 0,
+                "note": "所需向心力20 N正好由重力提供，绳拉力为零"
+              },
+              {
+                "type": "scan",
+                "scenario": "圆周",
+                "var": "v",
+                "lo": 5,
+                "hi": 10,
+                "n": 17,
+                "note": "只扫描临界速度及以上的接触允许域"
+              },
+              {
+                "type": "consistency",
+                "scenario": "圆周",
+                "with": "met-05|最高点约束力",
+                "with_expr": "0*m*g",
+                "target": "最高点绳拉力或内轨支持力",
+                "note": "本公式直接求N；参考端显式关系为0*m*g。两端使用同一情境和阶段，只核对该关系；with字段仅定位来源，不代表调用另一条被覆盖的公式。",
+                "verification_kind": "独立关系核对",
+                "tol": 1e-12
+              }
+            ]
+          },
+          {
+            "name": "最大静摩擦力",
+            "expr": "f = mu*N",
+            "when": "仅用于即将滑动的最大静摩擦边界，通常静摩擦可以更小",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "摩擦",
+                "ref": 10,
+                "note": "系数0.5乘支持力20 N，最大静摩擦力10 N"
+              }
+            ]
+          },
+          {
+            "name": "最小间距",
+            "expr": "d_min = d_0-u^2/(2*a)",
+            "when": "a为正，初速度使间距缩小，顶点时刻位于光滑研究区间内",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "临界接触",
+                "ref": 0,
+                "note": "间距4−4t+t²=(t−2)²，最小值0 m而相对加速度为2 m/s²"
+              }
+            ]
+          },
+          {
+            "name": "内部最小间距时刻",
+            "expr": "t_c = u/a",
+            "when": "相对速度从负值变到零，阶段内的光滑极小值",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "临界接触",
+                "ref": 2,
+                "note": "相对速度−4+2t为零时，t为2 s"
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "先判断变化的是接触、绳松紧、滑动还是两物体相遇，再选择对应边界量。",
+          "圆周最高点列向心方向的合力，约束力到零是细绳保持绷紧的临界。",
+          "静摩擦临界用最大静摩擦，未到边界时应由平衡或动力学求实际摩擦力。",
+          "相撞问题写间距随时间的函数，在允许时间区间比较内点极小值与端点；不要额外强加相对加速度为零。"
+        ],
+        "errors": [
+          {
+            "wrong": "最高点求拉力漏掉重力项",
+            "wrong_expr": "N = m*v^2/r",
+            "why": "向心力是所有径向力的合力，不是额外一项独立力；重力已经贡献所需20 N，忽略它会把临界零拉力误算成20 N。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "圆周",
+              "expr": "m*v^2/r",
+              "ref": 0
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "恰好不相撞一律要求相对速度和相对加速度同时为零",
+            "why": "二次间距可以在相对加速度为正的时刻达到零的最小值，本卡明确给出反例；相对速度为零也是光滑内点极值的条件而非所有端点边界条件。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "两物体的间距可写成初始4 m减去4 m/s乘时间再加时间平方项，相对加速度为2 m/s²。求最小间距并判断是否必须相对加速度为零。",
+          "solution": [
+            "间距函数为4−4t+t²=(t−2)²，在2 s达到最小值0 m。",
+            "该时刻相对速度为零，但相对加速度仍为2 m/s²；质点恰好接触的边界不要求加速度为零。"
+          ],
+          "answer": "最小间距0 m，发生在2 s；相对加速度不必为零。"
+        },
+        "prereq": [
+          "cir-04",
+          "dyn-03",
+          "mdl-05"
+        ],
+        "next": [
+          "mdl-09",
+          "met-06"
+        ],
+        "tags": [
+          "临界条件",
+          "最大静摩擦",
+          "恰好不脱离",
+          "恰好不相撞"
+        ],
+        "learning_scope": "高中"
       },
-      "title": "临界条件分析法",
+      "error_index": 0,
       "chapter": "第二十五章 · 解题方法与数学工具"
     },
     "diagnostic-met-05-2": {
-      "error": {
-        "wrong": "恰好不相撞一律要求相对速度和相对加速度同时为零",
-        "why": "二次间距可以在相对加速度为正的时刻达到零的最小值，本卡明确给出反例；相对速度为零也是光滑内点极值的条件而非所有端点边界条件。",
-        "caught_by": "人工审核"
+      "point": {
+        "id": "met-05",
+        "title": "临界条件分析法",
+        "level": "进阶",
+        "definition": "临界分析把即将发生的状态改变翻译为边界方程。细绳圆周最高点恰好不松弛时 N = 0；静摩擦恰到极限时 f = mu*N；相撞问题则要分析间距最小值。",
+        "meaning": "临界不是一条统一的万能等式。支持力或绳拉力的零值对应约束失效，最大静摩擦对应将要相对滑动，光滑时间区间内的最小间距对应相对速度为零。恰好接触时最小间距为零，但相对加速度可以非零；若最小值在阶段端点，还不能盲目要求相对速度为零。",
+        "symbols": {
+          "N": {
+            "unit": "N",
+            "desc": "最高点绳拉力或内轨支持力"
+          },
+          "m": {
+            "unit": "kg",
+            "desc": "圆周物体质量"
+          },
+          "v": {
+            "unit": "m/s",
+            "desc": "最高点速度"
+          },
+          "r": {
+            "unit": "m",
+            "desc": "圆周半径"
+          },
+          "g": {
+            "unit": "m/s^2",
+            "desc": "重力加速度，取10"
+          },
+          "mu": {
+            "unit": "1",
+            "desc": "最大静摩擦系数"
+          },
+          "f": {
+            "unit": "N",
+            "desc": "最大静摩擦力大小"
+          },
+          "d_0": {
+            "unit": "m",
+            "desc": "两物体初始间距"
+          },
+          "u": {
+            "unit": "m/s",
+            "desc": "初始使间距缩小的相对速度大小"
+          },
+          "a": {
+            "unit": "m/s^2",
+            "desc": "使间距增大的相对加速度"
+          },
+          "d_min": {
+            "unit": "m",
+            "desc": "研究阶段内的最小间距"
+          },
+          "t_c": {
+            "unit": "s",
+            "desc": "光滑区间内达到最小间距的时刻"
+          }
+        },
+        "scenarios": {
+          "圆周": {
+            "m": 2,
+            "v": 5,
+            "r": 2.5,
+            "g": 10
+          },
+          "摩擦": {
+            "m": 2,
+            "g": 10,
+            "mu": 0.5,
+            "N": 20
+          },
+          "临界接触": {
+            "d_0": 4,
+            "u": 4,
+            "a": 2,
+            "t_c": 2
+          }
+        },
+        "formulas": [
+          {
+            "name": "最高点约束力",
+            "expr": "N = m*v^2/r-m*g",
+            "when": "细绳或内轨，最高点重力与约束力均指向圆心，负值说明此模型无法维持",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "圆周",
+                "ref": 0,
+                "note": "所需向心力20 N正好由重力提供，绳拉力为零"
+              },
+              {
+                "type": "scan",
+                "scenario": "圆周",
+                "var": "v",
+                "lo": 5,
+                "hi": 10,
+                "n": 17,
+                "note": "只扫描临界速度及以上的接触允许域"
+              },
+              {
+                "type": "consistency",
+                "scenario": "圆周",
+                "with": "met-05|最高点约束力",
+                "with_expr": "0*m*g",
+                "target": "最高点绳拉力或内轨支持力",
+                "note": "本公式直接求N；参考端显式关系为0*m*g。两端使用同一情境和阶段，只核对该关系；with字段仅定位来源，不代表调用另一条被覆盖的公式。",
+                "verification_kind": "独立关系核对",
+                "tol": 1e-12
+              }
+            ]
+          },
+          {
+            "name": "最大静摩擦力",
+            "expr": "f = mu*N",
+            "when": "仅用于即将滑动的最大静摩擦边界，通常静摩擦可以更小",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "摩擦",
+                "ref": 10,
+                "note": "系数0.5乘支持力20 N，最大静摩擦力10 N"
+              }
+            ]
+          },
+          {
+            "name": "最小间距",
+            "expr": "d_min = d_0-u^2/(2*a)",
+            "when": "a为正，初速度使间距缩小，顶点时刻位于光滑研究区间内",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "临界接触",
+                "ref": 0,
+                "note": "间距4−4t+t²=(t−2)²，最小值0 m而相对加速度为2 m/s²"
+              }
+            ]
+          },
+          {
+            "name": "内部最小间距时刻",
+            "expr": "t_c = u/a",
+            "when": "相对速度从负值变到零，阶段内的光滑极小值",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "临界接触",
+                "ref": 2,
+                "note": "相对速度−4+2t为零时，t为2 s"
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "先判断变化的是接触、绳松紧、滑动还是两物体相遇，再选择对应边界量。",
+          "圆周最高点列向心方向的合力，约束力到零是细绳保持绷紧的临界。",
+          "静摩擦临界用最大静摩擦，未到边界时应由平衡或动力学求实际摩擦力。",
+          "相撞问题写间距随时间的函数，在允许时间区间比较内点极小值与端点；不要额外强加相对加速度为零。"
+        ],
+        "errors": [
+          {
+            "wrong": "最高点求拉力漏掉重力项",
+            "wrong_expr": "N = m*v^2/r",
+            "why": "向心力是所有径向力的合力，不是额外一项独立力；重力已经贡献所需20 N，忽略它会把临界零拉力误算成20 N。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "圆周",
+              "expr": "m*v^2/r",
+              "ref": 0
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "恰好不相撞一律要求相对速度和相对加速度同时为零",
+            "why": "二次间距可以在相对加速度为正的时刻达到零的最小值，本卡明确给出反例；相对速度为零也是光滑内点极值的条件而非所有端点边界条件。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "两物体的间距可写成初始4 m减去4 m/s乘时间再加时间平方项，相对加速度为2 m/s²。求最小间距并判断是否必须相对加速度为零。",
+          "solution": [
+            "间距函数为4−4t+t²=(t−2)²，在2 s达到最小值0 m。",
+            "该时刻相对速度为零，但相对加速度仍为2 m/s²；质点恰好接触的边界不要求加速度为零。"
+          ],
+          "answer": "最小间距0 m，发生在2 s；相对加速度不必为零。"
+        },
+        "prereq": [
+          "cir-04",
+          "dyn-03",
+          "mdl-05"
+        ],
+        "next": [
+          "mdl-09",
+          "met-06"
+        ],
+        "tags": [
+          "临界条件",
+          "最大静摩擦",
+          "恰好不脱离",
+          "恰好不相撞"
+        ],
+        "learning_scope": "高中"
       },
-      "title": "临界条件分析法",
+      "error_index": 1,
       "chapter": "第二十五章 · 解题方法与数学工具"
     },
     "diagnostic-met-06-1": {
-      "error": {
-        "wrong": "连接体质量误写成相减",
-        "wrong_expr": "a = F/(m1-m2)",
-        "why": "两个物体共同加速时惯性质量应相加；相减不仅可能产生不合理负加速度，还会在两质量相等时造成无物理依据的除零。",
-        "caught_by": "数值代入",
-        "trap_test": {
-          "scenario": "连接体",
-          "expr": "F/(m1-m2)",
-          "ref": 2
-        }
+      "point": {
+        "id": "met-06",
+        "title": "极限检验与特殊值检验",
+        "level": "进阶",
+        "definition": "极限和特殊值检验把一般公式放回易判断的简单场景。连接体中 m2 趋于零应回到单物体，斜面角 theta 为零应无沿面重力加速度，外电阻 R 趋于无穷时电流应趋零。",
+        "meaning": "这种方法能发现符号、系数和函数方向错误，但不能替代推导，因为错误公式也可能在少数特殊值碰巧正确。必须保持模型的其余条件一致，避免质量为零造成除零、短路时忽略内阻、斜面接触消失等越界；无穷只能检查趋近趋势，不能把无穷当作普通有限数输入计算器。",
+        "symbols": {
+          "F": {
+            "unit": "N",
+            "desc": "连接体沿运动方向的外合力"
+          },
+          "m1": {
+            "unit": "kg",
+            "desc": "第一个物体质量"
+          },
+          "m2": {
+            "unit": "kg",
+            "desc": "第二个物体质量，可取零的理想极限"
+          },
+          "a": {
+            "unit": "m/s^2",
+            "desc": "光滑连接体共有加速度"
+          },
+          "g": {
+            "unit": "m/s^2",
+            "desc": "重力加速度，取10"
+          },
+          "theta": {
+            "unit": "rad",
+            "desc": "无摩擦斜面倾角"
+          },
+          "a_x": {
+            "unit": "m/s^2",
+            "desc": "斜面向下的加速度"
+          },
+          "E": {
+            "unit": "V",
+            "desc": "电源电动势"
+          },
+          "R": {
+            "unit": "ohm",
+            "desc": "外电阻"
+          },
+          "r": {
+            "unit": "ohm",
+            "desc": "电源固定内阻"
+          },
+          "I": {
+            "unit": "A",
+            "desc": "闭合电路电流"
+          },
+          "s": {
+            "unit": "m",
+            "desc": "位移"
+          },
+          "W": {
+            "unit": "J",
+            "desc": "外力做功"
+          }
+        },
+        "scenarios": {
+          "连接体": {
+            "F": 10,
+            "m1": 2,
+            "m2": 3,
+            "s": 2,
+            "W": 20
+          },
+          "单体极限": {
+            "F": 10,
+            "m1": 2,
+            "m2": 0,
+            "s": 2,
+            "W": 20
+          },
+          "水平面": {
+            "g": 10,
+            "theta": 0
+          },
+          "电路": {
+            "E": 6,
+            "R": 5,
+            "r": 1
+          },
+          "近开路": {
+            "E": 6,
+            "R": 999999,
+            "r": 1
+          }
+        },
+        "formulas": [
+          {
+            "name": "连接体一般加速度",
+            "expr": "a = F/(m1+m2)",
+            "when": "共加速、光滑，第一物体质量严格为正",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "连接体",
+                "ref": 2,
+                "note": "10 N除总质量5 kg为2 m/s²"
+              },
+              {
+                "type": "numeric",
+                "scenario": "单体极限",
+                "ref": 5,
+                "note": "第二质量归零，回到10 N推动2 kg单物体"
+              },
+              {
+                "type": "scan",
+                "scenario": "连接体",
+                "var": "m2",
+                "lo": 0,
+                "hi": 10,
+                "n": 17,
+                "note": "扫描包含零的轻物体极限，不允许总质量为零"
+              },
+              {
+                "type": "consistency",
+                "scenario": "连接体",
+                "with": "met-06|连接体一般加速度",
+                "with_expr": "W/((m1+m2)*s)",
+                "target": "光滑连接体共有加速度",
+                "note": "本公式直接求a；参考端显式关系为W/((m1+m2)*s)。两端使用同一情境和阶段，只核对该关系；with字段仅定位来源，不代表调用另一条被覆盖的公式。",
+                "verification_kind": "独立关系核对"
+              }
+            ]
+          },
+          {
+            "name": "光滑斜面加速度",
+            "expr": "a_x = g*sin(theta)",
+            "when": "只受重力与支持力，斜面倾角从水平起算",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "水平面",
+                "ref": 0,
+                "note": "斜面变水平后重力没有沿面分量，加速度为零"
+              }
+            ]
+          },
+          {
+            "name": "有限内阻电路电流",
+            "expr": "I = E/(R+r)",
+            "when": "纯电阻外电路，内阻为正；开路通过外电阻增大的极限理解",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "电路",
+                "ref": 1,
+                "note": "6 V除以总电阻6 ohm为1 A"
+              },
+              {
+                "type": "numeric",
+                "scenario": "近开路",
+                "ref": 6e-06,
+                "note": "总电阻一百万ohm时电流6微安，接近零但不是直接输入无穷"
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "选一组能凭物理直觉独立判断的极限或特殊值，先预测结论再代公式。",
+          "连接体让第二质量归零时保留第一质量，检验是否还原单物体加速度。",
+          "斜面倾角为零时检验沿面加速度是否归零；只在原接触约束允许时讨论直角端点。",
+          "外电阻逐渐增大，检查电流是否趋零，同时保持电动势和内阻不变；通过一般情形数值再防止特殊值碰巧掩盖错误。"
+        ],
+        "errors": [
+          {
+            "wrong": "连接体质量误写成相减",
+            "wrong_expr": "a = F/(m1-m2)",
+            "why": "两个物体共同加速时惯性质量应相加；相减不仅可能产生不合理负加速度，还会在两质量相等时造成无物理依据的除零。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "连接体",
+              "expr": "F/(m1-m2)",
+              "ref": 2
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "几个特殊值通过就认定整个公式被证明",
+            "why": "不同函数可以在零值或某个角度上恰好相同；极限检验是反证和排错工具，仍须配合量纲、普通数值情形与物理推导进行确认。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "10 N水平外力拉动光滑连接体，第一物体2 kg，第二物体3 kg。比较第二质量为3 kg和趋近零时的加速度。",
+          "solution": [
+            "一般情形总质量5 kg，加速度为10/5=2 m/s²。",
+            "第二质量趋零时总质量趋2 kg，加速度趋5 m/s²，与单物体牛顿第二定律一致。"
+          ],
+          "answer": "一般加速度2 m/s²；轻物体极限趋近5 m/s²。"
+        },
+        "prereq": [
+          "dyn-05",
+          "dc-06"
+        ],
+        "next": [
+          "mdl-32",
+          "mdl-17"
+        ],
+        "tags": [
+          "极限检验",
+          "特殊值检验",
+          "模型边界"
+        ],
+        "learning_scope": "高中"
       },
-      "title": "极限检验与特殊值检验",
+      "error_index": 0,
       "chapter": "第二十五章 · 解题方法与数学工具"
     },
     "diagnostic-met-06-2": {
-      "error": {
-        "wrong": "几个特殊值通过就认定整个公式被证明",
-        "why": "不同函数可以在零值或某个角度上恰好相同；极限检验是反证和排错工具，仍须配合量纲、普通数值情形与物理推导进行确认。",
-        "caught_by": "人工审核"
+      "point": {
+        "id": "met-06",
+        "title": "极限检验与特殊值检验",
+        "level": "进阶",
+        "definition": "极限和特殊值检验把一般公式放回易判断的简单场景。连接体中 m2 趋于零应回到单物体，斜面角 theta 为零应无沿面重力加速度，外电阻 R 趋于无穷时电流应趋零。",
+        "meaning": "这种方法能发现符号、系数和函数方向错误，但不能替代推导，因为错误公式也可能在少数特殊值碰巧正确。必须保持模型的其余条件一致，避免质量为零造成除零、短路时忽略内阻、斜面接触消失等越界；无穷只能检查趋近趋势，不能把无穷当作普通有限数输入计算器。",
+        "symbols": {
+          "F": {
+            "unit": "N",
+            "desc": "连接体沿运动方向的外合力"
+          },
+          "m1": {
+            "unit": "kg",
+            "desc": "第一个物体质量"
+          },
+          "m2": {
+            "unit": "kg",
+            "desc": "第二个物体质量，可取零的理想极限"
+          },
+          "a": {
+            "unit": "m/s^2",
+            "desc": "光滑连接体共有加速度"
+          },
+          "g": {
+            "unit": "m/s^2",
+            "desc": "重力加速度，取10"
+          },
+          "theta": {
+            "unit": "rad",
+            "desc": "无摩擦斜面倾角"
+          },
+          "a_x": {
+            "unit": "m/s^2",
+            "desc": "斜面向下的加速度"
+          },
+          "E": {
+            "unit": "V",
+            "desc": "电源电动势"
+          },
+          "R": {
+            "unit": "ohm",
+            "desc": "外电阻"
+          },
+          "r": {
+            "unit": "ohm",
+            "desc": "电源固定内阻"
+          },
+          "I": {
+            "unit": "A",
+            "desc": "闭合电路电流"
+          },
+          "s": {
+            "unit": "m",
+            "desc": "位移"
+          },
+          "W": {
+            "unit": "J",
+            "desc": "外力做功"
+          }
+        },
+        "scenarios": {
+          "连接体": {
+            "F": 10,
+            "m1": 2,
+            "m2": 3,
+            "s": 2,
+            "W": 20
+          },
+          "单体极限": {
+            "F": 10,
+            "m1": 2,
+            "m2": 0,
+            "s": 2,
+            "W": 20
+          },
+          "水平面": {
+            "g": 10,
+            "theta": 0
+          },
+          "电路": {
+            "E": 6,
+            "R": 5,
+            "r": 1
+          },
+          "近开路": {
+            "E": 6,
+            "R": 999999,
+            "r": 1
+          }
+        },
+        "formulas": [
+          {
+            "name": "连接体一般加速度",
+            "expr": "a = F/(m1+m2)",
+            "when": "共加速、光滑，第一物体质量严格为正",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "连接体",
+                "ref": 2,
+                "note": "10 N除总质量5 kg为2 m/s²"
+              },
+              {
+                "type": "numeric",
+                "scenario": "单体极限",
+                "ref": 5,
+                "note": "第二质量归零，回到10 N推动2 kg单物体"
+              },
+              {
+                "type": "scan",
+                "scenario": "连接体",
+                "var": "m2",
+                "lo": 0,
+                "hi": 10,
+                "n": 17,
+                "note": "扫描包含零的轻物体极限，不允许总质量为零"
+              },
+              {
+                "type": "consistency",
+                "scenario": "连接体",
+                "with": "met-06|连接体一般加速度",
+                "with_expr": "W/((m1+m2)*s)",
+                "target": "光滑连接体共有加速度",
+                "note": "本公式直接求a；参考端显式关系为W/((m1+m2)*s)。两端使用同一情境和阶段，只核对该关系；with字段仅定位来源，不代表调用另一条被覆盖的公式。",
+                "verification_kind": "独立关系核对"
+              }
+            ]
+          },
+          {
+            "name": "光滑斜面加速度",
+            "expr": "a_x = g*sin(theta)",
+            "when": "只受重力与支持力，斜面倾角从水平起算",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "水平面",
+                "ref": 0,
+                "note": "斜面变水平后重力没有沿面分量，加速度为零"
+              }
+            ]
+          },
+          {
+            "name": "有限内阻电路电流",
+            "expr": "I = E/(R+r)",
+            "when": "纯电阻外电路，内阻为正；开路通过外电阻增大的极限理解",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "电路",
+                "ref": 1,
+                "note": "6 V除以总电阻6 ohm为1 A"
+              },
+              {
+                "type": "numeric",
+                "scenario": "近开路",
+                "ref": 6e-06,
+                "note": "总电阻一百万ohm时电流6微安，接近零但不是直接输入无穷"
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "选一组能凭物理直觉独立判断的极限或特殊值，先预测结论再代公式。",
+          "连接体让第二质量归零时保留第一质量，检验是否还原单物体加速度。",
+          "斜面倾角为零时检验沿面加速度是否归零；只在原接触约束允许时讨论直角端点。",
+          "外电阻逐渐增大，检查电流是否趋零，同时保持电动势和内阻不变；通过一般情形数值再防止特殊值碰巧掩盖错误。"
+        ],
+        "errors": [
+          {
+            "wrong": "连接体质量误写成相减",
+            "wrong_expr": "a = F/(m1-m2)",
+            "why": "两个物体共同加速时惯性质量应相加；相减不仅可能产生不合理负加速度，还会在两质量相等时造成无物理依据的除零。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "连接体",
+              "expr": "F/(m1-m2)",
+              "ref": 2
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "几个特殊值通过就认定整个公式被证明",
+            "why": "不同函数可以在零值或某个角度上恰好相同；极限检验是反证和排错工具，仍须配合量纲、普通数值情形与物理推导进行确认。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "10 N水平外力拉动光滑连接体，第一物体2 kg，第二物体3 kg。比较第二质量为3 kg和趋近零时的加速度。",
+          "solution": [
+            "一般情形总质量5 kg，加速度为10/5=2 m/s²。",
+            "第二质量趋零时总质量趋2 kg，加速度趋5 m/s²，与单物体牛顿第二定律一致。"
+          ],
+          "answer": "一般加速度2 m/s²；轻物体极限趋近5 m/s²。"
+        },
+        "prereq": [
+          "dyn-05",
+          "dc-06"
+        ],
+        "next": [
+          "mdl-32",
+          "mdl-17"
+        ],
+        "tags": [
+          "极限检验",
+          "特殊值检验",
+          "模型边界"
+        ],
+        "learning_scope": "高中"
       },
-      "title": "极限检验与特殊值检验",
+      "error_index": 1,
       "chapter": "第二十五章 · 解题方法与数学工具"
     },
     "diagnostic-met-07-1": {
-      "error": {
-        "wrong": "换参考系时仍使用地面坐标，忘记减参考原点坐标。",
-        "wrong_expr": "x = xo",
-        "why": "地面坐标10 m而参考原点在3 m，相对坐标是7 m；位置变化须同时明确原点，不能把坐标当成绝对属性。",
-        "caught_by": "数值代入",
-        "trap_test": {
-          "scenario": "同向移动",
-          "expr": "xo",
-          "ref": 7
-        }
+      "point": {
+        "id": "met-07",
+        "title": "质点模型与参考系",
+        "level": "基础",
+        "definition": "当研究问题中物体的形状和大小影响可以忽略时，可把物体作为有质量的点。描述位置和运动须先选参考系，同一物体相对不同参考系可能有不同速度。",
+        "meaning": "能否视为质点取决于研究问题：研究地球绕太阳的位置运动可作质点近似，研究地球自转或物体转动姿态不能这样处理。质点并非质量为零，也不是所有小物体都能忽略大小。参考系可以选地面、车厢或其他对象，但要说明；在经典低速且坐标轴同向的平动参考系中，位置和速度分别作差。加速参考系的动力学分析不能直接沿用惯性系受力规则。",
+        "symbols": {
+          "x": {
+            "desc": "相对参考系原点坐标",
+            "unit": "m"
+          },
+          "xo": {
+            "desc": "地面系物体坐标",
+            "unit": "m"
+          },
+          "xr": {
+            "desc": "地面系参考原点坐标",
+            "unit": "m"
+          },
+          "v": {
+            "desc": "相对参考系速度",
+            "unit": "m/s"
+          },
+          "vo": {
+            "desc": "地面系物体速度",
+            "unit": "m/s"
+          },
+          "vr": {
+            "desc": "地面系参考原点速度",
+            "unit": "m/s"
+          },
+          "d": {
+            "desc": "独立测量物体与参考原点有向间距",
+            "unit": "m"
+          }
+        },
+        "scenarios": {
+          "同向移动": {
+            "xo": 10,
+            "xr": 3,
+            "x": 7,
+            "vo": 5,
+            "vr": 2,
+            "v": 3,
+            "d": 7
+          },
+          "反向移动": {
+            "xo": 10,
+            "xr": -3,
+            "x": 13,
+            "vo": 5,
+            "vr": -2,
+            "v": 7,
+            "d": 13
+          }
+        },
+        "formulas": [
+          {
+            "name": "同向坐标轴下的相对位置",
+            "expr": "x = xo-xr",
+            "when": "同一时刻在同向的一维坐标轴上，xo为物体坐标，xr为参考点坐标；x保留正负。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "同向移动",
+                "ref": 7,
+                "note": "地面位置10 m减原点3 m。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "反向移动",
+                "ref": 13,
+                "note": "减去负原点位置得13 m。"
+              },
+              {
+                "type": "scan",
+                "scenario": "同向移动",
+                "var": "xo",
+                "lo": 0,
+                "hi": 20,
+                "note": "扫描本条适用范围内的参数，奇点和越量程操作不在有效范围内。"
+              },
+              {
+                "type": "consistency",
+                "scenario": "同向移动",
+                "with": "met-07|同向坐标轴下的相对位置",
+                "with_expr": "d",
+                "note": "直接求本公式输出，与情境中另列的d设计基准核对；数据是设计示例，不是实测。用于核对定义、反算或边界值，不宣称不同物理原理互证。",
+                "target": "相对参考系原点坐标",
+                "verification_kind": "独立设计情境数据核对"
+              }
+            ]
+          },
+          {
+            "name": "相对平动速度",
+            "expr": "v = vo-vr",
+            "when": "经典低速、同向坐标轴的平动参考系。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "同向移动",
+                "ref": 3,
+                "note": "物体5 m/s减参考原点2 m/s。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "反向移动",
+                "ref": 7,
+                "note": "参考原点速度-2 m/s。"
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "位置10-3=7 m。",
+          "速度5-2=3 m/s；两者都相对于车厢原点。",
+          "能否视为质点取决于研究问题：研究地球绕太阳的位置运动可作质点近似，研究地球自转或物体转动姿态不能这样处理。"
+        ],
+        "errors": [
+          {
+            "wrong": "换参考系时仍使用地面坐标，忘记减参考原点坐标。",
+            "wrong_expr": "x = xo",
+            "why": "地面坐标10 m而参考原点在3 m，相对坐标是7 m；位置变化须同时明确原点，不能把坐标当成绝对属性。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "同向移动",
+              "expr": "xo",
+              "ref": 7
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "地球很大所以任何问题都不能作质点，或者小物体永远可以。",
+            "why": "大小是否影响所研究问题才是标准，轨道位置与转动姿态要求不同；模型必须保留质量并说明忽略的几何信息。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "地面系物体位置10 m、速度5 m/s，车厢原点位置3 m、速度2 m/s，轴同向且低速，求车厢系位置和速度。",
+          "solution": [
+            "位置10-3=7 m。",
+            "速度5-2=3 m/s；两者都相对于车厢原点。"
+          ],
+          "answer": "位置7 m，相对速度3 m/s。"
+        },
+        "prereq": [],
+        "next": [
+          "kine-01",
+          "dyn-09"
+        ],
+        "tags": [
+          "质点模型与参考系",
+          "条件与边界",
+          "实验与证据"
+        ],
+        "core": [
+          {
+            "title": "质点模型与参考系：方法与边界",
+            "text": "能否视为质点取决于研究问题：研究地球绕太阳的位置运动可作质点近似，研究地球自转或物体转动姿态不能这样处理。质点并非质量为零，也不是所有小物体都能忽略大小。参考系可以选地面、车厢或其他对象，但要说明；在经典低速且坐标轴同向的平动参考系中，位置和速度分别作差。加速参考系的动力学分析不能直接沿用惯性系受力规则。"
+          }
+        ],
+        "learning_scope": "高中"
       },
-      "title": "质点模型与参考系",
+      "error_index": 0,
       "chapter": "第二十五章 · 解题方法与数学工具"
     },
     "diagnostic-met-07-2": {
-      "error": {
-        "wrong": "地球很大所以任何问题都不能作质点，或者小物体永远可以。",
-        "why": "大小是否影响所研究问题才是标准，轨道位置与转动姿态要求不同；模型必须保留质量并说明忽略的几何信息。",
-        "caught_by": "人工审核"
+      "point": {
+        "id": "met-07",
+        "title": "质点模型与参考系",
+        "level": "基础",
+        "definition": "当研究问题中物体的形状和大小影响可以忽略时，可把物体作为有质量的点。描述位置和运动须先选参考系，同一物体相对不同参考系可能有不同速度。",
+        "meaning": "能否视为质点取决于研究问题：研究地球绕太阳的位置运动可作质点近似，研究地球自转或物体转动姿态不能这样处理。质点并非质量为零，也不是所有小物体都能忽略大小。参考系可以选地面、车厢或其他对象，但要说明；在经典低速且坐标轴同向的平动参考系中，位置和速度分别作差。加速参考系的动力学分析不能直接沿用惯性系受力规则。",
+        "symbols": {
+          "x": {
+            "desc": "相对参考系原点坐标",
+            "unit": "m"
+          },
+          "xo": {
+            "desc": "地面系物体坐标",
+            "unit": "m"
+          },
+          "xr": {
+            "desc": "地面系参考原点坐标",
+            "unit": "m"
+          },
+          "v": {
+            "desc": "相对参考系速度",
+            "unit": "m/s"
+          },
+          "vo": {
+            "desc": "地面系物体速度",
+            "unit": "m/s"
+          },
+          "vr": {
+            "desc": "地面系参考原点速度",
+            "unit": "m/s"
+          },
+          "d": {
+            "desc": "独立测量物体与参考原点有向间距",
+            "unit": "m"
+          }
+        },
+        "scenarios": {
+          "同向移动": {
+            "xo": 10,
+            "xr": 3,
+            "x": 7,
+            "vo": 5,
+            "vr": 2,
+            "v": 3,
+            "d": 7
+          },
+          "反向移动": {
+            "xo": 10,
+            "xr": -3,
+            "x": 13,
+            "vo": 5,
+            "vr": -2,
+            "v": 7,
+            "d": 13
+          }
+        },
+        "formulas": [
+          {
+            "name": "同向坐标轴下的相对位置",
+            "expr": "x = xo-xr",
+            "when": "同一时刻在同向的一维坐标轴上，xo为物体坐标，xr为参考点坐标；x保留正负。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "同向移动",
+                "ref": 7,
+                "note": "地面位置10 m减原点3 m。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "反向移动",
+                "ref": 13,
+                "note": "减去负原点位置得13 m。"
+              },
+              {
+                "type": "scan",
+                "scenario": "同向移动",
+                "var": "xo",
+                "lo": 0,
+                "hi": 20,
+                "note": "扫描本条适用范围内的参数，奇点和越量程操作不在有效范围内。"
+              },
+              {
+                "type": "consistency",
+                "scenario": "同向移动",
+                "with": "met-07|同向坐标轴下的相对位置",
+                "with_expr": "d",
+                "note": "直接求本公式输出，与情境中另列的d设计基准核对；数据是设计示例，不是实测。用于核对定义、反算或边界值，不宣称不同物理原理互证。",
+                "target": "相对参考系原点坐标",
+                "verification_kind": "独立设计情境数据核对"
+              }
+            ]
+          },
+          {
+            "name": "相对平动速度",
+            "expr": "v = vo-vr",
+            "when": "经典低速、同向坐标轴的平动参考系。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "同向移动",
+                "ref": 3,
+                "note": "物体5 m/s减参考原点2 m/s。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "反向移动",
+                "ref": 7,
+                "note": "参考原点速度-2 m/s。"
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "位置10-3=7 m。",
+          "速度5-2=3 m/s；两者都相对于车厢原点。",
+          "能否视为质点取决于研究问题：研究地球绕太阳的位置运动可作质点近似，研究地球自转或物体转动姿态不能这样处理。"
+        ],
+        "errors": [
+          {
+            "wrong": "换参考系时仍使用地面坐标，忘记减参考原点坐标。",
+            "wrong_expr": "x = xo",
+            "why": "地面坐标10 m而参考原点在3 m，相对坐标是7 m；位置变化须同时明确原点，不能把坐标当成绝对属性。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "同向移动",
+              "expr": "xo",
+              "ref": 7
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "地球很大所以任何问题都不能作质点，或者小物体永远可以。",
+            "why": "大小是否影响所研究问题才是标准，轨道位置与转动姿态要求不同；模型必须保留质量并说明忽略的几何信息。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "地面系物体位置10 m、速度5 m/s，车厢原点位置3 m、速度2 m/s，轴同向且低速，求车厢系位置和速度。",
+          "solution": [
+            "位置10-3=7 m。",
+            "速度5-2=3 m/s；两者都相对于车厢原点。"
+          ],
+          "answer": "位置7 m，相对速度3 m/s。"
+        },
+        "prereq": [],
+        "next": [
+          "kine-01",
+          "dyn-09"
+        ],
+        "tags": [
+          "质点模型与参考系",
+          "条件与边界",
+          "实验与证据"
+        ],
+        "core": [
+          {
+            "title": "质点模型与参考系：方法与边界",
+            "text": "能否视为质点取决于研究问题：研究地球绕太阳的位置运动可作质点近似，研究地球自转或物体转动姿态不能这样处理。质点并非质量为零，也不是所有小物体都能忽略大小。参考系可以选地面、车厢或其他对象，但要说明；在经典低速且坐标轴同向的平动参考系中，位置和速度分别作差。加速参考系的动力学分析不能直接沿用惯性系受力规则。"
+          }
+        ],
+        "learning_scope": "高中"
       },
-      "title": "质点模型与参考系",
+      "error_index": 1,
       "chapter": "第二十五章 · 解题方法与数学工具"
     }
-  }
+  },
+  "generator_version": "2026-10-04-条件过程返工-8"
 }

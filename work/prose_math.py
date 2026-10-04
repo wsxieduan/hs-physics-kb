@@ -49,6 +49,83 @@ Copyright 提示：本模块只参与「出成品」的渲染，不属于冻结�
 import html
 import re
 import xml.etree.ElementTree as ET
+from contextvars import ContextVar
+from contextlib import contextmanager
+from functools import wraps
+
+# 同一机器后缀在不同卡片含义不同，显示时必须带上卡片上下文。
+# 未登记的符号保持原样，不能凭 p 猜测末态；计算变量始终不变。
+_POINT = ContextVar('排版卡片', default=None)
+P_DISPLAY = {
+    'mom-03': {'v1_p': ('v1', '′'), 'v2_p': ('v2', '′')},
+    'mom-04': {'v1_p': ('v1', '′'), 'v2_p': ('v2', '′')},
+    'osc-07': {'f_p': ('f', '接收'), 'T_p': ('T', '接收')},
+    'dc-05': {'R_p': ('R', '并')},
+    'iad-06': {'v1_p': ('v1', '稳'), 'v2_p': ('v2', '稳')},
+    'iad-07': {'v_p': ('v', '′')},
+    'wop-03': {'I_p': ('I', '透')},
+    'qz-08': {'l_p': ('λ', '′')},
+    'exp-04': {'v1_p': ('v1', '′'), 'v2_p': ('v2', '′'), 'p_p': ('p', '′')},
+    'mdl-06': {'v_p': ('v', '′')},
+    'mdl-07': {'x_p': ('x', '人')},
+    'mdl-13': {'v_p': ('v', '近')},
+    'mdl-22': {'U_p': ('U', '初级'), 'N_p': ('N', '初级')},
+    'mdl-23': {'U_p': ('U', '′')},
+    'mdl-28': {'a_p': ('a', '物'), 'T_p': ('T', '绳')},
+    'mdl-29': {'W_p': ('W', '等压')},
+    'mdl-36': {'a_p': ('a', '板')},
+    'mdl-37': {'t_p': ('t', '飞行')},
+    'mdl-38': {'t_p': ('t', '飞行')},
+    'exp-11': {'v_p': ('v', '′')},
+    'exp-12': {'t_p': ('t', '平抛'), 'x_p': ('x', '平抛'), 'R_p': ('R', '斜抛')},
+    'exp-18': {'T_p': ('T', '摆'), 'L_p': ('L', '摆'), 'N_p': ('N', '周期数')},
+    'exp-25': {'K_p': ('K', '′')},
+}
+
+@contextmanager
+def symbol_context(point_id):
+    """只在一张卡片的显示过程中启用映射，结束时还原，避免串卡。"""
+    token = _POINT.set(point_id)
+    try:
+        yield
+    finally:
+        _POINT.reset(token)
+
+def card_symbols(first_is_id=False):
+    """给已有卡片渲染入口补上下文，不改公式与校验器。"""
+    def decorate(func):
+        @wraps(func)
+        def wrapped(first, *args, **kwargs):
+            pid = first if first_is_id else first.get('id')
+            with symbol_context(pid):
+                return func(first, *args, **kwargs)
+        return wrapped
+    return decorate
+
+def _p_display(name, point_id=None, mathml=False):
+    """正文和 MathML 共用唯一的物理语义表。"""
+    pid = point_id if point_id is not None else _POINT.get()
+    name = re.sub(r'^v_([0-9]+)_p$', r'v\1_p', name)
+    spec = P_DISPLAY.get(pid, {}).get(name)
+    # 无上下文的旧接口兼容已存在的 v 系排版测试；实际页面均传卡片。
+    if spec is None and pid is None and re.fullmatch(r'v[0-9]*_p', name):
+        spec = (name[:-2], '′')
+    if spec is None:
+        return None
+    base, suffix = spec
+    numbered = re.fullmatch(r'([A-Za-z])([0-9]+)', base)
+    if mathml:
+        if suffix == '′':
+            if numbered:
+                return '<msubsup><mi>%s</mi><mn>%s</mn><mo>′</mo></msubsup>' % numbered.groups()
+            return '<msup><mi>%s</mi><mo>′</mo></msup>' % base
+        if numbered:
+            base = numbered[1]
+            suffix = numbered[2] + suffix
+        return '<msub><mi>%s</mi><mi mathvariant="normal">%s</mi></msub>' % (base,suffix)
+    if numbered:
+        base = numbered[1] + '<sub>' + numbered[2] + '</sub>'
+    return base + ('′' if suffix == '′' else '<sub>' + suffix + '</sub>')
 
 __all__ = ["render", "display_mathml"]
 
@@ -430,7 +507,7 @@ def _do_sub(m):
 # 三、对外接口
 # ============================================================
 
-def render(text):
+def render(text, point_id=None):
     """把一段正文文本还原成教材习惯的写法，返回 HTML 片段。
 
     · 输入里的 & < > 会被转义；
@@ -463,9 +540,9 @@ def render(text):
     s = _RE_SUP_PAREN.sub(lambda m: "<sup>%s</sup>" % m.group(1), s)
     s = _RE_SUP_VAR.sub(_do_sup_var, s)
     s = _RE_BOLD.sub(r"<strong>\1</strong>", s)
-    # 数据层的 _p 专指变化后的一撇；须在普通数字下标规则之前处理。
-    s = re.sub(r"(?<![A-Za-z0-9_])(v)_?([0-9]*)_p(?![A-Za-z0-9_])",
-               lambda m: m.group(1) + ("<sub>%s</sub>" % m.group(2) if m.group(2) else "") + "′", s)
+    # 先按卡片语义处理，平抛、初级、并联等与末态分开。
+    s = re.sub(r'(?<![A-Za-z0-9_])([A-Za-z]_?[0-9]*_p)(?![A-Za-z0-9_])',
+               lambda m: _p_display(m[1], point_id) or m[1], s)
     # ★ 平排「字母+数字」名 → 教材下标（h1→h₁、Ek2→E_k2；m 系不转，
     #   见 _RE_PROSE_SUB 的注释——正文里 m2 多数是"平方米"）
     s = _RE_PROSE_SUB.sub(_do_prose_sub, s)
@@ -538,15 +615,9 @@ _RE_DELTA = re.compile(r'<mi>\u03b4</mi>')
 
 def _do_sub_display(m):
     base, sub = m.group(1), m.group(2)
-    # 兼容已有实验数据 v_1_p：序号与一撇并列，不能嵌套成小号的字母 p。
-    if base == "v" and re.fullmatch(r"[0-9]+_p", sub):
-        return '<msubsup><mi>v</mi><mn>%s</mn><mo>′</mo></msubsup>' % sub[:-2]
-    # 一撇放在上标，序号放在下标，避免把碰后速度显示成 v1 的字母 p 下标。
-    if sub == "p" and re.fullmatch(r"v[0-9]*", base):
-        numbered = re.fullmatch(r"([A-Za-z])([0-9]+)", base)
-        if numbered:
-            return '<msubsup><mi>%s</mi><mn>%s</mn><mo>′</mo></msubsup>' % numbered.groups()
-        return '<msup><mi>%s</mi><mo>′</mo></msup>' % base
+    mapped = _p_display(base + '_' + sub, mathml=True)
+    if mapped:
+        return mapped
     # 老卡片的 S_dot 是面积速度，新卡片的 T_dot 是打点周期，不共用含义。
     if base == "T" and sub == "dot":
         return '<msub><mi>T</mi><mi mathvariant="normal">打点</mi></msub>'
@@ -737,7 +808,7 @@ _RE_MI_EKP = re.compile(
     r'(?<!<msub>)<mi mathvariant="normal">E([kp][0-9]*)</mi>')
 
 
-def display_mathml(text):
+def display_mathml(text, point_id=None):
     """把 physkit 生成的 MathML 里的「机器记号」换成人看的教材写法。
 
     ⚠ 只动**记号怎么写**：不改数值、不改结构、不改符号顺序。
@@ -748,7 +819,8 @@ def display_mathml(text):
     if not text:
         return text
     s = _mathml_fence_half(text)               # ★ 树状：围栏 + 0.5→½
-    s = _SUB_PAT.sub(_do_sub_display, s)
+    with symbol_context(point_id if point_id is not None else _POINT.get()):
+        s = _SUB_PAT.sub(_do_sub_display, s)
     s = _SUB_CN_PAT.sub(
         lambda m: '<msub><mi>%s</mi><mi mathvariant="normal">%s</mi></msub>'
                   % (m.group(1), m.group(2)), s)
@@ -906,7 +978,27 @@ def _selftest():
             print("✘ MML 输入：%s" % src)
             print("    须含：%s  须无：%s" % (must_have, must_not))
             print("    实际：%s" % got)
-    total = len(_CASES) + len(_MML_CASES)
+    context_total = 0
+    # 每个实际语义同时测试正文与 MathML，包括已处理 v_p 的非末态反向保护。
+    for pid, mapping in P_DISPLAY.items():
+        for name, (base, suffix) in mapping.items():
+            for is_math in (False, True):
+                context_total += 1
+                src = name
+                if is_math:
+                    a,b = name.split('_',1)
+                    src = '<msub><mi>%s</mi><mi>%s</mi></msub>' % (a,b)
+                got = display_mathml(src,pid) if is_math else render(src,pid)
+                want = _p_display(name,pid,is_math)
+                if got != want:
+                    bad += 1
+                    print('✘ 卡片语义：',pid,name,got,want)
+    for pid,name in [('dc-05','S_p'),('mdl-22','v_p'),('mdl-13','v1_p')]:
+        context_total += 1
+        if '′' in render(name,pid):
+            bad += 1
+            print('✘ 未定义符号被改成一撇：',pid,name)
+    total = len(_CASES) + len(_MML_CASES) + context_total
     print("自测：%d / %d 通过" % (total - bad, total))
     return 1 if bad else 0
 

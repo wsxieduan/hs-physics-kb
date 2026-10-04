@@ -8,27 +8,19 @@
       "point_id": "thermo-01",
       "point_title": "热力学第一定律",
       "chapter": "第十九章 · 热力学定律",
-      "stem": "【第十九章 · 热力学定律 · 热力学第一定律】学生的错误做法：在本章的符号约定下仍机械地写 ΔU = Q - W（错误表达式：ΔU = Q - W）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "stem": "在“热力学第一定律”的模型下，Q（传入系统的热量，吸热为正、放热为负）=500 J；W（外界对系统做的功，外界做正功时为正）=-200 J。条件：采用外界对系统做功为正、传入系统的热量为正的约定。求系统内能的变化量，末态内能减初态内能（ΔU）。这些数值是设计示例。",
       "options": [
         {
           "label": "A",
-          "text": "概念混淆：熔化平台上 ΔT=0，但物质持续吸收潜热来改变微观结构。"
+          "text": "300 J"
         },
         {
           "label": "B",
-          "text": "概念混淆：百分数必须化为小数 0.70。"
-        },
-        {
-          "label": "C",
-          "text": "数值代入：“损耗”通常是机械能转化成内能并扩散到环境，不是能量消失。"
-        },
-        {
-          "label": "D",
-          "text": "数值代入：本章的 W 指外界对系统做功。"
+          "text": "700 J"
         }
       ],
-      "correct_answer": "D",
-      "explanation": "本章的 W 指外界对系统做功。吸热膨胀情境中 W=-200 J，错误式得到 700 J，而能量收支应为 300 J。减号版本只适用于把 W 定义为系统对外做功的另一套约定。\n知识库校验证据：情境：吸热膨胀；代入错误式：Q - W；校验参照值：300。",
+      "correct_answer": "A",
+      "explanation": "使用热力学第一定律：Q + W，代入得300 J。另一结果来自Q - W，算得700 J。\n本章的 W 指外界对系统做功。吸热膨胀情境中 W=-200 J，错误式得到 700 J，而能量收支应为 300 J。减号版本只适用于把 W 定义为系统对外做功的另一套约定。\n知识点条件：公式最难的不是加法，而是符号。先判断能量沿哪条路径进出系统，再代入正负号：吸热使能量进入系统，取正；外界压缩气体也把能量送入系统，做功取正。相反，气体膨胀推动活塞时能量离开系统，W 取负。内能是状态量，而热量和功是过程量，不能说某个物体“含有多少热量”。\n推导依据：把研究对象选作热力学系统。系统与外界交换能量只有传热和做功两条常见路径。；按能量流入系统为正的统一思想：传入的热量记为 Q，外界对系统做功记为 W。；由能量守恒，系统内能的增量等于两条路径流入能量的代数和，因此 ΔU = Q + W。；若采用“系统对外界做功为正”的另一套约定，第一定律中的做功项要改用减号；两种符号约定不能混用。\n卡片公式各自的适用条件（不是本题共同前提）：\n热力学第一定律：采用外界对系统做功为正、传入系统的热量为正的约定\n由内能变化反求外界做功：已知内能变化与传热，反求外界对系统做的功",
       "error_type": "数值代入",
       "judging": "auto",
       "source_error_index": 0,
@@ -39,15 +31,56 @@
         "expr": "Q - W",
         "ref": 300
       },
+      "level": "基础",
+      "learning_scope": "高中",
+      "answer_evidence": {
+        "kind": "numeric",
+        "scenario": "吸热膨胀",
+        "parameters": {
+          "Q": 500,
+          "W": -200,
+          "delta_U": 300
+        },
+        "target": "delta_U",
+        "unit": "J",
+        "reference": 300,
+        "correct_proof": {
+          "expression": "Q + W",
+          "formula": "热力学第一定律",
+          "value": 300,
+          "when": "采用外界对系统做功为正、传入系统的热量为正的约定"
+        },
+        "distractor_expression": "Q - W",
+        "distractor_value": 700.0,
+        "dimension_matches": true,
+        "independent_evaluation": true
+      },
       "review": {
         "confidence": "medium",
-        "checks": {
-          "answer_unique": true,
-          "distractors_plausible": true,
-          "stem_clear": true,
-          "no_cross_segment": true
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": true,
+          "no_answer_leak_in_options": true
         },
-        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。"
       }
     },
     {
@@ -55,27 +88,19 @@
       "point_id": "thermo-01",
       "point_title": "热力学第一定律",
       "chapter": "第十九章 · 热力学定律",
-      "stem": "【第十九章 · 热力学定律 · 热力学第一定律】学生的错误做法：绝热过程一定不做功，所以内能不变（错误表达式：ΔU = Q）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "stem": "在“热力学第一定律”的模型下，Q（传入系统的热量，吸热为正、放热为负）=0 J；W（外界对系统做的功，外界做正功时为正）=150 J。条件：采用外界对系统做功为正、传入系统的热量为正的约定。求系统内能的变化量，末态内能减初态内能（ΔU）。这些数值是设计示例。",
       "options": [
         {
           "label": "A",
-          "text": "概念混淆：百分数必须化为小数 0.70。"
+          "text": "150 J"
         },
         {
           "label": "B",
-          "text": "数值代入：“损耗”通常是机械能转化成内能并扩散到环境，不是能量消失。"
-        },
-        {
-          "label": "C",
-          "text": "数值代入：绝热只表示 Q=0，不表示 W=0。"
-        },
-        {
-          "label": "D",
-          "text": "概念混淆：熔化平台上 ΔT=0，但物质持续吸收潜热来改变微观结构。"
+          "text": "0 J"
         }
       ],
-      "correct_answer": "C",
-      "explanation": "绝热只表示 Q=0，不表示 W=0。绝热压缩中外界做功 150 J，内能增加 150 J；错误式却给出 0。\n知识库校验证据：情境：绝热压缩；代入错误式：Q；校验参照值：150。",
+      "correct_answer": "A",
+      "explanation": "使用热力学第一定律：Q + W，代入得150 J。另一结果来自Q，算得0 J。\n绝热只表示 Q=0，不表示 W=0。绝热压缩中外界做功 150 J，内能增加 150 J；错误式却给出 0。\n知识点条件：公式最难的不是加法，而是符号。先判断能量沿哪条路径进出系统，再代入正负号：吸热使能量进入系统，取正；外界压缩气体也把能量送入系统，做功取正。相反，气体膨胀推动活塞时能量离开系统，W 取负。内能是状态量，而热量和功是过程量，不能说某个物体“含有多少热量”。\n推导依据：把研究对象选作热力学系统。系统与外界交换能量只有传热和做功两条常见路径。；按能量流入系统为正的统一思想：传入的热量记为 Q，外界对系统做功记为 W。；由能量守恒，系统内能的增量等于两条路径流入能量的代数和，因此 ΔU = Q + W。；若采用“系统对外界做功为正”的另一套约定，第一定律中的做功项要改用减号；两种符号约定不能混用。\n卡片公式各自的适用条件（不是本题共同前提）：\n热力学第一定律：采用外界对系统做功为正、传入系统的热量为正的约定\n由内能变化反求外界做功：已知内能变化与传热，反求外界对系统做的功",
       "error_type": "数值代入",
       "judging": "auto",
       "source_error_index": 1,
@@ -86,15 +111,56 @@
         "expr": "Q",
         "ref": 150
       },
+      "level": "基础",
+      "learning_scope": "高中",
+      "answer_evidence": {
+        "kind": "numeric",
+        "scenario": "绝热压缩",
+        "parameters": {
+          "Q": 0,
+          "W": 150,
+          "delta_U": 150
+        },
+        "target": "delta_U",
+        "unit": "J",
+        "reference": 150,
+        "correct_proof": {
+          "expression": "Q + W",
+          "formula": "热力学第一定律",
+          "value": 150,
+          "when": "采用外界对系统做功为正、传入系统的热量为正的约定"
+        },
+        "distractor_expression": "Q",
+        "distractor_value": 0.0,
+        "dimension_matches": true,
+        "independent_evaluation": true
+      },
       "review": {
         "confidence": "medium",
-        "checks": {
-          "answer_unique": true,
-          "distractors_plausible": true,
-          "stem_clear": true,
-          "no_cross_segment": true
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": true,
+          "no_answer_leak_in_options": true
         },
-        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。"
       }
     },
     {
@@ -102,46 +168,154 @@
       "point_id": "thermo-02",
       "point_title": "能量守恒定律",
       "chapter": "第十九章 · 热力学定律",
-      "stem": "【第十九章 · 热力学定律 · 能量守恒定律】学生的错误做法：认为能量转化过程中会有一部分能量消失（错误表达式：E<sub>后</sub> = 0.8·E<sub>前</sub>）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "stem": "在“能量守恒定律”的模型下，E<sub>前</sub>（孤立系统初态的总能量）=1250 J。条件：能量可以在不同形式之间转化，也可以随热传递和做功跨越系统边界。总能量保持不变的条件是系统不与外界交换物质和能量，即选取孤立系统。仅仅密闭或绝热并不足以推出总能量不变。若系统只含相互传热的物体、没有外界做功且忽略容器吸热与环境散热，放热量与吸热量大小相等。。求孤立系统末态的总能量（E<sub>后</sub>）。这些数值是设计示例。",
       "options": [
         {
           "label": "A",
-          "text": "数值代入：本章的 W 指外界对系统做功。"
+          "text": "1000 J"
         },
         {
           "label": "B",
-          "text": "数值代入：“损耗”通常是机械能转化成内能并扩散到环境，不是能量消失。"
-        },
-        {
-          "label": "C",
-          "text": "概念混淆：熔化平台上 ΔT=0，但物质持续吸收潜热来改变微观结构。"
-        },
-        {
-          "label": "D",
-          "text": "概念混淆：百分数必须化为小数 0.70。"
+          "text": "1250 J"
         }
       ],
       "correct_answer": "B",
-      "explanation": "“损耗”通常是机械能转化成内能并扩散到环境，不是能量消失。封闭系统情境中错误式只得 1000 J，而总能量仍应为 1250 J。\n知识库校验证据：情境：封闭系统；代入错误式：0.8·E<sub>前</sub>；校验参照值：1250。",
+      "explanation": "使用本卡物理关系的等价变形或明确边界条件：E<sub>前</sub>，代入得1250 J。另一结果来自0.8·E<sub>前</sub>，算得1000 J。\n“损耗”通常是机械能转化成内能并扩散到环境，不是能量消失。孤立系统情境中错误式只得 1000 J，而总能量仍应为 1250 J。\n知识点条件：先选系统，再核对边界。密闭容器可以被外界加热；绝热容器内的气体可以推动活塞做功，这两种情况均可能发生能量交换。本卡将两部分水合在一起，并假定容器绝热、不发生外界功、忽略容器吸热和宏观动能及势能变化，才可使用热量平衡。若向空气散热，系统能量会减少，须计入流出的热量；将环境一并纳入更大系统仍可进行能量守恒记账。\n推导依据：选取不与外界交换物质和能量的孤立系统，将机械能、内能等全部计入总能量。；在这一边界条件下没有能量输入或输出，故 E<sub>后</sub>=E<sub>前</sub>，ΔE<sub>总</sub>=0；密闭并不自动满足这一条件。；两部分水组成的系统与环境绝热、无外界功且忽略容器吸热及宏观能量变化时，内能只在两部分水之间转移，Q<sub>吸</sub>=Q<sub>放</sub>。\n卡片公式各自的适用条件（不是本题共同前提）：\n系统总能量变化：总能量变化定义适用于选定系统；只有不与外界交换物质和能量时，才能进一步断言变化量为零\n绝热热交换的热量平衡：系统只含相互传热的物体，并且与环境绝热、不发生其他能量交换",
       "error_type": "数值代入",
       "judging": "auto",
       "source_error_index": 0,
       "source_caught_by": "数值代入",
       "wrong_expr": "E<sub>后</sub> = 0.8·E<sub>前</sub>",
       "trap_test": {
-        "scenario": "封闭系统",
+        "scenario": "孤立系统",
         "expr": "0.8*E_before",
         "ref": 1250
       },
+      "level": "基础",
+      "learning_scope": "高中",
+      "answer_evidence": {
+        "kind": "numeric",
+        "scenario": "孤立系统",
+        "parameters": {
+          "E_before": 1250,
+          "E_after": 1250,
+          "delta_E_total": 0
+        },
+        "target": "E_after",
+        "unit": "J",
+        "reference": 1250,
+        "correct_proof": {
+          "expression": "E_before",
+          "formula": "本卡物理关系的等价变形或明确边界条件",
+          "value": 1250,
+          "when": "能量可以在不同形式之间转化，也可以随热传递和做功跨越系统边界。总能量保持不变的条件是系统不与外界交换物质和能量，即选取孤立系统。仅仅密闭或绝热并不足以推出总能量不变。若系统只含相互传热的物体、没有外界做功且忽略容器吸热与环境散热，放热量与吸热量大小相等。"
+        },
+        "distractor_expression": "0.8*E_before",
+        "distractor_value": 1000.0,
+        "dimension_matches": true,
+        "independent_evaluation": true
+      },
       "review": {
         "confidence": "medium",
-        "checks": {
-          "answer_unique": true,
-          "distractors_plausible": true,
-          "stem_clear": true,
-          "no_cross_segment": true
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": true,
+          "no_answer_leak_in_options": true
         },
-        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。"
+      }
+    },
+    {
+      "id": "diagnostic-thermo-02-2",
+      "point_id": "thermo-02",
+      "point_title": "能量守恒定律",
+      "chapter": "第十九章 · 热力学定律",
+      "stem": "在“能量守恒定律”的模型下，Q<sub>放</sub>（高温物体放出的热量大小）=8400 J。条件：系统只含相互传热的物体，并且与环境绝热、不发生其他能量交换。求低温物体吸收的热量大小（Q<sub>吸</sub>）。这些数值是设计示例。",
+      "options": [
+        {
+          "label": "A",
+          "text": "16800 J"
+        },
+        {
+          "label": "B",
+          "text": "8400 J"
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "使用绝热热交换的热量平衡：Q<sub>放</sub>，代入得8400 J。另一结果来自Q<sub>放</sub> + Q<sub>吸</sub>，算得16800 J。\n同一份转移的能量被重复记了两次。情境中右边变成 16800 J，而低温物体只吸收 8400 J。\n知识点条件：先选系统，再核对边界。密闭容器可以被外界加热；绝热容器内的气体可以推动活塞做功，这两种情况均可能发生能量交换。本卡将两部分水合在一起，并假定容器绝热、不发生外界功、忽略容器吸热和宏观动能及势能变化，才可使用热量平衡。若向空气散热，系统能量会减少，须计入流出的热量；将环境一并纳入更大系统仍可进行能量守恒记账。\n推导依据：选取不与外界交换物质和能量的孤立系统，将机械能、内能等全部计入总能量。；在这一边界条件下没有能量输入或输出，故 E<sub>后</sub>=E<sub>前</sub>，ΔE<sub>总</sub>=0；密闭并不自动满足这一条件。；两部分水组成的系统与环境绝热、无外界功且忽略容器吸热及宏观能量变化时，内能只在两部分水之间转移，Q<sub>吸</sub>=Q<sub>放</sub>。\n卡片公式各自的适用条件（不是本题共同前提）：\n系统总能量变化：总能量变化定义适用于选定系统；只有不与外界交换物质和能量时，才能进一步断言变化量为零\n绝热热交换的热量平衡：系统只含相互传热的物体，并且与环境绝热、不发生其他能量交换",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 1,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "Q<sub>吸</sub> = Q<sub>放</sub> + Q<sub>吸</sub>",
+      "trap_test": null,
+      "level": "基础",
+      "learning_scope": "高中",
+      "answer_evidence": {
+        "kind": "numeric",
+        "scenario": "绝热混合",
+        "parameters": {
+          "Q_release": 8400,
+          "Q_absorb": 8400
+        },
+        "target": "Q_absorb",
+        "unit": "J",
+        "reference": 8400,
+        "correct_proof": {
+          "expression": "Q_release",
+          "formula": "绝热热交换的热量平衡",
+          "value": 8400,
+          "when": "系统只含相互传热的物体，并且与环境绝热、不发生其他能量交换"
+        },
+        "distractor_expression": "Q_release + Q_absorb",
+        "distractor_value": 16800.0,
+        "dimension_matches": true,
+        "independent_evaluation": true
+      },
+      "review": {
+        "confidence": "medium",
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": true,
+          "no_answer_leak_in_options": true
+        },
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。"
       }
     },
     {
@@ -149,27 +323,19 @@
       "point_id": "thermo-03",
       "point_title": "热力学第二定律与热机效率",
       "chapter": "第十九章 · 热力学定律",
-      "stem": "【第十九章 · 热力学定律 · 热力学第二定律与热机效率】学生的错误做法：把热机效率的分子分母颠倒，写成 η=Q<sub>h</sub>/W<sub>出</sub>（错误表达式：η = Q<sub>h</sub>/W<sub>出</sub>）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "stem": "在“热力学第二定律与热机效率”的模型下，W<sub>出</sub>（热机一个循环对外输出的有用功）=350 J；Q<sub>h</sub>（热机一个循环从高温热库吸收的热量）=1000 J。条件：热机循环工作，效率等于有用功与从高温热库吸热量之比。求热机效率（η）。这些数值是设计示例。",
       "options": [
         {
           "label": "A",
-          "text": "概念混淆：熔化平台上 ΔT=0，但物质持续吸收潜热来改变微观结构。"
+          "text": "0.35 1"
         },
         {
           "label": "B",
-          "text": "概念混淆：百分数必须化为小数 0.70。"
-        },
-        {
-          "label": "C",
-          "text": "数值代入：本章的 W 指外界对系统做功。"
-        },
-        {
-          "label": "D",
-          "text": "数值代入：效率应是有用输出除以能量输入。"
+          "text": "2.85714 1"
         }
       ],
-      "correct_answer": "D",
-      "explanation": "效率应是有用输出除以能量输入。错误式得到 1000/350≈2.86，大于 1，既与定义不符也违反第二定律。\n知识库校验证据：情境：实际热机；代入错误式：Q<sub>h</sub>/W<sub>出</sub>；校验参照值：0.35。",
+      "correct_answer": "A",
+      "explanation": "使用热机效率：W<sub>出</sub>/Q<sub>h</sub>，代入得0.35 1。另一结果来自Q<sub>h</sub>/W<sub>出</sub>，算得2.85714 1。\n效率应是有用输出除以能量输入。错误式得到 1000/350≈2.86，大于 1，既与定义不符也违反第二定律。\n知识点条件：第二定律不否定能量守恒，而是在守恒之外增加“方向限制”。冰箱能把热量从低温处搬到高温处，是因为压缩机消耗了电功；热机能连续对外做功，也必须把一部分热量排给低温热库。因此真实热机效率小于 1，并且不会超过相同高、低温热库之间可逆热机的卡诺效率。温度必须使用开尔文温标。\n推导依据：热机每循环从高温热库吸收 Q<sub>h</sub>，对外做有用功 W<sub>出</sub>，其余能量必须排向低温热库。；效率定义为收益与投入之比，因此 η=W<sub>出</sub>/Q<sub>h</sub>；第二定律要求连续工作的热机 η&lt;1。；对理想可逆热机，效率只由两个热库的热力学温度决定，η<sub>max</sub>=1-T<sub>c</sub>/T<sub>h</sub>。；实际过程存在摩擦、有限温差传热等不可逆因素，所以实际效率严格低于卡诺上限。\n卡片公式各自的适用条件（不是本题共同前提）：\n热机效率：热机循环工作，效率等于有用功与从高温热库吸热量之比\n卡诺效率上限：理想可逆热机在温度为 T<sub>h</sub> 与 T<sub>c</sub> 的两个热库之间工作，且 T<sub>h</sub>&gt;T<sub>c</sub>&gt;0",
       "error_type": "数值代入",
       "judging": "auto",
       "source_error_index": 0,
@@ -180,15 +346,59 @@
         "expr": "Q_h/W_out",
         "ref": 0.35
       },
+      "level": "进阶",
+      "learning_scope": "高中",
+      "answer_evidence": {
+        "kind": "numeric",
+        "scenario": "实际热机",
+        "parameters": {
+          "W_out": 350,
+          "Q_h": 1000,
+          "eta": 0.35,
+          "T_h": 600,
+          "T_c": 300,
+          "eta_max": 0.5
+        },
+        "target": "eta",
+        "unit": "1",
+        "reference": 0.35,
+        "correct_proof": {
+          "expression": "W_out/Q_h",
+          "formula": "热机效率",
+          "value": 0.35,
+          "when": "热机循环工作，效率等于有用功与从高温热库吸热量之比"
+        },
+        "distractor_expression": "Q_h/W_out",
+        "distractor_value": 2.857142857142857,
+        "dimension_matches": true,
+        "independent_evaluation": true
+      },
       "review": {
         "confidence": "medium",
-        "checks": {
-          "answer_unique": true,
-          "distractors_plausible": true,
-          "stem_clear": true,
-          "no_cross_segment": true
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": true,
+          "no_answer_leak_in_options": true
         },
-        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。"
       }
     },
     {
@@ -196,27 +406,19 @@
       "point_id": "thermo-03",
       "point_title": "热力学第二定律与热机效率",
       "chapter": "第十九章 · 热力学定律",
-      "stem": "【第十九章 · 热力学定律 · 热力学第二定律与热机效率】学生的错误做法：卡诺效率写成 η<sub>max</sub>=1-T<sub>h</sub>/T<sub>c</sub>（错误表达式：η<sub>max</sub> = 1 - T<sub>h</sub>/T<sub>c</sub>）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "stem": "在“热力学第二定律与热机效率”的模型下，T<sub>h</sub>（高温热库的热力学温度）=600 K；T<sub>c</sub>（低温热库的热力学温度）=300 K。条件：理想可逆热机在温度为 T<sub>h</sub> 与 T<sub>c</sub> 的两个热库之间工作，且 T<sub>h</sub>&gt;T<sub>c</sub>&gt;0。求给定高低温热库之间的卡诺效率上限（η<sub>max</sub>）。这些数值是设计示例。",
       "options": [
         {
           "label": "A",
-          "text": "概念混淆：百分数必须化为小数 0.70。"
+          "text": "0.5 1"
         },
         {
           "label": "B",
-          "text": "数值代入：本章的 W 指外界对系统做功。"
-        },
-        {
-          "label": "C",
-          "text": "数值代入：高低温温度比写反会得到 1-600/300=-1，不可能成为效率。"
-        },
-        {
-          "label": "D",
-          "text": "概念混淆：熔化平台上 ΔT=0，但物质持续吸收潜热来改变微观结构。"
+          "text": "-1 1"
         }
       ],
-      "correct_answer": "C",
-      "explanation": "高低温温度比写反会得到 1-600/300=-1，不可能成为效率。正确结果是 0.5。\n知识库校验证据：情境：实际热机；代入错误式：1 - T<sub>h</sub>/T<sub>c</sub>；校验参照值：0.5。",
+      "correct_answer": "A",
+      "explanation": "使用卡诺效率上限：1 - T<sub>c</sub>/T<sub>h</sub>，代入得0.5 1。另一结果来自1 - T<sub>h</sub>/T<sub>c</sub>，算得-1 1。\n高低温温度比写反会得到 1-600/300=-1，不可能成为效率。正确结果是 0.5。\n知识点条件：第二定律不否定能量守恒，而是在守恒之外增加“方向限制”。冰箱能把热量从低温处搬到高温处，是因为压缩机消耗了电功；热机能连续对外做功，也必须把一部分热量排给低温热库。因此真实热机效率小于 1，并且不会超过相同高、低温热库之间可逆热机的卡诺效率。温度必须使用开尔文温标。\n推导依据：热机每循环从高温热库吸收 Q<sub>h</sub>，对外做有用功 W<sub>出</sub>，其余能量必须排向低温热库。；效率定义为收益与投入之比，因此 η=W<sub>出</sub>/Q<sub>h</sub>；第二定律要求连续工作的热机 η&lt;1。；对理想可逆热机，效率只由两个热库的热力学温度决定，η<sub>max</sub>=1-T<sub>c</sub>/T<sub>h</sub>。；实际过程存在摩擦、有限温差传热等不可逆因素，所以实际效率严格低于卡诺上限。\n卡片公式各自的适用条件（不是本题共同前提）：\n热机效率：热机循环工作，效率等于有用功与从高温热库吸热量之比\n卡诺效率上限：理想可逆热机在温度为 T<sub>h</sub> 与 T<sub>c</sub> 的两个热库之间工作，且 T<sub>h</sub>&gt;T<sub>c</sub>&gt;0",
       "error_type": "数值代入",
       "judging": "auto",
       "source_error_index": 1,
@@ -227,15 +429,59 @@
         "expr": "1 - T_h/T_c",
         "ref": 0.5
       },
+      "level": "进阶",
+      "learning_scope": "高中",
+      "answer_evidence": {
+        "kind": "numeric",
+        "scenario": "实际热机",
+        "parameters": {
+          "W_out": 350,
+          "Q_h": 1000,
+          "eta": 0.35,
+          "T_h": 600,
+          "T_c": 300,
+          "eta_max": 0.5
+        },
+        "target": "eta_max",
+        "unit": "1",
+        "reference": 0.5,
+        "correct_proof": {
+          "expression": "1 - T_c/T_h",
+          "formula": "卡诺效率上限",
+          "value": 0.5,
+          "when": "理想可逆热机在温度为 T_h 与 T_c 的两个热库之间工作，且 T_h>T_c>0"
+        },
+        "distractor_expression": "1 - T_h/T_c",
+        "distractor_value": -1.0,
+        "dimension_matches": true,
+        "independent_evaluation": true
+      },
       "review": {
         "confidence": "medium",
-        "checks": {
-          "answer_unique": true,
-          "distractors_plausible": true,
-          "stem_clear": true,
-          "no_cross_segment": true
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": true,
+          "no_answer_leak_in_options": true
         },
-        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。"
       }
     },
     {
@@ -243,42 +489,59 @@
       "point_id": "thermo-04",
       "point_title": "固体、液体与物态变化",
       "chapter": "第十九章 · 热力学定律",
-      "stem": "【第十九章 · 热力学定律 · 固体、液体与物态变化】学生的错误做法：晶体熔化过程中仍用 Q=mc ΔT，并因温度不变算出吸热为零。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "stem": "关于“固体、液体与物态变化”，判断这一说法是否成立，并说明依据：\n晶体熔化过程中仍用 Q=mc ΔT，并因温度不变算出吸热为零。",
       "options": [
         {
           "label": "A",
-          "text": "数值代入：效率应是有用输出除以能量输入。"
+          "text": "该说法成立。"
         },
         {
           "label": "B",
-          "text": "概念混淆：熔化平台上 ΔT=0，但物质持续吸收潜热来改变微观结构。"
-        },
-        {
-          "label": "C",
-          "text": "数值代入：本章的 W 指外界对系统做功。"
-        },
-        {
-          "label": "D",
-          "text": "数值代入：“损耗”通常是机械能转化成内能并扩散到环境，不是能量消失。"
+          "text": "该说法不成立。"
         }
       ],
       "correct_answer": "B",
-      "explanation": "熔化平台上 ΔT=0，但物质持续吸收潜热来改变微观结构。2 kg 冰完全熔化需要 668000 J，并非 0。",
+      "explanation": "熔化平台上 ΔT=0，但物质持续吸收潜热来改变微观结构。2 kg 冰完全熔化需要 668000 J，并非 0。\n知识点条件：必须先判断加热过程是否处于相变平台，再选择公式。相变时用 Q=mL，L 取决于物质和相变种类；单纯升温时用 Q=mc ΔT。晶体熔化时持续吸热但温度保持在熔点，吸收的能量用于改变分子排列和分子势能，而不是提高温度。两段过程同时出现时，应分段计算再相加。\n推导依据：相变潜热 L 定义为单位质量物质完成指定相变所需的热量，因此质量为 m 时 Q<sub>潜</sub>=mL。；比热容 c 定义为单位质量物质温度改变 1 K 所需的热量，因此无相变时 Q<sub>显热</sub>=mc ΔT。；相变平台上 ΔT=0 但 Q<sub>潜</sub> 可以不为零，说明潜热公式不能被温升公式替代。\n卡片公式各自的适用条件（不是本题共同前提）：\n相变潜热：物质在相变温度发生熔化、凝固、汽化或液化，L 取对应相变的潜热\n无相变时的吸放热：物质不发生物态变化，且所考察温区内比热容可近似为常量",
       "error_type": "概念混淆",
       "judging": "teacher",
       "source_error_index": 0,
       "source_caught_by": "人工审核",
       "wrong_expr": null,
       "trap_test": null,
+      "level": "基础",
+      "learning_scope": "高中",
+      "answer_evidence": {
+        "kind": "teacher",
+        "claim_source": "wrong",
+        "reference_only": true,
+        "reason": "概念、操作或无法建立完整定量证据，教师确认条件与结论。"
+      },
       "review": {
         "confidence": "medium",
-        "checks": {
-          "answer_unique": true,
-          "distractors_plausible": true,
-          "stem_clear": true,
-          "no_cross_segment": true
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": false,
+          "no_answer_leak_in_options": true
         },
-        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。"
       }
     },
     {
@@ -286,46 +549,79 @@
       "point_id": "thermo-04",
       "point_title": "固体、液体与物态变化",
       "chapter": "第十九章 · 热力学定律",
-      "stem": "【第十九章 · 热力学定律 · 固体、液体与物态变化】学生的错误做法：误把相变潜热写成 Q<sub>潜</sub>=0.5·m·L，多乘了二分之一（错误表达式：Q<sub>潜</sub> = 0.5·m·L）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "stem": "在“固体、液体与物态变化”的模型下，m（发生相变或温度变化的物质质量）=2 kg；L（单位质量物质发生某种相变的潜热）=334000 J/kg。条件：物质在相变温度发生熔化、凝固、汽化或液化，L 取对应相变的潜热。求物态变化过程中吸收或放出的潜热大小（Q<sub>潜</sub>）。这些数值是设计示例。",
       "options": [
         {
           "label": "A",
-          "text": "数值代入：错误式量纲仍然是能量，量纲检查抓不到；代入 2 kg 和 334000 J/kg 只得到 334000 J，正确值应为 668000 J。"
+          "text": "334000 J"
         },
         {
           "label": "B",
-          "text": "概念混淆：百分数必须化为小数 0.70。"
-        },
-        {
-          "label": "C",
-          "text": "概念混淆：熔化平台上 ΔT=0，但物质持续吸收潜热来改变微观结构。"
-        },
-        {
-          "label": "D",
-          "text": "数值代入：本章的 W 指外界对系统做功。"
+          "text": "668000 J"
         }
       ],
-      "correct_answer": "A",
-      "explanation": "错误式量纲仍然是能量，量纲检查抓不到；代入 2 kg 和 334000 J/kg 只得到 334000 J，正确值应为 668000 J。\n知识库校验证据：情境：冰的熔化；代入错误式：0.5·m·L；校验参照值：668000。",
+      "correct_answer": "B",
+      "explanation": "使用相变潜热：m·L，代入得668000 J。另一结果来自½m·L，算得334000 J。\n错误式量纲仍然是能量，量纲检查抓不到；代入 2 kg 和 334000 J/kg 只得到 334000 J，正确值应为 668000 J。\n知识点条件：必须先判断加热过程是否处于相变平台，再选择公式。相变时用 Q=mL，L 取决于物质和相变种类；单纯升温时用 Q=mc ΔT。晶体熔化时持续吸热但温度保持在熔点，吸收的能量用于改变分子排列和分子势能，而不是提高温度。两段过程同时出现时，应分段计算再相加。\n推导依据：相变潜热 L 定义为单位质量物质完成指定相变所需的热量，因此质量为 m 时 Q<sub>潜</sub>=mL。；比热容 c 定义为单位质量物质温度改变 1 K 所需的热量，因此无相变时 Q<sub>显热</sub>=mc ΔT。；相变平台上 ΔT=0 但 Q<sub>潜</sub> 可以不为零，说明潜热公式不能被温升公式替代。\n卡片公式各自的适用条件（不是本题共同前提）：\n相变潜热：物质在相变温度发生熔化、凝固、汽化或液化，L 取对应相变的潜热\n无相变时的吸放热：物质不发生物态变化，且所考察温区内比热容可近似为常量",
       "error_type": "数值代入",
       "judging": "auto",
       "source_error_index": 1,
       "source_caught_by": "数值代入",
-      "wrong_expr": "Q<sub>潜</sub> = 0.5·m·L",
+      "wrong_expr": "Q<sub>潜</sub> = ½m·L",
       "trap_test": {
         "scenario": "冰的熔化",
         "expr": "0.5*m*L",
         "ref": 668000
       },
+      "level": "基础",
+      "learning_scope": "高中",
+      "answer_evidence": {
+        "kind": "numeric",
+        "scenario": "冰的熔化",
+        "parameters": {
+          "m": 2,
+          "L": 334000,
+          "Q_latent": 668000
+        },
+        "target": "Q_latent",
+        "unit": "J",
+        "reference": 668000,
+        "correct_proof": {
+          "expression": "m*L",
+          "formula": "相变潜热",
+          "value": 668000,
+          "when": "物质在相变温度发生熔化、凝固、汽化或液化，L 取对应相变的潜热"
+        },
+        "distractor_expression": "0.5*m*L",
+        "distractor_value": 334000.0,
+        "dimension_matches": true,
+        "independent_evaluation": true
+      },
       "review": {
         "confidence": "medium",
-        "checks": {
-          "answer_unique": true,
-          "distractors_plausible": true,
-          "stem_clear": true,
-          "no_cross_segment": true
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": true,
+          "no_answer_leak_in_options": true
         },
-        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。"
       }
     },
     {
@@ -333,27 +629,19 @@
       "point_id": "thermo-05",
       "point_title": "饱和汽与空气湿度",
       "chapter": "第十九章 · 热力学定律",
-      "stem": "【第十九章 · 热力学定律 · 饱和汽与空气湿度】学生的错误做法：把相对湿度的分子分母颠倒，写成 φ=p<sub>饱和</sub>/p<sub>v</sub>（错误表达式：φ = p<sub>饱和</sub>/p<sub>v</sub>）。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "stem": "在“饱和汽与空气湿度”的模型下，p<sub>v</sub>（空气中水蒸气的实际分压）=1400 Pa；p<sub>饱和</sub>（同温度下水的饱和汽压）=2000 Pa。条件：实际水汽压与饱和汽压取同一温度、同一压强单位。求相对湿度，用小数表示（φ）。这些数值是设计示例。",
       "options": [
         {
           "label": "A",
-          "text": "概念混淆：熔化平台上 ΔT=0，但物质持续吸收潜热来改变微观结构。"
+          "text": "1.42857 1"
         },
         {
           "label": "B",
-          "text": "概念混淆：百分数必须化为小数 0.70。"
-        },
-        {
-          "label": "C",
-          "text": "数值代入：本章的 W 指外界对系统做功。"
-        },
-        {
-          "label": "D",
-          "text": "数值代入：未饱和空气中 p<sub>v</sub>&lt;p<sub>饱和</sub>，颠倒后会算出 2000/1400≈1.43，即 143%，而正确值为 70%。"
+          "text": "0.7 1"
         }
       ],
-      "correct_answer": "D",
-      "explanation": "未饱和空气中 p<sub>v</sub>&lt;p<sub>饱和</sub>，颠倒后会算出 2000/1400≈1.43，即 143%，而正确值为 70%。\n知识库校验证据：情境：室内空气；代入错误式：p<sub>饱和</sub>/p<sub>v</sub>；校验参照值：0.7。",
+      "correct_answer": "B",
+      "explanation": "使用相对湿度：p<sub>v</sub>/p<sub>饱和</sub>，代入得0.7 1。另一结果来自p<sub>饱和</sub>/p<sub>v</sub>，算得1.42857 1。\n未饱和空气中 p<sub>v</sub>&lt;p<sub>饱和</sub>，颠倒后会算出 2000/1400≈1.43，即 143%，而正确值为 70%。\n知识点条件：相对湿度描述空气距离饱和还有多远，不等于空气中水蒸气的质量。实际水汽压不变而温度降低时，饱和汽压会下降，相对湿度上升；达到 100% 后继续降温，就会出现凝露。绝对湿度用单位体积空气所含水蒸气质量表示，与相对湿度是不同口径。天气预报常把相对湿度写成百分数，计算时应先化成小数。\n推导依据：同温度下，以实际水汽压占饱和汽压的比例衡量接近饱和的程度，得到 φ=p<sub>v</sub>/p<sub>饱和</sub>。；当 φ=1 时空气恰好饱和；通常未饱和空气有 0&lt;φ&lt;1，乘 100% 后得到百分数表示。；按质量密度的定义，单位体积所含水蒸气质量为 ρ<sub>v</sub>=m<sub>v</sub>/V，这就是绝对湿度的一种常用表示。\n卡片公式各自的适用条件（不是本题共同前提）：\n相对湿度：实际水汽压与饱和汽压取同一温度、同一压强单位\n绝对湿度：用单位体积空气中水蒸气的质量描述湿度",
       "error_type": "数值代入",
       "judging": "auto",
       "source_error_index": 0,
@@ -364,15 +652,59 @@
         "expr": "p_sat/p_v",
         "ref": 0.7
       },
+      "level": "基础",
+      "learning_scope": "高中",
+      "answer_evidence": {
+        "kind": "numeric",
+        "scenario": "室内空气",
+        "parameters": {
+          "p_v": 1400,
+          "p_sat": 2000,
+          "phi": 0.7,
+          "m_v": 0.018,
+          "V": 15,
+          "rho_v": 0.0012
+        },
+        "target": "phi",
+        "unit": "1",
+        "reference": 0.7,
+        "correct_proof": {
+          "expression": "p_v/p_sat",
+          "formula": "相对湿度",
+          "value": 0.7,
+          "when": "实际水汽压与饱和汽压取同一温度、同一压强单位"
+        },
+        "distractor_expression": "p_sat/p_v",
+        "distractor_value": 1.4285714285714286,
+        "dimension_matches": true,
+        "independent_evaluation": true
+      },
       "review": {
         "confidence": "medium",
-        "checks": {
-          "answer_unique": true,
-          "distractors_plausible": true,
-          "stem_clear": true,
-          "no_cross_segment": true
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": true,
+          "no_answer_leak_in_options": true
         },
-        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。"
       }
     },
     {
@@ -380,51 +712,1962 @@
       "point_id": "thermo-05",
       "point_title": "饱和汽与空气湿度",
       "chapter": "第十九章 · 热力学定律",
-      "stem": "【第十九章 · 热力学定律 · 饱和汽与空气湿度】学生的错误做法：把相对湿度 70% 直接当成数值 70 代入后续公式。以下哪项“错误类别 + 判断依据”最符合题干中的做法？",
+      "stem": "关于“饱和汽与空气湿度”，判断这一说法是否成立，并说明依据：\n相对湿度为70%时，作为比例代入应使用0.70。",
       "options": [
         {
           "label": "A",
-          "text": "数值代入：“损耗”通常是机械能转化成内能并扩散到环境，不是能量消失。"
+          "text": "该说法成立。"
         },
         {
           "label": "B",
-          "text": "数值代入：效率应是有用输出除以能量输入。"
-        },
-        {
-          "label": "C",
-          "text": "概念混淆：百分数必须化为小数 0.70。"
-        },
-        {
-          "label": "D",
-          "text": "数值代入：本章的 W 指外界对系统做功。"
+          "text": "该说法不成立。"
         }
       ],
-      "correct_answer": "C",
-      "explanation": "百分数必须化为小数 0.70。把 70 当作相对湿度会大 100 倍，而且相对湿度的常规范围应在 0 到 1 之间。",
+      "correct_answer": "A",
+      "explanation": "百分数必须化为小数 0.70。把 70 当作相对湿度会大 100 倍，而且相对湿度的常规范围应在 0 到 1 之间。\n知识点条件：相对湿度描述空气距离饱和还有多远，不等于空气中水蒸气的质量。实际水汽压不变而温度降低时，饱和汽压会下降，相对湿度上升；达到 100% 后继续降温，就会出现凝露。绝对湿度用单位体积空气所含水蒸气质量表示，与相对湿度是不同口径。天气预报常把相对湿度写成百分数，计算时应先化成小数。\n推导依据：同温度下，以实际水汽压占饱和汽压的比例衡量接近饱和的程度，得到 φ=p<sub>v</sub>/p<sub>饱和</sub>。；当 φ=1 时空气恰好饱和；通常未饱和空气有 0&lt;φ&lt;1，乘 100% 后得到百分数表示。；按质量密度的定义，单位体积所含水蒸气质量为 ρ<sub>v</sub>=m<sub>v</sub>/V，这就是绝对湿度的一种常用表示。\n卡片公式各自的适用条件（不是本题共同前提）：\n相对湿度：实际水汽压与饱和汽压取同一温度、同一压强单位\n绝对湿度：用单位体积空气中水蒸气的质量描述湿度",
       "error_type": "概念混淆",
       "judging": "teacher",
       "source_error_index": 1,
       "source_caught_by": "人工审核",
       "wrong_expr": null,
       "trap_test": null,
+      "level": "基础",
+      "learning_scope": "高中",
+      "answer_evidence": {
+        "kind": "teacher",
+        "claim_source": "执行方明确命题",
+        "reference_only": true,
+        "reason": "概念、操作或无法建立完整定量证据，教师确认条件与结论。"
+      },
       "review": {
         "confidence": "medium",
-        "checks": {
-          "answer_unique": true,
-          "distractors_plausible": true,
-          "stem_clear": true,
-          "no_cross_segment": true
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": false,
+          "no_answer_leak_in_options": true
         },
-        "note": "本章可用类型不足四类，干扰项包含同章其他错误的类别与原解释；答案按“类别+依据”唯一匹配，建议抽查教学区分度。"
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。"
       }
     }
   ],
-  "skipped": [
-    {
-      "point_id": "thermo-02",
-      "point_title": "能量守恒定律",
-      "source_error_index": 1,
-      "reason": "自动判定条目没有 trap_test 可执行证据；不把校验标签代替实测证据。"
+  "skipped": [],
+  "source_records": {
+    "diagnostic-thermo-01-1": {
+      "point": {
+        "id": "thermo-01",
+        "title": "热力学第一定律",
+        "level": "基础",
+        "definition": "热力学第一定律是能量守恒在热现象中的具体表达。本章规定：传给系统的热量 Q 为正，外界对系统做的功 W 为正，则系统内能的变化量满足 delta_U = Q + W。系统向外界放热时 Q 为负，系统对外界做功时 W 为负。",
+        "meaning": "公式最难的不是加法，而是符号。先判断能量沿哪条路径进出系统，再代入正负号：吸热使能量进入系统，取正；外界压缩气体也把能量送入系统，做功取正。相反，气体膨胀推动活塞时能量离开系统，W 取负。内能是状态量，而热量和功是过程量，不能说某个物体“含有多少热量”。",
+        "symbols": {
+          "delta_U": {
+            "desc": "系统内能的变化量，末态内能减初态内能",
+            "unit": "J"
+          },
+          "Q": {
+            "desc": "传入系统的热量，吸热为正、放热为负",
+            "unit": "J"
+          },
+          "W": {
+            "desc": "外界对系统做的功，外界做正功时为正",
+            "unit": "J"
+          }
+        },
+        "scenarios": {
+          "吸热膨胀": {
+            "Q": 500,
+            "W": -200,
+            "delta_U": 300
+          },
+          "绝热压缩": {
+            "Q": 0,
+            "W": 150,
+            "delta_U": 150
+          }
+        },
+        "formulas": [
+          {
+            "name": "热力学第一定律",
+            "expr": "delta_U = Q + W",
+            "when": "采用外界对系统做功为正、传入系统的热量为正的约定",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "吸热膨胀",
+                "expr": "Q + W",
+                "ref": 300,
+                "note": "系统吸收 500 J，同时对外做功 200 J（所以 W=-200 J），内能增加 500-200=300 J。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "绝热压缩",
+                "expr": "Q + W",
+                "ref": 150,
+                "note": "绝热过程 Q=0，外界压缩气体做功 150 J，所以内能增加 150 J。"
+              },
+              {
+                "type": "direction",
+                "scenario": "吸热膨胀",
+                "var": "Q",
+                "lo": 100,
+                "hi": 900,
+                "expr": "Q + W",
+                "expect": "up",
+                "note": "做功情况不变时，传入系统的热量越多，内能增加得越多。"
+              },
+              {
+                "type": "scan",
+                "scenario": "吸热膨胀",
+                "var": "W",
+                "lo": -1000,
+                "hi": 1000
+              }
+            ]
+          },
+          {
+            "name": "由内能变化反求外界做功",
+            "expr": "W = delta_U - Q",
+            "when": "已知内能变化与传热，反求外界对系统做的功",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "吸热膨胀",
+                "expr": "delta_U - Q",
+                "ref": -200,
+                "note": "300-500=-200 J，负号说明实际是系统对外界做了 200 J 的功。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "绝热压缩",
+                "expr": "delta_U - Q",
+                "ref": 150,
+                "note": "150-0=150 J，表示外界对气体做正功。"
+              },
+              {
+                "type": "direction",
+                "scenario": "吸热膨胀",
+                "var": "Q",
+                "lo": 300,
+                "hi": 700,
+                "expr": "delta_U - Q",
+                "expect": "down",
+                "note": "内能增量固定时，吸收热量越多，需要由外界提供的功越少。"
+              },
+              {
+                "type": "consistency",
+                "scenario": "吸热膨胀",
+                "with": "thermo-01|由内能变化反求外界做功",
+                "with_expr": "W",
+                "target": "外界对系统做的功，外界做正功时为正",
+                "note": "直接求本公式输出，与情境中另列的W设计基准核对；数据是设计示例，不是实测。用于核对定义、反算或边界值，不宣称不同物理原理互证。",
+                "verification_kind": "独立设计情境数据核对"
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "把研究对象选作热力学系统。系统与外界交换能量只有传热和做功两条常见路径。",
+          "按能量流入系统为正的统一思想：传入的热量记为 Q，外界对系统做功记为 W。",
+          "由能量守恒，系统内能的增量等于两条路径流入能量的代数和，因此 delta_U = Q + W。",
+          "若采用“系统对外界做功为正”的另一套约定，第一定律中的做功项要改用减号；两种符号约定不能混用。"
+        ],
+        "errors": [
+          {
+            "wrong": "在本章的符号约定下仍机械地写 delta_U = Q - W",
+            "wrong_expr": "delta_U = Q - W",
+            "why": "本章的 W 指外界对系统做功。吸热膨胀情境中 W=-200 J，错误式得到 700 J，而能量收支应为 300 J。减号版本只适用于把 W 定义为系统对外做功的另一套约定。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "吸热膨胀",
+              "expr": "Q - W",
+              "ref": 300
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "绝热过程一定不做功，所以内能不变",
+            "wrong_expr": "delta_U = Q",
+            "why": "绝热只表示 Q=0，不表示 W=0。绝热压缩中外界做功 150 J，内能增加 150 J；错误式却给出 0。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "绝热压缩",
+              "expr": "Q",
+              "ref": 150
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "某气体吸收 500 J 热量，同时膨胀并对外界做功 200 J。按外界对系统做功为正的约定，求气体内能的变化。",
+          "solution": [
+            "吸热，所以 Q=+500 J。",
+            "气体对外界做功，因此外界对气体做功 W=-200 J。",
+            "由 delta_U=Q+W，得 delta_U=500+(-200)=300 J。"
+          ],
+          "answer": "气体内能增加 300 J。"
+        },
+        "prereq": [
+          "mgas-04"
+        ],
+        "next": [
+          "thermo-02"
+        ],
+        "tags": [
+          "热力学第一定律",
+          "内能",
+          "热量",
+          "做功",
+          "符号约定"
+        ],
+        "learning_scope": "高中"
+      },
+      "error_index": 0,
+      "chapter": "第十九章 · 热力学定律"
+    },
+    "diagnostic-thermo-01-2": {
+      "point": {
+        "id": "thermo-01",
+        "title": "热力学第一定律",
+        "level": "基础",
+        "definition": "热力学第一定律是能量守恒在热现象中的具体表达。本章规定：传给系统的热量 Q 为正，外界对系统做的功 W 为正，则系统内能的变化量满足 delta_U = Q + W。系统向外界放热时 Q 为负，系统对外界做功时 W 为负。",
+        "meaning": "公式最难的不是加法，而是符号。先判断能量沿哪条路径进出系统，再代入正负号：吸热使能量进入系统，取正；外界压缩气体也把能量送入系统，做功取正。相反，气体膨胀推动活塞时能量离开系统，W 取负。内能是状态量，而热量和功是过程量，不能说某个物体“含有多少热量”。",
+        "symbols": {
+          "delta_U": {
+            "desc": "系统内能的变化量，末态内能减初态内能",
+            "unit": "J"
+          },
+          "Q": {
+            "desc": "传入系统的热量，吸热为正、放热为负",
+            "unit": "J"
+          },
+          "W": {
+            "desc": "外界对系统做的功，外界做正功时为正",
+            "unit": "J"
+          }
+        },
+        "scenarios": {
+          "吸热膨胀": {
+            "Q": 500,
+            "W": -200,
+            "delta_U": 300
+          },
+          "绝热压缩": {
+            "Q": 0,
+            "W": 150,
+            "delta_U": 150
+          }
+        },
+        "formulas": [
+          {
+            "name": "热力学第一定律",
+            "expr": "delta_U = Q + W",
+            "when": "采用外界对系统做功为正、传入系统的热量为正的约定",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "吸热膨胀",
+                "expr": "Q + W",
+                "ref": 300,
+                "note": "系统吸收 500 J，同时对外做功 200 J（所以 W=-200 J），内能增加 500-200=300 J。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "绝热压缩",
+                "expr": "Q + W",
+                "ref": 150,
+                "note": "绝热过程 Q=0，外界压缩气体做功 150 J，所以内能增加 150 J。"
+              },
+              {
+                "type": "direction",
+                "scenario": "吸热膨胀",
+                "var": "Q",
+                "lo": 100,
+                "hi": 900,
+                "expr": "Q + W",
+                "expect": "up",
+                "note": "做功情况不变时，传入系统的热量越多，内能增加得越多。"
+              },
+              {
+                "type": "scan",
+                "scenario": "吸热膨胀",
+                "var": "W",
+                "lo": -1000,
+                "hi": 1000
+              }
+            ]
+          },
+          {
+            "name": "由内能变化反求外界做功",
+            "expr": "W = delta_U - Q",
+            "when": "已知内能变化与传热，反求外界对系统做的功",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "吸热膨胀",
+                "expr": "delta_U - Q",
+                "ref": -200,
+                "note": "300-500=-200 J，负号说明实际是系统对外界做了 200 J 的功。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "绝热压缩",
+                "expr": "delta_U - Q",
+                "ref": 150,
+                "note": "150-0=150 J，表示外界对气体做正功。"
+              },
+              {
+                "type": "direction",
+                "scenario": "吸热膨胀",
+                "var": "Q",
+                "lo": 300,
+                "hi": 700,
+                "expr": "delta_U - Q",
+                "expect": "down",
+                "note": "内能增量固定时，吸收热量越多，需要由外界提供的功越少。"
+              },
+              {
+                "type": "consistency",
+                "scenario": "吸热膨胀",
+                "with": "thermo-01|由内能变化反求外界做功",
+                "with_expr": "W",
+                "target": "外界对系统做的功，外界做正功时为正",
+                "note": "直接求本公式输出，与情境中另列的W设计基准核对；数据是设计示例，不是实测。用于核对定义、反算或边界值，不宣称不同物理原理互证。",
+                "verification_kind": "独立设计情境数据核对"
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "把研究对象选作热力学系统。系统与外界交换能量只有传热和做功两条常见路径。",
+          "按能量流入系统为正的统一思想：传入的热量记为 Q，外界对系统做功记为 W。",
+          "由能量守恒，系统内能的增量等于两条路径流入能量的代数和，因此 delta_U = Q + W。",
+          "若采用“系统对外界做功为正”的另一套约定，第一定律中的做功项要改用减号；两种符号约定不能混用。"
+        ],
+        "errors": [
+          {
+            "wrong": "在本章的符号约定下仍机械地写 delta_U = Q - W",
+            "wrong_expr": "delta_U = Q - W",
+            "why": "本章的 W 指外界对系统做功。吸热膨胀情境中 W=-200 J，错误式得到 700 J，而能量收支应为 300 J。减号版本只适用于把 W 定义为系统对外做功的另一套约定。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "吸热膨胀",
+              "expr": "Q - W",
+              "ref": 300
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "绝热过程一定不做功，所以内能不变",
+            "wrong_expr": "delta_U = Q",
+            "why": "绝热只表示 Q=0，不表示 W=0。绝热压缩中外界做功 150 J，内能增加 150 J；错误式却给出 0。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "绝热压缩",
+              "expr": "Q",
+              "ref": 150
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "某气体吸收 500 J 热量，同时膨胀并对外界做功 200 J。按外界对系统做功为正的约定，求气体内能的变化。",
+          "solution": [
+            "吸热，所以 Q=+500 J。",
+            "气体对外界做功，因此外界对气体做功 W=-200 J。",
+            "由 delta_U=Q+W，得 delta_U=500+(-200)=300 J。"
+          ],
+          "answer": "气体内能增加 300 J。"
+        },
+        "prereq": [
+          "mgas-04"
+        ],
+        "next": [
+          "thermo-02"
+        ],
+        "tags": [
+          "热力学第一定律",
+          "内能",
+          "热量",
+          "做功",
+          "符号约定"
+        ],
+        "learning_scope": "高中"
+      },
+      "error_index": 1,
+      "chapter": "第十九章 · 热力学定律"
+    },
+    "diagnostic-thermo-02-1": {
+      "point": {
+        "id": "thermo-02",
+        "title": "能量守恒定律",
+        "level": "基础",
+        "definition": "能量可以在不同形式之间转化，也可以随热传递和做功跨越系统边界。总能量保持不变的条件是系统不与外界交换物质和能量，即选取孤立系统。仅仅密闭或绝热并不足以推出总能量不变。若系统只含相互传热的物体、没有外界做功且忽略容器吸热与环境散热，放热量与吸热量大小相等。",
+        "meaning": "先选系统，再核对边界。密闭容器可以被外界加热；绝热容器内的气体可以推动活塞做功，这两种情况均可能发生能量交换。本卡将两部分水合在一起，并假定容器绝热、不发生外界功、忽略容器吸热和宏观动能及势能变化，才可使用热量平衡。若向空气散热，系统能量会减少，须计入流出的热量；将环境一并纳入更大系统仍可进行能量守恒记账。",
+        "symbols": {
+          "E_before": {
+            "desc": "孤立系统初态的总能量",
+            "unit": "J"
+          },
+          "E_after": {
+            "desc": "孤立系统末态的总能量",
+            "unit": "J"
+          },
+          "delta_E_total": {
+            "desc": "孤立系统总能量的变化量",
+            "unit": "J"
+          },
+          "Q_release": {
+            "desc": "高温物体放出的热量大小",
+            "unit": "J"
+          },
+          "Q_absorb": {
+            "desc": "低温物体吸收的热量大小",
+            "unit": "J"
+          }
+        },
+        "scenarios": {
+          "绝热混合": {
+            "Q_release": 8400,
+            "Q_absorb": 8400
+          },
+          "孤立系统": {
+            "E_before": 1250,
+            "E_after": 1250,
+            "delta_E_total": 0
+          }
+        },
+        "formulas": [
+          {
+            "name": "系统总能量变化",
+            "expr": "delta_E_total = E_after - E_before",
+            "when": "总能量变化定义适用于选定系统；只有不与外界交换物质和能量时，才能进一步断言变化量为零",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "孤立系统",
+                "expr": "E_after - E_before",
+                "ref": 0,
+                "note": "1250-1250=0 J，系统的总能量不变。"
+              },
+              {
+                "type": "compare",
+                "scenario": "孤立系统",
+                "expr": "E_after",
+                "op": "==",
+                "vs": "E_before",
+                "note": "初态与末态总能量同为 1250 J。"
+              },
+              {
+                "type": "direction",
+                "scenario": "孤立系统",
+                "var": "E_after",
+                "lo": 1000,
+                "hi": 1500,
+                "expr": "E_after - E_before",
+                "expect": "up",
+                "note": "初态能量一定时，末态总能量越高，总能量变化量越大。"
+              },
+              {
+                "type": "scan",
+                "scenario": "孤立系统",
+                "var": "E_after",
+                "lo": 0,
+                "hi": 10000
+              },
+              {
+                "type": "consistency",
+                "scenario": "孤立系统",
+                "with": "thermo-02|系统总能量变化",
+                "with_expr": "delta_E_total",
+                "target": "孤立系统总能量的变化量",
+                "note": "直接求本公式输出，与情境中另列的delta_E_total设计基准核对；数据是设计示例，不是实测。用于核对定义、反算或边界值，不宣称不同物理原理互证。",
+                "verification_kind": "独立设计情境数据核对"
+              }
+            ]
+          },
+          {
+            "name": "绝热热交换的热量平衡",
+            "expr": "Q_absorb = Q_release",
+            "when": "系统只含相互传热的物体，并且与环境绝热、不发生其他能量交换",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "绝热混合",
+                "expr": "Q_release",
+                "ref": 8400,
+                "note": "高温物体放出 8400 J，绝热条件下低温物体恰好吸收 8400 J。"
+              },
+              {
+                "type": "compare",
+                "scenario": "绝热混合",
+                "expr": "Q_absorb",
+                "op": "==",
+                "vs": "Q_release",
+                "note": "吸热量与放热量大小相等。"
+              },
+              {
+                "type": "direction",
+                "scenario": "绝热混合",
+                "var": "Q_release",
+                "lo": 1000,
+                "hi": 12000,
+                "expr": "Q_release",
+                "expect": "up",
+                "note": "绝热系统中放热量增大时，可供另一物体吸收的热量同步增大。"
+              },
+              {
+                "type": "scan",
+                "scenario": "绝热混合",
+                "var": "Q_release",
+                "lo": 0,
+                "hi": 100000
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "选取不与外界交换物质和能量的孤立系统，将机械能、内能等全部计入总能量。",
+          "在这一边界条件下没有能量输入或输出，故 E_after=E_before，delta_E_total=0；密闭并不自动满足这一条件。",
+          "两部分水组成的系统与环境绝热、无外界功且忽略容器吸热及宏观能量变化时，内能只在两部分水之间转移，Q_absorb=Q_release。"
+        ],
+        "errors": [
+          {
+            "wrong": "认为能量转化过程中会有一部分能量消失",
+            "wrong_expr": "E_after = 0.8*E_before",
+            "why": "“损耗”通常是机械能转化成内能并扩散到环境，不是能量消失。孤立系统情境中错误式只得 1000 J，而总能量仍应为 1250 J。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "孤立系统",
+              "expr": "0.8*E_before",
+              "ref": 1250
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "热水和冷水绝热混合时，把吸热量与放热量相加作为低温物体所得热量",
+            "wrong_expr": "Q_absorb = Q_release + Q_absorb",
+            "why": "同一份转移的能量被重复记了两次。情境中右边变成 16800 J，而低温物体只吸收 8400 J。",
+            "caught_by": "数值代入",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "两部分水在绝热、无外界做功的容器中混合。忽略容器吸热和宏观动能、势能变化；达到热平衡时高温水内能减少8400 J，低温水内能增加多少？",
+          "solution": [
+            "把两部分水合为系统，明确不向外界传热、不发生外界功，且忽略容器吸热。",
+            "在这些条件下，能量只在两部分水之间转移。",
+            "Q_absorb=Q_release=8400 J。"
+          ],
+          "answer": "低温水内能增加8400 J。"
+        },
+        "prereq": [
+          "thermo-01"
+        ],
+        "next": [
+          "thermo-03"
+        ],
+        "tags": [
+          "能量守恒",
+          "系统边界",
+          "热平衡",
+          "永动机"
+        ],
+        "learning_scope": "高中"
+      },
+      "error_index": 0,
+      "chapter": "第十九章 · 热力学定律"
+    },
+    "diagnostic-thermo-02-2": {
+      "point": {
+        "id": "thermo-02",
+        "title": "能量守恒定律",
+        "level": "基础",
+        "definition": "能量可以在不同形式之间转化，也可以随热传递和做功跨越系统边界。总能量保持不变的条件是系统不与外界交换物质和能量，即选取孤立系统。仅仅密闭或绝热并不足以推出总能量不变。若系统只含相互传热的物体、没有外界做功且忽略容器吸热与环境散热，放热量与吸热量大小相等。",
+        "meaning": "先选系统，再核对边界。密闭容器可以被外界加热；绝热容器内的气体可以推动活塞做功，这两种情况均可能发生能量交换。本卡将两部分水合在一起，并假定容器绝热、不发生外界功、忽略容器吸热和宏观动能及势能变化，才可使用热量平衡。若向空气散热，系统能量会减少，须计入流出的热量；将环境一并纳入更大系统仍可进行能量守恒记账。",
+        "symbols": {
+          "E_before": {
+            "desc": "孤立系统初态的总能量",
+            "unit": "J"
+          },
+          "E_after": {
+            "desc": "孤立系统末态的总能量",
+            "unit": "J"
+          },
+          "delta_E_total": {
+            "desc": "孤立系统总能量的变化量",
+            "unit": "J"
+          },
+          "Q_release": {
+            "desc": "高温物体放出的热量大小",
+            "unit": "J"
+          },
+          "Q_absorb": {
+            "desc": "低温物体吸收的热量大小",
+            "unit": "J"
+          }
+        },
+        "scenarios": {
+          "绝热混合": {
+            "Q_release": 8400,
+            "Q_absorb": 8400
+          },
+          "孤立系统": {
+            "E_before": 1250,
+            "E_after": 1250,
+            "delta_E_total": 0
+          }
+        },
+        "formulas": [
+          {
+            "name": "系统总能量变化",
+            "expr": "delta_E_total = E_after - E_before",
+            "when": "总能量变化定义适用于选定系统；只有不与外界交换物质和能量时，才能进一步断言变化量为零",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "孤立系统",
+                "expr": "E_after - E_before",
+                "ref": 0,
+                "note": "1250-1250=0 J，系统的总能量不变。"
+              },
+              {
+                "type": "compare",
+                "scenario": "孤立系统",
+                "expr": "E_after",
+                "op": "==",
+                "vs": "E_before",
+                "note": "初态与末态总能量同为 1250 J。"
+              },
+              {
+                "type": "direction",
+                "scenario": "孤立系统",
+                "var": "E_after",
+                "lo": 1000,
+                "hi": 1500,
+                "expr": "E_after - E_before",
+                "expect": "up",
+                "note": "初态能量一定时，末态总能量越高，总能量变化量越大。"
+              },
+              {
+                "type": "scan",
+                "scenario": "孤立系统",
+                "var": "E_after",
+                "lo": 0,
+                "hi": 10000
+              },
+              {
+                "type": "consistency",
+                "scenario": "孤立系统",
+                "with": "thermo-02|系统总能量变化",
+                "with_expr": "delta_E_total",
+                "target": "孤立系统总能量的变化量",
+                "note": "直接求本公式输出，与情境中另列的delta_E_total设计基准核对；数据是设计示例，不是实测。用于核对定义、反算或边界值，不宣称不同物理原理互证。",
+                "verification_kind": "独立设计情境数据核对"
+              }
+            ]
+          },
+          {
+            "name": "绝热热交换的热量平衡",
+            "expr": "Q_absorb = Q_release",
+            "when": "系统只含相互传热的物体，并且与环境绝热、不发生其他能量交换",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "绝热混合",
+                "expr": "Q_release",
+                "ref": 8400,
+                "note": "高温物体放出 8400 J，绝热条件下低温物体恰好吸收 8400 J。"
+              },
+              {
+                "type": "compare",
+                "scenario": "绝热混合",
+                "expr": "Q_absorb",
+                "op": "==",
+                "vs": "Q_release",
+                "note": "吸热量与放热量大小相等。"
+              },
+              {
+                "type": "direction",
+                "scenario": "绝热混合",
+                "var": "Q_release",
+                "lo": 1000,
+                "hi": 12000,
+                "expr": "Q_release",
+                "expect": "up",
+                "note": "绝热系统中放热量增大时，可供另一物体吸收的热量同步增大。"
+              },
+              {
+                "type": "scan",
+                "scenario": "绝热混合",
+                "var": "Q_release",
+                "lo": 0,
+                "hi": 100000
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "选取不与外界交换物质和能量的孤立系统，将机械能、内能等全部计入总能量。",
+          "在这一边界条件下没有能量输入或输出，故 E_after=E_before，delta_E_total=0；密闭并不自动满足这一条件。",
+          "两部分水组成的系统与环境绝热、无外界功且忽略容器吸热及宏观能量变化时，内能只在两部分水之间转移，Q_absorb=Q_release。"
+        ],
+        "errors": [
+          {
+            "wrong": "认为能量转化过程中会有一部分能量消失",
+            "wrong_expr": "E_after = 0.8*E_before",
+            "why": "“损耗”通常是机械能转化成内能并扩散到环境，不是能量消失。孤立系统情境中错误式只得 1000 J，而总能量仍应为 1250 J。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "孤立系统",
+              "expr": "0.8*E_before",
+              "ref": 1250
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "热水和冷水绝热混合时，把吸热量与放热量相加作为低温物体所得热量",
+            "wrong_expr": "Q_absorb = Q_release + Q_absorb",
+            "why": "同一份转移的能量被重复记了两次。情境中右边变成 16800 J，而低温物体只吸收 8400 J。",
+            "caught_by": "数值代入",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "两部分水在绝热、无外界做功的容器中混合。忽略容器吸热和宏观动能、势能变化；达到热平衡时高温水内能减少8400 J，低温水内能增加多少？",
+          "solution": [
+            "把两部分水合为系统，明确不向外界传热、不发生外界功，且忽略容器吸热。",
+            "在这些条件下，能量只在两部分水之间转移。",
+            "Q_absorb=Q_release=8400 J。"
+          ],
+          "answer": "低温水内能增加8400 J。"
+        },
+        "prereq": [
+          "thermo-01"
+        ],
+        "next": [
+          "thermo-03"
+        ],
+        "tags": [
+          "能量守恒",
+          "系统边界",
+          "热平衡",
+          "永动机"
+        ],
+        "learning_scope": "高中"
+      },
+      "error_index": 1,
+      "chapter": "第十九章 · 热力学定律"
+    },
+    "diagnostic-thermo-03-1": {
+      "point": {
+        "id": "thermo-03",
+        "title": "热力学第二定律与热机效率",
+        "level": "进阶",
+        "definition": "热力学第二定律揭示宏观热过程的方向性。克劳修斯表述指出：热量不能自发地从低温物体传到高温物体；开尔文表述指出：不可能从单一热库吸热并把吸收的热量全部用来做功而不引起其他变化。孤立系统的熵不会自发减小，可用来定性描述过程方向。",
+        "meaning": "第二定律不否定能量守恒，而是在守恒之外增加“方向限制”。冰箱能把热量从低温处搬到高温处，是因为压缩机消耗了电功；热机能连续对外做功，也必须把一部分热量排给低温热库。因此真实热机效率小于 1，并且不会超过相同高、低温热库之间可逆热机的卡诺效率。温度必须使用开尔文温标。",
+        "symbols": {
+          "eta": {
+            "desc": "热机效率",
+            "unit": "1"
+          },
+          "W_out": {
+            "desc": "热机一个循环对外输出的有用功",
+            "unit": "J"
+          },
+          "Q_h": {
+            "desc": "热机一个循环从高温热库吸收的热量",
+            "unit": "J"
+          },
+          "eta_max": {
+            "desc": "给定高低温热库之间的卡诺效率上限",
+            "unit": "1"
+          },
+          "T_h": {
+            "desc": "高温热库的热力学温度",
+            "unit": "K"
+          },
+          "T_c": {
+            "desc": "低温热库的热力学温度",
+            "unit": "K"
+          }
+        },
+        "scenarios": {
+          "实际热机": {
+            "W_out": 350,
+            "Q_h": 1000,
+            "eta": 0.35,
+            "T_h": 600,
+            "T_c": 300,
+            "eta_max": 0.5
+          }
+        },
+        "formulas": [
+          {
+            "name": "热机效率",
+            "expr": "eta = W_out/Q_h",
+            "when": "热机循环工作，效率等于有用功与从高温热库吸热量之比",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "实际热机",
+                "expr": "W_out/Q_h",
+                "ref": 0.35,
+                "note": "350 除以 1000 得 0.35，即 35%。"
+              },
+              {
+                "type": "direction",
+                "scenario": "实际热机",
+                "var": "W_out",
+                "lo": 100,
+                "hi": 800,
+                "expr": "W_out/Q_h",
+                "expect": "up",
+                "note": "吸热量相同时，有用功越大，效率越高。"
+              },
+              {
+                "type": "compare",
+                "scenario": "实际热机",
+                "expr": "W_out/Q_h",
+                "op": "<",
+                "vs": "1",
+                "note": "实际热机不可能把从高温热库吸收的热量全部变为功，0.35<1。"
+              },
+              {
+                "type": "scan",
+                "scenario": "实际热机",
+                "var": "Q_h",
+                "lo": 400,
+                "hi": 5000
+              },
+              {
+                "type": "consistency",
+                "scenario": "实际热机",
+                "with": "thermo-03|热机效率",
+                "with_expr": "eta",
+                "target": "热机效率",
+                "note": "直接求本公式输出，与情境中另列的eta设计基准核对；数据是设计示例，不是实测。用于核对定义、反算或边界值，不宣称不同物理原理互证。",
+                "verification_kind": "独立设计情境数据核对",
+                "tol": 1e-06
+              }
+            ]
+          },
+          {
+            "name": "卡诺效率上限",
+            "expr": "eta_max = 1 - T_c/T_h",
+            "when": "理想可逆热机在温度为 T_h 与 T_c 的两个热库之间工作，且 T_h>T_c>0",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "实际热机",
+                "expr": "1 - T_c/T_h",
+                "ref": 0.5,
+                "note": "1-300/600=0.5，给定两热库之间的最高理论效率为 50%。"
+              },
+              {
+                "type": "direction",
+                "scenario": "实际热机",
+                "var": "T_h",
+                "lo": 400,
+                "hi": 1000,
+                "expr": "1 - T_c/T_h",
+                "expect": "up",
+                "note": "低温热库不变时，提高高温热库温度会提高理论效率上限。"
+              },
+              {
+                "type": "direction",
+                "scenario": "实际热机",
+                "var": "T_c",
+                "lo": 100,
+                "hi": 500,
+                "expr": "1 - T_c/T_h",
+                "expect": "down",
+                "note": "高温热库不变时，提高低温热库温度会降低理论效率上限。"
+              },
+              {
+                "type": "compare",
+                "scenario": "实际热机",
+                "expr": "eta",
+                "op": "<",
+                "vs": "eta_max",
+                "note": "实际效率 0.35 小于相同热库条件下的卡诺上限 0.50。"
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "热机每循环从高温热库吸收 Q_h，对外做有用功 W_out，其余能量必须排向低温热库。",
+          "效率定义为收益与投入之比，因此 eta=W_out/Q_h；第二定律要求连续工作的热机 eta<1。",
+          "对理想可逆热机，效率只由两个热库的热力学温度决定，eta_max=1-T_c/T_h。",
+          "实际过程存在摩擦、有限温差传热等不可逆因素，所以实际效率严格低于卡诺上限。"
+        ],
+        "errors": [
+          {
+            "wrong": "把热机效率的分子分母颠倒，写成 eta=Q_h/W_out",
+            "wrong_expr": "eta = Q_h/W_out",
+            "why": "效率应是有用输出除以能量输入。错误式得到 1000/350≈2.86，大于 1，既与定义不符也违反第二定律。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "实际热机",
+              "expr": "Q_h/W_out",
+              "ref": 0.35
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "卡诺效率写成 eta_max=1-T_h/T_c",
+            "wrong_expr": "eta_max = 1 - T_h/T_c",
+            "why": "高低温温度比写反会得到 1-600/300=-1，不可能成为效率。正确结果是 0.5。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "实际热机",
+              "expr": "1 - T_h/T_c",
+              "ref": 0.5
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "某热机每循环从 600 K 的高温热库吸收 1000 J 热量，对外做功 350 J，低温热库温度为 300 K。求实际效率和卡诺效率上限。",
+          "solution": [
+            "实际效率 eta=W_out/Q_h=350/1000=0.35。",
+            "卡诺上限 eta_max=1-T_c/T_h=1-300/600=0.50。",
+            "0.35<0.50，实际热机没有超过理论上限。"
+          ],
+          "answer": "实际效率为 35%，卡诺效率上限为 50%。"
+        },
+        "prereq": [
+          "thermo-02",
+          "mgas-03"
+        ],
+        "next": [
+          "thermo-04"
+        ],
+        "tags": [
+          "热力学第二定律",
+          "熵",
+          "热机",
+          "卡诺效率",
+          "过程方向"
+        ],
+        "learning_scope": "高中"
+      },
+      "error_index": 0,
+      "chapter": "第十九章 · 热力学定律"
+    },
+    "diagnostic-thermo-03-2": {
+      "point": {
+        "id": "thermo-03",
+        "title": "热力学第二定律与热机效率",
+        "level": "进阶",
+        "definition": "热力学第二定律揭示宏观热过程的方向性。克劳修斯表述指出：热量不能自发地从低温物体传到高温物体；开尔文表述指出：不可能从单一热库吸热并把吸收的热量全部用来做功而不引起其他变化。孤立系统的熵不会自发减小，可用来定性描述过程方向。",
+        "meaning": "第二定律不否定能量守恒，而是在守恒之外增加“方向限制”。冰箱能把热量从低温处搬到高温处，是因为压缩机消耗了电功；热机能连续对外做功，也必须把一部分热量排给低温热库。因此真实热机效率小于 1，并且不会超过相同高、低温热库之间可逆热机的卡诺效率。温度必须使用开尔文温标。",
+        "symbols": {
+          "eta": {
+            "desc": "热机效率",
+            "unit": "1"
+          },
+          "W_out": {
+            "desc": "热机一个循环对外输出的有用功",
+            "unit": "J"
+          },
+          "Q_h": {
+            "desc": "热机一个循环从高温热库吸收的热量",
+            "unit": "J"
+          },
+          "eta_max": {
+            "desc": "给定高低温热库之间的卡诺效率上限",
+            "unit": "1"
+          },
+          "T_h": {
+            "desc": "高温热库的热力学温度",
+            "unit": "K"
+          },
+          "T_c": {
+            "desc": "低温热库的热力学温度",
+            "unit": "K"
+          }
+        },
+        "scenarios": {
+          "实际热机": {
+            "W_out": 350,
+            "Q_h": 1000,
+            "eta": 0.35,
+            "T_h": 600,
+            "T_c": 300,
+            "eta_max": 0.5
+          }
+        },
+        "formulas": [
+          {
+            "name": "热机效率",
+            "expr": "eta = W_out/Q_h",
+            "when": "热机循环工作，效率等于有用功与从高温热库吸热量之比",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "实际热机",
+                "expr": "W_out/Q_h",
+                "ref": 0.35,
+                "note": "350 除以 1000 得 0.35，即 35%。"
+              },
+              {
+                "type": "direction",
+                "scenario": "实际热机",
+                "var": "W_out",
+                "lo": 100,
+                "hi": 800,
+                "expr": "W_out/Q_h",
+                "expect": "up",
+                "note": "吸热量相同时，有用功越大，效率越高。"
+              },
+              {
+                "type": "compare",
+                "scenario": "实际热机",
+                "expr": "W_out/Q_h",
+                "op": "<",
+                "vs": "1",
+                "note": "实际热机不可能把从高温热库吸收的热量全部变为功，0.35<1。"
+              },
+              {
+                "type": "scan",
+                "scenario": "实际热机",
+                "var": "Q_h",
+                "lo": 400,
+                "hi": 5000
+              },
+              {
+                "type": "consistency",
+                "scenario": "实际热机",
+                "with": "thermo-03|热机效率",
+                "with_expr": "eta",
+                "target": "热机效率",
+                "note": "直接求本公式输出，与情境中另列的eta设计基准核对；数据是设计示例，不是实测。用于核对定义、反算或边界值，不宣称不同物理原理互证。",
+                "verification_kind": "独立设计情境数据核对",
+                "tol": 1e-06
+              }
+            ]
+          },
+          {
+            "name": "卡诺效率上限",
+            "expr": "eta_max = 1 - T_c/T_h",
+            "when": "理想可逆热机在温度为 T_h 与 T_c 的两个热库之间工作，且 T_h>T_c>0",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "实际热机",
+                "expr": "1 - T_c/T_h",
+                "ref": 0.5,
+                "note": "1-300/600=0.5，给定两热库之间的最高理论效率为 50%。"
+              },
+              {
+                "type": "direction",
+                "scenario": "实际热机",
+                "var": "T_h",
+                "lo": 400,
+                "hi": 1000,
+                "expr": "1 - T_c/T_h",
+                "expect": "up",
+                "note": "低温热库不变时，提高高温热库温度会提高理论效率上限。"
+              },
+              {
+                "type": "direction",
+                "scenario": "实际热机",
+                "var": "T_c",
+                "lo": 100,
+                "hi": 500,
+                "expr": "1 - T_c/T_h",
+                "expect": "down",
+                "note": "高温热库不变时，提高低温热库温度会降低理论效率上限。"
+              },
+              {
+                "type": "compare",
+                "scenario": "实际热机",
+                "expr": "eta",
+                "op": "<",
+                "vs": "eta_max",
+                "note": "实际效率 0.35 小于相同热库条件下的卡诺上限 0.50。"
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "热机每循环从高温热库吸收 Q_h，对外做有用功 W_out，其余能量必须排向低温热库。",
+          "效率定义为收益与投入之比，因此 eta=W_out/Q_h；第二定律要求连续工作的热机 eta<1。",
+          "对理想可逆热机，效率只由两个热库的热力学温度决定，eta_max=1-T_c/T_h。",
+          "实际过程存在摩擦、有限温差传热等不可逆因素，所以实际效率严格低于卡诺上限。"
+        ],
+        "errors": [
+          {
+            "wrong": "把热机效率的分子分母颠倒，写成 eta=Q_h/W_out",
+            "wrong_expr": "eta = Q_h/W_out",
+            "why": "效率应是有用输出除以能量输入。错误式得到 1000/350≈2.86，大于 1，既与定义不符也违反第二定律。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "实际热机",
+              "expr": "Q_h/W_out",
+              "ref": 0.35
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "卡诺效率写成 eta_max=1-T_h/T_c",
+            "wrong_expr": "eta_max = 1 - T_h/T_c",
+            "why": "高低温温度比写反会得到 1-600/300=-1，不可能成为效率。正确结果是 0.5。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "实际热机",
+              "expr": "1 - T_h/T_c",
+              "ref": 0.5
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "某热机每循环从 600 K 的高温热库吸收 1000 J 热量，对外做功 350 J，低温热库温度为 300 K。求实际效率和卡诺效率上限。",
+          "solution": [
+            "实际效率 eta=W_out/Q_h=350/1000=0.35。",
+            "卡诺上限 eta_max=1-T_c/T_h=1-300/600=0.50。",
+            "0.35<0.50，实际热机没有超过理论上限。"
+          ],
+          "answer": "实际效率为 35%，卡诺效率上限为 50%。"
+        },
+        "prereq": [
+          "thermo-02",
+          "mgas-03"
+        ],
+        "next": [
+          "thermo-04"
+        ],
+        "tags": [
+          "热力学第二定律",
+          "熵",
+          "热机",
+          "卡诺效率",
+          "过程方向"
+        ],
+        "learning_scope": "高中"
+      },
+      "error_index": 1,
+      "chapter": "第十九章 · 热力学定律"
+    },
+    "diagnostic-thermo-04-1": {
+      "point": {
+        "id": "thermo-04",
+        "title": "固体、液体与物态变化",
+        "level": "基础",
+        "definition": "晶体有确定的熔点，非晶体没有确定的熔点；液体具有表面张力，浸润与不浸润取决于液体和固体之间的相互作用。物质发生熔化、汽化等物态变化时会吸收潜热，在相变过程中温度可以保持不变；没有发生相变时，吸收的热量通常表现为温度变化。",
+        "meaning": "必须先判断加热过程是否处于相变平台，再选择公式。相变时用 Q=mL，L 取决于物质和相变种类；单纯升温时用 Q=mc delta_T。晶体熔化时持续吸热但温度保持在熔点，吸收的能量用于改变分子排列和分子势能，而不是提高温度。两段过程同时出现时，应分段计算再相加。",
+        "symbols": {
+          "Q_latent": {
+            "desc": "物态变化过程中吸收或放出的潜热大小",
+            "unit": "J"
+          },
+          "m": {
+            "desc": "发生相变或温度变化的物质质量",
+            "unit": "kg"
+          },
+          "L": {
+            "desc": "单位质量物质发生某种相变的潜热",
+            "unit": "J/kg"
+          },
+          "Q_sensible": {
+            "desc": "未发生相变时因温度变化吸收或放出的热量大小",
+            "unit": "J"
+          },
+          "c": {
+            "desc": "物质的比热容",
+            "unit": "J/kg/K"
+          },
+          "delta_T": {
+            "desc": "温度变化量",
+            "unit": "K"
+          }
+        },
+        "scenarios": {
+          "冰的熔化": {
+            "m": 2,
+            "L": 334000,
+            "Q_latent": 668000
+          },
+          "水的升温": {
+            "m": 2,
+            "c": 4200,
+            "delta_T": 10,
+            "Q_sensible": 84000
+          }
+        },
+        "formulas": [
+          {
+            "name": "相变潜热",
+            "expr": "Q_latent = m*L",
+            "when": "物质在相变温度发生熔化、凝固、汽化或液化，L 取对应相变的潜热",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "冰的熔化",
+                "expr": "m*L",
+                "ref": 668000,
+                "note": "2 kg 乘 334000 J/kg 得 668000 J。"
+              },
+              {
+                "type": "direction",
+                "scenario": "冰的熔化",
+                "var": "m",
+                "lo": 0.5,
+                "hi": 5,
+                "expr": "m*L",
+                "expect": "up",
+                "note": "同种相变中，质量越大，需要的潜热越多。"
+              },
+              {
+                "type": "direction",
+                "scenario": "冰的熔化",
+                "var": "L",
+                "lo": 100000,
+                "hi": 500000,
+                "expr": "m*L",
+                "expect": "up",
+                "note": "质量相同时，相变潜热越大，总热量越多。"
+              },
+              {
+                "type": "scan",
+                "scenario": "冰的熔化",
+                "var": "m",
+                "lo": 0,
+                "hi": 100
+              },
+              {
+                "type": "consistency",
+                "scenario": "冰的熔化",
+                "with": "thermo-04|相变潜热",
+                "with_expr": "Q_latent",
+                "target": "物态变化过程中吸收或放出的潜热大小",
+                "note": "直接求本公式输出，与情境中另列的Q_latent设计基准核对；数据是设计示例，不是实测。用于核对定义、反算或边界值，不宣称不同物理原理互证。",
+                "verification_kind": "独立设计情境数据核对"
+              }
+            ]
+          },
+          {
+            "name": "无相变时的吸放热",
+            "expr": "Q_sensible = m*c*delta_T",
+            "when": "物质不发生物态变化，且所考察温区内比热容可近似为常量",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "水的升温",
+                "expr": "m*c*delta_T",
+                "ref": 84000,
+                "note": "2×4200×10=84000 J。"
+              },
+              {
+                "type": "direction",
+                "scenario": "水的升温",
+                "var": "delta_T",
+                "lo": 2,
+                "hi": 30,
+                "expr": "m*c*delta_T",
+                "expect": "up",
+                "note": "质量和比热容一定时，升高的温度越多，需要的热量越多。"
+              },
+              {
+                "type": "direction",
+                "scenario": "水的升温",
+                "var": "c",
+                "lo": 1000,
+                "hi": 5000,
+                "expr": "m*c*delta_T",
+                "expect": "up",
+                "note": "相同质量升高相同温度，比热容越大，需要的热量越多。"
+              },
+              {
+                "type": "scan",
+                "scenario": "水的升温",
+                "var": "delta_T",
+                "lo": 0,
+                "hi": 1000
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "相变潜热 L 定义为单位质量物质完成指定相变所需的热量，因此质量为 m 时 Q_latent=mL。",
+          "比热容 c 定义为单位质量物质温度改变 1 K 所需的热量，因此无相变时 Q_sensible=mc delta_T。",
+          "相变平台上 delta_T=0 但 Q_latent 可以不为零，说明潜热公式不能被温升公式替代。"
+        ],
+        "errors": [
+          {
+            "wrong": "晶体熔化过程中仍用 Q=mc delta_T，并因温度不变算出吸热为零",
+            "why": "熔化平台上 delta_T=0，但物质持续吸收潜热来改变微观结构。2 kg 冰完全熔化需要 668000 J，并非 0。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "误把相变潜热写成 Q_latent=0.5*m*L，多乘了二分之一",
+            "wrong_expr": "Q_latent = 0.5*m*L",
+            "why": "错误式量纲仍然是能量，量纲检查抓不到；代入 2 kg 和 334000 J/kg 只得到 334000 J，正确值应为 668000 J。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "冰的熔化",
+              "expr": "0.5*m*L",
+              "ref": 668000
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "质量 2.0 kg、处在熔点的冰完全熔化，冰的熔化潜热为 3.34×10^5 J/kg。求需要吸收的热量。",
+          "solution": [
+            "冰已经处在熔点，过程只发生物态变化，不需要先升温。",
+            "用相变潜热公式 Q_latent=mL。",
+            "Q_latent=2.0×3.34×10^5=6.68×10^5 J。"
+          ],
+          "answer": "需要吸收 6.68×10^5 J 热量。"
+        },
+        "prereq": [
+          "thermo-01"
+        ],
+        "next": [
+          "thermo-05"
+        ],
+        "tags": [
+          "晶体",
+          "非晶体",
+          "表面张力",
+          "物态变化",
+          "潜热",
+          "比热容"
+        ],
+        "learning_scope": "高中"
+      },
+      "error_index": 0,
+      "chapter": "第十九章 · 热力学定律"
+    },
+    "diagnostic-thermo-04-2": {
+      "point": {
+        "id": "thermo-04",
+        "title": "固体、液体与物态变化",
+        "level": "基础",
+        "definition": "晶体有确定的熔点，非晶体没有确定的熔点；液体具有表面张力，浸润与不浸润取决于液体和固体之间的相互作用。物质发生熔化、汽化等物态变化时会吸收潜热，在相变过程中温度可以保持不变；没有发生相变时，吸收的热量通常表现为温度变化。",
+        "meaning": "必须先判断加热过程是否处于相变平台，再选择公式。相变时用 Q=mL，L 取决于物质和相变种类；单纯升温时用 Q=mc delta_T。晶体熔化时持续吸热但温度保持在熔点，吸收的能量用于改变分子排列和分子势能，而不是提高温度。两段过程同时出现时，应分段计算再相加。",
+        "symbols": {
+          "Q_latent": {
+            "desc": "物态变化过程中吸收或放出的潜热大小",
+            "unit": "J"
+          },
+          "m": {
+            "desc": "发生相变或温度变化的物质质量",
+            "unit": "kg"
+          },
+          "L": {
+            "desc": "单位质量物质发生某种相变的潜热",
+            "unit": "J/kg"
+          },
+          "Q_sensible": {
+            "desc": "未发生相变时因温度变化吸收或放出的热量大小",
+            "unit": "J"
+          },
+          "c": {
+            "desc": "物质的比热容",
+            "unit": "J/kg/K"
+          },
+          "delta_T": {
+            "desc": "温度变化量",
+            "unit": "K"
+          }
+        },
+        "scenarios": {
+          "冰的熔化": {
+            "m": 2,
+            "L": 334000,
+            "Q_latent": 668000
+          },
+          "水的升温": {
+            "m": 2,
+            "c": 4200,
+            "delta_T": 10,
+            "Q_sensible": 84000
+          }
+        },
+        "formulas": [
+          {
+            "name": "相变潜热",
+            "expr": "Q_latent = m*L",
+            "when": "物质在相变温度发生熔化、凝固、汽化或液化，L 取对应相变的潜热",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "冰的熔化",
+                "expr": "m*L",
+                "ref": 668000,
+                "note": "2 kg 乘 334000 J/kg 得 668000 J。"
+              },
+              {
+                "type": "direction",
+                "scenario": "冰的熔化",
+                "var": "m",
+                "lo": 0.5,
+                "hi": 5,
+                "expr": "m*L",
+                "expect": "up",
+                "note": "同种相变中，质量越大，需要的潜热越多。"
+              },
+              {
+                "type": "direction",
+                "scenario": "冰的熔化",
+                "var": "L",
+                "lo": 100000,
+                "hi": 500000,
+                "expr": "m*L",
+                "expect": "up",
+                "note": "质量相同时，相变潜热越大，总热量越多。"
+              },
+              {
+                "type": "scan",
+                "scenario": "冰的熔化",
+                "var": "m",
+                "lo": 0,
+                "hi": 100
+              },
+              {
+                "type": "consistency",
+                "scenario": "冰的熔化",
+                "with": "thermo-04|相变潜热",
+                "with_expr": "Q_latent",
+                "target": "物态变化过程中吸收或放出的潜热大小",
+                "note": "直接求本公式输出，与情境中另列的Q_latent设计基准核对；数据是设计示例，不是实测。用于核对定义、反算或边界值，不宣称不同物理原理互证。",
+                "verification_kind": "独立设计情境数据核对"
+              }
+            ]
+          },
+          {
+            "name": "无相变时的吸放热",
+            "expr": "Q_sensible = m*c*delta_T",
+            "when": "物质不发生物态变化，且所考察温区内比热容可近似为常量",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "水的升温",
+                "expr": "m*c*delta_T",
+                "ref": 84000,
+                "note": "2×4200×10=84000 J。"
+              },
+              {
+                "type": "direction",
+                "scenario": "水的升温",
+                "var": "delta_T",
+                "lo": 2,
+                "hi": 30,
+                "expr": "m*c*delta_T",
+                "expect": "up",
+                "note": "质量和比热容一定时，升高的温度越多，需要的热量越多。"
+              },
+              {
+                "type": "direction",
+                "scenario": "水的升温",
+                "var": "c",
+                "lo": 1000,
+                "hi": 5000,
+                "expr": "m*c*delta_T",
+                "expect": "up",
+                "note": "相同质量升高相同温度，比热容越大，需要的热量越多。"
+              },
+              {
+                "type": "scan",
+                "scenario": "水的升温",
+                "var": "delta_T",
+                "lo": 0,
+                "hi": 1000
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "相变潜热 L 定义为单位质量物质完成指定相变所需的热量，因此质量为 m 时 Q_latent=mL。",
+          "比热容 c 定义为单位质量物质温度改变 1 K 所需的热量，因此无相变时 Q_sensible=mc delta_T。",
+          "相变平台上 delta_T=0 但 Q_latent 可以不为零，说明潜热公式不能被温升公式替代。"
+        ],
+        "errors": [
+          {
+            "wrong": "晶体熔化过程中仍用 Q=mc delta_T，并因温度不变算出吸热为零",
+            "why": "熔化平台上 delta_T=0，但物质持续吸收潜热来改变微观结构。2 kg 冰完全熔化需要 668000 J，并非 0。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "误把相变潜热写成 Q_latent=0.5*m*L，多乘了二分之一",
+            "wrong_expr": "Q_latent = 0.5*m*L",
+            "why": "错误式量纲仍然是能量，量纲检查抓不到；代入 2 kg 和 334000 J/kg 只得到 334000 J，正确值应为 668000 J。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "冰的熔化",
+              "expr": "0.5*m*L",
+              "ref": 668000
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "质量 2.0 kg、处在熔点的冰完全熔化，冰的熔化潜热为 3.34×10^5 J/kg。求需要吸收的热量。",
+          "solution": [
+            "冰已经处在熔点，过程只发生物态变化，不需要先升温。",
+            "用相变潜热公式 Q_latent=mL。",
+            "Q_latent=2.0×3.34×10^5=6.68×10^5 J。"
+          ],
+          "answer": "需要吸收 6.68×10^5 J 热量。"
+        },
+        "prereq": [
+          "thermo-01"
+        ],
+        "next": [
+          "thermo-05"
+        ],
+        "tags": [
+          "晶体",
+          "非晶体",
+          "表面张力",
+          "物态变化",
+          "潜热",
+          "比热容"
+        ],
+        "learning_scope": "高中"
+      },
+      "error_index": 1,
+      "chapter": "第十九章 · 热力学定律"
+    },
+    "diagnostic-thermo-05-1": {
+      "point": {
+        "id": "thermo-05",
+        "title": "饱和汽与空气湿度",
+        "level": "基础",
+        "definition": "在密闭容器中，液体蒸发与蒸气液化达到动态平衡时，蒸气叫饱和汽，其压强叫饱和汽压。饱和汽压随温度升高而增大，并且在同一温度下主要由物质种类决定。空气的相对湿度等于水蒸气实际压强与同温度下饱和汽压之比。",
+        "meaning": "相对湿度描述空气距离饱和还有多远，不等于空气中水蒸气的质量。实际水汽压不变而温度降低时，饱和汽压会下降，相对湿度上升；达到 100% 后继续降温，就会出现凝露。绝对湿度用单位体积空气所含水蒸气质量表示，与相对湿度是不同口径。天气预报常把相对湿度写成百分数，计算时应先化成小数。",
+        "symbols": {
+          "phi": {
+            "desc": "相对湿度，用小数表示",
+            "unit": "1"
+          },
+          "p_v": {
+            "desc": "空气中水蒸气的实际分压",
+            "unit": "Pa"
+          },
+          "p_sat": {
+            "desc": "同温度下水的饱和汽压",
+            "unit": "Pa"
+          },
+          "rho_v": {
+            "desc": "绝对湿度，即水蒸气质量密度",
+            "unit": "kg/m^3"
+          },
+          "m_v": {
+            "desc": "空气中所含水蒸气的质量",
+            "unit": "kg"
+          },
+          "V": {
+            "desc": "所考察空气的体积",
+            "unit": "m^3"
+          }
+        },
+        "scenarios": {
+          "室内空气": {
+            "p_v": 1400,
+            "p_sat": 2000,
+            "phi": 0.7,
+            "m_v": 0.018,
+            "V": 15,
+            "rho_v": 0.0012
+          }
+        },
+        "formulas": [
+          {
+            "name": "相对湿度",
+            "expr": "phi = p_v/p_sat",
+            "when": "实际水汽压与饱和汽压取同一温度、同一压强单位",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "室内空气",
+                "expr": "p_v/p_sat",
+                "ref": 0.7,
+                "note": "1400/2000=0.70，即相对湿度 70%。"
+              },
+              {
+                "type": "direction",
+                "scenario": "室内空气",
+                "var": "p_v",
+                "lo": 400,
+                "hi": 1800,
+                "expr": "p_v/p_sat",
+                "expect": "up",
+                "note": "同温度下实际水汽压越大，空气越接近饱和。"
+              },
+              {
+                "type": "direction",
+                "scenario": "室内空气",
+                "var": "p_sat",
+                "lo": 1600,
+                "hi": 4000,
+                "expr": "p_v/p_sat",
+                "expect": "down",
+                "note": "实际水汽压不变时，饱和汽压越大，相对湿度越低。"
+              },
+              {
+                "type": "scan",
+                "scenario": "室内空气",
+                "var": "p_sat",
+                "lo": 100,
+                "hi": 10000
+              }
+            ]
+          },
+          {
+            "name": "绝对湿度",
+            "expr": "rho_v = m_v/V",
+            "when": "用单位体积空气中水蒸气的质量描述湿度",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "室内空气",
+                "expr": "m_v/V",
+                "ref": 0.0012,
+                "note": "0.018 kg 除以 15 m^3 得 0.0012 kg/m^3，即 1.2 g/m^3。"
+              },
+              {
+                "type": "direction",
+                "scenario": "室内空气",
+                "var": "m_v",
+                "lo": 0.006,
+                "hi": 0.06,
+                "expr": "m_v/V",
+                "expect": "up",
+                "note": "空气体积一定时，水蒸气质量越多，绝对湿度越大。"
+              },
+              {
+                "type": "direction",
+                "scenario": "室内空气",
+                "var": "V",
+                "lo": 5,
+                "hi": 30,
+                "expr": "m_v/V",
+                "expect": "down",
+                "note": "水蒸气质量一定时，分布体积越大，质量密度越小。"
+              },
+              {
+                "type": "scan",
+                "scenario": "室内空气",
+                "var": "V",
+                "lo": 0.1,
+                "hi": 1000
+              },
+              {
+                "type": "consistency",
+                "scenario": "室内空气",
+                "with": "thermo-05|绝对湿度",
+                "with_expr": "rho_v",
+                "target": "绝对湿度，即水蒸气质量密度",
+                "note": "直接求本公式输出，与情境中另列的rho_v设计基准核对；数据是设计示例，不是实测。用于核对定义、反算或边界值，不宣称不同物理原理互证。",
+                "verification_kind": "独立设计情境数据核对",
+                "tol": 1.2e-08
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "同温度下，以实际水汽压占饱和汽压的比例衡量接近饱和的程度，得到 phi=p_v/p_sat。",
+          "当 phi=1 时空气恰好饱和；通常未饱和空气有 0<phi<1，乘 100% 后得到百分数表示。",
+          "按质量密度的定义，单位体积所含水蒸气质量为 rho_v=m_v/V，这就是绝对湿度的一种常用表示。"
+        ],
+        "errors": [
+          {
+            "wrong": "把相对湿度的分子分母颠倒，写成 phi=p_sat/p_v",
+            "wrong_expr": "phi = p_sat/p_v",
+            "why": "未饱和空气中 p_v<p_sat，颠倒后会算出 2000/1400≈1.43，即 143%，而正确值为 70%。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "室内空气",
+              "expr": "p_sat/p_v",
+              "ref": 0.7
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "把相对湿度 70% 直接当成数值 70 代入后续公式",
+            "why": "百分数必须化为小数 0.70。把 70 当作相对湿度会大 100 倍，而且相对湿度的常规范围应在 0 到 1 之间。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "某室内空气中水蒸气实际分压为 1.40×10^3 Pa，同温度下饱和汽压为 2.00×10^3 Pa。另测得 15 m^3 空气中含水蒸气 0.018 kg。求相对湿度和绝对湿度。",
+          "solution": [
+            "相对湿度 phi=p_v/p_sat=1400/2000=0.70，即 70%。",
+            "绝对湿度 rho_v=m_v/V=0.018/15=0.0012 kg/m^3。",
+            "换算为常用单位是 1.2 g/m^3；两个湿度数值描述的是不同口径。"
+          ],
+          "answer": "相对湿度为 70%，绝对湿度为 0.0012 kg/m^3（1.2 g/m^3）。"
+        },
+        "prereq": [
+          "mgas-03",
+          "mgas-06"
+        ],
+        "next": [],
+        "tags": [
+          "饱和汽",
+          "饱和汽压",
+          "相对湿度",
+          "绝对湿度",
+          "露点"
+        ],
+        "learning_scope": "高中"
+      },
+      "error_index": 0,
+      "chapter": "第十九章 · 热力学定律"
+    },
+    "diagnostic-thermo-05-2": {
+      "point": {
+        "id": "thermo-05",
+        "title": "饱和汽与空气湿度",
+        "level": "基础",
+        "definition": "在密闭容器中，液体蒸发与蒸气液化达到动态平衡时，蒸气叫饱和汽，其压强叫饱和汽压。饱和汽压随温度升高而增大，并且在同一温度下主要由物质种类决定。空气的相对湿度等于水蒸气实际压强与同温度下饱和汽压之比。",
+        "meaning": "相对湿度描述空气距离饱和还有多远，不等于空气中水蒸气的质量。实际水汽压不变而温度降低时，饱和汽压会下降，相对湿度上升；达到 100% 后继续降温，就会出现凝露。绝对湿度用单位体积空气所含水蒸气质量表示，与相对湿度是不同口径。天气预报常把相对湿度写成百分数，计算时应先化成小数。",
+        "symbols": {
+          "phi": {
+            "desc": "相对湿度，用小数表示",
+            "unit": "1"
+          },
+          "p_v": {
+            "desc": "空气中水蒸气的实际分压",
+            "unit": "Pa"
+          },
+          "p_sat": {
+            "desc": "同温度下水的饱和汽压",
+            "unit": "Pa"
+          },
+          "rho_v": {
+            "desc": "绝对湿度，即水蒸气质量密度",
+            "unit": "kg/m^3"
+          },
+          "m_v": {
+            "desc": "空气中所含水蒸气的质量",
+            "unit": "kg"
+          },
+          "V": {
+            "desc": "所考察空气的体积",
+            "unit": "m^3"
+          }
+        },
+        "scenarios": {
+          "室内空气": {
+            "p_v": 1400,
+            "p_sat": 2000,
+            "phi": 0.7,
+            "m_v": 0.018,
+            "V": 15,
+            "rho_v": 0.0012
+          }
+        },
+        "formulas": [
+          {
+            "name": "相对湿度",
+            "expr": "phi = p_v/p_sat",
+            "when": "实际水汽压与饱和汽压取同一温度、同一压强单位",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "室内空气",
+                "expr": "p_v/p_sat",
+                "ref": 0.7,
+                "note": "1400/2000=0.70，即相对湿度 70%。"
+              },
+              {
+                "type": "direction",
+                "scenario": "室内空气",
+                "var": "p_v",
+                "lo": 400,
+                "hi": 1800,
+                "expr": "p_v/p_sat",
+                "expect": "up",
+                "note": "同温度下实际水汽压越大，空气越接近饱和。"
+              },
+              {
+                "type": "direction",
+                "scenario": "室内空气",
+                "var": "p_sat",
+                "lo": 1600,
+                "hi": 4000,
+                "expr": "p_v/p_sat",
+                "expect": "down",
+                "note": "实际水汽压不变时，饱和汽压越大，相对湿度越低。"
+              },
+              {
+                "type": "scan",
+                "scenario": "室内空气",
+                "var": "p_sat",
+                "lo": 100,
+                "hi": 10000
+              }
+            ]
+          },
+          {
+            "name": "绝对湿度",
+            "expr": "rho_v = m_v/V",
+            "when": "用单位体积空气中水蒸气的质量描述湿度",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "室内空气",
+                "expr": "m_v/V",
+                "ref": 0.0012,
+                "note": "0.018 kg 除以 15 m^3 得 0.0012 kg/m^3，即 1.2 g/m^3。"
+              },
+              {
+                "type": "direction",
+                "scenario": "室内空气",
+                "var": "m_v",
+                "lo": 0.006,
+                "hi": 0.06,
+                "expr": "m_v/V",
+                "expect": "up",
+                "note": "空气体积一定时，水蒸气质量越多，绝对湿度越大。"
+              },
+              {
+                "type": "direction",
+                "scenario": "室内空气",
+                "var": "V",
+                "lo": 5,
+                "hi": 30,
+                "expr": "m_v/V",
+                "expect": "down",
+                "note": "水蒸气质量一定时，分布体积越大，质量密度越小。"
+              },
+              {
+                "type": "scan",
+                "scenario": "室内空气",
+                "var": "V",
+                "lo": 0.1,
+                "hi": 1000
+              },
+              {
+                "type": "consistency",
+                "scenario": "室内空气",
+                "with": "thermo-05|绝对湿度",
+                "with_expr": "rho_v",
+                "target": "绝对湿度，即水蒸气质量密度",
+                "note": "直接求本公式输出，与情境中另列的rho_v设计基准核对；数据是设计示例，不是实测。用于核对定义、反算或边界值，不宣称不同物理原理互证。",
+                "verification_kind": "独立设计情境数据核对",
+                "tol": 1.2e-08
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "同温度下，以实际水汽压占饱和汽压的比例衡量接近饱和的程度，得到 phi=p_v/p_sat。",
+          "当 phi=1 时空气恰好饱和；通常未饱和空气有 0<phi<1，乘 100% 后得到百分数表示。",
+          "按质量密度的定义，单位体积所含水蒸气质量为 rho_v=m_v/V，这就是绝对湿度的一种常用表示。"
+        ],
+        "errors": [
+          {
+            "wrong": "把相对湿度的分子分母颠倒，写成 phi=p_sat/p_v",
+            "wrong_expr": "phi = p_sat/p_v",
+            "why": "未饱和空气中 p_v<p_sat，颠倒后会算出 2000/1400≈1.43，即 143%，而正确值为 70%。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "室内空气",
+              "expr": "p_sat/p_v",
+              "ref": 0.7
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "把相对湿度 70% 直接当成数值 70 代入后续公式",
+            "why": "百分数必须化为小数 0.70。把 70 当作相对湿度会大 100 倍，而且相对湿度的常规范围应在 0 到 1 之间。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "某室内空气中水蒸气实际分压为 1.40×10^3 Pa，同温度下饱和汽压为 2.00×10^3 Pa。另测得 15 m^3 空气中含水蒸气 0.018 kg。求相对湿度和绝对湿度。",
+          "solution": [
+            "相对湿度 phi=p_v/p_sat=1400/2000=0.70，即 70%。",
+            "绝对湿度 rho_v=m_v/V=0.018/15=0.0012 kg/m^3。",
+            "换算为常用单位是 1.2 g/m^3；两个湿度数值描述的是不同口径。"
+          ],
+          "answer": "相对湿度为 70%，绝对湿度为 0.0012 kg/m^3（1.2 g/m^3）。"
+        },
+        "prereq": [
+          "mgas-03",
+          "mgas-06"
+        ],
+        "next": [],
+        "tags": [
+          "饱和汽",
+          "饱和汽压",
+          "相对湿度",
+          "绝对湿度",
+          "露点"
+        ],
+        "learning_scope": "高中"
+      },
+      "error_index": 1,
+      "chapter": "第十九章 · 热力学定律"
     }
-  ]
+  },
+  "generator_version": "2026-10-04-条件过程返工-8"
 }

@@ -51,7 +51,7 @@ from physkit import expr as EX
 from prose_math import render as prose
 # ★ 数学标记的「教材写法」还原：把 v_avg 显示成 v̄、T_half 显示成 T_(1/2)……
 #   只影响显示，不动内容，也不影响任何校验结论（详见 prose_math.display_mathml）。
-from prose_math import display_mathml
+from prose_math import display_mathml, card_symbols, symbol_context
 
 
 # ============================================================
@@ -76,19 +76,19 @@ def paras(text):
                      for line in str(text).split("\n") if line.strip())
 
 
-def mathml_block(expr_text):
+def mathml_block(expr_text, point_id=None):
     """把 MathML 包成浏览器能直接渲染的 <math>。
 
     ★ 所有公式框与符号表都从这里过 —— 所以「机器下标 → 教材写法」的还原
       只需挂在这两个函数上，一处覆盖全站。
     """
     return ('<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">'
-            '%s</math>' % display_mathml(expr_text))
+            '%s</math>' % display_mathml(expr_text, point_id))
 
 
-def mathml_inline(expr_text):
+def mathml_inline(expr_text, point_id=None):
     return ('<math xmlns="http://www.w3.org/1998/Math/MathML">%s</math>'
-            % display_mathml(expr_text))
+            % display_mathml(expr_text, point_id))
 
 
 def compact_check_records(page):
@@ -140,15 +140,11 @@ def compact_page(page):
     # 本地静态样式只去掉注释和行首缩进，不更改选择器、属性或页面内容。
     for index in range(1, len(chunks), 2):
         if re.match(r'<style\b', chunks[index], re.I):
-            chunks[index] = re.sub(r'/\*.*?\*/', '', chunks[index], flags=re.S)
+            # 保留中文样式注释；体积不再靠删除排错说明控制。
             chunks[index] = re.sub(r'(?m)^[ \t]+', '', chunks[index])
         elif re.match(r'<script\b', chunks[index], re.I):
             # 此页脚本无多行字符串；只删行首缩进，保留换行与全部执行语句。
             chunks[index] = re.sub(r'(?m)^[ \t]+', '', chunks[index])
-            # 中文说明保留在源文件；成品去掉独占行注释，为共享修复留出体积空间。
-            if 'application/json' not in chunks[index]:
-                chunks[index] = re.sub(r'(?m)^//[^\n]*\n', '', chunks[index])
-                chunks[index] = re.sub(r'\n[ \t]*\n', '\n', chunks[index])
     return ''.join(chunks)
 
 
@@ -189,9 +185,10 @@ CHECK_DOC = [
      "这类量纲查不出的错误 —— 例如把 ½at² 写成 at²。"),
     ("direction", "变化方向",
      "让某个参数从小变到大，结果必须朝物理规律要求的方向变化。抓的是「公式抄反了导致单调性反转」。"),
-    ("consistency", "跨公式一致",
-     "同一个情境下，两条推导路径完全不同的公式各算一遍同一个量，答案必须相同。"
-     "这个「相同」不是人手工算出来的，是两条公式互相印证出来的 —— 所以它能发现「两条公式里有一条错了」。"),
+    ("consistency", "关系一致核对",
+     "直接求被检查公式的结果，与同一阶段的独立关系或设计情境基准核对。"
+     "定义与反算的数据核对不代表不同物理原理互证；具体路径、数据性质和适用阶段见每项说明。"
+     "正式通过只证明本项结果一致；是否能拒绝错误另以隔离错误注入验证。"),
     ("compare", "不等式关系",
      "物理里不少结论是不等式而不是等式（例如中间位置速度不小于中间时刻速度）。"
      "这类结论用等式检查抓不到，单独做一条。"),
@@ -315,6 +312,7 @@ def validate_learning(p):
     return counts
 
 
+@card_symbols()
 def render_learning(p):
     """把初中定性主线、实验记录和读图显示在公式前；文字不冒称自动验算。"""
     validate_learning(p)
@@ -354,6 +352,7 @@ def render_learning(p):
     return ''.join(blocks)
 
 
+@card_symbols(first_is_id=True)
 def render_point(pid, p, related=None, quiz_href=None, segment_name="高中", source_page="index.html"):
     """一个完整的知识点卡片。"""
     lvl = p.get("level", "基础")
@@ -367,8 +366,8 @@ def render_point(pid, p, related=None, quiz_href=None, segment_name="高中", so
             '<tr><td class="sym">%s</td><td class="sym-desc">%s</td>'
             '<td class="sym-unit">%s</td></tr>'
             % (mathml_inline(s["mathml"]), prose(s["desc"]), prose(s["unit"]) or "—"))
-    sym_table = ('<table class="syms"><thead><tr><th>符号</th><th>含义</th><th>单位</th>'
-                 '</tr></thead><tbody>%s</tbody></table>' % "".join(sym_rows))
+    sym_table = ('<div class="table-scroll"><table class="syms"><thead><tr><th>符号</th><th>含义</th><th>单位</th>'
+                 '</tr></thead><tbody>%s</tbody></table></div>' % "".join(sym_rows))
 
     # --- 公式 ---
     formulas = "".join(render_formula(f) for f in p["formulas"])
@@ -626,6 +625,12 @@ math{font-size:1.12em}
 .toc a:hover{color:var(--brand);text-decoration:none}
 .toc .tid{margin-left:6px;font-size:11px;color:var(--ink3);
   font-family:"Cascadia Mono",Consolas,monospace}
+/* 狭窄屏幕让网格与文字在卡片内换行；表格与长公式仅在局部滚动。 */
+main,.kp,.kp-body,.mrow,.vs-row{min-width:0}
+.kp-head{flex-wrap:wrap}.kp-head h3{min-width:0;overflow-wrap:anywhere}
+.kp-body p,.kp-body li,.mdesc,.f-when,.sym-desc{overflow-wrap:anywhere}
+.table-scroll{max-width:100%;overflow-x:auto}.vs-row{grid-template-columns:96px minmax(0,1fr) 88px 160px}
+@media(max-width:820px){.vs-row{grid-template-columns:78px minmax(0,1fr) 72px}.vs-from{display:block;grid-column:1/-1;text-align:left}}
 @media print{.toc{display:none!important}}
 .tgl input{cursor:pointer}
 #count{font-size:12.5px;color:var(--ink3);white-space:nowrap}
@@ -637,7 +642,7 @@ main{max-width:1080px;margin:0 auto;padding:26px 24px 70px}
   padding:24px 26px;margin-bottom:26px}
 .method h2{margin:0 0 8px;font-size:19px}
 .lead{margin:0 0 20px;color:var(--ink2);font-size:13.5px;line-height:1.85}
-.mgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px 26px}
+.mgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:16px 26px}
 .mname{font-size:13.5px;font-weight:600;margin-bottom:5px}
 .mbar{height:6px;background:var(--line2);border-radius:3px;overflow:hidden;margin-bottom:4px}
 .mbar span{display:block;height:100%;background:linear-gradient(90deg,#3f8f6a,#2f9e6b)}
@@ -1137,7 +1142,7 @@ def render_page(report, stats, chapters, title="高中物理知识库", lead="",
         merged = {}
         order = []
         for nm, s, ptitle, symbol_ref in base_map[base]:
-            key = (nm, s.get("unit", ""))
+            key = (nm, s.get("unit", ""), display_mathml(s.get("mathml", ""),symbol_ref.split("|")[0]), s.get("desc", ""))
             if key not in merged:
                 merged[key] = {"s": s, "pts": [], "ref": symbol_ref}
                 order.append(key)
@@ -1149,7 +1154,7 @@ def render_page(report, stats, chapters, title="高中物理知识库", lead="",
         ss.append('<div class="vidx-g"><h3 class="vs-base">%s<span class="vs-count">%d 个符号</span></h3>'
                   % (prose(base), len(order)))
         for key in sorted(order, key=lambda k: k[0]):
-            nm, unit_raw = key
+            nm, unit_raw, _, _desc = key
             s = merged[key]["s"]
             pts = merged[key]["pts"]
             # 来源文字与卡片标题一致，浏览器切到符号视图时读取，不重复嵌入。

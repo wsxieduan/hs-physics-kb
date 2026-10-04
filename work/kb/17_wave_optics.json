@@ -112,11 +112,12 @@
             {
               "type": "consistency",
               "scenario": "红光双缝",
-              "expr": "m_order*delta_x",
-              "with": "wop-01|双缝干涉条纹间距",
+              "with": "wop-01|第 m_order 级亮纹位置",
               "with_expr": "m_order*L*lambda/d",
-              "target": "第三级亮纹到中央亮纹的距离",
-              "note": "先算条纹间距再乘级次得到 0.009 m；把双缝参数直接代入也得到 0.009 m"
+              "target": "第 m_order 级亮纹到中央亮纹的距离",
+              "note": "本公式直接求x_m；参考端显式关系为m_order*L*lambda/d。两端使用同一情境和阶段，只核对该关系；with字段仅定位来源，不代表调用另一条被覆盖的公式。",
+              "verification_kind": "独立关系核对",
+              "tol": 9.000000000000001e-08
             },
             {
               "type": "scan",
@@ -143,17 +144,26 @@
             "scenario": "红光双缝",
             "expr": "d*lambda/L",
             "ref": 0.003
+          },
+          "diagnostic": {
+            "style": "物理结论与步骤辨析"
           }
         },
         {
           "wrong": "认为双缝间距越大，干涉条纹越疏",
           "wrong_expr": "delta_x = L*lambda*d",
           "why": "正确关系中 d 在分母，双缝间距增大应使条纹变密。错误式在本情境给出 4.8×10^-10 m，也与实测 0.003 m 不符。",
-          "caught_by": "数值代入",
+          "caught_by": "量纲一致性",
           "trap_test": {
-            "scenario": "红光双缝",
-            "expr": "L*lambda*d",
-            "ref": 0.003
+            "kind": "dimension",
+            "target": "delta_x = L*lambda*d",
+            "expect": "mismatch",
+            "lhs_dim": "L",
+            "rhs_dim": "L^3",
+            "note": "正式引擎验证量纲不一致；不计作同量纲错误数值实测。"
+          },
+          "diagnostic": {
+            "style": "物理结论与步骤辨析"
           }
         }
       ],
@@ -178,7 +188,8 @@
         "光的干涉",
         "双缝实验",
         "条纹间距"
-      ]
+      ],
+      "learning_scope": "高中"
     },
     {
       "id": "wop-02",
@@ -288,11 +299,12 @@
             {
               "type": "consistency",
               "scenario": "窄缝衍射",
-              "expr": "2*L*lambda/a",
-              "with": "wop-02|单缝第一暗纹条件",
+              "with": "wop-02|单缝中央亮纹宽度",
               "with_expr": "2*L*s_theta",
-              "target": "中央亮纹宽度",
-              "note": "由缝宽和波长直接算得 0.12 m；先算第一暗纹正弦近似再乘两侧屏距也得 0.12 m"
+              "target": "中央亮纹的近似宽度",
+              "note": "本公式直接求w；参考端显式关系为2*L*s_theta。两端使用同一情境和阶段，只核对该关系；with字段仅定位来源，不代表调用另一条被覆盖的公式。",
+              "verification_kind": "独立关系核对",
+              "tol": 1e-06
             },
             {
               "type": "scan",
@@ -319,6 +331,9 @@
             "scenario": "窄缝衍射",
             "expr": "a/lambda",
             "ref": 0.05
+          },
+          "diagnostic": {
+            "style": "物理结论与步骤辨析"
           }
         },
         {
@@ -330,6 +345,9 @@
             "scenario": "窄缝衍射",
             "expr": "L*lambda/a",
             "ref": 0.12
+          },
+          "diagnostic": {
+            "style": "物理结论与步骤辨析"
           }
         }
       ],
@@ -354,7 +372,8 @@
         "光的衍射",
         "单缝衍射",
         "中央亮纹"
-      ]
+      ],
+      "learning_scope": "高中"
     },
     {
       "id": "wop-03",
@@ -457,11 +476,12 @@
             {
               "type": "consistency",
               "scenario": "两片偏振片",
-              "expr": "I_p*c_theta^2",
-              "with": "wop-03|自然光通过理想偏振片",
+              "with": "wop-03|马吕斯定律",
               "with_expr": "I_in*c_theta^2/2",
-              "target": "自然光依次通过两片偏振片后的光强",
-              "note": "先算第一片后的 0.5 再用马吕斯定律得 0.18；合并两步由入射光强直接算也得 0.18"
+              "target": "线偏振光通过检偏器后的相对光强",
+              "note": "本公式直接求I；参考端显式关系为I_in*c_theta^2/2。两端使用同一情境和阶段，只核对该关系；with字段仅定位来源，不代表调用另一条被覆盖的公式。",
+              "verification_kind": "独立关系核对",
+              "tol": 1e-06
             },
             {
               "type": "scan",
@@ -488,6 +508,9 @@
             "scenario": "两片偏振片",
             "expr": "I_in",
             "ref": 0.5
+          },
+          "diagnostic": {
+            "style": "物理结论与步骤辨析"
           }
         },
         {
@@ -499,6 +522,9 @@
             "scenario": "两片偏振片",
             "expr": "I_p*c_theta",
             "ref": 0.18
+          },
+          "diagnostic": {
+            "style": "物理结论与步骤辨析"
           }
         }
       ],
@@ -520,7 +546,8 @@
         "偏振",
         "横波",
         "马吕斯定律"
-      ]
+      ],
+      "learning_scope": "高中"
     },
     {
       "id": "wop-04",
@@ -604,7 +631,8 @@
               "scenario": "绿光真空传播",
               "expr": "1/f",
               "ref": 1.6666666666666668e-15,
-              "note": "1÷(6.0×10^14) = (1/6)×10^-14 = 1.6666667×10^-15 s（独立倒数计算）"
+              "note": "1÷(6.0×10^14) = (1/6)×10^-14 = 1.6666667×10^-15 s（独立倒数计算） 本项采用参考物理量百万分之一的绝对容差，零值和十倍数量级错误不能通过。",
+              "tol": 1.6666666666666666e-21
             },
             {
               "type": "direction",
@@ -619,11 +647,12 @@
             {
               "type": "consistency",
               "scenario": "绿光真空传播",
-              "expr": "c*T",
-              "with": "wop-04|真空中光速关系",
-              "with_expr": "lambda",
-              "target": "一个周期内光传播的距离",
-              "note": "光速乘周期得到 5.0×10^-7 m；由光速关系直接给出的真空波长也是 5.0×10^-7 m"
+              "with": "wop-04|频率与周期",
+              "with_expr": "lambda/c",
+              "target": "电磁振动的周期",
+              "note": "本公式直接求T；参考端显式关系为lambda/c。两端使用同一情境和阶段，只核对该关系；with字段仅定位来源，不代表调用另一条被覆盖的公式。",
+              "verification_kind": "独立关系核对",
+              "tol": 1.6666666666666668e-20
             },
             {
               "type": "scan",
@@ -650,6 +679,9 @@
             "scenario": "绿光真空传播",
             "expr": "2*lambda*f",
             "ref": 300000000.0
+          },
+          "diagnostic": {
+            "style": "物理结论与步骤辨析"
           }
         },
         {
@@ -664,6 +696,9 @@
             "rhs_dim": "T^-1",
             "expect": "mismatch",
             "note": "实际量纲检查得到等号左边为T、右边为T^-1；两边不是同一物理量，因此该等式不成立。"
+          },
+          "diagnostic": {
+            "style": "物理结论与步骤辨析"
           }
         }
       ],
@@ -687,7 +722,8 @@
         "光速",
         "频率",
         "波长"
-      ]
+      ],
+      "learning_scope": "高中"
     },
     {
       "id": "wop-05",
@@ -759,11 +795,12 @@
             {
               "type": "consistency",
               "scenario": "一级",
-              "expr": "asin(k*lambda/d)",
               "with_expr": "atan(s/L)",
-              "target": "两条物理路径的结果",
-              "note": "光程差干涉条件求角度，与独立屏幕位置和距离反算角度核对",
-              "with": "wop-05|主极大方向"
+              "target": "主极大方向与正前方夹角",
+              "note": "本公式直接求theta；参考端显式关系为atan(s/L)。两端使用同一情境和阶段，只核对该关系；with字段仅定位来源，不代表调用另一条被覆盖的公式。",
+              "with": "wop-05|主极大方向",
+              "verification_kind": "独立关系核对",
+              "tol": 1e-06
             }
           ]
         },
@@ -810,12 +847,18 @@
             "scenario": "一级",
             "expr": "L*k*lambda/d",
             "ref": 1
+          },
+          "diagnostic": {
+            "style": "物理结论与步骤辨析"
           }
         },
         {
           "wrong": "把缝宽当成光栅常量来求主极大",
           "why": "相邻缝间距控制多缝相位差，单缝宽度控制衍射包络；两者是不同几何参数，即使单位相同也不能互换。",
-          "caught_by": "人工审核"
+          "caught_by": "人工审核",
+          "diagnostic": {
+            "style": "物理结论与步骤辨析"
+          }
         }
       ],
       "example": {
@@ -837,7 +880,8 @@
         "光栅",
         "主极大",
         "衍射级次"
-      ]
+      ],
+      "learning_scope": "高中"
     }
   ]
 }

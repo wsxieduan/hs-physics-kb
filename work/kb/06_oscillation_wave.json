@@ -118,11 +118,11 @@
             {
               "type": "consistency",
               "scenario": "半秒周期",
-              "expr": "2*pi/T",
-              "with": "osc-01|简谐运动位移",
+              "with": "osc-01|角频率与周期",
               "with_expr": "omega",
-              "target": "位移式所用角频率",
-              "note": "由周期换算得到 4pi rad/s，与位移式情境给定的角频率一致"
+              "target": "角频率",
+              "note": "直接求本公式输出，与情境中另列的omega设计基准核对；数据是设计示例，不是实测。用于核对定义、反算或边界值，不宣称不同物理原理互证。",
+              "verification_kind": "独立设计情境数据核对"
             },
             {
               "type": "scan",
@@ -152,6 +152,9 @@
             "rhs_dim": "T",
             "expect": "mismatch",
             "note": "实际量纲检查得到等号左边为T^-1、右边为T；两边不是同一物理量，因此该等式不成立。"
+          },
+          "diagnostic": {
+            "style": "物理结论与步骤辨析"
           }
         },
         {
@@ -163,6 +166,9 @@
             "scenario": "余弦振动",
             "expr": "A*sin(omega*t + phi)",
             "ref": 0.2
+          },
+          "diagnostic": {
+            "style": "物理结论与步骤辨析"
           }
         }
       ],
@@ -186,7 +192,8 @@
         "振幅",
         "周期",
         "相位"
-      ]
+      ],
+      "learning_scope": "高中"
     },
     {
       "id": "osc-02",
@@ -306,11 +313,11 @@
             {
               "type": "consistency",
               "scenario": "正向位移",
-              "expr": "0.5*k*A^2",
-              "with": "osc-02|简谐运动回复力",
-              "with_expr": "0.5*abs(-k*A)*A",
-              "target": "端点回复力—位移图像面积与总能量",
-              "note": "直接用弹性势能公式得 1 J；回复力从 0 线性增至 kA，力—位移图像三角形面积也为 1 J"
+              "with": "osc-02|弹簧振子总机械能",
+              "with_expr": "abs(F_restore)*A^2/(2*x)",
+              "target": "振动总机械能",
+              "note": "本公式直接求E；参考端显式关系为abs(F_restore)*A^2/(2*x)。两端使用同一情境和阶段，只核对该关系；with字段仅定位来源，不代表调用另一条被覆盖的公式。",
+              "verification_kind": "独立关系核对"
             },
             {
               "type": "scan",
@@ -332,7 +339,10 @@
           "wrong": "漏掉回复力的负号，写成 F_restore=kx",
           "wrong_expr": "F_restore = k*x",
           "why": "这会让力指向远离平衡位置的方向；正向位移情境会算出 +10 N，而正确值是 -10 N。",
-          "caught_by": "数值代入"
+          "caught_by": "数值代入",
+          "diagnostic": {
+            "style": "物理结论与步骤辨析"
+          }
         },
         {
           "wrong": "把总能量写成 E=kA^2，漏掉二分之一",
@@ -343,6 +353,9 @@
             "scenario": "正向位移",
             "expr": "k*A^2",
             "ref": 1.0
+          },
+          "diagnostic": {
+            "style": "物理结论与步骤辨析"
           }
         }
       ],
@@ -367,7 +380,8 @@
         "回复力",
         "弹簧振子",
         "机械能"
-      ]
+      ],
+      "learning_scope": "高中"
     },
     {
       "id": "osc-03",
@@ -391,6 +405,14 @@
         "f": {
           "desc": "振动频率",
           "unit": "Hz"
+        },
+        "omega": {
+          "desc": "小角度近似下单摆振动的角频率",
+          "unit": "rad/s"
+        },
+        "theta": {
+          "desc": "摆线与竖直方向的夹角，小角近似用弧度",
+          "unit": "rad"
         }
       },
       "scenarios": {
@@ -474,11 +496,12 @@
             {
               "type": "consistency",
               "scenario": "一米单摆",
-              "expr": "1/T",
-              "with": "osc-03|单摆周期",
+              "with": "osc-03|单摆频率",
               "with_expr": "1/(2*pi*sqrt(L/g))",
-              "target": "单摆频率",
-              "note": "由已知周期取倒数与把周期公式整体取倒数，两条路径均得约 0.498233 Hz"
+              "target": "振动频率",
+              "note": "本公式直接求f；参考端显式关系为1/(2*pi*sqrt(L/g))。两端使用同一情境和阶段，只核对该关系；with字段仅定位来源，不代表调用另一条被覆盖的公式。",
+              "verification_kind": "独立关系核对",
+              "tol": 1e-06
             },
             {
               "type": "scan",
@@ -505,12 +528,18 @@
             "scenario": "一米单摆",
             "expr": "pi*sqrt(L/g)",
             "ref": 2.007089923154493
+          },
+          "diagnostic": {
+            "style": "物理结论与步骤辨析"
           }
         },
         {
           "wrong": "把细线长度直接当摆长，忽略摆球半径",
           "why": "摆长应从悬点量到摆球重心。若只取细线长度，会系统性低估 L 和周期；属于建模与测量错误。",
-          "caught_by": "人工审核"
+          "caught_by": "人工审核",
+          "diagnostic": {
+            "style": "物理结论与步骤辨析"
+          }
         }
       ],
       "example": {
@@ -533,7 +562,8 @@
         "单摆",
         "周期公式",
         "小角度"
-      ]
+      ],
+      "learning_scope": "高中"
     },
     {
       "id": "osc-04",
@@ -638,11 +668,11 @@
             {
               "type": "consistency",
               "scenario": "共振调谐",
-              "expr": "2*pi*f_drive",
-              "with": "osc-04|固有频率与固有周期",
+              "with": "osc-04|驱动力角频率",
               "with_expr": "2*pi/T_0",
-              "target": "共振时驱动角频率与固有角频率",
-              "note": "共振时 f_drive=1/T_0，两条路径都得到 4pi rad/s"
+              "target": "驱动力角频率",
+              "note": "本公式直接求omega_drive；参考端显式关系为2*pi/T_0。两端使用同一情境和阶段，只核对该关系；with字段仅定位来源，不代表调用另一条被覆盖的公式。",
+              "verification_kind": "独立关系核对"
             },
             {
               "type": "scan",
@@ -663,7 +693,10 @@
         {
           "wrong": "认为受迫振动稳定后的频率始终等于固有频率",
           "why": "稳定受迫振动的频率由驱动力决定；固有频率决定在什么驱动频率附近响应最强。",
-          "caught_by": "人工审核"
+          "caught_by": "人工审核",
+          "diagnostic": {
+            "style": "物理结论与步骤辨析"
+          }
         },
         {
           "wrong": "把驱动力角频率写成 omega_drive=pi*f_drive，漏掉系数 2",
@@ -674,6 +707,9 @@
             "scenario": "未调谐",
             "expr": "pi*f_drive",
             "ref": 18.84955592153876
+          },
+          "diagnostic": {
+            "style": "物理结论与步骤辨析"
           }
         }
       ],
@@ -696,7 +732,8 @@
         "固有频率",
         "共振",
         "阻尼"
-      ]
+      ],
+      "learning_scope": "高中"
     },
     {
       "id": "osc-05",
@@ -809,11 +846,11 @@
             {
               "type": "consistency",
               "scenario": "绳波传播",
-              "expr": "v*T",
-              "with": "osc-05|波的传播速度",
+              "with": "osc-05|一个周期传播的距离",
               "with_expr": "s*T/t",
-              "target": "由传播测量得到的波长",
-              "note": "先测得波速再乘周期，与直接用传播距离、时间和周期组合，均得 2 m"
+              "target": "波长",
+              "note": "本公式直接求lambda；参考端显式关系为s*T/t。两端使用同一情境和阶段，只核对该关系；with字段仅定位来源，不代表调用另一条被覆盖的公式。",
+              "verification_kind": "独立关系核对"
             },
             {
               "type": "scan",
@@ -834,7 +871,10 @@
         {
           "wrong": "认为介质质点会随波从波源一直移动到远处",
           "why": "质点只在平衡位置附近振动；向外传播的是振动状态和能量。可用漂浮物随水波上下振动但不持续随波前进来辨别。",
-          "caught_by": "人工审核"
+          "caught_by": "人工审核",
+          "diagnostic": {
+            "style": "物理结论与步骤辨析"
+          }
         },
         {
           "wrong": "误认为半个周期传播一个波长，写成 lambda=2vT",
@@ -845,6 +885,9 @@
             "scenario": "绳波传播",
             "expr": "2*v*T",
             "ref": 2.0
+          },
+          "diagnostic": {
+            "style": "物理结论与步骤辨析"
           }
         }
       ],
@@ -867,7 +910,8 @@
         "横波",
         "纵波",
         "介质"
-      ]
+      ],
+      "learning_scope": "高中"
     },
     {
       "id": "osc-06",
@@ -939,11 +983,11 @@
             {
               "type": "consistency",
               "scenario": "同相水波",
-              "expr": "lambda*f",
-              "with": "osc-05|一个周期传播的距离",
-              "with_expr": "lambda/(1/f)",
-              "target": "由波长与周期表示的波速",
-              "note": "波长乘频率与波长除周期（其中 T=1/f）两条路径都得到 8 m/s"
+              "with": "osc-06|波速关系",
+              "with_expr": "v",
+              "target": "波速",
+              "note": "直接求本公式输出，与情境中另列的v设计基准核对；数据是设计示例，不是实测。用于核对定义、反算或边界值，不宣称不同物理原理互证。",
+              "verification_kind": "独立设计情境数据核对"
             },
             {
               "type": "scan",
@@ -1011,12 +1055,18 @@
             "scenario": "同相水波",
             "expr": "2*lambda*f",
             "ref": 8.0
+          },
+          "diagnostic": {
+            "style": "物理结论与步骤辨析"
           }
         },
         {
           "wrong": "认为频率越高，波在同一介质中一定传播得越快",
           "why": "在高中常见的均匀、非色散介质模型中，波速主要由介质决定。波源频率升高时通常是波长缩短，使 lambda f 仍等于原波速。",
-          "caught_by": "人工审核"
+          "caught_by": "人工审核",
+          "diagnostic": {
+            "style": "物理结论与步骤辨析"
+          }
         }
       ],
       "example": {
@@ -1040,7 +1090,8 @@
         "频率",
         "干涉",
         "衍射"
-      ]
+      ],
+      "learning_scope": "高中"
     },
     {
       "id": "osc-07",
@@ -1124,11 +1175,11 @@
             {
               "type": "consistency",
               "scenario": "接近",
-              "expr": "f*(c+v_o)/(c-v_s)",
               "with_expr": "1/T_p",
-              "target": "两条物理路径的结果",
-              "note": "运动产生的波峰计数与独立接收时间间隔互证",
-              "with": "osc-07|沿线运动的接收频率"
+              "target": "观察者接收频率",
+              "note": "本公式直接求f_p；参考端显式关系为1/T_p。两端使用同一情境和阶段，只核对该关系；with字段仅定位来源，不代表调用另一条被覆盖的公式。",
+              "with": "osc-07|沿线运动的接收频率",
+              "verification_kind": "独立关系核对"
             }
           ]
         },
@@ -1161,12 +1212,18 @@
             "scenario": "接近",
             "expr": "f*c/(c+v_s)",
             "ref": 1000
+          },
+          "diagnostic": {
+            "style": "物理结论与步骤辨析"
           }
         },
         {
           "wrong": "认为声源移动使介质中的声速随之改变",
           "why": "声源改变发射位置和波峰间距，波峰离开声源后仍按介质条件决定的声速传播；应区分波速与观察者接收频率。",
-          "caught_by": "人工审核"
+          "caught_by": "人工审核",
+          "diagnostic": {
+            "style": "物理结论与步骤辨析"
+          }
         }
       ],
       "example": {
@@ -1188,7 +1245,8 @@
         "多普勒",
         "声源运动",
         "接收频率"
-      ]
+      ],
+      "learning_scope": "高中"
     },
     {
       "id": "osc-08",
@@ -1256,11 +1314,11 @@
             {
               "type": "consistency",
               "scenario": "欠阻尼",
-              "expr": "b/(2*m)",
               "with_expr": "ln(A_0/A)/t",
-              "target": "两条物理路径的结果",
-              "note": "动力学阻力参数与独立测量振幅减半时间所得衰减率核对",
-              "with": "osc-08|振幅衰减率"
+              "target": "振幅包络衰减率",
+              "note": "本公式直接求beta；参考端显式关系为ln(A_0/A)/t。两端使用同一情境和阶段，只核对该关系；with字段仅定位来源，不代表调用另一条被覆盖的公式。",
+              "with": "osc-08|振幅衰减率",
+              "verification_kind": "独立关系核对"
             }
           ]
         },
@@ -1315,12 +1373,18 @@
             "scenario": "欠阻尼",
             "expr": "b/m",
             "ref": 1
+          },
+          "diagnostic": {
+            "style": "物理结论与步骤辨析"
           }
         },
         {
           "wrong": "认为只要有弹簧就必然来回振荡",
           "why": "回复力的存在不足以保证反复振荡；阻尼过大时系统可以不越过平衡位置，本卡角频率根式只适用于欠阻尼。",
-          "caught_by": "人工审核"
+          "caught_by": "人工审核",
+          "diagnostic": {
+            "style": "物理结论与步骤辨析"
+          }
         }
       ],
       "example": {
@@ -1342,7 +1406,8 @@
         "阻尼振动",
         "欠阻尼",
         "振幅包络"
-      ]
+      ],
+      "learning_scope": "高中"
     }
   ]
 }
