@@ -456,7 +456,7 @@ def render_point(pid, p, related=None, quiz_href=None, segment_name="高中", so
       <div class="kp-head">
         <span class="kp-id">%(pid)s</span>
         <h3>%(title)s</h3>
-        <span class="lvl %(lvlcls)s">%(lvl)s</span>
+        <span class="lvl %(lvlcls)s">难度：%(lvl)s</span><span class="lvl">范围：%(scope)s</span>
         <span class="kp-pass %(okcls)s">校验 %(nok)d/%(nall)d</span>
       </div>
       %(practice)s
@@ -494,6 +494,7 @@ def render_point(pid, p, related=None, quiz_href=None, segment_name="高中", so
         "title": E(p["title"]),
         "lvlcls": LEVEL_CLASS.get(lvl, "lv-base"),
         "lvl": E(lvl),
+        "scope": E(p.get("learning_scope") or segment_name),
         "okcls": "ok" if ok else "bad",
         "nok": n_ok,
         "nall": n_all,
@@ -1049,7 +1050,7 @@ def render_page(report, stats, chapters, title="高中物理知识库", lead="",
         # 扩充展示字段从源读取；冻结公式报告保持原结构与原检查数。
         for source in chapter.get('points', []):
             if source['id'] in report:
-                for key in ('core', 'experiments', 'figures', 'evidence'):
+                for key in ('core', 'experiments', 'figures', 'evidence', 'learning_scope'):
                     report[source['id']][key] = source.get(key, [])
         if pts:
             groups.append((cname, chapter.get("intro", ""), pts))
@@ -1404,10 +1405,12 @@ def main(argv):
     print("  %s（%.1f KB）" % (html_path, size_kb))
     print("  %s" % md_path)
     # ★ 2026-09-19：体积约束放宽（需求方的原话：「大小不重要，重要的是成品的效果，
-    # 不出 bug 就行」）。这里只留一个 2 MB 的防呆上限，正常交付碰不到。
+    # 不出 bug 就行」）。这里只留一个防呆上限，正常交付碰不到。
     # 不要为了压体积而删内容 —— 覆盖门槛优先。
-    if size_kb > 2048:
-        print("  注意：文件超过 2 MB 的防呆上限 —— 体积约束已放宽，此项仅防失控。")
+    # ★ 2026-10-04：2 MB → 8 MB。高中完整版已 1999.1 KB，只剩 49 KB 余量，
+    #   继续卡 2 MB 会直接让构建失败（return 1）。主人原话：「质量第一，占多少 MB 无所谓」。
+    if size_kb > 8192:
+        print("  注意：文件超过 8 MB 的防呆上限 —— 体积约束已放宽，此项仅防失控。")
         return 1
     print()
     print("结论：全部通过，成品可用。")

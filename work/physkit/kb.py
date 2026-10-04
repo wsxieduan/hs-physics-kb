@@ -174,6 +174,28 @@ def _auto_numeric_trap(wlhs, wrhs, symbols, scenarios):
     return None, (skipped or "现有情境都没法算出这条写法的数值")
 
 
+# 检查项「根本没算出来」时 checks.py 写回的文案特征。
+# 这类结果既不能算「抓住了错误」，也不能算「防线是假的」——它压根没测成。
+# ★ 2026-10-04 修正：此前 caught = not r.ok 会把「求值失败」当成「抓住错误」，
+#   导致统计虚高（高中曾出现 298 条「实测抓住」里混进 1 条求值失败）。
+#   详见 work/校验器变更.md。
+_EVAL_FAIL_MARKS = (
+    "缺少这些变量的值",     # 情境里没给这个变量的值
+    "表达式写不通",         # trap_test 的 expr 语法有问题
+    "代入算账时出错",       # 求值过程抛异常
+    "算出来没有数值",       # 结果不是数
+    "结果算不出数值",       # direction 类算不出方向
+)
+
+
+def _eval_failed(r):
+    """判断一条检查结果是不是「没测成」（而不是「测出来不符」）。"""
+    if getattr(r, "error", None):
+        return True
+    detail = getattr(r, "detail", "") or ""
+    return any(mark in detail for mark in _EVAL_FAIL_MARKS)
+
+
 def verify_traps(chapters):
     """
     逐条实测「常见错误」是否真的能被声称的那类检查抓住。
@@ -181,7 +203,8 @@ def verify_traps(chapters):
     返回 {(知识点id, 错误序号): {"caught": True/False/None, "by": 类型, "detail": 说明}}
         caught = True   声称成立，该错写法确实被抓住
         caught = False  ★ 声称不成立，这条防线是假的（属于内容缺陷）
-        caught = None   没法自动实测（缺 wrong_expr / trap_test，或公式本身跑不通）
+        caught = None   没法自动实测（缺 wrong_expr / trap_test，或公式本身跑不通，
+                        或情境缺变量导致根本算不出值）
     """
     out = {}
 
@@ -245,12 +268,18 @@ def verify_traps(chapters):
                             spec = dict(tt)
                             spec["_scenario_values"] = scenarios.get(tt.get("scenario"), {})
                             r = CH.check_numeric("【错写法】", wlhs, wrhs, lvar, symbols, spec)
-                            caught = not r.ok
-                            if caught:
-                                detail = r.detail
+                            # ★ 2026-10-04：先分出「没算出来」—— 求值失败既不能算抓住，
+                            # 也不能算防线是假的，必须记成「无法实测」，否则统计虚高。
+                            if _eval_failed(r):
+                                caught = None
+                                detail = "无法自动实测（%s）" % r.detail
                             else:
-                                detail = ("★ 实测发现这条错写法居然通过了「%s」检查 —— 该防线是假的"
-                                          % r.type_name)
+                                caught = not r.ok
+                                if caught:
+                                    detail = r.detail
+                                else:
+                                    detail = ("★ 实测发现这条错写法居然通过了「%s」检查 —— 该防线是假的"
+                                              % r.type_name)
                         else:
                             # 没指定参考值：自动把错误写法代进各个情境，看左右两边对不对得上
                             caught, detail = _auto_numeric_trap(wlhs, wrhs, symbols, scenarios)
@@ -274,12 +303,17 @@ def verify_traps(chapters):
                     continue
 
                 # 检查判为"不通过" → 说明这条错写法确实被抓住了
-                out[key] = {
-                    "caught": (not r.ok),
-                    "by": by,
-                    "detail": r.detail if not r.ok else
-                              "★ 实测发现这条错写法居然通过了「%s」检查 —— 该防线是假的" % r.type_name,
-                }
+                # ★ 2026-10-04：同样先排除「没算出来」的情况（见 _eval_failed 注释）
+                if _eval_failed(r):
+                    out[key] = {"caught": None, "by": by,
+                                "detail": "无法自动实测（%s）" % r.detail}
+                else:
+                    out[key] = {
+                        "caught": (not r.ok),
+                        "by": by,
+                        "detail": r.detail if not r.ok else
+                                  "★ 实测发现这条错写法居然通过了「%s」检查 —— 该防线是假的" % r.type_name,
+                    }
 
     return out
 

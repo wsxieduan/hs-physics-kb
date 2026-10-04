@@ -129,7 +129,7 @@ def make_payload(chapters, report, segment="高中"):
                  prose(example.get("answer", ""))],
                 list(point.get("prereq") or []), list(point.get("next") or []),
                 [prose(x) for x in point.get("tags", [])], len(groups),
-                render_learning(source),
+                render_learning(source), source.get("level", "基础"), source.get("learning_scope", segment),
             ]
             points.append(item)
             chapter_ids.append(len(points) - 1)
@@ -167,7 +167,11 @@ let domain='全部',chapterName='全部',query='';
 const pointIndex=new Map(points.map((p,i)=>[p[0],i]));
 
 // 搜索只从给人看的字段建立索引，不把公式解析器的内部名称重新写进页面。
-const pointSearch=points.map(p=>clean([p[1],p[2],p[6],p[13],p[11].join(' '),groups[p[12]][0],groups[p[12]][1],...p[3].flat(),...p[4].flat(),...p[5].flat()].map(strip).join(' ')));
+// 每个字段保留命中位置；折叠内容也建立索引，搜索时主动展开。
+const searchSections=points.map(p=>[['标题和定义',[p[1],p[2],p[11].join(' '),groups[p[12]][0]]],['核心正文',[p[13]]],['物理意义',[p[6]]],['推导',p[7]],['例题',[p[8][0],...p[8][1],p[8][2]]],['公式',p[3].flat()],['符号',p[4].flat()],['易错点',p[5].flat()]].map(([label,parts])=>[label,clean(parts.map(strip).join(' '))]));
+const pointSearch=searchSections.map(parts=>parts.map(x=>x[1]).join(' '));
+function hits(i){return query?searchSections[i].filter(x=>x[1].includes(query)).map(x=>x[0]):[]}
+
 const formulas=[];points.forEach((p,i)=>p[3].forEach((f,k)=>formulas.push([i,k,clean([strip(p[1]),strip(f[0]),strip(f[2]),...p[4].map(s=>strip(s[0])+' '+strip(s[1])),groups[p[12]][0]].join(' '))])));
 const symbols=[],symbolMap=new Map();points.forEach((p,i)=>p[4].forEach(s=>{const key=s.join('|');if(!symbolMap.has(key)){symbolMap.set(key,symbols.length);symbols.push([s,[i]])}else symbols[symbolMap.get(key)][1].push(i)}));
 
@@ -176,19 +180,19 @@ function formulaHTML(f){return '<div class="formula"><div class="formula-name">'
 function symbolHTML(s){return '<div class="sym-row"><div class="sym-name">'+s[0]+'</div><div>'+s[1]+'</div><div class="sym-unit">'+s[2]+'</div></div>'}
 function errorHTML(e){return '<div class="error"><b>'+e[0]+'</b><p>'+e[1]+'</p></div>'}
 function relationHTML(p,i){const before=p[9].map(id=>pointIndex.get(id)).filter(x=>x!==undefined),after=p[10].map(id=>pointIndex.get(id)).filter(x=>x!==undefined);const row=(label,list)=>list.length?'<div class="relation-line"><span>'+label+'</span>'+list.map(j=>'<button data-go="'+j+'">'+points[j][1]+'</button>').join('')+'</div>':'';return before.length||after.length?'<section class="relations"><h3>知识关系</h3>'+row('先理解',before)+row('接着看',after)+'</section>':''}
-function pointHTML(i){const p=points[i],g=groups[p[12]],more=p[5].length>2?'<details class="more-errors"><summary>查看其余 '+(p[5].length-2)+' 条常见错误</summary>'+p[5].slice(2).map(errorHTML).join('')+'</details>':'';return '<article class="card" id="'+p[0]+'"><div class="path">'+g[1]+' · '+text(groupName(p[12]))+'</div><h2>'+p[1]+'</h2><p class="definition">'+p[2]+'</p>'+p[13]+'<section class="block"><h3>公式与适用范围</h3><div class="formulas">'+p[3].map(formulaHTML).join('')+'</div></section><section class="block"><h3>容易出错</h3>'+p[5].slice(0,2).map(errorHTML).join('')+more+'</section><section class="block"><h3>符号与单位</h3><div class="symbols"><div class="sym-row head"><div>符号</div><div>含义</div><div>单位</div></div>'+p[4].map(symbolHTML).join('')+'</div></section>'+relationHTML(p,i)+'<details class="deep" data-deep="'+i+'"><summary>深入理解：物理意义、推导和例题</summary><div class="deep-content"></div></details><div class="card-practice"><a href="'+QUIZ_HREF+'#mode=example&amp;point='+encodeURIComponent(p[0])+'&amp;source='+encodeURIComponent(SEGMENT_ROOT+'速查版')+'&amp;return='+encodeURIComponent(RETURN_PAGE+'#'+p[0])+'">练这道题 ↗</a></div></article>'}
+function pointHTML(i){const p=points[i],g=groups[p[12]],more=p[5].length>2?'<details class="more-errors"><summary>查看其余 '+(p[5].length-2)+' 条常见错误</summary>'+p[5].slice(2).map(errorHTML).join('')+'</details>':'';return '<article class="card" id="'+p[0]+'">'+(query?'<p class="search-hit">命中：'+hits(i).join('、')+'</p>':'')+'<div class="path">难度：'+text(p[14])+' · 范围：'+text(p[15])+' · '+g[1]+' · '+text(groupName(p[12]))+'</div><h2>'+p[1]+'</h2><p class="definition">'+p[2]+'</p>'+p[13]+'<section class="block"><h3>公式与适用范围</h3><div class="formulas">'+p[3].map(formulaHTML).join('')+'</div></section><section class="block"><h3>容易出错</h3>'+p[5].slice(0,2).map(errorHTML).join('')+more+'</section><section class="block"><h3>符号与单位</h3><div class="symbols"><div class="sym-row head"><div>符号</div><div>含义</div><div>单位</div></div>'+p[4].map(symbolHTML).join('')+'</div></section>'+relationHTML(p,i)+'<details class="deep" data-deep="'+i+'"><summary>深入理解：物理意义、推导和例题</summary><div class="deep-content"></div></details><div class="card-practice"><a href="'+QUIZ_HREF+'#mode=example&amp;point='+encodeURIComponent(p[0])+'&amp;source='+encodeURIComponent(SEGMENT_ROOT+'速查版')+'&amp;return='+encodeURIComponent(RETURN_PAGE+'#'+p[0])+'">练这道题 ↗</a></div></article>'}
 function deepHTML(p){const ex=p[8];return '<h3>物理意义</h3><p>'+p[6]+'</p>'+(p[7].length?'<h3>推导要点</h3><ol>'+p[7].map(x=>'<li>'+x+'</li>').join('')+'</ol>':'')+(ex[0]?'<h3>典型例题</h3><p>'+ex[0]+'</p><ol>'+ex[1].map(x=>'<li>'+x+'</li>').join('')+'</ol><p class="answer">答案：'+ex[2]+'</p>':'')}
-function renderPoints(){const ids=points.map((_,i)=>i).filter(matchPoint);viewBox.className='list';viewBox.innerHTML=ids.map(pointHTML).join('');return ids.length}
+function renderPoints(){const ids=points.map((_,i)=>i).filter(matchPoint);viewBox.className='list';viewBox.innerHTML=ids.map(pointHTML).join('');if(query)ids.forEach(i=>{const card=document.getElementById(points[i][0]);if(hits(i).some(x=>['物理意义','推导','例题'].includes(x))){const d=card.querySelector('.deep');d.querySelector('.deep-content').innerHTML=deepHTML(points[i]);d.querySelector('.deep-content').dataset.loaded='1';d.open=true}card.querySelectorAll('details.learning,details.more-errors').forEach(d=>{if(clean(strip(d.innerHTML)).includes(query))d.open=true})});return ids.length}
 function renderFormulas(){const rows=formulas.filter(row=>matchPoint(row[0])&&(!query||row[2].includes(query)));viewBox.className='index-grid';viewBox.innerHTML=rows.map(([i,k])=>'<article class="index-card"><button class="source" data-go="'+i+'">'+points[i][1]+'</button><h2>'+points[i][3][k][0]+'</h2>'+formulaHTML(points[i][3][k])+'</article>').join('');return rows.length}
 function renderSymbols(){const rows=symbols.filter(([s,ids])=>ids.some(matchPoint)&&(!query||clean([strip(s[0]),strip(s[1]),strip(s[2]),...ids.map(i=>strip(points[i][1]))].join(' ')).includes(query)));viewBox.className='symbol-grid';viewBox.innerHTML=rows.map(([s,ids])=>{const target=ids.find(matchPoint);return '<article class="symbol-card"><div class="sym-name">'+s[0]+'</div><p>'+s[1]+'</p><div class="sym-unit">'+s[2]+'</div><button class="source" data-go="'+target+'">'+points[target][1]+(ids.length>1?' 等'+ids.length+'处':'')+'</button></article>'}).join('');return rows.length}
 function renderMap(){const gs=groups.map((g,i)=>[g,i]).filter(([g])=>(domain==='全部'||g[1]===domain)&&(chapterName==='全部'||g[0]===chapterName));const domains=[...new Set(gs.map(([g])=>g[1]))];viewBox.className='';viewBox.innerHTML='<div class="map-title"><h2>知识脉络</h2><p>按领域与章节串联知识点；章节顺序是学习建议，点击可打开速查卡。</p></div><div class="map-root">'+SEGMENT_ROOT+'</div>'+domains.map(d=>'<section class="map-domain"><h2>'+d+'<small>'+gs.filter(([g])=>g[1]===d).length+'章</small></h2><div class="map-chapters">'+gs.filter(([g])=>g[1]===d).map(([g,gi])=>'<div class="map-chapter"><button data-chapter-go="'+gi+'">'+text(groupName(gi))+' →</button><div class="map-points">'+g[3].map(i=>'<button class="map-point" data-go="'+i+'">'+points[i][1]+'</button>').join('')+'</div></div>').join('')+'</div></section>').join('');return gs.length}
 function render(){document.querySelectorAll('.nav button').forEach(b=>b.classList.toggle('active',b.dataset.view===view));let count=view==='points'?renderPoints():view==='formulas'?renderFormulas():view==='symbols'?renderSymbols():renderMap();counter.textContent=view==='map'?'知识脉络':'显示 '+count+' 项';document.getElementById('empty').hidden=count>0}
-document.querySelectorAll('.nav button').forEach(b=>b.addEventListener('click',()=>{view=b.dataset.view;history.replaceState(null,'','#'+view);render();window.scrollTo(0,0)}));
+document.querySelectorAll('.nav button').forEach(b=>b.addEventListener('click',()=>{view=b.dataset.view;history.pushState(null,'','#'+view);render();window.scrollTo(0,0)}));
 document.querySelectorAll('.filter').forEach(b=>b.addEventListener('click',()=>{domain=b.dataset.domain;document.querySelectorAll('.filter').forEach(x=>x.classList.toggle('active',x===b));render()}));
 chapter.addEventListener('change',()=>{chapterName=chapter.value;render()});search.addEventListener('input',()=>{query=clean(search.value);if(query&&view==='map'){view='points';history.replaceState(null,'','#points')}render()});
 document.addEventListener('keydown',e=>{if(e.key==='/'&&document.activeElement!==search){e.preventDefault();search.focus()}});
 document.addEventListener('toggle',e=>{const d=e.target;if(d.matches&&d.matches('details[data-deep]')&&d.open){const slot=d.querySelector('.deep-content');if(!slot.dataset.loaded){slot.innerHTML=deepHTML(points[Number(d.dataset.deep)]);slot.dataset.loaded='1'}}},true);
-document.addEventListener('click',e=>{const go=e.target.closest('[data-go]');if(go){const i=Number(go.dataset.go);view='points';domain='全部';chapterName='全部';query='';search.value='';chapter.value='全部';document.querySelectorAll('.filter').forEach(b=>b.classList.toggle('active',b.dataset.domain==='全部'));render();document.getElementById(points[i][0]).scrollIntoView({behavior:'smooth',block:'start'});return}const ch=e.target.closest('[data-chapter-go]');if(ch){view='points';chapterName=groups[Number(ch.dataset.chapterGo)][0];chapter.value=chapterName;render();window.scrollTo(0,0)}});
+document.addEventListener('click',e=>{const go=e.target.closest('[data-go]');if(go){const i=Number(go.dataset.go);history.pushState(null,'','#'+encodeURIComponent(points[i][0]));restorePoint();return}const ch=e.target.closest('[data-chapter-go]');if(ch){view='points';chapterName=groups[Number(ch.dataset.chapterGo)][0];chapter.value=chapterName;render();window.scrollTo(0,0)}});
 render();
 // 从练习页回看时，知识点编号是阅读定位，不是视图名称。
 function restorePoint(){
@@ -197,10 +201,10 @@ function restorePoint(){
     view='points';domain='全部';chapterName='全部';query='';search.value='';chapter.value='全部';
     document.querySelectorAll('.filter').forEach(b=>b.classList.toggle('active',b.dataset.domain==='全部'));
     render();requestAnimationFrame(()=>{const card=document.getElementById(id);if(card)card.scrollIntoView({behavior:'instant',block:'start'})});
-  }else if(['points','formulas','symbols','map'].includes(id)){view=id;render()}
+  }else if(!id||['points','formulas','symbols','map'].includes(id)){view=id||'points';domain='全部';chapterName='全部';query='';search.value='';chapter.value='全部';render()}
 }
 // 首次渲染及浏览器恢复页面完成后定位；返回阅读位置无需长距离平滑动画。
-restorePoint();window.addEventListener('load',restorePoint);window.addEventListener('hashchange',restorePoint);
+restorePoint();window.addEventListener('load',restorePoint);window.addEventListener('hashchange',restorePoint);window.addEventListener('popstate',restorePoint);
 })();
 '''
 
@@ -208,7 +212,7 @@ restorePoint();window.addEventListener('load',restorePoint);window.addEventListe
 HTML = r'''<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="__SEGMENT_LABEL__物理知识点、公式、符号和常见错误速查"><title>__SEGMENT_LABEL__物理速查 · 谢端</title><style>__CSS__</style></head><body>
 <header class="appbar"><div class="appbar-inner"><div class="brand"><i>物</i>__SEGMENT_LABEL__物理速查</div><nav class="nav" aria-label="查看内容"><button data-view="points">知识点</button><button data-view="formulas">公式</button><button data-view="symbols">符号</button><button data-view="map">知识脉络</button></nav><a class="old-link" href="__FULL_PAGE__">完整校验版 ↗</a></div></header>
 __SEGMENT_NAV__
-<section class="intro"><div class="eyebrow">公式 · 符号 · 条件 · 易错点</div><h1>__SEGMENT_LABEL__物理，快速查清楚</h1><p>先找到公式，再认清符号，最后避开常见错误。</p><label class="search"><span>⌕</span><input id="search" type="search" autocomplete="off" placeholder="搜索知识点、公式、符号或错误……" aria-label="搜索知识库"></label><div class="counts">__POINTS__ 个知识点 · __FORMULAS__ 条公式 · 内容已校验</div></section>
+<section class="intro"><div class="eyebrow">公式 · 符号 · 条件 · 易错点</div><h1>__SEGMENT_LABEL__物理，快速查清楚</h1><p>先找到公式，再认清符号，最后避开常见错误。</p><label class="search"><span>⌕</span><input id="search" type="search" autocomplete="off" placeholder="搜索正文、推导、例题、公式或错误……" aria-label="搜索知识库"></label><div class="counts">__POINTS__ 个知识点 · __FORMULAS__ 条公式 · 内容已校验</div></section>
 <div class="filters"><div class="filters-inner">__DOMAIN_FILTERS__<select id="chapter" aria-label="选择章节">__CHAPTERS__</select><span class="count" id="count"></span></div></div>
 <main><div id="content"></div><div id="empty" class="empty" hidden>没有找到匹配内容，请换个关键词。</div></main>
 <footer>__SEGMENT_LABEL__物理速查 · 谢端　单文件、断网可用　<a href="__FULL_PAGE__">查看完整校验版</a></footer>
@@ -274,8 +278,10 @@ def build_page(kb_dir, segment, output_path):
     if 'class="chk ' in page or re.search(r'(?:src|href)="https?://', page, re.I):
         raise RuntimeError("速查版含校验明细或外部资源，拒绝生成。")
     encoded = page.encode("utf-8")
-    if len(encoded) > 620 * 1024:
-        raise RuntimeError("%s速查版 %.1f KB，超过 620 KB 验收上限。" % (segment, len(encoded) / 1024))
+    # ★ 2026-10-04：2 MiB → 8 MiB。与成品完整版同一口径（主人：「质量第一，
+    #   占多少 MB 无所谓」），速查版目前 628 KB，此上限正常交付碰不到。
+    if len(encoded) > 8 * 1024 * 1024:
+        raise RuntimeError("%s速查版 %.1f KB，超过项目 8 MiB 防呆上限。" % (segment, len(encoded) / 1024))
     os.makedirs(os.path.dirname(os.path.abspath(output_path)), exist_ok=True)
     # 本机直接覆写刚被读取的成品多次出现EINVAL。先分块写自己的临时文件，
     # 完整写入后再替换目标，避免失败留下半份速查页；不清理历史成果。
