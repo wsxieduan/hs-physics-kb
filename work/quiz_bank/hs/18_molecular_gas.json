@@ -81,7 +81,85 @@
           "stem_clear": null,
           "no_cross_segment": null
         },
-        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。"
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。",
+        "material": {
+          "anchors": [
+            {
+              "kind": "公式",
+              "name": "由总体积估算分子数",
+              "expression": "V_total/V_molecule",
+              "when": "总体积可视为 N 个分子平均占据体积之和",
+              "display": "V<sub>总</sub>/V<sub>分子</sub>"
+            }
+          ],
+          "source": {
+            "nature": "原创设计示例，非教材实测或真实实验记录",
+            "scenario": "油膜估算",
+            "parameters": {
+              "V_total": 1e-08,
+              "V_molecule": 1e-30,
+              "N": 1e+22,
+              "d": 1e-10
+            },
+            "data": [
+              "所有分子占据的总体积：1e-08 m^3",
+              "单个分子平均占据的体积：1e-30 m^3",
+              "分子数目：1e+22 1",
+              "分子线度的估计值：1e-10 m"
+            ]
+          },
+          "predicted_errors": [
+            {
+              "option": "B",
+              "text": "1e-22 1",
+              "reason": "分子数应是总体积除以单分子体积。错误式在本情境得到 10^-22，而不是 10^22，量纲虽同为无量纲但数量级完全相反。",
+              "expression": "V_molecule/V_total",
+              "status": "误答原因预测，待教师确认；未采集学生作答证据"
+            }
+          ],
+          "difficulty_note": "建议难度沿用本题level（源卡难度）；尚非题目难度实测，待教师调整",
+          "estimated_seconds": [
+            60,
+            120
+          ],
+          "time_basis": "未做学生计时；按现有难度给出备课估计区间，待教师确认",
+          "machine_checks": [
+            {
+              "name": "题目ID关联源知识点",
+              "passed": true
+            },
+            {
+              "name": "选项标签唯一且参考标签存在",
+              "passed": true
+            },
+            {
+              "name": "选项文本互异",
+              "passed": true
+            },
+            {
+              "name": "正确路径独立数值复算",
+              "passed": true
+            },
+            {
+              "name": "带量纲求值与独立求值一致",
+              "passed": true
+            },
+            {
+              "name": "干扰路径复算且与正确路径分离",
+              "passed": true
+            }
+          ],
+          "machine_boundary": "只列本次逐题实际执行项目；不把关联知识卡的方向、扫描或一致性检查算作本题已验。概念题未验命题真假。",
+          "human_review_items": [
+            "题干条件是否充分、清楚且符合学段",
+            "参考结论在指定条件下是否唯一",
+            "干扰项是否合理、对应真实认知问题且无答案暗示",
+            "公式或概念锚点是否准确",
+            "建议难度及用时是否适合教学",
+            "语言、装置与安全操作是否恰当"
+          ],
+          "reference_answer_note": "现有参考答案保持；即使本地可以判选项，也仍须教师审核教学可用性"
+        }
       }
     },
     {
@@ -150,7 +228,99 @@
           "stem_clear": null,
           "no_cross_segment": null
         },
-        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。"
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。",
+        "material": {
+          "anchors": [
+            {
+              "kind": "公式量纲",
+              "name": "本题目标量与等式",
+              "expression": "V_molecule = d^3",
+              "when": "量纲相符是必要条件，不能据此证明系数或物理条件正确",
+              "display": "V<sub>分子</sub> = d³"
+            }
+          ],
+          "source": {
+            "nature": "原创量纲辨析命题；无实测数据",
+            "source_error_index": 1
+          },
+          "predicted_errors": [
+            {
+              "option": "A",
+              "text": "V<sub>分子</sub> = d²",
+              "reason": "面积不是体积，d^2 的量纲是 L^2，而单分子体积的量纲是 L^3。",
+              "expression": "V_molecule = d^2",
+              "status": "误答原因预测，待教师确认；未采集学生作答证据"
+            }
+          ],
+          "difficulty_note": "建议难度沿用本题level（源卡难度）；尚非题目难度实测，待教师调整",
+          "estimated_seconds": [
+            60,
+            120
+          ],
+          "time_basis": "未做学生计时；按现有难度给出备课估计区间，待教师确认",
+          "machine_checks": [
+            {
+              "name": "题目ID关联源知识点",
+              "passed": true
+            },
+            {
+              "name": "选项标签唯一且参考标签存在",
+              "passed": true
+            },
+            {
+              "name": "选项文本互异",
+              "passed": true
+            },
+            {
+              "name": "正确式量纲一致",
+              "passed": true,
+              "actual": {
+                "type": "dimension",
+                "type_name": "量纲一致性",
+                "formula": "教师审核证据",
+                "ok": true,
+                "detail": "左端L^3，右端L^3",
+                "note": "",
+                "error": null,
+                "evaluation_status": "success",
+                "failure_reason": null,
+                "result_dimension": "L^3",
+                "reference_dimension": "L^3",
+                "diagnostics": {},
+                "physical_error_identified": false
+              }
+            },
+            {
+              "name": "干扰式量纲冲突",
+              "passed": true,
+              "actual": {
+                "type": "dimension",
+                "type_name": "量纲一致性",
+                "formula": "教师审核证据",
+                "ok": false,
+                "detail": "左端L^3，右端L^2",
+                "note": "",
+                "error": null,
+                "evaluation_status": "dimension_conflict",
+                "failure_reason": "dimension_conflict",
+                "result_dimension": "L^2",
+                "reference_dimension": "L^3",
+                "diagnostics": {},
+                "physical_error_identified": true
+              }
+            }
+          ],
+          "machine_boundary": "只列本次逐题实际执行项目；不把关联知识卡的方向、扫描或一致性检查算作本题已验。概念题未验命题真假。",
+          "human_review_items": [
+            "题干条件是否充分、清楚且符合学段",
+            "参考结论在指定条件下是否唯一",
+            "干扰项是否合理、对应真实认知问题且无答案暗示",
+            "公式或概念锚点是否准确",
+            "建议难度及用时是否适合教学",
+            "语言、装置与安全操作是否恰当"
+          ],
+          "reference_answer_note": "现有参考答案保持；即使本地可以判选项，也仍须教师审核教学可用性"
+        }
       }
     },
     {
@@ -231,7 +401,83 @@
           "stem_clear": null,
           "no_cross_segment": null
         },
-        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。"
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。",
+        "material": {
+          "anchors": [
+            {
+              "kind": "公式",
+              "name": "分子间合力的一维表示",
+              "expression": "F_rep-F_attr",
+              "when": "只比较同一直线上的排斥与吸引作用，并把间距增大方向取正",
+              "display": "F<sub>斥</sub>-F<sub>引</sub>"
+            }
+          ],
+          "source": {
+            "nature": "原创设计示例，非教材实测或真实实验记录",
+            "scenario": "距离小于平衡距离",
+            "parameters": {
+              "F_rep": 8e-09,
+              "F_attr": 3e-09,
+              "F_net": 5e-09
+            },
+            "data": [
+              "排斥作用的大小：8e-09 N",
+              "吸引作用的大小：3e-09 N",
+              "沿分子间距增大方向的合力：5e-09 N"
+            ]
+          },
+          "predicted_errors": [
+            {
+              "option": "B",
+              "text": "1.1e-08 N",
+              "reason": "吸引与排斥方向相反，应作差而不是相加。两种写法量纲完全相同；把错误结果与正确合力作无量纲比值，本情境得到 2.2 而不是 1，可由数值代入抓住。本情境直接以合力的牛顿数值比较，不把力与无量纲比值比较。",
+              "expression": "F_rep+F_attr",
+              "status": "误答原因预测，待教师确认；未采集学生作答证据"
+            }
+          ],
+          "difficulty_note": "建议难度沿用本题level（源卡难度）；尚非题目难度实测，待教师调整",
+          "estimated_seconds": [
+            60,
+            120
+          ],
+          "time_basis": "未做学生计时；按现有难度给出备课估计区间，待教师确认",
+          "machine_checks": [
+            {
+              "name": "题目ID关联源知识点",
+              "passed": true
+            },
+            {
+              "name": "选项标签唯一且参考标签存在",
+              "passed": true
+            },
+            {
+              "name": "选项文本互异",
+              "passed": true
+            },
+            {
+              "name": "正确路径独立数值复算",
+              "passed": true
+            },
+            {
+              "name": "带量纲求值与独立求值一致",
+              "passed": true
+            },
+            {
+              "name": "干扰路径复算且与正确路径分离",
+              "passed": true
+            }
+          ],
+          "machine_boundary": "只列本次逐题实际执行项目；不把关联知识卡的方向、扫描或一致性检查算作本题已验。概念题未验命题真假。",
+          "human_review_items": [
+            "题干条件是否充分、清楚且符合学段",
+            "参考结论在指定条件下是否唯一",
+            "干扰项是否合理、对应真实认知问题且无答案暗示",
+            "公式或概念锚点是否准确",
+            "建议难度及用时是否适合教学",
+            "语言、装置与安全操作是否恰当"
+          ],
+          "reference_answer_note": "现有参考答案保持；即使本地可以判选项，也仍须教师审核教学可用性"
+        }
       }
     },
     {
@@ -291,7 +537,152 @@
           "stem_clear": null,
           "no_cross_segment": null
         },
-        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。"
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。",
+        "material": {
+          "anchors": [
+            {
+              "kind": "概念或操作",
+              "name": "分子间作用力与分子势能",
+              "claim": "把势能变化写成 delta_Ep = W_molecular",
+              "correction_basis": "保守力做正功时势能应减少。本情境错误式给出正的 2.5×10^-20 J，与正确的负值符号相反；该微观能量远小于陷阱测试的固定绝对容差，不能诚实声称会被自动抓住。",
+              "note": "概念锚点及命题真假待教师确认；未套用任意第一条公式",
+              "display": "把势能变化写成 ΔE<sub>p</sub> = W<sub>分子</sub>"
+            },
+            {
+              "kind": "数值反例补充",
+              "name": "人工标签保留的指定数值反例",
+              "display": "ΔE<sub>p</sub> = -W<sub>分子</sub>",
+              "note": "机器只证明本设计反例，未证明概念讲解或教学可用性。原解析提到的精度限制属于历史机制，当前复验已能拒绝该数值错误。 旧固定绝对容差限制已修，当前纯相对比较能拒绝微观势能错符号"
+            }
+          ],
+          "source": {
+            "nature": "原创概念/操作命题；无真实测量记录",
+            "source_error_index": 1
+          },
+          "predicted_errors": [
+            {
+              "option": "A",
+              "text": "该说法不成立。",
+              "reason": "保守力做正功时势能应减少。本情境错误式给出正的 2.5×10^-20 J，与正确的负值符号相反；该微观能量远小于陷阱测试的固定绝对容差，不能诚实声称会被自动抓住。",
+              "expression": null,
+              "status": "误答原因预测，待教师确认；未采集学生作答证据"
+            }
+          ],
+          "difficulty_note": "建议难度沿用本题level（源卡难度）；尚非题目难度实测，待教师调整",
+          "estimated_seconds": [
+            60,
+            120
+          ],
+          "time_basis": "未做学生计时；按现有难度给出备课估计区间，待教师确认",
+          "machine_checks": [
+            {
+              "name": "题目ID关联源知识点",
+              "passed": true
+            },
+            {
+              "name": "选项标签唯一且参考标签存在",
+              "passed": true
+            },
+            {
+              "name": "选项文本互异",
+              "passed": true
+            },
+            {
+              "name": "指定反例正确控制正式求值通过",
+              "passed": true,
+              "actual": {
+                "type": "numeric",
+                "type_name": "数值代入",
+                "formula": "补充反例正确控制",
+                "ok": true,
+                "detail": "情境「None」：算得delta_Ep=-2.5e-20；参考-2.5e-20；有效容差2.5e-30",
+                "note": "",
+                "error": null,
+                "evaluation_status": "success",
+                "failure_reason": null,
+                "result_dimension": "M·L^2·T^-2",
+                "reference_dimension": "M·L^2·T^-2",
+                "diagnostics": {
+                  "primary_expression": "-W_molecular",
+                  "target_expression": "delta_Ep",
+                  "follows_primary_formula_changes": true,
+                  "primary_source_rhs": "-W_molecular",
+                  "numeric_reference": -2.5e-20,
+                  "actual_variables": [
+                    "W_molecular"
+                  ],
+                  "target_variables": [
+                    "delta_Ep"
+                  ],
+                  "rtol": 1e-10,
+                  "atol": 0.0,
+                  "effective_limit": 2.5e-30,
+                  "declared_limit": 2.5e-30,
+                  "capped_by_default": false,
+                  "scale": 2.5e-20,
+                  "policy": "显式rtol/atol（严于默认，照此执行）",
+                  "expected_zero": false,
+                  "zero_basis": null,
+                  "actual_value": -2.5e-20,
+                  "reference_value": -2.5e-20
+                },
+                "physical_error_identified": false
+              }
+            },
+            {
+              "name": "指定反例错误注入被拒绝（非求值失败）",
+              "passed": true,
+              "actual": {
+                "type": "numeric",
+                "type_name": "数值代入",
+                "formula": "补充反例错误注入",
+                "ok": false,
+                "detail": "情境「None」：算得delta_Ep=2.5e-20；参考-2.5e-20；有效容差2.5e-30",
+                "note": "",
+                "error": null,
+                "evaluation_status": "numeric_mismatch",
+                "failure_reason": "numeric_mismatch",
+                "result_dimension": "M·L^2·T^-2",
+                "reference_dimension": "M·L^2·T^-2",
+                "diagnostics": {
+                  "primary_expression": "W_molecular",
+                  "target_expression": "delta_Ep",
+                  "follows_primary_formula_changes": false,
+                  "primary_source_rhs": "-W_molecular",
+                  "numeric_reference": -2.5e-20,
+                  "actual_variables": [
+                    "W_molecular"
+                  ],
+                  "target_variables": [
+                    "delta_Ep"
+                  ],
+                  "rtol": 1e-10,
+                  "atol": 0.0,
+                  "effective_limit": 2.5e-30,
+                  "declared_limit": 2.5e-30,
+                  "capped_by_default": false,
+                  "scale": 2.5e-20,
+                  "policy": "显式rtol/atol（严于默认，照此执行）",
+                  "expected_zero": false,
+                  "zero_basis": null,
+                  "actual_value": 2.5e-20,
+                  "reference_value": -2.5e-20
+                },
+                "physical_error_identified": true
+              }
+            }
+          ],
+          "machine_boundary": "只列本次逐题实际执行项目；不把关联知识卡的方向、扫描或一致性检查算作本题已验。概念题未验命题真假。",
+          "human_review_items": [
+            "题干条件是否充分、清楚且符合学段",
+            "参考结论在指定条件下是否唯一",
+            "干扰项是否合理、对应真实认知问题且无答案暗示",
+            "公式或概念锚点是否准确",
+            "建议难度及用时是否适合教学",
+            "语言、装置与安全操作是否恰当"
+          ],
+          "reference_answer_note": "现有参考答案保持；即使本地可以判选项，也仍须教师审核教学可用性"
+        }
       }
     },
     {
@@ -371,7 +762,83 @@
           "stem_clear": null,
           "no_cross_segment": null
         },
-        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。"
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。",
+        "material": {
+          "anchors": [
+            {
+              "kind": "公式",
+              "name": "摄氏温度换算为热力学温度",
+              "expression": "t_C+T0",
+              "when": "把摄氏温度数值换算为开尔文温度，T0 取 273.15 K",
+              "display": "t<sub>C</sub>+T<sub>0</sub>"
+            }
+          ],
+          "source": {
+            "nature": "原创设计示例，非教材实测或真实实验记录",
+            "scenario": "室温换算",
+            "parameters": {
+              "t_C": 26.85,
+              "T0": 273.15,
+              "T": 300.0
+            },
+            "data": [
+              "摄氏温度的数值；换算时按与 K 等大的温度间隔处理：26.85 K",
+              "摄氏零度对应的热力学温度：273.15 K",
+              "热力学温度：300.0 K"
+            ]
+          },
+          "predicted_errors": [
+            {
+              "option": "A",
+              "text": "26.85 K",
+              "reason": "两种温标零点不同。本情境正确温度是 300 K，直接使用摄氏数值会把绝对温度低估十倍以上。",
+              "expression": "t_C",
+              "status": "误答原因预测，待教师确认；未采集学生作答证据"
+            }
+          ],
+          "difficulty_note": "建议难度沿用本题level（源卡难度）；尚非题目难度实测，待教师调整",
+          "estimated_seconds": [
+            60,
+            120
+          ],
+          "time_basis": "未做学生计时；按现有难度给出备课估计区间，待教师确认",
+          "machine_checks": [
+            {
+              "name": "题目ID关联源知识点",
+              "passed": true
+            },
+            {
+              "name": "选项标签唯一且参考标签存在",
+              "passed": true
+            },
+            {
+              "name": "选项文本互异",
+              "passed": true
+            },
+            {
+              "name": "正确路径独立数值复算",
+              "passed": true
+            },
+            {
+              "name": "带量纲求值与独立求值一致",
+              "passed": true
+            },
+            {
+              "name": "干扰路径复算且与正确路径分离",
+              "passed": true
+            }
+          ],
+          "machine_boundary": "只列本次逐题实际执行项目；不把关联知识卡的方向、扫描或一致性检查算作本题已验。概念题未验命题真假。",
+          "human_review_items": [
+            "题干条件是否充分、清楚且符合学段",
+            "参考结论在指定条件下是否唯一",
+            "干扰项是否合理、对应真实认知问题且无答案暗示",
+            "公式或概念锚点是否准确",
+            "建议难度及用时是否适合教学",
+            "语言、装置与安全操作是否恰当"
+          ],
+          "reference_answer_note": "现有参考答案保持；即使本地可以判选项，也仍须教师审核教学可用性"
+        }
       }
     },
     {
@@ -451,7 +918,83 @@
           "stem_clear": null,
           "no_cross_segment": null
         },
-        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。"
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。",
+        "material": {
+          "anchors": [
+            {
+              "kind": "公式",
+              "name": "摄氏温度换算为热力学温度",
+              "expression": "t_C+T0",
+              "when": "把摄氏温度数值换算为开尔文温度，T0 取 273.15 K",
+              "display": "t<sub>C</sub>+T<sub>0</sub>"
+            }
+          ],
+          "source": {
+            "nature": "原创设计示例，非教材实测或真实实验记录",
+            "scenario": "室温换算",
+            "parameters": {
+              "t_C": 26.85,
+              "T0": 273.15,
+              "T": 300.0
+            },
+            "data": [
+              "摄氏温度的数值；换算时按与 K 等大的温度间隔处理：26.85 K",
+              "摄氏零度对应的热力学温度：273.15 K",
+              "热力学温度：300.0 K"
+            ]
+          },
+          "predicted_errors": [
+            {
+              "option": "A",
+              "text": "-246.3 K",
+              "reason": "应当加上零点偏移。本情境错误式得到 -246.3 K，不但数值错误，还违反热力学温度不得为负的物理限制。",
+              "expression": "t_C-T0",
+              "status": "误答原因预测，待教师确认；未采集学生作答证据"
+            }
+          ],
+          "difficulty_note": "建议难度沿用本题level（源卡难度）；尚非题目难度实测，待教师调整",
+          "estimated_seconds": [
+            60,
+            120
+          ],
+          "time_basis": "未做学生计时；按现有难度给出备课估计区间，待教师确认",
+          "machine_checks": [
+            {
+              "name": "题目ID关联源知识点",
+              "passed": true
+            },
+            {
+              "name": "选项标签唯一且参考标签存在",
+              "passed": true
+            },
+            {
+              "name": "选项文本互异",
+              "passed": true
+            },
+            {
+              "name": "正确路径独立数值复算",
+              "passed": true
+            },
+            {
+              "name": "带量纲求值与独立求值一致",
+              "passed": true
+            },
+            {
+              "name": "干扰路径复算且与正确路径分离",
+              "passed": true
+            }
+          ],
+          "machine_boundary": "只列本次逐题实际执行项目；不把关联知识卡的方向、扫描或一致性检查算作本题已验。概念题未验命题真假。",
+          "human_review_items": [
+            "题干条件是否充分、清楚且符合学段",
+            "参考结论在指定条件下是否唯一",
+            "干扰项是否合理、对应真实认知问题且无答案暗示",
+            "公式或概念锚点是否准确",
+            "建议难度及用时是否适合教学",
+            "语言、装置与安全操作是否恰当"
+          ],
+          "reference_answer_note": "现有参考答案保持；即使本地可以判选项，也仍须教师审核教学可用性"
+        }
       }
     },
     {
@@ -511,7 +1054,62 @@
           "stem_clear": null,
           "no_cross_segment": null
         },
-        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。"
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。",
+        "material": {
+          "anchors": [
+            {
+              "kind": "概念或操作",
+              "name": "物体的内能与理想气体内能",
+              "claim": "认为温度相同的所有物体内能必定相同",
+              "correction_basis": "内能还与分子数、物态和分子间势能等因素有关；温度只反映热运动的平均剧烈程度。这是适用条件判断，需人工审核。",
+              "note": "概念锚点及命题真假待教师确认；未套用任意第一条公式",
+              "display": "认为温度相同的所有物体内能必定相同"
+            }
+          ],
+          "source": {
+            "nature": "原创概念/操作命题；无真实测量记录",
+            "source_error_index": 0
+          },
+          "predicted_errors": [
+            {
+              "option": "B",
+              "text": "该说法成立。",
+              "reason": "内能还与分子数、物态和分子间势能等因素有关；温度只反映热运动的平均剧烈程度。这是适用条件判断，需人工审核。",
+              "expression": null,
+              "status": "误答原因预测，待教师确认；未采集学生作答证据"
+            }
+          ],
+          "difficulty_note": "建议难度沿用本题level（源卡难度）；尚非题目难度实测，待教师调整",
+          "estimated_seconds": [
+            120,
+            240
+          ],
+          "time_basis": "未做学生计时；按现有难度给出备课估计区间，待教师确认",
+          "machine_checks": [
+            {
+              "name": "题目ID关联源知识点",
+              "passed": true
+            },
+            {
+              "name": "选项标签唯一且参考标签存在",
+              "passed": true
+            },
+            {
+              "name": "选项文本互异",
+              "passed": true
+            }
+          ],
+          "machine_boundary": "只列本次逐题实际执行项目；不把关联知识卡的方向、扫描或一致性检查算作本题已验。概念题未验命题真假。",
+          "human_review_items": [
+            "题干条件是否充分、清楚且符合学段",
+            "参考结论在指定条件下是否唯一",
+            "干扰项是否合理、对应真实认知问题且无答案暗示",
+            "公式或概念锚点是否准确",
+            "建议难度及用时是否适合教学",
+            "语言、装置与安全操作是否恰当"
+          ],
+          "reference_answer_note": "现有参考答案保持；即使本地可以判选项，也仍须教师审核教学可用性"
+        }
       }
     },
     {
@@ -592,7 +1190,85 @@
           "stem_clear": null,
           "no_cross_segment": null
         },
-        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。"
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。",
+        "material": {
+          "anchors": [
+            {
+              "kind": "公式",
+              "name": "单原子理想气体的内能",
+              "expression": "1.5*N*k_B*T",
+              "when": "一定数量的单原子理想气体，分子平动自由度为三个",
+              "display": "1.5·N·k<sub>B</sub>·T"
+            }
+          ],
+          "source": {
+            "nature": "原创设计示例，非教材实测或真实实验记录",
+            "scenario": "一份单原子理想气体",
+            "parameters": {
+              "N": 2e+23,
+              "k_B": 1.38e-23,
+              "T": 300.0,
+              "U": 1242.0
+            },
+            "data": [
+              "气体分子数：2e+23 1",
+              "玻尔兹曼常量：1.38e-23 J/K",
+              "热力学温度：300.0 K",
+              "单原子理想气体的内能：1242.0 J"
+            ]
+          },
+          "predicted_errors": [
+            {
+              "option": "A",
+              "text": "828 J",
+              "reason": "错误式量纲仍为能量，量纲检查抓不到。本情境只算得 828 J，而正确内能是 1242 J。",
+              "expression": "N*k_B*T",
+              "status": "误答原因预测，待教师确认；未采集学生作答证据"
+            }
+          ],
+          "difficulty_note": "建议难度沿用本题level（源卡难度）；尚非题目难度实测，待教师调整",
+          "estimated_seconds": [
+            120,
+            240
+          ],
+          "time_basis": "未做学生计时；按现有难度给出备课估计区间，待教师确认",
+          "machine_checks": [
+            {
+              "name": "题目ID关联源知识点",
+              "passed": true
+            },
+            {
+              "name": "选项标签唯一且参考标签存在",
+              "passed": true
+            },
+            {
+              "name": "选项文本互异",
+              "passed": true
+            },
+            {
+              "name": "正确路径独立数值复算",
+              "passed": true
+            },
+            {
+              "name": "带量纲求值与独立求值一致",
+              "passed": true
+            },
+            {
+              "name": "干扰路径复算且与正确路径分离",
+              "passed": true
+            }
+          ],
+          "machine_boundary": "只列本次逐题实际执行项目；不把关联知识卡的方向、扫描或一致性检查算作本题已验。概念题未验命题真假。",
+          "human_review_items": [
+            "题干条件是否充分、清楚且符合学段",
+            "参考结论在指定条件下是否唯一",
+            "干扰项是否合理、对应真实认知问题且无答案暗示",
+            "公式或概念锚点是否准确",
+            "建议难度及用时是否适合教学",
+            "语言、装置与安全操作是否恰当"
+          ],
+          "reference_answer_note": "现有参考答案保持；即使本地可以判选项，也仍须教师审核教学可用性"
+        }
       }
     },
     {
@@ -675,7 +1351,89 @@
           "stem_clear": null,
           "no_cross_segment": null
         },
-        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。"
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。",
+        "material": {
+          "anchors": [
+            {
+              "kind": "公式",
+              "name": "玻意耳定律",
+              "expression": "p1*V1/V2",
+              "when": "一定质量的理想气体发生等温变化，且初末态均为平衡态",
+              "display": "p<sub>1</sub>·V<sub>1</sub>/V<sub>2</sub>"
+            }
+          ],
+          "source": {
+            "nature": "原创设计示例，非教材实测或真实实验记录",
+            "scenario": "等温压缩",
+            "parameters": {
+              "p1": 100000.0,
+              "V1": 0.006,
+              "p2": 200000.0,
+              "V2": 0.003,
+              "T1": 300.0,
+              "T2": 300.0
+            },
+            "data": [
+              "初态压强：100000.0 Pa",
+              "初态体积：0.006 m^3",
+              "末态压强：200000.0 Pa",
+              "末态体积：0.003 m^3",
+              "初态热力学温度：300.0 K",
+              "末态热力学温度：300.0 K"
+            ]
+          },
+          "predicted_errors": [
+            {
+              "option": "B",
+              "text": "50000 Pa",
+              "reason": "等温时 p 与 V 成反比。本情境错误式得到 5.0×10^4 Pa，正确值应为 2.0×10^5 Pa。",
+              "expression": "p1*V2/V1",
+              "status": "误答原因预测，待教师确认；未采集学生作答证据"
+            }
+          ],
+          "difficulty_note": "建议难度沿用本题level（源卡难度）；尚非题目难度实测，待教师调整",
+          "estimated_seconds": [
+            60,
+            120
+          ],
+          "time_basis": "未做学生计时；按现有难度给出备课估计区间，待教师确认",
+          "machine_checks": [
+            {
+              "name": "题目ID关联源知识点",
+              "passed": true
+            },
+            {
+              "name": "选项标签唯一且参考标签存在",
+              "passed": true
+            },
+            {
+              "name": "选项文本互异",
+              "passed": true
+            },
+            {
+              "name": "正确路径独立数值复算",
+              "passed": true
+            },
+            {
+              "name": "带量纲求值与独立求值一致",
+              "passed": true
+            },
+            {
+              "name": "干扰路径复算且与正确路径分离",
+              "passed": true
+            }
+          ],
+          "machine_boundary": "只列本次逐题实际执行项目；不把关联知识卡的方向、扫描或一致性检查算作本题已验。概念题未验命题真假。",
+          "human_review_items": [
+            "题干条件是否充分、清楚且符合学段",
+            "参考结论在指定条件下是否唯一",
+            "干扰项是否合理、对应真实认知问题且无答案暗示",
+            "公式或概念锚点是否准确",
+            "建议难度及用时是否适合教学",
+            "语言、装置与安全操作是否恰当"
+          ],
+          "reference_answer_note": "现有参考答案保持；即使本地可以判选项，也仍须教师审核教学可用性"
+        }
       }
     },
     {
@@ -758,7 +1516,89 @@
           "stem_clear": null,
           "no_cross_segment": null
         },
-        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。"
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。",
+        "material": {
+          "anchors": [
+            {
+              "kind": "公式",
+              "name": "查理定律",
+              "expression": "V1*T2/T1",
+              "when": "一定质量的理想气体发生等压变化，温度使用开尔文",
+              "display": "V<sub>1</sub>·T<sub>2</sub>/T<sub>1</sub>"
+            }
+          ],
+          "source": {
+            "nature": "原创设计示例，非教材实测或真实实验记录",
+            "scenario": "等压升温",
+            "parameters": {
+              "p1": 120000.0,
+              "p2": 120000.0,
+              "V1": 0.004,
+              "V2": 0.005,
+              "T1": 320.0,
+              "T2": 400.0
+            },
+            "data": [
+              "初态压强：120000.0 Pa",
+              "末态压强：120000.0 Pa",
+              "初态体积：0.004 m^3",
+              "末态体积：0.005 m^3",
+              "初态热力学温度：320.0 K",
+              "末态热力学温度：400.0 K"
+            ]
+          },
+          "predicted_errors": [
+            {
+              "option": "B",
+              "text": "0.0032 m³",
+              "reason": "升温时体积应增大。错误式算得 0.0032 m^3，与正确的 0.005 m^3 相反。",
+              "expression": "V1*T1/T2",
+              "status": "误答原因预测，待教师确认；未采集学生作答证据"
+            }
+          ],
+          "difficulty_note": "建议难度沿用本题level（源卡难度）；尚非题目难度实测，待教师调整",
+          "estimated_seconds": [
+            60,
+            120
+          ],
+          "time_basis": "未做学生计时；按现有难度给出备课估计区间，待教师确认",
+          "machine_checks": [
+            {
+              "name": "题目ID关联源知识点",
+              "passed": true
+            },
+            {
+              "name": "选项标签唯一且参考标签存在",
+              "passed": true
+            },
+            {
+              "name": "选项文本互异",
+              "passed": true
+            },
+            {
+              "name": "正确路径独立数值复算",
+              "passed": true
+            },
+            {
+              "name": "带量纲求值与独立求值一致",
+              "passed": true
+            },
+            {
+              "name": "干扰路径复算且与正确路径分离",
+              "passed": true
+            }
+          ],
+          "machine_boundary": "只列本次逐题实际执行项目；不把关联知识卡的方向、扫描或一致性检查算作本题已验。概念题未验命题真假。",
+          "human_review_items": [
+            "题干条件是否充分、清楚且符合学段",
+            "参考结论在指定条件下是否唯一",
+            "干扰项是否合理、对应真实认知问题且无答案暗示",
+            "公式或概念锚点是否准确",
+            "建议难度及用时是否适合教学",
+            "语言、装置与安全操作是否恰当"
+          ],
+          "reference_answer_note": "现有参考答案保持；即使本地可以判选项，也仍须教师审核教学可用性"
+        }
       }
     },
     {
@@ -827,7 +1667,99 @@
           "stem_clear": null,
           "no_cross_segment": null
         },
-        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。"
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。",
+        "material": {
+          "anchors": [
+            {
+              "kind": "公式量纲",
+              "name": "本题目标量与等式",
+              "expression": "p = N*k_B*T/V",
+              "when": "量纲相符是必要条件，不能据此证明系数或物理条件正确",
+              "display": "p = N·k<sub>B</sub>·T/V"
+            }
+          ],
+          "source": {
+            "nature": "原创量纲辨析命题；无实测数据",
+            "source_error_index": 0
+          },
+          "predicted_errors": [
+            {
+              "option": "B",
+              "text": "p = N·k<sub>B</sub>·T·V",
+              "reason": "乘以体积后量纲变成能量乘体积，已经不是压强；而且错误式会预言容器越大压强越大，方向也相反。",
+              "expression": "p = N*k_B*T*V",
+              "status": "误答原因预测，待教师确认；未采集学生作答证据"
+            }
+          ],
+          "difficulty_note": "建议难度沿用本题level（源卡难度）；尚非题目难度实测，待教师调整",
+          "estimated_seconds": [
+            120,
+            240
+          ],
+          "time_basis": "未做学生计时；按现有难度给出备课估计区间，待教师确认",
+          "machine_checks": [
+            {
+              "name": "题目ID关联源知识点",
+              "passed": true
+            },
+            {
+              "name": "选项标签唯一且参考标签存在",
+              "passed": true
+            },
+            {
+              "name": "选项文本互异",
+              "passed": true
+            },
+            {
+              "name": "正确式量纲一致",
+              "passed": true,
+              "actual": {
+                "type": "dimension",
+                "type_name": "量纲一致性",
+                "formula": "教师审核证据",
+                "ok": true,
+                "detail": "左端M·L^-1·T^-2，右端M·L^-1·T^-2",
+                "note": "",
+                "error": null,
+                "evaluation_status": "success",
+                "failure_reason": null,
+                "result_dimension": "M·L^-1·T^-2",
+                "reference_dimension": "M·L^-1·T^-2",
+                "diagnostics": {},
+                "physical_error_identified": false
+              }
+            },
+            {
+              "name": "干扰式量纲冲突",
+              "passed": true,
+              "actual": {
+                "type": "dimension",
+                "type_name": "量纲一致性",
+                "formula": "教师审核证据",
+                "ok": false,
+                "detail": "左端M·L^-1·T^-2，右端M·L^5·T^-2",
+                "note": "",
+                "error": null,
+                "evaluation_status": "dimension_conflict",
+                "failure_reason": "dimension_conflict",
+                "result_dimension": "M·L^5·T^-2",
+                "reference_dimension": "M·L^-1·T^-2",
+                "diagnostics": {},
+                "physical_error_identified": true
+              }
+            }
+          ],
+          "machine_boundary": "只列本次逐题实际执行项目；不把关联知识卡的方向、扫描或一致性检查算作本题已验。概念题未验命题真假。",
+          "human_review_items": [
+            "题干条件是否充分、清楚且符合学段",
+            "参考结论在指定条件下是否唯一",
+            "干扰项是否合理、对应真实认知问题且无答案暗示",
+            "公式或概念锚点是否准确",
+            "建议难度及用时是否适合教学",
+            "语言、装置与安全操作是否恰当"
+          ],
+          "reference_answer_note": "现有参考答案保持；即使本地可以判选项，也仍须教师审核教学可用性"
+        }
       }
     },
     {
@@ -909,7 +1841,87 @@
           "stem_clear": null,
           "no_cross_segment": null
         },
-        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。"
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。",
+        "material": {
+          "anchors": [
+            {
+              "kind": "公式",
+              "name": "理想气体状态方程的微观形式",
+              "expression": "N*k_B*T/V",
+              "when": "气体可视为理想气体，N 为容器内分子总数",
+              "display": "N·k<sub>B</sub>·T/V"
+            }
+          ],
+          "source": {
+            "nature": "原创设计示例，非教材实测或真实实验记录",
+            "scenario": "微观状态方程",
+            "parameters": {
+              "N": 2e+23,
+              "k_B": 1.38e-23,
+              "T": 300.0,
+              "V": 0.00828,
+              "p": 100000.0
+            },
+            "data": [
+              "气体分子数：2e+23 1",
+              "玻尔兹曼常量：1.38e-23 J/K",
+              "热力学温度：300.0 K",
+              "气体体积：0.00828 m^3",
+              "气体压强：100000.0 Pa"
+            ]
+          },
+          "predicted_errors": [
+            {
+              "option": "B",
+              "text": "200000 Pa",
+              "reason": "错误式与正确式量纲完全相同，量纲检查无法发现；在微观状态方程情境中会算出 2.0×10^5 Pa，而独立参考值是 1.0×10^5 Pa。",
+              "expression": "2*N*k_B*T/V",
+              "status": "误答原因预测，待教师确认；未采集学生作答证据"
+            }
+          ],
+          "difficulty_note": "建议难度沿用本题level（源卡难度）；尚非题目难度实测，待教师调整",
+          "estimated_seconds": [
+            120,
+            240
+          ],
+          "time_basis": "未做学生计时；按现有难度给出备课估计区间，待教师确认",
+          "machine_checks": [
+            {
+              "name": "题目ID关联源知识点",
+              "passed": true
+            },
+            {
+              "name": "选项标签唯一且参考标签存在",
+              "passed": true
+            },
+            {
+              "name": "选项文本互异",
+              "passed": true
+            },
+            {
+              "name": "正确路径独立数值复算",
+              "passed": true
+            },
+            {
+              "name": "带量纲求值与独立求值一致",
+              "passed": true
+            },
+            {
+              "name": "干扰路径复算且与正确路径分离",
+              "passed": true
+            }
+          ],
+          "machine_boundary": "只列本次逐题实际执行项目；不把关联知识卡的方向、扫描或一致性检查算作本题已验。概念题未验命题真假。",
+          "human_review_items": [
+            "题干条件是否充分、清楚且符合学段",
+            "参考结论在指定条件下是否唯一",
+            "干扰项是否合理、对应真实认知问题且无答案暗示",
+            "公式或概念锚点是否准确",
+            "建议难度及用时是否适合教学",
+            "语言、装置与安全操作是否恰当"
+          ],
+          "reference_answer_note": "现有参考答案保持；即使本地可以判选项，也仍须教师审核教学可用性"
+        }
       }
     },
     {
@@ -990,7 +2002,85 @@
           "stem_clear": null,
           "no_cross_segment": null
         },
-        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。"
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。",
+        "material": {
+          "anchors": [
+            {
+              "kind": "公式",
+              "name": "光功率透射比例",
+              "expression": "P_out/P_in",
+              "when": "入射、透射功率对应同一光束和同一时段，P_in>0；比例无量纲，不把所有未透射能量都视为吸收。",
+              "display": "P<sub>出</sub>/P<sub>入</sub>"
+            }
+          ],
+          "source": {
+            "nature": "原创设计示例，非教材实测或真实实验记录",
+            "scenario": "状态甲",
+            "parameters": {
+              "P_in": 0.01,
+              "P_out": 0.004,
+              "P_loss": 0.006,
+              "tau": 0.4
+            },
+            "data": [
+              "入射光功率：0.01 W",
+              "透射光功率：0.004 W",
+              "非透射各通道合计光功率：0.006 W",
+              "该装置透射光功率比例：0.4 1"
+            ]
+          },
+          "predicted_errors": [
+            {
+              "option": "A",
+              "text": "2.5 1",
+              "reason": "比例是输出透射量占输入的份额，4/10为0.4，颠倒会变成2.5，不能当作无额外光源装置的透射比例。",
+              "expression": "P_in/P_out",
+              "status": "误答原因预测，待教师确认；未采集学生作答证据"
+            }
+          ],
+          "difficulty_note": "建议难度沿用本题level（源卡难度）；尚非题目难度实测，待教师调整",
+          "estimated_seconds": [
+            60,
+            120
+          ],
+          "time_basis": "未做学生计时；按现有难度给出备课估计区间，待教师确认",
+          "machine_checks": [
+            {
+              "name": "题目ID关联源知识点",
+              "passed": true
+            },
+            {
+              "name": "选项标签唯一且参考标签存在",
+              "passed": true
+            },
+            {
+              "name": "选项文本互异",
+              "passed": true
+            },
+            {
+              "name": "正确路径独立数值复算",
+              "passed": true
+            },
+            {
+              "name": "带量纲求值与独立求值一致",
+              "passed": true
+            },
+            {
+              "name": "干扰路径复算且与正确路径分离",
+              "passed": true
+            }
+          ],
+          "machine_boundary": "只列本次逐题实际执行项目；不把关联知识卡的方向、扫描或一致性检查算作本题已验。概念题未验命题真假。",
+          "human_review_items": [
+            "题干条件是否充分、清楚且符合学段",
+            "参考结论在指定条件下是否唯一",
+            "干扰项是否合理、对应真实认知问题且无答案暗示",
+            "公式或概念锚点是否准确",
+            "建议难度及用时是否适合教学",
+            "语言、装置与安全操作是否恰当"
+          ],
+          "reference_answer_note": "现有参考答案保持；即使本地可以判选项，也仍须教师审核教学可用性"
+        }
       }
     },
     {
@@ -1050,7 +2140,62 @@
           "stem_clear": null,
           "no_cross_segment": null
         },
-        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。"
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。",
+        "material": {
+          "anchors": [
+            {
+              "kind": "概念或操作",
+              "name": "液晶：取向有序、流动性与显示",
+              "claim": "液晶屏幕发亮就说明液晶分子自己发光，或加电总会更亮。",
+              "correction_basis": "光源通常是背光或环境光，液晶与偏振元件调制透光；明暗变化取决于结构、取向和驱动，不能从一种结构推广所有液晶。",
+              "note": "概念锚点及命题真假待教师确认；未套用任意第一条公式",
+              "display": "液晶屏幕发亮就说明液晶分子自己发光，或加电总会更亮。"
+            }
+          ],
+          "source": {
+            "nature": "原创概念/操作命题；无真实测量记录",
+            "source_error_index": 1
+          },
+          "predicted_errors": [
+            {
+              "option": "A",
+              "text": "该说法不成立。",
+              "reason": "光源通常是背光或环境光，液晶与偏振元件调制透光；明暗变化取决于结构、取向和驱动，不能从一种结构推广所有液晶。",
+              "expression": null,
+              "status": "误答原因预测，待教师确认；未采集学生作答证据"
+            }
+          ],
+          "difficulty_note": "建议难度沿用本题level（源卡难度）；尚非题目难度实测，待教师调整",
+          "estimated_seconds": [
+            60,
+            120
+          ],
+          "time_basis": "未做学生计时；按现有难度给出备课估计区间，待教师确认",
+          "machine_checks": [
+            {
+              "name": "题目ID关联源知识点",
+              "passed": true
+            },
+            {
+              "name": "选项标签唯一且参考标签存在",
+              "passed": true
+            },
+            {
+              "name": "选项文本互异",
+              "passed": true
+            }
+          ],
+          "machine_boundary": "只列本次逐题实际执行项目；不把关联知识卡的方向、扫描或一致性检查算作本题已验。概念题未验命题真假。",
+          "human_review_items": [
+            "题干条件是否充分、清楚且符合学段",
+            "参考结论在指定条件下是否唯一",
+            "干扰项是否合理、对应真实认知问题且无答案暗示",
+            "公式或概念锚点是否准确",
+            "建议难度及用时是否适合教学",
+            "语言、装置与安全操作是否恰当"
+          ],
+          "reference_answer_note": "现有参考答案保持；即使本地可以判选项，也仍须教师审核教学可用性"
+        }
       }
     },
     {
@@ -1135,7 +2280,93 @@
           "stem_clear": null,
           "no_cross_segment": null
         },
-        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。"
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。",
+        "material": {
+          "anchors": [
+            {
+              "kind": "公式",
+              "name": "圆管静态毛细高度",
+              "expression": "2*sigma*cos(theta)/(rho*g*r)",
+              "when": "细圆管内液体静止，液面曲率由接触角决定；theta从液体一侧量取，忽略管径尺度的弯月面体积及蒸发。",
+              "display": "2·σ·cos(θ)/(ρ·g·r)"
+            }
+          ],
+          "source": {
+            "nature": "原创设计示例，非教材实测或真实实验记录",
+            "scenario": "浸润设计",
+            "parameters": {
+              "sigma": 0.072,
+              "theta": 1.0471975511965976,
+              "rho": 1000,
+              "g": 10,
+              "r": 0.0005,
+              "d": 0.001,
+              "h": 0.0144,
+              "F": 0.00011309733552923256
+            },
+            "data": [
+              "表面张力系数：0.072 N/m",
+              "液体侧接触角：1.0471975511965976 rad",
+              "液体密度：1000 kg/m^3",
+              "重力加速度：10 m/s^2",
+              "细圆管内半径：0.0005 m",
+              "细圆管内直径：0.001 m",
+              "相对外液面有符号高度：0.0144 m",
+              "表面张力有符号竖直合力：0.00011309733552923256 N"
+            ]
+          },
+          "predicted_errors": [
+            {
+              "option": "A",
+              "text": "0.0072 m",
+              "reason": "公式分母为内半径，直径是它的两倍；错用1 mm而不是0.5 mm会把高度算成一半，即0.72 cm。",
+              "expression": "2*sigma*cos(theta)/(rho*g*d)",
+              "status": "误答原因预测，待教师确认；未采集学生作答证据"
+            }
+          ],
+          "difficulty_note": "建议难度沿用本题level（源卡难度）；尚非题目难度实测，待教师调整",
+          "estimated_seconds": [
+            60,
+            120
+          ],
+          "time_basis": "未做学生计时；按现有难度给出备课估计区间，待教师确认",
+          "machine_checks": [
+            {
+              "name": "题目ID关联源知识点",
+              "passed": true
+            },
+            {
+              "name": "选项标签唯一且参考标签存在",
+              "passed": true
+            },
+            {
+              "name": "选项文本互异",
+              "passed": true
+            },
+            {
+              "name": "正确路径独立数值复算",
+              "passed": true
+            },
+            {
+              "name": "带量纲求值与独立求值一致",
+              "passed": true
+            },
+            {
+              "name": "干扰路径复算且与正确路径分离",
+              "passed": true
+            }
+          ],
+          "machine_boundary": "只列本次逐题实际执行项目；不把关联知识卡的方向、扫描或一致性检查算作本题已验。概念题未验命题真假。",
+          "human_review_items": [
+            "题干条件是否充分、清楚且符合学段",
+            "参考结论在指定条件下是否唯一",
+            "干扰项是否合理、对应真实认知问题且无答案暗示",
+            "公式或概念锚点是否准确",
+            "建议难度及用时是否适合教学",
+            "语言、装置与安全操作是否恰当"
+          ],
+          "reference_answer_note": "现有参考答案保持；即使本地可以判选项，也仍须教师审核教学可用性"
+        }
       }
     },
     {
@@ -1195,7 +2426,62 @@
           "stem_clear": null,
           "no_cross_segment": null
         },
-        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。"
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。",
+        "material": {
+          "anchors": [
+            {
+              "kind": "概念或操作",
+              "name": "毛细现象与浸润条件",
+              "claim": "所有液体在任何细管中都会上升，或毛细高度大就说明流量更大。",
+              "correction_basis": "上升下降取决于浸润及接触角；静态高度与动态流量不同，流量还受黏性和阻力限制，不能从静态公式直接推出。",
+              "note": "概念锚点及命题真假待教师确认；未套用任意第一条公式",
+              "display": "所有液体在任何细管中都会上升，或毛细高度大就说明流量更大。"
+            }
+          ],
+          "source": {
+            "nature": "原创概念/操作命题；无真实测量记录",
+            "source_error_index": 1
+          },
+          "predicted_errors": [
+            {
+              "option": "B",
+              "text": "该说法不成立。",
+              "reason": "上升下降取决于浸润及接触角；静态高度与动态流量不同，流量还受黏性和阻力限制，不能从静态公式直接推出。",
+              "expression": null,
+              "status": "误答原因预测，待教师确认；未采集学生作答证据"
+            }
+          ],
+          "difficulty_note": "建议难度沿用本题level（源卡难度）；尚非题目难度实测，待教师调整",
+          "estimated_seconds": [
+            60,
+            120
+          ],
+          "time_basis": "未做学生计时；按现有难度给出备课估计区间，待教师确认",
+          "machine_checks": [
+            {
+              "name": "题目ID关联源知识点",
+              "passed": true
+            },
+            {
+              "name": "选项标签唯一且参考标签存在",
+              "passed": true
+            },
+            {
+              "name": "选项文本互异",
+              "passed": true
+            }
+          ],
+          "machine_boundary": "只列本次逐题实际执行项目；不把关联知识卡的方向、扫描或一致性检查算作本题已验。概念题未验命题真假。",
+          "human_review_items": [
+            "题干条件是否充分、清楚且符合学段",
+            "参考结论在指定条件下是否唯一",
+            "干扰项是否合理、对应真实认知问题且无答案暗示",
+            "公式或概念锚点是否准确",
+            "建议难度及用时是否适合教学",
+            "语言、装置与安全操作是否恰当"
+          ],
+          "reference_answer_note": "现有参考答案保持；即使本地可以判选项，也仍须教师审核教学可用性"
+        }
       }
     }
   ],
@@ -1717,6 +3003,17 @@
             "caught_by": "人工审核",
             "diagnostic": {
               "style": "物理结论与步骤辨析"
+            },
+            "automation_review": {
+              "status": "指定数值反例已补验；人工审核标签保留",
+              "basis": "旧固定绝对容差限制已修，当前纯相对比较能拒绝微观势能错符号",
+              "scenario": "分子力做正功",
+              "correct_expression": "delta_Ep = -W_molecular",
+              "wrong_expression": "W_molecular",
+              "correct_value": -2.5e-20,
+              "wrong_value": 2.5e-20,
+              "unit": "J",
+              "note": "机器只证明本设计反例，未证明概念讲解或教学可用性。原解析提到的精度限制属于历史机制，当前复验已能拒绝该数值错误。"
             }
           }
         ],
@@ -1900,6 +3197,17 @@
             "caught_by": "人工审核",
             "diagnostic": {
               "style": "物理结论与步骤辨析"
+            },
+            "automation_review": {
+              "status": "指定数值反例已补验；人工审核标签保留",
+              "basis": "旧固定绝对容差限制已修，当前纯相对比较能拒绝微观势能错符号",
+              "scenario": "分子力做正功",
+              "correct_expression": "delta_Ep = -W_molecular",
+              "wrong_expression": "W_molecular",
+              "correct_value": -2.5e-20,
+              "wrong_value": 2.5e-20,
+              "unit": "J",
+              "note": "机器只证明本设计反例，未证明概念讲解或教学可用性。原解析提到的精度限制属于历史机制，当前复验已能拒绝该数值错误。"
             }
           }
         ],

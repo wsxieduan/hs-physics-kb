@@ -69,7 +69,99 @@
           "stem_clear": null,
           "no_cross_segment": null
         },
-        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。"
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。",
+        "material": {
+          "anchors": [
+            {
+              "kind": "公式量纲",
+              "name": "本题目标量与等式",
+              "expression": "B = F/(I*L)",
+              "when": "量纲相符是必要条件，不能据此证明系数或物理条件正确",
+              "display": "B = F/(I·L)"
+            }
+          ],
+          "source": {
+            "nature": "原创量纲辨析命题；无实测数据",
+            "source_error_index": 0
+          },
+          "predicted_errors": [
+            {
+              "option": "A",
+              "text": "B = I·L/F",
+              "reason": "右边量纲不是磁感应强度应有的特斯拉；把力放到分母后，所得单位与 T 完全不符，因此量纲检查可以直接发现。",
+              "expression": "B = I*L/F",
+              "status": "误答原因预测，待教师确认；未采集学生作答证据"
+            }
+          ],
+          "difficulty_note": "建议难度沿用本题level（源卡难度）；尚非题目难度实测，待教师调整",
+          "estimated_seconds": [
+            60,
+            120
+          ],
+          "time_basis": "未做学生计时；按现有难度给出备课估计区间，待教师确认",
+          "machine_checks": [
+            {
+              "name": "题目ID关联源知识点",
+              "passed": true
+            },
+            {
+              "name": "选项标签唯一且参考标签存在",
+              "passed": true
+            },
+            {
+              "name": "选项文本互异",
+              "passed": true
+            },
+            {
+              "name": "正确式量纲一致",
+              "passed": true,
+              "actual": {
+                "type": "dimension",
+                "type_name": "量纲一致性",
+                "formula": "教师审核证据",
+                "ok": true,
+                "detail": "左端M·T^-2·I^-1，右端M·T^-2·I^-1",
+                "note": "",
+                "error": null,
+                "evaluation_status": "success",
+                "failure_reason": null,
+                "result_dimension": "M·T^-2·I^-1",
+                "reference_dimension": "M·T^-2·I^-1",
+                "diagnostics": {},
+                "physical_error_identified": false
+              }
+            },
+            {
+              "name": "干扰式量纲冲突",
+              "passed": true,
+              "actual": {
+                "type": "dimension",
+                "type_name": "量纲一致性",
+                "formula": "教师审核证据",
+                "ok": false,
+                "detail": "左端M·T^-2·I^-1，右端M^-1·T^2·I",
+                "note": "",
+                "error": null,
+                "evaluation_status": "dimension_conflict",
+                "failure_reason": "dimension_conflict",
+                "result_dimension": "M^-1·T^2·I",
+                "reference_dimension": "M·T^-2·I^-1",
+                "diagnostics": {},
+                "physical_error_identified": true
+              }
+            }
+          ],
+          "machine_boundary": "只列本次逐题实际执行项目；不把关联知识卡的方向、扫描或一致性检查算作本题已验。概念题未验命题真假。",
+          "human_review_items": [
+            "题干条件是否充分、清楚且符合学段",
+            "参考结论在指定条件下是否唯一",
+            "干扰项是否合理、对应真实认知问题且无答案暗示",
+            "公式或概念锚点是否准确",
+            "建议难度及用时是否适合教学",
+            "语言、装置与安全操作是否恰当"
+          ],
+          "reference_answer_note": "现有参考答案保持；即使本地可以判选项，也仍须教师审核教学可用性"
+        }
       }
     },
     {
@@ -150,7 +242,85 @@
           "stem_clear": null,
           "no_cross_segment": null
         },
-        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。"
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。",
+        "material": {
+          "anchors": [
+            {
+              "kind": "公式",
+              "name": "垂直导线受到的安培力",
+              "expression": "B*I*L",
+              "when": "直导线与匀强磁场垂直",
+              "display": "B·I·L"
+            }
+          ],
+          "source": {
+            "nature": "原创设计示例，非教材实测或真实实验记录",
+            "scenario": "垂直检验导线",
+            "parameters": {
+              "B": 0.5,
+              "F": 2,
+              "I": 4,
+              "L": 1
+            },
+            "data": [
+              "磁感应强度：0.5 T_",
+              "通电直导线受到的安培力：2 N",
+              "导线中的电流：4 A",
+              "处在磁场中的有效导线长度：1 m"
+            ]
+          },
+          "predicted_errors": [
+            {
+              "option": "B",
+              "text": "4 N",
+              "reason": "系数 2 不改变量纲，因此量纲检查抓不到；垂直检验导线情境会误得 4 N，而单根有效导线受到的正确安培力是 2 N。",
+              "expression": "2*B*I*L",
+              "status": "误答原因预测，待教师确认；未采集学生作答证据"
+            }
+          ],
+          "difficulty_note": "建议难度沿用本题level（源卡难度）；尚非题目难度实测，待教师调整",
+          "estimated_seconds": [
+            60,
+            120
+          ],
+          "time_basis": "未做学生计时；按现有难度给出备课估计区间，待教师确认",
+          "machine_checks": [
+            {
+              "name": "题目ID关联源知识点",
+              "passed": true
+            },
+            {
+              "name": "选项标签唯一且参考标签存在",
+              "passed": true
+            },
+            {
+              "name": "选项文本互异",
+              "passed": true
+            },
+            {
+              "name": "正确路径独立数值复算",
+              "passed": true
+            },
+            {
+              "name": "带量纲求值与独立求值一致",
+              "passed": true
+            },
+            {
+              "name": "干扰路径复算且与正确路径分离",
+              "passed": true
+            }
+          ],
+          "machine_boundary": "只列本次逐题实际执行项目；不把关联知识卡的方向、扫描或一致性检查算作本题已验。概念题未验命题真假。",
+          "human_review_items": [
+            "题干条件是否充分、清楚且符合学段",
+            "参考结论在指定条件下是否唯一",
+            "干扰项是否合理、对应真实认知问题且无答案暗示",
+            "公式或概念锚点是否准确",
+            "建议难度及用时是否适合教学",
+            "语言、装置与安全操作是否恰当"
+          ],
+          "reference_answer_note": "现有参考答案保持；即使本地可以判选项，也仍须教师审核教学可用性"
+        }
       }
     },
     {
@@ -219,7 +389,99 @@
           "stem_clear": null,
           "no_cross_segment": null
         },
-        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。"
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。",
+        "material": {
+          "anchors": [
+            {
+              "kind": "公式量纲",
+              "name": "本题目标量与等式",
+              "expression": "B_net = B1 + B2",
+              "when": "量纲相符是必要条件，不能据此证明系数或物理条件正确",
+              "display": "B<sub>合</sub> = B1 + B2"
+            }
+          ],
+          "source": {
+            "nature": "原创量纲辨析命题；无实测数据",
+            "source_error_index": 0
+          },
+          "predicted_errors": [
+            {
+              "option": "A",
+              "text": "B<sub>合</sub> = B1·B2",
+              "reason": "右边单位变成 T²，不再是磁感应强度应有的单位 T；这种把矢量叠加误写成乘法的错误可由量纲检查直接发现。",
+              "expression": "B_net = B1*B2",
+              "status": "误答原因预测，待教师确认；未采集学生作答证据"
+            }
+          ],
+          "difficulty_note": "建议难度沿用本题level（源卡难度）；尚非题目难度实测，待教师调整",
+          "estimated_seconds": [
+            60,
+            120
+          ],
+          "time_basis": "未做学生计时；按现有难度给出备课估计区间，待教师确认",
+          "machine_checks": [
+            {
+              "name": "题目ID关联源知识点",
+              "passed": true
+            },
+            {
+              "name": "选项标签唯一且参考标签存在",
+              "passed": true
+            },
+            {
+              "name": "选项文本互异",
+              "passed": true
+            },
+            {
+              "name": "正确式量纲一致",
+              "passed": true,
+              "actual": {
+                "type": "dimension",
+                "type_name": "量纲一致性",
+                "formula": "教师审核证据",
+                "ok": true,
+                "detail": "左端M·T^-2·I^-1，右端M·T^-2·I^-1",
+                "note": "",
+                "error": null,
+                "evaluation_status": "success",
+                "failure_reason": null,
+                "result_dimension": "M·T^-2·I^-1",
+                "reference_dimension": "M·T^-2·I^-1",
+                "diagnostics": {},
+                "physical_error_identified": false
+              }
+            },
+            {
+              "name": "干扰式量纲冲突",
+              "passed": true,
+              "actual": {
+                "type": "dimension",
+                "type_name": "量纲一致性",
+                "formula": "教师审核证据",
+                "ok": false,
+                "detail": "左端M·T^-2·I^-1，右端M^2·T^-4·I^-2",
+                "note": "",
+                "error": null,
+                "evaluation_status": "dimension_conflict",
+                "failure_reason": "dimension_conflict",
+                "result_dimension": "M^2·T^-4·I^-2",
+                "reference_dimension": "M·T^-2·I^-1",
+                "diagnostics": {},
+                "physical_error_identified": true
+              }
+            }
+          ],
+          "machine_boundary": "只列本次逐题实际执行项目；不把关联知识卡的方向、扫描或一致性检查算作本题已验。概念题未验命题真假。",
+          "human_review_items": [
+            "题干条件是否充分、清楚且符合学段",
+            "参考结论在指定条件下是否唯一",
+            "干扰项是否合理、对应真实认知问题且无答案暗示",
+            "公式或概念锚点是否准确",
+            "建议难度及用时是否适合教学",
+            "语言、装置与安全操作是否恰当"
+          ],
+          "reference_answer_note": "现有参考答案保持；即使本地可以判选项，也仍须教师审核教学可用性"
+        }
       }
     },
     {
@@ -299,7 +561,83 @@
           "stem_clear": null,
           "no_cross_segment": null
         },
-        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。"
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。",
+        "material": {
+          "anchors": [
+            {
+              "kind": "公式",
+              "name": "共线反向磁场叠加",
+              "expression": "abs(B1 - B2)",
+              "when": "两个磁场方向相反；式中给出合磁场大小",
+              "display": "abs(B1 - B2)"
+            }
+          ],
+          "source": {
+            "nature": "原创设计示例，非教材实测或真实实验记录",
+            "scenario": "反向叠加",
+            "parameters": {
+              "B_net": 0.001,
+              "B1": 0.003,
+              "B2": 0.002
+            },
+            "data": [
+              "两个共线磁场叠加后的磁感应强度大小：0.001 T_",
+              "第一个磁场的磁感应强度大小：0.003 T_",
+              "第二个磁场的磁感应强度大小：0.002 T_"
+            ]
+          },
+          "predicted_errors": [
+            {
+              "option": "A",
+              "text": "0.005 T",
+              "reason": "量纲正确但方向关系错；反向叠加情境会误得 0.005 T，正确大小是 0.001 T。",
+              "expression": "B1 + B2",
+              "status": "误答原因预测，待教师确认；未采集学生作答证据"
+            }
+          ],
+          "difficulty_note": "建议难度沿用本题level（源卡难度）；尚非题目难度实测，待教师调整",
+          "estimated_seconds": [
+            60,
+            120
+          ],
+          "time_basis": "未做学生计时；按现有难度给出备课估计区间，待教师确认",
+          "machine_checks": [
+            {
+              "name": "题目ID关联源知识点",
+              "passed": true
+            },
+            {
+              "name": "选项标签唯一且参考标签存在",
+              "passed": true
+            },
+            {
+              "name": "选项文本互异",
+              "passed": true
+            },
+            {
+              "name": "正确路径独立数值复算",
+              "passed": true
+            },
+            {
+              "name": "带量纲求值与独立求值一致",
+              "passed": true
+            },
+            {
+              "name": "干扰路径复算且与正确路径分离",
+              "passed": true
+            }
+          ],
+          "machine_boundary": "只列本次逐题实际执行项目；不把关联知识卡的方向、扫描或一致性检查算作本题已验。概念题未验命题真假。",
+          "human_review_items": [
+            "题干条件是否充分、清楚且符合学段",
+            "参考结论在指定条件下是否唯一",
+            "干扰项是否合理、对应真实认知问题且无答案暗示",
+            "公式或概念锚点是否准确",
+            "建议难度及用时是否适合教学",
+            "语言、装置与安全操作是否恰当"
+          ],
+          "reference_answer_note": "现有参考答案保持；即使本地可以判选项，也仍须教师审核教学可用性"
+        }
       }
     },
     {
@@ -380,7 +718,85 @@
           "stem_clear": null,
           "no_cross_segment": null
         },
-        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。"
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。",
+        "material": {
+          "anchors": [
+            {
+              "kind": "公式",
+              "name": "匀强磁场中的磁通量",
+              "expression": "B*S*cos(theta)",
+              "when": "B、S 均匀，theta 为磁场与平面法线的夹角，计算磁通量大小时取 0 至 90°",
+              "display": "B·S·cos(θ)"
+            }
+          ],
+          "source": {
+            "nature": "原创设计示例，非教材实测或真实实验记录",
+            "scenario": "倾斜线圈",
+            "parameters": {
+              "Phi": 0.24,
+              "B": 0.8,
+              "S": 0.5,
+              "theta": 0.9272952180016123
+            },
+            "data": [
+              "穿过平面的磁通量：0.24 Wb",
+              "匀强磁场的磁感应强度：0.8 T_",
+              "平面的面积：0.5 m^2",
+              "磁场方向与平面法线的夹角：0.9272952180016123 rad"
+            ]
+          },
+          "predicted_errors": [
+            {
+              "option": "A",
+              "text": "0.4 Wb",
+              "reason": "量纲正确但漏掉投影；倾斜线圈会误得 0.4 Wb，正确值为 0.24 Wb。",
+              "expression": "B*S",
+              "status": "误答原因预测，待教师确认；未采集学生作答证据"
+            }
+          ],
+          "difficulty_note": "建议难度沿用本题level（源卡难度）；尚非题目难度实测，待教师调整",
+          "estimated_seconds": [
+            60,
+            120
+          ],
+          "time_basis": "未做学生计时；按现有难度给出备课估计区间，待教师确认",
+          "machine_checks": [
+            {
+              "name": "题目ID关联源知识点",
+              "passed": true
+            },
+            {
+              "name": "选项标签唯一且参考标签存在",
+              "passed": true
+            },
+            {
+              "name": "选项文本互异",
+              "passed": true
+            },
+            {
+              "name": "正确路径独立数值复算",
+              "passed": true
+            },
+            {
+              "name": "带量纲求值与独立求值一致",
+              "passed": true
+            },
+            {
+              "name": "干扰路径复算且与正确路径分离",
+              "passed": true
+            }
+          ],
+          "machine_boundary": "只列本次逐题实际执行项目；不把关联知识卡的方向、扫描或一致性检查算作本题已验。概念题未验命题真假。",
+          "human_review_items": [
+            "题干条件是否充分、清楚且符合学段",
+            "参考结论在指定条件下是否唯一",
+            "干扰项是否合理、对应真实认知问题且无答案暗示",
+            "公式或概念锚点是否准确",
+            "建议难度及用时是否适合教学",
+            "语言、装置与安全操作是否恰当"
+          ],
+          "reference_answer_note": "现有参考答案保持；即使本地可以判选项，也仍须教师审核教学可用性"
+        }
       }
     },
     {
@@ -461,7 +877,85 @@
           "stem_clear": null,
           "no_cross_segment": null
         },
-        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。"
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。",
+        "material": {
+          "anchors": [
+            {
+              "kind": "公式",
+              "name": "匀强磁场中的磁通量",
+              "expression": "B*S*cos(theta)",
+              "when": "B、S 均匀，theta 为磁场与平面法线的夹角，计算磁通量大小时取 0 至 90°",
+              "display": "B·S·cos(θ)"
+            }
+          ],
+          "source": {
+            "nature": "原创设计示例，非教材实测或真实实验记录",
+            "scenario": "垂直穿过",
+            "parameters": {
+              "Phi": 0.4,
+              "B": 0.8,
+              "S": 0.5,
+              "theta": 0
+            },
+            "data": [
+              "穿过平面的磁通量：0.4 Wb",
+              "匀强磁场的磁感应强度：0.8 T_",
+              "平面的面积：0.5 m^2",
+              "磁场方向与平面法线的夹角：0 rad"
+            ]
+          },
+          "predicted_errors": [
+            {
+              "option": "B",
+              "text": "0 Wb",
+              "reason": "量纲检查抓不到三角函数选错；垂直穿过时 theta=0，错误式给出 0，正确值为 0.4 Wb。",
+              "expression": "B*S*sin(theta)",
+              "status": "误答原因预测，待教师确认；未采集学生作答证据"
+            }
+          ],
+          "difficulty_note": "建议难度沿用本题level（源卡难度）；尚非题目难度实测，待教师调整",
+          "estimated_seconds": [
+            60,
+            120
+          ],
+          "time_basis": "未做学生计时；按现有难度给出备课估计区间，待教师确认",
+          "machine_checks": [
+            {
+              "name": "题目ID关联源知识点",
+              "passed": true
+            },
+            {
+              "name": "选项标签唯一且参考标签存在",
+              "passed": true
+            },
+            {
+              "name": "选项文本互异",
+              "passed": true
+            },
+            {
+              "name": "正确路径独立数值复算",
+              "passed": true
+            },
+            {
+              "name": "带量纲求值与独立求值一致",
+              "passed": true
+            },
+            {
+              "name": "干扰路径复算且与正确路径分离",
+              "passed": true
+            }
+          ],
+          "machine_boundary": "只列本次逐题实际执行项目；不把关联知识卡的方向、扫描或一致性检查算作本题已验。概念题未验命题真假。",
+          "human_review_items": [
+            "题干条件是否充分、清楚且符合学段",
+            "参考结论在指定条件下是否唯一",
+            "干扰项是否合理、对应真实认知问题且无答案暗示",
+            "公式或概念锚点是否准确",
+            "建议难度及用时是否适合教学",
+            "语言、装置与安全操作是否恰当"
+          ],
+          "reference_answer_note": "现有参考答案保持；即使本地可以判选项，也仍须教师审核教学可用性"
+        }
       }
     },
     {
@@ -544,7 +1038,89 @@
           "stem_clear": null,
           "no_cross_segment": null
         },
-        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。"
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。",
+        "material": {
+          "anchors": [
+            {
+              "kind": "公式",
+              "name": "安培力大小",
+              "expression": "B*I*L*sin(theta)",
+              "when": "直导线处在匀强磁场中，theta 为电流与磁场的夹角",
+              "display": "B·I·L·sin(θ)"
+            }
+          ],
+          "source": {
+            "nature": "原创设计示例，非教材实测或真实实验记录",
+            "scenario": "斜放导线",
+            "parameters": {
+              "F": 2.4,
+              "F_max": 4,
+              "B": 0.5,
+              "I": 4,
+              "L": 2,
+              "theta": 0.6435011087932844
+            },
+            "data": [
+              "通电导线受到的安培力：2.4 N",
+              "给定 B、I、L 时的最大安培力：4 N",
+              "匀强磁场的磁感应强度：0.5 T_",
+              "导线中的电流：4 A",
+              "导线在磁场中的有效长度：2 m",
+              "电流方向与磁场方向的夹角：0.6435011087932844 rad"
+            ]
+          },
+          "predicted_errors": [
+            {
+              "option": "A",
+              "text": "4 N",
+              "reason": "量纲完全正确；斜放导线会误得 4 N，正确值为 2.4 N。",
+              "expression": "B*I*L",
+              "status": "误答原因预测，待教师确认；未采集学生作答证据"
+            }
+          ],
+          "difficulty_note": "建议难度沿用本题level（源卡难度）；尚非题目难度实测，待教师调整",
+          "estimated_seconds": [
+            60,
+            120
+          ],
+          "time_basis": "未做学生计时；按现有难度给出备课估计区间，待教师确认",
+          "machine_checks": [
+            {
+              "name": "题目ID关联源知识点",
+              "passed": true
+            },
+            {
+              "name": "选项标签唯一且参考标签存在",
+              "passed": true
+            },
+            {
+              "name": "选项文本互异",
+              "passed": true
+            },
+            {
+              "name": "正确路径独立数值复算",
+              "passed": true
+            },
+            {
+              "name": "带量纲求值与独立求值一致",
+              "passed": true
+            },
+            {
+              "name": "干扰路径复算且与正确路径分离",
+              "passed": true
+            }
+          ],
+          "machine_boundary": "只列本次逐题实际执行项目；不把关联知识卡的方向、扫描或一致性检查算作本题已验。概念题未验命题真假。",
+          "human_review_items": [
+            "题干条件是否充分、清楚且符合学段",
+            "参考结论在指定条件下是否唯一",
+            "干扰项是否合理、对应真实认知问题且无答案暗示",
+            "公式或概念锚点是否准确",
+            "建议难度及用时是否适合教学",
+            "语言、装置与安全操作是否恰当"
+          ],
+          "reference_answer_note": "现有参考答案保持；即使本地可以判选项，也仍须教师审核教学可用性"
+        }
       }
     },
     {
@@ -627,7 +1203,89 @@
           "stem_clear": null,
           "no_cross_segment": null
         },
-        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。"
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。",
+        "material": {
+          "anchors": [
+            {
+              "kind": "公式",
+              "name": "安培力大小",
+              "expression": "B*I*L*sin(theta)",
+              "when": "直导线处在匀强磁场中，theta 为电流与磁场的夹角",
+              "display": "B·I·L·sin(θ)"
+            }
+          ],
+          "source": {
+            "nature": "原创设计示例，非教材实测或真实实验记录",
+            "scenario": "斜放导线",
+            "parameters": {
+              "F": 2.4,
+              "F_max": 4,
+              "B": 0.5,
+              "I": 4,
+              "L": 2,
+              "theta": 0.6435011087932844
+            },
+            "data": [
+              "通电导线受到的安培力：2.4 N",
+              "给定 B、I、L 时的最大安培力：4 N",
+              "匀强磁场的磁感应强度：0.5 T_",
+              "导线中的电流：4 A",
+              "导线在磁场中的有效长度：2 m",
+              "电流方向与磁场方向的夹角：0.6435011087932844 rad"
+            ]
+          },
+          "predicted_errors": [
+            {
+              "option": "B",
+              "text": "3.2 N",
+              "reason": "量纲检查无法区分正弦和余弦；本情境会误得 3.2 N，正确值为 2.4 N。",
+              "expression": "B*I*L*cos(theta)",
+              "status": "误答原因预测，待教师确认；未采集学生作答证据"
+            }
+          ],
+          "difficulty_note": "建议难度沿用本题level（源卡难度）；尚非题目难度实测，待教师调整",
+          "estimated_seconds": [
+            60,
+            120
+          ],
+          "time_basis": "未做学生计时；按现有难度给出备课估计区间，待教师确认",
+          "machine_checks": [
+            {
+              "name": "题目ID关联源知识点",
+              "passed": true
+            },
+            {
+              "name": "选项标签唯一且参考标签存在",
+              "passed": true
+            },
+            {
+              "name": "选项文本互异",
+              "passed": true
+            },
+            {
+              "name": "正确路径独立数值复算",
+              "passed": true
+            },
+            {
+              "name": "带量纲求值与独立求值一致",
+              "passed": true
+            },
+            {
+              "name": "干扰路径复算且与正确路径分离",
+              "passed": true
+            }
+          ],
+          "machine_boundary": "只列本次逐题实际执行项目；不把关联知识卡的方向、扫描或一致性检查算作本题已验。概念题未验命题真假。",
+          "human_review_items": [
+            "题干条件是否充分、清楚且符合学段",
+            "参考结论在指定条件下是否唯一",
+            "干扰项是否合理、对应真实认知问题且无答案暗示",
+            "公式或概念锚点是否准确",
+            "建议难度及用时是否适合教学",
+            "语言、装置与安全操作是否恰当"
+          ],
+          "reference_answer_note": "现有参考答案保持；即使本地可以判选项，也仍须教师审核教学可用性"
+        }
       }
     },
     {
@@ -712,7 +1370,93 @@
           "stem_clear": null,
           "no_cross_segment": null
         },
-        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。"
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。",
+        "material": {
+          "anchors": [
+            {
+              "kind": "公式",
+              "name": "通电线圈的磁力矩",
+              "expression": "N_turn*B*I*S*sin(alpha)",
+              "when": "N 匝平面线圈处在匀强磁场中，alpha 为磁场与线圈法线夹角",
+              "display": "N<sub>匝</sub>·B·I·S·sin(α)"
+            }
+          ],
+          "source": {
+            "nature": "原创设计示例，非教材实测或真实实验记录",
+            "scenario": "磁电式表头",
+            "parameters": {
+              "tau": 0.001,
+              "N_turn": 100,
+              "B": 0.2,
+              "I": 0.01,
+              "S": 0.005,
+              "alpha": 1.5707963267948966,
+              "k_t": 0.02,
+              "beta": 0.05
+            },
+            "data": [
+              "通电线圈受到的磁力矩：0.001 N*m",
+              "线圈匝数：100 1",
+              "磁感应强度：0.2 T_",
+              "线圈中的电流：0.01 A",
+              "每匝线圈面积：0.005 m^2",
+              "磁场与线圈法线的夹角：1.5707963267948966 rad",
+              "游丝的角回复系数：0.02 N*m/rad",
+              "电表指针的偏转角：0.05 rad"
+            ]
+          },
+          "predicted_errors": [
+            {
+              "option": "B",
+              "text": "1e-05 N·m",
+              "reason": "量纲正确但少算各匝的共同贡献；表头情境会误得 0.00001 N·m，正确值是 0.001 N·m。",
+              "expression": "B*I*S*sin(alpha)",
+              "status": "误答原因预测，待教师确认；未采集学生作答证据"
+            }
+          ],
+          "difficulty_note": "建议难度沿用本题level（源卡难度）；尚非题目难度实测，待教师调整",
+          "estimated_seconds": [
+            120,
+            240
+          ],
+          "time_basis": "未做学生计时；按现有难度给出备课估计区间，待教师确认",
+          "machine_checks": [
+            {
+              "name": "题目ID关联源知识点",
+              "passed": true
+            },
+            {
+              "name": "选项标签唯一且参考标签存在",
+              "passed": true
+            },
+            {
+              "name": "选项文本互异",
+              "passed": true
+            },
+            {
+              "name": "正确路径独立数值复算",
+              "passed": true
+            },
+            {
+              "name": "带量纲求值与独立求值一致",
+              "passed": true
+            },
+            {
+              "name": "干扰路径复算且与正确路径分离",
+              "passed": true
+            }
+          ],
+          "machine_boundary": "只列本次逐题实际执行项目；不把关联知识卡的方向、扫描或一致性检查算作本题已验。概念题未验命题真假。",
+          "human_review_items": [
+            "题干条件是否充分、清楚且符合学段",
+            "参考结论在指定条件下是否唯一",
+            "干扰项是否合理、对应真实认知问题且无答案暗示",
+            "公式或概念锚点是否准确",
+            "建议难度及用时是否适合教学",
+            "语言、装置与安全操作是否恰当"
+          ],
+          "reference_answer_note": "现有参考答案保持；即使本地可以判选项，也仍须教师审核教学可用性"
+        }
       }
     },
     {
@@ -772,7 +1516,62 @@
           "stem_clear": null,
           "no_cross_segment": null
         },
-        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。"
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。",
+        "material": {
+          "anchors": [
+            {
+              "kind": "概念或操作",
+              "name": "磁电式电表与电动机原理",
+              "claim": "认为电动机线圈转过半周后无需换向也能持续同向转动",
+              "correction_basis": "若电流方向不变，线圈越过平衡位置后磁力矩会促使它反向；直流电动机依靠换向器适时改变电流方向。此过程判断需人工审核。",
+              "note": "概念锚点及命题真假待教师确认；未套用任意第一条公式",
+              "display": "认为电动机线圈转过半周后无需换向也能持续同向转动"
+            }
+          ],
+          "source": {
+            "nature": "原创概念/操作命题；无真实测量记录",
+            "source_error_index": 1
+          },
+          "predicted_errors": [
+            {
+              "option": "B",
+              "text": "该说法不成立。",
+              "reason": "若电流方向不变，线圈越过平衡位置后磁力矩会促使它反向；直流电动机依靠换向器适时改变电流方向。此过程判断需人工审核。",
+              "expression": null,
+              "status": "误答原因预测，待教师确认；未采集学生作答证据"
+            }
+          ],
+          "difficulty_note": "建议难度沿用本题level（源卡难度）；尚非题目难度实测，待教师调整",
+          "estimated_seconds": [
+            120,
+            240
+          ],
+          "time_basis": "未做学生计时；按现有难度给出备课估计区间，待教师确认",
+          "machine_checks": [
+            {
+              "name": "题目ID关联源知识点",
+              "passed": true
+            },
+            {
+              "name": "选项标签唯一且参考标签存在",
+              "passed": true
+            },
+            {
+              "name": "选项文本互异",
+              "passed": true
+            }
+          ],
+          "machine_boundary": "只列本次逐题实际执行项目；不把关联知识卡的方向、扫描或一致性检查算作本题已验。概念题未验命题真假。",
+          "human_review_items": [
+            "题干条件是否充分、清楚且符合学段",
+            "参考结论在指定条件下是否唯一",
+            "干扰项是否合理、对应真实认知问题且无答案暗示",
+            "公式或概念锚点是否准确",
+            "建议难度及用时是否适合教学",
+            "语言、装置与安全操作是否恰当"
+          ],
+          "reference_answer_note": "现有参考答案保持；即使本地可以判选项，也仍须教师审核教学可用性"
+        }
       }
     },
     {
@@ -841,7 +1640,99 @@
           "stem_clear": null,
           "no_cross_segment": null
         },
-        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。"
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。",
+        "material": {
+          "anchors": [
+            {
+              "kind": "公式量纲",
+              "name": "本题目标量与等式",
+              "expression": "I = m*g/(B*L)",
+              "when": "量纲相符是必要条件，不能据此证明系数或物理条件正确",
+              "display": "I = m·g/(B·L)"
+            }
+          ],
+          "source": {
+            "nature": "原创量纲辨析命题；无实测数据",
+            "source_error_index": 0
+          },
+          "predicted_errors": [
+            {
+              "option": "A",
+              "text": "I = m/(B·L)",
+              "reason": "右边量纲不是电流；质量必须先乘 g 才是与安培力平衡的重力，量纲检查可直接发现。",
+              "expression": "I = m/(B*L)",
+              "status": "误答原因预测，待教师确认；未采集学生作答证据"
+            }
+          ],
+          "difficulty_note": "建议难度沿用本题level（源卡难度）；尚非题目难度实测，待教师调整",
+          "estimated_seconds": [
+            120,
+            240
+          ],
+          "time_basis": "未做学生计时；按现有难度给出备课估计区间，待教师确认",
+          "machine_checks": [
+            {
+              "name": "题目ID关联源知识点",
+              "passed": true
+            },
+            {
+              "name": "选项标签唯一且参考标签存在",
+              "passed": true
+            },
+            {
+              "name": "选项文本互异",
+              "passed": true
+            },
+            {
+              "name": "正确式量纲一致",
+              "passed": true,
+              "actual": {
+                "type": "dimension",
+                "type_name": "量纲一致性",
+                "formula": "教师审核证据",
+                "ok": true,
+                "detail": "左端I，右端I",
+                "note": "",
+                "error": null,
+                "evaluation_status": "success",
+                "failure_reason": null,
+                "result_dimension": "I",
+                "reference_dimension": "I",
+                "diagnostics": {},
+                "physical_error_identified": false
+              }
+            },
+            {
+              "name": "干扰式量纲冲突",
+              "passed": true,
+              "actual": {
+                "type": "dimension",
+                "type_name": "量纲一致性",
+                "formula": "教师审核证据",
+                "ok": false,
+                "detail": "左端I，右端L^-1·T^2·I",
+                "note": "",
+                "error": null,
+                "evaluation_status": "dimension_conflict",
+                "failure_reason": "dimension_conflict",
+                "result_dimension": "L^-1·T^2·I",
+                "reference_dimension": "I",
+                "diagnostics": {},
+                "physical_error_identified": true
+              }
+            }
+          ],
+          "machine_boundary": "只列本次逐题实际执行项目；不把关联知识卡的方向、扫描或一致性检查算作本题已验。概念题未验命题真假。",
+          "human_review_items": [
+            "题干条件是否充分、清楚且符合学段",
+            "参考结论在指定条件下是否唯一",
+            "干扰项是否合理、对应真实认知问题且无答案暗示",
+            "公式或概念锚点是否准确",
+            "建议难度及用时是否适合教学",
+            "语言、装置与安全操作是否恰当"
+          ],
+          "reference_answer_note": "现有参考答案保持；即使本地可以判选项，也仍须教师审核教学可用性"
+        }
       }
     },
     {
@@ -925,7 +1816,91 @@
           "stem_clear": null,
           "no_cross_segment": null
         },
-        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。"
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。",
+        "material": {
+          "anchors": [
+            {
+              "kind": "公式",
+              "name": "竖直方向的加速度",
+              "expression": "(B*I*L - m*g)/m",
+              "when": "安培力竖直向上、重力向下，取向上为正且忽略其他竖直力",
+              "display": "(B·I·L - m·g)/m"
+            }
+          ],
+          "source": {
+            "nature": "原创设计示例，非教材实测或真实实验记录",
+            "scenario": "向上加速",
+            "parameters": {
+              "I": 6,
+              "m": 0.2,
+              "g": 10,
+              "B": 0.5,
+              "L": 1,
+              "F": 3,
+              "a": 5
+            },
+            "data": [
+              "导线中的电流：6 A",
+              "导线或导体棒质量：0.2 kg",
+              "重力加速度：10 m/s^2",
+              "磁感应强度：0.5 T_",
+              "垂直磁场的有效导线长度：1 m",
+              "导线受到的安培力：3 N",
+              "取安培力方向为正时导线的加速度：5 m/s^2"
+            ]
+          },
+          "predicted_errors": [
+            {
+              "option": "B",
+              "text": "25 m/s²",
+              "reason": "量纲正确但受力方向错误；向上加速情境会误得 25 m/s²，正确值为 5 m/s²。",
+              "expression": "(B*I*L + m*g)/m",
+              "status": "误答原因预测，待教师确认；未采集学生作答证据"
+            }
+          ],
+          "difficulty_note": "建议难度沿用本题level（源卡难度）；尚非题目难度实测，待教师调整",
+          "estimated_seconds": [
+            120,
+            240
+          ],
+          "time_basis": "未做学生计时；按现有难度给出备课估计区间，待教师确认",
+          "machine_checks": [
+            {
+              "name": "题目ID关联源知识点",
+              "passed": true
+            },
+            {
+              "name": "选项标签唯一且参考标签存在",
+              "passed": true
+            },
+            {
+              "name": "选项文本互异",
+              "passed": true
+            },
+            {
+              "name": "正确路径独立数值复算",
+              "passed": true
+            },
+            {
+              "name": "带量纲求值与独立求值一致",
+              "passed": true
+            },
+            {
+              "name": "干扰路径复算且与正确路径分离",
+              "passed": true
+            }
+          ],
+          "machine_boundary": "只列本次逐题实际执行项目；不把关联知识卡的方向、扫描或一致性检查算作本题已验。概念题未验命题真假。",
+          "human_review_items": [
+            "题干条件是否充分、清楚且符合学段",
+            "参考结论在指定条件下是否唯一",
+            "干扰项是否合理、对应真实认知问题且无答案暗示",
+            "公式或概念锚点是否准确",
+            "建议难度及用时是否适合教学",
+            "语言、装置与安全操作是否恰当"
+          ],
+          "reference_answer_note": "现有参考答案保持；即使本地可以判选项，也仍须教师审核教学可用性"
+        }
       }
     },
     {
@@ -1010,7 +1985,93 @@
           "stem_clear": null,
           "no_cross_segment": null
         },
-        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。"
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。",
+        "material": {
+          "anchors": [
+            {
+              "kind": "公式",
+              "name": "霍尔电压",
+              "expression": "B*I/(n*q*d)",
+              "when": "单一载流子薄片，磁场与电流垂直，电压取大小",
+              "display": "B·I/(n·q·d)"
+            }
+          ],
+          "source": {
+            "nature": "原创设计示例，非教材实测或真实实验记录",
+            "scenario": "薄片",
+            "parameters": {
+              "B": 0.8,
+              "I": 0.1,
+              "n": 1e+24,
+              "q": 1.6e-19,
+              "d": 0.0001,
+              "w": 0.01,
+              "U_H": 0.005,
+              "v": 0.625
+            },
+            "data": [
+              "磁感应强度大小：0.8 T_",
+              "沿薄片长度的电流大小：0.1 A",
+              "单一载流子数密度：1e+24 m^-3",
+              "载流子电荷量的非负大小：1.6e-19 C",
+              "沿磁场方向的薄片厚度：0.0001 m",
+              "测量横向电压的薄片宽度：0.01 m",
+              "霍尔电压大小：0.005 V",
+              "载流子漂移速率：0.625 m/s"
+            ]
+          },
+          "predicted_errors": [
+            {
+              "option": "B",
+              "text": "5e-05 V",
+              "reason": "霍尔电压跨宽度产生，而电流截面积也含宽度，消元后宽度约去；错换成宽度虽量纲一致，本例电压会缩小一百倍。",
+              "expression": "B*I/(n*q*w)",
+              "status": "误答原因预测，待教师确认；未采集学生作答证据"
+            }
+          ],
+          "difficulty_note": "建议难度沿用本题level（源卡难度）；尚非题目难度实测，待教师调整",
+          "estimated_seconds": [
+            180,
+            360
+          ],
+          "time_basis": "未做学生计时；按现有难度给出备课估计区间，待教师确认",
+          "machine_checks": [
+            {
+              "name": "题目ID关联源知识点",
+              "passed": true
+            },
+            {
+              "name": "选项标签唯一且参考标签存在",
+              "passed": true
+            },
+            {
+              "name": "选项文本互异",
+              "passed": true
+            },
+            {
+              "name": "正确路径独立数值复算",
+              "passed": true
+            },
+            {
+              "name": "带量纲求值与独立求值一致",
+              "passed": true
+            },
+            {
+              "name": "干扰路径复算且与正确路径分离",
+              "passed": true
+            }
+          ],
+          "machine_boundary": "只列本次逐题实际执行项目；不把关联知识卡的方向、扫描或一致性检查算作本题已验。概念题未验命题真假。",
+          "human_review_items": [
+            "题干条件是否充分、清楚且符合学段",
+            "参考结论在指定条件下是否唯一",
+            "干扰项是否合理、对应真实认知问题且无答案暗示",
+            "公式或概念锚点是否准确",
+            "建议难度及用时是否适合教学",
+            "语言、装置与安全操作是否恰当"
+          ],
+          "reference_answer_note": "现有参考答案保持；即使本地可以判选项，也仍须教师审核教学可用性"
+        }
       }
     },
     {
@@ -1070,7 +2131,62 @@
           "stem_clear": null,
           "no_cross_segment": null
         },
-        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。"
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。",
+        "material": {
+          "anchors": [
+            {
+              "kind": "概念或操作",
+              "name": "霍尔效应与霍尔元件",
+              "claim": "只根据电压大小式判定哪一侧电势高",
+              "correction_basis": "同一大小公式可以对应正或负载流子；必须结合电荷符号、电流方向及磁场方向判断横向受力和电压极性。",
+              "note": "概念锚点及命题真假待教师确认；未套用任意第一条公式",
+              "display": "只根据电压大小式判定哪一侧电势高"
+            }
+          ],
+          "source": {
+            "nature": "原创概念/操作命题；无真实测量记录",
+            "source_error_index": 1
+          },
+          "predicted_errors": [
+            {
+              "option": "B",
+              "text": "该说法成立。",
+              "reason": "同一大小公式可以对应正或负载流子；必须结合电荷符号、电流方向及磁场方向判断横向受力和电压极性。",
+              "expression": null,
+              "status": "误答原因预测，待教师确认；未采集学生作答证据"
+            }
+          ],
+          "difficulty_note": "建议难度沿用本题level（源卡难度）；尚非题目难度实测，待教师调整",
+          "estimated_seconds": [
+            180,
+            360
+          ],
+          "time_basis": "未做学生计时；按现有难度给出备课估计区间，待教师确认",
+          "machine_checks": [
+            {
+              "name": "题目ID关联源知识点",
+              "passed": true
+            },
+            {
+              "name": "选项标签唯一且参考标签存在",
+              "passed": true
+            },
+            {
+              "name": "选项文本互异",
+              "passed": true
+            }
+          ],
+          "machine_boundary": "只列本次逐题实际执行项目；不把关联知识卡的方向、扫描或一致性检查算作本题已验。概念题未验命题真假。",
+          "human_review_items": [
+            "题干条件是否充分、清楚且符合学段",
+            "参考结论在指定条件下是否唯一",
+            "干扰项是否合理、对应真实认知问题且无答案暗示",
+            "公式或概念锚点是否准确",
+            "建议难度及用时是否适合教学",
+            "语言、装置与安全操作是否恰当"
+          ],
+          "reference_answer_note": "现有参考答案保持；即使本地可以判选项，也仍须教师审核教学可用性"
+        }
       }
     }
   ],

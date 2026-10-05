@@ -69,7 +69,99 @@
           "stem_clear": null,
           "no_cross_segment": null
         },
-        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。"
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。",
+        "material": {
+          "anchors": [
+            {
+              "kind": "公式量纲",
+              "name": "本题目标量与等式",
+              "expression": "F = k*x",
+              "when": "量纲相符是必要条件，不能据此证明系数或物理条件正确",
+              "display": "F = k·x"
+            }
+          ],
+          "source": {
+            "nature": "原创量纲辨析命题；无实测数据",
+            "source_error_index": 0
+          },
+          "predicted_errors": [
+            {
+              "option": "A",
+              "text": "F = k/x",
+              "reason": "写成除法后 k/x 的量纲变成 N/m²，与力的单位 N 完全不同，量纲检查立刻拦住。",
+              "expression": "F = k/x",
+              "status": "误答原因预测，待教师确认；未采集学生作答证据"
+            }
+          ],
+          "difficulty_note": "建议难度沿用本题level（源卡难度）；尚非题目难度实测，待教师调整",
+          "estimated_seconds": [
+            60,
+            120
+          ],
+          "time_basis": "未做学生计时；按现有难度给出备课估计区间，待教师确认",
+          "machine_checks": [
+            {
+              "name": "题目ID关联源知识点",
+              "passed": true
+            },
+            {
+              "name": "选项标签唯一且参考标签存在",
+              "passed": true
+            },
+            {
+              "name": "选项文本互异",
+              "passed": true
+            },
+            {
+              "name": "正确式量纲一致",
+              "passed": true,
+              "actual": {
+                "type": "dimension",
+                "type_name": "量纲一致性",
+                "formula": "教师审核证据",
+                "ok": true,
+                "detail": "左端M·L·T^-2，右端M·L·T^-2",
+                "note": "",
+                "error": null,
+                "evaluation_status": "success",
+                "failure_reason": null,
+                "result_dimension": "M·L·T^-2",
+                "reference_dimension": "M·L·T^-2",
+                "diagnostics": {},
+                "physical_error_identified": false
+              }
+            },
+            {
+              "name": "干扰式量纲冲突",
+              "passed": true,
+              "actual": {
+                "type": "dimension",
+                "type_name": "量纲一致性",
+                "formula": "教师审核证据",
+                "ok": false,
+                "detail": "左端M·L·T^-2，右端M·L^-1·T^-2",
+                "note": "",
+                "error": null,
+                "evaluation_status": "dimension_conflict",
+                "failure_reason": "dimension_conflict",
+                "result_dimension": "M·L^-1·T^-2",
+                "reference_dimension": "M·L·T^-2",
+                "diagnostics": {},
+                "physical_error_identified": true
+              }
+            }
+          ],
+          "machine_boundary": "只列本次逐题实际执行项目；不把关联知识卡的方向、扫描或一致性检查算作本题已验。概念题未验命题真假。",
+          "human_review_items": [
+            "题干条件是否充分、清楚且符合学段",
+            "参考结论在指定条件下是否唯一",
+            "干扰项是否合理、对应真实认知问题且无答案暗示",
+            "公式或概念锚点是否准确",
+            "建议难度及用时是否适合教学",
+            "语言、装置与安全操作是否恰当"
+          ],
+          "reference_answer_note": "现有参考答案保持；即使本地可以判选项，也仍须教师审核教学可用性"
+        }
       }
     },
     {
@@ -151,7 +243,87 @@
           "stem_clear": null,
           "no_cross_segment": null
         },
-        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。"
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。",
+        "material": {
+          "anchors": [
+            {
+              "kind": "公式",
+              "name": "胡克定律",
+              "expression": "k*x",
+              "when": "在弹簧的弹性限度内，弹簧的弹力",
+              "display": "k·x"
+            }
+          ],
+          "source": {
+            "nature": "原创设计示例，非教材实测或真实实验记录",
+            "scenario": "拉伸弹簧",
+            "parameters": {
+              "k": 200,
+              "x": 0.05,
+              "F": 10,
+              "L_0": 0.1,
+              "L_total": 0.15
+            },
+            "data": [
+              "劲度系数（弹簧的「软硬」程度）：200 N/m",
+              "形变量（拉伸或压缩的长度，不是弹簧总长）：0.05 m",
+              "弹力的大小：10 N",
+              "弹簧原长：0.1 m",
+              "弹簧形变后的总长度：0.15 m"
+            ]
+          },
+          "predicted_errors": [
+            {
+              "option": "B",
+              "text": "30 N",
+              "reason": "胡克定律中的 x 是总长度与原长之差，不是总长度。错误式与正确式量纲完全相同，量纲检查抓不到；本情境中误代 0.15 m 会得到 30 N，正确形变量 0.05 m 对应 10 N。",
+              "expression": "k*L_total",
+              "status": "误答原因预测，待教师确认；未采集学生作答证据"
+            }
+          ],
+          "difficulty_note": "建议难度沿用本题level（源卡难度）；尚非题目难度实测，待教师调整",
+          "estimated_seconds": [
+            60,
+            120
+          ],
+          "time_basis": "未做学生计时；按现有难度给出备课估计区间，待教师确认",
+          "machine_checks": [
+            {
+              "name": "题目ID关联源知识点",
+              "passed": true
+            },
+            {
+              "name": "选项标签唯一且参考标签存在",
+              "passed": true
+            },
+            {
+              "name": "选项文本互异",
+              "passed": true
+            },
+            {
+              "name": "正确路径独立数值复算",
+              "passed": true
+            },
+            {
+              "name": "带量纲求值与独立求值一致",
+              "passed": true
+            },
+            {
+              "name": "干扰路径复算且与正确路径分离",
+              "passed": true
+            }
+          ],
+          "machine_boundary": "只列本次逐题实际执行项目；不把关联知识卡的方向、扫描或一致性检查算作本题已验。概念题未验命题真假。",
+          "human_review_items": [
+            "题干条件是否充分、清楚且符合学段",
+            "参考结论在指定条件下是否唯一",
+            "干扰项是否合理、对应真实认知问题且无答案暗示",
+            "公式或概念锚点是否准确",
+            "建议难度及用时是否适合教学",
+            "语言、装置与安全操作是否恰当"
+          ],
+          "reference_answer_note": "现有参考答案保持；即使本地可以判选项，也仍须教师审核教学可用性"
+        }
       }
     },
     {
@@ -220,7 +392,99 @@
           "stem_clear": null,
           "no_cross_segment": null
         },
-        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。"
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。",
+        "material": {
+          "anchors": [
+            {
+              "kind": "公式量纲",
+              "name": "本题目标量与等式",
+              "expression": "G = m*g",
+              "when": "量纲相符是必要条件，不能据此证明系数或物理条件正确",
+              "display": "G = m·g"
+            }
+          ],
+          "source": {
+            "nature": "原创量纲辨析命题；无实测数据",
+            "source_error_index": 0
+          },
+          "predicted_errors": [
+            {
+              "option": "A",
+              "text": "G = m/g",
+              "reason": "写成除法后量纲变成 kg·s²/m，与力的量纲完全不同，量纲检查直接拦住。同时它也会让「月球上重力变大」这种荒谬结论出现，方向检查也能抓到。",
+              "expression": "G = m/g",
+              "status": "误答原因预测，待教师确认；未采集学生作答证据"
+            }
+          ],
+          "difficulty_note": "建议难度沿用本题level（源卡难度）；尚非题目难度实测，待教师调整",
+          "estimated_seconds": [
+            60,
+            120
+          ],
+          "time_basis": "未做学生计时；按现有难度给出备课估计区间，待教师确认",
+          "machine_checks": [
+            {
+              "name": "题目ID关联源知识点",
+              "passed": true
+            },
+            {
+              "name": "选项标签唯一且参考标签存在",
+              "passed": true
+            },
+            {
+              "name": "选项文本互异",
+              "passed": true
+            },
+            {
+              "name": "正确式量纲一致",
+              "passed": true,
+              "actual": {
+                "type": "dimension",
+                "type_name": "量纲一致性",
+                "formula": "教师审核证据",
+                "ok": true,
+                "detail": "左端M·L·T^-2，右端M·L·T^-2",
+                "note": "",
+                "error": null,
+                "evaluation_status": "success",
+                "failure_reason": null,
+                "result_dimension": "M·L·T^-2",
+                "reference_dimension": "M·L·T^-2",
+                "diagnostics": {},
+                "physical_error_identified": false
+              }
+            },
+            {
+              "name": "干扰式量纲冲突",
+              "passed": true,
+              "actual": {
+                "type": "dimension",
+                "type_name": "量纲一致性",
+                "formula": "教师审核证据",
+                "ok": false,
+                "detail": "左端M·L·T^-2，右端M·L^-1·T^2",
+                "note": "",
+                "error": null,
+                "evaluation_status": "dimension_conflict",
+                "failure_reason": "dimension_conflict",
+                "result_dimension": "M·L^-1·T^2",
+                "reference_dimension": "M·L·T^-2",
+                "diagnostics": {},
+                "physical_error_identified": true
+              }
+            }
+          ],
+          "machine_boundary": "只列本次逐题实际执行项目；不把关联知识卡的方向、扫描或一致性检查算作本题已验。概念题未验命题真假。",
+          "human_review_items": [
+            "题干条件是否充分、清楚且符合学段",
+            "参考结论在指定条件下是否唯一",
+            "干扰项是否合理、对应真实认知问题且无答案暗示",
+            "公式或概念锚点是否准确",
+            "建议难度及用时是否适合教学",
+            "语言、装置与安全操作是否恰当"
+          ],
+          "reference_answer_note": "现有参考答案保持；即使本地可以判选项，也仍须教师审核教学可用性"
+        }
       }
     },
     {
@@ -300,7 +564,83 @@
           "stem_clear": null,
           "no_cross_segment": null
         },
-        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。"
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。",
+        "material": {
+          "anchors": [
+            {
+              "kind": "公式",
+              "name": "重力的大小",
+              "expression": "m*g",
+              "when": "任何物体，在地球表面附近",
+              "display": "m·g"
+            }
+          ],
+          "source": {
+            "nature": "原创设计示例，非教材实测或真实实验记录",
+            "scenario": "月球表面",
+            "parameters": {
+              "m": 2,
+              "g": 1.6,
+              "a": 1.6
+            },
+            "data": [
+              "物体的质量：2 kg",
+              "重力加速度（也写作 N/kg）：1.6 m/s^2",
+              "物体自由落体时的加速度：1.6 m/s^2"
+            ]
+          },
+          "predicted_errors": [
+            {
+              "option": "A",
+              "text": "0.533333 N",
+              "reason": "月球情境里的 g = 1.6 m/s² 已经体现了约为地球六分之一，再除以 6 属于重复折算。错误式与正确式量纲完全相同，只能靠数值代入发现：会算成约 0.533 N，而正确值是 3.2 N。",
+              "expression": "m*g/6",
+              "status": "误答原因预测，待教师确认；未采集学生作答证据"
+            }
+          ],
+          "difficulty_note": "建议难度沿用本题level（源卡难度）；尚非题目难度实测，待教师调整",
+          "estimated_seconds": [
+            60,
+            120
+          ],
+          "time_basis": "未做学生计时；按现有难度给出备课估计区间，待教师确认",
+          "machine_checks": [
+            {
+              "name": "题目ID关联源知识点",
+              "passed": true
+            },
+            {
+              "name": "选项标签唯一且参考标签存在",
+              "passed": true
+            },
+            {
+              "name": "选项文本互异",
+              "passed": true
+            },
+            {
+              "name": "正确路径独立数值复算",
+              "passed": true
+            },
+            {
+              "name": "带量纲求值与独立求值一致",
+              "passed": true
+            },
+            {
+              "name": "干扰路径复算且与正确路径分离",
+              "passed": true
+            }
+          ],
+          "machine_boundary": "只列本次逐题实际执行项目；不把关联知识卡的方向、扫描或一致性检查算作本题已验。概念题未验命题真假。",
+          "human_review_items": [
+            "题干条件是否充分、清楚且符合学段",
+            "参考结论在指定条件下是否唯一",
+            "干扰项是否合理、对应真实认知问题且无答案暗示",
+            "公式或概念锚点是否准确",
+            "建议难度及用时是否适合教学",
+            "语言、装置与安全操作是否恰当"
+          ],
+          "reference_answer_note": "现有参考答案保持；即使本地可以判选项，也仍须教师审核教学可用性"
+        }
       }
     },
     {
@@ -360,7 +700,62 @@
           "stem_clear": null,
           "no_cross_segment": null
         },
-        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。"
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。",
+        "material": {
+          "anchors": [
+            {
+              "kind": "概念或操作",
+              "name": "重力",
+              "claim": "以为物体越重下落越快、或者说「重力大的物体先落地」",
+              "correction_basis": "重力确实与质量成正比，但加速度 a = G / m = g 与质量无关，所有物体下落加速度相同。这是第一章自由落体已经纠正过的错误，在这里以「误把重力当加速度」的形式再次出现。属于概念性错误，标注人工审核。",
+              "note": "概念锚点及命题真假待教师确认；未套用任意第一条公式",
+              "display": "以为物体越重下落越快、或者说「重力大的物体先落地」"
+            }
+          ],
+          "source": {
+            "nature": "原创概念/操作命题；无真实测量记录",
+            "source_error_index": 2
+          },
+          "predicted_errors": [
+            {
+              "option": "A",
+              "text": "该说法不成立。",
+              "reason": "重力确实与质量成正比，但加速度 a = G / m = g 与质量无关，所有物体下落加速度相同。这是第一章自由落体已经纠正过的错误，在这里以「误把重力当加速度」的形式再次出现。属于概念性错误，标注人工审核。",
+              "expression": null,
+              "status": "误答原因预测，待教师确认；未采集学生作答证据"
+            }
+          ],
+          "difficulty_note": "建议难度沿用本题level（源卡难度）；尚非题目难度实测，待教师调整",
+          "estimated_seconds": [
+            60,
+            120
+          ],
+          "time_basis": "未做学生计时；按现有难度给出备课估计区间，待教师确认",
+          "machine_checks": [
+            {
+              "name": "题目ID关联源知识点",
+              "passed": true
+            },
+            {
+              "name": "选项标签唯一且参考标签存在",
+              "passed": true
+            },
+            {
+              "name": "选项文本互异",
+              "passed": true
+            }
+          ],
+          "machine_boundary": "只列本次逐题实际执行项目；不把关联知识卡的方向、扫描或一致性检查算作本题已验。概念题未验命题真假。",
+          "human_review_items": [
+            "题干条件是否充分、清楚且符合学段",
+            "参考结论在指定条件下是否唯一",
+            "干扰项是否合理、对应真实认知问题且无答案暗示",
+            "公式或概念锚点是否准确",
+            "建议难度及用时是否适合教学",
+            "语言、装置与安全操作是否恰当"
+          ],
+          "reference_answer_note": "现有参考答案保持；即使本地可以判选项，也仍须教师审核教学可用性"
+        }
       }
     },
     {
@@ -442,7 +837,87 @@
           "stem_clear": null,
           "no_cross_segment": null
         },
-        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。"
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。",
+        "material": {
+          "anchors": [
+            {
+              "kind": "公式",
+              "name": "静止物体的静摩擦力",
+              "expression": "F",
+              "when": "物体静止时，静摩擦力由平衡条件决定，与正压力无关",
+              "display": "F"
+            }
+          ],
+          "source": {
+            "nature": "原创设计示例，非教材实测或真实实验记录",
+            "scenario": "静摩擦未推动",
+            "parameters": {
+              "mu": 0.3,
+              "F_N": 19.6,
+              "F": 1,
+              "m": 2,
+              "g": 9.8
+            },
+            "data": [
+              "动摩擦因数（无量纲）：0.3 ",
+              "接触面间的正压力：19.6 N",
+              "水平推力（用于求静摩擦力）：1 N",
+              "水平面上物体的质量：2 kg",
+              "重力加速度：9.8 m/s^2"
+            ]
+          },
+          "predicted_errors": [
+            {
+              "option": "B",
+              "text": "5.88 N",
+              "reason": "★ 这条错写法的量纲完全正确（两个力相乘再乘纯数，仍是 N），量纲检查抓不到。要抓住它必须靠数值代入：物体被 1 N 的水平力推着却没动，静摩擦力只有 1 N；按公式算却得到 5.88 N —— 那个数其实是最大静摩擦力的量级，不是实际受到的摩擦力。",
+              "expression": "mu*F_N",
+              "status": "误答原因预测，待教师确认；未采集学生作答证据"
+            }
+          ],
+          "difficulty_note": "建议难度沿用本题level（源卡难度）；尚非题目难度实测，待教师调整",
+          "estimated_seconds": [
+            120,
+            240
+          ],
+          "time_basis": "未做学生计时；按现有难度给出备课估计区间，待教师确认",
+          "machine_checks": [
+            {
+              "name": "题目ID关联源知识点",
+              "passed": true
+            },
+            {
+              "name": "选项标签唯一且参考标签存在",
+              "passed": true
+            },
+            {
+              "name": "选项文本互异",
+              "passed": true
+            },
+            {
+              "name": "正确路径独立数值复算",
+              "passed": true
+            },
+            {
+              "name": "带量纲求值与独立求值一致",
+              "passed": true
+            },
+            {
+              "name": "干扰路径复算且与正确路径分离",
+              "passed": true
+            }
+          ],
+          "machine_boundary": "只列本次逐题实际执行项目；不把关联知识卡的方向、扫描或一致性检查算作本题已验。概念题未验命题真假。",
+          "human_review_items": [
+            "题干条件是否充分、清楚且符合学段",
+            "参考结论在指定条件下是否唯一",
+            "干扰项是否合理、对应真实认知问题且无答案暗示",
+            "公式或概念锚点是否准确",
+            "建议难度及用时是否适合教学",
+            "语言、装置与安全操作是否恰当"
+          ],
+          "reference_answer_note": "现有参考答案保持；即使本地可以判选项，也仍须教师审核教学可用性"
+        }
       }
     },
     {
@@ -502,7 +977,62 @@
           "stem_clear": null,
           "no_cross_segment": null
         },
-        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。"
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。",
+        "material": {
+          "anchors": [
+            {
+              "kind": "概念或操作",
+              "name": "摩擦力",
+              "claim": "认为摩擦力总是阻碍物体运动，因此摩擦力的方向一定与运动方向相反",
+              "correction_basis": "滑动摩擦力的确与「相对运动」方向相反，但静摩擦力可以和运动方向相同 —— 例如随传送带一起加速的物体，正是静摩擦力在推它前进。说「阻碍运动方向」不准确，准确说法是「阻碍相对运动（或相对运动趋势）」。这类表述错误不体现为公式写错，标注人工审核。",
+              "note": "概念锚点及命题真假待教师确认；未套用任意第一条公式",
+              "display": "认为摩擦力总是阻碍物体运动，因此摩擦力的方向一定与运动方向相反"
+            }
+          ],
+          "source": {
+            "nature": "原创概念/操作命题；无真实测量记录",
+            "source_error_index": 1
+          },
+          "predicted_errors": [
+            {
+              "option": "B",
+              "text": "该说法不成立。",
+              "reason": "滑动摩擦力的确与「相对运动」方向相反，但静摩擦力可以和运动方向相同 —— 例如随传送带一起加速的物体，正是静摩擦力在推它前进。说「阻碍运动方向」不准确，准确说法是「阻碍相对运动（或相对运动趋势）」。这类表述错误不体现为公式写错，标注人工审核。",
+              "expression": null,
+              "status": "误答原因预测，待教师确认；未采集学生作答证据"
+            }
+          ],
+          "difficulty_note": "建议难度沿用本题level（源卡难度）；尚非题目难度实测，待教师调整",
+          "estimated_seconds": [
+            120,
+            240
+          ],
+          "time_basis": "未做学生计时；按现有难度给出备课估计区间，待教师确认",
+          "machine_checks": [
+            {
+              "name": "题目ID关联源知识点",
+              "passed": true
+            },
+            {
+              "name": "选项标签唯一且参考标签存在",
+              "passed": true
+            },
+            {
+              "name": "选项文本互异",
+              "passed": true
+            }
+          ],
+          "machine_boundary": "只列本次逐题实际执行项目；不把关联知识卡的方向、扫描或一致性检查算作本题已验。概念题未验命题真假。",
+          "human_review_items": [
+            "题干条件是否充分、清楚且符合学段",
+            "参考结论在指定条件下是否唯一",
+            "干扰项是否合理、对应真实认知问题且无答案暗示",
+            "公式或概念锚点是否准确",
+            "建议难度及用时是否适合教学",
+            "语言、装置与安全操作是否恰当"
+          ],
+          "reference_answer_note": "现有参考答案保持；即使本地可以判选项，也仍须教师审核教学可用性"
+        }
       }
     },
     {
@@ -583,7 +1113,85 @@
           "stem_clear": null,
           "no_cross_segment": null
         },
-        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。"
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。",
+        "material": {
+          "anchors": [
+            {
+              "kind": "公式",
+              "name": "水平方向的分力",
+              "expression": "F*cos(theta)",
+              "when": "θ 是力与水平方向的夹角",
+              "display": "F·cos(θ)"
+            }
+          ],
+          "source": {
+            "nature": "原创设计示例，非教材实测或真实实验记录",
+            "scenario": "斜向拉力",
+            "parameters": {
+              "F": 10,
+              "theta": 0.6435011088,
+              "F_x": 8,
+              "F_y": 6
+            },
+            "data": [
+              "被分解的那个力（合力）的大小：10 N",
+              "力与水平方向的夹角（弧度）：0.6435011088 rad",
+              "水平方向的分力：8 N",
+              "竖直方向的分力：6 N"
+            ]
+          },
+          "predicted_errors": [
+            {
+              "option": "A",
+              "text": "6 N",
+              "reason": "★ 这类错误量纲完全一致（都是「纯数乘一个力」，结果还是 N），量纲检查一点用都没有。数值代入才暴露：θ ≈ 36.87° 时算出 6 N，而水平分量应该是 8 N —— 两个分量正好互换了。",
+              "expression": "F*sin(theta)",
+              "status": "误答原因预测，待教师确认；未采集学生作答证据"
+            }
+          ],
+          "difficulty_note": "建议难度沿用本题level（源卡难度）；尚非题目难度实测，待教师调整",
+          "estimated_seconds": [
+            120,
+            240
+          ],
+          "time_basis": "未做学生计时；按现有难度给出备课估计区间，待教师确认",
+          "machine_checks": [
+            {
+              "name": "题目ID关联源知识点",
+              "passed": true
+            },
+            {
+              "name": "选项标签唯一且参考标签存在",
+              "passed": true
+            },
+            {
+              "name": "选项文本互异",
+              "passed": true
+            },
+            {
+              "name": "正确路径独立数值复算",
+              "passed": true
+            },
+            {
+              "name": "带量纲求值与独立求值一致",
+              "passed": true
+            },
+            {
+              "name": "干扰路径复算且与正确路径分离",
+              "passed": true
+            }
+          ],
+          "machine_boundary": "只列本次逐题实际执行项目；不把关联知识卡的方向、扫描或一致性检查算作本题已验。概念题未验命题真假。",
+          "human_review_items": [
+            "题干条件是否充分、清楚且符合学段",
+            "参考结论在指定条件下是否唯一",
+            "干扰项是否合理、对应真实认知问题且无答案暗示",
+            "公式或概念锚点是否准确",
+            "建议难度及用时是否适合教学",
+            "语言、装置与安全操作是否恰当"
+          ],
+          "reference_answer_note": "现有参考答案保持；即使本地可以判选项，也仍须教师审核教学可用性"
+        }
       }
     },
     {
@@ -664,7 +1272,85 @@
           "stem_clear": null,
           "no_cross_segment": null
         },
-        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。"
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。",
+        "material": {
+          "anchors": [
+            {
+              "kind": "公式",
+              "name": "由两个分力求合力",
+              "expression": "sqrt(F_x^2 + F_y^2)",
+              "when": "两个分力互相垂直时",
+              "display": "√(F<sub>x</sub>² + F<sub>y</sub>²)"
+            }
+          ],
+          "source": {
+            "nature": "原创设计示例，非教材实测或真实实验记录",
+            "scenario": "斜向拉力",
+            "parameters": {
+              "F": 10,
+              "theta": 0.6435011088,
+              "F_x": 8,
+              "F_y": 6
+            },
+            "data": [
+              "被分解的那个力（合力）的大小：10 N",
+              "力与水平方向的夹角（弧度）：0.6435011088 rad",
+              "水平方向的分力：8 N",
+              "竖直方向的分力：6 N"
+            ]
+          },
+          "predicted_errors": [
+            {
+              "option": "B",
+              "text": "14 N",
+              "reason": "★ 又一个量纲拦不住的错误：力加力还是力，量纲永远正确。数值代入才暴露：8 + 6 = 14 N，而真正的合力是 10 N。差的那 4 N 就是矢量合成与代数相加的区别。",
+              "expression": "F_x + F_y",
+              "status": "误答原因预测，待教师确认；未采集学生作答证据"
+            }
+          ],
+          "difficulty_note": "建议难度沿用本题level（源卡难度）；尚非题目难度实测，待教师调整",
+          "estimated_seconds": [
+            120,
+            240
+          ],
+          "time_basis": "未做学生计时；按现有难度给出备课估计区间，待教师确认",
+          "machine_checks": [
+            {
+              "name": "题目ID关联源知识点",
+              "passed": true
+            },
+            {
+              "name": "选项标签唯一且参考标签存在",
+              "passed": true
+            },
+            {
+              "name": "选项文本互异",
+              "passed": true
+            },
+            {
+              "name": "正确路径独立数值复算",
+              "passed": true
+            },
+            {
+              "name": "带量纲求值与独立求值一致",
+              "passed": true
+            },
+            {
+              "name": "干扰路径复算且与正确路径分离",
+              "passed": true
+            }
+          ],
+          "machine_boundary": "只列本次逐题实际执行项目；不把关联知识卡的方向、扫描或一致性检查算作本题已验。概念题未验命题真假。",
+          "human_review_items": [
+            "题干条件是否充分、清楚且符合学段",
+            "参考结论在指定条件下是否唯一",
+            "干扰项是否合理、对应真实认知问题且无答案暗示",
+            "公式或概念锚点是否准确",
+            "建议难度及用时是否适合教学",
+            "语言、装置与安全操作是否恰当"
+          ],
+          "reference_answer_note": "现有参考答案保持；即使本地可以判选项，也仍须教师审核教学可用性"
+        }
       }
     },
     {
@@ -733,7 +1419,99 @@
           "stem_clear": null,
           "no_cross_segment": null
         },
-        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。"
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。",
+        "material": {
+          "anchors": [
+            {
+              "kind": "公式量纲",
+              "name": "本题目标量与等式",
+              "expression": "F_net = m*a",
+              "when": "量纲相符是必要条件，不能据此证明系数或物理条件正确",
+              "display": "F<sub>合</sub> = m·a"
+            }
+          ],
+          "source": {
+            "nature": "原创量纲辨析命题；无实测数据",
+            "source_error_index": 0
+          },
+          "predicted_errors": [
+            {
+              "option": "B",
+              "text": "F<sub>合</sub> = m/a",
+              "reason": "写成除法后量纲变成 kg²·m/s²，与力的量纲对不上，量纲检查当场拦住。",
+              "expression": "F_net = m/a",
+              "status": "误答原因预测，待教师确认；未采集学生作答证据"
+            }
+          ],
+          "difficulty_note": "建议难度沿用本题level（源卡难度）；尚非题目难度实测，待教师调整",
+          "estimated_seconds": [
+            60,
+            120
+          ],
+          "time_basis": "未做学生计时；按现有难度给出备课估计区间，待教师确认",
+          "machine_checks": [
+            {
+              "name": "题目ID关联源知识点",
+              "passed": true
+            },
+            {
+              "name": "选项标签唯一且参考标签存在",
+              "passed": true
+            },
+            {
+              "name": "选项文本互异",
+              "passed": true
+            },
+            {
+              "name": "正确式量纲一致",
+              "passed": true,
+              "actual": {
+                "type": "dimension",
+                "type_name": "量纲一致性",
+                "formula": "教师审核证据",
+                "ok": true,
+                "detail": "左端M·L·T^-2，右端M·L·T^-2",
+                "note": "",
+                "error": null,
+                "evaluation_status": "success",
+                "failure_reason": null,
+                "result_dimension": "M·L·T^-2",
+                "reference_dimension": "M·L·T^-2",
+                "diagnostics": {},
+                "physical_error_identified": false
+              }
+            },
+            {
+              "name": "干扰式量纲冲突",
+              "passed": true,
+              "actual": {
+                "type": "dimension",
+                "type_name": "量纲一致性",
+                "formula": "教师审核证据",
+                "ok": false,
+                "detail": "左端M·L·T^-2，右端M·L^-1·T^2",
+                "note": "",
+                "error": null,
+                "evaluation_status": "dimension_conflict",
+                "failure_reason": "dimension_conflict",
+                "result_dimension": "M·L^-1·T^2",
+                "reference_dimension": "M·L·T^-2",
+                "diagnostics": {},
+                "physical_error_identified": true
+              }
+            }
+          ],
+          "machine_boundary": "只列本次逐题实际执行项目；不把关联知识卡的方向、扫描或一致性检查算作本题已验。概念题未验命题真假。",
+          "human_review_items": [
+            "题干条件是否充分、清楚且符合学段",
+            "参考结论在指定条件下是否唯一",
+            "干扰项是否合理、对应真实认知问题且无答案暗示",
+            "公式或概念锚点是否准确",
+            "建议难度及用时是否适合教学",
+            "语言、装置与安全操作是否恰当"
+          ],
+          "reference_answer_note": "现有参考答案保持；即使本地可以判选项，也仍须教师审核教学可用性"
+        }
       }
     },
     {
@@ -814,7 +1592,85 @@
           "stem_clear": null,
           "no_cross_segment": null
         },
-        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。"
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。",
+        "material": {
+          "anchors": [
+            {
+              "kind": "公式",
+              "name": "本卡物理关系的等价变形或明确边界条件",
+              "expression": "(F_push-f)/m",
+              "when": "物体加速度的大小与所受合外力成正比、与质量成反比，加速度的方向与合外力方向相同。写成等式即 F_合 = m a，其中 F_合 是物体受到的**所有**外力的矢量和。",
+              "display": "(F<sub>拉</sub>-f)/m"
+            }
+          ],
+          "source": {
+            "nature": "原创设计示例，非教材实测或真实实验记录",
+            "scenario": "水平面加速",
+            "parameters": {
+              "F_push": 10,
+              "f": 4,
+              "m": 2,
+              "a": 3
+            },
+            "data": [
+              "水平方向施加的拉力：10 N",
+              "摩擦力：4 N",
+              "物体的质量：2 kg",
+              "加速度：3 m/s^2"
+            ]
+          },
+          "predicted_errors": [
+            {
+              "option": "A",
+              "text": "5 m/s²",
+              "reason": "★ 量纲完全正确（N/kg 正是 m/s²），量纲检查抓不到。数值代入才暴露：直接用 10 ÷ 2 得 5 m/s²，而真实加速度是 (10 − 4) ÷ 2 = 3 m/s²。这是牛顿第二定律在实际题目里最高频的错误 —— 公式背得滚瓜烂熟，但「合力」漏了一个力。",
+              "expression": "F_push/m",
+              "status": "误答原因预测，待教师确认；未采集学生作答证据"
+            }
+          ],
+          "difficulty_note": "建议难度沿用本题level（源卡难度）；尚非题目难度实测，待教师调整",
+          "estimated_seconds": [
+            60,
+            120
+          ],
+          "time_basis": "未做学生计时；按现有难度给出备课估计区间，待教师确认",
+          "machine_checks": [
+            {
+              "name": "题目ID关联源知识点",
+              "passed": true
+            },
+            {
+              "name": "选项标签唯一且参考标签存在",
+              "passed": true
+            },
+            {
+              "name": "选项文本互异",
+              "passed": true
+            },
+            {
+              "name": "正确路径独立数值复算",
+              "passed": true
+            },
+            {
+              "name": "带量纲求值与独立求值一致",
+              "passed": true
+            },
+            {
+              "name": "干扰路径复算且与正确路径分离",
+              "passed": true
+            }
+          ],
+          "machine_boundary": "只列本次逐题实际执行项目；不把关联知识卡的方向、扫描或一致性检查算作本题已验。概念题未验命题真假。",
+          "human_review_items": [
+            "题干条件是否充分、清楚且符合学段",
+            "参考结论在指定条件下是否唯一",
+            "干扰项是否合理、对应真实认知问题且无答案暗示",
+            "公式或概念锚点是否准确",
+            "建议难度及用时是否适合教学",
+            "语言、装置与安全操作是否恰当"
+          ],
+          "reference_answer_note": "现有参考答案保持；即使本地可以判选项，也仍须教师审核教学可用性"
+        }
       }
     },
     {
@@ -889,7 +1745,81 @@
           "stem_clear": null,
           "no_cross_segment": null
         },
-        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。"
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。",
+        "material": {
+          "anchors": [
+            {
+              "kind": "公式",
+              "name": "作用力与反作用力",
+              "expression": "-F_BA",
+              "when": "任何两个相互作用的物体之间，与运动状态无关",
+              "display": "-F<sub>BA</sub>"
+            }
+          ],
+          "source": {
+            "nature": "原创设计示例，非教材实测或真实实验记录",
+            "scenario": "互相推挤",
+            "parameters": {
+              "F_AB": 5,
+              "F_BA": -5
+            },
+            "data": [
+              "A 对 B 的作用力（取正方向为正）：5 N",
+              "B 对 A 的反作用力：-5 N"
+            ]
+          },
+          "predicted_errors": [
+            {
+              "option": "A",
+              "text": "-5 N",
+              "reason": "量纲完全正确，量纲检查抓不到。这一条由校验器自动实测：把错误写法原样代进情境（F_AB = 5 N、F_BA = −5 N），算出等号左边是 5、右边是 −5，两边对不上，于是被判为不通过。整个过程不需要人提供参考值。",
+              "expression": "F_BA",
+              "status": "误答原因预测，待教师确认；未采集学生作答证据"
+            }
+          ],
+          "difficulty_note": "建议难度沿用本题level（源卡难度）；尚非题目难度实测，待教师调整",
+          "estimated_seconds": [
+            60,
+            120
+          ],
+          "time_basis": "未做学生计时；按现有难度给出备课估计区间，待教师确认",
+          "machine_checks": [
+            {
+              "name": "题目ID关联源知识点",
+              "passed": true
+            },
+            {
+              "name": "选项标签唯一且参考标签存在",
+              "passed": true
+            },
+            {
+              "name": "选项文本互异",
+              "passed": true
+            },
+            {
+              "name": "正确路径独立数值复算",
+              "passed": true
+            },
+            {
+              "name": "带量纲求值与独立求值一致",
+              "passed": true
+            },
+            {
+              "name": "干扰路径复算且与正确路径分离",
+              "passed": true
+            }
+          ],
+          "machine_boundary": "只列本次逐题实际执行项目；不把关联知识卡的方向、扫描或一致性检查算作本题已验。概念题未验命题真假。",
+          "human_review_items": [
+            "题干条件是否充分、清楚且符合学段",
+            "参考结论在指定条件下是否唯一",
+            "干扰项是否合理、对应真实认知问题且无答案暗示",
+            "公式或概念锚点是否准确",
+            "建议难度及用时是否适合教学",
+            "语言、装置与安全操作是否恰当"
+          ],
+          "reference_answer_note": "现有参考答案保持；即使本地可以判选项，也仍须教师审核教学可用性"
+        }
       }
     },
     {
@@ -949,7 +1879,62 @@
           "stem_clear": null,
           "no_cross_segment": null
         },
-        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。"
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。",
+        "material": {
+          "anchors": [
+            {
+              "kind": "概念或操作",
+              "name": "牛顿第三定律",
+              "claim": "把作用力与反作用力当成一对平衡力，认为它们可以相互抵消",
+              "correction_basis": "平衡力作用在**同一个**物体上，作用力与反作用力分别作用在两个物体上，永远不能抵消。这条错误不体现为公式写错，而是受力分析时把它们画到了同一个物体上，公式类检查无法覆盖，标注人工审核。",
+              "note": "概念锚点及命题真假待教师确认；未套用任意第一条公式",
+              "display": "把作用力与反作用力当成一对平衡力，认为它们可以相互抵消"
+            }
+          ],
+          "source": {
+            "nature": "原创概念/操作命题；无真实测量记录",
+            "source_error_index": 1
+          },
+          "predicted_errors": [
+            {
+              "option": "B",
+              "text": "该说法成立。",
+              "reason": "平衡力作用在**同一个**物体上，作用力与反作用力分别作用在两个物体上，永远不能抵消。这条错误不体现为公式写错，而是受力分析时把它们画到了同一个物体上，公式类检查无法覆盖，标注人工审核。",
+              "expression": null,
+              "status": "误答原因预测，待教师确认；未采集学生作答证据"
+            }
+          ],
+          "difficulty_note": "建议难度沿用本题level（源卡难度）；尚非题目难度实测，待教师调整",
+          "estimated_seconds": [
+            60,
+            120
+          ],
+          "time_basis": "未做学生计时；按现有难度给出备课估计区间，待教师确认",
+          "machine_checks": [
+            {
+              "name": "题目ID关联源知识点",
+              "passed": true
+            },
+            {
+              "name": "选项标签唯一且参考标签存在",
+              "passed": true
+            },
+            {
+              "name": "选项文本互异",
+              "passed": true
+            }
+          ],
+          "machine_boundary": "只列本次逐题实际执行项目；不把关联知识卡的方向、扫描或一致性检查算作本题已验。概念题未验命题真假。",
+          "human_review_items": [
+            "题干条件是否充分、清楚且符合学段",
+            "参考结论在指定条件下是否唯一",
+            "干扰项是否合理、对应真实认知问题且无答案暗示",
+            "公式或概念锚点是否准确",
+            "建议难度及用时是否适合教学",
+            "语言、装置与安全操作是否恰当"
+          ],
+          "reference_answer_note": "现有参考答案保持；即使本地可以判选项，也仍须教师审核教学可用性"
+        }
       }
     },
     {
@@ -1031,7 +2016,87 @@
           "stem_clear": null,
           "no_cross_segment": null
         },
-        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。"
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。",
+        "material": {
+          "anchors": [
+            {
+              "kind": "公式",
+              "name": "竖直运动的视重",
+              "expression": "m*(g+a)",
+              "when": "竖直向上为正，人与秤保持接触，a不能使支持力为负",
+              "display": "m·(g+a)"
+            }
+          ],
+          "source": {
+            "nature": "原创设计示例，非教材实测或真实实验记录",
+            "scenario": "向上加速",
+            "parameters": {
+              "m": 50,
+              "g": 10,
+              "a": 2,
+              "F_N": 600,
+              "G": 500
+            },
+            "data": [
+              "物体质量：50 kg",
+              "当地重力加速度，取10：10 m/s^2",
+              "竖直加速度，向上为正：2 m/s^2",
+              "台秤对人的支持力，即视重：600 N",
+              "物体所受重力：500 N"
+            ]
+          },
+          "predicted_errors": [
+            {
+              "option": "B",
+              "text": "400 N",
+              "reason": "减号适用于以向下加速度大小描述的失重情形；本卡已取向上为正，再减会使视重变化方向颠倒，量纲却仍正确。",
+              "expression": "m*(g-a)",
+              "status": "误答原因预测，待教师确认；未采集学生作答证据"
+            }
+          ],
+          "difficulty_note": "建议难度沿用本题level（源卡难度）；尚非题目难度实测，待教师调整",
+          "estimated_seconds": [
+            120,
+            240
+          ],
+          "time_basis": "未做学生计时；按现有难度给出备课估计区间，待教师确认",
+          "machine_checks": [
+            {
+              "name": "题目ID关联源知识点",
+              "passed": true
+            },
+            {
+              "name": "选项标签唯一且参考标签存在",
+              "passed": true
+            },
+            {
+              "name": "选项文本互异",
+              "passed": true
+            },
+            {
+              "name": "正确路径独立数值复算",
+              "passed": true
+            },
+            {
+              "name": "带量纲求值与独立求值一致",
+              "passed": true
+            },
+            {
+              "name": "干扰路径复算且与正确路径分离",
+              "passed": true
+            }
+          ],
+          "machine_boundary": "只列本次逐题实际执行项目；不把关联知识卡的方向、扫描或一致性检查算作本题已验。概念题未验命题真假。",
+          "human_review_items": [
+            "题干条件是否充分、清楚且符合学段",
+            "参考结论在指定条件下是否唯一",
+            "干扰项是否合理、对应真实认知问题且无答案暗示",
+            "公式或概念锚点是否准确",
+            "建议难度及用时是否适合教学",
+            "语言、装置与安全操作是否恰当"
+          ],
+          "reference_answer_note": "现有参考答案保持；即使本地可以判选项，也仍须教师审核教学可用性"
+        }
       }
     },
     {
@@ -1091,7 +2156,62 @@
           "stem_clear": null,
           "no_cross_segment": null
         },
-        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。"
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。",
+        "material": {
+          "anchors": [
+            {
+              "kind": "概念或操作",
+              "name": "超重与失重",
+              "claim": "只要正在下降就认为失重，或认为失重时没有重力",
+              "correction_basis": "下降时若速度减小，加速度实际向上，台秤示数会增大；自由落体中重力仍作用，只是支持力消失，不能混淆视重和重力。",
+              "note": "概念锚点及命题真假待教师确认；未套用任意第一条公式",
+              "display": "只要正在下降就认为失重，或认为失重时没有重力"
+            }
+          ],
+          "source": {
+            "nature": "原创概念/操作命题；无真实测量记录",
+            "source_error_index": 1
+          },
+          "predicted_errors": [
+            {
+              "option": "B",
+              "text": "该说法成立。",
+              "reason": "下降时若速度减小，加速度实际向上，台秤示数会增大；自由落体中重力仍作用，只是支持力消失，不能混淆视重和重力。",
+              "expression": null,
+              "status": "误答原因预测，待教师确认；未采集学生作答证据"
+            }
+          ],
+          "difficulty_note": "建议难度沿用本题level（源卡难度）；尚非题目难度实测，待教师调整",
+          "estimated_seconds": [
+            120,
+            240
+          ],
+          "time_basis": "未做学生计时；按现有难度给出备课估计区间，待教师确认",
+          "machine_checks": [
+            {
+              "name": "题目ID关联源知识点",
+              "passed": true
+            },
+            {
+              "name": "选项标签唯一且参考标签存在",
+              "passed": true
+            },
+            {
+              "name": "选项文本互异",
+              "passed": true
+            }
+          ],
+          "machine_boundary": "只列本次逐题实际执行项目；不把关联知识卡的方向、扫描或一致性检查算作本题已验。概念题未验命题真假。",
+          "human_review_items": [
+            "题干条件是否充分、清楚且符合学段",
+            "参考结论在指定条件下是否唯一",
+            "干扰项是否合理、对应真实认知问题且无答案暗示",
+            "公式或概念锚点是否准确",
+            "建议难度及用时是否适合教学",
+            "语言、装置与安全操作是否恰当"
+          ],
+          "reference_answer_note": "现有参考答案保持；即使本地可以判选项，也仍须教师审核教学可用性"
+        }
       }
     },
     {
@@ -1173,7 +2293,87 @@
           "stem_clear": null,
           "no_cross_segment": null
         },
-        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。"
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。",
+        "material": {
+          "anchors": [
+            {
+              "kind": "公式",
+              "name": "摩擦角",
+              "expression": "atan(mu)",
+              "when": "静摩擦达到最大时，接触合力与法线夹角",
+              "display": "atan(μ)"
+            }
+          ],
+          "source": {
+            "nature": "原创设计示例，非教材实测或真实实验记录",
+            "scenario": "临界",
+            "parameters": {
+              "mu": 0.75,
+              "theta": 0.6435011087932844,
+              "m": 2,
+              "g": 10,
+              "N": 16
+            },
+            "data": [
+              "最大静摩擦系数：0.75 1",
+              "斜面倾角：0.6435011087932844 rad",
+              "物体质量：2 kg",
+              "重力加速度，取10：10 m/s^2",
+              "斜面对物体的支持力：16 N"
+            ]
+          },
+          "predicted_errors": [
+            {
+              "option": "A",
+              "text": "0.75 rad",
+              "reason": "摩擦系数是两力大小比，摩擦角是该比的反正切；只有非常小的角才可能近似相同，直接把0.75当弧度并不满足临界力三角形。",
+              "expression": "mu",
+              "status": "误答原因预测，待教师确认；未采集学生作答证据"
+            }
+          ],
+          "difficulty_note": "建议难度沿用本题level（源卡难度）；尚非题目难度实测，待教师调整",
+          "estimated_seconds": [
+            120,
+            240
+          ],
+          "time_basis": "未做学生计时；按现有难度给出备课估计区间，待教师确认",
+          "machine_checks": [
+            {
+              "name": "题目ID关联源知识点",
+              "passed": true
+            },
+            {
+              "name": "选项标签唯一且参考标签存在",
+              "passed": true
+            },
+            {
+              "name": "选项文本互异",
+              "passed": true
+            },
+            {
+              "name": "正确路径独立数值复算",
+              "passed": true
+            },
+            {
+              "name": "带量纲求值与独立求值一致",
+              "passed": true
+            },
+            {
+              "name": "干扰路径复算且与正确路径分离",
+              "passed": true
+            }
+          ],
+          "machine_boundary": "只列本次逐题实际执行项目；不把关联知识卡的方向、扫描或一致性检查算作本题已验。概念题未验命题真假。",
+          "human_review_items": [
+            "题干条件是否充分、清楚且符合学段",
+            "参考结论在指定条件下是否唯一",
+            "干扰项是否合理、对应真实认知问题且无答案暗示",
+            "公式或概念锚点是否准确",
+            "建议难度及用时是否适合教学",
+            "语言、装置与安全操作是否恰当"
+          ],
+          "reference_answer_note": "现有参考答案保持；即使本地可以判选项，也仍须教师审核教学可用性"
+        }
       }
     },
     {
@@ -1233,7 +2433,62 @@
           "stem_clear": null,
           "no_cross_segment": null
         },
-        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。"
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。",
+        "material": {
+          "anchors": [
+            {
+              "kind": "概念或操作",
+              "name": "斜面自锁与摩擦角",
+              "claim": "自锁就说明任意方向任意大的推力也无法运动",
+              "correction_basis": "当前条件仅描述重力使物体沿斜面下滑时的静止边界，外力方向会改变支持力和所需摩擦；沿面足够大推拉力仍可破坏静止。",
+              "note": "概念锚点及命题真假待教师确认；未套用任意第一条公式",
+              "display": "自锁就说明任意方向任意大的推力也无法运动"
+            }
+          ],
+          "source": {
+            "nature": "原创概念/操作命题；无真实测量记录",
+            "source_error_index": 1
+          },
+          "predicted_errors": [
+            {
+              "option": "A",
+              "text": "该说法不成立。",
+              "reason": "当前条件仅描述重力使物体沿斜面下滑时的静止边界，外力方向会改变支持力和所需摩擦；沿面足够大推拉力仍可破坏静止。",
+              "expression": null,
+              "status": "误答原因预测，待教师确认；未采集学生作答证据"
+            }
+          ],
+          "difficulty_note": "建议难度沿用本题level（源卡难度）；尚非题目难度实测，待教师调整",
+          "estimated_seconds": [
+            120,
+            240
+          ],
+          "time_basis": "未做学生计时；按现有难度给出备课估计区间，待教师确认",
+          "machine_checks": [
+            {
+              "name": "题目ID关联源知识点",
+              "passed": true
+            },
+            {
+              "name": "选项标签唯一且参考标签存在",
+              "passed": true
+            },
+            {
+              "name": "选项文本互异",
+              "passed": true
+            }
+          ],
+          "machine_boundary": "只列本次逐题实际执行项目；不把关联知识卡的方向、扫描或一致性检查算作本题已验。概念题未验命题真假。",
+          "human_review_items": [
+            "题干条件是否充分、清楚且符合学段",
+            "参考结论在指定条件下是否唯一",
+            "干扰项是否合理、对应真实认知问题且无答案暗示",
+            "公式或概念锚点是否准确",
+            "建议难度及用时是否适合教学",
+            "语言、装置与安全操作是否恰当"
+          ],
+          "reference_answer_note": "现有参考答案保持；即使本地可以判选项，也仍须教师审核教学可用性"
+        }
       }
     },
     {
@@ -1318,7 +2573,93 @@
           "stem_clear": null,
           "no_cross_segment": null
         },
-        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。"
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。",
+        "material": {
+          "anchors": [
+            {
+              "kind": "公式",
+              "name": "反向两力的合力",
+              "expression": "F1-F2",
+              "when": "仅有共线反向的两力，F1、F2为非负大小，取F1方向为正。",
+              "display": "F<sub>1</sub>-F<sub>2</sub>"
+            }
+          ],
+          "source": {
+            "nature": "原创设计示例，非教材实测或真实实验记录",
+            "scenario": "静止平衡",
+            "parameters": {
+              "F1": 10,
+              "F2": 10,
+              "F": 0,
+              "a": 0,
+              "m": 2,
+              "v1": 0,
+              "v2": 0,
+              "t": 2
+            },
+            "data": [
+              "向右作用力大小：10 N",
+              "向左作用力大小：10 N",
+              "同一直线上合力：0 N",
+              "该方向加速度：0 m/s^2",
+              "物体质量：2 kg",
+              "初速度：0 m/s",
+              "独立测得末速度：0 m/s",
+              "观测间隔：2 s"
+            ]
+          },
+          "predicted_errors": [
+            {
+              "option": "B",
+              "text": "20 N",
+              "reason": "规定右为正，向左的力取负；两个10 N合力为零，不是20 N。物体可能静止，也可能以原速度匀速运动。",
+              "expression": "F1+F2",
+              "status": "误答原因预测，待教师确认；未采集学生作答证据"
+            }
+          ],
+          "difficulty_note": "建议难度沿用本题level（源卡难度）；尚非题目难度实测，待教师调整",
+          "estimated_seconds": [
+            60,
+            120
+          ],
+          "time_basis": "未做学生计时；按现有难度给出备课估计区间，待教师确认",
+          "machine_checks": [
+            {
+              "name": "题目ID关联源知识点",
+              "passed": true
+            },
+            {
+              "name": "选项标签唯一且参考标签存在",
+              "passed": true
+            },
+            {
+              "name": "选项文本互异",
+              "passed": true
+            },
+            {
+              "name": "正确路径独立数值复算",
+              "passed": true
+            },
+            {
+              "name": "带量纲求值与独立求值一致",
+              "passed": true
+            },
+            {
+              "name": "干扰路径复算且与正确路径分离",
+              "passed": true
+            }
+          ],
+          "machine_boundary": "只列本次逐题实际执行项目；不把关联知识卡的方向、扫描或一致性检查算作本题已验。概念题未验命题真假。",
+          "human_review_items": [
+            "题干条件是否充分、清楚且符合学段",
+            "参考结论在指定条件下是否唯一",
+            "干扰项是否合理、对应真实认知问题且无答案暗示",
+            "公式或概念锚点是否准确",
+            "建议难度及用时是否适合教学",
+            "语言、装置与安全操作是否恰当"
+          ],
+          "reference_answer_note": "现有参考答案保持；即使本地可以判选项，也仍须教师审核教学可用性"
+        }
       }
     },
     {
@@ -1378,7 +2719,62 @@
           "stem_clear": null,
           "no_cross_segment": null
         },
-        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。"
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。",
+        "material": {
+          "anchors": [
+            {
+              "kind": "概念或操作",
+              "name": "牛顿第一定律与惯性",
+              "claim": "运动越快惯性越大，或说惯性力把物体推向前。",
+              "correction_basis": "经典力学的惯性由质量衡量，与速度大小无关；惯性是性质，不能在受力图中凭空添加惯性力。非惯性系的惯性力概念不属于本卡分析。",
+              "note": "概念锚点及命题真假待教师确认；未套用任意第一条公式",
+              "display": "运动越快惯性越大，或说惯性力把物体推向前。"
+            }
+          ],
+          "source": {
+            "nature": "原创概念/操作命题；无真实测量记录",
+            "source_error_index": 1
+          },
+          "predicted_errors": [
+            {
+              "option": "B",
+              "text": "该说法成立。",
+              "reason": "经典力学的惯性由质量衡量，与速度大小无关；惯性是性质，不能在受力图中凭空添加惯性力。非惯性系的惯性力概念不属于本卡分析。",
+              "expression": null,
+              "status": "误答原因预测，待教师确认；未采集学生作答证据"
+            }
+          ],
+          "difficulty_note": "建议难度沿用本题level（源卡难度）；尚非题目难度实测，待教师调整",
+          "estimated_seconds": [
+            60,
+            120
+          ],
+          "time_basis": "未做学生计时；按现有难度给出备课估计区间，待教师确认",
+          "machine_checks": [
+            {
+              "name": "题目ID关联源知识点",
+              "passed": true
+            },
+            {
+              "name": "选项标签唯一且参考标签存在",
+              "passed": true
+            },
+            {
+              "name": "选项文本互异",
+              "passed": true
+            }
+          ],
+          "machine_boundary": "只列本次逐题实际执行项目；不把关联知识卡的方向、扫描或一致性检查算作本题已验。概念题未验命题真假。",
+          "human_review_items": [
+            "题干条件是否充分、清楚且符合学段",
+            "参考结论在指定条件下是否唯一",
+            "干扰项是否合理、对应真实认知问题且无答案暗示",
+            "公式或概念锚点是否准确",
+            "建议难度及用时是否适合教学",
+            "语言、装置与安全操作是否恰当"
+          ],
+          "reference_answer_note": "现有参考答案保持；即使本地可以判选项，也仍须教师审核教学可用性"
+        }
       }
     },
     {
@@ -1461,7 +2857,89 @@
           "stem_clear": null,
           "no_cross_segment": null
         },
-        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。"
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。",
+        "material": {
+          "anchors": [
+            {
+              "kind": "公式",
+              "name": "损失后的回升高度",
+              "expression": "h1-W_loss/(m*g)",
+              "when": "起点和回升最高点动能均为零，仅重力与耗散作用；W_loss≥0且不超过m*g*h1，高度用同一零势能面。",
+              "display": "h<sub>1</sub>-W<sub>损</sub>/(m·g)"
+            }
+          ],
+          "source": {
+            "nature": "原创设计示例，非教材实测或真实实验记录",
+            "scenario": "有损失",
+            "parameters": {
+              "h1": 0.5,
+              "h2": 0.4,
+              "W_loss": 2,
+              "m": 2,
+              "g": 10,
+              "E": 8
+            },
+            "data": [
+              "初始高度：0.5 m",
+              "回升高度：0.4 m",
+              "耗散能量：2 J",
+              "小球质量：2 kg",
+              "重力加速度：10 m/s^2",
+              "回升势能：8 J"
+            ]
+          },
+          "predicted_errors": [
+            {
+              "option": "A",
+              "text": "0.6 m",
+              "reason": "耗散减少可恢复的机械能，必须从初势能扣除；2 J损失使高度少0.1 m，不能回升到0.6 m。",
+              "expression": "h1+W_loss/(m*g)",
+              "status": "误答原因预测，待教师确认；未采集学生作答证据"
+            }
+          ],
+          "difficulty_note": "建议难度沿用本题level（源卡难度）；尚非题目难度实测，待教师调整",
+          "estimated_seconds": [
+            60,
+            120
+          ],
+          "time_basis": "未做学生计时；按现有难度给出备课估计区间，待教师确认",
+          "machine_checks": [
+            {
+              "name": "题目ID关联源知识点",
+              "passed": true
+            },
+            {
+              "name": "选项标签唯一且参考标签存在",
+              "passed": true
+            },
+            {
+              "name": "选项文本互异",
+              "passed": true
+            },
+            {
+              "name": "正确路径独立数值复算",
+              "passed": true
+            },
+            {
+              "name": "带量纲求值与独立求值一致",
+              "passed": true
+            },
+            {
+              "name": "干扰路径复算且与正确路径分离",
+              "passed": true
+            }
+          ],
+          "machine_boundary": "只列本次逐题实际执行项目；不把关联知识卡的方向、扫描或一致性检查算作本题已验。概念题未验命题真假。",
+          "human_review_items": [
+            "题干条件是否充分、清楚且符合学段",
+            "参考结论在指定条件下是否唯一",
+            "干扰项是否合理、对应真实认知问题且无答案暗示",
+            "公式或概念锚点是否准确",
+            "建议难度及用时是否适合教学",
+            "语言、装置与安全操作是否恰当"
+          ],
+          "reference_answer_note": "现有参考答案保持；即使本地可以判选项，也仍须教师审核教学可用性"
+        }
       }
     },
     {
@@ -1521,7 +2999,62 @@
           "stem_clear": null,
           "no_cross_segment": null
         },
-        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。"
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。",
+        "material": {
+          "anchors": [
+            {
+              "kind": "概念或操作",
+              "name": "理想实验与伽利略斜面思想",
+              "claim": "理想实验就是不用事实依据的猜想，或认为实物能完全没有阻力。",
+              "correction_basis": "推理必须基于事实和可说明的理想条件，逐步外推并说明极限；理想模型与真实装置之间仍有阻力和测量误差。",
+              "note": "概念锚点及命题真假待教师确认；未套用任意第一条公式",
+              "display": "理想实验就是不用事实依据的猜想，或认为实物能完全没有阻力。"
+            }
+          ],
+          "source": {
+            "nature": "原创概念/操作命题；无真实测量记录",
+            "source_error_index": 1
+          },
+          "predicted_errors": [
+            {
+              "option": "B",
+              "text": "该说法不成立。",
+              "reason": "推理必须基于事实和可说明的理想条件，逐步外推并说明极限；理想模型与真实装置之间仍有阻力和测量误差。",
+              "expression": null,
+              "status": "误答原因预测，待教师确认；未采集学生作答证据"
+            }
+          ],
+          "difficulty_note": "建议难度沿用本题level（源卡难度）；尚非题目难度实测，待教师调整",
+          "estimated_seconds": [
+            60,
+            120
+          ],
+          "time_basis": "未做学生计时；按现有难度给出备课估计区间，待教师确认",
+          "machine_checks": [
+            {
+              "name": "题目ID关联源知识点",
+              "passed": true
+            },
+            {
+              "name": "选项标签唯一且参考标签存在",
+              "passed": true
+            },
+            {
+              "name": "选项文本互异",
+              "passed": true
+            }
+          ],
+          "machine_boundary": "只列本次逐题实际执行项目；不把关联知识卡的方向、扫描或一致性检查算作本题已验。概念题未验命题真假。",
+          "human_review_items": [
+            "题干条件是否充分、清楚且符合学段",
+            "参考结论在指定条件下是否唯一",
+            "干扰项是否合理、对应真实认知问题且无答案暗示",
+            "公式或概念锚点是否准确",
+            "建议难度及用时是否适合教学",
+            "语言、装置与安全操作是否恰当"
+          ],
+          "reference_answer_note": "现有参考答案保持；即使本地可以判选项，也仍须教师审核教学可用性"
+        }
       }
     }
   ],

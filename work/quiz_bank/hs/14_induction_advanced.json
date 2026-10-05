@@ -60,7 +60,62 @@
           "stem_clear": null,
           "no_cross_segment": null
         },
-        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。"
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。",
+        "material": {
+          "anchors": [
+            {
+              "kind": "概念或操作",
+              "name": "自感现象与自感系数",
+              "claim": "认为自感电动势总与原电流方向相反",
+              "correction_basis": "自感电动势反抗的是电流变化：通电时反抗增大，断电时反而尽力维持原电流方向。空间方向需结合绕向判断，标注人工审核。",
+              "note": "概念锚点及命题真假待教师确认；未套用任意第一条公式",
+              "display": "认为自感电动势总与原电流方向相反"
+            }
+          ],
+          "source": {
+            "nature": "原创概念/操作命题；无真实测量记录",
+            "source_error_index": 0
+          },
+          "predicted_errors": [
+            {
+              "option": "A",
+              "text": "该说法成立。",
+              "reason": "自感电动势反抗的是电流变化：通电时反抗增大，断电时反而尽力维持原电流方向。空间方向需结合绕向判断，标注人工审核。",
+              "expression": null,
+              "status": "误答原因预测，待教师确认；未采集学生作答证据"
+            }
+          ],
+          "difficulty_note": "建议难度沿用本题level（源卡难度）；尚非题目难度实测，待教师调整",
+          "estimated_seconds": [
+            60,
+            120
+          ],
+          "time_basis": "未做学生计时；按现有难度给出备课估计区间，待教师确认",
+          "machine_checks": [
+            {
+              "name": "题目ID关联源知识点",
+              "passed": true
+            },
+            {
+              "name": "选项标签唯一且参考标签存在",
+              "passed": true
+            },
+            {
+              "name": "选项文本互异",
+              "passed": true
+            }
+          ],
+          "machine_boundary": "只列本次逐题实际执行项目；不把关联知识卡的方向、扫描或一致性检查算作本题已验。概念题未验命题真假。",
+          "human_review_items": [
+            "题干条件是否充分、清楚且符合学段",
+            "参考结论在指定条件下是否唯一",
+            "干扰项是否合理、对应真实认知问题且无答案暗示",
+            "公式或概念锚点是否准确",
+            "建议难度及用时是否适合教学",
+            "语言、装置与安全操作是否恰当"
+          ],
+          "reference_answer_note": "现有参考答案保持；即使本地可以判选项，也仍须教师审核教学可用性"
+        }
       }
     },
     {
@@ -143,7 +198,89 @@
           "stem_clear": null,
           "no_cross_segment": null
         },
-        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。"
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。",
+        "material": {
+          "anchors": [
+            {
+              "kind": "公式",
+              "name": "自感电动势的大小",
+              "expression": "L*abs(Delta_I)/Delta_t",
+              "when": "线圈自感系数不变，Delta_t 大于零，只计算电动势大小",
+              "display": "L·abs(ΔI)/Δt"
+            }
+          ],
+          "source": {
+            "nature": "原创设计示例，非教材实测或真实实验记录",
+            "scenario": "电流均匀减小",
+            "parameters": {
+              "E_L": 6.0,
+              "L": 0.4,
+              "Delta_I": -3.0,
+              "Delta_t": 0.2,
+              "tau": 0.2,
+              "R": 2.0
+            },
+            "data": [
+              "自感电动势的大小：6.0 V",
+              "线圈的自感系数：0.4 H",
+              "线圈电流的变化量大小：-3.0 A",
+              "电流变化经历的时间：0.2 s",
+              "电阻—电感串联电路的时间常量：0.2 s",
+              "电路中的总电阻：2.0 ohm"
+            ]
+          },
+          "predicted_errors": [
+            {
+              "option": "A",
+              "text": "-6 V",
+              "reason": "该式量纲完全正确，但在电流减小的情境中会给出 −6.0 V；这里求的是大小，应为 6.0 V，方向另由楞次定律判断。",
+              "expression": "L*Delta_I/Delta_t",
+              "status": "误答原因预测，待教师确认；未采集学生作答证据"
+            }
+          ],
+          "difficulty_note": "建议难度沿用本题level（源卡难度）；尚非题目难度实测，待教师调整",
+          "estimated_seconds": [
+            60,
+            120
+          ],
+          "time_basis": "未做学生计时；按现有难度给出备课估计区间，待教师确认",
+          "machine_checks": [
+            {
+              "name": "题目ID关联源知识点",
+              "passed": true
+            },
+            {
+              "name": "选项标签唯一且参考标签存在",
+              "passed": true
+            },
+            {
+              "name": "选项文本互异",
+              "passed": true
+            },
+            {
+              "name": "正确路径独立数值复算",
+              "passed": true
+            },
+            {
+              "name": "带量纲求值与独立求值一致",
+              "passed": true
+            },
+            {
+              "name": "干扰路径复算且与正确路径分离",
+              "passed": true
+            }
+          ],
+          "machine_boundary": "只列本次逐题实际执行项目；不把关联知识卡的方向、扫描或一致性检查算作本题已验。概念题未验命题真假。",
+          "human_review_items": [
+            "题干条件是否充分、清楚且符合学段",
+            "参考结论在指定条件下是否唯一",
+            "干扰项是否合理、对应真实认知问题且无答案暗示",
+            "公式或概念锚点是否准确",
+            "建议难度及用时是否适合教学",
+            "语言、装置与安全操作是否恰当"
+          ],
+          "reference_answer_note": "现有参考答案保持；即使本地可以判选项，也仍须教师审核教学可用性"
+        }
       }
     },
     {
@@ -203,7 +340,62 @@
           "stem_clear": null,
           "no_cross_segment": null
         },
-        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。"
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。",
+        "material": {
+          "anchors": [
+            {
+              "kind": "概念或操作",
+              "name": "涡流及其应用",
+              "claim": "认为涡流只有危害，应在所有装置中完全消除",
+              "correction_basis": "电磁炉和感应炉正是利用涡流发热；磁阻尼也可用于仪表稳定。是否利用或抑制取决于装置目标，属于应用判断，需人工审核。",
+              "note": "概念锚点及命题真假待教师确认；未套用任意第一条公式",
+              "display": "认为涡流只有危害，应在所有装置中完全消除"
+            }
+          ],
+          "source": {
+            "nature": "原创概念/操作命题；无真实测量记录",
+            "source_error_index": 0
+          },
+          "predicted_errors": [
+            {
+              "option": "B",
+              "text": "该说法不成立。",
+              "reason": "电磁炉和感应炉正是利用涡流发热；磁阻尼也可用于仪表稳定。是否利用或抑制取决于装置目标，属于应用判断，需人工审核。",
+              "expression": null,
+              "status": "误答原因预测，待教师确认；未采集学生作答证据"
+            }
+          ],
+          "difficulty_note": "建议难度沿用本题level（源卡难度）；尚非题目难度实测，待教师调整",
+          "estimated_seconds": [
+            60,
+            120
+          ],
+          "time_basis": "未做学生计时；按现有难度给出备课估计区间，待教师确认",
+          "machine_checks": [
+            {
+              "name": "题目ID关联源知识点",
+              "passed": true
+            },
+            {
+              "name": "选项标签唯一且参考标签存在",
+              "passed": true
+            },
+            {
+              "name": "选项文本互异",
+              "passed": true
+            }
+          ],
+          "machine_boundary": "只列本次逐题实际执行项目；不把关联知识卡的方向、扫描或一致性检查算作本题已验。概念题未验命题真假。",
+          "human_review_items": [
+            "题干条件是否充分、清楚且符合学段",
+            "参考结论在指定条件下是否唯一",
+            "干扰项是否合理、对应真实认知问题且无答案暗示",
+            "公式或概念锚点是否准确",
+            "建议难度及用时是否适合教学",
+            "语言、装置与安全操作是否恰当"
+          ],
+          "reference_answer_note": "现有参考答案保持；即使本地可以判选项，也仍须教师审核教学可用性"
+        }
       }
     },
     {
@@ -285,7 +477,87 @@
           "stem_clear": null,
           "no_cross_segment": null
         },
-        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。"
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。",
+        "material": {
+          "anchors": [
+            {
+              "kind": "公式",
+              "name": "涡流的焦耳热功率",
+              "expression": "I_eddy^2*R_eddy",
+              "when": "用等效电流和等效电阻描述导体内的涡流发热",
+              "display": "I<sub>涡</sub>²·R<sub>涡</sub>"
+            }
+          ],
+          "source": {
+            "nature": "原创设计示例，非教材实测或真实实验记录",
+            "scenario": "感应加热",
+            "parameters": {
+              "I_eddy": 3.0,
+              "R_eddy": 0.8,
+              "P_eddy": 7.2,
+              "Q_eddy": 36.0,
+              "t": 5.0
+            },
+            "data": [
+              "涡流等效电流的有效值：3.0 A",
+              "涡流通路的等效电阻：0.8 ohm",
+              "涡流产生焦耳热的平均功率：7.2 W",
+              "一段时间内涡流产生的热量：36.0 J",
+              "涡流持续的时间：5.0 s"
+            ]
+          },
+          "predicted_errors": [
+            {
+              "option": "B",
+              "text": "3.6 W",
+              "reason": "有效值已把周期内变化折算进去，不能再乘二分之一。错误式量纲完全正确，却只算得 3.6 W，正确值是 7.2 W。",
+              "expression": "0.5*I_eddy^2*R_eddy",
+              "status": "误答原因预测，待教师确认；未采集学生作答证据"
+            }
+          ],
+          "difficulty_note": "建议难度沿用本题level（源卡难度）；尚非题目难度实测，待教师调整",
+          "estimated_seconds": [
+            60,
+            120
+          ],
+          "time_basis": "未做学生计时；按现有难度给出备课估计区间，待教师确认",
+          "machine_checks": [
+            {
+              "name": "题目ID关联源知识点",
+              "passed": true
+            },
+            {
+              "name": "选项标签唯一且参考标签存在",
+              "passed": true
+            },
+            {
+              "name": "选项文本互异",
+              "passed": true
+            },
+            {
+              "name": "正确路径独立数值复算",
+              "passed": true
+            },
+            {
+              "name": "带量纲求值与独立求值一致",
+              "passed": true
+            },
+            {
+              "name": "干扰路径复算且与正确路径分离",
+              "passed": true
+            }
+          ],
+          "machine_boundary": "只列本次逐题实际执行项目；不把关联知识卡的方向、扫描或一致性检查算作本题已验。概念题未验命题真假。",
+          "human_review_items": [
+            "题干条件是否充分、清楚且符合学段",
+            "参考结论在指定条件下是否唯一",
+            "干扰项是否合理、对应真实认知问题且无答案暗示",
+            "公式或概念锚点是否准确",
+            "建议难度及用时是否适合教学",
+            "语言、装置与安全操作是否恰当"
+          ],
+          "reference_answer_note": "现有参考答案保持；即使本地可以判选项，也仍须教师审核教学可用性"
+        }
       }
     },
     {
@@ -367,7 +639,87 @@
           "stem_clear": null,
           "no_cross_segment": null
         },
-        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。"
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。",
+        "material": {
+          "anchors": [
+            {
+              "kind": "公式",
+              "name": "电感储存的磁场能",
+              "expression": "0.5*L*I^2",
+              "when": "自感系数 L 不随电流改变的线性电感",
+              "display": "½L·I²"
+            }
+          ],
+          "source": {
+            "nature": "原创设计示例，非教材实测或真实实验记录",
+            "scenario": "线圈储能",
+            "parameters": {
+              "W_m": 4.0,
+              "L": 0.5,
+              "I": 4.0,
+              "W_source": 10.0,
+              "Q_heat": 6.0
+            },
+            "data": [
+              "电感线圈储存的磁场能：4.0 J",
+              "线圈的自感系数：0.5 H",
+              "线圈中的电流：4.0 A",
+              "电源或外力输入系统的能量：10.0 J",
+              "电阻产生并散出的热量：6.0 J"
+            ]
+          },
+          "predicted_errors": [
+            {
+              "option": "B",
+              "text": "8 J",
+              "reason": "量纲完全正确，必须靠数值检验；线圈储能情境中错误式得到 8.0 J，正确值为 4.0 J。",
+              "expression": "L*I^2",
+              "status": "误答原因预测，待教师确认；未采集学生作答证据"
+            }
+          ],
+          "difficulty_note": "建议难度沿用本题level（源卡难度）；尚非题目难度实测，待教师调整",
+          "estimated_seconds": [
+            120,
+            240
+          ],
+          "time_basis": "未做学生计时；按现有难度给出备课估计区间，待教师确认",
+          "machine_checks": [
+            {
+              "name": "题目ID关联源知识点",
+              "passed": true
+            },
+            {
+              "name": "选项标签唯一且参考标签存在",
+              "passed": true
+            },
+            {
+              "name": "选项文本互异",
+              "passed": true
+            },
+            {
+              "name": "正确路径独立数值复算",
+              "passed": true
+            },
+            {
+              "name": "带量纲求值与独立求值一致",
+              "passed": true
+            },
+            {
+              "name": "干扰路径复算且与正确路径分离",
+              "passed": true
+            }
+          ],
+          "machine_boundary": "只列本次逐题实际执行项目；不把关联知识卡的方向、扫描或一致性检查算作本题已验。概念题未验命题真假。",
+          "human_review_items": [
+            "题干条件是否充分、清楚且符合学段",
+            "参考结论在指定条件下是否唯一",
+            "干扰项是否合理、对应真实认知问题且无答案暗示",
+            "公式或概念锚点是否准确",
+            "建议难度及用时是否适合教学",
+            "语言、装置与安全操作是否恰当"
+          ],
+          "reference_answer_note": "现有参考答案保持；即使本地可以判选项，也仍须教师审核教学可用性"
+        }
       }
     },
     {
@@ -436,7 +788,99 @@
           "stem_clear": null,
           "no_cross_segment": null
         },
-        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。"
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。",
+        "material": {
+          "anchors": [
+            {
+              "kind": "公式量纲",
+              "name": "本题目标量与等式",
+              "expression": "W_m = 0.5*L*I^2",
+              "when": "量纲相符是必要条件，不能据此证明系数或物理条件正确",
+              "display": "W<sub>m</sub> = ½L·I²"
+            }
+          ],
+          "source": {
+            "nature": "原创量纲辨析命题；无实测数据",
+            "source_error_index": 1
+          },
+          "predicted_errors": [
+            {
+              "option": "A",
+              "text": "W<sub>m</sub> = ½L·I",
+              "reason": "右侧量纲不是能量，因此会被量纲检查拦住；并且电流增大一倍时，正确磁场能应增为原来的四倍，而不是两倍。",
+              "expression": "W_m = 0.5*L*I",
+              "status": "误答原因预测，待教师确认；未采集学生作答证据"
+            }
+          ],
+          "difficulty_note": "建议难度沿用本题level（源卡难度）；尚非题目难度实测，待教师调整",
+          "estimated_seconds": [
+            120,
+            240
+          ],
+          "time_basis": "未做学生计时；按现有难度给出备课估计区间，待教师确认",
+          "machine_checks": [
+            {
+              "name": "题目ID关联源知识点",
+              "passed": true
+            },
+            {
+              "name": "选项标签唯一且参考标签存在",
+              "passed": true
+            },
+            {
+              "name": "选项文本互异",
+              "passed": true
+            },
+            {
+              "name": "正确式量纲一致",
+              "passed": true,
+              "actual": {
+                "type": "dimension",
+                "type_name": "量纲一致性",
+                "formula": "教师审核证据",
+                "ok": true,
+                "detail": "左端M·L^2·T^-2，右端M·L^2·T^-2",
+                "note": "",
+                "error": null,
+                "evaluation_status": "success",
+                "failure_reason": null,
+                "result_dimension": "M·L^2·T^-2",
+                "reference_dimension": "M·L^2·T^-2",
+                "diagnostics": {},
+                "physical_error_identified": false
+              }
+            },
+            {
+              "name": "干扰式量纲冲突",
+              "passed": true,
+              "actual": {
+                "type": "dimension",
+                "type_name": "量纲一致性",
+                "formula": "教师审核证据",
+                "ok": false,
+                "detail": "左端M·L^2·T^-2，右端M·L^2·T^-2·I^-1",
+                "note": "",
+                "error": null,
+                "evaluation_status": "dimension_conflict",
+                "failure_reason": "dimension_conflict",
+                "result_dimension": "M·L^2·T^-2·I^-1",
+                "reference_dimension": "M·L^2·T^-2",
+                "diagnostics": {},
+                "physical_error_identified": true
+              }
+            }
+          ],
+          "machine_boundary": "只列本次逐题实际执行项目；不把关联知识卡的方向、扫描或一致性检查算作本题已验。概念题未验命题真假。",
+          "human_review_items": [
+            "题干条件是否充分、清楚且符合学段",
+            "参考结论在指定条件下是否唯一",
+            "干扰项是否合理、对应真实认知问题且无答案暗示",
+            "公式或概念锚点是否准确",
+            "建议难度及用时是否适合教学",
+            "语言、装置与安全操作是否恰当"
+          ],
+          "reference_answer_note": "现有参考答案保持；即使本地可以判选项，也仍须教师审核教学可用性"
+        }
       }
     },
     {
@@ -505,7 +949,99 @@
           "stem_clear": null,
           "no_cross_segment": null
         },
-        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。"
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。",
+        "material": {
+          "anchors": [
+            {
+              "kind": "公式量纲",
+              "name": "本题目标量与等式",
+              "expression": "F_mag = B^2*L_rod^2*v/R_total",
+              "when": "量纲相符是必要条件，不能据此证明系数或物理条件正确",
+              "display": "F<sub>安</sub> = B²·L<sub>棒</sub>²·v/R<sub>总</sub>"
+            }
+          ],
+          "source": {
+            "nature": "原创量纲辨析命题；无实测数据",
+            "source_error_index": 0
+          },
+          "predicted_errors": [
+            {
+              "option": "A",
+              "text": "F<sub>安</sub> = B²·L<sub>棒</sub>²/(R<sub>总</sub>·v)",
+              "reason": "错误式不仅量纲不对，也颠倒了反馈关系；正确关系中安培阻力与速度成正比。",
+              "expression": "F_mag = B^2*L_rod^2/(R_total*v)",
+              "status": "误答原因预测，待教师确认；未采集学生作答证据"
+            }
+          ],
+          "difficulty_note": "建议难度沿用本题level（源卡难度）；尚非题目难度实测，待教师调整",
+          "estimated_seconds": [
+            120,
+            240
+          ],
+          "time_basis": "未做学生计时；按现有难度给出备课估计区间，待教师确认",
+          "machine_checks": [
+            {
+              "name": "题目ID关联源知识点",
+              "passed": true
+            },
+            {
+              "name": "选项标签唯一且参考标签存在",
+              "passed": true
+            },
+            {
+              "name": "选项文本互异",
+              "passed": true
+            },
+            {
+              "name": "正确式量纲一致",
+              "passed": true,
+              "actual": {
+                "type": "dimension",
+                "type_name": "量纲一致性",
+                "formula": "教师审核证据",
+                "ok": true,
+                "detail": "左端M·L·T^-2，右端M·L·T^-2",
+                "note": "",
+                "error": null,
+                "evaluation_status": "success",
+                "failure_reason": null,
+                "result_dimension": "M·L·T^-2",
+                "reference_dimension": "M·L·T^-2",
+                "diagnostics": {},
+                "physical_error_identified": false
+              }
+            },
+            {
+              "name": "干扰式量纲冲突",
+              "passed": true,
+              "actual": {
+                "type": "dimension",
+                "type_name": "量纲一致性",
+                "formula": "教师审核证据",
+                "ok": false,
+                "detail": "左端M·L·T^-2，右端M·L^-1",
+                "note": "",
+                "error": null,
+                "evaluation_status": "dimension_conflict",
+                "failure_reason": "dimension_conflict",
+                "result_dimension": "M·L^-1",
+                "reference_dimension": "M·L·T^-2",
+                "diagnostics": {},
+                "physical_error_identified": true
+              }
+            }
+          ],
+          "machine_boundary": "只列本次逐题实际执行项目；不把关联知识卡的方向、扫描或一致性检查算作本题已验。概念题未验命题真假。",
+          "human_review_items": [
+            "题干条件是否充分、清楚且符合学段",
+            "参考结论在指定条件下是否唯一",
+            "干扰项是否合理、对应真实认知问题且无答案暗示",
+            "公式或概念锚点是否准确",
+            "建议难度及用时是否适合教学",
+            "语言、装置与安全操作是否恰当"
+          ],
+          "reference_answer_note": "现有参考答案保持；即使本地可以判选项，也仍须教师审核教学可用性"
+        }
       }
     },
     {
@@ -590,7 +1126,93 @@
           "stem_clear": null,
           "no_cross_segment": null
         },
-        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。"
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。",
+        "material": {
+          "anchors": [
+            {
+              "kind": "公式",
+              "name": "导体棒受到的安培阻力",
+              "expression": "B^2*L_rod^2*v/R_total",
+              "when": "由 F_mag=B*I*L_rod 与感应电流公式合并，方向与运动相反",
+              "display": "B²·L<sub>棒</sub>²·v/R<sub>总</sub>"
+            }
+          ],
+          "source": {
+            "nature": "原创设计示例，非教材实测或真实实验记录",
+            "scenario": "速度减半",
+            "parameters": {
+              "I": 2.0,
+              "B": 0.5,
+              "L_rod": 0.4,
+              "v": 3.0,
+              "R_total": 0.3,
+              "F_mag": 0.4,
+              "F_drive": 0.8,
+              "v_terminal": 6.0
+            },
+            "data": [
+              "闭合回路中的感应电流：2.0 A",
+              "垂直导轨平面的匀强磁场磁感应强度：0.5 T_",
+              "导体棒接入回路的有效长度：0.4 m",
+              "导体棒切割磁感线的速度：3.0 m/s",
+              "导体棒与导轨构成回路的总电阻：0.3 ohm",
+              "导体棒受到的安培阻力大小：0.4 N",
+              "沿运动方向的恒定驱动力：0.8 N",
+              "安培阻力与驱动力平衡时的终端速度：6.0 m/s"
+            ]
+          },
+          "predicted_errors": [
+            {
+              "option": "A",
+              "text": "0.8 N",
+              "reason": "两者只在终端匀速状态相等。速度减半情境中实际安培阻力为 0.40 N，驱动力仍为 0.80 N，导体棒仍会加速。",
+              "expression": "F_drive",
+              "status": "误答原因预测，待教师确认；未采集学生作答证据"
+            }
+          ],
+          "difficulty_note": "建议难度沿用本题level（源卡难度）；尚非题目难度实测，待教师调整",
+          "estimated_seconds": [
+            120,
+            240
+          ],
+          "time_basis": "未做学生计时；按现有难度给出备课估计区间，待教师确认",
+          "machine_checks": [
+            {
+              "name": "题目ID关联源知识点",
+              "passed": true
+            },
+            {
+              "name": "选项标签唯一且参考标签存在",
+              "passed": true
+            },
+            {
+              "name": "选项文本互异",
+              "passed": true
+            },
+            {
+              "name": "正确路径独立数值复算",
+              "passed": true
+            },
+            {
+              "name": "带量纲求值与独立求值一致",
+              "passed": true
+            },
+            {
+              "name": "干扰路径复算且与正确路径分离",
+              "passed": true
+            }
+          ],
+          "machine_boundary": "只列本次逐题实际执行项目；不把关联知识卡的方向、扫描或一致性检查算作本题已验。概念题未验命题真假。",
+          "human_review_items": [
+            "题干条件是否充分、清楚且符合学段",
+            "参考结论在指定条件下是否唯一",
+            "干扰项是否合理、对应真实认知问题且无答案暗示",
+            "公式或概念锚点是否准确",
+            "建议难度及用时是否适合教学",
+            "语言、装置与安全操作是否恰当"
+          ],
+          "reference_answer_note": "现有参考答案保持；即使本地可以判选项，也仍须教师审核教学可用性"
+        }
       }
     },
     {
@@ -675,7 +1297,93 @@
           "stem_clear": null,
           "no_cross_segment": null
         },
-        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。"
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。",
+        "material": {
+          "anchors": [
+            {
+              "kind": "公式",
+              "name": "由电动势—时间图像面积求磁通量变化",
+              "expression": "A_E/n",
+              "when": "A_E 为某时间段 E-t 图像代数面积的绝对值，n 为串联匝数",
+              "display": "A<sub>E</sub>/n"
+            }
+          ],
+          "source": {
+            "nature": "原创设计示例，非教材实测或真实实验记录",
+            "scenario": "矩形电动势图像",
+            "parameters": {
+              "A_E": 0.8,
+              "E_avg": 4.0,
+              "Delta_t": 0.2,
+              "n": 40,
+              "Delta_Phi": 0.02,
+              "A_I": 0.24,
+              "I_avg": 1.2,
+              "q": 0.24
+            },
+            "data": [
+              "感应电动势—时间图像面积的绝对值：0.8 Wb",
+              "该时间段内感应电动势的平均大小：4.0 V",
+              "所考察的时间间隔：0.2 s",
+              "串联线圈匝数：40 1",
+              "单匝线圈磁通量变化大小：0.02 Wb",
+              "电流—时间图像的代数面积：0.24 C",
+              "该时间段内的平均电流：1.2 A",
+              "该时间段通过回路截面的电荷量：0.24 C"
+            ]
+          },
+          "predicted_errors": [
+            {
+              "option": "B",
+              "text": "0.8 Wb",
+              "reason": "E-t 面积对应的是磁通匝数变化。40 匝情境中面积为 0.80 Wb，而单匝磁通量只变化 0.020 Wb。",
+              "expression": "A_E",
+              "status": "误答原因预测，待教师确认；未采集学生作答证据"
+            }
+          ],
+          "difficulty_note": "建议难度沿用本题level（源卡难度）；尚非题目难度实测，待教师调整",
+          "estimated_seconds": [
+            120,
+            240
+          ],
+          "time_basis": "未做学生计时；按现有难度给出备课估计区间，待教师确认",
+          "machine_checks": [
+            {
+              "name": "题目ID关联源知识点",
+              "passed": true
+            },
+            {
+              "name": "选项标签唯一且参考标签存在",
+              "passed": true
+            },
+            {
+              "name": "选项文本互异",
+              "passed": true
+            },
+            {
+              "name": "正确路径独立数值复算",
+              "passed": true
+            },
+            {
+              "name": "带量纲求值与独立求值一致",
+              "passed": true
+            },
+            {
+              "name": "干扰路径复算且与正确路径分离",
+              "passed": true
+            }
+          ],
+          "machine_boundary": "只列本次逐题实际执行项目；不把关联知识卡的方向、扫描或一致性检查算作本题已验。概念题未验命题真假。",
+          "human_review_items": [
+            "题干条件是否充分、清楚且符合学段",
+            "参考结论在指定条件下是否唯一",
+            "干扰项是否合理、对应真实认知问题且无答案暗示",
+            "公式或概念锚点是否准确",
+            "建议难度及用时是否适合教学",
+            "语言、装置与安全操作是否恰当"
+          ],
+          "reference_answer_note": "现有参考答案保持；即使本地可以判选项，也仍须教师审核教学可用性"
+        }
       }
     },
     {
@@ -744,7 +1452,99 @@
           "stem_clear": null,
           "no_cross_segment": null
         },
-        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。"
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。",
+        "material": {
+          "anchors": [
+            {
+              "kind": "公式量纲",
+              "name": "本题目标量与等式",
+              "expression": "q = A_I",
+              "when": "量纲相符是必要条件，不能据此证明系数或物理条件正确",
+              "display": "q = A<sub>I</sub>"
+            }
+          ],
+          "source": {
+            "nature": "原创量纲辨析命题；无实测数据",
+            "source_error_index": 1
+          },
+          "predicted_errors": [
+            {
+              "option": "B",
+              "text": "q = <span style=\"text-decoration:overline\">I</span>",
+              "reason": "电流单位是 A，电荷量单位是 C，必须乘时间或求图像面积；0.60 A 持续 0.20 s 只通过 0.12 C。",
+              "expression": "q = I_avg",
+              "status": "误答原因预测，待教师确认；未采集学生作答证据"
+            }
+          ],
+          "difficulty_note": "建议难度沿用本题level（源卡难度）；尚非题目难度实测，待教师调整",
+          "estimated_seconds": [
+            120,
+            240
+          ],
+          "time_basis": "未做学生计时；按现有难度给出备课估计区间，待教师确认",
+          "machine_checks": [
+            {
+              "name": "题目ID关联源知识点",
+              "passed": true
+            },
+            {
+              "name": "选项标签唯一且参考标签存在",
+              "passed": true
+            },
+            {
+              "name": "选项文本互异",
+              "passed": true
+            },
+            {
+              "name": "正确式量纲一致",
+              "passed": true,
+              "actual": {
+                "type": "dimension",
+                "type_name": "量纲一致性",
+                "formula": "教师审核证据",
+                "ok": true,
+                "detail": "左端T·I，右端T·I",
+                "note": "",
+                "error": null,
+                "evaluation_status": "success",
+                "failure_reason": null,
+                "result_dimension": "T·I",
+                "reference_dimension": "T·I",
+                "diagnostics": {},
+                "physical_error_identified": false
+              }
+            },
+            {
+              "name": "干扰式量纲冲突",
+              "passed": true,
+              "actual": {
+                "type": "dimension",
+                "type_name": "量纲一致性",
+                "formula": "教师审核证据",
+                "ok": false,
+                "detail": "左端T·I，右端I",
+                "note": "",
+                "error": null,
+                "evaluation_status": "dimension_conflict",
+                "failure_reason": "dimension_conflict",
+                "result_dimension": "I",
+                "reference_dimension": "T·I",
+                "diagnostics": {},
+                "physical_error_identified": true
+              }
+            }
+          ],
+          "machine_boundary": "只列本次逐题实际执行项目；不把关联知识卡的方向、扫描或一致性检查算作本题已验。概念题未验命题真假。",
+          "human_review_items": [
+            "题干条件是否充分、清楚且符合学段",
+            "参考结论在指定条件下是否唯一",
+            "干扰项是否合理、对应真实认知问题且无答案暗示",
+            "公式或概念锚点是否准确",
+            "建议难度及用时是否适合教学",
+            "语言、装置与安全操作是否恰当"
+          ],
+          "reference_answer_note": "现有参考答案保持；即使本地可以判选项，也仍须教师审核教学可用性"
+        }
       }
     },
     {
@@ -832,7 +1632,99 @@
           "stem_clear": null,
           "no_cross_segment": null
         },
-        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。"
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。",
+        "material": {
+          "anchors": [
+            {
+              "kind": "公式",
+              "name": "稳定速度",
+              "expression": "(m1*v1/L1+m2*v2/L2)/(m1/L1+m2*L1/L2^2)",
+              "when": "两杆有效长度固定、磁场相同、无沿轨外力，安培力由同一电流产生",
+              "display": "(m1·v<sub>1</sub>/L1+m2·v<sub>2</sub>/L2)/(m1/L1+m2·L1/L2²)"
+            }
+          ],
+          "source": {
+            "nature": "原创设计示例，非教材实测或真实实验记录",
+            "scenario": "等长",
+            "parameters": {
+              "B": 1,
+              "L1": 1,
+              "L2": 1,
+              "v1": 4,
+              "v2": 0,
+              "v1_p": 2,
+              "v2_p": 2,
+              "m1": 1,
+              "m2": 1,
+              "R": 2,
+              "Delta_Phi": 4
+            },
+            "data": [
+              "匀强磁场磁感应强度：1 T_",
+              "第一杆有效切割长度：1 m",
+              "第二杆有效切割长度：1 m",
+              "第一杆初速度，沿共同正方向：4 m/s",
+              "第二杆初速度，沿共同正方向：0 m/s",
+              "第一杆稳定速度：2 m/s",
+              "第二杆稳定速度：2 m/s",
+              "第一杆质量：1 kg",
+              "第二杆质量：1 kg",
+              "整个回路固定总电阻：2 ohm",
+              "全过程磁通量变化的代数值：4 Wb"
+            ]
+          },
+          "predicted_errors": [
+            {
+              "option": "B",
+              "text": "4 m/s",
+              "reason": "相等质量杆的初总动量要分配给两杆，而不是把初速度直接给每根杆；这会让末总动量和总能量同时增大，量纲仍然正确。",
+              "expression": "v1+v2",
+              "status": "误答原因预测，待教师确认；未采集学生作答证据"
+            }
+          ],
+          "difficulty_note": "建议难度沿用本题level（源卡难度）；尚非题目难度实测，待教师调整",
+          "estimated_seconds": [
+            180,
+            360
+          ],
+          "time_basis": "未做学生计时；按现有难度给出备课估计区间，待教师确认",
+          "machine_checks": [
+            {
+              "name": "题目ID关联源知识点",
+              "passed": true
+            },
+            {
+              "name": "选项标签唯一且参考标签存在",
+              "passed": true
+            },
+            {
+              "name": "选项文本互异",
+              "passed": true
+            },
+            {
+              "name": "正确路径独立数值复算",
+              "passed": true
+            },
+            {
+              "name": "带量纲求值与独立求值一致",
+              "passed": true
+            },
+            {
+              "name": "干扰路径复算且与正确路径分离",
+              "passed": true
+            }
+          ],
+          "machine_boundary": "只列本次逐题实际执行项目；不把关联知识卡的方向、扫描或一致性检查算作本题已验。概念题未验命题真假。",
+          "human_review_items": [
+            "题干条件是否充分、清楚且符合学段",
+            "参考结论在指定条件下是否唯一",
+            "干扰项是否合理、对应真实认知问题且无答案暗示",
+            "公式或概念锚点是否准确",
+            "建议难度及用时是否适合教学",
+            "语言、装置与安全操作是否恰当"
+          ],
+          "reference_answer_note": "现有参考答案保持；即使本地可以判选项，也仍须教师审核教学可用性"
+        }
       }
     },
     {
@@ -892,7 +1784,62 @@
           "stem_clear": null,
           "no_cross_segment": null
         },
-        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。"
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。",
+        "material": {
+          "anchors": [
+            {
+              "kind": "概念或操作",
+              "name": "双杆电磁感应",
+              "claim": "不等长度双杆也直接使用杆系统总动量守恒",
+              "correction_basis": "同一电流通过不同有效长度时安培力大小不同，杆系统所受合力不为零；应使用加权不变量，不能把磁场支架的反作用忽略。",
+              "note": "概念锚点及命题真假待教师确认；未套用任意第一条公式",
+              "display": "不等长度双杆也直接使用杆系统总动量守恒"
+            }
+          ],
+          "source": {
+            "nature": "原创概念/操作命题；无真实测量记录",
+            "source_error_index": 1
+          },
+          "predicted_errors": [
+            {
+              "option": "A",
+              "text": "该说法不成立。",
+              "reason": "同一电流通过不同有效长度时安培力大小不同，杆系统所受合力不为零；应使用加权不变量，不能把磁场支架的反作用忽略。",
+              "expression": null,
+              "status": "误答原因预测，待教师确认；未采集学生作答证据"
+            }
+          ],
+          "difficulty_note": "建议难度沿用本题level（源卡难度）；尚非题目难度实测，待教师调整",
+          "estimated_seconds": [
+            180,
+            360
+          ],
+          "time_basis": "未做学生计时；按现有难度给出备课估计区间，待教师确认",
+          "machine_checks": [
+            {
+              "name": "题目ID关联源知识点",
+              "passed": true
+            },
+            {
+              "name": "选项标签唯一且参考标签存在",
+              "passed": true
+            },
+            {
+              "name": "选项文本互异",
+              "passed": true
+            }
+          ],
+          "machine_boundary": "只列本次逐题实际执行项目；不把关联知识卡的方向、扫描或一致性检查算作本题已验。概念题未验命题真假。",
+          "human_review_items": [
+            "题干条件是否充分、清楚且符合学段",
+            "参考结论在指定条件下是否唯一",
+            "干扰项是否合理、对应真实认知问题且无答案暗示",
+            "公式或概念锚点是否准确",
+            "建议难度及用时是否适合教学",
+            "语言、装置与安全操作是否恰当"
+          ],
+          "reference_answer_note": "现有参考答案保持；即使本地可以判选项，也仍须教师审核教学可用性"
+        }
       }
     },
     {
@@ -976,7 +1923,91 @@
           "stem_clear": null,
           "no_cross_segment": null
         },
-        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。"
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。",
+        "material": {
+          "anchors": [
+            {
+              "kind": "公式",
+              "name": "无源制动力",
+              "expression": "B^2*L^2*v/R",
+              "when": "无外接电源，闭合回路且电阻正，方向与运动相反",
+              "display": "B²·L²·v/R"
+            }
+          ],
+          "source": {
+            "nature": "原创设计示例，非教材实测或真实实验记录",
+            "scenario": "无源",
+            "parameters": {
+              "B": 2,
+              "L": 1,
+              "R": 4,
+              "v": 3,
+              "m": 2,
+              "I": 1.5,
+              "t": 1.3862943611198906
+            },
+            "data": [
+              "垂直回路的磁感应强度大小：2 T_",
+              "杆的有效切割长度：1 m",
+              "回路总电阻：4 ohm",
+              "杆的当前速度大小：3 m/s",
+              "杆质量：2 kg",
+              "当前回路电流大小：1.5 A",
+              "无源制动经过时间：1.3862943611198906 s"
+            ]
+          },
+          "predicted_errors": [
+            {
+              "option": "B",
+              "text": "1.5 N",
+              "reason": "电磁制动力由瞬时电流与安培力共同给出，不含累积功中的二分之一；额外除以二会使本例制动力变为1.5 N，量纲完全相同。",
+              "expression": "B^2*L^2*v/(2*R)",
+              "status": "误答原因预测，待教师确认；未采集学生作答证据"
+            }
+          ],
+          "difficulty_note": "建议难度沿用本题level（源卡难度）；尚非题目难度实测，待教师调整",
+          "estimated_seconds": [
+            180,
+            360
+          ],
+          "time_basis": "未做学生计时；按现有难度给出备课估计区间，待教师确认",
+          "machine_checks": [
+            {
+              "name": "题目ID关联源知识点",
+              "passed": true
+            },
+            {
+              "name": "选项标签唯一且参考标签存在",
+              "passed": true
+            },
+            {
+              "name": "选项文本互异",
+              "passed": true
+            },
+            {
+              "name": "正确路径独立数值复算",
+              "passed": true
+            },
+            {
+              "name": "带量纲求值与独立求值一致",
+              "passed": true
+            },
+            {
+              "name": "干扰路径复算且与正确路径分离",
+              "passed": true
+            }
+          ],
+          "machine_boundary": "只列本次逐题实际执行项目；不把关联知识卡的方向、扫描或一致性检查算作本题已验。概念题未验命题真假。",
+          "human_review_items": [
+            "题干条件是否充分、清楚且符合学段",
+            "参考结论在指定条件下是否唯一",
+            "干扰项是否合理、对应真实认知问题且无答案暗示",
+            "公式或概念锚点是否准确",
+            "建议难度及用时是否适合教学",
+            "语言、装置与安全操作是否恰当"
+          ],
+          "reference_answer_note": "现有参考答案保持；即使本地可以判选项，也仍须教师审核教学可用性"
+        }
       }
     },
     {
@@ -1036,7 +2067,62 @@
           "stem_clear": null,
           "no_cross_segment": null
         },
-        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。"
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。",
+        "material": {
+          "anchors": [
+            {
+              "kind": "概念或操作",
+              "name": "电磁阻尼与电磁驱动",
+              "claim": "把电磁驱动中的反电动势当成额外助推电压",
+              "correction_basis": "运动电动势反映机械能与电能转化，正常电动运行时降低驱动电流；把它加到电源电压会错误预测越快电流越大。",
+              "note": "概念锚点及命题真假待教师确认；未套用任意第一条公式",
+              "display": "把电磁驱动中的反电动势当成额外助推电压"
+            }
+          ],
+          "source": {
+            "nature": "原创概念/操作命题；无真实测量记录",
+            "source_error_index": 1
+          },
+          "predicted_errors": [
+            {
+              "option": "B",
+              "text": "该说法成立。",
+              "reason": "运动电动势反映机械能与电能转化，正常电动运行时降低驱动电流；把它加到电源电压会错误预测越快电流越大。",
+              "expression": null,
+              "status": "误答原因预测，待教师确认；未采集学生作答证据"
+            }
+          ],
+          "difficulty_note": "建议难度沿用本题level（源卡难度）；尚非题目难度实测，待教师调整",
+          "estimated_seconds": [
+            180,
+            360
+          ],
+          "time_basis": "未做学生计时；按现有难度给出备课估计区间，待教师确认",
+          "machine_checks": [
+            {
+              "name": "题目ID关联源知识点",
+              "passed": true
+            },
+            {
+              "name": "选项标签唯一且参考标签存在",
+              "passed": true
+            },
+            {
+              "name": "选项文本互异",
+              "passed": true
+            }
+          ],
+          "machine_boundary": "只列本次逐题实际执行项目；不把关联知识卡的方向、扫描或一致性检查算作本题已验。概念题未验命题真假。",
+          "human_review_items": [
+            "题干条件是否充分、清楚且符合学段",
+            "参考结论在指定条件下是否唯一",
+            "干扰项是否合理、对应真实认知问题且无答案暗示",
+            "公式或概念锚点是否准确",
+            "建议难度及用时是否适合教学",
+            "语言、装置与安全操作是否恰当"
+          ],
+          "reference_answer_note": "现有参考答案保持；即使本地可以判选项，也仍须教师审核教学可用性"
+        }
       }
     }
   ],

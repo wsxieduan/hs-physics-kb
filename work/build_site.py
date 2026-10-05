@@ -328,8 +328,13 @@ def render_learning(p):
         before = ''.join('<p><b>%s：</b>%s</p>' % (label, prose(experiment[key])) for label, key in rows[:3])
         after = ''.join('<p><b>%s：</b>%s</p>' % (label, prose(experiment[key])) for label, key in rows[3:])
         steps = ''.join('<li>%s</li>' % prose(step) for step in experiment['steps'])
+        # 设计数据逐列带单位；表格在小屏内滚动，不撑宽整个页面。
+        tables = ''.join('<div class="table-scroll" style="overflow-x:auto"><table><caption>%s</caption><thead><tr>%s</tr></thead><tbody>%s</tbody></table></div>' %
+                         (E(t['title']), ''.join('<th>%s</th>' % E(c) for c in t['columns']),
+                          ''.join('<tr>%s</tr>' % ''.join('<td>%s</td>' % E(str(v)) for v in row) for row in t['rows']))
+                         for t in experiment.get('tables', []))
         blocks.append('<details class="learning"><summary>实验：%s</summary>%s<p><b>步骤：</b></p><ol>%s</ol>%s</details>' %
-                      (E(experiment['title']), before, steps, after))
+                      (E(experiment['title']), before, steps, after + tables))
     for graph in p.get("figures", []):
         # 坐标和读数来自同一组源数据；SVG只负责显示，不重新计算参考答案。
         xmax, ymax = graph['xmax'], graph['ymax']

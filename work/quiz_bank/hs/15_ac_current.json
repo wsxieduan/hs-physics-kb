@@ -60,7 +60,62 @@
           "stem_clear": null,
           "no_cross_segment": null
         },
-        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。"
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。",
+        "material": {
+          "anchors": [
+            {
+              "kind": "概念或操作",
+              "name": "交变电流的产生",
+              "claim": "认为磁通量最大时，感应电动势也最大",
+              "correction_basis": "感应电动势取决于磁通量的变化率，不取决于磁通量本身。磁通量处在最大值时瞬时变化率为零，电动势也为零。这个相位判断需要结合图像人工审核。",
+              "note": "概念锚点及命题真假待教师确认；未套用任意第一条公式",
+              "display": "认为磁通量最大时，感应电动势也最大"
+            }
+          ],
+          "source": {
+            "nature": "原创概念/操作命题；无真实测量记录",
+            "source_error_index": 0
+          },
+          "predicted_errors": [
+            {
+              "option": "B",
+              "text": "该说法不成立。",
+              "reason": "感应电动势取决于磁通量的变化率，不取决于磁通量本身。磁通量处在最大值时瞬时变化率为零，电动势也为零。这个相位判断需要结合图像人工审核。",
+              "expression": null,
+              "status": "误答原因预测，待教师确认；未采集学生作答证据"
+            }
+          ],
+          "difficulty_note": "建议难度沿用本题level（源卡难度）；尚非题目难度实测，待教师调整",
+          "estimated_seconds": [
+            60,
+            120
+          ],
+          "time_basis": "未做学生计时；按现有难度给出备课估计区间，待教师确认",
+          "machine_checks": [
+            {
+              "name": "题目ID关联源知识点",
+              "passed": true
+            },
+            {
+              "name": "选项标签唯一且参考标签存在",
+              "passed": true
+            },
+            {
+              "name": "选项文本互异",
+              "passed": true
+            }
+          ],
+          "machine_boundary": "只列本次逐题实际执行项目；不把关联知识卡的方向、扫描或一致性检查算作本题已验。概念题未验命题真假。",
+          "human_review_items": [
+            "题干条件是否充分、清楚且符合学段",
+            "参考结论在指定条件下是否唯一",
+            "干扰项是否合理、对应真实认知问题且无答案暗示",
+            "公式或概念锚点是否准确",
+            "建议难度及用时是否适合教学",
+            "语言、装置与安全操作是否恰当"
+          ],
+          "reference_answer_note": "现有参考答案保持；即使本地可以判选项，也仍须教师审核教学可用性"
+        }
       }
     },
     {
@@ -143,7 +198,89 @@
           "stem_clear": null,
           "no_cross_segment": null
         },
-        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。"
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。",
+        "material": {
+          "anchors": [
+            {
+              "kind": "公式",
+              "name": "旋转线圈电动势峰值",
+              "expression": "N_turn*B*S_coil*omega",
+              "when": "N_turn 匝线圈在匀强磁场中绕垂直于磁场的轴匀速转动，线圈面积和磁场均匀",
+              "display": "N<sub>匝</sub>·B·S<sub>线圈</sub>·ω"
+            }
+          ],
+          "source": {
+            "nature": "原创设计示例，非教材实测或真实实验记录",
+            "scenario": "匀速转动线圈",
+            "parameters": {
+              "E_m": 100.0,
+              "N_turn": 100,
+              "B": 0.5,
+              "S_coil": 0.02,
+              "omega": 100.0,
+              "f": 15.9154943092
+            },
+            "data": [
+              "正弦式交变电动势的峰值：100.0 V",
+              "串联线圈匝数：100 1",
+              "匀强磁场的磁感应强度：0.5 T_",
+              "每匝线圈的有效面积：0.02 m^2",
+              "线圈转动的角速度：100.0 rad/s",
+              "交变电流的频率：15.9154943092 Hz"
+            ]
+          },
+          "predicted_errors": [
+            {
+              "option": "B",
+              "text": "1 V",
+              "reason": "匝数是无量纲量，漏掉它后量纲仍然完全正确，量纲检查抓不到。此情境错误式只得到 1 V，100 匝串联线圈的正确峰值是 100 V。",
+              "expression": "B*S_coil*omega",
+              "status": "误答原因预测，待教师确认；未采集学生作答证据"
+            }
+          ],
+          "difficulty_note": "建议难度沿用本题level（源卡难度）；尚非题目难度实测，待教师调整",
+          "estimated_seconds": [
+            60,
+            120
+          ],
+          "time_basis": "未做学生计时；按现有难度给出备课估计区间，待教师确认",
+          "machine_checks": [
+            {
+              "name": "题目ID关联源知识点",
+              "passed": true
+            },
+            {
+              "name": "选项标签唯一且参考标签存在",
+              "passed": true
+            },
+            {
+              "name": "选项文本互异",
+              "passed": true
+            },
+            {
+              "name": "正确路径独立数值复算",
+              "passed": true
+            },
+            {
+              "name": "带量纲求值与独立求值一致",
+              "passed": true
+            },
+            {
+              "name": "干扰路径复算且与正确路径分离",
+              "passed": true
+            }
+          ],
+          "machine_boundary": "只列本次逐题实际执行项目；不把关联知识卡的方向、扫描或一致性检查算作本题已验。概念题未验命题真假。",
+          "human_review_items": [
+            "题干条件是否充分、清楚且符合学段",
+            "参考结论在指定条件下是否唯一",
+            "干扰项是否合理、对应真实认知问题且无答案暗示",
+            "公式或概念锚点是否准确",
+            "建议难度及用时是否适合教学",
+            "语言、装置与安全操作是否恰当"
+          ],
+          "reference_answer_note": "现有参考答案保持；即使本地可以判选项，也仍须教师审核教学可用性"
+        }
       }
     },
     {
@@ -224,7 +361,85 @@
           "stem_clear": null,
           "no_cross_segment": null
         },
-        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。"
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。",
+        "material": {
+          "anchors": [
+            {
+              "kind": "公式",
+              "name": "正弦交变电压的有效值",
+              "expression": "U_m/sqrt(2)",
+              "when": "电压随时间按正弦规律变化",
+              "display": "U<sub>m</sub>/√(2)"
+            }
+          ],
+          "source": {
+            "nature": "原创设计示例，非教材实测或真实实验记录",
+            "scenario": "正弦交流用电器",
+            "parameters": {
+              "U_eff": 100.0,
+              "U_m": 141.4213562373,
+              "I_eff": 2.0,
+              "I_m": 2.8284271247
+            },
+            "data": [
+              "正弦交变电压的有效值：100.0 V",
+              "正弦交变电压的峰值：141.4213562373 V",
+              "正弦交变电流的有效值：2.0 A",
+              "正弦交变电流的峰值：2.8284271247 A"
+            ]
+          },
+          "predicted_errors": [
+            {
+              "option": "A",
+              "text": "70.7107 V",
+              "reason": "错误式量纲正确，只能靠数值实测抓住：峰值 141.421 V 时会算出 70.711 V，正确有效值是 100 V。",
+              "expression": "U_m/2",
+              "status": "误答原因预测，待教师确认；未采集学生作答证据"
+            }
+          ],
+          "difficulty_note": "建议难度沿用本题level（源卡难度）；尚非题目难度实测，待教师调整",
+          "estimated_seconds": [
+            60,
+            120
+          ],
+          "time_basis": "未做学生计时；按现有难度给出备课估计区间，待教师确认",
+          "machine_checks": [
+            {
+              "name": "题目ID关联源知识点",
+              "passed": true
+            },
+            {
+              "name": "选项标签唯一且参考标签存在",
+              "passed": true
+            },
+            {
+              "name": "选项文本互异",
+              "passed": true
+            },
+            {
+              "name": "正确路径独立数值复算",
+              "passed": true
+            },
+            {
+              "name": "带量纲求值与独立求值一致",
+              "passed": true
+            },
+            {
+              "name": "干扰路径复算且与正确路径分离",
+              "passed": true
+            }
+          ],
+          "machine_boundary": "只列本次逐题实际执行项目；不把关联知识卡的方向、扫描或一致性检查算作本题已验。概念题未验命题真假。",
+          "human_review_items": [
+            "题干条件是否充分、清楚且符合学段",
+            "参考结论在指定条件下是否唯一",
+            "干扰项是否合理、对应真实认知问题且无答案暗示",
+            "公式或概念锚点是否准确",
+            "建议难度及用时是否适合教学",
+            "语言、装置与安全操作是否恰当"
+          ],
+          "reference_answer_note": "现有参考答案保持；即使本地可以判选项，也仍须教师审核教学可用性"
+        }
       }
     },
     {
@@ -284,7 +499,62 @@
           "stem_clear": null,
           "no_cross_segment": null
         },
-        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。"
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。",
+        "material": {
+          "anchors": [
+            {
+              "kind": "概念或操作",
+              "name": "交变电流的峰值、有效值、周期与频率",
+              "claim": "认为任何周期交变电流都满足有效值等于峰值除以 sqrt(2)",
+              "correction_basis": "sqrt(2) 关系只适用于正弦式交变电流；其他波形必须由相同发热效果定义有效值。这是适用条件判断，标注人工审核。",
+              "note": "概念锚点及命题真假待教师确认；未套用任意第一条公式",
+              "display": "认为任何周期交变电流都满足有效值等于峰值除以 √(2)"
+            }
+          ],
+          "source": {
+            "nature": "原创概念/操作命题；无真实测量记录",
+            "source_error_index": 1
+          },
+          "predicted_errors": [
+            {
+              "option": "A",
+              "text": "该说法成立。",
+              "reason": "sqrt(2) 关系只适用于正弦式交变电流；其他波形必须由相同发热效果定义有效值。这是适用条件判断，标注人工审核。",
+              "expression": null,
+              "status": "误答原因预测，待教师确认；未采集学生作答证据"
+            }
+          ],
+          "difficulty_note": "建议难度沿用本题level（源卡难度）；尚非题目难度实测，待教师调整",
+          "estimated_seconds": [
+            60,
+            120
+          ],
+          "time_basis": "未做学生计时；按现有难度给出备课估计区间，待教师确认",
+          "machine_checks": [
+            {
+              "name": "题目ID关联源知识点",
+              "passed": true
+            },
+            {
+              "name": "选项标签唯一且参考标签存在",
+              "passed": true
+            },
+            {
+              "name": "选项文本互异",
+              "passed": true
+            }
+          ],
+          "machine_boundary": "只列本次逐题实际执行项目；不把关联知识卡的方向、扫描或一致性检查算作本题已验。概念题未验命题真假。",
+          "human_review_items": [
+            "题干条件是否充分、清楚且符合学段",
+            "参考结论在指定条件下是否唯一",
+            "干扰项是否合理、对应真实认知问题且无答案暗示",
+            "公式或概念锚点是否准确",
+            "建议难度及用时是否适合教学",
+            "语言、装置与安全操作是否恰当"
+          ],
+          "reference_answer_note": "现有参考答案保持；即使本地可以判选项，也仍须教师审核教学可用性"
+        }
       }
     },
     {
@@ -344,7 +614,62 @@
           "stem_clear": null,
           "no_cross_segment": null
         },
-        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。"
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。",
+        "material": {
+          "anchors": [
+            {
+              "kind": "概念或操作",
+              "name": "正弦式交变电流的表达式与图像",
+              "claim": "把任意计时起点都写成 u=U_m*sin(omega*t)，忽略初相位",
+              "correction_basis": "只有从电压过零且沿正方向增大的时刻开始计时，初相位才为零。换起点后应写入相应初相位，这需要结合题图人工判断。",
+              "note": "概念锚点及命题真假待教师确认；未套用任意第一条公式",
+              "display": "把任意计时起点都写成 u=U<sub>m</sub>·sin(ω·t)，忽略初相位"
+            }
+          ],
+          "source": {
+            "nature": "原创概念/操作命题；无真实测量记录",
+            "source_error_index": 0
+          },
+          "predicted_errors": [
+            {
+              "option": "A",
+              "text": "该说法不成立。",
+              "reason": "只有从电压过零且沿正方向增大的时刻开始计时，初相位才为零。换起点后应写入相应初相位，这需要结合题图人工判断。",
+              "expression": null,
+              "status": "误答原因预测，待教师确认；未采集学生作答证据"
+            }
+          ],
+          "difficulty_note": "建议难度沿用本题level（源卡难度）；尚非题目难度实测，待教师调整",
+          "estimated_seconds": [
+            60,
+            120
+          ],
+          "time_basis": "未做学生计时；按现有难度给出备课估计区间，待教师确认",
+          "machine_checks": [
+            {
+              "name": "题目ID关联源知识点",
+              "passed": true
+            },
+            {
+              "name": "选项标签唯一且参考标签存在",
+              "passed": true
+            },
+            {
+              "name": "选项文本互异",
+              "passed": true
+            }
+          ],
+          "machine_boundary": "只列本次逐题实际执行项目；不把关联知识卡的方向、扫描或一致性检查算作本题已验。概念题未验命题真假。",
+          "human_review_items": [
+            "题干条件是否充分、清楚且符合学段",
+            "参考结论在指定条件下是否唯一",
+            "干扰项是否合理、对应真实认知问题且无答案暗示",
+            "公式或概念锚点是否准确",
+            "建议难度及用时是否适合教学",
+            "语言、装置与安全操作是否恰当"
+          ],
+          "reference_answer_note": "现有参考答案保持；即使本地可以判选项，也仍须教师审核教学可用性"
+        }
       }
     },
     {
@@ -426,7 +751,87 @@
           "stem_clear": null,
           "no_cross_segment": null
         },
-        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。"
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。",
+        "material": {
+          "anchors": [
+            {
+              "kind": "公式",
+              "name": "正弦交变电压的瞬时值",
+              "expression": "U_m*sin(omega*t)",
+              "when": "从电压过零且沿正方向增大的时刻开始计时，初相位为零",
+              "display": "U<sub>m</sub>·sin(ω·t)"
+            }
+          ],
+          "source": {
+            "nature": "原创设计示例，非教材实测或真实实验记录",
+            "scenario": "四分之一周期",
+            "parameters": {
+              "u": 100.0,
+              "U_m": 100.0,
+              "omega": 314.159265359,
+              "t": 0.005,
+              "phi": 1.5707963268
+            },
+            "data": [
+              "t 时刻交变电压的瞬时值：100.0 V",
+              "交变电压峰值：100.0 V",
+              "角频率：314.159265359 rad/s",
+              "从规定零相位时刻开始的时间：0.005 s",
+              "相位：1.5707963268 rad"
+            ]
+          },
+          "predicted_errors": [
+            {
+              "option": "B",
+              "text": "-1.03412e-11 V",
+              "reason": "正弦与余弦的量纲完全相同，量纲检查无法发现相位错位。四分之一周期时错误式给出 0 V，而正确瞬时值为 100 V。",
+              "expression": "U_m*cos(omega*t)",
+              "status": "误答原因预测，待教师确认；未采集学生作答证据"
+            }
+          ],
+          "difficulty_note": "建议难度沿用本题level（源卡难度）；尚非题目难度实测，待教师调整",
+          "estimated_seconds": [
+            60,
+            120
+          ],
+          "time_basis": "未做学生计时；按现有难度给出备课估计区间，待教师确认",
+          "machine_checks": [
+            {
+              "name": "题目ID关联源知识点",
+              "passed": true
+            },
+            {
+              "name": "选项标签唯一且参考标签存在",
+              "passed": true
+            },
+            {
+              "name": "选项文本互异",
+              "passed": true
+            },
+            {
+              "name": "正确路径独立数值复算",
+              "passed": true
+            },
+            {
+              "name": "带量纲求值与独立求值一致",
+              "passed": true
+            },
+            {
+              "name": "干扰路径复算且与正确路径分离",
+              "passed": true
+            }
+          ],
+          "machine_boundary": "只列本次逐题实际执行项目；不把关联知识卡的方向、扫描或一致性检查算作本题已验。概念题未验命题真假。",
+          "human_review_items": [
+            "题干条件是否充分、清楚且符合学段",
+            "参考结论在指定条件下是否唯一",
+            "干扰项是否合理、对应真实认知问题且无答案暗示",
+            "公式或概念锚点是否准确",
+            "建议难度及用时是否适合教学",
+            "语言、装置与安全操作是否恰当"
+          ],
+          "reference_answer_note": "现有参考答案保持；即使本地可以判选项，也仍须教师审核教学可用性"
+        }
       }
     },
     {
@@ -509,7 +914,89 @@
           "stem_clear": null,
           "no_cross_segment": null
         },
-        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。"
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。",
+        "material": {
+          "anchors": [
+            {
+              "kind": "公式",
+              "name": "理想变压器的电流关系",
+              "expression": "I1*N1/N2",
+              "when": "理想变压器带有负载，输入功率等于输出功率",
+              "display": "I<sub>1</sub>·N1/N2"
+            }
+          ],
+          "source": {
+            "nature": "原创设计示例，非教材实测或真实实验记录",
+            "scenario": "理想降压变压器",
+            "parameters": {
+              "U1": 220.0,
+              "U2": 44.0,
+              "N1": 1000,
+              "N2": 200,
+              "I1": 1.0,
+              "I2": 5.0
+            },
+            "data": [
+              "原线圈两端交变电压的有效值：220.0 V",
+              "副线圈两端交变电压的有效值：44.0 V",
+              "原线圈匝数：1000 1",
+              "副线圈匝数：200 1",
+              "原线圈电流的有效值：1.0 A",
+              "副线圈电流的有效值：5.0 A"
+            ]
+          },
+          "predicted_errors": [
+            {
+              "option": "A",
+              "text": "0.2 A",
+              "reason": "量纲正确但数值错误：该降压情境会算出 0.2 A，正确值是 5.0 A；正确关系由功率守恒决定，电流与匝数成反比。",
+              "expression": "I1*N2/N1",
+              "status": "误答原因预测，待教师确认；未采集学生作答证据"
+            }
+          ],
+          "difficulty_note": "建议难度沿用本题level（源卡难度）；尚非题目难度实测，待教师调整",
+          "estimated_seconds": [
+            60,
+            120
+          ],
+          "time_basis": "未做学生计时；按现有难度给出备课估计区间，待教师确认",
+          "machine_checks": [
+            {
+              "name": "题目ID关联源知识点",
+              "passed": true
+            },
+            {
+              "name": "选项标签唯一且参考标签存在",
+              "passed": true
+            },
+            {
+              "name": "选项文本互异",
+              "passed": true
+            },
+            {
+              "name": "正确路径独立数值复算",
+              "passed": true
+            },
+            {
+              "name": "带量纲求值与独立求值一致",
+              "passed": true
+            },
+            {
+              "name": "干扰路径复算且与正确路径分离",
+              "passed": true
+            }
+          ],
+          "machine_boundary": "只列本次逐题实际执行项目；不把关联知识卡的方向、扫描或一致性检查算作本题已验。概念题未验命题真假。",
+          "human_review_items": [
+            "题干条件是否充分、清楚且符合学段",
+            "参考结论在指定条件下是否唯一",
+            "干扰项是否合理、对应真实认知问题且无答案暗示",
+            "公式或概念锚点是否准确",
+            "建议难度及用时是否适合教学",
+            "语言、装置与安全操作是否恰当"
+          ],
+          "reference_answer_note": "现有参考答案保持；即使本地可以判选项，也仍须教师审核教学可用性"
+        }
       }
     },
     {
@@ -569,7 +1056,62 @@
           "stem_clear": null,
           "no_cross_segment": null
         },
-        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。"
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。",
+        "material": {
+          "anchors": [
+            {
+              "kind": "概念或操作",
+              "name": "理想变压器",
+              "claim": "把稳定直流接入普通变压器，认为仍能持续得到按匝数比变化的电压",
+              "correction_basis": "稳定直流建立后磁通量不再变化，副线圈没有持续感应电动势；原线圈还可能因电流过大而发热损坏。这是适用条件判断，需人工审核。",
+              "note": "概念锚点及命题真假待教师确认；未套用任意第一条公式",
+              "display": "把稳定直流接入普通变压器，认为仍能持续得到按匝数比变化的电压"
+            }
+          ],
+          "source": {
+            "nature": "原创概念/操作命题；无真实测量记录",
+            "source_error_index": 1
+          },
+          "predicted_errors": [
+            {
+              "option": "A",
+              "text": "该说法不成立。",
+              "reason": "稳定直流建立后磁通量不再变化，副线圈没有持续感应电动势；原线圈还可能因电流过大而发热损坏。这是适用条件判断，需人工审核。",
+              "expression": null,
+              "status": "误答原因预测，待教师确认；未采集学生作答证据"
+            }
+          ],
+          "difficulty_note": "建议难度沿用本题level（源卡难度）；尚非题目难度实测，待教师调整",
+          "estimated_seconds": [
+            60,
+            120
+          ],
+          "time_basis": "未做学生计时；按现有难度给出备课估计区间，待教师确认",
+          "machine_checks": [
+            {
+              "name": "题目ID关联源知识点",
+              "passed": true
+            },
+            {
+              "name": "选项标签唯一且参考标签存在",
+              "passed": true
+            },
+            {
+              "name": "选项文本互异",
+              "passed": true
+            }
+          ],
+          "machine_boundary": "只列本次逐题实际执行项目；不把关联知识卡的方向、扫描或一致性检查算作本题已验。概念题未验命题真假。",
+          "human_review_items": [
+            "题干条件是否充分、清楚且符合学段",
+            "参考结论在指定条件下是否唯一",
+            "干扰项是否合理、对应真实认知问题且无答案暗示",
+            "公式或概念锚点是否准确",
+            "建议难度及用时是否适合教学",
+            "语言、装置与安全操作是否恰当"
+          ],
+          "reference_answer_note": "现有参考答案保持；即使本地可以判选项，也仍须教师审核教学可用性"
+        }
       }
     },
     {
@@ -651,7 +1193,87 @@
           "stem_clear": null,
           "no_cross_segment": null
         },
-        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。"
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。",
+        "material": {
+          "anchors": [
+            {
+              "kind": "公式",
+              "name": "输电线电流",
+              "expression": "P_send/U_send",
+              "when": "用有效值描述且功率因数按高中理想模型取 1，U_send 大于零",
+              "display": "P<sub>送</sub>/U<sub>送</sub>"
+            }
+          ],
+          "source": {
+            "nature": "原创设计示例，非教材实测或真实实验记录",
+            "scenario": "高压输电",
+            "parameters": {
+              "P_send": 1000000.0,
+              "U_send": 100000.0,
+              "I": 10.0,
+              "R": 20.0,
+              "Delta_P": 2000.0
+            },
+            "data": [
+              "输电系统要输送的有功功率：1000000.0 W",
+              "输电电压的有效值：100000.0 V",
+              "输电线中的电流有效值：10.0 A",
+              "两根输电线的总电阻：20.0 ohm",
+              "输电线因发热损失的功率：2000.0 W"
+            ]
+          },
+          "predicted_errors": [
+            {
+              "option": "B",
+              "text": "5000 A",
+              "reason": "输电电压主要加在用户负载和输电系统上，不是全部加在输电线电阻上。高压输电情境中错误式得 5000 A，而由输送功率确定的正确电流仅 10 A。",
+              "expression": "U_send/R",
+              "status": "误答原因预测，待教师确认；未采集学生作答证据"
+            }
+          ],
+          "difficulty_note": "建议难度沿用本题level（源卡难度）；尚非题目难度实测，待教师调整",
+          "estimated_seconds": [
+            120,
+            240
+          ],
+          "time_basis": "未做学生计时；按现有难度给出备课估计区间，待教师确认",
+          "machine_checks": [
+            {
+              "name": "题目ID关联源知识点",
+              "passed": true
+            },
+            {
+              "name": "选项标签唯一且参考标签存在",
+              "passed": true
+            },
+            {
+              "name": "选项文本互异",
+              "passed": true
+            },
+            {
+              "name": "正确路径独立数值复算",
+              "passed": true
+            },
+            {
+              "name": "带量纲求值与独立求值一致",
+              "passed": true
+            },
+            {
+              "name": "干扰路径复算且与正确路径分离",
+              "passed": true
+            }
+          ],
+          "machine_boundary": "只列本次逐题实际执行项目；不把关联知识卡的方向、扫描或一致性检查算作本题已验。概念题未验命题真假。",
+          "human_review_items": [
+            "题干条件是否充分、清楚且符合学段",
+            "参考结论在指定条件下是否唯一",
+            "干扰项是否合理、对应真实认知问题且无答案暗示",
+            "公式或概念锚点是否准确",
+            "建议难度及用时是否适合教学",
+            "语言、装置与安全操作是否恰当"
+          ],
+          "reference_answer_note": "现有参考答案保持；即使本地可以判选项，也仍须教师审核教学可用性"
+        }
       }
     },
     {
@@ -720,7 +1342,99 @@
           "stem_clear": null,
           "no_cross_segment": null
         },
-        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。"
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。",
+        "material": {
+          "anchors": [
+            {
+              "kind": "公式量纲",
+              "name": "本题目标量与等式",
+              "expression": "Delta_P = I^2*R",
+              "when": "量纲相符是必要条件，不能据此证明系数或物理条件正确",
+              "display": "ΔP = I²·R"
+            }
+          ],
+          "source": {
+            "nature": "原创量纲辨析命题；无实测数据",
+            "source_error_index": 1
+          },
+          "predicted_errors": [
+            {
+              "option": "A",
+              "text": "ΔP = P<sub>送</sub>·R/U<sub>送</sub>",
+              "reason": "功率一定时电流与电压成反比，而损耗又与电流平方成正比，所以电压加倍时损耗应降为四分之一。错误式还存在量纲不一致。",
+              "expression": "Delta_P = P_send*R/U_send",
+              "status": "误答原因预测，待教师确认；未采集学生作答证据"
+            }
+          ],
+          "difficulty_note": "建议难度沿用本题level（源卡难度）；尚非题目难度实测，待教师调整",
+          "estimated_seconds": [
+            120,
+            240
+          ],
+          "time_basis": "未做学生计时；按现有难度给出备课估计区间，待教师确认",
+          "machine_checks": [
+            {
+              "name": "题目ID关联源知识点",
+              "passed": true
+            },
+            {
+              "name": "选项标签唯一且参考标签存在",
+              "passed": true
+            },
+            {
+              "name": "选项文本互异",
+              "passed": true
+            },
+            {
+              "name": "正确式量纲一致",
+              "passed": true,
+              "actual": {
+                "type": "dimension",
+                "type_name": "量纲一致性",
+                "formula": "教师审核证据",
+                "ok": true,
+                "detail": "左端M·L^2·T^-3，右端M·L^2·T^-3",
+                "note": "",
+                "error": null,
+                "evaluation_status": "success",
+                "failure_reason": null,
+                "result_dimension": "M·L^2·T^-3",
+                "reference_dimension": "M·L^2·T^-3",
+                "diagnostics": {},
+                "physical_error_identified": false
+              }
+            },
+            {
+              "name": "干扰式量纲冲突",
+              "passed": true,
+              "actual": {
+                "type": "dimension",
+                "type_name": "量纲一致性",
+                "formula": "教师审核证据",
+                "ok": false,
+                "detail": "左端M·L^2·T^-3，右端M·L^2·T^-3·I^-1",
+                "note": "",
+                "error": null,
+                "evaluation_status": "dimension_conflict",
+                "failure_reason": "dimension_conflict",
+                "result_dimension": "M·L^2·T^-3·I^-1",
+                "reference_dimension": "M·L^2·T^-3",
+                "diagnostics": {},
+                "physical_error_identified": true
+              }
+            }
+          ],
+          "machine_boundary": "只列本次逐题实际执行项目；不把关联知识卡的方向、扫描或一致性检查算作本题已验。概念题未验命题真假。",
+          "human_review_items": [
+            "题干条件是否充分、清楚且符合学段",
+            "参考结论在指定条件下是否唯一",
+            "干扰项是否合理、对应真实认知问题且无答案暗示",
+            "公式或概念锚点是否准确",
+            "建议难度及用时是否适合教学",
+            "语言、装置与安全操作是否恰当"
+          ],
+          "reference_answer_note": "现有参考答案保持；即使本地可以判选项，也仍须教师审核教学可用性"
+        }
       }
     },
     {
@@ -802,7 +1516,87 @@
           "stem_clear": null,
           "no_cross_segment": null
         },
-        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。"
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。",
+        "material": {
+          "anchors": [
+            {
+              "kind": "公式",
+              "name": "理想电感的感抗",
+              "expression": "omega*L",
+              "when": "理想电感接入角频率为 omega 的正弦式交变电流",
+              "display": "ω·L"
+            }
+          ],
+          "source": {
+            "nature": "原创设计示例，非教材实测或真实实验记录",
+            "scenario": "工频电抗",
+            "parameters": {
+              "X_L": 62.8318530718,
+              "X_C": 31.8309886184,
+              "omega": 314.159265359,
+              "L": 0.2,
+              "C_cap": 0.0001
+            },
+            "data": [
+              "理想电感对正弦交流的感抗：62.8318530718 ohm",
+              "理想电容对正弦交流的容抗：31.8309886184 ohm",
+              "交变电流的角频率：314.159265359 rad/s",
+              "电感器的自感系数：0.2 H",
+              "电容器的电容：0.0001 F"
+            ]
+          },
+          "predicted_errors": [
+            {
+              "option": "B",
+              "text": "125.664 Ω",
+              "reason": "多出的 2 没有量纲，所以错误式量纲完全正确。工频情境中它会算出约 125.66 Ω，正确感抗约为 62.83 Ω，只能靠数值代入抓住。",
+              "expression": "2*omega*L",
+              "status": "误答原因预测，待教师确认；未采集学生作答证据"
+            }
+          ],
+          "difficulty_note": "建议难度沿用本题level（源卡难度）；尚非题目难度实测，待教师调整",
+          "estimated_seconds": [
+            120,
+            240
+          ],
+          "time_basis": "未做学生计时；按现有难度给出备课估计区间，待教师确认",
+          "machine_checks": [
+            {
+              "name": "题目ID关联源知识点",
+              "passed": true
+            },
+            {
+              "name": "选项标签唯一且参考标签存在",
+              "passed": true
+            },
+            {
+              "name": "选项文本互异",
+              "passed": true
+            },
+            {
+              "name": "正确路径独立数值复算",
+              "passed": true
+            },
+            {
+              "name": "带量纲求值与独立求值一致",
+              "passed": true
+            },
+            {
+              "name": "干扰路径复算且与正确路径分离",
+              "passed": true
+            }
+          ],
+          "machine_boundary": "只列本次逐题实际执行项目；不把关联知识卡的方向、扫描或一致性检查算作本题已验。概念题未验命题真假。",
+          "human_review_items": [
+            "题干条件是否充分、清楚且符合学段",
+            "参考结论在指定条件下是否唯一",
+            "干扰项是否合理、对应真实认知问题且无答案暗示",
+            "公式或概念锚点是否准确",
+            "建议难度及用时是否适合教学",
+            "语言、装置与安全操作是否恰当"
+          ],
+          "reference_answer_note": "现有参考答案保持；即使本地可以判选项，也仍须教师审核教学可用性"
+        }
       }
     },
     {
@@ -871,7 +1665,99 @@
           "stem_clear": null,
           "no_cross_segment": null
         },
-        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。"
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。",
+        "material": {
+          "anchors": [
+            {
+              "kind": "公式量纲",
+              "name": "本题目标量与等式",
+              "expression": "X_C = 1/(omega*C_cap)",
+              "when": "量纲相符是必要条件，不能据此证明系数或物理条件正确",
+              "display": "X<sub>C</sub> = 1/(ω·C<sub>容</sub>)"
+            }
+          ],
+          "source": {
+            "nature": "原创量纲辨析命题；无实测数据",
+            "source_error_index": 1
+          },
+          "predicted_errors": [
+            {
+              "option": "A",
+              "text": "X<sub>C</sub> = ω·C<sub>容</sub>",
+              "reason": "正确容抗与角频率成反比；频率加倍时容抗应从约 31.83 Ω 减至约 15.92 Ω。错误式量纲也不是欧姆。",
+              "expression": "X_C = omega*C_cap",
+              "status": "误答原因预测，待教师确认；未采集学生作答证据"
+            }
+          ],
+          "difficulty_note": "建议难度沿用本题level（源卡难度）；尚非题目难度实测，待教师调整",
+          "estimated_seconds": [
+            120,
+            240
+          ],
+          "time_basis": "未做学生计时；按现有难度给出备课估计区间，待教师确认",
+          "machine_checks": [
+            {
+              "name": "题目ID关联源知识点",
+              "passed": true
+            },
+            {
+              "name": "选项标签唯一且参考标签存在",
+              "passed": true
+            },
+            {
+              "name": "选项文本互异",
+              "passed": true
+            },
+            {
+              "name": "正确式量纲一致",
+              "passed": true,
+              "actual": {
+                "type": "dimension",
+                "type_name": "量纲一致性",
+                "formula": "教师审核证据",
+                "ok": true,
+                "detail": "左端M·L^2·T^-3·I^-2，右端M·L^2·T^-3·I^-2",
+                "note": "",
+                "error": null,
+                "evaluation_status": "success",
+                "failure_reason": null,
+                "result_dimension": "M·L^2·T^-3·I^-2",
+                "reference_dimension": "M·L^2·T^-3·I^-2",
+                "diagnostics": {},
+                "physical_error_identified": false
+              }
+            },
+            {
+              "name": "干扰式量纲冲突",
+              "passed": true,
+              "actual": {
+                "type": "dimension",
+                "type_name": "量纲一致性",
+                "formula": "教师审核证据",
+                "ok": false,
+                "detail": "左端M·L^2·T^-3·I^-2，右端M^-1·L^-2·T^3·I^2",
+                "note": "",
+                "error": null,
+                "evaluation_status": "dimension_conflict",
+                "failure_reason": "dimension_conflict",
+                "result_dimension": "M^-1·L^-2·T^3·I^2",
+                "reference_dimension": "M·L^2·T^-3·I^-2",
+                "diagnostics": {},
+                "physical_error_identified": true
+              }
+            }
+          ],
+          "machine_boundary": "只列本次逐题实际执行项目；不把关联知识卡的方向、扫描或一致性检查算作本题已验。概念题未验命题真假。",
+          "human_review_items": [
+            "题干条件是否充分、清楚且符合学段",
+            "参考结论在指定条件下是否唯一",
+            "干扰项是否合理、对应真实认知问题且无答案暗示",
+            "公式或概念锚点是否准确",
+            "建议难度及用时是否适合教学",
+            "语言、装置与安全操作是否恰当"
+          ],
+          "reference_answer_note": "现有参考答案保持；即使本地可以判选项，也仍须教师审核教学可用性"
+        }
       }
     },
     {
@@ -956,7 +1842,93 @@
           "stem_clear": null,
           "no_cross_segment": null
         },
-        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。"
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。",
+        "material": {
+          "anchors": [
+            {
+              "kind": "公式",
+              "name": "理想LC周期",
+              "expression": "2*pi*sqrt(L*C)",
+              "when": "理想电感和电容构成自由LC振荡回路，L、C>0，忽略电阻损耗、辐射及外部驱动。",
+              "display": "2·π·√(L·C)"
+            }
+          ],
+          "source": {
+            "nature": "原创设计示例，非教材实测或真实实验记录",
+            "scenario": "电感甲",
+            "parameters": {
+              "L": 0.1,
+              "C": 1e-05,
+              "q0": 0.0001,
+              "I0": 0.1,
+              "T": 0.006283185307179586,
+              "omega": 1000,
+              "Ee": 0.0005,
+              "Em": 0.0005
+            },
+            "data": [
+              "电感：0.1 H",
+              "电容：1e-05 F",
+              "极板最大电荷量：0.0001 C",
+              "最大电流大小：0.1 A",
+              "理想振荡周期：0.006283185307179586 s",
+              "角频率：1000 rad/s",
+              "最大电场能：0.0005 J",
+              "最大磁场能：0.0005 J"
+            ]
+          },
+          "predicted_errors": [
+            {
+              "option": "B",
+              "text": "0.00314159 s",
+              "reason": "角频率的倒数还须乘完整2π，不能写π√(LC)；该参数周期约6.283 ms，错式约3.142 ms。",
+              "expression": "pi*sqrt(L*C)",
+              "status": "误答原因预测，待教师确认；未采集学生作答证据"
+            }
+          ],
+          "difficulty_note": "建议难度沿用本题level（源卡难度）；尚非题目难度实测，待教师调整",
+          "estimated_seconds": [
+            60,
+            120
+          ],
+          "time_basis": "未做学生计时；按现有难度给出备课估计区间，待教师确认",
+          "machine_checks": [
+            {
+              "name": "题目ID关联源知识点",
+              "passed": true
+            },
+            {
+              "name": "选项标签唯一且参考标签存在",
+              "passed": true
+            },
+            {
+              "name": "选项文本互异",
+              "passed": true
+            },
+            {
+              "name": "正确路径独立数值复算",
+              "passed": true
+            },
+            {
+              "name": "带量纲求值与独立求值一致",
+              "passed": true
+            },
+            {
+              "name": "干扰路径复算且与正确路径分离",
+              "passed": true
+            }
+          ],
+          "machine_boundary": "只列本次逐题实际执行项目；不把关联知识卡的方向、扫描或一致性检查算作本题已验。概念题未验命题真假。",
+          "human_review_items": [
+            "题干条件是否充分、清楚且符合学段",
+            "参考结论在指定条件下是否唯一",
+            "干扰项是否合理、对应真实认知问题且无答案暗示",
+            "公式或概念锚点是否准确",
+            "建议难度及用时是否适合教学",
+            "语言、装置与安全操作是否恰当"
+          ],
+          "reference_answer_note": "现有参考答案保持；即使本地可以判选项，也仍须教师审核教学可用性"
+        }
       }
     },
     {
@@ -1016,7 +1988,62 @@
           "stem_clear": null,
           "no_cross_segment": null
         },
-        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。"
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。",
+        "material": {
+          "anchors": [
+            {
+              "kind": "概念或操作",
+              "name": "LC振荡电路：周期、相位与能量",
+              "claim": "电容电荷最大时电流也最大，或实际有电阻仍永远等幅。",
+              "correction_basis": "电荷极值处时间导数零，电流此时零；真实电阻产生热损失而衰减。相位符号还取决于选定电荷极板及电流方向。",
+              "note": "概念锚点及命题真假待教师确认；未套用任意第一条公式",
+              "display": "电容电荷最大时电流也最大，或实际有电阻仍永远等幅。"
+            }
+          ],
+          "source": {
+            "nature": "原创概念/操作命题；无真实测量记录",
+            "source_error_index": 1
+          },
+          "predicted_errors": [
+            {
+              "option": "A",
+              "text": "该说法不成立。",
+              "reason": "电荷极值处时间导数零，电流此时零；真实电阻产生热损失而衰减。相位符号还取决于选定电荷极板及电流方向。",
+              "expression": null,
+              "status": "误答原因预测，待教师确认；未采集学生作答证据"
+            }
+          ],
+          "difficulty_note": "建议难度沿用本题level（源卡难度）；尚非题目难度实测，待教师调整",
+          "estimated_seconds": [
+            60,
+            120
+          ],
+          "time_basis": "未做学生计时；按现有难度给出备课估计区间，待教师确认",
+          "machine_checks": [
+            {
+              "name": "题目ID关联源知识点",
+              "passed": true
+            },
+            {
+              "name": "选项标签唯一且参考标签存在",
+              "passed": true
+            },
+            {
+              "name": "选项文本互异",
+              "passed": true
+            }
+          ],
+          "machine_boundary": "只列本次逐题实际执行项目；不把关联知识卡的方向、扫描或一致性检查算作本题已验。概念题未验命题真假。",
+          "human_review_items": [
+            "题干条件是否充分、清楚且符合学段",
+            "参考结论在指定条件下是否唯一",
+            "干扰项是否合理、对应真实认知问题且无答案暗示",
+            "公式或概念锚点是否准确",
+            "建议难度及用时是否适合教学",
+            "语言、装置与安全操作是否恰当"
+          ],
+          "reference_answer_note": "现有参考答案保持；即使本地可以判选项，也仍须教师审核教学可用性"
+        }
       }
     }
   ],

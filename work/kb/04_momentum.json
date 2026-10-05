@@ -568,6 +568,13 @@
           "v2": 0,
           "v1_p": 1,
           "v2_p": 4
+        },
+        "不等质量粘连设计": {
+          "m1": 2,
+          "m2": 1,
+          "v1": 3,
+          "v2": 0,
+          "v_common": 2
         }
       },
       "formulas": [
@@ -604,6 +611,14 @@
               "var": "m2",
               "lo": 0.1,
               "hi": 100
+            },
+            {
+              "type": "numeric",
+              "scenario": "不等质量粘连设计",
+              "ref": 2,
+              "rtol": 1e-10,
+              "atol": 0,
+              "note": "设计示例，初始总动量6 kg·m/s除总质量3 kg得2 m/s；错误算术平均为1.5 m/s。"
             }
           ]
         },
@@ -659,6 +674,17 @@
           "caught_by": "人工审核",
           "diagnostic": {
             "style": "物理结论与步骤辨析"
+          },
+          "automation_review": {
+            "status": "指定数值反例已补验；人工审核标签保留",
+            "basis": "原等质量数据掩盖算术平均错误，已补不等质量设计情境",
+            "scenario": "不等质量粘连设计",
+            "correct_expression": "v_common = (m1*v1+m2*v2)/(m1+m2)",
+            "wrong_expression": "(v1+v2)/2",
+            "correct_value": 2,
+            "wrong_value": 1.5,
+            "unit": "m/s",
+            "note": "机器只证明本设计反例，未证明概念讲解或教学可用性。原解析提到的精度限制属于历史机制，当前复验已能拒绝该数值错误。"
           }
         },
         {

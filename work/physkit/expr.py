@@ -352,9 +352,19 @@ def evaluate(node, env):
 
 
 def _call_func(name, args, node):
-    """函数求值。注意每个函数对参数的量纲有要求，这里逐条把关。"""
+    """函数求值。注意每个函数对参数的量纲有要求，这里逐条把关。
+
+    ★ 2026-10-05 质检方补：所有「数学上不允许」的输入都带上结构化状态。
+      - domain_error   ：定义域错误（负数开平方、对数非正、反三角超范围、除以零）
+      - overflow_error ：溢出（exp 太大、幂运算爆掉）
+      以前这三类都只有一句中文，上层拿不到状态，于是被笼统记成"没测成"，
+      实测统计因此失真。中文文案只供人读，**不参与任何判断**。
+    """
     if name == "sqrt":
         _need_args(name, args, 1)
+        v = args[0].value
+        if v is not None and v < 0:
+            raise ExprError("负数开平方：%g" % v, evaluation_status="domain_error")
         return args[0].sqrt()
 
     if name == "cbrt":
@@ -380,7 +390,8 @@ def _call_func(name, args, node):
         _need_dimensionless(name, args[0])
         v = args[0].value
         if v is not None and name in ("asin", "acos") and not (-1 <= v <= 1):
-            raise ExprError("%s 的自变量必须在 -1 到 1 之间，实际是 %g" % (name, v))
+            raise ExprError("%s 的自变量必须在 -1 到 1 之间，实际是 %g" % (name, v),
+                            evaluation_status="domain_error")
         fn = {"asin": math.asin, "acos": math.acos, "atan": math.atan}[name]
         return Quantity(None if v is None else fn(v), Dim())
 
@@ -392,9 +403,14 @@ def _call_func(name, args, node):
         if v is None:
             return Quantity(None, Dim())
         if name == "exp":
-            return Quantity(math.exp(v), Dim())
+            try:
+                return Quantity(math.exp(v), Dim())
+            except OverflowError:
+                raise ExprError("指数函数溢出：exp(%g) 超出浮点数范围" % v,
+                                evaluation_status="overflow_error")
         if v <= 0:
-            raise ExprError("对数的自变量必须大于 0，实际是 %g" % v)
+            raise ExprError("对数的自变量必须大于 0，实际是 %g" % v,
+                            evaluation_status="domain_error")
         return Quantity(math.log(v) if name == "ln" else math.log10(v), Dim())
 
     raise ExprError("不认识函数 %s" % name)

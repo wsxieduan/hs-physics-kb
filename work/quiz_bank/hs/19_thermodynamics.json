@@ -80,7 +80,83 @@
           "stem_clear": null,
           "no_cross_segment": null
         },
-        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。"
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。",
+        "material": {
+          "anchors": [
+            {
+              "kind": "公式",
+              "name": "热力学第一定律",
+              "expression": "Q + W",
+              "when": "采用外界对系统做功为正、传入系统的热量为正的约定",
+              "display": "Q + W"
+            }
+          ],
+          "source": {
+            "nature": "原创设计示例，非教材实测或真实实验记录",
+            "scenario": "吸热膨胀",
+            "parameters": {
+              "Q": 500,
+              "W": -200,
+              "delta_U": 300
+            },
+            "data": [
+              "传入系统的热量，吸热为正、放热为负：500 J",
+              "外界对系统做的功，外界做正功时为正：-200 J",
+              "系统内能的变化量，末态内能减初态内能：300 J"
+            ]
+          },
+          "predicted_errors": [
+            {
+              "option": "B",
+              "text": "700 J",
+              "reason": "本章的 W 指外界对系统做功。吸热膨胀情境中 W=-200 J，错误式得到 700 J，而能量收支应为 300 J。减号版本只适用于把 W 定义为系统对外做功的另一套约定。",
+              "expression": "Q - W",
+              "status": "误答原因预测，待教师确认；未采集学生作答证据"
+            }
+          ],
+          "difficulty_note": "建议难度沿用本题level（源卡难度）；尚非题目难度实测，待教师调整",
+          "estimated_seconds": [
+            60,
+            120
+          ],
+          "time_basis": "未做学生计时；按现有难度给出备课估计区间，待教师确认",
+          "machine_checks": [
+            {
+              "name": "题目ID关联源知识点",
+              "passed": true
+            },
+            {
+              "name": "选项标签唯一且参考标签存在",
+              "passed": true
+            },
+            {
+              "name": "选项文本互异",
+              "passed": true
+            },
+            {
+              "name": "正确路径独立数值复算",
+              "passed": true
+            },
+            {
+              "name": "带量纲求值与独立求值一致",
+              "passed": true
+            },
+            {
+              "name": "干扰路径复算且与正确路径分离",
+              "passed": true
+            }
+          ],
+          "machine_boundary": "只列本次逐题实际执行项目；不把关联知识卡的方向、扫描或一致性检查算作本题已验。概念题未验命题真假。",
+          "human_review_items": [
+            "题干条件是否充分、清楚且符合学段",
+            "参考结论在指定条件下是否唯一",
+            "干扰项是否合理、对应真实认知问题且无答案暗示",
+            "公式或概念锚点是否准确",
+            "建议难度及用时是否适合教学",
+            "语言、装置与安全操作是否恰当"
+          ],
+          "reference_answer_note": "现有参考答案保持；即使本地可以判选项，也仍须教师审核教学可用性"
+        }
       }
     },
     {
@@ -160,7 +236,83 @@
           "stem_clear": null,
           "no_cross_segment": null
         },
-        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。"
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。",
+        "material": {
+          "anchors": [
+            {
+              "kind": "公式",
+              "name": "热力学第一定律",
+              "expression": "Q + W",
+              "when": "采用外界对系统做功为正、传入系统的热量为正的约定",
+              "display": "Q + W"
+            }
+          ],
+          "source": {
+            "nature": "原创设计示例，非教材实测或真实实验记录",
+            "scenario": "绝热压缩",
+            "parameters": {
+              "Q": 0,
+              "W": 150,
+              "delta_U": 150
+            },
+            "data": [
+              "传入系统的热量，吸热为正、放热为负：0 J",
+              "外界对系统做的功，外界做正功时为正：150 J",
+              "系统内能的变化量，末态内能减初态内能：150 J"
+            ]
+          },
+          "predicted_errors": [
+            {
+              "option": "B",
+              "text": "0 J",
+              "reason": "绝热只表示 Q=0，不表示 W=0。绝热压缩中外界做功 150 J，内能增加 150 J；错误式却给出 0。",
+              "expression": "Q",
+              "status": "误答原因预测，待教师确认；未采集学生作答证据"
+            }
+          ],
+          "difficulty_note": "建议难度沿用本题level（源卡难度）；尚非题目难度实测，待教师调整",
+          "estimated_seconds": [
+            60,
+            120
+          ],
+          "time_basis": "未做学生计时；按现有难度给出备课估计区间，待教师确认",
+          "machine_checks": [
+            {
+              "name": "题目ID关联源知识点",
+              "passed": true
+            },
+            {
+              "name": "选项标签唯一且参考标签存在",
+              "passed": true
+            },
+            {
+              "name": "选项文本互异",
+              "passed": true
+            },
+            {
+              "name": "正确路径独立数值复算",
+              "passed": true
+            },
+            {
+              "name": "带量纲求值与独立求值一致",
+              "passed": true
+            },
+            {
+              "name": "干扰路径复算且与正确路径分离",
+              "passed": true
+            }
+          ],
+          "machine_boundary": "只列本次逐题实际执行项目；不把关联知识卡的方向、扫描或一致性检查算作本题已验。概念题未验命题真假。",
+          "human_review_items": [
+            "题干条件是否充分、清楚且符合学段",
+            "参考结论在指定条件下是否唯一",
+            "干扰项是否合理、对应真实认知问题且无答案暗示",
+            "公式或概念锚点是否准确",
+            "建议难度及用时是否适合教学",
+            "语言、装置与安全操作是否恰当"
+          ],
+          "reference_answer_note": "现有参考答案保持；即使本地可以判选项，也仍须教师审核教学可用性"
+        }
       }
     },
     {
@@ -240,7 +392,83 @@
           "stem_clear": null,
           "no_cross_segment": null
         },
-        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。"
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。",
+        "material": {
+          "anchors": [
+            {
+              "kind": "公式",
+              "name": "本卡物理关系的等价变形或明确边界条件",
+              "expression": "E_before",
+              "when": "能量可以在不同形式之间转化，也可以随热传递和做功跨越系统边界。总能量保持不变的条件是系统不与外界交换物质和能量，即选取孤立系统。仅仅密闭或绝热并不足以推出总能量不变。若系统只含相互传热的物体、没有外界做功且忽略容器吸热与环境散热，放热量与吸热量大小相等。",
+              "display": "E<sub>前</sub>"
+            }
+          ],
+          "source": {
+            "nature": "原创设计示例，非教材实测或真实实验记录",
+            "scenario": "孤立系统",
+            "parameters": {
+              "E_before": 1250,
+              "E_after": 1250,
+              "delta_E_total": 0
+            },
+            "data": [
+              "孤立系统初态的总能量：1250 J",
+              "孤立系统末态的总能量：1250 J",
+              "孤立系统总能量的变化量：0 J"
+            ]
+          },
+          "predicted_errors": [
+            {
+              "option": "A",
+              "text": "1000 J",
+              "reason": "“损耗”通常是机械能转化成内能并扩散到环境，不是能量消失。孤立系统情境中错误式只得 1000 J，而总能量仍应为 1250 J。",
+              "expression": "0.8*E_before",
+              "status": "误答原因预测，待教师确认；未采集学生作答证据"
+            }
+          ],
+          "difficulty_note": "建议难度沿用本题level（源卡难度）；尚非题目难度实测，待教师调整",
+          "estimated_seconds": [
+            60,
+            120
+          ],
+          "time_basis": "未做学生计时；按现有难度给出备课估计区间，待教师确认",
+          "machine_checks": [
+            {
+              "name": "题目ID关联源知识点",
+              "passed": true
+            },
+            {
+              "name": "选项标签唯一且参考标签存在",
+              "passed": true
+            },
+            {
+              "name": "选项文本互异",
+              "passed": true
+            },
+            {
+              "name": "正确路径独立数值复算",
+              "passed": true
+            },
+            {
+              "name": "带量纲求值与独立求值一致",
+              "passed": true
+            },
+            {
+              "name": "干扰路径复算且与正确路径分离",
+              "passed": true
+            }
+          ],
+          "machine_boundary": "只列本次逐题实际执行项目；不把关联知识卡的方向、扫描或一致性检查算作本题已验。概念题未验命题真假。",
+          "human_review_items": [
+            "题干条件是否充分、清楚且符合学段",
+            "参考结论在指定条件下是否唯一",
+            "干扰项是否合理、对应真实认知问题且无答案暗示",
+            "公式或概念锚点是否准确",
+            "建议难度及用时是否适合教学",
+            "语言、装置与安全操作是否恰当"
+          ],
+          "reference_answer_note": "现有参考答案保持；即使本地可以判选项，也仍须教师审核教学可用性"
+        }
       }
     },
     {
@@ -315,7 +543,81 @@
           "stem_clear": null,
           "no_cross_segment": null
         },
-        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。"
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。",
+        "material": {
+          "anchors": [
+            {
+              "kind": "公式",
+              "name": "绝热热交换的热量平衡",
+              "expression": "Q_release",
+              "when": "系统只含相互传热的物体，并且与环境绝热、不发生其他能量交换",
+              "display": "Q<sub>放</sub>"
+            }
+          ],
+          "source": {
+            "nature": "原创设计示例，非教材实测或真实实验记录",
+            "scenario": "绝热混合",
+            "parameters": {
+              "Q_release": 8400,
+              "Q_absorb": 8400
+            },
+            "data": [
+              "高温物体放出的热量大小：8400 J",
+              "低温物体吸收的热量大小：8400 J"
+            ]
+          },
+          "predicted_errors": [
+            {
+              "option": "A",
+              "text": "16800 J",
+              "reason": "同一份转移的能量被重复记了两次。情境中右边变成 16800 J，而低温物体只吸收 8400 J。",
+              "expression": "Q_release + Q_absorb",
+              "status": "误答原因预测，待教师确认；未采集学生作答证据"
+            }
+          ],
+          "difficulty_note": "建议难度沿用本题level（源卡难度）；尚非题目难度实测，待教师调整",
+          "estimated_seconds": [
+            60,
+            120
+          ],
+          "time_basis": "未做学生计时；按现有难度给出备课估计区间，待教师确认",
+          "machine_checks": [
+            {
+              "name": "题目ID关联源知识点",
+              "passed": true
+            },
+            {
+              "name": "选项标签唯一且参考标签存在",
+              "passed": true
+            },
+            {
+              "name": "选项文本互异",
+              "passed": true
+            },
+            {
+              "name": "正确路径独立数值复算",
+              "passed": true
+            },
+            {
+              "name": "带量纲求值与独立求值一致",
+              "passed": true
+            },
+            {
+              "name": "干扰路径复算且与正确路径分离",
+              "passed": true
+            }
+          ],
+          "machine_boundary": "只列本次逐题实际执行项目；不把关联知识卡的方向、扫描或一致性检查算作本题已验。概念题未验命题真假。",
+          "human_review_items": [
+            "题干条件是否充分、清楚且符合学段",
+            "参考结论在指定条件下是否唯一",
+            "干扰项是否合理、对应真实认知问题且无答案暗示",
+            "公式或概念锚点是否准确",
+            "建议难度及用时是否适合教学",
+            "语言、装置与安全操作是否恰当"
+          ],
+          "reference_answer_note": "现有参考答案保持；即使本地可以判选项，也仍须教师审核教学可用性"
+        }
       }
     },
     {
@@ -398,7 +700,89 @@
           "stem_clear": null,
           "no_cross_segment": null
         },
-        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。"
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。",
+        "material": {
+          "anchors": [
+            {
+              "kind": "公式",
+              "name": "热机效率",
+              "expression": "W_out/Q_h",
+              "when": "热机循环工作，效率等于有用功与从高温热库吸热量之比",
+              "display": "W<sub>出</sub>/Q<sub>h</sub>"
+            }
+          ],
+          "source": {
+            "nature": "原创设计示例，非教材实测或真实实验记录",
+            "scenario": "实际热机",
+            "parameters": {
+              "W_out": 350,
+              "Q_h": 1000,
+              "eta": 0.35,
+              "T_h": 600,
+              "T_c": 300,
+              "eta_max": 0.5
+            },
+            "data": [
+              "热机一个循环对外输出的有用功：350 J",
+              "热机一个循环从高温热库吸收的热量：1000 J",
+              "热机效率：0.35 1",
+              "高温热库的热力学温度：600 K",
+              "低温热库的热力学温度：300 K",
+              "给定高低温热库之间的卡诺效率上限：0.5 1"
+            ]
+          },
+          "predicted_errors": [
+            {
+              "option": "B",
+              "text": "2.85714 1",
+              "reason": "效率应是有用输出除以能量输入。错误式得到 1000/350≈2.86，大于 1，既与定义不符也违反第二定律。",
+              "expression": "Q_h/W_out",
+              "status": "误答原因预测，待教师确认；未采集学生作答证据"
+            }
+          ],
+          "difficulty_note": "建议难度沿用本题level（源卡难度）；尚非题目难度实测，待教师调整",
+          "estimated_seconds": [
+            120,
+            240
+          ],
+          "time_basis": "未做学生计时；按现有难度给出备课估计区间，待教师确认",
+          "machine_checks": [
+            {
+              "name": "题目ID关联源知识点",
+              "passed": true
+            },
+            {
+              "name": "选项标签唯一且参考标签存在",
+              "passed": true
+            },
+            {
+              "name": "选项文本互异",
+              "passed": true
+            },
+            {
+              "name": "正确路径独立数值复算",
+              "passed": true
+            },
+            {
+              "name": "带量纲求值与独立求值一致",
+              "passed": true
+            },
+            {
+              "name": "干扰路径复算且与正确路径分离",
+              "passed": true
+            }
+          ],
+          "machine_boundary": "只列本次逐题实际执行项目；不把关联知识卡的方向、扫描或一致性检查算作本题已验。概念题未验命题真假。",
+          "human_review_items": [
+            "题干条件是否充分、清楚且符合学段",
+            "参考结论在指定条件下是否唯一",
+            "干扰项是否合理、对应真实认知问题且无答案暗示",
+            "公式或概念锚点是否准确",
+            "建议难度及用时是否适合教学",
+            "语言、装置与安全操作是否恰当"
+          ],
+          "reference_answer_note": "现有参考答案保持；即使本地可以判选项，也仍须教师审核教学可用性"
+        }
       }
     },
     {
@@ -481,7 +865,89 @@
           "stem_clear": null,
           "no_cross_segment": null
         },
-        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。"
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。",
+        "material": {
+          "anchors": [
+            {
+              "kind": "公式",
+              "name": "卡诺效率上限",
+              "expression": "1 - T_c/T_h",
+              "when": "理想可逆热机在温度为 T_h 与 T_c 的两个热库之间工作，且 T_h>T_c>0",
+              "display": "1 - T<sub>c</sub>/T<sub>h</sub>"
+            }
+          ],
+          "source": {
+            "nature": "原创设计示例，非教材实测或真实实验记录",
+            "scenario": "实际热机",
+            "parameters": {
+              "W_out": 350,
+              "Q_h": 1000,
+              "eta": 0.35,
+              "T_h": 600,
+              "T_c": 300,
+              "eta_max": 0.5
+            },
+            "data": [
+              "热机一个循环对外输出的有用功：350 J",
+              "热机一个循环从高温热库吸收的热量：1000 J",
+              "热机效率：0.35 1",
+              "高温热库的热力学温度：600 K",
+              "低温热库的热力学温度：300 K",
+              "给定高低温热库之间的卡诺效率上限：0.5 1"
+            ]
+          },
+          "predicted_errors": [
+            {
+              "option": "B",
+              "text": "-1 1",
+              "reason": "高低温温度比写反会得到 1-600/300=-1，不可能成为效率。正确结果是 0.5。",
+              "expression": "1 - T_h/T_c",
+              "status": "误答原因预测，待教师确认；未采集学生作答证据"
+            }
+          ],
+          "difficulty_note": "建议难度沿用本题level（源卡难度）；尚非题目难度实测，待教师调整",
+          "estimated_seconds": [
+            120,
+            240
+          ],
+          "time_basis": "未做学生计时；按现有难度给出备课估计区间，待教师确认",
+          "machine_checks": [
+            {
+              "name": "题目ID关联源知识点",
+              "passed": true
+            },
+            {
+              "name": "选项标签唯一且参考标签存在",
+              "passed": true
+            },
+            {
+              "name": "选项文本互异",
+              "passed": true
+            },
+            {
+              "name": "正确路径独立数值复算",
+              "passed": true
+            },
+            {
+              "name": "带量纲求值与独立求值一致",
+              "passed": true
+            },
+            {
+              "name": "干扰路径复算且与正确路径分离",
+              "passed": true
+            }
+          ],
+          "machine_boundary": "只列本次逐题实际执行项目；不把关联知识卡的方向、扫描或一致性检查算作本题已验。概念题未验命题真假。",
+          "human_review_items": [
+            "题干条件是否充分、清楚且符合学段",
+            "参考结论在指定条件下是否唯一",
+            "干扰项是否合理、对应真实认知问题且无答案暗示",
+            "公式或概念锚点是否准确",
+            "建议难度及用时是否适合教学",
+            "语言、装置与安全操作是否恰当"
+          ],
+          "reference_answer_note": "现有参考答案保持；即使本地可以判选项，也仍须教师审核教学可用性"
+        }
       }
     },
     {
@@ -541,7 +1007,155 @@
           "stem_clear": null,
           "no_cross_segment": null
         },
-        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。"
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。",
+        "material": {
+          "anchors": [
+            {
+              "kind": "概念或操作",
+              "name": "固体、液体与物态变化",
+              "claim": "晶体熔化过程中仍用 Q=mc delta_T，并因温度不变算出吸热为零",
+              "correction_basis": "熔化平台上 delta_T=0，但物质持续吸收潜热来改变微观结构。2 kg 冰完全熔化需要 668000 J，并非 0。",
+              "note": "概念锚点及命题真假待教师确认；未套用任意第一条公式",
+              "display": "晶体熔化过程中仍用 Q=mc ΔT，并因温度不变算出吸热为零"
+            },
+            {
+              "kind": "数值反例补充",
+              "name": "人工标签保留的指定数值反例",
+              "display": "Q<sub>潜</sub> = m·L",
+              "note": "这是原创设计反例，机器仅验证指定模型、数据及量纲；自然语言命题、学生认知与装置仍待教师确认。 2 kg冰在熔化平台上温度变化为零，潜热668000 J；错误套比热式得0 J。比热2100 J/(kg·K)仅为设计参数，结论不依赖其具体值。"
+            }
+          ],
+          "source": {
+            "nature": "原创概念/操作命题；无真实测量记录",
+            "source_error_index": 0
+          },
+          "predicted_errors": [
+            {
+              "option": "A",
+              "text": "该说法成立。",
+              "reason": "熔化平台上 delta_T=0，但物质持续吸收潜热来改变微观结构。2 kg 冰完全熔化需要 668000 J，并非 0。",
+              "expression": null,
+              "status": "误答原因预测，待教师确认；未采集学生作答证据"
+            }
+          ],
+          "difficulty_note": "建议难度沿用本题level（源卡难度）；尚非题目难度实测，待教师调整",
+          "estimated_seconds": [
+            60,
+            120
+          ],
+          "time_basis": "未做学生计时；按现有难度给出备课估计区间，待教师确认",
+          "machine_checks": [
+            {
+              "name": "题目ID关联源知识点",
+              "passed": true
+            },
+            {
+              "name": "选项标签唯一且参考标签存在",
+              "passed": true
+            },
+            {
+              "name": "选项文本互异",
+              "passed": true
+            },
+            {
+              "name": "指定反例正确控制正式求值通过",
+              "passed": true,
+              "actual": {
+                "type": "numeric",
+                "type_name": "数值代入",
+                "formula": "补充反例正确控制",
+                "ok": true,
+                "detail": "情境「None」：算得Q_latent=668000；参考668000；有效容差6.68e-05",
+                "note": "",
+                "error": null,
+                "evaluation_status": "success",
+                "failure_reason": null,
+                "result_dimension": "M·L^2·T^-2",
+                "reference_dimension": "M·L^2·T^-2",
+                "diagnostics": {
+                  "primary_expression": "m·L",
+                  "target_expression": "Q_latent",
+                  "follows_primary_formula_changes": true,
+                  "primary_source_rhs": "m·L",
+                  "numeric_reference": 668000,
+                  "actual_variables": [
+                    "L",
+                    "m"
+                  ],
+                  "target_variables": [
+                    "Q_latent"
+                  ],
+                  "rtol": 1e-10,
+                  "atol": 0.0,
+                  "effective_limit": 6.68e-05,
+                  "declared_limit": 6.68e-05,
+                  "capped_by_default": false,
+                  "scale": 668000.0,
+                  "policy": "显式rtol/atol（严于默认，照此执行）",
+                  "expected_zero": false,
+                  "zero_basis": null,
+                  "actual_value": 668000.0,
+                  "reference_value": 668000
+                },
+                "physical_error_identified": false
+              }
+            },
+            {
+              "name": "指定反例错误注入被拒绝（非求值失败）",
+              "passed": true,
+              "actual": {
+                "type": "numeric",
+                "type_name": "数值代入",
+                "formula": "补充反例错误注入",
+                "ok": false,
+                "detail": "情境「None」：算得Q_latent=0；参考668000；有效容差6.68e-05",
+                "note": "",
+                "error": null,
+                "evaluation_status": "numeric_mismatch",
+                "failure_reason": "numeric_mismatch",
+                "result_dimension": "M·L^2·T^-2",
+                "reference_dimension": "M·L^2·T^-2",
+                "diagnostics": {
+                  "primary_expression": "m*c*delta_T",
+                  "target_expression": "Q_latent",
+                  "follows_primary_formula_changes": false,
+                  "primary_source_rhs": "m·L",
+                  "numeric_reference": 668000,
+                  "actual_variables": [
+                    "c",
+                    "delta_T",
+                    "m"
+                  ],
+                  "target_variables": [
+                    "Q_latent"
+                  ],
+                  "rtol": 1e-10,
+                  "atol": 0.0,
+                  "effective_limit": 6.68e-05,
+                  "declared_limit": 6.68e-05,
+                  "capped_by_default": false,
+                  "scale": 668000.0,
+                  "policy": "显式rtol/atol（严于默认，照此执行）",
+                  "expected_zero": false,
+                  "zero_basis": null,
+                  "actual_value": 0.0,
+                  "reference_value": 668000
+                },
+                "physical_error_identified": true
+              }
+            }
+          ],
+          "machine_boundary": "只列本次逐题实际执行项目；不把关联知识卡的方向、扫描或一致性检查算作本题已验。概念题未验命题真假。",
+          "human_review_items": [
+            "题干条件是否充分、清楚且符合学段",
+            "参考结论在指定条件下是否唯一",
+            "干扰项是否合理、对应真实认知问题且无答案暗示",
+            "公式或概念锚点是否准确",
+            "建议难度及用时是否适合教学",
+            "语言、装置与安全操作是否恰当"
+          ],
+          "reference_answer_note": "现有参考答案保持；即使本地可以判选项，也仍须教师审核教学可用性"
+        }
       }
     },
     {
@@ -621,7 +1235,83 @@
           "stem_clear": null,
           "no_cross_segment": null
         },
-        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。"
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。",
+        "material": {
+          "anchors": [
+            {
+              "kind": "公式",
+              "name": "相变潜热",
+              "expression": "m*L",
+              "when": "物质在相变温度发生熔化、凝固、汽化或液化，L 取对应相变的潜热",
+              "display": "m·L"
+            }
+          ],
+          "source": {
+            "nature": "原创设计示例，非教材实测或真实实验记录",
+            "scenario": "冰的熔化",
+            "parameters": {
+              "m": 2,
+              "L": 334000,
+              "Q_latent": 668000
+            },
+            "data": [
+              "发生相变或温度变化的物质质量：2 kg",
+              "单位质量物质发生某种相变的潜热：334000 J/kg",
+              "物态变化过程中吸收或放出的潜热大小：668000 J"
+            ]
+          },
+          "predicted_errors": [
+            {
+              "option": "A",
+              "text": "334000 J",
+              "reason": "错误式量纲仍然是能量，量纲检查抓不到；代入 2 kg 和 334000 J/kg 只得到 334000 J，正确值应为 668000 J。",
+              "expression": "0.5*m*L",
+              "status": "误答原因预测，待教师确认；未采集学生作答证据"
+            }
+          ],
+          "difficulty_note": "建议难度沿用本题level（源卡难度）；尚非题目难度实测，待教师调整",
+          "estimated_seconds": [
+            60,
+            120
+          ],
+          "time_basis": "未做学生计时；按现有难度给出备课估计区间，待教师确认",
+          "machine_checks": [
+            {
+              "name": "题目ID关联源知识点",
+              "passed": true
+            },
+            {
+              "name": "选项标签唯一且参考标签存在",
+              "passed": true
+            },
+            {
+              "name": "选项文本互异",
+              "passed": true
+            },
+            {
+              "name": "正确路径独立数值复算",
+              "passed": true
+            },
+            {
+              "name": "带量纲求值与独立求值一致",
+              "passed": true
+            },
+            {
+              "name": "干扰路径复算且与正确路径分离",
+              "passed": true
+            }
+          ],
+          "machine_boundary": "只列本次逐题实际执行项目；不把关联知识卡的方向、扫描或一致性检查算作本题已验。概念题未验命题真假。",
+          "human_review_items": [
+            "题干条件是否充分、清楚且符合学段",
+            "参考结论在指定条件下是否唯一",
+            "干扰项是否合理、对应真实认知问题且无答案暗示",
+            "公式或概念锚点是否准确",
+            "建议难度及用时是否适合教学",
+            "语言、装置与安全操作是否恰当"
+          ],
+          "reference_answer_note": "现有参考答案保持；即使本地可以判选项，也仍须教师审核教学可用性"
+        }
       }
     },
     {
@@ -704,7 +1394,89 @@
           "stem_clear": null,
           "no_cross_segment": null
         },
-        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。"
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。",
+        "material": {
+          "anchors": [
+            {
+              "kind": "公式",
+              "name": "相对湿度",
+              "expression": "p_v/p_sat",
+              "when": "实际水汽压与饱和汽压取同一温度、同一压强单位",
+              "display": "p<sub>v</sub>/p<sub>饱和</sub>"
+            }
+          ],
+          "source": {
+            "nature": "原创设计示例，非教材实测或真实实验记录",
+            "scenario": "室内空气",
+            "parameters": {
+              "p_v": 1400,
+              "p_sat": 2000,
+              "phi": 0.7,
+              "m_v": 0.018,
+              "V": 15,
+              "rho_v": 0.0012
+            },
+            "data": [
+              "空气中水蒸气的实际分压：1400 Pa",
+              "同温度下水的饱和汽压：2000 Pa",
+              "相对湿度，用小数表示：0.7 1",
+              "空气中所含水蒸气的质量：0.018 kg",
+              "所考察空气的体积：15 m^3",
+              "绝对湿度，即水蒸气质量密度：0.0012 kg/m^3"
+            ]
+          },
+          "predicted_errors": [
+            {
+              "option": "A",
+              "text": "1.42857 1",
+              "reason": "未饱和空气中 p_v<p_sat，颠倒后会算出 2000/1400≈1.43，即 143%，而正确值为 70%。",
+              "expression": "p_sat/p_v",
+              "status": "误答原因预测，待教师确认；未采集学生作答证据"
+            }
+          ],
+          "difficulty_note": "建议难度沿用本题level（源卡难度）；尚非题目难度实测，待教师调整",
+          "estimated_seconds": [
+            60,
+            120
+          ],
+          "time_basis": "未做学生计时；按现有难度给出备课估计区间，待教师确认",
+          "machine_checks": [
+            {
+              "name": "题目ID关联源知识点",
+              "passed": true
+            },
+            {
+              "name": "选项标签唯一且参考标签存在",
+              "passed": true
+            },
+            {
+              "name": "选项文本互异",
+              "passed": true
+            },
+            {
+              "name": "正确路径独立数值复算",
+              "passed": true
+            },
+            {
+              "name": "带量纲求值与独立求值一致",
+              "passed": true
+            },
+            {
+              "name": "干扰路径复算且与正确路径分离",
+              "passed": true
+            }
+          ],
+          "machine_boundary": "只列本次逐题实际执行项目；不把关联知识卡的方向、扫描或一致性检查算作本题已验。概念题未验命题真假。",
+          "human_review_items": [
+            "题干条件是否充分、清楚且符合学段",
+            "参考结论在指定条件下是否唯一",
+            "干扰项是否合理、对应真实认知问题且无答案暗示",
+            "公式或概念锚点是否准确",
+            "建议难度及用时是否适合教学",
+            "语言、装置与安全操作是否恰当"
+          ],
+          "reference_answer_note": "现有参考答案保持；即使本地可以判选项，也仍须教师审核教学可用性"
+        }
       }
     },
     {
@@ -764,7 +1536,154 @@
           "stem_clear": null,
           "no_cross_segment": null
         },
-        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。"
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。",
+        "material": {
+          "anchors": [
+            {
+              "kind": "概念或操作",
+              "name": "饱和汽与空气湿度",
+              "claim": "把相对湿度 70% 直接当成数值 70 代入后续公式",
+              "correction_basis": "百分数必须化为小数 0.70。把 70 当作相对湿度会大 100 倍，而且相对湿度的常规范围应在 0 到 1 之间。",
+              "note": "概念锚点及命题真假待教师确认；未套用任意第一条公式",
+              "display": "把相对湿度 70% 直接当成数值 70 代入后续公式"
+            },
+            {
+              "kind": "数值反例补充",
+              "name": "人工标签保留的指定数值反例",
+              "display": "φ = p<sub>v</sub>/p<sub>饱和</sub>",
+              "note": "这是原创设计反例，机器仅验证指定模型、数据及量纲；自然语言命题、学生认知与装置仍待教师确认。 1400 Pa除2000 Pa得小数0.7；百分数记法70%不能在小数目标中写成70。"
+            }
+          ],
+          "source": {
+            "nature": "原创概念/操作命题；无真实测量记录",
+            "source_error_index": 1
+          },
+          "predicted_errors": [
+            {
+              "option": "B",
+              "text": "该说法不成立。",
+              "reason": "百分数必须化为小数 0.70。把 70 当作相对湿度会大 100 倍，而且相对湿度的常规范围应在 0 到 1 之间。",
+              "expression": null,
+              "status": "误答原因预测，待教师确认；未采集学生作答证据"
+            }
+          ],
+          "difficulty_note": "建议难度沿用本题level（源卡难度）；尚非题目难度实测，待教师调整",
+          "estimated_seconds": [
+            60,
+            120
+          ],
+          "time_basis": "未做学生计时；按现有难度给出备课估计区间，待教师确认",
+          "machine_checks": [
+            {
+              "name": "题目ID关联源知识点",
+              "passed": true
+            },
+            {
+              "name": "选项标签唯一且参考标签存在",
+              "passed": true
+            },
+            {
+              "name": "选项文本互异",
+              "passed": true
+            },
+            {
+              "name": "指定反例正确控制正式求值通过",
+              "passed": true,
+              "actual": {
+                "type": "numeric",
+                "type_name": "数值代入",
+                "formula": "补充反例正确控制",
+                "ok": true,
+                "detail": "情境「None」：算得φ=0.7；参考0.7；有效容差7e-11",
+                "note": "",
+                "error": null,
+                "evaluation_status": "success",
+                "failure_reason": null,
+                "result_dimension": "无量纲",
+                "reference_dimension": "无量纲",
+                "diagnostics": {
+                  "primary_expression": "p_v/p_sat",
+                  "target_expression": "φ",
+                  "follows_primary_formula_changes": true,
+                  "primary_source_rhs": "p_v/p_sat",
+                  "numeric_reference": 0.7,
+                  "actual_variables": [
+                    "p_sat",
+                    "p_v"
+                  ],
+                  "target_variables": [
+                    "phi"
+                  ],
+                  "rtol": 1e-10,
+                  "atol": 0.0,
+                  "effective_limit": 7e-11,
+                  "declared_limit": 7e-11,
+                  "capped_by_default": false,
+                  "scale": 0.7,
+                  "policy": "显式rtol/atol（严于默认，照此执行）",
+                  "expected_zero": false,
+                  "zero_basis": null,
+                  "actual_value": 0.7,
+                  "reference_value": 0.7
+                },
+                "physical_error_identified": false
+              }
+            },
+            {
+              "name": "指定反例错误注入被拒绝（非求值失败）",
+              "passed": true,
+              "actual": {
+                "type": "numeric",
+                "type_name": "数值代入",
+                "formula": "补充反例错误注入",
+                "ok": false,
+                "detail": "情境「None」：算得φ=70；参考0.7；有效容差7e-09",
+                "note": "",
+                "error": null,
+                "evaluation_status": "numeric_mismatch",
+                "failure_reason": "numeric_mismatch",
+                "result_dimension": "无量纲",
+                "reference_dimension": "无量纲",
+                "diagnostics": {
+                  "primary_expression": "100*p_v/p_sat",
+                  "target_expression": "φ",
+                  "follows_primary_formula_changes": false,
+                  "primary_source_rhs": "p_v/p_sat",
+                  "numeric_reference": 0.7,
+                  "actual_variables": [
+                    "p_sat",
+                    "p_v"
+                  ],
+                  "target_variables": [
+                    "phi"
+                  ],
+                  "rtol": 1e-10,
+                  "atol": 0.0,
+                  "effective_limit": 7.000000000000001e-09,
+                  "declared_limit": 7.000000000000001e-09,
+                  "capped_by_default": false,
+                  "scale": 70.0,
+                  "policy": "显式rtol/atol（严于默认，照此执行）",
+                  "expected_zero": false,
+                  "zero_basis": null,
+                  "actual_value": 70.0,
+                  "reference_value": 0.7
+                },
+                "physical_error_identified": true
+              }
+            }
+          ],
+          "machine_boundary": "只列本次逐题实际执行项目；不把关联知识卡的方向、扫描或一致性检查算作本题已验。概念题未验命题真假。",
+          "human_review_items": [
+            "题干条件是否充分、清楚且符合学段",
+            "参考结论在指定条件下是否唯一",
+            "干扰项是否合理、对应真实认知问题且无答案暗示",
+            "公式或概念锚点是否准确",
+            "建议难度及用时是否适合教学",
+            "语言、装置与安全操作是否恰当"
+          ],
+          "reference_answer_note": "现有参考答案保持；即使本地可以判选项，也仍须教师审核教学可用性"
+        }
       }
     }
   ],
@@ -1936,6 +2855,14 @@
             "c": 4200,
             "delta_T": 10,
             "Q_sensible": 84000
+          },
+          "冰的熔化反例设计": {
+            "m": 2,
+            "L": 334000,
+            "c": 2100,
+            "delta_T": 0,
+            "Q_latent": 668000,
+            "Q_sensible": 0
           }
         },
         "formulas": [
@@ -1986,6 +2913,14 @@
                 "target": "物态变化过程中吸收或放出的潜热大小",
                 "note": "直接求本公式输出，与情境中另列的Q_latent设计基准核对；数据是设计示例，不是实测。用于核对定义、反算或边界值，不宣称不同物理原理互证。",
                 "verification_kind": "独立设计情境数据核对"
+              },
+              {
+                "type": "numeric",
+                "scenario": "冰的熔化反例设计",
+                "ref": 668000,
+                "rtol": 1e-10,
+                "atol": 0,
+                "note": "设计示例；人工标签保留的指定反例正确控制。2 kg冰在熔化平台上温度变化为零，潜热668000 J；错误套比热式得0 J。比热2100 J/(kg·K)仅为设计参数，结论不依赖其具体值。"
               }
             ]
           },
@@ -2043,6 +2978,18 @@
             "caught_by": "人工审核",
             "diagnostic": {
               "style": "物理结论与步骤辨析"
+            },
+            "automation_review": {
+              "status": "指定反例已补验；原人工审核标签保留",
+              "basis": "2 kg冰在熔化平台上温度变化为零，潜热668000 J；错误套比热式得0 J。比热2100 J/(kg·K)仅为设计参数，结论不依赖其具体值。",
+              "scenario": "冰的熔化反例设计",
+              "correct_expression": "Q_latent = m*L",
+              "wrong_expression": "m*c*delta_T",
+              "correct_value": 668000,
+              "wrong_value": 0,
+              "unit": "J",
+              "wrong_status": "numeric_mismatch",
+              "note": "这是原创设计反例，机器仅验证指定模型、数据及量纲；自然语言命题、学生认知与装置仍待教师确认。"
             }
           },
           {
@@ -2132,6 +3079,14 @@
             "c": 4200,
             "delta_T": 10,
             "Q_sensible": 84000
+          },
+          "冰的熔化反例设计": {
+            "m": 2,
+            "L": 334000,
+            "c": 2100,
+            "delta_T": 0,
+            "Q_latent": 668000,
+            "Q_sensible": 0
           }
         },
         "formulas": [
@@ -2182,6 +3137,14 @@
                 "target": "物态变化过程中吸收或放出的潜热大小",
                 "note": "直接求本公式输出，与情境中另列的Q_latent设计基准核对；数据是设计示例，不是实测。用于核对定义、反算或边界值，不宣称不同物理原理互证。",
                 "verification_kind": "独立设计情境数据核对"
+              },
+              {
+                "type": "numeric",
+                "scenario": "冰的熔化反例设计",
+                "ref": 668000,
+                "rtol": 1e-10,
+                "atol": 0,
+                "note": "设计示例；人工标签保留的指定反例正确控制。2 kg冰在熔化平台上温度变化为零，潜热668000 J；错误套比热式得0 J。比热2100 J/(kg·K)仅为设计参数，结论不依赖其具体值。"
               }
             ]
           },
@@ -2239,6 +3202,18 @@
             "caught_by": "人工审核",
             "diagnostic": {
               "style": "物理结论与步骤辨析"
+            },
+            "automation_review": {
+              "status": "指定反例已补验；原人工审核标签保留",
+              "basis": "2 kg冰在熔化平台上温度变化为零，潜热668000 J；错误套比热式得0 J。比热2100 J/(kg·K)仅为设计参数，结论不依赖其具体值。",
+              "scenario": "冰的熔化反例设计",
+              "correct_expression": "Q_latent = m*L",
+              "wrong_expression": "m*c*delta_T",
+              "correct_value": 668000,
+              "wrong_value": 0,
+              "unit": "J",
+              "wrong_status": "numeric_mismatch",
+              "note": "这是原创设计反例，机器仅验证指定模型、数据及量纲；自然语言命题、学生认知与装置仍待教师确认。"
             }
           },
           {
@@ -2366,6 +3341,14 @@
                 "var": "p_sat",
                 "lo": 100,
                 "hi": 10000
+              },
+              {
+                "type": "numeric",
+                "scenario": "室内空气",
+                "ref": 0.7,
+                "rtol": 1e-10,
+                "atol": 0,
+                "note": "设计示例；人工标签保留的指定反例正确控制。1400 Pa除2000 Pa得小数0.7；百分数记法70%不能在小数目标中写成70。"
               }
             ]
           },
@@ -2447,6 +3430,18 @@
             "caught_by": "人工审核",
             "diagnostic": {
               "style": "物理结论与步骤辨析"
+            },
+            "automation_review": {
+              "status": "指定反例已补验；原人工审核标签保留",
+              "basis": "1400 Pa除2000 Pa得小数0.7；百分数记法70%不能在小数目标中写成70。",
+              "scenario": "室内空气",
+              "correct_expression": "phi = p_v/p_sat",
+              "wrong_expression": "100*p_v/p_sat",
+              "correct_value": 0.7,
+              "wrong_value": 70.0,
+              "unit": "1",
+              "wrong_status": "numeric_mismatch",
+              "note": "这是原创设计反例，机器仅验证指定模型、数据及量纲；自然语言命题、学生认知与装置仍待教师确认。"
             }
           }
         ],
@@ -2558,6 +3553,14 @@
                 "var": "p_sat",
                 "lo": 100,
                 "hi": 10000
+              },
+              {
+                "type": "numeric",
+                "scenario": "室内空气",
+                "ref": 0.7,
+                "rtol": 1e-10,
+                "atol": 0,
+                "note": "设计示例；人工标签保留的指定反例正确控制。1400 Pa除2000 Pa得小数0.7；百分数记法70%不能在小数目标中写成70。"
               }
             ]
           },
@@ -2639,6 +3642,18 @@
             "caught_by": "人工审核",
             "diagnostic": {
               "style": "物理结论与步骤辨析"
+            },
+            "automation_review": {
+              "status": "指定反例已补验；原人工审核标签保留",
+              "basis": "1400 Pa除2000 Pa得小数0.7；百分数记法70%不能在小数目标中写成70。",
+              "scenario": "室内空气",
+              "correct_expression": "phi = p_v/p_sat",
+              "wrong_expression": "100*p_v/p_sat",
+              "correct_value": 0.7,
+              "wrong_value": 70.0,
+              "unit": "1",
+              "wrong_status": "numeric_mismatch",
+              "note": "这是原创设计反例，机器仅验证指定模型、数据及量纲；自然语言命题、学生认知与装置仍待教师确认。"
             }
           }
         ],

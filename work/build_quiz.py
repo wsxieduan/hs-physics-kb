@@ -80,6 +80,71 @@ def _diagnostic_excerpt(text, limit=90):
     return value[:limit].rstrip() + ("……" if len(value) > limit else "")
 
 
+def review_material(question, point, error):
+    """逐题复算已有证据并整理审核材料；不把机器检查当成教师签署。"""
+    import copy, math
+    from physkit import checks as C, expr as E
+    from qc import safe_eval
+    evidence = question['answer_evidence']
+    options = question['options']; labels = [o['label'] for o in options]
+    checks = [{'name':'题目ID关联源知识点', 'passed':question['point_id']==point['id']},
+              {'name':'选项标签唯一且参考标签存在', 'passed':len(set(labels))==len(labels) and question['correct_answer'] in labels},
+              {'name':'选项文本互异', 'passed':len(set(o['text'] for o in options))==len(options)}]
+    anchors=[]
+    if evidence['kind']=='numeric':
+        proof=evidence['correct_proof']; values=evidence['parameters'];expression=proof['expression']
+        actual=safe_eval(expression,values)
+        typed=E.evaluate(E.parse(expression),C.build_env(point['symbols'],values))
+        unit=evidence['unit']; target=C.build_env({'target':{'unit':unit}},{'target':1})['target']
+        checks += [{'name':'正确路径独立数值复算', 'passed':math.isclose(actual,evidence['reference'],rel_tol=1e-10,abs_tol=1e-40)},
+                   {'name':'带量纲求值与独立求值一致','passed':typed.dim==target.dim and math.isclose(typed.value,actual,rel_tol=1e-10,abs_tol=1e-40)}]
+        if evidence.get('distractor_expression'):
+            bad=safe_eval(evidence['distractor_expression'],values)
+            checks.append({'name':'干扰路径复算且与正确路径分离','passed':math.isclose(bad,evidence['distractor_value'],rel_tol=1e-10,abs_tol=1e-40) and not math.isclose(bad,actual,rel_tol=1e-6,abs_tol=1e-40)})
+        if proof.get('momentum_expression'):
+            velocity=safe_eval(proof['momentum_expression'],values)
+            checks.append({'name':'碰撞动量式独立复算共同速度','passed':math.isclose(velocity,proof['calculated_velocity'],rel_tol=1e-10,abs_tol=1e-40)})
+        anchors=[{'kind':'公式','name':proof.get('formula','本题正确求值关系'),'expression':expression,'when':proof.get('when','见题干条件及解析')}]
+        source={'nature':'原创设计示例，非教材实测或真实实验记录','scenario':evidence.get('scenario','本题参数'),'parameters':copy.deepcopy(values)}
+    elif evidence['kind']=='dimension':
+        for key,wanted in [('correct_expression',True),('distractor_expression',False)]:
+            lhs,rhs=E.parse_equation(evidence[key]);variables=E.collect_vars(lhs)
+            r=C.check_dimension('教师审核证据',lhs,rhs,next(iter(variables)) if len(variables)==1 else '?',point['symbols'])
+            checks.append({'name':'正确式量纲一致' if wanted else '干扰式量纲冲突','passed':r.ok==wanted,'actual':r.as_dict()})
+        anchors=[{'kind':'公式量纲','name':'本题目标量与等式','expression':evidence['correct_expression'],'when':'量纲相符是必要条件，不能据此证明系数或物理条件正确'}]
+        source={'nature':'原创量纲辨析命题；无实测数据','source_error_index':question['source_error_index']}
+    else:
+        anchors=[{'kind':'概念或操作','name':point['title'],'claim':error['wrong'],'correction_basis':error['why'],'note':'概念锚点及命题真假待教师确认；未套用任意第一条公式'}]
+        source={'nature':'原创概念/操作命题；无真实测量记录','source_error_index':question['source_error_index']}
+    if not all(c['passed'] for c in checks):
+        raise ValueError(question['id']+'审核资料的机器复算未通过：'+str(checks))
+    for anchor in anchors:
+        anchor['display']=prose(anchor.get('expression') or anchor.get('claim',''))
+    if error.get('automation_review'):
+        s=error['automation_review']; lhs,rhs=E.parse_equation(s['correct_expression'])
+        lhs_vars=E.collect_vars(lhs); lv=next(iter(lhs_vars)) if len(lhs_vars)==1 else '?'
+        spec={'_scenario_values':point['scenarios'][s['scenario']],'ref':s['correct_value'],'rtol':1e-10,'atol':0}
+        control=C.check_numeric('补充反例正确控制',lhs,rhs,lv,point['symbols'],spec)
+        wrong=C.check_numeric('补充反例错误注入',lhs,rhs,lv,point['symbols'],dict(spec,expr=s['wrong_expression']))
+        checks += [{'name':'指定反例正确控制正式求值通过','passed':control.ok,'actual':control.as_dict()},
+                   {'name':'指定反例错误注入被拒绝（非求值失败）','passed':not wrong.ok and wrong.evaluation_status in ['numeric_mismatch','dimension_conflict'],'actual':wrong.as_dict()}]
+        if not all(c['passed'] for c in checks):raise ValueError(question['id']+'补充反例不能复现')
+        anchors.append({'kind':'数值反例补充','name':'人工标签保留的指定数值反例','display':prose(error['automation_review']['correct_expression']),
+                        'note':error['automation_review']['note']+' '+error['automation_review']['basis']})
+    if source.get('parameters'):
+        source['data']=[point['symbols'].get(k,{}).get('desc',k)+'：'+str(v)+' '+point['symbols'].get(k,{}).get('unit','') for k,v in source['parameters'].items()]
+    wrong_options=[{'option':o['label'],'text':o['text'],'reason':error['why'],
+                    'expression':evidence.get('distractor_expression'),'status':'误答原因预测，待教师确认；未采集学生作答证据'}
+                   for o in options if o['label']!=question['correct_answer']]
+    level=question.get('level','基础'); seconds={'基础':[60,120],'进阶':[120,240],'拓展':[180,360]}.get(level,[90,180])
+    return {'anchors':anchors,'source':source,'predicted_errors':wrong_options,
+            'difficulty_note':'建议难度沿用本题level（源卡难度）；尚非题目难度实测，待教师调整',
+            'estimated_seconds':seconds,'time_basis':'未做学生计时；按现有难度给出备课估计区间，待教师确认',
+            'machine_checks':checks,'machine_boundary':'只列本次逐题实际执行项目；不把关联知识卡的方向、扫描或一致性检查算作本题已验。概念题未验命题真假。',
+            'human_review_items':['题干条件是否充分、清楚且符合学段','参考结论在指定条件下是否唯一','干扰项是否合理、对应真实认知问题且无答案暗示','公式或概念锚点是否准确','建议难度及用时是否适合教学','语言、装置与安全操作是否恰当'],
+            'reference_answer_note':'现有参考答案保持；即使本地可以判选项，也仍须教师审核教学可用性'}
+
+
 def make_diagnostic_bank(kb_dir, output_path, segment="高中", source_filename=None):
     """两学段统一来源同步；题目改变必须来自解释、情境或题目目标的实际变化。"""
     old_bank = {}
@@ -98,18 +163,39 @@ def make_diagnostic_bank(kb_dir, output_path, segment="高中", source_filename=
             snapshot = {"point": point, "error_index": i, "chapter": chapter["chapter"]}
             records[qid] = snapshot
             old = old_questions.get(qid)
-            if old and old_bank.get("generator_version") == GENERATOR_VERSION and old_bank.get("source_records", {}).get(qid) == snapshot:
-                questions.append(old); preserved += 1; continue
-            if old: updated.append(qid)
+            if old:
+                # 实验补充与检查精度修订不应重写已经有效的题面。源错误命题改变时须另行登记修订。
+                old_record=old_bank.get('source_records', {}).get(qid, {})
+                old_point=old_record.get('point', {})
+                old_errors=old_point.get('errors', [])
+                if len(old_errors)<=i or any(error.get(k)!=v for k,v in old_errors[i].items() if k!='automation_review'):
+                    raise ValueError(qid+'源错误记录已改变，请先登记题目修订理由再处理')
+                question=old
+                material=review_material(question,point,error)
+                if question['review'].get('material')!=material: updated.append(qid)
+                question['review']['material']=material
+                questions.append(question); preserved += 1; continue
             if not error.get("wrong") or not error.get("why"):
                 skipped.append({"point_id": point["id"], "source_error_index": i,
                                 "reason": "缺少物理错误或更正依据，待教师补充。"}); continue
-            questions.append(make_question(point,error,i,chapter["chapter"],segment))
+            question=make_question(point,error,i,chapter["chapter"],segment)
+            question['review']['material']=review_material(question,point,error)
+            questions.append(question)
     bank = {"segment": segment, "chapter": chapter["chapter"], "source_file": filename,
             "questions": questions, "skipped": skipped, "source_records": records, "generator_version": GENERATOR_VERSION}
     os.makedirs(os.path.dirname(os.path.abspath(output_path)), exist_ok=True)
-    with open(output_path, "w", encoding="utf-8", newline="\n") as handle:
-        json.dump(bank, handle, ensure_ascii=False, indent=2); handle.write("\n")
+    # 完整写入临时快照再替换，避免读者取得半份JSON；只短暂重试本机瞬态占用。
+    import time
+    temporary=output_path+'.写入.tmp'
+    for attempt in range(5):
+        try:
+            with open(temporary, 'w', encoding='utf-8', newline='\n') as handle:
+                json.dump(bank, handle, ensure_ascii=False, indent=2); handle.write('\n')
+            os.replace(temporary,output_path)
+            break
+        except OSError as exc:
+            if exc.errno not in (13,22) or attempt==4:raise
+            time.sleep(.2)
     print("%s题库 %s：%d题，保留%d，刷新%d" % (segment, filename, len(questions), preserved, len(updated)))
     bank["updated_ids"] = updated
     return bank
@@ -175,6 +261,9 @@ select{width:100%;padding:9px;border:1px solid var(--line);border-radius:8px;bac
 .diag-stem{font-size:16px;font-weight:600;margin:12px 0;white-space:pre-wrap}
 .source-banner{background:#f4f7ff;border-color:#dce5fb}
 .source-banner a{font-weight:600}
+/* 教师审核资料按题目折叠，长公式和来源文字可换行，手机不横向溢出。 */
+.teacher-review-card{padding:12px 0;border-bottom:1px solid var(--line);overflow-wrap:anywhere;min-width:0}
+.teacher-review-card summary{cursor:pointer;font-weight:600}.teacher-review-card p{white-space:pre-wrap}
 .inline-links{display:flex;flex-wrap:wrap;gap:12px;margin:9px 0}
 .inline-links a{font-size:13px}
 footer{max-width:900px;margin:0 auto;padding:0 16px 30px;color:var(--muted);font-size:12px}
@@ -460,6 +549,39 @@ DIAGNOSTIC_SCRIPT = r"""
     trapLink.href=bank.mainPage+'#trap-'+current.point_id+'-'+(current.source_error_index+1);
     trapLink.textContent='查看知识库中的这条常见错误';
   }
+  // 全部诊断题的审核材料可直接从页面查阅；此处只读，不自动签署教师状态。
+  node('teacher-review-toggle').addEventListener('click',function(){
+    var panel=node('teacher-review-panel');panel.classList.toggle('hidden');
+    if(panel.dataset.loaded)return;
+    var container=node('teacher-review-list');
+    data.questions.forEach(function(q){
+      var m=q.review.material, detail=document.createElement('details');
+      detail.className='teacher-review-card';detail.id='teacher-review-'+q.id;
+      var summary=document.createElement('summary');
+      summary.textContent=q.id+' · '+q.point_title+' · '+q.level+' · 教师'+q.review.teacher.status;
+      detail.appendChild(summary);
+      function paragraph(title,value,asHTML){var p=document.createElement('p'),b=document.createElement('b');b.textContent=title+'：';p.appendChild(b);var s=document.createElement('span');if(asHTML)s.innerHTML=value;else s.textContent=value;p.appendChild(s);detail.appendChild(p);}
+      paragraph('题干',q.stem,true);
+      q.options.forEach(function(o){paragraph('选项'+o.label,o.text,true);});
+      paragraph('参考答案',q.correct_answer+'；'+m.reference_answer_note);
+      paragraph('现有解析',q.explanation,true);
+      paragraph('主知识点',q.point_title+'（'+q.point_id+'）');
+      m.anchors.forEach(function(a){paragraph('具体锚点',a.name+' · '+a.display,true);if(a.when)paragraph('条件',a.when);if(a.note)paragraph('锚点边界',a.note);});
+      paragraph('情境来源与数据性质',m.source.nature+(m.source.scenario?'；情境：'+m.source.scenario:''));
+      if(m.source.data)paragraph('设计参数',m.source.data.join('；'));
+      m.predicted_errors.forEach(function(e){paragraph('可能误答（待教师确认）',e.option+'：'+e.text+'；原因预测：'+e.reason,true);paragraph('预测性质',e.status);});
+      paragraph('建议难度与用时',q.level+'；'+m.estimated_seconds[0]+'～'+m.estimated_seconds[1]+'秒。'+m.difficulty_note+'；'+m.time_basis);
+      paragraph('实际机器检查',m.machine_checks.map(function(c){return c.name+'：'+(c.passed?'通过':'未通过')}).join('；'));
+      paragraph('自动检查边界',m.machine_boundary);
+      paragraph('人工待审事项',m.human_review_items.join('；'));
+      detail.dataset.search=(q.id+' '+q.point_title+' '+q.chapter+' '+q.stem).toLowerCase();
+      container.appendChild(detail);
+    });panel.dataset.loaded='1';
+    node('teacher-review-count').textContent='共 '+data.questions.length+' 题；所有教师状态按原记录显示，未自动改为通过。';
+  });
+  node('teacher-review-search').addEventListener('input',function(){
+    var query=this.value.trim().toLowerCase();node('teacher-review-list').querySelectorAll('details').forEach(function(d){d.hidden=!d.dataset.search.includes(query);});
+  });
   answerButton.addEventListener('click',function(){
     if(!current||!selected)return;
     var feedback=node('diagnostic-feedback'),chosen=current.options.find(function(o){return o.label===selected;});
@@ -598,6 +720,8 @@ def build(kb_dir, segment, main_page, output_path, diagnostic_path=None):
 <a class="segment-quiz" aria-current="page" href="%(own_quiz)s">例题自测 ↗</a></div></nav>
 <main>
 <section id="source-banner" class="panel source-banner hidden"><span id="source-label"></span><a id="source-return" href="%(main)s">返回</a><span class="small">；也可使用浏览器后退返回原位置。</span></section>
+<div class="actions"><button id="teacher-review-toggle" class="button">教师审核资料（全部诊断题）</button></div>
+<section id="teacher-review-panel" class="panel hidden"><h2>教师逐题审核资料</h2><p id="teacher-review-count"></p><label>按题目编号、知识点或题干查找 <input id="teacher-review-search" type="search" style="max-width:100%%" placeholder="例如：单摆"></label><div id="teacher-review-list"></div></section>
 <section class="panel"><h2>选择练习模式</h2><div class="mode-tabs" role="group" aria-label="练习模式">
 <button class="mode-tab" data-mode="example" aria-pressed="true">例题自测</button>
 <button class="mode-tab" data-mode="diagnostic" aria-pressed="false"%(diagnostic_disabled)s>%(diagnostic_button)s</button></div>

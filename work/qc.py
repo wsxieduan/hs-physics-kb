@@ -953,9 +953,56 @@ def render_release_section(release):
     lines += ['', '运行范围：'+release.get('scope','未登记')+'。']
     lines += ['', '验收版本稳定：'+('是' if release['version_stable'] else '否，必须重验')+'。完整正式检查与独立复算分别执行，不能互相替代。', '教学质量仍待教师签署；实验装置未实测的不宣称已验证。','', '### 本次正式失败或版本问题','']
     lines += ['- '+s for s in release['issues']] or ['无。']
-    lines += ['', '### 当前冻结校验器指纹','']
+
+    # ---------- ★ 2026-10-05：报告必须绑定「实际输入 + 实际加载的校验器 + 实际成品」 ----------
+    # 以前门禁只用一句"源/校验器/生成器版本：`xxx`"的文字匹配来判断"这份报告是不是
+    # 对这批成品写的"。文字是可以复制的，所以现在改成**算指纹**：输入、成品各压一个
+    # 汇总指纹，再合成一个验收总指纹；门禁按这个总指纹核对，文字对不上都不算数。
+    lines += ['', '### 本次验收绑定（报告 ↔ 实际受检输入与成品）','']
+    sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__))))
+    from 发布版本 import acceptance_binding, input_fingerprints, product_fingerprints
+    bind = acceptance_binding()
+    lines += ['- 实际输入：**%d** 个文件，指纹汇总 `%s`' % (bind['inputs_count'], bind['inputs_digest'])]
+    lines += ['- 最终成品：三处交付 × 7 个页面，指纹汇总 `%s`' % bind['products_digest']]
+    lines += ['- **验收绑定总指纹：`%s`**' % bind['binding']]
+    lines += ['- 机器识别标记：`ACCEPTANCE-BINDING %s`' % bind['binding']]
+    lines += ['', '> 题库（含 `work/quiz_bank/*.json` 派生快照）、校验器或成品任何一处变化，'
+                  '本指纹即失效，这份报告随之作废，必须重新质检。']
+    lines += ['', '#### 实际加载的正式校验器指纹','']
+    for path, h in sorted((release.get('loaded_engine_fingerprints') or {}).items()):
+        lines += ['- `%s`：`%s`' % (path, h)]
+    lines += ['', '#### 冻结基线指纹','']
     lines += ['- `%s`：`%s`'%(n,h) for n,h in release['after']['fingerprints'].items() if n.startswith('work/physkit/') or n in ['work/qc.py','work/validate.py']]
+    lines += ['', '#### 最终成品逐页指纹（三处交付）','']
+    products = release.get('products') or []
+    for name in ['index.html','junior.html','student.html','quick.html','junior-quick.html','quiz-hs.html','quiz-junior.html']:
+        rows = [r for r in products if str(r['path']).endswith(name)]
+        if not rows:
+            lines += ['- `%s`：未登记' % name];continue
+        for r in rows:
+            lines += ['- `%s`：`%s`（%s，版本 `%s`）' % (r['path'], r['sha256'], '同版' if r.get('version') == release['after']['version'] else '**版本不符**', r.get('version'))]
     return '\n'.join(lines)+'\n'
+
+
+def write_text_retry(path, value):
+    """写质检报告/基线，带一个有界重试。
+
+    ★ 2026-10-05：实测 Windows 会在写入时偶发抛 `OSError: [Errno 22] Invalid argument`
+      （杀毒或索引器短暂占住文件）。它是资源问题，不是内容问题，但会让质检直接崩，
+      留下**上一次的旧报告** —— 而旧报告看起来是完整的，很容易被误当成本轮结果。
+      所以这里重试 3 次；仍然失败才抛出，绝不"静默保留旧报告"。
+    """
+    import time
+    last = None
+    for attempt in range(3):
+        try:
+            with io.open(path, "w", encoding="utf-8", newline="\n") as fh:
+                fh.write(value)
+            return
+        except OSError as exc:
+            last = exc
+            time.sleep(0.5 * (attempt + 1))
+    raise last
 
 
 def main(argv):
@@ -1010,8 +1057,8 @@ def main(argv):
     path = os.path.join(OUT_DIR, "质检报告.md")
     if not os.path.isdir(OUT_DIR):
         os.makedirs(OUT_DIR)
-    with io.open(path, "w", encoding="utf-8", newline="\n") as fh:
-        fh.write(report)
+    # 带重试写盘；失败就抛出，绝不"静默保留旧报告"（旧报告看着完整，极易被误当本轮结果）。
+    write_text_retry(path, report)
 
     hard = len(fps) + len(cov) + len(rec) + len(out) + len(prose_hard) + len(release_issues)
     print("完整正式验收问题 %d" % len(release_issues))

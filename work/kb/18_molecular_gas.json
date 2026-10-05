@@ -333,6 +333,17 @@
           "caught_by": "人工审核",
           "diagnostic": {
             "style": "物理结论与步骤辨析"
+          },
+          "automation_review": {
+            "status": "指定数值反例已补验；人工审核标签保留",
+            "basis": "旧固定绝对容差限制已修，当前纯相对比较能拒绝微观势能错符号",
+            "scenario": "分子力做正功",
+            "correct_expression": "delta_Ep = -W_molecular",
+            "wrong_expression": "W_molecular",
+            "correct_value": -2.5e-20,
+            "wrong_value": 2.5e-20,
+            "unit": "J",
+            "note": "机器只证明本设计反例，未证明概念讲解或教学可用性。原解析提到的精度限制属于历史机制，当前复验已能拒绝该数值错误。"
           }
         }
       ],

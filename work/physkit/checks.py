@@ -269,11 +269,19 @@ def comparison(a,b,spec):
 
 
 def exception_status(exc):
-    """按类型和结构化字段分类，不检索中文报错。"""
+    """按类型和结构化字段分类，不检索中文报错。
+
+    ★ 2026-10-05 质检方补：定义域与溢出的兜底分类。
+      expr.py 里的函数已经显式抛 ExprError(domain_error/overflow_error)；
+      Python 自带的 math 抛出的 ValueError/OverflowError 在这里兜住，
+      免得它们掉进笼统的 evaluation_error 里、被当成"没测成"。
+    """
     if isinstance(exc,DimError):return 'dimension_conflict'
     if isinstance(exc,UnitError):return 'unit_error'
     if isinstance(exc,EX.ExprError):return getattr(exc,'evaluation_status','syntax_error')
     if isinstance(exc,ZeroDivisionError):return 'domain_error'
+    if isinstance(exc,OverflowError):return 'overflow_error'
+    if isinstance(exc,ValueError):return 'domain_error'
     return 'evaluation_error'
 
 
@@ -544,7 +552,8 @@ def run_formula_checks(rec, symbols, scenarios, other_formulas):
         lhs, rhs = EX.parse_equation(rec["expr"])
     except EX.ExprError as exc:
         results.append(CheckResult("dimension", fname, False,
-                                   "公式本身写不通：%s" % exc, error=str(exc)))
+                                   "公式本身写不通：%s" % exc, error=str(exc),
+                                   evaluation_status="syntax_error"))
         return results, None
 
     lhs_vars = EX.collect_vars(lhs)
@@ -552,7 +561,8 @@ def run_formula_checks(rec, symbols, scenarios, other_formulas):
         results.append(CheckResult(
             "dimension", fname, False,
             "等号左边必须正好是一个变量，实际是 %s"
-            % ("、".join(sorted(lhs_vars)) if lhs_vars else "空")))
+            % ("、".join(sorted(lhs_vars)) if lhs_vars else "空"),
+            evaluation_status="invalid_formula_shape"))
         return results, None
     lhs_var = list(lhs_vars)[0]
 
@@ -564,7 +574,8 @@ def run_formula_checks(rec, symbols, scenarios, other_formulas):
     if undeclared:
         results.append(CheckResult(
             "dimension", fname, False,
-            "公式里用了没在符号表中声明的变量：%s" % "、".join(undeclared)))
+            "公式里用了没在符号表中声明的变量：%s" % "、".join(undeclared),
+            evaluation_status="missing_variable"))
         return results, None
 
     # --- 自动检查 1：量纲一致性 ---
@@ -583,7 +594,8 @@ def run_formula_checks(rec, symbols, scenarios, other_formulas):
             if sc not in scenarios:
                 results.append(CheckResult(
                     ctype or "?", fname, False,
-                    "引用了不存在的情境「%s」" % sc))
+                    "引用了不存在的情境「%s」" % sc,
+                    evaluation_status="missing_scenario"))
                 continue
             spec["_scenario_values"] = scenarios[sc]
         else:
@@ -602,7 +614,8 @@ def run_formula_checks(rec, symbols, scenarios, other_formulas):
         else:
             results.append(CheckResult(
                 ctype or "?", fname, False,
-                "不认识的检查类型：%r（可选：numeric / direction / consistency / scan / compare）" % ctype))
+                "不认识的检查类型：%r（可选：numeric / direction / consistency / scan / compare）" % ctype,
+                evaluation_status="invalid_spec"))
 
     return results, {"lhs": lhs, "rhs": rhs, "lhs_var": lhs_var}
 

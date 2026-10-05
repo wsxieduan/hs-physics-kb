@@ -13,6 +13,7 @@ import re
 import shutil
 import subprocess
 import sys
+import time
 from html.parser import HTMLParser
 from urllib.parse import unquote, urlsplit
 
@@ -170,9 +171,24 @@ def make_crosswalk_checklist(crosswalk, review_doc, senior_points, junior_points
 
 
 def write_text(path, value):
-    """用 UTF-8 写入成品文件，保证中文在常见浏览器中正常显示。"""
-    with open(path, "w", encoding="utf-8", newline="\n") as handle:
-        handle.write(value)
+    """用 UTF-8 写入成品文件，保证中文在常见浏览器中正常显示。
+
+    ★ 2026-10-05：加一个有界重试。
+      实测遇到过 Windows 在写入大页面时抛 `[Errno 22] Invalid argument`
+      （杀毒/索引器短暂占住文件），它不是内容错误，却会让构建直接中止，
+      很容易被误判成"内容有问题"。这里重试 3 次、间隔 0.5 秒；
+      仍然失败才真的报错 —— 资源问题不该伪装成内容失败。
+    """
+    last = None
+    for attempt in range(3):
+        try:
+            with open(path, "w", encoding="utf-8", newline="\n") as handle:
+                handle.write(value)
+            return
+        except OSError as exc:
+            last = exc
+            time.sleep(0.5 * (attempt + 1))
+    raise last
 
 
 def write_review_checklist(path, banks):
@@ -450,6 +466,9 @@ def main():
     from 发布验收 import ensure_ready, validate_inputs, finish
     from 发布版本 import versions
     acceptance = ensure_ready()
+    # 本批设计表、拟合、边界和错误注入也纳入构建前检查，不能只验证正文公式。
+    from 最终交付_核验 import experiment_checks
+    experiment_checks()
     hs_dir = os.path.join(HERE, "kb")
     junior_dir = os.path.join(HERE, "kb_junior")
     crosswalk_path = os.path.join(HERE, "crosswalk.json")
@@ -481,6 +500,25 @@ def main():
     junior_bank_dir = os.path.join(HERE, "quiz_bank", "junior")
     previous_questions = read_existing_questions((hs_bank_dir, junior_bank_dir))
     dimension_audit = audit_dimension_evidence({"高中": hs_dir, "初中": junior_dir})
+    # ★ 2026-10-05 质检方：派生题库必须**在任何页面盖版本戳之前**先同步。
+    #   版本号现在也覆盖 quiz_bank/*.json（诊断题页面就是由它生成的），
+    #   若先渲染页面、后同步题库，第一遍构建就会出现"知识库页＝旧版本、
+    #   诊断题页＝新版本"的撕裂。这一段提前，就是落实
+    #   「先同步派生题库，再确定最终版本，再生成页面」。
+    os.makedirs(hs_bank_dir, exist_ok=True)
+    os.makedirs(junior_bank_dir, exist_ok=True)
+    hs_banks, junior_banks = [], []
+    for filename, _chapter in hs_chapters:
+        bank_path = os.path.join(hs_bank_dir, filename)
+        hs_banks.append(make_diagnostic_bank(hs_dir, bank_path, "高中", filename))
+    for filename, _chapter in junior_chapters:
+        bank_path = os.path.join(junior_bank_dir, filename)
+        junior_banks.append(make_diagnostic_bank(junior_dir, bank_path, "初中", filename))
+    # 题库是正式版本的一部分；同步完成后再确定验收起点，所有页面才盖同一版本。
+    acceptance = validate_inputs()
+    if acceptance['issues']:
+        finish(acceptance)
+        raise RuntimeError('题库同步后正式输入未通过，拒绝生成页面')
     os.makedirs(site_dir, exist_ok=True)
     os.makedirs(outputs_dir, exist_ok=True)
     os.makedirs(package_dir, exist_ok=True)
@@ -521,16 +559,8 @@ def main():
         if directory in (outputs_dir, package_dir):
             write_text(os.path.join(directory, "跨学段映射复核清单.md"), checklist)
 
-    # 按章节落盘诊断题；不合并跨学段题目，并保留旧题的 JSON 字段对象。
-    os.makedirs(hs_bank_dir, exist_ok=True)
-    os.makedirs(junior_bank_dir, exist_ok=True)
-    hs_banks, junior_banks = [], []
-    for filename, _chapter in hs_chapters:
-        bank_path = os.path.join(hs_bank_dir, filename)
-        hs_banks.append(make_diagnostic_bank(hs_dir, bank_path, "高中", filename))
-    for filename, _chapter in junior_chapters:
-        bank_path = os.path.join(junior_bank_dir, filename)
-        junior_banks.append(make_diagnostic_bank(junior_dir, bank_path, "初中", filename))
+    # 按章节落盘的诊断题已在渲染任何页面之前同步完毕（见 main 前半段），
+    # 这里只做汇总、比对与校验：不合并跨学段题目，保留旧题的 JSON 字段对象。
     diagnostic_data = summarize_diagnostic_banks(hs_banks + junior_banks)
     rebuilt_questions = {question.get("id"): question
                          for question in diagnostic_data["questions"]}
@@ -579,7 +609,8 @@ def main():
     aliases = {"高中物理速查.html": "quick.html", "高中物理速查_优化版.html": "quick.html",
                "高中物理知识库-学生版.html": "student.html", "初中物理速查.html": "junior-quick.html"}
     for alias, filename in aliases.items():
-        copy_output(os.path.join(site_dir, filename), os.path.join(outputs_dir, alias))
+        for directory in (outputs_dir, site_dir, package_dir):
+            copy_output(os.path.join(site_dir, filename), os.path.join(directory, alias))
 
     page_audit = audit_generated_pages(package_dir)
 

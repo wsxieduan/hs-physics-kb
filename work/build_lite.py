@@ -83,6 +83,9 @@ def render_card(p, segment_nav=None):
 
     # 内容难度和课程范围分别说明，避免把基础难度误当初中必学。
     L.append('<p class="one">难度：%s · 范围：%s</p>' % (E(p.get("level", "基础")), E(p.get("learning_scope", "高中"))))
+    # 实验补充同源显示，设计数据和待实物验证提示也保留在学生版。
+    if p.get('experiments'):
+        L.append(BS.render_learning(p))
 
     # 一句话
     L.append('<p class="one">%s</p>' % prose(first_sentence(p.get("definition", ""))))
@@ -306,6 +309,8 @@ def build(kb_dir, out_path, segment_nav=None):
     for _, ch in chapters:
         for source in ch["points"]:
             report[source["id"]]["learning_scope"] = source.get("learning_scope", "高中")
+            for key in ('core', 'experiments'):
+                report[source['id']][key] = source.get(key, [])
 
     groups = []
     for _fname, ch in chapters:

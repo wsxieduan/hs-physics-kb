@@ -62,7 +62,12 @@ def engine_contract(contract_rows=None):
     if not hasattr(qc,'check_release_all'):issues.append('正式质检尚未具备初高中完整正式检查与版本验收，待质检方应用修复')
     # 不能因函数已存在就认定入口执行了它，也不能用已有样例通过代替机制回归。
     from 机制续修_契约检查 import inspect_contract,inspect_qc_entry
-    contract=inspect_contract()+[inspect_qc_entry()]
+    from 机制续修_定义域回归 import inspect_domain
+    from 机制续修_版本与报告回归 import inspect_version_binding
+    # ★ 只接**隔离副本**检查这一组。依赖当前成品现状的两条（报告是否绑定本次成品、
+    #   七页三处是否同字节）故意留在 finish() 的收尾核对里 —— 构建前查它们会自锁：
+    #   一次中断的构建留下撕裂状态 → 拦住下一次构建 → 而只有构建才能修好它。
+    contract=inspect_contract()+[inspect_qc_entry()]+inspect_domain()+inspect_version_binding()
     # ★ 2026-10-05 质检方补：区分「还没修完」和「有意不采纳的政策分歧」。
     #   上面两条探针要求：源里只要写一句 rtol=1e-3，就得允许把误差放大到千分之一。
     #   质检方不采纳 —— 那等于内容可以自己给自己的检查开后门。
@@ -102,6 +107,16 @@ def validate_inputs():
     data['after']=versions();data['input_fingerprints_after']=input_fingerprints();data['finished_at']=now();data['version_stable']=data['before']==data['after'] and data['input_fingerprints_before']==data['input_fingerprints_after']
     if not data['version_stable']:data['issues'].append('验收期间版本变化，必须重验')
     return data
+def report_binding_marker(bind):
+    """报告里必须出现的机器识别标记。抽成函数，好让回归脚本直接复用同一判据。"""
+    return 'ACCEPTANCE-BINDING '+bind['binding']
+
+
+def report_is_bound(report,bind):
+    """这份报告是不是**算出来**绑定在本次输入与成品上的（不是靠同版文字）。"""
+    return report_binding_marker(bind) in report
+
+
 def products(version):
     rows=[];issues=[];bases=[ROOT/'outputs',ROOT/'site',ROOT/'outputs/物理知识库整合版']
     for f in PAGES:
@@ -127,10 +142,23 @@ def products(version):
 def finish(data):
     rows,issues=products(data['after']['version']);data.update(products=rows,product_issues=issues);data['issues']+=issues
     # 质检报告由质检方写；这里只核对，不能用内存质检替代正式落盘报告。
+    # ★ 2026-10-05：核对方式从"报告里那句版本文字"改成"**指纹绑定**"。
+    #   文字是可以照抄的：以前只比对「源/校验器/生成器版本：`xxx`」这句话，
+    #   报告是不是真的对这批成品写的，其实没被验证。现在要求报告里出现
+    #   本次用同一函数算出的 ACCEPTANCE-BINDING 总指纹（版本 + 全部实际输入 + 三处成品）。
+    from 发布版本 import acceptance_binding
+    bind=acceptance_binding()
+    marker=report_binding_marker(bind)
     qp=ROOT/'outputs/质检报告.md';report=qp.read_text(encoding='utf-8') if qp.exists() else '';qhash=sha(qp) if qp.exists() else None
-    data['quality_report']={'path':'outputs/质检报告.md','sha256':qhash,'same_version':('源/校验器/生成器版本：`'+data['after']['version']+'`') in report,'declares_full_machine_pass':'**自动环节全部通过。**' in report}
-    if not data['quality_report']['same_version']:data['issues'].append('质检方正式报告仍是历史版本；需在新成品生成后由质检方运行完整质检并更新报告')
-    elif not data['quality_report']['declares_full_machine_pass']:data['issues'].append('同版质检报告未声明完整机器环节通过，不能发布')
+    data['quality_report']={'path':'outputs/质检报告.md','sha256':qhash,'binding':bind['binding'],
+                            'expected_marker':marker,'binds_current_products':report_is_bound(report,bind),
+                            'same_version_text':('源/校验器/生成器版本：`'+data['after']['version']+'`') in report,
+                            'declares_full_machine_pass':'**自动环节全部通过。**' in report}
+    if not data['quality_report']['binds_current_products']:
+        data['issues'].append('质检方报告没有绑定本次实际输入与成品指纹（报告里找不到 '+marker+'）；'
+                              '题库、校验器或成品一变，旧报告即失效，必须由质检方重新质检并更新报告')
+    elif not data['quality_report']['declares_full_machine_pass']:
+        data['issues'].append('同版质检报告未声明完整机器环节通过，不能发布')
     if versions()!=data['after']:data['issues'].append('成品验收期间源或校验器变化，必须重验')
     if input_fingerprints()!=data['input_fingerprints_after']:data['issues'].append('成品验收期间诊断题等输入改变，必须重验')
     if (sha(qp) if qp.exists() else None)!=qhash:data['issues'].append('验收期间正式质检报告改变，必须重验')
@@ -142,8 +170,23 @@ def finish(data):
         s=r['summary'];lines.append('| %s | %d/%d | %d | %d项，%d处不符 |'%(label,s['pass'],s['checks'],r['failed_count'],len(r['independent']),sum(not x['pass'] for x in r['independent'])))
         print('%s：正式通过%d/%d；失败%d项；独立复算%d项、%d处不符'%(label,s['pass'],s['checks'],r['failed_count'],len(r['independent']),sum(not x['pass'] for x in r['independent'])))
     lines += ['', '## 未解决项目','']+['- '+s for s in data['issues']]
-    lines += ['', '742道诊断题教师审核状态不得由机器验收自动更改。7项实验继续部分覆盖。质检方原报告单独保存；未更新前只能作为历史结果。']
+    if data['quality_report']['binds_current_products']:
+        # 别让这句变成"范围性表述"：报告一旦重新生成并绑定本版，就不能再说它是历史结果。
+        note = ('742道诊断题教师审核状态不得由机器验收自动更改。7项实验继续部分覆盖。'
+                '质检方报告已重新生成并绑定本版输入与成品指纹（%s）。'
+                % data['quality_report']['binding'][:16])
+    else:
+        note = ('742道诊断题教师审核状态不得由机器验收自动更改。7项实验继续部分覆盖。'
+                '质检方报告尚未绑定本版输入与成品；未更新前只能作为历史结果。')
+    lines += ['', note]
     (ROOT/'outputs/当前发布验收.md').write_text('\n'.join(lines)+'\n',encoding='utf-8');print('结论：'+('✔ 完整机器验收通过，教师待审' if data['pass'] else '✘ 未通过；正式机制与最终同版成品尚未完成'))
+    # 中文收尾提示放在 Python 里：.cmd 必须保持纯 ASCII（cmd.exe 按 OEM 代码页读批处理，
+    # 写进去的 UTF-8 中文会变成乱码命令），所以给人看的中文一律由这里输出。
+    if data['pass']:
+        print('提示：通过后可直接双击 outputs/index.html 或 outputs/物理知识库整合版/index.html 使用；')
+        print('      742 道诊断题的教师审核、7 项实验的实物数据仍待人工确认，机器不代签。')
+    else:
+        print('提示：失败条目已逐条写入 outputs/当前发布验收.md，历史页面不代表当前通过，不能发布。')
     return 0 if data['pass'] else 1
 _READY=None
 def ensure_ready():
@@ -158,11 +201,32 @@ def ensure_ready():
 def main():
     data=validate_inputs()
     if '--build' in sys.argv and not data['issues']:
-        r=subprocess.run([sys.executable,'-X','utf8',str(ROOT/'work/build_all.py')],cwd=ROOT)
-        if r.returncode:data['issues'].append('统一构建失败，不发布')
-        # 构建可能同步历史题库；必须对实际最终源与正式机制重验。
-        post=validate_inputs()
-        if post['after']!=data['after']:post['issues'].append('构建前后版本改变，需重新启动完整验收')
-        data=post if not r.returncode else {**post,'issues':post['issues']+['统一构建失败，不发布']}
+        # ★ 2026-10-05 质检方：构建要跑两次，并核对**版本与成品字节都稳定**。
+        #   理由：版本号现在也覆盖派生题库 quiz_bank/*.json，而构建会先同步这份派生快照；
+        #   所以"先同步快照 → 再定版本 → 再生成页面"要跑一遍才能收敛。
+        #   第一次把快照同步好，第二次页面才与最终版本对齐；两次之间成品逐字节相同，
+        #   才算"重复构建稳定"，也顺手证明派生快照与版本没有互相循环。
+        from 发布版本 import product_fingerprints
+        seen_versions=[];seen_products=None;stopped=False;byte_stable=True
+        for attempt in range(2):
+            r=subprocess.run([sys.executable,'-X','utf8',str(ROOT/'work/build_all.py')],cwd=ROOT)
+            post=validate_inputs()
+            if r.returncode:
+                post['issues'].append('统一构建第%d次失败，不发布'%(attempt+1));data=post;stopped=True;break
+            seen_versions.append(post['after']['version'])
+            prods=product_fingerprints()
+            if seen_products is None:seen_products=prods
+            elif prods!=seen_products:
+                byte_stable=False;post['issues'].append('重复构建后成品字节不稳定（页面指纹发生变化），不发布')
+            data=post
+            if len(seen_versions)>=2 and seen_versions[-1]==seen_versions[-2]:break
+        else:
+            data['issues'].append('连续两次构建后版本仍在变化，疑似派生快照与版本互相循环，不发布')
+        data['repeat_build']={'builds':len(seen_versions),'versions':seen_versions,
+                              'byte_stable':byte_stable and len(seen_versions)>=2 and not stopped,
+                              'stopped_early':stopped}
+        print('   重复构建：%d 次，版本%s，成品字节%s'
+              %(len(seen_versions),'稳定' if len(set(seen_versions))<=1 else '仍在变',
+                '稳定' if data['repeat_build']['byte_stable'] else '不稳定'))
     return finish(data)
 if __name__=='__main__':sys.exit(main())

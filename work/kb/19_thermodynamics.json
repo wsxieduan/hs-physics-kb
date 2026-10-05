@@ -595,6 +595,14 @@
           "c": 4200,
           "delta_T": 10,
           "Q_sensible": 84000
+        },
+        "冰的熔化反例设计": {
+          "m": 2,
+          "L": 334000,
+          "c": 2100,
+          "delta_T": 0,
+          "Q_latent": 668000,
+          "Q_sensible": 0
         }
       },
       "formulas": [
@@ -645,6 +653,14 @@
               "target": "物态变化过程中吸收或放出的潜热大小",
               "note": "直接求本公式输出，与情境中另列的Q_latent设计基准核对；数据是设计示例，不是实测。用于核对定义、反算或边界值，不宣称不同物理原理互证。",
               "verification_kind": "独立设计情境数据核对"
+            },
+            {
+              "type": "numeric",
+              "scenario": "冰的熔化反例设计",
+              "ref": 668000,
+              "rtol": 1e-10,
+              "atol": 0,
+              "note": "设计示例；人工标签保留的指定反例正确控制。2 kg冰在熔化平台上温度变化为零，潜热668000 J；错误套比热式得0 J。比热2100 J/(kg·K)仅为设计参数，结论不依赖其具体值。"
             }
           ]
         },
@@ -702,6 +718,18 @@
           "caught_by": "人工审核",
           "diagnostic": {
             "style": "物理结论与步骤辨析"
+          },
+          "automation_review": {
+            "status": "指定反例已补验；原人工审核标签保留",
+            "basis": "2 kg冰在熔化平台上温度变化为零，潜热668000 J；错误套比热式得0 J。比热2100 J/(kg·K)仅为设计参数，结论不依赖其具体值。",
+            "scenario": "冰的熔化反例设计",
+            "correct_expression": "Q_latent = m*L",
+            "wrong_expression": "m*c*delta_T",
+            "correct_value": 668000,
+            "wrong_value": 0,
+            "unit": "J",
+            "wrong_status": "numeric_mismatch",
+            "note": "这是原创设计反例，机器仅验证指定模型、数据及量纲；自然语言命题、学生认知与装置仍待教师确认。"
           }
         },
         {
@@ -825,6 +853,14 @@
               "var": "p_sat",
               "lo": 100,
               "hi": 10000
+            },
+            {
+              "type": "numeric",
+              "scenario": "室内空气",
+              "ref": 0.7,
+              "rtol": 1e-10,
+              "atol": 0,
+              "note": "设计示例；人工标签保留的指定反例正确控制。1400 Pa除2000 Pa得小数0.7；百分数记法70%不能在小数目标中写成70。"
             }
           ]
         },
@@ -906,6 +942,18 @@
           "caught_by": "人工审核",
           "diagnostic": {
             "style": "物理结论与步骤辨析"
+          },
+          "automation_review": {
+            "status": "指定反例已补验；原人工审核标签保留",
+            "basis": "1400 Pa除2000 Pa得小数0.7；百分数记法70%不能在小数目标中写成70。",
+            "scenario": "室内空气",
+            "correct_expression": "phi = p_v/p_sat",
+            "wrong_expression": "100*p_v/p_sat",
+            "correct_value": 0.7,
+            "wrong_value": 70.0,
+            "unit": "1",
+            "wrong_status": "numeric_mismatch",
+            "note": "这是原创设计反例，机器仅验证指定模型、数据及量纲；自然语言命题、学生认知与装置仍待教师确认。"
           }
         }
       ],
