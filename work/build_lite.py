@@ -292,6 +292,8 @@ footer{max-width:900px;margin:0 auto;padding:0 16px 40px;color:var(--ink3);font-
 
 
 def build(kb_dir, out_path, segment_nav=None):
+    from 发布验收 import ensure_ready
+    ensure_ready()
     chapters = KB.load_kb(kb_dir)
     issues, id_map = KB.check_structure(chapters)
     errs = [i for i in issues if i.level == "错误"]
@@ -415,6 +417,8 @@ __SEGMENT_BAR__
         segment_bar = ""
     page = page.replace("__SEGMENT_BAR__", segment_bar)
 
+    from 发布版本 import stamp
+    page = stamp(page)
     with open(out_path, "w", encoding="utf-8") as f:
         f.write(page)
     kb_size = os.path.getsize(out_path) / 1024

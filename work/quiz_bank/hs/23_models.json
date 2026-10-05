@@ -9006,7 +9006,11 @@
                 "scenario": "基准",
                 "ref": 0,
                 "note": "1×(10−10)=0 N，临界刚好绷紧",
-                "tol": 1e-12
+                "tol": 1e-12,
+                "expected_zero": true,
+                "zero_basis": "临界v_top²=g*r，最高点绳张力理论为0 N；绝对精度1e-12 N，仅处理浮点残差。",
+                "rtol": 0.0,
+                "atol": 1e-12
               },
               {
                 "type": "consistency",
@@ -9016,7 +9020,11 @@
                 "target": "最高点绳张力",
                 "note": "本公式直接求T_top；参考端显式关系为m*((v_bottom^2-4*g*r)/r-g)。两端使用同一情境和阶段，只核对该关系；with字段仅定位来源，不代表调用另一条被覆盖的公式。",
                 "verification_kind": "独立关系核对",
-                "tol": 1e-12
+                "tol": 1e-12,
+                "expected_zero": true,
+                "zero_basis": "同一临界竖直圆周情境，直接受力路径与最低点能量关系路径均给出理论0 N；绝对精度1e-12 N，仅处理浮点残差，不适用于非临界6 N情境。",
+                "rtol": 0.0,
+                "atol": 1e-12
               },
               {
                 "type": "scan",
@@ -9207,7 +9215,11 @@
                 "scenario": "基准",
                 "ref": 0,
                 "note": "1×(10−10)=0 N，临界刚好绷紧",
-                "tol": 1e-12
+                "tol": 1e-12,
+                "expected_zero": true,
+                "zero_basis": "临界v_top²=g*r，最高点绳张力理论为0 N；绝对精度1e-12 N，仅处理浮点残差。",
+                "rtol": 0.0,
+                "atol": 1e-12
               },
               {
                 "type": "consistency",
@@ -9217,7 +9229,11 @@
                 "target": "最高点绳张力",
                 "note": "本公式直接求T_top；参考端显式关系为m*((v_bottom^2-4*g*r)/r-g)。两端使用同一情境和阶段，只核对该关系；with字段仅定位来源，不代表调用另一条被覆盖的公式。",
                 "verification_kind": "独立关系核对",
-                "tol": 1e-12
+                "tol": 1e-12,
+                "expected_zero": true,
+                "zero_basis": "同一临界竖直圆周情境，直接受力路径与最低点能量关系路径均给出理论0 N；绝对精度1e-12 N，仅处理浮点残差，不适用于非临界6 N情境。",
+                "rtol": 0.0,
+                "atol": 1e-12
               },
               {
                 "type": "scan",
@@ -9408,7 +9424,11 @@
                 "scenario": "基准",
                 "ref": 0,
                 "note": "1×(10−10)=0 N，临界刚好绷紧",
-                "tol": 1e-12
+                "tol": 1e-12,
+                "expected_zero": true,
+                "zero_basis": "临界v_top²=g*r，最高点绳张力理论为0 N；绝对精度1e-12 N，仅处理浮点残差。",
+                "rtol": 0.0,
+                "atol": 1e-12
               },
               {
                 "type": "consistency",
@@ -9418,7 +9438,11 @@
                 "target": "最高点绳张力",
                 "note": "本公式直接求T_top；参考端显式关系为m*((v_bottom^2-4*g*r)/r-g)。两端使用同一情境和阶段，只核对该关系；with字段仅定位来源，不代表调用另一条被覆盖的公式。",
                 "verification_kind": "独立关系核对",
-                "tol": 1e-12
+                "tol": 1e-12,
+                "expected_zero": true,
+                "zero_basis": "同一临界竖直圆周情境，直接受力路径与最低点能量关系路径均给出理论0 N；绝对精度1e-12 N，仅处理浮点残差，不适用于非临界6 N情境。",
+                "rtol": 0.0,
+                "atol": 1e-12
               },
               {
                 "type": "scan",
@@ -21341,7 +21365,11 @@
                 "scenario": "基准",
                 "ref": 0,
                 "note": "最高点竖直速度物理上为零；三角函数的约10⁻¹⁵ m/s残差按零处理，绝对容差10⁻¹² m/s。",
-                "tol": 1e-12
+                "tol": 1e-12,
+                "expected_zero": true,
+                "zero_basis": "竖直最高点速度分量理论为0 m/s；绝对精度1e-12 m/s，允许三角函数约1e-15的浮点残差。",
+                "rtol": 0.0,
+                "atol": 1e-12
               }
             ]
           },
@@ -21622,7 +21650,11 @@
                 "scenario": "基准",
                 "ref": 0,
                 "note": "最高点竖直速度物理上为零；三角函数的约10⁻¹⁵ m/s残差按零处理，绝对容差10⁻¹² m/s。",
-                "tol": 1e-12
+                "tol": 1e-12,
+                "expected_zero": true,
+                "zero_basis": "竖直最高点速度分量理论为0 m/s；绝对精度1e-12 m/s，允许三角函数约1e-15的浮点残差。",
+                "rtol": 0.0,
+                "atol": 1e-12
               }
             ]
           },
@@ -21903,7 +21935,11 @@
                 "scenario": "基准",
                 "ref": 0,
                 "note": "最高点竖直速度物理上为零；三角函数的约10⁻¹⁵ m/s残差按零处理，绝对容差10⁻¹² m/s。",
-                "tol": 1e-12
+                "tol": 1e-12,
+                "expected_zero": true,
+                "zero_basis": "竖直最高点速度分量理论为0 m/s；绝对精度1e-12 m/s，允许三角函数约1e-15的浮点残差。",
+                "rtol": 0.0,
+                "atol": 1e-12
               }
             ]
           },

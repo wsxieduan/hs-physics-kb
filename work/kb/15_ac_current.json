@@ -429,7 +429,11 @@
               "scenario": "半周期",
               "expr": "U_m*sin(omega*t)",
               "ref": 0.0,
-              "note": "0.010 s 对应相位 π，sin(π)=0，瞬时电压回到零。"
+              "note": "0.010 s 对应相位 π，sin(π)=0，瞬时电压回到零。",
+              "expected_zero": true,
+              "zero_basis": "t=T/2时相位为pi，正弦电压理论为0 V；允许三角函数及相位计算的浮点残差。",
+              "rtol": 0.0,
+              "atol": 1e-09
             },
             {
               "type": "direction",

@@ -537,6 +537,8 @@ DIAGNOSTIC_SCRIPT = r"""
 
 
 def build(kb_dir, segment, main_page, output_path, diagnostic_path=None):
+    from 发布验收 import ensure_ready
+    ensure_ready()
     """把例题与分章诊断题内嵌进同一张离线答题页。"""
     chapters = KB.load_kb(kb_dir)
     questions = []
@@ -630,6 +632,8 @@ def build(kb_dir, segment, main_page, output_path, diagnostic_path=None):
         "diagnostic_button": diagnostic_button, "diagnostic_disabled": diagnostic_disabled,
         "bank": bank_json, "script": SCRIPT, "diagnostic_script": DIAGNOSTIC_SCRIPT,
     }
+    from 发布版本 import stamp
+    page = stamp(page)
     parent = os.path.dirname(os.path.abspath(output_path))
     if not os.path.isdir(parent):
         os.makedirs(parent)

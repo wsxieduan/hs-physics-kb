@@ -553,11 +553,15 @@ _GREEK_NAMES = [
     "Omega", "Theta", "Lambda", "Phi",
 ]
 
+# 希腊名后面的下标同样可能带多段（delta_E_total 总能量差），吃完整，不要截成 delta_E
 _RE_PROSE_GREEK = re.compile(
-    r"(?<![A-Za-z])(" + "|".join(_GREEK_NAMES) + r")(_[A-Za-z0-9]+)?(?![A-Za-z])")
+    r"(?<![A-Za-z])(" + "|".join(_GREEK_NAMES) + r")((?:_[A-Za-z0-9]+)+)?(?![A-Za-z])")
 
+# 下标里可能带好几段：delta_E_total（总能量差）、E_k_s1（状态1的动能）。
+# 以前只吃到第一段，于是 delta_E_total 被截成 delta_E，而符号表里没有 delta_E，
+# 白白报一条「正文用到的符号没定义」。改成把连续的下标段一次吃完整。
 _RE_PROSE_SUB = re.compile(
-    r"(?<![A-Za-z0-9_])([A-Za-z][A-Za-z0-9]*_[A-Za-z0-9]+)")
+    r"(?<![A-Za-z0-9_])([A-Za-z][A-Za-z0-9]*(?:_[A-Za-z0-9]+)+)")
 
 
 def _prose_fields(p):
@@ -645,6 +649,10 @@ def render_report(fps, fp_rows, cov, cov_stats, rec, rec_n, samples, out, out_in
     L.append("")
     L.append("由 `work/qc.py` 自动生成。**质检的前提是「假设成品有问题」，"
              "所以这里查的是校验器管不到的东西。**")
+    L.append("")
+    # 版本号 = 源 + 校验器 + 生成器所有文件的组合哈希（与 work/发布版本.py 同一算法）。
+    # 发布验收靠它判断「这份报告和那批成品是不是同一版」，所以必须写进来。
+    L.append("源/校验器/生成器版本：`%s`" % release_version())
     L.append("")
     L.append("基线封存时间：%s" % baseline.get("frozen_at", "（尚未封存）"))
     L.append("")
@@ -838,6 +846,106 @@ def render_report(fps, fp_rows, cov, cov_stats, rec, rec_n, samples, out, out_in
 # ============================================================
 # 主流程
 # ============================================================
+
+def release_version():
+    """当前「源 + 校验器 + 生成器」的版本哈希。
+
+    算法与 `work/发布版本.py` 的 versions() 完全一致（同一批文件、同样排序、同样的序列化），
+    这样质检报告里写的版本号才能和成品的版本标记对得上。
+    """
+    import json as _json
+    root = repo_root()
+    records = {}
+    paths = []
+    for d in ("kb", "kb_junior"):
+        dpath = os.path.join(root, "work", d)
+        if os.path.isdir(dpath):
+            for name in sorted(os.listdir(dpath)):
+                if name.endswith(".json") and not name.startswith("_"):
+                    paths.append(os.path.join(dpath, name))
+    physkit_dir = os.path.join(root, "work", "physkit")
+    if os.path.isdir(physkit_dir):
+        for name in sorted(os.listdir(physkit_dir)):
+            if name.endswith(".py"):
+                paths.append(os.path.join(physkit_dir, name))
+    for n in ("qc.py", "validate.py", "build_all.py", "build_site.py", "build_lite.py",
+              "build_quick_site.py", "build_quiz.py", "诊断题重构.py", "prose_math.py",
+              "发布版本.py", "发布验收.py", "crosswalk.json", "crosswalk_review.json"):
+        p = os.path.join(root, "work", n)
+        if os.path.exists(p):
+            paths.append(p)
+    for p in paths:
+        rel = os.path.relpath(p, root).replace("\\", "/")
+        records[rel] = sha256_of(p)
+    return hashlib.sha256(
+        _json.dumps(records, ensure_ascii=False, sort_keys=True,
+                    separators=(",", ":")).encode("utf-8")).hexdigest()
+
+
+def check_release_all(root=None):
+    """一次跑完两个学段的正式检查（结构 + 完整物理 + 独立复算）。
+
+    返回 (问题列表, 明细)：
+        issues 为空表示两学段都通过；
+        data 里记录了实际加载的引擎文件指纹，用来证明跑的是正式路径而不是隔离候选。
+    """
+    import datetime
+    from physkit import kb as KB
+
+    root = root or repo_root()
+    issues = []
+    data = {"started_at": datetime.datetime.now().isoformat(timespec="seconds"),
+            "segments": {}}
+
+    # 记录实际加载的校验器文件，防止「拿隔离候选的结果冒充正式验收」
+    import sys
+    loaded = {n: sys.modules[n].__file__
+              for n in ("physkit.kb", "physkit.checks", "physkit.expr")
+              if n in sys.modules}
+    loaded["qc"] = os.path.abspath(__file__)
+    data["loaded_engine_fingerprints"] = {p: sha256_of(p) for p in loaded.values()}
+    physkit_dir = os.path.join(root, "work", "physkit")
+    data["scope"] = ("正式路径"
+                     if all(os.path.dirname(os.path.abspath(p)) == physkit_dir
+                            for n, p in loaded.items() if n != "qc")
+                     else "隔离候选，仅供审查，不能作为发布依据")
+
+    for label, directory in (("高中", "kb"), ("初中", "kb_junior")):
+        chapters = KB.load_kb(os.path.join(root, "work", directory))
+        structure, _ = KB.check_structure(chapters)
+        hard_structure = [str(x) for x in structure if x.level == "错误"]
+
+        physics = KB.run_physics_checks(chapters)
+        stats = KB.summarize(physics)
+        failed = [{"point": pid, "formula": r.get("formula"),
+                   "type": r.get("type"), "detail": r.get("detail"),
+                   "status": r.get("evaluation_status")}
+                  for pid, p in physics.items()
+                  for r in p.get("results", []) if not r.get("ok")]
+
+        rec, rec_n, _samples = check_recompute(chapters, 0, 20261005)
+
+        data["segments"][label] = {
+            "structure_errors": hard_structure,
+            "summary": stats,
+            "failed_count": stats["checks"] - stats["pass"],
+            "failed_checks": failed,
+            "independent_count": rec_n,
+            "independent_issues": rec,
+            "trap_failures": stats.get("trap_failures", []),
+        }
+        issues.extend(label + "结构：" + s for s in hard_structure)
+        issues.extend("%s正式物理失败：%s/%s" % (label, f["point"], f["formula"])
+                      for f in failed)
+        issues.extend(label + "独立复算：" + str(s) for s in rec)
+        issues.extend(label + "错误防线未抓住：" + str(s)
+                      for s in stats.get("trap_failures", []))
+
+    data["finished_at"] = datetime.datetime.now().isoformat(timespec="seconds")
+    data["issues"] = issues
+    return issues, data
+
+
 
 def main(argv):
     freeze = "--freeze" in argv

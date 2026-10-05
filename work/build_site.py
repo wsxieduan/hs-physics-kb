@@ -145,7 +145,8 @@ def compact_page(page):
         elif re.match(r'<script\b', chunks[index], re.I):
             # 此页脚本无多行字符串；只删行首缩进，保留换行与全部执行语句。
             chunks[index] = re.sub(r'(?m)^[ \t]+', '', chunks[index])
-    return ''.join(chunks)
+    from 发布版本 import stamp
+    return stamp(''.join(chunks))
 
 
 LEVEL_CLASS = {"基础": "lv-base", "进阶": "lv-adv", "拓展": "lv-ext"}
@@ -512,6 +513,12 @@ def render_point(pid, p, related=None, quiz_href=None, segment_name="高中", so
     }
 
 
+def pass_percent(passed,total):
+    """有失败时向下保留一位小数，避免2670/2671四舍五入为100%。"""
+    import math
+    return 100.0 if passed==total and total>0 else math.floor(1000.0*passed/max(1,total))/10
+
+
 def render_method_panel(stats):
     """方法说明面板：六类检查各查了多少、通过率多少。"""
     rows = []
@@ -524,9 +531,9 @@ def render_method_panel(stats):
         rows.append(
             '<div class="mrow"><div class="mname">%s</div>'
             '<div class="mbar"><span style="width:%.1f%%"></span></div>'
-            '<div class="mnum">%d/%d</div></div>'
+            '<div class="mnum">通过%d/%d · 失败%d</div></div>'
             '<div class="mdesc">%s</div>'
-            % (E(name), 100.0 * ok / max(1, tot), ok, tot, E(desc)))
+            % (E(name), pass_percent(ok, tot), ok, tot, tot-ok, E(desc)))
 
     return """
     <section class="method" id="method">
@@ -1171,7 +1178,7 @@ def render_page(report, stats, chapters, title="高中物理知识库", lead="",
         (stats["points"], "知识点"),
         (stats["formulas"], "公式"),
         (stats["checks"], "项自动校验"),
-        ("%.0f%%" % (100.0 * stats["pass"] / max(1, stats["checks"])), "校验通过率"),
+        ("%d/%d" % (stats["pass"], stats["checks"]), "通过校验 · 失败%d项" % (stats["checks"]-stats["pass"])),
         (stats["traps_ok"], "条常见错误实测抓住"),
     ]
     hstats = "".join('<div class="hstat"><b>%s</b><span>%s</span></div>' % (v, E(k))
@@ -1275,8 +1282,8 @@ def render_markdown(report, stats, chapters):
     L.append("| 知识点 | %d 个 |" % stats["points"])
     L.append("| 公式 | %d 条 |" % stats["formulas"])
     L.append("| 自动校验 | %d 项 |" % stats["checks"])
-    L.append("| 校验通过 | %d 项（%.1f%%）"
-             % (stats["pass"], 100.0 * stats["pass"] / max(1, stats["checks"])))
+    L.append("| 校验通过 | %d/%d 项（%.1f%%），失败%d项 |"
+             % (stats["pass"], stats["checks"], pass_percent(stats["pass"], stats["checks"]),stats["checks"]-stats["pass"]))
     L.append("| 常见错误 | %d 条，实测抓住 %d 条，标注人工审核 %d 条"
              % (stats["traps"], stats["traps_ok"], stats["traps_unknown"]))
     L.append("")
@@ -1336,6 +1343,8 @@ def render_markdown(report, stats, chapters):
 # ============================================================
 
 def main(argv):
+    from 发布验收 import ensure_ready
+    ensure_ready()
     kb_dir = os.path.join(HERE, "kb")
     out_dir = os.path.abspath(os.path.join(HERE, "..", "outputs"))
     if len(argv) > 1:
@@ -1367,7 +1376,8 @@ def main(argv):
     stats = KB.summarize(report)
     print("物理检查：%d 项，通过 %d 项，通过率 %.1f%%"
           % (stats["checks"], stats["pass"],
-             100.0 * stats["pass"] / max(1, stats["checks"])))
+             pass_percent(stats["pass"], stats["checks"])))
+    print("正式失败：%d项" % (stats["checks"]-stats["pass"]))
     print("常见错误实测：%d 条，抓住 %d 条，标注人工审核 %d 条"
           % (stats["traps"], stats["traps_ok"], stats["traps_unknown"]))
 

@@ -53,13 +53,18 @@ CHECK_NAMES = {
 class CheckResult:
     """一条检查的结果。"""
 
-    def __init__(self, check_type, formula, ok, detail, note="", error=None):
+    def __init__(self, check_type, formula, ok, detail, note="", error=None,
+                 status=None):
         self.type = check_type
         self.formula = formula
         self.ok = ok
         self.detail = detail
         self.note = note
         self.error = error          # 语法/量纲等异常时的原文
+        # 结构化状态：把「为什么没通过」写成机器可读的记号，
+        # 免得上层只能拿中文报错文字去猜（以前就是这样，猜错就把「没测成」当成「抓住了」）。
+        # 取值见下方 EVAL_STATUS_* 常量。
+        self.status = status
 
     @property
     def type_name(self):
@@ -73,7 +78,15 @@ class CheckResult:
             "ok": self.ok,
             "detail": self.detail,
             "note": self.note,
+            "evaluation_status": self.status,
         }
+
+
+# 结构化状态取值（给上层判断用，不靠中文文案识别）
+EVAL_STATUS_OK = "ok"                            # 算得对，通过
+EVAL_STATUS_NUMERIC_MISMATCH = "numeric_mismatch"  # 算出来了，但数值对不上
+EVAL_STATUS_DIMENSION_CONFLICT = "dimension_conflict"  # 量纲对不上（速度冒充位移一类）
+EVAL_STATUS_NOT_EVALUATED = "not_evaluated"      # 没测成（缺变量、表达式写不通等）
 
 
 # ============================================================
@@ -256,6 +269,40 @@ def _tolerance(ref, tol):
     return limit
 
 
+def _declared_dim(symbols, name):
+    """从符号表取出某个量声明的量纲；没声明单位或解析不了就返回 None（表示没法比）。"""
+    info = symbols.get(name)
+    if not isinstance(info, dict):
+        return None
+    unit = info.get("unit", "")
+    if not unit:
+        return None
+    try:
+        return parse_unit(unit)
+    except UnitError:
+        return None
+
+
+def _dim_text(dim):
+    """把量纲写成人能读的样子，报错时用。"""
+    try:
+        return str(dim)
+    except Exception:
+        return "未知量纲"
+
+
+def _zero_limit(spec, tol):
+    """理论零检查用的绝对容差：源给了 atol 就用 atol，否则退回 tol。
+
+    「理论零」不是「算出来恰好是 0」，而是物理上真值就是 0：
+    临界速度下的绳张力、逃逸临界处的总机械能、半周期处的正弦电压、竖直最高点的竖直分速度。
+    这类检查的正确结果是 1e-15 级的浮点残差，**没有「参考值的比例」可谈**，
+    只能问「离 0 够不够近」，所以必须用绝对容差，且不能套比例护栏。
+    """
+    v = spec.get("atol")
+    return v if v is not None else tol
+
+
 def check_numeric(fname, ast_lhs, ast_rhs, lhs_var, symbols, spec):
     scenario_name = spec.get("scenario")
     values = spec["_scenario_values"]
@@ -266,35 +313,78 @@ def check_numeric(fname, ast_lhs, ast_rhs, lhs_var, symbols, spec):
     try:
         ast = _spec_ast(spec, ast_rhs)
     except EX.ExprError as exc:
-        return CheckResult("numeric", fname, False, "检查项里的表达式写不通：%s" % exc)
+        return CheckResult("numeric", fname, False, "检查项里的表达式写不通：%s" % exc,
+                           status=EVAL_STATUS_NOT_EVALUATED)
 
     miss = _missing_for(ast, symbols, values)
     if miss:
         return CheckResult("numeric", fname, False,
                            "情境「%s」缺少这些变量的值：%s"
-                           % (scenario_name, "、".join(miss)))
+                           % (scenario_name, "、".join(miss)),
+                           status=EVAL_STATUS_NOT_EVALUATED)
 
     try:
         env = build_env(symbols, values)
-        got = EX.evaluate(ast, env).value
+        q = EX.evaluate(ast, env)
+        got = q.value
     except Exception as exc:
-        return CheckResult("numeric", fname, False, "代入算账时出错：%s" % exc)
+        return CheckResult("numeric", fname, False, "代入算账时出错：%s" % exc,
+                           status=EVAL_STATUS_NOT_EVALUATED)
 
     if got is None:
-        return CheckResult("numeric", fname, False, "算出来没有数值")
+        return CheckResult("numeric", fname, False, "算出来没有数值",
+                           status=EVAL_STATUS_NOT_EVALUATED)
+
+    # --- 目标量纲门禁 ---
+    # 只比数值不看量纲会放过「速度 1 冒充位移 1」这类错误：
+    # 数字对上了，但算的根本不是要验的那个量。
+    #
+    # 期望量纲的取法有讲究：公式左边常常写成平方形式（r^3 = …、v^2 = …、omega^2 = …），
+    # 而符号表里 r / v / omega 声明的是一次方。若死抠符号表，会把「左边是 r^3」误判成量纲错。
+    # 所以：没显式指定算什么时，期望量纲直接从公式左边推导；
+    #       显式指定了 expr（例如「我要验的是 v 而不是 v^2」）才用符号表里 target 的声明。
+    want_dim = None
+    if spec.get("expr") or spec.get("target"):
+        want_dim = _declared_dim(symbols, target)
+    else:
+        try:
+            want_dim = EX.evaluate(ast_lhs, env).dim
+        except Exception:
+            want_dim = _declared_dim(symbols, target)
+    if want_dim is not None and q.dim != want_dim:
+        return CheckResult(
+            "numeric", fname, False,
+            "★ 数值算出来了（%.6g），但算得的是 %s，而要验的 %s 声明的是 %s —— "
+            "量纲对不上，这个数不能拿来核对" % (got, _dim_text(q.dim), target, _dim_text(want_dim)),
+            note=spec.get("note", ""), status=EVAL_STATUS_DIMENSION_CONFLICT)
+
+    # 源显式声明「这条的理论真值是 0」时，改用「离 0 够不够近」判据，不走比例护栏
+    if spec.get("expected_zero"):
+        limit = _zero_limit(spec, tol)
+        if abs(got) <= limit and abs(ref) <= limit:
+            return CheckResult(
+                "numeric", fname, True,
+                "情境「%s」：算得 %s = %.3g，理论真值 0（绝对容差 %.3g 内），相符"
+                % (scenario_name, target, got, limit),
+                note=spec.get("note", ""), status=EVAL_STATUS_OK)
+        return CheckResult(
+            "numeric", fname, False,
+            "情境「%s」：声明的理论真值是 0，但算得 %s = %.6g（绝对容差 %.3g）"
+            % (scenario_name, target, got, limit),
+            note=spec.get("note", ""), status=EVAL_STATUS_NUMERIC_MISMATCH)
 
     if abs(got - ref) <= _tolerance(ref, tol):
         return CheckResult(
             "numeric", fname, True,
             "情境「%s」：算得 %s = %.6g，独立参考值 %.6g，相符"
             % (scenario_name, target, got, ref),
-            note=spec.get("note", ""))
+            note=spec.get("note", ""), status=EVAL_STATUS_OK)
 
     return CheckResult(
         "numeric", fname, False,
         "情境「%s」：算得 %s = %.6g，但独立参考值是 %.6g（相差 %.3g）"
         % (scenario_name, target, got, ref, got - ref),
-        note=spec.get("note", ""))
+        note=spec.get("note", ""), status=EVAL_STATUS_NUMERIC_MISMATCH)
 
 
 # ============================================================
@@ -385,7 +475,8 @@ def check_consistency(fname, ast_rhs, symbols, spec, other_formulas):
     other_name = spec.get("with")
     if other_name not in other_formulas:
         return CheckResult("consistency", fname, False,
-                           "找不到要对照的公式「%s」" % other_name)
+                           "找不到要对照的公式「%s」" % other_name,
+                           status=EVAL_STATUS_NOT_EVALUATED)
 
     other = other_formulas[other_name]
     values = dict(spec["_scenario_values"])
@@ -397,23 +488,28 @@ def check_consistency(fname, ast_rhs, symbols, spec, other_formulas):
         ast_b = _spec_ast(spec, other["rhs"], "with_expr")
     except EX.ExprError as exc:
         return CheckResult("consistency", fname, False,
-                           "检查项里的表达式写不通：%s" % exc)
+                           "检查项里的表达式写不通：%s" % exc,
+                           status=EVAL_STATUS_NOT_EVALUATED)
 
     miss = sorted(set(_missing_for(ast_a, symbols, values))
                   | set(_missing_for(ast_b, symbols, values)))
     if miss:
         return CheckResult("consistency", fname, False,
-                           "两条公式一起算还缺这些变量的值：%s" % "、".join(miss))
+                           "两条公式一起算还缺这些变量的值：%s" % "、".join(miss),
+                           status=EVAL_STATUS_NOT_EVALUATED)
 
     try:
         env = build_env(symbols, values)
-        a = EX.evaluate(ast_a, env).value
-        b = EX.evaluate(ast_b, env).value
+        qa = EX.evaluate(ast_a, env)
+        qb = EX.evaluate(ast_b, env)
+        a, b = qa.value, qb.value
     except Exception as exc:
-        return CheckResult("consistency", fname, False, "对照计算时出错：%s" % exc)
+        return CheckResult("consistency", fname, False, "对照计算时出错：%s" % exc,
+                           status=EVAL_STATUS_NOT_EVALUATED)
 
     if a is None or b is None:
-        return CheckResult("consistency", fname, False, "对照时有一边没有数值")
+        return CheckResult("consistency", fname, False, "对照时有一边没有数值",
+                           status=EVAL_STATUS_NOT_EVALUATED)
 
     # 对照式的称呼：写了 with_expr 就说明对照的是"某个具体表达式"，
     # 没写就说明对照的是另一条公式的等号右边 —— 两种情况说法要分开，别让人误解。
@@ -422,18 +518,49 @@ def check_consistency(fname, ast_rhs, symbols, spec, other_formulas):
     else:
         who = "「%s」" % other_name
 
-    if abs(a - b) <= _tolerance(a, tol):
+    # --- 两端量纲门禁 ---
+    # 两个数就算相等也没用，如果根本不是同一个量：电流 1 A 和电荷 1 C 数值都是 1，
+    # 不问量纲的话会判成「完全吻合」。一致性检查的前提就是两端可比。
+    if qa.dim != qb.dim:
+        return CheckResult(
+            "consistency", fname, False,
+            "★ 两条路子算的不是同一个量：本式是 %s，%s 是 %s —— "
+            "数值再接近也不能算互相印证" % (_dim_text(qa.dim), who, _dim_text(qb.dim)),
+            note=spec.get("note", ""), status=EVAL_STATUS_DIMENSION_CONFLICT)
+
+    # 理论零：两条路径的真值都是 0，各自离 0 够近就算吻合，
+    # 不能拿「本式算得的 1e-15 级残差」当参考值去要求另一条路径 —— 那是拿噪声当尺子
+    if spec.get("expected_zero"):
+        limit = _zero_limit(spec, tol)
+        if abs(a) <= limit and abs(b) <= limit:
+            return CheckResult(
+                "consistency", fname, True,
+                "同一情境下「%s」：本式算得 %.3g，%s 算得 %.3g，"
+                "两者都在理论真值 0 的绝对容差 %.3g 内，吻合"
+                % (target, a, who, b, limit),
+                note=spec.get("note", ""), status=EVAL_STATUS_OK)
+        return CheckResult(
+            "consistency", fname, False,
+            "同一情境下「%s」：声明理论真值为 0，但本式算得 %.6g、%s 算得 %.6g"
+            "（绝对容差 %.3g）—— 至少有一条路径不是零" % (target, a, who, b, limit),
+            note=spec.get("note", ""), status=EVAL_STATUS_NUMERIC_MISMATCH)
+
+    # 量级取两端的较大者：只拿 a 当参考值会有个漏洞 ——
+    # 一边算成 0 时「参考值的一半」也成了 0，容差跟着塌成 0 附近又走回绝对容差，
+    # 于是「0*I*t 对 I*t」这种微小量错误被放过（I=8e-19 时差 8e-19 < 默认容差 1e-6）。
+    # 两端量级都小才是真的微小量，这时才收紧容差；一端大而一端小本来就该判不符。
+    if abs(a - b) <= _tolerance(max(abs(a), abs(b)), tol):
         return CheckResult(
             "consistency", fname, True,
             "同一情境下「%s」：本式算得 %.6g，%s 算得 %.6g，完全吻合"
             % (target, a, who, b),
-            note=spec.get("note", ""))
+            note=spec.get("note", ""), status=EVAL_STATUS_OK)
 
     return CheckResult(
         "consistency", fname, False,
         "同一情境下「%s」：本式算得 %.6g，但 %s 算得 %.6g（相差 %.3g）"
         "—— 两条路子必有一条是错的" % (target, a, who, b, a - b),
-        note=spec.get("note", ""))
+        note=spec.get("note", ""), status=EVAL_STATUS_NUMERIC_MISMATCH)
 
 
 # ============================================================
@@ -454,6 +581,7 @@ def check_scan(fname, ast_rhs, symbols, spec):
         return CheckResult("scan", fname, False, "组装环境时出错：%s" % exc)
 
     bad = []
+    got_value = 0          # 真正算出数值的采样点数
     for k in range(n + 1):
         x = lo + (hi - lo) * k / n
         env = dict(base_q)
@@ -464,14 +592,28 @@ def check_scan(fname, ast_rhs, symbols, spec):
             bad.append("%s=%g 时出错（%s）" % (var, x, exc))
             continue
         if v is None:
+            # ★ 以前这里是 continue —— 算不出数值就悄悄跳过。
+            #   如果每个点都算不出数值，bad 是空的，检查反而判「通过」，
+            #   等于一次都没验证却发了合格证（kine-06 曾 61 个点全部无值仍通过）。
+            bad.append("%s=%g 时算不出数值" % (var, x))
             continue
+        got_value += 1
         if math.isnan(v) or math.isinf(v):
             bad.append("%s=%g 时算出 %s" % (var, x, "NaN" if math.isnan(v) else "无穷"))
 
     if not bad:
         return CheckResult(
             "scan", fname, True,
-            "%s 在 %g ~ %g 之间取了 %d 个值，全程无异常、无 NaN、无无穷"
+            "%s 在 %g ~ %g 之间取了 %d 个值，全程有数值、无异常、无 NaN、无无穷"
+            % (var, lo, hi, n + 1),
+            note=spec.get("note", ""))
+
+    if got_value == 0:
+        # 一次都没算出数值 = 这次扫描什么都没验到，必须判失败而不是「没发现问题」
+        return CheckResult(
+            "scan", fname, False,
+            "★ %s 在 %g ~ %g 之间取了 %d 个值，但一个都没算出数值 —— "
+            "这次扫描等于没验证，不能算通过（多半是情境缺了公式需要的变量）"
             % (var, lo, hi, n + 1),
             note=spec.get("note", ""))
 

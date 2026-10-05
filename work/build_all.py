@@ -446,6 +446,10 @@ def run_frozen_qc_without_overwriting_report():
 
 def main():
     """完成双学段校验、主页面、自测页、离线包与交付说明。"""
+    # 先验完整正式检查、精度和独立复算；失败时不覆盖历史成品。
+    from 发布验收 import ensure_ready, validate_inputs, finish
+    from 发布版本 import versions
+    acceptance = ensure_ready()
     hs_dir = os.path.join(HERE, "kb")
     junior_dir = os.path.join(HERE, "kb_junior")
     crosswalk_path = os.path.join(HERE, "crosswalk.json")
@@ -753,7 +757,13 @@ def main():
         sum(1 for item in diagnostic_data["questions"] if item["judging"] == "auto"),
         sum(1 for item in diagnostic_data["questions"] if item["judging"] == "teacher"),
         len(diagnostic_data["skipped"])))
-    return 0
+    if versions() != acceptance['before']:
+        acceptance['issues'].append('构建期间源、校验器或生成器发生变化，必须重新验收')
+    acceptance['after'] = versions()
+    # 成品、维护别名和版本逐项验收，不能只凭生成成功宣布发布。
+    final_acceptance=validate_inputs()
+    final_acceptance['issues'].extend(acceptance['issues'])
+    return finish(final_acceptance)
 
 
 if __name__ == "__main__":

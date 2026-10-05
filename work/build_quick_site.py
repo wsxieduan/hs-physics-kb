@@ -243,6 +243,8 @@ __SEGMENT_NAV__
 
 def build_page(kb_dir, segment, output_path):
     """根据传入学段复用同一套速查模板，并在生成前重新跑知识库校验。"""
+    from 发布验收 import ensure_ready
+    ensure_ready()
     chapters = KB.load_kb(kb_dir)
     issues, id_map = KB.check_structure(chapters)
     if any(x.level == "错误" for x in issues):
@@ -299,6 +301,8 @@ def build_page(kb_dir, segment, output_path):
         raise RuntimeError("常见错误缺失或机器写法漏入页面，拒绝生成。")
     if 'class="chk ' in page or re.search(r'(?:src|href)="https?://', page, re.I):
         raise RuntimeError("速查版含校验明细或外部资源，拒绝生成。")
+    from 发布版本 import stamp
+    page = stamp(page)
     encoded = page.encode("utf-8")
     # ★ 2026-10-04：2 MiB → 8 MiB。与成品完整版同一口径（主人：「质量第一，
     #   占多少 MB 无所谓」），速查版目前 628 KB，此上限正常交付碰不到。

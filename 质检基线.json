@@ -1,12 +1,12 @@
 {
-  "frozen_at": "2026-10-05 00:41:59",
+  "frozen_at": "2026-10-05 07:54:30",
   "note": "这是质检基线。冻结清单里的文件若发生改动，质检会报出来。",
   "fingerprint": {
     "work/physkit/quantity.py": "7641bc82bb0225cf21c7347da6c46eb4418ea583d2496271671d385b2e7a38b8",
     "work/physkit/expr.py": "a626480be37bccbc8d7d6bbeab9c039599b7fa980e4e944367fd7b5ac96541a6",
-    "work/physkit/checks.py": "285afac261f68b58dc1fd646312aebc4b1b544b9fc5ff7946777025b833456f3",
+    "work/physkit/checks.py": "6f011810576a6700d172c9cff4cd17b123b70270428ae213c2f674ae04d9ad3c",
     "work/physkit/kb.py": "e71d8fb3927c223241da2a6210342db712fff01bb896611b3855d4d35f5914d4",
-    "work/qc.py": "3d63e7d9d1cfe984842df92677a8cd40c29981d6de30fbdabbb83eefac8f8d47",
+    "work/qc.py": "e470ff8bb25457856b5ba3a2627305048547f53c918bc73cf0f529fdab726940",
     "work/net_guard.py": "ed42643eec8889ec70a0c2e310c710ae5e57d072720a3e9bca2346ab2b6b9e6e",
     "work/orchestrator.py": "b7e6b6000cd243d386fd924f7b9c0f5451ab1eef18037675eab9aae06fc6fe6d"
   }
