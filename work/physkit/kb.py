@@ -127,51 +127,19 @@ def _missing_vars(ast, symbols, values):
     return miss
 
 
-def _auto_numeric_trap(wlhs, wrhs, symbols, scenarios):
-    """
-    数值类错误的"自动实测"。
-
-    做法最直白也最彻底：**把这条错误写法原样代进知识库里的各个情境，
-    看等号左边算出来和右边算出来是不是一样。**
-    对不上，就说明这条错误写法确实算错数 —— 数值代入检查能抓住它。
-
-    之所以要这样验，是因为"量纲对但公式错"的那一类错误（例如 ½at² 漏了 ½）
-    量纲检查完全无能为力，只能靠代数字。而代数字这件事机器做得比人可靠。
-    """
-    if not scenarios:
-        return None, "这个知识点没有情境参数，无法自动实测"
-
-    computed = 0          # 有多少个情境真的算出了两边的数
-    skipped = None
-
-    for name, vals in scenarios.items():
-        miss = sorted(set(_missing_vars(wlhs, symbols, vals))
-                      | set(_missing_vars(wrhs, symbols, vals)))
-        if miss:
-            skipped = skipped or ("情境「%s」缺少这些变量的值：%s"
-                                  % (name, "、".join(miss)))
-            continue
+def _auto_numeric_trap(wlhs,wrhs,symbols,scenarios):
+    computed=0
+    for name,values in scenarios.items():
         try:
-            env = CH.build_env(symbols, vals)
-            a = EX.evaluate(wlhs, env).value
-            b = EX.evaluate(wrhs, env).value
+            env=CH.build_env(symbols,values);a=EX.evaluate(wlhs,env);b=EX.evaluate(wrhs,env)
+            if a.dim!=b.dim:return True,'已识别目标与结果量纲冲突','dimension_conflict'
+            if a.value is None or b.value is None:continue
+            computed+=1;ok,_=CH.comparison(a.value,b.value,{})
+            if not ok:return True,'情境「%s」成功求值，左右数值不符'%name,'numeric_mismatch'
         except Exception as exc:
-            skipped = skipped or ("代入情境「%s」时出错：%s" % (name, exc))
-            continue
-        if a is None or b is None:
-            continue
-
-        computed += 1
-        scale = max(abs(a), abs(b), 1.0)
-        if abs(a - b) > 1e-6 * scale:
-            return True, ("代进情境「%s」：左边 %s = %.6g，右边 %s = %.6g，两边对不上"
-                          " —— 数值代入能抓住它"
-                          % (name, EX.to_plain(wlhs), a, EX.to_plain(wrhs), b))
-
-    if computed:
-        return False, ("★ 把这条错误写法代进全部 %d 个情境，左右两边居然都对得上 —— "
-                       "说明这个情境参数选得不好（把错误掩盖了），该防线实际上是空的" % computed)
-    return None, (skipped or "现有情境都没法算出这条写法的数值")
+            if CH.exception_status(exc)=='dimension_conflict':return True,'已识别表达式内部量纲冲突','dimension_conflict'
+            last_status=CH.exception_status(exc)
+    return (False,'各可求值情境均与参考相符','success') if computed else (None,'没有完成数值求值，不能声称抓错',locals().get('last_status','missing_variable'))
 
 
 # 检查项「根本没算出来」时 checks.py 写回的文案特征。
@@ -189,11 +157,8 @@ _EVAL_FAIL_MARKS = (
 
 
 def _eval_failed(r):
-    """判断一条检查结果是不是「没测成」（而不是「测出来不符」）。"""
-    if getattr(r, "error", None):
-        return True
-    detail = getattr(r, "detail", "") or ""
-    return any(mark in detail for mark in _EVAL_FAIL_MARKS)
+    """成功求值后的数值或物理命题不符，以及确定量纲冲突，均为已识别。"""
+    return r.evaluation_status not in ('success','numeric_mismatch','dimension_conflict','physical_mismatch')
 
 
 def verify_traps(chapters):
@@ -242,7 +207,7 @@ def verify_traps(chapters):
                     wlhs, wrhs = EX.parse_equation(wrong)
                 except EX.ExprError as exc:
                     out[key] = {"caught": None, "by": by,
-                                "detail": "错误写法本身解析不了：%s" % exc}
+                                "evaluation_status": "syntax_error", "detail": "错误写法本身解析不了：%s" % exc}
                     continue
 
                 lv = list(EX.collect_vars(wlhs))
@@ -253,7 +218,7 @@ def verify_traps(chapters):
                        and v not in CH.GREEK_REVERSE]
                 if bad:
                     out[key] = {"caught": None, "by": by,
-                                "detail": "错误写法用到未声明的变量 %s，无法实测"
+                                "evaluation_status": "missing_variable", "detail": "错误写法用到未声明的变量 %s，无法实测"
                                           % "、".join(bad)}
                     continue
 
@@ -282,8 +247,8 @@ def verify_traps(chapters):
                                               % r.type_name)
                         else:
                             # 没指定参考值：自动把错误写法代进各个情境，看左右两边对不对得上
-                            caught, detail = _auto_numeric_trap(wlhs, wrhs, symbols, scenarios)
-                        out[key] = {"caught": caught, "by": by, "detail": detail}
+                            caught, detail, auto_status = _auto_numeric_trap(wlhs, wrhs, symbols, scenarios)
+                        out[key] = {"caught": caught, "by": by, "detail": detail, "evaluation_status": r.evaluation_status if "ref" in tt else auto_status}
                         continue
                     elif ctype == "direction":
                         spec = dict(tt)
@@ -299,19 +264,19 @@ def verify_traps(chapters):
                         continue
                 except Exception as exc:
                     out[key] = {"caught": None, "by": by,
-                                "detail": "实测时出错：%s" % exc}
+                                "evaluation_status": CH.exception_status(exc), "detail": "实测时出错：%s" % exc}
                     continue
 
                 # 检查判为"不通过" → 说明这条错写法确实被抓住了
                 # ★ 2026-10-04：同样先排除「没算出来」的情况（见 _eval_failed 注释）
                 if _eval_failed(r):
                     out[key] = {"caught": None, "by": by,
-                                "detail": "无法自动实测（%s）" % r.detail}
+                                "evaluation_status": r.evaluation_status, "detail": "无法自动实测（%s）" % r.detail}
                 else:
                     out[key] = {
                         "caught": (not r.ok),
                         "by": by,
-                        "detail": r.detail if not r.ok else
+                        "evaluation_status": r.evaluation_status, "result": r.as_dict(), "detail": r.detail if not r.ok else
                                   "★ 实测发现这条错写法居然通过了「%s」检查 —— 该防线是假的" % r.type_name,
                     }
 

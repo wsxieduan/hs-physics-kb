@@ -56,6 +56,8 @@ import os
 import random
 import re
 import sys
+if hasattr(sys.stdout,"reconfigure"):sys.stdout.reconfigure(encoding="utf-8",errors="backslashreplace")
+if hasattr(sys.stderr,"reconfigure"):sys.stderr.reconfigure(encoding="utf-8",errors="backslashreplace")
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 KB_DIR = os.path.join(HERE, "kb")
@@ -334,6 +336,8 @@ def split_equation(text):
 
 def check_recompute(chapters, sample_n, seed):
     """独立复算所有数值类检查 + 生成人工抽样单。"""
+    from physkit.kb import build_formula_index
+    formula_index=build_formula_index(chapters)
     issues = []
     checked = 0
     samples = []
@@ -368,7 +372,7 @@ def check_recompute(chapters, sample_n, seed):
                                           % (where, fname_, exc))
                             continue
                         ref = c["ref"]
-                        if abs(got - ref) > 1e-6 * max(1.0, abs(ref)):
+                        if not __import__("physkit.checks", fromlist=["comparison"]).comparison(got, ref, c)[0]:
                             issues.append(
                                 "**参考值可疑** %s / %s：独立重算得 %.6g，"
                                 "但源文件写的参考值是 %.6g（差 %.3g）"
@@ -380,7 +384,10 @@ def check_recompute(chapters, sample_n, seed):
                         ea = c.get("expr") or split_equation(expr)[1]
                         eb = c.get("with_expr")
                         if not eb:
-                            continue
+                            reference=formula_index.get(c.get("with"))
+                            if not reference:
+                                issues.append("一致性参考公式不存在："+str(c.get("with")));continue
+                            eb=split_equation(reference["expr"])[1]
                         if not (all(v in sc for v in _names(ea))
                                 and all(v in sc for v in _names(eb))):
                             issues.append("%s / %s：跨公式一致检查引用了情境里没有的变量"
@@ -393,7 +400,7 @@ def check_recompute(chapters, sample_n, seed):
                             issues.append("%s / %s：跨公式一致独立复算失败（%s）"
                                           % (where, fname_, exc))
                             continue
-                        if abs(a1 - b1) > 1e-6 * max(1.0, abs(a1)):
+                        if not __import__("physkit.checks", fromlist=["comparison"]).comparison(a1, b1, c)[0]:
                             issues.append("**互证不成立** %s / %s：独立重算两边分别是 %.6g 和 %.6g"
                                           % (where, fname_, a1, b1))
 
@@ -641,11 +648,11 @@ def check_prose_symbols(chapters):
 # ============================================================
 
 def render_report(fps, fp_rows, cov, cov_stats, rec, rec_n, samples, out, out_info,
-                  baseline, quality_issues, prose_hard=None, prose_soft=None):
+                  baseline, quality_issues, prose_hard=None, prose_soft=None, release=None):
     prose_hard = list(prose_hard or [])
     prose_soft = list(prose_soft or [])
     L = []
-    L.append("# 质检报告 · 高中物理知识库")
+    L.append("# 质检报告 · 初高中物理知识库")
     L.append("")
     L.append("由 `work/qc.py` 自动生成。**质检的前提是「假设成品有问题」，"
              "所以这里查的是校验器管不到的东西。**")
@@ -658,7 +665,7 @@ def render_report(fps, fp_rows, cov, cov_stats, rec, rec_n, samples, out, out_in
     L.append("")
 
     # --- 结论 ---
-    all_issues = fps + cov + rec + out + prose_hard
+    all_issues = fps + cov + rec + out + prose_hard + (release.get("issues", []) if release else ["未执行完整正式验收"])
     hard = [i for i in all_issues]          # 一到五项的问题都算硬问题
     soft = quality_issues
     L.append("## 一、结论")
@@ -702,6 +709,7 @@ def render_report(fps, fp_rows, cov, cov_stats, rec, rec_n, samples, out, out_in
     L.append("")
 
     # --- 一、指纹 ---
+    L.append(render_release_section(release))
     L.append("## 二、指纹：校验器本体有没有被动过")
     L.append("")
     L.append("校验器源码属于「冻结」范围。改了就必须在 `work/校验器变更.md` 里说明理由，"
@@ -720,7 +728,7 @@ def render_report(fps, fp_rows, cov, cov_stats, rec, rec_n, samples, out, out_in
     L.append("所以给「检查的深度」设了下限：")
     L.append("")
     L.append("- 每个知识点的公式里，`数值代入` 至少 2 项、`极端参数扫描` 至少 1 项、"
-             "`跨公式互证` 至少 1 项")
+             "`一致性核对` 至少 1 项")
     L.append("- 每个知识点至少要有一条**「量纲抓不到、只能靠数值代入」**的陷阱")
     L.append("- 每个知识点至少 3 条推导要点、2 条常见错误、1 组情境参数")
     L.append("- 定义 / 物理意义 / 例题都有最短长度要求")
@@ -751,7 +759,7 @@ def render_report(fps, fp_rows, cov, cov_stats, rec, rec_n, samples, out, out_in
     L.append("")
     L.append("为什么必须这么做：如果有人把公式写错了，再把「参考值」也改成错误公式算出来的数，"
              "那么校验器会认为一切正常 —— 因为校验器比的就是这两者。"
-             "换一套代码独立重算，是唯一能发现这种情况的自动手段。")
+             "独立求值可发现参考数值或求值实现不符；源表达式与参考值共同写错仍需独立物理证据或教师审核。")
     L.append("")
     L.append("共独立复算 **%d** 项，%s。" % (rec_n, "全部相符" if not rec else "发现 %d 处不符" % len(rec)))
     L.append("")
@@ -848,103 +856,106 @@ def render_report(fps, fp_rows, cov, cov_stats, rec, rec_n, samples, out, out_in
 # ============================================================
 
 def release_version():
-    """当前「源 + 校验器 + 生成器」的版本哈希。
+    # 与发布门禁共用版本登记，包括被门禁调用的契约检查脚本。
+    from 发布版本 import versions
+    return versions(repo_root())['version']
 
-    算法与 `work/发布版本.py` 的 versions() 完全一致（同一批文件、同样排序、同样的序列化），
-    这样质检报告里写的版本号才能和成品的版本标记对得上。
-    """
-    import json as _json
-    root = repo_root()
-    records = {}
-    paths = []
-    for d in ("kb", "kb_junior"):
-        dpath = os.path.join(root, "work", d)
-        if os.path.isdir(dpath):
-            for name in sorted(os.listdir(dpath)):
-                if name.endswith(".json") and not name.startswith("_"):
-                    paths.append(os.path.join(dpath, name))
-    physkit_dir = os.path.join(root, "work", "physkit")
-    if os.path.isdir(physkit_dir):
-        for name in sorted(os.listdir(physkit_dir)):
-            if name.endswith(".py"):
-                paths.append(os.path.join(physkit_dir, name))
-    for n in ("qc.py", "validate.py", "build_all.py", "build_site.py", "build_lite.py",
-              "build_quick_site.py", "build_quiz.py", "诊断题重构.py", "prose_math.py",
-              "发布版本.py", "发布验收.py", "crosswalk.json", "crosswalk_review.json"):
-        p = os.path.join(root, "work", n)
-        if os.path.exists(p):
-            paths.append(p)
-    for p in paths:
-        rel = os.path.relpath(p, root).replace("\\", "/")
-        records[rel] = sha256_of(p)
-    return hashlib.sha256(
-        _json.dumps(records, ensure_ascii=False, sort_keys=True,
-                    separators=(",", ":")).encode("utf-8")).hexdigest()
 
+
+
+
+# -*- coding: utf-8 -*-
+"""供质检方审查的完整正式检查与版本记录；与独立复算分别计数。"""
+def release_versions(root=None):
+    root=root or repo_root();records={}
+    for directory in ['kb','kb_junior','quiz_bank/hs','quiz_bank/junior']:
+        path=os.path.join(root,'work',directory)
+        if not os.path.isdir(path):continue
+        for name in sorted(os.listdir(path)):
+            if name.endswith('.json') and not name.startswith('_'):
+                relative='work/'+directory+'/'+name;records[relative]=sha256_of(os.path.join(path,name))
+    for name in FROZEN_PATTERNS+['work/validate.py','work/physkit/__init__.py','work/build_all.py','work/build_site.py','work/build_lite.py','work/build_quick_site.py','work/build_quiz.py','work/诊断题重构.py','work/prose_math.py']:
+        path=os.path.join(root,name)
+        if os.path.isfile(path):records[name]=sha256_of(path)
+    # 发布版本以真实输入摘要确定，检查时间另外记录，不把时间当内容版本。
+    from 发布版本 import versions
+    canonical=versions(root);records.update(canonical['fingerprints']);version=canonical['version']
+    baseline_path=os.path.join(root,'质检基线.json')
+    if os.path.isfile(baseline_path):records['质检基线.json']=sha256_of(baseline_path)
+    return {'version':version,'fingerprints':records}
 
 def check_release_all(root=None):
-    """一次跑完两个学段的正式检查（结构 + 完整物理 + 独立复算）。
-
-    返回 (问题列表, 明细)：
-        issues 为空表示两学段都通过；
-        data 里记录了实际加载的引擎文件指纹，用来证明跑的是正式路径而不是隔离候选。
-    """
-    import datetime
+    """双学段完整结构、完整物理及独立求值分别执行。"""
     from physkit import kb as KB
-
-    root = root or repo_root()
-    issues = []
-    data = {"started_at": datetime.datetime.now().isoformat(timespec="seconds"),
-            "segments": {}}
-
-    # 记录实际加载的校验器文件，防止「拿隔离候选的结果冒充正式验收」
+    from datetime import datetime,timezone,timedelta
+    root=root or repo_root();before=release_versions(root);data={'started_at':datetime.now(timezone(timedelta(hours=8))).isoformat(),'before':before,'segments':{}};issues=[]
     import sys
-    loaded = {n: sys.modules[n].__file__
-              for n in ("physkit.kb", "physkit.checks", "physkit.expr")
-              if n in sys.modules}
-    loaded["qc"] = os.path.abspath(__file__)
-    data["loaded_engine_fingerprints"] = {p: sha256_of(p) for p in loaded.values()}
-    physkit_dir = os.path.join(root, "work", "physkit")
-    data["scope"] = ("正式路径"
-                     if all(os.path.dirname(os.path.abspath(p)) == physkit_dir
-                            for n, p in loaded.items() if n != "qc")
-                     else "隔离候选，仅供审查，不能作为发布依据")
+    modules={name:sys.modules[name].__file__ for name in ['physkit.kb','physkit.checks','physkit.expr']}
+    modules['质检']=__file__;data['loaded_engine_fingerprints']={path:sha256_of(path) for path in modules.values()}
+    # ★ 2026-10-05 质检方修：判断「跑的是不是正式路径」必须先把路径统一写法再比。
+    #   原来直接拿 dirname 和 root 拼出来的字符串比，只要调用时 root 写成 D:/codex（正斜杠）
+    #   而模块路径是 D:\codex\work\physkit（反斜杠），比就永远不成立，
+    #   于是明明跑的是正式引擎，报告里却写成「隔离候选」——凭空多一场虚惊。
+    formal_engine=os.path.normcase(os.path.realpath(os.path.join(root,'work','physkit')))
+    formal_qc=os.path.normcase(os.path.realpath(os.path.join(root,'work','qc.py')))
+    loaded_paths=[os.path.normcase(os.path.realpath(p)) for n,p in modules.items() if n!='质检']
+    data['scope']='正式路径' if all(os.path.dirname(p)==formal_engine for p in loaded_paths) and os.path.normcase(os.path.realpath(__file__))==formal_qc else '隔离候选，仅供审查，不是正式发布'
+    for label,directory in [('高中','kb'),('初中','kb_junior')]:
+        chapters=KB.load_kb(os.path.join(root,'work',directory));structure,_=KB.check_structure(chapters);physics=KB.run_physics_checks(chapters);stats=KB.summarize(physics)
+        hard_structure=[str(x) for x in structure if x.level=='错误'];rec,n,_=check_recompute(chapters,0,20261005)
+        failed=[{'point':pid,**r} for pid,p in physics.items() for r in p['results'] if not r['ok']]
+        data['segments'][label]={'structure_errors':hard_structure,'summary':stats,'failed_count':stats['checks']-stats['pass'],'failed_checks':failed,'independent_count':n,'independent_issues':rec}
+        issues.extend(label+'结构：'+s for s in hard_structure);issues.extend(label+'正式物理失败：'+r['point']+'/'+r['formula'] for r in failed);issues.extend(label+'独立复算：'+s for s in rec)
+        issues.extend(label+'错误防线未抓住：'+s for s in stats['trap_failures'])
+    data['after']=release_versions(root);data['version_stable']=data['before']==data['after'];data['finished_at']=datetime.now(timezone(timedelta(hours=8))).isoformat()
+    if not data['version_stable']:issues.append('验收期间输入或校验器改变，必须重新验收')
+    data['issues']=issues;return issues,data
 
-    for label, directory in (("高中", "kb"), ("初中", "kb_junior")):
-        chapters = KB.load_kb(os.path.join(root, "work", directory))
-        structure, _ = KB.check_structure(chapters)
-        hard_structure = [str(x) for x in structure if x.level == "错误"]
+def complete_release_review(release,root=None):
+    """质检结束时复查版本、三处七页面及维护别名；旧成品不能冒充新版。"""
+    from datetime import datetime,timezone,timedelta
+    from pathlib import Path
+    root=Path(root or repo_root());release['after']=release_versions(str(root))
+    release['version_stable']=release['before']==release['after']
+    if not release['version_stable']:release['issues'].append('整个质检期间输入或校验器改变，必须重新验收')
+    names=['index.html','junior.html','student.html','quick.html','junior-quick.html','quiz-hs.html','quiz-junior.html']
+    aliases={'高中物理知识库.html':'index.html','初中物理知识库.html':'junior.html','高中物理速查.html':'quick.html','高中物理速查_优化版.html':'quick.html','高中物理知识库-学生版.html':'student.html','初中物理速查.html':'junior-quick.html'}
+    records=[]
+    for name in names:
+        hashes=[]
+        for directory in ['outputs','site','outputs/物理知识库整合版']:
+            p=root/directory/name
+            if not p.exists():release['issues'].append('缺少成品：'+str(p));continue
+            content=p.read_text(encoding='utf-8');h=sha256_of(str(p));hashes.append(h)
+            match=re.search(r'<meta name="物理知识库版本" content="([a-f0-9]+)">',content)
+            pv=match.group(1) if match else None;records.append({'path':str(p.relative_to(root)),'sha256':h,'version':pv})
+            if pv!=release['after']['version']:release['issues'].append('成品版本不同或仍为历史成品：'+str(p))
+            if p.stat().st_size>8*1024*1024:release['issues'].append('成品超过8 MiB：'+str(p))
+        if len(hashes)!=3 or len(set(hashes))!=1:release['issues'].append('三处交付不同版：'+name)
+    for directory in ['outputs','site','outputs/物理知识库整合版']:
+        for alias,target in aliases.items():
+            p=root/directory/alias;t=root/directory/target
+            required=directory=='outputs' or target in ['index.html','junior.html']
+            if not p.exists():
+                if required:release['issues'].append('缺少维护别名：'+str(p))
+            elif not t.exists() or sha256_of(str(p))!=sha256_of(str(t)):release['issues'].append('维护别名不同版：'+str(p))
+    last=release_versions(str(root))
+    if last!=release['after']:
+        release['issues'].append('成品检查过程中输入或校验器变化，必须重验');release['version_stable']=False;release['after']=last
+    release['products']=records;release['finished_at']=datetime.now(timezone(timedelta(hours=8))).isoformat()
+    return release['issues']
 
-        physics = KB.run_physics_checks(chapters)
-        stats = KB.summarize(physics)
-        failed = [{"point": pid, "formula": r.get("formula"),
-                   "type": r.get("type"), "detail": r.get("detail"),
-                   "status": r.get("evaluation_status")}
-                  for pid, p in physics.items()
-                  for r in p.get("results", []) if not r.get("ok")]
-
-        rec, rec_n, _samples = check_recompute(chapters, 0, 20261005)
-
-        data["segments"][label] = {
-            "structure_errors": hard_structure,
-            "summary": stats,
-            "failed_count": stats["checks"] - stats["pass"],
-            "failed_checks": failed,
-            "independent_count": rec_n,
-            "independent_issues": rec,
-            "trap_failures": stats.get("trap_failures", []),
-        }
-        issues.extend(label + "结构：" + s for s in hard_structure)
-        issues.extend("%s正式物理失败：%s/%s" % (label, f["point"], f["formula"])
-                      for f in failed)
-        issues.extend(label + "独立复算：" + str(s) for s in rec)
-        issues.extend(label + "错误防线未抓住：" + str(s)
-                      for s in stats.get("trap_failures", []))
-
-    data["finished_at"] = datetime.datetime.now().isoformat(timespec="seconds")
-    data["issues"] = issues
-    return issues, data
-
+def render_release_section(release):
+    if not release:return '\n## 完整正式验收\n\n未执行完整正式验收，不能发布。\n'
+    lines=['## 完整正式验收与版本','', '源/校验器/生成器版本：`'+release['after']['version']+'`。', '检查开始：'+release['started_at']+'；结束：'+release['finished_at']+'。','', '| 学段 | 结构错误 | 正式通过 | 正式失败 | 独立复算 |','|---|---:|---:|---:|---:|']
+    for label,row in release['segments'].items():
+        s=row['summary'];lines.append('| %s | %d | %d/%d | %d | %d项，%d处不符 |'%(label,len(row['structure_errors']),s['pass'],s['checks'],row['failed_count'],row['independent_count'],len(row['independent_issues'])))
+    lines += ['', '运行范围：'+release.get('scope','未登记')+'。']
+    lines += ['', '验收版本稳定：'+('是' if release['version_stable'] else '否，必须重验')+'。完整正式检查与独立复算分别执行，不能互相替代。', '教学质量仍待教师签署；实验装置未实测的不宣称已验证。','', '### 本次正式失败或版本问题','']
+    lines += ['- '+s for s in release['issues']] or ['无。']
+    lines += ['', '### 当前冻结校验器指纹','']
+    lines += ['- `%s`：`%s`'%(n,h) for n,h in release['after']['fingerprints'].items() if n.startswith('work/physkit/') or n in ['work/qc.py','work/validate.py']]
+    return '\n'.join(lines)+'\n'
 
 
 def main(argv):
@@ -983,6 +994,7 @@ def main(argv):
     with io.open(BASELINE, encoding="utf-8") as fh:
         baseline = json.load(fh)
 
+    release_issues, release = check_release_all()
     chapters = load_raw_kb()
 
     fps, fp_rows = check_fingerprint(baseline)
@@ -992,15 +1004,17 @@ def main(argv):
     soft = check_quality(chapters)
     prose_hard, prose_soft = check_prose_symbols(chapters)
 
+    release_issues = complete_release_review(release)
     report = render_report(fps, fp_rows, cov, cov_stats, rec, rec_n, samples,
-                           out, out_info, baseline, soft, prose_hard, prose_soft)
+                           out, out_info, baseline, soft, prose_hard, prose_soft, release)
     path = os.path.join(OUT_DIR, "质检报告.md")
     if not os.path.isdir(OUT_DIR):
         os.makedirs(OUT_DIR)
     with io.open(path, "w", encoding="utf-8", newline="\n") as fh:
         fh.write(report)
 
-    hard = len(fps) + len(cov) + len(rec) + len(out) + len(prose_hard)
+    hard = len(fps) + len(cov) + len(rec) + len(out) + len(prose_hard) + len(release_issues)
+    print("完整正式验收问题 %d" % len(release_issues))
     print("指纹问题      %d" % len(fps))
     print("覆盖门槛问题  %d" % len(cov))
     print("独立复算不符  %d（共复算 %d 项）" % (len(rec), rec_n))

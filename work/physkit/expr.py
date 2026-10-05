@@ -45,8 +45,9 @@ from .quantity import Dim, Quantity, DimError, EPS
 # ============================================================
 
 class ExprError(Exception):
-    """公式写法有问题（语法错误、变量未定义等）。"""
-    pass
+    """公式错误携带稳定状态；中文仅供阅读，不供分类。"""
+    def __init__(self,message,evaluation_status='syntax_error'):
+        super().__init__(message);self.evaluation_status=evaluation_status
 
 
 # 希腊字母：英文名 → 符号。这样公式里写 theta 或 θ 都行。
@@ -318,7 +319,7 @@ def evaluate(node, env):
             if not isinstance(q, Quantity):
                 raise ExprError("变量 %s 的值不是物理量" % name)
             return q
-        raise ExprError("公式里用到了变量 %s，但没有说明它是什么（请在 vars 里声明）" % name)
+        raise ExprError("变量未声明：%s" % name, evaluation_status="missing_variable")
 
     if kind == "neg":
         return -evaluate(node[1], env)
@@ -338,9 +339,9 @@ def evaluate(node, env):
             return a ** b
         except DimError as exc:
             # 把量纲错误包成公式错误，报告里好读
-            raise ExprError("%s" % exc)
+            raise ExprError("%s" % exc, evaluation_status="dimension_conflict") from exc
         except ZeroDivisionError:
-            raise ExprError("公式里出现了除以零")
+            raise ExprError("公式里出现了除以零", evaluation_status="domain_error")
 
     if kind == "call":
         name = node[1]
@@ -408,7 +409,7 @@ def _need_dimensionless(name, q):
     if q.dim != Dim():
         raise ExprError(
             "函数 %s 的自变量必须是无量纲的数，实际是 %s"
-            "（常见原因：角度忘了用弧度，或者公式写错了）" % (name, q.dim)
+            "（常见原因：角度忘了用弧度，或者公式写错了）" % (name, q.dim), evaluation_status="dimension_conflict"
         )
 
 
