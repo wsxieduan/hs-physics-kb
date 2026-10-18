@@ -616,7 +616,11 @@ def main():
 
     readme = """# 初高中物理知识库整合版
 
-初中建议双击 `junior-quick.html`，可查看基础说明、实验步骤、单位和读图证据；`junior.html` 查看完整校验。高中双击 `quick.html` 或 `index.html`；顶部可以切换学段与进入练习。
+日常查阅建议先打开高中 `quick.html` 或初中 `junior-quick.html`。默认按章节展示目录，点击“查看本章重点”可快速浏览本章全部知识点的定义与公式，再点击知识点深入查看适用条件、推导、易错点和例题。
+
+搜索支持多个关键词，用空格分开，例如“牛顿 第二定律”“平抛 速度”“欧姆 电阻”。标题直接命中的知识点优先展示。可以按领域、章节缩小范围；没有结果时点击“清除搜索与全部筛选”重新检索。顶部分别提供知识点、公式、符号和知识脉络视图，切换学段后仍进入速查界面。
+
+教师可在选定章节后打印概览。概览使用已有内容，不另行推断考试权重。`index.html`、`junior.html` 是完整内容与校验记录入口；原有链接和练习记录格式保持兼容。
 
 新版分节覆盖前后台账及教学复核边界见同包 `初中覆盖前后台账.md`。九下完整新版分节与实践栏目待纸本或出版社目录核对，不把公式全通过当作教材完整认证。
 
@@ -634,7 +638,7 @@ def main():
 
     # 把已经整理好的覆盖证据与交付说明随整合包带走，避免说明指向缺失文件。
     # 它们由执行方维护；此处只复制，不把旧报告当作本次校验结论。
-    for filename in ("初中覆盖前后台账.md", "初中分节覆盖记录.json", "初中修补交付说明.md",
+    for filename in ("项目说明.md", "初中覆盖前后台账.md", "初中分节覆盖记录.json", "初中修补交付说明.md",
                      "第四批补录交付说明.md", "第四批补录清单.md", "本轮互证与条件返工说明.md"):
         source = os.path.join(outputs_dir, filename)
         if os.path.isfile(source):
@@ -794,7 +798,11 @@ def main():
     # 成品、维护别名和版本逐项验收，不能只凭生成成功宣布发布。
     final_acceptance=validate_inputs()
     final_acceptance['issues'].extend(acceptance['issues'])
-    return finish(final_acceptance)
+    result = finish(final_acceptance)
+    # 离线包不能继续携带上次版本的验收结论；无论通过还是失败均同步真实状态。
+    for filename in ("当前发布验收.md", "当前发布验收.json", "质检报告.md"):
+        copy_output(os.path.join(outputs_dir, filename), os.path.join(package_dir, filename))
+    return result
 
 
 if __name__ == "__main__":

@@ -859,6 +859,9 @@ JS = """
   var count=document.getElementById('count');
   var expand=document.getElementById('expand');
   var cur='all';
+  // 与速查版保持同一检索习惯：空格分隔的关键词必须全部命中。
+  function normalizeSearch(value){return String(value||'').normalize('NFKC').toLowerCase().replace(/\\s+/g,' ').trim();}
+  function matchesSearch(value,kw){var content=normalizeSearch(value);return !kw||kw.split(' ').every(function(word){return content.indexOf(word)>=0;});}
   // 检索文本从同一份页面内容生成，不在文件中重复保存近十万字节索引。
   cards.forEach(function(card){
     var visible=card.cloneNode(true);
@@ -895,10 +898,10 @@ JS = """
   });
 
   function apply(){
-    var kw=(q.value||'').trim().toLowerCase();
+    var kw=normalizeSearch(q.value);
     var shown=0;
     cards.forEach(function(c){
-      var okKw=!kw||c.getAttribute('data-search').indexOf(kw)>=0;
+      var okKw=matchesSearch(c.getAttribute('data-search'),kw);
       var okCh=cur==='all'||c.getAttribute('data-chapter')===cur;
       var vis=okKw&&okCh;
       c.style.display=vis?'':'none';
@@ -920,7 +923,7 @@ JS = """
       rows.forEach(function(row){
         var host=view==='formula'?row.parentElement:row;
         var sources=view==='formula'?[document.getElementById(host.dataset.formulas)]:row._sources;
-        var hit=sources.some(function(source){return (!kw||(row.textContent+' '+source.querySelector('.kp-head h3').textContent+' '+source.id+' '+(view==='symbol'?source._symbolText[row._key]:'')).toLowerCase().indexOf(kw)>=0)&&(cur==='all'||source.dataset.chapter===cur);});
+        var hit=sources.some(function(source){return matchesSearch(row.textContent+' '+source.querySelector('.kp-head h3').textContent+' '+source.id+' '+(view==='symbol'?source._symbolText[row._key]:''),kw)&&(cur==='all'||source.dataset.chapter===cur);});
         row.style.display=hit?'':'none';if(hit)n++;
       });
       if(view==='formula')document.querySelectorAll('[data-formulas]').forEach(function(host){
@@ -1199,7 +1202,7 @@ def render_page(report, stats, chapters, title="高中物理知识库", lead="",
             '<nav class="segment-switchbar" aria-label="切换物理学段"><div class="segment-switch-inner">'
             '<span class="segment-switch-label">知识库学段</span>'
             '<a href="%s"%s>高中</a><a href="%s"%s>初中</a>'
-            '<a href="%s">速查版 ↗</a>'
+            '<a href="%s" style="background:#176b65;color:#fff;border-color:#176b65">章节重点与快速查阅</a>'
             '<a class="segment-quiz" href="%s">例题自测 ↗</a>'
             '</div></nav>' % (E(segment_nav.get("senior_href", "index.html")), hs_attrs,
                               E(segment_nav.get("junior_href", "junior.html")), junior_attrs,
@@ -1216,6 +1219,8 @@ def render_page(report, stats, chapters, title="高中物理知识库", lead="",
 </head>
 <body data-view="point">
 
+%s
+
 <header class="hero">
   <div class="hero-in">
     <div class="eyebrow">离线可用 · 单文件 · 内容逐条自动校验</div>
@@ -1224,8 +1229,6 @@ def render_page(report, stats, chapters, title="高中物理知识库", lead="",
     <div class="hstats">%s</div>
   </div>
 </header>
-
-%s
 
 <div class="toolbar">
   <div class="toolbar-in">
@@ -1265,7 +1268,7 @@ def render_page(report, stats, chapters, title="高中物理知识库", lead="",
 
 <script>%s</script>
 </body>
-</html>""" % (E(title), CSS, E(title), prose(lead), hstats, segment_bar,
+</html>""" % (E(title), CSS, segment_bar, E(title), prose(lead), hstats,
              "".join(chips), toc, render_method_panel(stats), "".join(body),
              views_html, JS)))
 

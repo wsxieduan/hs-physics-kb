@@ -1,0 +1,5036 @@
+{
+  "segment": "初中",
+  "chapter": "压强和浮力",
+  "source_file": "09_pressure_buoyancy.json",
+  "questions": [
+    {
+      "id": "diagnostic-pressure-01-1",
+      "point_id": "pressure-01",
+      "point_title": "压强",
+      "chapter": "压强和浮力",
+      "stem": "在“压强”中，F 垂直接触面，F 用 N、S 用 m2，结果 p 用 Pa。。压强的单位为Pa。下列哪一表达式的量纲与该目标量一致？",
+      "options": [
+        {
+          "label": "A",
+          "text": "p = F·S"
+        },
+        {
+          "label": "B",
+          "text": "p = F/S"
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "压强表示单位面积上的压力，应除以面积；F·S 的单位也不是 Pa。\n知识点条件：压强能描述压力作用效果。计算固体压强时使用垂直接触面的压力和实际受力面积；不能把物体全部表面积当作受力面积。增大压力或减小受力面积通常会增大压强；单位 Pa 等于 N/m²。\n推导依据：确定垂直作用于接触面的压力 F。；测量承受压力的面积 S 并统一为 m2。；把 F 除以 S 得压强 p；也可由 p 和 S 反算压力。\n卡片公式各自的适用条件（不是本题共同前提）：\n压力与受力面积求压强：F 垂直接触面，F 用 N、S 用 m2，结果 p 用 Pa。\n由压强和面积求压力：压力垂直作用于面积 S，压强 p 均匀。",
+      "error_type": "量纲一致性",
+      "judging": "auto",
+      "source_error_index": 0,
+      "source_caught_by": "量纲一致性",
+      "wrong_expr": "p = F·S",
+      "trap_test": {
+        "scenario": "窄底物体",
+        "expr": "F*S",
+        "ref": 5000
+      },
+      "level": "基础",
+      "learning_scope": "初中",
+      "answer_evidence": {
+        "kind": "dimension",
+        "target": "p",
+        "correct_expression": "p = F/S",
+        "distractor_expression": "p = F*S",
+        "target_dimension": "M·L^-1·T^-2",
+        "distractor_dimension": "M·L^3·T^-2"
+      },
+      "review": {
+        "confidence": "medium",
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": true,
+          "no_answer_leak_in_options": true
+        },
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。",
+        "material": {
+          "anchors": [
+            {
+              "kind": "公式量纲",
+              "name": "本题目标量与等式",
+              "expression": "p = F/S",
+              "when": "量纲相符是必要条件，不能据此证明系数或物理条件正确",
+              "display": "p = F/S"
+            }
+          ],
+          "source": {
+            "nature": "原创量纲辨析命题；无实测数据",
+            "source_error_index": 0
+          },
+          "predicted_errors": [
+            {
+              "option": "A",
+              "text": "p = F·S",
+              "reason": "压强表示单位面积上的压力，应除以面积；F*S 的单位也不是 Pa。",
+              "expression": "p = F*S",
+              "status": "误答原因预测，待教师确认；未采集学生作答证据"
+            }
+          ],
+          "difficulty_note": "建议难度沿用本题level（源卡难度）；尚非题目难度实测，待教师调整",
+          "estimated_seconds": [
+            60,
+            120
+          ],
+          "time_basis": "未做学生计时；按现有难度给出备课估计区间，待教师确认",
+          "machine_checks": [
+            {
+              "name": "题目ID关联源知识点",
+              "passed": true
+            },
+            {
+              "name": "选项标签唯一且参考标签存在",
+              "passed": true
+            },
+            {
+              "name": "选项文本互异",
+              "passed": true
+            },
+            {
+              "name": "正确式量纲一致",
+              "passed": true,
+              "actual": {
+                "type": "dimension",
+                "type_name": "量纲一致性",
+                "formula": "教师审核证据",
+                "ok": true,
+                "detail": "左端M·L^-1·T^-2，右端M·L^-1·T^-2",
+                "note": "",
+                "error": null,
+                "evaluation_status": "success",
+                "failure_reason": null,
+                "result_dimension": "M·L^-1·T^-2",
+                "reference_dimension": "M·L^-1·T^-2",
+                "diagnostics": {},
+                "physical_error_identified": false
+              }
+            },
+            {
+              "name": "干扰式量纲冲突",
+              "passed": true,
+              "actual": {
+                "type": "dimension",
+                "type_name": "量纲一致性",
+                "formula": "教师审核证据",
+                "ok": false,
+                "detail": "左端M·L^-1·T^-2，右端M·L^3·T^-2",
+                "note": "",
+                "error": null,
+                "evaluation_status": "dimension_conflict",
+                "failure_reason": "dimension_conflict",
+                "result_dimension": "M·L^3·T^-2",
+                "reference_dimension": "M·L^-1·T^-2",
+                "diagnostics": {},
+                "physical_error_identified": true
+              }
+            }
+          ],
+          "machine_boundary": "只列本次逐题实际执行项目；不把关联知识卡的方向、扫描或一致性检查算作本题已验。概念题未验命题真假。",
+          "human_review_items": [
+            "题干条件是否充分、清楚且符合学段",
+            "参考结论在指定条件下是否唯一",
+            "干扰项是否合理、对应真实认知问题且无答案暗示",
+            "公式或概念锚点是否准确",
+            "建议难度及用时是否适合教学",
+            "语言、装置与安全操作是否恰当"
+          ],
+          "reference_answer_note": "现有参考答案保持；即使本地可以判选项，也仍须教师审核教学可用性"
+        }
+      }
+    },
+    {
+      "id": "diagnostic-pressure-01-2",
+      "point_id": "pressure-01",
+      "point_title": "压强",
+      "chapter": "压强和浮力",
+      "stem": "在“压强”的模型下，F（垂直接触面的压力）=100 N；S（受力面积）=0.02 m2；S<sub>cm</sub>（受力面积以平方厘米记录的数值）=200 cm2。条件：F 垂直接触面，F 用 N、S 用 m2，结果 p 用 Pa。。求压强（p）。这些数值是设计示例。",
+      "options": [
+        {
+          "label": "A",
+          "text": "50 Pa"
+        },
+        {
+          "label": "B",
+          "text": "5000 Pa"
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "使用压力与受力面积求压强：F/S，代入得5000 Pa。另一结果来自F/(S<sub>cm</sub>/100)，算得50 Pa。\n200 cm²应为0.020 m²，不是2 m²；100 N应产生5000 Pa，误换算只得50 Pa。\n知识点条件：压强能描述压力作用效果。计算固体压强时使用垂直接触面的压力和实际受力面积；不能把物体全部表面积当作受力面积。增大压力或减小受力面积通常会增大压强；单位 Pa 等于 N/m²。\n推导依据：确定垂直作用于接触面的压力 F。；测量承受压力的面积 S 并统一为 m2。；把 F 除以 S 得压强 p；也可由 p 和 S 反算压力。\n卡片公式各自的适用条件（不是本题共同前提）：\n压力与受力面积求压强：F 垂直接触面，F 用 N、S 用 m2，结果 p 用 Pa。\n由压强和面积求压力：压力垂直作用于面积 S，压强 p 均匀。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 1,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "p = F/(S<sub>cm</sub>/100)",
+      "trap_test": {
+        "scenario": "窄底物体",
+        "expr": "F/(S_cm/100)",
+        "ref": 5000
+      },
+      "level": "基础",
+      "learning_scope": "初中",
+      "answer_evidence": {
+        "kind": "numeric",
+        "scenario": "窄底物体",
+        "parameters": {
+          "F": 100,
+          "S": 0.02,
+          "p": 5000,
+          "S_cm": 200.0
+        },
+        "target": "p",
+        "unit": "Pa",
+        "reference": 5000,
+        "correct_proof": {
+          "expression": "F/S",
+          "formula": "压力与受力面积求压强",
+          "value": 5000.0,
+          "when": "F 垂直接触面，F 用 N、S 用 m2，结果 p 用 Pa。"
+        },
+        "distractor_expression": "F/(S_cm/100)",
+        "distractor_value": 50.0,
+        "dimension_matches": true,
+        "independent_evaluation": true
+      },
+      "review": {
+        "confidence": "medium",
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": true,
+          "no_answer_leak_in_options": true
+        },
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。",
+        "material": {
+          "anchors": [
+            {
+              "kind": "公式",
+              "name": "压力与受力面积求压强",
+              "expression": "F/S",
+              "when": "F 垂直接触面，F 用 N、S 用 m2，结果 p 用 Pa。",
+              "display": "F/S"
+            }
+          ],
+          "source": {
+            "nature": "原创设计示例，非教材实测或真实实验记录",
+            "scenario": "窄底物体",
+            "parameters": {
+              "F": 100,
+              "S": 0.02,
+              "p": 5000,
+              "S_cm": 200.0
+            },
+            "data": [
+              "垂直接触面的压力：100 N",
+              "受力面积：0.02 m2",
+              "压强：5000 Pa",
+              "受力面积以平方厘米记录的数值：200.0 cm2"
+            ]
+          },
+          "predicted_errors": [
+            {
+              "option": "A",
+              "text": "50 Pa",
+              "reason": "200 cm²应为0.020 m²，不是2 m²；100 N应产生5000 Pa，误换算只得50 Pa。",
+              "expression": "F/(S_cm/100)",
+              "status": "误答原因预测，待教师确认；未采集学生作答证据"
+            }
+          ],
+          "difficulty_note": "建议难度沿用本题level（源卡难度）；尚非题目难度实测，待教师调整",
+          "estimated_seconds": [
+            60,
+            120
+          ],
+          "time_basis": "未做学生计时；按现有难度给出备课估计区间，待教师确认",
+          "machine_checks": [
+            {
+              "name": "题目ID关联源知识点",
+              "passed": true
+            },
+            {
+              "name": "选项标签唯一且参考标签存在",
+              "passed": true
+            },
+            {
+              "name": "选项文本互异",
+              "passed": true
+            },
+            {
+              "name": "正确路径独立数值复算",
+              "passed": true
+            },
+            {
+              "name": "带量纲求值与独立求值一致",
+              "passed": true
+            },
+            {
+              "name": "干扰路径复算且与正确路径分离",
+              "passed": true
+            }
+          ],
+          "machine_boundary": "只列本次逐题实际执行项目；不把关联知识卡的方向、扫描或一致性检查算作本题已验。概念题未验命题真假。",
+          "human_review_items": [
+            "题干条件是否充分、清楚且符合学段",
+            "参考结论在指定条件下是否唯一",
+            "干扰项是否合理、对应真实认知问题且无答案暗示",
+            "公式或概念锚点是否准确",
+            "建议难度及用时是否适合教学",
+            "语言、装置与安全操作是否恰当"
+          ],
+          "reference_answer_note": "现有参考答案保持；即使本地可以判选项，也仍须教师审核教学可用性"
+        }
+      }
+    },
+    {
+      "id": "diagnostic-pressure-01-3",
+      "point_id": "pressure-01",
+      "point_title": "压强",
+      "chapter": "压强和浮力",
+      "stem": "关于“压强”，判断这一说法是否成立，并说明依据：\n受力面积越大，压力固定时压强也越大。",
+      "options": [
+        {
+          "label": "A",
+          "text": "该说法不成立。"
+        },
+        {
+          "label": "B",
+          "text": "该说法成立。"
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "同一压力分摊到更大的受力面积上，单位面积承担的压力会减小，因此压强减小；压力和压强不能混为一个量。\n知识点条件：压强能描述压力作用效果。计算固体压强时使用垂直接触面的压力和实际受力面积；不能把物体全部表面积当作受力面积。增大压力或减小受力面积通常会增大压强；单位 Pa 等于 N/m²。\n推导依据：确定垂直作用于接触面的压力 F。；测量承受压力的面积 S 并统一为 m2。；把 F 除以 S 得压强 p；也可由 p 和 S 反算压力。\n卡片公式各自的适用条件（不是本题共同前提）：\n压力与受力面积求压强：F 垂直接触面，F 用 N、S 用 m2，结果 p 用 Pa。\n由压强和面积求压力：压力垂直作用于面积 S，压强 p 均匀。",
+      "error_type": "概念混淆",
+      "judging": "teacher",
+      "source_error_index": 2,
+      "source_caught_by": "人工审核",
+      "wrong_expr": null,
+      "trap_test": null,
+      "level": "基础",
+      "learning_scope": "初中",
+      "answer_evidence": {
+        "kind": "teacher",
+        "claim_source": "wrong",
+        "reference_only": true,
+        "reason": "概念、操作或无法建立完整定量证据，教师确认条件与结论。"
+      },
+      "review": {
+        "confidence": "medium",
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": false,
+          "no_answer_leak_in_options": true
+        },
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。",
+        "material": {
+          "anchors": [
+            {
+              "kind": "概念或操作",
+              "name": "压强",
+              "claim": "认为受力面积越大，压力固定时压强也越大。",
+              "correction_basis": "同一压力分摊到更大的受力面积上，单位面积承担的压力会减小，因此压强减小；压力和压强不能混为一个量。",
+              "note": "概念锚点及命题真假待教师确认；未套用任意第一条公式",
+              "display": "认为受力面积越大，压力固定时压强也越大。"
+            },
+            {
+              "kind": "数值反例补充",
+              "name": "人工标签保留的指定数值反例",
+              "display": "p = F/S",
+              "note": "这是原创设计反例，机器仅验证指定模型、数据及量纲；自然语言命题、学生认知与装置仍待教师确认。 压力固定100 N，面积从0.02 m²增加到0.04 m²，压强5000 Pa降到2500 Pa；错误按面积同比增大预测10000 Pa。"
+            }
+          ],
+          "source": {
+            "nature": "原创概念/操作命题；无真实测量记录",
+            "source_error_index": 2
+          },
+          "predicted_errors": [
+            {
+              "option": "B",
+              "text": "该说法成立。",
+              "reason": "同一压力分摊到更大的受力面积上，单位面积承担的压力会减小，因此压强减小；压力和压强不能混为一个量。",
+              "expression": null,
+              "status": "误答原因预测，待教师确认；未采集学生作答证据"
+            }
+          ],
+          "difficulty_note": "建议难度沿用本题level（源卡难度）；尚非题目难度实测，待教师调整",
+          "estimated_seconds": [
+            60,
+            120
+          ],
+          "time_basis": "未做学生计时；按现有难度给出备课估计区间，待教师确认",
+          "machine_checks": [
+            {
+              "name": "题目ID关联源知识点",
+              "passed": true
+            },
+            {
+              "name": "选项标签唯一且参考标签存在",
+              "passed": true
+            },
+            {
+              "name": "选项文本互异",
+              "passed": true
+            },
+            {
+              "name": "指定反例正确控制正式求值通过",
+              "passed": true,
+              "actual": {
+                "type": "numeric",
+                "type_name": "数值代入",
+                "formula": "补充反例正确控制",
+                "ok": true,
+                "detail": "情境「None」：算得p=2500；参考2500；有效容差2.5e-07",
+                "note": "",
+                "error": null,
+                "evaluation_status": "success",
+                "failure_reason": null,
+                "result_dimension": "M·L^-1·T^-2",
+                "reference_dimension": "M·L^-1·T^-2",
+                "diagnostics": {
+                  "primary_expression": "F/S",
+                  "target_expression": "p",
+                  "follows_primary_formula_changes": true,
+                  "primary_source_rhs": "F/S",
+                  "numeric_reference": 2500,
+                  "actual_variables": [
+                    "F",
+                    "S"
+                  ],
+                  "target_variables": [
+                    "p"
+                  ],
+                  "rtol": 1e-10,
+                  "atol": 0.0,
+                  "effective_limit": 2.5e-07,
+                  "declared_limit": 2.5e-07,
+                  "capped_by_default": false,
+                  "scale": 2500.0,
+                  "policy": "显式rtol/atol（严于默认，照此执行）",
+                  "expected_zero": false,
+                  "zero_basis": null,
+                  "actual_value": 2500.0,
+                  "reference_value": 2500
+                },
+                "physical_error_identified": false
+              }
+            },
+            {
+              "name": "指定反例错误注入被拒绝（非求值失败）",
+              "passed": true,
+              "actual": {
+                "type": "numeric",
+                "type_name": "数值代入",
+                "formula": "补充反例错误注入",
+                "ok": false,
+                "detail": "情境「None」：算得p=10000；参考2500；有效容差1e-06",
+                "note": "",
+                "error": null,
+                "evaluation_status": "numeric_mismatch",
+                "failure_reason": "numeric_mismatch",
+                "result_dimension": "M·L^-1·T^-2",
+                "reference_dimension": "M·L^-1·T^-2",
+                "diagnostics": {
+                  "primary_expression": "p_0*S/S_0",
+                  "target_expression": "p",
+                  "follows_primary_formula_changes": false,
+                  "primary_source_rhs": "F/S",
+                  "numeric_reference": 2500,
+                  "actual_variables": [
+                    "S",
+                    "S_0",
+                    "p_0"
+                  ],
+                  "target_variables": [
+                    "p"
+                  ],
+                  "rtol": 1e-10,
+                  "atol": 0.0,
+                  "effective_limit": 1e-06,
+                  "declared_limit": 1e-06,
+                  "capped_by_default": false,
+                  "scale": 10000.0,
+                  "policy": "显式rtol/atol（严于默认，照此执行）",
+                  "expected_zero": false,
+                  "zero_basis": null,
+                  "actual_value": 10000.0,
+                  "reference_value": 2500
+                },
+                "physical_error_identified": true
+              }
+            }
+          ],
+          "machine_boundary": "只列本次逐题实际执行项目；不把关联知识卡的方向、扫描或一致性检查算作本题已验。概念题未验命题真假。",
+          "human_review_items": [
+            "题干条件是否充分、清楚且符合学段",
+            "参考结论在指定条件下是否唯一",
+            "干扰项是否合理、对应真实认知问题且无答案暗示",
+            "公式或概念锚点是否准确",
+            "建议难度及用时是否适合教学",
+            "语言、装置与安全操作是否恰当"
+          ],
+          "reference_answer_note": "现有参考答案保持；即使本地可以判选项，也仍须教师审核教学可用性"
+        }
+      }
+    },
+    {
+      "id": "diagnostic-pressure-02-1",
+      "point_id": "pressure-02",
+      "point_title": "液体的压强",
+      "chapter": "压强和浮力",
+      "stem": "在“液体的压强”中，静止液体中测点相对液面的深度 h 用 m，ρ 用 kg/m³。。液体内部压强的单位为Pa。下列哪一表达式的量纲与该目标量一致？",
+      "options": [
+        {
+          "label": "A",
+          "text": "p = ρ·g·S"
+        },
+        {
+          "label": "B",
+          "text": "p = ρ·g·h"
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "深度单位是m，面积是m²；替换后量纲变为Pa·m，不再是压强。这不是斜长与深度的数值混用。\n知识点条件：深度 h 从液面向下竖直测量，不是沿斜面或容器壁量出的距离。液体压强还会传向容器侧壁和底部；同一深度的压强与容器形状无关。利用压强求某一面积上的压力时再用 F=pS，避免把压强和压力混淆。\n推导依据：取静止液体中距液面深度为 h 的位置。；该位置上方液柱的重力随液体密度、重力加速度和高度变化。；液柱压力作用于单位面积后得到 p=ρ·g·h。；若进一步求某面积上的压力，用压强乘面积。\n卡片公式各自的适用条件（不是本题共同前提）：\n液体密度和深度求内部压强：静止液体中测点相对液面的深度 h 用 m，ρ 用 kg/m³。\n由液体压强和面积求压力：压强在所取小面积上近似均匀，F 用 N、S 用 m2。",
+      "error_type": "量纲一致性",
+      "judging": "auto",
+      "source_error_index": 0,
+      "source_caught_by": "量纲一致性",
+      "wrong_expr": "p = ρ·g·S",
+      "trap_test": {
+        "scenario": "水下10厘米",
+        "expr": "rho*g*S",
+        "ref": 1000
+      },
+      "level": "基础",
+      "learning_scope": "初中",
+      "answer_evidence": {
+        "kind": "dimension",
+        "target": "p",
+        "correct_expression": "p = rho*g*h",
+        "distractor_expression": "p = rho*g*S",
+        "target_dimension": "M·L^-1·T^-2",
+        "distractor_dimension": "M·T^-2"
+      },
+      "review": {
+        "confidence": "medium",
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": true,
+          "no_answer_leak_in_options": true
+        },
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。",
+        "material": {
+          "anchors": [
+            {
+              "kind": "公式量纲",
+              "name": "本题目标量与等式",
+              "expression": "p = rho*g*h",
+              "when": "量纲相符是必要条件，不能据此证明系数或物理条件正确",
+              "display": "p = ρ·g·h"
+            }
+          ],
+          "source": {
+            "nature": "原创量纲辨析命题；无实测数据",
+            "source_error_index": 0
+          },
+          "predicted_errors": [
+            {
+              "option": "A",
+              "text": "p = ρ·g·S",
+              "reason": "深度单位是m，面积是m²；替换后量纲变为Pa·m，不再是压强。这不是斜长与深度的数值混用。",
+              "expression": "p = rho*g*S",
+              "status": "误答原因预测，待教师确认；未采集学生作答证据"
+            }
+          ],
+          "difficulty_note": "建议难度沿用本题level（源卡难度）；尚非题目难度实测，待教师调整",
+          "estimated_seconds": [
+            60,
+            120
+          ],
+          "time_basis": "未做学生计时；按现有难度给出备课估计区间，待教师确认",
+          "machine_checks": [
+            {
+              "name": "题目ID关联源知识点",
+              "passed": true
+            },
+            {
+              "name": "选项标签唯一且参考标签存在",
+              "passed": true
+            },
+            {
+              "name": "选项文本互异",
+              "passed": true
+            },
+            {
+              "name": "正确式量纲一致",
+              "passed": true,
+              "actual": {
+                "type": "dimension",
+                "type_name": "量纲一致性",
+                "formula": "教师审核证据",
+                "ok": true,
+                "detail": "左端M·L^-1·T^-2，右端M·L^-1·T^-2",
+                "note": "",
+                "error": null,
+                "evaluation_status": "success",
+                "failure_reason": null,
+                "result_dimension": "M·L^-1·T^-2",
+                "reference_dimension": "M·L^-1·T^-2",
+                "diagnostics": {},
+                "physical_error_identified": false
+              }
+            },
+            {
+              "name": "干扰式量纲冲突",
+              "passed": true,
+              "actual": {
+                "type": "dimension",
+                "type_name": "量纲一致性",
+                "formula": "教师审核证据",
+                "ok": false,
+                "detail": "左端M·L^-1·T^-2，右端M·T^-2",
+                "note": "",
+                "error": null,
+                "evaluation_status": "dimension_conflict",
+                "failure_reason": "dimension_conflict",
+                "result_dimension": "M·T^-2",
+                "reference_dimension": "M·L^-1·T^-2",
+                "diagnostics": {},
+                "physical_error_identified": true
+              }
+            }
+          ],
+          "machine_boundary": "只列本次逐题实际执行项目；不把关联知识卡的方向、扫描或一致性检查算作本题已验。概念题未验命题真假。",
+          "human_review_items": [
+            "题干条件是否充分、清楚且符合学段",
+            "参考结论在指定条件下是否唯一",
+            "干扰项是否合理、对应真实认知问题且无答案暗示",
+            "公式或概念锚点是否准确",
+            "建议难度及用时是否适合教学",
+            "语言、装置与安全操作是否恰当"
+          ],
+          "reference_answer_note": "现有参考答案保持；即使本地可以判选项，也仍须教师审核教学可用性"
+        }
+      }
+    },
+    {
+      "id": "diagnostic-pressure-02-2",
+      "point_id": "pressure-02",
+      "point_title": "液体的压强",
+      "chapter": "压强和浮力",
+      "stem": "在“液体的压强”的模型下，ρ（液体密度）=1000 kg/m³；g（当地重力加速度）=10 N/kg；h（测点到液面的竖直深度）=0.1 m。条件：静止液体中测点相对液面的深度 h 用 m，ρ 用 kg/m³。。求液体内部压强（p）。这些数值是设计示例。",
+      "options": [
+        {
+          "label": "A",
+          "text": "1000 Pa"
+        },
+        {
+          "label": "B",
+          "text": "100000 Pa"
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "使用液体密度和深度求内部压强：ρ·g·h，代入得1000 Pa。另一结果来自ρ·g·100·h，算得100000 Pa。\n水下 0.1 m 的压强为 1000 Pa；重复做厘米换算会错误得到 100 000 Pa。\n知识点条件：深度 h 从液面向下竖直测量，不是沿斜面或容器壁量出的距离。液体压强还会传向容器侧壁和底部；同一深度的压强与容器形状无关。利用压强求某一面积上的压力时再用 F=pS，避免把压强和压力混淆。\n推导依据：取静止液体中距液面深度为 h 的位置。；该位置上方液柱的重力随液体密度、重力加速度和高度变化。；液柱压力作用于单位面积后得到 p=ρ·g·h。；若进一步求某面积上的压力，用压强乘面积。\n卡片公式各自的适用条件（不是本题共同前提）：\n液体密度和深度求内部压强：静止液体中测点相对液面的深度 h 用 m，ρ 用 kg/m³。\n由液体压强和面积求压力：压强在所取小面积上近似均匀，F 用 N、S 用 m2。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 1,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "p = ρ·g·100·h",
+      "trap_test": {
+        "scenario": "水下10厘米",
+        "expr": "rho*g*100*h",
+        "ref": 1000
+      },
+      "level": "基础",
+      "learning_scope": "初中",
+      "answer_evidence": {
+        "kind": "numeric",
+        "scenario": "水下10厘米",
+        "parameters": {
+          "p": 1000,
+          "rho": 1000,
+          "g": 10,
+          "h": 0.1,
+          "S": 0.01,
+          "F": 10
+        },
+        "target": "p",
+        "unit": "Pa",
+        "reference": 1000,
+        "correct_proof": {
+          "expression": "rho*g*h",
+          "formula": "液体密度和深度求内部压强",
+          "value": 1000.0,
+          "when": "静止液体中测点相对液面的深度 h 用 m，rho 用 kg/m^3。"
+        },
+        "distractor_expression": "rho*g*100*h",
+        "distractor_value": 100000.0,
+        "dimension_matches": true,
+        "independent_evaluation": true
+      },
+      "review": {
+        "confidence": "medium",
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": true,
+          "no_answer_leak_in_options": true
+        },
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。",
+        "material": {
+          "anchors": [
+            {
+              "kind": "公式",
+              "name": "液体密度和深度求内部压强",
+              "expression": "rho*g*h",
+              "when": "静止液体中测点相对液面的深度 h 用 m，rho 用 kg/m^3。",
+              "display": "ρ·g·h"
+            }
+          ],
+          "source": {
+            "nature": "原创设计示例，非教材实测或真实实验记录",
+            "scenario": "水下10厘米",
+            "parameters": {
+              "p": 1000,
+              "rho": 1000,
+              "g": 10,
+              "h": 0.1,
+              "S": 0.01,
+              "F": 10
+            },
+            "data": [
+              "液体内部压强：1000 Pa",
+              "液体密度：1000 kg/m^3",
+              "当地重力加速度：10 N/kg",
+              "测点到液面的竖直深度：0.1 m",
+              "受液体压强作用的面积：0.01 m2",
+              "该面积上液体压力：10 N"
+            ]
+          },
+          "predicted_errors": [
+            {
+              "option": "B",
+              "text": "100000 Pa",
+              "reason": "水下 0.1 m 的压强为 1000 Pa；重复做厘米换算会错误得到 100 000 Pa。",
+              "expression": "rho*g*100*h",
+              "status": "误答原因预测，待教师确认；未采集学生作答证据"
+            }
+          ],
+          "difficulty_note": "建议难度沿用本题level（源卡难度）；尚非题目难度实测，待教师调整",
+          "estimated_seconds": [
+            60,
+            120
+          ],
+          "time_basis": "未做学生计时；按现有难度给出备课估计区间，待教师确认",
+          "machine_checks": [
+            {
+              "name": "题目ID关联源知识点",
+              "passed": true
+            },
+            {
+              "name": "选项标签唯一且参考标签存在",
+              "passed": true
+            },
+            {
+              "name": "选项文本互异",
+              "passed": true
+            },
+            {
+              "name": "正确路径独立数值复算",
+              "passed": true
+            },
+            {
+              "name": "带量纲求值与独立求值一致",
+              "passed": true
+            },
+            {
+              "name": "干扰路径复算且与正确路径分离",
+              "passed": true
+            }
+          ],
+          "machine_boundary": "只列本次逐题实际执行项目；不把关联知识卡的方向、扫描或一致性检查算作本题已验。概念题未验命题真假。",
+          "human_review_items": [
+            "题干条件是否充分、清楚且符合学段",
+            "参考结论在指定条件下是否唯一",
+            "干扰项是否合理、对应真实认知问题且无答案暗示",
+            "公式或概念锚点是否准确",
+            "建议难度及用时是否适合教学",
+            "语言、装置与安全操作是否恰当"
+          ],
+          "reference_answer_note": "现有参考答案保持；即使本地可以判选项，也仍须教师审核教学可用性"
+        }
+      }
+    },
+    {
+      "id": "diagnostic-pressure-02-3",
+      "point_id": "pressure-02",
+      "point_title": "液体的压强",
+      "chapter": "压强和浮力",
+      "stem": "关于“液体的压强”，判断这一说法是否成立，并说明依据：\n容器越宽或形状不同，同种液体同深度处的压强必然不同。",
+      "options": [
+        {
+          "label": "A",
+          "text": "该说法不成立。"
+        },
+        {
+          "label": "B",
+          "text": "该说法成立。"
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "静止同种液体的压强由密度、重力加速度和竖直深度决定，不由容器外形直接决定。\n知识点条件：深度 h 从液面向下竖直测量，不是沿斜面或容器壁量出的距离。液体压强还会传向容器侧壁和底部；同一深度的压强与容器形状无关。利用压强求某一面积上的压力时再用 F=pS，避免把压强和压力混淆。\n推导依据：取静止液体中距液面深度为 h 的位置。；该位置上方液柱的重力随液体密度、重力加速度和高度变化。；液柱压力作用于单位面积后得到 p=ρ·g·h。；若进一步求某面积上的压力，用压强乘面积。\n卡片公式各自的适用条件（不是本题共同前提）：\n液体密度和深度求内部压强：静止液体中测点相对液面的深度 h 用 m，ρ 用 kg/m³。\n由液体压强和面积求压力：压强在所取小面积上近似均匀，F 用 N、S 用 m2。",
+      "error_type": "概念混淆",
+      "judging": "teacher",
+      "source_error_index": 2,
+      "source_caught_by": "人工审核",
+      "wrong_expr": null,
+      "trap_test": null,
+      "level": "基础",
+      "learning_scope": "初中",
+      "answer_evidence": {
+        "kind": "teacher",
+        "claim_source": "wrong",
+        "reference_only": true,
+        "reason": "概念、操作或无法建立完整定量证据，教师确认条件与结论。"
+      },
+      "review": {
+        "confidence": "medium",
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": false,
+          "no_answer_leak_in_options": true
+        },
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。",
+        "material": {
+          "anchors": [
+            {
+              "kind": "概念或操作",
+              "name": "液体的压强",
+              "claim": "认为容器越宽或形状不同，同种液体同深度处的压强必然不同。",
+              "correction_basis": "静止同种液体的压强由密度、重力加速度和竖直深度决定，不由容器外形直接决定。",
+              "note": "概念锚点及命题真假待教师确认；未套用任意第一条公式",
+              "display": "认为容器越宽或形状不同，同种液体同深度处的压强必然不同。"
+            }
+          ],
+          "source": {
+            "nature": "原创概念/操作命题；无真实测量记录",
+            "source_error_index": 2
+          },
+          "predicted_errors": [
+            {
+              "option": "B",
+              "text": "该说法成立。",
+              "reason": "静止同种液体的压强由密度、重力加速度和竖直深度决定，不由容器外形直接决定。",
+              "expression": null,
+              "status": "误答原因预测，待教师确认；未采集学生作答证据"
+            }
+          ],
+          "difficulty_note": "建议难度沿用本题level（源卡难度）；尚非题目难度实测，待教师调整",
+          "estimated_seconds": [
+            60,
+            120
+          ],
+          "time_basis": "未做学生计时；按现有难度给出备课估计区间，待教师确认",
+          "machine_checks": [
+            {
+              "name": "题目ID关联源知识点",
+              "passed": true
+            },
+            {
+              "name": "选项标签唯一且参考标签存在",
+              "passed": true
+            },
+            {
+              "name": "选项文本互异",
+              "passed": true
+            }
+          ],
+          "machine_boundary": "只列本次逐题实际执行项目；不把关联知识卡的方向、扫描或一致性检查算作本题已验。概念题未验命题真假。",
+          "human_review_items": [
+            "题干条件是否充分、清楚且符合学段",
+            "参考结论在指定条件下是否唯一",
+            "干扰项是否合理、对应真实认知问题且无答案暗示",
+            "公式或概念锚点是否准确",
+            "建议难度及用时是否适合教学",
+            "语言、装置与安全操作是否恰当"
+          ],
+          "reference_answer_note": "现有参考答案保持；即使本地可以判选项，也仍须教师审核教学可用性"
+        }
+      }
+    },
+    {
+      "id": "diagnostic-pressure-02-4",
+      "point_id": "pressure-02",
+      "point_title": "液体的压强",
+      "chapter": "压强和浮力",
+      "stem": "关于“液体的压强”，判断这一说法是否成立，并说明依据：\n深度须从液面竖直向下量到测点，斜长通常更大。",
+      "options": [
+        {
+          "label": "A",
+          "text": "该说法不成立。"
+        },
+        {
+          "label": "B",
+          "text": "该说法成立。"
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "深度须从液面竖直向下量到测点，斜长通常更大；要结合几何图判断，不由面积式错误实测代替。\n知识点条件：深度 h 从液面向下竖直测量，不是沿斜面或容器壁量出的距离。液体压强还会传向容器侧壁和底部；同一深度的压强与容器形状无关。利用压强求某一面积上的压力时再用 F=pS，避免把压强和压力混淆。\n推导依据：取静止液体中距液面深度为 h 的位置。；该位置上方液柱的重力随液体密度、重力加速度和高度变化。；液柱压力作用于单位面积后得到 p=ρ·g·h。；若进一步求某面积上的压力，用压强乘面积。\n卡片公式各自的适用条件（不是本题共同前提）：\n液体密度和深度求内部压强：静止液体中测点相对液面的深度 h 用 m，ρ 用 kg/m³。\n由液体压强和面积求压力：压强在所取小面积上近似均匀，F 用 N、S 用 m2。",
+      "error_type": "概念混淆",
+      "judging": "teacher",
+      "source_error_index": 3,
+      "source_caught_by": "人工审核",
+      "wrong_expr": null,
+      "trap_test": null,
+      "level": "基础",
+      "learning_scope": "初中",
+      "answer_evidence": {
+        "kind": "teacher",
+        "claim_source": "why",
+        "reference_only": true,
+        "reason": "概念、操作或无法建立完整定量证据，教师确认条件与结论。"
+      },
+      "review": {
+        "confidence": "medium",
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": false,
+          "no_answer_leak_in_options": true
+        },
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。",
+        "material": {
+          "anchors": [
+            {
+              "kind": "概念或操作",
+              "name": "液体的压强",
+              "claim": "把沿容器壁量出的斜长当作液体深度。",
+              "correction_basis": "深度须从液面竖直向下量到测点，斜长通常更大；要结合几何图判断，不由面积式错误实测代替。",
+              "note": "概念锚点及命题真假待教师确认；未套用任意第一条公式",
+              "display": "把沿容器壁量出的斜长当作液体深度。"
+            }
+          ],
+          "source": {
+            "nature": "原创概念/操作命题；无真实测量记录",
+            "source_error_index": 3
+          },
+          "predicted_errors": [
+            {
+              "option": "A",
+              "text": "该说法不成立。",
+              "reason": "深度须从液面竖直向下量到测点，斜长通常更大；要结合几何图判断，不由面积式错误实测代替。",
+              "expression": null,
+              "status": "误答原因预测，待教师确认；未采集学生作答证据"
+            }
+          ],
+          "difficulty_note": "建议难度沿用本题level（源卡难度）；尚非题目难度实测，待教师调整",
+          "estimated_seconds": [
+            60,
+            120
+          ],
+          "time_basis": "未做学生计时；按现有难度给出备课估计区间，待教师确认",
+          "machine_checks": [
+            {
+              "name": "题目ID关联源知识点",
+              "passed": true
+            },
+            {
+              "name": "选项标签唯一且参考标签存在",
+              "passed": true
+            },
+            {
+              "name": "选项文本互异",
+              "passed": true
+            }
+          ],
+          "machine_boundary": "只列本次逐题实际执行项目；不把关联知识卡的方向、扫描或一致性检查算作本题已验。概念题未验命题真假。",
+          "human_review_items": [
+            "题干条件是否充分、清楚且符合学段",
+            "参考结论在指定条件下是否唯一",
+            "干扰项是否合理、对应真实认知问题且无答案暗示",
+            "公式或概念锚点是否准确",
+            "建议难度及用时是否适合教学",
+            "语言、装置与安全操作是否恰当"
+          ],
+          "reference_answer_note": "现有参考答案保持；即使本地可以判选项，也仍须教师审核教学可用性"
+        }
+      }
+    },
+    {
+      "id": "diagnostic-pressure-03-1",
+      "point_id": "pressure-03",
+      "point_title": "气体的压强",
+      "chapter": "压强和浮力",
+      "stem": "在“气体的压强”的模型下，ρ（水银密度）=13600 kg/m³；g（重力加速度）=9.8 N/kg；h（水银柱的竖直高度）=0.76 m；h<sub>cm</sub>（同一水银柱竖直高度以厘米记录的读数）=76 cm。条件：静止水银柱的压强估算，忽略液面压强差；h 为竖直高度。。求水银柱对应的大气压估值（p）。这些数值是设计示例。",
+      "options": [
+        {
+          "label": "A",
+          "text": "101293 Pa"
+        },
+        {
+          "label": "B",
+          "text": "1.01293e+07 Pa"
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "使用由水银柱高度估算大气压：ρ·g·h，代入得101293 Pa。另一结果来自ρ·g·h<sub>cm</sub>，算得1.01293e+07 Pa。\n76 cm应先换0.76 m；13600×9.8×0.76=101292.8 Pa，把76当米得到10129280 Pa，放大100倍。\n知识点条件：大气压随高度、天气和测量环境变化；标准大气压约为 1.01×10⁵ Pa。水银柱高度必须竖直测量，不能把容器形状误认为决定压强的因素。用液柱估算大气压属于受压液柱的定量拓展，初中核心还包括覆杯实验、吸盘和气压变化现象。\n推导依据：水银柱静止时，液柱重量对下方截面产生压强。；按液体压强关系 p=ρ·g·h，以水银密度和竖直高度估算。；将所得值与约 1.01×10⁵ Pa 的标准大气压数量级比较，并说明实际大气压会变化。\n卡片公式各自的适用条件（不是本题共同前提）：\n由水银柱高度估算大气压：静止水银柱的压强估算，忽略液面压强差；h 为竖直高度。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 0,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "p = ρ·g·h<sub>cm</sub>",
+      "trap_test": {
+        "scenario": "标准大气压水银柱",
+        "expr": "rho*g*h_cm",
+        "ref": 101292.8
+      },
+      "level": "基础",
+      "learning_scope": "初中",
+      "answer_evidence": {
+        "kind": "numeric",
+        "scenario": "标准大气压水银柱",
+        "parameters": {
+          "p": 101292.8,
+          "rho": 13600,
+          "g": 9.8,
+          "h": 0.76,
+          "h_cm": 76.0
+        },
+        "target": "p",
+        "unit": "Pa",
+        "reference": 101292.8,
+        "correct_proof": {
+          "expression": "rho*g*h",
+          "formula": "由水银柱高度估算大气压",
+          "value": 101292.8,
+          "when": "静止水银柱的压强估算，忽略液面压强差；h 为竖直高度。"
+        },
+        "distractor_expression": "rho*g*h_cm",
+        "distractor_value": 10129280.0,
+        "dimension_matches": true,
+        "independent_evaluation": true
+      },
+      "review": {
+        "confidence": "medium",
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": true,
+          "no_answer_leak_in_options": true
+        },
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。",
+        "material": {
+          "anchors": [
+            {
+              "kind": "公式",
+              "name": "由水银柱高度估算大气压",
+              "expression": "rho*g*h",
+              "when": "静止水银柱的压强估算，忽略液面压强差；h 为竖直高度。",
+              "display": "ρ·g·h"
+            }
+          ],
+          "source": {
+            "nature": "原创设计示例，非教材实测或真实实验记录",
+            "scenario": "标准大气压水银柱",
+            "parameters": {
+              "p": 101292.8,
+              "rho": 13600,
+              "g": 9.8,
+              "h": 0.76,
+              "h_cm": 76.0
+            },
+            "data": [
+              "水银柱对应的大气压估值：101292.8 Pa",
+              "水银密度：13600 kg/m^3",
+              "重力加速度：9.8 N/kg",
+              "水银柱的竖直高度：0.76 m",
+              "同一水银柱竖直高度以厘米记录的读数：76.0 cm"
+            ]
+          },
+          "predicted_errors": [
+            {
+              "option": "B",
+              "text": "1.01293e+07 Pa",
+              "reason": "76 cm应先换0.76 m；13600×9.8×0.76=101292.8 Pa，把76当米得到10129280 Pa，放大100倍。",
+              "expression": "rho*g*h_cm",
+              "status": "误答原因预测，待教师确认；未采集学生作答证据"
+            }
+          ],
+          "difficulty_note": "建议难度沿用本题level（源卡难度）；尚非题目难度实测，待教师调整",
+          "estimated_seconds": [
+            60,
+            120
+          ],
+          "time_basis": "未做学生计时；按现有难度给出备课估计区间，待教师确认",
+          "machine_checks": [
+            {
+              "name": "题目ID关联源知识点",
+              "passed": true
+            },
+            {
+              "name": "选项标签唯一且参考标签存在",
+              "passed": true
+            },
+            {
+              "name": "选项文本互异",
+              "passed": true
+            },
+            {
+              "name": "正确路径独立数值复算",
+              "passed": true
+            },
+            {
+              "name": "带量纲求值与独立求值一致",
+              "passed": true
+            },
+            {
+              "name": "干扰路径复算且与正确路径分离",
+              "passed": true
+            }
+          ],
+          "machine_boundary": "只列本次逐题实际执行项目；不把关联知识卡的方向、扫描或一致性检查算作本题已验。概念题未验命题真假。",
+          "human_review_items": [
+            "题干条件是否充分、清楚且符合学段",
+            "参考结论在指定条件下是否唯一",
+            "干扰项是否合理、对应真实认知问题且无答案暗示",
+            "公式或概念锚点是否准确",
+            "建议难度及用时是否适合教学",
+            "语言、装置与安全操作是否恰当"
+          ],
+          "reference_answer_note": "现有参考答案保持；即使本地可以判选项，也仍须教师审核教学可用性"
+        }
+      }
+    },
+    {
+      "id": "diagnostic-pressure-03-2",
+      "point_id": "pressure-03",
+      "point_title": "气体的压强",
+      "chapter": "压强和浮力",
+      "stem": "关于“气体的压强”，判断这一说法是否成立，并说明依据：\n大气压只从上方作用，不会向各个方向传递。",
+      "options": [
+        {
+          "label": "A",
+          "text": "该说法成立。"
+        },
+        {
+          "label": "B",
+          "text": "该说法不成立。"
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "静止气体压强向各方向作用，覆杯实验、吸盘等现象都能体现大气压的作用。\n知识点条件：大气压随高度、天气和测量环境变化；标准大气压约为 1.01×10⁵ Pa。水银柱高度必须竖直测量，不能把容器形状误认为决定压强的因素。用液柱估算大气压属于受压液柱的定量拓展，初中核心还包括覆杯实验、吸盘和气压变化现象。\n推导依据：水银柱静止时，液柱重量对下方截面产生压强。；按液体压强关系 p=ρ·g·h，以水银密度和竖直高度估算。；将所得值与约 1.01×10⁵ Pa 的标准大气压数量级比较，并说明实际大气压会变化。\n卡片公式各自的适用条件（不是本题共同前提）：\n由水银柱高度估算大气压：静止水银柱的压强估算，忽略液面压强差；h 为竖直高度。",
+      "error_type": "概念混淆",
+      "judging": "teacher",
+      "source_error_index": 1,
+      "source_caught_by": "人工审核",
+      "wrong_expr": null,
+      "trap_test": null,
+      "level": "基础",
+      "learning_scope": "初中",
+      "answer_evidence": {
+        "kind": "teacher",
+        "claim_source": "wrong",
+        "reference_only": true,
+        "reason": "概念、操作或无法建立完整定量证据，教师确认条件与结论。"
+      },
+      "review": {
+        "confidence": "medium",
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": false,
+          "no_answer_leak_in_options": true
+        },
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。",
+        "material": {
+          "anchors": [
+            {
+              "kind": "概念或操作",
+              "name": "气体的压强",
+              "claim": "认为大气压只从上方作用，不会向各个方向传递。",
+              "correction_basis": "静止气体压强向各方向作用，覆杯实验、吸盘等现象都能体现大气压的作用。",
+              "note": "概念锚点及命题真假待教师确认；未套用任意第一条公式",
+              "display": "认为大气压只从上方作用，不会向各个方向传递。"
+            }
+          ],
+          "source": {
+            "nature": "原创概念/操作命题；无真实测量记录",
+            "source_error_index": 1
+          },
+          "predicted_errors": [
+            {
+              "option": "A",
+              "text": "该说法成立。",
+              "reason": "静止气体压强向各方向作用，覆杯实验、吸盘等现象都能体现大气压的作用。",
+              "expression": null,
+              "status": "误答原因预测，待教师确认；未采集学生作答证据"
+            }
+          ],
+          "difficulty_note": "建议难度沿用本题level（源卡难度）；尚非题目难度实测，待教师调整",
+          "estimated_seconds": [
+            60,
+            120
+          ],
+          "time_basis": "未做学生计时；按现有难度给出备课估计区间，待教师确认",
+          "machine_checks": [
+            {
+              "name": "题目ID关联源知识点",
+              "passed": true
+            },
+            {
+              "name": "选项标签唯一且参考标签存在",
+              "passed": true
+            },
+            {
+              "name": "选项文本互异",
+              "passed": true
+            }
+          ],
+          "machine_boundary": "只列本次逐题实际执行项目；不把关联知识卡的方向、扫描或一致性检查算作本题已验。概念题未验命题真假。",
+          "human_review_items": [
+            "题干条件是否充分、清楚且符合学段",
+            "参考结论在指定条件下是否唯一",
+            "干扰项是否合理、对应真实认知问题且无答案暗示",
+            "公式或概念锚点是否准确",
+            "建议难度及用时是否适合教学",
+            "语言、装置与安全操作是否恰当"
+          ],
+          "reference_answer_note": "现有参考答案保持；即使本地可以判选项，也仍须教师审核教学可用性"
+        }
+      }
+    },
+    {
+      "id": "diagnostic-pressure-04-1",
+      "point_id": "pressure-04",
+      "point_title": "浮力",
+      "chapter": "压强和浮力",
+      "stem": "在“浮力”的模型下，ρ（液体密度）=1000 kg/m³；g（当地重力加速度）=10 N/kg；V（物体排开液体的体积）=0.002 m³；V<sub>总</sub>（物体总体积，部分浸入时大于排开体积）=0.004 m³。条件：V 是被排开的流体体积；物体完全浸没时 V 等于物体体积。。求物体受到的浮力（Fb）。这些数值是设计示例。",
+      "options": [
+        {
+          "label": "A",
+          "text": "40 N"
+        },
+        {
+          "label": "B",
+          "text": "20 N"
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "使用流体密度和排开体积求浮力：ρ·g·V，代入得20 N。另一结果来自ρ·g·V<sub>总</sub>，算得40 N。\n木块总体积0.004 m³、仅排水0.002 m³，正确浮力20 N；用总体积计算得40 N。水中完全浸没石块则不区分，必须选择部分浸入情境。\n知识点条件：计算浮力时用排开流体的体积，不一定等于物体总体积：物体部分浸入时只取浸入部分。浮力方向竖直向上；同一流体中排开体积越大，浮力越大。称重法、阿基米德原理和排液重力比较可以作为不同测量路径。浮沉状态还需单独比较浮力与重力。\n推导依据：浮力来自液体对物体上下表面的压力差，方向竖直向上。；阿基米德原理把浮力与排开流体的重力相联系。；排开液体质量可由密度乘排开体积得到，再乘 g 得其重力。；物体漂浮或悬浮静止时，竖直方向合力为零，故浮力等于物体重力。\n卡片公式各自的适用条件（不是本题共同前提）：\n流体密度和排开体积求浮力：V 是被排开的流体体积；物体完全浸没时 V 等于物体体积。\n阿基米德原理的排液重力关系：Gd 是物体排开的液体或气体所受的重力。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 0,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "Fb = ρ·g·V<sub>总</sub>",
+      "trap_test": {
+        "scenario": "漂浮木块",
+        "expr": "rho*g*V_total",
+        "ref": 20
+      },
+      "level": "基础",
+      "learning_scope": "初中",
+      "answer_evidence": {
+        "kind": "numeric",
+        "scenario": "漂浮木块",
+        "parameters": {
+          "Fb": 20,
+          "rho": 1000,
+          "g": 10,
+          "V": 0.002,
+          "Gd": 20,
+          "G": 20,
+          "V_total": 0.004
+        },
+        "target": "Fb",
+        "unit": "N",
+        "reference": 20,
+        "correct_proof": {
+          "expression": "rho*g*V",
+          "formula": "流体密度和排开体积求浮力",
+          "value": 20.0,
+          "when": "V 是被排开的流体体积；物体完全浸没时 V 等于物体体积。"
+        },
+        "distractor_expression": "rho*g*V_total",
+        "distractor_value": 40.0,
+        "dimension_matches": true,
+        "independent_evaluation": true
+      },
+      "review": {
+        "confidence": "medium",
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": true,
+          "no_answer_leak_in_options": true
+        },
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。",
+        "material": {
+          "anchors": [
+            {
+              "kind": "公式",
+              "name": "流体密度和排开体积求浮力",
+              "expression": "rho*g*V",
+              "when": "V 是被排开的流体体积；物体完全浸没时 V 等于物体体积。",
+              "display": "ρ·g·V"
+            }
+          ],
+          "source": {
+            "nature": "原创设计示例，非教材实测或真实实验记录",
+            "scenario": "漂浮木块",
+            "parameters": {
+              "Fb": 20,
+              "rho": 1000,
+              "g": 10,
+              "V": 0.002,
+              "Gd": 20,
+              "G": 20,
+              "V_total": 0.004
+            },
+            "data": [
+              "物体受到的浮力：20 N",
+              "液体密度：1000 kg/m^3",
+              "当地重力加速度：10 N/kg",
+              "物体排开液体的体积：0.002 m^3",
+              "排开液体所受的重力：20 N",
+              "物体所受重力：20 N",
+              "物体总体积，部分浸入时大于排开体积：0.004 m^3"
+            ]
+          },
+          "predicted_errors": [
+            {
+              "option": "A",
+              "text": "40 N",
+              "reason": "木块总体积0.004 m³、仅排水0.002 m³，正确浮力20 N；用总体积计算得40 N。水中完全浸没石块则不区分，必须选择部分浸入情境。",
+              "expression": "rho*g*V_total",
+              "status": "误答原因预测，待教师确认；未采集学生作答证据"
+            }
+          ],
+          "difficulty_note": "建议难度沿用本题level（源卡难度）；尚非题目难度实测，待教师调整",
+          "estimated_seconds": [
+            60,
+            120
+          ],
+          "time_basis": "未做学生计时；按现有难度给出备课估计区间，待教师确认",
+          "machine_checks": [
+            {
+              "name": "题目ID关联源知识点",
+              "passed": true
+            },
+            {
+              "name": "选项标签唯一且参考标签存在",
+              "passed": true
+            },
+            {
+              "name": "选项文本互异",
+              "passed": true
+            },
+            {
+              "name": "正确路径独立数值复算",
+              "passed": true
+            },
+            {
+              "name": "带量纲求值与独立求值一致",
+              "passed": true
+            },
+            {
+              "name": "干扰路径复算且与正确路径分离",
+              "passed": true
+            }
+          ],
+          "machine_boundary": "只列本次逐题实际执行项目；不把关联知识卡的方向、扫描或一致性检查算作本题已验。概念题未验命题真假。",
+          "human_review_items": [
+            "题干条件是否充分、清楚且符合学段",
+            "参考结论在指定条件下是否唯一",
+            "干扰项是否合理、对应真实认知问题且无答案暗示",
+            "公式或概念锚点是否准确",
+            "建议难度及用时是否适合教学",
+            "语言、装置与安全操作是否恰当"
+          ],
+          "reference_answer_note": "现有参考答案保持；即使本地可以判选项，也仍须教师审核教学可用性"
+        }
+      }
+    },
+    {
+      "id": "diagnostic-pressure-04-2",
+      "point_id": "pressure-04",
+      "point_title": "浮力",
+      "chapter": "压强和浮力",
+      "stem": "关于“浮力”，判断这一说法是否成立，并说明依据：\n浸没在液体中的石块也受到浮力。",
+      "options": [
+        {
+          "label": "A",
+          "text": "该说法成立。"
+        },
+        {
+          "label": "B",
+          "text": "该说法不成立。"
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "浸没在液体中的石块也受到浮力；只要物体浸在流体中，就应分析浮力。\n知识点条件：计算浮力时用排开流体的体积，不一定等于物体总体积：物体部分浸入时只取浸入部分。浮力方向竖直向上；同一流体中排开体积越大，浮力越大。称重法、阿基米德原理和排液重力比较可以作为不同测量路径。浮沉状态还需单独比较浮力与重力。\n推导依据：浮力来自液体对物体上下表面的压力差，方向竖直向上。；阿基米德原理把浮力与排开流体的重力相联系。；排开液体质量可由密度乘排开体积得到，再乘 g 得其重力。；物体漂浮或悬浮静止时，竖直方向合力为零，故浮力等于物体重力。\n卡片公式各自的适用条件（不是本题共同前提）：\n流体密度和排开体积求浮力：V 是被排开的流体体积；物体完全浸没时 V 等于物体体积。\n阿基米德原理的排液重力关系：Gd 是物体排开的液体或气体所受的重力。",
+      "error_type": "概念混淆",
+      "judging": "teacher",
+      "source_error_index": 1,
+      "source_caught_by": "人工审核",
+      "wrong_expr": null,
+      "trap_test": null,
+      "level": "基础",
+      "learning_scope": "初中",
+      "answer_evidence": {
+        "kind": "teacher",
+        "claim_source": "why",
+        "reference_only": true,
+        "reason": "概念、操作或无法建立完整定量证据，教师确认条件与结论。"
+      },
+      "review": {
+        "confidence": "medium",
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": false,
+          "no_answer_leak_in_options": true
+        },
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。",
+        "material": {
+          "anchors": [
+            {
+              "kind": "概念或操作",
+              "name": "浮力",
+              "claim": "认为浮力只作用于漂浮物体。",
+              "correction_basis": "浸没在液体中的石块也受到浮力；只要物体浸在流体中，就应分析浮力。",
+              "note": "概念锚点及命题真假待教师确认；未套用任意第一条公式",
+              "display": "认为浮力只作用于漂浮物体。"
+            }
+          ],
+          "source": {
+            "nature": "原创概念/操作命题；无真实测量记录",
+            "source_error_index": 1
+          },
+          "predicted_errors": [
+            {
+              "option": "B",
+              "text": "该说法不成立。",
+              "reason": "浸没在液体中的石块也受到浮力；只要物体浸在流体中，就应分析浮力。",
+              "expression": null,
+              "status": "误答原因预测，待教师确认；未采集学生作答证据"
+            }
+          ],
+          "difficulty_note": "建议难度沿用本题level（源卡难度）；尚非题目难度实测，待教师调整",
+          "estimated_seconds": [
+            60,
+            120
+          ],
+          "time_basis": "未做学生计时；按现有难度给出备课估计区间，待教师确认",
+          "machine_checks": [
+            {
+              "name": "题目ID关联源知识点",
+              "passed": true
+            },
+            {
+              "name": "选项标签唯一且参考标签存在",
+              "passed": true
+            },
+            {
+              "name": "选项文本互异",
+              "passed": true
+            }
+          ],
+          "machine_boundary": "只列本次逐题实际执行项目；不把关联知识卡的方向、扫描或一致性检查算作本题已验。概念题未验命题真假。",
+          "human_review_items": [
+            "题干条件是否充分、清楚且符合学段",
+            "参考结论在指定条件下是否唯一",
+            "干扰项是否合理、对应真实认知问题且无答案暗示",
+            "公式或概念锚点是否准确",
+            "建议难度及用时是否适合教学",
+            "语言、装置与安全操作是否恰当"
+          ],
+          "reference_answer_note": "现有参考答案保持；即使本地可以判选项，也仍须教师审核教学可用性"
+        }
+      }
+    },
+    {
+      "id": "diagnostic-pressure-05-1",
+      "point_id": "pressure-05",
+      "point_title": "物体的浮与沉",
+      "chapter": "压强和浮力",
+      "stem": "在“物体的浮与沉”的模型下，G（物体所受重力）=20 N。条件：物体处于静止漂浮或悬浮状态，合力为零。。求物体受到的浮力（Fb）。这些数值是设计示例。",
+      "options": [
+        {
+          "label": "A",
+          "text": "40 N"
+        },
+        {
+          "label": "B",
+          "text": "20 N"
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "使用漂浮或悬浮时的力平衡：G，代入得20 N。另一结果来自2·G，算得40 N。\n静止漂浮且仅受重力和浮力时两力平衡，20 N重力对应20 N浮力，不是40 N。\n知识点条件：判断浮沉先明确物体是否浸没，再比较浮力与重力：静止漂浮或悬浮时两力平衡；下沉加速时重力大于浮力；上浮时浮力大于重力。密度比较可帮助判断常见情境，但要注意空心、内部气体和形状对平均密度的影响。\n推导依据：画出物体所受的重力和浮力，确认它们方向相反。；静止漂浮或悬浮时合力为零，因此浮力大小等于重力大小。；运动中则比较两力大小判断加速度方向；不要把平衡条件套用于下沉加速过程。\n卡片公式各自的适用条件（不是本题共同前提）：\n漂浮或悬浮时的力平衡：物体处于静止漂浮或悬浮状态，合力为零。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 0,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "Fb = 2·G",
+      "trap_test": {
+        "scenario": "漂浮木块",
+        "expr": "2*G",
+        "ref": 20
+      },
+      "level": "基础",
+      "learning_scope": "初中",
+      "answer_evidence": {
+        "kind": "numeric",
+        "scenario": "漂浮木块",
+        "parameters": {
+          "Fb": 20,
+          "G": 20,
+          "Gd": 20,
+          "rho": 1000,
+          "g": 10,
+          "V": 0.002
+        },
+        "target": "Fb",
+        "unit": "N",
+        "reference": 20,
+        "correct_proof": {
+          "expression": "G",
+          "formula": "漂浮或悬浮时的力平衡",
+          "value": 20,
+          "when": "物体处于静止漂浮或悬浮状态，合力为零。"
+        },
+        "distractor_expression": "2*G",
+        "distractor_value": 40.0,
+        "dimension_matches": true,
+        "independent_evaluation": true
+      },
+      "review": {
+        "confidence": "medium",
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": true,
+          "no_answer_leak_in_options": true
+        },
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。",
+        "material": {
+          "anchors": [
+            {
+              "kind": "公式",
+              "name": "漂浮或悬浮时的力平衡",
+              "expression": "G",
+              "when": "物体处于静止漂浮或悬浮状态，合力为零。",
+              "display": "G"
+            }
+          ],
+          "source": {
+            "nature": "原创设计示例，非教材实测或真实实验记录",
+            "scenario": "漂浮木块",
+            "parameters": {
+              "Fb": 20,
+              "G": 20,
+              "Gd": 20,
+              "rho": 1000,
+              "g": 10,
+              "V": 0.002
+            },
+            "data": [
+              "物体受到的浮力：20 N",
+              "物体所受重力：20 N",
+              "排开液体所受的重力：20 N",
+              "液体密度：1000 kg/m^3",
+              "重力加速度：10 N/kg",
+              "物体排开液体体积：0.002 m^3"
+            ]
+          },
+          "predicted_errors": [
+            {
+              "option": "A",
+              "text": "40 N",
+              "reason": "静止漂浮且仅受重力和浮力时两力平衡，20 N重力对应20 N浮力，不是40 N。",
+              "expression": "2*G",
+              "status": "误答原因预测，待教师确认；未采集学生作答证据"
+            }
+          ],
+          "difficulty_note": "建议难度沿用本题level（源卡难度）；尚非题目难度实测，待教师调整",
+          "estimated_seconds": [
+            60,
+            120
+          ],
+          "time_basis": "未做学生计时；按现有难度给出备课估计区间，待教师确认",
+          "machine_checks": [
+            {
+              "name": "题目ID关联源知识点",
+              "passed": true
+            },
+            {
+              "name": "选项标签唯一且参考标签存在",
+              "passed": true
+            },
+            {
+              "name": "选项文本互异",
+              "passed": true
+            },
+            {
+              "name": "正确路径独立数值复算",
+              "passed": true
+            },
+            {
+              "name": "带量纲求值与独立求值一致",
+              "passed": true
+            },
+            {
+              "name": "干扰路径复算且与正确路径分离",
+              "passed": true
+            }
+          ],
+          "machine_boundary": "只列本次逐题实际执行项目；不把关联知识卡的方向、扫描或一致性检查算作本题已验。概念题未验命题真假。",
+          "human_review_items": [
+            "题干条件是否充分、清楚且符合学段",
+            "参考结论在指定条件下是否唯一",
+            "干扰项是否合理、对应真实认知问题且无答案暗示",
+            "公式或概念锚点是否准确",
+            "建议难度及用时是否适合教学",
+            "语言、装置与安全操作是否恰当"
+          ],
+          "reference_answer_note": "现有参考答案保持；即使本地可以判选项，也仍须教师审核教学可用性"
+        }
+      }
+    },
+    {
+      "id": "diagnostic-pressure-05-2",
+      "point_id": "pressure-05",
+      "point_title": "物体的浮与沉",
+      "chapter": "压强和浮力",
+      "stem": "关于“物体的浮与沉”，判断这一说法是否成立，并说明依据：\n把“漂浮”和“悬浮”理解成浮力方向不同。",
+      "options": [
+        {
+          "label": "A",
+          "text": "该说法不成立。"
+        },
+        {
+          "label": "B",
+          "text": "该说法成立。"
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "两种状态下浮力都竖直向上；区别是物体处于液面还是浸没在液体内部。\n知识点条件：判断浮沉先明确物体是否浸没，再比较浮力与重力：静止漂浮或悬浮时两力平衡；下沉加速时重力大于浮力；上浮时浮力大于重力。密度比较可帮助判断常见情境，但要注意空心、内部气体和形状对平均密度的影响。\n推导依据：画出物体所受的重力和浮力，确认它们方向相反。；静止漂浮或悬浮时合力为零，因此浮力大小等于重力大小。；运动中则比较两力大小判断加速度方向；不要把平衡条件套用于下沉加速过程。\n卡片公式各自的适用条件（不是本题共同前提）：\n漂浮或悬浮时的力平衡：物体处于静止漂浮或悬浮状态，合力为零。",
+      "error_type": "概念混淆",
+      "judging": "teacher",
+      "source_error_index": 1,
+      "source_caught_by": "人工审核",
+      "wrong_expr": null,
+      "trap_test": null,
+      "level": "基础",
+      "learning_scope": "初中",
+      "answer_evidence": {
+        "kind": "teacher",
+        "claim_source": "wrong",
+        "reference_only": true,
+        "reason": "概念、操作或无法建立完整定量证据，教师确认条件与结论。"
+      },
+      "review": {
+        "confidence": "medium",
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": false,
+          "no_answer_leak_in_options": true
+        },
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。",
+        "material": {
+          "anchors": [
+            {
+              "kind": "概念或操作",
+              "name": "物体的浮与沉",
+              "claim": "把“漂浮”和“悬浮”理解成浮力方向不同。",
+              "correction_basis": "两种状态下浮力都竖直向上；区别是物体处于液面还是浸没在液体内部。",
+              "note": "概念锚点及命题真假待教师确认；未套用任意第一条公式",
+              "display": "把“漂浮”和“悬浮”理解成浮力方向不同。"
+            }
+          ],
+          "source": {
+            "nature": "原创概念/操作命题；无真实测量记录",
+            "source_error_index": 1
+          },
+          "predicted_errors": [
+            {
+              "option": "B",
+              "text": "该说法成立。",
+              "reason": "两种状态下浮力都竖直向上；区别是物体处于液面还是浸没在液体内部。",
+              "expression": null,
+              "status": "误答原因预测，待教师确认；未采集学生作答证据"
+            }
+          ],
+          "difficulty_note": "建议难度沿用本题level（源卡难度）；尚非题目难度实测，待教师调整",
+          "estimated_seconds": [
+            60,
+            120
+          ],
+          "time_basis": "未做学生计时；按现有难度给出备课估计区间，待教师确认",
+          "machine_checks": [
+            {
+              "name": "题目ID关联源知识点",
+              "passed": true
+            },
+            {
+              "name": "选项标签唯一且参考标签存在",
+              "passed": true
+            },
+            {
+              "name": "选项文本互异",
+              "passed": true
+            }
+          ],
+          "machine_boundary": "只列本次逐题实际执行项目；不把关联知识卡的方向、扫描或一致性检查算作本题已验。概念题未验命题真假。",
+          "human_review_items": [
+            "题干条件是否充分、清楚且符合学段",
+            "参考结论在指定条件下是否唯一",
+            "干扰项是否合理、对应真实认知问题且无答案暗示",
+            "公式或概念锚点是否准确",
+            "建议难度及用时是否适合教学",
+            "语言、装置与安全操作是否恰当"
+          ],
+          "reference_answer_note": "现有参考答案保持；即使本地可以判选项，也仍须教师审核教学可用性"
+        }
+      }
+    },
+    {
+      "id": "diagnostic-pressure-05-3",
+      "point_id": "pressure-05",
+      "point_title": "物体的浮与沉",
+      "chapter": "压强和浮力",
+      "stem": "关于“物体的浮与沉”，判断这一说法是否成立，并说明依据：\n仅受重力与浮力而向下加速的物体，浮力小于重力，不能使用平衡条件。",
+      "options": [
+        {
+          "label": "A",
+          "text": "该说法成立。"
+        },
+        {
+          "label": "B",
+          "text": "该说法不成立。"
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "只有平衡等条件下才能等同；仅受重力与浮力而向下加速时重力大于浮力，须先明确状态。\n知识点条件：判断浮沉先明确物体是否浸没，再比较浮力与重力：静止漂浮或悬浮时两力平衡；下沉加速时重力大于浮力；上浮时浮力大于重力。密度比较可帮助判断常见情境，但要注意空心、内部气体和形状对平均密度的影响。\n推导依据：画出物体所受的重力和浮力，确认它们方向相反。；静止漂浮或悬浮时合力为零，因此浮力大小等于重力大小。；运动中则比较两力大小判断加速度方向；不要把平衡条件套用于下沉加速过程。\n卡片公式各自的适用条件（不是本题共同前提）：\n漂浮或悬浮时的力平衡：物体处于静止漂浮或悬浮状态，合力为零。",
+      "error_type": "概念混淆",
+      "judging": "teacher",
+      "source_error_index": 2,
+      "source_caught_by": "人工审核",
+      "wrong_expr": null,
+      "trap_test": null,
+      "level": "基础",
+      "learning_scope": "初中",
+      "answer_evidence": {
+        "kind": "teacher",
+        "claim_source": "执行方明确命题",
+        "reference_only": true,
+        "reason": "概念、操作或无法建立完整定量证据，教师确认条件与结论。"
+      },
+      "review": {
+        "confidence": "medium",
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": false,
+          "no_answer_leak_in_options": true
+        },
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。",
+        "material": {
+          "anchors": [
+            {
+              "kind": "概念或操作",
+              "name": "物体的浮与沉",
+              "claim": "把正在加速下沉的物体也直接按浮力等于重力处理。",
+              "correction_basis": "只有平衡等条件下才能等同；仅受重力与浮力而向下加速时重力大于浮力，须先明确状态。",
+              "note": "概念锚点及命题真假待教师确认；未套用任意第一条公式",
+              "display": "把正在加速下沉的物体也直接按浮力等于重力处理。"
+            }
+          ],
+          "source": {
+            "nature": "原创概念/操作命题；无真实测量记录",
+            "source_error_index": 2
+          },
+          "predicted_errors": [
+            {
+              "option": "B",
+              "text": "该说法不成立。",
+              "reason": "只有平衡等条件下才能等同；仅受重力与浮力而向下加速时重力大于浮力，须先明确状态。",
+              "expression": null,
+              "status": "误答原因预测，待教师确认；未采集学生作答证据"
+            }
+          ],
+          "difficulty_note": "建议难度沿用本题level（源卡难度）；尚非题目难度实测，待教师调整",
+          "estimated_seconds": [
+            60,
+            120
+          ],
+          "time_basis": "未做学生计时；按现有难度给出备课估计区间，待教师确认",
+          "machine_checks": [
+            {
+              "name": "题目ID关联源知识点",
+              "passed": true
+            },
+            {
+              "name": "选项标签唯一且参考标签存在",
+              "passed": true
+            },
+            {
+              "name": "选项文本互异",
+              "passed": true
+            }
+          ],
+          "machine_boundary": "只列本次逐题实际执行项目；不把关联知识卡的方向、扫描或一致性检查算作本题已验。概念题未验命题真假。",
+          "human_review_items": [
+            "题干条件是否充分、清楚且符合学段",
+            "参考结论在指定条件下是否唯一",
+            "干扰项是否合理、对应真实认知问题且无答案暗示",
+            "公式或概念锚点是否准确",
+            "建议难度及用时是否适合教学",
+            "语言、装置与安全操作是否恰当"
+          ],
+          "reference_answer_note": "现有参考答案保持；即使本地可以判选项，也仍须教师审核教学可用性"
+        }
+      }
+    }
+  ],
+  "skipped": [],
+  "source_records": {
+    "diagnostic-pressure-01-1": {
+      "point": {
+        "id": "pressure-01",
+        "title": "压强",
+        "level": "基础",
+        "definition": "压力是垂直作用在接触面上的力；压强表示单位面积上受到的压力，p=F/S。压力固定时受力面积越小，压强越大；比较不同情境时要先确认压力方向和接触面积。",
+        "meaning": "压强能描述压力作用效果。计算固体压强时使用垂直接触面的压力和实际受力面积；不能把物体全部表面积当作受力面积。增大压力或减小受力面积通常会增大压强；单位 Pa 等于 N/m²。",
+        "symbols": {
+          "F": {
+            "desc": "垂直接触面的压力",
+            "unit": "N"
+          },
+          "S": {
+            "desc": "受力面积",
+            "unit": "m2"
+          },
+          "p": {
+            "desc": "压强",
+            "unit": "Pa"
+          },
+          "rho": {
+            "desc": "液体密度",
+            "unit": "kg/m^3"
+          },
+          "g": {
+            "desc": "当地重力加速度",
+            "unit": "N/kg"
+          },
+          "h": {
+            "desc": "测点到液面的竖直深度",
+            "unit": "m"
+          },
+          "S_cm": {
+            "desc": "受力面积以平方厘米记录的数值",
+            "unit": "cm2"
+          },
+          "p_0": {
+            "unit": "Pa",
+            "desc": "面积改变前的设计压强"
+          },
+          "S_0": {
+            "unit": "m2",
+            "desc": "面积改变前的设计受力面积"
+          }
+        },
+        "scenarios": {
+          "窄底物体": {
+            "F": 100,
+            "S": 0.02,
+            "p": 5000,
+            "S_cm": 200.0
+          },
+          "宽底物体": {
+            "F": 200,
+            "S": 0.04,
+            "p": 5000,
+            "S_cm": 400.0
+          },
+          "水下10厘米": {
+            "p": 1000,
+            "rho": 1000,
+            "g": 10,
+            "h": 0.1,
+            "S": 0.01,
+            "F": 10,
+            "S_cm": 100.0
+          },
+          "水下20厘米": {
+            "p": 2000,
+            "rho": 1000,
+            "g": 10,
+            "h": 0.2,
+            "S": 0.01,
+            "F": 20,
+            "S_cm": 100.0
+          },
+          "固定压力宽底反例设计": {
+            "F": 100,
+            "S": 0.04,
+            "p": 2500,
+            "S_cm": 400,
+            "p_0": 5000,
+            "S_0": 0.02
+          }
+        },
+        "formulas": [
+          {
+            "name": "压力与受力面积求压强",
+            "expr": "p = F/S",
+            "when": "F 垂直接触面，F 用 N、S 用 m2，结果 p 用 Pa。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "窄底物体",
+                "expr": "F/S",
+                "ref": 5000,
+                "note": "100 N÷0.02 m2=5000 Pa。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "宽底物体",
+                "expr": "F/S",
+                "ref": 5000,
+                "note": "200 N÷0.04 m2=5000 Pa。"
+              },
+              {
+                "type": "direction",
+                "scenario": "窄底物体",
+                "var": "S",
+                "lo": 0.01,
+                "hi": 0.1,
+                "expr": "F/S",
+                "expect": "down",
+                "note": "压力固定时，受力面积增大，压强减小。"
+              },
+              {
+                "type": "scan",
+                "scenario": "窄底物体",
+                "var": "S",
+                "lo": 0.001,
+                "hi": 1,
+                "note": "扫描正面积范围，检查除法计算稳定。"
+              },
+              {
+                "type": "consistency",
+                "scenario": "窄底物体",
+                "with": "pressure-01|压力与受力面积求压强",
+                "with_expr": "p",
+                "target": "压强",
+                "note": "直接求本公式输出，与情境中另列的p设计基准核对；数据是设计示例，不是实测。用于核对定义、反算或边界值，不宣称不同物理原理互证。",
+                "verification_kind": "独立设计情境数据核对"
+              },
+              {
+                "type": "numeric",
+                "scenario": "固定压力宽底反例设计",
+                "ref": 2500,
+                "rtol": 1e-10,
+                "atol": 0,
+                "note": "设计示例；人工标签保留的指定反例正确控制。压力固定100 N，面积从0.02 m²增加到0.04 m²，压强5000 Pa降到2500 Pa；错误按面积同比增大预测10000 Pa。"
+              }
+            ]
+          },
+          {
+            "name": "由压强和面积求压力",
+            "expr": "F = p*S",
+            "when": "压力垂直作用于面积 S，压强 p 均匀。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "窄底物体",
+                "expr": "p*S",
+                "ref": 100,
+                "note": "5000 Pa×0.02 m2=100 N。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "宽底物体",
+                "expr": "p*S",
+                "ref": 200,
+                "note": "5000 Pa×0.04 m2=200 N。"
+              },
+              {
+                "type": "scan",
+                "scenario": "窄底物体",
+                "var": "S",
+                "lo": 0,
+                "hi": 1,
+                "note": "扫描非负面积，反算的压力数值有限。"
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "确定垂直作用于接触面的压力 F。",
+          "测量承受压力的面积 S 并统一为 m2。",
+          "把 F 除以 S 得压强 p；也可由 p 和 S 反算压力。"
+        ],
+        "errors": [
+          {
+            "wrong": "把压强写成压力乘以面积。",
+            "wrong_expr": "p = F*S",
+            "why": "压强表示单位面积上的压力，应除以面积；F*S 的单位也不是 Pa。",
+            "caught_by": "量纲一致性",
+            "trap_test": {
+              "scenario": "窄底物体",
+              "expr": "F*S",
+              "ref": 5000
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "把平方厘米换成平方米时只除100，漏掉长度倍率的平方。",
+            "wrong_expr": "p = F/(S_cm/100)",
+            "why": "200 cm²应为0.020 m²，不是2 m²；100 N应产生5000 Pa，误换算只得50 Pa。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "窄底物体",
+              "expr": "F/(S_cm/100)",
+              "ref": 5000
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "认为受力面积越大，压力固定时压强也越大。",
+            "why": "同一压力分摊到更大的受力面积上，单位面积承担的压力会减小，因此压强减小；压力和压强不能混为一个量。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            },
+            "automation_review": {
+              "status": "指定反例已补验；原人工审核标签保留",
+              "basis": "压力固定100 N，面积从0.02 m²增加到0.04 m²，压强5000 Pa降到2500 Pa；错误按面积同比增大预测10000 Pa。",
+              "scenario": "固定压力宽底反例设计",
+              "correct_expression": "p = F/S",
+              "wrong_expression": "p_0*S/S_0",
+              "correct_value": 2500,
+              "wrong_value": 10000.0,
+              "unit": "Pa",
+              "wrong_status": "numeric_mismatch",
+              "note": "这是原创设计反例，机器仅验证指定模型、数据及量纲；自然语言命题、学生认知与装置仍待教师确认。"
+            }
+          }
+        ],
+        "example": {
+          "stem": "重 100 N 的物体对水平地面的受力面积为 0.02 m2，求压强。",
+          "solution": [
+            "物体静止且水平面支撑时，压力大小为 100 N。",
+            "p=F/S=100/0.02=5000 Pa。"
+          ],
+          "answer": "压强为 5000 Pa。"
+        },
+        "prereq": [
+          "force-01"
+        ],
+        "next": [
+          "pressure-02"
+        ],
+        "tags": [
+          "压强",
+          "压力",
+          "受力面积",
+          "帕斯卡"
+        ],
+        "core": [
+          {
+            "title": "压力与压强",
+            "text": "压力垂直接触面，大小不总等于重力；斜面、额外按压等情况须分析。海绵凹陷程度用于比较压力效果，控制压力比面积、控制面积比压力。宽背带、雪板增大受力面积以减小压强；尖刀刃减小受力面积以增大压强。1 cm²=0.0001 m²，面积换算须平方长度倍率。"
+          },
+          {
+            "title": "本章素养回顾（原创任务）",
+            "text": "选择本章一个现象，写出结论、成立条件和证据；用另一条本章规律复核解释是否矛盾。指出一次测量或模型的局限，并说明还需什么证据；数值通过不替代概念辨析。"
+          }
+        ],
+        "evidence": [
+          {
+            "kind": "conversion",
+            "value": 200,
+            "from_unit": "cm²",
+            "expected": 0.02,
+            "to_unit": "m²",
+            "note": "长度100倍率，面积平方为10000倍率。"
+          }
+        ],
+        "learning_scope": "初中"
+      },
+      "error_index": 0,
+      "chapter": "压强和浮力"
+    },
+    "diagnostic-pressure-01-2": {
+      "point": {
+        "id": "pressure-01",
+        "title": "压强",
+        "level": "基础",
+        "definition": "压力是垂直作用在接触面上的力；压强表示单位面积上受到的压力，p=F/S。压力固定时受力面积越小，压强越大；比较不同情境时要先确认压力方向和接触面积。",
+        "meaning": "压强能描述压力作用效果。计算固体压强时使用垂直接触面的压力和实际受力面积；不能把物体全部表面积当作受力面积。增大压力或减小受力面积通常会增大压强；单位 Pa 等于 N/m²。",
+        "symbols": {
+          "F": {
+            "desc": "垂直接触面的压力",
+            "unit": "N"
+          },
+          "S": {
+            "desc": "受力面积",
+            "unit": "m2"
+          },
+          "p": {
+            "desc": "压强",
+            "unit": "Pa"
+          },
+          "rho": {
+            "desc": "液体密度",
+            "unit": "kg/m^3"
+          },
+          "g": {
+            "desc": "当地重力加速度",
+            "unit": "N/kg"
+          },
+          "h": {
+            "desc": "测点到液面的竖直深度",
+            "unit": "m"
+          },
+          "S_cm": {
+            "desc": "受力面积以平方厘米记录的数值",
+            "unit": "cm2"
+          },
+          "p_0": {
+            "unit": "Pa",
+            "desc": "面积改变前的设计压强"
+          },
+          "S_0": {
+            "unit": "m2",
+            "desc": "面积改变前的设计受力面积"
+          }
+        },
+        "scenarios": {
+          "窄底物体": {
+            "F": 100,
+            "S": 0.02,
+            "p": 5000,
+            "S_cm": 200.0
+          },
+          "宽底物体": {
+            "F": 200,
+            "S": 0.04,
+            "p": 5000,
+            "S_cm": 400.0
+          },
+          "水下10厘米": {
+            "p": 1000,
+            "rho": 1000,
+            "g": 10,
+            "h": 0.1,
+            "S": 0.01,
+            "F": 10,
+            "S_cm": 100.0
+          },
+          "水下20厘米": {
+            "p": 2000,
+            "rho": 1000,
+            "g": 10,
+            "h": 0.2,
+            "S": 0.01,
+            "F": 20,
+            "S_cm": 100.0
+          },
+          "固定压力宽底反例设计": {
+            "F": 100,
+            "S": 0.04,
+            "p": 2500,
+            "S_cm": 400,
+            "p_0": 5000,
+            "S_0": 0.02
+          }
+        },
+        "formulas": [
+          {
+            "name": "压力与受力面积求压强",
+            "expr": "p = F/S",
+            "when": "F 垂直接触面，F 用 N、S 用 m2，结果 p 用 Pa。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "窄底物体",
+                "expr": "F/S",
+                "ref": 5000,
+                "note": "100 N÷0.02 m2=5000 Pa。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "宽底物体",
+                "expr": "F/S",
+                "ref": 5000,
+                "note": "200 N÷0.04 m2=5000 Pa。"
+              },
+              {
+                "type": "direction",
+                "scenario": "窄底物体",
+                "var": "S",
+                "lo": 0.01,
+                "hi": 0.1,
+                "expr": "F/S",
+                "expect": "down",
+                "note": "压力固定时，受力面积增大，压强减小。"
+              },
+              {
+                "type": "scan",
+                "scenario": "窄底物体",
+                "var": "S",
+                "lo": 0.001,
+                "hi": 1,
+                "note": "扫描正面积范围，检查除法计算稳定。"
+              },
+              {
+                "type": "consistency",
+                "scenario": "窄底物体",
+                "with": "pressure-01|压力与受力面积求压强",
+                "with_expr": "p",
+                "target": "压强",
+                "note": "直接求本公式输出，与情境中另列的p设计基准核对；数据是设计示例，不是实测。用于核对定义、反算或边界值，不宣称不同物理原理互证。",
+                "verification_kind": "独立设计情境数据核对"
+              },
+              {
+                "type": "numeric",
+                "scenario": "固定压力宽底反例设计",
+                "ref": 2500,
+                "rtol": 1e-10,
+                "atol": 0,
+                "note": "设计示例；人工标签保留的指定反例正确控制。压力固定100 N，面积从0.02 m²增加到0.04 m²，压强5000 Pa降到2500 Pa；错误按面积同比增大预测10000 Pa。"
+              }
+            ]
+          },
+          {
+            "name": "由压强和面积求压力",
+            "expr": "F = p*S",
+            "when": "压力垂直作用于面积 S，压强 p 均匀。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "窄底物体",
+                "expr": "p*S",
+                "ref": 100,
+                "note": "5000 Pa×0.02 m2=100 N。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "宽底物体",
+                "expr": "p*S",
+                "ref": 200,
+                "note": "5000 Pa×0.04 m2=200 N。"
+              },
+              {
+                "type": "scan",
+                "scenario": "窄底物体",
+                "var": "S",
+                "lo": 0,
+                "hi": 1,
+                "note": "扫描非负面积，反算的压力数值有限。"
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "确定垂直作用于接触面的压力 F。",
+          "测量承受压力的面积 S 并统一为 m2。",
+          "把 F 除以 S 得压强 p；也可由 p 和 S 反算压力。"
+        ],
+        "errors": [
+          {
+            "wrong": "把压强写成压力乘以面积。",
+            "wrong_expr": "p = F*S",
+            "why": "压强表示单位面积上的压力，应除以面积；F*S 的单位也不是 Pa。",
+            "caught_by": "量纲一致性",
+            "trap_test": {
+              "scenario": "窄底物体",
+              "expr": "F*S",
+              "ref": 5000
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "把平方厘米换成平方米时只除100，漏掉长度倍率的平方。",
+            "wrong_expr": "p = F/(S_cm/100)",
+            "why": "200 cm²应为0.020 m²，不是2 m²；100 N应产生5000 Pa，误换算只得50 Pa。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "窄底物体",
+              "expr": "F/(S_cm/100)",
+              "ref": 5000
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "认为受力面积越大，压力固定时压强也越大。",
+            "why": "同一压力分摊到更大的受力面积上，单位面积承担的压力会减小，因此压强减小；压力和压强不能混为一个量。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            },
+            "automation_review": {
+              "status": "指定反例已补验；原人工审核标签保留",
+              "basis": "压力固定100 N，面积从0.02 m²增加到0.04 m²，压强5000 Pa降到2500 Pa；错误按面积同比增大预测10000 Pa。",
+              "scenario": "固定压力宽底反例设计",
+              "correct_expression": "p = F/S",
+              "wrong_expression": "p_0*S/S_0",
+              "correct_value": 2500,
+              "wrong_value": 10000.0,
+              "unit": "Pa",
+              "wrong_status": "numeric_mismatch",
+              "note": "这是原创设计反例，机器仅验证指定模型、数据及量纲；自然语言命题、学生认知与装置仍待教师确认。"
+            }
+          }
+        ],
+        "example": {
+          "stem": "重 100 N 的物体对水平地面的受力面积为 0.02 m2，求压强。",
+          "solution": [
+            "物体静止且水平面支撑时，压力大小为 100 N。",
+            "p=F/S=100/0.02=5000 Pa。"
+          ],
+          "answer": "压强为 5000 Pa。"
+        },
+        "prereq": [
+          "force-01"
+        ],
+        "next": [
+          "pressure-02"
+        ],
+        "tags": [
+          "压强",
+          "压力",
+          "受力面积",
+          "帕斯卡"
+        ],
+        "core": [
+          {
+            "title": "压力与压强",
+            "text": "压力垂直接触面，大小不总等于重力；斜面、额外按压等情况须分析。海绵凹陷程度用于比较压力效果，控制压力比面积、控制面积比压力。宽背带、雪板增大受力面积以减小压强；尖刀刃减小受力面积以增大压强。1 cm²=0.0001 m²，面积换算须平方长度倍率。"
+          },
+          {
+            "title": "本章素养回顾（原创任务）",
+            "text": "选择本章一个现象，写出结论、成立条件和证据；用另一条本章规律复核解释是否矛盾。指出一次测量或模型的局限，并说明还需什么证据；数值通过不替代概念辨析。"
+          }
+        ],
+        "evidence": [
+          {
+            "kind": "conversion",
+            "value": 200,
+            "from_unit": "cm²",
+            "expected": 0.02,
+            "to_unit": "m²",
+            "note": "长度100倍率，面积平方为10000倍率。"
+          }
+        ],
+        "learning_scope": "初中"
+      },
+      "error_index": 1,
+      "chapter": "压强和浮力"
+    },
+    "diagnostic-pressure-01-3": {
+      "point": {
+        "id": "pressure-01",
+        "title": "压强",
+        "level": "基础",
+        "definition": "压力是垂直作用在接触面上的力；压强表示单位面积上受到的压力，p=F/S。压力固定时受力面积越小，压强越大；比较不同情境时要先确认压力方向和接触面积。",
+        "meaning": "压强能描述压力作用效果。计算固体压强时使用垂直接触面的压力和实际受力面积；不能把物体全部表面积当作受力面积。增大压力或减小受力面积通常会增大压强；单位 Pa 等于 N/m²。",
+        "symbols": {
+          "F": {
+            "desc": "垂直接触面的压力",
+            "unit": "N"
+          },
+          "S": {
+            "desc": "受力面积",
+            "unit": "m2"
+          },
+          "p": {
+            "desc": "压强",
+            "unit": "Pa"
+          },
+          "rho": {
+            "desc": "液体密度",
+            "unit": "kg/m^3"
+          },
+          "g": {
+            "desc": "当地重力加速度",
+            "unit": "N/kg"
+          },
+          "h": {
+            "desc": "测点到液面的竖直深度",
+            "unit": "m"
+          },
+          "S_cm": {
+            "desc": "受力面积以平方厘米记录的数值",
+            "unit": "cm2"
+          },
+          "p_0": {
+            "unit": "Pa",
+            "desc": "面积改变前的设计压强"
+          },
+          "S_0": {
+            "unit": "m2",
+            "desc": "面积改变前的设计受力面积"
+          }
+        },
+        "scenarios": {
+          "窄底物体": {
+            "F": 100,
+            "S": 0.02,
+            "p": 5000,
+            "S_cm": 200.0
+          },
+          "宽底物体": {
+            "F": 200,
+            "S": 0.04,
+            "p": 5000,
+            "S_cm": 400.0
+          },
+          "水下10厘米": {
+            "p": 1000,
+            "rho": 1000,
+            "g": 10,
+            "h": 0.1,
+            "S": 0.01,
+            "F": 10,
+            "S_cm": 100.0
+          },
+          "水下20厘米": {
+            "p": 2000,
+            "rho": 1000,
+            "g": 10,
+            "h": 0.2,
+            "S": 0.01,
+            "F": 20,
+            "S_cm": 100.0
+          },
+          "固定压力宽底反例设计": {
+            "F": 100,
+            "S": 0.04,
+            "p": 2500,
+            "S_cm": 400,
+            "p_0": 5000,
+            "S_0": 0.02
+          }
+        },
+        "formulas": [
+          {
+            "name": "压力与受力面积求压强",
+            "expr": "p = F/S",
+            "when": "F 垂直接触面，F 用 N、S 用 m2，结果 p 用 Pa。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "窄底物体",
+                "expr": "F/S",
+                "ref": 5000,
+                "note": "100 N÷0.02 m2=5000 Pa。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "宽底物体",
+                "expr": "F/S",
+                "ref": 5000,
+                "note": "200 N÷0.04 m2=5000 Pa。"
+              },
+              {
+                "type": "direction",
+                "scenario": "窄底物体",
+                "var": "S",
+                "lo": 0.01,
+                "hi": 0.1,
+                "expr": "F/S",
+                "expect": "down",
+                "note": "压力固定时，受力面积增大，压强减小。"
+              },
+              {
+                "type": "scan",
+                "scenario": "窄底物体",
+                "var": "S",
+                "lo": 0.001,
+                "hi": 1,
+                "note": "扫描正面积范围，检查除法计算稳定。"
+              },
+              {
+                "type": "consistency",
+                "scenario": "窄底物体",
+                "with": "pressure-01|压力与受力面积求压强",
+                "with_expr": "p",
+                "target": "压强",
+                "note": "直接求本公式输出，与情境中另列的p设计基准核对；数据是设计示例，不是实测。用于核对定义、反算或边界值，不宣称不同物理原理互证。",
+                "verification_kind": "独立设计情境数据核对"
+              },
+              {
+                "type": "numeric",
+                "scenario": "固定压力宽底反例设计",
+                "ref": 2500,
+                "rtol": 1e-10,
+                "atol": 0,
+                "note": "设计示例；人工标签保留的指定反例正确控制。压力固定100 N，面积从0.02 m²增加到0.04 m²，压强5000 Pa降到2500 Pa；错误按面积同比增大预测10000 Pa。"
+              }
+            ]
+          },
+          {
+            "name": "由压强和面积求压力",
+            "expr": "F = p*S",
+            "when": "压力垂直作用于面积 S，压强 p 均匀。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "窄底物体",
+                "expr": "p*S",
+                "ref": 100,
+                "note": "5000 Pa×0.02 m2=100 N。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "宽底物体",
+                "expr": "p*S",
+                "ref": 200,
+                "note": "5000 Pa×0.04 m2=200 N。"
+              },
+              {
+                "type": "scan",
+                "scenario": "窄底物体",
+                "var": "S",
+                "lo": 0,
+                "hi": 1,
+                "note": "扫描非负面积，反算的压力数值有限。"
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "确定垂直作用于接触面的压力 F。",
+          "测量承受压力的面积 S 并统一为 m2。",
+          "把 F 除以 S 得压强 p；也可由 p 和 S 反算压力。"
+        ],
+        "errors": [
+          {
+            "wrong": "把压强写成压力乘以面积。",
+            "wrong_expr": "p = F*S",
+            "why": "压强表示单位面积上的压力，应除以面积；F*S 的单位也不是 Pa。",
+            "caught_by": "量纲一致性",
+            "trap_test": {
+              "scenario": "窄底物体",
+              "expr": "F*S",
+              "ref": 5000
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "把平方厘米换成平方米时只除100，漏掉长度倍率的平方。",
+            "wrong_expr": "p = F/(S_cm/100)",
+            "why": "200 cm²应为0.020 m²，不是2 m²；100 N应产生5000 Pa，误换算只得50 Pa。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "窄底物体",
+              "expr": "F/(S_cm/100)",
+              "ref": 5000
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "认为受力面积越大，压力固定时压强也越大。",
+            "why": "同一压力分摊到更大的受力面积上，单位面积承担的压力会减小，因此压强减小；压力和压强不能混为一个量。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            },
+            "automation_review": {
+              "status": "指定反例已补验；原人工审核标签保留",
+              "basis": "压力固定100 N，面积从0.02 m²增加到0.04 m²，压强5000 Pa降到2500 Pa；错误按面积同比增大预测10000 Pa。",
+              "scenario": "固定压力宽底反例设计",
+              "correct_expression": "p = F/S",
+              "wrong_expression": "p_0*S/S_0",
+              "correct_value": 2500,
+              "wrong_value": 10000.0,
+              "unit": "Pa",
+              "wrong_status": "numeric_mismatch",
+              "note": "这是原创设计反例，机器仅验证指定模型、数据及量纲；自然语言命题、学生认知与装置仍待教师确认。"
+            }
+          }
+        ],
+        "example": {
+          "stem": "重 100 N 的物体对水平地面的受力面积为 0.02 m2，求压强。",
+          "solution": [
+            "物体静止且水平面支撑时，压力大小为 100 N。",
+            "p=F/S=100/0.02=5000 Pa。"
+          ],
+          "answer": "压强为 5000 Pa。"
+        },
+        "prereq": [
+          "force-01"
+        ],
+        "next": [
+          "pressure-02"
+        ],
+        "tags": [
+          "压强",
+          "压力",
+          "受力面积",
+          "帕斯卡"
+        ],
+        "core": [
+          {
+            "title": "压力与压强",
+            "text": "压力垂直接触面，大小不总等于重力；斜面、额外按压等情况须分析。海绵凹陷程度用于比较压力效果，控制压力比面积、控制面积比压力。宽背带、雪板增大受力面积以减小压强；尖刀刃减小受力面积以增大压强。1 cm²=0.0001 m²，面积换算须平方长度倍率。"
+          },
+          {
+            "title": "本章素养回顾（原创任务）",
+            "text": "选择本章一个现象，写出结论、成立条件和证据；用另一条本章规律复核解释是否矛盾。指出一次测量或模型的局限，并说明还需什么证据；数值通过不替代概念辨析。"
+          }
+        ],
+        "evidence": [
+          {
+            "kind": "conversion",
+            "value": 200,
+            "from_unit": "cm²",
+            "expected": 0.02,
+            "to_unit": "m²",
+            "note": "长度100倍率，面积平方为10000倍率。"
+          }
+        ],
+        "learning_scope": "初中"
+      },
+      "error_index": 2,
+      "chapter": "压强和浮力"
+    },
+    "diagnostic-pressure-02-1": {
+      "point": {
+        "id": "pressure-02",
+        "title": "液体的压强",
+        "level": "基础",
+        "definition": "液体内部向各个方向都有压强；同种液体中深度越大，压强越大。液体内部压强与液体密度、重力加速度和测点到液面的竖直深度有关，常用 p=rho*g*h 计算。",
+        "meaning": "深度 h 从液面向下竖直测量，不是沿斜面或容器壁量出的距离。液体压强还会传向容器侧壁和底部；同一深度的压强与容器形状无关。利用压强求某一面积上的压力时再用 F=pS，避免把压强和压力混淆。",
+        "symbols": {
+          "p": {
+            "desc": "液体内部压强",
+            "unit": "Pa"
+          },
+          "rho": {
+            "desc": "液体密度",
+            "unit": "kg/m^3"
+          },
+          "g": {
+            "desc": "当地重力加速度",
+            "unit": "N/kg"
+          },
+          "h": {
+            "desc": "测点到液面的竖直深度",
+            "unit": "m"
+          },
+          "S": {
+            "desc": "受液体压强作用的面积",
+            "unit": "m2"
+          },
+          "F": {
+            "desc": "该面积上液体压力",
+            "unit": "N"
+          }
+        },
+        "scenarios": {
+          "水下10厘米": {
+            "p": 1000,
+            "rho": 1000,
+            "g": 10,
+            "h": 0.1,
+            "S": 0.01,
+            "F": 10
+          },
+          "水下20厘米": {
+            "p": 2000,
+            "rho": 1000,
+            "g": 10,
+            "h": 0.2,
+            "S": 0.01,
+            "F": 20
+          }
+        },
+        "formulas": [
+          {
+            "name": "液体密度和深度求内部压强",
+            "expr": "p = rho*g*h",
+            "when": "静止液体中测点相对液面的深度 h 用 m，rho 用 kg/m^3。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "水下10厘米",
+                "expr": "rho*g*h",
+                "ref": 1000,
+                "note": "1000×10×0.1=1000 Pa。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "水下20厘米",
+                "expr": "rho*g*h",
+                "ref": 2000,
+                "note": "水深加倍，液体压强加倍。"
+              },
+              {
+                "type": "direction",
+                "scenario": "水下10厘米",
+                "var": "h",
+                "lo": 0.01,
+                "hi": 1,
+                "expr": "rho*g*h",
+                "expect": "up",
+                "note": "同种液体中深度增加，液体压强增大。"
+              },
+              {
+                "type": "scan",
+                "scenario": "水下10厘米",
+                "var": "h",
+                "lo": 0,
+                "hi": 10,
+                "note": "扫描非负深度，检查液体压强随深度变化。"
+              },
+              {
+                "type": "consistency",
+                "scenario": "水下10厘米",
+                "with": "pressure-02|液体密度和深度求内部压强",
+                "with_expr": "F/S",
+                "target": "液体内部压强",
+                "note": "本公式直接求p；参考端显式关系为F/S。两端使用同一情境和阶段，只核对该关系；with字段仅定位来源，不代表调用另一条被覆盖的公式。",
+                "verification_kind": "独立关系核对"
+              }
+            ]
+          },
+          {
+            "name": "由液体压强和面积求压力",
+            "expr": "F = p*S",
+            "when": "压强在所取小面积上近似均匀，F 用 N、S 用 m2。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "水下10厘米",
+                "expr": "p*S",
+                "ref": 10,
+                "note": "1000 Pa×0.01 m2=10 N。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "水下20厘米",
+                "expr": "p*S",
+                "ref": 20,
+                "note": "2000 Pa×0.01 m2=20 N。"
+              },
+              {
+                "type": "scan",
+                "scenario": "水下10厘米",
+                "var": "S",
+                "lo": 0,
+                "hi": 1,
+                "note": "扫描非负受力面积，压力计算有限。"
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "取静止液体中距液面深度为 h 的位置。",
+          "该位置上方液柱的重力随液体密度、重力加速度和高度变化。",
+          "液柱压力作用于单位面积后得到 p=rho*g*h。",
+          "若进一步求某面积上的压力，用压强乘面积。"
+        ],
+        "errors": [
+          {
+            "wrong": "把液体压强式中的深度误换成受力面积。",
+            "wrong_expr": "p = rho*g*S",
+            "why": "深度单位是m，面积是m²；替换后量纲变为Pa·m，不再是压强。这不是斜长与深度的数值混用。",
+            "caught_by": "量纲一致性",
+            "trap_test": {
+              "scenario": "水下10厘米",
+              "expr": "rho*g*S",
+              "ref": 1000
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "深度已经用 m 表示，却又把它当成 cm 数值额外放大 100 倍。",
+            "wrong_expr": "p = rho*g*100*h",
+            "why": "水下 0.1 m 的压强为 1000 Pa；重复做厘米换算会错误得到 100 000 Pa。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "水下10厘米",
+              "expr": "rho*g*100*h",
+              "ref": 1000
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "认为容器越宽或形状不同，同种液体同深度处的压强必然不同。",
+            "why": "静止同种液体的压强由密度、重力加速度和竖直深度决定，不由容器外形直接决定。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "把沿容器壁量出的斜长当作液体深度。",
+            "why": "深度须从液面竖直向下量到测点，斜长通常更大；要结合几何图判断，不由面积式错误实测代替。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "水中距液面0.2 m处，由水的重力产生的附加压强是多少（不含液面大气压）？取水密度1000 kg/m³、g=10 N/kg。",
+          "solution": [
+            "p=rho*g*h=1000×10×0.2=2000 Pa。",
+            "深度取竖直距离，单位为 m。"
+          ],
+          "answer": "液体压强为 2000 Pa。"
+        },
+        "prereq": [
+          "pressure-01"
+        ],
+        "next": [
+          "pressure-03"
+        ],
+        "tags": [
+          "液体压强",
+          "液体深度",
+          "密度",
+          "液体压力"
+        ],
+        "core": [
+          {
+            "title": "液体压强",
+            "text": "液体因重力与流动性对底、壁和内部各方向施压；静止同种液体同深度压强相同。深度是自由液面到测点的竖直距离，不是倾斜距离或液柱总长度。连通器中同种液体、自由液面压强相同且静止时，各液面高度相同；不满足条件时不能直接套用。"
+          }
+        ],
+        "experiments": [
+          {
+            "title": "探究液体压强的影响因素",
+            "purpose": "比较方向、深度、液体密度。",
+            "apparatus": "液体压强计、橡皮膜探头、水、盐水和刻度尺。",
+            "variables": "同液同深度改朝向；同液改深度；同深度改液体密度，观察U形管高度差。",
+            "steps": [
+              "检查密封，确认同压时两侧液面等高。",
+              "同深度转探头，比较高度差；再增大深度。",
+              "保持深度改用较高密度液体，比较高度差。"
+            ],
+            "data": "设计示例（非实测）：水中10 cm与20 cm高度差不同，若按g=10 N/kg则模型压强1000、2000 Pa。",
+            "conclusion": "静止同种液体同深度各向压强相同；深度或液体密度较大时压强较大。",
+            "limits": "橡皮膜漏气、残余压差、深度量错影响结论；U形管高度差表示压强差，不直接当探头深度。",
+            "kind": "学生必做"
+          }
+        ],
+        "learning_scope": "初中"
+      },
+      "error_index": 0,
+      "chapter": "压强和浮力"
+    },
+    "diagnostic-pressure-02-2": {
+      "point": {
+        "id": "pressure-02",
+        "title": "液体的压强",
+        "level": "基础",
+        "definition": "液体内部向各个方向都有压强；同种液体中深度越大，压强越大。液体内部压强与液体密度、重力加速度和测点到液面的竖直深度有关，常用 p=rho*g*h 计算。",
+        "meaning": "深度 h 从液面向下竖直测量，不是沿斜面或容器壁量出的距离。液体压强还会传向容器侧壁和底部；同一深度的压强与容器形状无关。利用压强求某一面积上的压力时再用 F=pS，避免把压强和压力混淆。",
+        "symbols": {
+          "p": {
+            "desc": "液体内部压强",
+            "unit": "Pa"
+          },
+          "rho": {
+            "desc": "液体密度",
+            "unit": "kg/m^3"
+          },
+          "g": {
+            "desc": "当地重力加速度",
+            "unit": "N/kg"
+          },
+          "h": {
+            "desc": "测点到液面的竖直深度",
+            "unit": "m"
+          },
+          "S": {
+            "desc": "受液体压强作用的面积",
+            "unit": "m2"
+          },
+          "F": {
+            "desc": "该面积上液体压力",
+            "unit": "N"
+          }
+        },
+        "scenarios": {
+          "水下10厘米": {
+            "p": 1000,
+            "rho": 1000,
+            "g": 10,
+            "h": 0.1,
+            "S": 0.01,
+            "F": 10
+          },
+          "水下20厘米": {
+            "p": 2000,
+            "rho": 1000,
+            "g": 10,
+            "h": 0.2,
+            "S": 0.01,
+            "F": 20
+          }
+        },
+        "formulas": [
+          {
+            "name": "液体密度和深度求内部压强",
+            "expr": "p = rho*g*h",
+            "when": "静止液体中测点相对液面的深度 h 用 m，rho 用 kg/m^3。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "水下10厘米",
+                "expr": "rho*g*h",
+                "ref": 1000,
+                "note": "1000×10×0.1=1000 Pa。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "水下20厘米",
+                "expr": "rho*g*h",
+                "ref": 2000,
+                "note": "水深加倍，液体压强加倍。"
+              },
+              {
+                "type": "direction",
+                "scenario": "水下10厘米",
+                "var": "h",
+                "lo": 0.01,
+                "hi": 1,
+                "expr": "rho*g*h",
+                "expect": "up",
+                "note": "同种液体中深度增加，液体压强增大。"
+              },
+              {
+                "type": "scan",
+                "scenario": "水下10厘米",
+                "var": "h",
+                "lo": 0,
+                "hi": 10,
+                "note": "扫描非负深度，检查液体压强随深度变化。"
+              },
+              {
+                "type": "consistency",
+                "scenario": "水下10厘米",
+                "with": "pressure-02|液体密度和深度求内部压强",
+                "with_expr": "F/S",
+                "target": "液体内部压强",
+                "note": "本公式直接求p；参考端显式关系为F/S。两端使用同一情境和阶段，只核对该关系；with字段仅定位来源，不代表调用另一条被覆盖的公式。",
+                "verification_kind": "独立关系核对"
+              }
+            ]
+          },
+          {
+            "name": "由液体压强和面积求压力",
+            "expr": "F = p*S",
+            "when": "压强在所取小面积上近似均匀，F 用 N、S 用 m2。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "水下10厘米",
+                "expr": "p*S",
+                "ref": 10,
+                "note": "1000 Pa×0.01 m2=10 N。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "水下20厘米",
+                "expr": "p*S",
+                "ref": 20,
+                "note": "2000 Pa×0.01 m2=20 N。"
+              },
+              {
+                "type": "scan",
+                "scenario": "水下10厘米",
+                "var": "S",
+                "lo": 0,
+                "hi": 1,
+                "note": "扫描非负受力面积，压力计算有限。"
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "取静止液体中距液面深度为 h 的位置。",
+          "该位置上方液柱的重力随液体密度、重力加速度和高度变化。",
+          "液柱压力作用于单位面积后得到 p=rho*g*h。",
+          "若进一步求某面积上的压力，用压强乘面积。"
+        ],
+        "errors": [
+          {
+            "wrong": "把液体压强式中的深度误换成受力面积。",
+            "wrong_expr": "p = rho*g*S",
+            "why": "深度单位是m，面积是m²；替换后量纲变为Pa·m，不再是压强。这不是斜长与深度的数值混用。",
+            "caught_by": "量纲一致性",
+            "trap_test": {
+              "scenario": "水下10厘米",
+              "expr": "rho*g*S",
+              "ref": 1000
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "深度已经用 m 表示，却又把它当成 cm 数值额外放大 100 倍。",
+            "wrong_expr": "p = rho*g*100*h",
+            "why": "水下 0.1 m 的压强为 1000 Pa；重复做厘米换算会错误得到 100 000 Pa。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "水下10厘米",
+              "expr": "rho*g*100*h",
+              "ref": 1000
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "认为容器越宽或形状不同，同种液体同深度处的压强必然不同。",
+            "why": "静止同种液体的压强由密度、重力加速度和竖直深度决定，不由容器外形直接决定。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "把沿容器壁量出的斜长当作液体深度。",
+            "why": "深度须从液面竖直向下量到测点，斜长通常更大；要结合几何图判断，不由面积式错误实测代替。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "水中距液面0.2 m处，由水的重力产生的附加压强是多少（不含液面大气压）？取水密度1000 kg/m³、g=10 N/kg。",
+          "solution": [
+            "p=rho*g*h=1000×10×0.2=2000 Pa。",
+            "深度取竖直距离，单位为 m。"
+          ],
+          "answer": "液体压强为 2000 Pa。"
+        },
+        "prereq": [
+          "pressure-01"
+        ],
+        "next": [
+          "pressure-03"
+        ],
+        "tags": [
+          "液体压强",
+          "液体深度",
+          "密度",
+          "液体压力"
+        ],
+        "core": [
+          {
+            "title": "液体压强",
+            "text": "液体因重力与流动性对底、壁和内部各方向施压；静止同种液体同深度压强相同。深度是自由液面到测点的竖直距离，不是倾斜距离或液柱总长度。连通器中同种液体、自由液面压强相同且静止时，各液面高度相同；不满足条件时不能直接套用。"
+          }
+        ],
+        "experiments": [
+          {
+            "title": "探究液体压强的影响因素",
+            "purpose": "比较方向、深度、液体密度。",
+            "apparatus": "液体压强计、橡皮膜探头、水、盐水和刻度尺。",
+            "variables": "同液同深度改朝向；同液改深度；同深度改液体密度，观察U形管高度差。",
+            "steps": [
+              "检查密封，确认同压时两侧液面等高。",
+              "同深度转探头，比较高度差；再增大深度。",
+              "保持深度改用较高密度液体，比较高度差。"
+            ],
+            "data": "设计示例（非实测）：水中10 cm与20 cm高度差不同，若按g=10 N/kg则模型压强1000、2000 Pa。",
+            "conclusion": "静止同种液体同深度各向压强相同；深度或液体密度较大时压强较大。",
+            "limits": "橡皮膜漏气、残余压差、深度量错影响结论；U形管高度差表示压强差，不直接当探头深度。",
+            "kind": "学生必做"
+          }
+        ],
+        "learning_scope": "初中"
+      },
+      "error_index": 1,
+      "chapter": "压强和浮力"
+    },
+    "diagnostic-pressure-02-3": {
+      "point": {
+        "id": "pressure-02",
+        "title": "液体的压强",
+        "level": "基础",
+        "definition": "液体内部向各个方向都有压强；同种液体中深度越大，压强越大。液体内部压强与液体密度、重力加速度和测点到液面的竖直深度有关，常用 p=rho*g*h 计算。",
+        "meaning": "深度 h 从液面向下竖直测量，不是沿斜面或容器壁量出的距离。液体压强还会传向容器侧壁和底部；同一深度的压强与容器形状无关。利用压强求某一面积上的压力时再用 F=pS，避免把压强和压力混淆。",
+        "symbols": {
+          "p": {
+            "desc": "液体内部压强",
+            "unit": "Pa"
+          },
+          "rho": {
+            "desc": "液体密度",
+            "unit": "kg/m^3"
+          },
+          "g": {
+            "desc": "当地重力加速度",
+            "unit": "N/kg"
+          },
+          "h": {
+            "desc": "测点到液面的竖直深度",
+            "unit": "m"
+          },
+          "S": {
+            "desc": "受液体压强作用的面积",
+            "unit": "m2"
+          },
+          "F": {
+            "desc": "该面积上液体压力",
+            "unit": "N"
+          }
+        },
+        "scenarios": {
+          "水下10厘米": {
+            "p": 1000,
+            "rho": 1000,
+            "g": 10,
+            "h": 0.1,
+            "S": 0.01,
+            "F": 10
+          },
+          "水下20厘米": {
+            "p": 2000,
+            "rho": 1000,
+            "g": 10,
+            "h": 0.2,
+            "S": 0.01,
+            "F": 20
+          }
+        },
+        "formulas": [
+          {
+            "name": "液体密度和深度求内部压强",
+            "expr": "p = rho*g*h",
+            "when": "静止液体中测点相对液面的深度 h 用 m，rho 用 kg/m^3。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "水下10厘米",
+                "expr": "rho*g*h",
+                "ref": 1000,
+                "note": "1000×10×0.1=1000 Pa。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "水下20厘米",
+                "expr": "rho*g*h",
+                "ref": 2000,
+                "note": "水深加倍，液体压强加倍。"
+              },
+              {
+                "type": "direction",
+                "scenario": "水下10厘米",
+                "var": "h",
+                "lo": 0.01,
+                "hi": 1,
+                "expr": "rho*g*h",
+                "expect": "up",
+                "note": "同种液体中深度增加，液体压强增大。"
+              },
+              {
+                "type": "scan",
+                "scenario": "水下10厘米",
+                "var": "h",
+                "lo": 0,
+                "hi": 10,
+                "note": "扫描非负深度，检查液体压强随深度变化。"
+              },
+              {
+                "type": "consistency",
+                "scenario": "水下10厘米",
+                "with": "pressure-02|液体密度和深度求内部压强",
+                "with_expr": "F/S",
+                "target": "液体内部压强",
+                "note": "本公式直接求p；参考端显式关系为F/S。两端使用同一情境和阶段，只核对该关系；with字段仅定位来源，不代表调用另一条被覆盖的公式。",
+                "verification_kind": "独立关系核对"
+              }
+            ]
+          },
+          {
+            "name": "由液体压强和面积求压力",
+            "expr": "F = p*S",
+            "when": "压强在所取小面积上近似均匀，F 用 N、S 用 m2。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "水下10厘米",
+                "expr": "p*S",
+                "ref": 10,
+                "note": "1000 Pa×0.01 m2=10 N。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "水下20厘米",
+                "expr": "p*S",
+                "ref": 20,
+                "note": "2000 Pa×0.01 m2=20 N。"
+              },
+              {
+                "type": "scan",
+                "scenario": "水下10厘米",
+                "var": "S",
+                "lo": 0,
+                "hi": 1,
+                "note": "扫描非负受力面积，压力计算有限。"
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "取静止液体中距液面深度为 h 的位置。",
+          "该位置上方液柱的重力随液体密度、重力加速度和高度变化。",
+          "液柱压力作用于单位面积后得到 p=rho*g*h。",
+          "若进一步求某面积上的压力，用压强乘面积。"
+        ],
+        "errors": [
+          {
+            "wrong": "把液体压强式中的深度误换成受力面积。",
+            "wrong_expr": "p = rho*g*S",
+            "why": "深度单位是m，面积是m²；替换后量纲变为Pa·m，不再是压强。这不是斜长与深度的数值混用。",
+            "caught_by": "量纲一致性",
+            "trap_test": {
+              "scenario": "水下10厘米",
+              "expr": "rho*g*S",
+              "ref": 1000
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "深度已经用 m 表示，却又把它当成 cm 数值额外放大 100 倍。",
+            "wrong_expr": "p = rho*g*100*h",
+            "why": "水下 0.1 m 的压强为 1000 Pa；重复做厘米换算会错误得到 100 000 Pa。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "水下10厘米",
+              "expr": "rho*g*100*h",
+              "ref": 1000
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "认为容器越宽或形状不同，同种液体同深度处的压强必然不同。",
+            "why": "静止同种液体的压强由密度、重力加速度和竖直深度决定，不由容器外形直接决定。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "把沿容器壁量出的斜长当作液体深度。",
+            "why": "深度须从液面竖直向下量到测点，斜长通常更大；要结合几何图判断，不由面积式错误实测代替。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "水中距液面0.2 m处，由水的重力产生的附加压强是多少（不含液面大气压）？取水密度1000 kg/m³、g=10 N/kg。",
+          "solution": [
+            "p=rho*g*h=1000×10×0.2=2000 Pa。",
+            "深度取竖直距离，单位为 m。"
+          ],
+          "answer": "液体压强为 2000 Pa。"
+        },
+        "prereq": [
+          "pressure-01"
+        ],
+        "next": [
+          "pressure-03"
+        ],
+        "tags": [
+          "液体压强",
+          "液体深度",
+          "密度",
+          "液体压力"
+        ],
+        "core": [
+          {
+            "title": "液体压强",
+            "text": "液体因重力与流动性对底、壁和内部各方向施压；静止同种液体同深度压强相同。深度是自由液面到测点的竖直距离，不是倾斜距离或液柱总长度。连通器中同种液体、自由液面压强相同且静止时，各液面高度相同；不满足条件时不能直接套用。"
+          }
+        ],
+        "experiments": [
+          {
+            "title": "探究液体压强的影响因素",
+            "purpose": "比较方向、深度、液体密度。",
+            "apparatus": "液体压强计、橡皮膜探头、水、盐水和刻度尺。",
+            "variables": "同液同深度改朝向；同液改深度；同深度改液体密度，观察U形管高度差。",
+            "steps": [
+              "检查密封，确认同压时两侧液面等高。",
+              "同深度转探头，比较高度差；再增大深度。",
+              "保持深度改用较高密度液体，比较高度差。"
+            ],
+            "data": "设计示例（非实测）：水中10 cm与20 cm高度差不同，若按g=10 N/kg则模型压强1000、2000 Pa。",
+            "conclusion": "静止同种液体同深度各向压强相同；深度或液体密度较大时压强较大。",
+            "limits": "橡皮膜漏气、残余压差、深度量错影响结论；U形管高度差表示压强差，不直接当探头深度。",
+            "kind": "学生必做"
+          }
+        ],
+        "learning_scope": "初中"
+      },
+      "error_index": 2,
+      "chapter": "压强和浮力"
+    },
+    "diagnostic-pressure-02-4": {
+      "point": {
+        "id": "pressure-02",
+        "title": "液体的压强",
+        "level": "基础",
+        "definition": "液体内部向各个方向都有压强；同种液体中深度越大，压强越大。液体内部压强与液体密度、重力加速度和测点到液面的竖直深度有关，常用 p=rho*g*h 计算。",
+        "meaning": "深度 h 从液面向下竖直测量，不是沿斜面或容器壁量出的距离。液体压强还会传向容器侧壁和底部；同一深度的压强与容器形状无关。利用压强求某一面积上的压力时再用 F=pS，避免把压强和压力混淆。",
+        "symbols": {
+          "p": {
+            "desc": "液体内部压强",
+            "unit": "Pa"
+          },
+          "rho": {
+            "desc": "液体密度",
+            "unit": "kg/m^3"
+          },
+          "g": {
+            "desc": "当地重力加速度",
+            "unit": "N/kg"
+          },
+          "h": {
+            "desc": "测点到液面的竖直深度",
+            "unit": "m"
+          },
+          "S": {
+            "desc": "受液体压强作用的面积",
+            "unit": "m2"
+          },
+          "F": {
+            "desc": "该面积上液体压力",
+            "unit": "N"
+          }
+        },
+        "scenarios": {
+          "水下10厘米": {
+            "p": 1000,
+            "rho": 1000,
+            "g": 10,
+            "h": 0.1,
+            "S": 0.01,
+            "F": 10
+          },
+          "水下20厘米": {
+            "p": 2000,
+            "rho": 1000,
+            "g": 10,
+            "h": 0.2,
+            "S": 0.01,
+            "F": 20
+          }
+        },
+        "formulas": [
+          {
+            "name": "液体密度和深度求内部压强",
+            "expr": "p = rho*g*h",
+            "when": "静止液体中测点相对液面的深度 h 用 m，rho 用 kg/m^3。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "水下10厘米",
+                "expr": "rho*g*h",
+                "ref": 1000,
+                "note": "1000×10×0.1=1000 Pa。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "水下20厘米",
+                "expr": "rho*g*h",
+                "ref": 2000,
+                "note": "水深加倍，液体压强加倍。"
+              },
+              {
+                "type": "direction",
+                "scenario": "水下10厘米",
+                "var": "h",
+                "lo": 0.01,
+                "hi": 1,
+                "expr": "rho*g*h",
+                "expect": "up",
+                "note": "同种液体中深度增加，液体压强增大。"
+              },
+              {
+                "type": "scan",
+                "scenario": "水下10厘米",
+                "var": "h",
+                "lo": 0,
+                "hi": 10,
+                "note": "扫描非负深度，检查液体压强随深度变化。"
+              },
+              {
+                "type": "consistency",
+                "scenario": "水下10厘米",
+                "with": "pressure-02|液体密度和深度求内部压强",
+                "with_expr": "F/S",
+                "target": "液体内部压强",
+                "note": "本公式直接求p；参考端显式关系为F/S。两端使用同一情境和阶段，只核对该关系；with字段仅定位来源，不代表调用另一条被覆盖的公式。",
+                "verification_kind": "独立关系核对"
+              }
+            ]
+          },
+          {
+            "name": "由液体压强和面积求压力",
+            "expr": "F = p*S",
+            "when": "压强在所取小面积上近似均匀，F 用 N、S 用 m2。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "水下10厘米",
+                "expr": "p*S",
+                "ref": 10,
+                "note": "1000 Pa×0.01 m2=10 N。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "水下20厘米",
+                "expr": "p*S",
+                "ref": 20,
+                "note": "2000 Pa×0.01 m2=20 N。"
+              },
+              {
+                "type": "scan",
+                "scenario": "水下10厘米",
+                "var": "S",
+                "lo": 0,
+                "hi": 1,
+                "note": "扫描非负受力面积，压力计算有限。"
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "取静止液体中距液面深度为 h 的位置。",
+          "该位置上方液柱的重力随液体密度、重力加速度和高度变化。",
+          "液柱压力作用于单位面积后得到 p=rho*g*h。",
+          "若进一步求某面积上的压力，用压强乘面积。"
+        ],
+        "errors": [
+          {
+            "wrong": "把液体压强式中的深度误换成受力面积。",
+            "wrong_expr": "p = rho*g*S",
+            "why": "深度单位是m，面积是m²；替换后量纲变为Pa·m，不再是压强。这不是斜长与深度的数值混用。",
+            "caught_by": "量纲一致性",
+            "trap_test": {
+              "scenario": "水下10厘米",
+              "expr": "rho*g*S",
+              "ref": 1000
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "深度已经用 m 表示，却又把它当成 cm 数值额外放大 100 倍。",
+            "wrong_expr": "p = rho*g*100*h",
+            "why": "水下 0.1 m 的压强为 1000 Pa；重复做厘米换算会错误得到 100 000 Pa。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "水下10厘米",
+              "expr": "rho*g*100*h",
+              "ref": 1000
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "认为容器越宽或形状不同，同种液体同深度处的压强必然不同。",
+            "why": "静止同种液体的压强由密度、重力加速度和竖直深度决定，不由容器外形直接决定。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "把沿容器壁量出的斜长当作液体深度。",
+            "why": "深度须从液面竖直向下量到测点，斜长通常更大；要结合几何图判断，不由面积式错误实测代替。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "水中距液面0.2 m处，由水的重力产生的附加压强是多少（不含液面大气压）？取水密度1000 kg/m³、g=10 N/kg。",
+          "solution": [
+            "p=rho*g*h=1000×10×0.2=2000 Pa。",
+            "深度取竖直距离，单位为 m。"
+          ],
+          "answer": "液体压强为 2000 Pa。"
+        },
+        "prereq": [
+          "pressure-01"
+        ],
+        "next": [
+          "pressure-03"
+        ],
+        "tags": [
+          "液体压强",
+          "液体深度",
+          "密度",
+          "液体压力"
+        ],
+        "core": [
+          {
+            "title": "液体压强",
+            "text": "液体因重力与流动性对底、壁和内部各方向施压；静止同种液体同深度压强相同。深度是自由液面到测点的竖直距离，不是倾斜距离或液柱总长度。连通器中同种液体、自由液面压强相同且静止时，各液面高度相同；不满足条件时不能直接套用。"
+          }
+        ],
+        "experiments": [
+          {
+            "title": "探究液体压强的影响因素",
+            "purpose": "比较方向、深度、液体密度。",
+            "apparatus": "液体压强计、橡皮膜探头、水、盐水和刻度尺。",
+            "variables": "同液同深度改朝向；同液改深度；同深度改液体密度，观察U形管高度差。",
+            "steps": [
+              "检查密封，确认同压时两侧液面等高。",
+              "同深度转探头，比较高度差；再增大深度。",
+              "保持深度改用较高密度液体，比较高度差。"
+            ],
+            "data": "设计示例（非实测）：水中10 cm与20 cm高度差不同，若按g=10 N/kg则模型压强1000、2000 Pa。",
+            "conclusion": "静止同种液体同深度各向压强相同；深度或液体密度较大时压强较大。",
+            "limits": "橡皮膜漏气、残余压差、深度量错影响结论；U形管高度差表示压强差，不直接当探头深度。",
+            "kind": "学生必做"
+          }
+        ],
+        "learning_scope": "初中"
+      },
+      "error_index": 3,
+      "chapter": "压强和浮力"
+    },
+    "diagnostic-pressure-03-1": {
+      "point": {
+        "id": "pressure-03",
+        "title": "气体的压强",
+        "level": "基础",
+        "definition": "气体会对容器壁和浸入其中的物体产生压强；大气也对地面和物体施加压强。气体压强可通过实验测量，托里拆利水银柱可将大气压与液柱压强联系起来。",
+        "meaning": "大气压随高度、天气和测量环境变化；标准大气压约为 1.01×10^5 Pa。水银柱高度必须竖直测量，不能把容器形状误认为决定压强的因素。用液柱估算大气压属于受压液柱的定量拓展，初中核心还包括覆杯实验、吸盘和气压变化现象。",
+        "symbols": {
+          "p": {
+            "desc": "水银柱对应的大气压估值",
+            "unit": "Pa"
+          },
+          "rho": {
+            "desc": "水银密度",
+            "unit": "kg/m^3"
+          },
+          "g": {
+            "desc": "重力加速度",
+            "unit": "N/kg"
+          },
+          "h": {
+            "desc": "水银柱的竖直高度",
+            "unit": "m"
+          },
+          "h_cm": {
+            "desc": "同一水银柱竖直高度以厘米记录的读数",
+            "unit": "cm"
+          }
+        },
+        "scenarios": {
+          "标准大气压水银柱": {
+            "p": 101292.8,
+            "rho": 13600,
+            "g": 9.8,
+            "h": 0.76,
+            "h_cm": 76.0
+          },
+          "较低水银柱示例": {
+            "p": 99960,
+            "rho": 13600,
+            "g": 9.8,
+            "h": 0.75,
+            "h_cm": 75.0
+          }
+        },
+        "formulas": [
+          {
+            "name": "由水银柱高度估算大气压",
+            "expr": "p = rho*g*h",
+            "when": "静止水银柱的压强估算，忽略液面压强差；h 为竖直高度。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "标准大气压水银柱",
+                "expr": "rho*g*h",
+                "ref": 101292.8,
+                "note": "13600×9.8×0.76≈1.013×10^5 Pa。 "
+              },
+              {
+                "type": "numeric",
+                "scenario": "较低水银柱示例",
+                "expr": "rho*g*h",
+                "ref": 99960,
+                "note": "水银柱高度 0.75 m 时估值约为 9.996×10^4 Pa。 "
+              },
+              {
+                "type": "direction",
+                "scenario": "标准大气压水银柱",
+                "var": "h",
+                "lo": 0.5,
+                "hi": 0.9,
+                "expr": "rho*g*h",
+                "expect": "up",
+                "note": "水银密度和重力加速度固定时，液柱越高，对应压强越大。 "
+              },
+              {
+                "type": "scan",
+                "scenario": "标准大气压水银柱",
+                "var": "h",
+                "lo": 0.1,
+                "hi": 2,
+                "note": "扫描正液柱高度，压力估算保持有限。 "
+              },
+              {
+                "type": "consistency",
+                "scenario": "标准大气压水银柱",
+                "with": "pressure-03|由水银柱高度估算大气压",
+                "with_expr": "p",
+                "target": "水银柱对应的大气压估值",
+                "note": "直接求本公式输出，与情境中另列的p设计基准核对；数据是设计示例，不是实测。用于核对定义、反算或边界值，不宣称不同物理原理互证。",
+                "verification_kind": "独立设计情境数据核对"
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "水银柱静止时，液柱重量对下方截面产生压强。",
+          "按液体压强关系 p=rho*g*h，以水银密度和竖直高度估算。",
+          "将所得值与约 1.01×10^5 Pa 的标准大气压数量级比较，并说明实际大气压会变化。"
+        ],
+        "errors": [
+          {
+            "wrong": "把水银柱高度的厘米读数直接当作米代入。",
+            "wrong_expr": "p = rho*g*h_cm",
+            "why": "76 cm应先换0.76 m；13600×9.8×0.76=101292.8 Pa，把76当米得到10129280 Pa，放大100倍。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "标准大气压水银柱",
+              "expr": "rho*g*h_cm",
+              "ref": 101292.8
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "认为大气压只从上方作用，不会向各个方向传递。",
+            "why": "静止气体压强向各方向作用，覆杯实验、吸盘等现象都能体现大气压的作用。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "水银柱高 0.76 m，水银密度取 13600 kg/m^3，g=9.8 N/kg，估算大气压。",
+          "solution": [
+            "确认水银柱高度已用米表示。",
+            "p=rho*g*h=13600×9.8×0.76≈101293 Pa。"
+          ],
+          "answer": "约 1.01×10^5 Pa。"
+        },
+        "prereq": [
+          "pressure-02"
+        ],
+        "next": [
+          "pressure-04"
+        ],
+        "tags": [
+          "气体压强",
+          "大气压",
+          "水银柱",
+          "托里拆利实验",
+          "拓展"
+        ],
+        "core": [
+          {
+            "title": "气体压强与生活应用",
+            "text": "大气压向各方向作用，吸管饮水是管内压强降低后外部气压推动液体，不是吸力凭空拉水。标准大气压约1.01×10⁵ Pa，随海拔升高通常降低；沸点随气压降低而降低。活塞压缩密闭气体时若温度等条件明确，通常压强增大；流速较大的流体区域压强常较小，但要说明比较条件。水银有毒，托里拆利实验只作原理阅读，不要求学生自行操作。"
+          }
+        ],
+        "learning_scope": "初中"
+      },
+      "error_index": 0,
+      "chapter": "压强和浮力"
+    },
+    "diagnostic-pressure-03-2": {
+      "point": {
+        "id": "pressure-03",
+        "title": "气体的压强",
+        "level": "基础",
+        "definition": "气体会对容器壁和浸入其中的物体产生压强；大气也对地面和物体施加压强。气体压强可通过实验测量，托里拆利水银柱可将大气压与液柱压强联系起来。",
+        "meaning": "大气压随高度、天气和测量环境变化；标准大气压约为 1.01×10^5 Pa。水银柱高度必须竖直测量，不能把容器形状误认为决定压强的因素。用液柱估算大气压属于受压液柱的定量拓展，初中核心还包括覆杯实验、吸盘和气压变化现象。",
+        "symbols": {
+          "p": {
+            "desc": "水银柱对应的大气压估值",
+            "unit": "Pa"
+          },
+          "rho": {
+            "desc": "水银密度",
+            "unit": "kg/m^3"
+          },
+          "g": {
+            "desc": "重力加速度",
+            "unit": "N/kg"
+          },
+          "h": {
+            "desc": "水银柱的竖直高度",
+            "unit": "m"
+          },
+          "h_cm": {
+            "desc": "同一水银柱竖直高度以厘米记录的读数",
+            "unit": "cm"
+          }
+        },
+        "scenarios": {
+          "标准大气压水银柱": {
+            "p": 101292.8,
+            "rho": 13600,
+            "g": 9.8,
+            "h": 0.76,
+            "h_cm": 76.0
+          },
+          "较低水银柱示例": {
+            "p": 99960,
+            "rho": 13600,
+            "g": 9.8,
+            "h": 0.75,
+            "h_cm": 75.0
+          }
+        },
+        "formulas": [
+          {
+            "name": "由水银柱高度估算大气压",
+            "expr": "p = rho*g*h",
+            "when": "静止水银柱的压强估算，忽略液面压强差；h 为竖直高度。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "标准大气压水银柱",
+                "expr": "rho*g*h",
+                "ref": 101292.8,
+                "note": "13600×9.8×0.76≈1.013×10^5 Pa。 "
+              },
+              {
+                "type": "numeric",
+                "scenario": "较低水银柱示例",
+                "expr": "rho*g*h",
+                "ref": 99960,
+                "note": "水银柱高度 0.75 m 时估值约为 9.996×10^4 Pa。 "
+              },
+              {
+                "type": "direction",
+                "scenario": "标准大气压水银柱",
+                "var": "h",
+                "lo": 0.5,
+                "hi": 0.9,
+                "expr": "rho*g*h",
+                "expect": "up",
+                "note": "水银密度和重力加速度固定时，液柱越高，对应压强越大。 "
+              },
+              {
+                "type": "scan",
+                "scenario": "标准大气压水银柱",
+                "var": "h",
+                "lo": 0.1,
+                "hi": 2,
+                "note": "扫描正液柱高度，压力估算保持有限。 "
+              },
+              {
+                "type": "consistency",
+                "scenario": "标准大气压水银柱",
+                "with": "pressure-03|由水银柱高度估算大气压",
+                "with_expr": "p",
+                "target": "水银柱对应的大气压估值",
+                "note": "直接求本公式输出，与情境中另列的p设计基准核对；数据是设计示例，不是实测。用于核对定义、反算或边界值，不宣称不同物理原理互证。",
+                "verification_kind": "独立设计情境数据核对"
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "水银柱静止时，液柱重量对下方截面产生压强。",
+          "按液体压强关系 p=rho*g*h，以水银密度和竖直高度估算。",
+          "将所得值与约 1.01×10^5 Pa 的标准大气压数量级比较，并说明实际大气压会变化。"
+        ],
+        "errors": [
+          {
+            "wrong": "把水银柱高度的厘米读数直接当作米代入。",
+            "wrong_expr": "p = rho*g*h_cm",
+            "why": "76 cm应先换0.76 m；13600×9.8×0.76=101292.8 Pa，把76当米得到10129280 Pa，放大100倍。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "标准大气压水银柱",
+              "expr": "rho*g*h_cm",
+              "ref": 101292.8
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "认为大气压只从上方作用，不会向各个方向传递。",
+            "why": "静止气体压强向各方向作用，覆杯实验、吸盘等现象都能体现大气压的作用。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "水银柱高 0.76 m，水银密度取 13600 kg/m^3，g=9.8 N/kg，估算大气压。",
+          "solution": [
+            "确认水银柱高度已用米表示。",
+            "p=rho*g*h=13600×9.8×0.76≈101293 Pa。"
+          ],
+          "answer": "约 1.01×10^5 Pa。"
+        },
+        "prereq": [
+          "pressure-02"
+        ],
+        "next": [
+          "pressure-04"
+        ],
+        "tags": [
+          "气体压强",
+          "大气压",
+          "水银柱",
+          "托里拆利实验",
+          "拓展"
+        ],
+        "core": [
+          {
+            "title": "气体压强与生活应用",
+            "text": "大气压向各方向作用，吸管饮水是管内压强降低后外部气压推动液体，不是吸力凭空拉水。标准大气压约1.01×10⁵ Pa，随海拔升高通常降低；沸点随气压降低而降低。活塞压缩密闭气体时若温度等条件明确，通常压强增大；流速较大的流体区域压强常较小，但要说明比较条件。水银有毒，托里拆利实验只作原理阅读，不要求学生自行操作。"
+          }
+        ],
+        "learning_scope": "初中"
+      },
+      "error_index": 1,
+      "chapter": "压强和浮力"
+    },
+    "diagnostic-pressure-04-1": {
+      "point": {
+        "id": "pressure-04",
+        "title": "浮力",
+        "level": "基础",
+        "definition": "浸在液体或气体中的物体会受到竖直向上的浮力。阿基米德原理指出，浮力大小等于物体排开流体所受的重力，可用流体密度、重力加速度和排开体积定量计算。",
+        "meaning": "计算浮力时用排开流体的体积，不一定等于物体总体积：物体部分浸入时只取浸入部分。浮力方向竖直向上；同一流体中排开体积越大，浮力越大。称重法、阿基米德原理和排液重力比较可以作为不同测量路径。浮沉状态还需单独比较浮力与重力。",
+        "symbols": {
+          "Fb": {
+            "desc": "物体受到的浮力",
+            "unit": "N"
+          },
+          "rho": {
+            "desc": "液体密度",
+            "unit": "kg/m^3"
+          },
+          "g": {
+            "desc": "当地重力加速度",
+            "unit": "N/kg"
+          },
+          "V": {
+            "desc": "物体排开液体的体积",
+            "unit": "m^3"
+          },
+          "Gd": {
+            "desc": "排开液体所受的重力",
+            "unit": "N"
+          },
+          "G": {
+            "desc": "物体所受重力",
+            "unit": "N"
+          },
+          "V_total": {
+            "desc": "物体总体积，部分浸入时大于排开体积",
+            "unit": "m^3"
+          }
+        },
+        "scenarios": {
+          "水中石块": {
+            "Fb": 10,
+            "rho": 1000,
+            "g": 10,
+            "V": 0.001,
+            "Gd": 10,
+            "G": 15,
+            "V_total": 0.001
+          },
+          "漂浮木块": {
+            "Fb": 20,
+            "rho": 1000,
+            "g": 10,
+            "V": 0.002,
+            "Gd": 20,
+            "G": 20,
+            "V_total": 0.004
+          }
+        },
+        "formulas": [
+          {
+            "name": "流体密度和排开体积求浮力",
+            "expr": "Fb = rho*g*V",
+            "when": "V 是被排开的流体体积；物体完全浸没时 V 等于物体体积。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "水中石块",
+                "expr": "rho*g*V",
+                "ref": 10,
+                "note": "1000×10×0.001=10 N。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "漂浮木块",
+                "expr": "rho*g*V",
+                "ref": 20,
+                "note": "漂浮木块排开 0.002 m^3 水，浮力为 20 N。"
+              },
+              {
+                "type": "direction",
+                "scenario": "水中石块",
+                "var": "V",
+                "lo": 0.0001,
+                "hi": 0.01,
+                "expr": "rho*g*V",
+                "expect": "up",
+                "note": "同种液体中排开体积越大，浮力越大。"
+              },
+              {
+                "type": "scan",
+                "scenario": "水中石块",
+                "var": "V",
+                "lo": 0,
+                "hi": 1,
+                "note": "扫描非负排开体积，浮力保持有限且不为负。"
+              },
+              {
+                "type": "consistency",
+                "scenario": "漂浮木块",
+                "with": "pressure-04|流体密度和排开体积求浮力",
+                "with_expr": "Gd",
+                "target": "物体受到的浮力",
+                "note": "直接求本公式输出，与情境中另列的Gd设计基准核对；数据是设计示例，不是实测。用于核对定义、反算或边界值，不宣称不同物理原理互证。",
+                "verification_kind": "独立设计情境数据核对"
+              }
+            ]
+          },
+          {
+            "name": "阿基米德原理的排液重力关系",
+            "expr": "Fb = Gd",
+            "when": "Gd 是物体排开的液体或气体所受的重力。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "水中石块",
+                "expr": "Gd",
+                "ref": 10,
+                "note": "排开液体重力为 10 N，浮力也为 10 N。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "漂浮木块",
+                "expr": "Gd",
+                "ref": 20,
+                "note": "排开液体重力为 20 N，等于浮力。"
+              },
+              {
+                "type": "scan",
+                "scenario": "水中石块",
+                "var": "Gd",
+                "lo": 0,
+                "hi": 1000,
+                "note": "扫描非负排液重力，浮力关系保持有限。"
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "浮力来自液体对物体上下表面的压力差，方向竖直向上。",
+          "阿基米德原理把浮力与排开流体的重力相联系。",
+          "排开液体质量可由密度乘排开体积得到，再乘 g 得其重力。",
+          "物体漂浮或悬浮静止时，竖直方向合力为零，故浮力等于物体重力。"
+        ],
+        "errors": [
+          {
+            "wrong": "部分浸入时把物体总体积当成排开液体体积。",
+            "wrong_expr": "Fb = rho*g*V_total",
+            "why": "木块总体积0.004 m³、仅排水0.002 m³，正确浮力20 N；用总体积计算得40 N。水中完全浸没石块则不区分，必须选择部分浸入情境。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "漂浮木块",
+              "expr": "rho*g*V_total",
+              "ref": 20
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "认为浮力只作用于漂浮物体。",
+            "why": "浸没在液体中的石块也受到浮力；只要物体浸在流体中，就应分析浮力。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "一个物体浸没在水中并排开 0.003 m^3 的水，取水密度 1000 kg/m^3、g=10 N/kg，求浮力。",
+          "solution": [
+            "确认使用排开液体体积 V=0.003 m^3。",
+            "Fb=rho*g*V=1000×10×0.003=30 N。"
+          ],
+          "answer": "浮力为 30 N。"
+        },
+        "prereq": [
+          "pressure-02"
+        ],
+        "next": [
+          "pressure-05"
+        ],
+        "tags": [
+          "浮力",
+          "阿基米德原理",
+          "排开液体体积",
+          "排液重力"
+        ],
+        "core": [
+          {
+            "title": "浮力与排开体积",
+            "text": "浸在液体中的物体受向上浮力，液体上下表面对物体的压力差可解释其来源。浮力大小等于排开液体的重力，取决于液体密度和排开体积；部分浸入时排开体积小于物体总体积，完全浸没后在均匀液体中继续加深，浮力不因深度单独增大。物体和底部接触且底面无液体时，通常浮力模型需重新分析。"
+          }
+        ],
+        "experiments": [
+          {
+            "title": "探究浮力大小的影响因素",
+            "purpose": "研究排开体积和液体密度。",
+            "apparatus": "测力计、物体、水与盐水、量筒、细线。",
+            "variables": "同液改变浸入体积，体积相同改液体，完全浸没后改深度；观察称重差。",
+            "steps": [
+              "先在空气中读重力，浸液后读稳定拉力。",
+              "用重力减拉力求浮力，逐步增加浸入体积。",
+              "完全浸没后改深度，再保持体积换液体，分组比较。"
+            ],
+            "data": "设计示例（非实测）：空气中5 N、水中完全浸没3 N，浮力2 N；排水200 cm³按g=10也得2 N。",
+            "conclusion": "浮力随排开体积或液体密度增大而增大；均匀液体全浸没后仅改深度一般不改变浮力。",
+            "limits": "附着气泡、碰底碰壁、线未竖直影响测力；密度不同与体积不同不能同时改变后归因于一个因素。",
+            "kind": "学生必做"
+          }
+        ],
+        "learning_scope": "初中"
+      },
+      "error_index": 0,
+      "chapter": "压强和浮力"
+    },
+    "diagnostic-pressure-04-2": {
+      "point": {
+        "id": "pressure-04",
+        "title": "浮力",
+        "level": "基础",
+        "definition": "浸在液体或气体中的物体会受到竖直向上的浮力。阿基米德原理指出，浮力大小等于物体排开流体所受的重力，可用流体密度、重力加速度和排开体积定量计算。",
+        "meaning": "计算浮力时用排开流体的体积，不一定等于物体总体积：物体部分浸入时只取浸入部分。浮力方向竖直向上；同一流体中排开体积越大，浮力越大。称重法、阿基米德原理和排液重力比较可以作为不同测量路径。浮沉状态还需单独比较浮力与重力。",
+        "symbols": {
+          "Fb": {
+            "desc": "物体受到的浮力",
+            "unit": "N"
+          },
+          "rho": {
+            "desc": "液体密度",
+            "unit": "kg/m^3"
+          },
+          "g": {
+            "desc": "当地重力加速度",
+            "unit": "N/kg"
+          },
+          "V": {
+            "desc": "物体排开液体的体积",
+            "unit": "m^3"
+          },
+          "Gd": {
+            "desc": "排开液体所受的重力",
+            "unit": "N"
+          },
+          "G": {
+            "desc": "物体所受重力",
+            "unit": "N"
+          },
+          "V_total": {
+            "desc": "物体总体积，部分浸入时大于排开体积",
+            "unit": "m^3"
+          }
+        },
+        "scenarios": {
+          "水中石块": {
+            "Fb": 10,
+            "rho": 1000,
+            "g": 10,
+            "V": 0.001,
+            "Gd": 10,
+            "G": 15,
+            "V_total": 0.001
+          },
+          "漂浮木块": {
+            "Fb": 20,
+            "rho": 1000,
+            "g": 10,
+            "V": 0.002,
+            "Gd": 20,
+            "G": 20,
+            "V_total": 0.004
+          }
+        },
+        "formulas": [
+          {
+            "name": "流体密度和排开体积求浮力",
+            "expr": "Fb = rho*g*V",
+            "when": "V 是被排开的流体体积；物体完全浸没时 V 等于物体体积。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "水中石块",
+                "expr": "rho*g*V",
+                "ref": 10,
+                "note": "1000×10×0.001=10 N。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "漂浮木块",
+                "expr": "rho*g*V",
+                "ref": 20,
+                "note": "漂浮木块排开 0.002 m^3 水，浮力为 20 N。"
+              },
+              {
+                "type": "direction",
+                "scenario": "水中石块",
+                "var": "V",
+                "lo": 0.0001,
+                "hi": 0.01,
+                "expr": "rho*g*V",
+                "expect": "up",
+                "note": "同种液体中排开体积越大，浮力越大。"
+              },
+              {
+                "type": "scan",
+                "scenario": "水中石块",
+                "var": "V",
+                "lo": 0,
+                "hi": 1,
+                "note": "扫描非负排开体积，浮力保持有限且不为负。"
+              },
+              {
+                "type": "consistency",
+                "scenario": "漂浮木块",
+                "with": "pressure-04|流体密度和排开体积求浮力",
+                "with_expr": "Gd",
+                "target": "物体受到的浮力",
+                "note": "直接求本公式输出，与情境中另列的Gd设计基准核对；数据是设计示例，不是实测。用于核对定义、反算或边界值，不宣称不同物理原理互证。",
+                "verification_kind": "独立设计情境数据核对"
+              }
+            ]
+          },
+          {
+            "name": "阿基米德原理的排液重力关系",
+            "expr": "Fb = Gd",
+            "when": "Gd 是物体排开的液体或气体所受的重力。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "水中石块",
+                "expr": "Gd",
+                "ref": 10,
+                "note": "排开液体重力为 10 N，浮力也为 10 N。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "漂浮木块",
+                "expr": "Gd",
+                "ref": 20,
+                "note": "排开液体重力为 20 N，等于浮力。"
+              },
+              {
+                "type": "scan",
+                "scenario": "水中石块",
+                "var": "Gd",
+                "lo": 0,
+                "hi": 1000,
+                "note": "扫描非负排液重力，浮力关系保持有限。"
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "浮力来自液体对物体上下表面的压力差，方向竖直向上。",
+          "阿基米德原理把浮力与排开流体的重力相联系。",
+          "排开液体质量可由密度乘排开体积得到，再乘 g 得其重力。",
+          "物体漂浮或悬浮静止时，竖直方向合力为零，故浮力等于物体重力。"
+        ],
+        "errors": [
+          {
+            "wrong": "部分浸入时把物体总体积当成排开液体体积。",
+            "wrong_expr": "Fb = rho*g*V_total",
+            "why": "木块总体积0.004 m³、仅排水0.002 m³，正确浮力20 N；用总体积计算得40 N。水中完全浸没石块则不区分，必须选择部分浸入情境。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "漂浮木块",
+              "expr": "rho*g*V_total",
+              "ref": 20
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "认为浮力只作用于漂浮物体。",
+            "why": "浸没在液体中的石块也受到浮力；只要物体浸在流体中，就应分析浮力。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "一个物体浸没在水中并排开 0.003 m^3 的水，取水密度 1000 kg/m^3、g=10 N/kg，求浮力。",
+          "solution": [
+            "确认使用排开液体体积 V=0.003 m^3。",
+            "Fb=rho*g*V=1000×10×0.003=30 N。"
+          ],
+          "answer": "浮力为 30 N。"
+        },
+        "prereq": [
+          "pressure-02"
+        ],
+        "next": [
+          "pressure-05"
+        ],
+        "tags": [
+          "浮力",
+          "阿基米德原理",
+          "排开液体体积",
+          "排液重力"
+        ],
+        "core": [
+          {
+            "title": "浮力与排开体积",
+            "text": "浸在液体中的物体受向上浮力，液体上下表面对物体的压力差可解释其来源。浮力大小等于排开液体的重力，取决于液体密度和排开体积；部分浸入时排开体积小于物体总体积，完全浸没后在均匀液体中继续加深，浮力不因深度单独增大。物体和底部接触且底面无液体时，通常浮力模型需重新分析。"
+          }
+        ],
+        "experiments": [
+          {
+            "title": "探究浮力大小的影响因素",
+            "purpose": "研究排开体积和液体密度。",
+            "apparatus": "测力计、物体、水与盐水、量筒、细线。",
+            "variables": "同液改变浸入体积，体积相同改液体，完全浸没后改深度；观察称重差。",
+            "steps": [
+              "先在空气中读重力，浸液后读稳定拉力。",
+              "用重力减拉力求浮力，逐步增加浸入体积。",
+              "完全浸没后改深度，再保持体积换液体，分组比较。"
+            ],
+            "data": "设计示例（非实测）：空气中5 N、水中完全浸没3 N，浮力2 N；排水200 cm³按g=10也得2 N。",
+            "conclusion": "浮力随排开体积或液体密度增大而增大；均匀液体全浸没后仅改深度一般不改变浮力。",
+            "limits": "附着气泡、碰底碰壁、线未竖直影响测力；密度不同与体积不同不能同时改变后归因于一个因素。",
+            "kind": "学生必做"
+          }
+        ],
+        "learning_scope": "初中"
+      },
+      "error_index": 1,
+      "chapter": "压强和浮力"
+    },
+    "diagnostic-pressure-05-1": {
+      "point": {
+        "id": "pressure-05",
+        "title": "物体的浮与沉",
+        "level": "基础",
+        "definition": "物体浸入液体后，运动状态由浮力、重力和初始状态共同决定。漂浮或悬浮时物体处于平衡，浮力等于重力；下沉过程中若浮力小于重力，合力向下。",
+        "meaning": "判断浮沉先明确物体是否浸没，再比较浮力与重力：静止漂浮或悬浮时两力平衡；下沉加速时重力大于浮力；上浮时浮力大于重力。密度比较可帮助判断常见情境，但要注意空心、内部气体和形状对平均密度的影响。",
+        "symbols": {
+          "Fb": {
+            "desc": "物体受到的浮力",
+            "unit": "N"
+          },
+          "G": {
+            "desc": "物体所受重力",
+            "unit": "N"
+          },
+          "Gd": {
+            "desc": "排开液体所受的重力",
+            "unit": "N"
+          },
+          "rho": {
+            "desc": "液体密度",
+            "unit": "kg/m^3"
+          },
+          "g": {
+            "desc": "重力加速度",
+            "unit": "N/kg"
+          },
+          "V": {
+            "desc": "物体排开液体体积",
+            "unit": "m^3"
+          }
+        },
+        "scenarios": {
+          "漂浮木块": {
+            "Fb": 20,
+            "G": 20,
+            "Gd": 20,
+            "rho": 1000,
+            "g": 10,
+            "V": 0.002
+          },
+          "悬浮物体": {
+            "Fb": 8,
+            "G": 8,
+            "Gd": 8,
+            "rho": 1000,
+            "g": 10,
+            "V": 0.0008
+          }
+        },
+        "formulas": [
+          {
+            "name": "漂浮或悬浮时的力平衡",
+            "expr": "Fb = G",
+            "when": "物体处于静止漂浮或悬浮状态，合力为零。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "漂浮木块",
+                "expr": "G",
+                "ref": 20,
+                "note": "漂浮木块静止，浮力和重力均为 20 N。 "
+              },
+              {
+                "type": "numeric",
+                "scenario": "悬浮物体",
+                "expr": "G",
+                "ref": 8,
+                "note": "悬浮物体的浮力等于 8 N 重力。 "
+              },
+              {
+                "type": "direction",
+                "scenario": "漂浮木块",
+                "var": "G",
+                "lo": 0,
+                "hi": 100,
+                "expr": "G",
+                "expect": "up",
+                "note": "比较不同漂浮物体时，重力越大，平衡所需浮力也越大。 "
+              },
+              {
+                "type": "scan",
+                "scenario": "漂浮木块",
+                "var": "G",
+                "lo": 0,
+                "hi": 1000,
+                "note": "扫描非负重力，平衡关系保持有限。 "
+              },
+              {
+                "type": "consistency",
+                "scenario": "漂浮木块",
+                "with": "pressure-05|漂浮或悬浮时的力平衡",
+                "with_expr": "Gd",
+                "target": "物体受到的浮力",
+                "note": "直接求本公式输出，与情境中另列的Gd设计基准核对；数据是设计示例，不是实测。用于核对定义、反算或边界值，不宣称不同物理原理互证。",
+                "verification_kind": "独立设计情境数据核对"
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "画出物体所受的重力和浮力，确认它们方向相反。",
+          "静止漂浮或悬浮时合力为零，因此浮力大小等于重力大小。",
+          "运动中则比较两力大小判断加速度方向；不要把平衡条件套用于下沉加速过程。"
+        ],
+        "errors": [
+          {
+            "wrong": "把静止漂浮时浮力大小误写成重力的两倍。",
+            "wrong_expr": "Fb = 2*G",
+            "why": "静止漂浮且仅受重力和浮力时两力平衡，20 N重力对应20 N浮力，不是40 N。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "漂浮木块",
+              "expr": "2*G",
+              "ref": 20
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "把“漂浮”和“悬浮”理解成浮力方向不同。",
+            "why": "两种状态下浮力都竖直向上；区别是物体处于液面还是浸没在液体内部。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "把正在加速下沉的物体也直接按浮力等于重力处理。",
+            "why": "只有平衡等条件下才能等同；仅受重力与浮力而向下加速时重力大于浮力，须先明确状态。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "某木块漂浮在水面，重力为 3 N，求它受到的浮力。",
+          "solution": [
+            "漂浮状态稳定，木块处于平衡。",
+            "因此浮力大小等于重力，Fb=3 N。"
+          ],
+          "answer": "浮力为 3 N。"
+        },
+        "prereq": [
+          "pressure-04"
+        ],
+        "next": [],
+        "tags": [
+          "物体的浮与沉",
+          "漂浮",
+          "悬浮",
+          "下沉",
+          "浮力与重力"
+        ],
+        "core": [
+          {
+            "title": "物体的浮与沉",
+            "text": "只受重力和浮力的物体，浮力大于重力时向上加速，小于重力时向下加速，相等时合力零。静止漂浮时部分体积浸入，静止悬浮时全部浸入且都满足浮力等于重力。对均匀实心、全浸没模型可比较物体与液体密度；空心船要比较总质量与排水能力。潜水艇改变总重力，轮船改变排水体积，气球借气体浮力；不能把密度判据无条件用于空心模型。"
+          },
+          {
+            "title": "跨学科实践（原创任务）",
+            "text": "设计承载小物的纸船：在相同水盆、相同载荷位置下比较船形，记录载荷和浸入程度，解释排开水的重力与总重力的关系。联系几何、材料和稳定性，避免把船的材料密度当整体平均密度。"
+          }
+        ],
+        "learning_scope": "初中"
+      },
+      "error_index": 0,
+      "chapter": "压强和浮力"
+    },
+    "diagnostic-pressure-05-2": {
+      "point": {
+        "id": "pressure-05",
+        "title": "物体的浮与沉",
+        "level": "基础",
+        "definition": "物体浸入液体后，运动状态由浮力、重力和初始状态共同决定。漂浮或悬浮时物体处于平衡，浮力等于重力；下沉过程中若浮力小于重力，合力向下。",
+        "meaning": "判断浮沉先明确物体是否浸没，再比较浮力与重力：静止漂浮或悬浮时两力平衡；下沉加速时重力大于浮力；上浮时浮力大于重力。密度比较可帮助判断常见情境，但要注意空心、内部气体和形状对平均密度的影响。",
+        "symbols": {
+          "Fb": {
+            "desc": "物体受到的浮力",
+            "unit": "N"
+          },
+          "G": {
+            "desc": "物体所受重力",
+            "unit": "N"
+          },
+          "Gd": {
+            "desc": "排开液体所受的重力",
+            "unit": "N"
+          },
+          "rho": {
+            "desc": "液体密度",
+            "unit": "kg/m^3"
+          },
+          "g": {
+            "desc": "重力加速度",
+            "unit": "N/kg"
+          },
+          "V": {
+            "desc": "物体排开液体体积",
+            "unit": "m^3"
+          }
+        },
+        "scenarios": {
+          "漂浮木块": {
+            "Fb": 20,
+            "G": 20,
+            "Gd": 20,
+            "rho": 1000,
+            "g": 10,
+            "V": 0.002
+          },
+          "悬浮物体": {
+            "Fb": 8,
+            "G": 8,
+            "Gd": 8,
+            "rho": 1000,
+            "g": 10,
+            "V": 0.0008
+          }
+        },
+        "formulas": [
+          {
+            "name": "漂浮或悬浮时的力平衡",
+            "expr": "Fb = G",
+            "when": "物体处于静止漂浮或悬浮状态，合力为零。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "漂浮木块",
+                "expr": "G",
+                "ref": 20,
+                "note": "漂浮木块静止，浮力和重力均为 20 N。 "
+              },
+              {
+                "type": "numeric",
+                "scenario": "悬浮物体",
+                "expr": "G",
+                "ref": 8,
+                "note": "悬浮物体的浮力等于 8 N 重力。 "
+              },
+              {
+                "type": "direction",
+                "scenario": "漂浮木块",
+                "var": "G",
+                "lo": 0,
+                "hi": 100,
+                "expr": "G",
+                "expect": "up",
+                "note": "比较不同漂浮物体时，重力越大，平衡所需浮力也越大。 "
+              },
+              {
+                "type": "scan",
+                "scenario": "漂浮木块",
+                "var": "G",
+                "lo": 0,
+                "hi": 1000,
+                "note": "扫描非负重力，平衡关系保持有限。 "
+              },
+              {
+                "type": "consistency",
+                "scenario": "漂浮木块",
+                "with": "pressure-05|漂浮或悬浮时的力平衡",
+                "with_expr": "Gd",
+                "target": "物体受到的浮力",
+                "note": "直接求本公式输出，与情境中另列的Gd设计基准核对；数据是设计示例，不是实测。用于核对定义、反算或边界值，不宣称不同物理原理互证。",
+                "verification_kind": "独立设计情境数据核对"
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "画出物体所受的重力和浮力，确认它们方向相反。",
+          "静止漂浮或悬浮时合力为零，因此浮力大小等于重力大小。",
+          "运动中则比较两力大小判断加速度方向；不要把平衡条件套用于下沉加速过程。"
+        ],
+        "errors": [
+          {
+            "wrong": "把静止漂浮时浮力大小误写成重力的两倍。",
+            "wrong_expr": "Fb = 2*G",
+            "why": "静止漂浮且仅受重力和浮力时两力平衡，20 N重力对应20 N浮力，不是40 N。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "漂浮木块",
+              "expr": "2*G",
+              "ref": 20
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "把“漂浮”和“悬浮”理解成浮力方向不同。",
+            "why": "两种状态下浮力都竖直向上；区别是物体处于液面还是浸没在液体内部。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "把正在加速下沉的物体也直接按浮力等于重力处理。",
+            "why": "只有平衡等条件下才能等同；仅受重力与浮力而向下加速时重力大于浮力，须先明确状态。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "某木块漂浮在水面，重力为 3 N，求它受到的浮力。",
+          "solution": [
+            "漂浮状态稳定，木块处于平衡。",
+            "因此浮力大小等于重力，Fb=3 N。"
+          ],
+          "answer": "浮力为 3 N。"
+        },
+        "prereq": [
+          "pressure-04"
+        ],
+        "next": [],
+        "tags": [
+          "物体的浮与沉",
+          "漂浮",
+          "悬浮",
+          "下沉",
+          "浮力与重力"
+        ],
+        "core": [
+          {
+            "title": "物体的浮与沉",
+            "text": "只受重力和浮力的物体，浮力大于重力时向上加速，小于重力时向下加速，相等时合力零。静止漂浮时部分体积浸入，静止悬浮时全部浸入且都满足浮力等于重力。对均匀实心、全浸没模型可比较物体与液体密度；空心船要比较总质量与排水能力。潜水艇改变总重力，轮船改变排水体积，气球借气体浮力；不能把密度判据无条件用于空心模型。"
+          },
+          {
+            "title": "跨学科实践（原创任务）",
+            "text": "设计承载小物的纸船：在相同水盆、相同载荷位置下比较船形，记录载荷和浸入程度，解释排开水的重力与总重力的关系。联系几何、材料和稳定性，避免把船的材料密度当整体平均密度。"
+          }
+        ],
+        "learning_scope": "初中"
+      },
+      "error_index": 1,
+      "chapter": "压强和浮力"
+    },
+    "diagnostic-pressure-05-3": {
+      "point": {
+        "id": "pressure-05",
+        "title": "物体的浮与沉",
+        "level": "基础",
+        "definition": "物体浸入液体后，运动状态由浮力、重力和初始状态共同决定。漂浮或悬浮时物体处于平衡，浮力等于重力；下沉过程中若浮力小于重力，合力向下。",
+        "meaning": "判断浮沉先明确物体是否浸没，再比较浮力与重力：静止漂浮或悬浮时两力平衡；下沉加速时重力大于浮力；上浮时浮力大于重力。密度比较可帮助判断常见情境，但要注意空心、内部气体和形状对平均密度的影响。",
+        "symbols": {
+          "Fb": {
+            "desc": "物体受到的浮力",
+            "unit": "N"
+          },
+          "G": {
+            "desc": "物体所受重力",
+            "unit": "N"
+          },
+          "Gd": {
+            "desc": "排开液体所受的重力",
+            "unit": "N"
+          },
+          "rho": {
+            "desc": "液体密度",
+            "unit": "kg/m^3"
+          },
+          "g": {
+            "desc": "重力加速度",
+            "unit": "N/kg"
+          },
+          "V": {
+            "desc": "物体排开液体体积",
+            "unit": "m^3"
+          }
+        },
+        "scenarios": {
+          "漂浮木块": {
+            "Fb": 20,
+            "G": 20,
+            "Gd": 20,
+            "rho": 1000,
+            "g": 10,
+            "V": 0.002
+          },
+          "悬浮物体": {
+            "Fb": 8,
+            "G": 8,
+            "Gd": 8,
+            "rho": 1000,
+            "g": 10,
+            "V": 0.0008
+          }
+        },
+        "formulas": [
+          {
+            "name": "漂浮或悬浮时的力平衡",
+            "expr": "Fb = G",
+            "when": "物体处于静止漂浮或悬浮状态，合力为零。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "漂浮木块",
+                "expr": "G",
+                "ref": 20,
+                "note": "漂浮木块静止，浮力和重力均为 20 N。 "
+              },
+              {
+                "type": "numeric",
+                "scenario": "悬浮物体",
+                "expr": "G",
+                "ref": 8,
+                "note": "悬浮物体的浮力等于 8 N 重力。 "
+              },
+              {
+                "type": "direction",
+                "scenario": "漂浮木块",
+                "var": "G",
+                "lo": 0,
+                "hi": 100,
+                "expr": "G",
+                "expect": "up",
+                "note": "比较不同漂浮物体时，重力越大，平衡所需浮力也越大。 "
+              },
+              {
+                "type": "scan",
+                "scenario": "漂浮木块",
+                "var": "G",
+                "lo": 0,
+                "hi": 1000,
+                "note": "扫描非负重力，平衡关系保持有限。 "
+              },
+              {
+                "type": "consistency",
+                "scenario": "漂浮木块",
+                "with": "pressure-05|漂浮或悬浮时的力平衡",
+                "with_expr": "Gd",
+                "target": "物体受到的浮力",
+                "note": "直接求本公式输出，与情境中另列的Gd设计基准核对；数据是设计示例，不是实测。用于核对定义、反算或边界值，不宣称不同物理原理互证。",
+                "verification_kind": "独立设计情境数据核对"
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "画出物体所受的重力和浮力，确认它们方向相反。",
+          "静止漂浮或悬浮时合力为零，因此浮力大小等于重力大小。",
+          "运动中则比较两力大小判断加速度方向；不要把平衡条件套用于下沉加速过程。"
+        ],
+        "errors": [
+          {
+            "wrong": "把静止漂浮时浮力大小误写成重力的两倍。",
+            "wrong_expr": "Fb = 2*G",
+            "why": "静止漂浮且仅受重力和浮力时两力平衡，20 N重力对应20 N浮力，不是40 N。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "漂浮木块",
+              "expr": "2*G",
+              "ref": 20
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "把“漂浮”和“悬浮”理解成浮力方向不同。",
+            "why": "两种状态下浮力都竖直向上；区别是物体处于液面还是浸没在液体内部。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "把正在加速下沉的物体也直接按浮力等于重力处理。",
+            "why": "只有平衡等条件下才能等同；仅受重力与浮力而向下加速时重力大于浮力，须先明确状态。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "某木块漂浮在水面，重力为 3 N，求它受到的浮力。",
+          "solution": [
+            "漂浮状态稳定，木块处于平衡。",
+            "因此浮力大小等于重力，Fb=3 N。"
+          ],
+          "answer": "浮力为 3 N。"
+        },
+        "prereq": [
+          "pressure-04"
+        ],
+        "next": [],
+        "tags": [
+          "物体的浮与沉",
+          "漂浮",
+          "悬浮",
+          "下沉",
+          "浮力与重力"
+        ],
+        "core": [
+          {
+            "title": "物体的浮与沉",
+            "text": "只受重力和浮力的物体，浮力大于重力时向上加速，小于重力时向下加速，相等时合力零。静止漂浮时部分体积浸入，静止悬浮时全部浸入且都满足浮力等于重力。对均匀实心、全浸没模型可比较物体与液体密度；空心船要比较总质量与排水能力。潜水艇改变总重力，轮船改变排水体积，气球借气体浮力；不能把密度判据无条件用于空心模型。"
+          },
+          {
+            "title": "跨学科实践（原创任务）",
+            "text": "设计承载小物的纸船：在相同水盆、相同载荷位置下比较船形，记录载荷和浸入程度，解释排开水的重力与总重力的关系。联系几何、材料和稳定性，避免把船的材料密度当整体平均密度。"
+          }
+        ],
+        "learning_scope": "初中"
+      },
+      "error_index": 2,
+      "chapter": "压强和浮力"
+    }
+  },
+  "generator_version": "2026-10-04-条件过程返工-8"
+}

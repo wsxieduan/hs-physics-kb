@@ -1,0 +1,4594 @@
+{
+  "segment": "初中",
+  "chapter": "机械能和内能",
+  "source_file": "12_energy_heat.json",
+  "questions": [
+    {
+      "id": "diagnostic-energy-01-1",
+      "point_id": "energy-01",
+      "point_title": "机械能",
+      "chapter": "机械能和内能",
+      "stem": "在“机械能”中，拓展计算，非本卡初中必背主线。适用于物体平动的动能计算，m 用 kg、v 用 m/s。。物体动能的单位为J。下列哪一表达式的量纲与该目标量一致？",
+      "options": [
+        {
+          "label": "A",
+          "text": "E<sub>k</sub> = ½m·v²"
+        },
+        {
+          "label": "B",
+          "text": "E<sub>k</sub> = m·v"
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "动能的单位应为 J，m·v 的单位是 kg·m/s；量纲与数值关系都不符。\n知识点条件：质量相同时速度越大，动能越大；速度相同时质量越大，动能越大。相对同一参考面，质量相同时高度越高，重力势能越大；高度相同时质量越大，重力势能越大。同一弹性物体在弹性限度内，形变量越大，弹性势能一般越大。机械能可在不同形式间转化，有摩擦等耗散时机械能可能减少，但总能量不消失。\n推导依据：物体运动时具有动能，计算时使用质量和速度。；相对参考面被举高的物体具有重力势能，计算时使用质量、g 和高度。；把动能与重力势能相加，得到该参考面下的机械能。；分析能量转化时，检查摩擦等因素是否使机械能转化为内能。\n卡片公式各自的适用条件（不是本题共同前提）：\n物体动能：拓展计算，非本卡初中必背主线。适用于物体平动的动能计算，m 用 kg、v 用 m/s。\n物体重力势能：拓展计算，非本卡初中必背主线。h 从选定参考面竖直量起，g 取当地值。\n动能与各类势能组成机械能：机械能账目包含动能、重力势能和弹性势能；参考面一致，其他机械储能另计。\n由速度和高度直接求机械能：拓展计算，非本卡初中必背主线。同一物体相对同一参考面计重力势能，机械能只包含动能和重力势能。",
+      "error_type": "量纲一致性",
+      "judging": "auto",
+      "source_error_index": 0,
+      "source_caught_by": "量纲一致性",
+      "wrong_expr": "E<sub>k</sub> = m·v",
+      "trap_test": {
+        "scenario": "高处小球",
+        "expr": "m*v",
+        "ref": 9
+      },
+      "level": "基础",
+      "learning_scope": "初中主线；公式含拓展",
+      "answer_evidence": {
+        "kind": "dimension",
+        "target": "Ek",
+        "correct_expression": "Ek = 0.5*m*v^2",
+        "distractor_expression": "Ek = m*v",
+        "target_dimension": "M·L^2·T^-2",
+        "distractor_dimension": "M·L·T^-1"
+      },
+      "review": {
+        "confidence": "medium",
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": true,
+          "no_answer_leak_in_options": true
+        },
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。",
+        "material": {
+          "anchors": [
+            {
+              "kind": "公式量纲",
+              "name": "本题目标量与等式",
+              "expression": "Ek = 0.5*m*v^2",
+              "when": "量纲相符是必要条件，不能据此证明系数或物理条件正确",
+              "display": "E<sub>k</sub> = ½m·v²"
+            }
+          ],
+          "source": {
+            "nature": "原创量纲辨析命题；无实测数据",
+            "source_error_index": 0
+          },
+          "predicted_errors": [
+            {
+              "option": "B",
+              "text": "E<sub>k</sub> = m·v",
+              "reason": "动能的单位应为 J，m*v 的单位是 kg·m/s；量纲与数值关系都不符。",
+              "expression": "Ek = m*v",
+              "status": "误答原因预测，待教师确认；未采集学生作答证据"
+            }
+          ],
+          "difficulty_note": "建议难度沿用本题level（源卡难度）；尚非题目难度实测，待教师调整",
+          "estimated_seconds": [
+            60,
+            120
+          ],
+          "time_basis": "未做学生计时；按现有难度给出备课估计区间，待教师确认",
+          "machine_checks": [
+            {
+              "name": "题目ID关联源知识点",
+              "passed": true
+            },
+            {
+              "name": "选项标签唯一且参考标签存在",
+              "passed": true
+            },
+            {
+              "name": "选项文本互异",
+              "passed": true
+            },
+            {
+              "name": "正确式量纲一致",
+              "passed": true,
+              "actual": {
+                "type": "dimension",
+                "type_name": "量纲一致性",
+                "formula": "教师审核证据",
+                "ok": true,
+                "detail": "左端M·L^2·T^-2，右端M·L^2·T^-2",
+                "note": "",
+                "error": null,
+                "evaluation_status": "success",
+                "failure_reason": null,
+                "result_dimension": "M·L^2·T^-2",
+                "reference_dimension": "M·L^2·T^-2",
+                "diagnostics": {},
+                "physical_error_identified": false
+              }
+            },
+            {
+              "name": "干扰式量纲冲突",
+              "passed": true,
+              "actual": {
+                "type": "dimension",
+                "type_name": "量纲一致性",
+                "formula": "教师审核证据",
+                "ok": false,
+                "detail": "左端M·L^2·T^-2，右端M·L·T^-1",
+                "note": "",
+                "error": null,
+                "evaluation_status": "dimension_conflict",
+                "failure_reason": "dimension_conflict",
+                "result_dimension": "M·L·T^-1",
+                "reference_dimension": "M·L^2·T^-2",
+                "diagnostics": {},
+                "physical_error_identified": true
+              }
+            }
+          ],
+          "machine_boundary": "只列本次逐题实际执行项目；不把关联知识卡的方向、扫描或一致性检查算作本题已验。概念题未验命题真假。",
+          "human_review_items": [
+            "题干条件是否充分、清楚且符合学段",
+            "参考结论在指定条件下是否唯一",
+            "干扰项是否合理、对应真实认知问题且无答案暗示",
+            "公式或概念锚点是否准确",
+            "建议难度及用时是否适合教学",
+            "语言、装置与安全操作是否恰当"
+          ],
+          "reference_answer_note": "现有参考答案保持；即使本地可以判选项，也仍须教师审核教学可用性"
+        }
+      }
+    },
+    {
+      "id": "diagnostic-energy-01-2",
+      "point_id": "energy-01",
+      "point_title": "机械能",
+      "chapter": "机械能和内能",
+      "stem": "在“机械能”的模型下，m（物体质量）=2 kg；v（物体速度大小）=3 m/s。条件：拓展计算，非本卡初中必背主线。适用于物体平动的动能计算，m 用 kg、v 用 m/s。。求物体动能（E<sub>k</sub>）。这些数值是设计示例。",
+      "options": [
+        {
+          "label": "A",
+          "text": "9 J"
+        },
+        {
+          "label": "B",
+          "text": "18 J"
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "使用物体动能：½m·v²，代入得9 J。另一结果来自m·v²，算得18 J。\n高处小球的动能为 0.5×2×3²=9 J；漏掉二分之一会得到 18 J，量纲仍正确但数值翻倍。\n知识点条件：质量相同时速度越大，动能越大；速度相同时质量越大，动能越大。相对同一参考面，质量相同时高度越高，重力势能越大；高度相同时质量越大，重力势能越大。同一弹性物体在弹性限度内，形变量越大，弹性势能一般越大。机械能可在不同形式间转化，有摩擦等耗散时机械能可能减少，但总能量不消失。\n推导依据：物体运动时具有动能，计算时使用质量和速度。；相对参考面被举高的物体具有重力势能，计算时使用质量、g 和高度。；把动能与重力势能相加，得到该参考面下的机械能。；分析能量转化时，检查摩擦等因素是否使机械能转化为内能。\n卡片公式各自的适用条件（不是本题共同前提）：\n物体动能：拓展计算，非本卡初中必背主线。适用于物体平动的动能计算，m 用 kg、v 用 m/s。\n物体重力势能：拓展计算，非本卡初中必背主线。h 从选定参考面竖直量起，g 取当地值。\n动能与各类势能组成机械能：机械能账目包含动能、重力势能和弹性势能；参考面一致，其他机械储能另计。\n由速度和高度直接求机械能：拓展计算，非本卡初中必背主线。同一物体相对同一参考面计重力势能，机械能只包含动能和重力势能。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 1,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "E<sub>k</sub> = m·v²",
+      "trap_test": {
+        "scenario": "高处小球",
+        "expr": "m*v^2",
+        "ref": 9
+      },
+      "level": "基础",
+      "learning_scope": "初中主线；公式含拓展",
+      "answer_evidence": {
+        "kind": "numeric",
+        "scenario": "高处小球",
+        "parameters": {
+          "m": 2,
+          "v": 3,
+          "Ek": 9,
+          "g": 10,
+          "h": 5,
+          "Ep": 100,
+          "Em": 109,
+          "Ee": 0
+        },
+        "target": "Ek",
+        "unit": "J",
+        "reference": 9,
+        "correct_proof": {
+          "expression": "0.5*m*v^2",
+          "formula": "物体动能",
+          "value": 9.0,
+          "when": "拓展计算，非本卡初中必背主线。适用于物体平动的动能计算，m 用 kg、v 用 m/s。"
+        },
+        "distractor_expression": "m*v^2",
+        "distractor_value": 18.0,
+        "dimension_matches": true,
+        "independent_evaluation": true
+      },
+      "review": {
+        "confidence": "medium",
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": true,
+          "no_answer_leak_in_options": true
+        },
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。",
+        "material": {
+          "anchors": [
+            {
+              "kind": "公式",
+              "name": "物体动能",
+              "expression": "0.5*m*v^2",
+              "when": "拓展计算，非本卡初中必背主线。适用于物体平动的动能计算，m 用 kg、v 用 m/s。",
+              "display": "½m·v²"
+            }
+          ],
+          "source": {
+            "nature": "原创设计示例，非教材实测或真实实验记录",
+            "scenario": "高处小球",
+            "parameters": {
+              "m": 2,
+              "v": 3,
+              "Ek": 9,
+              "g": 10,
+              "h": 5,
+              "Ep": 100,
+              "Em": 109,
+              "Ee": 0
+            },
+            "data": [
+              "物体质量：2 kg",
+              "物体速度大小：3 m/s",
+              "物体动能：9 J",
+              "当地重力加速度：10 N/kg",
+              "相对选定参考面的高度：5 m",
+              "物体重力势能：100 J",
+              "动能、重力势能与弹性势能的总和：109 J",
+              "弹性势能，本卡只用已知储能作账目：0 J"
+            ]
+          },
+          "predicted_errors": [
+            {
+              "option": "B",
+              "text": "18 J",
+              "reason": "高处小球的动能为 0.5×2×3^2=9 J；漏掉二分之一会得到 18 J，量纲仍正确但数值翻倍。",
+              "expression": "m*v^2",
+              "status": "误答原因预测，待教师确认；未采集学生作答证据"
+            }
+          ],
+          "difficulty_note": "建议难度沿用本题level（源卡难度）；尚非题目难度实测，待教师调整",
+          "estimated_seconds": [
+            60,
+            120
+          ],
+          "time_basis": "未做学生计时；按现有难度给出备课估计区间，待教师确认",
+          "machine_checks": [
+            {
+              "name": "题目ID关联源知识点",
+              "passed": true
+            },
+            {
+              "name": "选项标签唯一且参考标签存在",
+              "passed": true
+            },
+            {
+              "name": "选项文本互异",
+              "passed": true
+            },
+            {
+              "name": "正确路径独立数值复算",
+              "passed": true
+            },
+            {
+              "name": "带量纲求值与独立求值一致",
+              "passed": true
+            },
+            {
+              "name": "干扰路径复算且与正确路径分离",
+              "passed": true
+            }
+          ],
+          "machine_boundary": "只列本次逐题实际执行项目；不把关联知识卡的方向、扫描或一致性检查算作本题已验。概念题未验命题真假。",
+          "human_review_items": [
+            "题干条件是否充分、清楚且符合学段",
+            "参考结论在指定条件下是否唯一",
+            "干扰项是否合理、对应真实认知问题且无答案暗示",
+            "公式或概念锚点是否准确",
+            "建议难度及用时是否适合教学",
+            "语言、装置与安全操作是否恰当"
+          ],
+          "reference_answer_note": "现有参考答案保持；即使本地可以判选项，也仍须教师审核教学可用性"
+        }
+      }
+    },
+    {
+      "id": "diagnostic-energy-01-3",
+      "point_id": "energy-01",
+      "point_title": "机械能",
+      "chapter": "机械能和内能",
+      "stem": "关于“机械能”，判断这一说法是否成立，并说明依据：\n重力势能数值依赖所选零势能参考面。",
+      "options": [
+        {
+          "label": "A",
+          "text": "该说法不成立。"
+        },
+        {
+          "label": "B",
+          "text": "该说法成立。"
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "重力势能数值依赖所选零势能参考面；比较同一过程能量变化时要保持参考面一致。\n知识点条件：质量相同时速度越大，动能越大；速度相同时质量越大，动能越大。相对同一参考面，质量相同时高度越高，重力势能越大；高度相同时质量越大，重力势能越大。同一弹性物体在弹性限度内，形变量越大，弹性势能一般越大。机械能可在不同形式间转化，有摩擦等耗散时机械能可能减少，但总能量不消失。\n推导依据：物体运动时具有动能，计算时使用质量和速度。；相对参考面被举高的物体具有重力势能，计算时使用质量、g 和高度。；把动能与重力势能相加，得到该参考面下的机械能。；分析能量转化时，检查摩擦等因素是否使机械能转化为内能。\n卡片公式各自的适用条件（不是本题共同前提）：\n物体动能：拓展计算，非本卡初中必背主线。适用于物体平动的动能计算，m 用 kg、v 用 m/s。\n物体重力势能：拓展计算，非本卡初中必背主线。h 从选定参考面竖直量起，g 取当地值。\n动能与各类势能组成机械能：机械能账目包含动能、重力势能和弹性势能；参考面一致，其他机械储能另计。\n由速度和高度直接求机械能：拓展计算，非本卡初中必背主线。同一物体相对同一参考面计重力势能，机械能只包含动能和重力势能。",
+      "error_type": "概念混淆",
+      "judging": "teacher",
+      "source_error_index": 2,
+      "source_caught_by": "人工审核",
+      "wrong_expr": null,
+      "trap_test": null,
+      "level": "基础",
+      "learning_scope": "初中主线；公式含拓展",
+      "answer_evidence": {
+        "kind": "teacher",
+        "claim_source": "why",
+        "reference_only": true,
+        "reason": "概念、操作或无法建立完整定量证据，教师确认条件与结论。"
+      },
+      "review": {
+        "confidence": "medium",
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": false,
+          "no_answer_leak_in_options": true
+        },
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。",
+        "material": {
+          "anchors": [
+            {
+              "kind": "概念或操作",
+              "name": "机械能",
+              "claim": "认为物体高度变化时重力势能与参考面无关。",
+              "correction_basis": "重力势能数值依赖所选零势能参考面；比较同一过程能量变化时要保持参考面一致。",
+              "note": "概念锚点及命题真假待教师确认；未套用任意第一条公式",
+              "display": "认为物体高度变化时重力势能与参考面无关。"
+            }
+          ],
+          "source": {
+            "nature": "原创概念/操作命题；无真实测量记录",
+            "source_error_index": 2
+          },
+          "predicted_errors": [
+            {
+              "option": "A",
+              "text": "该说法不成立。",
+              "reason": "重力势能数值依赖所选零势能参考面；比较同一过程能量变化时要保持参考面一致。",
+              "expression": null,
+              "status": "误答原因预测，待教师确认；未采集学生作答证据"
+            }
+          ],
+          "difficulty_note": "建议难度沿用本题level（源卡难度）；尚非题目难度实测，待教师调整",
+          "estimated_seconds": [
+            60,
+            120
+          ],
+          "time_basis": "未做学生计时；按现有难度给出备课估计区间，待教师确认",
+          "machine_checks": [
+            {
+              "name": "题目ID关联源知识点",
+              "passed": true
+            },
+            {
+              "name": "选项标签唯一且参考标签存在",
+              "passed": true
+            },
+            {
+              "name": "选项文本互异",
+              "passed": true
+            }
+          ],
+          "machine_boundary": "只列本次逐题实际执行项目；不把关联知识卡的方向、扫描或一致性检查算作本题已验。概念题未验命题真假。",
+          "human_review_items": [
+            "题干条件是否充分、清楚且符合学段",
+            "参考结论在指定条件下是否唯一",
+            "干扰项是否合理、对应真实认知问题且无答案暗示",
+            "公式或概念锚点是否准确",
+            "建议难度及用时是否适合教学",
+            "语言、装置与安全操作是否恰当"
+          ],
+          "reference_answer_note": "现有参考答案保持；即使本地可以判选项，也仍须教师审核教学可用性"
+        }
+      }
+    },
+    {
+      "id": "diagnostic-energy-03-1",
+      "point_id": "energy-03",
+      "point_title": "内能 热传递",
+      "chapter": "机械能和内能",
+      "stem": "在“内能 热传递”的模型下，Q<sub>吸</sub>（低温物体吸收的热量）=42000 J。条件：把参与热交换的物体作为近似绝热系统，忽略向环境、容器等散失的能量。。求高温物体放出的热量大小（Q<sub>放</sub>）。这些数值是设计示例。",
+      "options": [
+        {
+          "label": "A",
+          "text": "42000 J"
+        },
+        {
+          "label": "B",
+          "text": "84000 J"
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "使用绝热热交换中的放热吸热平衡：Q<sub>吸</sub>，代入得42000 J。另一结果来自2·Q<sub>吸</sub>，算得84000 J。\n封闭近似绝热系统的能量账目应相等；额外乘 2 会破坏热量平衡。\n知识点条件：热量是热传递过程中传递的能量，不是物体“含有”的一种物质。忽略与外界的能量交换和散失时，高温物体放出的热量等于低温物体吸收的热量；实际实验需要考虑容器、温度计和环境带走的能量。用水的比热容可估算吸热量，再与热平衡的能量账目核对。\n推导依据：确定热交换系统边界，并判断是否可近似忽略向环境散热。；记录高温物体放热量和低温物体吸热量的大小。；在近似绝热的系统内，两者大小相等；实际实验可将差值视作热损失与测量误差分析。\n卡片公式各自的适用条件（不是本题共同前提）：\n绝热热交换中的放热吸热平衡：把参与热交换的物体作为近似绝热系统，忽略向环境、容器等散失的能量。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 0,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "Q<sub>放</sub> = 2·Q<sub>吸</sub>",
+      "trap_test": {
+        "scenario": "水吸热与热水放热",
+        "expr": "2*Q_gained",
+        "ref": 42000
+      },
+      "level": "基础",
+      "learning_scope": "初中",
+      "answer_evidence": {
+        "kind": "numeric",
+        "scenario": "水吸热与热水放热",
+        "parameters": {
+          "Q_lost": 42000,
+          "Q_gained": 42000,
+          "c_h": 4200,
+          "m": 0.2,
+          "dT": 50
+        },
+        "target": "Q_lost",
+        "unit": "J",
+        "reference": 42000,
+        "correct_proof": {
+          "expression": "Q_gained",
+          "formula": "绝热热交换中的放热吸热平衡",
+          "value": 42000,
+          "when": "把参与热交换的物体作为近似绝热系统，忽略向环境、容器等散失的能量。"
+        },
+        "distractor_expression": "2*Q_gained",
+        "distractor_value": 84000.0,
+        "dimension_matches": true,
+        "independent_evaluation": true
+      },
+      "review": {
+        "confidence": "medium",
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": true,
+          "no_answer_leak_in_options": true
+        },
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。",
+        "material": {
+          "anchors": [
+            {
+              "kind": "公式",
+              "name": "绝热热交换中的放热吸热平衡",
+              "expression": "Q_gained",
+              "when": "把参与热交换的物体作为近似绝热系统，忽略向环境、容器等散失的能量。",
+              "display": "Q<sub>吸</sub>"
+            }
+          ],
+          "source": {
+            "nature": "原创设计示例，非教材实测或真实实验记录",
+            "scenario": "水吸热与热水放热",
+            "parameters": {
+              "Q_lost": 42000,
+              "Q_gained": 42000,
+              "c_h": 4200,
+              "m": 0.2,
+              "dT": 50
+            },
+            "data": [
+              "高温物体放出的热量大小：42000 J",
+              "低温物体吸收的热量：42000 J",
+              "被加热物质的比热容：4200 J/kg/℃",
+              "被加热物质质量：0.2 kg",
+              "被加热物质的温升：50 ℃"
+            ]
+          },
+          "predicted_errors": [
+            {
+              "option": "B",
+              "text": "84000 J",
+              "reason": "封闭近似绝热系统的能量账目应相等；额外乘 2 会破坏热量平衡。",
+              "expression": "2*Q_gained",
+              "status": "误答原因预测，待教师确认；未采集学生作答证据"
+            }
+          ],
+          "difficulty_note": "建议难度沿用本题level（源卡难度）；尚非题目难度实测，待教师调整",
+          "estimated_seconds": [
+            60,
+            120
+          ],
+          "time_basis": "未做学生计时；按现有难度给出备课估计区间，待教师确认",
+          "machine_checks": [
+            {
+              "name": "题目ID关联源知识点",
+              "passed": true
+            },
+            {
+              "name": "选项标签唯一且参考标签存在",
+              "passed": true
+            },
+            {
+              "name": "选项文本互异",
+              "passed": true
+            },
+            {
+              "name": "正确路径独立数值复算",
+              "passed": true
+            },
+            {
+              "name": "带量纲求值与独立求值一致",
+              "passed": true
+            },
+            {
+              "name": "干扰路径复算且与正确路径分离",
+              "passed": true
+            }
+          ],
+          "machine_boundary": "只列本次逐题实际执行项目；不把关联知识卡的方向、扫描或一致性检查算作本题已验。概念题未验命题真假。",
+          "human_review_items": [
+            "题干条件是否充分、清楚且符合学段",
+            "参考结论在指定条件下是否唯一",
+            "干扰项是否合理、对应真实认知问题且无答案暗示",
+            "公式或概念锚点是否准确",
+            "建议难度及用时是否适合教学",
+            "语言、装置与安全操作是否恰当"
+          ],
+          "reference_answer_note": "现有参考答案保持；即使本地可以判选项，也仍须教师审核教学可用性"
+        }
+      }
+    },
+    {
+      "id": "diagnostic-energy-03-2",
+      "point_id": "energy-03",
+      "point_title": "内能 热传递",
+      "chapter": "机械能和内能",
+      "stem": "关于“内能 热传递”，判断这一说法是否成立，并说明依据：\n热量是物体本身储存的一种物质。",
+      "options": [
+        {
+          "label": "A",
+          "text": "该说法成立。"
+        },
+        {
+          "label": "B",
+          "text": "该说法不成立。"
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "热量描述热传递过程中转移的能量；物体具有内能，而不是“含有热量”。\n知识点条件：热量是热传递过程中传递的能量，不是物体“含有”的一种物质。忽略与外界的能量交换和散失时，高温物体放出的热量等于低温物体吸收的热量；实际实验需要考虑容器、温度计和环境带走的能量。用水的比热容可估算吸热量，再与热平衡的能量账目核对。\n推导依据：确定热交换系统边界，并判断是否可近似忽略向环境散热。；记录高温物体放热量和低温物体吸热量的大小。；在近似绝热的系统内，两者大小相等；实际实验可将差值视作热损失与测量误差分析。\n卡片公式各自的适用条件（不是本题共同前提）：\n绝热热交换中的放热吸热平衡：把参与热交换的物体作为近似绝热系统，忽略向环境、容器等散失的能量。",
+      "error_type": "概念混淆",
+      "judging": "teacher",
+      "source_error_index": 1,
+      "source_caught_by": "人工审核",
+      "wrong_expr": null,
+      "trap_test": null,
+      "level": "基础",
+      "learning_scope": "初中",
+      "answer_evidence": {
+        "kind": "teacher",
+        "claim_source": "wrong",
+        "reference_only": true,
+        "reason": "概念、操作或无法建立完整定量证据，教师确认条件与结论。"
+      },
+      "review": {
+        "confidence": "medium",
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": false,
+          "no_answer_leak_in_options": true
+        },
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。",
+        "material": {
+          "anchors": [
+            {
+              "kind": "概念或操作",
+              "name": "内能 热传递",
+              "claim": "认为热量是物体本身储存的一种物质。",
+              "correction_basis": "热量描述热传递过程中转移的能量；物体具有内能，而不是“含有热量”。",
+              "note": "概念锚点及命题真假待教师确认；未套用任意第一条公式",
+              "display": "认为热量是物体本身储存的一种物质。"
+            }
+          ],
+          "source": {
+            "nature": "原创概念/操作命题；无真实测量记录",
+            "source_error_index": 1
+          },
+          "predicted_errors": [
+            {
+              "option": "A",
+              "text": "该说法成立。",
+              "reason": "热量描述热传递过程中转移的能量；物体具有内能，而不是“含有热量”。",
+              "expression": null,
+              "status": "误答原因预测，待教师确认；未采集学生作答证据"
+            }
+          ],
+          "difficulty_note": "建议难度沿用本题level（源卡难度）；尚非题目难度实测，待教师调整",
+          "estimated_seconds": [
+            60,
+            120
+          ],
+          "time_basis": "未做学生计时；按现有难度给出备课估计区间，待教师确认",
+          "machine_checks": [
+            {
+              "name": "题目ID关联源知识点",
+              "passed": true
+            },
+            {
+              "name": "选项标签唯一且参考标签存在",
+              "passed": true
+            },
+            {
+              "name": "选项文本互异",
+              "passed": true
+            }
+          ],
+          "machine_boundary": "只列本次逐题实际执行项目；不把关联知识卡的方向、扫描或一致性检查算作本题已验。概念题未验命题真假。",
+          "human_review_items": [
+            "题干条件是否充分、清楚且符合学段",
+            "参考结论在指定条件下是否唯一",
+            "干扰项是否合理、对应真实认知问题且无答案暗示",
+            "公式或概念锚点是否准确",
+            "建议难度及用时是否适合教学",
+            "语言、装置与安全操作是否恰当"
+          ],
+          "reference_answer_note": "现有参考答案保持；即使本地可以判选项，也仍须教师审核教学可用性"
+        }
+      }
+    },
+    {
+      "id": "diagnostic-energy-02-1",
+      "point_id": "energy-02",
+      "point_title": "物质的比热容",
+      "chapter": "机械能和内能",
+      "stem": "在“物质的比热容”中，无物态变化、比热容近似不变，dT 为温升，单位 ℃。。物体吸收的热量的单位为J。下列哪一表达式的量纲与该目标量一致？",
+      "options": [
+        {
+          "label": "A",
+          "text": "Q = c<sub>h</sub>·dT"
+        },
+        {
+          "label": "B",
+          "text": "Q = c<sub>h</sub>·m·dT"
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "比热容描述单位质量的吸热量，整块物体还要乘质量；半千克水升温 10℃ 吸热 21 000 J。\n知识点条件：水的比热容约为 4200 J/kg/℃，表示 1 kg 水升高 1℃ 约需吸收 4200 J。用 Q=c<sub>h</sub>·m·dT 计算时，先确认过程没有发生物态变化，并把质量、温升和热量单位统一。比热容是物质特性，不等于一整份物体吸收的热量。\n推导依据：记录被加热物体质量 m 和比热容 c<sub>h</sub>。；测量加热前后温度，求温升 dT。；在无物态变化条件下，用 Q=c<sub>h</sub>·m·dT 求吸收热量。；实验中还要考虑容器吸热和散热等误差来源。\n卡片公式各自的适用条件（不是本题共同前提）：\n加热温度变化时的吸热量：无物态变化、比热容近似不变，dT 为温升，单位 ℃。\n由吸热量求比热容：样品无物态变化，吸收热量 Q、质量 m 和温升 dT 已知。",
+      "error_type": "量纲一致性",
+      "judging": "auto",
+      "source_error_index": 0,
+      "source_caught_by": "量纲一致性",
+      "wrong_expr": "Q = c<sub>h</sub>·dT",
+      "trap_test": {
+        "kind": "dimension",
+        "target": "Q = c_h*dT",
+        "expect": "mismatch",
+        "lhs_dim": "M·L^2·T^-2",
+        "rhs_dim": "L^2·T^-2",
+        "note": "正式引擎验证量纲不一致；不计作同量纲错误数值实测。"
+      },
+      "level": "基础",
+      "learning_scope": "初中",
+      "answer_evidence": {
+        "kind": "dimension",
+        "target": "Q",
+        "correct_expression": "Q = c_h*m*dT",
+        "distractor_expression": "Q = c_h*dT",
+        "target_dimension": "M·L^2·T^-2",
+        "distractor_dimension": "L^2·T^-2"
+      },
+      "review": {
+        "confidence": "medium",
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": true,
+          "no_answer_leak_in_options": true
+        },
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。",
+        "material": {
+          "anchors": [
+            {
+              "kind": "公式量纲",
+              "name": "本题目标量与等式",
+              "expression": "Q = c_h*m*dT",
+              "when": "量纲相符是必要条件，不能据此证明系数或物理条件正确",
+              "display": "Q = c<sub>h</sub>·m·dT"
+            }
+          ],
+          "source": {
+            "nature": "原创量纲辨析命题；无实测数据",
+            "source_error_index": 0
+          },
+          "predicted_errors": [
+            {
+              "option": "A",
+              "text": "Q = c<sub>h</sub>·dT",
+              "reason": "比热容描述单位质量的吸热量，整块物体还要乘质量；半千克水升温 10℃ 吸热 21 000 J。",
+              "expression": "Q = c_h*dT",
+              "status": "误答原因预测，待教师确认；未采集学生作答证据"
+            }
+          ],
+          "difficulty_note": "建议难度沿用本题level（源卡难度）；尚非题目难度实测，待教师调整",
+          "estimated_seconds": [
+            60,
+            120
+          ],
+          "time_basis": "未做学生计时；按现有难度给出备课估计区间，待教师确认",
+          "machine_checks": [
+            {
+              "name": "题目ID关联源知识点",
+              "passed": true
+            },
+            {
+              "name": "选项标签唯一且参考标签存在",
+              "passed": true
+            },
+            {
+              "name": "选项文本互异",
+              "passed": true
+            },
+            {
+              "name": "正确式量纲一致",
+              "passed": true,
+              "actual": {
+                "type": "dimension",
+                "type_name": "量纲一致性",
+                "formula": "教师审核证据",
+                "ok": true,
+                "detail": "左端M·L^2·T^-2，右端M·L^2·T^-2",
+                "note": "",
+                "error": null,
+                "evaluation_status": "success",
+                "failure_reason": null,
+                "result_dimension": "M·L^2·T^-2",
+                "reference_dimension": "M·L^2·T^-2",
+                "diagnostics": {},
+                "physical_error_identified": false
+              }
+            },
+            {
+              "name": "干扰式量纲冲突",
+              "passed": true,
+              "actual": {
+                "type": "dimension",
+                "type_name": "量纲一致性",
+                "formula": "教师审核证据",
+                "ok": false,
+                "detail": "左端M·L^2·T^-2，右端L^2·T^-2",
+                "note": "",
+                "error": null,
+                "evaluation_status": "dimension_conflict",
+                "failure_reason": "dimension_conflict",
+                "result_dimension": "L^2·T^-2",
+                "reference_dimension": "M·L^2·T^-2",
+                "diagnostics": {},
+                "physical_error_identified": true
+              }
+            }
+          ],
+          "machine_boundary": "只列本次逐题实际执行项目；不把关联知识卡的方向、扫描或一致性检查算作本题已验。概念题未验命题真假。",
+          "human_review_items": [
+            "题干条件是否充分、清楚且符合学段",
+            "参考结论在指定条件下是否唯一",
+            "干扰项是否合理、对应真实认知问题且无答案暗示",
+            "公式或概念锚点是否准确",
+            "建议难度及用时是否适合教学",
+            "语言、装置与安全操作是否恰当"
+          ],
+          "reference_answer_note": "现有参考答案保持；即使本地可以判选项，也仍须教师审核教学可用性"
+        }
+      }
+    },
+    {
+      "id": "diagnostic-energy-02-2",
+      "point_id": "energy-02",
+      "point_title": "物质的比热容",
+      "chapter": "机械能和内能",
+      "stem": "关于“物质的比热容”，判断这一说法是否成立，并说明依据：\n在比热容近似不变且无物态变化时，计算显热可以用末温直接代替温度变化量。",
+      "options": [
+        {
+          "label": "A",
+          "text": "该说法不成立。"
+        },
+        {
+          "label": "B",
+          "text": "该说法成立。"
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "本式需要温度变化量，且适用于比热容近似不变、没有物态变化的过程；相变时需另行分析。\n知识点条件：水的比热容约为 4200 J/kg/℃，表示 1 kg 水升高 1℃ 约需吸收 4200 J。用 Q=c<sub>h</sub>·m·dT 计算时，先确认过程没有发生物态变化，并把质量、温升和热量单位统一。比热容是物质特性，不等于一整份物体吸收的热量。\n推导依据：记录被加热物体质量 m 和比热容 c<sub>h</sub>。；测量加热前后温度，求温升 dT。；在无物态变化条件下，用 Q=c<sub>h</sub>·m·dT 求吸收热量。；实验中还要考虑容器吸热和散热等误差来源。\n卡片公式各自的适用条件（不是本题共同前提）：\n加热温度变化时的吸热量：无物态变化、比热容近似不变，dT 为温升，单位 ℃。\n由吸热量求比热容：样品无物态变化，吸收热量 Q、质量 m 和温升 dT 已知。",
+      "error_type": "概念混淆",
+      "judging": "teacher",
+      "source_error_index": 1,
+      "source_caught_by": "人工审核",
+      "wrong_expr": null,
+      "trap_test": null,
+      "level": "基础",
+      "learning_scope": "初中",
+      "answer_evidence": {
+        "kind": "teacher",
+        "claim_source": "执行方明确命题",
+        "reference_only": true,
+        "reason": "概念、操作或无法建立完整定量证据，教师确认条件与结论。"
+      },
+      "review": {
+        "confidence": "medium",
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": false,
+          "no_answer_leak_in_options": true
+        },
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。",
+        "material": {
+          "anchors": [
+            {
+              "kind": "概念或操作",
+              "name": "物质的比热容",
+              "claim": "用末温代替温升，并在温度不变或发生物态变化时直接套用本式。",
+              "correction_basis": "本式需要温度变化量，且适用于比热容近似不变、没有物态变化的过程；相变时需另行分析。",
+              "note": "概念锚点及命题真假待教师确认；未套用任意第一条公式",
+              "display": "用末温代替温升，并在温度不变或发生物态变化时直接套用本式。"
+            }
+          ],
+          "source": {
+            "nature": "原创概念/操作命题；无真实测量记录",
+            "source_error_index": 1
+          },
+          "predicted_errors": [
+            {
+              "option": "B",
+              "text": "该说法成立。",
+              "reason": "本式需要温度变化量，且适用于比热容近似不变、没有物态变化的过程；相变时需另行分析。",
+              "expression": null,
+              "status": "误答原因预测，待教师确认；未采集学生作答证据"
+            }
+          ],
+          "difficulty_note": "建议难度沿用本题level（源卡难度）；尚非题目难度实测，待教师调整",
+          "estimated_seconds": [
+            60,
+            120
+          ],
+          "time_basis": "未做学生计时；按现有难度给出备课估计区间，待教师确认",
+          "machine_checks": [
+            {
+              "name": "题目ID关联源知识点",
+              "passed": true
+            },
+            {
+              "name": "选项标签唯一且参考标签存在",
+              "passed": true
+            },
+            {
+              "name": "选项文本互异",
+              "passed": true
+            }
+          ],
+          "machine_boundary": "只列本次逐题实际执行项目；不把关联知识卡的方向、扫描或一致性检查算作本题已验。概念题未验命题真假。",
+          "human_review_items": [
+            "题干条件是否充分、清楚且符合学段",
+            "参考结论在指定条件下是否唯一",
+            "干扰项是否合理、对应真实认知问题且无答案暗示",
+            "公式或概念锚点是否准确",
+            "建议难度及用时是否适合教学",
+            "语言、装置与安全操作是否恰当"
+          ],
+          "reference_answer_note": "现有参考答案保持；即使本地可以判选项，也仍须教师审核教学可用性"
+        }
+      }
+    },
+    {
+      "id": "diagnostic-energy-02-3",
+      "point_id": "energy-02",
+      "point_title": "物质的比热容",
+      "chapter": "机械能和内能",
+      "stem": "在“物质的比热容”的模型下，c<sub>h</sub>（物质比热容）=4200 J/kg/℃；m（物体质量）=0.5 kg；dT（物体升高的温度）=10 ℃。条件：无物态变化、比热容近似不变，dT 为温升，单位 ℃。。求物体吸收的热量（Q）。这些数值是设计示例。",
+      "options": [
+        {
+          "label": "A",
+          "text": "21000 J"
+        },
+        {
+          "label": "B",
+          "text": "2.1e+07 J"
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "使用加热温度变化时的吸热量：c<sub>h</sub>·m·dT，代入得21000 J。另一结果来自c<sub>h</sub>·(1000·m)·dT，算得2.1e+07 J。\n比热容单位含kg，质量需0.5 kg；用500代入使正确21000 J误大千倍。\n知识点条件：水的比热容约为 4200 J/kg/℃，表示 1 kg 水升高 1℃ 约需吸收 4200 J。用 Q=c<sub>h</sub>·m·dT 计算时，先确认过程没有发生物态变化，并把质量、温升和热量单位统一。比热容是物质特性，不等于一整份物体吸收的热量。\n推导依据：记录被加热物体质量 m 和比热容 c<sub>h</sub>。；测量加热前后温度，求温升 dT。；在无物态变化条件下，用 Q=c<sub>h</sub>·m·dT 求吸收热量。；实验中还要考虑容器吸热和散热等误差来源。\n卡片公式各自的适用条件（不是本题共同前提）：\n加热温度变化时的吸热量：无物态变化、比热容近似不变，dT 为温升，单位 ℃。\n由吸热量求比热容：样品无物态变化，吸收热量 Q、质量 m 和温升 dT 已知。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 2,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "Q = c<sub>h</sub>·(1000·m)·dT",
+      "trap_test": {
+        "scenario": "半千克水升温10度",
+        "expr": "c_h*(1000*m)*dT",
+        "ref": 21000,
+        "tol": 1e-06
+      },
+      "level": "基础",
+      "learning_scope": "初中",
+      "answer_evidence": {
+        "kind": "numeric",
+        "scenario": "半千克水升温10度",
+        "parameters": {
+          "Q": 21000,
+          "c_h": 4200,
+          "m": 0.5,
+          "dT": 10
+        },
+        "target": "Q",
+        "unit": "J",
+        "reference": 21000,
+        "correct_proof": {
+          "expression": "c_h*m*dT",
+          "formula": "加热温度变化时的吸热量",
+          "value": 21000.0,
+          "when": "无物态变化、比热容近似不变，dT 为温升，单位 ℃。"
+        },
+        "distractor_expression": "c_h*(1000*m)*dT",
+        "distractor_value": 21000000.0,
+        "dimension_matches": true,
+        "independent_evaluation": true
+      },
+      "review": {
+        "confidence": "medium",
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": true,
+          "no_answer_leak_in_options": true
+        },
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。",
+        "material": {
+          "anchors": [
+            {
+              "kind": "公式",
+              "name": "加热温度变化时的吸热量",
+              "expression": "c_h*m*dT",
+              "when": "无物态变化、比热容近似不变，dT 为温升，单位 ℃。",
+              "display": "c<sub>h</sub>·m·dT"
+            }
+          ],
+          "source": {
+            "nature": "原创设计示例，非教材实测或真实实验记录",
+            "scenario": "半千克水升温10度",
+            "parameters": {
+              "Q": 21000,
+              "c_h": 4200,
+              "m": 0.5,
+              "dT": 10
+            },
+            "data": [
+              "物体吸收的热量：21000 J",
+              "物质比热容：4200 J/kg/℃",
+              "物体质量：0.5 kg",
+              "物体升高的温度：10 ℃"
+            ]
+          },
+          "predicted_errors": [
+            {
+              "option": "B",
+              "text": "2.1e+07 J",
+              "reason": "比热容单位含kg，质量需0.5 kg；用500代入使正确21000 J误大千倍。",
+              "expression": "c_h*(1000*m)*dT",
+              "status": "误答原因预测，待教师确认；未采集学生作答证据"
+            }
+          ],
+          "difficulty_note": "建议难度沿用本题level（源卡难度）；尚非题目难度实测，待教师调整",
+          "estimated_seconds": [
+            60,
+            120
+          ],
+          "time_basis": "未做学生计时；按现有难度给出备课估计区间，待教师确认",
+          "machine_checks": [
+            {
+              "name": "题目ID关联源知识点",
+              "passed": true
+            },
+            {
+              "name": "选项标签唯一且参考标签存在",
+              "passed": true
+            },
+            {
+              "name": "选项文本互异",
+              "passed": true
+            },
+            {
+              "name": "正确路径独立数值复算",
+              "passed": true
+            },
+            {
+              "name": "带量纲求值与独立求值一致",
+              "passed": true
+            },
+            {
+              "name": "干扰路径复算且与正确路径分离",
+              "passed": true
+            }
+          ],
+          "machine_boundary": "只列本次逐题实际执行项目；不把关联知识卡的方向、扫描或一致性检查算作本题已验。概念题未验命题真假。",
+          "human_review_items": [
+            "题干条件是否充分、清楚且符合学段",
+            "参考结论在指定条件下是否唯一",
+            "干扰项是否合理、对应真实认知问题且无答案暗示",
+            "公式或概念锚点是否准确",
+            "建议难度及用时是否适合教学",
+            "语言、装置与安全操作是否恰当"
+          ],
+          "reference_answer_note": "现有参考答案保持；即使本地可以判选项，也仍须教师审核教学可用性"
+        }
+      }
+    },
+    {
+      "id": "diagnostic-energy-04-1",
+      "point_id": "energy-04",
+      "point_title": "机械能与内能的相互转化",
+      "chapter": "机械能和内能",
+      "stem": "在“机械能与内能的相互转化”的模型下，E<sub>机前</sub>（转化前机械能）=100 J；E<sub>机后</sub>（转化后机械能）=80 J。条件：机械能减少量全部转化为系统内能，忽略热量散失和其他能量形式。。求转化增加的内能（E<sub>内增</sub>）。这些数值是设计示例。",
+      "options": [
+        {
+          "label": "A",
+          "text": "20 J"
+        },
+        {
+          "label": "B",
+          "text": "-20 J"
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "使用由前后机械能差求内能增量：E<sub>机前</sub>-E<sub>机后</sub>，代入得20 J。另一结果来自E<sub>机后</sub>-E<sub>机前</sub>，算得-20 J。\n本情境机械能从 100 J 降至 80 J，减少量为 20 J，转化为内能应为正的 20 J。\n知识点条件：刹车片发热、双手摩擦后变热，说明机械能可转化为内能；热机中气体膨胀推动活塞，则内能可转化为机械能。只研究机械能时会观察到它减少，但把内能等形式也计入后能量账目仍平衡。分析前先划定系统，确认是否有外界能量输入或散失。\n推导依据：选定系统并记录转化前机械能和转化后机械能。；若机械能减少全部进入系统内能，则内能增加量等于机械能减少量。；把末态机械能和内能增量相加，与初态机械能核对；有外界散热时应补记散失能量。\n卡片公式各自的适用条件（不是本题共同前提）：\n机械能减少转化为内能：把刹车或摩擦过程中的相关物体作为系统，忽略向外界的能量散失。\n由前后机械能差求内能增量：机械能减少量全部转化为系统内能，忽略热量散失和其他能量形式。\n燃料完全燃烧放热：按质量定义热值，燃料完全燃烧；q用J/kg、质量用kg。实际利用热量须计效率。\n热机效率：燃料完全燃烧理论放热量为正，有用机械功为对外输出，百分数为该比值乘100%。\n热机能量账目：输入输出统计于同一过程，其他能量已包括散热、尾气及其他非有用输出。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 0,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "E<sub>内增</sub> = E<sub>机后</sub>-E<sub>机前</sub>",
+      "trap_test": {
+        "scenario": "刹车减速",
+        "expr": "E_mech_after-E_mech_before",
+        "ref": 20
+      },
+      "level": "基础",
+      "learning_scope": "初中",
+      "answer_evidence": {
+        "kind": "numeric",
+        "scenario": "刹车减速",
+        "parameters": {
+          "E_mech_before": 100,
+          "E_mech_after": 80,
+          "E_int_gain": 20
+        },
+        "target": "E_int_gain",
+        "unit": "J",
+        "reference": 20,
+        "correct_proof": {
+          "expression": "E_mech_before-E_mech_after",
+          "formula": "由前后机械能差求内能增量",
+          "value": 20,
+          "when": "机械能减少量全部转化为系统内能，忽略热量散失和其他能量形式。"
+        },
+        "distractor_expression": "E_mech_after-E_mech_before",
+        "distractor_value": -20.0,
+        "dimension_matches": true,
+        "independent_evaluation": true
+      },
+      "review": {
+        "confidence": "medium",
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": true,
+          "no_answer_leak_in_options": true
+        },
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。",
+        "material": {
+          "anchors": [
+            {
+              "kind": "公式",
+              "name": "由前后机械能差求内能增量",
+              "expression": "E_mech_before-E_mech_after",
+              "when": "机械能减少量全部转化为系统内能，忽略热量散失和其他能量形式。",
+              "display": "E<sub>机前</sub>-E<sub>机后</sub>"
+            }
+          ],
+          "source": {
+            "nature": "原创设计示例，非教材实测或真实实验记录",
+            "scenario": "刹车减速",
+            "parameters": {
+              "E_mech_before": 100,
+              "E_mech_after": 80,
+              "E_int_gain": 20
+            },
+            "data": [
+              "转化前机械能：100 J",
+              "转化后机械能：80 J",
+              "转化增加的内能：20 J"
+            ]
+          },
+          "predicted_errors": [
+            {
+              "option": "B",
+              "text": "-20 J",
+              "reason": "本情境机械能从 100 J 降至 80 J，减少量为 20 J，转化为内能应为正的 20 J。",
+              "expression": "E_mech_after-E_mech_before",
+              "status": "误答原因预测，待教师确认；未采集学生作答证据"
+            }
+          ],
+          "difficulty_note": "建议难度沿用本题level（源卡难度）；尚非题目难度实测，待教师调整",
+          "estimated_seconds": [
+            60,
+            120
+          ],
+          "time_basis": "未做学生计时；按现有难度给出备课估计区间，待教师确认",
+          "machine_checks": [
+            {
+              "name": "题目ID关联源知识点",
+              "passed": true
+            },
+            {
+              "name": "选项标签唯一且参考标签存在",
+              "passed": true
+            },
+            {
+              "name": "选项文本互异",
+              "passed": true
+            },
+            {
+              "name": "正确路径独立数值复算",
+              "passed": true
+            },
+            {
+              "name": "带量纲求值与独立求值一致",
+              "passed": true
+            },
+            {
+              "name": "干扰路径复算且与正确路径分离",
+              "passed": true
+            }
+          ],
+          "machine_boundary": "只列本次逐题实际执行项目；不把关联知识卡的方向、扫描或一致性检查算作本题已验。概念题未验命题真假。",
+          "human_review_items": [
+            "题干条件是否充分、清楚且符合学段",
+            "参考结论在指定条件下是否唯一",
+            "干扰项是否合理、对应真实认知问题且无答案暗示",
+            "公式或概念锚点是否准确",
+            "建议难度及用时是否适合教学",
+            "语言、装置与安全操作是否恰当"
+          ],
+          "reference_answer_note": "现有参考答案保持；即使本地可以判选项，也仍须教师审核教学可用性"
+        }
+      }
+    },
+    {
+      "id": "diagnostic-energy-04-2",
+      "point_id": "energy-04",
+      "point_title": "机械能与内能的相互转化",
+      "chapter": "机械能和内能",
+      "stem": "关于“机械能与内能的相互转化”，判断这一说法是否成立，并说明依据：\n摩擦可使机械能转化为内能。",
+      "options": [
+        {
+          "label": "A",
+          "text": "该说法不成立。"
+        },
+        {
+          "label": "B",
+          "text": "该说法成立。"
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "摩擦可使机械能转化为内能；把系统边界和其他能量形式计入后，能量总量仍守恒。\n知识点条件：刹车片发热、双手摩擦后变热，说明机械能可转化为内能；热机中气体膨胀推动活塞，则内能可转化为机械能。只研究机械能时会观察到它减少，但把内能等形式也计入后能量账目仍平衡。分析前先划定系统，确认是否有外界能量输入或散失。\n推导依据：选定系统并记录转化前机械能和转化后机械能。；若机械能减少全部进入系统内能，则内能增加量等于机械能减少量。；把末态机械能和内能增量相加，与初态机械能核对；有外界散热时应补记散失能量。\n卡片公式各自的适用条件（不是本题共同前提）：\n机械能减少转化为内能：把刹车或摩擦过程中的相关物体作为系统，忽略向外界的能量散失。\n由前后机械能差求内能增量：机械能减少量全部转化为系统内能，忽略热量散失和其他能量形式。\n燃料完全燃烧放热：按质量定义热值，燃料完全燃烧；q用J/kg、质量用kg。实际利用热量须计效率。\n热机效率：燃料完全燃烧理论放热量为正，有用机械功为对外输出，百分数为该比值乘100%。\n热机能量账目：输入输出统计于同一过程，其他能量已包括散热、尾气及其他非有用输出。",
+      "error_type": "概念混淆",
+      "judging": "teacher",
+      "source_error_index": 1,
+      "source_caught_by": "人工审核",
+      "wrong_expr": null,
+      "trap_test": null,
+      "level": "基础",
+      "learning_scope": "初中",
+      "answer_evidence": {
+        "kind": "teacher",
+        "claim_source": "why",
+        "reference_only": true,
+        "reason": "概念、操作或无法建立完整定量证据，教师确认条件与结论。"
+      },
+      "review": {
+        "confidence": "medium",
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": false,
+          "no_answer_leak_in_options": true
+        },
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。",
+        "material": {
+          "anchors": [
+            {
+              "kind": "概念或操作",
+              "name": "机械能与内能的相互转化",
+              "claim": "认为机械能减少就意味着能量消失。",
+              "correction_basis": "摩擦可使机械能转化为内能；把系统边界和其他能量形式计入后，能量总量仍守恒。",
+              "note": "概念锚点及命题真假待教师确认；未套用任意第一条公式",
+              "display": "认为机械能减少就意味着能量消失。"
+            }
+          ],
+          "source": {
+            "nature": "原创概念/操作命题；无真实测量记录",
+            "source_error_index": 1
+          },
+          "predicted_errors": [
+            {
+              "option": "A",
+              "text": "该说法不成立。",
+              "reason": "摩擦可使机械能转化为内能；把系统边界和其他能量形式计入后，能量总量仍守恒。",
+              "expression": null,
+              "status": "误答原因预测，待教师确认；未采集学生作答证据"
+            }
+          ],
+          "difficulty_note": "建议难度沿用本题level（源卡难度）；尚非题目难度实测，待教师调整",
+          "estimated_seconds": [
+            60,
+            120
+          ],
+          "time_basis": "未做学生计时；按现有难度给出备课估计区间，待教师确认",
+          "machine_checks": [
+            {
+              "name": "题目ID关联源知识点",
+              "passed": true
+            },
+            {
+              "name": "选项标签唯一且参考标签存在",
+              "passed": true
+            },
+            {
+              "name": "选项文本互异",
+              "passed": true
+            }
+          ],
+          "machine_boundary": "只列本次逐题实际执行项目；不把关联知识卡的方向、扫描或一致性检查算作本题已验。概念题未验命题真假。",
+          "human_review_items": [
+            "题干条件是否充分、清楚且符合学段",
+            "参考结论在指定条件下是否唯一",
+            "干扰项是否合理、对应真实认知问题且无答案暗示",
+            "公式或概念锚点是否准确",
+            "建议难度及用时是否适合教学",
+            "语言、装置与安全操作是否恰当"
+          ],
+          "reference_answer_note": "现有参考答案保持；即使本地可以判选项，也仍须教师审核教学可用性"
+        }
+      }
+    },
+    {
+      "id": "diagnostic-energy-04-3",
+      "point_id": "energy-04",
+      "point_title": "机械能与内能的相互转化",
+      "chapter": "机械能和内能",
+      "stem": "在“机械能与内能的相互转化”的模型下，Q（燃料完全燃烧理论放热量）=400000 J；W<sub>有用</sub>（热机对外有用机械功）=100000 J。条件：燃料完全燃烧理论放热量为正，有用机械功为对外输出，百分数为该比值乘100%。。求热机效率，取0到1间比值（η）。这些数值是设计示例。",
+      "options": [
+        {
+          "label": "A",
+          "text": "0.25 1"
+        },
+        {
+          "label": "B",
+          "text": "4 1"
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "使用热机效率：W<sub>有用</sub>/Q，代入得0.25 1。另一结果来自Q/W<sub>有用</sub>，算得4 1。\n100 kJ有用功、400 kJ输入，效率应为0.25；反比得到4即400%，违反能量账目。\n知识点条件：刹车片发热、双手摩擦后变热，说明机械能可转化为内能；热机中气体膨胀推动活塞，则内能可转化为机械能。只研究机械能时会观察到它减少，但把内能等形式也计入后能量账目仍平衡。分析前先划定系统，确认是否有外界能量输入或散失。\n推导依据：选定系统并记录转化前机械能和转化后机械能。；若机械能减少全部进入系统内能，则内能增加量等于机械能减少量。；把末态机械能和内能增量相加，与初态机械能核对；有外界散热时应补记散失能量。\n卡片公式各自的适用条件（不是本题共同前提）：\n机械能减少转化为内能：把刹车或摩擦过程中的相关物体作为系统，忽略向外界的能量散失。\n由前后机械能差求内能增量：机械能减少量全部转化为系统内能，忽略热量散失和其他能量形式。\n燃料完全燃烧放热：按质量定义热值，燃料完全燃烧；q用J/kg、质量用kg。实际利用热量须计效率。\n热机效率：燃料完全燃烧理论放热量为正，有用机械功为对外输出，百分数为该比值乘100%。\n热机能量账目：输入输出统计于同一过程，其他能量已包括散热、尾气及其他非有用输出。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 2,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "η = Q/W<sub>有用</sub>",
+      "trap_test": {
+        "scenario": "燃料与热机一",
+        "expr": "Q/W_use",
+        "ref": 0.25
+      },
+      "level": "基础",
+      "learning_scope": "初中",
+      "answer_evidence": {
+        "kind": "numeric",
+        "scenario": "燃料与热机一",
+        "parameters": {
+          "q": 40000000,
+          "m": 0.01,
+          "Q": 400000,
+          "W_use": 100000,
+          "eta": 0.25,
+          "Q_loss": 300000
+        },
+        "target": "eta",
+        "unit": "1",
+        "reference": 0.25,
+        "correct_proof": {
+          "expression": "W_use/Q",
+          "formula": "热机效率",
+          "value": 0.25,
+          "when": "燃料完全燃烧理论放热量为正，有用机械功为对外输出，百分数为该比值乘100%。"
+        },
+        "distractor_expression": "Q/W_use",
+        "distractor_value": 4.0,
+        "dimension_matches": true,
+        "independent_evaluation": true
+      },
+      "review": {
+        "confidence": "medium",
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": true,
+          "no_answer_leak_in_options": true
+        },
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。",
+        "material": {
+          "anchors": [
+            {
+              "kind": "公式",
+              "name": "热机效率",
+              "expression": "W_use/Q",
+              "when": "燃料完全燃烧理论放热量为正，有用机械功为对外输出，百分数为该比值乘100%。",
+              "display": "W<sub>有用</sub>/Q"
+            }
+          ],
+          "source": {
+            "nature": "原创设计示例，非教材实测或真实实验记录",
+            "scenario": "燃料与热机一",
+            "parameters": {
+              "q": 40000000,
+              "m": 0.01,
+              "Q": 400000,
+              "W_use": 100000,
+              "eta": 0.25,
+              "Q_loss": 300000
+            },
+            "data": [
+              "燃料热值，按单位质量定义：40000000 J/kg",
+              "完全燃烧的燃料质量：0.01 kg",
+              "燃料完全燃烧理论放热量：400000 J",
+              "热机对外有用机械功：100000 J",
+              "热机效率，取0到1间比值：0.25 1",
+              "未成为有用功的其他能量总量：300000 J"
+            ]
+          },
+          "predicted_errors": [
+            {
+              "option": "B",
+              "text": "4 1",
+              "reason": "100 kJ有用功、400 kJ输入，效率应为0.25；反比得到4即400%，违反能量账目。",
+              "expression": "Q/W_use",
+              "status": "误答原因预测，待教师确认；未采集学生作答证据"
+            }
+          ],
+          "difficulty_note": "建议难度沿用本题level（源卡难度）；尚非题目难度实测，待教师调整",
+          "estimated_seconds": [
+            60,
+            120
+          ],
+          "time_basis": "未做学生计时；按现有难度给出备课估计区间，待教师确认",
+          "machine_checks": [
+            {
+              "name": "题目ID关联源知识点",
+              "passed": true
+            },
+            {
+              "name": "选项标签唯一且参考标签存在",
+              "passed": true
+            },
+            {
+              "name": "选项文本互异",
+              "passed": true
+            },
+            {
+              "name": "正确路径独立数值复算",
+              "passed": true
+            },
+            {
+              "name": "带量纲求值与独立求值一致",
+              "passed": true
+            },
+            {
+              "name": "干扰路径复算且与正确路径分离",
+              "passed": true
+            }
+          ],
+          "machine_boundary": "只列本次逐题实际执行项目；不把关联知识卡的方向、扫描或一致性检查算作本题已验。概念题未验命题真假。",
+          "human_review_items": [
+            "题干条件是否充分、清楚且符合学段",
+            "参考结论在指定条件下是否唯一",
+            "干扰项是否合理、对应真实认知问题且无答案暗示",
+            "公式或概念锚点是否准确",
+            "建议难度及用时是否适合教学",
+            "语言、装置与安全操作是否恰当"
+          ],
+          "reference_answer_note": "现有参考答案保持；即使本地可以判选项，也仍须教师审核教学可用性"
+        }
+      }
+    }
+  ],
+  "skipped": [],
+  "source_records": {
+    "diagnostic-energy-01-1": {
+      "point": {
+        "id": "energy-01",
+        "title": "机械能",
+        "level": "基础",
+        "definition": "动能是物体因运动具有的能量，势能包括重力势能和弹性势能；动能与势能统称机械能。被举高的物体具有重力势能，发生弹性形变的物体具有弹性势能；比较大小必须控制相关条件，初中以实验和定性规律为主。",
+        "meaning": "质量相同时速度越大，动能越大；速度相同时质量越大，动能越大。相对同一参考面，质量相同时高度越高，重力势能越大；高度相同时质量越大，重力势能越大。同一弹性物体在弹性限度内，形变量越大，弹性势能一般越大。机械能可在不同形式间转化，有摩擦等耗散时机械能可能减少，但总能量不消失。",
+        "symbols": {
+          "m": {
+            "desc": "物体质量",
+            "unit": "kg"
+          },
+          "v": {
+            "desc": "物体速度大小",
+            "unit": "m/s"
+          },
+          "Ek": {
+            "desc": "物体动能",
+            "unit": "J"
+          },
+          "g": {
+            "desc": "当地重力加速度",
+            "unit": "N/kg"
+          },
+          "h": {
+            "desc": "相对选定参考面的高度",
+            "unit": "m"
+          },
+          "Ep": {
+            "desc": "物体重力势能",
+            "unit": "J"
+          },
+          "Em": {
+            "desc": "动能、重力势能与弹性势能的总和",
+            "unit": "J"
+          },
+          "Q": {
+            "desc": "物体吸收的热量",
+            "unit": "J"
+          },
+          "c_h": {
+            "desc": "物质比热容",
+            "unit": "J/kg/℃"
+          },
+          "dT": {
+            "desc": "物体升高的温度",
+            "unit": "℃"
+          },
+          "Ee": {
+            "desc": "弹性势能，本卡只用已知储能作账目",
+            "unit": "J"
+          }
+        },
+        "scenarios": {
+          "高处小球": {
+            "m": 2,
+            "v": 3,
+            "Ek": 9,
+            "g": 10,
+            "h": 5,
+            "Ep": 100,
+            "Em": 109,
+            "Ee": 0
+          },
+          "抛起物体": {
+            "m": 1,
+            "v": 4,
+            "Ek": 8,
+            "g": 10,
+            "h": 3,
+            "Ep": 30,
+            "Em": 38,
+            "Ee": 0
+          },
+          "半千克水升温10度": {
+            "Q": 21000,
+            "c_h": 4200,
+            "m": 0.5,
+            "dT": 10,
+            "Ee": 0
+          },
+          "两百克水升温5度": {
+            "Q": 4200,
+            "c_h": 4200,
+            "m": 0.2,
+            "dT": 5,
+            "Ee": 0
+          },
+          "弹性储能账目": {
+            "Ek": 2,
+            "Ep": 3,
+            "Ee": 5,
+            "Em": 10
+          }
+        },
+        "formulas": [
+          {
+            "name": "物体动能",
+            "expr": "Ek = 0.5*m*v^2",
+            "when": "拓展计算，非本卡初中必背主线。适用于物体平动的动能计算，m 用 kg、v 用 m/s。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "高处小球",
+                "expr": "0.5*m*v^2",
+                "ref": 9,
+                "note": "0.5×2×3^2=9 J。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "抛起物体",
+                "expr": "0.5*m*v^2",
+                "ref": 8,
+                "note": "0.5×1×4^2=8 J。"
+              },
+              {
+                "type": "direction",
+                "scenario": "高处小球",
+                "var": "v",
+                "lo": 0,
+                "hi": 20,
+                "expr": "0.5*m*v^2",
+                "expect": "up",
+                "note": "质量固定时，速度增大，动能按速度平方增大。"
+              },
+              {
+                "type": "scan",
+                "scenario": "高处小球",
+                "var": "v",
+                "lo": 0,
+                "hi": 100,
+                "note": "扫描非负速度，动能保持非负且有限。"
+              }
+            ]
+          },
+          {
+            "name": "物体重力势能",
+            "expr": "Ep = m*g*h",
+            "when": "拓展计算，非本卡初中必背主线。h 从选定参考面竖直量起，g 取当地值。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "高处小球",
+                "expr": "m*g*h",
+                "ref": 100,
+                "note": "2 kg×10 N/kg×5 m=100 J。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "抛起物体",
+                "expr": "m*g*h",
+                "ref": 30,
+                "note": "1 kg×10 N/kg×3 m=30 J。"
+              },
+              {
+                "type": "direction",
+                "scenario": "高处小球",
+                "var": "h",
+                "lo": 0,
+                "hi": 20,
+                "expr": "m*g*h",
+                "expect": "up",
+                "note": "质量和 g 固定时，高度增大，重力势能增大。"
+              },
+              {
+                "type": "scan",
+                "scenario": "高处小球",
+                "var": "h",
+                "lo": 0,
+                "hi": 100,
+                "note": "扫描参考面以上的非负高度。"
+              }
+            ]
+          },
+          {
+            "name": "动能与各类势能组成机械能",
+            "expr": "Em = Ek+Ep+Ee",
+            "when": "机械能账目包含动能、重力势能和弹性势能；参考面一致，其他机械储能另计。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "高处小球",
+                "expr": "Ek+Ep",
+                "ref": 109,
+                "note": "9 J+100 J=109 J。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "抛起物体",
+                "expr": "Ek+Ep",
+                "ref": 38,
+                "note": "8 J+30 J=38 J。"
+              },
+              {
+                "type": "scan",
+                "scenario": "高处小球",
+                "var": "Ek",
+                "lo": 0,
+                "hi": 10000,
+                "note": "扫描非负动能，机械能总量有限。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "弹性储能账目",
+                "ref": 10,
+                "note": "独立加和2 J运动能、3 J重力储能、5 J弹性储能，总10 J；不能漏掉弹性项。"
+              }
+            ]
+          },
+          {
+            "name": "由速度和高度直接求机械能",
+            "expr": "Em = 0.5*m*v^2+m*g*h",
+            "when": "拓展计算，非本卡初中必背主线。同一物体相对同一参考面计重力势能，机械能只包含动能和重力势能。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "高处小球",
+                "expr": "0.5*m*v^2+m*g*h",
+                "ref": 109,
+                "note": "直接代入质量、速度和高度，得到 9 J+100 J=109 J。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "抛起物体",
+                "expr": "0.5*m*v^2+m*g*h",
+                "ref": 38,
+                "note": "直接代入得 8 J+30 J=38 J，与该情境机械能相符。"
+              },
+              {
+                "type": "direction",
+                "scenario": "高处小球",
+                "var": "h",
+                "lo": 0,
+                "hi": 20,
+                "expr": "0.5*m*v^2+m*g*h",
+                "expect": "up",
+                "note": "速度不变、参考面固定时，升高物体会增加重力势能和机械能。"
+              },
+              {
+                "type": "scan",
+                "scenario": "高处小球",
+                "var": "h",
+                "lo": 0,
+                "hi": 100,
+                "note": "扫描参考面以上高度，直接计算的机械能保持有限。"
+              },
+              {
+                "type": "consistency",
+                "scenario": "高处小球",
+                "with": "energy-01|由速度和高度直接求机械能",
+                "with_expr": "Ek+Ep",
+                "target": "动能、重力势能与弹性势能的总和",
+                "note": "本公式直接求Em；参考端显式关系为Ek+Ep。两端使用同一情境和阶段，只核对该关系；with字段仅定位来源，不代表调用另一条被覆盖的公式。",
+                "verification_kind": "独立关系核对"
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "物体运动时具有动能，计算时使用质量和速度。",
+          "相对参考面被举高的物体具有重力势能，计算时使用质量、g 和高度。",
+          "把动能与重力势能相加，得到该参考面下的机械能。",
+          "分析能量转化时，检查摩擦等因素是否使机械能转化为内能。"
+        ],
+        "errors": [
+          {
+            "wrong": "把动能写成质量与速度的一次方相乘，漏掉速度平方和二分之一。",
+            "wrong_expr": "Ek = m*v",
+            "why": "动能的单位应为 J，m*v 的单位是 kg·m/s；量纲与数值关系都不符。",
+            "caught_by": "量纲一致性",
+            "trap_test": {
+              "scenario": "高处小球",
+              "expr": "m*v",
+              "ref": 9
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "写动能公式时漏掉系数二分之一，只保留质量乘速度平方。",
+            "wrong_expr": "Ek = m*v^2",
+            "why": "高处小球的动能为 0.5×2×3^2=9 J；漏掉二分之一会得到 18 J，量纲仍正确但数值翻倍。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "高处小球",
+              "expr": "m*v^2",
+              "ref": 9
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "认为物体高度变化时重力势能与参考面无关。",
+            "why": "重力势能数值依赖所选零势能参考面；比较同一过程能量变化时要保持参考面一致。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "用同一小车从同一斜面不同高度静止释放，撞击同一木块。高处释放时木块被推得更远。解释能量变化，再说明怎样比较质量对动能的影响。",
+          "solution": [
+            "高处释放的小车初始重力势能更大，下滑时部分转成动能，撞击后对木块做功，推动距离可作为比较证据。",
+            "研究质量时应改变小车质量、保持撞击前速度相同并保持木块和水平面相同；不能同时任意改变质量和速度。"
+          ],
+          "answer": "能量可由重力势能转为动能再转移；质量比较须控制速度相同。"
+        },
+        "prereq": [
+          "motion-01",
+          "force-01"
+        ],
+        "next": [
+          "energy-02"
+        ],
+        "tags": [
+          "机械能",
+          "动能",
+          "重力势能",
+          "机械能转化"
+        ],
+        "core": [
+          {
+            "title": "初中核心：三种机械能",
+            "text": "运动小车推动木块的距离用于比较动能；从不同高度释放同一物体，或同一高度释放不同质量物体，用做功效果比较重力势能。保持材料相同再比较弹性形变量，以弹簧推动物体的效果比较弹性势能。控制变量和能量转化是主线，不要求推导动能平方公式或弹性势能公式。弹性势能不是重力势能，机械能不能一概只算动能与重力势能。"
+          },
+          {
+            "title": "机械能转化与拓展边界",
+            "text": "摆球下落时重力势能减小、动能增大，上升时相反；弹簧恢复形变可把弹性势能转为动能。忽略摩擦和其他耗散且系统边界适当时，机械能可守恒。下面数值关系供高中衔接；动能和重力势能公式不当作初中必背，机械能加和若忽略弹性势能必须明确无弹性储能。"
+          },
+          {
+            "title": "本章素养回顾（原创任务）",
+            "text": "选择本章一个现象，写出结论、成立条件和证据；用另一条本章规律复核解释是否矛盾。指出一次测量或模型的局限，并说明还需什么证据；数值通过不替代概念辨析。"
+          }
+        ],
+        "experiments": [
+          {
+            "title": "比较动能与重力势能的影响因素",
+            "purpose": "用做功效果作间接证据，练习控制变量。",
+            "apparatus": "小车、缓斜面、不同配重、木块、刻度尺。",
+            "variables": "动能比较固定质量改变撞击速度，或固定速度改变质量；重力势能比较固定质量改变高度。",
+            "steps": [
+              "同车从不同高度释放，记录撞后木块移动距离。",
+              "研究质量时通过速度测量等办法保持撞击速度相同，再换配重。",
+              "写清间接指标、控制条件和适用范围，再说明能量转化。"
+            ],
+            "data": "设计示例（非实测）：同车较高位置释放推动距离可由5 cm增至9 cm；这些是设计示例，不由距离直接读出多少J。",
+            "conclusion": "动能随质量和速度增大而增大；重力势能随质量和相对高度增大而增大，控制变量后分别判断。",
+            "limits": "摩擦差异、撞击方式和速度未控制会混入影响，不能由两组距离推导动能平方系数。",
+            "kind": "教材与目录补充"
+          }
+        ],
+        "learning_scope": "初中主线；公式含拓展"
+      },
+      "error_index": 0,
+      "chapter": "机械能和内能"
+    },
+    "diagnostic-energy-01-2": {
+      "point": {
+        "id": "energy-01",
+        "title": "机械能",
+        "level": "基础",
+        "definition": "动能是物体因运动具有的能量，势能包括重力势能和弹性势能；动能与势能统称机械能。被举高的物体具有重力势能，发生弹性形变的物体具有弹性势能；比较大小必须控制相关条件，初中以实验和定性规律为主。",
+        "meaning": "质量相同时速度越大，动能越大；速度相同时质量越大，动能越大。相对同一参考面，质量相同时高度越高，重力势能越大；高度相同时质量越大，重力势能越大。同一弹性物体在弹性限度内，形变量越大，弹性势能一般越大。机械能可在不同形式间转化，有摩擦等耗散时机械能可能减少，但总能量不消失。",
+        "symbols": {
+          "m": {
+            "desc": "物体质量",
+            "unit": "kg"
+          },
+          "v": {
+            "desc": "物体速度大小",
+            "unit": "m/s"
+          },
+          "Ek": {
+            "desc": "物体动能",
+            "unit": "J"
+          },
+          "g": {
+            "desc": "当地重力加速度",
+            "unit": "N/kg"
+          },
+          "h": {
+            "desc": "相对选定参考面的高度",
+            "unit": "m"
+          },
+          "Ep": {
+            "desc": "物体重力势能",
+            "unit": "J"
+          },
+          "Em": {
+            "desc": "动能、重力势能与弹性势能的总和",
+            "unit": "J"
+          },
+          "Q": {
+            "desc": "物体吸收的热量",
+            "unit": "J"
+          },
+          "c_h": {
+            "desc": "物质比热容",
+            "unit": "J/kg/℃"
+          },
+          "dT": {
+            "desc": "物体升高的温度",
+            "unit": "℃"
+          },
+          "Ee": {
+            "desc": "弹性势能，本卡只用已知储能作账目",
+            "unit": "J"
+          }
+        },
+        "scenarios": {
+          "高处小球": {
+            "m": 2,
+            "v": 3,
+            "Ek": 9,
+            "g": 10,
+            "h": 5,
+            "Ep": 100,
+            "Em": 109,
+            "Ee": 0
+          },
+          "抛起物体": {
+            "m": 1,
+            "v": 4,
+            "Ek": 8,
+            "g": 10,
+            "h": 3,
+            "Ep": 30,
+            "Em": 38,
+            "Ee": 0
+          },
+          "半千克水升温10度": {
+            "Q": 21000,
+            "c_h": 4200,
+            "m": 0.5,
+            "dT": 10,
+            "Ee": 0
+          },
+          "两百克水升温5度": {
+            "Q": 4200,
+            "c_h": 4200,
+            "m": 0.2,
+            "dT": 5,
+            "Ee": 0
+          },
+          "弹性储能账目": {
+            "Ek": 2,
+            "Ep": 3,
+            "Ee": 5,
+            "Em": 10
+          }
+        },
+        "formulas": [
+          {
+            "name": "物体动能",
+            "expr": "Ek = 0.5*m*v^2",
+            "when": "拓展计算，非本卡初中必背主线。适用于物体平动的动能计算，m 用 kg、v 用 m/s。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "高处小球",
+                "expr": "0.5*m*v^2",
+                "ref": 9,
+                "note": "0.5×2×3^2=9 J。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "抛起物体",
+                "expr": "0.5*m*v^2",
+                "ref": 8,
+                "note": "0.5×1×4^2=8 J。"
+              },
+              {
+                "type": "direction",
+                "scenario": "高处小球",
+                "var": "v",
+                "lo": 0,
+                "hi": 20,
+                "expr": "0.5*m*v^2",
+                "expect": "up",
+                "note": "质量固定时，速度增大，动能按速度平方增大。"
+              },
+              {
+                "type": "scan",
+                "scenario": "高处小球",
+                "var": "v",
+                "lo": 0,
+                "hi": 100,
+                "note": "扫描非负速度，动能保持非负且有限。"
+              }
+            ]
+          },
+          {
+            "name": "物体重力势能",
+            "expr": "Ep = m*g*h",
+            "when": "拓展计算，非本卡初中必背主线。h 从选定参考面竖直量起，g 取当地值。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "高处小球",
+                "expr": "m*g*h",
+                "ref": 100,
+                "note": "2 kg×10 N/kg×5 m=100 J。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "抛起物体",
+                "expr": "m*g*h",
+                "ref": 30,
+                "note": "1 kg×10 N/kg×3 m=30 J。"
+              },
+              {
+                "type": "direction",
+                "scenario": "高处小球",
+                "var": "h",
+                "lo": 0,
+                "hi": 20,
+                "expr": "m*g*h",
+                "expect": "up",
+                "note": "质量和 g 固定时，高度增大，重力势能增大。"
+              },
+              {
+                "type": "scan",
+                "scenario": "高处小球",
+                "var": "h",
+                "lo": 0,
+                "hi": 100,
+                "note": "扫描参考面以上的非负高度。"
+              }
+            ]
+          },
+          {
+            "name": "动能与各类势能组成机械能",
+            "expr": "Em = Ek+Ep+Ee",
+            "when": "机械能账目包含动能、重力势能和弹性势能；参考面一致，其他机械储能另计。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "高处小球",
+                "expr": "Ek+Ep",
+                "ref": 109,
+                "note": "9 J+100 J=109 J。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "抛起物体",
+                "expr": "Ek+Ep",
+                "ref": 38,
+                "note": "8 J+30 J=38 J。"
+              },
+              {
+                "type": "scan",
+                "scenario": "高处小球",
+                "var": "Ek",
+                "lo": 0,
+                "hi": 10000,
+                "note": "扫描非负动能，机械能总量有限。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "弹性储能账目",
+                "ref": 10,
+                "note": "独立加和2 J运动能、3 J重力储能、5 J弹性储能，总10 J；不能漏掉弹性项。"
+              }
+            ]
+          },
+          {
+            "name": "由速度和高度直接求机械能",
+            "expr": "Em = 0.5*m*v^2+m*g*h",
+            "when": "拓展计算，非本卡初中必背主线。同一物体相对同一参考面计重力势能，机械能只包含动能和重力势能。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "高处小球",
+                "expr": "0.5*m*v^2+m*g*h",
+                "ref": 109,
+                "note": "直接代入质量、速度和高度，得到 9 J+100 J=109 J。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "抛起物体",
+                "expr": "0.5*m*v^2+m*g*h",
+                "ref": 38,
+                "note": "直接代入得 8 J+30 J=38 J，与该情境机械能相符。"
+              },
+              {
+                "type": "direction",
+                "scenario": "高处小球",
+                "var": "h",
+                "lo": 0,
+                "hi": 20,
+                "expr": "0.5*m*v^2+m*g*h",
+                "expect": "up",
+                "note": "速度不变、参考面固定时，升高物体会增加重力势能和机械能。"
+              },
+              {
+                "type": "scan",
+                "scenario": "高处小球",
+                "var": "h",
+                "lo": 0,
+                "hi": 100,
+                "note": "扫描参考面以上高度，直接计算的机械能保持有限。"
+              },
+              {
+                "type": "consistency",
+                "scenario": "高处小球",
+                "with": "energy-01|由速度和高度直接求机械能",
+                "with_expr": "Ek+Ep",
+                "target": "动能、重力势能与弹性势能的总和",
+                "note": "本公式直接求Em；参考端显式关系为Ek+Ep。两端使用同一情境和阶段，只核对该关系；with字段仅定位来源，不代表调用另一条被覆盖的公式。",
+                "verification_kind": "独立关系核对"
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "物体运动时具有动能，计算时使用质量和速度。",
+          "相对参考面被举高的物体具有重力势能，计算时使用质量、g 和高度。",
+          "把动能与重力势能相加，得到该参考面下的机械能。",
+          "分析能量转化时，检查摩擦等因素是否使机械能转化为内能。"
+        ],
+        "errors": [
+          {
+            "wrong": "把动能写成质量与速度的一次方相乘，漏掉速度平方和二分之一。",
+            "wrong_expr": "Ek = m*v",
+            "why": "动能的单位应为 J，m*v 的单位是 kg·m/s；量纲与数值关系都不符。",
+            "caught_by": "量纲一致性",
+            "trap_test": {
+              "scenario": "高处小球",
+              "expr": "m*v",
+              "ref": 9
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "写动能公式时漏掉系数二分之一，只保留质量乘速度平方。",
+            "wrong_expr": "Ek = m*v^2",
+            "why": "高处小球的动能为 0.5×2×3^2=9 J；漏掉二分之一会得到 18 J，量纲仍正确但数值翻倍。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "高处小球",
+              "expr": "m*v^2",
+              "ref": 9
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "认为物体高度变化时重力势能与参考面无关。",
+            "why": "重力势能数值依赖所选零势能参考面；比较同一过程能量变化时要保持参考面一致。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "用同一小车从同一斜面不同高度静止释放，撞击同一木块。高处释放时木块被推得更远。解释能量变化，再说明怎样比较质量对动能的影响。",
+          "solution": [
+            "高处释放的小车初始重力势能更大，下滑时部分转成动能，撞击后对木块做功，推动距离可作为比较证据。",
+            "研究质量时应改变小车质量、保持撞击前速度相同并保持木块和水平面相同；不能同时任意改变质量和速度。"
+          ],
+          "answer": "能量可由重力势能转为动能再转移；质量比较须控制速度相同。"
+        },
+        "prereq": [
+          "motion-01",
+          "force-01"
+        ],
+        "next": [
+          "energy-02"
+        ],
+        "tags": [
+          "机械能",
+          "动能",
+          "重力势能",
+          "机械能转化"
+        ],
+        "core": [
+          {
+            "title": "初中核心：三种机械能",
+            "text": "运动小车推动木块的距离用于比较动能；从不同高度释放同一物体，或同一高度释放不同质量物体，用做功效果比较重力势能。保持材料相同再比较弹性形变量，以弹簧推动物体的效果比较弹性势能。控制变量和能量转化是主线，不要求推导动能平方公式或弹性势能公式。弹性势能不是重力势能，机械能不能一概只算动能与重力势能。"
+          },
+          {
+            "title": "机械能转化与拓展边界",
+            "text": "摆球下落时重力势能减小、动能增大，上升时相反；弹簧恢复形变可把弹性势能转为动能。忽略摩擦和其他耗散且系统边界适当时，机械能可守恒。下面数值关系供高中衔接；动能和重力势能公式不当作初中必背，机械能加和若忽略弹性势能必须明确无弹性储能。"
+          },
+          {
+            "title": "本章素养回顾（原创任务）",
+            "text": "选择本章一个现象，写出结论、成立条件和证据；用另一条本章规律复核解释是否矛盾。指出一次测量或模型的局限，并说明还需什么证据；数值通过不替代概念辨析。"
+          }
+        ],
+        "experiments": [
+          {
+            "title": "比较动能与重力势能的影响因素",
+            "purpose": "用做功效果作间接证据，练习控制变量。",
+            "apparatus": "小车、缓斜面、不同配重、木块、刻度尺。",
+            "variables": "动能比较固定质量改变撞击速度，或固定速度改变质量；重力势能比较固定质量改变高度。",
+            "steps": [
+              "同车从不同高度释放，记录撞后木块移动距离。",
+              "研究质量时通过速度测量等办法保持撞击速度相同，再换配重。",
+              "写清间接指标、控制条件和适用范围，再说明能量转化。"
+            ],
+            "data": "设计示例（非实测）：同车较高位置释放推动距离可由5 cm增至9 cm；这些是设计示例，不由距离直接读出多少J。",
+            "conclusion": "动能随质量和速度增大而增大；重力势能随质量和相对高度增大而增大，控制变量后分别判断。",
+            "limits": "摩擦差异、撞击方式和速度未控制会混入影响，不能由两组距离推导动能平方系数。",
+            "kind": "教材与目录补充"
+          }
+        ],
+        "learning_scope": "初中主线；公式含拓展"
+      },
+      "error_index": 1,
+      "chapter": "机械能和内能"
+    },
+    "diagnostic-energy-01-3": {
+      "point": {
+        "id": "energy-01",
+        "title": "机械能",
+        "level": "基础",
+        "definition": "动能是物体因运动具有的能量，势能包括重力势能和弹性势能；动能与势能统称机械能。被举高的物体具有重力势能，发生弹性形变的物体具有弹性势能；比较大小必须控制相关条件，初中以实验和定性规律为主。",
+        "meaning": "质量相同时速度越大，动能越大；速度相同时质量越大，动能越大。相对同一参考面，质量相同时高度越高，重力势能越大；高度相同时质量越大，重力势能越大。同一弹性物体在弹性限度内，形变量越大，弹性势能一般越大。机械能可在不同形式间转化，有摩擦等耗散时机械能可能减少，但总能量不消失。",
+        "symbols": {
+          "m": {
+            "desc": "物体质量",
+            "unit": "kg"
+          },
+          "v": {
+            "desc": "物体速度大小",
+            "unit": "m/s"
+          },
+          "Ek": {
+            "desc": "物体动能",
+            "unit": "J"
+          },
+          "g": {
+            "desc": "当地重力加速度",
+            "unit": "N/kg"
+          },
+          "h": {
+            "desc": "相对选定参考面的高度",
+            "unit": "m"
+          },
+          "Ep": {
+            "desc": "物体重力势能",
+            "unit": "J"
+          },
+          "Em": {
+            "desc": "动能、重力势能与弹性势能的总和",
+            "unit": "J"
+          },
+          "Q": {
+            "desc": "物体吸收的热量",
+            "unit": "J"
+          },
+          "c_h": {
+            "desc": "物质比热容",
+            "unit": "J/kg/℃"
+          },
+          "dT": {
+            "desc": "物体升高的温度",
+            "unit": "℃"
+          },
+          "Ee": {
+            "desc": "弹性势能，本卡只用已知储能作账目",
+            "unit": "J"
+          }
+        },
+        "scenarios": {
+          "高处小球": {
+            "m": 2,
+            "v": 3,
+            "Ek": 9,
+            "g": 10,
+            "h": 5,
+            "Ep": 100,
+            "Em": 109,
+            "Ee": 0
+          },
+          "抛起物体": {
+            "m": 1,
+            "v": 4,
+            "Ek": 8,
+            "g": 10,
+            "h": 3,
+            "Ep": 30,
+            "Em": 38,
+            "Ee": 0
+          },
+          "半千克水升温10度": {
+            "Q": 21000,
+            "c_h": 4200,
+            "m": 0.5,
+            "dT": 10,
+            "Ee": 0
+          },
+          "两百克水升温5度": {
+            "Q": 4200,
+            "c_h": 4200,
+            "m": 0.2,
+            "dT": 5,
+            "Ee": 0
+          },
+          "弹性储能账目": {
+            "Ek": 2,
+            "Ep": 3,
+            "Ee": 5,
+            "Em": 10
+          }
+        },
+        "formulas": [
+          {
+            "name": "物体动能",
+            "expr": "Ek = 0.5*m*v^2",
+            "when": "拓展计算，非本卡初中必背主线。适用于物体平动的动能计算，m 用 kg、v 用 m/s。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "高处小球",
+                "expr": "0.5*m*v^2",
+                "ref": 9,
+                "note": "0.5×2×3^2=9 J。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "抛起物体",
+                "expr": "0.5*m*v^2",
+                "ref": 8,
+                "note": "0.5×1×4^2=8 J。"
+              },
+              {
+                "type": "direction",
+                "scenario": "高处小球",
+                "var": "v",
+                "lo": 0,
+                "hi": 20,
+                "expr": "0.5*m*v^2",
+                "expect": "up",
+                "note": "质量固定时，速度增大，动能按速度平方增大。"
+              },
+              {
+                "type": "scan",
+                "scenario": "高处小球",
+                "var": "v",
+                "lo": 0,
+                "hi": 100,
+                "note": "扫描非负速度，动能保持非负且有限。"
+              }
+            ]
+          },
+          {
+            "name": "物体重力势能",
+            "expr": "Ep = m*g*h",
+            "when": "拓展计算，非本卡初中必背主线。h 从选定参考面竖直量起，g 取当地值。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "高处小球",
+                "expr": "m*g*h",
+                "ref": 100,
+                "note": "2 kg×10 N/kg×5 m=100 J。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "抛起物体",
+                "expr": "m*g*h",
+                "ref": 30,
+                "note": "1 kg×10 N/kg×3 m=30 J。"
+              },
+              {
+                "type": "direction",
+                "scenario": "高处小球",
+                "var": "h",
+                "lo": 0,
+                "hi": 20,
+                "expr": "m*g*h",
+                "expect": "up",
+                "note": "质量和 g 固定时，高度增大，重力势能增大。"
+              },
+              {
+                "type": "scan",
+                "scenario": "高处小球",
+                "var": "h",
+                "lo": 0,
+                "hi": 100,
+                "note": "扫描参考面以上的非负高度。"
+              }
+            ]
+          },
+          {
+            "name": "动能与各类势能组成机械能",
+            "expr": "Em = Ek+Ep+Ee",
+            "when": "机械能账目包含动能、重力势能和弹性势能；参考面一致，其他机械储能另计。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "高处小球",
+                "expr": "Ek+Ep",
+                "ref": 109,
+                "note": "9 J+100 J=109 J。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "抛起物体",
+                "expr": "Ek+Ep",
+                "ref": 38,
+                "note": "8 J+30 J=38 J。"
+              },
+              {
+                "type": "scan",
+                "scenario": "高处小球",
+                "var": "Ek",
+                "lo": 0,
+                "hi": 10000,
+                "note": "扫描非负动能，机械能总量有限。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "弹性储能账目",
+                "ref": 10,
+                "note": "独立加和2 J运动能、3 J重力储能、5 J弹性储能，总10 J；不能漏掉弹性项。"
+              }
+            ]
+          },
+          {
+            "name": "由速度和高度直接求机械能",
+            "expr": "Em = 0.5*m*v^2+m*g*h",
+            "when": "拓展计算，非本卡初中必背主线。同一物体相对同一参考面计重力势能，机械能只包含动能和重力势能。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "高处小球",
+                "expr": "0.5*m*v^2+m*g*h",
+                "ref": 109,
+                "note": "直接代入质量、速度和高度，得到 9 J+100 J=109 J。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "抛起物体",
+                "expr": "0.5*m*v^2+m*g*h",
+                "ref": 38,
+                "note": "直接代入得 8 J+30 J=38 J，与该情境机械能相符。"
+              },
+              {
+                "type": "direction",
+                "scenario": "高处小球",
+                "var": "h",
+                "lo": 0,
+                "hi": 20,
+                "expr": "0.5*m*v^2+m*g*h",
+                "expect": "up",
+                "note": "速度不变、参考面固定时，升高物体会增加重力势能和机械能。"
+              },
+              {
+                "type": "scan",
+                "scenario": "高处小球",
+                "var": "h",
+                "lo": 0,
+                "hi": 100,
+                "note": "扫描参考面以上高度，直接计算的机械能保持有限。"
+              },
+              {
+                "type": "consistency",
+                "scenario": "高处小球",
+                "with": "energy-01|由速度和高度直接求机械能",
+                "with_expr": "Ek+Ep",
+                "target": "动能、重力势能与弹性势能的总和",
+                "note": "本公式直接求Em；参考端显式关系为Ek+Ep。两端使用同一情境和阶段，只核对该关系；with字段仅定位来源，不代表调用另一条被覆盖的公式。",
+                "verification_kind": "独立关系核对"
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "物体运动时具有动能，计算时使用质量和速度。",
+          "相对参考面被举高的物体具有重力势能，计算时使用质量、g 和高度。",
+          "把动能与重力势能相加，得到该参考面下的机械能。",
+          "分析能量转化时，检查摩擦等因素是否使机械能转化为内能。"
+        ],
+        "errors": [
+          {
+            "wrong": "把动能写成质量与速度的一次方相乘，漏掉速度平方和二分之一。",
+            "wrong_expr": "Ek = m*v",
+            "why": "动能的单位应为 J，m*v 的单位是 kg·m/s；量纲与数值关系都不符。",
+            "caught_by": "量纲一致性",
+            "trap_test": {
+              "scenario": "高处小球",
+              "expr": "m*v",
+              "ref": 9
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "写动能公式时漏掉系数二分之一，只保留质量乘速度平方。",
+            "wrong_expr": "Ek = m*v^2",
+            "why": "高处小球的动能为 0.5×2×3^2=9 J；漏掉二分之一会得到 18 J，量纲仍正确但数值翻倍。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "高处小球",
+              "expr": "m*v^2",
+              "ref": 9
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "认为物体高度变化时重力势能与参考面无关。",
+            "why": "重力势能数值依赖所选零势能参考面；比较同一过程能量变化时要保持参考面一致。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "用同一小车从同一斜面不同高度静止释放，撞击同一木块。高处释放时木块被推得更远。解释能量变化，再说明怎样比较质量对动能的影响。",
+          "solution": [
+            "高处释放的小车初始重力势能更大，下滑时部分转成动能，撞击后对木块做功，推动距离可作为比较证据。",
+            "研究质量时应改变小车质量、保持撞击前速度相同并保持木块和水平面相同；不能同时任意改变质量和速度。"
+          ],
+          "answer": "能量可由重力势能转为动能再转移；质量比较须控制速度相同。"
+        },
+        "prereq": [
+          "motion-01",
+          "force-01"
+        ],
+        "next": [
+          "energy-02"
+        ],
+        "tags": [
+          "机械能",
+          "动能",
+          "重力势能",
+          "机械能转化"
+        ],
+        "core": [
+          {
+            "title": "初中核心：三种机械能",
+            "text": "运动小车推动木块的距离用于比较动能；从不同高度释放同一物体，或同一高度释放不同质量物体，用做功效果比较重力势能。保持材料相同再比较弹性形变量，以弹簧推动物体的效果比较弹性势能。控制变量和能量转化是主线，不要求推导动能平方公式或弹性势能公式。弹性势能不是重力势能，机械能不能一概只算动能与重力势能。"
+          },
+          {
+            "title": "机械能转化与拓展边界",
+            "text": "摆球下落时重力势能减小、动能增大，上升时相反；弹簧恢复形变可把弹性势能转为动能。忽略摩擦和其他耗散且系统边界适当时，机械能可守恒。下面数值关系供高中衔接；动能和重力势能公式不当作初中必背，机械能加和若忽略弹性势能必须明确无弹性储能。"
+          },
+          {
+            "title": "本章素养回顾（原创任务）",
+            "text": "选择本章一个现象，写出结论、成立条件和证据；用另一条本章规律复核解释是否矛盾。指出一次测量或模型的局限，并说明还需什么证据；数值通过不替代概念辨析。"
+          }
+        ],
+        "experiments": [
+          {
+            "title": "比较动能与重力势能的影响因素",
+            "purpose": "用做功效果作间接证据，练习控制变量。",
+            "apparatus": "小车、缓斜面、不同配重、木块、刻度尺。",
+            "variables": "动能比较固定质量改变撞击速度，或固定速度改变质量；重力势能比较固定质量改变高度。",
+            "steps": [
+              "同车从不同高度释放，记录撞后木块移动距离。",
+              "研究质量时通过速度测量等办法保持撞击速度相同，再换配重。",
+              "写清间接指标、控制条件和适用范围，再说明能量转化。"
+            ],
+            "data": "设计示例（非实测）：同车较高位置释放推动距离可由5 cm增至9 cm；这些是设计示例，不由距离直接读出多少J。",
+            "conclusion": "动能随质量和速度增大而增大；重力势能随质量和相对高度增大而增大，控制变量后分别判断。",
+            "limits": "摩擦差异、撞击方式和速度未控制会混入影响，不能由两组距离推导动能平方系数。",
+            "kind": "教材与目录补充"
+          }
+        ],
+        "learning_scope": "初中主线；公式含拓展"
+      },
+      "error_index": 2,
+      "chapter": "机械能和内能"
+    },
+    "diagnostic-energy-03-1": {
+      "point": {
+        "id": "energy-03",
+        "title": "内能 热传递",
+        "level": "基础",
+        "definition": "物体内部所有分子无规则运动的动能及分子相互作用势能的总和称为内能。热传递是内能改变的一种方式，能量从温度较高的物体传向温度较低的物体，直到达到热平衡。",
+        "meaning": "热量是热传递过程中传递的能量，不是物体“含有”的一种物质。忽略与外界的能量交换和散失时，高温物体放出的热量等于低温物体吸收的热量；实际实验需要考虑容器、温度计和环境带走的能量。用水的比热容可估算吸热量，再与热平衡的能量账目核对。",
+        "symbols": {
+          "Q_lost": {
+            "desc": "高温物体放出的热量大小",
+            "unit": "J"
+          },
+          "Q_gained": {
+            "desc": "低温物体吸收的热量",
+            "unit": "J"
+          },
+          "c_h": {
+            "desc": "被加热物质的比热容",
+            "unit": "J/kg/℃"
+          },
+          "m": {
+            "desc": "被加热物质质量",
+            "unit": "kg"
+          },
+          "dT": {
+            "desc": "被加热物质的温升",
+            "unit": "℃"
+          }
+        },
+        "scenarios": {
+          "水吸热与热水放热": {
+            "Q_lost": 42000,
+            "Q_gained": 42000,
+            "c_h": 4200,
+            "m": 0.2,
+            "dT": 50
+          },
+          "混合水热交换": {
+            "Q_lost": 84000,
+            "Q_gained": 84000,
+            "c_h": 4200,
+            "m": 0.4,
+            "dT": 50
+          }
+        },
+        "formulas": [
+          {
+            "name": "绝热热交换中的放热吸热平衡",
+            "expr": "Q_lost = Q_gained",
+            "when": "把参与热交换的物体作为近似绝热系统，忽略向环境、容器等散失的能量。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "水吸热与热水放热",
+                "expr": "Q_gained",
+                "ref": 42000,
+                "note": "近似绝热时，热水放出 42 000 J，冷水吸收相同热量。 "
+              },
+              {
+                "type": "numeric",
+                "scenario": "混合水热交换",
+                "expr": "Q_gained",
+                "ref": 84000,
+                "note": "另一组热平衡情境中放热量和吸热量相同。 "
+              },
+              {
+                "type": "direction",
+                "scenario": "水吸热与热水放热",
+                "var": "Q_lost",
+                "lo": 0,
+                "hi": 200000,
+                "expr": "Q_lost",
+                "expect": "up",
+                "note": "理想热平衡情境中放热量增加，吸热量按能量平衡同步增加。 "
+              },
+              {
+                "type": "scan",
+                "scenario": "水吸热与热水放热",
+                "var": "Q_lost",
+                "lo": 0,
+                "hi": 1000000,
+                "note": "扫描非负热量，守恒关系保持有限。 "
+              },
+              {
+                "type": "consistency",
+                "scenario": "水吸热与热水放热",
+                "with": "energy-03|绝热热交换中的放热吸热平衡",
+                "with_expr": "c_h*m*dT",
+                "target": "高温物体放出的热量大小",
+                "note": "本公式直接求Q_lost；参考端显式关系为c_h*m*dT。两端使用同一情境和阶段，只核对该关系；with字段仅定位来源，不代表调用另一条被覆盖的公式。",
+                "verification_kind": "独立关系核对"
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "确定热交换系统边界，并判断是否可近似忽略向环境散热。",
+          "记录高温物体放热量和低温物体吸热量的大小。",
+          "在近似绝热的系统内，两者大小相等；实际实验可将差值视作热损失与测量误差分析。"
+        ],
+        "errors": [
+          {
+            "wrong": "在忽略散热的热平衡问题中把吸热量误写成放热量的两倍。",
+            "wrong_expr": "Q_lost = 2*Q_gained",
+            "why": "封闭近似绝热系统的能量账目应相等；额外乘 2 会破坏热量平衡。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "水吸热与热水放热",
+              "expr": "2*Q_gained",
+              "ref": 42000
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "认为热量是物体本身储存的一种物质。",
+            "why": "热量描述热传递过程中转移的能量；物体具有内能，而不是“含有热量”。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "忽略散热时，一块热金属放出 600 J 热量给水，水吸收多少热量？",
+          "solution": [
+            "把金属和水作为近似绝热系统。",
+            "金属放出的热量等于水吸收的热量。"
+          ],
+          "answer": "水吸收约 600 J。"
+        },
+        "prereq": [
+          "energy-01"
+        ],
+        "next": [
+          "energy-02",
+          "energy-04"
+        ],
+        "tags": [
+          "内能",
+          "热传递",
+          "吸热",
+          "放热",
+          "热平衡"
+        ],
+        "core": [
+          {
+            "title": "内能、温度和热量",
+            "text": "内能是物体内大量微观粒子无规则运动的动能及相互作用势能的总和，所有物体都有内能，0℃并不代表没有内能。温度描述冷热，内能还与物体质量、状态等有关，不能只比温度判内能多少。热量是热传递过程中转移的能量，用J；只说“物体内能增大”，不说“物体含有热量”。热传递自发地由高温物体向低温物体发生。"
+          }
+        ],
+        "learning_scope": "初中"
+      },
+      "error_index": 0,
+      "chapter": "机械能和内能"
+    },
+    "diagnostic-energy-03-2": {
+      "point": {
+        "id": "energy-03",
+        "title": "内能 热传递",
+        "level": "基础",
+        "definition": "物体内部所有分子无规则运动的动能及分子相互作用势能的总和称为内能。热传递是内能改变的一种方式，能量从温度较高的物体传向温度较低的物体，直到达到热平衡。",
+        "meaning": "热量是热传递过程中传递的能量，不是物体“含有”的一种物质。忽略与外界的能量交换和散失时，高温物体放出的热量等于低温物体吸收的热量；实际实验需要考虑容器、温度计和环境带走的能量。用水的比热容可估算吸热量，再与热平衡的能量账目核对。",
+        "symbols": {
+          "Q_lost": {
+            "desc": "高温物体放出的热量大小",
+            "unit": "J"
+          },
+          "Q_gained": {
+            "desc": "低温物体吸收的热量",
+            "unit": "J"
+          },
+          "c_h": {
+            "desc": "被加热物质的比热容",
+            "unit": "J/kg/℃"
+          },
+          "m": {
+            "desc": "被加热物质质量",
+            "unit": "kg"
+          },
+          "dT": {
+            "desc": "被加热物质的温升",
+            "unit": "℃"
+          }
+        },
+        "scenarios": {
+          "水吸热与热水放热": {
+            "Q_lost": 42000,
+            "Q_gained": 42000,
+            "c_h": 4200,
+            "m": 0.2,
+            "dT": 50
+          },
+          "混合水热交换": {
+            "Q_lost": 84000,
+            "Q_gained": 84000,
+            "c_h": 4200,
+            "m": 0.4,
+            "dT": 50
+          }
+        },
+        "formulas": [
+          {
+            "name": "绝热热交换中的放热吸热平衡",
+            "expr": "Q_lost = Q_gained",
+            "when": "把参与热交换的物体作为近似绝热系统，忽略向环境、容器等散失的能量。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "水吸热与热水放热",
+                "expr": "Q_gained",
+                "ref": 42000,
+                "note": "近似绝热时，热水放出 42 000 J，冷水吸收相同热量。 "
+              },
+              {
+                "type": "numeric",
+                "scenario": "混合水热交换",
+                "expr": "Q_gained",
+                "ref": 84000,
+                "note": "另一组热平衡情境中放热量和吸热量相同。 "
+              },
+              {
+                "type": "direction",
+                "scenario": "水吸热与热水放热",
+                "var": "Q_lost",
+                "lo": 0,
+                "hi": 200000,
+                "expr": "Q_lost",
+                "expect": "up",
+                "note": "理想热平衡情境中放热量增加，吸热量按能量平衡同步增加。 "
+              },
+              {
+                "type": "scan",
+                "scenario": "水吸热与热水放热",
+                "var": "Q_lost",
+                "lo": 0,
+                "hi": 1000000,
+                "note": "扫描非负热量，守恒关系保持有限。 "
+              },
+              {
+                "type": "consistency",
+                "scenario": "水吸热与热水放热",
+                "with": "energy-03|绝热热交换中的放热吸热平衡",
+                "with_expr": "c_h*m*dT",
+                "target": "高温物体放出的热量大小",
+                "note": "本公式直接求Q_lost；参考端显式关系为c_h*m*dT。两端使用同一情境和阶段，只核对该关系；with字段仅定位来源，不代表调用另一条被覆盖的公式。",
+                "verification_kind": "独立关系核对"
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "确定热交换系统边界，并判断是否可近似忽略向环境散热。",
+          "记录高温物体放热量和低温物体吸热量的大小。",
+          "在近似绝热的系统内，两者大小相等；实际实验可将差值视作热损失与测量误差分析。"
+        ],
+        "errors": [
+          {
+            "wrong": "在忽略散热的热平衡问题中把吸热量误写成放热量的两倍。",
+            "wrong_expr": "Q_lost = 2*Q_gained",
+            "why": "封闭近似绝热系统的能量账目应相等；额外乘 2 会破坏热量平衡。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "水吸热与热水放热",
+              "expr": "2*Q_gained",
+              "ref": 42000
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "认为热量是物体本身储存的一种物质。",
+            "why": "热量描述热传递过程中转移的能量；物体具有内能，而不是“含有热量”。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "忽略散热时，一块热金属放出 600 J 热量给水，水吸收多少热量？",
+          "solution": [
+            "把金属和水作为近似绝热系统。",
+            "金属放出的热量等于水吸收的热量。"
+          ],
+          "answer": "水吸收约 600 J。"
+        },
+        "prereq": [
+          "energy-01"
+        ],
+        "next": [
+          "energy-02",
+          "energy-04"
+        ],
+        "tags": [
+          "内能",
+          "热传递",
+          "吸热",
+          "放热",
+          "热平衡"
+        ],
+        "core": [
+          {
+            "title": "内能、温度和热量",
+            "text": "内能是物体内大量微观粒子无规则运动的动能及相互作用势能的总和，所有物体都有内能，0℃并不代表没有内能。温度描述冷热，内能还与物体质量、状态等有关，不能只比温度判内能多少。热量是热传递过程中转移的能量，用J；只说“物体内能增大”，不说“物体含有热量”。热传递自发地由高温物体向低温物体发生。"
+          }
+        ],
+        "learning_scope": "初中"
+      },
+      "error_index": 1,
+      "chapter": "机械能和内能"
+    },
+    "diagnostic-energy-02-1": {
+      "point": {
+        "id": "energy-02",
+        "title": "物质的比热容",
+        "level": "基础",
+        "definition": "比热容表示单位质量的某种物质温度升高或降低 1℃ 时吸收或放出的热量。不同物质的比热容通常不同；同种物质吸收热量还与质量和温度变化有关。",
+        "meaning": "水的比热容约为 4200 J/kg/℃，表示 1 kg 水升高 1℃ 约需吸收 4200 J。用 Q=c_h*m*dT 计算时，先确认过程没有发生物态变化，并把质量、温升和热量单位统一。比热容是物质特性，不等于一整份物体吸收的热量。",
+        "symbols": {
+          "Q": {
+            "desc": "物体吸收的热量",
+            "unit": "J"
+          },
+          "c_h": {
+            "desc": "物质比热容",
+            "unit": "J/kg/℃"
+          },
+          "m": {
+            "desc": "物体质量",
+            "unit": "kg"
+          },
+          "dT": {
+            "desc": "物体升高的温度",
+            "unit": "℃"
+          }
+        },
+        "scenarios": {
+          "半千克水升温10度": {
+            "Q": 21000,
+            "c_h": 4200,
+            "m": 0.5,
+            "dT": 10
+          },
+          "两百克水升温5度": {
+            "Q": 4200,
+            "c_h": 4200,
+            "m": 0.2,
+            "dT": 5
+          }
+        },
+        "formulas": [
+          {
+            "name": "加热温度变化时的吸热量",
+            "expr": "Q = c_h*m*dT",
+            "when": "无物态变化、比热容近似不变，dT 为温升，单位 ℃。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "半千克水升温10度",
+                "expr": "c_h*m*dT",
+                "ref": 21000,
+                "note": "4200×0.5×10=21 000 J。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "两百克水升温5度",
+                "expr": "c_h*m*dT",
+                "ref": 4200,
+                "note": "4200×0.2×5=4 200 J。"
+              },
+              {
+                "type": "direction",
+                "scenario": "半千克水升温10度",
+                "var": "dT",
+                "lo": 0,
+                "hi": 50,
+                "expr": "c_h*m*dT",
+                "expect": "up",
+                "note": "其他条件不变时，温升越大，吸收热量越多。"
+              },
+              {
+                "type": "scan",
+                "scenario": "半千克水升温10度",
+                "var": "dT",
+                "lo": 0,
+                "hi": 100,
+                "note": "扫描非负温升，吸热量计算保持线性。"
+              },
+              {
+                "type": "consistency",
+                "scenario": "半千克水升温10度",
+                "with": "energy-02|加热温度变化时的吸热量",
+                "with_expr": "Q",
+                "target": "物体吸收的热量",
+                "note": "直接求本公式输出，与情境中另列的Q设计基准核对；数据是设计示例，不是实测。用于核对定义、反算或边界值，不宣称不同物理原理互证。",
+                "verification_kind": "独立设计情境数据核对"
+              }
+            ]
+          },
+          {
+            "name": "由吸热量求比热容",
+            "expr": "c_h = Q/(m*dT)",
+            "when": "样品无物态变化，吸收热量 Q、质量 m 和温升 dT 已知。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "半千克水升温10度",
+                "expr": "Q/(m*dT)",
+                "ref": 4200,
+                "note": "21 000÷(0.5×10)=4200 J/kg/℃。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "两百克水升温5度",
+                "expr": "Q/(m*dT)",
+                "ref": 4200,
+                "note": "4 200÷(0.2×5)=4200 J/kg/℃。"
+              },
+              {
+                "type": "scan",
+                "scenario": "半千克水升温10度",
+                "var": "m",
+                "lo": 0.01,
+                "hi": 10,
+                "note": "扫描正质量，反算比热容避免除零。"
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "记录被加热物体质量 m 和比热容 c_h。",
+          "测量加热前后温度，求温升 dT。",
+          "在无物态变化条件下，用 Q=c_h*m*dT 求吸收热量。",
+          "实验中还要考虑容器吸热和散热等误差来源。"
+        ],
+        "errors": [
+          {
+            "wrong": "计算吸热量时漏掉物体质量。",
+            "wrong_expr": "Q = c_h*dT",
+            "why": "比热容描述单位质量的吸热量，整块物体还要乘质量；半千克水升温 10℃ 吸热 21 000 J。",
+            "caught_by": "量纲一致性",
+            "trap_test": {
+              "kind": "dimension",
+              "target": "Q = c_h*dT",
+              "expect": "mismatch",
+              "lhs_dim": "M·L^2·T^-2",
+              "rhs_dim": "L^2·T^-2",
+              "note": "正式引擎验证量纲不一致；不计作同量纲错误数值实测。"
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "用末温代替温升，并在温度不变或发生物态变化时直接套用本式。",
+            "why": "本式需要温度变化量，且适用于比热容近似不变、没有物态变化的过程；相变时需另行分析。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "把质量0.5 kg写成500，并仍按kg代入。",
+            "wrong_expr": "Q = c_h*(1000*m)*dT",
+            "why": "比热容单位含kg，质量需0.5 kg；用500代入使正确21000 J误大千倍。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "半千克水升温10度",
+              "expr": "c_h*(1000*m)*dT",
+              "ref": 21000,
+              "tol": 1e-06
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "0.5 kg 的水温度升高 10℃，水的比热容取 4200 J/kg/℃，求吸收热量。",
+          "solution": [
+            "Q=c_h*m*dT。",
+            "Q=4200×0.5×10=21 000 J。"
+          ],
+          "answer": "水吸收 21 000 J 热量。"
+        },
+        "prereq": [
+          "state-01"
+        ],
+        "next": [],
+        "tags": [
+          "比热容",
+          "热量",
+          "质量",
+          "温度变化"
+        ],
+        "core": [
+          {
+            "title": "比热容",
+            "text": "比热容描述单位质量物质温度改变1℃时吸收或放出的热量，用J/(kg·℃)表述。比较不同物质时控制质量和吸收热量相同，温升小者比热容大；或控制质量和温升相同，吸热多者比热容大。吸放热算值必须取温差，且没有相变、比热容可近似恒定；沸腾吸热而温度不变不能套温升式求零热量。"
+          }
+        ],
+        "learning_scope": "初中"
+      },
+      "error_index": 0,
+      "chapter": "机械能和内能"
+    },
+    "diagnostic-energy-02-2": {
+      "point": {
+        "id": "energy-02",
+        "title": "物质的比热容",
+        "level": "基础",
+        "definition": "比热容表示单位质量的某种物质温度升高或降低 1℃ 时吸收或放出的热量。不同物质的比热容通常不同；同种物质吸收热量还与质量和温度变化有关。",
+        "meaning": "水的比热容约为 4200 J/kg/℃，表示 1 kg 水升高 1℃ 约需吸收 4200 J。用 Q=c_h*m*dT 计算时，先确认过程没有发生物态变化，并把质量、温升和热量单位统一。比热容是物质特性，不等于一整份物体吸收的热量。",
+        "symbols": {
+          "Q": {
+            "desc": "物体吸收的热量",
+            "unit": "J"
+          },
+          "c_h": {
+            "desc": "物质比热容",
+            "unit": "J/kg/℃"
+          },
+          "m": {
+            "desc": "物体质量",
+            "unit": "kg"
+          },
+          "dT": {
+            "desc": "物体升高的温度",
+            "unit": "℃"
+          }
+        },
+        "scenarios": {
+          "半千克水升温10度": {
+            "Q": 21000,
+            "c_h": 4200,
+            "m": 0.5,
+            "dT": 10
+          },
+          "两百克水升温5度": {
+            "Q": 4200,
+            "c_h": 4200,
+            "m": 0.2,
+            "dT": 5
+          }
+        },
+        "formulas": [
+          {
+            "name": "加热温度变化时的吸热量",
+            "expr": "Q = c_h*m*dT",
+            "when": "无物态变化、比热容近似不变，dT 为温升，单位 ℃。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "半千克水升温10度",
+                "expr": "c_h*m*dT",
+                "ref": 21000,
+                "note": "4200×0.5×10=21 000 J。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "两百克水升温5度",
+                "expr": "c_h*m*dT",
+                "ref": 4200,
+                "note": "4200×0.2×5=4 200 J。"
+              },
+              {
+                "type": "direction",
+                "scenario": "半千克水升温10度",
+                "var": "dT",
+                "lo": 0,
+                "hi": 50,
+                "expr": "c_h*m*dT",
+                "expect": "up",
+                "note": "其他条件不变时，温升越大，吸收热量越多。"
+              },
+              {
+                "type": "scan",
+                "scenario": "半千克水升温10度",
+                "var": "dT",
+                "lo": 0,
+                "hi": 100,
+                "note": "扫描非负温升，吸热量计算保持线性。"
+              },
+              {
+                "type": "consistency",
+                "scenario": "半千克水升温10度",
+                "with": "energy-02|加热温度变化时的吸热量",
+                "with_expr": "Q",
+                "target": "物体吸收的热量",
+                "note": "直接求本公式输出，与情境中另列的Q设计基准核对；数据是设计示例，不是实测。用于核对定义、反算或边界值，不宣称不同物理原理互证。",
+                "verification_kind": "独立设计情境数据核对"
+              }
+            ]
+          },
+          {
+            "name": "由吸热量求比热容",
+            "expr": "c_h = Q/(m*dT)",
+            "when": "样品无物态变化，吸收热量 Q、质量 m 和温升 dT 已知。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "半千克水升温10度",
+                "expr": "Q/(m*dT)",
+                "ref": 4200,
+                "note": "21 000÷(0.5×10)=4200 J/kg/℃。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "两百克水升温5度",
+                "expr": "Q/(m*dT)",
+                "ref": 4200,
+                "note": "4 200÷(0.2×5)=4200 J/kg/℃。"
+              },
+              {
+                "type": "scan",
+                "scenario": "半千克水升温10度",
+                "var": "m",
+                "lo": 0.01,
+                "hi": 10,
+                "note": "扫描正质量，反算比热容避免除零。"
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "记录被加热物体质量 m 和比热容 c_h。",
+          "测量加热前后温度，求温升 dT。",
+          "在无物态变化条件下，用 Q=c_h*m*dT 求吸收热量。",
+          "实验中还要考虑容器吸热和散热等误差来源。"
+        ],
+        "errors": [
+          {
+            "wrong": "计算吸热量时漏掉物体质量。",
+            "wrong_expr": "Q = c_h*dT",
+            "why": "比热容描述单位质量的吸热量，整块物体还要乘质量；半千克水升温 10℃ 吸热 21 000 J。",
+            "caught_by": "量纲一致性",
+            "trap_test": {
+              "kind": "dimension",
+              "target": "Q = c_h*dT",
+              "expect": "mismatch",
+              "lhs_dim": "M·L^2·T^-2",
+              "rhs_dim": "L^2·T^-2",
+              "note": "正式引擎验证量纲不一致；不计作同量纲错误数值实测。"
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "用末温代替温升，并在温度不变或发生物态变化时直接套用本式。",
+            "why": "本式需要温度变化量，且适用于比热容近似不变、没有物态变化的过程；相变时需另行分析。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "把质量0.5 kg写成500，并仍按kg代入。",
+            "wrong_expr": "Q = c_h*(1000*m)*dT",
+            "why": "比热容单位含kg，质量需0.5 kg；用500代入使正确21000 J误大千倍。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "半千克水升温10度",
+              "expr": "c_h*(1000*m)*dT",
+              "ref": 21000,
+              "tol": 1e-06
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "0.5 kg 的水温度升高 10℃，水的比热容取 4200 J/kg/℃，求吸收热量。",
+          "solution": [
+            "Q=c_h*m*dT。",
+            "Q=4200×0.5×10=21 000 J。"
+          ],
+          "answer": "水吸收 21 000 J 热量。"
+        },
+        "prereq": [
+          "state-01"
+        ],
+        "next": [],
+        "tags": [
+          "比热容",
+          "热量",
+          "质量",
+          "温度变化"
+        ],
+        "core": [
+          {
+            "title": "比热容",
+            "text": "比热容描述单位质量物质温度改变1℃时吸收或放出的热量，用J/(kg·℃)表述。比较不同物质时控制质量和吸收热量相同，温升小者比热容大；或控制质量和温升相同，吸热多者比热容大。吸放热算值必须取温差，且没有相变、比热容可近似恒定；沸腾吸热而温度不变不能套温升式求零热量。"
+          }
+        ],
+        "learning_scope": "初中"
+      },
+      "error_index": 1,
+      "chapter": "机械能和内能"
+    },
+    "diagnostic-energy-02-3": {
+      "point": {
+        "id": "energy-02",
+        "title": "物质的比热容",
+        "level": "基础",
+        "definition": "比热容表示单位质量的某种物质温度升高或降低 1℃ 时吸收或放出的热量。不同物质的比热容通常不同；同种物质吸收热量还与质量和温度变化有关。",
+        "meaning": "水的比热容约为 4200 J/kg/℃，表示 1 kg 水升高 1℃ 约需吸收 4200 J。用 Q=c_h*m*dT 计算时，先确认过程没有发生物态变化，并把质量、温升和热量单位统一。比热容是物质特性，不等于一整份物体吸收的热量。",
+        "symbols": {
+          "Q": {
+            "desc": "物体吸收的热量",
+            "unit": "J"
+          },
+          "c_h": {
+            "desc": "物质比热容",
+            "unit": "J/kg/℃"
+          },
+          "m": {
+            "desc": "物体质量",
+            "unit": "kg"
+          },
+          "dT": {
+            "desc": "物体升高的温度",
+            "unit": "℃"
+          }
+        },
+        "scenarios": {
+          "半千克水升温10度": {
+            "Q": 21000,
+            "c_h": 4200,
+            "m": 0.5,
+            "dT": 10
+          },
+          "两百克水升温5度": {
+            "Q": 4200,
+            "c_h": 4200,
+            "m": 0.2,
+            "dT": 5
+          }
+        },
+        "formulas": [
+          {
+            "name": "加热温度变化时的吸热量",
+            "expr": "Q = c_h*m*dT",
+            "when": "无物态变化、比热容近似不变，dT 为温升，单位 ℃。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "半千克水升温10度",
+                "expr": "c_h*m*dT",
+                "ref": 21000,
+                "note": "4200×0.5×10=21 000 J。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "两百克水升温5度",
+                "expr": "c_h*m*dT",
+                "ref": 4200,
+                "note": "4200×0.2×5=4 200 J。"
+              },
+              {
+                "type": "direction",
+                "scenario": "半千克水升温10度",
+                "var": "dT",
+                "lo": 0,
+                "hi": 50,
+                "expr": "c_h*m*dT",
+                "expect": "up",
+                "note": "其他条件不变时，温升越大，吸收热量越多。"
+              },
+              {
+                "type": "scan",
+                "scenario": "半千克水升温10度",
+                "var": "dT",
+                "lo": 0,
+                "hi": 100,
+                "note": "扫描非负温升，吸热量计算保持线性。"
+              },
+              {
+                "type": "consistency",
+                "scenario": "半千克水升温10度",
+                "with": "energy-02|加热温度变化时的吸热量",
+                "with_expr": "Q",
+                "target": "物体吸收的热量",
+                "note": "直接求本公式输出，与情境中另列的Q设计基准核对；数据是设计示例，不是实测。用于核对定义、反算或边界值，不宣称不同物理原理互证。",
+                "verification_kind": "独立设计情境数据核对"
+              }
+            ]
+          },
+          {
+            "name": "由吸热量求比热容",
+            "expr": "c_h = Q/(m*dT)",
+            "when": "样品无物态变化，吸收热量 Q、质量 m 和温升 dT 已知。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "半千克水升温10度",
+                "expr": "Q/(m*dT)",
+                "ref": 4200,
+                "note": "21 000÷(0.5×10)=4200 J/kg/℃。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "两百克水升温5度",
+                "expr": "Q/(m*dT)",
+                "ref": 4200,
+                "note": "4 200÷(0.2×5)=4200 J/kg/℃。"
+              },
+              {
+                "type": "scan",
+                "scenario": "半千克水升温10度",
+                "var": "m",
+                "lo": 0.01,
+                "hi": 10,
+                "note": "扫描正质量，反算比热容避免除零。"
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "记录被加热物体质量 m 和比热容 c_h。",
+          "测量加热前后温度，求温升 dT。",
+          "在无物态变化条件下，用 Q=c_h*m*dT 求吸收热量。",
+          "实验中还要考虑容器吸热和散热等误差来源。"
+        ],
+        "errors": [
+          {
+            "wrong": "计算吸热量时漏掉物体质量。",
+            "wrong_expr": "Q = c_h*dT",
+            "why": "比热容描述单位质量的吸热量，整块物体还要乘质量；半千克水升温 10℃ 吸热 21 000 J。",
+            "caught_by": "量纲一致性",
+            "trap_test": {
+              "kind": "dimension",
+              "target": "Q = c_h*dT",
+              "expect": "mismatch",
+              "lhs_dim": "M·L^2·T^-2",
+              "rhs_dim": "L^2·T^-2",
+              "note": "正式引擎验证量纲不一致；不计作同量纲错误数值实测。"
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "用末温代替温升，并在温度不变或发生物态变化时直接套用本式。",
+            "why": "本式需要温度变化量，且适用于比热容近似不变、没有物态变化的过程；相变时需另行分析。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "把质量0.5 kg写成500，并仍按kg代入。",
+            "wrong_expr": "Q = c_h*(1000*m)*dT",
+            "why": "比热容单位含kg，质量需0.5 kg；用500代入使正确21000 J误大千倍。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "半千克水升温10度",
+              "expr": "c_h*(1000*m)*dT",
+              "ref": 21000,
+              "tol": 1e-06
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "0.5 kg 的水温度升高 10℃，水的比热容取 4200 J/kg/℃，求吸收热量。",
+          "solution": [
+            "Q=c_h*m*dT。",
+            "Q=4200×0.5×10=21 000 J。"
+          ],
+          "answer": "水吸收 21 000 J 热量。"
+        },
+        "prereq": [
+          "state-01"
+        ],
+        "next": [],
+        "tags": [
+          "比热容",
+          "热量",
+          "质量",
+          "温度变化"
+        ],
+        "core": [
+          {
+            "title": "比热容",
+            "text": "比热容描述单位质量物质温度改变1℃时吸收或放出的热量，用J/(kg·℃)表述。比较不同物质时控制质量和吸收热量相同，温升小者比热容大；或控制质量和温升相同，吸热多者比热容大。吸放热算值必须取温差，且没有相变、比热容可近似恒定；沸腾吸热而温度不变不能套温升式求零热量。"
+          }
+        ],
+        "learning_scope": "初中"
+      },
+      "error_index": 2,
+      "chapter": "机械能和内能"
+    },
+    "diagnostic-energy-04-1": {
+      "point": {
+        "id": "energy-04",
+        "title": "机械能与内能的相互转化",
+        "level": "基础",
+        "definition": "机械能可以转化为内能，内能也可通过做功等过程转化为机械能。存在摩擦时，部分机械能会转化为物体内能；能量总量遵循转化与守恒规律。",
+        "meaning": "刹车片发热、双手摩擦后变热，说明机械能可转化为内能；热机中气体膨胀推动活塞，则内能可转化为机械能。只研究机械能时会观察到它减少，但把内能等形式也计入后能量账目仍平衡。分析前先划定系统，确认是否有外界能量输入或散失。",
+        "symbols": {
+          "E_mech_before": {
+            "desc": "转化前机械能",
+            "unit": "J"
+          },
+          "E_mech_after": {
+            "desc": "转化后机械能",
+            "unit": "J"
+          },
+          "E_int_gain": {
+            "desc": "转化增加的内能",
+            "unit": "J"
+          },
+          "q": {
+            "desc": "燃料热值，按单位质量定义",
+            "unit": "J/kg"
+          },
+          "m": {
+            "desc": "完全燃烧的燃料质量",
+            "unit": "kg"
+          },
+          "Q": {
+            "desc": "燃料完全燃烧理论放热量",
+            "unit": "J"
+          },
+          "W_use": {
+            "desc": "热机对外有用机械功",
+            "unit": "J"
+          },
+          "eta": {
+            "desc": "热机效率，取0到1间比值",
+            "unit": "1"
+          },
+          "Q_loss": {
+            "desc": "未成为有用功的其他能量总量",
+            "unit": "J"
+          }
+        },
+        "scenarios": {
+          "刹车减速": {
+            "E_mech_before": 100,
+            "E_mech_after": 80,
+            "E_int_gain": 20
+          },
+          "摩擦生热": {
+            "E_mech_before": 250,
+            "E_mech_after": 150,
+            "E_int_gain": 100
+          },
+          "燃料与热机一": {
+            "q": 40000000,
+            "m": 0.01,
+            "Q": 400000,
+            "W_use": 100000,
+            "eta": 0.25,
+            "Q_loss": 300000
+          },
+          "燃料与热机二": {
+            "q": 40000000,
+            "m": 0.02,
+            "Q": 800000,
+            "W_use": 240000,
+            "eta": 0.3,
+            "Q_loss": 560000
+          }
+        },
+        "formulas": [
+          {
+            "name": "机械能减少转化为内能",
+            "expr": "E_mech_before = E_mech_after+E_int_gain",
+            "when": "把刹车或摩擦过程中的相关物体作为系统，忽略向外界的能量散失。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "刹车减速",
+                "expr": "E_mech_after+E_int_gain",
+                "ref": 100,
+                "note": "机械能由 100 J 降至 80 J，增加的内能约为 20 J。 "
+              },
+              {
+                "type": "numeric",
+                "scenario": "摩擦生热",
+                "expr": "E_mech_after+E_int_gain",
+                "ref": 250,
+                "note": "150 J 机械能与 100 J 内能增量合计为 250 J。 "
+              },
+              {
+                "type": "direction",
+                "scenario": "刹车减速",
+                "var": "E_int_gain",
+                "lo": 0,
+                "hi": 100,
+                "expr": "E_mech_after+E_int_gain",
+                "expect": "up",
+                "note": "机械能末值固定时，内能增量增加对应更大的转化前能量。 "
+              },
+              {
+                "type": "scan",
+                "scenario": "刹车减速",
+                "var": "E_int_gain",
+                "lo": 0,
+                "hi": 10000,
+                "note": "扫描非负能量转化量，能量合计有限。 "
+              },
+              {
+                "type": "consistency",
+                "scenario": "刹车减速",
+                "with": "energy-04|机械能减少转化为内能",
+                "with_expr": "E_mech_before",
+                "target": "转化前机械能",
+                "note": "直接求本公式输出，与情境中另列的E_mech_before设计基准核对；数据是设计示例，不是实测。用于核对定义、反算或边界值，不宣称不同物理原理互证。",
+                "verification_kind": "独立设计情境数据核对"
+              }
+            ]
+          },
+          {
+            "name": "由前后机械能差求内能增量",
+            "expr": "E_int_gain = E_mech_before-E_mech_after",
+            "when": "机械能减少量全部转化为系统内能，忽略热量散失和其他能量形式。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "刹车减速",
+                "expr": "E_mech_before-E_mech_after",
+                "ref": 20,
+                "note": "100 J-80 J=20 J。 "
+              },
+              {
+                "type": "numeric",
+                "scenario": "摩擦生热",
+                "expr": "E_mech_before-E_mech_after",
+                "ref": 100,
+                "note": "250 J-150 J=100 J。 "
+              },
+              {
+                "type": "direction",
+                "scenario": "刹车减速",
+                "var": "E_mech_before",
+                "lo": 80,
+                "hi": 200,
+                "expr": "E_mech_before-E_mech_after",
+                "expect": "up",
+                "note": "机械能末值固定时，初始机械能增加会增大转化量。 "
+              },
+              {
+                "type": "scan",
+                "scenario": "刹车减速",
+                "var": "E_mech_before",
+                "lo": 80,
+                "hi": 10000,
+                "note": "扫描非负初态能量，能量差计算有限。 "
+              }
+            ]
+          },
+          {
+            "name": "燃料完全燃烧放热",
+            "expr": "Q = q*m",
+            "when": "按质量定义热值，燃料完全燃烧；q用J/kg、质量用kg。实际利用热量须计效率。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "燃料与热机一",
+                "ref": 400000,
+                "note": "40 MJ/kg乘0.01 kg=0.4 MJ=400000 J，独立单位换算。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "燃料与热机二",
+                "ref": 800000,
+                "note": "20 g即0.02 kg，理论放热0.8 MJ。"
+              },
+              {
+                "type": "direction",
+                "scenario": "燃料与热机一",
+                "var": "m",
+                "lo": 0,
+                "hi": 0.1,
+                "expect": "up",
+                "note": "相同燃料热值固定，完全燃烧质量增大则理论放热增大。"
+              },
+              {
+                "type": "scan",
+                "scenario": "燃料与热机一",
+                "var": "m",
+                "lo": 0,
+                "hi": 1,
+                "note": "零燃料对应零放热，正质量范围有限。"
+              },
+              {
+                "type": "consistency",
+                "scenario": "燃料与热机一",
+                "with": "energy-04|燃料完全燃烧放热",
+                "with_expr": "W_use+Q_loss",
+                "target": "燃料完全燃烧理论放热量",
+                "note": "本公式直接求Q；参考端显式关系为W_use+Q_loss。两端使用同一情境和阶段，只核对该关系；with字段仅定位来源，不代表调用另一条被覆盖的公式。",
+                "verification_kind": "独立关系核对"
+              }
+            ]
+          },
+          {
+            "name": "热机效率",
+            "expr": "eta = W_use/Q",
+            "when": "燃料完全燃烧理论放热量为正，有用机械功为对外输出，百分数为该比值乘100%。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "燃料与热机一",
+                "ref": 0.25,
+                "note": "100 kJ占400 kJ的四分之一，即25%。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "燃料与热机二",
+                "ref": 0.3,
+                "note": "240 kJ占800 kJ的三成，即30%。"
+              },
+              {
+                "type": "compare",
+                "scenario": "燃料与热机一",
+                "expr": "W_use/Q",
+                "op": "<=",
+                "vs": "1",
+                "note": "有用机械功不能超过燃料输入总能量。"
+              },
+              {
+                "type": "scan",
+                "scenario": "燃料与热机一",
+                "var": "Q",
+                "lo": 100000,
+                "hi": 1000000,
+                "note": "分母为正且不小于固定有用功，效率有限且不超过1。"
+              }
+            ]
+          },
+          {
+            "name": "热机能量账目",
+            "expr": "Q = W_use+Q_loss",
+            "when": "输入输出统计于同一过程，其他能量已包括散热、尾气及其他非有用输出。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "燃料与热机一",
+                "ref": 400000,
+                "note": "100000+300000=400000 J。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "燃料与热机二",
+                "ref": 800000,
+                "note": "240000+560000=800000 J，账目加和独立于热值法。"
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "选定系统并记录转化前机械能和转化后机械能。",
+          "若机械能减少全部进入系统内能，则内能增加量等于机械能减少量。",
+          "把末态机械能和内能增量相加，与初态机械能核对；有外界散热时应补记散失能量。"
+        ],
+        "errors": [
+          {
+            "wrong": "把机械能减少量的符号写反，导致内能减少。",
+            "wrong_expr": "E_int_gain = E_mech_after-E_mech_before",
+            "why": "本情境机械能从 100 J 降至 80 J，减少量为 20 J，转化为内能应为正的 20 J。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "刹车减速",
+              "expr": "E_mech_after-E_mech_before",
+              "ref": 20
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "认为机械能减少就意味着能量消失。",
+            "why": "摩擦可使机械能转化为内能；把系统边界和其他能量形式计入后，能量总量仍守恒。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "把热机效率写成燃料理论放热量除以有用机械功。",
+            "wrong_expr": "eta = Q/W_use",
+            "why": "100 kJ有用功、400 kJ输入，效率应为0.25；反比得到4即400%，违反能量账目。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "燃料与热机一",
+              "expr": "Q/W_use",
+              "ref": 0.25
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "刹车前汽车机械能为 5000 J，刹车后为 4200 J，忽略向外界散热，求转化增加的内能。",
+          "solution": [
+            "机械能减少量为 5000-4200=800 J。",
+            "忽略散热时，减少的机械能转化为内能。"
+          ],
+          "answer": "内能增加约 800 J。"
+        },
+        "prereq": [
+          "energy-01",
+          "energy-03"
+        ],
+        "next": [],
+        "tags": [
+          "机械能转化",
+          "内能",
+          "摩擦生热",
+          "能量守恒"
+        ],
+        "core": [
+          {
+            "title": "热机与四冲程",
+            "text": "热机把内能转为机械能。典型四冲程汽油机：吸气时进气门开、排气门关、活塞下行，吸入空气和燃料混合物；压缩时两门关、活塞上行，机械能转为内能；做功时两门关、燃烧气体推动活塞下行，内能转为机械能；排气时排气门开、进气门关、活塞上行排出废气。一个循环通常曲轴转两周，完成四冲程、对外做功一次；其余冲程借飞轮惯性维持。柴油机吸入空气、压缩后喷油压燃，不采用火花塞点火模型。"
+          },
+          {
+            "title": "燃料热值与热机效率",
+            "text": "热值表示单位质量燃料完全燃烧放出的热量，单位J/kg；气体燃料也可按体积定义，使用前看单位。热值是燃料特性，不随取样质量改变；完全燃烧放热量等于热值乘燃料质量。热机效率为对外有用机械功占燃料完全燃烧放热量之比；不等于水吸热效率，也不等于机械效率。尾气、散热、摩擦和不完全燃烧等导致有用输出小于理论放热，能量仍守恒。"
+          }
+        ],
+        "learning_scope": "初中"
+      },
+      "error_index": 0,
+      "chapter": "机械能和内能"
+    },
+    "diagnostic-energy-04-2": {
+      "point": {
+        "id": "energy-04",
+        "title": "机械能与内能的相互转化",
+        "level": "基础",
+        "definition": "机械能可以转化为内能，内能也可通过做功等过程转化为机械能。存在摩擦时，部分机械能会转化为物体内能；能量总量遵循转化与守恒规律。",
+        "meaning": "刹车片发热、双手摩擦后变热，说明机械能可转化为内能；热机中气体膨胀推动活塞，则内能可转化为机械能。只研究机械能时会观察到它减少，但把内能等形式也计入后能量账目仍平衡。分析前先划定系统，确认是否有外界能量输入或散失。",
+        "symbols": {
+          "E_mech_before": {
+            "desc": "转化前机械能",
+            "unit": "J"
+          },
+          "E_mech_after": {
+            "desc": "转化后机械能",
+            "unit": "J"
+          },
+          "E_int_gain": {
+            "desc": "转化增加的内能",
+            "unit": "J"
+          },
+          "q": {
+            "desc": "燃料热值，按单位质量定义",
+            "unit": "J/kg"
+          },
+          "m": {
+            "desc": "完全燃烧的燃料质量",
+            "unit": "kg"
+          },
+          "Q": {
+            "desc": "燃料完全燃烧理论放热量",
+            "unit": "J"
+          },
+          "W_use": {
+            "desc": "热机对外有用机械功",
+            "unit": "J"
+          },
+          "eta": {
+            "desc": "热机效率，取0到1间比值",
+            "unit": "1"
+          },
+          "Q_loss": {
+            "desc": "未成为有用功的其他能量总量",
+            "unit": "J"
+          }
+        },
+        "scenarios": {
+          "刹车减速": {
+            "E_mech_before": 100,
+            "E_mech_after": 80,
+            "E_int_gain": 20
+          },
+          "摩擦生热": {
+            "E_mech_before": 250,
+            "E_mech_after": 150,
+            "E_int_gain": 100
+          },
+          "燃料与热机一": {
+            "q": 40000000,
+            "m": 0.01,
+            "Q": 400000,
+            "W_use": 100000,
+            "eta": 0.25,
+            "Q_loss": 300000
+          },
+          "燃料与热机二": {
+            "q": 40000000,
+            "m": 0.02,
+            "Q": 800000,
+            "W_use": 240000,
+            "eta": 0.3,
+            "Q_loss": 560000
+          }
+        },
+        "formulas": [
+          {
+            "name": "机械能减少转化为内能",
+            "expr": "E_mech_before = E_mech_after+E_int_gain",
+            "when": "把刹车或摩擦过程中的相关物体作为系统，忽略向外界的能量散失。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "刹车减速",
+                "expr": "E_mech_after+E_int_gain",
+                "ref": 100,
+                "note": "机械能由 100 J 降至 80 J，增加的内能约为 20 J。 "
+              },
+              {
+                "type": "numeric",
+                "scenario": "摩擦生热",
+                "expr": "E_mech_after+E_int_gain",
+                "ref": 250,
+                "note": "150 J 机械能与 100 J 内能增量合计为 250 J。 "
+              },
+              {
+                "type": "direction",
+                "scenario": "刹车减速",
+                "var": "E_int_gain",
+                "lo": 0,
+                "hi": 100,
+                "expr": "E_mech_after+E_int_gain",
+                "expect": "up",
+                "note": "机械能末值固定时，内能增量增加对应更大的转化前能量。 "
+              },
+              {
+                "type": "scan",
+                "scenario": "刹车减速",
+                "var": "E_int_gain",
+                "lo": 0,
+                "hi": 10000,
+                "note": "扫描非负能量转化量，能量合计有限。 "
+              },
+              {
+                "type": "consistency",
+                "scenario": "刹车减速",
+                "with": "energy-04|机械能减少转化为内能",
+                "with_expr": "E_mech_before",
+                "target": "转化前机械能",
+                "note": "直接求本公式输出，与情境中另列的E_mech_before设计基准核对；数据是设计示例，不是实测。用于核对定义、反算或边界值，不宣称不同物理原理互证。",
+                "verification_kind": "独立设计情境数据核对"
+              }
+            ]
+          },
+          {
+            "name": "由前后机械能差求内能增量",
+            "expr": "E_int_gain = E_mech_before-E_mech_after",
+            "when": "机械能减少量全部转化为系统内能，忽略热量散失和其他能量形式。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "刹车减速",
+                "expr": "E_mech_before-E_mech_after",
+                "ref": 20,
+                "note": "100 J-80 J=20 J。 "
+              },
+              {
+                "type": "numeric",
+                "scenario": "摩擦生热",
+                "expr": "E_mech_before-E_mech_after",
+                "ref": 100,
+                "note": "250 J-150 J=100 J。 "
+              },
+              {
+                "type": "direction",
+                "scenario": "刹车减速",
+                "var": "E_mech_before",
+                "lo": 80,
+                "hi": 200,
+                "expr": "E_mech_before-E_mech_after",
+                "expect": "up",
+                "note": "机械能末值固定时，初始机械能增加会增大转化量。 "
+              },
+              {
+                "type": "scan",
+                "scenario": "刹车减速",
+                "var": "E_mech_before",
+                "lo": 80,
+                "hi": 10000,
+                "note": "扫描非负初态能量，能量差计算有限。 "
+              }
+            ]
+          },
+          {
+            "name": "燃料完全燃烧放热",
+            "expr": "Q = q*m",
+            "when": "按质量定义热值，燃料完全燃烧；q用J/kg、质量用kg。实际利用热量须计效率。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "燃料与热机一",
+                "ref": 400000,
+                "note": "40 MJ/kg乘0.01 kg=0.4 MJ=400000 J，独立单位换算。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "燃料与热机二",
+                "ref": 800000,
+                "note": "20 g即0.02 kg，理论放热0.8 MJ。"
+              },
+              {
+                "type": "direction",
+                "scenario": "燃料与热机一",
+                "var": "m",
+                "lo": 0,
+                "hi": 0.1,
+                "expect": "up",
+                "note": "相同燃料热值固定，完全燃烧质量增大则理论放热增大。"
+              },
+              {
+                "type": "scan",
+                "scenario": "燃料与热机一",
+                "var": "m",
+                "lo": 0,
+                "hi": 1,
+                "note": "零燃料对应零放热，正质量范围有限。"
+              },
+              {
+                "type": "consistency",
+                "scenario": "燃料与热机一",
+                "with": "energy-04|燃料完全燃烧放热",
+                "with_expr": "W_use+Q_loss",
+                "target": "燃料完全燃烧理论放热量",
+                "note": "本公式直接求Q；参考端显式关系为W_use+Q_loss。两端使用同一情境和阶段，只核对该关系；with字段仅定位来源，不代表调用另一条被覆盖的公式。",
+                "verification_kind": "独立关系核对"
+              }
+            ]
+          },
+          {
+            "name": "热机效率",
+            "expr": "eta = W_use/Q",
+            "when": "燃料完全燃烧理论放热量为正，有用机械功为对外输出，百分数为该比值乘100%。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "燃料与热机一",
+                "ref": 0.25,
+                "note": "100 kJ占400 kJ的四分之一，即25%。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "燃料与热机二",
+                "ref": 0.3,
+                "note": "240 kJ占800 kJ的三成，即30%。"
+              },
+              {
+                "type": "compare",
+                "scenario": "燃料与热机一",
+                "expr": "W_use/Q",
+                "op": "<=",
+                "vs": "1",
+                "note": "有用机械功不能超过燃料输入总能量。"
+              },
+              {
+                "type": "scan",
+                "scenario": "燃料与热机一",
+                "var": "Q",
+                "lo": 100000,
+                "hi": 1000000,
+                "note": "分母为正且不小于固定有用功，效率有限且不超过1。"
+              }
+            ]
+          },
+          {
+            "name": "热机能量账目",
+            "expr": "Q = W_use+Q_loss",
+            "when": "输入输出统计于同一过程，其他能量已包括散热、尾气及其他非有用输出。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "燃料与热机一",
+                "ref": 400000,
+                "note": "100000+300000=400000 J。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "燃料与热机二",
+                "ref": 800000,
+                "note": "240000+560000=800000 J，账目加和独立于热值法。"
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "选定系统并记录转化前机械能和转化后机械能。",
+          "若机械能减少全部进入系统内能，则内能增加量等于机械能减少量。",
+          "把末态机械能和内能增量相加，与初态机械能核对；有外界散热时应补记散失能量。"
+        ],
+        "errors": [
+          {
+            "wrong": "把机械能减少量的符号写反，导致内能减少。",
+            "wrong_expr": "E_int_gain = E_mech_after-E_mech_before",
+            "why": "本情境机械能从 100 J 降至 80 J，减少量为 20 J，转化为内能应为正的 20 J。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "刹车减速",
+              "expr": "E_mech_after-E_mech_before",
+              "ref": 20
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "认为机械能减少就意味着能量消失。",
+            "why": "摩擦可使机械能转化为内能；把系统边界和其他能量形式计入后，能量总量仍守恒。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "把热机效率写成燃料理论放热量除以有用机械功。",
+            "wrong_expr": "eta = Q/W_use",
+            "why": "100 kJ有用功、400 kJ输入，效率应为0.25；反比得到4即400%，违反能量账目。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "燃料与热机一",
+              "expr": "Q/W_use",
+              "ref": 0.25
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "刹车前汽车机械能为 5000 J，刹车后为 4200 J，忽略向外界散热，求转化增加的内能。",
+          "solution": [
+            "机械能减少量为 5000-4200=800 J。",
+            "忽略散热时，减少的机械能转化为内能。"
+          ],
+          "answer": "内能增加约 800 J。"
+        },
+        "prereq": [
+          "energy-01",
+          "energy-03"
+        ],
+        "next": [],
+        "tags": [
+          "机械能转化",
+          "内能",
+          "摩擦生热",
+          "能量守恒"
+        ],
+        "core": [
+          {
+            "title": "热机与四冲程",
+            "text": "热机把内能转为机械能。典型四冲程汽油机：吸气时进气门开、排气门关、活塞下行，吸入空气和燃料混合物；压缩时两门关、活塞上行，机械能转为内能；做功时两门关、燃烧气体推动活塞下行，内能转为机械能；排气时排气门开、进气门关、活塞上行排出废气。一个循环通常曲轴转两周，完成四冲程、对外做功一次；其余冲程借飞轮惯性维持。柴油机吸入空气、压缩后喷油压燃，不采用火花塞点火模型。"
+          },
+          {
+            "title": "燃料热值与热机效率",
+            "text": "热值表示单位质量燃料完全燃烧放出的热量，单位J/kg；气体燃料也可按体积定义，使用前看单位。热值是燃料特性，不随取样质量改变；完全燃烧放热量等于热值乘燃料质量。热机效率为对外有用机械功占燃料完全燃烧放热量之比；不等于水吸热效率，也不等于机械效率。尾气、散热、摩擦和不完全燃烧等导致有用输出小于理论放热，能量仍守恒。"
+          }
+        ],
+        "learning_scope": "初中"
+      },
+      "error_index": 1,
+      "chapter": "机械能和内能"
+    },
+    "diagnostic-energy-04-3": {
+      "point": {
+        "id": "energy-04",
+        "title": "机械能与内能的相互转化",
+        "level": "基础",
+        "definition": "机械能可以转化为内能，内能也可通过做功等过程转化为机械能。存在摩擦时，部分机械能会转化为物体内能；能量总量遵循转化与守恒规律。",
+        "meaning": "刹车片发热、双手摩擦后变热，说明机械能可转化为内能；热机中气体膨胀推动活塞，则内能可转化为机械能。只研究机械能时会观察到它减少，但把内能等形式也计入后能量账目仍平衡。分析前先划定系统，确认是否有外界能量输入或散失。",
+        "symbols": {
+          "E_mech_before": {
+            "desc": "转化前机械能",
+            "unit": "J"
+          },
+          "E_mech_after": {
+            "desc": "转化后机械能",
+            "unit": "J"
+          },
+          "E_int_gain": {
+            "desc": "转化增加的内能",
+            "unit": "J"
+          },
+          "q": {
+            "desc": "燃料热值，按单位质量定义",
+            "unit": "J/kg"
+          },
+          "m": {
+            "desc": "完全燃烧的燃料质量",
+            "unit": "kg"
+          },
+          "Q": {
+            "desc": "燃料完全燃烧理论放热量",
+            "unit": "J"
+          },
+          "W_use": {
+            "desc": "热机对外有用机械功",
+            "unit": "J"
+          },
+          "eta": {
+            "desc": "热机效率，取0到1间比值",
+            "unit": "1"
+          },
+          "Q_loss": {
+            "desc": "未成为有用功的其他能量总量",
+            "unit": "J"
+          }
+        },
+        "scenarios": {
+          "刹车减速": {
+            "E_mech_before": 100,
+            "E_mech_after": 80,
+            "E_int_gain": 20
+          },
+          "摩擦生热": {
+            "E_mech_before": 250,
+            "E_mech_after": 150,
+            "E_int_gain": 100
+          },
+          "燃料与热机一": {
+            "q": 40000000,
+            "m": 0.01,
+            "Q": 400000,
+            "W_use": 100000,
+            "eta": 0.25,
+            "Q_loss": 300000
+          },
+          "燃料与热机二": {
+            "q": 40000000,
+            "m": 0.02,
+            "Q": 800000,
+            "W_use": 240000,
+            "eta": 0.3,
+            "Q_loss": 560000
+          }
+        },
+        "formulas": [
+          {
+            "name": "机械能减少转化为内能",
+            "expr": "E_mech_before = E_mech_after+E_int_gain",
+            "when": "把刹车或摩擦过程中的相关物体作为系统，忽略向外界的能量散失。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "刹车减速",
+                "expr": "E_mech_after+E_int_gain",
+                "ref": 100,
+                "note": "机械能由 100 J 降至 80 J，增加的内能约为 20 J。 "
+              },
+              {
+                "type": "numeric",
+                "scenario": "摩擦生热",
+                "expr": "E_mech_after+E_int_gain",
+                "ref": 250,
+                "note": "150 J 机械能与 100 J 内能增量合计为 250 J。 "
+              },
+              {
+                "type": "direction",
+                "scenario": "刹车减速",
+                "var": "E_int_gain",
+                "lo": 0,
+                "hi": 100,
+                "expr": "E_mech_after+E_int_gain",
+                "expect": "up",
+                "note": "机械能末值固定时，内能增量增加对应更大的转化前能量。 "
+              },
+              {
+                "type": "scan",
+                "scenario": "刹车减速",
+                "var": "E_int_gain",
+                "lo": 0,
+                "hi": 10000,
+                "note": "扫描非负能量转化量，能量合计有限。 "
+              },
+              {
+                "type": "consistency",
+                "scenario": "刹车减速",
+                "with": "energy-04|机械能减少转化为内能",
+                "with_expr": "E_mech_before",
+                "target": "转化前机械能",
+                "note": "直接求本公式输出，与情境中另列的E_mech_before设计基准核对；数据是设计示例，不是实测。用于核对定义、反算或边界值，不宣称不同物理原理互证。",
+                "verification_kind": "独立设计情境数据核对"
+              }
+            ]
+          },
+          {
+            "name": "由前后机械能差求内能增量",
+            "expr": "E_int_gain = E_mech_before-E_mech_after",
+            "when": "机械能减少量全部转化为系统内能，忽略热量散失和其他能量形式。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "刹车减速",
+                "expr": "E_mech_before-E_mech_after",
+                "ref": 20,
+                "note": "100 J-80 J=20 J。 "
+              },
+              {
+                "type": "numeric",
+                "scenario": "摩擦生热",
+                "expr": "E_mech_before-E_mech_after",
+                "ref": 100,
+                "note": "250 J-150 J=100 J。 "
+              },
+              {
+                "type": "direction",
+                "scenario": "刹车减速",
+                "var": "E_mech_before",
+                "lo": 80,
+                "hi": 200,
+                "expr": "E_mech_before-E_mech_after",
+                "expect": "up",
+                "note": "机械能末值固定时，初始机械能增加会增大转化量。 "
+              },
+              {
+                "type": "scan",
+                "scenario": "刹车减速",
+                "var": "E_mech_before",
+                "lo": 80,
+                "hi": 10000,
+                "note": "扫描非负初态能量，能量差计算有限。 "
+              }
+            ]
+          },
+          {
+            "name": "燃料完全燃烧放热",
+            "expr": "Q = q*m",
+            "when": "按质量定义热值，燃料完全燃烧；q用J/kg、质量用kg。实际利用热量须计效率。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "燃料与热机一",
+                "ref": 400000,
+                "note": "40 MJ/kg乘0.01 kg=0.4 MJ=400000 J，独立单位换算。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "燃料与热机二",
+                "ref": 800000,
+                "note": "20 g即0.02 kg，理论放热0.8 MJ。"
+              },
+              {
+                "type": "direction",
+                "scenario": "燃料与热机一",
+                "var": "m",
+                "lo": 0,
+                "hi": 0.1,
+                "expect": "up",
+                "note": "相同燃料热值固定，完全燃烧质量增大则理论放热增大。"
+              },
+              {
+                "type": "scan",
+                "scenario": "燃料与热机一",
+                "var": "m",
+                "lo": 0,
+                "hi": 1,
+                "note": "零燃料对应零放热，正质量范围有限。"
+              },
+              {
+                "type": "consistency",
+                "scenario": "燃料与热机一",
+                "with": "energy-04|燃料完全燃烧放热",
+                "with_expr": "W_use+Q_loss",
+                "target": "燃料完全燃烧理论放热量",
+                "note": "本公式直接求Q；参考端显式关系为W_use+Q_loss。两端使用同一情境和阶段，只核对该关系；with字段仅定位来源，不代表调用另一条被覆盖的公式。",
+                "verification_kind": "独立关系核对"
+              }
+            ]
+          },
+          {
+            "name": "热机效率",
+            "expr": "eta = W_use/Q",
+            "when": "燃料完全燃烧理论放热量为正，有用机械功为对外输出，百分数为该比值乘100%。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "燃料与热机一",
+                "ref": 0.25,
+                "note": "100 kJ占400 kJ的四分之一，即25%。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "燃料与热机二",
+                "ref": 0.3,
+                "note": "240 kJ占800 kJ的三成，即30%。"
+              },
+              {
+                "type": "compare",
+                "scenario": "燃料与热机一",
+                "expr": "W_use/Q",
+                "op": "<=",
+                "vs": "1",
+                "note": "有用机械功不能超过燃料输入总能量。"
+              },
+              {
+                "type": "scan",
+                "scenario": "燃料与热机一",
+                "var": "Q",
+                "lo": 100000,
+                "hi": 1000000,
+                "note": "分母为正且不小于固定有用功，效率有限且不超过1。"
+              }
+            ]
+          },
+          {
+            "name": "热机能量账目",
+            "expr": "Q = W_use+Q_loss",
+            "when": "输入输出统计于同一过程，其他能量已包括散热、尾气及其他非有用输出。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "燃料与热机一",
+                "ref": 400000,
+                "note": "100000+300000=400000 J。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "燃料与热机二",
+                "ref": 800000,
+                "note": "240000+560000=800000 J，账目加和独立于热值法。"
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "选定系统并记录转化前机械能和转化后机械能。",
+          "若机械能减少全部进入系统内能，则内能增加量等于机械能减少量。",
+          "把末态机械能和内能增量相加，与初态机械能核对；有外界散热时应补记散失能量。"
+        ],
+        "errors": [
+          {
+            "wrong": "把机械能减少量的符号写反，导致内能减少。",
+            "wrong_expr": "E_int_gain = E_mech_after-E_mech_before",
+            "why": "本情境机械能从 100 J 降至 80 J，减少量为 20 J，转化为内能应为正的 20 J。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "刹车减速",
+              "expr": "E_mech_after-E_mech_before",
+              "ref": 20
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "认为机械能减少就意味着能量消失。",
+            "why": "摩擦可使机械能转化为内能；把系统边界和其他能量形式计入后，能量总量仍守恒。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "把热机效率写成燃料理论放热量除以有用机械功。",
+            "wrong_expr": "eta = Q/W_use",
+            "why": "100 kJ有用功、400 kJ输入，效率应为0.25；反比得到4即400%，违反能量账目。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "燃料与热机一",
+              "expr": "Q/W_use",
+              "ref": 0.25
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "刹车前汽车机械能为 5000 J，刹车后为 4200 J，忽略向外界散热，求转化增加的内能。",
+          "solution": [
+            "机械能减少量为 5000-4200=800 J。",
+            "忽略散热时，减少的机械能转化为内能。"
+          ],
+          "answer": "内能增加约 800 J。"
+        },
+        "prereq": [
+          "energy-01",
+          "energy-03"
+        ],
+        "next": [],
+        "tags": [
+          "机械能转化",
+          "内能",
+          "摩擦生热",
+          "能量守恒"
+        ],
+        "core": [
+          {
+            "title": "热机与四冲程",
+            "text": "热机把内能转为机械能。典型四冲程汽油机：吸气时进气门开、排气门关、活塞下行，吸入空气和燃料混合物；压缩时两门关、活塞上行，机械能转为内能；做功时两门关、燃烧气体推动活塞下行，内能转为机械能；排气时排气门开、进气门关、活塞上行排出废气。一个循环通常曲轴转两周，完成四冲程、对外做功一次；其余冲程借飞轮惯性维持。柴油机吸入空气、压缩后喷油压燃，不采用火花塞点火模型。"
+          },
+          {
+            "title": "燃料热值与热机效率",
+            "text": "热值表示单位质量燃料完全燃烧放出的热量，单位J/kg；气体燃料也可按体积定义，使用前看单位。热值是燃料特性，不随取样质量改变；完全燃烧放热量等于热值乘燃料质量。热机效率为对外有用机械功占燃料完全燃烧放热量之比；不等于水吸热效率，也不等于机械效率。尾气、散热、摩擦和不完全燃烧等导致有用输出小于理论放热，能量仍守恒。"
+          }
+        ],
+        "learning_scope": "初中"
+      },
+      "error_index": 2,
+      "chapter": "机械能和内能"
+    }
+  },
+  "generator_version": "2026-10-04-条件过程返工-8"
+}

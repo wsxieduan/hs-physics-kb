@@ -1,0 +1,3509 @@
+{
+  "segment": "初中",
+  "chapter": "从粒子到宇宙",
+  "source_file": "10_particles.json",
+  "questions": [
+    {
+      "id": "diagnostic-particle-01-1",
+      "point_id": "particle-01",
+      "point_title": "走进分子世界",
+      "chapter": "从粒子到宇宙",
+      "stem": "在“走进分子世界”的模型下，d<sub>m</sub>（以米表示的微观长度）=1e-10 m。条件：1 m=10⁹ nm；两种数值表示同一长度。。求同一长度以纳米表示（d<sub>nm</sub>）。这些数值是设计示例。",
+      "options": [
+        {
+          "label": "A",
+          "text": "1e-07 nm"
+        },
+        {
+          "label": "B",
+          "text": "0.1 nm"
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "使用米换算为纳米：1000000000·d<sub>m</sub>，代入得0.1 nm。另一结果来自1000·d<sub>m</sub>，算得1e-07 nm。\n米到纳米相差 10⁹ 倍；例如 10⁻¹⁰ m 应为 0.1 nm，而不是 10⁻⁷ nm。\n知识点条件：不同物质彼此接触后会逐渐混合，这种扩散现象支持分子在不停运动的认识。扩散速度还受温度、状态和颗粒尺度等因素影响，不能仅由一个简单比例式预测。纳米与米的换算可帮助描述分子尺度，但不表示每个分子直径都恰为某一固定值。\n推导依据：物质的粒子尺度远小于日常物体，表示时常使用纳米。；米和纳米都是长度单位，1 m=1 000 000 000 nm。；乘以或除以单位换算比例，可在 m 与 nm 之间转换。\n卡片公式各自的适用条件（不是本题共同前提）：\n米换算为纳米：1 m=10⁹ nm；两种数值表示同一长度。\n纳米换算为米：原长度用 nm 表示，换算结果用 m 表示。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 0,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "d<sub>nm</sub> = 1000·d<sub>m</sub>",
+      "trap_test": {
+        "scenario": "十分之一纳米",
+        "expr": "1000*d_m",
+        "ref": 0.1
+      },
+      "level": "基础",
+      "learning_scope": "初中",
+      "answer_evidence": {
+        "kind": "numeric",
+        "scenario": "十分之一纳米",
+        "parameters": {
+          "d_m": 1e-10,
+          "d_nm": 0.1
+        },
+        "target": "d_nm",
+        "unit": "nm",
+        "reference": 0.1,
+        "correct_proof": {
+          "expression": "1000000000*d_m",
+          "formula": "米换算为纳米",
+          "value": 0.1,
+          "when": "1 m=10^9 nm；两种数值表示同一长度。"
+        },
+        "distractor_expression": "1000*d_m",
+        "distractor_value": 1.0000000000000001e-07,
+        "dimension_matches": true,
+        "independent_evaluation": true
+      },
+      "review": {
+        "confidence": "medium",
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": true,
+          "no_answer_leak_in_options": true
+        },
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。",
+        "material": {
+          "anchors": [
+            {
+              "kind": "公式",
+              "name": "米换算为纳米",
+              "expression": "1000000000*d_m",
+              "when": "1 m=10^9 nm；两种数值表示同一长度。",
+              "display": "1000000000·d<sub>m</sub>"
+            }
+          ],
+          "source": {
+            "nature": "原创设计示例，非教材实测或真实实验记录",
+            "scenario": "十分之一纳米",
+            "parameters": {
+              "d_m": 1e-10,
+              "d_nm": 0.1
+            },
+            "data": [
+              "以米表示的微观长度：1e-10 m",
+              "同一长度以纳米表示：0.1 nm"
+            ]
+          },
+          "predicted_errors": [
+            {
+              "option": "A",
+              "text": "1e-07 nm",
+              "reason": "米到纳米相差 10^9 倍；例如 10^-10 m 应为 0.1 nm，而不是 10^-7 nm。",
+              "expression": "1000*d_m",
+              "status": "误答原因预测，待教师确认；未采集学生作答证据"
+            }
+          ],
+          "difficulty_note": "建议难度沿用本题level（源卡难度）；尚非题目难度实测，待教师调整",
+          "estimated_seconds": [
+            60,
+            120
+          ],
+          "time_basis": "未做学生计时；按现有难度给出备课估计区间，待教师确认",
+          "machine_checks": [
+            {
+              "name": "题目ID关联源知识点",
+              "passed": true
+            },
+            {
+              "name": "选项标签唯一且参考标签存在",
+              "passed": true
+            },
+            {
+              "name": "选项文本互异",
+              "passed": true
+            },
+            {
+              "name": "正确路径独立数值复算",
+              "passed": true
+            },
+            {
+              "name": "带量纲求值与独立求值一致",
+              "passed": true
+            },
+            {
+              "name": "干扰路径复算且与正确路径分离",
+              "passed": true
+            }
+          ],
+          "machine_boundary": "只列本次逐题实际执行项目；不把关联知识卡的方向、扫描或一致性检查算作本题已验。概念题未验命题真假。",
+          "human_review_items": [
+            "题干条件是否充分、清楚且符合学段",
+            "参考结论在指定条件下是否唯一",
+            "干扰项是否合理、对应真实认知问题且无答案暗示",
+            "公式或概念锚点是否准确",
+            "建议难度及用时是否适合教学",
+            "语言、装置与安全操作是否恰当"
+          ],
+          "reference_answer_note": "现有参考答案保持；即使本地可以判选项，也仍须教师审核教学可用性"
+        }
+      }
+    },
+    {
+      "id": "diagnostic-particle-01-2",
+      "point_id": "particle-01",
+      "point_title": "走进分子世界",
+      "chapter": "从粒子到宇宙",
+      "stem": "关于“走进分子世界”，判断这一说法是否成立，并说明依据：\n把分子或原子的示意图当作按真实尺寸比例绘制的结构图。",
+      "options": [
+        {
+          "label": "A",
+          "text": "该说法成立。"
+        },
+        {
+          "label": "B",
+          "text": "该说法不成立。"
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "微观结构图通常为便于辨认而放大或简化，不能直接据图比较真实粒子尺寸。\n知识点条件：不同物质彼此接触后会逐渐混合，这种扩散现象支持分子在不停运动的认识。扩散速度还受温度、状态和颗粒尺度等因素影响，不能仅由一个简单比例式预测。纳米与米的换算可帮助描述分子尺度，但不表示每个分子直径都恰为某一固定值。\n推导依据：物质的粒子尺度远小于日常物体，表示时常使用纳米。；米和纳米都是长度单位，1 m=1 000 000 000 nm。；乘以或除以单位换算比例，可在 m 与 nm 之间转换。\n卡片公式各自的适用条件（不是本题共同前提）：\n米换算为纳米：1 m=10⁹ nm；两种数值表示同一长度。\n纳米换算为米：原长度用 nm 表示，换算结果用 m 表示。",
+      "error_type": "概念混淆",
+      "judging": "teacher",
+      "source_error_index": 1,
+      "source_caught_by": "人工审核",
+      "wrong_expr": null,
+      "trap_test": null,
+      "level": "基础",
+      "learning_scope": "初中",
+      "answer_evidence": {
+        "kind": "teacher",
+        "claim_source": "wrong",
+        "reference_only": true,
+        "reason": "概念、操作或无法建立完整定量证据，教师确认条件与结论。"
+      },
+      "review": {
+        "confidence": "medium",
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": false,
+          "no_answer_leak_in_options": true
+        },
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。",
+        "material": {
+          "anchors": [
+            {
+              "kind": "概念或操作",
+              "name": "走进分子世界",
+              "claim": "把分子或原子的示意图当作按真实尺寸比例绘制的结构图。",
+              "correction_basis": "微观结构图通常为便于辨认而放大或简化，不能直接据图比较真实粒子尺寸。",
+              "note": "概念锚点及命题真假待教师确认；未套用任意第一条公式",
+              "display": "把分子或原子的示意图当作按真实尺寸比例绘制的结构图。"
+            }
+          ],
+          "source": {
+            "nature": "原创概念/操作命题；无真实测量记录",
+            "source_error_index": 1
+          },
+          "predicted_errors": [
+            {
+              "option": "A",
+              "text": "该说法成立。",
+              "reason": "微观结构图通常为便于辨认而放大或简化，不能直接据图比较真实粒子尺寸。",
+              "expression": null,
+              "status": "误答原因预测，待教师确认；未采集学生作答证据"
+            }
+          ],
+          "difficulty_note": "建议难度沿用本题level（源卡难度）；尚非题目难度实测，待教师调整",
+          "estimated_seconds": [
+            60,
+            120
+          ],
+          "time_basis": "未做学生计时；按现有难度给出备课估计区间，待教师确认",
+          "machine_checks": [
+            {
+              "name": "题目ID关联源知识点",
+              "passed": true
+            },
+            {
+              "name": "选项标签唯一且参考标签存在",
+              "passed": true
+            },
+            {
+              "name": "选项文本互异",
+              "passed": true
+            }
+          ],
+          "machine_boundary": "只列本次逐题实际执行项目；不把关联知识卡的方向、扫描或一致性检查算作本题已验。概念题未验命题真假。",
+          "human_review_items": [
+            "题干条件是否充分、清楚且符合学段",
+            "参考结论在指定条件下是否唯一",
+            "干扰项是否合理、对应真实认知问题且无答案暗示",
+            "公式或概念锚点是否准确",
+            "建议难度及用时是否适合教学",
+            "语言、装置与安全操作是否恰当"
+          ],
+          "reference_answer_note": "现有参考答案保持；即使本地可以判选项，也仍须教师审核教学可用性"
+        }
+      }
+    },
+    {
+      "id": "diagnostic-particle-03-1",
+      "point_id": "particle-03",
+      "point_title": "静电现象",
+      "chapter": "从粒子到宇宙",
+      "stem": "在“静电现象”的模型下，Q<sub>A</sub>（系统内物体 A 的带符号电荷量）=0.0002 C；Q<sub>B</sub>（系统内物体 B 的带符号电荷量）=-0.0002 C。条件：拓展计算，非本卡初中必背主线。把所有相关带电物体纳入系统，且系统与外界没有电荷交换；电荷量保留正负号。。求绝缘系统总电荷量（Q<sub>总</sub>）。这些数值是设计示例。",
+      "options": [
+        {
+          "label": "A",
+          "text": "0 C"
+        },
+        {
+          "label": "B",
+          "text": "0.0004 C"
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "使用绝缘系统总电荷守恒：Q<sub>A</sub>+Q<sub>B</sub>，代入得0 C。另一结果来自Q<sub>A</sub>-Q<sub>B</sub>，算得0.0004 C。\n电荷量应按符号作代数和；两物体带等量异号电荷时总电荷为零。应结合电荷守恒和本节讨论范围判断。\n知识点条件：摩擦起电不是凭空创造电荷，而是电子从一个物体转移到另一个物体；因此一个物体带正电时，另一个物体可能带等量负电。验电器可显示物体是否带电，但不直接给出电荷量大小。本点的电荷和守恒关系是定量拓展，初中核心是观察带电现象及相互作用。\n推导依据：把相互作用的带电物体划入同一系统，逐个记录电荷的正负号。；电子转移只改变电荷分布，孤立系统的总电荷不变。；把系统总电荷写成各物体带符号电荷的代数和，检查转移前后总量一致。\n卡片公式各自的适用条件（不是本题共同前提）：\n绝缘系统总电荷守恒：拓展计算，非本卡初中必背主线。把所有相关带电物体纳入系统，且系统与外界没有电荷交换；电荷量保留正负号。\n由守恒总电荷反求B物体电荷：拓展计算，非本卡初中必背主线。绝缘系统只含物体 A 和 B，电荷量采用带正负号的库仑值。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 0,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "Q<sub>总</sub> = Q<sub>A</sub>-Q<sub>B</sub>",
+      "trap_test": {
+        "scenario": "放大后便于检错",
+        "expr": "Q_A-Q_B",
+        "ref": 0
+      },
+      "level": "拓展",
+      "learning_scope": "初中主线；公式含拓展",
+      "answer_evidence": {
+        "kind": "numeric",
+        "scenario": "放大后便于检错",
+        "parameters": {
+          "Q_A": 0.0002,
+          "Q_B": -0.0002,
+          "Q_total": 0
+        },
+        "target": "Q_total",
+        "unit": "C",
+        "reference": 0,
+        "correct_proof": {
+          "expression": "Q_A+Q_B",
+          "formula": "绝缘系统总电荷守恒",
+          "value": 0.0,
+          "when": "拓展计算，非本卡初中必背主线。把所有相关带电物体纳入系统，且系统与外界没有电荷交换；电荷量保留正负号。"
+        },
+        "distractor_expression": "Q_A-Q_B",
+        "distractor_value": 0.0004,
+        "dimension_matches": true,
+        "independent_evaluation": true
+      },
+      "review": {
+        "confidence": "medium",
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": true,
+          "no_answer_leak_in_options": true
+        },
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。",
+        "material": {
+          "anchors": [
+            {
+              "kind": "公式",
+              "name": "绝缘系统总电荷守恒",
+              "expression": "Q_A+Q_B",
+              "when": "拓展计算，非本卡初中必背主线。把所有相关带电物体纳入系统，且系统与外界没有电荷交换；电荷量保留正负号。",
+              "display": "Q<sub>A</sub>+Q<sub>B</sub>"
+            }
+          ],
+          "source": {
+            "nature": "原创设计示例，非教材实测或真实实验记录",
+            "scenario": "放大后便于检错",
+            "parameters": {
+              "Q_A": 0.0002,
+              "Q_B": -0.0002,
+              "Q_total": 0
+            },
+            "data": [
+              "系统内物体 A 的带符号电荷量：0.0002 C",
+              "系统内物体 B 的带符号电荷量：-0.0002 C",
+              "绝缘系统总电荷量：0 C"
+            ]
+          },
+          "predicted_errors": [
+            {
+              "option": "B",
+              "text": "0.0004 C",
+              "reason": "电荷量应按符号作代数和；两物体带等量异号电荷时总电荷为零。应结合电荷守恒和本节讨论范围判断。",
+              "expression": "Q_A-Q_B",
+              "status": "误答原因预测，待教师确认；未采集学生作答证据"
+            }
+          ],
+          "difficulty_note": "建议难度沿用本题level（源卡难度）；尚非题目难度实测，待教师调整",
+          "estimated_seconds": [
+            180,
+            360
+          ],
+          "time_basis": "未做学生计时；按现有难度给出备课估计区间，待教师确认",
+          "machine_checks": [
+            {
+              "name": "题目ID关联源知识点",
+              "passed": true
+            },
+            {
+              "name": "选项标签唯一且参考标签存在",
+              "passed": true
+            },
+            {
+              "name": "选项文本互异",
+              "passed": true
+            },
+            {
+              "name": "正确路径独立数值复算",
+              "passed": true
+            },
+            {
+              "name": "带量纲求值与独立求值一致",
+              "passed": true
+            },
+            {
+              "name": "干扰路径复算且与正确路径分离",
+              "passed": true
+            }
+          ],
+          "machine_boundary": "只列本次逐题实际执行项目；不把关联知识卡的方向、扫描或一致性检查算作本题已验。概念题未验命题真假。",
+          "human_review_items": [
+            "题干条件是否充分、清楚且符合学段",
+            "参考结论在指定条件下是否唯一",
+            "干扰项是否合理、对应真实认知问题且无答案暗示",
+            "公式或概念锚点是否准确",
+            "建议难度及用时是否适合教学",
+            "语言、装置与安全操作是否恰当"
+          ],
+          "reference_answer_note": "现有参考答案保持；即使本地可以判选项，也仍须教师审核教学可用性"
+        }
+      }
+    },
+    {
+      "id": "diagnostic-particle-03-2",
+      "point_id": "particle-03",
+      "point_title": "静电现象",
+      "chapter": "从粒子到宇宙",
+      "stem": "关于“静电现象”，判断这一说法是否成立，并说明依据：\n同种电荷相吸、异种电荷相斥。",
+      "options": [
+        {
+          "label": "A",
+          "text": "该说法成立。"
+        },
+        {
+          "label": "B",
+          "text": "该说法不成立。"
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "同种电荷相互排斥，异种电荷相互吸引；应通过带电体实验辨认。应结合电荷守恒和本节讨论范围判断。\n知识点条件：摩擦起电不是凭空创造电荷，而是电子从一个物体转移到另一个物体；因此一个物体带正电时，另一个物体可能带等量负电。验电器可显示物体是否带电，但不直接给出电荷量大小。本点的电荷和守恒关系是定量拓展，初中核心是观察带电现象及相互作用。\n推导依据：把相互作用的带电物体划入同一系统，逐个记录电荷的正负号。；电子转移只改变电荷分布，孤立系统的总电荷不变。；把系统总电荷写成各物体带符号电荷的代数和，检查转移前后总量一致。\n卡片公式各自的适用条件（不是本题共同前提）：\n绝缘系统总电荷守恒：拓展计算，非本卡初中必背主线。把所有相关带电物体纳入系统，且系统与外界没有电荷交换；电荷量保留正负号。\n由守恒总电荷反求B物体电荷：拓展计算，非本卡初中必背主线。绝缘系统只含物体 A 和 B，电荷量采用带正负号的库仑值。",
+      "error_type": "概念混淆",
+      "judging": "teacher",
+      "source_error_index": 1,
+      "source_caught_by": "人工审核",
+      "wrong_expr": null,
+      "trap_test": null,
+      "level": "拓展",
+      "learning_scope": "初中主线；公式含拓展",
+      "answer_evidence": {
+        "kind": "teacher",
+        "claim_source": "wrong",
+        "reference_only": true,
+        "reason": "概念、操作或无法建立完整定量证据，教师确认条件与结论。"
+      },
+      "review": {
+        "confidence": "medium",
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": false,
+          "no_answer_leak_in_options": true
+        },
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。",
+        "material": {
+          "anchors": [
+            {
+              "kind": "概念或操作",
+              "name": "静电现象",
+              "claim": "认为同种电荷相吸、异种电荷相斥。",
+              "correction_basis": "同种电荷相互排斥，异种电荷相互吸引；应通过带电体实验辨认。应结合电荷守恒和本节讨论范围判断。",
+              "note": "概念锚点及命题真假待教师确认；未套用任意第一条公式",
+              "display": "认为同种电荷相吸、异种电荷相斥。"
+            }
+          ],
+          "source": {
+            "nature": "原创概念/操作命题；无真实测量记录",
+            "source_error_index": 1
+          },
+          "predicted_errors": [
+            {
+              "option": "A",
+              "text": "该说法成立。",
+              "reason": "同种电荷相互排斥，异种电荷相互吸引；应通过带电体实验辨认。应结合电荷守恒和本节讨论范围判断。",
+              "expression": null,
+              "status": "误答原因预测，待教师确认；未采集学生作答证据"
+            }
+          ],
+          "difficulty_note": "建议难度沿用本题level（源卡难度）；尚非题目难度实测，待教师调整",
+          "estimated_seconds": [
+            180,
+            360
+          ],
+          "time_basis": "未做学生计时；按现有难度给出备课估计区间，待教师确认",
+          "machine_checks": [
+            {
+              "name": "题目ID关联源知识点",
+              "passed": true
+            },
+            {
+              "name": "选项标签唯一且参考标签存在",
+              "passed": true
+            },
+            {
+              "name": "选项文本互异",
+              "passed": true
+            }
+          ],
+          "machine_boundary": "只列本次逐题实际执行项目；不把关联知识卡的方向、扫描或一致性检查算作本题已验。概念题未验命题真假。",
+          "human_review_items": [
+            "题干条件是否充分、清楚且符合学段",
+            "参考结论在指定条件下是否唯一",
+            "干扰项是否合理、对应真实认知问题且无答案暗示",
+            "公式或概念锚点是否准确",
+            "建议难度及用时是否适合教学",
+            "语言、装置与安全操作是否恰当"
+          ],
+          "reference_answer_note": "现有参考答案保持；即使本地可以判选项，也仍须教师审核教学可用性"
+        }
+      }
+    },
+    {
+      "id": "diagnostic-particle-03-3",
+      "point_id": "particle-03",
+      "point_title": "静电现象",
+      "chapter": "从粒子到宇宙",
+      "stem": "关于“静电现象”，判断这一说法是否成立，并说明依据：\n摩擦起电在系统内创造了新的电荷。",
+      "options": [
+        {
+          "label": "A",
+          "text": "该说法不成立。"
+        },
+        {
+          "label": "B",
+          "text": "该说法成立。"
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "摩擦起电由电子转移造成，孤立系统总电荷守恒；把正负带符号电荷相加，不以单方电荷增加推断总量增加。\n知识点条件：摩擦起电不是凭空创造电荷，而是电子从一个物体转移到另一个物体；因此一个物体带正电时，另一个物体可能带等量负电。验电器可显示物体是否带电，但不直接给出电荷量大小。本点的电荷和守恒关系是定量拓展，初中核心是观察带电现象及相互作用。\n推导依据：把相互作用的带电物体划入同一系统，逐个记录电荷的正负号。；电子转移只改变电荷分布，孤立系统的总电荷不变。；把系统总电荷写成各物体带符号电荷的代数和，检查转移前后总量一致。\n卡片公式各自的适用条件（不是本题共同前提）：\n绝缘系统总电荷守恒：拓展计算，非本卡初中必背主线。把所有相关带电物体纳入系统，且系统与外界没有电荷交换；电荷量保留正负号。\n由守恒总电荷反求B物体电荷：拓展计算，非本卡初中必背主线。绝缘系统只含物体 A 和 B，电荷量采用带正负号的库仑值。",
+      "error_type": "概念混淆",
+      "judging": "teacher",
+      "source_error_index": 2,
+      "source_caught_by": "人工审核",
+      "wrong_expr": null,
+      "trap_test": null,
+      "level": "拓展",
+      "learning_scope": "初中主线；公式含拓展",
+      "answer_evidence": {
+        "kind": "teacher",
+        "claim_source": "wrong",
+        "reference_only": true,
+        "reason": "概念、操作或无法建立完整定量证据，教师确认条件与结论。"
+      },
+      "review": {
+        "confidence": "medium",
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": false,
+          "no_answer_leak_in_options": true
+        },
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。",
+        "material": {
+          "anchors": [
+            {
+              "kind": "概念或操作",
+              "name": "静电现象",
+              "claim": "认为摩擦起电在系统内创造了新的电荷。",
+              "correction_basis": "摩擦起电由电子转移造成，孤立系统总电荷守恒；把正负带符号电荷相加，不以单方电荷增加推断总量增加。",
+              "note": "概念锚点及命题真假待教师确认；未套用任意第一条公式",
+              "display": "认为摩擦起电在系统内创造了新的电荷。"
+            }
+          ],
+          "source": {
+            "nature": "原创概念/操作命题；无真实测量记录",
+            "source_error_index": 2
+          },
+          "predicted_errors": [
+            {
+              "option": "B",
+              "text": "该说法成立。",
+              "reason": "摩擦起电由电子转移造成，孤立系统总电荷守恒；把正负带符号电荷相加，不以单方电荷增加推断总量增加。",
+              "expression": null,
+              "status": "误答原因预测，待教师确认；未采集学生作答证据"
+            }
+          ],
+          "difficulty_note": "建议难度沿用本题level（源卡难度）；尚非题目难度实测，待教师调整",
+          "estimated_seconds": [
+            180,
+            360
+          ],
+          "time_basis": "未做学生计时；按现有难度给出备课估计区间，待教师确认",
+          "machine_checks": [
+            {
+              "name": "题目ID关联源知识点",
+              "passed": true
+            },
+            {
+              "name": "选项标签唯一且参考标签存在",
+              "passed": true
+            },
+            {
+              "name": "选项文本互异",
+              "passed": true
+            }
+          ],
+          "machine_boundary": "只列本次逐题实际执行项目；不把关联知识卡的方向、扫描或一致性检查算作本题已验。概念题未验命题真假。",
+          "human_review_items": [
+            "题干条件是否充分、清楚且符合学段",
+            "参考结论在指定条件下是否唯一",
+            "干扰项是否合理、对应真实认知问题且无答案暗示",
+            "公式或概念锚点是否准确",
+            "建议难度及用时是否适合教学",
+            "语言、装置与安全操作是否恰当"
+          ],
+          "reference_answer_note": "现有参考答案保持；即使本地可以判选项，也仍须教师审核教学可用性"
+        }
+      }
+    },
+    {
+      "id": "diagnostic-particle-04-1",
+      "point_id": "particle-04",
+      "point_title": "探索更小的微粒",
+      "chapter": "从粒子到宇宙",
+      "stem": "在“探索更小的微粒”的模型下，d<sub>核</sub>（原子核直径的代表尺度）=1e-06 nm。条件：拓展计算，非本卡初中必背主线。仅比较典型数量级，原子尺度约 10⁻¹⁰ m、原子核约 10⁻¹⁵ m；不是精确适用于每种原子的尺寸定律。。求原子直径的代表尺度（d<sub>原子</sub>）。这些数值是设计示例。",
+      "options": [
+        {
+          "label": "A",
+          "text": "1e-05 nm"
+        },
+        {
+          "label": "B",
+          "text": "0.1 nm"
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "使用原子与原子核的代表尺度比：100000·d<sub>核</sub>，代入得0.1 nm。另一结果来自10·d<sub>核</sub>，算得1e-05 nm。\n典型尺度约差五个数量级；原子核约 10⁻¹⁵ m，原子约 10⁻¹⁰ m。\n知识点条件：从分子到原子、原子核和更小粒子的认识来自实验与模型不断发展。用代表尺度比较可看出原子核远小于原子，但这些数值是数量级估计，不是每种原子都完全相同的精确尺寸。不能把科学模型误读成肉眼可见的实体图，也不能把“更小”误认为质量和结构相同。\n推导依据：选取原子和原子核的代表性直径数量级，分别约为 10⁻¹⁰ m 和 10⁻¹⁵ m。；两尺度相除得到约 10⁵ 的数量级差别。；该比值用作尺度比较，不应误称为对所有原子都精确不变的常数。\n卡片公式各自的适用条件（不是本题共同前提）：\n原子与原子核的代表尺度比：拓展计算，非本卡初中必背主线。仅比较典型数量级，原子尺度约 10⁻¹⁰ m、原子核约 10⁻¹⁵ m；不是精确适用于每种原子的尺寸定律。\n由代表原子尺度反推原子核尺度：拓展计算，非本卡初中必背主线。沿用原子约为原子核 10⁵ 倍的数量级估计。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 0,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "d<sub>原子</sub> = 10·d<sub>核</sub>",
+      "trap_test": {
+        "scenario": "原子典型尺度",
+        "expr": "10*d_nucleus",
+        "ref": 0.1
+      },
+      "level": "拓展",
+      "learning_scope": "初中主线；公式含拓展",
+      "answer_evidence": {
+        "kind": "numeric",
+        "scenario": "原子典型尺度",
+        "parameters": {
+          "d_atom": 0.1,
+          "d_nucleus": 1e-06
+        },
+        "target": "d_atom",
+        "unit": "nm",
+        "reference": 0.1,
+        "correct_proof": {
+          "expression": "100000*d_nucleus",
+          "formula": "原子与原子核的代表尺度比",
+          "value": 0.09999999999999999,
+          "when": "拓展计算，非本卡初中必背主线。仅比较典型数量级，原子尺度约 10^-10 m、原子核约 10^-15 m；不是精确适用于每种原子的尺寸定律。"
+        },
+        "distractor_expression": "10*d_nucleus",
+        "distractor_value": 9.999999999999999e-06,
+        "dimension_matches": true,
+        "independent_evaluation": true
+      },
+      "review": {
+        "confidence": "medium",
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": true,
+          "no_answer_leak_in_options": true
+        },
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。",
+        "material": {
+          "anchors": [
+            {
+              "kind": "公式",
+              "name": "原子与原子核的代表尺度比",
+              "expression": "100000*d_nucleus",
+              "when": "拓展计算，非本卡初中必背主线。仅比较典型数量级，原子尺度约 10^-10 m、原子核约 10^-15 m；不是精确适用于每种原子的尺寸定律。",
+              "display": "100000·d<sub>核</sub>"
+            }
+          ],
+          "source": {
+            "nature": "原创设计示例，非教材实测或真实实验记录",
+            "scenario": "原子典型尺度",
+            "parameters": {
+              "d_atom": 0.1,
+              "d_nucleus": 1e-06
+            },
+            "data": [
+              "原子直径的代表尺度：0.1 nm",
+              "原子核直径的代表尺度：1e-06 nm"
+            ]
+          },
+          "predicted_errors": [
+            {
+              "option": "A",
+              "text": "1e-05 nm",
+              "reason": "典型尺度约差五个数量级；原子核约 10^-15 m，原子约 10^-10 m。",
+              "expression": "10*d_nucleus",
+              "status": "误答原因预测，待教师确认；未采集学生作答证据"
+            }
+          ],
+          "difficulty_note": "建议难度沿用本题level（源卡难度）；尚非题目难度实测，待教师调整",
+          "estimated_seconds": [
+            180,
+            360
+          ],
+          "time_basis": "未做学生计时；按现有难度给出备课估计区间，待教师确认",
+          "machine_checks": [
+            {
+              "name": "题目ID关联源知识点",
+              "passed": true
+            },
+            {
+              "name": "选项标签唯一且参考标签存在",
+              "passed": true
+            },
+            {
+              "name": "选项文本互异",
+              "passed": true
+            },
+            {
+              "name": "正确路径独立数值复算",
+              "passed": true
+            },
+            {
+              "name": "带量纲求值与独立求值一致",
+              "passed": true
+            },
+            {
+              "name": "干扰路径复算且与正确路径分离",
+              "passed": true
+            }
+          ],
+          "machine_boundary": "只列本次逐题实际执行项目；不把关联知识卡的方向、扫描或一致性检查算作本题已验。概念题未验命题真假。",
+          "human_review_items": [
+            "题干条件是否充分、清楚且符合学段",
+            "参考结论在指定条件下是否唯一",
+            "干扰项是否合理、对应真实认知问题且无答案暗示",
+            "公式或概念锚点是否准确",
+            "建议难度及用时是否适合教学",
+            "语言、装置与安全操作是否恰当"
+          ],
+          "reference_answer_note": "现有参考答案保持；即使本地可以判选项，也仍须教师审核教学可用性"
+        }
+      }
+    },
+    {
+      "id": "diagnostic-particle-04-2",
+      "point_id": "particle-04",
+      "point_title": "探索更小的微粒",
+      "chapter": "从粒子到宇宙",
+      "stem": "关于“探索更小的微粒”，判断这一说法是否成立，并说明依据：\n原子是不可再分的最小粒子。",
+      "options": [
+        {
+          "label": "A",
+          "text": "该说法成立。"
+        },
+        {
+          "label": "B",
+          "text": "该说法不成立。"
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "原子由原子核和核外电子构成，原子核还具有更细的内部结构；科学认识随证据发展。\n知识点条件：从分子到原子、原子核和更小粒子的认识来自实验与模型不断发展。用代表尺度比较可看出原子核远小于原子，但这些数值是数量级估计，不是每种原子都完全相同的精确尺寸。不能把科学模型误读成肉眼可见的实体图，也不能把“更小”误认为质量和结构相同。\n推导依据：选取原子和原子核的代表性直径数量级，分别约为 10⁻¹⁰ m 和 10⁻¹⁵ m。；两尺度相除得到约 10⁵ 的数量级差别。；该比值用作尺度比较，不应误称为对所有原子都精确不变的常数。\n卡片公式各自的适用条件（不是本题共同前提）：\n原子与原子核的代表尺度比：拓展计算，非本卡初中必背主线。仅比较典型数量级，原子尺度约 10⁻¹⁰ m、原子核约 10⁻¹⁵ m；不是精确适用于每种原子的尺寸定律。\n由代表原子尺度反推原子核尺度：拓展计算，非本卡初中必背主线。沿用原子约为原子核 10⁵ 倍的数量级估计。",
+      "error_type": "概念混淆",
+      "judging": "teacher",
+      "source_error_index": 1,
+      "source_caught_by": "人工审核",
+      "wrong_expr": null,
+      "trap_test": null,
+      "level": "拓展",
+      "learning_scope": "初中主线；公式含拓展",
+      "answer_evidence": {
+        "kind": "teacher",
+        "claim_source": "wrong",
+        "reference_only": true,
+        "reason": "概念、操作或无法建立完整定量证据，教师确认条件与结论。"
+      },
+      "review": {
+        "confidence": "medium",
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": false,
+          "no_answer_leak_in_options": true
+        },
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。",
+        "material": {
+          "anchors": [
+            {
+              "kind": "概念或操作",
+              "name": "探索更小的微粒",
+              "claim": "认为原子是不可再分的最小粒子。",
+              "correction_basis": "原子由原子核和核外电子构成，原子核还具有更细的内部结构；科学认识随证据发展。",
+              "note": "概念锚点及命题真假待教师确认；未套用任意第一条公式",
+              "display": "认为原子是不可再分的最小粒子。"
+            }
+          ],
+          "source": {
+            "nature": "原创概念/操作命题；无真实测量记录",
+            "source_error_index": 1
+          },
+          "predicted_errors": [
+            {
+              "option": "A",
+              "text": "该说法成立。",
+              "reason": "原子由原子核和核外电子构成，原子核还具有更细的内部结构；科学认识随证据发展。",
+              "expression": null,
+              "status": "误答原因预测，待教师确认；未采集学生作答证据"
+            }
+          ],
+          "difficulty_note": "建议难度沿用本题level（源卡难度）；尚非题目难度实测，待教师调整",
+          "estimated_seconds": [
+            180,
+            360
+          ],
+          "time_basis": "未做学生计时；按现有难度给出备课估计区间，待教师确认",
+          "machine_checks": [
+            {
+              "name": "题目ID关联源知识点",
+              "passed": true
+            },
+            {
+              "name": "选项标签唯一且参考标签存在",
+              "passed": true
+            },
+            {
+              "name": "选项文本互异",
+              "passed": true
+            }
+          ],
+          "machine_boundary": "只列本次逐题实际执行项目；不把关联知识卡的方向、扫描或一致性检查算作本题已验。概念题未验命题真假。",
+          "human_review_items": [
+            "题干条件是否充分、清楚且符合学段",
+            "参考结论在指定条件下是否唯一",
+            "干扰项是否合理、对应真实认知问题且无答案暗示",
+            "公式或概念锚点是否准确",
+            "建议难度及用时是否适合教学",
+            "语言、装置与安全操作是否恰当"
+          ],
+          "reference_answer_note": "现有参考答案保持；即使本地可以判选项，也仍须教师审核教学可用性"
+        }
+      }
+    },
+    {
+      "id": "diagnostic-particle-05-1",
+      "point_id": "particle-05",
+      "point_title": "日心说与太阳系",
+      "chapter": "从粒子到宇宙",
+      "stem": "在“日心说与太阳系”的模型下，r（近似圆轨道半径）=1.496e+11 m；T（行星绕日运行周期）=3.156e+07 s。条件：拓展计算，非本卡初中必背主线。把行星轨道近似为圆，r 为圆轨道半径、T 为周期；所得为平均轨道速度估算。。求行星平均轨道速度（v）。这些数值是设计示例。",
+      "options": [
+        {
+          "label": "A",
+          "text": "14891.7 m/s"
+        },
+        {
+          "label": "B",
+          "text": "29783.4 m/s"
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "使用圆轨道近似下的平均轨道速度：2·π·r/T，代入得29783.4 m/s。另一结果来自π·r/T，算得14891.7 m/s。\n圆周长是 2·π·r；漏掉因子 2 会把估算轨道速度减半。\n知识点条件：科学模型根据观测证据建立，并会随着新证据修正。把行星轨道近似为圆时，可用轨道周长除以周期估算平均轨道速度；该简化公式不等于精确轨道理论，也不单独证明日心说。比较地心、日心模型时要区分模型解释力与历史结论。\n推导依据：圆轨道一周的路径长度为 2·π·r。；平均速度等于一周路程除以周期，得到 v=2·π·r/T。；真实行星轨道为椭圆，圆轨道公式仅用于简化的数量级估算。\n卡片公式各自的适用条件（不是本题共同前提）：\n圆轨道近似下的平均轨道速度：拓展计算，非本卡初中必背主线。把行星轨道近似为圆，r 为圆轨道半径、T 为周期；所得为平均轨道速度估算。\n由圆轨道周长和平均速度求周期：拓展计算，非本卡初中必背主线。沿用圆轨道近似，轨道周长为 2·π·r。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 0,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "v = π·r/T",
+      "trap_test": {
+        "scenario": "地球轨道近似",
+        "expr": "pi*r/T",
+        "ref": 29783.413243157986
+      },
+      "level": "拓展",
+      "learning_scope": "初中主线；公式含拓展",
+      "answer_evidence": {
+        "kind": "numeric",
+        "scenario": "地球轨道近似",
+        "parameters": {
+          "v": 29783.413243157986,
+          "r": 149600000000,
+          "T": 31560000
+        },
+        "target": "v",
+        "unit": "m/s",
+        "reference": 29783.413243157986,
+        "correct_proof": {
+          "expression": "2*pi*r/T",
+          "formula": "圆轨道近似下的平均轨道速度",
+          "value": 29783.413243157986,
+          "when": "拓展计算，非本卡初中必背主线。把行星轨道近似为圆，r 为圆轨道半径、T 为周期；所得为平均轨道速度估算。"
+        },
+        "distractor_expression": "pi*r/T",
+        "distractor_value": 14891.706621578993,
+        "dimension_matches": true,
+        "independent_evaluation": true
+      },
+      "review": {
+        "confidence": "medium",
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": true,
+          "no_answer_leak_in_options": true
+        },
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。",
+        "material": {
+          "anchors": [
+            {
+              "kind": "公式",
+              "name": "圆轨道近似下的平均轨道速度",
+              "expression": "2*pi*r/T",
+              "when": "拓展计算，非本卡初中必背主线。把行星轨道近似为圆，r 为圆轨道半径、T 为周期；所得为平均轨道速度估算。",
+              "display": "2·π·r/T"
+            }
+          ],
+          "source": {
+            "nature": "原创设计示例，非教材实测或真实实验记录",
+            "scenario": "地球轨道近似",
+            "parameters": {
+              "v": 29783.413243157986,
+              "r": 149600000000,
+              "T": 31560000
+            },
+            "data": [
+              "行星平均轨道速度：29783.413243157986 m/s",
+              "近似圆轨道半径：149600000000 m",
+              "行星绕日运行周期：31560000 s"
+            ]
+          },
+          "predicted_errors": [
+            {
+              "option": "A",
+              "text": "14891.7 m/s",
+              "reason": "圆周长是 2*pi*r；漏掉因子 2 会把估算轨道速度减半。",
+              "expression": "pi*r/T",
+              "status": "误答原因预测，待教师确认；未采集学生作答证据"
+            }
+          ],
+          "difficulty_note": "建议难度沿用本题level（源卡难度）；尚非题目难度实测，待教师调整",
+          "estimated_seconds": [
+            180,
+            360
+          ],
+          "time_basis": "未做学生计时；按现有难度给出备课估计区间，待教师确认",
+          "machine_checks": [
+            {
+              "name": "题目ID关联源知识点",
+              "passed": true
+            },
+            {
+              "name": "选项标签唯一且参考标签存在",
+              "passed": true
+            },
+            {
+              "name": "选项文本互异",
+              "passed": true
+            },
+            {
+              "name": "正确路径独立数值复算",
+              "passed": true
+            },
+            {
+              "name": "带量纲求值与独立求值一致",
+              "passed": true
+            },
+            {
+              "name": "干扰路径复算且与正确路径分离",
+              "passed": true
+            }
+          ],
+          "machine_boundary": "只列本次逐题实际执行项目；不把关联知识卡的方向、扫描或一致性检查算作本题已验。概念题未验命题真假。",
+          "human_review_items": [
+            "题干条件是否充分、清楚且符合学段",
+            "参考结论在指定条件下是否唯一",
+            "干扰项是否合理、对应真实认知问题且无答案暗示",
+            "公式或概念锚点是否准确",
+            "建议难度及用时是否适合教学",
+            "语言、装置与安全操作是否恰当"
+          ],
+          "reference_answer_note": "现有参考答案保持；即使本地可以判选项，也仍须教师审核教学可用性"
+        }
+      }
+    },
+    {
+      "id": "diagnostic-particle-05-2",
+      "point_id": "particle-05",
+      "point_title": "日心说与太阳系",
+      "chapter": "从粒子到宇宙",
+      "stem": "关于“日心说与太阳系”，判断这一说法是否成立，并说明依据：\n日心说讨论太阳系行星绕太阳运行的模型，并不宣称太阳是整个宇宙中心。",
+      "options": [
+        {
+          "label": "A",
+          "text": "该说法成立。"
+        },
+        {
+          "label": "B",
+          "text": "该说法不成立。"
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "日心说讨论太阳系行星绕太阳运行的模型，并不宣称太阳是整个宇宙中心；这与电荷守恒没有关系。\n知识点条件：科学模型根据观测证据建立，并会随着新证据修正。把行星轨道近似为圆时，可用轨道周长除以周期估算平均轨道速度；该简化公式不等于精确轨道理论，也不单独证明日心说。比较地心、日心模型时要区分模型解释力与历史结论。\n推导依据：圆轨道一周的路径长度为 2·π·r。；平均速度等于一周路程除以周期，得到 v=2·π·r/T。；真实行星轨道为椭圆，圆轨道公式仅用于简化的数量级估算。\n卡片公式各自的适用条件（不是本题共同前提）：\n圆轨道近似下的平均轨道速度：拓展计算，非本卡初中必背主线。把行星轨道近似为圆，r 为圆轨道半径、T 为周期；所得为平均轨道速度估算。\n由圆轨道周长和平均速度求周期：拓展计算，非本卡初中必背主线。沿用圆轨道近似，轨道周长为 2·π·r。",
+      "error_type": "概念混淆",
+      "judging": "teacher",
+      "source_error_index": 1,
+      "source_caught_by": "人工审核",
+      "wrong_expr": null,
+      "trap_test": null,
+      "level": "拓展",
+      "learning_scope": "初中主线；公式含拓展",
+      "answer_evidence": {
+        "kind": "teacher",
+        "claim_source": "why",
+        "reference_only": true,
+        "reason": "概念、操作或无法建立完整定量证据，教师确认条件与结论。"
+      },
+      "review": {
+        "confidence": "medium",
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": false,
+          "no_answer_leak_in_options": true
+        },
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。",
+        "material": {
+          "anchors": [
+            {
+              "kind": "概念或操作",
+              "name": "日心说与太阳系",
+              "claim": "认为日心说把太阳放在整个宇宙的中心。",
+              "correction_basis": "日心说讨论太阳系行星绕太阳运行的模型，并不宣称太阳是整个宇宙中心；这与电荷守恒没有关系。",
+              "note": "概念锚点及命题真假待教师确认；未套用任意第一条公式",
+              "display": "认为日心说把太阳放在整个宇宙的中心。"
+            }
+          ],
+          "source": {
+            "nature": "原创概念/操作命题；无真实测量记录",
+            "source_error_index": 1
+          },
+          "predicted_errors": [
+            {
+              "option": "B",
+              "text": "该说法不成立。",
+              "reason": "日心说讨论太阳系行星绕太阳运行的模型，并不宣称太阳是整个宇宙中心；这与电荷守恒没有关系。",
+              "expression": null,
+              "status": "误答原因预测，待教师确认；未采集学生作答证据"
+            }
+          ],
+          "difficulty_note": "建议难度沿用本题level（源卡难度）；尚非题目难度实测，待教师调整",
+          "estimated_seconds": [
+            180,
+            360
+          ],
+          "time_basis": "未做学生计时；按现有难度给出备课估计区间，待教师确认",
+          "machine_checks": [
+            {
+              "name": "题目ID关联源知识点",
+              "passed": true
+            },
+            {
+              "name": "选项标签唯一且参考标签存在",
+              "passed": true
+            },
+            {
+              "name": "选项文本互异",
+              "passed": true
+            }
+          ],
+          "machine_boundary": "只列本次逐题实际执行项目；不把关联知识卡的方向、扫描或一致性检查算作本题已验。概念题未验命题真假。",
+          "human_review_items": [
+            "题干条件是否充分、清楚且符合学段",
+            "参考结论在指定条件下是否唯一",
+            "干扰项是否合理、对应真实认知问题且无答案暗示",
+            "公式或概念锚点是否准确",
+            "建议难度及用时是否适合教学",
+            "语言、装置与安全操作是否恰当"
+          ],
+          "reference_answer_note": "现有参考答案保持；即使本地可以判选项，也仍须教师审核教学可用性"
+        }
+      }
+    },
+    {
+      "id": "diagnostic-particle-02-1",
+      "point_id": "particle-02",
+      "point_title": "宇宙探秘",
+      "chapter": "从粒子到宇宙",
+      "stem": "关于“宇宙探秘”，判断这一说法是否成立，并说明依据：\n将光年视为时间单位，而不是光在一年内走过的距离。",
+      "options": [
+        {
+          "label": "A",
+          "text": "该说法成立。"
+        },
+        {
+          "label": "B",
+          "text": "该说法不成立。"
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "“一年”是定义中采用的传播时间，“光年”最终表示一段距离；量纲为长度。\n知识点条件：比较天体距离时，先分清“光走了多久”和“走过多远”。光速可近似取 3.0×10⁸ m/s；以年为时间单位时要换算秒数，再将光程表示为米或光年。宇宙结构和观测证据要结合模型理解，不能把日心说与宇宙起源问题混为一谈。\n推导依据：光年是长度单位，定义为光在一年内传播的距离。；一年按 365 d 换算为 31 536 000 s。；用光速乘以秒数，得到一光年约 9.46×10¹⁵ m。\n卡片公式各自的适用条件（不是本题共同前提）：\n光在给定时间内传播的距离：拓展计算，非本卡初中必背主线。光速近似取 3.0×10⁸ m/s，时间 t 用秒；一年按 365 d 估算。\n由光程和光速求传播时间：拓展计算，非本卡初中必背主线。距离 s 与真空光速 c 采用相同的光传播路径。",
+      "error_type": "概念混淆",
+      "judging": "teacher",
+      "source_error_index": 0,
+      "source_caught_by": "人工审核",
+      "wrong_expr": null,
+      "trap_test": null,
+      "level": "基础",
+      "learning_scope": "初中主线；公式含拓展",
+      "answer_evidence": {
+        "kind": "teacher",
+        "claim_source": "wrong",
+        "reference_only": true,
+        "reason": "概念、操作或无法建立完整定量证据，教师确认条件与结论。"
+      },
+      "review": {
+        "confidence": "medium",
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": false,
+          "no_answer_leak_in_options": true
+        },
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。",
+        "material": {
+          "anchors": [
+            {
+              "kind": "概念或操作",
+              "name": "宇宙探秘",
+              "claim": "将光年当成时间单位，而不是光在一年内走过的距离。",
+              "correction_basis": "“一年”是定义中采用的传播时间，“光年”最终表示一段距离；量纲为长度。",
+              "note": "概念锚点及命题真假待教师确认；未套用任意第一条公式",
+              "display": "将光年当成时间单位，而不是光在一年内走过的距离。"
+            }
+          ],
+          "source": {
+            "nature": "原创概念/操作命题；无真实测量记录",
+            "source_error_index": 0
+          },
+          "predicted_errors": [
+            {
+              "option": "A",
+              "text": "该说法成立。",
+              "reason": "“一年”是定义中采用的传播时间，“光年”最终表示一段距离；量纲为长度。",
+              "expression": null,
+              "status": "误答原因预测，待教师确认；未采集学生作答证据"
+            }
+          ],
+          "difficulty_note": "建议难度沿用本题level（源卡难度）；尚非题目难度实测，待教师调整",
+          "estimated_seconds": [
+            60,
+            120
+          ],
+          "time_basis": "未做学生计时；按现有难度给出备课估计区间，待教师确认",
+          "machine_checks": [
+            {
+              "name": "题目ID关联源知识点",
+              "passed": true
+            },
+            {
+              "name": "选项标签唯一且参考标签存在",
+              "passed": true
+            },
+            {
+              "name": "选项文本互异",
+              "passed": true
+            }
+          ],
+          "machine_boundary": "只列本次逐题实际执行项目；不把关联知识卡的方向、扫描或一致性检查算作本题已验。概念题未验命题真假。",
+          "human_review_items": [
+            "题干条件是否充分、清楚且符合学段",
+            "参考结论在指定条件下是否唯一",
+            "干扰项是否合理、对应真实认知问题且无答案暗示",
+            "公式或概念锚点是否准确",
+            "建议难度及用时是否适合教学",
+            "语言、装置与安全操作是否恰当"
+          ],
+          "reference_answer_note": "现有参考答案保持；即使本地可以判选项，也仍须教师审核教学可用性"
+        }
+      }
+    },
+    {
+      "id": "diagnostic-particle-02-2",
+      "point_id": "particle-02",
+      "point_title": "宇宙探秘",
+      "chapter": "从粒子到宇宙",
+      "stem": "在“宇宙探秘”的模型下，c（真空中的光速近似值）=3e+08 m/s；t（光传播时间，以秒计）=3.1536e+07 s。条件：拓展计算，非本卡初中必背主线。光速近似取 3.0×10⁸ m/s，时间 t 用秒；一年按 365 d 估算。。求光在给定时间内传播的距离（s）。这些数值是设计示例。",
+      "options": [
+        {
+          "label": "A",
+          "text": "9.4608e+12 m"
+        },
+        {
+          "label": "B",
+          "text": "9.4608e+15 m"
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "使用光在给定时间内传播的距离：c·t，代入得9.4608e+15 m。另一结果来自c·t/1000，算得9.4608e+12 m。\n300 000 是 km/s；换成 m/s 应为 300 000 000。直接使用会少算 1000 倍。\n知识点条件：比较天体距离时，先分清“光走了多久”和“走过多远”。光速可近似取 3.0×10⁸ m/s；以年为时间单位时要换算秒数，再将光程表示为米或光年。宇宙结构和观测证据要结合模型理解，不能把日心说与宇宙起源问题混为一谈。\n推导依据：光年是长度单位，定义为光在一年内传播的距离。；一年按 365 d 换算为 31 536 000 s。；用光速乘以秒数，得到一光年约 9.46×10¹⁵ m。\n卡片公式各自的适用条件（不是本题共同前提）：\n光在给定时间内传播的距离：拓展计算，非本卡初中必背主线。光速近似取 3.0×10⁸ m/s，时间 t 用秒；一年按 365 d 估算。\n由光程和光速求传播时间：拓展计算，非本卡初中必背主线。距离 s 与真空光速 c 采用相同的光传播路径。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 1,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "s = c·t/1000",
+      "trap_test": {
+        "scenario": "一年光程",
+        "expr": "c*t/1000",
+        "ref": 9460800000000000
+      },
+      "level": "基础",
+      "learning_scope": "初中主线；公式含拓展",
+      "answer_evidence": {
+        "kind": "numeric",
+        "scenario": "一年光程",
+        "parameters": {
+          "s": 9460800000000000,
+          "c": 300000000,
+          "t": 31536000
+        },
+        "target": "s",
+        "unit": "m",
+        "reference": 9460800000000000,
+        "correct_proof": {
+          "expression": "c*t",
+          "formula": "光在给定时间内传播的距离",
+          "value": 9460800000000000,
+          "when": "拓展计算，非本卡初中必背主线。光速近似取 3.0×10^8 m/s，时间 t 用秒；一年按 365 d 估算。"
+        },
+        "distractor_expression": "c*t/1000",
+        "distractor_value": 9460800000000.0,
+        "dimension_matches": true,
+        "independent_evaluation": true
+      },
+      "review": {
+        "confidence": "medium",
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": true,
+          "no_answer_leak_in_options": true
+        },
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。",
+        "material": {
+          "anchors": [
+            {
+              "kind": "公式",
+              "name": "光在给定时间内传播的距离",
+              "expression": "c*t",
+              "when": "拓展计算，非本卡初中必背主线。光速近似取 3.0×10^8 m/s，时间 t 用秒；一年按 365 d 估算。",
+              "display": "c·t"
+            }
+          ],
+          "source": {
+            "nature": "原创设计示例，非教材实测或真实实验记录",
+            "scenario": "一年光程",
+            "parameters": {
+              "s": 9460800000000000,
+              "c": 300000000,
+              "t": 31536000
+            },
+            "data": [
+              "光在给定时间内传播的距离：9460800000000000 m",
+              "真空中的光速近似值：300000000 m/s",
+              "光传播时间，以秒计：31536000 s"
+            ]
+          },
+          "predicted_errors": [
+            {
+              "option": "A",
+              "text": "9.4608e+12 m",
+              "reason": "300 000 是 km/s；换成 m/s 应为 300 000 000。直接使用会少算 1000 倍。",
+              "expression": "c*t/1000",
+              "status": "误答原因预测，待教师确认；未采集学生作答证据"
+            }
+          ],
+          "difficulty_note": "建议难度沿用本题level（源卡难度）；尚非题目难度实测，待教师调整",
+          "estimated_seconds": [
+            60,
+            120
+          ],
+          "time_basis": "未做学生计时；按现有难度给出备课估计区间，待教师确认",
+          "machine_checks": [
+            {
+              "name": "题目ID关联源知识点",
+              "passed": true
+            },
+            {
+              "name": "选项标签唯一且参考标签存在",
+              "passed": true
+            },
+            {
+              "name": "选项文本互异",
+              "passed": true
+            },
+            {
+              "name": "正确路径独立数值复算",
+              "passed": true
+            },
+            {
+              "name": "带量纲求值与独立求值一致",
+              "passed": true
+            },
+            {
+              "name": "干扰路径复算且与正确路径分离",
+              "passed": true
+            }
+          ],
+          "machine_boundary": "只列本次逐题实际执行项目；不把关联知识卡的方向、扫描或一致性检查算作本题已验。概念题未验命题真假。",
+          "human_review_items": [
+            "题干条件是否充分、清楚且符合学段",
+            "参考结论在指定条件下是否唯一",
+            "干扰项是否合理、对应真实认知问题且无答案暗示",
+            "公式或概念锚点是否准确",
+            "建议难度及用时是否适合教学",
+            "语言、装置与安全操作是否恰当"
+          ],
+          "reference_answer_note": "现有参考答案保持；即使本地可以判选项，也仍须教师审核教学可用性"
+        }
+      }
+    }
+  ],
+  "skipped": [],
+  "source_records": {
+    "diagnostic-particle-01-1": {
+      "point": {
+        "id": "particle-01",
+        "title": "走进分子世界",
+        "level": "基础",
+        "definition": "常见物质由大量分子构成，分子很小，肉眼无法直接观察；分子永不停息地做无规则运动，温度越高通常运动越剧烈。扩散现象和分子间隙可帮助建立微观图景。",
+        "meaning": "不同物质彼此接触后会逐渐混合，这种扩散现象支持分子在不停运动的认识。扩散速度还受温度、状态和颗粒尺度等因素影响，不能仅由一个简单比例式预测。纳米与米的换算可帮助描述分子尺度，但不表示每个分子直径都恰为某一固定值。",
+        "symbols": {
+          "d_m": {
+            "desc": "以米表示的微观长度",
+            "unit": "m"
+          },
+          "d_nm": {
+            "desc": "同一长度以纳米表示",
+            "unit": "nm"
+          }
+        },
+        "scenarios": {
+          "十分之一纳米": {
+            "d_m": 1e-10,
+            "d_nm": 0.1
+          },
+          "一纳米": {
+            "d_m": 1e-09,
+            "d_nm": 1
+          }
+        },
+        "formulas": [
+          {
+            "name": "米换算为纳米",
+            "expr": "d_nm = 1000000000*d_m",
+            "when": "1 m=10^9 nm；两种数值表示同一长度。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "十分之一纳米",
+                "expr": "1000000000*d_m",
+                "ref": 0.1,
+                "note": "10^-10 m×10^9=0.1 nm。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "一纳米",
+                "expr": "1000000000*d_m",
+                "ref": 1,
+                "note": "10^-9 m×10^9=1 nm。"
+              },
+              {
+                "type": "direction",
+                "scenario": "十分之一纳米",
+                "var": "d_m",
+                "lo": 1e-11,
+                "hi": 1e-08,
+                "expr": "1000000000*d_m",
+                "expect": "up",
+                "note": "同一长度的米数值越大，换算成纳米的数值也越大。"
+              },
+              {
+                "type": "scan",
+                "scenario": "十分之一纳米",
+                "var": "d_m",
+                "lo": 1e-11,
+                "hi": 1e-08,
+                "note": "扫描微观尺度长度，单位换算保持线性。"
+              },
+              {
+                "type": "consistency",
+                "scenario": "十分之一纳米",
+                "with": "particle-01|米换算为纳米",
+                "with_expr": "d_nm",
+                "target": "同一长度以纳米表示",
+                "note": "直接求本公式输出，与情境中另列的d_nm设计基准核对；数据是设计示例，不是实测。用于核对定义、反算或边界值，不宣称不同物理原理互证。",
+                "verification_kind": "独立设计情境数据核对",
+                "tol": 1e-06
+              }
+            ]
+          },
+          {
+            "name": "纳米换算为米",
+            "expr": "d_m = d_nm/1000000000",
+            "when": "原长度用 nm 表示，换算结果用 m 表示。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "十分之一纳米",
+                "expr": "d_nm/1000000000",
+                "ref": 1e-10,
+                "note": "0.1 nm÷10^9=10^-10 m。 本项采用参考物理量百万分之一的绝对容差，零值和十倍数量级错误不能通过。",
+                "tol": 1e-16
+              },
+              {
+                "type": "numeric",
+                "scenario": "一纳米",
+                "expr": "d_nm/1000000000",
+                "ref": 1e-09,
+                "note": "1 nm÷10^9=10^-9 m。 本项采用参考物理量百万分之一的绝对容差，零值和十倍数量级错误不能通过。",
+                "tol": 1e-15
+              },
+              {
+                "type": "scan",
+                "scenario": "一纳米",
+                "var": "d_nm",
+                "lo": 0,
+                "hi": 1000,
+                "note": "扫描非负纳米长度，换回米的数值有限。"
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "物质的粒子尺度远小于日常物体，表示时常使用纳米。",
+          "米和纳米都是长度单位，1 m=1 000 000 000 nm。",
+          "乘以或除以单位换算比例，可在 m 与 nm 之间转换。"
+        ],
+        "errors": [
+          {
+            "wrong": "把米换算成纳米时只乘 1000，误把毫、微等前缀混淆。",
+            "wrong_expr": "d_nm = 1000*d_m",
+            "why": "米到纳米相差 10^9 倍；例如 10^-10 m 应为 0.1 nm，而不是 10^-7 nm。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "十分之一纳米",
+              "expr": "1000*d_m",
+              "ref": 0.1
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "把分子或原子的示意图当作按真实尺寸比例绘制的结构图。",
+            "why": "微观结构图通常为便于辨认而放大或简化，不能直接据图比较真实粒子尺寸。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "某微观长度约为 0.2 nm，换算成米。",
+          "solution": [
+            "1 nm=10^-9 m。",
+            "0.2 nm=0.2×10^-9 m=2×10^-10 m。"
+          ],
+          "answer": "约为 2×10^-10 m。"
+        },
+        "prereq": [],
+        "next": [
+          "particle-02"
+        ],
+        "tags": [
+          "分子",
+          "分子运动",
+          "扩散",
+          "分子间隙",
+          "纳米"
+        ],
+        "core": [
+          {
+            "title": "分子世界",
+            "text": "分子之间有间隙，永不停息地做无规则运动，分子间同时存在引力和斥力；温度越高，热运动通常越剧烈。红墨水在水中逐渐扩散是分子运动的证据，粉尘在空气中飞舞是可见颗粒运动，不能直接当作看见分子。压缩不易、拉伸不易可分别用分子作用理解，但宏观力也依赖材料结构，不能逐个把可见颗粒等同分子。"
+          },
+          {
+            "title": "本章素养回顾（原创任务）",
+            "text": "选择本章一个现象，写出结论、成立条件和证据；用另一条本章规律复核解释是否矛盾。指出一次测量或模型的局限，并说明还需什么证据；数值通过不替代概念辨析。"
+          }
+        ],
+        "learning_scope": "初中"
+      },
+      "error_index": 0,
+      "chapter": "从粒子到宇宙"
+    },
+    "diagnostic-particle-01-2": {
+      "point": {
+        "id": "particle-01",
+        "title": "走进分子世界",
+        "level": "基础",
+        "definition": "常见物质由大量分子构成，分子很小，肉眼无法直接观察；分子永不停息地做无规则运动，温度越高通常运动越剧烈。扩散现象和分子间隙可帮助建立微观图景。",
+        "meaning": "不同物质彼此接触后会逐渐混合，这种扩散现象支持分子在不停运动的认识。扩散速度还受温度、状态和颗粒尺度等因素影响，不能仅由一个简单比例式预测。纳米与米的换算可帮助描述分子尺度，但不表示每个分子直径都恰为某一固定值。",
+        "symbols": {
+          "d_m": {
+            "desc": "以米表示的微观长度",
+            "unit": "m"
+          },
+          "d_nm": {
+            "desc": "同一长度以纳米表示",
+            "unit": "nm"
+          }
+        },
+        "scenarios": {
+          "十分之一纳米": {
+            "d_m": 1e-10,
+            "d_nm": 0.1
+          },
+          "一纳米": {
+            "d_m": 1e-09,
+            "d_nm": 1
+          }
+        },
+        "formulas": [
+          {
+            "name": "米换算为纳米",
+            "expr": "d_nm = 1000000000*d_m",
+            "when": "1 m=10^9 nm；两种数值表示同一长度。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "十分之一纳米",
+                "expr": "1000000000*d_m",
+                "ref": 0.1,
+                "note": "10^-10 m×10^9=0.1 nm。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "一纳米",
+                "expr": "1000000000*d_m",
+                "ref": 1,
+                "note": "10^-9 m×10^9=1 nm。"
+              },
+              {
+                "type": "direction",
+                "scenario": "十分之一纳米",
+                "var": "d_m",
+                "lo": 1e-11,
+                "hi": 1e-08,
+                "expr": "1000000000*d_m",
+                "expect": "up",
+                "note": "同一长度的米数值越大，换算成纳米的数值也越大。"
+              },
+              {
+                "type": "scan",
+                "scenario": "十分之一纳米",
+                "var": "d_m",
+                "lo": 1e-11,
+                "hi": 1e-08,
+                "note": "扫描微观尺度长度，单位换算保持线性。"
+              },
+              {
+                "type": "consistency",
+                "scenario": "十分之一纳米",
+                "with": "particle-01|米换算为纳米",
+                "with_expr": "d_nm",
+                "target": "同一长度以纳米表示",
+                "note": "直接求本公式输出，与情境中另列的d_nm设计基准核对；数据是设计示例，不是实测。用于核对定义、反算或边界值，不宣称不同物理原理互证。",
+                "verification_kind": "独立设计情境数据核对",
+                "tol": 1e-06
+              }
+            ]
+          },
+          {
+            "name": "纳米换算为米",
+            "expr": "d_m = d_nm/1000000000",
+            "when": "原长度用 nm 表示，换算结果用 m 表示。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "十分之一纳米",
+                "expr": "d_nm/1000000000",
+                "ref": 1e-10,
+                "note": "0.1 nm÷10^9=10^-10 m。 本项采用参考物理量百万分之一的绝对容差，零值和十倍数量级错误不能通过。",
+                "tol": 1e-16
+              },
+              {
+                "type": "numeric",
+                "scenario": "一纳米",
+                "expr": "d_nm/1000000000",
+                "ref": 1e-09,
+                "note": "1 nm÷10^9=10^-9 m。 本项采用参考物理量百万分之一的绝对容差，零值和十倍数量级错误不能通过。",
+                "tol": 1e-15
+              },
+              {
+                "type": "scan",
+                "scenario": "一纳米",
+                "var": "d_nm",
+                "lo": 0,
+                "hi": 1000,
+                "note": "扫描非负纳米长度，换回米的数值有限。"
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "物质的粒子尺度远小于日常物体，表示时常使用纳米。",
+          "米和纳米都是长度单位，1 m=1 000 000 000 nm。",
+          "乘以或除以单位换算比例，可在 m 与 nm 之间转换。"
+        ],
+        "errors": [
+          {
+            "wrong": "把米换算成纳米时只乘 1000，误把毫、微等前缀混淆。",
+            "wrong_expr": "d_nm = 1000*d_m",
+            "why": "米到纳米相差 10^9 倍；例如 10^-10 m 应为 0.1 nm，而不是 10^-7 nm。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "十分之一纳米",
+              "expr": "1000*d_m",
+              "ref": 0.1
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "把分子或原子的示意图当作按真实尺寸比例绘制的结构图。",
+            "why": "微观结构图通常为便于辨认而放大或简化，不能直接据图比较真实粒子尺寸。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "某微观长度约为 0.2 nm，换算成米。",
+          "solution": [
+            "1 nm=10^-9 m。",
+            "0.2 nm=0.2×10^-9 m=2×10^-10 m。"
+          ],
+          "answer": "约为 2×10^-10 m。"
+        },
+        "prereq": [],
+        "next": [
+          "particle-02"
+        ],
+        "tags": [
+          "分子",
+          "分子运动",
+          "扩散",
+          "分子间隙",
+          "纳米"
+        ],
+        "core": [
+          {
+            "title": "分子世界",
+            "text": "分子之间有间隙，永不停息地做无规则运动，分子间同时存在引力和斥力；温度越高，热运动通常越剧烈。红墨水在水中逐渐扩散是分子运动的证据，粉尘在空气中飞舞是可见颗粒运动，不能直接当作看见分子。压缩不易、拉伸不易可分别用分子作用理解，但宏观力也依赖材料结构，不能逐个把可见颗粒等同分子。"
+          },
+          {
+            "title": "本章素养回顾（原创任务）",
+            "text": "选择本章一个现象，写出结论、成立条件和证据；用另一条本章规律复核解释是否矛盾。指出一次测量或模型的局限，并说明还需什么证据；数值通过不替代概念辨析。"
+          }
+        ],
+        "learning_scope": "初中"
+      },
+      "error_index": 1,
+      "chapter": "从粒子到宇宙"
+    },
+    "diagnostic-particle-03-1": {
+      "point": {
+        "id": "particle-03",
+        "title": "静电现象",
+        "level": "拓展",
+        "definition": "物体因电子转移或电荷重新分布而带电，带电物体之间会发生吸引或排斥。若把相互作用物体作为一个与外界绝缘的系统，总电荷在转移过程中保持不变。",
+        "meaning": "摩擦起电不是凭空创造电荷，而是电子从一个物体转移到另一个物体；因此一个物体带正电时，另一个物体可能带等量负电。验电器可显示物体是否带电，但不直接给出电荷量大小。本点的电荷和守恒关系是定量拓展，初中核心是观察带电现象及相互作用。",
+        "symbols": {
+          "Q_A": {
+            "desc": "系统内物体 A 的带符号电荷量",
+            "unit": "C"
+          },
+          "Q_B": {
+            "desc": "系统内物体 B 的带符号电荷量",
+            "unit": "C"
+          },
+          "Q_total": {
+            "desc": "绝缘系统总电荷量",
+            "unit": "C"
+          }
+        },
+        "scenarios": {
+          "摩擦起电后两物体": {
+            "Q_A": 2e-08,
+            "Q_B": -2e-08,
+            "Q_total": 0
+          },
+          "电荷转移示例": {
+            "Q_A": 4e-08,
+            "Q_B": -1e-08,
+            "Q_total": 3e-08
+          },
+          "放大后便于检错": {
+            "Q_A": 0.0002,
+            "Q_B": -0.0002,
+            "Q_total": 0
+          }
+        },
+        "formulas": [
+          {
+            "name": "绝缘系统总电荷守恒",
+            "expr": "Q_total = Q_A+Q_B",
+            "when": "拓展计算，非本卡初中必背主线。把所有相关带电物体纳入系统，且系统与外界没有电荷交换；电荷量保留正负号。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "摩擦起电后两物体",
+                "expr": "Q_A+Q_B",
+                "ref": 0,
+                "note": "一物体带 +2×10^-8 C，另一物体带 -2×10^-8 C，总电荷仍为零。 "
+              },
+              {
+                "type": "numeric",
+                "scenario": "电荷转移示例",
+                "expr": "Q_A+Q_B",
+                "ref": 3e-08,
+                "note": "系统总电荷为 +3×10^-8 C，转移前后不变。  本项采用参考物理量百万分之一的绝对容差，零值和十倍数量级错误不能通过。",
+                "tol": 3e-14
+              },
+              {
+                "type": "direction",
+                "scenario": "电荷转移示例",
+                "var": "Q_A",
+                "lo": -5e-08,
+                "hi": 5e-08,
+                "expr": "Q_A+Q_B",
+                "expect": "up",
+                "note": "固定 B 的带符号电荷时，A 的电荷增加会使总电荷增加。 "
+              },
+              {
+                "type": "scan",
+                "scenario": "电荷转移示例",
+                "var": "Q_A",
+                "lo": -1e-06,
+                "hi": 1e-06,
+                "note": "扫描有限的带符号电荷范围，代数和稳定。 "
+              },
+              {
+                "type": "consistency",
+                "scenario": "电荷转移示例",
+                "with": "particle-03|绝缘系统总电荷守恒",
+                "with_expr": "Q_total",
+                "target": "绝缘系统总电荷量",
+                "note": "直接求本公式输出，与情境中另列的Q_total设计基准核对；数据是设计示例，不是实测。用于核对定义、反算或边界值，不宣称不同物理原理互证。",
+                "verification_kind": "独立设计情境数据核对",
+                "tol": 3.000000000000001e-13
+              }
+            ]
+          },
+          {
+            "name": "由守恒总电荷反求B物体电荷",
+            "expr": "Q_B = Q_total-Q_A",
+            "when": "拓展计算，非本卡初中必背主线。绝缘系统只含物体 A 和 B，电荷量采用带正负号的库仑值。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "摩擦起电后两物体",
+                "expr": "Q_total-Q_A",
+                "ref": -2e-08,
+                "note": "系统总电荷为零且 A 带 +2×10^-8 C，则 B 带 -2×10^-8 C。  本项采用参考物理量百万分之一的绝对容差，零值和十倍数量级错误不能通过。",
+                "tol": 2e-14
+              },
+              {
+                "type": "numeric",
+                "scenario": "电荷转移示例",
+                "expr": "Q_total-Q_A",
+                "ref": -1e-08,
+                "note": "3×10^-8 C-4×10^-8 C=-1×10^-8 C。  本项采用参考物理量百万分之一的绝对容差，零值和十倍数量级错误不能通过。",
+                "tol": 1e-14
+              },
+              {
+                "type": "direction",
+                "scenario": "电荷转移示例",
+                "var": "Q_total",
+                "lo": -1e-06,
+                "hi": 1e-06,
+                "expr": "Q_total-Q_A",
+                "expect": "up",
+                "note": "固定 A 电荷时，总电荷增加会使反求的 B 电荷增加。 "
+              },
+              {
+                "type": "scan",
+                "scenario": "电荷转移示例",
+                "var": "Q_total",
+                "lo": -1e-06,
+                "hi": 1e-06,
+                "note": "扫描有限总电荷范围，反求结果保持有限。 "
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "把相互作用的带电物体划入同一系统，逐个记录电荷的正负号。",
+          "电子转移只改变电荷分布，孤立系统的总电荷不变。",
+          "把系统总电荷写成各物体带符号电荷的代数和，检查转移前后总量一致。"
+        ],
+        "errors": [
+          {
+            "wrong": "计算两物体总电荷时误将带符号电荷作差而不是作代数和。",
+            "wrong_expr": "Q_total = Q_A-Q_B",
+            "why": "电荷量应按符号作代数和；两物体带等量异号电荷时总电荷为零。应结合电荷守恒和本节讨论范围判断。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "放大后便于检错",
+              "expr": "Q_A-Q_B",
+              "ref": 0
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "认为同种电荷相吸、异种电荷相斥。",
+            "why": "同种电荷相互排斥，异种电荷相互吸引；应通过带电体实验辨认。应结合电荷守恒和本节讨论范围判断。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "认为摩擦起电在系统内创造了新的电荷。",
+            "why": "摩擦起电由电子转移造成，孤立系统总电荷守恒；把正负带符号电荷相加，不以单方电荷增加推断总量增加。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "绝缘系统中物体 A 带 +5×10^-8 C，系统总电荷为 +2×10^-8 C，求物体 B 的电荷量。",
+          "solution": [
+            "用 Q_total=Q_A+Q_B。",
+            "Q_B=2×10^-8-5×10^-8=-3×10^-8 C。"
+          ],
+          "answer": "物体 B 带 -3×10^-8 C。"
+        },
+        "prereq": [],
+        "next": [
+          "particle-04"
+        ],
+        "tags": [
+          "静电现象",
+          "电荷",
+          "摩擦起电",
+          "电荷守恒",
+          "拓展"
+        ],
+        "core": [
+          {
+            "title": "静电现象",
+            "text": "摩擦起电实质是电子转移，不创造电荷。失去电子带正电，得到电子带负电；同种电荷排斥、异种吸引，带电体还可吸引不带电轻小物体。因此相互吸引不能单独证明两物体带异种电荷，排斥才可支持两者带同种电荷。验电器金属箔张开源于同种电荷排斥，不能只凭张角判正负电荷。"
+          }
+        ],
+        "learning_scope": "初中主线；公式含拓展"
+      },
+      "error_index": 0,
+      "chapter": "从粒子到宇宙"
+    },
+    "diagnostic-particle-03-2": {
+      "point": {
+        "id": "particle-03",
+        "title": "静电现象",
+        "level": "拓展",
+        "definition": "物体因电子转移或电荷重新分布而带电，带电物体之间会发生吸引或排斥。若把相互作用物体作为一个与外界绝缘的系统，总电荷在转移过程中保持不变。",
+        "meaning": "摩擦起电不是凭空创造电荷，而是电子从一个物体转移到另一个物体；因此一个物体带正电时，另一个物体可能带等量负电。验电器可显示物体是否带电，但不直接给出电荷量大小。本点的电荷和守恒关系是定量拓展，初中核心是观察带电现象及相互作用。",
+        "symbols": {
+          "Q_A": {
+            "desc": "系统内物体 A 的带符号电荷量",
+            "unit": "C"
+          },
+          "Q_B": {
+            "desc": "系统内物体 B 的带符号电荷量",
+            "unit": "C"
+          },
+          "Q_total": {
+            "desc": "绝缘系统总电荷量",
+            "unit": "C"
+          }
+        },
+        "scenarios": {
+          "摩擦起电后两物体": {
+            "Q_A": 2e-08,
+            "Q_B": -2e-08,
+            "Q_total": 0
+          },
+          "电荷转移示例": {
+            "Q_A": 4e-08,
+            "Q_B": -1e-08,
+            "Q_total": 3e-08
+          },
+          "放大后便于检错": {
+            "Q_A": 0.0002,
+            "Q_B": -0.0002,
+            "Q_total": 0
+          }
+        },
+        "formulas": [
+          {
+            "name": "绝缘系统总电荷守恒",
+            "expr": "Q_total = Q_A+Q_B",
+            "when": "拓展计算，非本卡初中必背主线。把所有相关带电物体纳入系统，且系统与外界没有电荷交换；电荷量保留正负号。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "摩擦起电后两物体",
+                "expr": "Q_A+Q_B",
+                "ref": 0,
+                "note": "一物体带 +2×10^-8 C，另一物体带 -2×10^-8 C，总电荷仍为零。 "
+              },
+              {
+                "type": "numeric",
+                "scenario": "电荷转移示例",
+                "expr": "Q_A+Q_B",
+                "ref": 3e-08,
+                "note": "系统总电荷为 +3×10^-8 C，转移前后不变。  本项采用参考物理量百万分之一的绝对容差，零值和十倍数量级错误不能通过。",
+                "tol": 3e-14
+              },
+              {
+                "type": "direction",
+                "scenario": "电荷转移示例",
+                "var": "Q_A",
+                "lo": -5e-08,
+                "hi": 5e-08,
+                "expr": "Q_A+Q_B",
+                "expect": "up",
+                "note": "固定 B 的带符号电荷时，A 的电荷增加会使总电荷增加。 "
+              },
+              {
+                "type": "scan",
+                "scenario": "电荷转移示例",
+                "var": "Q_A",
+                "lo": -1e-06,
+                "hi": 1e-06,
+                "note": "扫描有限的带符号电荷范围，代数和稳定。 "
+              },
+              {
+                "type": "consistency",
+                "scenario": "电荷转移示例",
+                "with": "particle-03|绝缘系统总电荷守恒",
+                "with_expr": "Q_total",
+                "target": "绝缘系统总电荷量",
+                "note": "直接求本公式输出，与情境中另列的Q_total设计基准核对；数据是设计示例，不是实测。用于核对定义、反算或边界值，不宣称不同物理原理互证。",
+                "verification_kind": "独立设计情境数据核对",
+                "tol": 3.000000000000001e-13
+              }
+            ]
+          },
+          {
+            "name": "由守恒总电荷反求B物体电荷",
+            "expr": "Q_B = Q_total-Q_A",
+            "when": "拓展计算，非本卡初中必背主线。绝缘系统只含物体 A 和 B，电荷量采用带正负号的库仑值。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "摩擦起电后两物体",
+                "expr": "Q_total-Q_A",
+                "ref": -2e-08,
+                "note": "系统总电荷为零且 A 带 +2×10^-8 C，则 B 带 -2×10^-8 C。  本项采用参考物理量百万分之一的绝对容差，零值和十倍数量级错误不能通过。",
+                "tol": 2e-14
+              },
+              {
+                "type": "numeric",
+                "scenario": "电荷转移示例",
+                "expr": "Q_total-Q_A",
+                "ref": -1e-08,
+                "note": "3×10^-8 C-4×10^-8 C=-1×10^-8 C。  本项采用参考物理量百万分之一的绝对容差，零值和十倍数量级错误不能通过。",
+                "tol": 1e-14
+              },
+              {
+                "type": "direction",
+                "scenario": "电荷转移示例",
+                "var": "Q_total",
+                "lo": -1e-06,
+                "hi": 1e-06,
+                "expr": "Q_total-Q_A",
+                "expect": "up",
+                "note": "固定 A 电荷时，总电荷增加会使反求的 B 电荷增加。 "
+              },
+              {
+                "type": "scan",
+                "scenario": "电荷转移示例",
+                "var": "Q_total",
+                "lo": -1e-06,
+                "hi": 1e-06,
+                "note": "扫描有限总电荷范围，反求结果保持有限。 "
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "把相互作用的带电物体划入同一系统，逐个记录电荷的正负号。",
+          "电子转移只改变电荷分布，孤立系统的总电荷不变。",
+          "把系统总电荷写成各物体带符号电荷的代数和，检查转移前后总量一致。"
+        ],
+        "errors": [
+          {
+            "wrong": "计算两物体总电荷时误将带符号电荷作差而不是作代数和。",
+            "wrong_expr": "Q_total = Q_A-Q_B",
+            "why": "电荷量应按符号作代数和；两物体带等量异号电荷时总电荷为零。应结合电荷守恒和本节讨论范围判断。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "放大后便于检错",
+              "expr": "Q_A-Q_B",
+              "ref": 0
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "认为同种电荷相吸、异种电荷相斥。",
+            "why": "同种电荷相互排斥，异种电荷相互吸引；应通过带电体实验辨认。应结合电荷守恒和本节讨论范围判断。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "认为摩擦起电在系统内创造了新的电荷。",
+            "why": "摩擦起电由电子转移造成，孤立系统总电荷守恒；把正负带符号电荷相加，不以单方电荷增加推断总量增加。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "绝缘系统中物体 A 带 +5×10^-8 C，系统总电荷为 +2×10^-8 C，求物体 B 的电荷量。",
+          "solution": [
+            "用 Q_total=Q_A+Q_B。",
+            "Q_B=2×10^-8-5×10^-8=-3×10^-8 C。"
+          ],
+          "answer": "物体 B 带 -3×10^-8 C。"
+        },
+        "prereq": [],
+        "next": [
+          "particle-04"
+        ],
+        "tags": [
+          "静电现象",
+          "电荷",
+          "摩擦起电",
+          "电荷守恒",
+          "拓展"
+        ],
+        "core": [
+          {
+            "title": "静电现象",
+            "text": "摩擦起电实质是电子转移，不创造电荷。失去电子带正电，得到电子带负电；同种电荷排斥、异种吸引，带电体还可吸引不带电轻小物体。因此相互吸引不能单独证明两物体带异种电荷，排斥才可支持两者带同种电荷。验电器金属箔张开源于同种电荷排斥，不能只凭张角判正负电荷。"
+          }
+        ],
+        "learning_scope": "初中主线；公式含拓展"
+      },
+      "error_index": 1,
+      "chapter": "从粒子到宇宙"
+    },
+    "diagnostic-particle-03-3": {
+      "point": {
+        "id": "particle-03",
+        "title": "静电现象",
+        "level": "拓展",
+        "definition": "物体因电子转移或电荷重新分布而带电，带电物体之间会发生吸引或排斥。若把相互作用物体作为一个与外界绝缘的系统，总电荷在转移过程中保持不变。",
+        "meaning": "摩擦起电不是凭空创造电荷，而是电子从一个物体转移到另一个物体；因此一个物体带正电时，另一个物体可能带等量负电。验电器可显示物体是否带电，但不直接给出电荷量大小。本点的电荷和守恒关系是定量拓展，初中核心是观察带电现象及相互作用。",
+        "symbols": {
+          "Q_A": {
+            "desc": "系统内物体 A 的带符号电荷量",
+            "unit": "C"
+          },
+          "Q_B": {
+            "desc": "系统内物体 B 的带符号电荷量",
+            "unit": "C"
+          },
+          "Q_total": {
+            "desc": "绝缘系统总电荷量",
+            "unit": "C"
+          }
+        },
+        "scenarios": {
+          "摩擦起电后两物体": {
+            "Q_A": 2e-08,
+            "Q_B": -2e-08,
+            "Q_total": 0
+          },
+          "电荷转移示例": {
+            "Q_A": 4e-08,
+            "Q_B": -1e-08,
+            "Q_total": 3e-08
+          },
+          "放大后便于检错": {
+            "Q_A": 0.0002,
+            "Q_B": -0.0002,
+            "Q_total": 0
+          }
+        },
+        "formulas": [
+          {
+            "name": "绝缘系统总电荷守恒",
+            "expr": "Q_total = Q_A+Q_B",
+            "when": "拓展计算，非本卡初中必背主线。把所有相关带电物体纳入系统，且系统与外界没有电荷交换；电荷量保留正负号。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "摩擦起电后两物体",
+                "expr": "Q_A+Q_B",
+                "ref": 0,
+                "note": "一物体带 +2×10^-8 C，另一物体带 -2×10^-8 C，总电荷仍为零。 "
+              },
+              {
+                "type": "numeric",
+                "scenario": "电荷转移示例",
+                "expr": "Q_A+Q_B",
+                "ref": 3e-08,
+                "note": "系统总电荷为 +3×10^-8 C，转移前后不变。  本项采用参考物理量百万分之一的绝对容差，零值和十倍数量级错误不能通过。",
+                "tol": 3e-14
+              },
+              {
+                "type": "direction",
+                "scenario": "电荷转移示例",
+                "var": "Q_A",
+                "lo": -5e-08,
+                "hi": 5e-08,
+                "expr": "Q_A+Q_B",
+                "expect": "up",
+                "note": "固定 B 的带符号电荷时，A 的电荷增加会使总电荷增加。 "
+              },
+              {
+                "type": "scan",
+                "scenario": "电荷转移示例",
+                "var": "Q_A",
+                "lo": -1e-06,
+                "hi": 1e-06,
+                "note": "扫描有限的带符号电荷范围，代数和稳定。 "
+              },
+              {
+                "type": "consistency",
+                "scenario": "电荷转移示例",
+                "with": "particle-03|绝缘系统总电荷守恒",
+                "with_expr": "Q_total",
+                "target": "绝缘系统总电荷量",
+                "note": "直接求本公式输出，与情境中另列的Q_total设计基准核对；数据是设计示例，不是实测。用于核对定义、反算或边界值，不宣称不同物理原理互证。",
+                "verification_kind": "独立设计情境数据核对",
+                "tol": 3.000000000000001e-13
+              }
+            ]
+          },
+          {
+            "name": "由守恒总电荷反求B物体电荷",
+            "expr": "Q_B = Q_total-Q_A",
+            "when": "拓展计算，非本卡初中必背主线。绝缘系统只含物体 A 和 B，电荷量采用带正负号的库仑值。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "摩擦起电后两物体",
+                "expr": "Q_total-Q_A",
+                "ref": -2e-08,
+                "note": "系统总电荷为零且 A 带 +2×10^-8 C，则 B 带 -2×10^-8 C。  本项采用参考物理量百万分之一的绝对容差，零值和十倍数量级错误不能通过。",
+                "tol": 2e-14
+              },
+              {
+                "type": "numeric",
+                "scenario": "电荷转移示例",
+                "expr": "Q_total-Q_A",
+                "ref": -1e-08,
+                "note": "3×10^-8 C-4×10^-8 C=-1×10^-8 C。  本项采用参考物理量百万分之一的绝对容差，零值和十倍数量级错误不能通过。",
+                "tol": 1e-14
+              },
+              {
+                "type": "direction",
+                "scenario": "电荷转移示例",
+                "var": "Q_total",
+                "lo": -1e-06,
+                "hi": 1e-06,
+                "expr": "Q_total-Q_A",
+                "expect": "up",
+                "note": "固定 A 电荷时，总电荷增加会使反求的 B 电荷增加。 "
+              },
+              {
+                "type": "scan",
+                "scenario": "电荷转移示例",
+                "var": "Q_total",
+                "lo": -1e-06,
+                "hi": 1e-06,
+                "note": "扫描有限总电荷范围，反求结果保持有限。 "
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "把相互作用的带电物体划入同一系统，逐个记录电荷的正负号。",
+          "电子转移只改变电荷分布，孤立系统的总电荷不变。",
+          "把系统总电荷写成各物体带符号电荷的代数和，检查转移前后总量一致。"
+        ],
+        "errors": [
+          {
+            "wrong": "计算两物体总电荷时误将带符号电荷作差而不是作代数和。",
+            "wrong_expr": "Q_total = Q_A-Q_B",
+            "why": "电荷量应按符号作代数和；两物体带等量异号电荷时总电荷为零。应结合电荷守恒和本节讨论范围判断。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "放大后便于检错",
+              "expr": "Q_A-Q_B",
+              "ref": 0
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "认为同种电荷相吸、异种电荷相斥。",
+            "why": "同种电荷相互排斥，异种电荷相互吸引；应通过带电体实验辨认。应结合电荷守恒和本节讨论范围判断。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "认为摩擦起电在系统内创造了新的电荷。",
+            "why": "摩擦起电由电子转移造成，孤立系统总电荷守恒；把正负带符号电荷相加，不以单方电荷增加推断总量增加。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "绝缘系统中物体 A 带 +5×10^-8 C，系统总电荷为 +2×10^-8 C，求物体 B 的电荷量。",
+          "solution": [
+            "用 Q_total=Q_A+Q_B。",
+            "Q_B=2×10^-8-5×10^-8=-3×10^-8 C。"
+          ],
+          "answer": "物体 B 带 -3×10^-8 C。"
+        },
+        "prereq": [],
+        "next": [
+          "particle-04"
+        ],
+        "tags": [
+          "静电现象",
+          "电荷",
+          "摩擦起电",
+          "电荷守恒",
+          "拓展"
+        ],
+        "core": [
+          {
+            "title": "静电现象",
+            "text": "摩擦起电实质是电子转移，不创造电荷。失去电子带正电，得到电子带负电；同种电荷排斥、异种吸引，带电体还可吸引不带电轻小物体。因此相互吸引不能单独证明两物体带异种电荷，排斥才可支持两者带同种电荷。验电器金属箔张开源于同种电荷排斥，不能只凭张角判正负电荷。"
+          }
+        ],
+        "learning_scope": "初中主线；公式含拓展"
+      },
+      "error_index": 2,
+      "chapter": "从粒子到宇宙"
+    },
+    "diagnostic-particle-04-1": {
+      "point": {
+        "id": "particle-04",
+        "title": "探索更小的微粒",
+        "level": "拓展",
+        "definition": "物质还可继续分为原子、原子核和更小的粒子，原子并非不可再分。原子尺度约为 10^-10 m，原子核尺度约为 10^-15 m，二者相差约五个数量级。",
+        "meaning": "从分子到原子、原子核和更小粒子的认识来自实验与模型不断发展。用代表尺度比较可看出原子核远小于原子，但这些数值是数量级估计，不是每种原子都完全相同的精确尺寸。不能把科学模型误读成肉眼可见的实体图，也不能把“更小”误认为质量和结构相同。",
+        "symbols": {
+          "d_atom": {
+            "desc": "原子直径的代表尺度",
+            "unit": "nm"
+          },
+          "d_nucleus": {
+            "desc": "原子核直径的代表尺度",
+            "unit": "nm"
+          }
+        },
+        "scenarios": {
+          "原子典型尺度": {
+            "d_atom": 0.1,
+            "d_nucleus": 1e-06
+          },
+          "另一数量级估算": {
+            "d_atom": 0.2,
+            "d_nucleus": 2e-06
+          }
+        },
+        "formulas": [
+          {
+            "name": "原子与原子核的代表尺度比",
+            "expr": "d_atom = 100000*d_nucleus",
+            "when": "拓展计算，非本卡初中必背主线。仅比较典型数量级，原子尺度约 10^-10 m、原子核约 10^-15 m；不是精确适用于每种原子的尺寸定律。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "原子典型尺度",
+                "expr": "100000*d_nucleus",
+                "ref": 0.1,
+                "note": "10^5×10^-15 m=10^-10 m。 "
+              },
+              {
+                "type": "numeric",
+                "scenario": "另一数量级估算",
+                "expr": "100000*d_nucleus",
+                "ref": 0.2,
+                "note": "同一数量级比例下，代表原子核尺度为 2×10^-15 m。 "
+              },
+              {
+                "type": "direction",
+                "scenario": "原子典型尺度",
+                "var": "d_nucleus",
+                "lo": 1e-07,
+                "hi": 1e-05,
+                "expr": "100000*d_nucleus",
+                "expect": "up",
+                "note": "代表原子核尺度增大时，按固定数量级比例估得的原子尺度也增大。 "
+              },
+              {
+                "type": "scan",
+                "scenario": "原子典型尺度",
+                "var": "d_nucleus",
+                "lo": 1e-07,
+                "hi": 1e-05,
+                "note": "扫描正的微观长度，数量级估算保持有限。 "
+              },
+              {
+                "type": "consistency",
+                "scenario": "原子典型尺度",
+                "with": "particle-04|原子与原子核的代表尺度比",
+                "with_expr": "d_atom",
+                "target": "原子直径的代表尺度",
+                "note": "直接求本公式输出，与情境中另列的d_atom设计基准核对；数据是设计示例，不是实测。用于核对定义、反算或边界值，不宣称不同物理原理互证。",
+                "verification_kind": "独立设计情境数据核对",
+                "tol": 1e-06
+              }
+            ]
+          },
+          {
+            "name": "由代表原子尺度反推原子核尺度",
+            "expr": "d_nucleus = d_atom/100000",
+            "when": "拓展计算，非本卡初中必背主线。沿用原子约为原子核 10^5 倍的数量级估计。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "原子典型尺度",
+                "expr": "d_atom/100000",
+                "ref": 1e-06,
+                "note": "10^-10 m 除以 10^5 得到 10^-15 m。 "
+              },
+              {
+                "type": "numeric",
+                "scenario": "另一数量级估算",
+                "expr": "d_atom/100000",
+                "ref": 2e-06,
+                "note": "2×10^-10 m 除以 10^5 得到 2×10^-15 m。 "
+              },
+              {
+                "type": "direction",
+                "scenario": "原子典型尺度",
+                "var": "d_atom",
+                "lo": 0.01,
+                "hi": 1,
+                "expr": "d_atom/100000",
+                "expect": "up",
+                "note": "固定数量级比例时，代表原子尺寸增大，对应原子核尺度也增大。 "
+              },
+              {
+                "type": "scan",
+                "scenario": "原子典型尺度",
+                "var": "d_atom",
+                "lo": 0.01,
+                "hi": 1,
+                "note": "扫描正原子尺度，反推值保持有限。 "
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "选取原子和原子核的代表性直径数量级，分别约为 10^-10 m 和 10^-15 m。",
+          "两尺度相除得到约 10^5 的数量级差别。",
+          "该比值用作尺度比较，不应误称为对所有原子都精确不变的常数。"
+        ],
+        "errors": [
+          {
+            "wrong": "把原子与原子核的尺度差误写成 10 倍。",
+            "wrong_expr": "d_atom = 10*d_nucleus",
+            "why": "典型尺度约差五个数量级；原子核约 10^-15 m，原子约 10^-10 m。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "原子典型尺度",
+              "expr": "10*d_nucleus",
+              "ref": 0.1
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "认为原子是不可再分的最小粒子。",
+            "why": "原子由原子核和核外电子构成，原子核还具有更细的内部结构；科学认识随证据发展。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "按原子直径约 10^-10 m、原子核直径约 10^-15 m 估算，二者尺度相差多少倍？",
+          "solution": [
+            "计算尺度比 10^-10÷10^-15。",
+            "指数相减得到 10^5。"
+          ],
+          "answer": "原子直径约为原子核的 10^5 倍。"
+        },
+        "prereq": [
+          "particle-01"
+        ],
+        "next": [
+          "particle-05"
+        ],
+        "tags": [
+          "原子",
+          "原子核",
+          "更小微粒",
+          "尺度",
+          "数量级",
+          "拓展"
+        ],
+        "core": [
+          {
+            "title": "更小的微粒",
+            "text": "原子由带正电的原子核和带负电的核外电子组成，原子核含质子和中子，质子带正电，中子不带电。通常中性原子正负电荷总量相等。原子核远小于原子，结构图多为示意，不按尺寸比例；微观认识来自实验和模型，不能只凭画图认定真实轨道。"
+          }
+        ],
+        "learning_scope": "初中主线；公式含拓展"
+      },
+      "error_index": 0,
+      "chapter": "从粒子到宇宙"
+    },
+    "diagnostic-particle-04-2": {
+      "point": {
+        "id": "particle-04",
+        "title": "探索更小的微粒",
+        "level": "拓展",
+        "definition": "物质还可继续分为原子、原子核和更小的粒子，原子并非不可再分。原子尺度约为 10^-10 m，原子核尺度约为 10^-15 m，二者相差约五个数量级。",
+        "meaning": "从分子到原子、原子核和更小粒子的认识来自实验与模型不断发展。用代表尺度比较可看出原子核远小于原子，但这些数值是数量级估计，不是每种原子都完全相同的精确尺寸。不能把科学模型误读成肉眼可见的实体图，也不能把“更小”误认为质量和结构相同。",
+        "symbols": {
+          "d_atom": {
+            "desc": "原子直径的代表尺度",
+            "unit": "nm"
+          },
+          "d_nucleus": {
+            "desc": "原子核直径的代表尺度",
+            "unit": "nm"
+          }
+        },
+        "scenarios": {
+          "原子典型尺度": {
+            "d_atom": 0.1,
+            "d_nucleus": 1e-06
+          },
+          "另一数量级估算": {
+            "d_atom": 0.2,
+            "d_nucleus": 2e-06
+          }
+        },
+        "formulas": [
+          {
+            "name": "原子与原子核的代表尺度比",
+            "expr": "d_atom = 100000*d_nucleus",
+            "when": "拓展计算，非本卡初中必背主线。仅比较典型数量级，原子尺度约 10^-10 m、原子核约 10^-15 m；不是精确适用于每种原子的尺寸定律。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "原子典型尺度",
+                "expr": "100000*d_nucleus",
+                "ref": 0.1,
+                "note": "10^5×10^-15 m=10^-10 m。 "
+              },
+              {
+                "type": "numeric",
+                "scenario": "另一数量级估算",
+                "expr": "100000*d_nucleus",
+                "ref": 0.2,
+                "note": "同一数量级比例下，代表原子核尺度为 2×10^-15 m。 "
+              },
+              {
+                "type": "direction",
+                "scenario": "原子典型尺度",
+                "var": "d_nucleus",
+                "lo": 1e-07,
+                "hi": 1e-05,
+                "expr": "100000*d_nucleus",
+                "expect": "up",
+                "note": "代表原子核尺度增大时，按固定数量级比例估得的原子尺度也增大。 "
+              },
+              {
+                "type": "scan",
+                "scenario": "原子典型尺度",
+                "var": "d_nucleus",
+                "lo": 1e-07,
+                "hi": 1e-05,
+                "note": "扫描正的微观长度，数量级估算保持有限。 "
+              },
+              {
+                "type": "consistency",
+                "scenario": "原子典型尺度",
+                "with": "particle-04|原子与原子核的代表尺度比",
+                "with_expr": "d_atom",
+                "target": "原子直径的代表尺度",
+                "note": "直接求本公式输出，与情境中另列的d_atom设计基准核对；数据是设计示例，不是实测。用于核对定义、反算或边界值，不宣称不同物理原理互证。",
+                "verification_kind": "独立设计情境数据核对",
+                "tol": 1e-06
+              }
+            ]
+          },
+          {
+            "name": "由代表原子尺度反推原子核尺度",
+            "expr": "d_nucleus = d_atom/100000",
+            "when": "拓展计算，非本卡初中必背主线。沿用原子约为原子核 10^5 倍的数量级估计。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "原子典型尺度",
+                "expr": "d_atom/100000",
+                "ref": 1e-06,
+                "note": "10^-10 m 除以 10^5 得到 10^-15 m。 "
+              },
+              {
+                "type": "numeric",
+                "scenario": "另一数量级估算",
+                "expr": "d_atom/100000",
+                "ref": 2e-06,
+                "note": "2×10^-10 m 除以 10^5 得到 2×10^-15 m。 "
+              },
+              {
+                "type": "direction",
+                "scenario": "原子典型尺度",
+                "var": "d_atom",
+                "lo": 0.01,
+                "hi": 1,
+                "expr": "d_atom/100000",
+                "expect": "up",
+                "note": "固定数量级比例时，代表原子尺寸增大，对应原子核尺度也增大。 "
+              },
+              {
+                "type": "scan",
+                "scenario": "原子典型尺度",
+                "var": "d_atom",
+                "lo": 0.01,
+                "hi": 1,
+                "note": "扫描正原子尺度，反推值保持有限。 "
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "选取原子和原子核的代表性直径数量级，分别约为 10^-10 m 和 10^-15 m。",
+          "两尺度相除得到约 10^5 的数量级差别。",
+          "该比值用作尺度比较，不应误称为对所有原子都精确不变的常数。"
+        ],
+        "errors": [
+          {
+            "wrong": "把原子与原子核的尺度差误写成 10 倍。",
+            "wrong_expr": "d_atom = 10*d_nucleus",
+            "why": "典型尺度约差五个数量级；原子核约 10^-15 m，原子约 10^-10 m。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "原子典型尺度",
+              "expr": "10*d_nucleus",
+              "ref": 0.1
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "认为原子是不可再分的最小粒子。",
+            "why": "原子由原子核和核外电子构成，原子核还具有更细的内部结构；科学认识随证据发展。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "按原子直径约 10^-10 m、原子核直径约 10^-15 m 估算，二者尺度相差多少倍？",
+          "solution": [
+            "计算尺度比 10^-10÷10^-15。",
+            "指数相减得到 10^5。"
+          ],
+          "answer": "原子直径约为原子核的 10^5 倍。"
+        },
+        "prereq": [
+          "particle-01"
+        ],
+        "next": [
+          "particle-05"
+        ],
+        "tags": [
+          "原子",
+          "原子核",
+          "更小微粒",
+          "尺度",
+          "数量级",
+          "拓展"
+        ],
+        "core": [
+          {
+            "title": "更小的微粒",
+            "text": "原子由带正电的原子核和带负电的核外电子组成，原子核含质子和中子，质子带正电，中子不带电。通常中性原子正负电荷总量相等。原子核远小于原子，结构图多为示意，不按尺寸比例；微观认识来自实验和模型，不能只凭画图认定真实轨道。"
+          }
+        ],
+        "learning_scope": "初中主线；公式含拓展"
+      },
+      "error_index": 1,
+      "chapter": "从粒子到宇宙"
+    },
+    "diagnostic-particle-05-1": {
+      "point": {
+        "id": "particle-05",
+        "title": "日心说与太阳系",
+        "level": "拓展",
+        "definition": "日心说以太阳为太阳系中心，解释地球和其他行星绕太阳运行的观测现象。太阳系包含太阳、行星及其他天体；行星运动的轨道通常可近似看作椭圆，定量估算时有时采用圆轨道模型。",
+        "meaning": "科学模型根据观测证据建立，并会随着新证据修正。把行星轨道近似为圆时，可用轨道周长除以周期估算平均轨道速度；该简化公式不等于精确轨道理论，也不单独证明日心说。比较地心、日心模型时要区分模型解释力与历史结论。",
+        "symbols": {
+          "v": {
+            "desc": "行星平均轨道速度",
+            "unit": "m/s"
+          },
+          "r": {
+            "desc": "近似圆轨道半径",
+            "unit": "m"
+          },
+          "T": {
+            "desc": "行星绕日运行周期",
+            "unit": "s"
+          }
+        },
+        "scenarios": {
+          "地球轨道近似": {
+            "v": 29783.413243157986,
+            "r": 149600000000,
+            "T": 31560000
+          },
+          "火星轨道近似": {
+            "v": 24106.699183606528,
+            "r": 227900000000,
+            "T": 59400000
+          }
+        },
+        "formulas": [
+          {
+            "name": "圆轨道近似下的平均轨道速度",
+            "expr": "v = 2*pi*r/T",
+            "when": "拓展计算，非本卡初中必背主线。把行星轨道近似为圆，r 为圆轨道半径、T 为周期；所得为平均轨道速度估算。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "地球轨道近似",
+                "expr": "2*pi*r/T",
+                "ref": 29783.413243157986,
+                "note": "地球平均轨道速度估算约为 3.0×10^4 m/s。 "
+              },
+              {
+                "type": "numeric",
+                "scenario": "火星轨道近似",
+                "expr": "2*pi*r/T",
+                "ref": 24106.699183606528,
+                "note": "火星轨道速度估算约为 2.4×10^4 m/s。 "
+              },
+              {
+                "type": "direction",
+                "scenario": "地球轨道近似",
+                "var": "r",
+                "lo": 10000000000,
+                "hi": 300000000000,
+                "expr": "2*pi*r/T",
+                "expect": "up",
+                "note": "周期固定时，圆轨道半径越大，轨道周长和平均速度按比例增加。 "
+              },
+              {
+                "type": "scan",
+                "scenario": "地球轨道近似",
+                "var": "r",
+                "lo": 1000000000,
+                "hi": 1000000000000,
+                "note": "扫描正轨道半径，平均速度估算有限。 "
+              }
+            ]
+          },
+          {
+            "name": "由圆轨道周长和平均速度求周期",
+            "expr": "T = 2*pi*r/v",
+            "when": "拓展计算，非本卡初中必背主线。沿用圆轨道近似，轨道周长为 2*pi*r。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "地球轨道近似",
+                "expr": "2*pi*r/v",
+                "ref": 31560000,
+                "note": "地球近似轨道周期约 3.16×10^7 s。 "
+              },
+              {
+                "type": "numeric",
+                "scenario": "火星轨道近似",
+                "expr": "2*pi*r/v",
+                "ref": 59400000,
+                "note": "火星近似轨道周期约 5.94×10^7 s。 "
+              },
+              {
+                "type": "direction",
+                "scenario": "地球轨道近似",
+                "var": "r",
+                "lo": 10000000000,
+                "hi": 300000000000,
+                "expr": "2*pi*r/v",
+                "expect": "up",
+                "note": "速度固定时，轨道半径越大，绕行一周用时越长。 "
+              },
+              {
+                "type": "scan",
+                "scenario": "地球轨道近似",
+                "var": "r",
+                "lo": 1000000000,
+                "hi": 1000000000000,
+                "note": "扫描正轨道半径，周期结果有限。 "
+              },
+              {
+                "type": "consistency",
+                "scenario": "地球轨道近似",
+                "with": "particle-05|由圆轨道周长和平均速度求周期",
+                "with_expr": "T",
+                "target": "行星绕日运行周期",
+                "note": "直接求本公式输出，与情境中另列的T设计基准核对；数据是设计示例，不是实测。用于核对定义、反算或边界值，不宣称不同物理原理互证。",
+                "verification_kind": "独立设计情境数据核对"
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "圆轨道一周的路径长度为 2*pi*r。",
+          "平均速度等于一周路程除以周期，得到 v=2*pi*r/T。",
+          "真实行星轨道为椭圆，圆轨道公式仅用于简化的数量级估算。"
+        ],
+        "errors": [
+          {
+            "wrong": "计算圆轨道周长时误用π乘半径，漏掉系数2。",
+            "wrong_expr": "v = pi*r/T",
+            "why": "圆周长是 2*pi*r；漏掉因子 2 会把估算轨道速度减半。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "地球轨道近似",
+              "expr": "pi*r/T",
+              "ref": 29783.413243157986
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "认为日心说把太阳放在整个宇宙的中心。",
+            "why": "日心说讨论太阳系行星绕太阳运行的模型，并不宣称太阳是整个宇宙中心；这与电荷守恒没有关系。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "把地球轨道近似成半径 1.50×10^11 m 的圆，周期取 3.16×10^7 s，估算平均轨道速度。",
+          "solution": [
+            "圆轨道周长约为 2*pi*r。",
+            "v=2*pi*r/T≈3.0×10^4 m/s。"
+          ],
+          "answer": "约为 3.0×10^4 m/s。"
+        },
+        "prereq": [],
+        "next": [
+          "particle-02"
+        ],
+        "tags": [
+          "日心说",
+          "太阳系",
+          "行星轨道",
+          "模型",
+          "拓展"
+        ],
+        "core": [
+          {
+            "title": "日心说与太阳系",
+            "text": "太阳系以太阳为中心天体，八大行星按离太阳由近到远为水、金、地、火、木、土、天王、海王星。卫星围绕行星运行，月球是地球的天然卫星；太阳是恒星。日心模型讨论太阳系，不把太阳放在整个宇宙中心。行星轨道一般是椭圆，圆周速度计算只是简化估算。"
+          }
+        ],
+        "learning_scope": "初中主线；公式含拓展"
+      },
+      "error_index": 0,
+      "chapter": "从粒子到宇宙"
+    },
+    "diagnostic-particle-05-2": {
+      "point": {
+        "id": "particle-05",
+        "title": "日心说与太阳系",
+        "level": "拓展",
+        "definition": "日心说以太阳为太阳系中心，解释地球和其他行星绕太阳运行的观测现象。太阳系包含太阳、行星及其他天体；行星运动的轨道通常可近似看作椭圆，定量估算时有时采用圆轨道模型。",
+        "meaning": "科学模型根据观测证据建立，并会随着新证据修正。把行星轨道近似为圆时，可用轨道周长除以周期估算平均轨道速度；该简化公式不等于精确轨道理论，也不单独证明日心说。比较地心、日心模型时要区分模型解释力与历史结论。",
+        "symbols": {
+          "v": {
+            "desc": "行星平均轨道速度",
+            "unit": "m/s"
+          },
+          "r": {
+            "desc": "近似圆轨道半径",
+            "unit": "m"
+          },
+          "T": {
+            "desc": "行星绕日运行周期",
+            "unit": "s"
+          }
+        },
+        "scenarios": {
+          "地球轨道近似": {
+            "v": 29783.413243157986,
+            "r": 149600000000,
+            "T": 31560000
+          },
+          "火星轨道近似": {
+            "v": 24106.699183606528,
+            "r": 227900000000,
+            "T": 59400000
+          }
+        },
+        "formulas": [
+          {
+            "name": "圆轨道近似下的平均轨道速度",
+            "expr": "v = 2*pi*r/T",
+            "when": "拓展计算，非本卡初中必背主线。把行星轨道近似为圆，r 为圆轨道半径、T 为周期；所得为平均轨道速度估算。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "地球轨道近似",
+                "expr": "2*pi*r/T",
+                "ref": 29783.413243157986,
+                "note": "地球平均轨道速度估算约为 3.0×10^4 m/s。 "
+              },
+              {
+                "type": "numeric",
+                "scenario": "火星轨道近似",
+                "expr": "2*pi*r/T",
+                "ref": 24106.699183606528,
+                "note": "火星轨道速度估算约为 2.4×10^4 m/s。 "
+              },
+              {
+                "type": "direction",
+                "scenario": "地球轨道近似",
+                "var": "r",
+                "lo": 10000000000,
+                "hi": 300000000000,
+                "expr": "2*pi*r/T",
+                "expect": "up",
+                "note": "周期固定时，圆轨道半径越大，轨道周长和平均速度按比例增加。 "
+              },
+              {
+                "type": "scan",
+                "scenario": "地球轨道近似",
+                "var": "r",
+                "lo": 1000000000,
+                "hi": 1000000000000,
+                "note": "扫描正轨道半径，平均速度估算有限。 "
+              }
+            ]
+          },
+          {
+            "name": "由圆轨道周长和平均速度求周期",
+            "expr": "T = 2*pi*r/v",
+            "when": "拓展计算，非本卡初中必背主线。沿用圆轨道近似，轨道周长为 2*pi*r。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "地球轨道近似",
+                "expr": "2*pi*r/v",
+                "ref": 31560000,
+                "note": "地球近似轨道周期约 3.16×10^7 s。 "
+              },
+              {
+                "type": "numeric",
+                "scenario": "火星轨道近似",
+                "expr": "2*pi*r/v",
+                "ref": 59400000,
+                "note": "火星近似轨道周期约 5.94×10^7 s。 "
+              },
+              {
+                "type": "direction",
+                "scenario": "地球轨道近似",
+                "var": "r",
+                "lo": 10000000000,
+                "hi": 300000000000,
+                "expr": "2*pi*r/v",
+                "expect": "up",
+                "note": "速度固定时，轨道半径越大，绕行一周用时越长。 "
+              },
+              {
+                "type": "scan",
+                "scenario": "地球轨道近似",
+                "var": "r",
+                "lo": 1000000000,
+                "hi": 1000000000000,
+                "note": "扫描正轨道半径，周期结果有限。 "
+              },
+              {
+                "type": "consistency",
+                "scenario": "地球轨道近似",
+                "with": "particle-05|由圆轨道周长和平均速度求周期",
+                "with_expr": "T",
+                "target": "行星绕日运行周期",
+                "note": "直接求本公式输出，与情境中另列的T设计基准核对；数据是设计示例，不是实测。用于核对定义、反算或边界值，不宣称不同物理原理互证。",
+                "verification_kind": "独立设计情境数据核对"
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "圆轨道一周的路径长度为 2*pi*r。",
+          "平均速度等于一周路程除以周期，得到 v=2*pi*r/T。",
+          "真实行星轨道为椭圆，圆轨道公式仅用于简化的数量级估算。"
+        ],
+        "errors": [
+          {
+            "wrong": "计算圆轨道周长时误用π乘半径，漏掉系数2。",
+            "wrong_expr": "v = pi*r/T",
+            "why": "圆周长是 2*pi*r；漏掉因子 2 会把估算轨道速度减半。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "地球轨道近似",
+              "expr": "pi*r/T",
+              "ref": 29783.413243157986
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "认为日心说把太阳放在整个宇宙的中心。",
+            "why": "日心说讨论太阳系行星绕太阳运行的模型，并不宣称太阳是整个宇宙中心；这与电荷守恒没有关系。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "把地球轨道近似成半径 1.50×10^11 m 的圆，周期取 3.16×10^7 s，估算平均轨道速度。",
+          "solution": [
+            "圆轨道周长约为 2*pi*r。",
+            "v=2*pi*r/T≈3.0×10^4 m/s。"
+          ],
+          "answer": "约为 3.0×10^4 m/s。"
+        },
+        "prereq": [],
+        "next": [
+          "particle-02"
+        ],
+        "tags": [
+          "日心说",
+          "太阳系",
+          "行星轨道",
+          "模型",
+          "拓展"
+        ],
+        "core": [
+          {
+            "title": "日心说与太阳系",
+            "text": "太阳系以太阳为中心天体，八大行星按离太阳由近到远为水、金、地、火、木、土、天王、海王星。卫星围绕行星运行，月球是地球的天然卫星；太阳是恒星。日心模型讨论太阳系，不把太阳放在整个宇宙中心。行星轨道一般是椭圆，圆周速度计算只是简化估算。"
+          }
+        ],
+        "learning_scope": "初中主线；公式含拓展"
+      },
+      "error_index": 1,
+      "chapter": "从粒子到宇宙"
+    },
+    "diagnostic-particle-02-1": {
+      "point": {
+        "id": "particle-02",
+        "title": "宇宙探秘",
+        "level": "基础",
+        "definition": "宇宙包含恒星、行星、星系等不同尺度的天体系统，观测遥远天体时接收到的是它们过去发出的光。光年是光在真空中一年传播的距离，是长度单位而不是时间单位。",
+        "meaning": "比较天体距离时，先分清“光走了多久”和“走过多远”。光速可近似取 3.0×10^8 m/s；以年为时间单位时要换算秒数，再将光程表示为米或光年。宇宙结构和观测证据要结合模型理解，不能把日心说与宇宙起源问题混为一谈。",
+        "symbols": {
+          "s": {
+            "desc": "光在给定时间内传播的距离",
+            "unit": "m"
+          },
+          "c": {
+            "desc": "真空中的光速近似值",
+            "unit": "m/s"
+          },
+          "t": {
+            "desc": "光传播时间，以秒计",
+            "unit": "s"
+          },
+          "d_m": {
+            "desc": "以米表示的微观长度",
+            "unit": "m"
+          },
+          "d_nm": {
+            "desc": "同一长度以纳米表示",
+            "unit": "nm"
+          }
+        },
+        "scenarios": {
+          "一年光程": {
+            "s": 9460800000000000,
+            "c": 300000000,
+            "t": 31536000
+          },
+          "两年光程": {
+            "s": 18921600000000000,
+            "c": 300000000,
+            "t": 63072000
+          },
+          "十分之一纳米": {
+            "d_m": 1e-10,
+            "d_nm": 0.1
+          },
+          "一纳米": {
+            "d_m": 1e-09,
+            "d_nm": 1
+          }
+        },
+        "formulas": [
+          {
+            "name": "光在给定时间内传播的距离",
+            "expr": "s = c*t",
+            "when": "拓展计算，非本卡初中必背主线。光速近似取 3.0×10^8 m/s，时间 t 用秒；一年按 365 d 估算。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "一年光程",
+                "expr": "c*t",
+                "ref": 9460800000000000,
+                "note": "3.0×10^8×365×24×3600≈9.46×10^15 m。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "两年光程",
+                "expr": "c*t",
+                "ref": 18921600000000000,
+                "note": "传播时间加倍，光程约为 1.892×10^16 m。"
+              },
+              {
+                "type": "direction",
+                "scenario": "一年光程",
+                "var": "t",
+                "lo": 1000000,
+                "hi": 100000000,
+                "expr": "c*t",
+                "expect": "up",
+                "note": "光速不变时，传播时间越长，路程越远。"
+              },
+              {
+                "type": "scan",
+                "scenario": "一年光程",
+                "var": "t",
+                "lo": 1,
+                "hi": 1000000000,
+                "note": "扫描正时间范围，光程计算保持线性。"
+              },
+              {
+                "type": "consistency",
+                "scenario": "一年光程",
+                "with": "particle-02|光在给定时间内传播的距离",
+                "with_expr": "s",
+                "target": "光在给定时间内传播的距离",
+                "note": "直接求本公式输出，与情境中另列的s设计基准核对；数据是设计示例，不是实测。用于核对定义、反算或边界值，不宣称不同物理原理互证。",
+                "verification_kind": "独立设计情境数据核对"
+              }
+            ]
+          },
+          {
+            "name": "由光程和光速求传播时间",
+            "expr": "t = s/c",
+            "when": "拓展计算，非本卡初中必背主线。距离 s 与真空光速 c 采用相同的光传播路径。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "一年光程",
+                "expr": "s/c",
+                "ref": 31536000,
+                "note": "9.4608×10^15 m÷3.0×10^8 m/s=31 536 000 s。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "两年光程",
+                "expr": "s/c",
+                "ref": 63072000,
+                "note": "两光年距离对应约 63 072 000 s。"
+              },
+              {
+                "type": "scan",
+                "scenario": "一年光程",
+                "var": "s",
+                "lo": 0,
+                "hi": 1000000000000000000,
+                "note": "扫描非负距离，反算时间保持有限。"
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "光年是长度单位，定义为光在一年内传播的距离。",
+          "一年按 365 d 换算为 31 536 000 s。",
+          "用光速乘以秒数，得到一光年约 9.46×10^15 m。"
+        ],
+        "errors": [
+          {
+            "wrong": "将光年当成时间单位，而不是光在一年内走过的距离。",
+            "why": "“一年”是定义中采用的传播时间，“光年”最终表示一段距离；量纲为长度。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "把光速 300 000 km/s 的数值直接当作 m/s 使用。",
+            "wrong_expr": "s = c*t/1000",
+            "why": "300 000 是 km/s；换成 m/s 应为 300 000 000。直接使用会少算 1000 倍。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "一年光程",
+              "expr": "c*t/1000",
+              "ref": 9460800000000000
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "按一年 365 d、光速 3.0×10^8 m/s 估算一光年。",
+          "solution": [
+            "一年为 365×24×3600=31 536 000 s。",
+            "s=ct=3.0×10^8×31 536 000≈9.46×10^15 m。"
+          ],
+          "answer": "一光年约为 9.46×10^15 m。"
+        },
+        "prereq": [
+          "particle-01",
+          "light-01"
+        ],
+        "next": [],
+        "tags": [
+          "宇宙",
+          "恒星",
+          "星系",
+          "光年",
+          "光速"
+        ],
+        "core": [
+          {
+            "title": "宇宙探秘",
+            "text": "太阳系属于银河系，银河系只是宇宙中的一个星系；恒星、行星、星系不是同一级概念。光年是距离单位，观测远方接收的是过去发出的光。宇宙模型依靠观测修正；红移等现象不能靠本卡一条光程式完整解释，不能把估算当宇宙起源证明。"
+          }
+        ],
+        "learning_scope": "初中主线；公式含拓展"
+      },
+      "error_index": 0,
+      "chapter": "从粒子到宇宙"
+    },
+    "diagnostic-particle-02-2": {
+      "point": {
+        "id": "particle-02",
+        "title": "宇宙探秘",
+        "level": "基础",
+        "definition": "宇宙包含恒星、行星、星系等不同尺度的天体系统，观测遥远天体时接收到的是它们过去发出的光。光年是光在真空中一年传播的距离，是长度单位而不是时间单位。",
+        "meaning": "比较天体距离时，先分清“光走了多久”和“走过多远”。光速可近似取 3.0×10^8 m/s；以年为时间单位时要换算秒数，再将光程表示为米或光年。宇宙结构和观测证据要结合模型理解，不能把日心说与宇宙起源问题混为一谈。",
+        "symbols": {
+          "s": {
+            "desc": "光在给定时间内传播的距离",
+            "unit": "m"
+          },
+          "c": {
+            "desc": "真空中的光速近似值",
+            "unit": "m/s"
+          },
+          "t": {
+            "desc": "光传播时间，以秒计",
+            "unit": "s"
+          },
+          "d_m": {
+            "desc": "以米表示的微观长度",
+            "unit": "m"
+          },
+          "d_nm": {
+            "desc": "同一长度以纳米表示",
+            "unit": "nm"
+          }
+        },
+        "scenarios": {
+          "一年光程": {
+            "s": 9460800000000000,
+            "c": 300000000,
+            "t": 31536000
+          },
+          "两年光程": {
+            "s": 18921600000000000,
+            "c": 300000000,
+            "t": 63072000
+          },
+          "十分之一纳米": {
+            "d_m": 1e-10,
+            "d_nm": 0.1
+          },
+          "一纳米": {
+            "d_m": 1e-09,
+            "d_nm": 1
+          }
+        },
+        "formulas": [
+          {
+            "name": "光在给定时间内传播的距离",
+            "expr": "s = c*t",
+            "when": "拓展计算，非本卡初中必背主线。光速近似取 3.0×10^8 m/s，时间 t 用秒；一年按 365 d 估算。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "一年光程",
+                "expr": "c*t",
+                "ref": 9460800000000000,
+                "note": "3.0×10^8×365×24×3600≈9.46×10^15 m。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "两年光程",
+                "expr": "c*t",
+                "ref": 18921600000000000,
+                "note": "传播时间加倍，光程约为 1.892×10^16 m。"
+              },
+              {
+                "type": "direction",
+                "scenario": "一年光程",
+                "var": "t",
+                "lo": 1000000,
+                "hi": 100000000,
+                "expr": "c*t",
+                "expect": "up",
+                "note": "光速不变时，传播时间越长，路程越远。"
+              },
+              {
+                "type": "scan",
+                "scenario": "一年光程",
+                "var": "t",
+                "lo": 1,
+                "hi": 1000000000,
+                "note": "扫描正时间范围，光程计算保持线性。"
+              },
+              {
+                "type": "consistency",
+                "scenario": "一年光程",
+                "with": "particle-02|光在给定时间内传播的距离",
+                "with_expr": "s",
+                "target": "光在给定时间内传播的距离",
+                "note": "直接求本公式输出，与情境中另列的s设计基准核对；数据是设计示例，不是实测。用于核对定义、反算或边界值，不宣称不同物理原理互证。",
+                "verification_kind": "独立设计情境数据核对"
+              }
+            ]
+          },
+          {
+            "name": "由光程和光速求传播时间",
+            "expr": "t = s/c",
+            "when": "拓展计算，非本卡初中必背主线。距离 s 与真空光速 c 采用相同的光传播路径。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "一年光程",
+                "expr": "s/c",
+                "ref": 31536000,
+                "note": "9.4608×10^15 m÷3.0×10^8 m/s=31 536 000 s。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "两年光程",
+                "expr": "s/c",
+                "ref": 63072000,
+                "note": "两光年距离对应约 63 072 000 s。"
+              },
+              {
+                "type": "scan",
+                "scenario": "一年光程",
+                "var": "s",
+                "lo": 0,
+                "hi": 1000000000000000000,
+                "note": "扫描非负距离，反算时间保持有限。"
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "光年是长度单位，定义为光在一年内传播的距离。",
+          "一年按 365 d 换算为 31 536 000 s。",
+          "用光速乘以秒数，得到一光年约 9.46×10^15 m。"
+        ],
+        "errors": [
+          {
+            "wrong": "将光年当成时间单位，而不是光在一年内走过的距离。",
+            "why": "“一年”是定义中采用的传播时间，“光年”最终表示一段距离；量纲为长度。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "把光速 300 000 km/s 的数值直接当作 m/s 使用。",
+            "wrong_expr": "s = c*t/1000",
+            "why": "300 000 是 km/s；换成 m/s 应为 300 000 000。直接使用会少算 1000 倍。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "一年光程",
+              "expr": "c*t/1000",
+              "ref": 9460800000000000
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "按一年 365 d、光速 3.0×10^8 m/s 估算一光年。",
+          "solution": [
+            "一年为 365×24×3600=31 536 000 s。",
+            "s=ct=3.0×10^8×31 536 000≈9.46×10^15 m。"
+          ],
+          "answer": "一光年约为 9.46×10^15 m。"
+        },
+        "prereq": [
+          "particle-01",
+          "light-01"
+        ],
+        "next": [],
+        "tags": [
+          "宇宙",
+          "恒星",
+          "星系",
+          "光年",
+          "光速"
+        ],
+        "core": [
+          {
+            "title": "宇宙探秘",
+            "text": "太阳系属于银河系，银河系只是宇宙中的一个星系；恒星、行星、星系不是同一级概念。光年是距离单位，观测远方接收的是过去发出的光。宇宙模型依靠观测修正；红移等现象不能靠本卡一条光程式完整解释，不能把估算当宇宙起源证明。"
+          }
+        ],
+        "learning_scope": "初中主线；公式含拓展"
+      },
+      "error_index": 1,
+      "chapter": "从粒子到宇宙"
+    }
+  },
+  "generator_version": "2026-10-04-条件过程返工-8"
+}

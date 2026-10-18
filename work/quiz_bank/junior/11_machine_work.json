@@ -1,0 +1,3873 @@
+{
+  "segment": "初中",
+  "chapter": "简单机械和功",
+  "source_file": "11_machine_work.json",
+  "questions": [
+    {
+      "id": "diagnostic-machine-01-1",
+      "point_id": "machine-01",
+      "point_title": "杠杆",
+      "chapter": "简单机械和功",
+      "stem": "关于“杠杆”，判断这一说法是否成立，并说明依据：\n将杠杆两端到支点的任意距离视为力臂。",
+      "options": [
+        {
+          "label": "A",
+          "text": "该说法成立。"
+        },
+        {
+          "label": "B",
+          "text": "该说法不成立。"
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "力臂是支点到力的作用线的垂直距离；不一定等于杠杆上沿的长度。\n知识点条件：杠杆平衡条件可用于分析撬棒、剪刀和天平。先找支点，再确定力的作用线并作垂线段得到力臂；力臂不是支点到作用点的任意距离。改变动力臂或阻力臂会改变平衡所需的力，但不能凭杠杆长短直接判断省力。\n推导依据：从支点到动力作用线作垂线，得到动力臂 l<sub>1</sub>。；从支点到阻力作用线作垂线，得到阻力臂 l<sub>2</sub>。；杠杆静止平衡时，两侧力与各自力臂的乘积相等。；根据已知的三个量，可解出第四个量。\n卡片公式各自的适用条件（不是本题共同前提）：\n杠杆平衡条件：杠杆静止平衡，l<sub>1</sub>、l<sub>2</sub> 是到支点的垂直力臂。\n由动力和力臂求平衡阻力：已知动力、动力臂和非零阻力臂，杠杆处于平衡。",
+      "error_type": "概念混淆",
+      "judging": "teacher",
+      "source_error_index": 0,
+      "source_caught_by": "人工审核",
+      "wrong_expr": null,
+      "trap_test": null,
+      "level": "基础",
+      "learning_scope": "初中",
+      "answer_evidence": {
+        "kind": "teacher",
+        "claim_source": "wrong",
+        "reference_only": true,
+        "reason": "概念、操作或无法建立完整定量证据，教师确认条件与结论。"
+      },
+      "review": {
+        "confidence": "medium",
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": false,
+          "no_answer_leak_in_options": true
+        },
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。",
+        "material": {
+          "anchors": [
+            {
+              "kind": "概念或操作",
+              "name": "杠杆",
+              "claim": "把杠杆两端到支点的任意距离当成力臂。",
+              "correction_basis": "力臂是支点到力的作用线的垂直距离；不一定等于杠杆上沿的长度。",
+              "note": "概念锚点及命题真假待教师确认；未套用任意第一条公式",
+              "display": "把杠杆两端到支点的任意距离当成力臂。"
+            }
+          ],
+          "source": {
+            "nature": "原创概念/操作命题；无真实测量记录",
+            "source_error_index": 0
+          },
+          "predicted_errors": [
+            {
+              "option": "A",
+              "text": "该说法成立。",
+              "reason": "力臂是支点到力的作用线的垂直距离；不一定等于杠杆上沿的长度。",
+              "expression": null,
+              "status": "误答原因预测，待教师确认；未采集学生作答证据"
+            }
+          ],
+          "difficulty_note": "建议难度沿用本题level（源卡难度）；尚非题目难度实测，待教师调整",
+          "estimated_seconds": [
+            60,
+            120
+          ],
+          "time_basis": "未做学生计时；按现有难度给出备课估计区间，待教师确认",
+          "machine_checks": [
+            {
+              "name": "题目ID关联源知识点",
+              "passed": true
+            },
+            {
+              "name": "选项标签唯一且参考标签存在",
+              "passed": true
+            },
+            {
+              "name": "选项文本互异",
+              "passed": true
+            }
+          ],
+          "machine_boundary": "只列本次逐题实际执行项目；不把关联知识卡的方向、扫描或一致性检查算作本题已验。概念题未验命题真假。",
+          "human_review_items": [
+            "题干条件是否充分、清楚且符合学段",
+            "参考结论在指定条件下是否唯一",
+            "干扰项是否合理、对应真实认知问题且无答案暗示",
+            "公式或概念锚点是否准确",
+            "建议难度及用时是否适合教学",
+            "语言、装置与安全操作是否恰当"
+          ],
+          "reference_answer_note": "现有参考答案保持；即使本地可以判选项，也仍须教师审核教学可用性"
+        }
+      }
+    },
+    {
+      "id": "diagnostic-machine-01-2",
+      "point_id": "machine-01",
+      "point_title": "杠杆",
+      "chapter": "简单机械和功",
+      "stem": "在“杠杆”的模型下，l<sub>1</sub>（动力臂长度）=0.3 m；F<sub>2</sub>（阻力大小）=30 N；l<sub>2</sub>（阻力臂长度）=0.2 m。条件：杠杆静止平衡，l<sub>1</sub>、l<sub>2</sub> 是到支点的垂直力臂。。求动力大小（F<sub>1</sub>）。这些数值是设计示例。",
+      "options": [
+        {
+          "label": "A",
+          "text": "20 N"
+        },
+        {
+          "label": "B",
+          "text": "30 N"
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "使用杠杆平衡条件：F<sub>2</sub>·l<sub>2</sub>/l<sub>1</sub>，代入得20 N。另一结果来自F<sub>2</sub>，算得30 N。\n剪刀情境阻力30 N、阻力臂0.2 m、动力臂0.3 m，平衡动力20 N；直接等同会误得30 N。\n知识点条件：杠杆平衡条件可用于分析撬棒、剪刀和天平。先找支点，再确定力的作用线并作垂线段得到力臂；力臂不是支点到作用点的任意距离。改变动力臂或阻力臂会改变平衡所需的力，但不能凭杠杆长短直接判断省力。\n推导依据：从支点到动力作用线作垂线，得到动力臂 l<sub>1</sub>。；从支点到阻力作用线作垂线，得到阻力臂 l<sub>2</sub>。；杠杆静止平衡时，两侧力与各自力臂的乘积相等。；根据已知的三个量，可解出第四个量。\n卡片公式各自的适用条件（不是本题共同前提）：\n杠杆平衡条件：杠杆静止平衡，l<sub>1</sub>、l<sub>2</sub> 是到支点的垂直力臂。\n由动力和力臂求平衡阻力：已知动力、动力臂和非零阻力臂，杠杆处于平衡。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 1,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "F<sub>1</sub> = F<sub>2</sub>",
+      "trap_test": {
+        "scenario": "剪刀杠杆",
+        "expr": "F2",
+        "ref": 20
+      },
+      "level": "基础",
+      "learning_scope": "初中",
+      "answer_evidence": {
+        "kind": "numeric",
+        "scenario": "剪刀杠杆",
+        "parameters": {
+          "F1": 20,
+          "l1": 0.3,
+          "F2": 30,
+          "l2": 0.2
+        },
+        "target": "F1",
+        "unit": "N",
+        "reference": 20,
+        "correct_proof": {
+          "expression": "F2*l2/l1",
+          "formula": "杠杆平衡条件",
+          "value": 20.0,
+          "when": "杠杆静止平衡，l1、l2 是到支点的垂直力臂。"
+        },
+        "distractor_expression": "F2",
+        "distractor_value": 30.0,
+        "dimension_matches": true,
+        "independent_evaluation": true
+      },
+      "review": {
+        "confidence": "medium",
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": true,
+          "no_answer_leak_in_options": true
+        },
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。",
+        "material": {
+          "anchors": [
+            {
+              "kind": "公式",
+              "name": "杠杆平衡条件",
+              "expression": "F2*l2/l1",
+              "when": "杠杆静止平衡，l1、l2 是到支点的垂直力臂。",
+              "display": "F<sub>2</sub>·l<sub>2</sub>/l<sub>1</sub>"
+            }
+          ],
+          "source": {
+            "nature": "原创设计示例，非教材实测或真实实验记录",
+            "scenario": "剪刀杠杆",
+            "parameters": {
+              "F1": 20,
+              "l1": 0.3,
+              "F2": 30,
+              "l2": 0.2
+            },
+            "data": [
+              "动力大小：20 N",
+              "动力臂长度：0.3 m",
+              "阻力大小：30 N",
+              "阻力臂长度：0.2 m"
+            ]
+          },
+          "predicted_errors": [
+            {
+              "option": "B",
+              "text": "30 N",
+              "reason": "剪刀情境阻力30 N、阻力臂0.2 m、动力臂0.3 m，平衡动力20 N；直接等同会误得30 N。",
+              "expression": "F2",
+              "status": "误答原因预测，待教师确认；未采集学生作答证据"
+            }
+          ],
+          "difficulty_note": "建议难度沿用本题level（源卡难度）；尚非题目难度实测，待教师调整",
+          "estimated_seconds": [
+            60,
+            120
+          ],
+          "time_basis": "未做学生计时；按现有难度给出备课估计区间，待教师确认",
+          "machine_checks": [
+            {
+              "name": "题目ID关联源知识点",
+              "passed": true
+            },
+            {
+              "name": "选项标签唯一且参考标签存在",
+              "passed": true
+            },
+            {
+              "name": "选项文本互异",
+              "passed": true
+            },
+            {
+              "name": "正确路径独立数值复算",
+              "passed": true
+            },
+            {
+              "name": "带量纲求值与独立求值一致",
+              "passed": true
+            },
+            {
+              "name": "干扰路径复算且与正确路径分离",
+              "passed": true
+            }
+          ],
+          "machine_boundary": "只列本次逐题实际执行项目；不把关联知识卡的方向、扫描或一致性检查算作本题已验。概念题未验命题真假。",
+          "human_review_items": [
+            "题干条件是否充分、清楚且符合学段",
+            "参考结论在指定条件下是否唯一",
+            "干扰项是否合理、对应真实认知问题且无答案暗示",
+            "公式或概念锚点是否准确",
+            "建议难度及用时是否适合教学",
+            "语言、装置与安全操作是否恰当"
+          ],
+          "reference_answer_note": "现有参考答案保持；即使本地可以判选项，也仍须教师审核教学可用性"
+        }
+      }
+    },
+    {
+      "id": "diagnostic-machine-04-1",
+      "point_id": "machine-04",
+      "point_title": "滑轮",
+      "chapter": "简单机械和功",
+      "stem": "在“滑轮”的模型下，h<sub>物</sub>（重物上升的高度）=1 m。条件：理想单动滑轮由两段绳承担重物，忽略绳伸长和摩擦。。求自由端绳子移动的距离（s<sub>拉</sub>）。这些数值是设计示例。",
+      "options": [
+        {
+          "label": "A",
+          "text": "2 m"
+        },
+        {
+          "label": "B",
+          "text": "1 m"
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "使用理想动滑轮的距离关系：2·h<sub>物</sub>，代入得2 m。另一结果来自h<sub>物</sub>，算得1 m。\n单动滑轮由两段绳承担重物，重物上升 1 m 时拉绳端约需移动 2 m。\n知识点条件：分析滑轮时先数承担动滑轮和重物的绳段，再判断每段绳的拉力与物体重力的关系。理想动滑轮省一半力时，拉绳距离约为重物上升高度的两倍，输入功与输出功相等；实际装置因摩擦等损耗，总输入功大于有用功。\n推导依据：先判断使用定滑轮、动滑轮还是滑轮组，画出承重绳段。；理想动滑轮中两段绳平均承担重物重力，所以拉力约为重力的一半。；省力伴随距离增加；比较拉力乘绳端路程与重力乘重物上升高度，理想情况下两者相等。\n卡片公式各自的适用条件（不是本题共同前提）：\n理想动滑轮的拉力关系：单个理想动滑轮匀速提升重物，忽略滑轮自重、绳重和摩擦。\n理想动滑轮的距离关系：理想单动滑轮由两段绳承担重物，忽略绳伸长和摩擦。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 0,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "s<sub>拉</sub> = h<sub>物</sub>",
+      "trap_test": {
+        "scenario": "理想动滑轮提升100牛",
+        "expr": "h_load",
+        "ref": 2
+      },
+      "level": "基础",
+      "learning_scope": "初中",
+      "answer_evidence": {
+        "kind": "numeric",
+        "scenario": "理想动滑轮提升100牛",
+        "parameters": {
+          "F_pull": 50,
+          "G_load": 100,
+          "s_pull": 2,
+          "h_load": 1,
+          "W_in": 100,
+          "W_out": 100
+        },
+        "target": "s_pull",
+        "unit": "m",
+        "reference": 2,
+        "correct_proof": {
+          "expression": "2*h_load",
+          "formula": "理想动滑轮的距离关系",
+          "value": 2,
+          "when": "理想单动滑轮由两段绳承担重物，忽略绳伸长和摩擦。"
+        },
+        "distractor_expression": "h_load",
+        "distractor_value": 1.0,
+        "dimension_matches": true,
+        "independent_evaluation": true
+      },
+      "review": {
+        "confidence": "medium",
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": true,
+          "no_answer_leak_in_options": true
+        },
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。",
+        "material": {
+          "anchors": [
+            {
+              "kind": "公式",
+              "name": "理想动滑轮的距离关系",
+              "expression": "2*h_load",
+              "when": "理想单动滑轮由两段绳承担重物，忽略绳伸长和摩擦。",
+              "display": "2·h<sub>物</sub>"
+            }
+          ],
+          "source": {
+            "nature": "原创设计示例，非教材实测或真实实验记录",
+            "scenario": "理想动滑轮提升100牛",
+            "parameters": {
+              "F_pull": 50,
+              "G_load": 100,
+              "s_pull": 2,
+              "h_load": 1,
+              "W_in": 100,
+              "W_out": 100
+            },
+            "data": [
+              "拉绳所需的拉力：50 N",
+              "被提升物体所受重力：100 N",
+              "自由端绳子移动的距离：2 m",
+              "重物上升的高度：1 m",
+              "输入的功：100 J",
+              "提升重物所做的有用功：100 J"
+            ]
+          },
+          "predicted_errors": [
+            {
+              "option": "B",
+              "text": "1 m",
+              "reason": "单动滑轮由两段绳承担重物，重物上升 1 m 时拉绳端约需移动 2 m。",
+              "expression": "h_load",
+              "status": "误答原因预测，待教师确认；未采集学生作答证据"
+            }
+          ],
+          "difficulty_note": "建议难度沿用本题level（源卡难度）；尚非题目难度实测，待教师调整",
+          "estimated_seconds": [
+            60,
+            120
+          ],
+          "time_basis": "未做学生计时；按现有难度给出备课估计区间，待教师确认",
+          "machine_checks": [
+            {
+              "name": "题目ID关联源知识点",
+              "passed": true
+            },
+            {
+              "name": "选项标签唯一且参考标签存在",
+              "passed": true
+            },
+            {
+              "name": "选项文本互异",
+              "passed": true
+            },
+            {
+              "name": "正确路径独立数值复算",
+              "passed": true
+            },
+            {
+              "name": "带量纲求值与独立求值一致",
+              "passed": true
+            },
+            {
+              "name": "干扰路径复算且与正确路径分离",
+              "passed": true
+            }
+          ],
+          "machine_boundary": "只列本次逐题实际执行项目；不把关联知识卡的方向、扫描或一致性检查算作本题已验。概念题未验命题真假。",
+          "human_review_items": [
+            "题干条件是否充分、清楚且符合学段",
+            "参考结论在指定条件下是否唯一",
+            "干扰项是否合理、对应真实认知问题且无答案暗示",
+            "公式或概念锚点是否准确",
+            "建议难度及用时是否适合教学",
+            "语言、装置与安全操作是否恰当"
+          ],
+          "reference_answer_note": "现有参考答案保持；即使本地可以判选项，也仍须教师审核教学可用性"
+        }
+      }
+    },
+    {
+      "id": "diagnostic-machine-04-2",
+      "point_id": "machine-04",
+      "point_title": "滑轮",
+      "chapter": "简单机械和功",
+      "stem": "关于“滑轮”，判断这一说法是否成立，并说明依据：\n实际滑轮组一定能省功。",
+      "options": [
+        {
+          "label": "A",
+          "text": "该说法成立。"
+        },
+        {
+          "label": "B",
+          "text": "该说法不成立。"
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "实际装置有摩擦和自身质量，输入功通常大于有用功；机械可以省力但不能省功。\n知识点条件：分析滑轮时先数承担动滑轮和重物的绳段，再判断每段绳的拉力与物体重力的关系。理想动滑轮省一半力时，拉绳距离约为重物上升高度的两倍，输入功与输出功相等；实际装置因摩擦等损耗，总输入功大于有用功。\n推导依据：先判断使用定滑轮、动滑轮还是滑轮组，画出承重绳段。；理想动滑轮中两段绳平均承担重物重力，所以拉力约为重力的一半。；省力伴随距离增加；比较拉力乘绳端路程与重力乘重物上升高度，理想情况下两者相等。\n卡片公式各自的适用条件（不是本题共同前提）：\n理想动滑轮的拉力关系：单个理想动滑轮匀速提升重物，忽略滑轮自重、绳重和摩擦。\n理想动滑轮的距离关系：理想单动滑轮由两段绳承担重物，忽略绳伸长和摩擦。",
+      "error_type": "概念混淆",
+      "judging": "teacher",
+      "source_error_index": 1,
+      "source_caught_by": "人工审核",
+      "wrong_expr": null,
+      "trap_test": null,
+      "level": "基础",
+      "learning_scope": "初中",
+      "answer_evidence": {
+        "kind": "teacher",
+        "claim_source": "wrong",
+        "reference_only": true,
+        "reason": "概念、操作或无法建立完整定量证据，教师确认条件与结论。"
+      },
+      "review": {
+        "confidence": "medium",
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": false,
+          "no_answer_leak_in_options": true
+        },
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。",
+        "material": {
+          "anchors": [
+            {
+              "kind": "概念或操作",
+              "name": "滑轮",
+              "claim": "认为实际滑轮组一定能省功。",
+              "correction_basis": "实际装置有摩擦和自身质量，输入功通常大于有用功；机械可以省力但不能省功。",
+              "note": "概念锚点及命题真假待教师确认；未套用任意第一条公式",
+              "display": "认为实际滑轮组一定能省功。"
+            }
+          ],
+          "source": {
+            "nature": "原创概念/操作命题；无真实测量记录",
+            "source_error_index": 1
+          },
+          "predicted_errors": [
+            {
+              "option": "A",
+              "text": "该说法成立。",
+              "reason": "实际装置有摩擦和自身质量，输入功通常大于有用功；机械可以省力但不能省功。",
+              "expression": null,
+              "status": "误答原因预测，待教师确认；未采集学生作答证据"
+            }
+          ],
+          "difficulty_note": "建议难度沿用本题level（源卡难度）；尚非题目难度实测，待教师调整",
+          "estimated_seconds": [
+            60,
+            120
+          ],
+          "time_basis": "未做学生计时；按现有难度给出备课估计区间，待教师确认",
+          "machine_checks": [
+            {
+              "name": "题目ID关联源知识点",
+              "passed": true
+            },
+            {
+              "name": "选项标签唯一且参考标签存在",
+              "passed": true
+            },
+            {
+              "name": "选项文本互异",
+              "passed": true
+            }
+          ],
+          "machine_boundary": "只列本次逐题实际执行项目；不把关联知识卡的方向、扫描或一致性检查算作本题已验。概念题未验命题真假。",
+          "human_review_items": [
+            "题干条件是否充分、清楚且符合学段",
+            "参考结论在指定条件下是否唯一",
+            "干扰项是否合理、对应真实认知问题且无答案暗示",
+            "公式或概念锚点是否准确",
+            "建议难度及用时是否适合教学",
+            "语言、装置与安全操作是否恰当"
+          ],
+          "reference_answer_note": "现有参考答案保持；即使本地可以判选项，也仍须教师审核教学可用性"
+        }
+      }
+    },
+    {
+      "id": "diagnostic-machine-02-1",
+      "point_id": "machine-02",
+      "point_title": "功",
+      "chapter": "简单机械和功",
+      "stem": "在“功”中，力与位移同方向，F 用 N、s 用 m。。力所做的功的单位为J。下列哪一表达式的量纲与该目标量一致？",
+      "options": [
+        {
+          "label": "A",
+          "text": "W = F·s"
+        },
+        {
+          "label": "B",
+          "text": "W = F/s"
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "功等于力与沿力方向位移的乘积，不是除法；单位由 N×m 得到 J，位移方向与力垂直时该力不做功。\n知识点条件：计算功时必须同时有力和沿力方向的位移：物体虽移动但力没有沿位移方向的分量时，不能直接用 W=Fs。力用 N、距离用 m，功的单位是 J。\n推导依据：确认作用力是否使物体沿力的方向移动。；若力和位移同向，用 W=F·s 求功。；记录完成这段功所用的时间。；用 P=W/t 比较做功快慢。\n卡片公式各自的适用条件（不是本题共同前提）：\n力和沿力方向距离求功：力与位移同方向，F 用 N、s 用 m。",
+      "error_type": "量纲一致性",
+      "judging": "auto",
+      "source_error_index": 0,
+      "source_caught_by": "量纲一致性",
+      "wrong_expr": "W = F/s",
+      "trap_test": {
+        "scenario": "抬起物体",
+        "expr": "F/s",
+        "ref": 200
+      },
+      "level": "基础",
+      "learning_scope": "初中",
+      "answer_evidence": {
+        "kind": "dimension",
+        "target": "W",
+        "correct_expression": "W = F*s",
+        "distractor_expression": "W = F/s",
+        "target_dimension": "M·L^2·T^-2",
+        "distractor_dimension": "M·T^-2"
+      },
+      "review": {
+        "confidence": "medium",
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": true,
+          "no_answer_leak_in_options": true
+        },
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。",
+        "material": {
+          "anchors": [
+            {
+              "kind": "公式量纲",
+              "name": "本题目标量与等式",
+              "expression": "W = F*s",
+              "when": "量纲相符是必要条件，不能据此证明系数或物理条件正确",
+              "display": "W = F·s"
+            }
+          ],
+          "source": {
+            "nature": "原创量纲辨析命题；无实测数据",
+            "source_error_index": 0
+          },
+          "predicted_errors": [
+            {
+              "option": "B",
+              "text": "W = F/s",
+              "reason": "功等于力与沿力方向位移的乘积，不是除法；单位由 N×m 得到 J，位移方向与力垂直时该力不做功。",
+              "expression": "W = F/s",
+              "status": "误答原因预测，待教师确认；未采集学生作答证据"
+            }
+          ],
+          "difficulty_note": "建议难度沿用本题level（源卡难度）；尚非题目难度实测，待教师调整",
+          "estimated_seconds": [
+            60,
+            120
+          ],
+          "time_basis": "未做学生计时；按现有难度给出备课估计区间，待教师确认",
+          "machine_checks": [
+            {
+              "name": "题目ID关联源知识点",
+              "passed": true
+            },
+            {
+              "name": "选项标签唯一且参考标签存在",
+              "passed": true
+            },
+            {
+              "name": "选项文本互异",
+              "passed": true
+            },
+            {
+              "name": "正确式量纲一致",
+              "passed": true,
+              "actual": {
+                "type": "dimension",
+                "type_name": "量纲一致性",
+                "formula": "教师审核证据",
+                "ok": true,
+                "detail": "左端M·L^2·T^-2，右端M·L^2·T^-2",
+                "note": "",
+                "error": null,
+                "evaluation_status": "success",
+                "failure_reason": null,
+                "result_dimension": "M·L^2·T^-2",
+                "reference_dimension": "M·L^2·T^-2",
+                "diagnostics": {},
+                "physical_error_identified": false
+              }
+            },
+            {
+              "name": "干扰式量纲冲突",
+              "passed": true,
+              "actual": {
+                "type": "dimension",
+                "type_name": "量纲一致性",
+                "formula": "教师审核证据",
+                "ok": false,
+                "detail": "左端M·L^2·T^-2，右端M·T^-2",
+                "note": "",
+                "error": null,
+                "evaluation_status": "dimension_conflict",
+                "failure_reason": "dimension_conflict",
+                "result_dimension": "M·T^-2",
+                "reference_dimension": "M·L^2·T^-2",
+                "diagnostics": {},
+                "physical_error_identified": true
+              }
+            }
+          ],
+          "machine_boundary": "只列本次逐题实际执行项目；不把关联知识卡的方向、扫描或一致性检查算作本题已验。概念题未验命题真假。",
+          "human_review_items": [
+            "题干条件是否充分、清楚且符合学段",
+            "参考结论在指定条件下是否唯一",
+            "干扰项是否合理、对应真实认知问题且无答案暗示",
+            "公式或概念锚点是否准确",
+            "建议难度及用时是否适合教学",
+            "语言、装置与安全操作是否恰当"
+          ],
+          "reference_answer_note": "现有参考答案保持；即使本地可以判选项，也仍须教师审核教学可用性"
+        }
+      }
+    },
+    {
+      "id": "diagnostic-machine-02-2",
+      "point_id": "machine-02",
+      "point_title": "功",
+      "chapter": "简单机械和功",
+      "stem": "在“功”的模型下，F（沿运动方向的作用力）=50 N；s（物体沿力方向通过的距离）=4 m。条件：力与位移同方向，F 用 N、s 用 m。。求力所做的功（W）。这些数值是设计示例。",
+      "options": [
+        {
+          "label": "A",
+          "text": "2 J"
+        },
+        {
+          "label": "B",
+          "text": "200 J"
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "使用力和沿力方向距离求功：F·s，代入得200 J。另一结果来自F·s/100，算得2 J。\n抬起物体的位移已按 4 m 代入，不能再除以 100；否则 200 J 会被算成 2 J。\n知识点条件：计算功时必须同时有力和沿力方向的位移：物体虽移动但力没有沿位移方向的分量时，不能直接用 W=Fs。力用 N、距离用 m，功的单位是 J。\n推导依据：确认作用力是否使物体沿力的方向移动。；若力和位移同向，用 W=F·s 求功。；记录完成这段功所用的时间。；用 P=W/t 比较做功快慢。\n卡片公式各自的适用条件（不是本题共同前提）：\n力和沿力方向距离求功：力与位移同方向，F 用 N、s 用 m。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 1,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "W = F·s/100",
+      "trap_test": {
+        "scenario": "抬起物体",
+        "expr": "F*s/100",
+        "ref": 200
+      },
+      "level": "基础",
+      "learning_scope": "初中",
+      "answer_evidence": {
+        "kind": "numeric",
+        "scenario": "抬起物体",
+        "parameters": {
+          "F": 50,
+          "s": 4,
+          "W": 200,
+          "t": 10,
+          "P": 20
+        },
+        "target": "W",
+        "unit": "J",
+        "reference": 200,
+        "correct_proof": {
+          "expression": "F*s",
+          "formula": "力和沿力方向距离求功",
+          "value": 200,
+          "when": "力与位移同方向，F 用 N、s 用 m。"
+        },
+        "distractor_expression": "F*s/100",
+        "distractor_value": 2.0,
+        "dimension_matches": true,
+        "independent_evaluation": true
+      },
+      "review": {
+        "confidence": "medium",
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": true,
+          "no_answer_leak_in_options": true
+        },
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。",
+        "material": {
+          "anchors": [
+            {
+              "kind": "公式",
+              "name": "力和沿力方向距离求功",
+              "expression": "F*s",
+              "when": "力与位移同方向，F 用 N、s 用 m。",
+              "display": "F·s"
+            }
+          ],
+          "source": {
+            "nature": "原创设计示例，非教材实测或真实实验记录",
+            "scenario": "抬起物体",
+            "parameters": {
+              "F": 50,
+              "s": 4,
+              "W": 200,
+              "t": 10,
+              "P": 20
+            },
+            "data": [
+              "沿运动方向的作用力：50 N",
+              "物体沿力方向通过的距离：4 m",
+              "力所做的功：200 J",
+              "做功所用时间：10 s",
+              "功率：20 W"
+            ]
+          },
+          "predicted_errors": [
+            {
+              "option": "A",
+              "text": "2 J",
+              "reason": "抬起物体的位移已按 4 m 代入，不能再除以 100；否则 200 J 会被算成 2 J。",
+              "expression": "F*s/100",
+              "status": "误答原因预测，待教师确认；未采集学生作答证据"
+            }
+          ],
+          "difficulty_note": "建议难度沿用本题level（源卡难度）；尚非题目难度实测，待教师调整",
+          "estimated_seconds": [
+            60,
+            120
+          ],
+          "time_basis": "未做学生计时；按现有难度给出备课估计区间，待教师确认",
+          "machine_checks": [
+            {
+              "name": "题目ID关联源知识点",
+              "passed": true
+            },
+            {
+              "name": "选项标签唯一且参考标签存在",
+              "passed": true
+            },
+            {
+              "name": "选项文本互异",
+              "passed": true
+            },
+            {
+              "name": "正确路径独立数值复算",
+              "passed": true
+            },
+            {
+              "name": "带量纲求值与独立求值一致",
+              "passed": true
+            },
+            {
+              "name": "干扰路径复算且与正确路径分离",
+              "passed": true
+            }
+          ],
+          "machine_boundary": "只列本次逐题实际执行项目；不把关联知识卡的方向、扫描或一致性检查算作本题已验。概念题未验命题真假。",
+          "human_review_items": [
+            "题干条件是否充分、清楚且符合学段",
+            "参考结论在指定条件下是否唯一",
+            "干扰项是否合理、对应真实认知问题且无答案暗示",
+            "公式或概念锚点是否准确",
+            "建议难度及用时是否适合教学",
+            "语言、装置与安全操作是否恰当"
+          ],
+          "reference_answer_note": "现有参考答案保持；即使本地可以判选项，也仍须教师审核教学可用性"
+        }
+      }
+    },
+    {
+      "id": "diagnostic-machine-02-3",
+      "point_id": "machine-02",
+      "point_title": "功",
+      "chapter": "简单机械和功",
+      "stem": "关于“功”，判断这一说法是否成立，并说明依据：\n物体受力但没有沿力方向移动，仍认为该力做了功。",
+      "options": [
+        {
+          "label": "A",
+          "text": "该说法不成立。"
+        },
+        {
+          "label": "B",
+          "text": "该说法成立。"
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "做功要求力对物体产生沿力方向的位移；只有力却没有相应位移，或物体运动方向与力垂直，都不能据此认为该力做了功。\n知识点条件：计算功时必须同时有力和沿力方向的位移：物体虽移动但力没有沿位移方向的分量时，不能直接用 W=Fs。力用 N、距离用 m，功的单位是 J。\n推导依据：确认作用力是否使物体沿力的方向移动。；若力和位移同向，用 W=F·s 求功。；记录完成这段功所用的时间。；用 P=W/t 比较做功快慢。\n卡片公式各自的适用条件（不是本题共同前提）：\n力和沿力方向距离求功：力与位移同方向，F 用 N、s 用 m。",
+      "error_type": "概念混淆",
+      "judging": "teacher",
+      "source_error_index": 2,
+      "source_caught_by": "人工审核",
+      "wrong_expr": null,
+      "trap_test": null,
+      "level": "基础",
+      "learning_scope": "初中",
+      "answer_evidence": {
+        "kind": "teacher",
+        "claim_source": "wrong",
+        "reference_only": true,
+        "reason": "概念、操作或无法建立完整定量证据，教师确认条件与结论。"
+      },
+      "review": {
+        "confidence": "medium",
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": false,
+          "no_answer_leak_in_options": true
+        },
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。",
+        "material": {
+          "anchors": [
+            {
+              "kind": "概念或操作",
+              "name": "功",
+              "claim": "物体受力但没有沿力方向移动，仍认为该力做了功。",
+              "correction_basis": "做功要求力对物体产生沿力方向的位移；只有力却没有相应位移，或物体运动方向与力垂直，都不能据此认为该力做了功。",
+              "note": "概念锚点及命题真假待教师确认；未套用任意第一条公式",
+              "display": "物体受力但没有沿力方向移动，仍认为该力做了功。"
+            }
+          ],
+          "source": {
+            "nature": "原创概念/操作命题；无真实测量记录",
+            "source_error_index": 2
+          },
+          "predicted_errors": [
+            {
+              "option": "B",
+              "text": "该说法成立。",
+              "reason": "做功要求力对物体产生沿力方向的位移；只有力却没有相应位移，或物体运动方向与力垂直，都不能据此认为该力做了功。",
+              "expression": null,
+              "status": "误答原因预测，待教师确认；未采集学生作答证据"
+            }
+          ],
+          "difficulty_note": "建议难度沿用本题level（源卡难度）；尚非题目难度实测，待教师调整",
+          "estimated_seconds": [
+            60,
+            120
+          ],
+          "time_basis": "未做学生计时；按现有难度给出备课估计区间，待教师确认",
+          "machine_checks": [
+            {
+              "name": "题目ID关联源知识点",
+              "passed": true
+            },
+            {
+              "name": "选项标签唯一且参考标签存在",
+              "passed": true
+            },
+            {
+              "name": "选项文本互异",
+              "passed": true
+            }
+          ],
+          "machine_boundary": "只列本次逐题实际执行项目；不把关联知识卡的方向、扫描或一致性检查算作本题已验。概念题未验命题真假。",
+          "human_review_items": [
+            "题干条件是否充分、清楚且符合学段",
+            "参考结论在指定条件下是否唯一",
+            "干扰项是否合理、对应真实认知问题且无答案暗示",
+            "公式或概念锚点是否准确",
+            "建议难度及用时是否适合教学",
+            "语言、装置与安全操作是否恰当"
+          ],
+          "reference_answer_note": "现有参考答案保持；即使本地可以判选项，也仍须教师审核教学可用性"
+        }
+      }
+    },
+    {
+      "id": "diagnostic-machine-05-1",
+      "point_id": "machine-05",
+      "point_title": "功率",
+      "chapter": "简单机械和功",
+      "stem": "在“功率”的模型下，W（力所做的功）=200 J；t（做功所用时间）=10 s。条件：W 是同一时间段内完成的功，t 大于零；功率单位为 W。。求功率（P）。这些数值是设计示例。",
+      "options": [
+        {
+          "label": "A",
+          "text": "10 W"
+        },
+        {
+          "label": "B",
+          "text": "20 W"
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "使用由功和时间求功率：W/t，代入得20 W。另一结果来自W/(2·t)，算得10 W。\n功率是单位时间内完成的功；把时间额外加倍会使结果减半。计算前应写出功、时间和功率各自的物理意义。\n知识点条件：比较机器做功快慢时要比较功率，而不是只看总功。计算时功用 J、时间用 s，功率单位为 W；大型设备也常用 kW。功率是单位时间完成的功，数值并不等于总功；功率换算时 1 kW=1000 W，不能漏写时间单位。\n推导依据：确定研究的做功过程及对应时间间隔 t。；用功除以完成该功所用的时间，得到平均功率 P=W/t。；把功统一为 J、时间统一为 s，功率结果即为 W。\n卡片公式各自的适用条件（不是本题共同前提）：\n由功和时间求功率：W 是同一时间段内完成的功，t 大于零；功率单位为 W。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 0,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "P = W/(2·t)",
+      "trap_test": {
+        "scenario": "抬起物体",
+        "expr": "W/(2*t)",
+        "ref": 20
+      },
+      "level": "基础",
+      "learning_scope": "初中",
+      "answer_evidence": {
+        "kind": "numeric",
+        "scenario": "抬起物体",
+        "parameters": {
+          "F": 50,
+          "s": 4,
+          "W": 200,
+          "t": 10,
+          "P": 20
+        },
+        "target": "P",
+        "unit": "W",
+        "reference": 20,
+        "correct_proof": {
+          "expression": "W/t",
+          "formula": "由功和时间求功率",
+          "value": 20.0,
+          "when": "W 是同一时间段内完成的功，t 大于零；功率单位为 W。"
+        },
+        "distractor_expression": "W/(2*t)",
+        "distractor_value": 10.0,
+        "dimension_matches": true,
+        "independent_evaluation": true
+      },
+      "review": {
+        "confidence": "medium",
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": true,
+          "no_answer_leak_in_options": true
+        },
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。",
+        "material": {
+          "anchors": [
+            {
+              "kind": "公式",
+              "name": "由功和时间求功率",
+              "expression": "W/t",
+              "when": "W 是同一时间段内完成的功，t 大于零；功率单位为 W。",
+              "display": "W/t"
+            }
+          ],
+          "source": {
+            "nature": "原创设计示例，非教材实测或真实实验记录",
+            "scenario": "抬起物体",
+            "parameters": {
+              "F": 50,
+              "s": 4,
+              "W": 200,
+              "t": 10,
+              "P": 20
+            },
+            "data": [
+              "沿运动方向的作用力：50 N",
+              "物体沿力方向通过的距离：4 m",
+              "力所做的功：200 J",
+              "做功所用时间：10 s",
+              "功率：20 W"
+            ]
+          },
+          "predicted_errors": [
+            {
+              "option": "A",
+              "text": "10 W",
+              "reason": "功率是单位时间内完成的功；把时间额外加倍会使结果减半。计算前应写出功、时间和功率各自的物理意义。",
+              "expression": "W/(2*t)",
+              "status": "误答原因预测，待教师确认；未采集学生作答证据"
+            }
+          ],
+          "difficulty_note": "建议难度沿用本题level（源卡难度）；尚非题目难度实测，待教师调整",
+          "estimated_seconds": [
+            60,
+            120
+          ],
+          "time_basis": "未做学生计时；按现有难度给出备课估计区间，待教师确认",
+          "machine_checks": [
+            {
+              "name": "题目ID关联源知识点",
+              "passed": true
+            },
+            {
+              "name": "选项标签唯一且参考标签存在",
+              "passed": true
+            },
+            {
+              "name": "选项文本互异",
+              "passed": true
+            },
+            {
+              "name": "正确路径独立数值复算",
+              "passed": true
+            },
+            {
+              "name": "带量纲求值与独立求值一致",
+              "passed": true
+            },
+            {
+              "name": "干扰路径复算且与正确路径分离",
+              "passed": true
+            }
+          ],
+          "machine_boundary": "只列本次逐题实际执行项目；不把关联知识卡的方向、扫描或一致性检查算作本题已验。概念题未验命题真假。",
+          "human_review_items": [
+            "题干条件是否充分、清楚且符合学段",
+            "参考结论在指定条件下是否唯一",
+            "干扰项是否合理、对应真实认知问题且无答案暗示",
+            "公式或概念锚点是否准确",
+            "建议难度及用时是否适合教学",
+            "语言、装置与安全操作是否恰当"
+          ],
+          "reference_answer_note": "现有参考答案保持；即使本地可以判选项，也仍须教师审核教学可用性"
+        }
+      }
+    },
+    {
+      "id": "diagnostic-machine-05-2",
+      "point_id": "machine-05",
+      "point_title": "功率",
+      "chapter": "简单机械和功",
+      "stem": "关于“功率”，判断这一说法是否成立，并说明依据：\n两个过程的总功相同，功率就一定相同，与所用时间无关。",
+      "options": [
+        {
+          "label": "A",
+          "text": "该说法不成立。"
+        },
+        {
+          "label": "B",
+          "text": "该说法成立。"
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "功率描述做功快慢；相同的功用时不同，功率就不同。计算前应写出功、时间和功率各自的物理意义。\n知识点条件：比较机器做功快慢时要比较功率，而不是只看总功。计算时功用 J、时间用 s，功率单位为 W；大型设备也常用 kW。功率是单位时间完成的功，数值并不等于总功；功率换算时 1 kW=1000 W，不能漏写时间单位。\n推导依据：确定研究的做功过程及对应时间间隔 t。；用功除以完成该功所用的时间，得到平均功率 P=W/t。；把功统一为 J、时间统一为 s，功率结果即为 W。\n卡片公式各自的适用条件（不是本题共同前提）：\n由功和时间求功率：W 是同一时间段内完成的功，t 大于零；功率单位为 W。",
+      "error_type": "概念混淆",
+      "judging": "teacher",
+      "source_error_index": 1,
+      "source_caught_by": "人工审核",
+      "wrong_expr": null,
+      "trap_test": null,
+      "level": "基础",
+      "learning_scope": "初中",
+      "answer_evidence": {
+        "kind": "teacher",
+        "claim_source": "执行方明确命题",
+        "reference_only": true,
+        "reason": "概念、操作或无法建立完整定量证据，教师确认条件与结论。"
+      },
+      "review": {
+        "confidence": "medium",
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": false,
+          "no_answer_leak_in_options": true
+        },
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。",
+        "material": {
+          "anchors": [
+            {
+              "kind": "概念或操作",
+              "name": "功率",
+              "claim": "把功率和总功混为一谈，只比较做功总量。",
+              "correction_basis": "功率描述做功快慢；相同的功用时不同，功率就不同。计算前应写出功、时间和功率各自的物理意义。",
+              "note": "概念锚点及命题真假待教师确认；未套用任意第一条公式",
+              "display": "把功率和总功混为一谈，只比较做功总量。"
+            }
+          ],
+          "source": {
+            "nature": "原创概念/操作命题；无真实测量记录",
+            "source_error_index": 1
+          },
+          "predicted_errors": [
+            {
+              "option": "B",
+              "text": "该说法成立。",
+              "reason": "功率描述做功快慢；相同的功用时不同，功率就不同。计算前应写出功、时间和功率各自的物理意义。",
+              "expression": null,
+              "status": "误答原因预测，待教师确认；未采集学生作答证据"
+            }
+          ],
+          "difficulty_note": "建议难度沿用本题level（源卡难度）；尚非题目难度实测，待教师调整",
+          "estimated_seconds": [
+            60,
+            120
+          ],
+          "time_basis": "未做学生计时；按现有难度给出备课估计区间，待教师确认",
+          "machine_checks": [
+            {
+              "name": "题目ID关联源知识点",
+              "passed": true
+            },
+            {
+              "name": "选项标签唯一且参考标签存在",
+              "passed": true
+            },
+            {
+              "name": "选项文本互异",
+              "passed": true
+            }
+          ],
+          "machine_boundary": "只列本次逐题实际执行项目；不把关联知识卡的方向、扫描或一致性检查算作本题已验。概念题未验命题真假。",
+          "human_review_items": [
+            "题干条件是否充分、清楚且符合学段",
+            "参考结论在指定条件下是否唯一",
+            "干扰项是否合理、对应真实认知问题且无答案暗示",
+            "公式或概念锚点是否准确",
+            "建议难度及用时是否适合教学",
+            "语言、装置与安全操作是否恰当"
+          ],
+          "reference_answer_note": "现有参考答案保持；即使本地可以判选项，也仍须教师审核教学可用性"
+        }
+      }
+    },
+    {
+      "id": "diagnostic-machine-05-3",
+      "point_id": "machine-05",
+      "point_title": "功率",
+      "chapter": "简单机械和功",
+      "stem": "关于“功率”，判断这一说法是否成立，并说明依据：\n做功要求力对物体产生沿力方向的位移。",
+      "options": [
+        {
+          "label": "A",
+          "text": "该说法不成立。"
+        },
+        {
+          "label": "B",
+          "text": "该说法成立。"
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "做功要求力对物体产生沿力方向的位移；只有力却没有相应位移，或物体运动方向与力垂直，都不能据此认为该力做了功。\n知识点条件：比较机器做功快慢时要比较功率，而不是只看总功。计算时功用 J、时间用 s，功率单位为 W；大型设备也常用 kW。功率是单位时间完成的功，数值并不等于总功；功率换算时 1 kW=1000 W，不能漏写时间单位。\n推导依据：确定研究的做功过程及对应时间间隔 t。；用功除以完成该功所用的时间，得到平均功率 P=W/t。；把功统一为 J、时间统一为 s，功率结果即为 W。\n卡片公式各自的适用条件（不是本题共同前提）：\n由功和时间求功率：W 是同一时间段内完成的功，t 大于零；功率单位为 W。",
+      "error_type": "概念混淆",
+      "judging": "teacher",
+      "source_error_index": 2,
+      "source_caught_by": "人工审核",
+      "wrong_expr": null,
+      "trap_test": null,
+      "level": "基础",
+      "learning_scope": "初中",
+      "answer_evidence": {
+        "kind": "teacher",
+        "claim_source": "why",
+        "reference_only": true,
+        "reason": "概念、操作或无法建立完整定量证据，教师确认条件与结论。"
+      },
+      "review": {
+        "confidence": "medium",
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": false,
+          "no_answer_leak_in_options": true
+        },
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。",
+        "material": {
+          "anchors": [
+            {
+              "kind": "概念或操作",
+              "name": "功率",
+              "claim": "物体受力但没有沿力方向移动，仍认为该力做了功。",
+              "correction_basis": "做功要求力对物体产生沿力方向的位移；只有力却没有相应位移，或物体运动方向与力垂直，都不能据此认为该力做了功。",
+              "note": "概念锚点及命题真假待教师确认；未套用任意第一条公式",
+              "display": "物体受力但没有沿力方向移动，仍认为该力做了功。"
+            }
+          ],
+          "source": {
+            "nature": "原创概念/操作命题；无真实测量记录",
+            "source_error_index": 2
+          },
+          "predicted_errors": [
+            {
+              "option": "A",
+              "text": "该说法不成立。",
+              "reason": "做功要求力对物体产生沿力方向的位移；只有力却没有相应位移，或物体运动方向与力垂直，都不能据此认为该力做了功。",
+              "expression": null,
+              "status": "误答原因预测，待教师确认；未采集学生作答证据"
+            }
+          ],
+          "difficulty_note": "建议难度沿用本题level（源卡难度）；尚非题目难度实测，待教师调整",
+          "estimated_seconds": [
+            60,
+            120
+          ],
+          "time_basis": "未做学生计时；按现有难度给出备课估计区间，待教师确认",
+          "machine_checks": [
+            {
+              "name": "题目ID关联源知识点",
+              "passed": true
+            },
+            {
+              "name": "选项标签唯一且参考标签存在",
+              "passed": true
+            },
+            {
+              "name": "选项文本互异",
+              "passed": true
+            }
+          ],
+          "machine_boundary": "只列本次逐题实际执行项目；不把关联知识卡的方向、扫描或一致性检查算作本题已验。概念题未验命题真假。",
+          "human_review_items": [
+            "题干条件是否充分、清楚且符合学段",
+            "参考结论在指定条件下是否唯一",
+            "干扰项是否合理、对应真实认知问题且无答案暗示",
+            "公式或概念锚点是否准确",
+            "建议难度及用时是否适合教学",
+            "语言、装置与安全操作是否恰当"
+          ],
+          "reference_answer_note": "现有参考答案保持；即使本地可以判选项，也仍须教师审核教学可用性"
+        }
+      }
+    },
+    {
+      "id": "diagnostic-machine-03-1",
+      "point_id": "machine-03",
+      "point_title": "机械效率",
+      "chapter": "简单机械和功",
+      "stem": "在“机械效率”的模型下，W<sub>有用</sub>（完成任务的有用功）=80 J；W<sub>入</sub>（输入机械的总功）=100 J。条件：有用功不大于总功；机械效率用小数表示时乘 100% 可换为百分数。。求机械效率，以小数表示（η）。这些数值是设计示例。",
+      "options": [
+        {
+          "label": "A",
+          "text": "1.25 1"
+        },
+        {
+          "label": "B",
+          "text": "0.8 1"
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "使用有用功与总功求机械效率：W<sub>有用</sub>/W<sub>入</sub>，代入得0.8 1。另一结果来自W<sub>入</sub>/W<sub>有用</sub>，算得1.25 1。\n效率应为有用功占输入总功的比例；提升重物情境中正确值 0.8，反过来会得到 1.25。\n知识点条件：使用滑轮或斜面时，先判断对目标有帮助的功是有用功，其余输入功构成总功。效率提高表示损失比例降低，并不意味着输入功一定减少或机械一定省力。计算前要让有用功和总功采用相同单位；效率不能写成超过 100% 的数值。\n推导依据：分清有用功和输入的总功。；用有用功除以总功得到效率小数。；将小数乘 100% 可换为百分数。；实际摩擦和其他损耗使有用功小于输入总功。\n卡片公式各自的适用条件（不是本题共同前提）：\n有用功与总功求机械效率：有用功不大于总功；机械效率用小数表示时乘 100% 可换为百分数。\n由效率和总功求有用功：η 用 0 到 1 之间的小数表示。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 0,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "η = W<sub>入</sub>/W<sub>有用</sub>",
+      "trap_test": {
+        "scenario": "提升重物",
+        "expr": "W_in/W_use",
+        "ref": 0.8
+      },
+      "level": "基础",
+      "learning_scope": "初中",
+      "answer_evidence": {
+        "kind": "numeric",
+        "scenario": "提升重物",
+        "parameters": {
+          "W_use": 80,
+          "W_in": 100,
+          "eta": 0.8
+        },
+        "target": "eta",
+        "unit": "1",
+        "reference": 0.8,
+        "correct_proof": {
+          "expression": "W_use/W_in",
+          "formula": "有用功与总功求机械效率",
+          "value": 0.8,
+          "when": "有用功不大于总功；机械效率用小数表示时乘 100% 可换为百分数。"
+        },
+        "distractor_expression": "W_in/W_use",
+        "distractor_value": 1.25,
+        "dimension_matches": true,
+        "independent_evaluation": true
+      },
+      "review": {
+        "confidence": "medium",
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": true,
+          "no_answer_leak_in_options": true
+        },
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。",
+        "material": {
+          "anchors": [
+            {
+              "kind": "公式",
+              "name": "有用功与总功求机械效率",
+              "expression": "W_use/W_in",
+              "when": "有用功不大于总功；机械效率用小数表示时乘 100% 可换为百分数。",
+              "display": "W<sub>有用</sub>/W<sub>入</sub>"
+            }
+          ],
+          "source": {
+            "nature": "原创设计示例，非教材实测或真实实验记录",
+            "scenario": "提升重物",
+            "parameters": {
+              "W_use": 80,
+              "W_in": 100,
+              "eta": 0.8
+            },
+            "data": [
+              "完成任务的有用功：80 J",
+              "输入机械的总功：100 J",
+              "机械效率，以小数表示：0.8 1"
+            ]
+          },
+          "predicted_errors": [
+            {
+              "option": "A",
+              "text": "1.25 1",
+              "reason": "效率应为有用功占输入总功的比例；提升重物情境中正确值 0.8，反过来会得到 1.25。",
+              "expression": "W_in/W_use",
+              "status": "误答原因预测，待教师确认；未采集学生作答证据"
+            }
+          ],
+          "difficulty_note": "建议难度沿用本题level（源卡难度）；尚非题目难度实测，待教师调整",
+          "estimated_seconds": [
+            60,
+            120
+          ],
+          "time_basis": "未做学生计时；按现有难度给出备课估计区间，待教师确认",
+          "machine_checks": [
+            {
+              "name": "题目ID关联源知识点",
+              "passed": true
+            },
+            {
+              "name": "选项标签唯一且参考标签存在",
+              "passed": true
+            },
+            {
+              "name": "选项文本互异",
+              "passed": true
+            },
+            {
+              "name": "正确路径独立数值复算",
+              "passed": true
+            },
+            {
+              "name": "带量纲求值与独立求值一致",
+              "passed": true
+            },
+            {
+              "name": "干扰路径复算且与正确路径分离",
+              "passed": true
+            }
+          ],
+          "machine_boundary": "只列本次逐题实际执行项目；不把关联知识卡的方向、扫描或一致性检查算作本题已验。概念题未验命题真假。",
+          "human_review_items": [
+            "题干条件是否充分、清楚且符合学段",
+            "参考结论在指定条件下是否唯一",
+            "干扰项是否合理、对应真实认知问题且无答案暗示",
+            "公式或概念锚点是否准确",
+            "建议难度及用时是否适合教学",
+            "语言、装置与安全操作是否恰当"
+          ],
+          "reference_answer_note": "现有参考答案保持；即使本地可以判选项，也仍须教师审核教学可用性"
+        }
+      }
+    },
+    {
+      "id": "diagnostic-machine-03-2",
+      "point_id": "machine-03",
+      "point_title": "机械效率",
+      "chapter": "简单机械和功",
+      "stem": "关于“机械效率”，判断这一说法是否成立，并说明依据：\n机械效率与功率是同一个物理量。",
+      "options": [
+        {
+          "label": "A",
+          "text": "该说法成立。"
+        },
+        {
+          "label": "B",
+          "text": "该说法不成立。"
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "实际机械有能量损失，有用功不能超过输入总功；功率是功与时间之比，与效率概念不同。\n知识点条件：使用滑轮或斜面时，先判断对目标有帮助的功是有用功，其余输入功构成总功。效率提高表示损失比例降低，并不意味着输入功一定减少或机械一定省力。计算前要让有用功和总功采用相同单位；效率不能写成超过 100% 的数值。\n推导依据：分清有用功和输入的总功。；用有用功除以总功得到效率小数。；将小数乘 100% 可换为百分数。；实际摩擦和其他损耗使有用功小于输入总功。\n卡片公式各自的适用条件（不是本题共同前提）：\n有用功与总功求机械效率：有用功不大于总功；机械效率用小数表示时乘 100% 可换为百分数。\n由效率和总功求有用功：η 用 0 到 1 之间的小数表示。",
+      "error_type": "概念混淆",
+      "judging": "teacher",
+      "source_error_index": 1,
+      "source_caught_by": "人工审核",
+      "wrong_expr": null,
+      "trap_test": null,
+      "level": "基础",
+      "learning_scope": "初中",
+      "answer_evidence": {
+        "kind": "teacher",
+        "claim_source": "执行方明确命题",
+        "reference_only": true,
+        "reason": "概念、操作或无法建立完整定量证据，教师确认条件与结论。"
+      },
+      "review": {
+        "confidence": "medium",
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": false,
+          "no_answer_leak_in_options": true
+        },
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。",
+        "material": {
+          "anchors": [
+            {
+              "kind": "概念或操作",
+              "name": "机械效率",
+              "claim": "认为机械效率可以大于 100%，或把效率与功率混为一谈。",
+              "correction_basis": "实际机械有能量损失，有用功不能超过输入总功；功率是功与时间之比，与效率概念不同。",
+              "note": "概念锚点及命题真假待教师确认；未套用任意第一条公式",
+              "display": "认为机械效率可以大于 100%，或把效率与功率混为一谈。"
+            }
+          ],
+          "source": {
+            "nature": "原创概念/操作命题；无真实测量记录",
+            "source_error_index": 1
+          },
+          "predicted_errors": [
+            {
+              "option": "A",
+              "text": "该说法成立。",
+              "reason": "实际机械有能量损失，有用功不能超过输入总功；功率是功与时间之比，与效率概念不同。",
+              "expression": null,
+              "status": "误答原因预测，待教师确认；未采集学生作答证据"
+            }
+          ],
+          "difficulty_note": "建议难度沿用本题level（源卡难度）；尚非题目难度实测，待教师调整",
+          "estimated_seconds": [
+            60,
+            120
+          ],
+          "time_basis": "未做学生计时；按现有难度给出备课估计区间，待教师确认",
+          "machine_checks": [
+            {
+              "name": "题目ID关联源知识点",
+              "passed": true
+            },
+            {
+              "name": "选项标签唯一且参考标签存在",
+              "passed": true
+            },
+            {
+              "name": "选项文本互异",
+              "passed": true
+            }
+          ],
+          "machine_boundary": "只列本次逐题实际执行项目；不把关联知识卡的方向、扫描或一致性检查算作本题已验。概念题未验命题真假。",
+          "human_review_items": [
+            "题干条件是否充分、清楚且符合学段",
+            "参考结论在指定条件下是否唯一",
+            "干扰项是否合理、对应真实认知问题且无答案暗示",
+            "公式或概念锚点是否准确",
+            "建议难度及用时是否适合教学",
+            "语言、装置与安全操作是否恰当"
+          ],
+          "reference_answer_note": "现有参考答案保持；即使本地可以判选项，也仍须教师审核教学可用性"
+        }
+      }
+    }
+  ],
+  "skipped": [],
+  "source_records": {
+    "diagnostic-machine-01-1": {
+      "point": {
+        "id": "machine-01",
+        "title": "杠杆",
+        "level": "基础",
+        "definition": "杠杆是在力的作用下绕固定点转动的硬棒。杠杆平衡时，动力与动力臂的乘积等于阻力与阻力臂的乘积；两种力臂均为支点到力的作用线的垂直距离。",
+        "meaning": "杠杆平衡条件可用于分析撬棒、剪刀和天平。先找支点，再确定力的作用线并作垂线段得到力臂；力臂不是支点到作用点的任意距离。改变动力臂或阻力臂会改变平衡所需的力，但不能凭杠杆长短直接判断省力。",
+        "symbols": {
+          "F1": {
+            "desc": "动力大小",
+            "unit": "N"
+          },
+          "l1": {
+            "desc": "动力臂长度",
+            "unit": "m"
+          },
+          "F2": {
+            "desc": "阻力大小",
+            "unit": "N"
+          },
+          "l2": {
+            "desc": "阻力臂长度",
+            "unit": "m"
+          }
+        },
+        "scenarios": {
+          "剪刀杠杆": {
+            "F1": 20,
+            "l1": 0.3,
+            "F2": 30,
+            "l2": 0.2
+          },
+          "撬棒杠杆": {
+            "F1": 40,
+            "l1": 0.2,
+            "F2": 10,
+            "l2": 0.8
+          }
+        },
+        "formulas": [
+          {
+            "name": "杠杆平衡条件",
+            "expr": "F1 = F2*l2/l1",
+            "when": "杠杆静止平衡，l1、l2 是到支点的垂直力臂。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "剪刀杠杆",
+                "expr": "F2*l2/l1",
+                "ref": 20,
+                "note": "30 N×0.2 m÷0.3 m=20 N。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "撬棒杠杆",
+                "expr": "F2*l2/l1",
+                "ref": 40,
+                "note": "10 N×0.8 m÷0.2 m=40 N。"
+              },
+              {
+                "type": "direction",
+                "scenario": "剪刀杠杆",
+                "var": "l1",
+                "lo": 0.05,
+                "hi": 1,
+                "expr": "F2*l2/l1",
+                "expect": "down",
+                "note": "阻力与阻力臂固定时，动力臂越长，平衡所需动力越小。"
+              },
+              {
+                "type": "scan",
+                "scenario": "剪刀杠杆",
+                "var": "l1",
+                "lo": 0.001,
+                "hi": 2,
+                "note": "扫描正动力臂长度，力矩计算稳定。"
+              },
+              {
+                "type": "consistency",
+                "scenario": "剪刀杠杆",
+                "with": "machine-01|杠杆平衡条件",
+                "with_expr": "F1",
+                "target": "动力大小",
+                "note": "直接求本公式输出，与情境中另列的F1设计基准核对；数据是设计示例，不是实测。用于核对定义、反算或边界值，不宣称不同物理原理互证。",
+                "verification_kind": "独立设计情境数据核对"
+              }
+            ]
+          },
+          {
+            "name": "由动力和力臂求平衡阻力",
+            "expr": "F2 = F1*l1/l2",
+            "when": "已知动力、动力臂和非零阻力臂，杠杆处于平衡。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "剪刀杠杆",
+                "expr": "F1*l1/l2",
+                "ref": 30,
+                "note": "20×0.3÷0.2=30 N。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "撬棒杠杆",
+                "expr": "F1*l1/l2",
+                "ref": 10,
+                "note": "40×0.2÷0.8=10 N。"
+              },
+              {
+                "type": "scan",
+                "scenario": "剪刀杠杆",
+                "var": "l2",
+                "lo": 0.01,
+                "hi": 2,
+                "note": "扫描非零阻力臂，反算阻力不发生除零。"
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "从支点到动力作用线作垂线，得到动力臂 l1。",
+          "从支点到阻力作用线作垂线，得到阻力臂 l2。",
+          "杠杆静止平衡时，两侧力与各自力臂的乘积相等。",
+          "根据已知的三个量，可解出第四个量。"
+        ],
+        "errors": [
+          {
+            "wrong": "把杠杆两端到支点的任意距离当成力臂。",
+            "why": "力臂是支点到力的作用线的垂直距离；不一定等于杠杆上沿的长度。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "把杠杆平衡条件写成动力与阻力直接相等。",
+            "wrong_expr": "F1 = F2",
+            "why": "剪刀情境阻力30 N、阻力臂0.2 m、动力臂0.3 m，平衡动力20 N；直接等同会误得30 N。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "剪刀杠杆",
+              "expr": "F2",
+              "ref": 20
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "撬棒阻力为 200 N，阻力臂为 0.1 m，动力臂为 1 m，求杠杆平衡所需动力。",
+          "solution": [
+            "F1=F2*l2/l1。",
+            "F1=200×0.1÷1=20 N。"
+          ],
+          "answer": "动力为 20 N。"
+        },
+        "prereq": [
+          "force-01"
+        ],
+        "next": [
+          "machine-02"
+        ],
+        "tags": [
+          "杠杆",
+          "支点",
+          "力臂",
+          "杠杆平衡条件"
+        ],
+        "core": [
+          {
+            "title": "杠杆分类与应用",
+            "text": "动力臂大于阻力臂的省力杠杆一般费距离；动力臂小于阻力臂的费力杠杆一般省距离；等臂杠杆不省力也不费力。撬棒、剪刀、筷子等须根据实际支点与力的作用线判断，不能按物品名称固定分类。用力方向改变会改变力臂，不只看杠杆几何长度。"
+          },
+          {
+            "title": "跨学科实践（原创任务）",
+            "text": "设计简易夹具：标出支点、动力作用线、阻力作用线及力臂，在同一负载下比较不同握持位置的力和手移动距离。结合结构设计解释省力与费距离，不将任意一把剪刀永久归入某类杠杆。"
+          },
+          {
+            "title": "本章素养回顾（原创任务）",
+            "text": "选择本章一个现象，写出结论、成立条件和证据；用另一条本章规律复核解释是否矛盾。指出一次测量或模型的局限，并说明还需什么证据；数值通过不替代概念辨析。"
+          }
+        ],
+        "experiments": [
+          {
+            "title": "探究杠杆的平衡条件",
+            "purpose": "用多组数据检验两侧力与力臂乘积关系。",
+            "apparatus": "杠杆、支架、钩码、刻度尺。",
+            "variables": "改动力和力臂，保持支点，观察静止平衡。",
+            "steps": [
+              "空杆调水平平衡以减少自重力矩影响。",
+              "两侧挂钩码，改位置使水平静止，测力和垂直力臂。",
+              "至少取多组不同组合，分别算两侧乘积并比较。"
+            ],
+            "data": "设计示例（非实测）：2 N×0.15 m=3 N×0.10 m=0.30 N·m；1 N×0.20 m=2 N×0.10 m。",
+            "conclusion": "水平、力垂直杆时可由刻度读力臂；一般情况须量作用线到支点垂距。",
+            "limits": "支点摩擦、自重未平衡、把杆长当力臂影响结论；不能只取一组等臂数据证明所有杠杆。",
+            "kind": "学生必做"
+          }
+        ],
+        "learning_scope": "初中"
+      },
+      "error_index": 0,
+      "chapter": "简单机械和功"
+    },
+    "diagnostic-machine-01-2": {
+      "point": {
+        "id": "machine-01",
+        "title": "杠杆",
+        "level": "基础",
+        "definition": "杠杆是在力的作用下绕固定点转动的硬棒。杠杆平衡时，动力与动力臂的乘积等于阻力与阻力臂的乘积；两种力臂均为支点到力的作用线的垂直距离。",
+        "meaning": "杠杆平衡条件可用于分析撬棒、剪刀和天平。先找支点，再确定力的作用线并作垂线段得到力臂；力臂不是支点到作用点的任意距离。改变动力臂或阻力臂会改变平衡所需的力，但不能凭杠杆长短直接判断省力。",
+        "symbols": {
+          "F1": {
+            "desc": "动力大小",
+            "unit": "N"
+          },
+          "l1": {
+            "desc": "动力臂长度",
+            "unit": "m"
+          },
+          "F2": {
+            "desc": "阻力大小",
+            "unit": "N"
+          },
+          "l2": {
+            "desc": "阻力臂长度",
+            "unit": "m"
+          }
+        },
+        "scenarios": {
+          "剪刀杠杆": {
+            "F1": 20,
+            "l1": 0.3,
+            "F2": 30,
+            "l2": 0.2
+          },
+          "撬棒杠杆": {
+            "F1": 40,
+            "l1": 0.2,
+            "F2": 10,
+            "l2": 0.8
+          }
+        },
+        "formulas": [
+          {
+            "name": "杠杆平衡条件",
+            "expr": "F1 = F2*l2/l1",
+            "when": "杠杆静止平衡，l1、l2 是到支点的垂直力臂。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "剪刀杠杆",
+                "expr": "F2*l2/l1",
+                "ref": 20,
+                "note": "30 N×0.2 m÷0.3 m=20 N。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "撬棒杠杆",
+                "expr": "F2*l2/l1",
+                "ref": 40,
+                "note": "10 N×0.8 m÷0.2 m=40 N。"
+              },
+              {
+                "type": "direction",
+                "scenario": "剪刀杠杆",
+                "var": "l1",
+                "lo": 0.05,
+                "hi": 1,
+                "expr": "F2*l2/l1",
+                "expect": "down",
+                "note": "阻力与阻力臂固定时，动力臂越长，平衡所需动力越小。"
+              },
+              {
+                "type": "scan",
+                "scenario": "剪刀杠杆",
+                "var": "l1",
+                "lo": 0.001,
+                "hi": 2,
+                "note": "扫描正动力臂长度，力矩计算稳定。"
+              },
+              {
+                "type": "consistency",
+                "scenario": "剪刀杠杆",
+                "with": "machine-01|杠杆平衡条件",
+                "with_expr": "F1",
+                "target": "动力大小",
+                "note": "直接求本公式输出，与情境中另列的F1设计基准核对；数据是设计示例，不是实测。用于核对定义、反算或边界值，不宣称不同物理原理互证。",
+                "verification_kind": "独立设计情境数据核对"
+              }
+            ]
+          },
+          {
+            "name": "由动力和力臂求平衡阻力",
+            "expr": "F2 = F1*l1/l2",
+            "when": "已知动力、动力臂和非零阻力臂，杠杆处于平衡。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "剪刀杠杆",
+                "expr": "F1*l1/l2",
+                "ref": 30,
+                "note": "20×0.3÷0.2=30 N。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "撬棒杠杆",
+                "expr": "F1*l1/l2",
+                "ref": 10,
+                "note": "40×0.2÷0.8=10 N。"
+              },
+              {
+                "type": "scan",
+                "scenario": "剪刀杠杆",
+                "var": "l2",
+                "lo": 0.01,
+                "hi": 2,
+                "note": "扫描非零阻力臂，反算阻力不发生除零。"
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "从支点到动力作用线作垂线，得到动力臂 l1。",
+          "从支点到阻力作用线作垂线，得到阻力臂 l2。",
+          "杠杆静止平衡时，两侧力与各自力臂的乘积相等。",
+          "根据已知的三个量，可解出第四个量。"
+        ],
+        "errors": [
+          {
+            "wrong": "把杠杆两端到支点的任意距离当成力臂。",
+            "why": "力臂是支点到力的作用线的垂直距离；不一定等于杠杆上沿的长度。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "把杠杆平衡条件写成动力与阻力直接相等。",
+            "wrong_expr": "F1 = F2",
+            "why": "剪刀情境阻力30 N、阻力臂0.2 m、动力臂0.3 m，平衡动力20 N；直接等同会误得30 N。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "剪刀杠杆",
+              "expr": "F2",
+              "ref": 20
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "撬棒阻力为 200 N，阻力臂为 0.1 m，动力臂为 1 m，求杠杆平衡所需动力。",
+          "solution": [
+            "F1=F2*l2/l1。",
+            "F1=200×0.1÷1=20 N。"
+          ],
+          "answer": "动力为 20 N。"
+        },
+        "prereq": [
+          "force-01"
+        ],
+        "next": [
+          "machine-02"
+        ],
+        "tags": [
+          "杠杆",
+          "支点",
+          "力臂",
+          "杠杆平衡条件"
+        ],
+        "core": [
+          {
+            "title": "杠杆分类与应用",
+            "text": "动力臂大于阻力臂的省力杠杆一般费距离；动力臂小于阻力臂的费力杠杆一般省距离；等臂杠杆不省力也不费力。撬棒、剪刀、筷子等须根据实际支点与力的作用线判断，不能按物品名称固定分类。用力方向改变会改变力臂，不只看杠杆几何长度。"
+          },
+          {
+            "title": "跨学科实践（原创任务）",
+            "text": "设计简易夹具：标出支点、动力作用线、阻力作用线及力臂，在同一负载下比较不同握持位置的力和手移动距离。结合结构设计解释省力与费距离，不将任意一把剪刀永久归入某类杠杆。"
+          },
+          {
+            "title": "本章素养回顾（原创任务）",
+            "text": "选择本章一个现象，写出结论、成立条件和证据；用另一条本章规律复核解释是否矛盾。指出一次测量或模型的局限，并说明还需什么证据；数值通过不替代概念辨析。"
+          }
+        ],
+        "experiments": [
+          {
+            "title": "探究杠杆的平衡条件",
+            "purpose": "用多组数据检验两侧力与力臂乘积关系。",
+            "apparatus": "杠杆、支架、钩码、刻度尺。",
+            "variables": "改动力和力臂，保持支点，观察静止平衡。",
+            "steps": [
+              "空杆调水平平衡以减少自重力矩影响。",
+              "两侧挂钩码，改位置使水平静止，测力和垂直力臂。",
+              "至少取多组不同组合，分别算两侧乘积并比较。"
+            ],
+            "data": "设计示例（非实测）：2 N×0.15 m=3 N×0.10 m=0.30 N·m；1 N×0.20 m=2 N×0.10 m。",
+            "conclusion": "水平、力垂直杆时可由刻度读力臂；一般情况须量作用线到支点垂距。",
+            "limits": "支点摩擦、自重未平衡、把杆长当力臂影响结论；不能只取一组等臂数据证明所有杠杆。",
+            "kind": "学生必做"
+          }
+        ],
+        "learning_scope": "初中"
+      },
+      "error_index": 1,
+      "chapter": "简单机械和功"
+    },
+    "diagnostic-machine-04-1": {
+      "point": {
+        "id": "machine-04",
+        "title": "滑轮",
+        "level": "基础",
+        "definition": "定滑轮主要改变用力方向，理想情况下不省力；动滑轮可省力但需要拉动更长距离。由承重绳段数决定理想省力倍数，实际机械还要考虑摩擦和滑轮自重。",
+        "meaning": "分析滑轮时先数承担动滑轮和重物的绳段，再判断每段绳的拉力与物体重力的关系。理想动滑轮省一半力时，拉绳距离约为重物上升高度的两倍，输入功与输出功相等；实际装置因摩擦等损耗，总输入功大于有用功。",
+        "symbols": {
+          "F_pull": {
+            "desc": "拉绳所需的拉力",
+            "unit": "N"
+          },
+          "G_load": {
+            "desc": "被提升物体所受重力",
+            "unit": "N"
+          },
+          "s_pull": {
+            "desc": "自由端绳子移动的距离",
+            "unit": "m"
+          },
+          "h_load": {
+            "desc": "重物上升的高度",
+            "unit": "m"
+          },
+          "W_in": {
+            "desc": "输入的功",
+            "unit": "J"
+          },
+          "W_out": {
+            "desc": "提升重物所做的有用功",
+            "unit": "J"
+          }
+        },
+        "scenarios": {
+          "理想动滑轮提升100牛": {
+            "F_pull": 50,
+            "G_load": 100,
+            "s_pull": 2,
+            "h_load": 1,
+            "W_in": 100,
+            "W_out": 100
+          },
+          "理想动滑轮提升200牛": {
+            "F_pull": 100,
+            "G_load": 200,
+            "s_pull": 4,
+            "h_load": 2,
+            "W_in": 400,
+            "W_out": 400
+          }
+        },
+        "derivation": [
+          "先判断使用定滑轮、动滑轮还是滑轮组，画出承重绳段。",
+          "理想动滑轮中两段绳平均承担重物重力，所以拉力约为重力的一半。",
+          "省力伴随距离增加；比较拉力乘绳端路程与重力乘重物上升高度，理想情况下两者相等。"
+        ],
+        "errors": [
+          {
+            "wrong": "使用理想动滑轮时只考虑省力，忘记拉绳距离也增加。",
+            "wrong_expr": "s_pull = h_load",
+            "why": "单动滑轮由两段绳承担重物，重物上升 1 m 时拉绳端约需移动 2 m。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "理想动滑轮提升100牛",
+              "expr": "h_load",
+              "ref": 2
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "认为实际滑轮组一定能省功。",
+            "why": "实际装置有摩擦和自身质量，输入功通常大于有用功；机械可以省力但不能省功。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "用理想动滑轮提升 200 N 重物 0.5 m，求拉力和拉绳距离。",
+          "solution": [
+            "理想单动滑轮由两段绳承重，拉力约为 200÷2=100 N。",
+            "拉绳距离约为 2×0.5=1.0 m。",
+            "输入功为 100×1.0=100 J，等于重物增加的有用功 200×0.5=100 J。"
+          ],
+          "answer": "拉力约 100 N，拉绳距离约 1.0 m。"
+        },
+        "prereq": [
+          "machine-01"
+        ],
+        "next": [
+          "machine-02"
+        ],
+        "tags": [
+          "滑轮",
+          "定滑轮",
+          "动滑轮",
+          "滑轮组",
+          "机械效率"
+        ],
+        "formulas": [
+          {
+            "name": "理想动滑轮的拉力关系",
+            "expr": "F_pull = G_load/2",
+            "when": "单个理想动滑轮匀速提升重物，忽略滑轮自重、绳重和摩擦。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "理想动滑轮提升100牛",
+                "expr": "G_load/2",
+                "ref": 50,
+                "note": "两段绳承担 100 N 重物，每段拉力为 50 N。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "理想动滑轮提升200牛",
+                "expr": "G_load/2",
+                "ref": 100,
+                "note": "重物重力加倍，理想拉力也加倍。"
+              },
+              {
+                "type": "direction",
+                "scenario": "理想动滑轮提升100牛",
+                "var": "G_load",
+                "lo": 1,
+                "hi": 1000,
+                "expr": "G_load/2",
+                "expect": "up",
+                "note": "重物重力越大，理想拉力越大。"
+              },
+              {
+                "type": "scan",
+                "scenario": "理想动滑轮提升100牛",
+                "var": "G_load",
+                "lo": 0,
+                "hi": 2000,
+                "note": "扫描非负重力，理想拉力计算有限。"
+              },
+              {
+                "type": "consistency",
+                "scenario": "理想动滑轮提升100牛",
+                "with": "machine-04|理想动滑轮的拉力关系",
+                "with_expr": "G_load*h_load/s_pull",
+                "target": "拉绳所需的拉力",
+                "note": "本公式直接求F_pull；参考端显式关系为G_load*h_load/s_pull。两端使用同一情境和阶段，只核对该关系；with字段仅定位来源，不代表调用另一条被覆盖的公式。",
+                "verification_kind": "独立关系核对"
+              }
+            ]
+          },
+          {
+            "name": "理想动滑轮的距离关系",
+            "expr": "s_pull = 2*h_load",
+            "when": "理想单动滑轮由两段绳承担重物，忽略绳伸长和摩擦。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "理想动滑轮提升100牛",
+                "expr": "2*h_load",
+                "ref": 2,
+                "note": "重物上升 1 m，拉绳端移动 2 m。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "理想动滑轮提升200牛",
+                "expr": "2*h_load",
+                "ref": 4,
+                "note": "重物上升 2 m，拉绳端移动 4 m。"
+              },
+              {
+                "type": "direction",
+                "scenario": "理想动滑轮提升100牛",
+                "var": "h_load",
+                "lo": 0.01,
+                "hi": 10,
+                "expr": "2*h_load",
+                "expect": "up",
+                "note": "重物上升高度增加时，拉绳端路程同步增加。"
+              },
+              {
+                "type": "scan",
+                "scenario": "理想动滑轮提升100牛",
+                "var": "h_load",
+                "lo": 0,
+                "hi": 100,
+                "note": "扫描非负上升高度，拉绳距离保持有限。"
+              },
+              {
+                "type": "consistency",
+                "scenario": "理想动滑轮提升100牛",
+                "with": "machine-04|理想动滑轮的距离关系",
+                "with_expr": "G_load*h_load/F_pull",
+                "target": "自由端绳子移动的距离",
+                "note": "本公式直接求s_pull；参考端显式关系为G_load*h_load/F_pull。两端使用同一情境和阶段，只核对该关系；with字段仅定位来源，不代表调用另一条被覆盖的公式。",
+                "verification_kind": "独立关系核对"
+              }
+            ]
+          }
+        ],
+        "core": [
+          {
+            "title": "定滑轮、动滑轮和滑轮组",
+            "text": "理想定滑轮改变用力方向，不省力；理想动滑轮两段竖直绳承担负载，可省一半力而绳端移动两倍距离。滑轮组先数连接动滑轮组件的承重绳段，不能数画面所有绳。考虑动滑轮重力、摩擦及绳倾斜时应调整模型；机械可以省力，但理想情况下也不省功。"
+          }
+        ],
+        "learning_scope": "初中"
+      },
+      "error_index": 0,
+      "chapter": "简单机械和功"
+    },
+    "diagnostic-machine-04-2": {
+      "point": {
+        "id": "machine-04",
+        "title": "滑轮",
+        "level": "基础",
+        "definition": "定滑轮主要改变用力方向，理想情况下不省力；动滑轮可省力但需要拉动更长距离。由承重绳段数决定理想省力倍数，实际机械还要考虑摩擦和滑轮自重。",
+        "meaning": "分析滑轮时先数承担动滑轮和重物的绳段，再判断每段绳的拉力与物体重力的关系。理想动滑轮省一半力时，拉绳距离约为重物上升高度的两倍，输入功与输出功相等；实际装置因摩擦等损耗，总输入功大于有用功。",
+        "symbols": {
+          "F_pull": {
+            "desc": "拉绳所需的拉力",
+            "unit": "N"
+          },
+          "G_load": {
+            "desc": "被提升物体所受重力",
+            "unit": "N"
+          },
+          "s_pull": {
+            "desc": "自由端绳子移动的距离",
+            "unit": "m"
+          },
+          "h_load": {
+            "desc": "重物上升的高度",
+            "unit": "m"
+          },
+          "W_in": {
+            "desc": "输入的功",
+            "unit": "J"
+          },
+          "W_out": {
+            "desc": "提升重物所做的有用功",
+            "unit": "J"
+          }
+        },
+        "scenarios": {
+          "理想动滑轮提升100牛": {
+            "F_pull": 50,
+            "G_load": 100,
+            "s_pull": 2,
+            "h_load": 1,
+            "W_in": 100,
+            "W_out": 100
+          },
+          "理想动滑轮提升200牛": {
+            "F_pull": 100,
+            "G_load": 200,
+            "s_pull": 4,
+            "h_load": 2,
+            "W_in": 400,
+            "W_out": 400
+          }
+        },
+        "derivation": [
+          "先判断使用定滑轮、动滑轮还是滑轮组，画出承重绳段。",
+          "理想动滑轮中两段绳平均承担重物重力，所以拉力约为重力的一半。",
+          "省力伴随距离增加；比较拉力乘绳端路程与重力乘重物上升高度，理想情况下两者相等。"
+        ],
+        "errors": [
+          {
+            "wrong": "使用理想动滑轮时只考虑省力，忘记拉绳距离也增加。",
+            "wrong_expr": "s_pull = h_load",
+            "why": "单动滑轮由两段绳承担重物，重物上升 1 m 时拉绳端约需移动 2 m。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "理想动滑轮提升100牛",
+              "expr": "h_load",
+              "ref": 2
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "认为实际滑轮组一定能省功。",
+            "why": "实际装置有摩擦和自身质量，输入功通常大于有用功；机械可以省力但不能省功。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "用理想动滑轮提升 200 N 重物 0.5 m，求拉力和拉绳距离。",
+          "solution": [
+            "理想单动滑轮由两段绳承重，拉力约为 200÷2=100 N。",
+            "拉绳距离约为 2×0.5=1.0 m。",
+            "输入功为 100×1.0=100 J，等于重物增加的有用功 200×0.5=100 J。"
+          ],
+          "answer": "拉力约 100 N，拉绳距离约 1.0 m。"
+        },
+        "prereq": [
+          "machine-01"
+        ],
+        "next": [
+          "machine-02"
+        ],
+        "tags": [
+          "滑轮",
+          "定滑轮",
+          "动滑轮",
+          "滑轮组",
+          "机械效率"
+        ],
+        "formulas": [
+          {
+            "name": "理想动滑轮的拉力关系",
+            "expr": "F_pull = G_load/2",
+            "when": "单个理想动滑轮匀速提升重物，忽略滑轮自重、绳重和摩擦。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "理想动滑轮提升100牛",
+                "expr": "G_load/2",
+                "ref": 50,
+                "note": "两段绳承担 100 N 重物，每段拉力为 50 N。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "理想动滑轮提升200牛",
+                "expr": "G_load/2",
+                "ref": 100,
+                "note": "重物重力加倍，理想拉力也加倍。"
+              },
+              {
+                "type": "direction",
+                "scenario": "理想动滑轮提升100牛",
+                "var": "G_load",
+                "lo": 1,
+                "hi": 1000,
+                "expr": "G_load/2",
+                "expect": "up",
+                "note": "重物重力越大，理想拉力越大。"
+              },
+              {
+                "type": "scan",
+                "scenario": "理想动滑轮提升100牛",
+                "var": "G_load",
+                "lo": 0,
+                "hi": 2000,
+                "note": "扫描非负重力，理想拉力计算有限。"
+              },
+              {
+                "type": "consistency",
+                "scenario": "理想动滑轮提升100牛",
+                "with": "machine-04|理想动滑轮的拉力关系",
+                "with_expr": "G_load*h_load/s_pull",
+                "target": "拉绳所需的拉力",
+                "note": "本公式直接求F_pull；参考端显式关系为G_load*h_load/s_pull。两端使用同一情境和阶段，只核对该关系；with字段仅定位来源，不代表调用另一条被覆盖的公式。",
+                "verification_kind": "独立关系核对"
+              }
+            ]
+          },
+          {
+            "name": "理想动滑轮的距离关系",
+            "expr": "s_pull = 2*h_load",
+            "when": "理想单动滑轮由两段绳承担重物，忽略绳伸长和摩擦。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "理想动滑轮提升100牛",
+                "expr": "2*h_load",
+                "ref": 2,
+                "note": "重物上升 1 m，拉绳端移动 2 m。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "理想动滑轮提升200牛",
+                "expr": "2*h_load",
+                "ref": 4,
+                "note": "重物上升 2 m，拉绳端移动 4 m。"
+              },
+              {
+                "type": "direction",
+                "scenario": "理想动滑轮提升100牛",
+                "var": "h_load",
+                "lo": 0.01,
+                "hi": 10,
+                "expr": "2*h_load",
+                "expect": "up",
+                "note": "重物上升高度增加时，拉绳端路程同步增加。"
+              },
+              {
+                "type": "scan",
+                "scenario": "理想动滑轮提升100牛",
+                "var": "h_load",
+                "lo": 0,
+                "hi": 100,
+                "note": "扫描非负上升高度，拉绳距离保持有限。"
+              },
+              {
+                "type": "consistency",
+                "scenario": "理想动滑轮提升100牛",
+                "with": "machine-04|理想动滑轮的距离关系",
+                "with_expr": "G_load*h_load/F_pull",
+                "target": "自由端绳子移动的距离",
+                "note": "本公式直接求s_pull；参考端显式关系为G_load*h_load/F_pull。两端使用同一情境和阶段，只核对该关系；with字段仅定位来源，不代表调用另一条被覆盖的公式。",
+                "verification_kind": "独立关系核对"
+              }
+            ]
+          }
+        ],
+        "core": [
+          {
+            "title": "定滑轮、动滑轮和滑轮组",
+            "text": "理想定滑轮改变用力方向，不省力；理想动滑轮两段竖直绳承担负载，可省一半力而绳端移动两倍距离。滑轮组先数连接动滑轮组件的承重绳段，不能数画面所有绳。考虑动滑轮重力、摩擦及绳倾斜时应调整模型；机械可以省力，但理想情况下也不省功。"
+          }
+        ],
+        "learning_scope": "初中"
+      },
+      "error_index": 1,
+      "chapter": "简单机械和功"
+    },
+    "diagnostic-machine-02-1": {
+      "point": {
+        "id": "machine-02",
+        "title": "功",
+        "level": "基础",
+        "definition": "功描述力对物体做功的过程。力和物体在力的方向上发生位移时，力对物体做功；在力与位移同方向的简单情形中，功等于力与沿力方向距离的乘积。",
+        "meaning": "计算功时必须同时有力和沿力方向的位移：物体虽移动但力没有沿位移方向的分量时，不能直接用 W=Fs。力用 N、距离用 m，功的单位是 J。",
+        "symbols": {
+          "F": {
+            "desc": "沿运动方向的作用力",
+            "unit": "N"
+          },
+          "s": {
+            "desc": "物体沿力方向通过的距离",
+            "unit": "m"
+          },
+          "W": {
+            "desc": "力所做的功",
+            "unit": "J"
+          },
+          "t": {
+            "desc": "做功所用时间",
+            "unit": "s"
+          },
+          "P": {
+            "desc": "功率",
+            "unit": "W"
+          }
+        },
+        "scenarios": {
+          "抬起物体": {
+            "F": 50,
+            "s": 4,
+            "W": 200,
+            "t": 10,
+            "P": 20
+          },
+          "拉动木箱": {
+            "F": 100,
+            "s": 2,
+            "W": 200,
+            "t": 5,
+            "P": 40
+          }
+        },
+        "formulas": [
+          {
+            "name": "力和沿力方向距离求功",
+            "expr": "W = F*s",
+            "when": "力与位移同方向，F 用 N、s 用 m。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "抬起物体",
+                "expr": "F*s",
+                "ref": 200,
+                "note": "50 N×4 m=200 J。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "拉动木箱",
+                "expr": "F*s",
+                "ref": 200,
+                "note": "100 N×2 m=200 J。"
+              },
+              {
+                "type": "direction",
+                "scenario": "抬起物体",
+                "var": "s",
+                "lo": 0,
+                "hi": 10,
+                "expr": "F*s",
+                "expect": "up",
+                "note": "力固定且同向时，移动距离越长，做功越多。"
+              },
+              {
+                "type": "scan",
+                "scenario": "抬起物体",
+                "var": "s",
+                "lo": 0,
+                "hi": 100,
+                "note": "扫描非负距离，做功计算保持稳定。"
+              },
+              {
+                "type": "consistency",
+                "scenario": "抬起物体",
+                "with": "machine-02|力和沿力方向距离求功",
+                "with_expr": "P*t",
+                "target": "力所做的功",
+                "note": "本公式直接求W；参考端显式关系为P*t。两端使用同一情境和阶段，只核对该关系；with字段仅定位来源，不代表调用另一条被覆盖的公式。",
+                "verification_kind": "独立关系核对"
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "确认作用力是否使物体沿力的方向移动。",
+          "若力和位移同向，用 W=F*s 求功。",
+          "记录完成这段功所用的时间。",
+          "用 P=W/t 比较做功快慢。"
+        ],
+        "errors": [
+          {
+            "wrong": "把功写成力除以移动距离。",
+            "wrong_expr": "W = F/s",
+            "why": "功等于力与沿力方向位移的乘积，不是除法；单位由 N×m 得到 J，位移方向与力垂直时该力不做功。",
+            "caught_by": "量纲一致性",
+            "trap_test": {
+              "scenario": "抬起物体",
+              "expr": "F/s",
+              "ref": 200
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "位移已换算为 m 后，又按 cm 单位额外缩小 100 倍。",
+            "wrong_expr": "W = F*s/100",
+            "why": "抬起物体的位移已按 4 m 代入，不能再除以 100；否则 200 J 会被算成 2 J。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "抬起物体",
+              "expr": "F*s/100",
+              "ref": 200
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "物体受力但没有沿力方向移动，仍认为该力做了功。",
+            "why": "做功要求力对物体产生沿力方向的位移；只有力却没有相应位移，或物体运动方向与力垂直，都不能据此认为该力做了功。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "用 100 N 的水平力拉木箱移动 2 m，历时 5 s，求功和功率。",
+          "solution": [
+            "W=Fs=100×2=200 J。",
+            "P=W/t=200/5=40 W。"
+          ],
+          "answer": "做功 200 J，功率 40 W。"
+        },
+        "prereq": [
+          "motion-01"
+        ],
+        "next": [
+          "machine-03"
+        ],
+        "tags": [
+          "功",
+          "力",
+          "位移",
+          "焦耳"
+        ],
+        "core": [
+          {
+            "title": "做功的两个条件",
+            "text": "既有力作用，又有沿该力方向的位移，才可判断该力做功。搬箱静止不做机械功；提箱水平匀速走，竖直提力不做功；放手后靠惯性滑行，已经撤去的手推力不继续做功。初中同向恒力情形用功等于力乘距离，不把位移任意方向混进去。"
+          }
+        ],
+        "learning_scope": "初中"
+      },
+      "error_index": 0,
+      "chapter": "简单机械和功"
+    },
+    "diagnostic-machine-02-2": {
+      "point": {
+        "id": "machine-02",
+        "title": "功",
+        "level": "基础",
+        "definition": "功描述力对物体做功的过程。力和物体在力的方向上发生位移时，力对物体做功；在力与位移同方向的简单情形中，功等于力与沿力方向距离的乘积。",
+        "meaning": "计算功时必须同时有力和沿力方向的位移：物体虽移动但力没有沿位移方向的分量时，不能直接用 W=Fs。力用 N、距离用 m，功的单位是 J。",
+        "symbols": {
+          "F": {
+            "desc": "沿运动方向的作用力",
+            "unit": "N"
+          },
+          "s": {
+            "desc": "物体沿力方向通过的距离",
+            "unit": "m"
+          },
+          "W": {
+            "desc": "力所做的功",
+            "unit": "J"
+          },
+          "t": {
+            "desc": "做功所用时间",
+            "unit": "s"
+          },
+          "P": {
+            "desc": "功率",
+            "unit": "W"
+          }
+        },
+        "scenarios": {
+          "抬起物体": {
+            "F": 50,
+            "s": 4,
+            "W": 200,
+            "t": 10,
+            "P": 20
+          },
+          "拉动木箱": {
+            "F": 100,
+            "s": 2,
+            "W": 200,
+            "t": 5,
+            "P": 40
+          }
+        },
+        "formulas": [
+          {
+            "name": "力和沿力方向距离求功",
+            "expr": "W = F*s",
+            "when": "力与位移同方向，F 用 N、s 用 m。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "抬起物体",
+                "expr": "F*s",
+                "ref": 200,
+                "note": "50 N×4 m=200 J。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "拉动木箱",
+                "expr": "F*s",
+                "ref": 200,
+                "note": "100 N×2 m=200 J。"
+              },
+              {
+                "type": "direction",
+                "scenario": "抬起物体",
+                "var": "s",
+                "lo": 0,
+                "hi": 10,
+                "expr": "F*s",
+                "expect": "up",
+                "note": "力固定且同向时，移动距离越长，做功越多。"
+              },
+              {
+                "type": "scan",
+                "scenario": "抬起物体",
+                "var": "s",
+                "lo": 0,
+                "hi": 100,
+                "note": "扫描非负距离，做功计算保持稳定。"
+              },
+              {
+                "type": "consistency",
+                "scenario": "抬起物体",
+                "with": "machine-02|力和沿力方向距离求功",
+                "with_expr": "P*t",
+                "target": "力所做的功",
+                "note": "本公式直接求W；参考端显式关系为P*t。两端使用同一情境和阶段，只核对该关系；with字段仅定位来源，不代表调用另一条被覆盖的公式。",
+                "verification_kind": "独立关系核对"
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "确认作用力是否使物体沿力的方向移动。",
+          "若力和位移同向，用 W=F*s 求功。",
+          "记录完成这段功所用的时间。",
+          "用 P=W/t 比较做功快慢。"
+        ],
+        "errors": [
+          {
+            "wrong": "把功写成力除以移动距离。",
+            "wrong_expr": "W = F/s",
+            "why": "功等于力与沿力方向位移的乘积，不是除法；单位由 N×m 得到 J，位移方向与力垂直时该力不做功。",
+            "caught_by": "量纲一致性",
+            "trap_test": {
+              "scenario": "抬起物体",
+              "expr": "F/s",
+              "ref": 200
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "位移已换算为 m 后，又按 cm 单位额外缩小 100 倍。",
+            "wrong_expr": "W = F*s/100",
+            "why": "抬起物体的位移已按 4 m 代入，不能再除以 100；否则 200 J 会被算成 2 J。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "抬起物体",
+              "expr": "F*s/100",
+              "ref": 200
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "物体受力但没有沿力方向移动，仍认为该力做了功。",
+            "why": "做功要求力对物体产生沿力方向的位移；只有力却没有相应位移，或物体运动方向与力垂直，都不能据此认为该力做了功。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "用 100 N 的水平力拉木箱移动 2 m，历时 5 s，求功和功率。",
+          "solution": [
+            "W=Fs=100×2=200 J。",
+            "P=W/t=200/5=40 W。"
+          ],
+          "answer": "做功 200 J，功率 40 W。"
+        },
+        "prereq": [
+          "motion-01"
+        ],
+        "next": [
+          "machine-03"
+        ],
+        "tags": [
+          "功",
+          "力",
+          "位移",
+          "焦耳"
+        ],
+        "core": [
+          {
+            "title": "做功的两个条件",
+            "text": "既有力作用，又有沿该力方向的位移，才可判断该力做功。搬箱静止不做机械功；提箱水平匀速走，竖直提力不做功；放手后靠惯性滑行，已经撤去的手推力不继续做功。初中同向恒力情形用功等于力乘距离，不把位移任意方向混进去。"
+          }
+        ],
+        "learning_scope": "初中"
+      },
+      "error_index": 1,
+      "chapter": "简单机械和功"
+    },
+    "diagnostic-machine-02-3": {
+      "point": {
+        "id": "machine-02",
+        "title": "功",
+        "level": "基础",
+        "definition": "功描述力对物体做功的过程。力和物体在力的方向上发生位移时，力对物体做功；在力与位移同方向的简单情形中，功等于力与沿力方向距离的乘积。",
+        "meaning": "计算功时必须同时有力和沿力方向的位移：物体虽移动但力没有沿位移方向的分量时，不能直接用 W=Fs。力用 N、距离用 m，功的单位是 J。",
+        "symbols": {
+          "F": {
+            "desc": "沿运动方向的作用力",
+            "unit": "N"
+          },
+          "s": {
+            "desc": "物体沿力方向通过的距离",
+            "unit": "m"
+          },
+          "W": {
+            "desc": "力所做的功",
+            "unit": "J"
+          },
+          "t": {
+            "desc": "做功所用时间",
+            "unit": "s"
+          },
+          "P": {
+            "desc": "功率",
+            "unit": "W"
+          }
+        },
+        "scenarios": {
+          "抬起物体": {
+            "F": 50,
+            "s": 4,
+            "W": 200,
+            "t": 10,
+            "P": 20
+          },
+          "拉动木箱": {
+            "F": 100,
+            "s": 2,
+            "W": 200,
+            "t": 5,
+            "P": 40
+          }
+        },
+        "formulas": [
+          {
+            "name": "力和沿力方向距离求功",
+            "expr": "W = F*s",
+            "when": "力与位移同方向，F 用 N、s 用 m。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "抬起物体",
+                "expr": "F*s",
+                "ref": 200,
+                "note": "50 N×4 m=200 J。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "拉动木箱",
+                "expr": "F*s",
+                "ref": 200,
+                "note": "100 N×2 m=200 J。"
+              },
+              {
+                "type": "direction",
+                "scenario": "抬起物体",
+                "var": "s",
+                "lo": 0,
+                "hi": 10,
+                "expr": "F*s",
+                "expect": "up",
+                "note": "力固定且同向时，移动距离越长，做功越多。"
+              },
+              {
+                "type": "scan",
+                "scenario": "抬起物体",
+                "var": "s",
+                "lo": 0,
+                "hi": 100,
+                "note": "扫描非负距离，做功计算保持稳定。"
+              },
+              {
+                "type": "consistency",
+                "scenario": "抬起物体",
+                "with": "machine-02|力和沿力方向距离求功",
+                "with_expr": "P*t",
+                "target": "力所做的功",
+                "note": "本公式直接求W；参考端显式关系为P*t。两端使用同一情境和阶段，只核对该关系；with字段仅定位来源，不代表调用另一条被覆盖的公式。",
+                "verification_kind": "独立关系核对"
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "确认作用力是否使物体沿力的方向移动。",
+          "若力和位移同向，用 W=F*s 求功。",
+          "记录完成这段功所用的时间。",
+          "用 P=W/t 比较做功快慢。"
+        ],
+        "errors": [
+          {
+            "wrong": "把功写成力除以移动距离。",
+            "wrong_expr": "W = F/s",
+            "why": "功等于力与沿力方向位移的乘积，不是除法；单位由 N×m 得到 J，位移方向与力垂直时该力不做功。",
+            "caught_by": "量纲一致性",
+            "trap_test": {
+              "scenario": "抬起物体",
+              "expr": "F/s",
+              "ref": 200
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "位移已换算为 m 后，又按 cm 单位额外缩小 100 倍。",
+            "wrong_expr": "W = F*s/100",
+            "why": "抬起物体的位移已按 4 m 代入，不能再除以 100；否则 200 J 会被算成 2 J。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "抬起物体",
+              "expr": "F*s/100",
+              "ref": 200
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "物体受力但没有沿力方向移动，仍认为该力做了功。",
+            "why": "做功要求力对物体产生沿力方向的位移；只有力却没有相应位移，或物体运动方向与力垂直，都不能据此认为该力做了功。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "用 100 N 的水平力拉木箱移动 2 m，历时 5 s，求功和功率。",
+          "solution": [
+            "W=Fs=100×2=200 J。",
+            "P=W/t=200/5=40 W。"
+          ],
+          "answer": "做功 200 J，功率 40 W。"
+        },
+        "prereq": [
+          "motion-01"
+        ],
+        "next": [
+          "machine-03"
+        ],
+        "tags": [
+          "功",
+          "力",
+          "位移",
+          "焦耳"
+        ],
+        "core": [
+          {
+            "title": "做功的两个条件",
+            "text": "既有力作用，又有沿该力方向的位移，才可判断该力做功。搬箱静止不做机械功；提箱水平匀速走，竖直提力不做功；放手后靠惯性滑行，已经撤去的手推力不继续做功。初中同向恒力情形用功等于力乘距离，不把位移任意方向混进去。"
+          }
+        ],
+        "learning_scope": "初中"
+      },
+      "error_index": 2,
+      "chapter": "简单机械和功"
+    },
+    "diagnostic-machine-05-1": {
+      "point": {
+        "id": "machine-05",
+        "title": "功率",
+        "level": "基础",
+        "definition": "功率表示做功的快慢，等于一段过程中所做的功与所用时间之比。相同的功用时越短，功率越大；相同时间内做功越多，功率越大。",
+        "meaning": "比较机器做功快慢时要比较功率，而不是只看总功。计算时功用 J、时间用 s，功率单位为 W；大型设备也常用 kW。功率是单位时间完成的功，数值并不等于总功；功率换算时 1 kW=1000 W，不能漏写时间单位。",
+        "symbols": {
+          "F": {
+            "desc": "沿运动方向的作用力",
+            "unit": "N"
+          },
+          "s": {
+            "desc": "物体沿力方向通过的距离",
+            "unit": "m"
+          },
+          "W": {
+            "desc": "力所做的功",
+            "unit": "J"
+          },
+          "t": {
+            "desc": "做功所用时间",
+            "unit": "s"
+          },
+          "P": {
+            "desc": "功率",
+            "unit": "W"
+          }
+        },
+        "scenarios": {
+          "抬起物体": {
+            "F": 50,
+            "s": 4,
+            "W": 200,
+            "t": 10,
+            "P": 20
+          },
+          "拉动木箱": {
+            "F": 100,
+            "s": 2,
+            "W": 200,
+            "t": 5,
+            "P": 40
+          }
+        },
+        "formulas": [
+          {
+            "name": "由功和时间求功率",
+            "expr": "P = W/t",
+            "when": "W 是同一时间段内完成的功，t 大于零；功率单位为 W。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "抬起物体",
+                "expr": "W/t",
+                "ref": 20,
+                "note": "200 J 的功在 10 s 内完成，功率为 20 W。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "拉动木箱",
+                "expr": "W/t",
+                "ref": 40,
+                "note": "200 J 的功在 5 s 内完成，功率为 40 W。"
+              },
+              {
+                "type": "direction",
+                "scenario": "抬起物体",
+                "var": "W",
+                "lo": 10,
+                "hi": 1000,
+                "expr": "W/t",
+                "expect": "up",
+                "note": "时间固定时，完成的功越多，功率越大。"
+              },
+              {
+                "type": "scan",
+                "scenario": "抬起物体",
+                "var": "t",
+                "lo": 0.1,
+                "hi": 1000,
+                "note": "扫描正时间范围，功率计算保持有限。"
+              },
+              {
+                "type": "consistency",
+                "scenario": "拉动木箱",
+                "with": "machine-05|由功和时间求功率",
+                "with_expr": "F*s/t",
+                "target": "功率",
+                "note": "本公式直接求P；参考端显式关系为F*s/t。两端使用同一情境和阶段，只核对该关系；with字段仅定位来源，不代表调用另一条被覆盖的公式。",
+                "verification_kind": "独立关系核对"
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "确定研究的做功过程及对应时间间隔 t。",
+          "用功除以完成该功所用的时间，得到平均功率 P=W/t。",
+          "把功统一为 J、时间统一为 s，功率结果即为 W。"
+        ],
+        "errors": [
+          {
+            "wrong": "把功率误算成做功除以两倍时间。",
+            "wrong_expr": "P = W/(2*t)",
+            "why": "功率是单位时间内完成的功；把时间额外加倍会使结果减半。计算前应写出功、时间和功率各自的物理意义。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "抬起物体",
+              "expr": "W/(2*t)",
+              "ref": 20
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "把功率和总功混为一谈，只比较做功总量。",
+            "why": "功率描述做功快慢；相同的功用时不同，功率就不同。计算前应写出功、时间和功率各自的物理意义。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "物体受力但没有沿力方向移动，仍认为该力做了功。",
+            "why": "做功要求力对物体产生沿力方向的位移；只有力却没有相应位移，或物体运动方向与力垂直，都不能据此认为该力做了功。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "机器在 5 s 内完成 200 J 的功，求平均功率。",
+          "solution": [
+            "使用 P=W/t。",
+            "P=200/5=40 W。"
+          ],
+          "answer": "平均功率为 40 W。"
+        },
+        "prereq": [
+          "machine-02"
+        ],
+        "next": [
+          "machine-03"
+        ],
+        "tags": [
+          "功率",
+          "做功快慢",
+          "功",
+          "时间",
+          "瓦特"
+        ],
+        "core": [
+          {
+            "title": "功率",
+            "text": "功率表示做功快慢，功表示做功总量；同样功用时短者功率大，同样时间做功多者功率大。1 kW=1000 W，1 W=1 J/s。举起物体可由质量、提升高度、用时估算提升功率，比较时先控制任务和条件，不能只凭“更重”或“更快”判断。"
+          }
+        ],
+        "learning_scope": "初中"
+      },
+      "error_index": 0,
+      "chapter": "简单机械和功"
+    },
+    "diagnostic-machine-05-2": {
+      "point": {
+        "id": "machine-05",
+        "title": "功率",
+        "level": "基础",
+        "definition": "功率表示做功的快慢，等于一段过程中所做的功与所用时间之比。相同的功用时越短，功率越大；相同时间内做功越多，功率越大。",
+        "meaning": "比较机器做功快慢时要比较功率，而不是只看总功。计算时功用 J、时间用 s，功率单位为 W；大型设备也常用 kW。功率是单位时间完成的功，数值并不等于总功；功率换算时 1 kW=1000 W，不能漏写时间单位。",
+        "symbols": {
+          "F": {
+            "desc": "沿运动方向的作用力",
+            "unit": "N"
+          },
+          "s": {
+            "desc": "物体沿力方向通过的距离",
+            "unit": "m"
+          },
+          "W": {
+            "desc": "力所做的功",
+            "unit": "J"
+          },
+          "t": {
+            "desc": "做功所用时间",
+            "unit": "s"
+          },
+          "P": {
+            "desc": "功率",
+            "unit": "W"
+          }
+        },
+        "scenarios": {
+          "抬起物体": {
+            "F": 50,
+            "s": 4,
+            "W": 200,
+            "t": 10,
+            "P": 20
+          },
+          "拉动木箱": {
+            "F": 100,
+            "s": 2,
+            "W": 200,
+            "t": 5,
+            "P": 40
+          }
+        },
+        "formulas": [
+          {
+            "name": "由功和时间求功率",
+            "expr": "P = W/t",
+            "when": "W 是同一时间段内完成的功，t 大于零；功率单位为 W。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "抬起物体",
+                "expr": "W/t",
+                "ref": 20,
+                "note": "200 J 的功在 10 s 内完成，功率为 20 W。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "拉动木箱",
+                "expr": "W/t",
+                "ref": 40,
+                "note": "200 J 的功在 5 s 内完成，功率为 40 W。"
+              },
+              {
+                "type": "direction",
+                "scenario": "抬起物体",
+                "var": "W",
+                "lo": 10,
+                "hi": 1000,
+                "expr": "W/t",
+                "expect": "up",
+                "note": "时间固定时，完成的功越多，功率越大。"
+              },
+              {
+                "type": "scan",
+                "scenario": "抬起物体",
+                "var": "t",
+                "lo": 0.1,
+                "hi": 1000,
+                "note": "扫描正时间范围，功率计算保持有限。"
+              },
+              {
+                "type": "consistency",
+                "scenario": "拉动木箱",
+                "with": "machine-05|由功和时间求功率",
+                "with_expr": "F*s/t",
+                "target": "功率",
+                "note": "本公式直接求P；参考端显式关系为F*s/t。两端使用同一情境和阶段，只核对该关系；with字段仅定位来源，不代表调用另一条被覆盖的公式。",
+                "verification_kind": "独立关系核对"
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "确定研究的做功过程及对应时间间隔 t。",
+          "用功除以完成该功所用的时间，得到平均功率 P=W/t。",
+          "把功统一为 J、时间统一为 s，功率结果即为 W。"
+        ],
+        "errors": [
+          {
+            "wrong": "把功率误算成做功除以两倍时间。",
+            "wrong_expr": "P = W/(2*t)",
+            "why": "功率是单位时间内完成的功；把时间额外加倍会使结果减半。计算前应写出功、时间和功率各自的物理意义。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "抬起物体",
+              "expr": "W/(2*t)",
+              "ref": 20
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "把功率和总功混为一谈，只比较做功总量。",
+            "why": "功率描述做功快慢；相同的功用时不同，功率就不同。计算前应写出功、时间和功率各自的物理意义。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "物体受力但没有沿力方向移动，仍认为该力做了功。",
+            "why": "做功要求力对物体产生沿力方向的位移；只有力却没有相应位移，或物体运动方向与力垂直，都不能据此认为该力做了功。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "机器在 5 s 内完成 200 J 的功，求平均功率。",
+          "solution": [
+            "使用 P=W/t。",
+            "P=200/5=40 W。"
+          ],
+          "answer": "平均功率为 40 W。"
+        },
+        "prereq": [
+          "machine-02"
+        ],
+        "next": [
+          "machine-03"
+        ],
+        "tags": [
+          "功率",
+          "做功快慢",
+          "功",
+          "时间",
+          "瓦特"
+        ],
+        "core": [
+          {
+            "title": "功率",
+            "text": "功率表示做功快慢，功表示做功总量；同样功用时短者功率大，同样时间做功多者功率大。1 kW=1000 W，1 W=1 J/s。举起物体可由质量、提升高度、用时估算提升功率，比较时先控制任务和条件，不能只凭“更重”或“更快”判断。"
+          }
+        ],
+        "learning_scope": "初中"
+      },
+      "error_index": 1,
+      "chapter": "简单机械和功"
+    },
+    "diagnostic-machine-05-3": {
+      "point": {
+        "id": "machine-05",
+        "title": "功率",
+        "level": "基础",
+        "definition": "功率表示做功的快慢，等于一段过程中所做的功与所用时间之比。相同的功用时越短，功率越大；相同时间内做功越多，功率越大。",
+        "meaning": "比较机器做功快慢时要比较功率，而不是只看总功。计算时功用 J、时间用 s，功率单位为 W；大型设备也常用 kW。功率是单位时间完成的功，数值并不等于总功；功率换算时 1 kW=1000 W，不能漏写时间单位。",
+        "symbols": {
+          "F": {
+            "desc": "沿运动方向的作用力",
+            "unit": "N"
+          },
+          "s": {
+            "desc": "物体沿力方向通过的距离",
+            "unit": "m"
+          },
+          "W": {
+            "desc": "力所做的功",
+            "unit": "J"
+          },
+          "t": {
+            "desc": "做功所用时间",
+            "unit": "s"
+          },
+          "P": {
+            "desc": "功率",
+            "unit": "W"
+          }
+        },
+        "scenarios": {
+          "抬起物体": {
+            "F": 50,
+            "s": 4,
+            "W": 200,
+            "t": 10,
+            "P": 20
+          },
+          "拉动木箱": {
+            "F": 100,
+            "s": 2,
+            "W": 200,
+            "t": 5,
+            "P": 40
+          }
+        },
+        "formulas": [
+          {
+            "name": "由功和时间求功率",
+            "expr": "P = W/t",
+            "when": "W 是同一时间段内完成的功，t 大于零；功率单位为 W。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "抬起物体",
+                "expr": "W/t",
+                "ref": 20,
+                "note": "200 J 的功在 10 s 内完成，功率为 20 W。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "拉动木箱",
+                "expr": "W/t",
+                "ref": 40,
+                "note": "200 J 的功在 5 s 内完成，功率为 40 W。"
+              },
+              {
+                "type": "direction",
+                "scenario": "抬起物体",
+                "var": "W",
+                "lo": 10,
+                "hi": 1000,
+                "expr": "W/t",
+                "expect": "up",
+                "note": "时间固定时，完成的功越多，功率越大。"
+              },
+              {
+                "type": "scan",
+                "scenario": "抬起物体",
+                "var": "t",
+                "lo": 0.1,
+                "hi": 1000,
+                "note": "扫描正时间范围，功率计算保持有限。"
+              },
+              {
+                "type": "consistency",
+                "scenario": "拉动木箱",
+                "with": "machine-05|由功和时间求功率",
+                "with_expr": "F*s/t",
+                "target": "功率",
+                "note": "本公式直接求P；参考端显式关系为F*s/t。两端使用同一情境和阶段，只核对该关系；with字段仅定位来源，不代表调用另一条被覆盖的公式。",
+                "verification_kind": "独立关系核对"
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "确定研究的做功过程及对应时间间隔 t。",
+          "用功除以完成该功所用的时间，得到平均功率 P=W/t。",
+          "把功统一为 J、时间统一为 s，功率结果即为 W。"
+        ],
+        "errors": [
+          {
+            "wrong": "把功率误算成做功除以两倍时间。",
+            "wrong_expr": "P = W/(2*t)",
+            "why": "功率是单位时间内完成的功；把时间额外加倍会使结果减半。计算前应写出功、时间和功率各自的物理意义。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "抬起物体",
+              "expr": "W/(2*t)",
+              "ref": 20
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "把功率和总功混为一谈，只比较做功总量。",
+            "why": "功率描述做功快慢；相同的功用时不同，功率就不同。计算前应写出功、时间和功率各自的物理意义。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "物体受力但没有沿力方向移动，仍认为该力做了功。",
+            "why": "做功要求力对物体产生沿力方向的位移；只有力却没有相应位移，或物体运动方向与力垂直，都不能据此认为该力做了功。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "机器在 5 s 内完成 200 J 的功，求平均功率。",
+          "solution": [
+            "使用 P=W/t。",
+            "P=200/5=40 W。"
+          ],
+          "answer": "平均功率为 40 W。"
+        },
+        "prereq": [
+          "machine-02"
+        ],
+        "next": [
+          "machine-03"
+        ],
+        "tags": [
+          "功率",
+          "做功快慢",
+          "功",
+          "时间",
+          "瓦特"
+        ],
+        "core": [
+          {
+            "title": "功率",
+            "text": "功率表示做功快慢，功表示做功总量；同样功用时短者功率大，同样时间做功多者功率大。1 kW=1000 W，1 W=1 J/s。举起物体可由质量、提升高度、用时估算提升功率，比较时先控制任务和条件，不能只凭“更重”或“更快”判断。"
+          }
+        ],
+        "learning_scope": "初中"
+      },
+      "error_index": 2,
+      "chapter": "简单机械和功"
+    },
+    "diagnostic-machine-03-1": {
+      "point": {
+        "id": "machine-03",
+        "title": "机械效率",
+        "level": "基础",
+        "definition": "机械效率表示有用功占总输入功的比例，等于有用功与总功之比。由于机械存在摩擦、变形等能量损失，机械效率通常小于 1，常用百分数表示。",
+        "meaning": "使用滑轮或斜面时，先判断对目标有帮助的功是有用功，其余输入功构成总功。效率提高表示损失比例降低，并不意味着输入功一定减少或机械一定省力。计算前要让有用功和总功采用相同单位；效率不能写成超过 100% 的数值。",
+        "symbols": {
+          "W_use": {
+            "desc": "完成任务的有用功",
+            "unit": "J"
+          },
+          "W_in": {
+            "desc": "输入机械的总功",
+            "unit": "J"
+          },
+          "eta": {
+            "desc": "机械效率，以小数表示",
+            "unit": "1"
+          }
+        },
+        "scenarios": {
+          "提升重物": {
+            "W_use": 80,
+            "W_in": 100,
+            "eta": 0.8
+          },
+          "滑轮组": {
+            "W_use": 150,
+            "W_in": 200,
+            "eta": 0.75
+          }
+        },
+        "formulas": [
+          {
+            "name": "有用功与总功求机械效率",
+            "expr": "eta = W_use/W_in",
+            "when": "有用功不大于总功；机械效率用小数表示时乘 100% 可换为百分数。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "提升重物",
+                "expr": "W_use/W_in",
+                "ref": 0.8,
+                "note": "80 J÷100 J=0.8，即 80%。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "滑轮组",
+                "expr": "W_use/W_in",
+                "ref": 0.75,
+                "note": "150 J÷200 J=0.75，即 75%。"
+              },
+              {
+                "type": "direction",
+                "scenario": "提升重物",
+                "var": "W_use",
+                "lo": 0,
+                "hi": 100,
+                "expr": "W_use/W_in",
+                "expect": "up",
+                "note": "总功固定时，有用功占比越大，效率越高。"
+              },
+              {
+                "type": "scan",
+                "scenario": "提升重物",
+                "var": "W_in",
+                "lo": 1,
+                "hi": 1000,
+                "note": "扫描正输入功范围，效率计算稳定。"
+              },
+              {
+                "type": "consistency",
+                "scenario": "提升重物",
+                "with": "machine-03|有用功与总功求机械效率",
+                "with_expr": "eta",
+                "target": "机械效率，以小数表示",
+                "note": "直接求本公式输出，与情境中另列的eta设计基准核对；数据是设计示例，不是实测。用于核对定义、反算或边界值，不宣称不同物理原理互证。",
+                "verification_kind": "独立设计情境数据核对",
+                "tol": 1e-06
+              }
+            ]
+          },
+          {
+            "name": "由效率和总功求有用功",
+            "expr": "W_use = eta*W_in",
+            "when": "eta 用 0 到 1 之间的小数表示。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "提升重物",
+                "expr": "eta*W_in",
+                "ref": 80,
+                "note": "0.8×100 J=80 J。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "滑轮组",
+                "expr": "eta*W_in",
+                "ref": 150,
+                "note": "0.75×200 J=150 J。"
+              },
+              {
+                "type": "scan",
+                "scenario": "提升重物",
+                "var": "eta",
+                "lo": 0,
+                "hi": 1,
+                "note": "扫描理想范围 0 到 1，计算有用功。"
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "分清有用功和输入的总功。",
+          "用有用功除以总功得到效率小数。",
+          "将小数乘 100% 可换为百分数。",
+          "实际摩擦和其他损耗使有用功小于输入总功。"
+        ],
+        "errors": [
+          {
+            "wrong": "把总功除以有用功当作机械效率。",
+            "wrong_expr": "eta = W_in/W_use",
+            "why": "效率应为有用功占输入总功的比例；提升重物情境中正确值 0.8，反过来会得到 1.25。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "提升重物",
+              "expr": "W_in/W_use",
+              "ref": 0.8
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "认为机械效率可以大于 100%，或把效率与功率混为一谈。",
+            "why": "实际机械有能量损失，有用功不能超过输入总功；功率是功与时间之比，与效率概念不同。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "滑轮组输入总功 200 J，提升重物的有用功为 150 J，求机械效率。",
+          "solution": [
+            "eta=150/200=0.75。",
+            "换成百分数为 75%。"
+          ],
+          "answer": "机械效率为 75%。"
+        },
+        "prereq": [
+          "machine-02"
+        ],
+        "next": [],
+        "tags": [
+          "机械效率",
+          "有用功",
+          "总功",
+          "能量损失"
+        ],
+        "core": [
+          {
+            "title": "机械效率",
+            "text": "机械效率为有用功与总功之比，总功包括有用功和额外功，效率无单位，常用百分数表示。它和功率无直接等同关系，高功率不保证高效率；增大合理负载、减小摩擦或机械自重可改善特定装置效率。理想机械效率可取100%，实际有损耗通常小于100%；不能省功。"
+          }
+        ],
+        "experiments": [
+          {
+            "title": "测量滑轮组机械效率",
+            "purpose": "比较有用功、总功和额外功。",
+            "apparatus": "滑轮组、钩码、测力计、刻度尺。",
+            "variables": "近似匀速竖直提升，记录重力、高度、拉力和绳端距离。",
+            "steps": [
+              "测负载重力，标记负载和绳端起点。",
+              "匀速拉动，记录拉力以及两处位移。",
+              "用重力乘高度求有用功，拉力乘绳端距离求总功，再求比值。"
+            ],
+            "data": "设计示例（非实测）：10 N提升0.20 m有用功2 J；6 N拉绳0.40 m总功2.4 J，效率约83.3%。",
+            "conclusion": "省力不省功，总功不小于有用功，效率约束与能量账目一致。",
+            "limits": "拉力波动、滑轮摩擦、量错绳端距离影响结果；不把承重绳段数倒数当实际效率。",
+            "kind": "教材与目录补充"
+          }
+        ],
+        "learning_scope": "初中"
+      },
+      "error_index": 0,
+      "chapter": "简单机械和功"
+    },
+    "diagnostic-machine-03-2": {
+      "point": {
+        "id": "machine-03",
+        "title": "机械效率",
+        "level": "基础",
+        "definition": "机械效率表示有用功占总输入功的比例，等于有用功与总功之比。由于机械存在摩擦、变形等能量损失，机械效率通常小于 1，常用百分数表示。",
+        "meaning": "使用滑轮或斜面时，先判断对目标有帮助的功是有用功，其余输入功构成总功。效率提高表示损失比例降低，并不意味着输入功一定减少或机械一定省力。计算前要让有用功和总功采用相同单位；效率不能写成超过 100% 的数值。",
+        "symbols": {
+          "W_use": {
+            "desc": "完成任务的有用功",
+            "unit": "J"
+          },
+          "W_in": {
+            "desc": "输入机械的总功",
+            "unit": "J"
+          },
+          "eta": {
+            "desc": "机械效率，以小数表示",
+            "unit": "1"
+          }
+        },
+        "scenarios": {
+          "提升重物": {
+            "W_use": 80,
+            "W_in": 100,
+            "eta": 0.8
+          },
+          "滑轮组": {
+            "W_use": 150,
+            "W_in": 200,
+            "eta": 0.75
+          }
+        },
+        "formulas": [
+          {
+            "name": "有用功与总功求机械效率",
+            "expr": "eta = W_use/W_in",
+            "when": "有用功不大于总功；机械效率用小数表示时乘 100% 可换为百分数。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "提升重物",
+                "expr": "W_use/W_in",
+                "ref": 0.8,
+                "note": "80 J÷100 J=0.8，即 80%。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "滑轮组",
+                "expr": "W_use/W_in",
+                "ref": 0.75,
+                "note": "150 J÷200 J=0.75，即 75%。"
+              },
+              {
+                "type": "direction",
+                "scenario": "提升重物",
+                "var": "W_use",
+                "lo": 0,
+                "hi": 100,
+                "expr": "W_use/W_in",
+                "expect": "up",
+                "note": "总功固定时，有用功占比越大，效率越高。"
+              },
+              {
+                "type": "scan",
+                "scenario": "提升重物",
+                "var": "W_in",
+                "lo": 1,
+                "hi": 1000,
+                "note": "扫描正输入功范围，效率计算稳定。"
+              },
+              {
+                "type": "consistency",
+                "scenario": "提升重物",
+                "with": "machine-03|有用功与总功求机械效率",
+                "with_expr": "eta",
+                "target": "机械效率，以小数表示",
+                "note": "直接求本公式输出，与情境中另列的eta设计基准核对；数据是设计示例，不是实测。用于核对定义、反算或边界值，不宣称不同物理原理互证。",
+                "verification_kind": "独立设计情境数据核对",
+                "tol": 1e-06
+              }
+            ]
+          },
+          {
+            "name": "由效率和总功求有用功",
+            "expr": "W_use = eta*W_in",
+            "when": "eta 用 0 到 1 之间的小数表示。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "提升重物",
+                "expr": "eta*W_in",
+                "ref": 80,
+                "note": "0.8×100 J=80 J。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "滑轮组",
+                "expr": "eta*W_in",
+                "ref": 150,
+                "note": "0.75×200 J=150 J。"
+              },
+              {
+                "type": "scan",
+                "scenario": "提升重物",
+                "var": "eta",
+                "lo": 0,
+                "hi": 1,
+                "note": "扫描理想范围 0 到 1，计算有用功。"
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "分清有用功和输入的总功。",
+          "用有用功除以总功得到效率小数。",
+          "将小数乘 100% 可换为百分数。",
+          "实际摩擦和其他损耗使有用功小于输入总功。"
+        ],
+        "errors": [
+          {
+            "wrong": "把总功除以有用功当作机械效率。",
+            "wrong_expr": "eta = W_in/W_use",
+            "why": "效率应为有用功占输入总功的比例；提升重物情境中正确值 0.8，反过来会得到 1.25。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "提升重物",
+              "expr": "W_in/W_use",
+              "ref": 0.8
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "认为机械效率可以大于 100%，或把效率与功率混为一谈。",
+            "why": "实际机械有能量损失，有用功不能超过输入总功；功率是功与时间之比，与效率概念不同。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "滑轮组输入总功 200 J，提升重物的有用功为 150 J，求机械效率。",
+          "solution": [
+            "eta=150/200=0.75。",
+            "换成百分数为 75%。"
+          ],
+          "answer": "机械效率为 75%。"
+        },
+        "prereq": [
+          "machine-02"
+        ],
+        "next": [],
+        "tags": [
+          "机械效率",
+          "有用功",
+          "总功",
+          "能量损失"
+        ],
+        "core": [
+          {
+            "title": "机械效率",
+            "text": "机械效率为有用功与总功之比，总功包括有用功和额外功，效率无单位，常用百分数表示。它和功率无直接等同关系，高功率不保证高效率；增大合理负载、减小摩擦或机械自重可改善特定装置效率。理想机械效率可取100%，实际有损耗通常小于100%；不能省功。"
+          }
+        ],
+        "experiments": [
+          {
+            "title": "测量滑轮组机械效率",
+            "purpose": "比较有用功、总功和额外功。",
+            "apparatus": "滑轮组、钩码、测力计、刻度尺。",
+            "variables": "近似匀速竖直提升，记录重力、高度、拉力和绳端距离。",
+            "steps": [
+              "测负载重力，标记负载和绳端起点。",
+              "匀速拉动，记录拉力以及两处位移。",
+              "用重力乘高度求有用功，拉力乘绳端距离求总功，再求比值。"
+            ],
+            "data": "设计示例（非实测）：10 N提升0.20 m有用功2 J；6 N拉绳0.40 m总功2.4 J，效率约83.3%。",
+            "conclusion": "省力不省功，总功不小于有用功，效率约束与能量账目一致。",
+            "limits": "拉力波动、滑轮摩擦、量错绳端距离影响结果；不把承重绳段数倒数当实际效率。",
+            "kind": "教材与目录补充"
+          }
+        ],
+        "learning_scope": "初中"
+      },
+      "error_index": 1,
+      "chapter": "简单机械和功"
+    }
+  },
+  "generator_version": "2026-10-04-条件过程返工-8"
+}

@@ -1,0 +1,2875 @@
+{
+  "segment": "初中",
+  "chapter": "光现象",
+  "source_file": "02_light.json",
+  "questions": [
+    {
+      "id": "diagnostic-light-04-1",
+      "point_id": "light-04",
+      "point_title": "光的色彩",
+      "chapter": "光现象",
+      "stem": "在“光的色彩”中，拓展计算，非本卡初中必背主线。用于真空或可近似看作真空的光传播；光速 c、波长 λ 使用 m/s、m。此关系用于色光的定量拓展，不是判断颜色的唯一依据。。光波频率的单位为Hz。下列哪一表达式的量纲与该目标量一致？",
+      "options": [
+        {
+          "label": "A",
+          "text": "f = c/λ"
+        },
+        {
+          "label": "B",
+          "text": "f = c·λ"
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "频率应为波速除以波长；相乘得到的单位为m²/s，不是Hz。红光示例乘积为225，正确频率为4×10¹⁴ Hz。\n知识点条件：教材重点是观察色散、认识不同色光及其混合现象；颜色不能用亮度替代。为把观察与可测量量联系起来，这里补充真空电磁波的波速关系：固定光速时，波长越长，频率越低。该换算属于拓展工具，不代替色散实验，也不意味着所有介质中的光速都相同。\n推导依据：波在一个周期内传播一个波长，因此波速等于波长乘以每秒振动次数。；频率关系 c=λ·f 两边同除以波长，得到 f=c/λ。；代入前统一单位：波长用 m、频率用 Hz，乘积的单位为 m/s。\n卡片公式各自的适用条件（不是本题共同前提）：\n由真空光速和波长求频率：拓展计算，非本卡初中必背主线。用于真空或可近似看作真空的光传播；光速 c、波长 λ 使用 m/s、m。此关系用于色光的定量拓展，不是判断颜色的唯一依据。",
+      "error_type": "量纲一致性",
+      "judging": "auto",
+      "source_error_index": 0,
+      "source_caught_by": "量纲一致性",
+      "wrong_expr": "f = c·λ",
+      "trap_test": {
+        "kind": "dimension",
+        "target": "f = c*lambda",
+        "expect": "mismatch",
+        "lhs_dim": "T^-1",
+        "rhs_dim": "L^2·T^-1",
+        "note": "正式引擎验证量纲不一致；不计作同量纲错误数值实测。"
+      },
+      "level": "拓展",
+      "learning_scope": "初中主线；公式含拓展",
+      "answer_evidence": {
+        "kind": "dimension",
+        "target": "f",
+        "correct_expression": "f = c/lambda",
+        "distractor_expression": "f = c*lambda",
+        "target_dimension": "T^-1",
+        "distractor_dimension": "L^2·T^-1"
+      },
+      "review": {
+        "confidence": "medium",
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": true,
+          "no_answer_leak_in_options": true
+        },
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。",
+        "material": {
+          "anchors": [
+            {
+              "kind": "公式量纲",
+              "name": "本题目标量与等式",
+              "expression": "f = c/lambda",
+              "when": "量纲相符是必要条件，不能据此证明系数或物理条件正确",
+              "display": "f = c/λ"
+            }
+          ],
+          "source": {
+            "nature": "原创量纲辨析命题；无实测数据",
+            "source_error_index": 0
+          },
+          "predicted_errors": [
+            {
+              "option": "B",
+              "text": "f = c·λ",
+              "reason": "频率应为波速除以波长；相乘得到的单位为m²/s，不是Hz。红光示例乘积为225，正确频率为4×10¹⁴ Hz。",
+              "expression": "f = c*lambda",
+              "status": "误答原因预测，待教师确认；未采集学生作答证据"
+            }
+          ],
+          "difficulty_note": "建议难度沿用本题level（源卡难度）；尚非题目难度实测，待教师调整",
+          "estimated_seconds": [
+            180,
+            360
+          ],
+          "time_basis": "未做学生计时；按现有难度给出备课估计区间，待教师确认",
+          "machine_checks": [
+            {
+              "name": "题目ID关联源知识点",
+              "passed": true
+            },
+            {
+              "name": "选项标签唯一且参考标签存在",
+              "passed": true
+            },
+            {
+              "name": "选项文本互异",
+              "passed": true
+            },
+            {
+              "name": "正确式量纲一致",
+              "passed": true,
+              "actual": {
+                "type": "dimension",
+                "type_name": "量纲一致性",
+                "formula": "教师审核证据",
+                "ok": true,
+                "detail": "左端T^-1，右端T^-1",
+                "note": "",
+                "error": null,
+                "evaluation_status": "success",
+                "failure_reason": null,
+                "result_dimension": "T^-1",
+                "reference_dimension": "T^-1",
+                "diagnostics": {},
+                "physical_error_identified": false
+              }
+            },
+            {
+              "name": "干扰式量纲冲突",
+              "passed": true,
+              "actual": {
+                "type": "dimension",
+                "type_name": "量纲一致性",
+                "formula": "教师审核证据",
+                "ok": false,
+                "detail": "左端T^-1，右端L^2·T^-1",
+                "note": "",
+                "error": null,
+                "evaluation_status": "dimension_conflict",
+                "failure_reason": "dimension_conflict",
+                "result_dimension": "L^2·T^-1",
+                "reference_dimension": "T^-1",
+                "diagnostics": {},
+                "physical_error_identified": true
+              }
+            }
+          ],
+          "machine_boundary": "只列本次逐题实际执行项目；不把关联知识卡的方向、扫描或一致性检查算作本题已验。概念题未验命题真假。",
+          "human_review_items": [
+            "题干条件是否充分、清楚且符合学段",
+            "参考结论在指定条件下是否唯一",
+            "干扰项是否合理、对应真实认知问题且无答案暗示",
+            "公式或概念锚点是否准确",
+            "建议难度及用时是否适合教学",
+            "语言、装置与安全操作是否恰当"
+          ],
+          "reference_answer_note": "现有参考答案保持；即使本地可以判选项，也仍须教师审核教学可用性"
+        }
+      }
+    },
+    {
+      "id": "diagnostic-light-04-2",
+      "point_id": "light-04",
+      "point_title": "光的色彩",
+      "chapter": "光现象",
+      "stem": "关于“光的色彩”，判断这一说法是否成立，并说明依据：\n白光本身只有一种颜色，或把色光混合与颜料混合规律混为一谈。",
+      "options": [
+        {
+          "label": "A",
+          "text": "该说法不成立。"
+        },
+        {
+          "label": "B",
+          "text": "该说法成立。"
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "棱镜色散可观察到白光分解出的多种色光；色光的叠加与颜料混合不是同一过程。\n知识点条件：教材重点是观察色散、认识不同色光及其混合现象；颜色不能用亮度替代。为把观察与可测量量联系起来，这里补充真空电磁波的波速关系：固定光速时，波长越长，频率越低。该换算属于拓展工具，不代替色散实验，也不意味着所有介质中的光速都相同。\n推导依据：波在一个周期内传播一个波长，因此波速等于波长乘以每秒振动次数。；频率关系 c=λ·f 两边同除以波长，得到 f=c/λ。；代入前统一单位：波长用 m、频率用 Hz，乘积的单位为 m/s。\n卡片公式各自的适用条件（不是本题共同前提）：\n由真空光速和波长求频率：拓展计算，非本卡初中必背主线。用于真空或可近似看作真空的光传播；光速 c、波长 λ 使用 m/s、m。此关系用于色光的定量拓展，不是判断颜色的唯一依据。",
+      "error_type": "概念混淆",
+      "judging": "teacher",
+      "source_error_index": 1,
+      "source_caught_by": "人工审核",
+      "wrong_expr": null,
+      "trap_test": null,
+      "level": "拓展",
+      "learning_scope": "初中主线；公式含拓展",
+      "answer_evidence": {
+        "kind": "teacher",
+        "claim_source": "wrong",
+        "reference_only": true,
+        "reason": "概念、操作或无法建立完整定量证据，教师确认条件与结论。"
+      },
+      "review": {
+        "confidence": "medium",
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": false,
+          "no_answer_leak_in_options": true
+        },
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。",
+        "material": {
+          "anchors": [
+            {
+              "kind": "概念或操作",
+              "name": "光的色彩",
+              "claim": "认为白光本身只有一种颜色，或把色光混合与颜料混合规律混为一谈。",
+              "correction_basis": "棱镜色散可观察到白光分解出的多种色光；色光的叠加与颜料混合不是同一过程。",
+              "note": "概念锚点及命题真假待教师确认；未套用任意第一条公式",
+              "display": "认为白光本身只有一种颜色，或把色光混合与颜料混合规律混为一谈。"
+            }
+          ],
+          "source": {
+            "nature": "原创概念/操作命题；无真实测量记录",
+            "source_error_index": 1
+          },
+          "predicted_errors": [
+            {
+              "option": "B",
+              "text": "该说法成立。",
+              "reason": "棱镜色散可观察到白光分解出的多种色光；色光的叠加与颜料混合不是同一过程。",
+              "expression": null,
+              "status": "误答原因预测，待教师确认；未采集学生作答证据"
+            }
+          ],
+          "difficulty_note": "建议难度沿用本题level（源卡难度）；尚非题目难度实测，待教师调整",
+          "estimated_seconds": [
+            180,
+            360
+          ],
+          "time_basis": "未做学生计时；按现有难度给出备课估计区间，待教师确认",
+          "machine_checks": [
+            {
+              "name": "题目ID关联源知识点",
+              "passed": true
+            },
+            {
+              "name": "选项标签唯一且参考标签存在",
+              "passed": true
+            },
+            {
+              "name": "选项文本互异",
+              "passed": true
+            }
+          ],
+          "machine_boundary": "只列本次逐题实际执行项目；不把关联知识卡的方向、扫描或一致性检查算作本题已验。概念题未验命题真假。",
+          "human_review_items": [
+            "题干条件是否充分、清楚且符合学段",
+            "参考结论在指定条件下是否唯一",
+            "干扰项是否合理、对应真实认知问题且无答案暗示",
+            "公式或概念锚点是否准确",
+            "建议难度及用时是否适合教学",
+            "语言、装置与安全操作是否恰当"
+          ],
+          "reference_answer_note": "现有参考答案保持；即使本地可以判选项，也仍须教师审核教学可用性"
+        }
+      }
+    },
+    {
+      "id": "diagnostic-light-04-3",
+      "point_id": "light-04",
+      "point_title": "光的色彩",
+      "chapter": "光现象",
+      "stem": "在“光的色彩”的模型下，λ（光波波长）=7.5e-07 m；c（真空中的光速）=3e+08 m/s。条件：拓展计算，非本卡初中必背主线。用于真空或可近似看作真空的光传播；光速 c、波长 λ 使用 m/s、m。此关系用于色光的定量拓展，不是判断颜色的唯一依据。。求光波频率（f）。这些数值是设计示例。",
+      "options": [
+        {
+          "label": "A",
+          "text": "4e+11 Hz"
+        },
+        {
+          "label": "B",
+          "text": "4e+14 Hz"
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "使用由真空光速和波长求频率：c/λ，代入得4e+14 Hz。另一结果来自c/(1000·λ)，算得4e+11 Hz。\n750 nm应7.5×10⁻⁷ m；误换为750 μm使波长大千倍、频率小千倍。\n知识点条件：教材重点是观察色散、认识不同色光及其混合现象；颜色不能用亮度替代。为把观察与可测量量联系起来，这里补充真空电磁波的波速关系：固定光速时，波长越长，频率越低。该换算属于拓展工具，不代替色散实验，也不意味着所有介质中的光速都相同。\n推导依据：波在一个周期内传播一个波长，因此波速等于波长乘以每秒振动次数。；频率关系 c=λ·f 两边同除以波长，得到 f=c/λ。；代入前统一单位：波长用 m、频率用 Hz，乘积的单位为 m/s。\n卡片公式各自的适用条件（不是本题共同前提）：\n由真空光速和波长求频率：拓展计算，非本卡初中必背主线。用于真空或可近似看作真空的光传播；光速 c、波长 λ 使用 m/s、m。此关系用于色光的定量拓展，不是判断颜色的唯一依据。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 2,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "f = c/(1000·λ)",
+      "trap_test": {
+        "scenario": "红光近似值",
+        "expr": "c/(1000*lambda)",
+        "ref": 400000000000000.0,
+        "tol": 1e-06
+      },
+      "level": "拓展",
+      "learning_scope": "初中主线；公式含拓展",
+      "answer_evidence": {
+        "kind": "numeric",
+        "scenario": "红光近似值",
+        "parameters": {
+          "f": 400000000000000,
+          "lambda": 7.5e-07,
+          "c": 300000000,
+          "s": 300,
+          "t": 1e-06
+        },
+        "target": "f",
+        "unit": "Hz",
+        "reference": 400000000000000.0,
+        "correct_proof": {
+          "expression": "c/lambda",
+          "formula": "由真空光速和波长求频率",
+          "value": 400000000000000.0,
+          "when": "拓展计算，非本卡初中必背主线。用于真空或可近似看作真空的光传播；光速 c、波长 lambda 使用 m/s、m。此关系用于色光的定量拓展，不是判断颜色的唯一依据。"
+        },
+        "distractor_expression": "c/(1000*lambda)",
+        "distractor_value": 400000000000.0,
+        "dimension_matches": true,
+        "independent_evaluation": true
+      },
+      "review": {
+        "confidence": "medium",
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": true,
+          "no_answer_leak_in_options": true
+        },
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。",
+        "material": {
+          "anchors": [
+            {
+              "kind": "公式",
+              "name": "由真空光速和波长求频率",
+              "expression": "c/lambda",
+              "when": "拓展计算，非本卡初中必背主线。用于真空或可近似看作真空的光传播；光速 c、波长 lambda 使用 m/s、m。此关系用于色光的定量拓展，不是判断颜色的唯一依据。",
+              "display": "c/λ"
+            }
+          ],
+          "source": {
+            "nature": "原创设计示例，非教材实测或真实实验记录",
+            "scenario": "红光近似值",
+            "parameters": {
+              "f": 400000000000000,
+              "lambda": 7.5e-07,
+              "c": 300000000,
+              "s": 300,
+              "t": 1e-06
+            },
+            "data": [
+              "光波频率：400000000000000 Hz",
+              "光波波长：7.5e-07 m",
+              "真空中的光速：300000000 m/s",
+              "真空中光传播路程：300 m",
+              "传播时间：1e-06 s"
+            ]
+          },
+          "predicted_errors": [
+            {
+              "option": "A",
+              "text": "4e+11 Hz",
+              "reason": "750 nm应7.5×10⁻⁷ m；误换为750 μm使波长大千倍、频率小千倍。",
+              "expression": "c/(1000*lambda)",
+              "status": "误答原因预测，待教师确认；未采集学生作答证据"
+            }
+          ],
+          "difficulty_note": "建议难度沿用本题level（源卡难度）；尚非题目难度实测，待教师调整",
+          "estimated_seconds": [
+            180,
+            360
+          ],
+          "time_basis": "未做学生计时；按现有难度给出备课估计区间，待教师确认",
+          "machine_checks": [
+            {
+              "name": "题目ID关联源知识点",
+              "passed": true
+            },
+            {
+              "name": "选项标签唯一且参考标签存在",
+              "passed": true
+            },
+            {
+              "name": "选项文本互异",
+              "passed": true
+            },
+            {
+              "name": "正确路径独立数值复算",
+              "passed": true
+            },
+            {
+              "name": "带量纲求值与独立求值一致",
+              "passed": true
+            },
+            {
+              "name": "干扰路径复算且与正确路径分离",
+              "passed": true
+            }
+          ],
+          "machine_boundary": "只列本次逐题实际执行项目；不把关联知识卡的方向、扫描或一致性检查算作本题已验。概念题未验命题真假。",
+          "human_review_items": [
+            "题干条件是否充分、清楚且符合学段",
+            "参考结论在指定条件下是否唯一",
+            "干扰项是否合理、对应真实认知问题且无答案暗示",
+            "公式或概念锚点是否准确",
+            "建议难度及用时是否适合教学",
+            "语言、装置与安全操作是否恰当"
+          ],
+          "reference_answer_note": "现有参考答案保持；即使本地可以判选项，也仍须教师审核教学可用性"
+        }
+      }
+    },
+    {
+      "id": "diagnostic-light-01-1",
+      "point_id": "light-01",
+      "point_title": "光的直线传播",
+      "chapter": "光现象",
+      "stem": "在“光的直线传播”的模型下，c（光传播速度，空气中近似取真空光速）=3e+08 m/s；t（光传播所用时间）=1e-06 s。条件：光在同一均匀介质中近似匀速传播，t 使用秒。。求光传播的路程（s）。这些数值是设计示例。",
+      "options": [
+        {
+          "label": "A",
+          "text": "300 m"
+        },
+        {
+          "label": "B",
+          "text": "600 m"
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "使用由光速和时间求传播路程：c·t，代入得300 m。另一结果来自2·c·t，算得600 m。\n题目若只描述光从发出到到达一次，路程就是 c·t；额外乘 2 会把单程误算成往返。\n知识点条件：影子的形成、小孔成像和日食月食都能用光沿直线传播解释。计算传播距离时，要区分单程和往返路程，并让速度、时间和距离采用相容单位。光速关系只能计算传播过程，不能单独决定反射或折射方向。\n推导依据：光沿直线传播时，路程可由轨迹长度确定；在同种均匀介质中传播速度近似不变。；速度定义为单位时间通过的路程，因此路程等于速度乘时间，速度也可由路程除以时间求出。；统一使用 m/s、s 和 m；若描述的是反射测距往返过程，还要把总路程与单程路程区分。\n卡片公式各自的适用条件（不是本题共同前提）：\n由光速和时间求传播路程：光在同一均匀介质中近似匀速传播，t 使用秒。\n由传播路程和时间求光速：s 与 t 必须描述同一段光传播过程。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 0,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "s = 2·c·t",
+      "trap_test": {
+        "scenario": "光传播1微秒",
+        "expr": "2*c*t",
+        "ref": 300
+      },
+      "level": "基础",
+      "learning_scope": "初中",
+      "answer_evidence": {
+        "kind": "numeric",
+        "scenario": "光传播1微秒",
+        "parameters": {
+          "s": 300,
+          "c": 300000000,
+          "t": 1e-06
+        },
+        "target": "s",
+        "unit": "m",
+        "reference": 300,
+        "correct_proof": {
+          "expression": "c*t",
+          "formula": "由光速和时间求传播路程",
+          "value": 300.0,
+          "when": "光在同一均匀介质中近似匀速传播，t 使用秒。"
+        },
+        "distractor_expression": "2*c*t",
+        "distractor_value": 600.0,
+        "dimension_matches": true,
+        "independent_evaluation": true
+      },
+      "review": {
+        "confidence": "medium",
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": true,
+          "no_answer_leak_in_options": true
+        },
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。",
+        "material": {
+          "anchors": [
+            {
+              "kind": "公式",
+              "name": "由光速和时间求传播路程",
+              "expression": "c*t",
+              "when": "光在同一均匀介质中近似匀速传播，t 使用秒。",
+              "display": "c·t"
+            }
+          ],
+          "source": {
+            "nature": "原创设计示例，非教材实测或真实实验记录",
+            "scenario": "光传播1微秒",
+            "parameters": {
+              "s": 300,
+              "c": 300000000,
+              "t": 1e-06
+            },
+            "data": [
+              "光传播的路程：300 m",
+              "光传播速度，空气中近似取真空光速：300000000 m/s",
+              "光传播所用时间：1e-06 s"
+            ]
+          },
+          "predicted_errors": [
+            {
+              "option": "B",
+              "text": "600 m",
+              "reason": "题目若只描述光从发出到到达一次，路程就是 c*t；额外乘 2 会把单程误算成往返。",
+              "expression": "2*c*t",
+              "status": "误答原因预测，待教师确认；未采集学生作答证据"
+            }
+          ],
+          "difficulty_note": "建议难度沿用本题level（源卡难度）；尚非题目难度实测，待教师调整",
+          "estimated_seconds": [
+            60,
+            120
+          ],
+          "time_basis": "未做学生计时；按现有难度给出备课估计区间，待教师确认",
+          "machine_checks": [
+            {
+              "name": "题目ID关联源知识点",
+              "passed": true
+            },
+            {
+              "name": "选项标签唯一且参考标签存在",
+              "passed": true
+            },
+            {
+              "name": "选项文本互异",
+              "passed": true
+            },
+            {
+              "name": "正确路径独立数值复算",
+              "passed": true
+            },
+            {
+              "name": "带量纲求值与独立求值一致",
+              "passed": true
+            },
+            {
+              "name": "干扰路径复算且与正确路径分离",
+              "passed": true
+            }
+          ],
+          "machine_boundary": "只列本次逐题实际执行项目；不把关联知识卡的方向、扫描或一致性检查算作本题已验。概念题未验命题真假。",
+          "human_review_items": [
+            "题干条件是否充分、清楚且符合学段",
+            "参考结论在指定条件下是否唯一",
+            "干扰项是否合理、对应真实认知问题且无答案暗示",
+            "公式或概念锚点是否准确",
+            "建议难度及用时是否适合教学",
+            "语言、装置与安全操作是否恰当"
+          ],
+          "reference_answer_note": "现有参考答案保持；即使本地可以判选项，也仍须教师审核教学可用性"
+        }
+      }
+    },
+    {
+      "id": "diagnostic-light-01-2",
+      "point_id": "light-01",
+      "point_title": "光的直线传播",
+      "chapter": "光现象",
+      "stem": "关于“光的直线传播”，判断这一说法是否成立，并说明依据：\n光在任何介质交界处都不会改变传播方向。",
+      "options": [
+        {
+          "label": "A",
+          "text": "该说法成立。"
+        },
+        {
+          "label": "B",
+          "text": "该说法不成立。"
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "光斜射入另一种介质时可能发生折射；直线传播规律只适用于同种均匀介质。\n知识点条件：影子的形成、小孔成像和日食月食都能用光沿直线传播解释。计算传播距离时，要区分单程和往返路程，并让速度、时间和距离采用相容单位。光速关系只能计算传播过程，不能单独决定反射或折射方向。\n推导依据：光沿直线传播时，路程可由轨迹长度确定；在同种均匀介质中传播速度近似不变。；速度定义为单位时间通过的路程，因此路程等于速度乘时间，速度也可由路程除以时间求出。；统一使用 m/s、s 和 m；若描述的是反射测距往返过程，还要把总路程与单程路程区分。\n卡片公式各自的适用条件（不是本题共同前提）：\n由光速和时间求传播路程：光在同一均匀介质中近似匀速传播，t 使用秒。\n由传播路程和时间求光速：s 与 t 必须描述同一段光传播过程。",
+      "error_type": "概念混淆",
+      "judging": "teacher",
+      "source_error_index": 1,
+      "source_caught_by": "人工审核",
+      "wrong_expr": null,
+      "trap_test": null,
+      "level": "基础",
+      "learning_scope": "初中",
+      "answer_evidence": {
+        "kind": "teacher",
+        "claim_source": "wrong",
+        "reference_only": true,
+        "reason": "概念、操作或无法建立完整定量证据，教师确认条件与结论。"
+      },
+      "review": {
+        "confidence": "medium",
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": false,
+          "no_answer_leak_in_options": true
+        },
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。",
+        "material": {
+          "anchors": [
+            {
+              "kind": "概念或操作",
+              "name": "光的直线传播",
+              "claim": "认为光在任何介质交界处都不会改变传播方向。",
+              "correction_basis": "光斜射入另一种介质时可能发生折射；直线传播规律只适用于同种均匀介质。",
+              "note": "概念锚点及命题真假待教师确认；未套用任意第一条公式",
+              "display": "认为光在任何介质交界处都不会改变传播方向。"
+            }
+          ],
+          "source": {
+            "nature": "原创概念/操作命题；无真实测量记录",
+            "source_error_index": 1
+          },
+          "predicted_errors": [
+            {
+              "option": "A",
+              "text": "该说法成立。",
+              "reason": "光斜射入另一种介质时可能发生折射；直线传播规律只适用于同种均匀介质。",
+              "expression": null,
+              "status": "误答原因预测，待教师确认；未采集学生作答证据"
+            }
+          ],
+          "difficulty_note": "建议难度沿用本题level（源卡难度）；尚非题目难度实测，待教师调整",
+          "estimated_seconds": [
+            60,
+            120
+          ],
+          "time_basis": "未做学生计时；按现有难度给出备课估计区间，待教师确认",
+          "machine_checks": [
+            {
+              "name": "题目ID关联源知识点",
+              "passed": true
+            },
+            {
+              "name": "选项标签唯一且参考标签存在",
+              "passed": true
+            },
+            {
+              "name": "选项文本互异",
+              "passed": true
+            }
+          ],
+          "machine_boundary": "只列本次逐题实际执行项目；不把关联知识卡的方向、扫描或一致性检查算作本题已验。概念题未验命题真假。",
+          "human_review_items": [
+            "题干条件是否充分、清楚且符合学段",
+            "参考结论在指定条件下是否唯一",
+            "干扰项是否合理、对应真实认知问题且无答案暗示",
+            "公式或概念锚点是否准确",
+            "建议难度及用时是否适合教学",
+            "语言、装置与安全操作是否恰当"
+          ],
+          "reference_answer_note": "现有参考答案保持；即使本地可以判选项，也仍须教师审核教学可用性"
+        }
+      }
+    },
+    {
+      "id": "diagnostic-light-02-1",
+      "point_id": "light-02",
+      "point_title": "平面镜",
+      "chapter": "光现象",
+      "stem": "在“平面镜”的模型下，d<sub>1</sub>（物体到平面镜的距离）=0.5 m。条件：物距和像距均指垂直于镜面的距离。。求像到平面镜的距离（d<sub>2</sub>）。这些数值是设计示例。",
+      "options": [
+        {
+          "label": "A",
+          "text": "0.25 m"
+        },
+        {
+          "label": "B",
+          "text": "0.5 m"
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "使用平面镜像距关系：d<sub>1</sub>，代入得0.5 m。另一结果来自d<sub>1</sub>/2，算得0.25 m。\n平面镜成像关于镜面对称，像距等于物距；物距 0.5 m 时像距应是 0.5 m。\n知识点条件：像距要从像点向镜面作垂线测量，物距也按同一方向测量；不能把沿着物体表面的斜距离当成像距。平面镜像是反射光线反向延长线的交点，不能用光屏承接。用等距、等高两项关系检查作图和读数，能快速发现对称位置画错。\n推导依据：作出法线后，反射定律要求反射角与入射角相等，两角都以法线为基准。；平面镜成像关于镜面对称，因此物点与像点到镜面的垂直距离相等。；对称变换不改变线段长度，所以像的高度与物体高度相同。\n卡片公式各自的适用条件（不是本题共同前提）：\n平面镜像距关系：物距和像距均指垂直于镜面的距离。\n平面镜像高关系：物体和像的高度采用相同长度单位。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 0,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "d<sub>2</sub> = d<sub>1</sub>/2",
+      "trap_test": {
+        "scenario": "物距半米",
+        "expr": "d1/2",
+        "ref": 0.5
+      },
+      "level": "基础",
+      "learning_scope": "初中",
+      "answer_evidence": {
+        "kind": "numeric",
+        "scenario": "物距半米",
+        "parameters": {
+          "d1": 0.5,
+          "d2": 0.5,
+          "h1": 0.2,
+          "h2": 0.2
+        },
+        "target": "d2",
+        "unit": "m",
+        "reference": 0.5,
+        "correct_proof": {
+          "expression": "d1",
+          "formula": "平面镜像距关系",
+          "value": 0.5,
+          "when": "物距和像距均指垂直于镜面的距离。"
+        },
+        "distractor_expression": "d1/2",
+        "distractor_value": 0.25,
+        "dimension_matches": true,
+        "independent_evaluation": true
+      },
+      "review": {
+        "confidence": "medium",
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": true,
+          "no_answer_leak_in_options": true
+        },
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。",
+        "material": {
+          "anchors": [
+            {
+              "kind": "公式",
+              "name": "平面镜像距关系",
+              "expression": "d1",
+              "when": "物距和像距均指垂直于镜面的距离。",
+              "display": "d<sub>1</sub>"
+            }
+          ],
+          "source": {
+            "nature": "原创设计示例，非教材实测或真实实验记录",
+            "scenario": "物距半米",
+            "parameters": {
+              "d1": 0.5,
+              "d2": 0.5,
+              "h1": 0.2,
+              "h2": 0.2
+            },
+            "data": [
+              "物体到平面镜的距离：0.5 m",
+              "像到平面镜的距离：0.5 m",
+              "物体高度：0.2 m",
+              "像的高度：0.2 m"
+            ]
+          },
+          "predicted_errors": [
+            {
+              "option": "A",
+              "text": "0.25 m",
+              "reason": "平面镜成像关于镜面对称，像距等于物距；物距 0.5 m 时像距应是 0.5 m。",
+              "expression": "d1/2",
+              "status": "误答原因预测，待教师确认；未采集学生作答证据"
+            }
+          ],
+          "difficulty_note": "建议难度沿用本题level（源卡难度）；尚非题目难度实测，待教师调整",
+          "estimated_seconds": [
+            60,
+            120
+          ],
+          "time_basis": "未做学生计时；按现有难度给出备课估计区间，待教师确认",
+          "machine_checks": [
+            {
+              "name": "题目ID关联源知识点",
+              "passed": true
+            },
+            {
+              "name": "选项标签唯一且参考标签存在",
+              "passed": true
+            },
+            {
+              "name": "选项文本互异",
+              "passed": true
+            },
+            {
+              "name": "正确路径独立数值复算",
+              "passed": true
+            },
+            {
+              "name": "带量纲求值与独立求值一致",
+              "passed": true
+            },
+            {
+              "name": "干扰路径复算且与正确路径分离",
+              "passed": true
+            }
+          ],
+          "machine_boundary": "只列本次逐题实际执行项目；不把关联知识卡的方向、扫描或一致性检查算作本题已验。概念题未验命题真假。",
+          "human_review_items": [
+            "题干条件是否充分、清楚且符合学段",
+            "参考结论在指定条件下是否唯一",
+            "干扰项是否合理、对应真实认知问题且无答案暗示",
+            "公式或概念锚点是否准确",
+            "建议难度及用时是否适合教学",
+            "语言、装置与安全操作是否恰当"
+          ],
+          "reference_answer_note": "现有参考答案保持；即使本地可以判选项，也仍须教师审核教学可用性"
+        }
+      }
+    },
+    {
+      "id": "diagnostic-light-02-2",
+      "point_id": "light-02",
+      "point_title": "平面镜",
+      "chapter": "光现象",
+      "stem": "关于“平面镜”，判断这一说法是否成立，并说明依据：\n平面镜像是反射光线反向延长线的交点，属于虚像。",
+      "options": [
+        {
+          "label": "A",
+          "text": "该说法不成立。"
+        },
+        {
+          "label": "B",
+          "text": "该说法成立。"
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "平面镜像是反射光线反向延长线的交点，属于虚像；应通过成像实验和光线图辨析。\n知识点条件：像距要从像点向镜面作垂线测量，物距也按同一方向测量；不能把沿着物体表面的斜距离当成像距。平面镜像是反射光线反向延长线的交点，不能用光屏承接。用等距、等高两项关系检查作图和读数，能快速发现对称位置画错。\n推导依据：作出法线后，反射定律要求反射角与入射角相等，两角都以法线为基准。；平面镜成像关于镜面对称，因此物点与像点到镜面的垂直距离相等。；对称变换不改变线段长度，所以像的高度与物体高度相同。\n卡片公式各自的适用条件（不是本题共同前提）：\n平面镜像距关系：物距和像距均指垂直于镜面的距离。\n平面镜像高关系：物体和像的高度采用相同长度单位。",
+      "error_type": "概念混淆",
+      "judging": "teacher",
+      "source_error_index": 1,
+      "source_caught_by": "人工审核",
+      "wrong_expr": null,
+      "trap_test": null,
+      "level": "基础",
+      "learning_scope": "初中",
+      "answer_evidence": {
+        "kind": "teacher",
+        "claim_source": "why",
+        "reference_only": true,
+        "reason": "概念、操作或无法建立完整定量证据，教师确认条件与结论。"
+      },
+      "review": {
+        "confidence": "medium",
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": false,
+          "no_answer_leak_in_options": true
+        },
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。",
+        "material": {
+          "anchors": [
+            {
+              "kind": "概念或操作",
+              "name": "平面镜",
+              "claim": "认为平面镜所成的像可以用光屏接收到。",
+              "correction_basis": "平面镜像是反射光线反向延长线的交点，属于虚像；应通过成像实验和光线图辨析。",
+              "note": "概念锚点及命题真假待教师确认；未套用任意第一条公式",
+              "display": "认为平面镜所成的像可以用光屏接收到。"
+            }
+          ],
+          "source": {
+            "nature": "原创概念/操作命题；无真实测量记录",
+            "source_error_index": 1
+          },
+          "predicted_errors": [
+            {
+              "option": "A",
+              "text": "该说法不成立。",
+              "reason": "平面镜像是反射光线反向延长线的交点，属于虚像；应通过成像实验和光线图辨析。",
+              "expression": null,
+              "status": "误答原因预测，待教师确认；未采集学生作答证据"
+            }
+          ],
+          "difficulty_note": "建议难度沿用本题level（源卡难度）；尚非题目难度实测，待教师调整",
+          "estimated_seconds": [
+            60,
+            120
+          ],
+          "time_basis": "未做学生计时；按现有难度给出备课估计区间，待教师确认",
+          "machine_checks": [
+            {
+              "name": "题目ID关联源知识点",
+              "passed": true
+            },
+            {
+              "name": "选项标签唯一且参考标签存在",
+              "passed": true
+            },
+            {
+              "name": "选项文本互异",
+              "passed": true
+            }
+          ],
+          "machine_boundary": "只列本次逐题实际执行项目；不把关联知识卡的方向、扫描或一致性检查算作本题已验。概念题未验命题真假。",
+          "human_review_items": [
+            "题干条件是否充分、清楚且符合学段",
+            "参考结论在指定条件下是否唯一",
+            "干扰项是否合理、对应真实认知问题且无答案暗示",
+            "公式或概念锚点是否准确",
+            "建议难度及用时是否适合教学",
+            "语言、装置与安全操作是否恰当"
+          ],
+          "reference_answer_note": "现有参考答案保持；即使本地可以判选项，也仍须教师审核教学可用性"
+        }
+      }
+    },
+    {
+      "id": "diagnostic-light-03-1",
+      "point_id": "light-03",
+      "point_title": "光的反射",
+      "chapter": "光现象",
+      "stem": "在“光的反射”的模型下，i（入射角，按度数记录）=30 1。条件：入射角和反射角均从法线量起；角度使用度数，且反射发生在同一介质侧。。求反射角，按度数记录（r）。这些数值是设计示例。",
+      "options": [
+        {
+          "label": "A",
+          "text": "60 1"
+        },
+        {
+          "label": "B",
+          "text": "30 1"
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "使用反射定律的角度关系：i，代入得30 1。另一结果来自90-i，算得60 1。\n入射角30°时从法线量的反射角也是30°，从镜面量到的60°是它的余角，不是反射角。\n知识点条件：作图时先找法线，再分别量入射角与反射角，角度不从镜面量起。反射定律可用角度读数检查：入射角变化多少，反射角就变化多少；反射线和镜面之间的夹角则与反射角互为余角。漫反射与镜面反射都遵循反射定律，只是表面情况不同。\n推导依据：过入射点作垂直于反射面的法线，明确角度的共同基准。；反射定律给出反射角 r 与入射角 i 相等。；法线和镜面夹角为 90°，所以反射线与镜面的夹角 α=90°-r。\n卡片公式各自的适用条件（不是本题共同前提）：\n反射定律的角度关系：入射角和反射角均从法线量起；角度使用度数，且反射发生在同一介质侧。\n反射线与镜面的夹角：α 是反射线与镜面的夹角，r 是反射角；法线与镜面互相垂直。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 0,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "r = 90-i",
+      "trap_test": {
+        "scenario": "入射角30度",
+        "expr": "90-i",
+        "ref": 30
+      },
+      "level": "基础",
+      "learning_scope": "初中",
+      "answer_evidence": {
+        "kind": "numeric",
+        "scenario": "入射角30度",
+        "parameters": {
+          "i": 30,
+          "r": 30,
+          "alpha": 60
+        },
+        "target": "r",
+        "unit": "1",
+        "reference": 30,
+        "correct_proof": {
+          "expression": "i",
+          "formula": "反射定律的角度关系",
+          "value": 30,
+          "when": "入射角和反射角均从法线量起；角度使用度数，且反射发生在同一介质侧。"
+        },
+        "distractor_expression": "90-i",
+        "distractor_value": 60.0,
+        "dimension_matches": true,
+        "independent_evaluation": true
+      },
+      "review": {
+        "confidence": "medium",
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": true,
+          "no_answer_leak_in_options": true
+        },
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。",
+        "material": {
+          "anchors": [
+            {
+              "kind": "公式",
+              "name": "反射定律的角度关系",
+              "expression": "i",
+              "when": "入射角和反射角均从法线量起；角度使用度数，且反射发生在同一介质侧。",
+              "display": "i"
+            }
+          ],
+          "source": {
+            "nature": "原创设计示例，非教材实测或真实实验记录",
+            "scenario": "入射角30度",
+            "parameters": {
+              "i": 30,
+              "r": 30,
+              "alpha": 60
+            },
+            "data": [
+              "入射角，按度数记录：30 1",
+              "反射角，按度数记录：30 1",
+              "反射光线与镜面的夹角，按度数记录：60 1"
+            ]
+          },
+          "predicted_errors": [
+            {
+              "option": "A",
+              "text": "60 1",
+              "reason": "入射角30°时从法线量的反射角也是30°，从镜面量到的60°是它的余角，不是反射角。",
+              "expression": "90-i",
+              "status": "误答原因预测，待教师确认；未采集学生作答证据"
+            }
+          ],
+          "difficulty_note": "建议难度沿用本题level（源卡难度）；尚非题目难度实测，待教师调整",
+          "estimated_seconds": [
+            60,
+            120
+          ],
+          "time_basis": "未做学生计时；按现有难度给出备课估计区间，待教师确认",
+          "machine_checks": [
+            {
+              "name": "题目ID关联源知识点",
+              "passed": true
+            },
+            {
+              "name": "选项标签唯一且参考标签存在",
+              "passed": true
+            },
+            {
+              "name": "选项文本互异",
+              "passed": true
+            },
+            {
+              "name": "正确路径独立数值复算",
+              "passed": true
+            },
+            {
+              "name": "带量纲求值与独立求值一致",
+              "passed": true
+            },
+            {
+              "name": "干扰路径复算且与正确路径分离",
+              "passed": true
+            }
+          ],
+          "machine_boundary": "只列本次逐题实际执行项目；不把关联知识卡的方向、扫描或一致性检查算作本题已验。概念题未验命题真假。",
+          "human_review_items": [
+            "题干条件是否充分、清楚且符合学段",
+            "参考结论在指定条件下是否唯一",
+            "干扰项是否合理、对应真实认知问题且无答案暗示",
+            "公式或概念锚点是否准确",
+            "建议难度及用时是否适合教学",
+            "语言、装置与安全操作是否恰当"
+          ],
+          "reference_answer_note": "现有参考答案保持；即使本地可以判选项，也仍须教师审核教学可用性"
+        }
+      }
+    },
+    {
+      "id": "diagnostic-light-03-2",
+      "point_id": "light-03",
+      "point_title": "光的反射",
+      "chapter": "光现象",
+      "stem": "关于“光的反射”，判断这一说法是否成立，并说明依据：\n漫反射和镜面反射都遵守反射定律，差别在于表面是否平整以及反射光的方向分布。",
+      "options": [
+        {
+          "label": "A",
+          "text": "该说法不成立。"
+        },
+        {
+          "label": "B",
+          "text": "该说法成立。"
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "漫反射和镜面反射都遵守反射定律，差别在于表面是否平整以及反射光的方向分布。\n知识点条件：作图时先找法线，再分别量入射角与反射角，角度不从镜面量起。反射定律可用角度读数检查：入射角变化多少，反射角就变化多少；反射线和镜面之间的夹角则与反射角互为余角。漫反射与镜面反射都遵循反射定律，只是表面情况不同。\n推导依据：过入射点作垂直于反射面的法线，明确角度的共同基准。；反射定律给出反射角 r 与入射角 i 相等。；法线和镜面夹角为 90°，所以反射线与镜面的夹角 α=90°-r。\n卡片公式各自的适用条件（不是本题共同前提）：\n反射定律的角度关系：入射角和反射角均从法线量起；角度使用度数，且反射发生在同一介质侧。\n反射线与镜面的夹角：α 是反射线与镜面的夹角，r 是反射角；法线与镜面互相垂直。",
+      "error_type": "概念混淆",
+      "judging": "teacher",
+      "source_error_index": 1,
+      "source_caught_by": "人工审核",
+      "wrong_expr": null,
+      "trap_test": null,
+      "level": "基础",
+      "learning_scope": "初中",
+      "answer_evidence": {
+        "kind": "teacher",
+        "claim_source": "why",
+        "reference_only": true,
+        "reason": "概念、操作或无法建立完整定量证据，教师确认条件与结论。"
+      },
+      "review": {
+        "confidence": "medium",
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": false,
+          "no_answer_leak_in_options": true
+        },
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。",
+        "material": {
+          "anchors": [
+            {
+              "kind": "概念或操作",
+              "name": "光的反射",
+              "claim": "认为只有光滑表面才发生反射。",
+              "correction_basis": "漫反射和镜面反射都遵守反射定律，差别在于表面是否平整以及反射光的方向分布。",
+              "note": "概念锚点及命题真假待教师确认；未套用任意第一条公式",
+              "display": "认为只有光滑表面才发生反射。"
+            }
+          ],
+          "source": {
+            "nature": "原创概念/操作命题；无真实测量记录",
+            "source_error_index": 1
+          },
+          "predicted_errors": [
+            {
+              "option": "A",
+              "text": "该说法不成立。",
+              "reason": "漫反射和镜面反射都遵守反射定律，差别在于表面是否平整以及反射光的方向分布。",
+              "expression": null,
+              "status": "误答原因预测，待教师确认；未采集学生作答证据"
+            }
+          ],
+          "difficulty_note": "建议难度沿用本题level（源卡难度）；尚非题目难度实测，待教师调整",
+          "estimated_seconds": [
+            60,
+            120
+          ],
+          "time_basis": "未做学生计时；按现有难度给出备课估计区间，待教师确认",
+          "machine_checks": [
+            {
+              "name": "题目ID关联源知识点",
+              "passed": true
+            },
+            {
+              "name": "选项标签唯一且参考标签存在",
+              "passed": true
+            },
+            {
+              "name": "选项文本互异",
+              "passed": true
+            }
+          ],
+          "machine_boundary": "只列本次逐题实际执行项目；不把关联知识卡的方向、扫描或一致性检查算作本题已验。概念题未验命题真假。",
+          "human_review_items": [
+            "题干条件是否充分、清楚且符合学段",
+            "参考结论在指定条件下是否唯一",
+            "干扰项是否合理、对应真实认知问题且无答案暗示",
+            "公式或概念锚点是否准确",
+            "建议难度及用时是否适合教学",
+            "语言、装置与安全操作是否恰当"
+          ],
+          "reference_answer_note": "现有参考答案保持；即使本地可以判选项，也仍须教师审核教学可用性"
+        }
+      }
+    }
+  ],
+  "skipped": [],
+  "source_records": {
+    "diagnostic-light-04-1": {
+      "point": {
+        "id": "light-04",
+        "title": "光的色彩",
+        "level": "拓展",
+        "definition": "白光由多种色光组成；不同色光在真空中的波速相同，但频率和波长不同。按本知识点的拓展关系，光速、频率与波长可互相换算，色散现象则用来观察白光分解出的色光。",
+        "meaning": "教材重点是观察色散、认识不同色光及其混合现象；颜色不能用亮度替代。为把观察与可测量量联系起来，这里补充真空电磁波的波速关系：固定光速时，波长越长，频率越低。该换算属于拓展工具，不代替色散实验，也不意味着所有介质中的光速都相同。",
+        "symbols": {
+          "f": {
+            "desc": "光波频率",
+            "unit": "Hz"
+          },
+          "lambda": {
+            "desc": "光波波长",
+            "unit": "m"
+          },
+          "c": {
+            "desc": "真空中的光速",
+            "unit": "m/s"
+          },
+          "s": {
+            "desc": "真空中光传播路程",
+            "unit": "m"
+          },
+          "t": {
+            "desc": "传播时间",
+            "unit": "s"
+          }
+        },
+        "scenarios": {
+          "红光近似值": {
+            "f": 400000000000000,
+            "lambda": 7.5e-07,
+            "c": 300000000,
+            "s": 300,
+            "t": 1e-06
+          },
+          "紫光近似值": {
+            "f": 750000000000000,
+            "lambda": 4e-07,
+            "c": 300000000,
+            "s": 600,
+            "t": 2e-06
+          }
+        },
+        "formulas": [
+          {
+            "name": "由真空光速和波长求频率",
+            "expr": "f = c/lambda",
+            "when": "拓展计算，非本卡初中必背主线。用于真空或可近似看作真空的光传播；光速 c、波长 lambda 使用 m/s、m。此关系用于色光的定量拓展，不是判断颜色的唯一依据。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "红光近似值",
+                "expr": "c/lambda",
+                "ref": 400000000000000,
+                "note": "约 3.0×10^8 m/s ÷ 7.5×10^-7 m = 4.0×10^14 Hz。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "紫光近似值",
+                "expr": "c/lambda",
+                "ref": 750000000000000,
+                "note": "约 3.0×10^8 m/s ÷ 4.0×10^-7 m = 7.5×10^14 Hz。"
+              },
+              {
+                "type": "direction",
+                "scenario": "红光近似值",
+                "var": "lambda",
+                "lo": 4e-07,
+                "hi": 8e-07,
+                "expr": "c/lambda",
+                "expect": "down",
+                "note": "在光速不变时，波长增大，频率减小。"
+              },
+              {
+                "type": "scan",
+                "scenario": "红光近似值",
+                "var": "lambda",
+                "lo": 4e-07,
+                "hi": 8e-07,
+                "note": "扫描可见光附近正波长，频率保持为有限正值。"
+              },
+              {
+                "type": "consistency",
+                "scenario": "红光近似值",
+                "with": "light-04|由真空光速和波长求频率",
+                "with_expr": "s/(t*lambda)",
+                "target": "光波频率",
+                "note": "本公式直接求f；参考端显式关系为s/(t*lambda)。两端使用同一情境和阶段，只核对该关系；with字段仅定位来源，不代表调用另一条被覆盖的公式。",
+                "verification_kind": "独立关系核对"
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "波在一个周期内传播一个波长，因此波速等于波长乘以每秒振动次数。",
+          "频率关系 c=lambda*f 两边同除以波长，得到 f=c/lambda。",
+          "代入前统一单位：波长用 m、频率用 Hz，乘积的单位为 m/s。"
+        ],
+        "errors": [
+          {
+            "wrong": "把频率误算为波速乘波长，混淆相除关系。",
+            "wrong_expr": "f = c*lambda",
+            "why": "频率应为波速除以波长；相乘得到的单位为m²/s，不是Hz。红光示例乘积为225，正确频率为4×10¹⁴ Hz。",
+            "caught_by": "量纲一致性",
+            "trap_test": {
+              "kind": "dimension",
+              "target": "f = c*lambda",
+              "expect": "mismatch",
+              "lhs_dim": "T^-1",
+              "rhs_dim": "L^2·T^-1",
+              "note": "正式引擎验证量纲不一致；不计作同量纲错误数值实测。"
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "认为白光本身只有一种颜色，或把色光混合与颜料混合规律混为一谈。",
+            "why": "棱镜色散可观察到白光分解出的多种色光；色光的叠加与颜料混合不是同一过程。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "把750 nm错误换为750 μm再求频率。",
+            "wrong_expr": "f = c/(1000*lambda)",
+            "why": "750 nm应7.5×10⁻⁷ m；误换为750 μm使波长大千倍、频率小千倍。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "红光近似值",
+              "expr": "c/(1000*lambda)",
+              "ref": 400000000000000.0,
+              "tol": 1e-06
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "某单色光波长约为 6.0×10^-7 m，取真空光速 3.0×10^8 m/s，估算其频率。",
+          "solution": [
+            "辨认所求量是频率，使用 f=c/lambda。",
+            "代入 f=3.0×10^8÷6.0×10^-7=5.0×10^14 Hz。"
+          ],
+          "answer": "频率约为 5.0×10^14 Hz。"
+        },
+        "prereq": [],
+        "next": [
+          "light-01"
+        ],
+        "tags": [
+          "光的色彩",
+          "白光",
+          "色散",
+          "频率",
+          "波长",
+          "拓展"
+        ],
+        "core": [
+          {
+            "title": "光的色彩",
+            "text": "光源自身发光，月亮反射太阳光而非光源。白光经棱镜色散，说明它由多种色光组成；色光三原色为红、绿、蓝，适当叠加可成白光，颜料混合不是同一规律。透明物体颜色取决于主要透过的色光，不透明物体颜色取决于主要反射的色光；红物体在只有蓝光照射时可能很暗，不能只按物体名称断言颜色。"
+          },
+          {
+            "title": "本章素养回顾（原创任务）",
+            "text": "选择本章一个现象，写出结论、成立条件和证据；用另一条本章规律复核解释是否矛盾。指出一次测量或模型的局限，并说明还需什么证据；数值通过不替代概念辨析。"
+          }
+        ],
+        "learning_scope": "初中主线；公式含拓展"
+      },
+      "error_index": 0,
+      "chapter": "光现象"
+    },
+    "diagnostic-light-04-2": {
+      "point": {
+        "id": "light-04",
+        "title": "光的色彩",
+        "level": "拓展",
+        "definition": "白光由多种色光组成；不同色光在真空中的波速相同，但频率和波长不同。按本知识点的拓展关系，光速、频率与波长可互相换算，色散现象则用来观察白光分解出的色光。",
+        "meaning": "教材重点是观察色散、认识不同色光及其混合现象；颜色不能用亮度替代。为把观察与可测量量联系起来，这里补充真空电磁波的波速关系：固定光速时，波长越长，频率越低。该换算属于拓展工具，不代替色散实验，也不意味着所有介质中的光速都相同。",
+        "symbols": {
+          "f": {
+            "desc": "光波频率",
+            "unit": "Hz"
+          },
+          "lambda": {
+            "desc": "光波波长",
+            "unit": "m"
+          },
+          "c": {
+            "desc": "真空中的光速",
+            "unit": "m/s"
+          },
+          "s": {
+            "desc": "真空中光传播路程",
+            "unit": "m"
+          },
+          "t": {
+            "desc": "传播时间",
+            "unit": "s"
+          }
+        },
+        "scenarios": {
+          "红光近似值": {
+            "f": 400000000000000,
+            "lambda": 7.5e-07,
+            "c": 300000000,
+            "s": 300,
+            "t": 1e-06
+          },
+          "紫光近似值": {
+            "f": 750000000000000,
+            "lambda": 4e-07,
+            "c": 300000000,
+            "s": 600,
+            "t": 2e-06
+          }
+        },
+        "formulas": [
+          {
+            "name": "由真空光速和波长求频率",
+            "expr": "f = c/lambda",
+            "when": "拓展计算，非本卡初中必背主线。用于真空或可近似看作真空的光传播；光速 c、波长 lambda 使用 m/s、m。此关系用于色光的定量拓展，不是判断颜色的唯一依据。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "红光近似值",
+                "expr": "c/lambda",
+                "ref": 400000000000000,
+                "note": "约 3.0×10^8 m/s ÷ 7.5×10^-7 m = 4.0×10^14 Hz。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "紫光近似值",
+                "expr": "c/lambda",
+                "ref": 750000000000000,
+                "note": "约 3.0×10^8 m/s ÷ 4.0×10^-7 m = 7.5×10^14 Hz。"
+              },
+              {
+                "type": "direction",
+                "scenario": "红光近似值",
+                "var": "lambda",
+                "lo": 4e-07,
+                "hi": 8e-07,
+                "expr": "c/lambda",
+                "expect": "down",
+                "note": "在光速不变时，波长增大，频率减小。"
+              },
+              {
+                "type": "scan",
+                "scenario": "红光近似值",
+                "var": "lambda",
+                "lo": 4e-07,
+                "hi": 8e-07,
+                "note": "扫描可见光附近正波长，频率保持为有限正值。"
+              },
+              {
+                "type": "consistency",
+                "scenario": "红光近似值",
+                "with": "light-04|由真空光速和波长求频率",
+                "with_expr": "s/(t*lambda)",
+                "target": "光波频率",
+                "note": "本公式直接求f；参考端显式关系为s/(t*lambda)。两端使用同一情境和阶段，只核对该关系；with字段仅定位来源，不代表调用另一条被覆盖的公式。",
+                "verification_kind": "独立关系核对"
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "波在一个周期内传播一个波长，因此波速等于波长乘以每秒振动次数。",
+          "频率关系 c=lambda*f 两边同除以波长，得到 f=c/lambda。",
+          "代入前统一单位：波长用 m、频率用 Hz，乘积的单位为 m/s。"
+        ],
+        "errors": [
+          {
+            "wrong": "把频率误算为波速乘波长，混淆相除关系。",
+            "wrong_expr": "f = c*lambda",
+            "why": "频率应为波速除以波长；相乘得到的单位为m²/s，不是Hz。红光示例乘积为225，正确频率为4×10¹⁴ Hz。",
+            "caught_by": "量纲一致性",
+            "trap_test": {
+              "kind": "dimension",
+              "target": "f = c*lambda",
+              "expect": "mismatch",
+              "lhs_dim": "T^-1",
+              "rhs_dim": "L^2·T^-1",
+              "note": "正式引擎验证量纲不一致；不计作同量纲错误数值实测。"
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "认为白光本身只有一种颜色，或把色光混合与颜料混合规律混为一谈。",
+            "why": "棱镜色散可观察到白光分解出的多种色光；色光的叠加与颜料混合不是同一过程。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "把750 nm错误换为750 μm再求频率。",
+            "wrong_expr": "f = c/(1000*lambda)",
+            "why": "750 nm应7.5×10⁻⁷ m；误换为750 μm使波长大千倍、频率小千倍。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "红光近似值",
+              "expr": "c/(1000*lambda)",
+              "ref": 400000000000000.0,
+              "tol": 1e-06
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "某单色光波长约为 6.0×10^-7 m，取真空光速 3.0×10^8 m/s，估算其频率。",
+          "solution": [
+            "辨认所求量是频率，使用 f=c/lambda。",
+            "代入 f=3.0×10^8÷6.0×10^-7=5.0×10^14 Hz。"
+          ],
+          "answer": "频率约为 5.0×10^14 Hz。"
+        },
+        "prereq": [],
+        "next": [
+          "light-01"
+        ],
+        "tags": [
+          "光的色彩",
+          "白光",
+          "色散",
+          "频率",
+          "波长",
+          "拓展"
+        ],
+        "core": [
+          {
+            "title": "光的色彩",
+            "text": "光源自身发光，月亮反射太阳光而非光源。白光经棱镜色散，说明它由多种色光组成；色光三原色为红、绿、蓝，适当叠加可成白光，颜料混合不是同一规律。透明物体颜色取决于主要透过的色光，不透明物体颜色取决于主要反射的色光；红物体在只有蓝光照射时可能很暗，不能只按物体名称断言颜色。"
+          },
+          {
+            "title": "本章素养回顾（原创任务）",
+            "text": "选择本章一个现象，写出结论、成立条件和证据；用另一条本章规律复核解释是否矛盾。指出一次测量或模型的局限，并说明还需什么证据；数值通过不替代概念辨析。"
+          }
+        ],
+        "learning_scope": "初中主线；公式含拓展"
+      },
+      "error_index": 1,
+      "chapter": "光现象"
+    },
+    "diagnostic-light-04-3": {
+      "point": {
+        "id": "light-04",
+        "title": "光的色彩",
+        "level": "拓展",
+        "definition": "白光由多种色光组成；不同色光在真空中的波速相同，但频率和波长不同。按本知识点的拓展关系，光速、频率与波长可互相换算，色散现象则用来观察白光分解出的色光。",
+        "meaning": "教材重点是观察色散、认识不同色光及其混合现象；颜色不能用亮度替代。为把观察与可测量量联系起来，这里补充真空电磁波的波速关系：固定光速时，波长越长，频率越低。该换算属于拓展工具，不代替色散实验，也不意味着所有介质中的光速都相同。",
+        "symbols": {
+          "f": {
+            "desc": "光波频率",
+            "unit": "Hz"
+          },
+          "lambda": {
+            "desc": "光波波长",
+            "unit": "m"
+          },
+          "c": {
+            "desc": "真空中的光速",
+            "unit": "m/s"
+          },
+          "s": {
+            "desc": "真空中光传播路程",
+            "unit": "m"
+          },
+          "t": {
+            "desc": "传播时间",
+            "unit": "s"
+          }
+        },
+        "scenarios": {
+          "红光近似值": {
+            "f": 400000000000000,
+            "lambda": 7.5e-07,
+            "c": 300000000,
+            "s": 300,
+            "t": 1e-06
+          },
+          "紫光近似值": {
+            "f": 750000000000000,
+            "lambda": 4e-07,
+            "c": 300000000,
+            "s": 600,
+            "t": 2e-06
+          }
+        },
+        "formulas": [
+          {
+            "name": "由真空光速和波长求频率",
+            "expr": "f = c/lambda",
+            "when": "拓展计算，非本卡初中必背主线。用于真空或可近似看作真空的光传播；光速 c、波长 lambda 使用 m/s、m。此关系用于色光的定量拓展，不是判断颜色的唯一依据。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "红光近似值",
+                "expr": "c/lambda",
+                "ref": 400000000000000,
+                "note": "约 3.0×10^8 m/s ÷ 7.5×10^-7 m = 4.0×10^14 Hz。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "紫光近似值",
+                "expr": "c/lambda",
+                "ref": 750000000000000,
+                "note": "约 3.0×10^8 m/s ÷ 4.0×10^-7 m = 7.5×10^14 Hz。"
+              },
+              {
+                "type": "direction",
+                "scenario": "红光近似值",
+                "var": "lambda",
+                "lo": 4e-07,
+                "hi": 8e-07,
+                "expr": "c/lambda",
+                "expect": "down",
+                "note": "在光速不变时，波长增大，频率减小。"
+              },
+              {
+                "type": "scan",
+                "scenario": "红光近似值",
+                "var": "lambda",
+                "lo": 4e-07,
+                "hi": 8e-07,
+                "note": "扫描可见光附近正波长，频率保持为有限正值。"
+              },
+              {
+                "type": "consistency",
+                "scenario": "红光近似值",
+                "with": "light-04|由真空光速和波长求频率",
+                "with_expr": "s/(t*lambda)",
+                "target": "光波频率",
+                "note": "本公式直接求f；参考端显式关系为s/(t*lambda)。两端使用同一情境和阶段，只核对该关系；with字段仅定位来源，不代表调用另一条被覆盖的公式。",
+                "verification_kind": "独立关系核对"
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "波在一个周期内传播一个波长，因此波速等于波长乘以每秒振动次数。",
+          "频率关系 c=lambda*f 两边同除以波长，得到 f=c/lambda。",
+          "代入前统一单位：波长用 m、频率用 Hz，乘积的单位为 m/s。"
+        ],
+        "errors": [
+          {
+            "wrong": "把频率误算为波速乘波长，混淆相除关系。",
+            "wrong_expr": "f = c*lambda",
+            "why": "频率应为波速除以波长；相乘得到的单位为m²/s，不是Hz。红光示例乘积为225，正确频率为4×10¹⁴ Hz。",
+            "caught_by": "量纲一致性",
+            "trap_test": {
+              "kind": "dimension",
+              "target": "f = c*lambda",
+              "expect": "mismatch",
+              "lhs_dim": "T^-1",
+              "rhs_dim": "L^2·T^-1",
+              "note": "正式引擎验证量纲不一致；不计作同量纲错误数值实测。"
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "认为白光本身只有一种颜色，或把色光混合与颜料混合规律混为一谈。",
+            "why": "棱镜色散可观察到白光分解出的多种色光；色光的叠加与颜料混合不是同一过程。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "把750 nm错误换为750 μm再求频率。",
+            "wrong_expr": "f = c/(1000*lambda)",
+            "why": "750 nm应7.5×10⁻⁷ m；误换为750 μm使波长大千倍、频率小千倍。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "红光近似值",
+              "expr": "c/(1000*lambda)",
+              "ref": 400000000000000.0,
+              "tol": 1e-06
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "某单色光波长约为 6.0×10^-7 m，取真空光速 3.0×10^8 m/s，估算其频率。",
+          "solution": [
+            "辨认所求量是频率，使用 f=c/lambda。",
+            "代入 f=3.0×10^8÷6.0×10^-7=5.0×10^14 Hz。"
+          ],
+          "answer": "频率约为 5.0×10^14 Hz。"
+        },
+        "prereq": [],
+        "next": [
+          "light-01"
+        ],
+        "tags": [
+          "光的色彩",
+          "白光",
+          "色散",
+          "频率",
+          "波长",
+          "拓展"
+        ],
+        "core": [
+          {
+            "title": "光的色彩",
+            "text": "光源自身发光，月亮反射太阳光而非光源。白光经棱镜色散，说明它由多种色光组成；色光三原色为红、绿、蓝，适当叠加可成白光，颜料混合不是同一规律。透明物体颜色取决于主要透过的色光，不透明物体颜色取决于主要反射的色光；红物体在只有蓝光照射时可能很暗，不能只按物体名称断言颜色。"
+          },
+          {
+            "title": "本章素养回顾（原创任务）",
+            "text": "选择本章一个现象，写出结论、成立条件和证据；用另一条本章规律复核解释是否矛盾。指出一次测量或模型的局限，并说明还需什么证据；数值通过不替代概念辨析。"
+          }
+        ],
+        "learning_scope": "初中主线；公式含拓展"
+      },
+      "error_index": 2,
+      "chapter": "光现象"
+    },
+    "diagnostic-light-01-1": {
+      "point": {
+        "id": "light-01",
+        "title": "光的直线传播",
+        "level": "基础",
+        "definition": "光在同种均匀介质中沿直线传播；从一种介质进入另一种介质时，传播方向可能改变。真空中的光速约为每秒三亿米，空气中的光速可近似取这一数值。",
+        "meaning": "影子的形成、小孔成像和日食月食都能用光沿直线传播解释。计算传播距离时，要区分单程和往返路程，并让速度、时间和距离采用相容单位。光速关系只能计算传播过程，不能单独决定反射或折射方向。",
+        "symbols": {
+          "s": {
+            "desc": "光传播的路程",
+            "unit": "m"
+          },
+          "c": {
+            "desc": "光传播速度，空气中近似取真空光速",
+            "unit": "m/s"
+          },
+          "t": {
+            "desc": "光传播所用时间",
+            "unit": "s"
+          }
+        },
+        "scenarios": {
+          "光传播1微秒": {
+            "s": 300,
+            "c": 300000000,
+            "t": 1e-06
+          },
+          "光传播2微秒": {
+            "s": 600,
+            "c": 300000000,
+            "t": 2e-06
+          }
+        },
+        "formulas": [
+          {
+            "name": "由光速和时间求传播路程",
+            "expr": "s = c*t",
+            "when": "光在同一均匀介质中近似匀速传播，t 使用秒。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "光传播1微秒",
+                "expr": "c*t",
+                "ref": 300,
+                "note": "3.0×10^8 m/s × 10^-6 s = 300 m。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "光传播2微秒",
+                "expr": "c*t",
+                "ref": 600,
+                "note": "时间加倍，传播路程加倍。"
+              },
+              {
+                "type": "direction",
+                "scenario": "光传播1微秒",
+                "var": "t",
+                "lo": 1e-06,
+                "hi": 1e-05,
+                "expr": "c*t",
+                "expect": "up",
+                "note": "光速固定时，传播时间越长，路程越大。"
+              },
+              {
+                "type": "scan",
+                "scenario": "光传播1微秒",
+                "var": "t",
+                "lo": 1e-06,
+                "hi": 1e-05,
+                "note": "扫描正时间范围，检查传播路程随参数变化稳定。"
+              }
+            ]
+          },
+          {
+            "name": "由传播路程和时间求光速",
+            "expr": "c = s/t",
+            "when": "s 与 t 必须描述同一段光传播过程。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "光传播1微秒",
+                "expr": "s/t",
+                "ref": 300000000,
+                "note": "300 m ÷ 0.000001 s = 3.0×10^8 m/s。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "光传播2微秒",
+                "expr": "s/t",
+                "ref": 300000000,
+                "note": "600 m ÷ 0.000002 s 仍约为 3.0×10^8 m/s。"
+              },
+              {
+                "type": "consistency",
+                "scenario": "光传播1微秒",
+                "with": "light-01|由传播路程和时间求光速",
+                "with_expr": "c",
+                "target": "光传播速度，空气中近似取真空光速",
+                "note": "直接求本公式输出，与情境中另列的c设计基准核对；数据是设计示例，不是实测。用于核对定义、反算或边界值，不宣称不同物理原理互证。",
+                "verification_kind": "独立设计情境数据核对"
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "光沿直线传播时，路程可由轨迹长度确定；在同种均匀介质中传播速度近似不变。",
+          "速度定义为单位时间通过的路程，因此路程等于速度乘时间，速度也可由路程除以时间求出。",
+          "统一使用 m/s、s 和 m；若描述的是反射测距往返过程，还要把总路程与单程路程区分。"
+        ],
+        "errors": [
+          {
+            "wrong": "把单程传播误写成往返路程，平白多乘 2。",
+            "wrong_expr": "s = 2*c*t",
+            "why": "题目若只描述光从发出到到达一次，路程就是 c*t；额外乘 2 会把单程误算成往返。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "光传播1微秒",
+              "expr": "2*c*t",
+              "ref": 300
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "认为光在任何介质交界处都不会改变传播方向。",
+            "why": "光斜射入另一种介质时可能发生折射；直线传播规律只适用于同种均匀介质。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "空气中一束光传播 2 微秒，按光速约 3.0×10^8 m/s 估算路程。",
+          "solution": [
+            "先换算时间：2 微秒 = 0.000002 s。",
+            "使用 s=ct，得到 3.0×10^8×0.000002=600 m。"
+          ],
+          "answer": "约 600 m。"
+        },
+        "prereq": [],
+        "next": [
+          "light-02",
+          "light-03"
+        ],
+        "tags": [
+          "直线传播",
+          "光速",
+          "影子",
+          "小孔成像"
+        ],
+        "core": [
+          {
+            "title": "光的直线传播",
+            "text": "成立条件是同种、均匀的介质。小孔成像是倒立的实像，形状由物体决定，孔的形状主要影响亮度与清晰度；影子是光被遮挡形成的暗区，不是镜像。日食时月球位于太阳与地球之间；月食时地球位于太阳与月球之间。解释先画光路，不把所有成像归为反射。"
+          }
+        ],
+        "learning_scope": "初中"
+      },
+      "error_index": 0,
+      "chapter": "光现象"
+    },
+    "diagnostic-light-01-2": {
+      "point": {
+        "id": "light-01",
+        "title": "光的直线传播",
+        "level": "基础",
+        "definition": "光在同种均匀介质中沿直线传播；从一种介质进入另一种介质时，传播方向可能改变。真空中的光速约为每秒三亿米，空气中的光速可近似取这一数值。",
+        "meaning": "影子的形成、小孔成像和日食月食都能用光沿直线传播解释。计算传播距离时，要区分单程和往返路程，并让速度、时间和距离采用相容单位。光速关系只能计算传播过程，不能单独决定反射或折射方向。",
+        "symbols": {
+          "s": {
+            "desc": "光传播的路程",
+            "unit": "m"
+          },
+          "c": {
+            "desc": "光传播速度，空气中近似取真空光速",
+            "unit": "m/s"
+          },
+          "t": {
+            "desc": "光传播所用时间",
+            "unit": "s"
+          }
+        },
+        "scenarios": {
+          "光传播1微秒": {
+            "s": 300,
+            "c": 300000000,
+            "t": 1e-06
+          },
+          "光传播2微秒": {
+            "s": 600,
+            "c": 300000000,
+            "t": 2e-06
+          }
+        },
+        "formulas": [
+          {
+            "name": "由光速和时间求传播路程",
+            "expr": "s = c*t",
+            "when": "光在同一均匀介质中近似匀速传播，t 使用秒。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "光传播1微秒",
+                "expr": "c*t",
+                "ref": 300,
+                "note": "3.0×10^8 m/s × 10^-6 s = 300 m。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "光传播2微秒",
+                "expr": "c*t",
+                "ref": 600,
+                "note": "时间加倍，传播路程加倍。"
+              },
+              {
+                "type": "direction",
+                "scenario": "光传播1微秒",
+                "var": "t",
+                "lo": 1e-06,
+                "hi": 1e-05,
+                "expr": "c*t",
+                "expect": "up",
+                "note": "光速固定时，传播时间越长，路程越大。"
+              },
+              {
+                "type": "scan",
+                "scenario": "光传播1微秒",
+                "var": "t",
+                "lo": 1e-06,
+                "hi": 1e-05,
+                "note": "扫描正时间范围，检查传播路程随参数变化稳定。"
+              }
+            ]
+          },
+          {
+            "name": "由传播路程和时间求光速",
+            "expr": "c = s/t",
+            "when": "s 与 t 必须描述同一段光传播过程。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "光传播1微秒",
+                "expr": "s/t",
+                "ref": 300000000,
+                "note": "300 m ÷ 0.000001 s = 3.0×10^8 m/s。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "光传播2微秒",
+                "expr": "s/t",
+                "ref": 300000000,
+                "note": "600 m ÷ 0.000002 s 仍约为 3.0×10^8 m/s。"
+              },
+              {
+                "type": "consistency",
+                "scenario": "光传播1微秒",
+                "with": "light-01|由传播路程和时间求光速",
+                "with_expr": "c",
+                "target": "光传播速度，空气中近似取真空光速",
+                "note": "直接求本公式输出，与情境中另列的c设计基准核对；数据是设计示例，不是实测。用于核对定义、反算或边界值，不宣称不同物理原理互证。",
+                "verification_kind": "独立设计情境数据核对"
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "光沿直线传播时，路程可由轨迹长度确定；在同种均匀介质中传播速度近似不变。",
+          "速度定义为单位时间通过的路程，因此路程等于速度乘时间，速度也可由路程除以时间求出。",
+          "统一使用 m/s、s 和 m；若描述的是反射测距往返过程，还要把总路程与单程路程区分。"
+        ],
+        "errors": [
+          {
+            "wrong": "把单程传播误写成往返路程，平白多乘 2。",
+            "wrong_expr": "s = 2*c*t",
+            "why": "题目若只描述光从发出到到达一次，路程就是 c*t；额外乘 2 会把单程误算成往返。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "光传播1微秒",
+              "expr": "2*c*t",
+              "ref": 300
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "认为光在任何介质交界处都不会改变传播方向。",
+            "why": "光斜射入另一种介质时可能发生折射；直线传播规律只适用于同种均匀介质。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "空气中一束光传播 2 微秒，按光速约 3.0×10^8 m/s 估算路程。",
+          "solution": [
+            "先换算时间：2 微秒 = 0.000002 s。",
+            "使用 s=ct，得到 3.0×10^8×0.000002=600 m。"
+          ],
+          "answer": "约 600 m。"
+        },
+        "prereq": [],
+        "next": [
+          "light-02",
+          "light-03"
+        ],
+        "tags": [
+          "直线传播",
+          "光速",
+          "影子",
+          "小孔成像"
+        ],
+        "core": [
+          {
+            "title": "光的直线传播",
+            "text": "成立条件是同种、均匀的介质。小孔成像是倒立的实像，形状由物体决定，孔的形状主要影响亮度与清晰度；影子是光被遮挡形成的暗区，不是镜像。日食时月球位于太阳与地球之间；月食时地球位于太阳与月球之间。解释先画光路，不把所有成像归为反射。"
+          }
+        ],
+        "learning_scope": "初中"
+      },
+      "error_index": 1,
+      "chapter": "光现象"
+    },
+    "diagnostic-light-02-1": {
+      "point": {
+        "id": "light-02",
+        "title": "平面镜",
+        "level": "基础",
+        "definition": "平面镜所成的像与物体关于镜面对称，是正立、等大的虚像。物体到镜面的垂直距离等于像到镜面的垂直距离，像的大小等于物体大小。",
+        "meaning": "像距要从像点向镜面作垂线测量，物距也按同一方向测量；不能把沿着物体表面的斜距离当成像距。平面镜像是反射光线反向延长线的交点，不能用光屏承接。用等距、等高两项关系检查作图和读数，能快速发现对称位置画错。",
+        "symbols": {
+          "d1": {
+            "desc": "物体到平面镜的距离",
+            "unit": "m"
+          },
+          "d2": {
+            "desc": "像到平面镜的距离",
+            "unit": "m"
+          },
+          "h1": {
+            "desc": "物体高度",
+            "unit": "m"
+          },
+          "h2": {
+            "desc": "像的高度",
+            "unit": "m"
+          }
+        },
+        "scenarios": {
+          "物距半米": {
+            "d1": 0.5,
+            "d2": 0.5,
+            "h1": 0.2,
+            "h2": 0.2
+          },
+          "物距1.2米": {
+            "d1": 1.2,
+            "d2": 1.2,
+            "h1": 1.6,
+            "h2": 1.6
+          }
+        },
+        "formulas": [
+          {
+            "name": "平面镜像距关系",
+            "expr": "d2 = d1",
+            "when": "物距和像距均指垂直于镜面的距离。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "物距半米",
+                "expr": "d1",
+                "ref": 0.5,
+                "note": "物距为 0.5 m，像距也为 0.5 m。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "物距1.2米",
+                "expr": "d1",
+                "ref": 1.2,
+                "note": "物距增加至 1.2 m，像距仍等于物距。"
+              },
+              {
+                "type": "consistency",
+                "scenario": "物距半米",
+                "with": "light-02|平面镜像距关系",
+                "with_expr": "d2",
+                "target": "像到平面镜的距离",
+                "note": "直接求本公式输出，与情境中另列的d2设计基准核对；数据是设计示例，不是实测。用于核对定义、反算或边界值，不宣称不同物理原理互证。",
+                "verification_kind": "独立设计情境数据核对",
+                "tol": 1e-06
+              }
+            ]
+          },
+          {
+            "name": "平面镜像高关系",
+            "expr": "h2 = h1",
+            "when": "物体和像的高度采用相同长度单位。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "物距半米",
+                "expr": "h1",
+                "ref": 0.2,
+                "note": "物体高 0.2 m，像也高 0.2 m。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "物距1.2米",
+                "expr": "h1",
+                "ref": 1.6,
+                "note": "物体高度改变，像仍与物体等高。"
+              },
+              {
+                "type": "scan",
+                "scenario": "物距半米",
+                "var": "h1",
+                "lo": 0.1,
+                "hi": 2,
+                "note": "扫描正物体高度，像高与物高保持相等。"
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "作出法线后，反射定律要求反射角与入射角相等，两角都以法线为基准。",
+          "平面镜成像关于镜面对称，因此物点与像点到镜面的垂直距离相等。",
+          "对称变换不改变线段长度，所以像的高度与物体高度相同。"
+        ],
+        "errors": [
+          {
+            "wrong": "误认为像距只有物距的一半。",
+            "wrong_expr": "d2 = d1/2",
+            "why": "平面镜成像关于镜面对称，像距等于物距；物距 0.5 m 时像距应是 0.5 m。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "物距半米",
+              "expr": "d1/2",
+              "ref": 0.5
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "认为平面镜所成的像可以用光屏接收到。",
+            "why": "平面镜像是反射光线反向延长线的交点，属于虚像；应通过成像实验和光线图辨析。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "物体距平面镜 0.8 m、高 0.3 m。求像距和像高，并判断像的性质。",
+          "solution": [
+            "像与物关于镜面对称，所以像距等于物距，为 0.8 m。",
+            "平面镜像正立、等大、虚，所以像高为 0.3 m，不能用光屏承接。"
+          ],
+          "answer": "像距 0.8 m，像高 0.3 m，成正立、等大的虚像。"
+        },
+        "prereq": [
+          "light-01"
+        ],
+        "next": [
+          "light-03"
+        ],
+        "tags": [
+          "平面镜",
+          "虚像",
+          "像距",
+          "像高"
+        ],
+        "core": [
+          {
+            "title": "平面镜成像特点",
+            "text": "像与物等大、正立，像物到镜面等距，连线垂直镜面，像为虚像。物体靠近镜子时像也靠近镜面，像的大小不随距离改变；人眼感觉的视角改变不等于像变大。虚像不能用光屏直接接收，眼睛仍可看见，因为反射光实际进入了眼睛。"
+          }
+        ],
+        "experiments": [
+          {
+            "title": "探究平面镜成像特点",
+            "purpose": "定位虚像、比较大小和像物关系。",
+            "apparatus": "薄透明玻璃板、两支相同LED物屏或蜡烛、白纸、刻度尺、光屏。",
+            "variables": "一物固定，移动另一等大物定位像；改变物距重复。",
+            "steps": [
+              "玻璃板竖直置纸上，沿玻璃位置画线。",
+              "透过玻璃看前物的像，移动后物直到看起来完全重合。",
+              "记录物与像位置、量垂直距离，移开后物在像处放光屏检查。"
+            ],
+            "data": "设计示例（非实测）：物到镜面10 cm，定位像也10 cm；移动物到15 cm，像距15 cm，大小仍等大。",
+            "conclusion": "等距等大、连线垂直镜面；光屏不能接收像，属于虚像。",
+            "limits": "厚玻璃产生双像、玻璃未竖直导致难重合、两物不等大影响比较；尽量用安全物屏替代明火。",
+            "kind": "学生必做"
+          }
+        ],
+        "learning_scope": "初中"
+      },
+      "error_index": 0,
+      "chapter": "光现象"
+    },
+    "diagnostic-light-02-2": {
+      "point": {
+        "id": "light-02",
+        "title": "平面镜",
+        "level": "基础",
+        "definition": "平面镜所成的像与物体关于镜面对称，是正立、等大的虚像。物体到镜面的垂直距离等于像到镜面的垂直距离，像的大小等于物体大小。",
+        "meaning": "像距要从像点向镜面作垂线测量，物距也按同一方向测量；不能把沿着物体表面的斜距离当成像距。平面镜像是反射光线反向延长线的交点，不能用光屏承接。用等距、等高两项关系检查作图和读数，能快速发现对称位置画错。",
+        "symbols": {
+          "d1": {
+            "desc": "物体到平面镜的距离",
+            "unit": "m"
+          },
+          "d2": {
+            "desc": "像到平面镜的距离",
+            "unit": "m"
+          },
+          "h1": {
+            "desc": "物体高度",
+            "unit": "m"
+          },
+          "h2": {
+            "desc": "像的高度",
+            "unit": "m"
+          }
+        },
+        "scenarios": {
+          "物距半米": {
+            "d1": 0.5,
+            "d2": 0.5,
+            "h1": 0.2,
+            "h2": 0.2
+          },
+          "物距1.2米": {
+            "d1": 1.2,
+            "d2": 1.2,
+            "h1": 1.6,
+            "h2": 1.6
+          }
+        },
+        "formulas": [
+          {
+            "name": "平面镜像距关系",
+            "expr": "d2 = d1",
+            "when": "物距和像距均指垂直于镜面的距离。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "物距半米",
+                "expr": "d1",
+                "ref": 0.5,
+                "note": "物距为 0.5 m，像距也为 0.5 m。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "物距1.2米",
+                "expr": "d1",
+                "ref": 1.2,
+                "note": "物距增加至 1.2 m，像距仍等于物距。"
+              },
+              {
+                "type": "consistency",
+                "scenario": "物距半米",
+                "with": "light-02|平面镜像距关系",
+                "with_expr": "d2",
+                "target": "像到平面镜的距离",
+                "note": "直接求本公式输出，与情境中另列的d2设计基准核对；数据是设计示例，不是实测。用于核对定义、反算或边界值，不宣称不同物理原理互证。",
+                "verification_kind": "独立设计情境数据核对",
+                "tol": 1e-06
+              }
+            ]
+          },
+          {
+            "name": "平面镜像高关系",
+            "expr": "h2 = h1",
+            "when": "物体和像的高度采用相同长度单位。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "物距半米",
+                "expr": "h1",
+                "ref": 0.2,
+                "note": "物体高 0.2 m，像也高 0.2 m。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "物距1.2米",
+                "expr": "h1",
+                "ref": 1.6,
+                "note": "物体高度改变，像仍与物体等高。"
+              },
+              {
+                "type": "scan",
+                "scenario": "物距半米",
+                "var": "h1",
+                "lo": 0.1,
+                "hi": 2,
+                "note": "扫描正物体高度，像高与物高保持相等。"
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "作出法线后，反射定律要求反射角与入射角相等，两角都以法线为基准。",
+          "平面镜成像关于镜面对称，因此物点与像点到镜面的垂直距离相等。",
+          "对称变换不改变线段长度，所以像的高度与物体高度相同。"
+        ],
+        "errors": [
+          {
+            "wrong": "误认为像距只有物距的一半。",
+            "wrong_expr": "d2 = d1/2",
+            "why": "平面镜成像关于镜面对称，像距等于物距；物距 0.5 m 时像距应是 0.5 m。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "物距半米",
+              "expr": "d1/2",
+              "ref": 0.5
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "认为平面镜所成的像可以用光屏接收到。",
+            "why": "平面镜像是反射光线反向延长线的交点，属于虚像；应通过成像实验和光线图辨析。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "物体距平面镜 0.8 m、高 0.3 m。求像距和像高，并判断像的性质。",
+          "solution": [
+            "像与物关于镜面对称，所以像距等于物距，为 0.8 m。",
+            "平面镜像正立、等大、虚，所以像高为 0.3 m，不能用光屏承接。"
+          ],
+          "answer": "像距 0.8 m，像高 0.3 m，成正立、等大的虚像。"
+        },
+        "prereq": [
+          "light-01"
+        ],
+        "next": [
+          "light-03"
+        ],
+        "tags": [
+          "平面镜",
+          "虚像",
+          "像距",
+          "像高"
+        ],
+        "core": [
+          {
+            "title": "平面镜成像特点",
+            "text": "像与物等大、正立，像物到镜面等距，连线垂直镜面，像为虚像。物体靠近镜子时像也靠近镜面，像的大小不随距离改变；人眼感觉的视角改变不等于像变大。虚像不能用光屏直接接收，眼睛仍可看见，因为反射光实际进入了眼睛。"
+          }
+        ],
+        "experiments": [
+          {
+            "title": "探究平面镜成像特点",
+            "purpose": "定位虚像、比较大小和像物关系。",
+            "apparatus": "薄透明玻璃板、两支相同LED物屏或蜡烛、白纸、刻度尺、光屏。",
+            "variables": "一物固定，移动另一等大物定位像；改变物距重复。",
+            "steps": [
+              "玻璃板竖直置纸上，沿玻璃位置画线。",
+              "透过玻璃看前物的像，移动后物直到看起来完全重合。",
+              "记录物与像位置、量垂直距离，移开后物在像处放光屏检查。"
+            ],
+            "data": "设计示例（非实测）：物到镜面10 cm，定位像也10 cm；移动物到15 cm，像距15 cm，大小仍等大。",
+            "conclusion": "等距等大、连线垂直镜面；光屏不能接收像，属于虚像。",
+            "limits": "厚玻璃产生双像、玻璃未竖直导致难重合、两物不等大影响比较；尽量用安全物屏替代明火。",
+            "kind": "学生必做"
+          }
+        ],
+        "learning_scope": "初中"
+      },
+      "error_index": 1,
+      "chapter": "光现象"
+    },
+    "diagnostic-light-03-1": {
+      "point": {
+        "id": "light-03",
+        "title": "光的反射",
+        "level": "基础",
+        "definition": "光射到物体表面后返回原介质的现象叫反射。反射光线、入射光线和法线在同一平面内；反射角等于入射角，两角都从法线量起。",
+        "meaning": "作图时先找法线，再分别量入射角与反射角，角度不从镜面量起。反射定律可用角度读数检查：入射角变化多少，反射角就变化多少；反射线和镜面之间的夹角则与反射角互为余角。漫反射与镜面反射都遵循反射定律，只是表面情况不同。",
+        "symbols": {
+          "i": {
+            "desc": "入射角，按度数记录",
+            "unit": "1"
+          },
+          "r": {
+            "desc": "反射角，按度数记录",
+            "unit": "1"
+          },
+          "alpha": {
+            "desc": "反射光线与镜面的夹角，按度数记录",
+            "unit": "1"
+          }
+        },
+        "scenarios": {
+          "入射角30度": {
+            "i": 30,
+            "r": 30,
+            "alpha": 60
+          },
+          "入射角60度": {
+            "i": 60,
+            "r": 60,
+            "alpha": 30
+          }
+        },
+        "formulas": [
+          {
+            "name": "反射定律的角度关系",
+            "expr": "r = i",
+            "when": "入射角和反射角均从法线量起；角度使用度数，且反射发生在同一介质侧。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "入射角30度",
+                "expr": "i",
+                "ref": 30,
+                "note": "入射角为 30°，反射角也为 30°。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "入射角60度",
+                "expr": "i",
+                "ref": 60,
+                "note": "入射角为 60°，反射角也为 60°。"
+              },
+              {
+                "type": "direction",
+                "scenario": "入射角30度",
+                "var": "i",
+                "lo": 10,
+                "hi": 80,
+                "expr": "i",
+                "expect": "up",
+                "note": "入射角增加时反射角等量增加。"
+              },
+              {
+                "type": "scan",
+                "scenario": "入射角30度",
+                "var": "i",
+                "lo": 10,
+                "hi": 80,
+                "note": "扫描常见的正入射角范围，反射角始终有限并与入射角相等。"
+              },
+              {
+                "type": "consistency",
+                "scenario": "入射角30度",
+                "with": "light-03|反射定律的角度关系",
+                "with_expr": "90-alpha",
+                "target": "反射角，按度数记录",
+                "note": "本公式直接求r；参考端显式关系为90-alpha。两端使用同一情境和阶段，只核对该关系；with字段仅定位来源，不代表调用另一条被覆盖的公式。",
+                "verification_kind": "独立关系核对"
+              }
+            ]
+          },
+          {
+            "name": "反射线与镜面的夹角",
+            "expr": "alpha = 90-r",
+            "when": "alpha 是反射线与镜面的夹角，r 是反射角；法线与镜面互相垂直。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "入射角30度",
+                "expr": "90-r",
+                "ref": 60,
+                "note": "反射角 30°，反射线与镜面的夹角为 60°。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "入射角60度",
+                "expr": "90-r",
+                "ref": 30,
+                "note": "反射角 60°，对应镜面夹角为 30°。"
+              },
+              {
+                "type": "direction",
+                "scenario": "入射角30度",
+                "var": "r",
+                "lo": 10,
+                "hi": 80,
+                "expr": "90-r",
+                "expect": "down",
+                "note": "反射角增大时，与镜面的夹角减小。"
+              },
+              {
+                "type": "scan",
+                "scenario": "入射角30度",
+                "var": "r",
+                "lo": 10,
+                "hi": 80,
+                "note": "扫描反射角范围，余角不越出 0° 至 90°。"
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "过入射点作垂直于反射面的法线，明确角度的共同基准。",
+          "反射定律给出反射角 r 与入射角 i 相等。",
+          "法线和镜面夹角为 90°，所以反射线与镜面的夹角 alpha=90°-r。"
+        ],
+        "errors": [
+          {
+            "wrong": "把反射角从镜面而不是法线量起，用余角代替反射角。",
+            "wrong_expr": "r = 90-i",
+            "why": "入射角30°时从法线量的反射角也是30°，从镜面量到的60°是它的余角，不是反射角。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "入射角30度",
+              "expr": "90-i",
+              "ref": 30
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "认为只有光滑表面才发生反射。",
+            "why": "漫反射和镜面反射都遵守反射定律，差别在于表面是否平整以及反射光的方向分布。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "一束光以 35° 入射到平面镜，求反射角以及反射光线与镜面的夹角。",
+          "solution": [
+            "反射角从法线量起，依据反射定律 r=i=35°。",
+            "法线和镜面互相垂直，所以反射光线与镜面的夹角为 90°-35°=55°。"
+          ],
+          "answer": "反射角 35°；反射光线与镜面的夹角 55°。"
+        },
+        "prereq": [
+          "light-01"
+        ],
+        "next": [],
+        "tags": [
+          "光的反射",
+          "反射定律",
+          "法线",
+          "入射角",
+          "反射角"
+        ],
+        "core": [
+          {
+            "title": "光的反射",
+            "text": "先在入射点作垂直镜面的法线；入射线和反射线分居法线两侧，入射角等于反射角，两线与法线在同一平面。让光逆原反射路径入射，会沿原入射路径返回，体现光路可逆。漫反射中每一小处仍遵守反射定律；粗糙表面能向不同方向反光，便于多方位看见物体。"
+          }
+        ],
+        "experiments": [
+          {
+            "title": "探究光的反射定律",
+            "purpose": "比较角度、同面条件及可逆性。",
+            "apparatus": "平面镜、可折白纸板、安全光源、量角器。",
+            "variables": "改变入射角，记录反射角；折纸板观察反射线是否仍在该面。",
+            "steps": [
+              "纸板垂直镜面，作法线，光沿纸板入射。",
+              "从法线量入射与反射角，取多组。",
+              "折动承载反射线一侧纸板，再逆反射路径入射。"
+            ],
+            "data": "设计示例（非实测）：20°、30°、50°入射，对应20°、30°、50°反射。",
+            "conclusion": "两角相等、分居法线两侧且共面，光路可逆。",
+            "limits": "镜面与纸板不垂直、量角起点用镜面、光束过粗会偏差；不把激光照向眼睛。",
+            "kind": "学生必做"
+          }
+        ],
+        "learning_scope": "初中"
+      },
+      "error_index": 0,
+      "chapter": "光现象"
+    },
+    "diagnostic-light-03-2": {
+      "point": {
+        "id": "light-03",
+        "title": "光的反射",
+        "level": "基础",
+        "definition": "光射到物体表面后返回原介质的现象叫反射。反射光线、入射光线和法线在同一平面内；反射角等于入射角，两角都从法线量起。",
+        "meaning": "作图时先找法线，再分别量入射角与反射角，角度不从镜面量起。反射定律可用角度读数检查：入射角变化多少，反射角就变化多少；反射线和镜面之间的夹角则与反射角互为余角。漫反射与镜面反射都遵循反射定律，只是表面情况不同。",
+        "symbols": {
+          "i": {
+            "desc": "入射角，按度数记录",
+            "unit": "1"
+          },
+          "r": {
+            "desc": "反射角，按度数记录",
+            "unit": "1"
+          },
+          "alpha": {
+            "desc": "反射光线与镜面的夹角，按度数记录",
+            "unit": "1"
+          }
+        },
+        "scenarios": {
+          "入射角30度": {
+            "i": 30,
+            "r": 30,
+            "alpha": 60
+          },
+          "入射角60度": {
+            "i": 60,
+            "r": 60,
+            "alpha": 30
+          }
+        },
+        "formulas": [
+          {
+            "name": "反射定律的角度关系",
+            "expr": "r = i",
+            "when": "入射角和反射角均从法线量起；角度使用度数，且反射发生在同一介质侧。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "入射角30度",
+                "expr": "i",
+                "ref": 30,
+                "note": "入射角为 30°，反射角也为 30°。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "入射角60度",
+                "expr": "i",
+                "ref": 60,
+                "note": "入射角为 60°，反射角也为 60°。"
+              },
+              {
+                "type": "direction",
+                "scenario": "入射角30度",
+                "var": "i",
+                "lo": 10,
+                "hi": 80,
+                "expr": "i",
+                "expect": "up",
+                "note": "入射角增加时反射角等量增加。"
+              },
+              {
+                "type": "scan",
+                "scenario": "入射角30度",
+                "var": "i",
+                "lo": 10,
+                "hi": 80,
+                "note": "扫描常见的正入射角范围，反射角始终有限并与入射角相等。"
+              },
+              {
+                "type": "consistency",
+                "scenario": "入射角30度",
+                "with": "light-03|反射定律的角度关系",
+                "with_expr": "90-alpha",
+                "target": "反射角，按度数记录",
+                "note": "本公式直接求r；参考端显式关系为90-alpha。两端使用同一情境和阶段，只核对该关系；with字段仅定位来源，不代表调用另一条被覆盖的公式。",
+                "verification_kind": "独立关系核对"
+              }
+            ]
+          },
+          {
+            "name": "反射线与镜面的夹角",
+            "expr": "alpha = 90-r",
+            "when": "alpha 是反射线与镜面的夹角，r 是反射角；法线与镜面互相垂直。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "入射角30度",
+                "expr": "90-r",
+                "ref": 60,
+                "note": "反射角 30°，反射线与镜面的夹角为 60°。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "入射角60度",
+                "expr": "90-r",
+                "ref": 30,
+                "note": "反射角 60°，对应镜面夹角为 30°。"
+              },
+              {
+                "type": "direction",
+                "scenario": "入射角30度",
+                "var": "r",
+                "lo": 10,
+                "hi": 80,
+                "expr": "90-r",
+                "expect": "down",
+                "note": "反射角增大时，与镜面的夹角减小。"
+              },
+              {
+                "type": "scan",
+                "scenario": "入射角30度",
+                "var": "r",
+                "lo": 10,
+                "hi": 80,
+                "note": "扫描反射角范围，余角不越出 0° 至 90°。"
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "过入射点作垂直于反射面的法线，明确角度的共同基准。",
+          "反射定律给出反射角 r 与入射角 i 相等。",
+          "法线和镜面夹角为 90°，所以反射线与镜面的夹角 alpha=90°-r。"
+        ],
+        "errors": [
+          {
+            "wrong": "把反射角从镜面而不是法线量起，用余角代替反射角。",
+            "wrong_expr": "r = 90-i",
+            "why": "入射角30°时从法线量的反射角也是30°，从镜面量到的60°是它的余角，不是反射角。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "入射角30度",
+              "expr": "90-i",
+              "ref": 30
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "认为只有光滑表面才发生反射。",
+            "why": "漫反射和镜面反射都遵守反射定律，差别在于表面是否平整以及反射光的方向分布。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "一束光以 35° 入射到平面镜，求反射角以及反射光线与镜面的夹角。",
+          "solution": [
+            "反射角从法线量起，依据反射定律 r=i=35°。",
+            "法线和镜面互相垂直，所以反射光线与镜面的夹角为 90°-35°=55°。"
+          ],
+          "answer": "反射角 35°；反射光线与镜面的夹角 55°。"
+        },
+        "prereq": [
+          "light-01"
+        ],
+        "next": [],
+        "tags": [
+          "光的反射",
+          "反射定律",
+          "法线",
+          "入射角",
+          "反射角"
+        ],
+        "core": [
+          {
+            "title": "光的反射",
+            "text": "先在入射点作垂直镜面的法线；入射线和反射线分居法线两侧，入射角等于反射角，两线与法线在同一平面。让光逆原反射路径入射，会沿原入射路径返回，体现光路可逆。漫反射中每一小处仍遵守反射定律；粗糙表面能向不同方向反光，便于多方位看见物体。"
+          }
+        ],
+        "experiments": [
+          {
+            "title": "探究光的反射定律",
+            "purpose": "比较角度、同面条件及可逆性。",
+            "apparatus": "平面镜、可折白纸板、安全光源、量角器。",
+            "variables": "改变入射角，记录反射角；折纸板观察反射线是否仍在该面。",
+            "steps": [
+              "纸板垂直镜面，作法线，光沿纸板入射。",
+              "从法线量入射与反射角，取多组。",
+              "折动承载反射线一侧纸板，再逆反射路径入射。"
+            ],
+            "data": "设计示例（非实测）：20°、30°、50°入射，对应20°、30°、50°反射。",
+            "conclusion": "两角相等、分居法线两侧且共面，光路可逆。",
+            "limits": "镜面与纸板不垂直、量角起点用镜面、光束过粗会偏差；不把激光照向眼睛。",
+            "kind": "学生必做"
+          }
+        ],
+        "learning_scope": "初中"
+      },
+      "error_index": 1,
+      "chapter": "光现象"
+    }
+  },
+  "generator_version": "2026-10-04-条件过程返工-8"
+}

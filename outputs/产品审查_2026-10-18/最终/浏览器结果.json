@@ -1,0 +1,501 @@
+{
+  "rows": [
+    {
+      "name": "index.html 320像素无横向溢出",
+      "pass": true,
+      "actual": true
+    },
+    {
+      "name": "index.html 390像素无横向溢出",
+      "pass": true,
+      "actual": true
+    },
+    {
+      "name": "index.html 1280像素无横向溢出",
+      "pass": true,
+      "actual": true
+    },
+    {
+      "name": "junior.html 320像素无横向溢出",
+      "pass": true,
+      "actual": true
+    },
+    {
+      "name": "junior.html 390像素无横向溢出",
+      "pass": true,
+      "actual": true
+    },
+    {
+      "name": "junior.html 1280像素无横向溢出",
+      "pass": true,
+      "actual": true
+    },
+    {
+      "name": "student.html 320像素无横向溢出",
+      "pass": true,
+      "actual": true
+    },
+    {
+      "name": "student.html 390像素无横向溢出",
+      "pass": true,
+      "actual": true
+    },
+    {
+      "name": "student.html 1280像素无横向溢出",
+      "pass": true,
+      "actual": true
+    },
+    {
+      "name": "quick.html 320像素无横向溢出",
+      "pass": true,
+      "actual": true
+    },
+    {
+      "name": "quick.html 390像素无横向溢出",
+      "pass": true,
+      "actual": true
+    },
+    {
+      "name": "quick.html 1280像素无横向溢出",
+      "pass": true,
+      "actual": true
+    },
+    {
+      "name": "junior-quick.html 320像素无横向溢出",
+      "pass": true,
+      "actual": true
+    },
+    {
+      "name": "junior-quick.html 390像素无横向溢出",
+      "pass": true,
+      "actual": true
+    },
+    {
+      "name": "junior-quick.html 1280像素无横向溢出",
+      "pass": true,
+      "actual": true
+    },
+    {
+      "name": "quiz-hs.html 320像素无横向溢出",
+      "pass": true,
+      "actual": true
+    },
+    {
+      "name": "quiz-hs.html 390像素无横向溢出",
+      "pass": true,
+      "actual": true
+    },
+    {
+      "name": "quiz-hs.html 1280像素无横向溢出",
+      "pass": true,
+      "actual": true
+    },
+    {
+      "name": "quiz-junior.html 320像素无横向溢出",
+      "pass": true,
+      "actual": true
+    },
+    {
+      "name": "quiz-junior.html 390像素无横向溢出",
+      "pass": true,
+      "actual": true
+    },
+    {
+      "name": "quiz-junior.html 1280像素无横向溢出",
+      "pass": true,
+      "actual": true
+    },
+    {
+      "name": "quick.html 搜索“牛顿 第二定律”",
+      "pass": true,
+      "actual": true
+    },
+    {
+      "name": "quick.html 搜索“平抛 速度”",
+      "pass": true,
+      "actual": true
+    },
+    {
+      "name": "quick.html 搜索“单摆 周期”",
+      "pass": true,
+      "actual": true
+    },
+    {
+      "name": "quick.html 搜索“跑道周长”",
+      "pass": true,
+      "actual": true
+    },
+    {
+      "name": "quick.html 公式可按单位搜索",
+      "pass": true,
+      "actual": true
+    },
+    {
+      "name": "quick.html 符号可按单位搜索",
+      "pass": true,
+      "actual": true
+    },
+    {
+      "name": "quick.html 默认展示章节重点",
+      "pass": true,
+      "actual": true
+    },
+    {
+      "name": "quick.html 章节 1 概览覆盖本章全部知识点",
+      "pass": true,
+      "actual": true
+    },
+    {
+      "name": "quick.html 章节 2 概览覆盖本章全部知识点",
+      "pass": true,
+      "actual": true
+    },
+    {
+      "name": "quick.html 章节 3 概览覆盖本章全部知识点",
+      "pass": true,
+      "actual": true
+    },
+    {
+      "name": "quick.html 章节 4 概览覆盖本章全部知识点",
+      "pass": true,
+      "actual": true
+    },
+    {
+      "name": "quick.html 章节 5 概览覆盖本章全部知识点",
+      "pass": true,
+      "actual": true
+    },
+    {
+      "name": "quick.html 章节 6 概览覆盖本章全部知识点",
+      "pass": true,
+      "actual": true
+    },
+    {
+      "name": "quick.html 章节 7 概览覆盖本章全部知识点",
+      "pass": true,
+      "actual": true
+    },
+    {
+      "name": "quick.html 章节 8 概览覆盖本章全部知识点",
+      "pass": true,
+      "actual": true
+    },
+    {
+      "name": "quick.html 章节 9 概览覆盖本章全部知识点",
+      "pass": true,
+      "actual": true
+    },
+    {
+      "name": "quick.html 章节 10 概览覆盖本章全部知识点",
+      "pass": true,
+      "actual": true
+    },
+    {
+      "name": "quick.html 章节 11 概览覆盖本章全部知识点",
+      "pass": true,
+      "actual": true
+    },
+    {
+      "name": "quick.html 章节 12 概览覆盖本章全部知识点",
+      "pass": true,
+      "actual": true
+    },
+    {
+      "name": "quick.html 章节 13 概览覆盖本章全部知识点",
+      "pass": true,
+      "actual": true
+    },
+    {
+      "name": "quick.html 章节 14 概览覆盖本章全部知识点",
+      "pass": true,
+      "actual": true
+    },
+    {
+      "name": "quick.html 章节 15 概览覆盖本章全部知识点",
+      "pass": true,
+      "actual": true
+    },
+    {
+      "name": "quick.html 章节 16 概览覆盖本章全部知识点",
+      "pass": true,
+      "actual": true
+    },
+    {
+      "name": "quick.html 章节 17 概览覆盖本章全部知识点",
+      "pass": true,
+      "actual": true
+    },
+    {
+      "name": "quick.html 章节 18 概览覆盖本章全部知识点",
+      "pass": true,
+      "actual": true
+    },
+    {
+      "name": "quick.html 章节 19 概览覆盖本章全部知识点",
+      "pass": true,
+      "actual": true
+    },
+    {
+      "name": "quick.html 章节 20 概览覆盖本章全部知识点",
+      "pass": true,
+      "actual": true
+    },
+    {
+      "name": "quick.html 章节 21 概览覆盖本章全部知识点",
+      "pass": true,
+      "actual": true
+    },
+    {
+      "name": "quick.html 章节 22 概览覆盖本章全部知识点",
+      "pass": true,
+      "actual": true
+    },
+    {
+      "name": "quick.html 章节 23 概览覆盖本章全部知识点",
+      "pass": true,
+      "actual": true
+    },
+    {
+      "name": "quick.html 章节 24 概览覆盖本章全部知识点",
+      "pass": true,
+      "actual": true
+    },
+    {
+      "name": "quick.html 章节 25 概览覆盖本章全部知识点",
+      "pass": true,
+      "actual": true
+    },
+    {
+      "name": "quick.html 本章概览与知识点对应",
+      "pass": true,
+      "actual": true
+    },
+    {
+      "name": "quick.html 刷新保留章节",
+      "pass": true,
+      "actual": true
+    },
+    {
+      "name": "quick.html 无结果提供重置操作",
+      "pass": true,
+      "actual": true
+    },
+    {
+      "name": "quick.html 重置清除搜索和筛选",
+      "pass": true,
+      "actual": true
+    },
+    {
+      "name": "quick.html 跨领域选择章节不会产生冲突空结果",
+      "pass": true,
+      "actual": true
+    },
+    {
+      "name": "quick.html 切换领域会解除冲突章节",
+      "pass": true,
+      "actual": true
+    },
+    {
+      "name": "quick.html 关键词标题匹配优先",
+      "pass": true,
+      "actual": true
+    },
+    {
+      "name": "junior-quick.html 搜索“欧姆 电阻”",
+      "pass": true,
+      "actual": true
+    },
+    {
+      "name": "junior-quick.html 搜索“电流 mA”",
+      "pass": true,
+      "actual": true
+    },
+    {
+      "name": "junior-quick.html 搜索“复测”",
+      "pass": true,
+      "actual": true
+    },
+    {
+      "name": "junior-quick.html 公式可按单位搜索",
+      "pass": true,
+      "actual": true
+    },
+    {
+      "name": "junior-quick.html 符号可按单位搜索",
+      "pass": true,
+      "actual": true
+    },
+    {
+      "name": "junior-quick.html 默认展示章节重点",
+      "pass": true,
+      "actual": true
+    },
+    {
+      "name": "junior-quick.html 章节 1 概览覆盖本章全部知识点",
+      "pass": true,
+      "actual": true
+    },
+    {
+      "name": "junior-quick.html 章节 2 概览覆盖本章全部知识点",
+      "pass": true,
+      "actual": true
+    },
+    {
+      "name": "junior-quick.html 章节 3 概览覆盖本章全部知识点",
+      "pass": true,
+      "actual": true
+    },
+    {
+      "name": "junior-quick.html 章节 4 概览覆盖本章全部知识点",
+      "pass": true,
+      "actual": true
+    },
+    {
+      "name": "junior-quick.html 章节 5 概览覆盖本章全部知识点",
+      "pass": true,
+      "actual": true
+    },
+    {
+      "name": "junior-quick.html 章节 6 概览覆盖本章全部知识点",
+      "pass": true,
+      "actual": true
+    },
+    {
+      "name": "junior-quick.html 章节 7 概览覆盖本章全部知识点",
+      "pass": true,
+      "actual": true
+    },
+    {
+      "name": "junior-quick.html 章节 8 概览覆盖本章全部知识点",
+      "pass": true,
+      "actual": true
+    },
+    {
+      "name": "junior-quick.html 章节 9 概览覆盖本章全部知识点",
+      "pass": true,
+      "actual": true
+    },
+    {
+      "name": "junior-quick.html 章节 10 概览覆盖本章全部知识点",
+      "pass": true,
+      "actual": true
+    },
+    {
+      "name": "junior-quick.html 章节 11 概览覆盖本章全部知识点",
+      "pass": true,
+      "actual": true
+    },
+    {
+      "name": "junior-quick.html 章节 12 概览覆盖本章全部知识点",
+      "pass": true,
+      "actual": true
+    },
+    {
+      "name": "junior-quick.html 章节 13 概览覆盖本章全部知识点",
+      "pass": true,
+      "actual": true
+    },
+    {
+      "name": "junior-quick.html 章节 14 概览覆盖本章全部知识点",
+      "pass": true,
+      "actual": true
+    },
+    {
+      "name": "junior-quick.html 章节 15 概览覆盖本章全部知识点",
+      "pass": true,
+      "actual": true
+    },
+    {
+      "name": "junior-quick.html 章节 16 概览覆盖本章全部知识点",
+      "pass": true,
+      "actual": true
+    },
+    {
+      "name": "junior-quick.html 章节 17 概览覆盖本章全部知识点",
+      "pass": true,
+      "actual": true
+    },
+    {
+      "name": "junior-quick.html 章节 18 概览覆盖本章全部知识点",
+      "pass": true,
+      "actual": true
+    },
+    {
+      "name": "junior-quick.html 章节 19 概览覆盖本章全部知识点",
+      "pass": true,
+      "actual": true
+    },
+    {
+      "name": "junior-quick.html 章节 20 概览覆盖本章全部知识点",
+      "pass": true,
+      "actual": true
+    },
+    {
+      "name": "junior-quick.html 章节 21 概览覆盖本章全部知识点",
+      "pass": true,
+      "actual": true
+    },
+    {
+      "name": "junior-quick.html 本章概览与知识点对应",
+      "pass": true,
+      "actual": true
+    },
+    {
+      "name": "junior-quick.html 刷新保留章节",
+      "pass": true,
+      "actual": true
+    },
+    {
+      "name": "junior-quick.html 无结果提供重置操作",
+      "pass": true,
+      "actual": true
+    },
+    {
+      "name": "junior-quick.html 重置清除搜索和筛选",
+      "pass": true,
+      "actual": true
+    },
+    {
+      "name": "junior-quick.html 跨领域选择章节不会产生冲突空结果",
+      "pass": true,
+      "actual": true
+    },
+    {
+      "name": "junior-quick.html 切换领域会解除冲突章节",
+      "pass": true,
+      "actual": true
+    },
+    {
+      "name": "junior-quick.html 关键词标题匹配优先",
+      "pass": true,
+      "actual": true
+    },
+    {
+      "name": "index.html 完整内容也支持复合检索",
+      "pass": true,
+      "actual": true
+    },
+    {
+      "name": "student.html 完整内容也支持复合检索",
+      "pass": true,
+      "actual": true
+    },
+    {
+      "name": "junior.html 完整内容也支持复合检索",
+      "pass": true,
+      "actual": true
+    },
+    {
+      "name": "学生版公式索引真正应用搜索",
+      "pass": true,
+      "actual": true
+    },
+    {
+      "name": "学生版符号索引真正应用搜索",
+      "pass": true,
+      "actual": true
+    }
+  ],
+  "errors": [],
+  "external": []
+}

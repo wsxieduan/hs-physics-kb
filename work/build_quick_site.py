@@ -156,6 +156,21 @@ main{max-width:1120px;margin:auto;padding:24px 16px 70px}.list{max-width:900px;m
 
 '''
 
+# 阅读界面以检索和章节目录为中心；颜色、字号均使用本机资源，保持离线可用。
+CSS += r'''
+:root{--ink:#17334c;--muted:#596c79;--line:#dbe3e9;--brand:#176b65;--soft:#f3f7f7}
+body{background:#f5f7fa;line-height:1.75}.brand i{border-radius:7px}.nav button.active,.nav button:hover{background:#e8f3f1}.old-link{color:var(--muted)}
+.intro{max-width:1120px;padding:25px 18px 20px;text-align:left}.eyebrow{display:none}.intro h1{font-size:clamp(25px,3.4vw,34px);margin:0 0 5px;line-height:1.4}.intro p{font-size:14px;margin:0 0 17px}.search{max-width:900px;border-radius:9px;box-shadow:none}.search:focus-within{outline:3px solid #b9dcd6;border-color:var(--brand)}.search input{padding:12px 2px}.clear-search{border:0;background:var(--soft);color:var(--ink);border-radius:5px;padding:3px 9px;white-space:nowrap}.intro .counts{font-size:12px}.search-tips{font-size:12px;color:var(--muted);margin-top:7px;display:flex;flex-wrap:wrap;gap:5px 10px}.search-tips button{border:0;background:transparent;color:var(--brand);padding:0;text-decoration:underline;text-underline-offset:3px}
+.filters{background:#f5f7faf5;backdrop-filter:blur(8px)}.filters-inner{flex-wrap:wrap;overflow:visible;gap:7px;padding:10px 18px}.filters select{min-width:0;max-width:100%;flex:1 1 270px;margin-left:8px}.filter{font-size:13px;padding:4px 11px}.filter.active{color:var(--brand);background:#e8f3f1;border-color:#a4ccc4}.count{display:block;white-space:normal}
+button:focus-visible,a:focus-visible,select:focus-visible,summary:focus-visible{outline:3px solid #5aa99d;outline-offset:3px}main{padding-top:20px}.card,.index-card,.symbol-card,.map-domain{box-shadow:none;border-radius:10px}.card{scroll-margin-top:calc(var(--appbar-height,60px) + var(--filters-height,100px) + 16px)}.definition{border-color:#a4ccc4}.formula{background:#f5f9fa;border-color:#d9e7ea;border-radius:7px}.math{overflow-y:hidden;padding:10px 0}.relation-line button,.source,.map-point{background:#e8f3f1}.card-practice a{border-color:#a4ccc4}.card-practice a:hover{background:#e8f3f1}.search-hit button{margin:2px 4px 2px 0}.path{color:var(--muted)}
+.chapter-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.chapter-card{background:#fff;border:1px solid var(--line);border-radius:10px;padding:19px 21px;min-width:0}.chapter-meta{font-size:12px;color:var(--muted)}.chapter-card h2{font-size:18px;margin:5px 0 10px;line-height:1.5}.chapter-card h2 button{background:none;border:0;padding:0;text-align:left;color:var(--ink);font:inherit;font-weight:700}.chapter-card h2 button:hover{color:var(--brand)}.chapter-points{display:flex;flex-wrap:wrap;gap:5px 13px}.chapter-points button{background:none;border:0;padding:1px 0;color:var(--brand);font-size:13px;text-align:left}.chapter-open{margin-top:14px;border:1px solid #a4ccc4;background:#edf6f3;color:var(--brand);border-radius:6px;padding:5px 11px;font-size:13px}.chapter-overview{background:#fff;border:1px solid var(--line);border-radius:10px;padding:23px;min-width:0}.chapter-overview h2{font-size:24px;margin:3px 0 10px;line-height:1.4}.chapter-overview>p{color:var(--muted);font-size:13px}.outline-point{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:18px;padding:20px 0;border-top:1px solid var(--line);min-width:0}.outline-point>div{min-width:0}.outline-point h3{font-size:17px;margin:0 0 5px}.outline-point h3 button{font:inherit;font-weight:700;text-align:left;color:var(--brand);border:0;background:none;padding:0}.outline-point p{font-size:14px;color:#42586b;margin:6px 0;overflow-wrap:anywhere}.outline-point .formula{align-self:start}.outline-point .formula .math{font-size:20px}.outline-scope{font-size:12px;color:var(--muted)}.overview-actions{display:flex;flex-wrap:wrap;gap:9px;align-items:center;margin:12px 0 18px}.overview-actions button,.reset-button{border:1px solid #a4ccc4;background:#fff;border-radius:6px;color:var(--brand);padding:6px 12px}.overview-actions a{font-size:13px}.empty{padding:35px 12px}.empty p{margin:8px 0}.reading-note{margin-top:12px;color:var(--muted);font-size:12px}.map-title{text-align:left}.map-root{margin-left:0;background:var(--brand)}
+@media(max-width:700px){.chapter-grid{grid-template-columns:minmax(0,1fr)}.outline-point{grid-template-columns:minmax(0,1fr);gap:10px}.chapter-overview{padding:17px}.chapter-overview h2{font-size:21px}.chapter-card{padding:16px}.appbar-inner{flex-wrap:wrap;gap:7px}.nav{width:100%;justify-content:space-between;margin:0;gap:0;flex-wrap:nowrap;overflow:visible}.nav button{padding:6px;font-size:13px}.intro{padding:20px 13px 16px}.intro h1{font-size:26px}.intro p{font-size:13px}.filters-inner{padding:9px 10px;gap:6px}.filters select{margin:0;flex-basis:100%;width:100%}.count{font-size:12px}.filter{font-size:12px;padding:3px 9px}.clear-search{font-size:12px;padding:3px 6px}.chapter-points{gap:5px 11px}}
+@media print{.appbar,.segment-switchbar,.intro,.filters,footer,.overview-actions,.outline-point .source{display:none!important}body{background:#fff}main{max-width:none;padding:0}.chapter-overview{border:0;padding:0}.outline-point{break-inside:avoid}.chapter-grid{grid-template-columns:1fr}}
+.domain-options{display:flex;gap:7px;flex:1 1 auto;min-width:0;flex-wrap:wrap}
+@media(max-width:700px){.domain-options{flex:1 1 100%;flex-wrap:nowrap;overflow-x:auto;padding-bottom:3px}.domain-options .filter{flex-shrink:0}.intro{padding-top:16px;padding-bottom:13px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+'''
+
 
 # 数据数组的索引：知识点 [编号,标题,一句定义,公式,符号,错误,物理意义,推导,例题,前置,后续,标签,章节序号,核心与实验正文,内容难度,学段范围]。
 # 公式 [名称,MathML,适用条件]；符号 [教材写法,含义,单位]。所有文本已经由 Python 安全转义。
@@ -165,10 +180,13 @@ const data=JSON.parse(document.getElementById('kb-data').textContent),groups=dat
 const SEGMENT_ROOT='__SEGMENT_ROOT__',QUIZ_HREF='__QUIZ_HREF__',RETURN_PAGE='__RETURN_PAGE__';
 const viewBox=document.getElementById('content'),search=document.getElementById('search'),chapter=document.getElementById('chapter'),counter=document.getElementById('count');
 const strip=s=>{const e=document.createElement('div');e.innerHTML=s||'';return(e.textContent||'').toLowerCase()};
-const clean=s=>(s||'').toLowerCase().replace(/\s+/g,' ').trim();
+// 统一全半角并按空白分词：学生可以输入“牛顿 第二定律”，无需记住连续原文。
+const clean=s=>String(s||'').normalize('NFKC').toLowerCase().replace(/\s+/g,' ').trim();
+const terms=()=>query.split(' ').filter(Boolean);
+const contains=s=>terms().every(word=>s.includes(word));
 const text=s=>{const e=document.createElement('span');e.textContent=s||'';return e.innerHTML};
 const groupName=i=>groups[i][0].split('·').slice(1).join('·').trim()||groups[i][0];
-let view=['points','formulas','symbols','map'].includes(location.hash.slice(1))?location.hash.slice(1):'points';
+let view=['chapters','points','formulas','symbols','map'].includes(location.hash.slice(1))?location.hash.slice(1):'chapters';
 let domain='全部',chapterName='全部',query='';
 const pointIndex=new Map(points.map((p,i)=>[p[0],i]));
 
@@ -176,28 +194,42 @@ const pointIndex=new Map(points.map((p,i)=>[p[0],i]));
 // 每个字段保留命中位置；折叠内容也建立索引，搜索时主动展开。
 const searchSections=points.map(p=>[['标题和定义',[p[1],p[2],p[11].join(' '),groups[p[12]][0]]],['核心正文',[p[13]]],['物理意义',[p[6]]],['推导',p[7]],['例题',[p[8][0],...p[8][1],p[8][2]]],['公式',p[3].flat()],['符号',p[4].flat()],['易错点',p[5].flat()]].map(([label,parts])=>[label,clean(parts.map(strip).join(' '))]));
 const pointSearch=searchSections.map(parts=>parts.map(x=>x[1]).join(' '));
-function hits(i){return query?searchSections[i].filter(x=>x[1].includes(query)).map(x=>x[0]):[]}
+function hits(i){return query?searchSections[i].filter(x=>terms().some(word=>x[1].includes(word))).map(x=>x[0]):[]}
 
-const formulas=[];points.forEach((p,i)=>p[3].forEach((f,k)=>formulas.push([i,k,clean([strip(p[1]),strip(f[0]),strip(f[2]),...p[4].map(s=>strip(s[0])+' '+strip(s[1])),groups[p[12]][0]].join(' '))])));
+const formulas=[];points.forEach((p,i)=>p[3].forEach((f,k)=>formulas.push([i,k,clean([strip(p[1]),...f.map(strip),...p[4].flat().map(strip),groups[p[12]][0]].join(' '))])));
 const symbols=[],symbolMap=new Map();points.forEach((p,i)=>p[4].forEach(s=>{const key=s.join('|');if(!symbolMap.has(key)){symbolMap.set(key,symbols.length);symbols.push([s,[i]])}else symbols[symbolMap.get(key)][1].push(i)}));
 
-function matchPoint(i){const p=points[i],g=groups[p[12]];return(domain==='全部'||g[1]===domain)&&(chapterName==='全部'||g[0]===chapterName)&&(!query||pointSearch[i].includes(query))}
+function matchPoint(i){const p=points[i],g=groups[p[12]];return(domain==='全部'||g[1]===domain)&&(chapterName==='全部'||g[0]===chapterName)&&(!query||contains(pointSearch[i]))}
 function formulaHTML(f){return '<div class="formula"><div class="formula-name">'+f[0]+'</div><div class="math"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">'+f[1]+'</math></div>'+(f[2]?'<div class="when">适用：'+f[2]+'</div>':'')+'</div>'}
 function symbolHTML(s){return '<div class="sym-row"><div class="sym-name">'+s[0]+'</div><div>'+s[1]+'</div><div class="sym-unit">'+s[2]+'</div></div>'}
 function errorHTML(e){return '<div class="error"><b>'+e[0]+'</b><p>'+e[1]+'</p></div>'}
 function relationHTML(p,i){const before=p[9].map(id=>pointIndex.get(id)).filter(x=>x!==undefined),after=p[10].map(id=>pointIndex.get(id)).filter(x=>x!==undefined);const row=(label,list)=>list.length?'<div class="relation-line"><span>'+label+'</span>'+list.map(j=>'<button data-go="'+j+'">'+points[j][1]+'</button>').join('')+'</div>':'';return before.length||after.length?'<section class="relations"><h3>知识关系</h3>'+row('先理解',before)+row('接着看',after)+'</section>':''}
 function pointHTML(i){const p=points[i],g=groups[p[12]],more=p[5].length>2?'<details class="more-errors"><summary>查看其余 '+(p[5].length-2)+' 条常见错误</summary>'+p[5].slice(2).map(errorHTML).join('')+'</details>':'';return '<article class="card" id="'+p[0]+'">'+(query?'<p class="search-hit">命中：'+hits(i).map(label=>'<button data-hit-point="'+i+'" data-hit-label="'+label+'">'+label+'</button>').join('、')+'</p>':'')+'<div class="path">难度：'+text(p[14])+' · 范围：'+text(p[15])+' · '+g[1]+' · '+text(groupName(p[12]))+'</div><h2>'+p[1]+'</h2><p class="definition">'+p[2]+'</p>'+p[13]+'<section class="block"><h3>公式与适用范围</h3><div class="formulas">'+p[3].map(formulaHTML).join('')+'</div></section><section class="block"><h3>容易出错</h3>'+p[5].slice(0,2).map(errorHTML).join('')+more+'</section><section class="block"><h3>符号与单位</h3><div class="symbols"><div class="sym-row head"><div>符号</div><div>含义</div><div>单位</div></div>'+p[4].map(symbolHTML).join('')+'</div></section>'+relationHTML(p,i)+'<details class="deep" data-deep="'+i+'"><summary>深入理解：物理意义、推导和例题</summary><div class="deep-content"></div></details><div class="card-practice"><a href="'+QUIZ_HREF+'#mode=example&amp;point='+encodeURIComponent(p[0])+'&amp;source='+encodeURIComponent(SEGMENT_ROOT+'速查版')+'&amp;return='+encodeURIComponent(RETURN_PAGE+'#'+p[0])+'">练这道题 ↗</a></div></article>'}
 function deepHTML(p){const ex=p[8];return '<h3>物理意义</h3><p>'+p[6]+'</p>'+(p[7].length?'<h3>推导要点</h3><ol>'+p[7].map(x=>'<li>'+x+'</li>').join('')+'</ol>':'')+(ex[0]?'<h3>典型例题</h3><p>'+ex[0]+'</p><ol>'+ex[1].map(x=>'<li>'+x+'</li>').join('')+'</ol><p class="answer">答案：'+ex[2]+'</p>':'')}
-function renderPoints(){const ids=points.map((_,i)=>i).filter(matchPoint);viewBox.className='list';viewBox.innerHTML=ids.map(pointHTML).join('');if(query)ids.forEach(i=>{const card=document.getElementById(points[i][0]);if(hits(i).some(x=>['物理意义','推导','例题'].includes(x))){const d=card.querySelector('.deep');d.querySelector('.deep-content').innerHTML=deepHTML(points[i]);d.querySelector('.deep-content').dataset.loaded='1';d.open=true}card.querySelectorAll('details.learning,details.more-errors').forEach(d=>{if(clean(strip(d.innerHTML)).includes(query))d.open=true})});return ids.length}
-function renderFormulas(){const rows=formulas.filter(row=>matchPoint(row[0])&&(!query||row[2].includes(query)));viewBox.className='index-grid';viewBox.innerHTML=rows.map(([i,k])=>'<article class="index-card"><button class="source" data-go="'+i+'">'+points[i][1]+'</button><h2>'+points[i][3][k][0]+'</h2>'+formulaHTML(points[i][3][k])+'</article>').join('');return rows.length}
-function renderSymbols(){const rows=symbols.filter(([s,ids])=>ids.some(matchPoint)&&(!query||clean([strip(s[0]),strip(s[1]),strip(s[2]),...ids.map(i=>strip(points[i][1]))].join(' ')).includes(query)));viewBox.className='symbol-grid';viewBox.innerHTML=rows.map(([s,ids])=>{const target=ids.find(matchPoint);return '<article class="symbol-card"><div class="sym-name">'+s[0]+'</div><p>'+s[1]+'</p><div class="sym-unit">'+s[2]+'</div><button class="source" data-go="'+target+'">'+points[target][1]+(ids.length>1?' 等'+ids.length+'处':'')+'</button></article>'}).join('');return rows.length}
+// 概览只组合已有定义、公式和条件，不生成新的教学结论或考试权重。
+function renderChapters(){
+  const gs=groups.map((g,i)=>[g,i]).filter(([g])=>(domain==='全部'||g[1]===domain)&&(chapterName==='全部'||g[0]===chapterName));
+  if(chapterName!=='全部'&&gs.length===1){
+    const [g,gi]=gs[0];viewBox.className='';
+    viewBox.innerHTML='<section class="chapter-overview"><div class="chapter-meta">'+text(g[1])+' · '+g[3].length+' 个知识点</div><h2>'+text(groupName(gi))+'</h2><p>先看定义与公式，点击知识点查看适用条件、推导、易错点和例题。难度与范围沿用原内容。</p><div class="overview-actions"><button data-all-chapters>全部章节</button><button data-chapter-detail>查看本章完整知识点</button><button data-print-chapter>打印本章概览</button></div>'+g[3].map(i=>{const p=points[i];return '<article class="outline-point"><div><div class="outline-scope">'+text(p[14])+' · '+text(p[15])+'</div><h3><button data-go="'+i+'">'+p[1]+'</button></h3><p>'+p[2]+'</p><button class="source" data-go="'+i+'">查看条件、易错点与例题</button></div>'+(p[3].length?formulaHTML(p[3][0]):'')+'</article>'}).join('')+'</section>';
+    return g[3].length;
+  }
+  viewBox.className='chapter-grid';
+  viewBox.innerHTML=gs.map(([g,gi])=>'<article class="chapter-card"><div class="chapter-meta">'+text(g[1])+' · '+g[3].length+' 个知识点 · '+g[3].reduce((n,i)=>n+points[i][3].length,0)+' 条公式</div><h2><button data-chapter-go="'+gi+'">'+text(groupName(gi))+'</button></h2><div class="chapter-points">'+g[3].slice(0,4).map(i=>'<button data-go="'+i+'">'+points[i][1]+'</button>').join('')+'</div><button class="chapter-open" data-chapter-go="'+gi+'">查看本章重点'+(g[3].length>4?'（共'+g[3].length+'点）':'')+'</button></article>').join('');
+  return gs.length;
+}
+function pointScore(i){const p=points[i],title=clean(strip(p[1])),tags=clean(p[11].map(strip).join(' '));return(title===query?100:0)+terms().reduce((n,t)=>n+(title.includes(t)?12:0)+(tags.includes(t)?4:0),0)}
+function renderPoints(){const ids=points.map((_,i)=>i).filter(matchPoint);if(query)ids.sort((a,b)=>pointScore(b)-pointScore(a)||a-b);viewBox.className='list';viewBox.innerHTML=ids.map(pointHTML).join('');if(query)ids.forEach(i=>{const card=document.getElementById(points[i][0]);if(hits(i).some(x=>['物理意义','推导','例题'].includes(x))){const d=card.querySelector('.deep');d.querySelector('.deep-content').innerHTML=deepHTML(points[i]);d.querySelector('.deep-content').dataset.loaded='1';d.open=true}card.querySelectorAll('details.learning,details.more-errors').forEach(d=>{if(terms().some(word=>clean(strip(d.innerHTML)).includes(word)))d.open=true})});return ids.length}
+function renderFormulas(){const rows=formulas.filter(row=>matchPoint(row[0])&&(!query||contains(row[2])));viewBox.className='index-grid';viewBox.innerHTML=rows.map(([i,k])=>'<article class="index-card"><button class="source" data-go="'+i+'">'+points[i][1]+'</button><h2>'+points[i][3][k][0]+'</h2>'+formulaHTML(points[i][3][k])+'</article>').join('');return rows.length}
+function renderSymbols(){const rows=symbols.filter(([s,ids])=>ids.some(matchPoint)&&(!query||contains(clean([strip(s[0]),strip(s[1]),strip(s[2]),...ids.map(i=>strip(points[i][1]))].join(' ')))));viewBox.className='symbol-grid';viewBox.innerHTML=rows.map(([s,ids])=>{const target=ids.find(matchPoint);return '<article class="symbol-card"><div class="sym-name">'+s[0]+'</div><p>'+s[1]+'</p><div class="sym-unit">'+s[2]+'</div><button class="source" data-go="'+target+'">'+points[target][1]+(ids.length>1?' 等'+ids.length+'处':'')+'</button></article>'}).join('');return rows.length}
 function renderMap(){const gs=groups.map((g,i)=>[g,i]).filter(([g])=>(domain==='全部'||g[1]===domain)&&(chapterName==='全部'||g[0]===chapterName));const domains=[...new Set(gs.map(([g])=>g[1]))];viewBox.className='';viewBox.innerHTML='<div class="map-title"><h2>知识脉络</h2><p>按领域与章节串联知识点；章节顺序是学习建议，点击可打开速查卡。</p></div><div class="map-root">'+SEGMENT_ROOT+'</div>'+domains.map(d=>'<section class="map-domain"><h2>'+d+'<small>'+gs.filter(([g])=>g[1]===d).length+'章</small></h2><div class="map-chapters">'+gs.filter(([g])=>g[1]===d).map(([g,gi])=>'<div class="map-chapter"><button data-chapter-go="'+gi+'">'+text(groupName(gi))+' →</button><div class="map-points">'+g[3].map(i=>'<button class="map-point" data-go="'+i+'">'+points[i][1]+'</button>').join('')+'</div></div>').join('')+'</div></section>').join('');return gs.length}
-function render(){document.querySelectorAll('.nav button').forEach(b=>b.classList.toggle('active',b.dataset.view===view));let count=view==='points'?renderPoints():view==='formulas'?renderFormulas():view==='symbols'?renderSymbols():renderMap();counter.textContent=view==='map'?'知识脉络':'显示 '+count+' 项';document.getElementById('empty').hidden=count>0}
+function render(){document.querySelectorAll('.nav button').forEach(b=>{b.classList.toggle('active',b.dataset.view===view);b.setAttribute('aria-pressed',String(b.dataset.view===view))});let count=view==='chapters'?renderChapters():view==='points'?renderPoints():view==='formulas'?renderFormulas():view==='symbols'?renderSymbols():renderMap();counter.textContent=view==='chapters'?(chapterName==='全部'?'显示 '+count+' 个章节':'本章 '+count+' 个知识点'):view==='map'?'知识脉络':'显示 '+count+' 项';document.getElementById('empty').hidden=count>0;document.getElementById('clear-search').hidden=!search.value;document.getElementById('active-scope').textContent=(domain==='全部'?'全部领域':domain)+' / '+(chapterName==='全部'?'全部章节':chapterName)}
 // 每一条浏览历史保存搜索、筛选、视图、展开项和滚动位置；复制链接仍只携带知识点编号。
 let restoring=false,scrollTimer,readingHash=location.hash,restorationRun=0;
 history.scrollRestoration='manual';
 // 吸顶导航换行后同步高度，筛选栏仍在导航下方可操作。
-new ResizeObserver(()=>document.documentElement.style.setProperty('--appbar-height',document.querySelector('.appbar').offsetHeight+'px')).observe(document.querySelector('.appbar'));
+new ResizeObserver(()=>{document.documentElement.style.setProperty('--appbar-height',document.querySelector('.appbar').offsetHeight+'px');document.documentElement.style.setProperty('--filters-height',document.querySelector('.filters').offsetHeight+'px')}).observe(document.querySelector('.appbar'));
+new ResizeObserver(()=>document.documentElement.style.setProperty('--filters-height',document.querySelector('.filters').offsetHeight+'px')).observe(document.querySelector('.filters'));
 function readingState(){return {version:1,segment:SEGMENT_ROOT,hash:location.hash,view,domain,chapterName,search:search.value,scrollY:window.scrollY,details:[...viewBox.querySelectorAll('details')].map((d,i)=>[i,d.open])}}
 // 后退已改变地址而页面尚未恢复时，不把旧页面的延迟滚动回调写进新历史条目。
 function saveReading(hash){if(restoring||location.hash!==readingHash)return;const state=readingState();if(hash!==undefined)state.hash=hash;history.replaceState({quickReading:state},'',hash===undefined?location.href:hash);readingHash=location.hash}
@@ -210,34 +242,40 @@ function restorePoint(){
   const valid=state&&state.version===1&&state.segment===SEGMENT_ROOT&&state.hash===location.hash;
   restoring=true;
   if(valid){view=state.view;domain=state.domain;chapterName=state.chapterName;search.value=state.search;query=clean(state.search)}
-  else {view=pointIndex.has(id)?'points':(['points','formulas','symbols','map'].includes(id)?id:'points');domain='全部';chapterName='全部';search.value='';query=''}
+  else {const chapterId=/^chapter-(\d+)$/.exec(id),g=chapterId&&groups.find(g=>g[2]===Number(chapterId[1]));view=pointIndex.has(id)?'points':g?'chapters':(['chapters','points','formulas','symbols','map'].includes(id)?id:'chapters');domain='全部';chapterName=g?g[0]:'全部';search.value='';query=''}
   setFilters();render();
   if(valid){const ds=[...viewBox.querySelectorAll('details')];(state.details||[]).forEach(([i,open])=>{if(ds[i]){if(open&&ds[i].matches('[data-deep]'))loadDeep(ds[i]);ds[i].open=open}})}
   requestAnimationFrame(()=>{if(run!==restorationRun)return;if(valid)window.scrollTo({top:state.scrollY||0,behavior:'instant'});else {const card=document.getElementById(id);if(card)card.scrollIntoView({behavior:'instant',block:'start'});else window.scrollTo({top:0,behavior:'instant'})}requestAnimationFrame(()=>{if(run!==restorationRun)return;restoring=false;saveReading()})});
 }
 function goPoint(i,origin){if(origin)saveReading('#'+origin.id);else saveReading();history.pushState(null,'','#'+encodeURIComponent(points[i][0]));restorePoint()}
 document.querySelectorAll('.nav button').forEach(b=>b.addEventListener('click',()=>{saveReading();++restorationRun;restoring=false;view=b.dataset.view;history.pushState(null,'','#'+view);readingHash=location.hash;render();window.scrollTo({top:0,behavior:'instant'});saveReading()}));
-document.querySelectorAll('.filter').forEach(b=>b.addEventListener('click',()=>{domain=b.dataset.domain;setFilters();render();saveReading()}));
-chapter.addEventListener('change',()=>{chapterName=chapter.value;render();saveReading()});
-search.addEventListener('input',()=>{query=clean(search.value);if(query&&view==='map')view='points';render();saveReading()});
+document.querySelectorAll('.filter').forEach(b=>b.addEventListener('click',()=>{domain=b.dataset.domain;if(chapterName!=='全部'&&domain!=='全部'&&!groups.some(g=>g[0]===chapterName&&g[1]===domain))chapterName='全部';setFilters();render();saveReading()}));
+chapter.addEventListener('change',()=>{chapterName=chapter.value;if(chapterName!=='全部'){const g=groups.find(g=>g[0]===chapterName);if(domain!=='全部'&&g[1]!==domain)domain='全部'}setFilters();render();saveReading()});
+search.addEventListener('input',()=>{query=clean(search.value);if(query&&['map','chapters'].includes(view))view='points';render();saveReading()});
 window.addEventListener('scroll',()=>{clearTimeout(scrollTimer);scrollTimer=setTimeout(()=>saveReading(),100)},{passive:true});
 window.addEventListener('pagehide',()=>saveReading());
-document.addEventListener('keydown',e=>{if(e.key==='/'&&document.activeElement!==search){e.preventDefault();search.focus()}});
+document.addEventListener('keydown',e=>{if(e.key==='/'&&!e.ctrlKey&&!e.metaKey&&!e.altKey&&!document.activeElement.matches('input,textarea,select,[contenteditable="true"]')){e.preventDefault();search.focus()}});
 document.addEventListener('toggle',e=>{const d=e.target;if(d.matches&&d.matches('details[data-deep]')&&d.open){loadDeep(d)}if(d.matches&&d.matches('details'))saveReading()},true);
 // 点击命中位置直接定位到相应正文，不让例题命中停留在卡片顶部。
-document.addEventListener('click',e=>{const hit=e.target.closest('[data-hit-point]');if(hit){const card=document.getElementById(points[Number(hit.dataset.hitPoint)][0]),label=hit.dataset.hitLabel;const heading=label==='易错点'?'容易出错':label;const target=(label==='核心正文'?[...card.querySelectorAll('.learning')].find(x=>clean(strip(x.innerHTML)).includes(query)):null)||[...card.querySelectorAll('h3,h2')].find(x=>x.textContent.includes(heading))||card.querySelector('.learning')||card;target.style.scrollMarginTop='140px';target.scrollIntoView({behavior:'instant',block:'start'});saveReading();return}const go=e.target.closest('[data-go]');if(go){const i=Number(go.dataset.go);const origin=go.closest('.card');goPoint(i,origin);return}const ch=e.target.closest('[data-chapter-go]');if(ch){view='points';chapterName=groups[Number(ch.dataset.chapterGo)][0];chapter.value=chapterName;render();window.scrollTo({top:0,behavior:'instant'});saveReading()}});
+document.addEventListener('click',e=>{const hit=e.target.closest('[data-hit-point]');if(hit){const card=document.getElementById(points[Number(hit.dataset.hitPoint)][0]),label=hit.dataset.hitLabel;const heading=label==='易错点'?'容易出错':label;const target=(label==='核心正文'?[...card.querySelectorAll('.learning')].find(x=>clean(strip(x.innerHTML)).includes(query)):null)||[...card.querySelectorAll('h3,h2')].find(x=>x.textContent.includes(heading))||card.querySelector('.learning')||card;target.style.scrollMarginTop='140px';target.scrollIntoView({behavior:'instant',block:'start'});saveReading();return}const go=e.target.closest('[data-go]');if(go){const i=Number(go.dataset.go);const origin=go.closest('.card');goPoint(i,origin);return}const ch=e.target.closest('[data-chapter-go]');if(ch){const g=groups[Number(ch.dataset.chapterGo)];saveReading();history.pushState(null,'','#chapter-'+g[2]);restorePoint()}});
+// 清空操作同时解除章节和领域限制，避免看不见的旧筛选让搜索一直为空。
+function resetFilters(){domain='全部';chapterName='全部';query='';search.value='';setFilters();render();saveReading()}
+document.getElementById('reset-filters').addEventListener('click',resetFilters);
+document.getElementById('clear-search').addEventListener('click',()=>{search.value='';search.dispatchEvent(new Event('input'));search.focus()});
+document.querySelectorAll('[data-query]').forEach(b=>b.addEventListener('click',()=>{resetFilters();search.value=b.dataset.query;search.dispatchEvent(new Event('input'));search.focus()}));
+document.addEventListener('click',e=>{if(e.target.closest('[data-all-chapters]')){saveReading();history.pushState(null,'','#chapters');restorePoint()}if(e.target.closest('[data-chapter-detail]')){view='points';render();saveReading()}if(e.target.closest('[data-print-chapter]'))window.print()});
 restorePoint();window.addEventListener('hashchange',restorePoint);window.addEventListener('popstate',restorePoint);
 })();
 '''
 
 
 HTML = r'''<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="__SEGMENT_LABEL__物理知识点、公式、符号和常见错误速查"><title>__SEGMENT_LABEL__物理速查 · 谢端</title><style>__CSS__</style></head><body>
-<header class="appbar"><div class="appbar-inner"><div class="brand"><i>物</i>__SEGMENT_LABEL__物理速查</div><nav class="nav" aria-label="查看内容"><button data-view="points">知识点</button><button data-view="formulas">公式</button><button data-view="symbols">符号</button><button data-view="map">知识脉络</button></nav><a class="old-link" href="__FULL_PAGE__">完整校验版 ↗</a></div></header>
+<header class="appbar"><div class="appbar-inner"><div class="brand"><i>物</i>__SEGMENT_LABEL__物理速查</div><nav class="nav" aria-label="查看内容"><button data-view="chapters">章节重点</button><button data-view="points">知识点</button><button data-view="formulas">公式</button><button data-view="symbols">符号</button><button data-view="map">知识脉络</button></nav><a class="old-link" href="__FULL_PAGE__">校验与完整内容</a></div></header>
 __SEGMENT_NAV__
-<section class="intro"><div class="eyebrow">公式 · 符号 · 条件 · 易错点</div><h1>__SEGMENT_LABEL__物理，快速查清楚</h1><p>先找到公式，再认清符号，最后避开常见错误。</p><label class="search"><span>⌕</span><input id="search" type="search" autocomplete="off" placeholder="搜索正文、推导、例题、公式或错误……" aria-label="搜索知识库"></label><div class="counts">__POINTS__ 个知识点 · __FORMULAS__ 条公式 · 内容已校验</div></section>
-<div class="filters"><div class="filters-inner">__DOMAIN_FILTERS__<select id="chapter" aria-label="选择章节">__CHAPTERS__</select><span class="count" id="count"></span></div></div>
-<main><div id="content"></div><div id="empty" class="empty" hidden>没有找到匹配内容，请换个关键词。</div></main>
-<footer>__SEGMENT_LABEL__物理速查 · 谢端　单文件、断网可用　<a href="__FULL_PAGE__">查看完整校验版</a></footer>
+<section class="intro"><h1>__SEGMENT_LABEL__物理，随查随用</h1><p>按章节梳理知识，按关键词查定义、公式、适用条件和例题。</p><div class="search"><span aria-hidden="true">⌕</span><input id="search" type="search" autocomplete="off" placeholder="如：__SEARCH_EXAMPLE__" aria-label="搜索知识库，多个关键词用空格分开"><button id="clear-search" class="clear-search" hidden>清空</button></div><div class="search-tips"><span>多个关键词用空格分开</span><button data-query="__SEARCH_EXAMPLE__">试搜：__SEARCH_EXAMPLE__</button></div><div class="counts">__POINTS__ 个知识点 · __FORMULAS__ 条公式 · 已通过自动校验；教学适用性仍需教师复核</div></section>
+<div class="filters"><div class="filters-inner"><div class="domain-options" aria-label="选择领域">__DOMAIN_FILTERS__</div><select id="chapter" aria-label="选择章节">__CHAPTERS__</select><span class="count" id="count" role="status" aria-live="polite"></span></div></div>
+<main><div id="content"></div><div id="empty" class="empty" hidden><p>没有找到匹配内容。</p><p>当前范围：<span id="active-scope"></span>。可以减少关键词，或清除筛选后重试。</p><button id="reset-filters" class="reset-button">清除搜索与全部筛选</button></div></main>
+<footer>__SEGMENT_LABEL__物理速查 · 谢端　单文件、断网可用　<a href="__FULL_PAGE__">查看完整内容与校验记录</a><p class="reading-note">章节概览沿用现有知识点的定义、难度与范围，不代表教材完整认证或考试权重。</p></footer>
 <script type="application/json" id="kb-data">__DATA__</script><script>__JS__</script></body></html>'''
 
 
@@ -269,7 +307,7 @@ def build_page(kb_dir, segment, output_path):
     quiz_page = "quiz-hs.html" if segment == "高中" else "quiz-junior.html"
     segment_nav = (
         '<nav class="segment-switchbar" aria-label="切换物理学段"><div class="segment-switchbar-inner">'
-        '<span>知识库学段</span><a href="index.html"%s>高中</a><a href="junior.html"%s>初中</a>'
+        '<span>知识库学段</span><a href="quick.html"%s>高中</a><a href="junior-quick.html"%s>初中</a>'
         '<a class="segment-quiz" href="%s">例题自测与错误诊断 ↗</a></div></nav>' % (
             senior_current, junior_current, quiz_page))
     # 只转义会影响脚本边界的片段，避免把每个数学标签的尖括号都重复写成六字符。
@@ -289,6 +327,7 @@ def build_page(kb_dir, segment, output_path):
     page = page.replace("__DATA__", data_json).replace("__CHAPTERS__", options)
     page = page.replace("__DOMAIN_FILTERS__", domain_filters).replace("__SEGMENT_NAV__", segment_nav)
     page = page.replace("__SEGMENT_LABEL__", html.escape(segment))
+    page = page.replace("__SEARCH_EXAMPLE__", "牛顿 第二定律" if segment == "高中" else "欧姆 电阻")
     page = page.replace("__FULL_PAGE__", full_page)
     page = page.replace("__POINTS__", str(stats["points"])).replace("__FORMULAS__", str(stats["formulas"]))
     if len(points) != stats["points"] or sum(len(p[3]) for p in points) != stats["formulas"] or len(groups) != len(chapters):

@@ -1,0 +1,4885 @@
+{
+  "segment": "初中",
+  "chapter": "欧姆定律",
+  "source_file": "14_ohm.json",
+  "questions": [
+    {
+      "id": "diagnostic-ohm-01-1",
+      "point_id": "ohm-01",
+      "point_title": "电阻",
+      "chapter": "欧姆定律",
+      "stem": "关于“电阻”，判断这一说法是否成立，并说明依据：\n温度不变的欧姆导体，电流可按I=R/U计算。",
+      "options": [
+        {
+          "label": "A",
+          "text": "该说法不成立。"
+        },
+        {
+          "label": "B",
+          "text": "该说法成立。"
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "欧姆定律应当用电压除以电阻来求电流；把电阻除以电压不仅关系倒置，所得量纲也不是安培。\n知识点条件：电阻大小与导体材料、长度、横截面积和温度等因素有关；同一导体不能因为电压或电流变大就说电阻一定改变。测电阻时应使用电压表并联、电流表串联，再用 R=U/I 计算。欧姆定律适用条件要明确，灯丝温度改变时电阻也会改变。\n推导依据：在温度等条件不变时，通过导体的电流随两端电压增大而增大。；电阻越大，对电流的阻碍作用越明显，电流越小。；综合两种变化关系得到 I=U/R。；由测得的 U 与 I 可变形求 R=U/I。\n卡片公式各自的适用条件（不是本题共同前提）：\n由电压和电流求电阻：导体两端电压 U 和通过电流 I 来自同一测量状态，I 不为零。",
+      "error_type": "量纲一致性",
+      "judging": "teacher",
+      "source_error_index": 0,
+      "source_caught_by": "量纲一致性",
+      "wrong_expr": "I = R/U",
+      "trap_test": {
+        "kind": "dimension",
+        "target": "I = R/U",
+        "lhs_dim": "I",
+        "rhs_dim": "I^-1",
+        "expect": "mismatch",
+        "note": "实际量纲检查得到等号左边为I、右边为I^-1；两边不是同一物理量，因此该等式不成立。"
+      },
+      "level": "基础",
+      "learning_scope": "初中",
+      "answer_evidence": {
+        "kind": "teacher",
+        "claim_source": "执行方明确命题",
+        "reference_only": true,
+        "reason": "概念、操作或无法建立完整定量证据，教师确认条件与结论。"
+      },
+      "review": {
+        "confidence": "medium",
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": false,
+          "no_answer_leak_in_options": true
+        },
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。",
+        "material": {
+          "anchors": [
+            {
+              "kind": "概念或操作",
+              "name": "电阻",
+              "claim": "把欧姆定律误写成电流等于电阻除以电压。",
+              "correction_basis": "欧姆定律应当用电压除以电阻来求电流；把电阻除以电压不仅关系倒置，所得量纲也不是安培。",
+              "note": "概念锚点及命题真假待教师确认；未套用任意第一条公式",
+              "display": "把欧姆定律误写成电流等于电阻除以电压。"
+            }
+          ],
+          "source": {
+            "nature": "原创概念/操作命题；无真实测量记录",
+            "source_error_index": 0
+          },
+          "predicted_errors": [
+            {
+              "option": "B",
+              "text": "该说法成立。",
+              "reason": "欧姆定律应当用电压除以电阻来求电流；把电阻除以电压不仅关系倒置，所得量纲也不是安培。",
+              "expression": null,
+              "status": "误答原因预测，待教师确认；未采集学生作答证据"
+            }
+          ],
+          "difficulty_note": "建议难度沿用本题level（源卡难度）；尚非题目难度实测，待教师调整",
+          "estimated_seconds": [
+            60,
+            120
+          ],
+          "time_basis": "未做学生计时；按现有难度给出备课估计区间，待教师确认",
+          "machine_checks": [
+            {
+              "name": "题目ID关联源知识点",
+              "passed": true
+            },
+            {
+              "name": "选项标签唯一且参考标签存在",
+              "passed": true
+            },
+            {
+              "name": "选项文本互异",
+              "passed": true
+            }
+          ],
+          "machine_boundary": "只列本次逐题实际执行项目；不把关联知识卡的方向、扫描或一致性检查算作本题已验。概念题未验命题真假。",
+          "human_review_items": [
+            "题干条件是否充分、清楚且符合学段",
+            "参考结论在指定条件下是否唯一",
+            "干扰项是否合理、对应真实认知问题且无答案暗示",
+            "公式或概念锚点是否准确",
+            "建议难度及用时是否适合教学",
+            "语言、装置与安全操作是否恰当"
+          ],
+          "reference_answer_note": "现有参考答案保持；即使本地可以判选项，也仍须教师审核教学可用性"
+        }
+      }
+    },
+    {
+      "id": "diagnostic-ohm-01-2",
+      "point_id": "ohm-01",
+      "point_title": "电阻",
+      "chapter": "欧姆定律",
+      "stem": "在“电阻”的模型下，U（导体两端电压）=6 V；Rk（以 kΩ 表示的电阻数值）=3 kΩ。条件：电阻表示导体对电流的阻碍作用，单位为欧姆。对符合欧姆定律的导体，在温度等条件不变时，可用导体两端电压与通过电流的比值测量电阻。。求通过导体的电流（I）。这些数值是设计示例。",
+      "options": [
+        {
+          "label": "A",
+          "text": "2 A"
+        },
+        {
+          "label": "B",
+          "text": "0.002 A"
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "使用本卡物理关系的等价变形或明确边界条件：U/(1000·Rk)，代入得0.002 A。另一结果来自U/Rk，算得2 A。\n6 V 接在 3 kΩ 电阻上，电流应为 0.002 A；把数值 3 当作 Ω 会错误得到 2 A。\n知识点条件：电阻大小与导体材料、长度、横截面积和温度等因素有关；同一导体不能因为电压或电流变大就说电阻一定改变。测电阻时应使用电压表并联、电流表串联，再用 R=U/I 计算。欧姆定律适用条件要明确，灯丝温度改变时电阻也会改变。\n推导依据：在温度等条件不变时，通过导体的电流随两端电压增大而增大。；电阻越大，对电流的阻碍作用越明显，电流越小。；综合两种变化关系得到 I=U/R。；由测得的 U 与 I 可变形求 R=U/I。\n卡片公式各自的适用条件（不是本题共同前提）：\n由电压和电流求电阻：导体两端电压 U 和通过电流 I 来自同一测量状态，I 不为零。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 1,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "I = U/Rk",
+      "trap_test": {
+        "scenario": "千欧换算误区",
+        "expr": "U/Rk",
+        "ref": 0.002
+      },
+      "level": "基础",
+      "learning_scope": "初中",
+      "answer_evidence": {
+        "kind": "numeric",
+        "scenario": "千欧换算误区",
+        "parameters": {
+          "U": 6,
+          "I": 0.002,
+          "R": 3000,
+          "Rk": 3
+        },
+        "target": "I",
+        "unit": "A",
+        "reference": 0.002,
+        "correct_proof": {
+          "expression": "U/(1000*Rk)",
+          "formula": "本卡物理关系的等价变形或明确边界条件",
+          "value": 0.002,
+          "when": "电阻表示导体对电流的阻碍作用，单位为欧姆。对符合欧姆定律的导体，在温度等条件不变时，可用导体两端电压与通过电流的比值测量电阻。"
+        },
+        "distractor_expression": "U/Rk",
+        "distractor_value": 2.0,
+        "dimension_matches": true,
+        "independent_evaluation": true
+      },
+      "review": {
+        "confidence": "medium",
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": true,
+          "no_answer_leak_in_options": true
+        },
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。",
+        "material": {
+          "anchors": [
+            {
+              "kind": "公式",
+              "name": "本卡物理关系的等价变形或明确边界条件",
+              "expression": "U/(1000*Rk)",
+              "when": "电阻表示导体对电流的阻碍作用，单位为欧姆。对符合欧姆定律的导体，在温度等条件不变时，可用导体两端电压与通过电流的比值测量电阻。",
+              "display": "U/(1000·Rk)"
+            }
+          ],
+          "source": {
+            "nature": "原创设计示例，非教材实测或真实实验记录",
+            "scenario": "千欧换算误区",
+            "parameters": {
+              "U": 6,
+              "I": 0.002,
+              "R": 3000,
+              "Rk": 3
+            },
+            "data": [
+              "导体两端电压：6 V",
+              "通过导体的电流：0.002 A",
+              "导体电阻：3000 Ω",
+              "以 kΩ 表示的电阻数值：3 kΩ"
+            ]
+          },
+          "predicted_errors": [
+            {
+              "option": "A",
+              "text": "2 A",
+              "reason": "6 V 接在 3 kΩ 电阻上，电流应为 0.002 A；把数值 3 当作 Ω 会错误得到 2 A。",
+              "expression": "U/Rk",
+              "status": "误答原因预测，待教师确认；未采集学生作答证据"
+            }
+          ],
+          "difficulty_note": "建议难度沿用本题level（源卡难度）；尚非题目难度实测，待教师调整",
+          "estimated_seconds": [
+            60,
+            120
+          ],
+          "time_basis": "未做学生计时；按现有难度给出备课估计区间，待教师确认",
+          "machine_checks": [
+            {
+              "name": "题目ID关联源知识点",
+              "passed": true
+            },
+            {
+              "name": "选项标签唯一且参考标签存在",
+              "passed": true
+            },
+            {
+              "name": "选项文本互异",
+              "passed": true
+            },
+            {
+              "name": "正确路径独立数值复算",
+              "passed": true
+            },
+            {
+              "name": "带量纲求值与独立求值一致",
+              "passed": true
+            },
+            {
+              "name": "干扰路径复算且与正确路径分离",
+              "passed": true
+            }
+          ],
+          "machine_boundary": "只列本次逐题实际执行项目；不把关联知识卡的方向、扫描或一致性检查算作本题已验。概念题未验命题真假。",
+          "human_review_items": [
+            "题干条件是否充分、清楚且符合学段",
+            "参考结论在指定条件下是否唯一",
+            "干扰项是否合理、对应真实认知问题且无答案暗示",
+            "公式或概念锚点是否准确",
+            "建议难度及用时是否适合教学",
+            "语言、装置与安全操作是否恰当"
+          ],
+          "reference_answer_note": "现有参考答案保持；即使本地可以判选项，也仍须教师审核教学可用性"
+        }
+      }
+    },
+    {
+      "id": "diagnostic-ohm-01-3",
+      "point_id": "ohm-01",
+      "point_title": "电阻",
+      "chapter": "欧姆定律",
+      "stem": "关于“电阻”，判断这一说法是否成立，并说明依据：\n电阻由导体材料、长度、横截面积和温度等因素决定。",
+      "options": [
+        {
+          "label": "A",
+          "text": "该说法成立。"
+        },
+        {
+          "label": "B",
+          "text": "该说法不成立。"
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "电阻由导体材料、长度、横截面积和温度等因素决定；欧姆定律的 U/I 比值在相同条件下描述电阻。\n知识点条件：电阻大小与导体材料、长度、横截面积和温度等因素有关；同一导体不能因为电压或电流变大就说电阻一定改变。测电阻时应使用电压表并联、电流表串联，再用 R=U/I 计算。欧姆定律适用条件要明确，灯丝温度改变时电阻也会改变。\n推导依据：在温度等条件不变时，通过导体的电流随两端电压增大而增大。；电阻越大，对电流的阻碍作用越明显，电流越小。；综合两种变化关系得到 I=U/R。；由测得的 U 与 I 可变形求 R=U/I。\n卡片公式各自的适用条件（不是本题共同前提）：\n由电压和电流求电阻：导体两端电压 U 和通过电流 I 来自同一测量状态，I 不为零。",
+      "error_type": "概念混淆",
+      "judging": "teacher",
+      "source_error_index": 2,
+      "source_caught_by": "人工审核",
+      "wrong_expr": null,
+      "trap_test": null,
+      "level": "基础",
+      "learning_scope": "初中",
+      "answer_evidence": {
+        "kind": "teacher",
+        "claim_source": "why",
+        "reference_only": true,
+        "reason": "概念、操作或无法建立完整定量证据，教师确认条件与结论。"
+      },
+      "review": {
+        "confidence": "medium",
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": false,
+          "no_answer_leak_in_options": true
+        },
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。",
+        "material": {
+          "anchors": [
+            {
+              "kind": "概念或操作",
+              "name": "电阻",
+              "claim": "不说明条件变化就认为电压改变会使导体电阻按比例改变。",
+              "correction_basis": "电阻由导体材料、长度、横截面积和温度等因素决定；欧姆定律的 U/I 比值在相同条件下描述电阻。",
+              "note": "概念锚点及命题真假待教师确认；未套用任意第一条公式",
+              "display": "不说明条件变化就认为电压改变会使导体电阻按比例改变。"
+            }
+          ],
+          "source": {
+            "nature": "原创概念/操作命题；无真实测量记录",
+            "source_error_index": 2
+          },
+          "predicted_errors": [
+            {
+              "option": "B",
+              "text": "该说法不成立。",
+              "reason": "电阻由导体材料、长度、横截面积和温度等因素决定；欧姆定律的 U/I 比值在相同条件下描述电阻。",
+              "expression": null,
+              "status": "误答原因预测，待教师确认；未采集学生作答证据"
+            }
+          ],
+          "difficulty_note": "建议难度沿用本题level（源卡难度）；尚非题目难度实测，待教师调整",
+          "estimated_seconds": [
+            60,
+            120
+          ],
+          "time_basis": "未做学生计时；按现有难度给出备课估计区间，待教师确认",
+          "machine_checks": [
+            {
+              "name": "题目ID关联源知识点",
+              "passed": true
+            },
+            {
+              "name": "选项标签唯一且参考标签存在",
+              "passed": true
+            },
+            {
+              "name": "选项文本互异",
+              "passed": true
+            }
+          ],
+          "machine_boundary": "只列本次逐题实际执行项目；不把关联知识卡的方向、扫描或一致性检查算作本题已验。概念题未验命题真假。",
+          "human_review_items": [
+            "题干条件是否充分、清楚且符合学段",
+            "参考结论在指定条件下是否唯一",
+            "干扰项是否合理、对应真实认知问题且无答案暗示",
+            "公式或概念锚点是否准确",
+            "建议难度及用时是否适合教学",
+            "语言、装置与安全操作是否恰当"
+          ],
+          "reference_answer_note": "现有参考答案保持；即使本地可以判选项，也仍须教师审核教学可用性"
+        }
+      }
+    },
+    {
+      "id": "diagnostic-ohm-03-1",
+      "point_id": "ohm-03",
+      "point_title": "变阻器",
+      "chapter": "欧姆定律",
+      "stem": "关于“变阻器”，判断这一说法是否成立，并说明依据：\n阻值变化由实际接入电路的下接线柱和滑片位置共同决定，必须结合电路连接判断。",
+      "options": [
+        {
+          "label": "A",
+          "text": "该说法不成立。"
+        },
+        {
+          "label": "B",
+          "text": "该说法成立。"
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "阻值变化由实际接入电路的下接线柱和滑片位置共同决定，必须结合电路连接判断。\n知识点条件：滑片移动后，接入电路的电阻丝长度改变，阻值随之变化；滑动变阻器通常串联在电路中，用来保护电路或连续调节电流。若它与固定电阻串联，总电阻等于两者相加；滑片方向与阻值增减的关系要根据实际接入的下接线柱判断。\n推导依据：观察变阻器接入的接线柱，确定滑片到下接线柱之间哪段电阻丝进入电路。；移动滑片会改变接入电阻丝长度，从而调节变阻器的阻值。；与定值电阻串联时，总电阻为两者之和；再用电流表验证滑片移动带来的变化。\n卡片公式各自的适用条件（不是本题共同前提）：\n定值电阻和变阻器串联总电阻：变阻器与定值电阻串联，忽略导线电阻并使用同一欧姆单位。",
+      "error_type": "概念混淆",
+      "judging": "teacher",
+      "source_error_index": 0,
+      "source_caught_by": "人工审核",
+      "wrong_expr": null,
+      "trap_test": null,
+      "level": "基础",
+      "learning_scope": "初中",
+      "answer_evidence": {
+        "kind": "teacher",
+        "claim_source": "why",
+        "reference_only": true,
+        "reason": "概念、操作或无法建立完整定量证据，教师确认条件与结论。"
+      },
+      "review": {
+        "confidence": "medium",
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": false,
+          "no_answer_leak_in_options": true
+        },
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。",
+        "material": {
+          "anchors": [
+            {
+              "kind": "概念或操作",
+              "name": "变阻器",
+              "claim": "把变阻器滑片移动方向与阻值变化关系不看接线柱就固定判断。",
+              "correction_basis": "阻值变化由实际接入电路的下接线柱和滑片位置共同决定，必须结合电路连接判断。",
+              "note": "概念锚点及命题真假待教师确认；未套用任意第一条公式",
+              "display": "把变阻器滑片移动方向与阻值变化关系不看接线柱就固定判断。"
+            }
+          ],
+          "source": {
+            "nature": "原创概念/操作命题；无真实测量记录",
+            "source_error_index": 0
+          },
+          "predicted_errors": [
+            {
+              "option": "A",
+              "text": "该说法不成立。",
+              "reason": "阻值变化由实际接入电路的下接线柱和滑片位置共同决定，必须结合电路连接判断。",
+              "expression": null,
+              "status": "误答原因预测，待教师确认；未采集学生作答证据"
+            }
+          ],
+          "difficulty_note": "建议难度沿用本题level（源卡难度）；尚非题目难度实测，待教师调整",
+          "estimated_seconds": [
+            60,
+            120
+          ],
+          "time_basis": "未做学生计时；按现有难度给出备课估计区间，待教师确认",
+          "machine_checks": [
+            {
+              "name": "题目ID关联源知识点",
+              "passed": true
+            },
+            {
+              "name": "选项标签唯一且参考标签存在",
+              "passed": true
+            },
+            {
+              "name": "选项文本互异",
+              "passed": true
+            }
+          ],
+          "machine_boundary": "只列本次逐题实际执行项目；不把关联知识卡的方向、扫描或一致性检查算作本题已验。概念题未验命题真假。",
+          "human_review_items": [
+            "题干条件是否充分、清楚且符合学段",
+            "参考结论在指定条件下是否唯一",
+            "干扰项是否合理、对应真实认知问题且无答案暗示",
+            "公式或概念锚点是否准确",
+            "建议难度及用时是否适合教学",
+            "语言、装置与安全操作是否恰当"
+          ],
+          "reference_answer_note": "现有参考答案保持；即使本地可以判选项，也仍须教师审核教学可用性"
+        }
+      }
+    },
+    {
+      "id": "diagnostic-ohm-03-2",
+      "point_id": "ohm-03",
+      "point_title": "变阻器",
+      "chapter": "欧姆定律",
+      "stem": "在“变阻器”中，变阻器与定值电阻串联，忽略导线电阻并使用同一欧姆单位。。两电阻串联的总阻值的单位为Ω。下列哪一表达式的量纲与该目标量一致？",
+      "options": [
+        {
+          "label": "A",
+          "text": "Rs = R<sub>1</sub>·R<sub>2</sub>"
+        },
+        {
+          "label": "B",
+          "text": "Rs = R<sub>1</sub>+R<sub>2</sub>"
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "串联总电阻为各电阻之和；10 Ω 和 20 Ω 串联应为 30 Ω。\n知识点条件：滑片移动后，接入电路的电阻丝长度改变，阻值随之变化；滑动变阻器通常串联在电路中，用来保护电路或连续调节电流。若它与固定电阻串联，总电阻等于两者相加；滑片方向与阻值增减的关系要根据实际接入的下接线柱判断。\n推导依据：观察变阻器接入的接线柱，确定滑片到下接线柱之间哪段电阻丝进入电路。；移动滑片会改变接入电阻丝长度，从而调节变阻器的阻值。；与定值电阻串联时，总电阻为两者之和；再用电流表验证滑片移动带来的变化。\n卡片公式各自的适用条件（不是本题共同前提）：\n定值电阻和变阻器串联总电阻：变阻器与定值电阻串联，忽略导线电阻并使用同一欧姆单位。",
+      "error_type": "量纲一致性",
+      "judging": "auto",
+      "source_error_index": 1,
+      "source_caught_by": "量纲一致性",
+      "wrong_expr": "Rs = R<sub>1</sub>·R<sub>2</sub>",
+      "trap_test": {
+        "kind": "dimension",
+        "target": "Rs = R1*R2",
+        "expect": "mismatch",
+        "lhs_dim": "M·L^2·T^-3·I^-2",
+        "rhs_dim": "M^2·L^4·T^-6·I^-4",
+        "note": "正式引擎验证量纲不一致；不计作同量纲错误数值实测。"
+      },
+      "level": "基础",
+      "learning_scope": "初中",
+      "answer_evidence": {
+        "kind": "dimension",
+        "target": "Rs",
+        "correct_expression": "Rs = R1+R2",
+        "distractor_expression": "Rs = R1*R2",
+        "target_dimension": "M·L^2·T^-3·I^-2",
+        "distractor_dimension": "M^2·L^4·T^-6·I^-4"
+      },
+      "review": {
+        "confidence": "medium",
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": true,
+          "no_answer_leak_in_options": true
+        },
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。",
+        "material": {
+          "anchors": [
+            {
+              "kind": "公式量纲",
+              "name": "本题目标量与等式",
+              "expression": "Rs = R1+R2",
+              "when": "量纲相符是必要条件，不能据此证明系数或物理条件正确",
+              "display": "Rs = R<sub>1</sub>+R<sub>2</sub>"
+            }
+          ],
+          "source": {
+            "nature": "原创量纲辨析命题；无实测数据",
+            "source_error_index": 1
+          },
+          "predicted_errors": [
+            {
+              "option": "A",
+              "text": "Rs = R<sub>1</sub>·R<sub>2</sub>",
+              "reason": "串联总电阻为各电阻之和；10 Ω 和 20 Ω 串联应为 30 Ω。",
+              "expression": "Rs = R1*R2",
+              "status": "误答原因预测，待教师确认；未采集学生作答证据"
+            }
+          ],
+          "difficulty_note": "建议难度沿用本题level（源卡难度）；尚非题目难度实测，待教师调整",
+          "estimated_seconds": [
+            60,
+            120
+          ],
+          "time_basis": "未做学生计时；按现有难度给出备课估计区间，待教师确认",
+          "machine_checks": [
+            {
+              "name": "题目ID关联源知识点",
+              "passed": true
+            },
+            {
+              "name": "选项标签唯一且参考标签存在",
+              "passed": true
+            },
+            {
+              "name": "选项文本互异",
+              "passed": true
+            },
+            {
+              "name": "正确式量纲一致",
+              "passed": true,
+              "actual": {
+                "type": "dimension",
+                "type_name": "量纲一致性",
+                "formula": "教师审核证据",
+                "ok": true,
+                "detail": "左端M·L^2·T^-3·I^-2，右端M·L^2·T^-3·I^-2",
+                "note": "",
+                "error": null,
+                "evaluation_status": "success",
+                "failure_reason": null,
+                "result_dimension": "M·L^2·T^-3·I^-2",
+                "reference_dimension": "M·L^2·T^-3·I^-2",
+                "diagnostics": {},
+                "physical_error_identified": false
+              }
+            },
+            {
+              "name": "干扰式量纲冲突",
+              "passed": true,
+              "actual": {
+                "type": "dimension",
+                "type_name": "量纲一致性",
+                "formula": "教师审核证据",
+                "ok": false,
+                "detail": "左端M·L^2·T^-3·I^-2，右端M^2·L^4·T^-6·I^-4",
+                "note": "",
+                "error": null,
+                "evaluation_status": "dimension_conflict",
+                "failure_reason": "dimension_conflict",
+                "result_dimension": "M^2·L^4·T^-6·I^-4",
+                "reference_dimension": "M·L^2·T^-3·I^-2",
+                "diagnostics": {},
+                "physical_error_identified": true
+              }
+            }
+          ],
+          "machine_boundary": "只列本次逐题实际执行项目；不把关联知识卡的方向、扫描或一致性检查算作本题已验。概念题未验命题真假。",
+          "human_review_items": [
+            "题干条件是否充分、清楚且符合学段",
+            "参考结论在指定条件下是否唯一",
+            "干扰项是否合理、对应真实认知问题且无答案暗示",
+            "公式或概念锚点是否准确",
+            "建议难度及用时是否适合教学",
+            "语言、装置与安全操作是否恰当"
+          ],
+          "reference_answer_note": "现有参考答案保持；即使本地可以判选项，也仍须教师审核教学可用性"
+        }
+      }
+    },
+    {
+      "id": "diagnostic-ohm-03-3",
+      "point_id": "ohm-03",
+      "point_title": "变阻器",
+      "chapter": "欧姆定律",
+      "stem": "在“变阻器”的模型下，R<sub>1</sub>（定值电阻阻值）=10 Ω；R<sub>2</sub>（变阻器接入电路的阻值）=20 Ω。条件：变阻器与定值电阻串联，忽略导线电阻并使用同一欧姆单位。。求两电阻串联的总阻值（Rs）。这些数值是设计示例。",
+      "options": [
+        {
+          "label": "A",
+          "text": "20 Ω"
+        },
+        {
+          "label": "B",
+          "text": "30 Ω"
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "使用定值电阻和变阻器串联总电阻：R<sub>1</sub>+R<sub>2</sub>，代入得30 Ω。另一结果来自R<sub>2</sub>，算得20 Ω。\n10 Ω固定电阻与20 Ω变阻器串联，总电阻30 Ω，不能只取20 Ω。\n知识点条件：滑片移动后，接入电路的电阻丝长度改变，阻值随之变化；滑动变阻器通常串联在电路中，用来保护电路或连续调节电流。若它与固定电阻串联，总电阻等于两者相加；滑片方向与阻值增减的关系要根据实际接入的下接线柱判断。\n推导依据：观察变阻器接入的接线柱，确定滑片到下接线柱之间哪段电阻丝进入电路。；移动滑片会改变接入电阻丝长度，从而调节变阻器的阻值。；与定值电阻串联时，总电阻为两者之和；再用电流表验证滑片移动带来的变化。\n卡片公式各自的适用条件（不是本题共同前提）：\n定值电阻和变阻器串联总电阻：变阻器与定值电阻串联，忽略导线电阻并使用同一欧姆单位。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 2,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "Rs = R<sub>2</sub>",
+      "trap_test": {
+        "scenario": "变阻器接入一",
+        "expr": "R2",
+        "ref": 30,
+        "tol": 1e-06
+      },
+      "level": "基础",
+      "learning_scope": "初中",
+      "answer_evidence": {
+        "kind": "numeric",
+        "scenario": "变阻器接入一",
+        "parameters": {
+          "R1": 10,
+          "R2": 20,
+          "Rs": 30,
+          "U": 12,
+          "I": 0.4,
+          "R": 30
+        },
+        "target": "Rs",
+        "unit": "ohm",
+        "reference": 30,
+        "correct_proof": {
+          "expression": "R1+R2",
+          "formula": "定值电阻和变阻器串联总电阻",
+          "value": 30,
+          "when": "变阻器与定值电阻串联，忽略导线电阻并使用同一欧姆单位。"
+        },
+        "distractor_expression": "R2",
+        "distractor_value": 20.0,
+        "dimension_matches": true,
+        "independent_evaluation": true
+      },
+      "review": {
+        "confidence": "medium",
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": true,
+          "no_answer_leak_in_options": true
+        },
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。",
+        "material": {
+          "anchors": [
+            {
+              "kind": "公式",
+              "name": "定值电阻和变阻器串联总电阻",
+              "expression": "R1+R2",
+              "when": "变阻器与定值电阻串联，忽略导线电阻并使用同一欧姆单位。",
+              "display": "R<sub>1</sub>+R<sub>2</sub>"
+            }
+          ],
+          "source": {
+            "nature": "原创设计示例，非教材实测或真实实验记录",
+            "scenario": "变阻器接入一",
+            "parameters": {
+              "R1": 10,
+              "R2": 20,
+              "Rs": 30,
+              "U": 12,
+              "I": 0.4,
+              "R": 30
+            },
+            "data": [
+              "定值电阻阻值：10 ohm",
+              "变阻器接入电路的阻值：20 ohm",
+              "两电阻串联的总阻值：30 ohm",
+              "串联部分两端电压：12 V",
+              "串联电路电流：0.4 A",
+              "由电压和电流得到的等效电阻：30 ohm"
+            ]
+          },
+          "predicted_errors": [
+            {
+              "option": "A",
+              "text": "20 Ω",
+              "reason": "10 Ω固定电阻与20 Ω变阻器串联，总电阻30 Ω，不能只取20 Ω。",
+              "expression": "R2",
+              "status": "误答原因预测，待教师确认；未采集学生作答证据"
+            }
+          ],
+          "difficulty_note": "建议难度沿用本题level（源卡难度）；尚非题目难度实测，待教师调整",
+          "estimated_seconds": [
+            60,
+            120
+          ],
+          "time_basis": "未做学生计时；按现有难度给出备课估计区间，待教师确认",
+          "machine_checks": [
+            {
+              "name": "题目ID关联源知识点",
+              "passed": true
+            },
+            {
+              "name": "选项标签唯一且参考标签存在",
+              "passed": true
+            },
+            {
+              "name": "选项文本互异",
+              "passed": true
+            },
+            {
+              "name": "正确路径独立数值复算",
+              "passed": true
+            },
+            {
+              "name": "带量纲求值与独立求值一致",
+              "passed": true
+            },
+            {
+              "name": "干扰路径复算且与正确路径分离",
+              "passed": true
+            }
+          ],
+          "machine_boundary": "只列本次逐题实际执行项目；不把关联知识卡的方向、扫描或一致性检查算作本题已验。概念题未验命题真假。",
+          "human_review_items": [
+            "题干条件是否充分、清楚且符合学段",
+            "参考结论在指定条件下是否唯一",
+            "干扰项是否合理、对应真实认知问题且无答案暗示",
+            "公式或概念锚点是否准确",
+            "建议难度及用时是否适合教学",
+            "语言、装置与安全操作是否恰当"
+          ],
+          "reference_answer_note": "现有参考答案保持；即使本地可以判选项，也仍须教师审核教学可用性"
+        }
+      }
+    },
+    {
+      "id": "diagnostic-ohm-04-1",
+      "point_id": "ohm-04",
+      "point_title": "欧姆定律",
+      "chapter": "欧姆定律",
+      "stem": "在“欧姆定律”中，一段导体温度等条件不变，U 用 V、R 用 Ω。。通过导体的电流的单位为A。下列哪一表达式的量纲与该目标量一致？",
+      "options": [
+        {
+          "label": "A",
+          "text": "I = R/U"
+        },
+        {
+          "label": "B",
+          "text": "I = U/R"
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "同一电阻器两端电压 6 V、电阻 12 Ω 时，电流为 0.5 A，而不是 2 A。\n知识点条件：使用欧姆定律前要确认电路元件和温度条件适用，电压用 V、电流用 A、电阻用 Ω。电阻由导体本身决定，不随同一导体两端电压或通过电流简单改变；电压、电流变化时可用比值检查条件是否保持。\n推导依据：在温度等条件不变时，通过导体的电流随两端电压增大而增大。；电阻越大，对电流的阻碍作用越明显，电流越小。；综合两种变化关系得到 I=U/R。；由测得的 U 与 I 可变形求 R=U/I。\n卡片公式各自的适用条件（不是本题共同前提）：\n欧姆定律求电流：一段导体温度等条件不变，U 用 V、R 用 Ω。\n由电压和电流求电阻：导体两端电压 U 和通过电流 I 来自同一测量状态，I 不为零。",
+      "error_type": "量纲一致性",
+      "judging": "auto",
+      "source_error_index": 0,
+      "source_caught_by": "量纲一致性",
+      "wrong_expr": "I = R/U",
+      "trap_test": {
+        "kind": "dimension",
+        "target": "I = R/U",
+        "expect": "mismatch",
+        "lhs_dim": "I",
+        "rhs_dim": "I^-1",
+        "note": "正式引擎验证量纲不一致；不计作同量纲错误数值实测。"
+      },
+      "level": "基础",
+      "learning_scope": "初中",
+      "answer_evidence": {
+        "kind": "dimension",
+        "target": "I",
+        "correct_expression": "I = U/R",
+        "distractor_expression": "I = R/U",
+        "target_dimension": "I",
+        "distractor_dimension": "I^-1"
+      },
+      "review": {
+        "confidence": "medium",
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": true,
+          "no_answer_leak_in_options": true
+        },
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。",
+        "material": {
+          "anchors": [
+            {
+              "kind": "公式量纲",
+              "name": "本题目标量与等式",
+              "expression": "I = U/R",
+              "when": "量纲相符是必要条件，不能据此证明系数或物理条件正确",
+              "display": "I = U/R"
+            }
+          ],
+          "source": {
+            "nature": "原创量纲辨析命题；无实测数据",
+            "source_error_index": 0
+          },
+          "predicted_errors": [
+            {
+              "option": "A",
+              "text": "I = R/U",
+              "reason": "同一电阻器两端电压 6 V、电阻 12 Ω 时，电流为 0.5 A，而不是 2 A。",
+              "expression": "I = R/U",
+              "status": "误答原因预测，待教师确认；未采集学生作答证据"
+            }
+          ],
+          "difficulty_note": "建议难度沿用本题level（源卡难度）；尚非题目难度实测，待教师调整",
+          "estimated_seconds": [
+            60,
+            120
+          ],
+          "time_basis": "未做学生计时；按现有难度给出备课估计区间，待教师确认",
+          "machine_checks": [
+            {
+              "name": "题目ID关联源知识点",
+              "passed": true
+            },
+            {
+              "name": "选项标签唯一且参考标签存在",
+              "passed": true
+            },
+            {
+              "name": "选项文本互异",
+              "passed": true
+            },
+            {
+              "name": "正确式量纲一致",
+              "passed": true,
+              "actual": {
+                "type": "dimension",
+                "type_name": "量纲一致性",
+                "formula": "教师审核证据",
+                "ok": true,
+                "detail": "左端I，右端I",
+                "note": "",
+                "error": null,
+                "evaluation_status": "success",
+                "failure_reason": null,
+                "result_dimension": "I",
+                "reference_dimension": "I",
+                "diagnostics": {},
+                "physical_error_identified": false
+              }
+            },
+            {
+              "name": "干扰式量纲冲突",
+              "passed": true,
+              "actual": {
+                "type": "dimension",
+                "type_name": "量纲一致性",
+                "formula": "教师审核证据",
+                "ok": false,
+                "detail": "左端I，右端I^-1",
+                "note": "",
+                "error": null,
+                "evaluation_status": "dimension_conflict",
+                "failure_reason": "dimension_conflict",
+                "result_dimension": "I^-1",
+                "reference_dimension": "I",
+                "diagnostics": {},
+                "physical_error_identified": true
+              }
+            }
+          ],
+          "machine_boundary": "只列本次逐题实际执行项目；不把关联知识卡的方向、扫描或一致性检查算作本题已验。概念题未验命题真假。",
+          "human_review_items": [
+            "题干条件是否充分、清楚且符合学段",
+            "参考结论在指定条件下是否唯一",
+            "干扰项是否合理、对应真实认知问题且无答案暗示",
+            "公式或概念锚点是否准确",
+            "建议难度及用时是否适合教学",
+            "语言、装置与安全操作是否恰当"
+          ],
+          "reference_answer_note": "现有参考答案保持；即使本地可以判选项，也仍须教师审核教学可用性"
+        }
+      }
+    },
+    {
+      "id": "diagnostic-ohm-04-2",
+      "point_id": "ohm-04",
+      "point_title": "欧姆定律",
+      "chapter": "欧姆定律",
+      "stem": "关于“欧姆定律”，判断这一说法是否成立，并说明依据：\n任何电学元件在任何温度下都保持恒定电阻并严格符合欧姆定律。",
+      "options": [
+        {
+          "label": "A",
+          "text": "该说法不成立。"
+        },
+        {
+          "label": "B",
+          "text": "该说法成立。"
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "灯丝等元件温度变化会影响电阻；使用关系式时要看元件和实验条件。\n知识点条件：使用欧姆定律前要确认电路元件和温度条件适用，电压用 V、电流用 A、电阻用 Ω。电阻由导体本身决定，不随同一导体两端电压或通过电流简单改变；电压、电流变化时可用比值检查条件是否保持。\n推导依据：在温度等条件不变时，通过导体的电流随两端电压增大而增大。；电阻越大，对电流的阻碍作用越明显，电流越小。；综合两种变化关系得到 I=U/R。；由测得的 U 与 I 可变形求 R=U/I。\n卡片公式各自的适用条件（不是本题共同前提）：\n欧姆定律求电流：一段导体温度等条件不变，U 用 V、R 用 Ω。\n由电压和电流求电阻：导体两端电压 U 和通过电流 I 来自同一测量状态，I 不为零。",
+      "error_type": "概念混淆",
+      "judging": "teacher",
+      "source_error_index": 1,
+      "source_caught_by": "人工审核",
+      "wrong_expr": null,
+      "trap_test": null,
+      "level": "基础",
+      "learning_scope": "初中",
+      "answer_evidence": {
+        "kind": "teacher",
+        "claim_source": "wrong",
+        "reference_only": true,
+        "reason": "概念、操作或无法建立完整定量证据，教师确认条件与结论。"
+      },
+      "review": {
+        "confidence": "medium",
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": false,
+          "no_answer_leak_in_options": true
+        },
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。",
+        "material": {
+          "anchors": [
+            {
+              "kind": "概念或操作",
+              "name": "欧姆定律",
+              "claim": "认为任何电学元件在任何温度下都保持恒定电阻并严格符合欧姆定律。",
+              "correction_basis": "灯丝等元件温度变化会影响电阻；使用关系式时要看元件和实验条件。",
+              "note": "概念锚点及命题真假待教师确认；未套用任意第一条公式",
+              "display": "认为任何电学元件在任何温度下都保持恒定电阻并严格符合欧姆定律。"
+            }
+          ],
+          "source": {
+            "nature": "原创概念/操作命题；无真实测量记录",
+            "source_error_index": 1
+          },
+          "predicted_errors": [
+            {
+              "option": "B",
+              "text": "该说法成立。",
+              "reason": "灯丝等元件温度变化会影响电阻；使用关系式时要看元件和实验条件。",
+              "expression": null,
+              "status": "误答原因预测，待教师确认；未采集学生作答证据"
+            }
+          ],
+          "difficulty_note": "建议难度沿用本题level（源卡难度）；尚非题目难度实测，待教师调整",
+          "estimated_seconds": [
+            60,
+            120
+          ],
+          "time_basis": "未做学生计时；按现有难度给出备课估计区间，待教师确认",
+          "machine_checks": [
+            {
+              "name": "题目ID关联源知识点",
+              "passed": true
+            },
+            {
+              "name": "选项标签唯一且参考标签存在",
+              "passed": true
+            },
+            {
+              "name": "选项文本互异",
+              "passed": true
+            }
+          ],
+          "machine_boundary": "只列本次逐题实际执行项目；不把关联知识卡的方向、扫描或一致性检查算作本题已验。概念题未验命题真假。",
+          "human_review_items": [
+            "题干条件是否充分、清楚且符合学段",
+            "参考结论在指定条件下是否唯一",
+            "干扰项是否合理、对应真实认知问题且无答案暗示",
+            "公式或概念锚点是否准确",
+            "建议难度及用时是否适合教学",
+            "语言、装置与安全操作是否恰当"
+          ],
+          "reference_answer_note": "现有参考答案保持；即使本地可以判选项，也仍须教师审核教学可用性"
+        }
+      }
+    },
+    {
+      "id": "diagnostic-ohm-04-3",
+      "point_id": "ohm-04",
+      "point_title": "欧姆定律",
+      "chapter": "欧姆定律",
+      "stem": "在“欧姆定律”的模型下，U（导体两端电压）=6 V；R（导体电阻）=3000 Ω。条件：一段导体温度等条件不变，U 用 V、R 用 Ω。。求通过导体的电流（I）。这些数值是设计示例。",
+      "options": [
+        {
+          "label": "A",
+          "text": "2 A"
+        },
+        {
+          "label": "B",
+          "text": "0.002 A"
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "使用欧姆定律求电流：U/R，代入得0.002 A。另一结果来自U/(R/1000)，算得2 A。\n6 V与3000 Ω给0.002 A；将3 kΩ的3直接当Ω会算2 A。\n知识点条件：使用欧姆定律前要确认电路元件和温度条件适用，电压用 V、电流用 A、电阻用 Ω。电阻由导体本身决定，不随同一导体两端电压或通过电流简单改变；电压、电流变化时可用比值检查条件是否保持。\n推导依据：在温度等条件不变时，通过导体的电流随两端电压增大而增大。；电阻越大，对电流的阻碍作用越明显，电流越小。；综合两种变化关系得到 I=U/R。；由测得的 U 与 I 可变形求 R=U/I。\n卡片公式各自的适用条件（不是本题共同前提）：\n欧姆定律求电流：一段导体温度等条件不变，U 用 V、R 用 Ω。\n由电压和电流求电阻：导体两端电压 U 和通过电流 I 来自同一测量状态，I 不为零。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 2,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "I = U/(R/1000)",
+      "trap_test": {
+        "scenario": "千欧换算误区",
+        "expr": "U/(R/1000)",
+        "ref": 0.002,
+        "tol": 2e-09
+      },
+      "level": "基础",
+      "learning_scope": "初中",
+      "answer_evidence": {
+        "kind": "numeric",
+        "scenario": "千欧换算误区",
+        "parameters": {
+          "U": 6,
+          "I": 0.002,
+          "R": 3000,
+          "Rk": 3
+        },
+        "target": "I",
+        "unit": "A",
+        "reference": 0.002,
+        "correct_proof": {
+          "expression": "U/R",
+          "formula": "欧姆定律求电流",
+          "value": 0.002,
+          "when": "一段导体温度等条件不变，U 用 V、R 用 Ω。"
+        },
+        "distractor_expression": "U/(R/1000)",
+        "distractor_value": 2.0,
+        "dimension_matches": true,
+        "independent_evaluation": true
+      },
+      "review": {
+        "confidence": "medium",
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": true,
+          "no_answer_leak_in_options": true
+        },
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。",
+        "material": {
+          "anchors": [
+            {
+              "kind": "公式",
+              "name": "欧姆定律求电流",
+              "expression": "U/R",
+              "when": "一段导体温度等条件不变，U 用 V、R 用 Ω。",
+              "display": "U/R"
+            }
+          ],
+          "source": {
+            "nature": "原创设计示例，非教材实测或真实实验记录",
+            "scenario": "千欧换算误区",
+            "parameters": {
+              "U": 6,
+              "I": 0.002,
+              "R": 3000,
+              "Rk": 3
+            },
+            "data": [
+              "导体两端电压：6 V",
+              "通过导体的电流：0.002 A",
+              "导体电阻：3000 Ω",
+              "以 kΩ 表示的电阻数值：3 kΩ"
+            ]
+          },
+          "predicted_errors": [
+            {
+              "option": "A",
+              "text": "2 A",
+              "reason": "6 V与3000 Ω给0.002 A；将3 kΩ的3直接当Ω会算2 A。",
+              "expression": "U/(R/1000)",
+              "status": "误答原因预测，待教师确认；未采集学生作答证据"
+            }
+          ],
+          "difficulty_note": "建议难度沿用本题level（源卡难度）；尚非题目难度实测，待教师调整",
+          "estimated_seconds": [
+            60,
+            120
+          ],
+          "time_basis": "未做学生计时；按现有难度给出备课估计区间，待教师确认",
+          "machine_checks": [
+            {
+              "name": "题目ID关联源知识点",
+              "passed": true
+            },
+            {
+              "name": "选项标签唯一且参考标签存在",
+              "passed": true
+            },
+            {
+              "name": "选项文本互异",
+              "passed": true
+            },
+            {
+              "name": "正确路径独立数值复算",
+              "passed": true
+            },
+            {
+              "name": "带量纲求值与独立求值一致",
+              "passed": true
+            },
+            {
+              "name": "干扰路径复算且与正确路径分离",
+              "passed": true
+            }
+          ],
+          "machine_boundary": "只列本次逐题实际执行项目；不把关联知识卡的方向、扫描或一致性检查算作本题已验。概念题未验命题真假。",
+          "human_review_items": [
+            "题干条件是否充分、清楚且符合学段",
+            "参考结论在指定条件下是否唯一",
+            "干扰项是否合理、对应真实认知问题且无答案暗示",
+            "公式或概念锚点是否准确",
+            "建议难度及用时是否适合教学",
+            "语言、装置与安全操作是否恰当"
+          ],
+          "reference_answer_note": "现有参考答案保持；即使本地可以判选项，也仍须教师审核教学可用性"
+        }
+      }
+    },
+    {
+      "id": "diagnostic-ohm-02-1",
+      "point_id": "ohm-02",
+      "point_title": "欧姆定律的应用",
+      "chapter": "欧姆定律",
+      "stem": "在“欧姆定律的应用”中，两个电阻并联，R<sub>1</sub>、R<sub>2</sub> 均为正值。。两电阻并联的等效电阻的单位为Ω。下列哪一表达式的量纲与该目标量一致？",
+      "options": [
+        {
+          "label": "A",
+          "text": "Rp = 1/(1/R<sub>1</sub>+1/R<sub>2</sub>)"
+        },
+        {
+          "label": "B",
+          "text": "Rp = 1/R<sub>1</sub>+1/R<sub>2</sub>"
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "6 Ω 与 3 Ω 并联的倒数和为 0.5 Ω⁻¹，等效电阻应为其倒数 2 Ω。\n知识点条件：分析实际电路时先辨认串联、并联结构，再化简等效电阻并结合总电压求干路电流。支路电压、电流必须对应正确元件；并联电阻不能直接相加。计算前确认电阻值适用，且电路中的总电压和总电流取同一等效部分。\n推导依据：串联电阻中电流相同，总电压为各电阻电压之和。；结合欧姆定律可得到串联总电阻为各电阻之和。；并联电阻两端电压相同，干路电流为各支路电流之和。；结合欧姆定律得到并联电阻倒数关系，最后对倒数和再取倒数。\n卡片公式各自的适用条件（不是本题共同前提）：\n两电阻并联等效电阻：两个电阻并联，R<sub>1</sub>、R<sub>2</sub> 均为正值。\n由总电压和总电流求等效电阻：U、It 描述整个等效电路，It 不为零。",
+      "error_type": "量纲一致性",
+      "judging": "auto",
+      "source_error_index": 0,
+      "source_caught_by": "量纲一致性",
+      "wrong_expr": "Rp = 1/R<sub>1</sub>+1/R<sub>2</sub>",
+      "trap_test": {
+        "kind": "dimension",
+        "target": "Rp = 1/R1+1/R2",
+        "expect": "mismatch",
+        "lhs_dim": "M·L^2·T^-3·I^-2",
+        "rhs_dim": "M^-1·L^-2·T^3·I^2",
+        "note": "正式引擎验证量纲不一致；不计作同量纲错误数值实测。"
+      },
+      "level": "基础",
+      "learning_scope": "初中",
+      "answer_evidence": {
+        "kind": "dimension",
+        "target": "Rp",
+        "correct_expression": "Rp = 1/(1/R1+1/R2)",
+        "distractor_expression": "Rp = 1/R1+1/R2",
+        "target_dimension": "M·L^2·T^-3·I^-2",
+        "distractor_dimension": "M^-1·L^-2·T^3·I^2"
+      },
+      "review": {
+        "confidence": "medium",
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": true,
+          "no_answer_leak_in_options": true
+        },
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。",
+        "material": {
+          "anchors": [
+            {
+              "kind": "公式量纲",
+              "name": "本题目标量与等式",
+              "expression": "Rp = 1/(1/R1+1/R2)",
+              "when": "量纲相符是必要条件，不能据此证明系数或物理条件正确",
+              "display": "Rp = 1/(1/R<sub>1</sub>+1/R<sub>2</sub>)"
+            }
+          ],
+          "source": {
+            "nature": "原创量纲辨析命题；无实测数据",
+            "source_error_index": 0
+          },
+          "predicted_errors": [
+            {
+              "option": "B",
+              "text": "Rp = 1/R<sub>1</sub>+1/R<sub>2</sub>",
+              "reason": "6 Ω 与 3 Ω 并联的倒数和为 0.5 Ω^-1，等效电阻应为其倒数 2 Ω。",
+              "expression": "Rp = 1/R1+1/R2",
+              "status": "误答原因预测，待教师确认；未采集学生作答证据"
+            }
+          ],
+          "difficulty_note": "建议难度沿用本题level（源卡难度）；尚非题目难度实测，待教师调整",
+          "estimated_seconds": [
+            60,
+            120
+          ],
+          "time_basis": "未做学生计时；按现有难度给出备课估计区间，待教师确认",
+          "machine_checks": [
+            {
+              "name": "题目ID关联源知识点",
+              "passed": true
+            },
+            {
+              "name": "选项标签唯一且参考标签存在",
+              "passed": true
+            },
+            {
+              "name": "选项文本互异",
+              "passed": true
+            },
+            {
+              "name": "正确式量纲一致",
+              "passed": true,
+              "actual": {
+                "type": "dimension",
+                "type_name": "量纲一致性",
+                "formula": "教师审核证据",
+                "ok": true,
+                "detail": "左端M·L^2·T^-3·I^-2，右端M·L^2·T^-3·I^-2",
+                "note": "",
+                "error": null,
+                "evaluation_status": "success",
+                "failure_reason": null,
+                "result_dimension": "M·L^2·T^-3·I^-2",
+                "reference_dimension": "M·L^2·T^-3·I^-2",
+                "diagnostics": {},
+                "physical_error_identified": false
+              }
+            },
+            {
+              "name": "干扰式量纲冲突",
+              "passed": true,
+              "actual": {
+                "type": "dimension",
+                "type_name": "量纲一致性",
+                "formula": "教师审核证据",
+                "ok": false,
+                "detail": "左端M·L^2·T^-3·I^-2，右端M^-1·L^-2·T^3·I^2",
+                "note": "",
+                "error": null,
+                "evaluation_status": "dimension_conflict",
+                "failure_reason": "dimension_conflict",
+                "result_dimension": "M^-1·L^-2·T^3·I^2",
+                "reference_dimension": "M·L^2·T^-3·I^-2",
+                "diagnostics": {},
+                "physical_error_identified": true
+              }
+            }
+          ],
+          "machine_boundary": "只列本次逐题实际执行项目；不把关联知识卡的方向、扫描或一致性检查算作本题已验。概念题未验命题真假。",
+          "human_review_items": [
+            "题干条件是否充分、清楚且符合学段",
+            "参考结论在指定条件下是否唯一",
+            "干扰项是否合理、对应真实认知问题且无答案暗示",
+            "公式或概念锚点是否准确",
+            "建议难度及用时是否适合教学",
+            "语言、装置与安全操作是否恰当"
+          ],
+          "reference_answer_note": "现有参考答案保持；即使本地可以判选项，也仍须教师审核教学可用性"
+        }
+      }
+    },
+    {
+      "id": "diagnostic-ohm-02-2",
+      "point_id": "ohm-02",
+      "point_title": "欧姆定律的应用",
+      "chapter": "欧姆定律",
+      "stem": "关于“欧姆定律的应用”，判断这一说法是否成立，并说明依据：\n并联增加额外电流通路，等效电阻会减小。",
+      "options": [
+        {
+          "label": "A",
+          "text": "该说法不成立。"
+        },
+        {
+          "label": "B",
+          "text": "该说法成立。"
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "并联增加额外电流通路，等效电阻会减小；串联增加电阻才会使总电阻增大。\n知识点条件：分析实际电路时先辨认串联、并联结构，再化简等效电阻并结合总电压求干路电流。支路电压、电流必须对应正确元件；并联电阻不能直接相加。计算前确认电阻值适用，且电路中的总电压和总电流取同一等效部分。\n推导依据：串联电阻中电流相同，总电压为各电阻电压之和。；结合欧姆定律可得到串联总电阻为各电阻之和。；并联电阻两端电压相同，干路电流为各支路电流之和。；结合欧姆定律得到并联电阻倒数关系，最后对倒数和再取倒数。\n卡片公式各自的适用条件（不是本题共同前提）：\n两电阻并联等效电阻：两个电阻并联，R<sub>1</sub>、R<sub>2</sub> 均为正值。\n由总电压和总电流求等效电阻：U、It 描述整个等效电路，It 不为零。",
+      "error_type": "概念混淆",
+      "judging": "teacher",
+      "source_error_index": 1,
+      "source_caught_by": "人工审核",
+      "wrong_expr": null,
+      "trap_test": null,
+      "level": "基础",
+      "learning_scope": "初中",
+      "answer_evidence": {
+        "kind": "teacher",
+        "claim_source": "why",
+        "reference_only": true,
+        "reason": "概念、操作或无法建立完整定量证据，教师确认条件与结论。"
+      },
+      "review": {
+        "confidence": "medium",
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": false,
+          "no_answer_leak_in_options": true
+        },
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。",
+        "material": {
+          "anchors": [
+            {
+              "kind": "概念或操作",
+              "name": "欧姆定律的应用",
+              "claim": "认为增加并联支路会增大总电阻。",
+              "correction_basis": "并联增加额外电流通路，等效电阻会减小；串联增加电阻才会使总电阻增大。",
+              "note": "概念锚点及命题真假待教师确认；未套用任意第一条公式",
+              "display": "认为增加并联支路会增大总电阻。"
+            },
+            {
+              "kind": "数值反例补充",
+              "name": "人工标签保留的指定数值反例",
+              "display": "Rp = 1/(1/R<sub>1</sub>+1/R<sub>2</sub>)",
+              "note": "这是原创设计反例，机器仅验证指定模型、数据及量纲；自然语言命题、学生认知与装置仍待教师确认。 原6 Ω支路加入3 Ω并联后总阻值2 Ω，小于6 Ω；错误当串联相加会得9 Ω。本例不判定任意接线图。"
+            }
+          ],
+          "source": {
+            "nature": "原创概念/操作命题；无真实测量记录",
+            "source_error_index": 1
+          },
+          "predicted_errors": [
+            {
+              "option": "A",
+              "text": "该说法不成立。",
+              "reason": "并联增加额外电流通路，等效电阻会减小；串联增加电阻才会使总电阻增大。",
+              "expression": null,
+              "status": "误答原因预测，待教师确认；未采集学生作答证据"
+            }
+          ],
+          "difficulty_note": "建议难度沿用本题level（源卡难度）；尚非题目难度实测，待教师调整",
+          "estimated_seconds": [
+            60,
+            120
+          ],
+          "time_basis": "未做学生计时；按现有难度给出备课估计区间，待教师确认",
+          "machine_checks": [
+            {
+              "name": "题目ID关联源知识点",
+              "passed": true
+            },
+            {
+              "name": "选项标签唯一且参考标签存在",
+              "passed": true
+            },
+            {
+              "name": "选项文本互异",
+              "passed": true
+            },
+            {
+              "name": "指定反例正确控制正式求值通过",
+              "passed": true,
+              "actual": {
+                "type": "numeric",
+                "type_name": "数值代入",
+                "formula": "补充反例正确控制",
+                "ok": true,
+                "detail": "情境「None」：算得Rp=2；参考2；有效容差2e-10",
+                "note": "",
+                "error": null,
+                "evaluation_status": "success",
+                "failure_reason": null,
+                "result_dimension": "M·L^2·T^-3·I^-2",
+                "reference_dimension": "M·L^2·T^-3·I^-2",
+                "diagnostics": {
+                  "primary_expression": "1/(1/R1 + 1/R2)",
+                  "target_expression": "Rp",
+                  "follows_primary_formula_changes": true,
+                  "primary_source_rhs": "1/(1/R1 + 1/R2)",
+                  "numeric_reference": 2,
+                  "actual_variables": [
+                    "R1",
+                    "R2"
+                  ],
+                  "target_variables": [
+                    "Rp"
+                  ],
+                  "rtol": 1e-10,
+                  "atol": 0.0,
+                  "effective_limit": 2e-10,
+                  "declared_limit": 2e-10,
+                  "capped_by_default": false,
+                  "scale": 2.0,
+                  "policy": "显式rtol/atol（严于默认，照此执行）",
+                  "expected_zero": false,
+                  "zero_basis": null,
+                  "actual_value": 2.0,
+                  "reference_value": 2
+                },
+                "physical_error_identified": false
+              }
+            },
+            {
+              "name": "指定反例错误注入被拒绝（非求值失败）",
+              "passed": true,
+              "actual": {
+                "type": "numeric",
+                "type_name": "数值代入",
+                "formula": "补充反例错误注入",
+                "ok": false,
+                "detail": "情境「None」：算得Rp=9；参考2；有效容差9e-10",
+                "note": "",
+                "error": null,
+                "evaluation_status": "numeric_mismatch",
+                "failure_reason": "numeric_mismatch",
+                "result_dimension": "M·L^2·T^-3·I^-2",
+                "reference_dimension": "M·L^2·T^-3·I^-2",
+                "diagnostics": {
+                  "primary_expression": "R1+R2",
+                  "target_expression": "Rp",
+                  "follows_primary_formula_changes": false,
+                  "primary_source_rhs": "1/(1/R1 + 1/R2)",
+                  "numeric_reference": 2,
+                  "actual_variables": [
+                    "R1",
+                    "R2"
+                  ],
+                  "target_variables": [
+                    "Rp"
+                  ],
+                  "rtol": 1e-10,
+                  "atol": 0.0,
+                  "effective_limit": 9e-10,
+                  "declared_limit": 9e-10,
+                  "capped_by_default": false,
+                  "scale": 9.0,
+                  "policy": "显式rtol/atol（严于默认，照此执行）",
+                  "expected_zero": false,
+                  "zero_basis": null,
+                  "actual_value": 9.0,
+                  "reference_value": 2
+                },
+                "physical_error_identified": true
+              }
+            }
+          ],
+          "machine_boundary": "只列本次逐题实际执行项目；不把关联知识卡的方向、扫描或一致性检查算作本题已验。概念题未验命题真假。",
+          "human_review_items": [
+            "题干条件是否充分、清楚且符合学段",
+            "参考结论在指定条件下是否唯一",
+            "干扰项是否合理、对应真实认知问题且无答案暗示",
+            "公式或概念锚点是否准确",
+            "建议难度及用时是否适合教学",
+            "语言、装置与安全操作是否恰当"
+          ],
+          "reference_answer_note": "现有参考答案保持；即使本地可以判选项，也仍须教师审核教学可用性"
+        }
+      }
+    },
+    {
+      "id": "diagnostic-ohm-02-3",
+      "point_id": "ohm-02",
+      "point_title": "欧姆定律的应用",
+      "chapter": "欧姆定律",
+      "stem": "在“欧姆定律的应用”的模型下，R<sub>1</sub>（第一只电阻）=6 Ω；R<sub>2</sub>（第二只电阻）=3 Ω。条件：两个电阻并联，R<sub>1</sub>、R<sub>2</sub> 均为正值。。求两电阻并联的等效电阻（Rp）。这些数值是设计示例。",
+      "options": [
+        {
+          "label": "A",
+          "text": "6 Ω"
+        },
+        {
+          "label": "B",
+          "text": "2 Ω"
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "使用两电阻并联等效电阻：1/(1/R<sub>1</sub>+1/R<sub>2</sub>)，代入得2 Ω。另一结果来自R<sub>1</sub>，算得6 Ω。\n6 Ω与3 Ω并联，等效电阻2 Ω，小于任一支路；只取6 Ω遗漏另一通路。\n知识点条件：分析实际电路时先辨认串联、并联结构，再化简等效电阻并结合总电压求干路电流。支路电压、电流必须对应正确元件；并联电阻不能直接相加。计算前确认电阻值适用，且电路中的总电压和总电流取同一等效部分。\n推导依据：串联电阻中电流相同，总电压为各电阻电压之和。；结合欧姆定律可得到串联总电阻为各电阻之和。；并联电阻两端电压相同，干路电流为各支路电流之和。；结合欧姆定律得到并联电阻倒数关系，最后对倒数和再取倒数。\n卡片公式各自的适用条件（不是本题共同前提）：\n两电阻并联等效电阻：两个电阻并联，R<sub>1</sub>、R<sub>2</sub> 均为正值。\n由总电压和总电流求等效电阻：U、It 描述整个等效电路，It 不为零。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 2,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "Rp = R<sub>1</sub>",
+      "trap_test": {
+        "scenario": "并联电阻组一",
+        "expr": "R1",
+        "ref": 2,
+        "tol": 1e-06
+      },
+      "level": "基础",
+      "learning_scope": "初中",
+      "answer_evidence": {
+        "kind": "numeric",
+        "scenario": "并联电阻组一",
+        "parameters": {
+          "R1": 6,
+          "R2": 3,
+          "Rp": 2,
+          "U": 6,
+          "It": 3
+        },
+        "target": "Rp",
+        "unit": "Ω",
+        "reference": 2,
+        "correct_proof": {
+          "expression": "1/(1/R1+1/R2)",
+          "formula": "两电阻并联等效电阻",
+          "value": 2.0,
+          "when": "两个电阻并联，R1、R2 均为正值。"
+        },
+        "distractor_expression": "R1",
+        "distractor_value": 6.0,
+        "dimension_matches": true,
+        "independent_evaluation": true
+      },
+      "review": {
+        "confidence": "medium",
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": true,
+          "no_answer_leak_in_options": true
+        },
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。",
+        "material": {
+          "anchors": [
+            {
+              "kind": "公式",
+              "name": "两电阻并联等效电阻",
+              "expression": "1/(1/R1+1/R2)",
+              "when": "两个电阻并联，R1、R2 均为正值。",
+              "display": "1/(1/R<sub>1</sub>+1/R<sub>2</sub>)"
+            }
+          ],
+          "source": {
+            "nature": "原创设计示例，非教材实测或真实实验记录",
+            "scenario": "并联电阻组一",
+            "parameters": {
+              "R1": 6,
+              "R2": 3,
+              "Rp": 2,
+              "U": 6,
+              "It": 3
+            },
+            "data": [
+              "第一只电阻：6 Ω",
+              "第二只电阻：3 Ω",
+              "两电阻并联的等效电阻：2 Ω",
+              "等效电阻两端电压：6 V",
+              "通过等效电阻的总电流：3 A"
+            ]
+          },
+          "predicted_errors": [
+            {
+              "option": "A",
+              "text": "6 Ω",
+              "reason": "6 Ω与3 Ω并联，等效电阻2 Ω，小于任一支路；只取6 Ω遗漏另一通路。",
+              "expression": "R1",
+              "status": "误答原因预测，待教师确认；未采集学生作答证据"
+            }
+          ],
+          "difficulty_note": "建议难度沿用本题level（源卡难度）；尚非题目难度实测，待教师调整",
+          "estimated_seconds": [
+            60,
+            120
+          ],
+          "time_basis": "未做学生计时；按现有难度给出备课估计区间，待教师确认",
+          "machine_checks": [
+            {
+              "name": "题目ID关联源知识点",
+              "passed": true
+            },
+            {
+              "name": "选项标签唯一且参考标签存在",
+              "passed": true
+            },
+            {
+              "name": "选项文本互异",
+              "passed": true
+            },
+            {
+              "name": "正确路径独立数值复算",
+              "passed": true
+            },
+            {
+              "name": "带量纲求值与独立求值一致",
+              "passed": true
+            },
+            {
+              "name": "干扰路径复算且与正确路径分离",
+              "passed": true
+            }
+          ],
+          "machine_boundary": "只列本次逐题实际执行项目；不把关联知识卡的方向、扫描或一致性检查算作本题已验。概念题未验命题真假。",
+          "human_review_items": [
+            "题干条件是否充分、清楚且符合学段",
+            "参考结论在指定条件下是否唯一",
+            "干扰项是否合理、对应真实认知问题且无答案暗示",
+            "公式或概念锚点是否准确",
+            "建议难度及用时是否适合教学",
+            "语言、装置与安全操作是否恰当"
+          ],
+          "reference_answer_note": "现有参考答案保持；即使本地可以判选项，也仍须教师审核教学可用性"
+        }
+      }
+    }
+  ],
+  "skipped": [],
+  "source_records": {
+    "diagnostic-ohm-01-1": {
+      "point": {
+        "id": "ohm-01",
+        "title": "电阻",
+        "level": "基础",
+        "definition": "电阻表示导体对电流的阻碍作用，单位为欧姆。对符合欧姆定律的导体，在温度等条件不变时，可用导体两端电压与通过电流的比值测量电阻。",
+        "meaning": "电阻大小与导体材料、长度、横截面积和温度等因素有关；同一导体不能因为电压或电流变大就说电阻一定改变。测电阻时应使用电压表并联、电流表串联，再用 R=U/I 计算。欧姆定律适用条件要明确，灯丝温度改变时电阻也会改变。",
+        "symbols": {
+          "U": {
+            "desc": "导体两端电压",
+            "unit": "V"
+          },
+          "I": {
+            "desc": "通过导体的电流",
+            "unit": "A"
+          },
+          "R": {
+            "desc": "导体电阻",
+            "unit": "Ω"
+          },
+          "Rk": {
+            "desc": "以 kΩ 表示的电阻数值",
+            "unit": "kΩ"
+          },
+          "R1": {
+            "desc": "第一只电阻",
+            "unit": "Ω"
+          },
+          "R2": {
+            "desc": "第二只电阻",
+            "unit": "Ω"
+          },
+          "Rs": {
+            "desc": "两电阻串联的总电阻",
+            "unit": "Ω"
+          },
+          "Rp": {
+            "desc": "两电阻并联的等效电阻",
+            "unit": "Ω"
+          },
+          "It": {
+            "desc": "通过等效电阻的总电流",
+            "unit": "A"
+          }
+        },
+        "scenarios": {
+          "三欧导体": {
+            "U": 6,
+            "I": 2,
+            "R": 3
+          },
+          "六欧导体": {
+            "U": 12,
+            "I": 2,
+            "R": 6
+          },
+          "千欧换算误区": {
+            "U": 6,
+            "I": 0.002,
+            "R": 3000,
+            "Rk": 3
+          },
+          "串联电阻组一": {
+            "R1": 2,
+            "R2": 4,
+            "Rs": 6,
+            "U": 12,
+            "It": 2
+          },
+          "串联电阻组二": {
+            "R1": 5,
+            "R2": 10,
+            "Rs": 15,
+            "U": 30,
+            "It": 2
+          },
+          "并联电阻组一": {
+            "R1": 6,
+            "R2": 3,
+            "Rp": 2,
+            "U": 6,
+            "It": 3
+          },
+          "并联电阻组二": {
+            "R1": 8,
+            "R2": 8,
+            "Rp": 4,
+            "U": 12,
+            "It": 3
+          },
+          "串联电阻总值测量": {
+            "U": 12,
+            "I": 2,
+            "R": 6,
+            "R1": 2,
+            "R2": 4,
+            "Rs": 6
+          }
+        },
+        "formulas": [
+          {
+            "name": "由电压和电流求电阻",
+            "expr": "R = U/I",
+            "when": "导体两端电压 U 和通过电流 I 来自同一测量状态，I 不为零。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "三欧导体",
+                "expr": "U/I",
+                "ref": 3,
+                "note": "6 V÷2 A=3 Ω。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "六欧导体",
+                "expr": "U/I",
+                "ref": 6,
+                "note": "12 V÷2 A=6 Ω。"
+              },
+              {
+                "type": "scan",
+                "scenario": "三欧导体",
+                "var": "I",
+                "lo": 0.001,
+                "hi": 20,
+                "note": "扫描正电流读数，反算电阻有限。"
+              },
+              {
+                "type": "consistency",
+                "scenario": "串联电阻总值测量",
+                "with": "ohm-01|由电压和电流求电阻",
+                "with_expr": "R1+R2",
+                "target": "导体电阻",
+                "note": "本公式直接求R；参考端显式关系为R1+R2。两端使用同一情境和阶段，只核对该关系；with字段仅定位来源，不代表调用另一条被覆盖的公式。",
+                "verification_kind": "独立关系核对"
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "在温度等条件不变时，通过导体的电流随两端电压增大而增大。",
+          "电阻越大，对电流的阻碍作用越明显，电流越小。",
+          "综合两种变化关系得到 I=U/R。",
+          "由测得的 U 与 I 可变形求 R=U/I。"
+        ],
+        "errors": [
+          {
+            "wrong": "把欧姆定律误写成电流等于电阻除以电压。",
+            "wrong_expr": "I = R/U",
+            "why": "欧姆定律应当用电压除以电阻来求电流；把电阻除以电压不仅关系倒置，所得量纲也不是安培。",
+            "caught_by": "量纲一致性",
+            "trap_test": {
+              "kind": "dimension",
+              "target": "I = R/U",
+              "lhs_dim": "I",
+              "rhs_dim": "I^-1",
+              "expect": "mismatch",
+              "note": "实际量纲检查得到等号左边为I、右边为I^-1；两边不是同一物理量，因此该等式不成立。"
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "把 3 kΩ 的数值 3 直接当成 3 Ω 代入，漏掉千欧到欧姆的 1000 倍换算。",
+            "wrong_expr": "I = U/Rk",
+            "why": "6 V 接在 3 kΩ 电阻上，电流应为 0.002 A；把数值 3 当作 Ω 会错误得到 2 A。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "千欧换算误区",
+              "expr": "U/Rk",
+              "ref": 0.002
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "不说明条件变化就认为电压改变会使导体电阻按比例改变。",
+            "why": "电阻由导体材料、长度、横截面积和温度等因素决定；欧姆定律的 U/I 比值在相同条件下描述电阻。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "某导体两端电压 6 V，通过电流 2 A，求电阻。",
+          "solution": [
+            "R=U/I=6/2=3 Ω。",
+            "欧姆定律适用于导体条件不变的测量状态。"
+          ],
+          "answer": "电阻为 3 Ω。"
+        },
+        "prereq": [
+          "circuit-01",
+          "circuit-02"
+        ],
+        "next": [
+          "ohm-02"
+        ],
+        "tags": [
+          "电阻",
+          "欧姆",
+          "电压",
+          "电流",
+          "测电阻"
+        ],
+        "core": [
+          {
+            "title": "电阻",
+            "text": "电阻表示导体对电流的阻碍作用，单位Ω。同材料、同温度下导线越长一般电阻越大，横截面积越大一般越小；材料和温度也有影响。对同一个温度近似稳定的电阻器，电压改变引起电流改变，并非电阻按电压随意变化。1 kΩ=1000 Ω，1 MΩ=1000000 Ω。灯丝受热时电阻明显变化。"
+          },
+          {
+            "title": "本章素养回顾（原创任务）",
+            "text": "选择本章一个现象，写出结论、成立条件和证据；用另一条本章规律复核解释是否矛盾。指出一次测量或模型的局限，并说明还需什么证据；数值通过不替代概念辨析。"
+          }
+        ],
+        "evidence": [
+          {
+            "kind": "conversion",
+            "value": 3,
+            "from_unit": "kΩ",
+            "expected": 3000,
+            "to_unit": "Ω",
+            "note": "千欧转欧乘1000。"
+          }
+        ],
+        "learning_scope": "初中"
+      },
+      "error_index": 0,
+      "chapter": "欧姆定律"
+    },
+    "diagnostic-ohm-01-2": {
+      "point": {
+        "id": "ohm-01",
+        "title": "电阻",
+        "level": "基础",
+        "definition": "电阻表示导体对电流的阻碍作用，单位为欧姆。对符合欧姆定律的导体，在温度等条件不变时，可用导体两端电压与通过电流的比值测量电阻。",
+        "meaning": "电阻大小与导体材料、长度、横截面积和温度等因素有关；同一导体不能因为电压或电流变大就说电阻一定改变。测电阻时应使用电压表并联、电流表串联，再用 R=U/I 计算。欧姆定律适用条件要明确，灯丝温度改变时电阻也会改变。",
+        "symbols": {
+          "U": {
+            "desc": "导体两端电压",
+            "unit": "V"
+          },
+          "I": {
+            "desc": "通过导体的电流",
+            "unit": "A"
+          },
+          "R": {
+            "desc": "导体电阻",
+            "unit": "Ω"
+          },
+          "Rk": {
+            "desc": "以 kΩ 表示的电阻数值",
+            "unit": "kΩ"
+          },
+          "R1": {
+            "desc": "第一只电阻",
+            "unit": "Ω"
+          },
+          "R2": {
+            "desc": "第二只电阻",
+            "unit": "Ω"
+          },
+          "Rs": {
+            "desc": "两电阻串联的总电阻",
+            "unit": "Ω"
+          },
+          "Rp": {
+            "desc": "两电阻并联的等效电阻",
+            "unit": "Ω"
+          },
+          "It": {
+            "desc": "通过等效电阻的总电流",
+            "unit": "A"
+          }
+        },
+        "scenarios": {
+          "三欧导体": {
+            "U": 6,
+            "I": 2,
+            "R": 3
+          },
+          "六欧导体": {
+            "U": 12,
+            "I": 2,
+            "R": 6
+          },
+          "千欧换算误区": {
+            "U": 6,
+            "I": 0.002,
+            "R": 3000,
+            "Rk": 3
+          },
+          "串联电阻组一": {
+            "R1": 2,
+            "R2": 4,
+            "Rs": 6,
+            "U": 12,
+            "It": 2
+          },
+          "串联电阻组二": {
+            "R1": 5,
+            "R2": 10,
+            "Rs": 15,
+            "U": 30,
+            "It": 2
+          },
+          "并联电阻组一": {
+            "R1": 6,
+            "R2": 3,
+            "Rp": 2,
+            "U": 6,
+            "It": 3
+          },
+          "并联电阻组二": {
+            "R1": 8,
+            "R2": 8,
+            "Rp": 4,
+            "U": 12,
+            "It": 3
+          },
+          "串联电阻总值测量": {
+            "U": 12,
+            "I": 2,
+            "R": 6,
+            "R1": 2,
+            "R2": 4,
+            "Rs": 6
+          }
+        },
+        "formulas": [
+          {
+            "name": "由电压和电流求电阻",
+            "expr": "R = U/I",
+            "when": "导体两端电压 U 和通过电流 I 来自同一测量状态，I 不为零。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "三欧导体",
+                "expr": "U/I",
+                "ref": 3,
+                "note": "6 V÷2 A=3 Ω。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "六欧导体",
+                "expr": "U/I",
+                "ref": 6,
+                "note": "12 V÷2 A=6 Ω。"
+              },
+              {
+                "type": "scan",
+                "scenario": "三欧导体",
+                "var": "I",
+                "lo": 0.001,
+                "hi": 20,
+                "note": "扫描正电流读数，反算电阻有限。"
+              },
+              {
+                "type": "consistency",
+                "scenario": "串联电阻总值测量",
+                "with": "ohm-01|由电压和电流求电阻",
+                "with_expr": "R1+R2",
+                "target": "导体电阻",
+                "note": "本公式直接求R；参考端显式关系为R1+R2。两端使用同一情境和阶段，只核对该关系；with字段仅定位来源，不代表调用另一条被覆盖的公式。",
+                "verification_kind": "独立关系核对"
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "在温度等条件不变时，通过导体的电流随两端电压增大而增大。",
+          "电阻越大，对电流的阻碍作用越明显，电流越小。",
+          "综合两种变化关系得到 I=U/R。",
+          "由测得的 U 与 I 可变形求 R=U/I。"
+        ],
+        "errors": [
+          {
+            "wrong": "把欧姆定律误写成电流等于电阻除以电压。",
+            "wrong_expr": "I = R/U",
+            "why": "欧姆定律应当用电压除以电阻来求电流；把电阻除以电压不仅关系倒置，所得量纲也不是安培。",
+            "caught_by": "量纲一致性",
+            "trap_test": {
+              "kind": "dimension",
+              "target": "I = R/U",
+              "lhs_dim": "I",
+              "rhs_dim": "I^-1",
+              "expect": "mismatch",
+              "note": "实际量纲检查得到等号左边为I、右边为I^-1；两边不是同一物理量，因此该等式不成立。"
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "把 3 kΩ 的数值 3 直接当成 3 Ω 代入，漏掉千欧到欧姆的 1000 倍换算。",
+            "wrong_expr": "I = U/Rk",
+            "why": "6 V 接在 3 kΩ 电阻上，电流应为 0.002 A；把数值 3 当作 Ω 会错误得到 2 A。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "千欧换算误区",
+              "expr": "U/Rk",
+              "ref": 0.002
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "不说明条件变化就认为电压改变会使导体电阻按比例改变。",
+            "why": "电阻由导体材料、长度、横截面积和温度等因素决定；欧姆定律的 U/I 比值在相同条件下描述电阻。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "某导体两端电压 6 V，通过电流 2 A，求电阻。",
+          "solution": [
+            "R=U/I=6/2=3 Ω。",
+            "欧姆定律适用于导体条件不变的测量状态。"
+          ],
+          "answer": "电阻为 3 Ω。"
+        },
+        "prereq": [
+          "circuit-01",
+          "circuit-02"
+        ],
+        "next": [
+          "ohm-02"
+        ],
+        "tags": [
+          "电阻",
+          "欧姆",
+          "电压",
+          "电流",
+          "测电阻"
+        ],
+        "core": [
+          {
+            "title": "电阻",
+            "text": "电阻表示导体对电流的阻碍作用，单位Ω。同材料、同温度下导线越长一般电阻越大，横截面积越大一般越小；材料和温度也有影响。对同一个温度近似稳定的电阻器，电压改变引起电流改变，并非电阻按电压随意变化。1 kΩ=1000 Ω，1 MΩ=1000000 Ω。灯丝受热时电阻明显变化。"
+          },
+          {
+            "title": "本章素养回顾（原创任务）",
+            "text": "选择本章一个现象，写出结论、成立条件和证据；用另一条本章规律复核解释是否矛盾。指出一次测量或模型的局限，并说明还需什么证据；数值通过不替代概念辨析。"
+          }
+        ],
+        "evidence": [
+          {
+            "kind": "conversion",
+            "value": 3,
+            "from_unit": "kΩ",
+            "expected": 3000,
+            "to_unit": "Ω",
+            "note": "千欧转欧乘1000。"
+          }
+        ],
+        "learning_scope": "初中"
+      },
+      "error_index": 1,
+      "chapter": "欧姆定律"
+    },
+    "diagnostic-ohm-01-3": {
+      "point": {
+        "id": "ohm-01",
+        "title": "电阻",
+        "level": "基础",
+        "definition": "电阻表示导体对电流的阻碍作用，单位为欧姆。对符合欧姆定律的导体，在温度等条件不变时，可用导体两端电压与通过电流的比值测量电阻。",
+        "meaning": "电阻大小与导体材料、长度、横截面积和温度等因素有关；同一导体不能因为电压或电流变大就说电阻一定改变。测电阻时应使用电压表并联、电流表串联，再用 R=U/I 计算。欧姆定律适用条件要明确，灯丝温度改变时电阻也会改变。",
+        "symbols": {
+          "U": {
+            "desc": "导体两端电压",
+            "unit": "V"
+          },
+          "I": {
+            "desc": "通过导体的电流",
+            "unit": "A"
+          },
+          "R": {
+            "desc": "导体电阻",
+            "unit": "Ω"
+          },
+          "Rk": {
+            "desc": "以 kΩ 表示的电阻数值",
+            "unit": "kΩ"
+          },
+          "R1": {
+            "desc": "第一只电阻",
+            "unit": "Ω"
+          },
+          "R2": {
+            "desc": "第二只电阻",
+            "unit": "Ω"
+          },
+          "Rs": {
+            "desc": "两电阻串联的总电阻",
+            "unit": "Ω"
+          },
+          "Rp": {
+            "desc": "两电阻并联的等效电阻",
+            "unit": "Ω"
+          },
+          "It": {
+            "desc": "通过等效电阻的总电流",
+            "unit": "A"
+          }
+        },
+        "scenarios": {
+          "三欧导体": {
+            "U": 6,
+            "I": 2,
+            "R": 3
+          },
+          "六欧导体": {
+            "U": 12,
+            "I": 2,
+            "R": 6
+          },
+          "千欧换算误区": {
+            "U": 6,
+            "I": 0.002,
+            "R": 3000,
+            "Rk": 3
+          },
+          "串联电阻组一": {
+            "R1": 2,
+            "R2": 4,
+            "Rs": 6,
+            "U": 12,
+            "It": 2
+          },
+          "串联电阻组二": {
+            "R1": 5,
+            "R2": 10,
+            "Rs": 15,
+            "U": 30,
+            "It": 2
+          },
+          "并联电阻组一": {
+            "R1": 6,
+            "R2": 3,
+            "Rp": 2,
+            "U": 6,
+            "It": 3
+          },
+          "并联电阻组二": {
+            "R1": 8,
+            "R2": 8,
+            "Rp": 4,
+            "U": 12,
+            "It": 3
+          },
+          "串联电阻总值测量": {
+            "U": 12,
+            "I": 2,
+            "R": 6,
+            "R1": 2,
+            "R2": 4,
+            "Rs": 6
+          }
+        },
+        "formulas": [
+          {
+            "name": "由电压和电流求电阻",
+            "expr": "R = U/I",
+            "when": "导体两端电压 U 和通过电流 I 来自同一测量状态，I 不为零。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "三欧导体",
+                "expr": "U/I",
+                "ref": 3,
+                "note": "6 V÷2 A=3 Ω。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "六欧导体",
+                "expr": "U/I",
+                "ref": 6,
+                "note": "12 V÷2 A=6 Ω。"
+              },
+              {
+                "type": "scan",
+                "scenario": "三欧导体",
+                "var": "I",
+                "lo": 0.001,
+                "hi": 20,
+                "note": "扫描正电流读数，反算电阻有限。"
+              },
+              {
+                "type": "consistency",
+                "scenario": "串联电阻总值测量",
+                "with": "ohm-01|由电压和电流求电阻",
+                "with_expr": "R1+R2",
+                "target": "导体电阻",
+                "note": "本公式直接求R；参考端显式关系为R1+R2。两端使用同一情境和阶段，只核对该关系；with字段仅定位来源，不代表调用另一条被覆盖的公式。",
+                "verification_kind": "独立关系核对"
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "在温度等条件不变时，通过导体的电流随两端电压增大而增大。",
+          "电阻越大，对电流的阻碍作用越明显，电流越小。",
+          "综合两种变化关系得到 I=U/R。",
+          "由测得的 U 与 I 可变形求 R=U/I。"
+        ],
+        "errors": [
+          {
+            "wrong": "把欧姆定律误写成电流等于电阻除以电压。",
+            "wrong_expr": "I = R/U",
+            "why": "欧姆定律应当用电压除以电阻来求电流；把电阻除以电压不仅关系倒置，所得量纲也不是安培。",
+            "caught_by": "量纲一致性",
+            "trap_test": {
+              "kind": "dimension",
+              "target": "I = R/U",
+              "lhs_dim": "I",
+              "rhs_dim": "I^-1",
+              "expect": "mismatch",
+              "note": "实际量纲检查得到等号左边为I、右边为I^-1；两边不是同一物理量，因此该等式不成立。"
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "把 3 kΩ 的数值 3 直接当成 3 Ω 代入，漏掉千欧到欧姆的 1000 倍换算。",
+            "wrong_expr": "I = U/Rk",
+            "why": "6 V 接在 3 kΩ 电阻上，电流应为 0.002 A；把数值 3 当作 Ω 会错误得到 2 A。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "千欧换算误区",
+              "expr": "U/Rk",
+              "ref": 0.002
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "不说明条件变化就认为电压改变会使导体电阻按比例改变。",
+            "why": "电阻由导体材料、长度、横截面积和温度等因素决定；欧姆定律的 U/I 比值在相同条件下描述电阻。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "某导体两端电压 6 V，通过电流 2 A，求电阻。",
+          "solution": [
+            "R=U/I=6/2=3 Ω。",
+            "欧姆定律适用于导体条件不变的测量状态。"
+          ],
+          "answer": "电阻为 3 Ω。"
+        },
+        "prereq": [
+          "circuit-01",
+          "circuit-02"
+        ],
+        "next": [
+          "ohm-02"
+        ],
+        "tags": [
+          "电阻",
+          "欧姆",
+          "电压",
+          "电流",
+          "测电阻"
+        ],
+        "core": [
+          {
+            "title": "电阻",
+            "text": "电阻表示导体对电流的阻碍作用，单位Ω。同材料、同温度下导线越长一般电阻越大，横截面积越大一般越小；材料和温度也有影响。对同一个温度近似稳定的电阻器，电压改变引起电流改变，并非电阻按电压随意变化。1 kΩ=1000 Ω，1 MΩ=1000000 Ω。灯丝受热时电阻明显变化。"
+          },
+          {
+            "title": "本章素养回顾（原创任务）",
+            "text": "选择本章一个现象，写出结论、成立条件和证据；用另一条本章规律复核解释是否矛盾。指出一次测量或模型的局限，并说明还需什么证据；数值通过不替代概念辨析。"
+          }
+        ],
+        "evidence": [
+          {
+            "kind": "conversion",
+            "value": 3,
+            "from_unit": "kΩ",
+            "expected": 3000,
+            "to_unit": "Ω",
+            "note": "千欧转欧乘1000。"
+          }
+        ],
+        "learning_scope": "初中"
+      },
+      "error_index": 2,
+      "chapter": "欧姆定律"
+    },
+    "diagnostic-ohm-03-1": {
+      "point": {
+        "id": "ohm-03",
+        "title": "变阻器",
+        "level": "基础",
+        "definition": "滑动变阻器通过移动滑片改变接入电路的电阻丝长度，从而改变电阻并调节电路电流或用电器两端电压。接入电路时应选择“一上一下”接线柱，并在闭合开关前将滑片置于适当位置。",
+        "meaning": "滑片移动后，接入电路的电阻丝长度改变，阻值随之变化；滑动变阻器通常串联在电路中，用来保护电路或连续调节电流。若它与固定电阻串联，总电阻等于两者相加；滑片方向与阻值增减的关系要根据实际接入的下接线柱判断。",
+        "symbols": {
+          "R1": {
+            "desc": "定值电阻阻值",
+            "unit": "ohm"
+          },
+          "R2": {
+            "desc": "变阻器接入电路的阻值",
+            "unit": "ohm"
+          },
+          "Rs": {
+            "desc": "两电阻串联的总阻值",
+            "unit": "ohm"
+          },
+          "U": {
+            "desc": "串联部分两端电压",
+            "unit": "V"
+          },
+          "I": {
+            "desc": "串联电路电流",
+            "unit": "A"
+          },
+          "R": {
+            "desc": "由电压和电流得到的等效电阻",
+            "unit": "ohm"
+          }
+        },
+        "scenarios": {
+          "变阻器接入一": {
+            "R1": 10,
+            "R2": 20,
+            "Rs": 30,
+            "U": 12,
+            "I": 0.4,
+            "R": 30
+          },
+          "变阻器接入二": {
+            "R1": 15,
+            "R2": 5,
+            "Rs": 20,
+            "U": 6,
+            "I": 0.3,
+            "R": 20
+          }
+        },
+        "formulas": [
+          {
+            "name": "定值电阻和变阻器串联总电阻",
+            "expr": "Rs = R1+R2",
+            "when": "变阻器与定值电阻串联，忽略导线电阻并使用同一欧姆单位。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "变阻器接入一",
+                "expr": "R1+R2",
+                "ref": 30,
+                "note": "10 Ω 定值电阻与 20 Ω 变阻器串联，总电阻为 30 Ω。 "
+              },
+              {
+                "type": "numeric",
+                "scenario": "变阻器接入二",
+                "expr": "R1+R2",
+                "ref": 20,
+                "note": "15 Ω 与 5 Ω 串联，总电阻为 20 Ω。 "
+              },
+              {
+                "type": "direction",
+                "scenario": "变阻器接入一",
+                "var": "R2",
+                "lo": 0,
+                "hi": 100,
+                "expr": "R1+R2",
+                "expect": "up",
+                "note": "定值电阻不变时，变阻器接入阻值增大，总阻值增大。 "
+              },
+              {
+                "type": "scan",
+                "scenario": "变阻器接入一",
+                "var": "R2",
+                "lo": 0,
+                "hi": 1000,
+                "note": "扫描非负变阻器阻值，总电阻保持有限。 "
+              },
+              {
+                "type": "consistency",
+                "scenario": "变阻器接入一",
+                "with": "ohm-03|定值电阻和变阻器串联总电阻",
+                "with_expr": "R",
+                "target": "两电阻串联的总阻值",
+                "note": "直接求本公式输出，与情境中另列的R设计基准核对；数据是设计示例，不是实测。用于核对定义、反算或边界值，不宣称不同物理原理互证。",
+                "verification_kind": "独立设计情境数据核对"
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "观察变阻器接入的接线柱，确定滑片到下接线柱之间哪段电阻丝进入电路。",
+          "移动滑片会改变接入电阻丝长度，从而调节变阻器的阻值。",
+          "与定值电阻串联时，总电阻为两者之和；再用电流表验证滑片移动带来的变化。"
+        ],
+        "errors": [
+          {
+            "wrong": "把变阻器滑片移动方向与阻值变化关系不看接线柱就固定判断。",
+            "why": "阻值变化由实际接入电路的下接线柱和滑片位置共同决定，必须结合电路连接判断。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "计算定值电阻与变阻器串联总阻值时把二者相乘。",
+            "wrong_expr": "Rs = R1*R2",
+            "why": "串联总电阻为各电阻之和；10 Ω 和 20 Ω 串联应为 30 Ω。",
+            "caught_by": "量纲一致性",
+            "trap_test": {
+              "kind": "dimension",
+              "target": "Rs = R1*R2",
+              "expect": "mismatch",
+              "lhs_dim": "M·L^2·T^-3·I^-2",
+              "rhs_dim": "M^2·L^4·T^-6·I^-4",
+              "note": "正式引擎验证量纲不一致；不计作同量纲错误数值实测。"
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "串联电路只算变阻器电阻，漏固定电阻。",
+            "wrong_expr": "Rs = R2",
+            "why": "10 Ω固定电阻与20 Ω变阻器串联，总电阻30 Ω，不能只取20 Ω。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "变阻器接入一",
+              "expr": "R2",
+              "ref": 30,
+              "tol": 1e-06
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "20 Ω 定值电阻与接入电路的 30 Ω 变阻器串联，求总电阻。",
+          "solution": [
+            "确认两个电阻串联。",
+            "Rs=20+30=50 Ω。"
+          ],
+          "answer": "总电阻为 50 Ω。"
+        },
+        "prereq": [
+          "ohm-01"
+        ],
+        "next": [
+          "ohm-04"
+        ],
+        "tags": [
+          "变阻器",
+          "滑动变阻器",
+          "串联电阻",
+          "电阻调节"
+        ],
+        "core": [
+          {
+            "title": "滑动变阻器",
+            "text": "通过改变接入电路电阻丝长度改变电阻，串联调节电流。常用一上一下接线柱；两个上柱近似导线、两个下柱接入全长，不具正常滑动调节。通电前调到接入电阻最大以保护电路；判断增减先看实际使用的下接线柱与滑片距离，不背固定左滑右滑口诀。"
+          }
+        ],
+        "learning_scope": "初中"
+      },
+      "error_index": 0,
+      "chapter": "欧姆定律"
+    },
+    "diagnostic-ohm-03-2": {
+      "point": {
+        "id": "ohm-03",
+        "title": "变阻器",
+        "level": "基础",
+        "definition": "滑动变阻器通过移动滑片改变接入电路的电阻丝长度，从而改变电阻并调节电路电流或用电器两端电压。接入电路时应选择“一上一下”接线柱，并在闭合开关前将滑片置于适当位置。",
+        "meaning": "滑片移动后，接入电路的电阻丝长度改变，阻值随之变化；滑动变阻器通常串联在电路中，用来保护电路或连续调节电流。若它与固定电阻串联，总电阻等于两者相加；滑片方向与阻值增减的关系要根据实际接入的下接线柱判断。",
+        "symbols": {
+          "R1": {
+            "desc": "定值电阻阻值",
+            "unit": "ohm"
+          },
+          "R2": {
+            "desc": "变阻器接入电路的阻值",
+            "unit": "ohm"
+          },
+          "Rs": {
+            "desc": "两电阻串联的总阻值",
+            "unit": "ohm"
+          },
+          "U": {
+            "desc": "串联部分两端电压",
+            "unit": "V"
+          },
+          "I": {
+            "desc": "串联电路电流",
+            "unit": "A"
+          },
+          "R": {
+            "desc": "由电压和电流得到的等效电阻",
+            "unit": "ohm"
+          }
+        },
+        "scenarios": {
+          "变阻器接入一": {
+            "R1": 10,
+            "R2": 20,
+            "Rs": 30,
+            "U": 12,
+            "I": 0.4,
+            "R": 30
+          },
+          "变阻器接入二": {
+            "R1": 15,
+            "R2": 5,
+            "Rs": 20,
+            "U": 6,
+            "I": 0.3,
+            "R": 20
+          }
+        },
+        "formulas": [
+          {
+            "name": "定值电阻和变阻器串联总电阻",
+            "expr": "Rs = R1+R2",
+            "when": "变阻器与定值电阻串联，忽略导线电阻并使用同一欧姆单位。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "变阻器接入一",
+                "expr": "R1+R2",
+                "ref": 30,
+                "note": "10 Ω 定值电阻与 20 Ω 变阻器串联，总电阻为 30 Ω。 "
+              },
+              {
+                "type": "numeric",
+                "scenario": "变阻器接入二",
+                "expr": "R1+R2",
+                "ref": 20,
+                "note": "15 Ω 与 5 Ω 串联，总电阻为 20 Ω。 "
+              },
+              {
+                "type": "direction",
+                "scenario": "变阻器接入一",
+                "var": "R2",
+                "lo": 0,
+                "hi": 100,
+                "expr": "R1+R2",
+                "expect": "up",
+                "note": "定值电阻不变时，变阻器接入阻值增大，总阻值增大。 "
+              },
+              {
+                "type": "scan",
+                "scenario": "变阻器接入一",
+                "var": "R2",
+                "lo": 0,
+                "hi": 1000,
+                "note": "扫描非负变阻器阻值，总电阻保持有限。 "
+              },
+              {
+                "type": "consistency",
+                "scenario": "变阻器接入一",
+                "with": "ohm-03|定值电阻和变阻器串联总电阻",
+                "with_expr": "R",
+                "target": "两电阻串联的总阻值",
+                "note": "直接求本公式输出，与情境中另列的R设计基准核对；数据是设计示例，不是实测。用于核对定义、反算或边界值，不宣称不同物理原理互证。",
+                "verification_kind": "独立设计情境数据核对"
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "观察变阻器接入的接线柱，确定滑片到下接线柱之间哪段电阻丝进入电路。",
+          "移动滑片会改变接入电阻丝长度，从而调节变阻器的阻值。",
+          "与定值电阻串联时，总电阻为两者之和；再用电流表验证滑片移动带来的变化。"
+        ],
+        "errors": [
+          {
+            "wrong": "把变阻器滑片移动方向与阻值变化关系不看接线柱就固定判断。",
+            "why": "阻值变化由实际接入电路的下接线柱和滑片位置共同决定，必须结合电路连接判断。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "计算定值电阻与变阻器串联总阻值时把二者相乘。",
+            "wrong_expr": "Rs = R1*R2",
+            "why": "串联总电阻为各电阻之和；10 Ω 和 20 Ω 串联应为 30 Ω。",
+            "caught_by": "量纲一致性",
+            "trap_test": {
+              "kind": "dimension",
+              "target": "Rs = R1*R2",
+              "expect": "mismatch",
+              "lhs_dim": "M·L^2·T^-3·I^-2",
+              "rhs_dim": "M^2·L^4·T^-6·I^-4",
+              "note": "正式引擎验证量纲不一致；不计作同量纲错误数值实测。"
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "串联电路只算变阻器电阻，漏固定电阻。",
+            "wrong_expr": "Rs = R2",
+            "why": "10 Ω固定电阻与20 Ω变阻器串联，总电阻30 Ω，不能只取20 Ω。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "变阻器接入一",
+              "expr": "R2",
+              "ref": 30,
+              "tol": 1e-06
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "20 Ω 定值电阻与接入电路的 30 Ω 变阻器串联，求总电阻。",
+          "solution": [
+            "确认两个电阻串联。",
+            "Rs=20+30=50 Ω。"
+          ],
+          "answer": "总电阻为 50 Ω。"
+        },
+        "prereq": [
+          "ohm-01"
+        ],
+        "next": [
+          "ohm-04"
+        ],
+        "tags": [
+          "变阻器",
+          "滑动变阻器",
+          "串联电阻",
+          "电阻调节"
+        ],
+        "core": [
+          {
+            "title": "滑动变阻器",
+            "text": "通过改变接入电路电阻丝长度改变电阻，串联调节电流。常用一上一下接线柱；两个上柱近似导线、两个下柱接入全长，不具正常滑动调节。通电前调到接入电阻最大以保护电路；判断增减先看实际使用的下接线柱与滑片距离，不背固定左滑右滑口诀。"
+          }
+        ],
+        "learning_scope": "初中"
+      },
+      "error_index": 1,
+      "chapter": "欧姆定律"
+    },
+    "diagnostic-ohm-03-3": {
+      "point": {
+        "id": "ohm-03",
+        "title": "变阻器",
+        "level": "基础",
+        "definition": "滑动变阻器通过移动滑片改变接入电路的电阻丝长度，从而改变电阻并调节电路电流或用电器两端电压。接入电路时应选择“一上一下”接线柱，并在闭合开关前将滑片置于适当位置。",
+        "meaning": "滑片移动后，接入电路的电阻丝长度改变，阻值随之变化；滑动变阻器通常串联在电路中，用来保护电路或连续调节电流。若它与固定电阻串联，总电阻等于两者相加；滑片方向与阻值增减的关系要根据实际接入的下接线柱判断。",
+        "symbols": {
+          "R1": {
+            "desc": "定值电阻阻值",
+            "unit": "ohm"
+          },
+          "R2": {
+            "desc": "变阻器接入电路的阻值",
+            "unit": "ohm"
+          },
+          "Rs": {
+            "desc": "两电阻串联的总阻值",
+            "unit": "ohm"
+          },
+          "U": {
+            "desc": "串联部分两端电压",
+            "unit": "V"
+          },
+          "I": {
+            "desc": "串联电路电流",
+            "unit": "A"
+          },
+          "R": {
+            "desc": "由电压和电流得到的等效电阻",
+            "unit": "ohm"
+          }
+        },
+        "scenarios": {
+          "变阻器接入一": {
+            "R1": 10,
+            "R2": 20,
+            "Rs": 30,
+            "U": 12,
+            "I": 0.4,
+            "R": 30
+          },
+          "变阻器接入二": {
+            "R1": 15,
+            "R2": 5,
+            "Rs": 20,
+            "U": 6,
+            "I": 0.3,
+            "R": 20
+          }
+        },
+        "formulas": [
+          {
+            "name": "定值电阻和变阻器串联总电阻",
+            "expr": "Rs = R1+R2",
+            "when": "变阻器与定值电阻串联，忽略导线电阻并使用同一欧姆单位。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "变阻器接入一",
+                "expr": "R1+R2",
+                "ref": 30,
+                "note": "10 Ω 定值电阻与 20 Ω 变阻器串联，总电阻为 30 Ω。 "
+              },
+              {
+                "type": "numeric",
+                "scenario": "变阻器接入二",
+                "expr": "R1+R2",
+                "ref": 20,
+                "note": "15 Ω 与 5 Ω 串联，总电阻为 20 Ω。 "
+              },
+              {
+                "type": "direction",
+                "scenario": "变阻器接入一",
+                "var": "R2",
+                "lo": 0,
+                "hi": 100,
+                "expr": "R1+R2",
+                "expect": "up",
+                "note": "定值电阻不变时，变阻器接入阻值增大，总阻值增大。 "
+              },
+              {
+                "type": "scan",
+                "scenario": "变阻器接入一",
+                "var": "R2",
+                "lo": 0,
+                "hi": 1000,
+                "note": "扫描非负变阻器阻值，总电阻保持有限。 "
+              },
+              {
+                "type": "consistency",
+                "scenario": "变阻器接入一",
+                "with": "ohm-03|定值电阻和变阻器串联总电阻",
+                "with_expr": "R",
+                "target": "两电阻串联的总阻值",
+                "note": "直接求本公式输出，与情境中另列的R设计基准核对；数据是设计示例，不是实测。用于核对定义、反算或边界值，不宣称不同物理原理互证。",
+                "verification_kind": "独立设计情境数据核对"
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "观察变阻器接入的接线柱，确定滑片到下接线柱之间哪段电阻丝进入电路。",
+          "移动滑片会改变接入电阻丝长度，从而调节变阻器的阻值。",
+          "与定值电阻串联时，总电阻为两者之和；再用电流表验证滑片移动带来的变化。"
+        ],
+        "errors": [
+          {
+            "wrong": "把变阻器滑片移动方向与阻值变化关系不看接线柱就固定判断。",
+            "why": "阻值变化由实际接入电路的下接线柱和滑片位置共同决定，必须结合电路连接判断。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "计算定值电阻与变阻器串联总阻值时把二者相乘。",
+            "wrong_expr": "Rs = R1*R2",
+            "why": "串联总电阻为各电阻之和；10 Ω 和 20 Ω 串联应为 30 Ω。",
+            "caught_by": "量纲一致性",
+            "trap_test": {
+              "kind": "dimension",
+              "target": "Rs = R1*R2",
+              "expect": "mismatch",
+              "lhs_dim": "M·L^2·T^-3·I^-2",
+              "rhs_dim": "M^2·L^4·T^-6·I^-4",
+              "note": "正式引擎验证量纲不一致；不计作同量纲错误数值实测。"
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "串联电路只算变阻器电阻，漏固定电阻。",
+            "wrong_expr": "Rs = R2",
+            "why": "10 Ω固定电阻与20 Ω变阻器串联，总电阻30 Ω，不能只取20 Ω。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "变阻器接入一",
+              "expr": "R2",
+              "ref": 30,
+              "tol": 1e-06
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "20 Ω 定值电阻与接入电路的 30 Ω 变阻器串联，求总电阻。",
+          "solution": [
+            "确认两个电阻串联。",
+            "Rs=20+30=50 Ω。"
+          ],
+          "answer": "总电阻为 50 Ω。"
+        },
+        "prereq": [
+          "ohm-01"
+        ],
+        "next": [
+          "ohm-04"
+        ],
+        "tags": [
+          "变阻器",
+          "滑动变阻器",
+          "串联电阻",
+          "电阻调节"
+        ],
+        "core": [
+          {
+            "title": "滑动变阻器",
+            "text": "通过改变接入电路电阻丝长度改变电阻，串联调节电流。常用一上一下接线柱；两个上柱近似导线、两个下柱接入全长，不具正常滑动调节。通电前调到接入电阻最大以保护电路；判断增减先看实际使用的下接线柱与滑片距离，不背固定左滑右滑口诀。"
+          }
+        ],
+        "learning_scope": "初中"
+      },
+      "error_index": 2,
+      "chapter": "欧姆定律"
+    },
+    "diagnostic-ohm-04-1": {
+      "point": {
+        "id": "ohm-04",
+        "title": "欧姆定律",
+        "level": "基础",
+        "definition": "在温度等条件不变时，通过导体的电流与导体两端电压成正比，与导体电阻成反比，关系式为 I=U/R。",
+        "meaning": "使用欧姆定律前要确认电路元件和温度条件适用，电压用 V、电流用 A、电阻用 Ω。电阻由导体本身决定，不随同一导体两端电压或通过电流简单改变；电压、电流变化时可用比值检查条件是否保持。",
+        "symbols": {
+          "U": {
+            "desc": "导体两端电压",
+            "unit": "V"
+          },
+          "I": {
+            "desc": "通过导体的电流",
+            "unit": "A"
+          },
+          "R": {
+            "desc": "导体电阻",
+            "unit": "Ω"
+          },
+          "Rk": {
+            "desc": "以 kΩ 表示的电阻数值",
+            "unit": "kΩ"
+          },
+          "R1": {
+            "desc": "第一只电阻",
+            "unit": "Ω"
+          },
+          "R2": {
+            "desc": "第二只电阻",
+            "unit": "Ω"
+          },
+          "Rs": {
+            "desc": "两电阻串联的总电阻",
+            "unit": "Ω"
+          },
+          "Rp": {
+            "desc": "两电阻并联的等效电阻",
+            "unit": "Ω"
+          },
+          "It": {
+            "desc": "通过等效电阻的总电流",
+            "unit": "A"
+          }
+        },
+        "scenarios": {
+          "三欧导体": {
+            "U": 6,
+            "I": 2,
+            "R": 3
+          },
+          "六欧导体": {
+            "U": 12,
+            "I": 2,
+            "R": 6
+          },
+          "千欧换算误区": {
+            "U": 6,
+            "I": 0.002,
+            "R": 3000,
+            "Rk": 3
+          },
+          "串联电阻组一": {
+            "R1": 2,
+            "R2": 4,
+            "Rs": 6,
+            "U": 12,
+            "It": 2
+          },
+          "串联电阻组二": {
+            "R1": 5,
+            "R2": 10,
+            "Rs": 15,
+            "U": 30,
+            "It": 2
+          },
+          "并联电阻组一": {
+            "R1": 6,
+            "R2": 3,
+            "Rp": 2,
+            "U": 6,
+            "It": 3
+          },
+          "并联电阻组二": {
+            "R1": 8,
+            "R2": 8,
+            "Rp": 4,
+            "U": 12,
+            "It": 3
+          }
+        },
+        "formulas": [
+          {
+            "name": "欧姆定律求电流",
+            "expr": "I = U/R",
+            "when": "一段导体温度等条件不变，U 用 V、R 用 Ω。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "三欧导体",
+                "expr": "U/R",
+                "ref": 2,
+                "note": "6 V÷3 Ω=2 A。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "六欧导体",
+                "expr": "U/R",
+                "ref": 2,
+                "note": "12 V÷6 Ω=2 A。"
+              },
+              {
+                "type": "direction",
+                "scenario": "三欧导体",
+                "var": "U",
+                "lo": 0,
+                "hi": 30,
+                "expr": "U/R",
+                "expect": "up",
+                "note": "电阻固定时，电压升高，电流增大。"
+              },
+              {
+                "type": "scan",
+                "scenario": "三欧导体",
+                "var": "R",
+                "lo": 0.1,
+                "hi": 1000,
+                "note": "扫描正电阻范围，检查电流计算不会除以零。"
+              },
+              {
+                "type": "consistency",
+                "scenario": "三欧导体",
+                "with": "ohm-04|欧姆定律求电流",
+                "with_expr": "I",
+                "target": "通过导体的电流",
+                "note": "直接求本公式输出，与情境中另列的I设计基准核对；数据是设计示例，不是实测。用于核对定义、反算或边界值，不宣称不同物理原理互证。",
+                "verification_kind": "独立设计情境数据核对"
+              }
+            ]
+          },
+          {
+            "name": "由电压和电流求电阻",
+            "expr": "R = U/I",
+            "when": "导体两端电压 U 和通过电流 I 来自同一测量状态，I 不为零。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "三欧导体",
+                "expr": "U/I",
+                "ref": 3,
+                "note": "6 V÷2 A=3 Ω。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "六欧导体",
+                "expr": "U/I",
+                "ref": 6,
+                "note": "12 V÷2 A=6 Ω。"
+              },
+              {
+                "type": "scan",
+                "scenario": "三欧导体",
+                "var": "I",
+                "lo": 0.001,
+                "hi": 20,
+                "note": "扫描正电流读数，反算电阻有限。"
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "在温度等条件不变时，通过导体的电流随两端电压增大而增大。",
+          "电阻越大，对电流的阻碍作用越明显，电流越小。",
+          "综合两种变化关系得到 I=U/R。",
+          "由测得的 U 与 I 可变形求 R=U/I。"
+        ],
+        "errors": [
+          {
+            "wrong": "把欧姆定律的电流公式误写成电阻除以电压。",
+            "wrong_expr": "I = R/U",
+            "why": "同一电阻器两端电压 6 V、电阻 12 Ω 时，电流为 0.5 A，而不是 2 A。",
+            "caught_by": "量纲一致性",
+            "trap_test": {
+              "kind": "dimension",
+              "target": "I = R/U",
+              "expect": "mismatch",
+              "lhs_dim": "I",
+              "rhs_dim": "I^-1",
+              "note": "正式引擎验证量纲不一致；不计作同量纲错误数值实测。"
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "认为任何电学元件在任何温度下都保持恒定电阻并严格符合欧姆定律。",
+            "why": "灯丝等元件温度变化会影响电阻；使用关系式时要看元件和实验条件。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "把电阻3 kΩ的数值3直接当Ω代入。",
+            "wrong_expr": "I = U/(R/1000)",
+            "why": "6 V与3000 Ω给0.002 A；将3 kΩ的3直接当Ω会算2 A。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "千欧换算误区",
+              "expr": "U/(R/1000)",
+              "ref": 0.002,
+              "tol": 2e-09
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "一个电阻器两端电压为 6 V，电阻为 12 Ω，求通过它的电流。",
+          "solution": [
+            "使用 I=U/R。",
+            "I=6/12=0.5 A。"
+          ],
+          "answer": "电流为 0.5 A。"
+        },
+        "prereq": [
+          "ohm-01"
+        ],
+        "next": [
+          "ohm-02"
+        ],
+        "tags": [
+          "欧姆定律",
+          "电压",
+          "电流",
+          "电阻"
+        ],
+        "core": [
+          {
+            "title": "欧姆定律：条件与实验",
+            "text": "同一导体温度等条件稳定时，电流与两端电压成正比；不同电阻器在相同电压下，电流与电阻成反比。研究电压影响时保持同一电阻器，研究电阻影响时调节变阻器使被测电压恢复相同值。电流、电压、电阻必须属于同一元件和同一时刻；不能拿干路电流除一个支路电压。"
+          }
+        ],
+        "experiments": [
+          {
+            "title": "探究电流与电压、电阻的关系",
+            "purpose": "区分正比和反比的控制条件。",
+            "apparatus": "低压电源、开关、定值电阻组、变阻器、电流表串联、电压表并联。",
+            "variables": "第一轮固定电阻改变电压；第二轮改变电阻但调变阻器恢复相同电压。",
+            "steps": [
+              "断电接线并把变阻器调到最大接入值。",
+              "固定10 Ω，取1、2、3 V，测相应电流画电流—电压图。",
+              "换10、15、30 Ω，每次恢复3 V，再记录电流。"
+            ],
+            "data": "设计示例（非实测）：10 Ω对应0.1、0.2、0.3 A；3 V下10、15、30 Ω对应0.3、0.2、0.1 A。",
+            "conclusion": "温度等条件稳定时，同电阻电流与电压成正比；同电压电流与电阻成反比。",
+            "limits": "换电阻后不恢复电压则变量不受控；发热改变阻值，避免长时间大电流。",
+            "kind": "学生必做"
+          }
+        ],
+        "figures": [
+          {
+            "title": "定值电阻电流—电压图",
+            "xlabel": "电压 / V",
+            "ylabel": "电流 / A",
+            "xmax": 3,
+            "ymax": 0.3,
+            "points": [
+              [
+                0,
+                0
+              ],
+              [
+                1,
+                0.1
+              ],
+              [
+                2,
+                0.2
+              ],
+              [
+                3,
+                0.3
+              ]
+            ],
+            "xticks": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "yticks": [
+              0,
+              0.1,
+              0.2,
+              0.3
+            ],
+            "reading": "直接读图：2 V对应0.2 A；电流对电压的斜率为0.1 A/V，其倒数为10 Ω。横纵轴交换时斜率含义不同。",
+            "checks": [
+              {
+                "kind": "point",
+                "x": 2,
+                "expected": 0.2,
+                "unit": "A"
+              },
+              {
+                "kind": "slope",
+                "left": 1,
+                "right": 3,
+                "expected": 0.1,
+                "unit": "A/V"
+              }
+            ]
+          }
+        ],
+        "learning_scope": "初中"
+      },
+      "error_index": 0,
+      "chapter": "欧姆定律"
+    },
+    "diagnostic-ohm-04-2": {
+      "point": {
+        "id": "ohm-04",
+        "title": "欧姆定律",
+        "level": "基础",
+        "definition": "在温度等条件不变时，通过导体的电流与导体两端电压成正比，与导体电阻成反比，关系式为 I=U/R。",
+        "meaning": "使用欧姆定律前要确认电路元件和温度条件适用，电压用 V、电流用 A、电阻用 Ω。电阻由导体本身决定，不随同一导体两端电压或通过电流简单改变；电压、电流变化时可用比值检查条件是否保持。",
+        "symbols": {
+          "U": {
+            "desc": "导体两端电压",
+            "unit": "V"
+          },
+          "I": {
+            "desc": "通过导体的电流",
+            "unit": "A"
+          },
+          "R": {
+            "desc": "导体电阻",
+            "unit": "Ω"
+          },
+          "Rk": {
+            "desc": "以 kΩ 表示的电阻数值",
+            "unit": "kΩ"
+          },
+          "R1": {
+            "desc": "第一只电阻",
+            "unit": "Ω"
+          },
+          "R2": {
+            "desc": "第二只电阻",
+            "unit": "Ω"
+          },
+          "Rs": {
+            "desc": "两电阻串联的总电阻",
+            "unit": "Ω"
+          },
+          "Rp": {
+            "desc": "两电阻并联的等效电阻",
+            "unit": "Ω"
+          },
+          "It": {
+            "desc": "通过等效电阻的总电流",
+            "unit": "A"
+          }
+        },
+        "scenarios": {
+          "三欧导体": {
+            "U": 6,
+            "I": 2,
+            "R": 3
+          },
+          "六欧导体": {
+            "U": 12,
+            "I": 2,
+            "R": 6
+          },
+          "千欧换算误区": {
+            "U": 6,
+            "I": 0.002,
+            "R": 3000,
+            "Rk": 3
+          },
+          "串联电阻组一": {
+            "R1": 2,
+            "R2": 4,
+            "Rs": 6,
+            "U": 12,
+            "It": 2
+          },
+          "串联电阻组二": {
+            "R1": 5,
+            "R2": 10,
+            "Rs": 15,
+            "U": 30,
+            "It": 2
+          },
+          "并联电阻组一": {
+            "R1": 6,
+            "R2": 3,
+            "Rp": 2,
+            "U": 6,
+            "It": 3
+          },
+          "并联电阻组二": {
+            "R1": 8,
+            "R2": 8,
+            "Rp": 4,
+            "U": 12,
+            "It": 3
+          }
+        },
+        "formulas": [
+          {
+            "name": "欧姆定律求电流",
+            "expr": "I = U/R",
+            "when": "一段导体温度等条件不变，U 用 V、R 用 Ω。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "三欧导体",
+                "expr": "U/R",
+                "ref": 2,
+                "note": "6 V÷3 Ω=2 A。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "六欧导体",
+                "expr": "U/R",
+                "ref": 2,
+                "note": "12 V÷6 Ω=2 A。"
+              },
+              {
+                "type": "direction",
+                "scenario": "三欧导体",
+                "var": "U",
+                "lo": 0,
+                "hi": 30,
+                "expr": "U/R",
+                "expect": "up",
+                "note": "电阻固定时，电压升高，电流增大。"
+              },
+              {
+                "type": "scan",
+                "scenario": "三欧导体",
+                "var": "R",
+                "lo": 0.1,
+                "hi": 1000,
+                "note": "扫描正电阻范围，检查电流计算不会除以零。"
+              },
+              {
+                "type": "consistency",
+                "scenario": "三欧导体",
+                "with": "ohm-04|欧姆定律求电流",
+                "with_expr": "I",
+                "target": "通过导体的电流",
+                "note": "直接求本公式输出，与情境中另列的I设计基准核对；数据是设计示例，不是实测。用于核对定义、反算或边界值，不宣称不同物理原理互证。",
+                "verification_kind": "独立设计情境数据核对"
+              }
+            ]
+          },
+          {
+            "name": "由电压和电流求电阻",
+            "expr": "R = U/I",
+            "when": "导体两端电压 U 和通过电流 I 来自同一测量状态，I 不为零。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "三欧导体",
+                "expr": "U/I",
+                "ref": 3,
+                "note": "6 V÷2 A=3 Ω。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "六欧导体",
+                "expr": "U/I",
+                "ref": 6,
+                "note": "12 V÷2 A=6 Ω。"
+              },
+              {
+                "type": "scan",
+                "scenario": "三欧导体",
+                "var": "I",
+                "lo": 0.001,
+                "hi": 20,
+                "note": "扫描正电流读数，反算电阻有限。"
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "在温度等条件不变时，通过导体的电流随两端电压增大而增大。",
+          "电阻越大，对电流的阻碍作用越明显，电流越小。",
+          "综合两种变化关系得到 I=U/R。",
+          "由测得的 U 与 I 可变形求 R=U/I。"
+        ],
+        "errors": [
+          {
+            "wrong": "把欧姆定律的电流公式误写成电阻除以电压。",
+            "wrong_expr": "I = R/U",
+            "why": "同一电阻器两端电压 6 V、电阻 12 Ω 时，电流为 0.5 A，而不是 2 A。",
+            "caught_by": "量纲一致性",
+            "trap_test": {
+              "kind": "dimension",
+              "target": "I = R/U",
+              "expect": "mismatch",
+              "lhs_dim": "I",
+              "rhs_dim": "I^-1",
+              "note": "正式引擎验证量纲不一致；不计作同量纲错误数值实测。"
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "认为任何电学元件在任何温度下都保持恒定电阻并严格符合欧姆定律。",
+            "why": "灯丝等元件温度变化会影响电阻；使用关系式时要看元件和实验条件。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "把电阻3 kΩ的数值3直接当Ω代入。",
+            "wrong_expr": "I = U/(R/1000)",
+            "why": "6 V与3000 Ω给0.002 A；将3 kΩ的3直接当Ω会算2 A。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "千欧换算误区",
+              "expr": "U/(R/1000)",
+              "ref": 0.002,
+              "tol": 2e-09
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "一个电阻器两端电压为 6 V，电阻为 12 Ω，求通过它的电流。",
+          "solution": [
+            "使用 I=U/R。",
+            "I=6/12=0.5 A。"
+          ],
+          "answer": "电流为 0.5 A。"
+        },
+        "prereq": [
+          "ohm-01"
+        ],
+        "next": [
+          "ohm-02"
+        ],
+        "tags": [
+          "欧姆定律",
+          "电压",
+          "电流",
+          "电阻"
+        ],
+        "core": [
+          {
+            "title": "欧姆定律：条件与实验",
+            "text": "同一导体温度等条件稳定时，电流与两端电压成正比；不同电阻器在相同电压下，电流与电阻成反比。研究电压影响时保持同一电阻器，研究电阻影响时调节变阻器使被测电压恢复相同值。电流、电压、电阻必须属于同一元件和同一时刻；不能拿干路电流除一个支路电压。"
+          }
+        ],
+        "experiments": [
+          {
+            "title": "探究电流与电压、电阻的关系",
+            "purpose": "区分正比和反比的控制条件。",
+            "apparatus": "低压电源、开关、定值电阻组、变阻器、电流表串联、电压表并联。",
+            "variables": "第一轮固定电阻改变电压；第二轮改变电阻但调变阻器恢复相同电压。",
+            "steps": [
+              "断电接线并把变阻器调到最大接入值。",
+              "固定10 Ω，取1、2、3 V，测相应电流画电流—电压图。",
+              "换10、15、30 Ω，每次恢复3 V，再记录电流。"
+            ],
+            "data": "设计示例（非实测）：10 Ω对应0.1、0.2、0.3 A；3 V下10、15、30 Ω对应0.3、0.2、0.1 A。",
+            "conclusion": "温度等条件稳定时，同电阻电流与电压成正比；同电压电流与电阻成反比。",
+            "limits": "换电阻后不恢复电压则变量不受控；发热改变阻值，避免长时间大电流。",
+            "kind": "学生必做"
+          }
+        ],
+        "figures": [
+          {
+            "title": "定值电阻电流—电压图",
+            "xlabel": "电压 / V",
+            "ylabel": "电流 / A",
+            "xmax": 3,
+            "ymax": 0.3,
+            "points": [
+              [
+                0,
+                0
+              ],
+              [
+                1,
+                0.1
+              ],
+              [
+                2,
+                0.2
+              ],
+              [
+                3,
+                0.3
+              ]
+            ],
+            "xticks": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "yticks": [
+              0,
+              0.1,
+              0.2,
+              0.3
+            ],
+            "reading": "直接读图：2 V对应0.2 A；电流对电压的斜率为0.1 A/V，其倒数为10 Ω。横纵轴交换时斜率含义不同。",
+            "checks": [
+              {
+                "kind": "point",
+                "x": 2,
+                "expected": 0.2,
+                "unit": "A"
+              },
+              {
+                "kind": "slope",
+                "left": 1,
+                "right": 3,
+                "expected": 0.1,
+                "unit": "A/V"
+              }
+            ]
+          }
+        ],
+        "learning_scope": "初中"
+      },
+      "error_index": 1,
+      "chapter": "欧姆定律"
+    },
+    "diagnostic-ohm-04-3": {
+      "point": {
+        "id": "ohm-04",
+        "title": "欧姆定律",
+        "level": "基础",
+        "definition": "在温度等条件不变时，通过导体的电流与导体两端电压成正比，与导体电阻成反比，关系式为 I=U/R。",
+        "meaning": "使用欧姆定律前要确认电路元件和温度条件适用，电压用 V、电流用 A、电阻用 Ω。电阻由导体本身决定，不随同一导体两端电压或通过电流简单改变；电压、电流变化时可用比值检查条件是否保持。",
+        "symbols": {
+          "U": {
+            "desc": "导体两端电压",
+            "unit": "V"
+          },
+          "I": {
+            "desc": "通过导体的电流",
+            "unit": "A"
+          },
+          "R": {
+            "desc": "导体电阻",
+            "unit": "Ω"
+          },
+          "Rk": {
+            "desc": "以 kΩ 表示的电阻数值",
+            "unit": "kΩ"
+          },
+          "R1": {
+            "desc": "第一只电阻",
+            "unit": "Ω"
+          },
+          "R2": {
+            "desc": "第二只电阻",
+            "unit": "Ω"
+          },
+          "Rs": {
+            "desc": "两电阻串联的总电阻",
+            "unit": "Ω"
+          },
+          "Rp": {
+            "desc": "两电阻并联的等效电阻",
+            "unit": "Ω"
+          },
+          "It": {
+            "desc": "通过等效电阻的总电流",
+            "unit": "A"
+          }
+        },
+        "scenarios": {
+          "三欧导体": {
+            "U": 6,
+            "I": 2,
+            "R": 3
+          },
+          "六欧导体": {
+            "U": 12,
+            "I": 2,
+            "R": 6
+          },
+          "千欧换算误区": {
+            "U": 6,
+            "I": 0.002,
+            "R": 3000,
+            "Rk": 3
+          },
+          "串联电阻组一": {
+            "R1": 2,
+            "R2": 4,
+            "Rs": 6,
+            "U": 12,
+            "It": 2
+          },
+          "串联电阻组二": {
+            "R1": 5,
+            "R2": 10,
+            "Rs": 15,
+            "U": 30,
+            "It": 2
+          },
+          "并联电阻组一": {
+            "R1": 6,
+            "R2": 3,
+            "Rp": 2,
+            "U": 6,
+            "It": 3
+          },
+          "并联电阻组二": {
+            "R1": 8,
+            "R2": 8,
+            "Rp": 4,
+            "U": 12,
+            "It": 3
+          }
+        },
+        "formulas": [
+          {
+            "name": "欧姆定律求电流",
+            "expr": "I = U/R",
+            "when": "一段导体温度等条件不变，U 用 V、R 用 Ω。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "三欧导体",
+                "expr": "U/R",
+                "ref": 2,
+                "note": "6 V÷3 Ω=2 A。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "六欧导体",
+                "expr": "U/R",
+                "ref": 2,
+                "note": "12 V÷6 Ω=2 A。"
+              },
+              {
+                "type": "direction",
+                "scenario": "三欧导体",
+                "var": "U",
+                "lo": 0,
+                "hi": 30,
+                "expr": "U/R",
+                "expect": "up",
+                "note": "电阻固定时，电压升高，电流增大。"
+              },
+              {
+                "type": "scan",
+                "scenario": "三欧导体",
+                "var": "R",
+                "lo": 0.1,
+                "hi": 1000,
+                "note": "扫描正电阻范围，检查电流计算不会除以零。"
+              },
+              {
+                "type": "consistency",
+                "scenario": "三欧导体",
+                "with": "ohm-04|欧姆定律求电流",
+                "with_expr": "I",
+                "target": "通过导体的电流",
+                "note": "直接求本公式输出，与情境中另列的I设计基准核对；数据是设计示例，不是实测。用于核对定义、反算或边界值，不宣称不同物理原理互证。",
+                "verification_kind": "独立设计情境数据核对"
+              }
+            ]
+          },
+          {
+            "name": "由电压和电流求电阻",
+            "expr": "R = U/I",
+            "when": "导体两端电压 U 和通过电流 I 来自同一测量状态，I 不为零。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "三欧导体",
+                "expr": "U/I",
+                "ref": 3,
+                "note": "6 V÷2 A=3 Ω。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "六欧导体",
+                "expr": "U/I",
+                "ref": 6,
+                "note": "12 V÷2 A=6 Ω。"
+              },
+              {
+                "type": "scan",
+                "scenario": "三欧导体",
+                "var": "I",
+                "lo": 0.001,
+                "hi": 20,
+                "note": "扫描正电流读数，反算电阻有限。"
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "在温度等条件不变时，通过导体的电流随两端电压增大而增大。",
+          "电阻越大，对电流的阻碍作用越明显，电流越小。",
+          "综合两种变化关系得到 I=U/R。",
+          "由测得的 U 与 I 可变形求 R=U/I。"
+        ],
+        "errors": [
+          {
+            "wrong": "把欧姆定律的电流公式误写成电阻除以电压。",
+            "wrong_expr": "I = R/U",
+            "why": "同一电阻器两端电压 6 V、电阻 12 Ω 时，电流为 0.5 A，而不是 2 A。",
+            "caught_by": "量纲一致性",
+            "trap_test": {
+              "kind": "dimension",
+              "target": "I = R/U",
+              "expect": "mismatch",
+              "lhs_dim": "I",
+              "rhs_dim": "I^-1",
+              "note": "正式引擎验证量纲不一致；不计作同量纲错误数值实测。"
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "认为任何电学元件在任何温度下都保持恒定电阻并严格符合欧姆定律。",
+            "why": "灯丝等元件温度变化会影响电阻；使用关系式时要看元件和实验条件。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "把电阻3 kΩ的数值3直接当Ω代入。",
+            "wrong_expr": "I = U/(R/1000)",
+            "why": "6 V与3000 Ω给0.002 A；将3 kΩ的3直接当Ω会算2 A。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "千欧换算误区",
+              "expr": "U/(R/1000)",
+              "ref": 0.002,
+              "tol": 2e-09
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "一个电阻器两端电压为 6 V，电阻为 12 Ω，求通过它的电流。",
+          "solution": [
+            "使用 I=U/R。",
+            "I=6/12=0.5 A。"
+          ],
+          "answer": "电流为 0.5 A。"
+        },
+        "prereq": [
+          "ohm-01"
+        ],
+        "next": [
+          "ohm-02"
+        ],
+        "tags": [
+          "欧姆定律",
+          "电压",
+          "电流",
+          "电阻"
+        ],
+        "core": [
+          {
+            "title": "欧姆定律：条件与实验",
+            "text": "同一导体温度等条件稳定时，电流与两端电压成正比；不同电阻器在相同电压下，电流与电阻成反比。研究电压影响时保持同一电阻器，研究电阻影响时调节变阻器使被测电压恢复相同值。电流、电压、电阻必须属于同一元件和同一时刻；不能拿干路电流除一个支路电压。"
+          }
+        ],
+        "experiments": [
+          {
+            "title": "探究电流与电压、电阻的关系",
+            "purpose": "区分正比和反比的控制条件。",
+            "apparatus": "低压电源、开关、定值电阻组、变阻器、电流表串联、电压表并联。",
+            "variables": "第一轮固定电阻改变电压；第二轮改变电阻但调变阻器恢复相同电压。",
+            "steps": [
+              "断电接线并把变阻器调到最大接入值。",
+              "固定10 Ω，取1、2、3 V，测相应电流画电流—电压图。",
+              "换10、15、30 Ω，每次恢复3 V，再记录电流。"
+            ],
+            "data": "设计示例（非实测）：10 Ω对应0.1、0.2、0.3 A；3 V下10、15、30 Ω对应0.3、0.2、0.1 A。",
+            "conclusion": "温度等条件稳定时，同电阻电流与电压成正比；同电压电流与电阻成反比。",
+            "limits": "换电阻后不恢复电压则变量不受控；发热改变阻值，避免长时间大电流。",
+            "kind": "学生必做"
+          }
+        ],
+        "figures": [
+          {
+            "title": "定值电阻电流—电压图",
+            "xlabel": "电压 / V",
+            "ylabel": "电流 / A",
+            "xmax": 3,
+            "ymax": 0.3,
+            "points": [
+              [
+                0,
+                0
+              ],
+              [
+                1,
+                0.1
+              ],
+              [
+                2,
+                0.2
+              ],
+              [
+                3,
+                0.3
+              ]
+            ],
+            "xticks": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "yticks": [
+              0,
+              0.1,
+              0.2,
+              0.3
+            ],
+            "reading": "直接读图：2 V对应0.2 A；电流对电压的斜率为0.1 A/V，其倒数为10 Ω。横纵轴交换时斜率含义不同。",
+            "checks": [
+              {
+                "kind": "point",
+                "x": 2,
+                "expected": 0.2,
+                "unit": "A"
+              },
+              {
+                "kind": "slope",
+                "left": 1,
+                "right": 3,
+                "expected": 0.1,
+                "unit": "A/V"
+              }
+            ]
+          }
+        ],
+        "learning_scope": "初中"
+      },
+      "error_index": 2,
+      "chapter": "欧姆定律"
+    },
+    "diagnostic-ohm-02-1": {
+      "point": {
+        "id": "ohm-02",
+        "title": "欧姆定律的应用",
+        "level": "基础",
+        "definition": "欧姆定律可用于计算电路中的电流、电压和等效电阻。串联电阻的总电阻等于各电阻之和；并联等效电阻小于任一支路电阻，且可用总电压除以干路电流复核。",
+        "meaning": "分析实际电路时先辨认串联、并联结构，再化简等效电阻并结合总电压求干路电流。支路电压、电流必须对应正确元件；并联电阻不能直接相加。计算前确认电阻值适用，且电路中的总电压和总电流取同一等效部分。",
+        "symbols": {
+          "R1": {
+            "desc": "第一只电阻",
+            "unit": "Ω"
+          },
+          "R2": {
+            "desc": "第二只电阻",
+            "unit": "Ω"
+          },
+          "Rs": {
+            "desc": "两电阻串联的总电阻",
+            "unit": "Ω"
+          },
+          "Rp": {
+            "desc": "两电阻并联的等效电阻",
+            "unit": "Ω"
+          },
+          "U": {
+            "desc": "等效电阻两端电压",
+            "unit": "V"
+          },
+          "It": {
+            "desc": "通过等效电阻的总电流",
+            "unit": "A"
+          },
+          "I": {
+            "desc": "通过导体的电流",
+            "unit": "A"
+          },
+          "R": {
+            "desc": "导体电阻",
+            "unit": "Ω"
+          },
+          "Rk": {
+            "desc": "以 kΩ 表示的电阻数值",
+            "unit": "kΩ"
+          }
+        },
+        "scenarios": {
+          "串联电阻组一": {
+            "R1": 2,
+            "R2": 4,
+            "Rs": 6,
+            "U": 12,
+            "It": 2
+          },
+          "串联电阻组二": {
+            "R1": 5,
+            "R2": 10,
+            "Rs": 15,
+            "U": 30,
+            "It": 2
+          },
+          "并联电阻组一": {
+            "R1": 6,
+            "R2": 3,
+            "Rp": 2,
+            "U": 6,
+            "It": 3
+          },
+          "并联电阻组二": {
+            "R1": 8,
+            "R2": 8,
+            "Rp": 4,
+            "U": 12,
+            "It": 3
+          },
+          "三欧导体": {
+            "U": 6,
+            "I": 2,
+            "R": 3
+          },
+          "六欧导体": {
+            "U": 12,
+            "I": 2,
+            "R": 6
+          },
+          "千欧换算误区": {
+            "U": 6,
+            "I": 0.002,
+            "R": 3000,
+            "Rk": 3
+          }
+        },
+        "formulas": [
+          {
+            "name": "两电阻并联等效电阻",
+            "expr": "Rp = 1/(1/R1+1/R2)",
+            "when": "两个电阻并联，R1、R2 均为正值。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "并联电阻组一",
+                "expr": "1/(1/R1+1/R2)",
+                "ref": 2,
+                "note": "1/(1/6+1/3)=2 Ω。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "并联电阻组二",
+                "expr": "1/(1/R1+1/R2)",
+                "ref": 4,
+                "note": "两个 8 Ω 电阻并联，等效电阻为 4 Ω。"
+              },
+              {
+                "type": "direction",
+                "scenario": "并联电阻组一",
+                "var": "R1",
+                "lo": 0.1,
+                "hi": 100,
+                "expr": "1/(1/R1+1/R2)",
+                "expect": "up",
+                "note": "另一支路固定时，增大一个并联电阻会增大等效电阻。"
+              },
+              {
+                "type": "scan",
+                "scenario": "并联电阻组一",
+                "var": "R1",
+                "lo": 0.001,
+                "hi": 1000,
+                "note": "扫描正电阻范围，倒数关系保持有限。"
+              },
+              {
+                "type": "consistency",
+                "scenario": "并联电阻组一",
+                "with": "ohm-02|两电阻并联等效电阻",
+                "with_expr": "U/It",
+                "target": "两电阻并联的等效电阻",
+                "note": "本公式直接求Rp；参考端显式关系为U/It。两端使用同一情境和阶段，只核对该关系；with字段仅定位来源，不代表调用另一条被覆盖的公式。",
+                "verification_kind": "独立关系核对"
+              },
+              {
+                "type": "numeric",
+                "scenario": "并联电阻组一",
+                "ref": 2,
+                "rtol": 1e-10,
+                "atol": 0,
+                "note": "设计示例；人工标签保留的指定反例正确控制。原6 Ω支路加入3 Ω并联后总阻值2 Ω，小于6 Ω；错误当串联相加会得9 Ω。本例不判定任意接线图。"
+              }
+            ]
+          },
+          {
+            "name": "由总电压和总电流求等效电阻",
+            "expr": "Rp = U/It",
+            "when": "U、It 描述整个等效电路，It 不为零。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "并联电阻组一",
+                "expr": "U/It",
+                "ref": 2,
+                "note": "6 V÷3 A=2 Ω，与并联公式相同。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "并联电阻组二",
+                "expr": "U/It",
+                "ref": 4,
+                "note": "12 V÷3 A=4 Ω。"
+              },
+              {
+                "type": "scan",
+                "scenario": "并联电阻组一",
+                "var": "It",
+                "lo": 0.001,
+                "hi": 100,
+                "note": "扫描正总电流，等效电阻反算稳定。"
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "串联电阻中电流相同，总电压为各电阻电压之和。",
+          "结合欧姆定律可得到串联总电阻为各电阻之和。",
+          "并联电阻两端电压相同，干路电流为各支路电流之和。",
+          "结合欧姆定律得到并联电阻倒数关系，最后对倒数和再取倒数。"
+        ],
+        "errors": [
+          {
+            "wrong": "并联电阻只把各支路电阻倒数相加，忘记再取倒数。",
+            "wrong_expr": "Rp = 1/R1+1/R2",
+            "why": "6 Ω 与 3 Ω 并联的倒数和为 0.5 Ω^-1，等效电阻应为其倒数 2 Ω。",
+            "caught_by": "量纲一致性",
+            "trap_test": {
+              "kind": "dimension",
+              "target": "Rp = 1/R1+1/R2",
+              "expect": "mismatch",
+              "lhs_dim": "M·L^2·T^-3·I^-2",
+              "rhs_dim": "M^-1·L^-2·T^3·I^2",
+              "note": "正式引擎验证量纲不一致；不计作同量纲错误数值实测。"
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "认为增加并联支路会增大总电阻。",
+            "why": "并联增加额外电流通路，等效电阻会减小；串联增加电阻才会使总电阻增大。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            },
+            "automation_review": {
+              "status": "指定反例已补验；原人工审核标签保留",
+              "basis": "原6 Ω支路加入3 Ω并联后总阻值2 Ω，小于6 Ω；错误当串联相加会得9 Ω。本例不判定任意接线图。",
+              "scenario": "并联电阻组一",
+              "correct_expression": "Rp = 1/(1/R1+1/R2)",
+              "wrong_expression": "R1+R2",
+              "correct_value": 2,
+              "wrong_value": 9,
+              "unit": "Ω",
+              "wrong_status": "numeric_mismatch",
+              "note": "这是原创设计反例，机器仅验证指定模型、数据及量纲；自然语言命题、学生认知与装置仍待教师确认。"
+            }
+          },
+          {
+            "wrong": "并联两支路只取第一支路电阻作为总阻值。",
+            "wrong_expr": "Rp = R1",
+            "why": "6 Ω与3 Ω并联，等效电阻2 Ω，小于任一支路；只取6 Ω遗漏另一通路。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "并联电阻组一",
+              "expr": "R1",
+              "ref": 2,
+              "tol": 1e-06
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "6 Ω 和 3 Ω 的电阻并联，求等效电阻。",
+          "solution": [
+            "1/Rp=1/6+1/3=1/2 Ω^-1。",
+            "Rp=2 Ω。",
+            "并联等效电阻小于较小的支路电阻 3 Ω，结果合理。"
+          ],
+          "answer": "等效电阻为 2 Ω。"
+        },
+        "prereq": [
+          "ohm-01",
+          "circuit-02"
+        ],
+        "next": [],
+        "tags": [
+          "欧姆定律应用",
+          "等效电阻",
+          "串并联电阻",
+          "电路计算"
+        ],
+        "core": [
+          {
+            "title": "欧姆定律的应用与故障边界",
+            "text": "伏安法用同一元件两端电压除流过电流测电阻。串联等效电阻增大，并联等效电阻小于任一支路电阻。低压模型中某元件被理想导线短接，其两端电压近零，别的串联元件可能电流增大；某处断路时电流近零，但电压表能否有示数取决于它跨接哪里。灯泡温度不同的电阻不宜无条件平均。"
+          },
+          {
+            "title": "跨学科实践（原创任务）",
+            "text": "设计低压电阻辨识记录：用同一电阻器取三组对应电压和电流，算比值并绘图，标出测量误差和温升边界。结合数据表比较单次读数与多次结果；不能用断路的电流零值直接做除法。"
+          }
+        ],
+        "experiments": [
+          {
+            "title": "用电流表和电压表测量电阻",
+            "purpose": "按同一元件的电流与电压求电阻。",
+            "apparatus": "低压电源、待测定值电阻、开关、变阻器、两表。",
+            "variables": "保持同一电阻且温度近似稳定，改变电压，多次测量。",
+            "steps": [
+              "断电连成电流表串联、电压表跨待测电阻、变阻器串联。",
+              "从最大接入阻值开始调节，记录同一状态的电压和电流。",
+              "各次单独求电阻后比较，定值电阻可合理取平均。"
+            ],
+            "data": "设计示例（非实测）：1、2、3 V对应0.1、0.2、0.3 A，每次电阻10 Ω。",
+            "conclusion": "伏安法基于同元件同状态的比值，不测两个不对应示数。",
+            "limits": "电压表分流和电流表分压造成系统误差；灯丝温度改变时不同状态阻值不能当同一定值平均。",
+            "kind": "学生必做"
+          }
+        ],
+        "learning_scope": "初中"
+      },
+      "error_index": 0,
+      "chapter": "欧姆定律"
+    },
+    "diagnostic-ohm-02-2": {
+      "point": {
+        "id": "ohm-02",
+        "title": "欧姆定律的应用",
+        "level": "基础",
+        "definition": "欧姆定律可用于计算电路中的电流、电压和等效电阻。串联电阻的总电阻等于各电阻之和；并联等效电阻小于任一支路电阻，且可用总电压除以干路电流复核。",
+        "meaning": "分析实际电路时先辨认串联、并联结构，再化简等效电阻并结合总电压求干路电流。支路电压、电流必须对应正确元件；并联电阻不能直接相加。计算前确认电阻值适用，且电路中的总电压和总电流取同一等效部分。",
+        "symbols": {
+          "R1": {
+            "desc": "第一只电阻",
+            "unit": "Ω"
+          },
+          "R2": {
+            "desc": "第二只电阻",
+            "unit": "Ω"
+          },
+          "Rs": {
+            "desc": "两电阻串联的总电阻",
+            "unit": "Ω"
+          },
+          "Rp": {
+            "desc": "两电阻并联的等效电阻",
+            "unit": "Ω"
+          },
+          "U": {
+            "desc": "等效电阻两端电压",
+            "unit": "V"
+          },
+          "It": {
+            "desc": "通过等效电阻的总电流",
+            "unit": "A"
+          },
+          "I": {
+            "desc": "通过导体的电流",
+            "unit": "A"
+          },
+          "R": {
+            "desc": "导体电阻",
+            "unit": "Ω"
+          },
+          "Rk": {
+            "desc": "以 kΩ 表示的电阻数值",
+            "unit": "kΩ"
+          }
+        },
+        "scenarios": {
+          "串联电阻组一": {
+            "R1": 2,
+            "R2": 4,
+            "Rs": 6,
+            "U": 12,
+            "It": 2
+          },
+          "串联电阻组二": {
+            "R1": 5,
+            "R2": 10,
+            "Rs": 15,
+            "U": 30,
+            "It": 2
+          },
+          "并联电阻组一": {
+            "R1": 6,
+            "R2": 3,
+            "Rp": 2,
+            "U": 6,
+            "It": 3
+          },
+          "并联电阻组二": {
+            "R1": 8,
+            "R2": 8,
+            "Rp": 4,
+            "U": 12,
+            "It": 3
+          },
+          "三欧导体": {
+            "U": 6,
+            "I": 2,
+            "R": 3
+          },
+          "六欧导体": {
+            "U": 12,
+            "I": 2,
+            "R": 6
+          },
+          "千欧换算误区": {
+            "U": 6,
+            "I": 0.002,
+            "R": 3000,
+            "Rk": 3
+          }
+        },
+        "formulas": [
+          {
+            "name": "两电阻并联等效电阻",
+            "expr": "Rp = 1/(1/R1+1/R2)",
+            "when": "两个电阻并联，R1、R2 均为正值。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "并联电阻组一",
+                "expr": "1/(1/R1+1/R2)",
+                "ref": 2,
+                "note": "1/(1/6+1/3)=2 Ω。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "并联电阻组二",
+                "expr": "1/(1/R1+1/R2)",
+                "ref": 4,
+                "note": "两个 8 Ω 电阻并联，等效电阻为 4 Ω。"
+              },
+              {
+                "type": "direction",
+                "scenario": "并联电阻组一",
+                "var": "R1",
+                "lo": 0.1,
+                "hi": 100,
+                "expr": "1/(1/R1+1/R2)",
+                "expect": "up",
+                "note": "另一支路固定时，增大一个并联电阻会增大等效电阻。"
+              },
+              {
+                "type": "scan",
+                "scenario": "并联电阻组一",
+                "var": "R1",
+                "lo": 0.001,
+                "hi": 1000,
+                "note": "扫描正电阻范围，倒数关系保持有限。"
+              },
+              {
+                "type": "consistency",
+                "scenario": "并联电阻组一",
+                "with": "ohm-02|两电阻并联等效电阻",
+                "with_expr": "U/It",
+                "target": "两电阻并联的等效电阻",
+                "note": "本公式直接求Rp；参考端显式关系为U/It。两端使用同一情境和阶段，只核对该关系；with字段仅定位来源，不代表调用另一条被覆盖的公式。",
+                "verification_kind": "独立关系核对"
+              },
+              {
+                "type": "numeric",
+                "scenario": "并联电阻组一",
+                "ref": 2,
+                "rtol": 1e-10,
+                "atol": 0,
+                "note": "设计示例；人工标签保留的指定反例正确控制。原6 Ω支路加入3 Ω并联后总阻值2 Ω，小于6 Ω；错误当串联相加会得9 Ω。本例不判定任意接线图。"
+              }
+            ]
+          },
+          {
+            "name": "由总电压和总电流求等效电阻",
+            "expr": "Rp = U/It",
+            "when": "U、It 描述整个等效电路，It 不为零。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "并联电阻组一",
+                "expr": "U/It",
+                "ref": 2,
+                "note": "6 V÷3 A=2 Ω，与并联公式相同。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "并联电阻组二",
+                "expr": "U/It",
+                "ref": 4,
+                "note": "12 V÷3 A=4 Ω。"
+              },
+              {
+                "type": "scan",
+                "scenario": "并联电阻组一",
+                "var": "It",
+                "lo": 0.001,
+                "hi": 100,
+                "note": "扫描正总电流，等效电阻反算稳定。"
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "串联电阻中电流相同，总电压为各电阻电压之和。",
+          "结合欧姆定律可得到串联总电阻为各电阻之和。",
+          "并联电阻两端电压相同，干路电流为各支路电流之和。",
+          "结合欧姆定律得到并联电阻倒数关系，最后对倒数和再取倒数。"
+        ],
+        "errors": [
+          {
+            "wrong": "并联电阻只把各支路电阻倒数相加，忘记再取倒数。",
+            "wrong_expr": "Rp = 1/R1+1/R2",
+            "why": "6 Ω 与 3 Ω 并联的倒数和为 0.5 Ω^-1，等效电阻应为其倒数 2 Ω。",
+            "caught_by": "量纲一致性",
+            "trap_test": {
+              "kind": "dimension",
+              "target": "Rp = 1/R1+1/R2",
+              "expect": "mismatch",
+              "lhs_dim": "M·L^2·T^-3·I^-2",
+              "rhs_dim": "M^-1·L^-2·T^3·I^2",
+              "note": "正式引擎验证量纲不一致；不计作同量纲错误数值实测。"
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "认为增加并联支路会增大总电阻。",
+            "why": "并联增加额外电流通路，等效电阻会减小；串联增加电阻才会使总电阻增大。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            },
+            "automation_review": {
+              "status": "指定反例已补验；原人工审核标签保留",
+              "basis": "原6 Ω支路加入3 Ω并联后总阻值2 Ω，小于6 Ω；错误当串联相加会得9 Ω。本例不判定任意接线图。",
+              "scenario": "并联电阻组一",
+              "correct_expression": "Rp = 1/(1/R1+1/R2)",
+              "wrong_expression": "R1+R2",
+              "correct_value": 2,
+              "wrong_value": 9,
+              "unit": "Ω",
+              "wrong_status": "numeric_mismatch",
+              "note": "这是原创设计反例，机器仅验证指定模型、数据及量纲；自然语言命题、学生认知与装置仍待教师确认。"
+            }
+          },
+          {
+            "wrong": "并联两支路只取第一支路电阻作为总阻值。",
+            "wrong_expr": "Rp = R1",
+            "why": "6 Ω与3 Ω并联，等效电阻2 Ω，小于任一支路；只取6 Ω遗漏另一通路。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "并联电阻组一",
+              "expr": "R1",
+              "ref": 2,
+              "tol": 1e-06
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "6 Ω 和 3 Ω 的电阻并联，求等效电阻。",
+          "solution": [
+            "1/Rp=1/6+1/3=1/2 Ω^-1。",
+            "Rp=2 Ω。",
+            "并联等效电阻小于较小的支路电阻 3 Ω，结果合理。"
+          ],
+          "answer": "等效电阻为 2 Ω。"
+        },
+        "prereq": [
+          "ohm-01",
+          "circuit-02"
+        ],
+        "next": [],
+        "tags": [
+          "欧姆定律应用",
+          "等效电阻",
+          "串并联电阻",
+          "电路计算"
+        ],
+        "core": [
+          {
+            "title": "欧姆定律的应用与故障边界",
+            "text": "伏安法用同一元件两端电压除流过电流测电阻。串联等效电阻增大，并联等效电阻小于任一支路电阻。低压模型中某元件被理想导线短接，其两端电压近零，别的串联元件可能电流增大；某处断路时电流近零，但电压表能否有示数取决于它跨接哪里。灯泡温度不同的电阻不宜无条件平均。"
+          },
+          {
+            "title": "跨学科实践（原创任务）",
+            "text": "设计低压电阻辨识记录：用同一电阻器取三组对应电压和电流，算比值并绘图，标出测量误差和温升边界。结合数据表比较单次读数与多次结果；不能用断路的电流零值直接做除法。"
+          }
+        ],
+        "experiments": [
+          {
+            "title": "用电流表和电压表测量电阻",
+            "purpose": "按同一元件的电流与电压求电阻。",
+            "apparatus": "低压电源、待测定值电阻、开关、变阻器、两表。",
+            "variables": "保持同一电阻且温度近似稳定，改变电压，多次测量。",
+            "steps": [
+              "断电连成电流表串联、电压表跨待测电阻、变阻器串联。",
+              "从最大接入阻值开始调节，记录同一状态的电压和电流。",
+              "各次单独求电阻后比较，定值电阻可合理取平均。"
+            ],
+            "data": "设计示例（非实测）：1、2、3 V对应0.1、0.2、0.3 A，每次电阻10 Ω。",
+            "conclusion": "伏安法基于同元件同状态的比值，不测两个不对应示数。",
+            "limits": "电压表分流和电流表分压造成系统误差；灯丝温度改变时不同状态阻值不能当同一定值平均。",
+            "kind": "学生必做"
+          }
+        ],
+        "learning_scope": "初中"
+      },
+      "error_index": 1,
+      "chapter": "欧姆定律"
+    },
+    "diagnostic-ohm-02-3": {
+      "point": {
+        "id": "ohm-02",
+        "title": "欧姆定律的应用",
+        "level": "基础",
+        "definition": "欧姆定律可用于计算电路中的电流、电压和等效电阻。串联电阻的总电阻等于各电阻之和；并联等效电阻小于任一支路电阻，且可用总电压除以干路电流复核。",
+        "meaning": "分析实际电路时先辨认串联、并联结构，再化简等效电阻并结合总电压求干路电流。支路电压、电流必须对应正确元件；并联电阻不能直接相加。计算前确认电阻值适用，且电路中的总电压和总电流取同一等效部分。",
+        "symbols": {
+          "R1": {
+            "desc": "第一只电阻",
+            "unit": "Ω"
+          },
+          "R2": {
+            "desc": "第二只电阻",
+            "unit": "Ω"
+          },
+          "Rs": {
+            "desc": "两电阻串联的总电阻",
+            "unit": "Ω"
+          },
+          "Rp": {
+            "desc": "两电阻并联的等效电阻",
+            "unit": "Ω"
+          },
+          "U": {
+            "desc": "等效电阻两端电压",
+            "unit": "V"
+          },
+          "It": {
+            "desc": "通过等效电阻的总电流",
+            "unit": "A"
+          },
+          "I": {
+            "desc": "通过导体的电流",
+            "unit": "A"
+          },
+          "R": {
+            "desc": "导体电阻",
+            "unit": "Ω"
+          },
+          "Rk": {
+            "desc": "以 kΩ 表示的电阻数值",
+            "unit": "kΩ"
+          }
+        },
+        "scenarios": {
+          "串联电阻组一": {
+            "R1": 2,
+            "R2": 4,
+            "Rs": 6,
+            "U": 12,
+            "It": 2
+          },
+          "串联电阻组二": {
+            "R1": 5,
+            "R2": 10,
+            "Rs": 15,
+            "U": 30,
+            "It": 2
+          },
+          "并联电阻组一": {
+            "R1": 6,
+            "R2": 3,
+            "Rp": 2,
+            "U": 6,
+            "It": 3
+          },
+          "并联电阻组二": {
+            "R1": 8,
+            "R2": 8,
+            "Rp": 4,
+            "U": 12,
+            "It": 3
+          },
+          "三欧导体": {
+            "U": 6,
+            "I": 2,
+            "R": 3
+          },
+          "六欧导体": {
+            "U": 12,
+            "I": 2,
+            "R": 6
+          },
+          "千欧换算误区": {
+            "U": 6,
+            "I": 0.002,
+            "R": 3000,
+            "Rk": 3
+          }
+        },
+        "formulas": [
+          {
+            "name": "两电阻并联等效电阻",
+            "expr": "Rp = 1/(1/R1+1/R2)",
+            "when": "两个电阻并联，R1、R2 均为正值。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "并联电阻组一",
+                "expr": "1/(1/R1+1/R2)",
+                "ref": 2,
+                "note": "1/(1/6+1/3)=2 Ω。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "并联电阻组二",
+                "expr": "1/(1/R1+1/R2)",
+                "ref": 4,
+                "note": "两个 8 Ω 电阻并联，等效电阻为 4 Ω。"
+              },
+              {
+                "type": "direction",
+                "scenario": "并联电阻组一",
+                "var": "R1",
+                "lo": 0.1,
+                "hi": 100,
+                "expr": "1/(1/R1+1/R2)",
+                "expect": "up",
+                "note": "另一支路固定时，增大一个并联电阻会增大等效电阻。"
+              },
+              {
+                "type": "scan",
+                "scenario": "并联电阻组一",
+                "var": "R1",
+                "lo": 0.001,
+                "hi": 1000,
+                "note": "扫描正电阻范围，倒数关系保持有限。"
+              },
+              {
+                "type": "consistency",
+                "scenario": "并联电阻组一",
+                "with": "ohm-02|两电阻并联等效电阻",
+                "with_expr": "U/It",
+                "target": "两电阻并联的等效电阻",
+                "note": "本公式直接求Rp；参考端显式关系为U/It。两端使用同一情境和阶段，只核对该关系；with字段仅定位来源，不代表调用另一条被覆盖的公式。",
+                "verification_kind": "独立关系核对"
+              },
+              {
+                "type": "numeric",
+                "scenario": "并联电阻组一",
+                "ref": 2,
+                "rtol": 1e-10,
+                "atol": 0,
+                "note": "设计示例；人工标签保留的指定反例正确控制。原6 Ω支路加入3 Ω并联后总阻值2 Ω，小于6 Ω；错误当串联相加会得9 Ω。本例不判定任意接线图。"
+              }
+            ]
+          },
+          {
+            "name": "由总电压和总电流求等效电阻",
+            "expr": "Rp = U/It",
+            "when": "U、It 描述整个等效电路，It 不为零。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "并联电阻组一",
+                "expr": "U/It",
+                "ref": 2,
+                "note": "6 V÷3 A=2 Ω，与并联公式相同。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "并联电阻组二",
+                "expr": "U/It",
+                "ref": 4,
+                "note": "12 V÷3 A=4 Ω。"
+              },
+              {
+                "type": "scan",
+                "scenario": "并联电阻组一",
+                "var": "It",
+                "lo": 0.001,
+                "hi": 100,
+                "note": "扫描正总电流，等效电阻反算稳定。"
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "串联电阻中电流相同，总电压为各电阻电压之和。",
+          "结合欧姆定律可得到串联总电阻为各电阻之和。",
+          "并联电阻两端电压相同，干路电流为各支路电流之和。",
+          "结合欧姆定律得到并联电阻倒数关系，最后对倒数和再取倒数。"
+        ],
+        "errors": [
+          {
+            "wrong": "并联电阻只把各支路电阻倒数相加，忘记再取倒数。",
+            "wrong_expr": "Rp = 1/R1+1/R2",
+            "why": "6 Ω 与 3 Ω 并联的倒数和为 0.5 Ω^-1，等效电阻应为其倒数 2 Ω。",
+            "caught_by": "量纲一致性",
+            "trap_test": {
+              "kind": "dimension",
+              "target": "Rp = 1/R1+1/R2",
+              "expect": "mismatch",
+              "lhs_dim": "M·L^2·T^-3·I^-2",
+              "rhs_dim": "M^-1·L^-2·T^3·I^2",
+              "note": "正式引擎验证量纲不一致；不计作同量纲错误数值实测。"
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "认为增加并联支路会增大总电阻。",
+            "why": "并联增加额外电流通路，等效电阻会减小；串联增加电阻才会使总电阻增大。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            },
+            "automation_review": {
+              "status": "指定反例已补验；原人工审核标签保留",
+              "basis": "原6 Ω支路加入3 Ω并联后总阻值2 Ω，小于6 Ω；错误当串联相加会得9 Ω。本例不判定任意接线图。",
+              "scenario": "并联电阻组一",
+              "correct_expression": "Rp = 1/(1/R1+1/R2)",
+              "wrong_expression": "R1+R2",
+              "correct_value": 2,
+              "wrong_value": 9,
+              "unit": "Ω",
+              "wrong_status": "numeric_mismatch",
+              "note": "这是原创设计反例，机器仅验证指定模型、数据及量纲；自然语言命题、学生认知与装置仍待教师确认。"
+            }
+          },
+          {
+            "wrong": "并联两支路只取第一支路电阻作为总阻值。",
+            "wrong_expr": "Rp = R1",
+            "why": "6 Ω与3 Ω并联，等效电阻2 Ω，小于任一支路；只取6 Ω遗漏另一通路。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "并联电阻组一",
+              "expr": "R1",
+              "ref": 2,
+              "tol": 1e-06
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "6 Ω 和 3 Ω 的电阻并联，求等效电阻。",
+          "solution": [
+            "1/Rp=1/6+1/3=1/2 Ω^-1。",
+            "Rp=2 Ω。",
+            "并联等效电阻小于较小的支路电阻 3 Ω，结果合理。"
+          ],
+          "answer": "等效电阻为 2 Ω。"
+        },
+        "prereq": [
+          "ohm-01",
+          "circuit-02"
+        ],
+        "next": [],
+        "tags": [
+          "欧姆定律应用",
+          "等效电阻",
+          "串并联电阻",
+          "电路计算"
+        ],
+        "core": [
+          {
+            "title": "欧姆定律的应用与故障边界",
+            "text": "伏安法用同一元件两端电压除流过电流测电阻。串联等效电阻增大，并联等效电阻小于任一支路电阻。低压模型中某元件被理想导线短接，其两端电压近零，别的串联元件可能电流增大；某处断路时电流近零，但电压表能否有示数取决于它跨接哪里。灯泡温度不同的电阻不宜无条件平均。"
+          },
+          {
+            "title": "跨学科实践（原创任务）",
+            "text": "设计低压电阻辨识记录：用同一电阻器取三组对应电压和电流，算比值并绘图，标出测量误差和温升边界。结合数据表比较单次读数与多次结果；不能用断路的电流零值直接做除法。"
+          }
+        ],
+        "experiments": [
+          {
+            "title": "用电流表和电压表测量电阻",
+            "purpose": "按同一元件的电流与电压求电阻。",
+            "apparatus": "低压电源、待测定值电阻、开关、变阻器、两表。",
+            "variables": "保持同一电阻且温度近似稳定，改变电压，多次测量。",
+            "steps": [
+              "断电连成电流表串联、电压表跨待测电阻、变阻器串联。",
+              "从最大接入阻值开始调节，记录同一状态的电压和电流。",
+              "各次单独求电阻后比较，定值电阻可合理取平均。"
+            ],
+            "data": "设计示例（非实测）：1、2、3 V对应0.1、0.2、0.3 A，每次电阻10 Ω。",
+            "conclusion": "伏安法基于同元件同状态的比值，不测两个不对应示数。",
+            "limits": "电压表分流和电流表分压造成系统误差；灯丝温度改变时不同状态阻值不能当同一定值平均。",
+            "kind": "学生必做"
+          }
+        ],
+        "learning_scope": "初中"
+      },
+      "error_index": 2,
+      "chapter": "欧姆定律"
+    }
+  },
+  "generator_version": "2026-10-04-条件过程返工-8"
+}

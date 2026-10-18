@@ -1,0 +1,2307 @@
+{
+  "segment": "初中",
+  "chapter": "力与运动",
+  "source_file": "08_force_motion.json",
+  "questions": [
+    {
+      "id": "diagnostic-fmotion-01-1",
+      "point_id": "fmotion-01",
+      "point_title": "二力平衡",
+      "chapter": "力与运动",
+      "stem": "在“二力平衡”的模型下，F<sub>1</sub>（沿选定方向的第一个力的大小）=5 N；F<sub>2</sub>（与第一个力反向的第二个力的大小）=5 N。条件：F<sub>1</sub>、F<sub>2</sub> 沿同一直线且方向相反；正方向取为 F<sub>1</sub> 方向。。求沿选定方向的合力（F<sub>合</sub>）。这些数值是设计示例。",
+      "options": [
+        {
+          "label": "A",
+          "text": "0 N"
+        },
+        {
+          "label": "B",
+          "text": "10 N"
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "使用反向共线两力的合力：F<sub>1</sub>-F<sub>2</sub>，代入得0 N。另一结果来自F<sub>1</sub>+F<sub>2</sub>，算得10 N。\n方向相反的共线力应按选定正方向做代数相减；5 N 与 5 N 反向合力为零。\n知识点条件：判断二力是否平衡，不能只看大小相等，还要检查方向、作用线和研究对象。沿同一直线取一个正方向后，反向两力的合力可用带方向的代数和表示；平衡时合力为零。作用力和反作用力虽然大小相等方向相反，但作用于不同物体，不能当作同一物体上的平衡力。\n推导依据：先画出物体所受力，确认两个力作用在同一物体上。；检查两力是否在同一直线、方向相反且大小相等。；沿选定方向计算代数和，等大反向时合力为零。；依据合力为零，物体保持静止或匀速直线运动状态。\n卡片公式各自的适用条件（不是本题共同前提）：\n反向共线两力的合力：F<sub>1</sub>、F<sub>2</sub> 沿同一直线且方向相反；正方向取为 F<sub>1</sub> 方向。\n二力平衡条件：两个力作用在同一物体、同一直线上且方向相反。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 0,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "F<sub>合</sub> = F<sub>1</sub>+F<sub>2</sub>",
+      "trap_test": {
+        "scenario": "桌面静止木块",
+        "expr": "F1+F2",
+        "ref": 0
+      },
+      "level": "基础",
+      "learning_scope": "初中",
+      "answer_evidence": {
+        "kind": "numeric",
+        "scenario": "桌面静止木块",
+        "parameters": {
+          "F1": 5,
+          "F2": 5,
+          "F_net": 0
+        },
+        "target": "F_net",
+        "unit": "N",
+        "reference": 0,
+        "correct_proof": {
+          "expression": "F1-F2",
+          "formula": "反向共线两力的合力",
+          "value": 0,
+          "when": "F1、F2 沿同一直线且方向相反；正方向取为 F1 方向。"
+        },
+        "distractor_expression": "F1+F2",
+        "distractor_value": 10.0,
+        "dimension_matches": true,
+        "independent_evaluation": true
+      },
+      "review": {
+        "confidence": "medium",
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": true,
+          "no_answer_leak_in_options": true
+        },
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。",
+        "material": {
+          "anchors": [
+            {
+              "kind": "公式",
+              "name": "反向共线两力的合力",
+              "expression": "F1-F2",
+              "when": "F1、F2 沿同一直线且方向相反；正方向取为 F1 方向。",
+              "display": "F<sub>1</sub>-F<sub>2</sub>"
+            }
+          ],
+          "source": {
+            "nature": "原创设计示例，非教材实测或真实实验记录",
+            "scenario": "桌面静止木块",
+            "parameters": {
+              "F1": 5,
+              "F2": 5,
+              "F_net": 0
+            },
+            "data": [
+              "沿选定方向的第一个力的大小：5 N",
+              "与第一个力反向的第二个力的大小：5 N",
+              "沿选定方向的合力：0 N"
+            ]
+          },
+          "predicted_errors": [
+            {
+              "option": "B",
+              "text": "10 N",
+              "reason": "方向相反的共线力应按选定正方向做代数相减；5 N 与 5 N 反向合力为零。",
+              "expression": "F1+F2",
+              "status": "误答原因预测，待教师确认；未采集学生作答证据"
+            }
+          ],
+          "difficulty_note": "建议难度沿用本题level（源卡难度）；尚非题目难度实测，待教师调整",
+          "estimated_seconds": [
+            60,
+            120
+          ],
+          "time_basis": "未做学生计时；按现有难度给出备课估计区间，待教师确认",
+          "machine_checks": [
+            {
+              "name": "题目ID关联源知识点",
+              "passed": true
+            },
+            {
+              "name": "选项标签唯一且参考标签存在",
+              "passed": true
+            },
+            {
+              "name": "选项文本互异",
+              "passed": true
+            },
+            {
+              "name": "正确路径独立数值复算",
+              "passed": true
+            },
+            {
+              "name": "带量纲求值与独立求值一致",
+              "passed": true
+            },
+            {
+              "name": "干扰路径复算且与正确路径分离",
+              "passed": true
+            }
+          ],
+          "machine_boundary": "只列本次逐题实际执行项目；不把关联知识卡的方向、扫描或一致性检查算作本题已验。概念题未验命题真假。",
+          "human_review_items": [
+            "题干条件是否充分、清楚且符合学段",
+            "参考结论在指定条件下是否唯一",
+            "干扰项是否合理、对应真实认知问题且无答案暗示",
+            "公式或概念锚点是否准确",
+            "建议难度及用时是否适合教学",
+            "语言、装置与安全操作是否恰当"
+          ],
+          "reference_answer_note": "现有参考答案保持；即使本地可以判选项，也仍须教师审核教学可用性"
+        }
+      }
+    },
+    {
+      "id": "diagnostic-fmotion-01-2",
+      "point_id": "fmotion-01",
+      "point_title": "二力平衡",
+      "chapter": "力与运动",
+      "stem": "关于“二力平衡”，判断这一说法是否成立，并说明依据：\n合力为零时物体保持原来的运动状态。",
+      "options": [
+        {
+          "label": "A",
+          "text": "该说法成立。"
+        },
+        {
+          "label": "B",
+          "text": "该说法不成立。"
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "合力为零时物体保持原来的运动状态；原来运动的物体可继续做匀速直线运动。\n知识点条件：判断二力是否平衡，不能只看大小相等，还要检查方向、作用线和研究对象。沿同一直线取一个正方向后，反向两力的合力可用带方向的代数和表示；平衡时合力为零。作用力和反作用力虽然大小相等方向相反，但作用于不同物体，不能当作同一物体上的平衡力。\n推导依据：先画出物体所受力，确认两个力作用在同一物体上。；检查两力是否在同一直线、方向相反且大小相等。；沿选定方向计算代数和，等大反向时合力为零。；依据合力为零，物体保持静止或匀速直线运动状态。\n卡片公式各自的适用条件（不是本题共同前提）：\n反向共线两力的合力：F<sub>1</sub>、F<sub>2</sub> 沿同一直线且方向相反；正方向取为 F<sub>1</sub> 方向。\n二力平衡条件：两个力作用在同一物体、同一直线上且方向相反。",
+      "error_type": "概念混淆",
+      "judging": "teacher",
+      "source_error_index": 1,
+      "source_caught_by": "人工审核",
+      "wrong_expr": null,
+      "trap_test": null,
+      "level": "基础",
+      "learning_scope": "初中",
+      "answer_evidence": {
+        "kind": "teacher",
+        "claim_source": "why",
+        "reference_only": true,
+        "reason": "概念、操作或无法建立完整定量证据，教师确认条件与结论。"
+      },
+      "review": {
+        "confidence": "medium",
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": false,
+          "no_answer_leak_in_options": true
+        },
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。",
+        "material": {
+          "anchors": [
+            {
+              "kind": "概念或操作",
+              "name": "二力平衡",
+              "claim": "认为合力为零就说明物体一定静止。",
+              "correction_basis": "合力为零时物体保持原来的运动状态；原来运动的物体可继续做匀速直线运动。",
+              "note": "概念锚点及命题真假待教师确认；未套用任意第一条公式",
+              "display": "认为合力为零就说明物体一定静止。"
+            }
+          ],
+          "source": {
+            "nature": "原创概念/操作命题；无真实测量记录",
+            "source_error_index": 1
+          },
+          "predicted_errors": [
+            {
+              "option": "B",
+              "text": "该说法不成立。",
+              "reason": "合力为零时物体保持原来的运动状态；原来运动的物体可继续做匀速直线运动。",
+              "expression": null,
+              "status": "误答原因预测，待教师确认；未采集学生作答证据"
+            }
+          ],
+          "difficulty_note": "建议难度沿用本题level（源卡难度）；尚非题目难度实测，待教师调整",
+          "estimated_seconds": [
+            60,
+            120
+          ],
+          "time_basis": "未做学生计时；按现有难度给出备课估计区间，待教师确认",
+          "machine_checks": [
+            {
+              "name": "题目ID关联源知识点",
+              "passed": true
+            },
+            {
+              "name": "选项标签唯一且参考标签存在",
+              "passed": true
+            },
+            {
+              "name": "选项文本互异",
+              "passed": true
+            }
+          ],
+          "machine_boundary": "只列本次逐题实际执行项目；不把关联知识卡的方向、扫描或一致性检查算作本题已验。概念题未验命题真假。",
+          "human_review_items": [
+            "题干条件是否充分、清楚且符合学段",
+            "参考结论在指定条件下是否唯一",
+            "干扰项是否合理、对应真实认知问题且无答案暗示",
+            "公式或概念锚点是否准确",
+            "建议难度及用时是否适合教学",
+            "语言、装置与安全操作是否恰当"
+          ],
+          "reference_answer_note": "现有参考答案保持；即使本地可以判选项，也仍须教师审核教学可用性"
+        }
+      }
+    },
+    {
+      "id": "diagnostic-fmotion-02-1",
+      "point_id": "fmotion-02",
+      "point_title": "牛顿第一定律",
+      "chapter": "力与运动",
+      "stem": "关于“牛顿第一定律”，判断这一说法是否成立，并说明依据：\n把惯性说成物体继续运动的一个力。",
+      "options": [
+        {
+          "label": "A",
+          "text": "该说法成立。"
+        },
+        {
+          "label": "B",
+          "text": "该说法不成立。"
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "惯性是物体本身的性质，不是力；分析速度改变仍要检查物体受到的合力。\n知识点条件：惯性是物体保持原来运动状态的性质，质量越大通常越难改变运动状态。力不是维持运动的原因，而是改变运动状态的原因；当合力为零，物体可以静止，也可以保持原有速度做匀速直线运动。解释现象时要区分“有速度”和“有合力”。\n推导依据：惯性使物体具有保持原有运动状态的倾向，不是额外施加在物体上的力。；合力为零时，物体的运动状态不发生改变。；若物体已沿直线匀速运动，则一段时间前后的速度相同。\n卡片公式各自的适用条件（不是本题共同前提）：\n匀速直线运动的速度：物体沿直线运动且速度大小不变，路程与计时区间匹配。\n合力为零时速度保持不变：沿直线运动且合力为零；此式描述速度大小不变，方向也保持不变。",
+      "error_type": "概念混淆",
+      "judging": "teacher",
+      "source_error_index": 0,
+      "source_caught_by": "人工审核",
+      "wrong_expr": null,
+      "trap_test": null,
+      "level": "基础",
+      "learning_scope": "初中",
+      "answer_evidence": {
+        "kind": "teacher",
+        "claim_source": "wrong",
+        "reference_only": true,
+        "reason": "概念、操作或无法建立完整定量证据，教师确认条件与结论。"
+      },
+      "review": {
+        "confidence": "medium",
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": false,
+          "no_answer_leak_in_options": true
+        },
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。",
+        "material": {
+          "anchors": [
+            {
+              "kind": "概念或操作",
+              "name": "牛顿第一定律",
+              "claim": "把惯性说成物体继续运动的一个力。",
+              "correction_basis": "惯性是物体本身的性质，不是力；分析速度改变仍要检查物体受到的合力。",
+              "note": "概念锚点及命题真假待教师确认；未套用任意第一条公式",
+              "display": "把惯性说成物体继续运动的一个力。"
+            }
+          ],
+          "source": {
+            "nature": "原创概念/操作命题；无真实测量记录",
+            "source_error_index": 0
+          },
+          "predicted_errors": [
+            {
+              "option": "A",
+              "text": "该说法成立。",
+              "reason": "惯性是物体本身的性质，不是力；分析速度改变仍要检查物体受到的合力。",
+              "expression": null,
+              "status": "误答原因预测，待教师确认；未采集学生作答证据"
+            }
+          ],
+          "difficulty_note": "建议难度沿用本题level（源卡难度）；尚非题目难度实测，待教师调整",
+          "estimated_seconds": [
+            60,
+            120
+          ],
+          "time_basis": "未做学生计时；按现有难度给出备课估计区间，待教师确认",
+          "machine_checks": [
+            {
+              "name": "题目ID关联源知识点",
+              "passed": true
+            },
+            {
+              "name": "选项标签唯一且参考标签存在",
+              "passed": true
+            },
+            {
+              "name": "选项文本互异",
+              "passed": true
+            }
+          ],
+          "machine_boundary": "只列本次逐题实际执行项目；不把关联知识卡的方向、扫描或一致性检查算作本题已验。概念题未验命题真假。",
+          "human_review_items": [
+            "题干条件是否充分、清楚且符合学段",
+            "参考结论在指定条件下是否唯一",
+            "干扰项是否合理、对应真实认知问题且无答案暗示",
+            "公式或概念锚点是否准确",
+            "建议难度及用时是否适合教学",
+            "语言、装置与安全操作是否恰当"
+          ],
+          "reference_answer_note": "现有参考答案保持；即使本地可以判选项，也仍须教师审核教学可用性"
+        }
+      }
+    },
+    {
+      "id": "diagnostic-fmotion-02-2",
+      "point_id": "fmotion-02",
+      "point_title": "牛顿第一定律",
+      "chapter": "力与运动",
+      "stem": "在“牛顿第一定律”的模型下，t（通过路程所用的时间）=5 s；v（匀速直线运动速度）=10 m/s。条件：一切物体在没有受到外力作用时，总保持静止状态或匀速直线运动状态。现实中难以完全消除外力，实验通过减小阻力观察物体运动状态变化，从而理解惯性和力的作用。。求匀速直线运动通过的路程（s）。这些数值是设计示例。",
+      "options": [
+        {
+          "label": "A",
+          "text": "50 m"
+        },
+        {
+          "label": "B",
+          "text": "180 m"
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "使用本卡物理关系的等价变形或明确边界条件：v·t，代入得50 m。另一结果来自3.6·v·t，算得180 m。\n匀速小车速度 10 m/s、时间 5 s，路程应为 50 m；再乘 3.6 会错算为 180 m。\n知识点条件：惯性是物体保持原来运动状态的性质，质量越大通常越难改变运动状态。力不是维持运动的原因，而是改变运动状态的原因；当合力为零，物体可以静止，也可以保持原有速度做匀速直线运动。解释现象时要区分“有速度”和“有合力”。\n推导依据：惯性使物体具有保持原有运动状态的倾向，不是额外施加在物体上的力。；合力为零时，物体的运动状态不发生改变。；若物体已沿直线匀速运动，则一段时间前后的速度相同。\n卡片公式各自的适用条件（不是本题共同前提）：\n匀速直线运动的速度：物体沿直线运动且速度大小不变，路程与计时区间匹配。\n合力为零时速度保持不变：沿直线运动且合力为零；此式描述速度大小不变，方向也保持不变。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 1,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "s = 3.6·v·t",
+      "trap_test": {
+        "scenario": "匀速小车",
+        "expr": "3.6*v*t",
+        "ref": 50
+      },
+      "level": "基础",
+      "learning_scope": "初中",
+      "answer_evidence": {
+        "kind": "numeric",
+        "scenario": "匀速小车",
+        "parameters": {
+          "s": 50,
+          "t": 5,
+          "v": 10,
+          "v1": 10,
+          "v2": 10
+        },
+        "target": "s",
+        "unit": "m",
+        "reference": 50,
+        "correct_proof": {
+          "expression": "v*t",
+          "formula": "本卡物理关系的等价变形或明确边界条件",
+          "value": 50,
+          "when": "一切物体在没有受到外力作用时，总保持静止状态或匀速直线运动状态。现实中难以完全消除外力，实验通过减小阻力观察物体运动状态变化，从而理解惯性和力的作用。"
+        },
+        "distractor_expression": "3.6*v*t",
+        "distractor_value": 180.0,
+        "dimension_matches": true,
+        "independent_evaluation": true
+      },
+      "review": {
+        "confidence": "medium",
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": true,
+          "no_answer_leak_in_options": true
+        },
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。",
+        "material": {
+          "anchors": [
+            {
+              "kind": "公式",
+              "name": "本卡物理关系的等价变形或明确边界条件",
+              "expression": "v*t",
+              "when": "一切物体在没有受到外力作用时，总保持静止状态或匀速直线运动状态。现实中难以完全消除外力，实验通过减小阻力观察物体运动状态变化，从而理解惯性和力的作用。",
+              "display": "v·t"
+            }
+          ],
+          "source": {
+            "nature": "原创设计示例，非教材实测或真实实验记录",
+            "scenario": "匀速小车",
+            "parameters": {
+              "s": 50,
+              "t": 5,
+              "v": 10,
+              "v1": 10,
+              "v2": 10
+            },
+            "data": [
+              "匀速直线运动通过的路程：50 m",
+              "通过路程所用的时间：5 s",
+              "匀速直线运动速度：10 m/s",
+              "运动开始时速度：10 m/s",
+              "一段时间后速度：10 m/s"
+            ]
+          },
+          "predicted_errors": [
+            {
+              "option": "B",
+              "text": "180 m",
+              "reason": "匀速小车速度 10 m/s、时间 5 s，路程应为 50 m；再乘 3.6 会错算为 180 m。",
+              "expression": "3.6*v*t",
+              "status": "误答原因预测，待教师确认；未采集学生作答证据"
+            }
+          ],
+          "difficulty_note": "建议难度沿用本题level（源卡难度）；尚非题目难度实测，待教师调整",
+          "estimated_seconds": [
+            60,
+            120
+          ],
+          "time_basis": "未做学生计时；按现有难度给出备课估计区间，待教师确认",
+          "machine_checks": [
+            {
+              "name": "题目ID关联源知识点",
+              "passed": true
+            },
+            {
+              "name": "选项标签唯一且参考标签存在",
+              "passed": true
+            },
+            {
+              "name": "选项文本互异",
+              "passed": true
+            },
+            {
+              "name": "正确路径独立数值复算",
+              "passed": true
+            },
+            {
+              "name": "带量纲求值与独立求值一致",
+              "passed": true
+            },
+            {
+              "name": "干扰路径复算且与正确路径分离",
+              "passed": true
+            }
+          ],
+          "machine_boundary": "只列本次逐题实际执行项目；不把关联知识卡的方向、扫描或一致性检查算作本题已验。概念题未验命题真假。",
+          "human_review_items": [
+            "题干条件是否充分、清楚且符合学段",
+            "参考结论在指定条件下是否唯一",
+            "干扰项是否合理、对应真实认知问题且无答案暗示",
+            "公式或概念锚点是否准确",
+            "建议难度及用时是否适合教学",
+            "语言、装置与安全操作是否恰当"
+          ],
+          "reference_answer_note": "现有参考答案保持；即使本地可以判选项，也仍须教师审核教学可用性"
+        }
+      }
+    },
+    {
+      "id": "diagnostic-fmotion-02-3",
+      "point_id": "fmotion-02",
+      "point_title": "牛顿第一定律",
+      "chapter": "力与运动",
+      "stem": "关于“牛顿第一定律”，判断这一说法是否成立，并说明依据：\n只有运动物体才有惯性，静止物体没有惯性。",
+      "options": [
+        {
+          "label": "A",
+          "text": "该说法成立。"
+        },
+        {
+          "label": "B",
+          "text": "该说法不成立。"
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "惯性是所有物体的固有属性，静止物体也保持静止状态，质量越大惯性越大。\n知识点条件：惯性是物体保持原来运动状态的性质，质量越大通常越难改变运动状态。力不是维持运动的原因，而是改变运动状态的原因；当合力为零，物体可以静止，也可以保持原有速度做匀速直线运动。解释现象时要区分“有速度”和“有合力”。\n推导依据：惯性使物体具有保持原有运动状态的倾向，不是额外施加在物体上的力。；合力为零时，物体的运动状态不发生改变。；若物体已沿直线匀速运动，则一段时间前后的速度相同。\n卡片公式各自的适用条件（不是本题共同前提）：\n匀速直线运动的速度：物体沿直线运动且速度大小不变，路程与计时区间匹配。\n合力为零时速度保持不变：沿直线运动且合力为零；此式描述速度大小不变，方向也保持不变。",
+      "error_type": "概念混淆",
+      "judging": "teacher",
+      "source_error_index": 2,
+      "source_caught_by": "人工审核",
+      "wrong_expr": null,
+      "trap_test": null,
+      "level": "基础",
+      "learning_scope": "初中",
+      "answer_evidence": {
+        "kind": "teacher",
+        "claim_source": "wrong",
+        "reference_only": true,
+        "reason": "概念、操作或无法建立完整定量证据，教师确认条件与结论。"
+      },
+      "review": {
+        "confidence": "medium",
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": false,
+          "no_answer_leak_in_options": true
+        },
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。",
+        "material": {
+          "anchors": [
+            {
+              "kind": "概念或操作",
+              "name": "牛顿第一定律",
+              "claim": "认为只有运动物体才有惯性，静止物体没有惯性。",
+              "correction_basis": "惯性是所有物体的固有属性，静止物体也保持静止状态，质量越大惯性越大。",
+              "note": "概念锚点及命题真假待教师确认；未套用任意第一条公式",
+              "display": "认为只有运动物体才有惯性，静止物体没有惯性。"
+            }
+          ],
+          "source": {
+            "nature": "原创概念/操作命题；无真实测量记录",
+            "source_error_index": 2
+          },
+          "predicted_errors": [
+            {
+              "option": "A",
+              "text": "该说法成立。",
+              "reason": "惯性是所有物体的固有属性，静止物体也保持静止状态，质量越大惯性越大。",
+              "expression": null,
+              "status": "误答原因预测，待教师确认；未采集学生作答证据"
+            }
+          ],
+          "difficulty_note": "建议难度沿用本题level（源卡难度）；尚非题目难度实测，待教师调整",
+          "estimated_seconds": [
+            60,
+            120
+          ],
+          "time_basis": "未做学生计时；按现有难度给出备课估计区间，待教师确认",
+          "machine_checks": [
+            {
+              "name": "题目ID关联源知识点",
+              "passed": true
+            },
+            {
+              "name": "选项标签唯一且参考标签存在",
+              "passed": true
+            },
+            {
+              "name": "选项文本互异",
+              "passed": true
+            }
+          ],
+          "machine_boundary": "只列本次逐题实际执行项目；不把关联知识卡的方向、扫描或一致性检查算作本题已验。概念题未验命题真假。",
+          "human_review_items": [
+            "题干条件是否充分、清楚且符合学段",
+            "参考结论在指定条件下是否唯一",
+            "干扰项是否合理、对应真实认知问题且无答案暗示",
+            "公式或概念锚点是否准确",
+            "建议难度及用时是否适合教学",
+            "语言、装置与安全操作是否恰当"
+          ],
+          "reference_answer_note": "现有参考答案保持；即使本地可以判选项，也仍须教师审核教学可用性"
+        }
+      }
+    },
+    {
+      "id": "diagnostic-fmotion-03-1",
+      "point_id": "fmotion-03",
+      "point_title": "力与运动的关系",
+      "chapter": "力与运动",
+      "stem": "在“力与运动的关系”的模型下，m（物体质量）=2 kg；a（物体加速度大小）=2 m/s²。条件：拓展计算，非本卡初中必背主线。质量不变且合力恒定时；单位分别为 kg、m/s²、N。。求物体所受合力大小（F<sub>合</sub>）。这些数值是设计示例。",
+      "options": [
+        {
+          "label": "A",
+          "text": "2 N"
+        },
+        {
+          "label": "B",
+          "text": "4 N"
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "使用恒定合力与加速度关系：m·a，代入得4 N。另一结果来自m·a/2，算得2 N。\n牛顿第二定律的拓展模型为 F<sub>合</sub>=m·a；2 kg 小车加速度 2 m/s² 时合力应为 4 N。\n知识点条件：观察相同质量的小车受到不同合力时的运动变化，可发现合力越大，加速度越大；合力相同时，质量更大，加速度更小。这里用 F<sub>合</sub>=m·a 把趋势定量表达，要求质量不变、合力恒定且单位统一为 kg、N、m/s²。初中课程首先要求理解力能改变运动状态。\n推导依据：确定研究对象，先合成同一直线上的各个力，得到合力 F<sub>合</sub>。；在质量不变且合力恒定时，合力与加速度大小满足 F<sub>合</sub>=m·a。；也可从速度变化量和时间求加速度，再与合力除以质量的结果比较。\n卡片公式各自的适用条件（不是本题共同前提）：\n恒定合力与加速度关系：拓展计算，非本卡初中必背主线。质量不变且合力恒定时；单位分别为 kg、m/s²、N。\n速度变化率表示加速度：拓展计算，非本卡初中必背主线。加速度取速度变化量除以同一时间间隔，t 大于零。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 0,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "F<sub>合</sub> = m·a/2",
+      "trap_test": {
+        "scenario": "二千克小车",
+        "expr": "m*a/2",
+        "ref": 4
+      },
+      "level": "拓展",
+      "learning_scope": "初中主线；公式含拓展",
+      "answer_evidence": {
+        "kind": "numeric",
+        "scenario": "二千克小车",
+        "parameters": {
+          "F_net": 4,
+          "m": 2,
+          "a": 2,
+          "dv": 4,
+          "t": 2
+        },
+        "target": "F_net",
+        "unit": "N",
+        "reference": 4,
+        "correct_proof": {
+          "expression": "m*a",
+          "formula": "恒定合力与加速度关系",
+          "value": 4,
+          "when": "拓展计算，非本卡初中必背主线。质量不变且合力恒定时；单位分别为 kg、m/s^2、N。"
+        },
+        "distractor_expression": "m*a/2",
+        "distractor_value": 2.0,
+        "dimension_matches": true,
+        "independent_evaluation": true
+      },
+      "review": {
+        "confidence": "medium",
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": true,
+          "no_answer_leak_in_options": true
+        },
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。",
+        "material": {
+          "anchors": [
+            {
+              "kind": "公式",
+              "name": "恒定合力与加速度关系",
+              "expression": "m*a",
+              "when": "拓展计算，非本卡初中必背主线。质量不变且合力恒定时；单位分别为 kg、m/s^2、N。",
+              "display": "m·a"
+            }
+          ],
+          "source": {
+            "nature": "原创设计示例，非教材实测或真实实验记录",
+            "scenario": "二千克小车",
+            "parameters": {
+              "F_net": 4,
+              "m": 2,
+              "a": 2,
+              "dv": 4,
+              "t": 2
+            },
+            "data": [
+              "物体所受合力大小：4 N",
+              "物体质量：2 kg",
+              "物体加速度大小：2 m/s^2",
+              "一段时间内速度变化量：4 m/s",
+              "速度变化所用时间：2 s"
+            ]
+          },
+          "predicted_errors": [
+            {
+              "option": "A",
+              "text": "2 N",
+              "reason": "牛顿第二定律的拓展模型为 F_net=m*a；2 kg 小车加速度 2 m/s² 时合力应为 4 N。",
+              "expression": "m*a/2",
+              "status": "误答原因预测，待教师确认；未采集学生作答证据"
+            }
+          ],
+          "difficulty_note": "建议难度沿用本题level（源卡难度）；尚非题目难度实测，待教师调整",
+          "estimated_seconds": [
+            180,
+            360
+          ],
+          "time_basis": "未做学生计时；按现有难度给出备课估计区间，待教师确认",
+          "machine_checks": [
+            {
+              "name": "题目ID关联源知识点",
+              "passed": true
+            },
+            {
+              "name": "选项标签唯一且参考标签存在",
+              "passed": true
+            },
+            {
+              "name": "选项文本互异",
+              "passed": true
+            },
+            {
+              "name": "正确路径独立数值复算",
+              "passed": true
+            },
+            {
+              "name": "带量纲求值与独立求值一致",
+              "passed": true
+            },
+            {
+              "name": "干扰路径复算且与正确路径分离",
+              "passed": true
+            }
+          ],
+          "machine_boundary": "只列本次逐题实际执行项目；不把关联知识卡的方向、扫描或一致性检查算作本题已验。概念题未验命题真假。",
+          "human_review_items": [
+            "题干条件是否充分、清楚且符合学段",
+            "参考结论在指定条件下是否唯一",
+            "干扰项是否合理、对应真实认知问题且无答案暗示",
+            "公式或概念锚点是否准确",
+            "建议难度及用时是否适合教学",
+            "语言、装置与安全操作是否恰当"
+          ],
+          "reference_answer_note": "现有参考答案保持；即使本地可以判选项，也仍须教师审核教学可用性"
+        }
+      }
+    },
+    {
+      "id": "diagnostic-fmotion-03-2",
+      "point_id": "fmotion-03",
+      "point_title": "力与运动的关系",
+      "chapter": "力与运动",
+      "stem": "关于“力与运动的关系”，判断这一说法是否成立，并说明依据：\n物体只要在运动，就一定受到沿运动方向的合力。",
+      "options": [
+        {
+          "label": "A",
+          "text": "该说法不成立。"
+        },
+        {
+          "label": "B",
+          "text": "该说法成立。"
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "物体可以在合力为零时保持匀速直线运动；合力决定运动状态如何改变，不是维持运动的必要条件。\n知识点条件：观察相同质量的小车受到不同合力时的运动变化，可发现合力越大，加速度越大；合力相同时，质量更大，加速度更小。这里用 F<sub>合</sub>=m·a 把趋势定量表达，要求质量不变、合力恒定且单位统一为 kg、N、m/s²。初中课程首先要求理解力能改变运动状态。\n推导依据：确定研究对象，先合成同一直线上的各个力，得到合力 F<sub>合</sub>。；在质量不变且合力恒定时，合力与加速度大小满足 F<sub>合</sub>=m·a。；也可从速度变化量和时间求加速度，再与合力除以质量的结果比较。\n卡片公式各自的适用条件（不是本题共同前提）：\n恒定合力与加速度关系：拓展计算，非本卡初中必背主线。质量不变且合力恒定时；单位分别为 kg、m/s²、N。\n速度变化率表示加速度：拓展计算，非本卡初中必背主线。加速度取速度变化量除以同一时间间隔，t 大于零。",
+      "error_type": "概念混淆",
+      "judging": "teacher",
+      "source_error_index": 1,
+      "source_caught_by": "人工审核",
+      "wrong_expr": null,
+      "trap_test": null,
+      "level": "拓展",
+      "learning_scope": "初中主线；公式含拓展",
+      "answer_evidence": {
+        "kind": "teacher",
+        "claim_source": "wrong",
+        "reference_only": true,
+        "reason": "概念、操作或无法建立完整定量证据，教师确认条件与结论。"
+      },
+      "review": {
+        "confidence": "medium",
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": false,
+          "no_answer_leak_in_options": true
+        },
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。",
+        "material": {
+          "anchors": [
+            {
+              "kind": "概念或操作",
+              "name": "力与运动的关系",
+              "claim": "认为物体只要在运动，就一定受到沿运动方向的合力。",
+              "correction_basis": "物体可以在合力为零时保持匀速直线运动；合力决定运动状态如何改变，不是维持运动的必要条件。",
+              "note": "概念锚点及命题真假待教师确认；未套用任意第一条公式",
+              "display": "认为物体只要在运动，就一定受到沿运动方向的合力。"
+            }
+          ],
+          "source": {
+            "nature": "原创概念/操作命题；无真实测量记录",
+            "source_error_index": 1
+          },
+          "predicted_errors": [
+            {
+              "option": "B",
+              "text": "该说法成立。",
+              "reason": "物体可以在合力为零时保持匀速直线运动；合力决定运动状态如何改变，不是维持运动的必要条件。",
+              "expression": null,
+              "status": "误答原因预测，待教师确认；未采集学生作答证据"
+            }
+          ],
+          "difficulty_note": "建议难度沿用本题level（源卡难度）；尚非题目难度实测，待教师调整",
+          "estimated_seconds": [
+            180,
+            360
+          ],
+          "time_basis": "未做学生计时；按现有难度给出备课估计区间，待教师确认",
+          "machine_checks": [
+            {
+              "name": "题目ID关联源知识点",
+              "passed": true
+            },
+            {
+              "name": "选项标签唯一且参考标签存在",
+              "passed": true
+            },
+            {
+              "name": "选项文本互异",
+              "passed": true
+            }
+          ],
+          "machine_boundary": "只列本次逐题实际执行项目；不把关联知识卡的方向、扫描或一致性检查算作本题已验。概念题未验命题真假。",
+          "human_review_items": [
+            "题干条件是否充分、清楚且符合学段",
+            "参考结论在指定条件下是否唯一",
+            "干扰项是否合理、对应真实认知问题且无答案暗示",
+            "公式或概念锚点是否准确",
+            "建议难度及用时是否适合教学",
+            "语言、装置与安全操作是否恰当"
+          ],
+          "reference_answer_note": "现有参考答案保持；即使本地可以判选项，也仍须教师审核教学可用性"
+        }
+      }
+    }
+  ],
+  "skipped": [],
+  "source_records": {
+    "diagnostic-fmotion-01-1": {
+      "point": {
+        "id": "fmotion-01",
+        "title": "二力平衡",
+        "level": "基础",
+        "definition": "物体在两个力作用下保持静止或匀速直线运动时，这两个力互相平衡。二力平衡要求大小相等、方向相反、作用在同一条直线上，并作用于同一物体。",
+        "meaning": "判断二力是否平衡，不能只看大小相等，还要检查方向、作用线和研究对象。沿同一直线取一个正方向后，反向两力的合力可用带方向的代数和表示；平衡时合力为零。作用力和反作用力虽然大小相等方向相反，但作用于不同物体，不能当作同一物体上的平衡力。",
+        "symbols": {
+          "F1": {
+            "desc": "沿选定方向的第一个力的大小",
+            "unit": "N"
+          },
+          "F2": {
+            "desc": "与第一个力反向的第二个力的大小",
+            "unit": "N"
+          },
+          "F_net": {
+            "desc": "沿选定方向的合力",
+            "unit": "N"
+          }
+        },
+        "scenarios": {
+          "桌面静止木块": {
+            "F1": 5,
+            "F2": 5,
+            "F_net": 0
+          },
+          "匀速拉动木块": {
+            "F1": 12,
+            "F2": 12,
+            "F_net": 0
+          },
+          "非平衡核对": {
+            "F1": 7,
+            "F2": 5,
+            "F_net": 2
+          }
+        },
+        "formulas": [
+          {
+            "name": "反向共线两力的合力",
+            "expr": "F_net = F1-F2",
+            "when": "F1、F2 沿同一直线且方向相反；正方向取为 F1 方向。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "桌面静止木块",
+                "expr": "F1-F2",
+                "ref": 0,
+                "note": "5 N 与 5 N 反向，合力为 0 N。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "匀速拉动木块",
+                "expr": "F1-F2",
+                "ref": 0,
+                "note": "拉力与摩擦力等大反向，木块可保持匀速直线运动。"
+              },
+              {
+                "type": "direction",
+                "scenario": "桌面静止木块",
+                "var": "F1",
+                "lo": 0,
+                "hi": 20,
+                "expr": "F1-F2",
+                "expect": "up",
+                "note": "第二个力固定时，沿正方向的力增加，合力代数值增加。"
+              },
+              {
+                "type": "scan",
+                "scenario": "桌面静止木块",
+                "var": "F1",
+                "lo": 0,
+                "hi": 100,
+                "note": "扫描同一直线上的非负力大小，合力计算保持有限。"
+              },
+              {
+                "type": "consistency",
+                "scenario": "桌面静止木块",
+                "with": "fmotion-01|反向共线两力的合力",
+                "with_expr": "F_net",
+                "target": "沿选定方向的合力",
+                "note": "直接求本公式输出，与情境中另列的F_net设计基准核对；数据是设计示例，不是实测。用于核对定义、反算或边界值，不宣称不同物理原理互证。",
+                "verification_kind": "独立设计情境数据核对"
+              },
+              {
+                "type": "consistency",
+                "scenario": "非平衡核对",
+                "with": "fmotion-01|反向共线两力的合力",
+                "with_expr": "F_net",
+                "target": "沿选定方向的合力",
+                "note": "共线反向的7 N与5 N设计力给出2 N合力，与另列合力基准核对；这不是平衡条件，也不冒称独立物理原理互证。",
+                "verification_kind": "独立设计情境数据核对"
+              }
+            ]
+          },
+          {
+            "name": "二力平衡条件",
+            "expr": "F1 = F2",
+            "when": "两个力作用在同一物体、同一直线上且方向相反。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "桌面静止木块",
+                "expr": "F1-F2",
+                "ref": 0,
+                "note": "平衡时两个反向力的代数和为零。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "匀速拉动木块",
+                "expr": "F1-F2",
+                "ref": 0,
+                "note": "匀速状态下水平方向合力为零。"
+              },
+              {
+                "type": "scan",
+                "scenario": "桌面静止木块",
+                "var": "F2",
+                "lo": 0,
+                "hi": 100,
+                "note": "若 F1 与 F2 同步等大变化，平衡条件仍成立。"
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "先画出物体所受力，确认两个力作用在同一物体上。",
+          "检查两力是否在同一直线、方向相反且大小相等。",
+          "沿选定方向计算代数和，等大反向时合力为零。",
+          "依据合力为零，物体保持静止或匀速直线运动状态。"
+        ],
+        "errors": [
+          {
+            "wrong": "两个反向力大小相等时，把合力写成两力相加。",
+            "wrong_expr": "F_net = F1+F2",
+            "why": "方向相反的共线力应按选定正方向做代数相减；5 N 与 5 N 反向合力为零。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "桌面静止木块",
+              "expr": "F1+F2",
+              "ref": 0
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "认为合力为零就说明物体一定静止。",
+            "why": "合力为零时物体保持原来的运动状态；原来运动的物体可继续做匀速直线运动。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "木块原来在水平面上向右运动，水平方向只有8 N向右拉力和8 N向左摩擦力，判断水平合力及此后运动状态。",
+          "solution": [
+            "取向右为正方向，合力为 8-8=0 N。",
+            "合力为零可保持已有运动状态；若木块原来匀速，则继续匀速直线运动。"
+          ],
+          "answer": "水平合力0 N，木块保持原速度向右作匀速直线运动。"
+        },
+        "prereq": [
+          "force-02"
+        ],
+        "next": [
+          "fmotion-02"
+        ],
+        "tags": [
+          "二力平衡",
+          "合力",
+          "平衡条件",
+          "受力分析"
+        ],
+        "core": [
+          {
+            "title": "二力平衡",
+            "text": "四个条件是同一物体、同一直线、大小相等、方向相反，缺一不可。静止或匀速直线运动是平衡状态；转弯即使速率不变也不属于匀速直线运动。书静止在桌上时支持力与重力平衡，书对桌的压力不在书的受力图中。"
+          },
+          {
+            "title": "本章素养回顾（原创任务）",
+            "text": "选择本章一个现象，写出结论、成立条件和证据；用另一条本章规律复核解释是否矛盾。指出一次测量或模型的局限，并说明还需什么证据；数值通过不替代概念辨析。"
+          }
+        ],
+        "learning_scope": "初中"
+      },
+      "error_index": 0,
+      "chapter": "力与运动"
+    },
+    "diagnostic-fmotion-01-2": {
+      "point": {
+        "id": "fmotion-01",
+        "title": "二力平衡",
+        "level": "基础",
+        "definition": "物体在两个力作用下保持静止或匀速直线运动时，这两个力互相平衡。二力平衡要求大小相等、方向相反、作用在同一条直线上，并作用于同一物体。",
+        "meaning": "判断二力是否平衡，不能只看大小相等，还要检查方向、作用线和研究对象。沿同一直线取一个正方向后，反向两力的合力可用带方向的代数和表示；平衡时合力为零。作用力和反作用力虽然大小相等方向相反，但作用于不同物体，不能当作同一物体上的平衡力。",
+        "symbols": {
+          "F1": {
+            "desc": "沿选定方向的第一个力的大小",
+            "unit": "N"
+          },
+          "F2": {
+            "desc": "与第一个力反向的第二个力的大小",
+            "unit": "N"
+          },
+          "F_net": {
+            "desc": "沿选定方向的合力",
+            "unit": "N"
+          }
+        },
+        "scenarios": {
+          "桌面静止木块": {
+            "F1": 5,
+            "F2": 5,
+            "F_net": 0
+          },
+          "匀速拉动木块": {
+            "F1": 12,
+            "F2": 12,
+            "F_net": 0
+          },
+          "非平衡核对": {
+            "F1": 7,
+            "F2": 5,
+            "F_net": 2
+          }
+        },
+        "formulas": [
+          {
+            "name": "反向共线两力的合力",
+            "expr": "F_net = F1-F2",
+            "when": "F1、F2 沿同一直线且方向相反；正方向取为 F1 方向。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "桌面静止木块",
+                "expr": "F1-F2",
+                "ref": 0,
+                "note": "5 N 与 5 N 反向，合力为 0 N。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "匀速拉动木块",
+                "expr": "F1-F2",
+                "ref": 0,
+                "note": "拉力与摩擦力等大反向，木块可保持匀速直线运动。"
+              },
+              {
+                "type": "direction",
+                "scenario": "桌面静止木块",
+                "var": "F1",
+                "lo": 0,
+                "hi": 20,
+                "expr": "F1-F2",
+                "expect": "up",
+                "note": "第二个力固定时，沿正方向的力增加，合力代数值增加。"
+              },
+              {
+                "type": "scan",
+                "scenario": "桌面静止木块",
+                "var": "F1",
+                "lo": 0,
+                "hi": 100,
+                "note": "扫描同一直线上的非负力大小，合力计算保持有限。"
+              },
+              {
+                "type": "consistency",
+                "scenario": "桌面静止木块",
+                "with": "fmotion-01|反向共线两力的合力",
+                "with_expr": "F_net",
+                "target": "沿选定方向的合力",
+                "note": "直接求本公式输出，与情境中另列的F_net设计基准核对；数据是设计示例，不是实测。用于核对定义、反算或边界值，不宣称不同物理原理互证。",
+                "verification_kind": "独立设计情境数据核对"
+              },
+              {
+                "type": "consistency",
+                "scenario": "非平衡核对",
+                "with": "fmotion-01|反向共线两力的合力",
+                "with_expr": "F_net",
+                "target": "沿选定方向的合力",
+                "note": "共线反向的7 N与5 N设计力给出2 N合力，与另列合力基准核对；这不是平衡条件，也不冒称独立物理原理互证。",
+                "verification_kind": "独立设计情境数据核对"
+              }
+            ]
+          },
+          {
+            "name": "二力平衡条件",
+            "expr": "F1 = F2",
+            "when": "两个力作用在同一物体、同一直线上且方向相反。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "桌面静止木块",
+                "expr": "F1-F2",
+                "ref": 0,
+                "note": "平衡时两个反向力的代数和为零。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "匀速拉动木块",
+                "expr": "F1-F2",
+                "ref": 0,
+                "note": "匀速状态下水平方向合力为零。"
+              },
+              {
+                "type": "scan",
+                "scenario": "桌面静止木块",
+                "var": "F2",
+                "lo": 0,
+                "hi": 100,
+                "note": "若 F1 与 F2 同步等大变化，平衡条件仍成立。"
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "先画出物体所受力，确认两个力作用在同一物体上。",
+          "检查两力是否在同一直线、方向相反且大小相等。",
+          "沿选定方向计算代数和，等大反向时合力为零。",
+          "依据合力为零，物体保持静止或匀速直线运动状态。"
+        ],
+        "errors": [
+          {
+            "wrong": "两个反向力大小相等时，把合力写成两力相加。",
+            "wrong_expr": "F_net = F1+F2",
+            "why": "方向相反的共线力应按选定正方向做代数相减；5 N 与 5 N 反向合力为零。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "桌面静止木块",
+              "expr": "F1+F2",
+              "ref": 0
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "认为合力为零就说明物体一定静止。",
+            "why": "合力为零时物体保持原来的运动状态；原来运动的物体可继续做匀速直线运动。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "木块原来在水平面上向右运动，水平方向只有8 N向右拉力和8 N向左摩擦力，判断水平合力及此后运动状态。",
+          "solution": [
+            "取向右为正方向，合力为 8-8=0 N。",
+            "合力为零可保持已有运动状态；若木块原来匀速，则继续匀速直线运动。"
+          ],
+          "answer": "水平合力0 N，木块保持原速度向右作匀速直线运动。"
+        },
+        "prereq": [
+          "force-02"
+        ],
+        "next": [
+          "fmotion-02"
+        ],
+        "tags": [
+          "二力平衡",
+          "合力",
+          "平衡条件",
+          "受力分析"
+        ],
+        "core": [
+          {
+            "title": "二力平衡",
+            "text": "四个条件是同一物体、同一直线、大小相等、方向相反，缺一不可。静止或匀速直线运动是平衡状态；转弯即使速率不变也不属于匀速直线运动。书静止在桌上时支持力与重力平衡，书对桌的压力不在书的受力图中。"
+          },
+          {
+            "title": "本章素养回顾（原创任务）",
+            "text": "选择本章一个现象，写出结论、成立条件和证据；用另一条本章规律复核解释是否矛盾。指出一次测量或模型的局限，并说明还需什么证据；数值通过不替代概念辨析。"
+          }
+        ],
+        "learning_scope": "初中"
+      },
+      "error_index": 1,
+      "chapter": "力与运动"
+    },
+    "diagnostic-fmotion-02-1": {
+      "point": {
+        "id": "fmotion-02",
+        "title": "牛顿第一定律",
+        "level": "基础",
+        "definition": "一切物体在没有受到外力作用时，总保持静止状态或匀速直线运动状态。现实中难以完全消除外力，实验通过减小阻力观察物体运动状态变化，从而理解惯性和力的作用。",
+        "meaning": "惯性是物体保持原来运动状态的性质，质量越大通常越难改变运动状态。力不是维持运动的原因，而是改变运动状态的原因；当合力为零，物体可以静止，也可以保持原有速度做匀速直线运动。解释现象时要区分“有速度”和“有合力”。",
+        "symbols": {
+          "s": {
+            "desc": "匀速直线运动通过的路程",
+            "unit": "m"
+          },
+          "t": {
+            "desc": "通过路程所用的时间",
+            "unit": "s"
+          },
+          "v": {
+            "desc": "匀速直线运动速度",
+            "unit": "m/s"
+          },
+          "v1": {
+            "desc": "运动开始时速度",
+            "unit": "m/s"
+          },
+          "v2": {
+            "desc": "一段时间后速度",
+            "unit": "m/s"
+          }
+        },
+        "scenarios": {
+          "匀速小车": {
+            "s": 50,
+            "t": 5,
+            "v": 10,
+            "v1": 10,
+            "v2": 10
+          },
+          "匀速传送带": {
+            "s": 24,
+            "t": 3,
+            "v": 8,
+            "v1": 8,
+            "v2": 8
+          }
+        },
+        "formulas": [
+          {
+            "name": "匀速直线运动的速度",
+            "expr": "v = s/t",
+            "when": "物体沿直线运动且速度大小不变，路程与计时区间匹配。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "匀速小车",
+                "expr": "s/t",
+                "ref": 10,
+                "note": "50 m÷5 s=10 m/s。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "匀速传送带",
+                "expr": "s/t",
+                "ref": 8,
+                "note": "24 m÷3 s=8 m/s。"
+              },
+              {
+                "type": "direction",
+                "scenario": "匀速小车",
+                "var": "s",
+                "lo": 10,
+                "hi": 100,
+                "expr": "s/t",
+                "expect": "up",
+                "note": "计时固定时，通过路程增大，计算的匀速速度增大。"
+              },
+              {
+                "type": "scan",
+                "scenario": "匀速小车",
+                "var": "t",
+                "lo": 0.1,
+                "hi": 20,
+                "note": "扫描正计时范围，速度计算稳定。"
+              },
+              {
+                "type": "consistency",
+                "scenario": "匀速小车",
+                "with": "fmotion-02|匀速直线运动的速度",
+                "with_expr": "v2",
+                "target": "匀速直线运动速度",
+                "note": "直接求本公式输出，与情境中另列的v2设计基准核对；数据是设计示例，不是实测。用于核对定义、反算或边界值，不宣称不同物理原理互证。",
+                "verification_kind": "独立设计情境数据核对"
+              }
+            ]
+          },
+          {
+            "name": "合力为零时速度保持不变",
+            "expr": "v2 = v1",
+            "when": "沿直线运动且合力为零；此式描述速度大小不变，方向也保持不变。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "匀速小车",
+                "expr": "v1",
+                "ref": 10,
+                "note": "匀速小车前后速度大小相同。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "匀速传送带",
+                "expr": "v1",
+                "ref": 8,
+                "note": "另一匀速运动情境中速度保持不变。"
+              },
+              {
+                "type": "scan",
+                "scenario": "匀速小车",
+                "var": "v1",
+                "lo": 0,
+                "hi": 50,
+                "note": "扫描非负初速度，合力为零时保持该速度。"
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "惯性使物体具有保持原有运动状态的倾向，不是额外施加在物体上的力。",
+          "合力为零时，物体的运动状态不发生改变。",
+          "若物体已沿直线匀速运动，则一段时间前后的速度相同。"
+        ],
+        "errors": [
+          {
+            "wrong": "把惯性说成物体继续运动的一个力。",
+            "why": "惯性是物体本身的性质，不是力；分析速度改变仍要检查物体受到的合力。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "速度已用 m/s 代入路程关系时，又额外乘 3.6，误把 km/h 换算重复做了一次。",
+            "wrong_expr": "s = 3.6*v*t",
+            "why": "匀速小车速度 10 m/s、时间 5 s，路程应为 50 m；再乘 3.6 会错算为 180 m。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "匀速小车",
+              "expr": "3.6*v*t",
+              "ref": 50
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "认为只有运动物体才有惯性，静止物体没有惯性。",
+            "why": "惯性是所有物体的固有属性，静止物体也保持静止状态，质量越大惯性越大。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "传送带使物体沿直线以 8 m/s 匀速运动 3 s，求路程，并说明合力为零时速度如何变化。",
+          "solution": [
+            "路程 s=vt=8×3=24 m。",
+            "若合力为零，物体保持原来的匀速直线运动状态。"
+          ],
+          "answer": "路程为 24 m；合力为零时速度保持不变。"
+        },
+        "prereq": [
+          "fmotion-01"
+        ],
+        "next": [
+          "fmotion-03"
+        ],
+        "tags": [
+          "牛顿第一定律",
+          "惯性",
+          "运动状态",
+          "合力为零"
+        ],
+        "core": [
+          {
+            "title": "牛顿第一定律与惯性",
+            "text": "让同一小车从同一斜面高度静止释放，分别在毛巾、棉布和木板上运动；阻力越小，速度改变越慢，运动越远。完全无阻力不能在课堂真正实现，定律是实验基础上的科学推理。所有物体都有惯性，惯性大小由质量决定，与是否运动无关，不称“惯性力”。急刹车时人因惯性保持原运动状态，安全带提供使其运动状态改变的力。"
+          },
+          {
+            "title": "跨学科实践（原创任务）",
+            "text": "解释乘车制动时安全带的作用：画制动前后人的运动趋势与安全带作用方向，结合惯性和交通规则提出乘坐建议。只做小车与模型物的低能量演示，不让学生用急刹车或人体碰撞来验证。"
+          }
+        ],
+        "learning_scope": "初中"
+      },
+      "error_index": 0,
+      "chapter": "力与运动"
+    },
+    "diagnostic-fmotion-02-2": {
+      "point": {
+        "id": "fmotion-02",
+        "title": "牛顿第一定律",
+        "level": "基础",
+        "definition": "一切物体在没有受到外力作用时，总保持静止状态或匀速直线运动状态。现实中难以完全消除外力，实验通过减小阻力观察物体运动状态变化，从而理解惯性和力的作用。",
+        "meaning": "惯性是物体保持原来运动状态的性质，质量越大通常越难改变运动状态。力不是维持运动的原因，而是改变运动状态的原因；当合力为零，物体可以静止，也可以保持原有速度做匀速直线运动。解释现象时要区分“有速度”和“有合力”。",
+        "symbols": {
+          "s": {
+            "desc": "匀速直线运动通过的路程",
+            "unit": "m"
+          },
+          "t": {
+            "desc": "通过路程所用的时间",
+            "unit": "s"
+          },
+          "v": {
+            "desc": "匀速直线运动速度",
+            "unit": "m/s"
+          },
+          "v1": {
+            "desc": "运动开始时速度",
+            "unit": "m/s"
+          },
+          "v2": {
+            "desc": "一段时间后速度",
+            "unit": "m/s"
+          }
+        },
+        "scenarios": {
+          "匀速小车": {
+            "s": 50,
+            "t": 5,
+            "v": 10,
+            "v1": 10,
+            "v2": 10
+          },
+          "匀速传送带": {
+            "s": 24,
+            "t": 3,
+            "v": 8,
+            "v1": 8,
+            "v2": 8
+          }
+        },
+        "formulas": [
+          {
+            "name": "匀速直线运动的速度",
+            "expr": "v = s/t",
+            "when": "物体沿直线运动且速度大小不变，路程与计时区间匹配。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "匀速小车",
+                "expr": "s/t",
+                "ref": 10,
+                "note": "50 m÷5 s=10 m/s。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "匀速传送带",
+                "expr": "s/t",
+                "ref": 8,
+                "note": "24 m÷3 s=8 m/s。"
+              },
+              {
+                "type": "direction",
+                "scenario": "匀速小车",
+                "var": "s",
+                "lo": 10,
+                "hi": 100,
+                "expr": "s/t",
+                "expect": "up",
+                "note": "计时固定时，通过路程增大，计算的匀速速度增大。"
+              },
+              {
+                "type": "scan",
+                "scenario": "匀速小车",
+                "var": "t",
+                "lo": 0.1,
+                "hi": 20,
+                "note": "扫描正计时范围，速度计算稳定。"
+              },
+              {
+                "type": "consistency",
+                "scenario": "匀速小车",
+                "with": "fmotion-02|匀速直线运动的速度",
+                "with_expr": "v2",
+                "target": "匀速直线运动速度",
+                "note": "直接求本公式输出，与情境中另列的v2设计基准核对；数据是设计示例，不是实测。用于核对定义、反算或边界值，不宣称不同物理原理互证。",
+                "verification_kind": "独立设计情境数据核对"
+              }
+            ]
+          },
+          {
+            "name": "合力为零时速度保持不变",
+            "expr": "v2 = v1",
+            "when": "沿直线运动且合力为零；此式描述速度大小不变，方向也保持不变。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "匀速小车",
+                "expr": "v1",
+                "ref": 10,
+                "note": "匀速小车前后速度大小相同。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "匀速传送带",
+                "expr": "v1",
+                "ref": 8,
+                "note": "另一匀速运动情境中速度保持不变。"
+              },
+              {
+                "type": "scan",
+                "scenario": "匀速小车",
+                "var": "v1",
+                "lo": 0,
+                "hi": 50,
+                "note": "扫描非负初速度，合力为零时保持该速度。"
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "惯性使物体具有保持原有运动状态的倾向，不是额外施加在物体上的力。",
+          "合力为零时，物体的运动状态不发生改变。",
+          "若物体已沿直线匀速运动，则一段时间前后的速度相同。"
+        ],
+        "errors": [
+          {
+            "wrong": "把惯性说成物体继续运动的一个力。",
+            "why": "惯性是物体本身的性质，不是力；分析速度改变仍要检查物体受到的合力。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "速度已用 m/s 代入路程关系时，又额外乘 3.6，误把 km/h 换算重复做了一次。",
+            "wrong_expr": "s = 3.6*v*t",
+            "why": "匀速小车速度 10 m/s、时间 5 s，路程应为 50 m；再乘 3.6 会错算为 180 m。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "匀速小车",
+              "expr": "3.6*v*t",
+              "ref": 50
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "认为只有运动物体才有惯性，静止物体没有惯性。",
+            "why": "惯性是所有物体的固有属性，静止物体也保持静止状态，质量越大惯性越大。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "传送带使物体沿直线以 8 m/s 匀速运动 3 s，求路程，并说明合力为零时速度如何变化。",
+          "solution": [
+            "路程 s=vt=8×3=24 m。",
+            "若合力为零，物体保持原来的匀速直线运动状态。"
+          ],
+          "answer": "路程为 24 m；合力为零时速度保持不变。"
+        },
+        "prereq": [
+          "fmotion-01"
+        ],
+        "next": [
+          "fmotion-03"
+        ],
+        "tags": [
+          "牛顿第一定律",
+          "惯性",
+          "运动状态",
+          "合力为零"
+        ],
+        "core": [
+          {
+            "title": "牛顿第一定律与惯性",
+            "text": "让同一小车从同一斜面高度静止释放，分别在毛巾、棉布和木板上运动；阻力越小，速度改变越慢，运动越远。完全无阻力不能在课堂真正实现，定律是实验基础上的科学推理。所有物体都有惯性，惯性大小由质量决定，与是否运动无关，不称“惯性力”。急刹车时人因惯性保持原运动状态，安全带提供使其运动状态改变的力。"
+          },
+          {
+            "title": "跨学科实践（原创任务）",
+            "text": "解释乘车制动时安全带的作用：画制动前后人的运动趋势与安全带作用方向，结合惯性和交通规则提出乘坐建议。只做小车与模型物的低能量演示，不让学生用急刹车或人体碰撞来验证。"
+          }
+        ],
+        "learning_scope": "初中"
+      },
+      "error_index": 1,
+      "chapter": "力与运动"
+    },
+    "diagnostic-fmotion-02-3": {
+      "point": {
+        "id": "fmotion-02",
+        "title": "牛顿第一定律",
+        "level": "基础",
+        "definition": "一切物体在没有受到外力作用时，总保持静止状态或匀速直线运动状态。现实中难以完全消除外力，实验通过减小阻力观察物体运动状态变化，从而理解惯性和力的作用。",
+        "meaning": "惯性是物体保持原来运动状态的性质，质量越大通常越难改变运动状态。力不是维持运动的原因，而是改变运动状态的原因；当合力为零，物体可以静止，也可以保持原有速度做匀速直线运动。解释现象时要区分“有速度”和“有合力”。",
+        "symbols": {
+          "s": {
+            "desc": "匀速直线运动通过的路程",
+            "unit": "m"
+          },
+          "t": {
+            "desc": "通过路程所用的时间",
+            "unit": "s"
+          },
+          "v": {
+            "desc": "匀速直线运动速度",
+            "unit": "m/s"
+          },
+          "v1": {
+            "desc": "运动开始时速度",
+            "unit": "m/s"
+          },
+          "v2": {
+            "desc": "一段时间后速度",
+            "unit": "m/s"
+          }
+        },
+        "scenarios": {
+          "匀速小车": {
+            "s": 50,
+            "t": 5,
+            "v": 10,
+            "v1": 10,
+            "v2": 10
+          },
+          "匀速传送带": {
+            "s": 24,
+            "t": 3,
+            "v": 8,
+            "v1": 8,
+            "v2": 8
+          }
+        },
+        "formulas": [
+          {
+            "name": "匀速直线运动的速度",
+            "expr": "v = s/t",
+            "when": "物体沿直线运动且速度大小不变，路程与计时区间匹配。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "匀速小车",
+                "expr": "s/t",
+                "ref": 10,
+                "note": "50 m÷5 s=10 m/s。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "匀速传送带",
+                "expr": "s/t",
+                "ref": 8,
+                "note": "24 m÷3 s=8 m/s。"
+              },
+              {
+                "type": "direction",
+                "scenario": "匀速小车",
+                "var": "s",
+                "lo": 10,
+                "hi": 100,
+                "expr": "s/t",
+                "expect": "up",
+                "note": "计时固定时，通过路程增大，计算的匀速速度增大。"
+              },
+              {
+                "type": "scan",
+                "scenario": "匀速小车",
+                "var": "t",
+                "lo": 0.1,
+                "hi": 20,
+                "note": "扫描正计时范围，速度计算稳定。"
+              },
+              {
+                "type": "consistency",
+                "scenario": "匀速小车",
+                "with": "fmotion-02|匀速直线运动的速度",
+                "with_expr": "v2",
+                "target": "匀速直线运动速度",
+                "note": "直接求本公式输出，与情境中另列的v2设计基准核对；数据是设计示例，不是实测。用于核对定义、反算或边界值，不宣称不同物理原理互证。",
+                "verification_kind": "独立设计情境数据核对"
+              }
+            ]
+          },
+          {
+            "name": "合力为零时速度保持不变",
+            "expr": "v2 = v1",
+            "when": "沿直线运动且合力为零；此式描述速度大小不变，方向也保持不变。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "匀速小车",
+                "expr": "v1",
+                "ref": 10,
+                "note": "匀速小车前后速度大小相同。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "匀速传送带",
+                "expr": "v1",
+                "ref": 8,
+                "note": "另一匀速运动情境中速度保持不变。"
+              },
+              {
+                "type": "scan",
+                "scenario": "匀速小车",
+                "var": "v1",
+                "lo": 0,
+                "hi": 50,
+                "note": "扫描非负初速度，合力为零时保持该速度。"
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "惯性使物体具有保持原有运动状态的倾向，不是额外施加在物体上的力。",
+          "合力为零时，物体的运动状态不发生改变。",
+          "若物体已沿直线匀速运动，则一段时间前后的速度相同。"
+        ],
+        "errors": [
+          {
+            "wrong": "把惯性说成物体继续运动的一个力。",
+            "why": "惯性是物体本身的性质，不是力；分析速度改变仍要检查物体受到的合力。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "速度已用 m/s 代入路程关系时，又额外乘 3.6，误把 km/h 换算重复做了一次。",
+            "wrong_expr": "s = 3.6*v*t",
+            "why": "匀速小车速度 10 m/s、时间 5 s，路程应为 50 m；再乘 3.6 会错算为 180 m。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "匀速小车",
+              "expr": "3.6*v*t",
+              "ref": 50
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "认为只有运动物体才有惯性，静止物体没有惯性。",
+            "why": "惯性是所有物体的固有属性，静止物体也保持静止状态，质量越大惯性越大。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "传送带使物体沿直线以 8 m/s 匀速运动 3 s，求路程，并说明合力为零时速度如何变化。",
+          "solution": [
+            "路程 s=vt=8×3=24 m。",
+            "若合力为零，物体保持原来的匀速直线运动状态。"
+          ],
+          "answer": "路程为 24 m；合力为零时速度保持不变。"
+        },
+        "prereq": [
+          "fmotion-01"
+        ],
+        "next": [
+          "fmotion-03"
+        ],
+        "tags": [
+          "牛顿第一定律",
+          "惯性",
+          "运动状态",
+          "合力为零"
+        ],
+        "core": [
+          {
+            "title": "牛顿第一定律与惯性",
+            "text": "让同一小车从同一斜面高度静止释放，分别在毛巾、棉布和木板上运动；阻力越小，速度改变越慢，运动越远。完全无阻力不能在课堂真正实现，定律是实验基础上的科学推理。所有物体都有惯性，惯性大小由质量决定，与是否运动无关，不称“惯性力”。急刹车时人因惯性保持原运动状态，安全带提供使其运动状态改变的力。"
+          },
+          {
+            "title": "跨学科实践（原创任务）",
+            "text": "解释乘车制动时安全带的作用：画制动前后人的运动趋势与安全带作用方向，结合惯性和交通规则提出乘坐建议。只做小车与模型物的低能量演示，不让学生用急刹车或人体碰撞来验证。"
+          }
+        ],
+        "learning_scope": "初中"
+      },
+      "error_index": 2,
+      "chapter": "力与运动"
+    },
+    "diagnostic-fmotion-03-1": {
+      "point": {
+        "id": "fmotion-03",
+        "title": "力与运动的关系",
+        "level": "拓展",
+        "definition": "合力会改变物体的运动状态。对质量不变、合力恒定的物体，合力大小与加速度大小满足 F_net=m*a；合力方向与加速度方向一致。该定量关系作为牛顿第二定律的拓展预览，不是初中本章的必背公式。",
+        "meaning": "观察相同质量的小车受到不同合力时的运动变化，可发现合力越大，加速度越大；合力相同时，质量更大，加速度更小。这里用 F_net=m*a 把趋势定量表达，要求质量不变、合力恒定且单位统一为 kg、N、m/s²。初中课程首先要求理解力能改变运动状态。",
+        "symbols": {
+          "F_net": {
+            "desc": "物体所受合力大小",
+            "unit": "N"
+          },
+          "m": {
+            "desc": "物体质量",
+            "unit": "kg"
+          },
+          "a": {
+            "desc": "物体加速度大小",
+            "unit": "m/s^2"
+          },
+          "dv": {
+            "desc": "一段时间内速度变化量",
+            "unit": "m/s"
+          },
+          "t": {
+            "desc": "速度变化所用时间",
+            "unit": "s"
+          }
+        },
+        "scenarios": {
+          "二千克小车": {
+            "F_net": 4,
+            "m": 2,
+            "a": 2,
+            "dv": 4,
+            "t": 2
+          },
+          "五千克小车": {
+            "F_net": 10,
+            "m": 5,
+            "a": 2,
+            "dv": 3,
+            "t": 1.5
+          }
+        },
+        "formulas": [
+          {
+            "name": "恒定合力与加速度关系",
+            "expr": "F_net = m*a",
+            "when": "拓展计算，非本卡初中必背主线。质量不变且合力恒定时；单位分别为 kg、m/s^2、N。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "二千克小车",
+                "expr": "m*a",
+                "ref": 4,
+                "note": "2 kg 小车加速度为 2 m/s²，合力大小为 4 N。 "
+              },
+              {
+                "type": "numeric",
+                "scenario": "五千克小车",
+                "expr": "m*a",
+                "ref": 10,
+                "note": "5 kg 小车加速度为 2 m/s²，合力大小为 10 N。 "
+              },
+              {
+                "type": "direction",
+                "scenario": "二千克小车",
+                "var": "a",
+                "lo": 0.1,
+                "hi": 10,
+                "expr": "m*a",
+                "expect": "up",
+                "note": "质量固定时，加速度增大对应合力增大。 "
+              },
+              {
+                "type": "scan",
+                "scenario": "二千克小车",
+                "var": "a",
+                "lo": 0,
+                "hi": 20,
+                "note": "扫描非负加速度，合力计算保持有限。 "
+              },
+              {
+                "type": "consistency",
+                "scenario": "二千克小车",
+                "with": "fmotion-03|恒定合力与加速度关系",
+                "with_expr": "m*dv/t",
+                "target": "物体所受合力大小",
+                "note": "本公式直接求F_net；参考端显式关系为m*dv/t。两端使用同一情境和阶段，只核对该关系；with字段仅定位来源，不代表调用另一条被覆盖的公式。",
+                "verification_kind": "独立关系核对"
+              }
+            ]
+          },
+          {
+            "name": "速度变化率表示加速度",
+            "expr": "a = dv/t",
+            "when": "拓展计算，非本卡初中必背主线。加速度取速度变化量除以同一时间间隔，t 大于零。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "二千克小车",
+                "expr": "dv/t",
+                "ref": 2,
+                "note": "2 m/s 速度变化发生在 1 s? 本情境用 4 m/s 和 2 s，a=2 m/s²。 "
+              },
+              {
+                "type": "numeric",
+                "scenario": "五千克小车",
+                "expr": "dv/t",
+                "ref": 2,
+                "note": "3 m/s ÷ 1.5 s=2 m/s²。 "
+              },
+              {
+                "type": "direction",
+                "scenario": "二千克小车",
+                "var": "dv",
+                "lo": 0.1,
+                "hi": 20,
+                "expr": "dv/t",
+                "expect": "up",
+                "note": "时间固定时，速度变化量越大，加速度越大。 "
+              },
+              {
+                "type": "scan",
+                "scenario": "二千克小车",
+                "var": "t",
+                "lo": 0.1,
+                "hi": 10,
+                "note": "扫描正时间间隔，加速度计算不发散。 "
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "确定研究对象，先合成同一直线上的各个力，得到合力 F_net。",
+          "在质量不变且合力恒定时，合力与加速度大小满足 F_net=m*a。",
+          "也可从速度变化量和时间求加速度，再与合力除以质量的结果比较。"
+        ],
+        "errors": [
+          {
+            "wrong": "把合力误写成质量与加速度乘积的一半。",
+            "wrong_expr": "F_net = m*a/2",
+            "why": "牛顿第二定律的拓展模型为 F_net=m*a；2 kg 小车加速度 2 m/s² 时合力应为 4 N。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "二千克小车",
+              "expr": "m*a/2",
+              "ref": 4
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "认为物体只要在运动，就一定受到沿运动方向的合力。",
+            "why": "物体可以在合力为零时保持匀速直线运动；合力决定运动状态如何改变，不是维持运动的必要条件。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "质量 2 kg 的小车受到大小为 4 N 的恒定合力，估算其加速度。",
+          "solution": [
+            "使用拓展关系 a=F_net/m。",
+            "代入 4÷2=2 m/s²，并确认合力方向与加速度方向一致。"
+          ],
+          "answer": "加速度大小约为 2 m/s²。"
+        },
+        "prereq": [
+          "fmotion-02"
+        ],
+        "next": [],
+        "tags": [
+          "力与运动",
+          "合力",
+          "加速度",
+          "牛顿第二定律",
+          "拓展"
+        ],
+        "core": [
+          {
+            "title": "力与运动的关系",
+            "text": "合力为零时运动状态不变，可能静止也可能匀速直线运动；合力不为零时速度大小或方向会改变。力方向与速度方向不同并不矛盾，物体可以一边前进一边减速。下列加速度定量公式为高中拓展，不用它代替初中“是否平衡、如何改变状态”的解释。"
+          }
+        ],
+        "learning_scope": "初中主线；公式含拓展"
+      },
+      "error_index": 0,
+      "chapter": "力与运动"
+    },
+    "diagnostic-fmotion-03-2": {
+      "point": {
+        "id": "fmotion-03",
+        "title": "力与运动的关系",
+        "level": "拓展",
+        "definition": "合力会改变物体的运动状态。对质量不变、合力恒定的物体，合力大小与加速度大小满足 F_net=m*a；合力方向与加速度方向一致。该定量关系作为牛顿第二定律的拓展预览，不是初中本章的必背公式。",
+        "meaning": "观察相同质量的小车受到不同合力时的运动变化，可发现合力越大，加速度越大；合力相同时，质量更大，加速度更小。这里用 F_net=m*a 把趋势定量表达，要求质量不变、合力恒定且单位统一为 kg、N、m/s²。初中课程首先要求理解力能改变运动状态。",
+        "symbols": {
+          "F_net": {
+            "desc": "物体所受合力大小",
+            "unit": "N"
+          },
+          "m": {
+            "desc": "物体质量",
+            "unit": "kg"
+          },
+          "a": {
+            "desc": "物体加速度大小",
+            "unit": "m/s^2"
+          },
+          "dv": {
+            "desc": "一段时间内速度变化量",
+            "unit": "m/s"
+          },
+          "t": {
+            "desc": "速度变化所用时间",
+            "unit": "s"
+          }
+        },
+        "scenarios": {
+          "二千克小车": {
+            "F_net": 4,
+            "m": 2,
+            "a": 2,
+            "dv": 4,
+            "t": 2
+          },
+          "五千克小车": {
+            "F_net": 10,
+            "m": 5,
+            "a": 2,
+            "dv": 3,
+            "t": 1.5
+          }
+        },
+        "formulas": [
+          {
+            "name": "恒定合力与加速度关系",
+            "expr": "F_net = m*a",
+            "when": "拓展计算，非本卡初中必背主线。质量不变且合力恒定时；单位分别为 kg、m/s^2、N。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "二千克小车",
+                "expr": "m*a",
+                "ref": 4,
+                "note": "2 kg 小车加速度为 2 m/s²，合力大小为 4 N。 "
+              },
+              {
+                "type": "numeric",
+                "scenario": "五千克小车",
+                "expr": "m*a",
+                "ref": 10,
+                "note": "5 kg 小车加速度为 2 m/s²，合力大小为 10 N。 "
+              },
+              {
+                "type": "direction",
+                "scenario": "二千克小车",
+                "var": "a",
+                "lo": 0.1,
+                "hi": 10,
+                "expr": "m*a",
+                "expect": "up",
+                "note": "质量固定时，加速度增大对应合力增大。 "
+              },
+              {
+                "type": "scan",
+                "scenario": "二千克小车",
+                "var": "a",
+                "lo": 0,
+                "hi": 20,
+                "note": "扫描非负加速度，合力计算保持有限。 "
+              },
+              {
+                "type": "consistency",
+                "scenario": "二千克小车",
+                "with": "fmotion-03|恒定合力与加速度关系",
+                "with_expr": "m*dv/t",
+                "target": "物体所受合力大小",
+                "note": "本公式直接求F_net；参考端显式关系为m*dv/t。两端使用同一情境和阶段，只核对该关系；with字段仅定位来源，不代表调用另一条被覆盖的公式。",
+                "verification_kind": "独立关系核对"
+              }
+            ]
+          },
+          {
+            "name": "速度变化率表示加速度",
+            "expr": "a = dv/t",
+            "when": "拓展计算，非本卡初中必背主线。加速度取速度变化量除以同一时间间隔，t 大于零。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "二千克小车",
+                "expr": "dv/t",
+                "ref": 2,
+                "note": "2 m/s 速度变化发生在 1 s? 本情境用 4 m/s 和 2 s，a=2 m/s²。 "
+              },
+              {
+                "type": "numeric",
+                "scenario": "五千克小车",
+                "expr": "dv/t",
+                "ref": 2,
+                "note": "3 m/s ÷ 1.5 s=2 m/s²。 "
+              },
+              {
+                "type": "direction",
+                "scenario": "二千克小车",
+                "var": "dv",
+                "lo": 0.1,
+                "hi": 20,
+                "expr": "dv/t",
+                "expect": "up",
+                "note": "时间固定时，速度变化量越大，加速度越大。 "
+              },
+              {
+                "type": "scan",
+                "scenario": "二千克小车",
+                "var": "t",
+                "lo": 0.1,
+                "hi": 10,
+                "note": "扫描正时间间隔，加速度计算不发散。 "
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "确定研究对象，先合成同一直线上的各个力，得到合力 F_net。",
+          "在质量不变且合力恒定时，合力与加速度大小满足 F_net=m*a。",
+          "也可从速度变化量和时间求加速度，再与合力除以质量的结果比较。"
+        ],
+        "errors": [
+          {
+            "wrong": "把合力误写成质量与加速度乘积的一半。",
+            "wrong_expr": "F_net = m*a/2",
+            "why": "牛顿第二定律的拓展模型为 F_net=m*a；2 kg 小车加速度 2 m/s² 时合力应为 4 N。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "二千克小车",
+              "expr": "m*a/2",
+              "ref": 4
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "认为物体只要在运动，就一定受到沿运动方向的合力。",
+            "why": "物体可以在合力为零时保持匀速直线运动；合力决定运动状态如何改变，不是维持运动的必要条件。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "质量 2 kg 的小车受到大小为 4 N 的恒定合力，估算其加速度。",
+          "solution": [
+            "使用拓展关系 a=F_net/m。",
+            "代入 4÷2=2 m/s²，并确认合力方向与加速度方向一致。"
+          ],
+          "answer": "加速度大小约为 2 m/s²。"
+        },
+        "prereq": [
+          "fmotion-02"
+        ],
+        "next": [],
+        "tags": [
+          "力与运动",
+          "合力",
+          "加速度",
+          "牛顿第二定律",
+          "拓展"
+        ],
+        "core": [
+          {
+            "title": "力与运动的关系",
+            "text": "合力为零时运动状态不变，可能静止也可能匀速直线运动；合力不为零时速度大小或方向会改变。力方向与速度方向不同并不矛盾，物体可以一边前进一边减速。下列加速度定量公式为高中拓展，不用它代替初中“是否平衡、如何改变状态”的解释。"
+          }
+        ],
+        "learning_scope": "初中主线；公式含拓展"
+      },
+      "error_index": 1,
+      "chapter": "力与运动"
+    }
+  },
+  "generator_version": "2026-10-04-条件过程返工-8"
+}

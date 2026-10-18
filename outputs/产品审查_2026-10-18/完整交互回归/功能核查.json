@@ -1,0 +1,821 @@
+{
+  "rows": [
+    {
+      "name": "index.html 320像素布局",
+      "pass": true,
+      "actual": {
+        "device": 320,
+        "inner": 320,
+        "client": 320,
+        "visual": 320,
+        "scroll": 320,
+        "outer": []
+      }
+    },
+    {
+      "name": "index.html 360像素布局",
+      "pass": true,
+      "actual": {
+        "device": 360,
+        "inner": 360,
+        "client": 360,
+        "visual": 360,
+        "scroll": 360,
+        "outer": []
+      }
+    },
+    {
+      "name": "index.html 390像素布局",
+      "pass": true,
+      "actual": {
+        "device": 390,
+        "inner": 390,
+        "client": 390,
+        "visual": 390,
+        "scroll": 390,
+        "outer": []
+      }
+    },
+    {
+      "name": "index.html 1200像素布局",
+      "pass": true,
+      "actual": {
+        "device": 1200,
+        "inner": 1200,
+        "client": 1185,
+        "visual": 1185,
+        "scroll": 1185,
+        "outer": []
+      }
+    },
+    {
+      "name": "junior.html 320像素布局",
+      "pass": true,
+      "actual": {
+        "device": 320,
+        "inner": 320,
+        "client": 320,
+        "visual": 320,
+        "scroll": 320,
+        "outer": []
+      }
+    },
+    {
+      "name": "junior.html 360像素布局",
+      "pass": true,
+      "actual": {
+        "device": 360,
+        "inner": 360,
+        "client": 360,
+        "visual": 360,
+        "scroll": 360,
+        "outer": []
+      }
+    },
+    {
+      "name": "junior.html 390像素布局",
+      "pass": true,
+      "actual": {
+        "device": 390,
+        "inner": 390,
+        "client": 390,
+        "visual": 390,
+        "scroll": 390,
+        "outer": []
+      }
+    },
+    {
+      "name": "junior.html 1200像素布局",
+      "pass": true,
+      "actual": {
+        "device": 1200,
+        "inner": 1200,
+        "client": 1185,
+        "visual": 1185,
+        "scroll": 1185,
+        "outer": []
+      }
+    },
+    {
+      "name": "student.html 320像素布局",
+      "pass": true,
+      "actual": {
+        "device": 320,
+        "inner": 320,
+        "client": 320,
+        "visual": 320,
+        "scroll": 320,
+        "outer": []
+      }
+    },
+    {
+      "name": "student.html 360像素布局",
+      "pass": true,
+      "actual": {
+        "device": 360,
+        "inner": 360,
+        "client": 360,
+        "visual": 360,
+        "scroll": 360,
+        "outer": []
+      }
+    },
+    {
+      "name": "student.html 390像素布局",
+      "pass": true,
+      "actual": {
+        "device": 390,
+        "inner": 390,
+        "client": 390,
+        "visual": 390,
+        "scroll": 390,
+        "outer": []
+      }
+    },
+    {
+      "name": "student.html 1200像素布局",
+      "pass": true,
+      "actual": {
+        "device": 1200,
+        "inner": 1200,
+        "client": 1185,
+        "visual": 1185,
+        "scroll": 1185,
+        "outer": []
+      }
+    },
+    {
+      "name": "quick.html 320像素布局",
+      "pass": true,
+      "actual": {
+        "device": 320,
+        "inner": 320,
+        "client": 320,
+        "visual": 320,
+        "scroll": 320,
+        "outer": []
+      }
+    },
+    {
+      "name": "quick.html 360像素布局",
+      "pass": true,
+      "actual": {
+        "device": 360,
+        "inner": 360,
+        "client": 360,
+        "visual": 360,
+        "scroll": 360,
+        "outer": []
+      }
+    },
+    {
+      "name": "quick.html 390像素布局",
+      "pass": true,
+      "actual": {
+        "device": 390,
+        "inner": 390,
+        "client": 390,
+        "visual": 390,
+        "scroll": 390,
+        "outer": []
+      }
+    },
+    {
+      "name": "quick.html 1200像素布局",
+      "pass": true,
+      "actual": {
+        "device": 1200,
+        "inner": 1200,
+        "client": 1185,
+        "visual": 1185,
+        "scroll": 1185,
+        "outer": []
+      }
+    },
+    {
+      "name": "junior-quick.html 320像素布局",
+      "pass": true,
+      "actual": {
+        "device": 320,
+        "inner": 320,
+        "client": 320,
+        "visual": 320,
+        "scroll": 320,
+        "outer": []
+      }
+    },
+    {
+      "name": "junior-quick.html 360像素布局",
+      "pass": true,
+      "actual": {
+        "device": 360,
+        "inner": 360,
+        "client": 360,
+        "visual": 360,
+        "scroll": 360,
+        "outer": []
+      }
+    },
+    {
+      "name": "junior-quick.html 390像素布局",
+      "pass": true,
+      "actual": {
+        "device": 390,
+        "inner": 390,
+        "client": 390,
+        "visual": 390,
+        "scroll": 390,
+        "outer": []
+      }
+    },
+    {
+      "name": "junior-quick.html 1200像素布局",
+      "pass": true,
+      "actual": {
+        "device": 1200,
+        "inner": 1200,
+        "client": 1185,
+        "visual": 1185,
+        "scroll": 1185,
+        "outer": []
+      }
+    },
+    {
+      "name": "quiz-hs.html 320像素布局",
+      "pass": true,
+      "actual": {
+        "device": 320,
+        "inner": 320,
+        "client": 320,
+        "visual": 320,
+        "scroll": 320,
+        "outer": []
+      }
+    },
+    {
+      "name": "quiz-hs.html 360像素布局",
+      "pass": true,
+      "actual": {
+        "device": 360,
+        "inner": 360,
+        "client": 360,
+        "visual": 360,
+        "scroll": 360,
+        "outer": []
+      }
+    },
+    {
+      "name": "quiz-hs.html 390像素布局",
+      "pass": true,
+      "actual": {
+        "device": 390,
+        "inner": 390,
+        "client": 390,
+        "visual": 390,
+        "scroll": 390,
+        "outer": []
+      }
+    },
+    {
+      "name": "quiz-hs.html 1200像素布局",
+      "pass": true,
+      "actual": {
+        "device": 1200,
+        "inner": 1200,
+        "client": 1200,
+        "visual": 1200,
+        "scroll": 1200,
+        "outer": []
+      }
+    },
+    {
+      "name": "quiz-junior.html 320像素布局",
+      "pass": true,
+      "actual": {
+        "device": 320,
+        "inner": 320,
+        "client": 320,
+        "visual": 320,
+        "scroll": 320,
+        "outer": []
+      }
+    },
+    {
+      "name": "quiz-junior.html 360像素布局",
+      "pass": true,
+      "actual": {
+        "device": 360,
+        "inner": 360,
+        "client": 360,
+        "visual": 360,
+        "scroll": 360,
+        "outer": []
+      }
+    },
+    {
+      "name": "quiz-junior.html 390像素布局",
+      "pass": true,
+      "actual": {
+        "device": 390,
+        "inner": 390,
+        "client": 390,
+        "visual": 390,
+        "scroll": 390,
+        "outer": []
+      }
+    },
+    {
+      "name": "quiz-junior.html 1200像素布局",
+      "pass": true,
+      "actual": {
+        "device": 1200,
+        "inner": 1200,
+        "client": 1200,
+        "visual": 1200,
+        "scroll": 1200,
+        "outer": []
+      }
+    },
+    {
+      "name": "quick.html 搜索覆盖正文和例题",
+      "pass": true,
+      "actual": true
+    },
+    {
+      "name": "quick.html 后退恢复搜索词与结果",
+      "pass": true,
+      "actual": {
+        "state": {
+          "search": "跑道周长",
+          "open": true,
+          "y": 929,
+          "cards": 1,
+          "url": "file:///D:/codex/outputs/%E7%89%A9%E7%90%86%E7%9F%A5%E8%AF%86%E5%BA%93%E6%95%B4%E5%90%88%E7%89%88/quick.html#kine-01"
+        },
+        "expected": {
+          "search": "跑道周长",
+          "cards": 1
+        }
+      }
+    },
+    {
+      "name": "quick.html 后退恢复展开与阅读位置",
+      "pass": true,
+      "actual": {
+        "state": {
+          "search": "跑道周长",
+          "open": true,
+          "y": 929,
+          "cards": 1,
+          "url": "file:///D:/codex/outputs/%E7%89%A9%E7%90%86%E7%9F%A5%E8%AF%86%E5%BA%93%E6%95%B4%E5%90%88%E7%89%88/quick.html#kine-01"
+        },
+        "expected": {
+          "open": true,
+          "y": 929
+        }
+      }
+    },
+    {
+      "name": "quick.html 前进恢复目标",
+      "pass": true,
+      "actual": true
+    },
+    {
+      "name": "quick.html 刷新保持目标",
+      "pass": true,
+      "actual": true
+    },
+    {
+      "name": "quick.html 复制链接直接打开",
+      "pass": true,
+      "actual": true
+    },
+    {
+      "name": "junior-quick.html 搜索覆盖正文和例题",
+      "pass": true,
+      "actual": true
+    },
+    {
+      "name": "junior-quick.html 后退恢复搜索词与结果",
+      "pass": true,
+      "actual": {
+        "state": {
+          "search": "复测",
+          "open": true,
+          "y": 9579,
+          "cards": 14,
+          "url": "file:///D:/codex/outputs/%E7%89%A9%E7%90%86%E7%9F%A5%E8%AF%86%E5%BA%93%E6%95%B4%E5%90%88%E7%89%88/junior-quick.html#jexp-01"
+        },
+        "expected": {
+          "search": "复测",
+          "cards": 14
+        }
+      }
+    },
+    {
+      "name": "junior-quick.html 后退恢复展开与阅读位置",
+      "pass": true,
+      "actual": {
+        "state": {
+          "search": "复测",
+          "open": true,
+          "y": 9579,
+          "cards": 14,
+          "url": "file:///D:/codex/outputs/%E7%89%A9%E7%90%86%E7%9F%A5%E8%AF%86%E5%BA%93%E6%95%B4%E5%90%88%E7%89%88/junior-quick.html#jexp-01"
+        },
+        "expected": {
+          "open": true,
+          "y": 9579
+        }
+      }
+    },
+    {
+      "name": "junior-quick.html 前进恢复目标",
+      "pass": true,
+      "actual": true
+    },
+    {
+      "name": "junior-quick.html 刷新保持目标",
+      "pass": true,
+      "actual": true
+    },
+    {
+      "name": "junior-quick.html 复制链接直接打开",
+      "pass": true,
+      "actual": true
+    },
+    {
+      "name": "quick.html formulas 返回恢复学科、章节、视图",
+      "pass": true,
+      "actual": true,
+      "history_entries": {
+        "before": 62,
+        "target": 63,
+        "after": 62
+      }
+    },
+    {
+      "name": "quick.html formulas 320像素内容可见",
+      "pass": true,
+      "actual": true
+    },
+    {
+      "name": "quick.html formulas 360像素内容可见",
+      "pass": true,
+      "actual": true
+    },
+    {
+      "name": "quick.html formulas 390像素内容可见",
+      "pass": true,
+      "actual": true
+    },
+    {
+      "name": "quick.html symbols 返回恢复学科、章节、视图",
+      "pass": true,
+      "actual": true,
+      "history_entries": {
+        "before": 64,
+        "target": 65,
+        "after": 64
+      }
+    },
+    {
+      "name": "quick.html symbols 320像素内容可见",
+      "pass": true,
+      "actual": true
+    },
+    {
+      "name": "quick.html symbols 360像素内容可见",
+      "pass": true,
+      "actual": true
+    },
+    {
+      "name": "quick.html symbols 390像素内容可见",
+      "pass": true,
+      "actual": true
+    },
+    {
+      "name": "quick.html map 返回恢复学科、章节、视图",
+      "pass": true,
+      "actual": true,
+      "history_entries": {
+        "before": 66,
+        "target": 67,
+        "after": 66
+      }
+    },
+    {
+      "name": "quick.html map 320像素内容可见",
+      "pass": true,
+      "actual": true
+    },
+    {
+      "name": "quick.html map 360像素内容可见",
+      "pass": true,
+      "actual": true
+    },
+    {
+      "name": "quick.html map 390像素内容可见",
+      "pass": true,
+      "actual": true
+    },
+    {
+      "name": "quick.html points 返回恢复学科、章节、视图",
+      "pass": true,
+      "actual": true,
+      "history_entries": {
+        "before": 68,
+        "target": 69,
+        "after": 68
+      }
+    },
+    {
+      "name": "quick.html points 320像素内容可见",
+      "pass": true,
+      "actual": true
+    },
+    {
+      "name": "quick.html points 360像素内容可见",
+      "pass": true,
+      "actual": true
+    },
+    {
+      "name": "quick.html points 390像素内容可见",
+      "pass": true,
+      "actual": true
+    },
+    {
+      "name": "quick.html 全部推导例题展开仍不撑宽页面",
+      "pass": true,
+      "actual": true
+    },
+    {
+      "name": "junior-quick.html formulas 返回恢复学科、章节、视图",
+      "pass": true,
+      "actual": true,
+      "history_entries": {
+        "before": 75,
+        "target": 76,
+        "after": 75
+      }
+    },
+    {
+      "name": "junior-quick.html formulas 320像素内容可见",
+      "pass": true,
+      "actual": true
+    },
+    {
+      "name": "junior-quick.html formulas 360像素内容可见",
+      "pass": true,
+      "actual": true
+    },
+    {
+      "name": "junior-quick.html formulas 390像素内容可见",
+      "pass": true,
+      "actual": true
+    },
+    {
+      "name": "junior-quick.html symbols 返回恢复学科、章节、视图",
+      "pass": true,
+      "actual": true,
+      "history_entries": {
+        "before": 77,
+        "target": 78,
+        "after": 77
+      }
+    },
+    {
+      "name": "junior-quick.html symbols 320像素内容可见",
+      "pass": true,
+      "actual": true
+    },
+    {
+      "name": "junior-quick.html symbols 360像素内容可见",
+      "pass": true,
+      "actual": true
+    },
+    {
+      "name": "junior-quick.html symbols 390像素内容可见",
+      "pass": true,
+      "actual": true
+    },
+    {
+      "name": "junior-quick.html map 返回恢复学科、章节、视图",
+      "pass": true,
+      "actual": true,
+      "history_entries": {
+        "before": 79,
+        "target": 80,
+        "after": 79
+      }
+    },
+    {
+      "name": "junior-quick.html map 320像素内容可见",
+      "pass": true,
+      "actual": true
+    },
+    {
+      "name": "junior-quick.html map 360像素内容可见",
+      "pass": true,
+      "actual": true
+    },
+    {
+      "name": "junior-quick.html map 390像素内容可见",
+      "pass": true,
+      "actual": true
+    },
+    {
+      "name": "junior-quick.html points 返回恢复学科、章节、视图",
+      "pass": true,
+      "actual": true,
+      "history_entries": {
+        "before": 81,
+        "target": 82,
+        "after": 81
+      }
+    },
+    {
+      "name": "junior-quick.html points 320像素内容可见",
+      "pass": true,
+      "actual": true
+    },
+    {
+      "name": "junior-quick.html points 360像素内容可见",
+      "pass": true,
+      "actual": true
+    },
+    {
+      "name": "junior-quick.html points 390像素内容可见",
+      "pass": true,
+      "actual": true
+    },
+    {
+      "name": "junior-quick.html 全部推导例题展开仍不撑宽页面",
+      "pass": true,
+      "actual": true
+    },
+    {
+      "name": "mdl-22 公式和正文含已渲染数学符号",
+      "pass": true,
+      "actual": true
+    },
+    {
+      "name": "exp-12 公式和正文含已渲染数学符号",
+      "pass": true,
+      "actual": true
+    },
+    {
+      "name": "exp-18 公式和正文含已渲染数学符号",
+      "pass": true,
+      "actual": true
+    },
+    {
+      "name": "qz-08 公式和正文含已渲染数学符号",
+      "pass": true,
+      "actual": true
+    },
+    {
+      "name": "mom-03 公式和正文含已渲染数学符号",
+      "pass": true,
+      "actual": true
+    },
+    {
+      "name": "dc-05 公式和正文含已渲染数学符号",
+      "pass": true,
+      "actual": true
+    },
+    {
+      "name": "mdl-13 公式和正文含已渲染数学符号",
+      "pass": true,
+      "actual": true
+    },
+    {
+      "name": "初中 实际自评写入记录",
+      "pass": true,
+      "actual": true
+    },
+    {
+      "name": "初中 实际下载JSON包含正确记录",
+      "pass": true,
+      "actual": {
+        "format": "物理知识库学习记录",
+        "version": 1,
+        "segment": "初中",
+        "attempts": [
+          {
+            "id": "tool-03",
+            "title": "螺旋测微器的读数",
+            "chapter": "测量工具与数据处理",
+            "outcome": "stuck",
+            "at": "2026-10-18T06:47:56.055Z"
+          }
+        ]
+      }
+    },
+    {
+      "name": "初中 重复导入去重",
+      "pass": true,
+      "actual": true
+    },
+    {
+      "name": "初中 错误学段 拒绝且原记录不变",
+      "pass": true,
+      "actual": true
+    },
+    {
+      "name": "初中 损坏文件 拒绝且原记录不变",
+      "pass": true,
+      "actual": true
+    },
+    {
+      "name": "初中 未知知识点 拒绝且原记录不变",
+      "pass": true,
+      "actual": true
+    },
+    {
+      "name": "初中 错误版本 拒绝且原记录不变",
+      "pass": true,
+      "actual": true
+    },
+    {
+      "name": "初中 导出再导入恢复记录",
+      "pass": true,
+      "actual": true
+    },
+    {
+      "name": "初中 刷新后保存并显示记录",
+      "pass": true,
+      "actual": true
+    },
+    {
+      "name": "高中 实际自评写入记录",
+      "pass": true,
+      "actual": true
+    },
+    {
+      "name": "高中 实际下载JSON包含正确记录",
+      "pass": true,
+      "actual": {
+        "format": "物理知识库学习记录",
+        "version": 1,
+        "segment": "高中",
+        "attempts": [
+          {
+            "id": "kine-01",
+            "title": "平均速度与平均速率",
+            "chapter": "第一章 · 运动的描述与匀变速直线运动",
+            "outcome": "stuck",
+            "at": "2026-10-18T06:48:00.106Z"
+          }
+        ]
+      }
+    },
+    {
+      "name": "高中 重复导入去重",
+      "pass": true,
+      "actual": true
+    },
+    {
+      "name": "高中 错误学段 拒绝且原记录不变",
+      "pass": true,
+      "actual": true
+    },
+    {
+      "name": "高中 损坏文件 拒绝且原记录不变",
+      "pass": true,
+      "actual": true
+    },
+    {
+      "name": "高中 未知知识点 拒绝且原记录不变",
+      "pass": true,
+      "actual": true
+    },
+    {
+      "name": "高中 错误版本 拒绝且原记录不变",
+      "pass": true,
+      "actual": true
+    },
+    {
+      "name": "高中 导出再导入恢复记录",
+      "pass": true,
+      "actual": true
+    },
+    {
+      "name": "高中 刷新后保存并显示记录",
+      "pass": true,
+      "actual": true
+    },
+    {
+      "name": "离线页面无脚本异常",
+      "pass": true,
+      "actual": []
+    },
+    {
+      "name": "离线操作无外部请求",
+      "pass": true,
+      "actual": []
+    }
+  ],
+  "errors": [],
+  "requests": []
+}

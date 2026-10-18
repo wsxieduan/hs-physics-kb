@@ -1,0 +1,4461 @@
+{
+  "segment": "初中",
+  "chapter": "引言 · 第一章 声现象",
+  "source_file": "01_sound.json",
+  "questions": [
+    {
+      "id": "diagnostic-sound-01-1",
+      "point_id": "sound-01",
+      "point_title": "声音的产生、传播与声速",
+      "chapter": "引言 · 第一章 声现象",
+      "stem": "在“声音的产生、传播与声速”的模型下，c（声速，以米每秒表示）=340 m/s。条件：c 用 m/s 表示、v 用 km/h 表示时，1 m/s = 3.6 km/h。。求同一声速换算成千米每小时后的数值（v）。这些数值是设计示例。",
+      "options": [
+        {
+          "label": "A",
+          "text": "94.4444 km/h"
+        },
+        {
+          "label": "B",
+          "text": "1224 km/h"
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "使用米每秒与千米每小时的换算：3.6·c，代入得1224 km/h。另一结果来自c/3.6，算得94.4444 km/h。\n从米每秒换到千米每小时要同时把米换成千米、秒换成小时，数值应乘 3.6。把 340 m/s 除以 3.6 得到约 94.4 km/h，与正确的 1224 km/h 不符；这是量纲相同但方向错误的单位换算，必须靠数值检查发现。\n知识点条件：观察声源时，可以用纸屑、薄膜或触摸等方式发现振动；传播时，声音通过固体、液体或气体中的介质传到接收者，真空中不能传播声音。声速把传播路程和时间联系起来；空气温度改变时声速也会变化，因此实验比较要注明条件。控制噪声可在声源处减弱振动，在传播途中隔声或吸声，也可在接收者处使用耳塞等防护。噪声控制不能简单理解成降低声速。\n推导依据：先选定声源与接收位置，明确测量的是声音实际走过的直达路程 s。；记录声音走完这段路程所用的时间 t；路程和时间的单位要先统一。；用 c = s/t 求出 m/s；若需要 km/h，再把 m/s 的数值乘以 3.6。；声音是否由振动产生、传播是否需要介质，仍需依靠观察和实验现象判断。\n卡片公式各自的适用条件（不是本题共同前提）：\n由直达传播路程和时间测声速：传播路程和时间采用同一段直达传播过程，结果单位为 m/s。\n米每秒与千米每小时的换算：c 用 m/s 表示、v 用 km/h 表示时，1 m/s = 3.6 km/h。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 0,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "v = c/3.6",
+      "trap_test": {
+        "scenario": "近距离直达测量",
+        "expr": "c/3.6",
+        "ref": 1224
+      },
+      "level": "基础",
+      "learning_scope": "初中",
+      "answer_evidence": {
+        "kind": "numeric",
+        "scenario": "近距离直达测量",
+        "parameters": {
+          "s": 34,
+          "t": 0.1,
+          "c": 340,
+          "v": 1224,
+          "d": 68,
+          "t_e": 0.4
+        },
+        "target": "v",
+        "unit": "km/h",
+        "reference": 1224,
+        "correct_proof": {
+          "expression": "3.6*c",
+          "formula": "米每秒与千米每小时的换算",
+          "value": 1224.0,
+          "when": "c 用 m/s 表示、v 用 km/h 表示时，1 m/s = 3.6 km/h。"
+        },
+        "distractor_expression": "c/3.6",
+        "distractor_value": 94.44444444444444,
+        "dimension_matches": true,
+        "independent_evaluation": true
+      },
+      "review": {
+        "confidence": "medium",
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": true,
+          "no_answer_leak_in_options": true
+        },
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。",
+        "material": {
+          "anchors": [
+            {
+              "kind": "公式",
+              "name": "米每秒与千米每小时的换算",
+              "expression": "3.6*c",
+              "when": "c 用 m/s 表示、v 用 km/h 表示时，1 m/s = 3.6 km/h。",
+              "display": "3.6·c"
+            }
+          ],
+          "source": {
+            "nature": "原创设计示例，非教材实测或真实实验记录",
+            "scenario": "近距离直达测量",
+            "parameters": {
+              "s": 34,
+              "t": 0.1,
+              "c": 340,
+              "v": 1224,
+              "d": 68,
+              "t_e": 0.4
+            },
+            "data": [
+              "声音在介质中传播的路程：34 m",
+              "声音传播这段路程所用的时间：0.1 s",
+              "声速，以米每秒表示：340 m/s",
+              "同一声速换算成千米每小时后的数值：1224 km/h",
+              "声源到反射面的单程距离，用于另一种测声速方法：68 m",
+              "声音发出到接收到回声的往返时间：0.4 s"
+            ]
+          },
+          "predicted_errors": [
+            {
+              "option": "A",
+              "text": "94.4444 km/h",
+              "reason": "从米每秒换到千米每小时要同时把米换成千米、秒换成小时，数值应乘 3.6。把 340 m/s 除以 3.6 得到约 94.4 km/h，与正确的 1224 km/h 不符；这是量纲相同但方向错误的单位换算，必须靠数值检查发现。",
+              "expression": "c/3.6",
+              "status": "误答原因预测，待教师确认；未采集学生作答证据"
+            }
+          ],
+          "difficulty_note": "建议难度沿用本题level（源卡难度）；尚非题目难度实测，待教师调整",
+          "estimated_seconds": [
+            60,
+            120
+          ],
+          "time_basis": "未做学生计时；按现有难度给出备课估计区间，待教师确认",
+          "machine_checks": [
+            {
+              "name": "题目ID关联源知识点",
+              "passed": true
+            },
+            {
+              "name": "选项标签唯一且参考标签存在",
+              "passed": true
+            },
+            {
+              "name": "选项文本互异",
+              "passed": true
+            },
+            {
+              "name": "正确路径独立数值复算",
+              "passed": true
+            },
+            {
+              "name": "带量纲求值与独立求值一致",
+              "passed": true
+            },
+            {
+              "name": "干扰路径复算且与正确路径分离",
+              "passed": true
+            }
+          ],
+          "machine_boundary": "只列本次逐题实际执行项目；不把关联知识卡的方向、扫描或一致性检查算作本题已验。概念题未验命题真假。",
+          "human_review_items": [
+            "题干条件是否充分、清楚且符合学段",
+            "参考结论在指定条件下是否唯一",
+            "干扰项是否合理、对应真实认知问题且无答案暗示",
+            "公式或概念锚点是否准确",
+            "建议难度及用时是否适合教学",
+            "语言、装置与安全操作是否恰当"
+          ],
+          "reference_answer_note": "现有参考答案保持；即使本地可以判选项，也仍须教师审核教学可用性"
+        }
+      }
+    },
+    {
+      "id": "diagnostic-sound-01-2",
+      "point_id": "sound-01",
+      "point_title": "声音的产生、传播与声速",
+      "chapter": "引言 · 第一章 声现象",
+      "stem": "在“声音的产生、传播与声速”中，传播路程和时间采用同一段直达传播过程，结果单位为 m/s。。声速，以米每秒表示的单位为m/s。下列哪一表达式的量纲与该目标量一致？",
+      "options": [
+        {
+          "label": "A",
+          "text": "c = s/t"
+        },
+        {
+          "label": "B",
+          "text": "c = s·t"
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "声速定义为单位时间内传播的路程，应使用路程除以时间。相乘后单位变成 m·s，不是 m/s，量纲检查能抓住。\n知识点条件：观察声源时，可以用纸屑、薄膜或触摸等方式发现振动；传播时，声音通过固体、液体或气体中的介质传到接收者，真空中不能传播声音。声速把传播路程和时间联系起来；空气温度改变时声速也会变化，因此实验比较要注明条件。控制噪声可在声源处减弱振动，在传播途中隔声或吸声，也可在接收者处使用耳塞等防护。噪声控制不能简单理解成降低声速。\n推导依据：先选定声源与接收位置，明确测量的是声音实际走过的直达路程 s。；记录声音走完这段路程所用的时间 t；路程和时间的单位要先统一。；用 c = s/t 求出 m/s；若需要 km/h，再把 m/s 的数值乘以 3.6。；声音是否由振动产生、传播是否需要介质，仍需依靠观察和实验现象判断。\n卡片公式各自的适用条件（不是本题共同前提）：\n由直达传播路程和时间测声速：传播路程和时间采用同一段直达传播过程，结果单位为 m/s。\n米每秒与千米每小时的换算：c 用 m/s 表示、v 用 km/h 表示时，1 m/s = 3.6 km/h。",
+      "error_type": "量纲一致性",
+      "judging": "auto",
+      "source_error_index": 1,
+      "source_caught_by": "量纲一致性",
+      "wrong_expr": "c = s·t",
+      "trap_test": {
+        "kind": "dimension",
+        "target": "c = s*t",
+        "lhs_dim": "L·T^-1",
+        "rhs_dim": "L·T",
+        "expect": "mismatch",
+        "note": "实际量纲检查得到等号左边为L·T^-1、右边为L·T；两边不是同一物理量，因此该等式不成立。"
+      },
+      "level": "基础",
+      "learning_scope": "初中",
+      "answer_evidence": {
+        "kind": "dimension",
+        "target": "c",
+        "correct_expression": "c = s/t",
+        "distractor_expression": "c = s*t",
+        "target_dimension": "L·T^-1",
+        "distractor_dimension": "L·T"
+      },
+      "review": {
+        "confidence": "medium",
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": true,
+          "no_answer_leak_in_options": true
+        },
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。",
+        "material": {
+          "anchors": [
+            {
+              "kind": "公式量纲",
+              "name": "本题目标量与等式",
+              "expression": "c = s/t",
+              "when": "量纲相符是必要条件，不能据此证明系数或物理条件正确",
+              "display": "c = s/t"
+            }
+          ],
+          "source": {
+            "nature": "原创量纲辨析命题；无实测数据",
+            "source_error_index": 1
+          },
+          "predicted_errors": [
+            {
+              "option": "B",
+              "text": "c = s·t",
+              "reason": "声速定义为单位时间内传播的路程，应使用路程除以时间。相乘后单位变成 m·s，不是 m/s，量纲检查能抓住。",
+              "expression": "c = s*t",
+              "status": "误答原因预测，待教师确认；未采集学生作答证据"
+            }
+          ],
+          "difficulty_note": "建议难度沿用本题level（源卡难度）；尚非题目难度实测，待教师调整",
+          "estimated_seconds": [
+            60,
+            120
+          ],
+          "time_basis": "未做学生计时；按现有难度给出备课估计区间，待教师确认",
+          "machine_checks": [
+            {
+              "name": "题目ID关联源知识点",
+              "passed": true
+            },
+            {
+              "name": "选项标签唯一且参考标签存在",
+              "passed": true
+            },
+            {
+              "name": "选项文本互异",
+              "passed": true
+            },
+            {
+              "name": "正确式量纲一致",
+              "passed": true,
+              "actual": {
+                "type": "dimension",
+                "type_name": "量纲一致性",
+                "formula": "教师审核证据",
+                "ok": true,
+                "detail": "左端L·T^-1，右端L·T^-1",
+                "note": "",
+                "error": null,
+                "evaluation_status": "success",
+                "failure_reason": null,
+                "result_dimension": "L·T^-1",
+                "reference_dimension": "L·T^-1",
+                "diagnostics": {},
+                "physical_error_identified": false
+              }
+            },
+            {
+              "name": "干扰式量纲冲突",
+              "passed": true,
+              "actual": {
+                "type": "dimension",
+                "type_name": "量纲一致性",
+                "formula": "教师审核证据",
+                "ok": false,
+                "detail": "左端L·T^-1，右端L·T",
+                "note": "",
+                "error": null,
+                "evaluation_status": "dimension_conflict",
+                "failure_reason": "dimension_conflict",
+                "result_dimension": "L·T",
+                "reference_dimension": "L·T^-1",
+                "diagnostics": {},
+                "physical_error_identified": true
+              }
+            }
+          ],
+          "machine_boundary": "只列本次逐题实际执行项目；不把关联知识卡的方向、扫描或一致性检查算作本题已验。概念题未验命题真假。",
+          "human_review_items": [
+            "题干条件是否充分、清楚且符合学段",
+            "参考结论在指定条件下是否唯一",
+            "干扰项是否合理、对应真实认知问题且无答案暗示",
+            "公式或概念锚点是否准确",
+            "建议难度及用时是否适合教学",
+            "语言、装置与安全操作是否恰当"
+          ],
+          "reference_answer_note": "现有参考答案保持；即使本地可以判选项，也仍须教师审核教学可用性"
+        }
+      }
+    },
+    {
+      "id": "diagnostic-sound-01-3",
+      "point_id": "sound-01",
+      "point_title": "声音的产生、传播与声速",
+      "chapter": "引言 · 第一章 声现象",
+      "stem": "关于“声音的产生、传播与声速”，判断这一说法是否成立，并说明依据：\n声波传播依靠介质中的振动传递。",
+      "options": [
+        {
+          "label": "A",
+          "text": "该说法不成立。"
+        },
+        {
+          "label": "B",
+          "text": "该说法成立。"
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "声波传播依靠介质中的振动传递；真空没有这种介质。需要用真空罩实验现象和机械波概念辨析，不能由声速计算式判定。\n知识点条件：观察声源时，可以用纸屑、薄膜或触摸等方式发现振动；传播时，声音通过固体、液体或气体中的介质传到接收者，真空中不能传播声音。声速把传播路程和时间联系起来；空气温度改变时声速也会变化，因此实验比较要注明条件。控制噪声可在声源处减弱振动，在传播途中隔声或吸声，也可在接收者处使用耳塞等防护。噪声控制不能简单理解成降低声速。\n推导依据：先选定声源与接收位置，明确测量的是声音实际走过的直达路程 s。；记录声音走完这段路程所用的时间 t；路程和时间的单位要先统一。；用 c = s/t 求出 m/s；若需要 km/h，再把 m/s 的数值乘以 3.6。；声音是否由振动产生、传播是否需要介质，仍需依靠观察和实验现象判断。\n卡片公式各自的适用条件（不是本题共同前提）：\n由直达传播路程和时间测声速：传播路程和时间采用同一段直达传播过程，结果单位为 m/s。\n米每秒与千米每小时的换算：c 用 m/s 表示、v 用 km/h 表示时，1 m/s = 3.6 km/h。",
+      "error_type": "概念混淆",
+      "judging": "teacher",
+      "source_error_index": 2,
+      "source_caught_by": "人工审核",
+      "wrong_expr": null,
+      "trap_test": null,
+      "level": "基础",
+      "learning_scope": "初中",
+      "answer_evidence": {
+        "kind": "teacher",
+        "claim_source": "why",
+        "reference_only": true,
+        "reason": "概念、操作或无法建立完整定量证据，教师确认条件与结论。"
+      },
+      "review": {
+        "confidence": "medium",
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": false,
+          "no_answer_leak_in_options": true
+        },
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。",
+        "material": {
+          "anchors": [
+            {
+              "kind": "概念或操作",
+              "name": "声音的产生、传播与声速",
+              "claim": "认为声音能在真空中传播，只是传播得比较慢。",
+              "correction_basis": "声波传播依靠介质中的振动传递；真空没有这种介质。需要用真空罩实验现象和机械波概念辨析，不能由声速计算式判定。",
+              "note": "概念锚点及命题真假待教师确认；未套用任意第一条公式",
+              "display": "认为声音能在真空中传播，只是传播得比较慢。"
+            }
+          ],
+          "source": {
+            "nature": "原创概念/操作命题；无真实测量记录",
+            "source_error_index": 2
+          },
+          "predicted_errors": [
+            {
+              "option": "A",
+              "text": "该说法不成立。",
+              "reason": "声波传播依靠介质中的振动传递；真空没有这种介质。需要用真空罩实验现象和机械波概念辨析，不能由声速计算式判定。",
+              "expression": null,
+              "status": "误答原因预测，待教师确认；未采集学生作答证据"
+            }
+          ],
+          "difficulty_note": "建议难度沿用本题level（源卡难度）；尚非题目难度实测，待教师调整",
+          "estimated_seconds": [
+            60,
+            120
+          ],
+          "time_basis": "未做学生计时；按现有难度给出备课估计区间，待教师确认",
+          "machine_checks": [
+            {
+              "name": "题目ID关联源知识点",
+              "passed": true
+            },
+            {
+              "name": "选项标签唯一且参考标签存在",
+              "passed": true
+            },
+            {
+              "name": "选项文本互异",
+              "passed": true
+            }
+          ],
+          "machine_boundary": "只列本次逐题实际执行项目；不把关联知识卡的方向、扫描或一致性检查算作本题已验。概念题未验命题真假。",
+          "human_review_items": [
+            "题干条件是否充分、清楚且符合学段",
+            "参考结论在指定条件下是否唯一",
+            "干扰项是否合理、对应真实认知问题且无答案暗示",
+            "公式或概念锚点是否准确",
+            "建议难度及用时是否适合教学",
+            "语言、装置与安全操作是否恰当"
+          ],
+          "reference_answer_note": "现有参考答案保持；即使本地可以判选项，也仍须教师审核教学可用性"
+        }
+      }
+    },
+    {
+      "id": "diagnostic-sound-02-1",
+      "point_id": "sound-02",
+      "point_title": "回声与声呐测距",
+      "chapter": "引言 · 第一章 声现象",
+      "stem": "在“回声与声呐测距”的模型下，c（声音在介质中的传播速度）=340 m/s；t<sub>e</sub>（从发声到接收到回声的往返时间）=0.4 s。条件：公式中的时间是发声到收到回声的往返时间；c 为声音在传播介质中的声速。。求声源到反射面的单程距离（d）。这些数值是设计示例。",
+      "options": [
+        {
+          "label": "A",
+          "text": "136 m"
+        },
+        {
+          "label": "B",
+          "text": "68 m"
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "使用由回声往返时间求反射面距离：c·t<sub>e</sub>/2，代入得68 m。另一结果来自c·t<sub>e</sub>，算得136 m。\n往返时间对应的是去程和回程的总路程。把总路程当单程距离会多算一倍；在 68 m 的墙距情境中，错误写法得到 136 m。\n知识点条件：回声测距常用于估计声源到墙面、山体或水下目标的距离。关键不是公式本身，而是先画出传播路径：声音走了一个来回，仪器记录的也是一个来回的时间。若把往返路程直接当成单程距离，答案就会扩大一倍。水下声呐同样依据发射与接收间隔估计目标距离，但实际测量还要考虑水中声速和回波识别条件。\n推导依据：先明确计时起点是发声时刻，计时终点是接收到回声的时刻。；声音从声源到反射面再返回，传播总路程是单程距离的两倍。；总路程由声速乘往返时间得到，再除以 2 得到声源到反射面的距离。；如果题目给的是单程传播时间，就不再额外除以 2；读清楚计时方式是关键。\n卡片公式各自的适用条件（不是本题共同前提）：\n由回声往返时间求反射面距离：公式中的时间是发声到收到回声的往返时间；c 为声音在传播介质中的声速。\n由已知反射面距离反测声速：反射面单程距离 d 已知，时间必须采用发声到收声的往返时间。\n回声的往返总路程：计算声音从发出到返回接收点所走过的总路程。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 0,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "d = c·t<sub>e</sub>",
+      "trap_test": {
+        "scenario": "墙面相距68米",
+        "expr": "c*t_e",
+        "ref": 68
+      },
+      "level": "基础",
+      "learning_scope": "初中",
+      "answer_evidence": {
+        "kind": "numeric",
+        "scenario": "墙面相距68米",
+        "parameters": {
+          "d": 68,
+          "l": 136,
+          "c": 340,
+          "t_e": 0.4,
+          "s": 34,
+          "t": 0.1
+        },
+        "target": "d",
+        "unit": "m",
+        "reference": 68,
+        "correct_proof": {
+          "expression": "c*t_e/2",
+          "formula": "由回声往返时间求反射面距离",
+          "value": 68.0,
+          "when": "公式中的时间是发声到收到回声的往返时间；c 为声音在传播介质中的声速。"
+        },
+        "distractor_expression": "c*t_e",
+        "distractor_value": 136.0,
+        "dimension_matches": true,
+        "independent_evaluation": true
+      },
+      "review": {
+        "confidence": "medium",
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": true,
+          "no_answer_leak_in_options": true
+        },
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。",
+        "material": {
+          "anchors": [
+            {
+              "kind": "公式",
+              "name": "由回声往返时间求反射面距离",
+              "expression": "c*t_e/2",
+              "when": "公式中的时间是发声到收到回声的往返时间；c 为声音在传播介质中的声速。",
+              "display": "c·t<sub>e</sub>/2"
+            }
+          ],
+          "source": {
+            "nature": "原创设计示例，非教材实测或真实实验记录",
+            "scenario": "墙面相距68米",
+            "parameters": {
+              "d": 68,
+              "l": 136,
+              "c": 340,
+              "t_e": 0.4,
+              "s": 34,
+              "t": 0.1
+            },
+            "data": [
+              "声源到反射面的单程距离：68 m",
+              "声音发出后往返传播的总路程：136 m",
+              "声音在介质中的传播速度：340 m/s",
+              "从发声到接收到回声的往返时间：0.4 s",
+              "直达测声速实验中声音传播的路程：34 m",
+              "直达测声速实验中声音传播的时间：0.1 s"
+            ]
+          },
+          "predicted_errors": [
+            {
+              "option": "A",
+              "text": "136 m",
+              "reason": "往返时间对应的是去程和回程的总路程。把总路程当单程距离会多算一倍；在 68 m 的墙距情境中，错误写法得到 136 m。",
+              "expression": "c*t_e",
+              "status": "误答原因预测，待教师确认；未采集学生作答证据"
+            }
+          ],
+          "difficulty_note": "建议难度沿用本题level（源卡难度）；尚非题目难度实测，待教师调整",
+          "estimated_seconds": [
+            60,
+            120
+          ],
+          "time_basis": "未做学生计时；按现有难度给出备课估计区间，待教师确认",
+          "machine_checks": [
+            {
+              "name": "题目ID关联源知识点",
+              "passed": true
+            },
+            {
+              "name": "选项标签唯一且参考标签存在",
+              "passed": true
+            },
+            {
+              "name": "选项文本互异",
+              "passed": true
+            },
+            {
+              "name": "正确路径独立数值复算",
+              "passed": true
+            },
+            {
+              "name": "带量纲求值与独立求值一致",
+              "passed": true
+            },
+            {
+              "name": "干扰路径复算且与正确路径分离",
+              "passed": true
+            }
+          ],
+          "machine_boundary": "只列本次逐题实际执行项目；不把关联知识卡的方向、扫描或一致性检查算作本题已验。概念题未验命题真假。",
+          "human_review_items": [
+            "题干条件是否充分、清楚且符合学段",
+            "参考结论在指定条件下是否唯一",
+            "干扰项是否合理、对应真实认知问题且无答案暗示",
+            "公式或概念锚点是否准确",
+            "建议难度及用时是否适合教学",
+            "语言、装置与安全操作是否恰当"
+          ],
+          "reference_answer_note": "现有参考答案保持；即使本地可以判选项，也仍须教师审核教学可用性"
+        }
+      }
+    },
+    {
+      "id": "diagnostic-sound-02-2",
+      "point_id": "sound-02",
+      "point_title": "回声与声呐测距",
+      "chapter": "引言 · 第一章 声现象",
+      "stem": "在“回声与声呐测距”的模型下，c（声音在介质中的传播速度）=340 m/s；t<sub>e</sub>（从发声到接收到回声的往返时间）=0.4 s。条件：公式中的时间是发声到收到回声的往返时间；c 为声音在传播介质中的声速。。求声源到反射面的单程距离（d）。这些数值是设计示例。",
+      "options": [
+        {
+          "label": "A",
+          "text": "68 m"
+        },
+        {
+          "label": "B",
+          "text": "34 m"
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "使用由回声往返时间求反射面距离：c·t<sub>e</sub>/2，代入得68 m。另一结果来自c·t<sub>e</sub>/4，算得34 m。\n公式中的一半已经把往返总路程转成单程距离，不能再重复减半。代入 0.4 s 会得到 34 m，而正确墙距为 68 m。\n知识点条件：回声测距常用于估计声源到墙面、山体或水下目标的距离。关键不是公式本身，而是先画出传播路径：声音走了一个来回，仪器记录的也是一个来回的时间。若把往返路程直接当成单程距离，答案就会扩大一倍。水下声呐同样依据发射与接收间隔估计目标距离，但实际测量还要考虑水中声速和回波识别条件。\n推导依据：先明确计时起点是发声时刻，计时终点是接收到回声的时刻。；声音从声源到反射面再返回，传播总路程是单程距离的两倍。；总路程由声速乘往返时间得到，再除以 2 得到声源到反射面的距离。；如果题目给的是单程传播时间，就不再额外除以 2；读清楚计时方式是关键。\n卡片公式各自的适用条件（不是本题共同前提）：\n由回声往返时间求反射面距离：公式中的时间是发声到收到回声的往返时间；c 为声音在传播介质中的声速。\n由已知反射面距离反测声速：反射面单程距离 d 已知，时间必须采用发声到收声的往返时间。\n回声的往返总路程：计算声音从发出到返回接收点所走过的总路程。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 1,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "d = c·t<sub>e</sub>/4",
+      "trap_test": {
+        "scenario": "墙面相距68米",
+        "expr": "c*t_e/4",
+        "ref": 68
+      },
+      "level": "基础",
+      "learning_scope": "初中",
+      "answer_evidence": {
+        "kind": "numeric",
+        "scenario": "墙面相距68米",
+        "parameters": {
+          "d": 68,
+          "l": 136,
+          "c": 340,
+          "t_e": 0.4,
+          "s": 34,
+          "t": 0.1
+        },
+        "target": "d",
+        "unit": "m",
+        "reference": 68,
+        "correct_proof": {
+          "expression": "c*t_e/2",
+          "formula": "由回声往返时间求反射面距离",
+          "value": 68.0,
+          "when": "公式中的时间是发声到收到回声的往返时间；c 为声音在传播介质中的声速。"
+        },
+        "distractor_expression": "c*t_e/4",
+        "distractor_value": 34.0,
+        "dimension_matches": true,
+        "independent_evaluation": true
+      },
+      "review": {
+        "confidence": "medium",
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": true,
+          "no_answer_leak_in_options": true
+        },
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。",
+        "material": {
+          "anchors": [
+            {
+              "kind": "公式",
+              "name": "由回声往返时间求反射面距离",
+              "expression": "c*t_e/2",
+              "when": "公式中的时间是发声到收到回声的往返时间；c 为声音在传播介质中的声速。",
+              "display": "c·t<sub>e</sub>/2"
+            }
+          ],
+          "source": {
+            "nature": "原创设计示例，非教材实测或真实实验记录",
+            "scenario": "墙面相距68米",
+            "parameters": {
+              "d": 68,
+              "l": 136,
+              "c": 340,
+              "t_e": 0.4,
+              "s": 34,
+              "t": 0.1
+            },
+            "data": [
+              "声源到反射面的单程距离：68 m",
+              "声音发出后往返传播的总路程：136 m",
+              "声音在介质中的传播速度：340 m/s",
+              "从发声到接收到回声的往返时间：0.4 s",
+              "直达测声速实验中声音传播的路程：34 m",
+              "直达测声速实验中声音传播的时间：0.1 s"
+            ]
+          },
+          "predicted_errors": [
+            {
+              "option": "B",
+              "text": "34 m",
+              "reason": "公式中的一半已经把往返总路程转成单程距离，不能再重复减半。代入 0.4 s 会得到 34 m，而正确墙距为 68 m。",
+              "expression": "c*t_e/4",
+              "status": "误答原因预测，待教师确认；未采集学生作答证据"
+            }
+          ],
+          "difficulty_note": "建议难度沿用本题level（源卡难度）；尚非题目难度实测，待教师调整",
+          "estimated_seconds": [
+            60,
+            120
+          ],
+          "time_basis": "未做学生计时；按现有难度给出备课估计区间，待教师确认",
+          "machine_checks": [
+            {
+              "name": "题目ID关联源知识点",
+              "passed": true
+            },
+            {
+              "name": "选项标签唯一且参考标签存在",
+              "passed": true
+            },
+            {
+              "name": "选项文本互异",
+              "passed": true
+            },
+            {
+              "name": "正确路径独立数值复算",
+              "passed": true
+            },
+            {
+              "name": "带量纲求值与独立求值一致",
+              "passed": true
+            },
+            {
+              "name": "干扰路径复算且与正确路径分离",
+              "passed": true
+            }
+          ],
+          "machine_boundary": "只列本次逐题实际执行项目；不把关联知识卡的方向、扫描或一致性检查算作本题已验。概念题未验命题真假。",
+          "human_review_items": [
+            "题干条件是否充分、清楚且符合学段",
+            "参考结论在指定条件下是否唯一",
+            "干扰项是否合理、对应真实认知问题且无答案暗示",
+            "公式或概念锚点是否准确",
+            "建议难度及用时是否适合教学",
+            "语言、装置与安全操作是否恰当"
+          ],
+          "reference_answer_note": "现有参考答案保持；即使本地可以判选项，也仍须教师审核教学可用性"
+        }
+      }
+    },
+    {
+      "id": "diagnostic-sound-02-3",
+      "point_id": "sound-02",
+      "point_title": "回声与声呐测距",
+      "chapter": "引言 · 第一章 声现象",
+      "stem": "关于“回声与声呐测距”，判断这一说法是否成立，并说明依据：\n回声可以用于距离测量，但距离要从介质中的传播速度和往返时间计算。",
+      "options": [
+        {
+          "label": "A",
+          "text": "该说法成立。"
+        },
+        {
+          "label": "B",
+          "text": "该说法不成立。"
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "回声可以用于距离测量，但距离要从介质中的传播速度和往返时间计算。实际声呐还受介质、反射面和回波识别影响，概念判断需人工结合情境审查。\n知识点条件：回声测距常用于估计声源到墙面、山体或水下目标的距离。关键不是公式本身，而是先画出传播路径：声音走了一个来回，仪器记录的也是一个来回的时间。若把往返路程直接当成单程距离，答案就会扩大一倍。水下声呐同样依据发射与接收间隔估计目标距离，但实际测量还要考虑水中声速和回波识别条件。\n推导依据：先明确计时起点是发声时刻，计时终点是接收到回声的时刻。；声音从声源到反射面再返回，传播总路程是单程距离的两倍。；总路程由声速乘往返时间得到，再除以 2 得到声源到反射面的距离。；如果题目给的是单程传播时间，就不再额外除以 2；读清楚计时方式是关键。\n卡片公式各自的适用条件（不是本题共同前提）：\n由回声往返时间求反射面距离：公式中的时间是发声到收到回声的往返时间；c 为声音在传播介质中的声速。\n由已知反射面距离反测声速：反射面单程距离 d 已知，时间必须采用发声到收声的往返时间。\n回声的往返总路程：计算声音从发出到返回接收点所走过的总路程。",
+      "error_type": "概念混淆",
+      "judging": "teacher",
+      "source_error_index": 2,
+      "source_caught_by": "人工审核",
+      "wrong_expr": null,
+      "trap_test": null,
+      "level": "基础",
+      "learning_scope": "初中",
+      "answer_evidence": {
+        "kind": "teacher",
+        "claim_source": "why",
+        "reference_only": true,
+        "reason": "概念、操作或无法建立完整定量证据，教师确认条件与结论。"
+      },
+      "review": {
+        "confidence": "medium",
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": false,
+          "no_answer_leak_in_options": true
+        },
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。",
+        "material": {
+          "anchors": [
+            {
+              "kind": "概念或操作",
+              "name": "回声与声呐测距",
+              "claim": "认为听见回声只说明障碍物存在，不需要考虑声速和传播时间。",
+              "correction_basis": "回声可以用于距离测量，但距离要从介质中的传播速度和往返时间计算。实际声呐还受介质、反射面和回波识别影响，概念判断需人工结合情境审查。",
+              "note": "概念锚点及命题真假待教师确认；未套用任意第一条公式",
+              "display": "认为听见回声只说明障碍物存在，不需要考虑声速和传播时间。"
+            }
+          ],
+          "source": {
+            "nature": "原创概念/操作命题；无真实测量记录",
+            "source_error_index": 2
+          },
+          "predicted_errors": [
+            {
+              "option": "B",
+              "text": "该说法不成立。",
+              "reason": "回声可以用于距离测量，但距离要从介质中的传播速度和往返时间计算。实际声呐还受介质、反射面和回波识别影响，概念判断需人工结合情境审查。",
+              "expression": null,
+              "status": "误答原因预测，待教师确认；未采集学生作答证据"
+            }
+          ],
+          "difficulty_note": "建议难度沿用本题level（源卡难度）；尚非题目难度实测，待教师调整",
+          "estimated_seconds": [
+            60,
+            120
+          ],
+          "time_basis": "未做学生计时；按现有难度给出备课估计区间，待教师确认",
+          "machine_checks": [
+            {
+              "name": "题目ID关联源知识点",
+              "passed": true
+            },
+            {
+              "name": "选项标签唯一且参考标签存在",
+              "passed": true
+            },
+            {
+              "name": "选项文本互异",
+              "passed": true
+            }
+          ],
+          "machine_boundary": "只列本次逐题实际执行项目；不把关联知识卡的方向、扫描或一致性检查算作本题已验。概念题未验命题真假。",
+          "human_review_items": [
+            "题干条件是否充分、清楚且符合学段",
+            "参考结论在指定条件下是否唯一",
+            "干扰项是否合理、对应真实认知问题且无答案暗示",
+            "公式或概念锚点是否准确",
+            "建议难度及用时是否适合教学",
+            "语言、装置与安全操作是否恰当"
+          ],
+          "reference_answer_note": "现有参考答案保持；即使本地可以判选项，也仍须教师审核教学可用性"
+        }
+      }
+    },
+    {
+      "id": "diagnostic-sound-03-1",
+      "point_id": "sound-03",
+      "point_title": "音调、响度、音色与听觉范围",
+      "chapter": "引言 · 第一章 声现象",
+      "stem": "在“音调、响度、音色与听觉范围”的模型下，N（在计时区间内完成的完整振动次数）=400 1；t（统计完整振动次数所用的时间）=2 s。条件：N 统计完整振动次数；t 与频率单位相配，f 的单位为 Hz。。求声源振动频率，即每秒完成的振动次数（f）。这些数值是设计示例。",
+      "options": [
+        {
+          "label": "A",
+          "text": "200 Hz"
+        },
+        {
+          "label": "B",
+          "text": "0.5 Hz"
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "使用由振动次数求频率：N/t，代入得200 Hz。另一结果来自1/t，算得0.5 Hz。\n周期倒数只适用于 t 是一次完整振动周期的情形。若 2 s 内发生 400 次完整振动，频率应为 200 Hz；把 1/2 当答案会少算 400 倍。两种写法量纲相同，必须用计数情境做数值检查。\n知识点条件：比较两个声音时，音调高低可通过频率或周期来描述：单位时间内振动次数越多，频率越高，音调通常越高。响度主要与振动幅度及传播条件有关，音色帮助区分发声体，不能仅用一个频率值概括。人耳通常能听到约 20 Hz 到 20 000 Hz 的声音；低于这一范围的叫次声，高于这一范围的叫超声。噪声和音色等定性判断要结合听觉和实验现象，不由频率公式单独裁决。\n推导依据：在一段已知计时 t 内，数出完成的完整振动次数 N，频率就是 N 除以 t。；若测得一次完整振动所用的时间 T，则一秒内能完成约 1/T 次振动，所以 f = 1/T。；频率与周期互为倒数：频率增大时周期减小，频率减小时周期增大。；音调与频率相关；响度、音色的判断还需要考虑振幅、发声体和传播条件。\n卡片公式各自的适用条件（不是本题共同前提）：\n由振动次数求频率：N 统计完整振动次数；t 与频率单位相配，f 的单位为 Hz。\n由振动周期求频率：T 表示一次完整振动的时间，必须用秒表示，f 的单位为 Hz。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 0,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "f = 1/t",
+      "trap_test": {
+        "scenario": "低音演示",
+        "expr": "1/t",
+        "ref": 200
+      },
+      "level": "基础",
+      "learning_scope": "初中",
+      "answer_evidence": {
+        "kind": "numeric",
+        "scenario": "低音演示",
+        "parameters": {
+          "f": 200,
+          "T": 0.005,
+          "N": 400,
+          "t": 2
+        },
+        "target": "f",
+        "unit": "Hz",
+        "reference": 200,
+        "correct_proof": {
+          "expression": "N/t",
+          "formula": "由振动次数求频率",
+          "value": 200.0,
+          "when": "N 统计完整振动次数；t 与频率单位相配，f 的单位为 Hz。"
+        },
+        "distractor_expression": "1/t",
+        "distractor_value": 0.5,
+        "dimension_matches": true,
+        "independent_evaluation": true
+      },
+      "review": {
+        "confidence": "medium",
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": true,
+          "no_answer_leak_in_options": true
+        },
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。",
+        "material": {
+          "anchors": [
+            {
+              "kind": "公式",
+              "name": "由振动次数求频率",
+              "expression": "N/t",
+              "when": "N 统计完整振动次数；t 与频率单位相配，f 的单位为 Hz。",
+              "display": "N/t"
+            }
+          ],
+          "source": {
+            "nature": "原创设计示例，非教材实测或真实实验记录",
+            "scenario": "低音演示",
+            "parameters": {
+              "f": 200,
+              "T": 0.005,
+              "N": 400,
+              "t": 2
+            },
+            "data": [
+              "声源振动频率，即每秒完成的振动次数：200 Hz",
+              "声源完成一次完整振动所用的周期：0.005 s",
+              "在计时区间内完成的完整振动次数：400 1",
+              "统计完整振动次数所用的时间：2 s"
+            ]
+          },
+          "predicted_errors": [
+            {
+              "option": "B",
+              "text": "0.5 Hz",
+              "reason": "周期倒数只适用于 t 是一次完整振动周期的情形。若 2 s 内发生 400 次完整振动，频率应为 200 Hz；把 1/2 当答案会少算 400 倍。两种写法量纲相同，必须用计数情境做数值检查。",
+              "expression": "1/t",
+              "status": "误答原因预测，待教师确认；未采集学生作答证据"
+            }
+          ],
+          "difficulty_note": "建议难度沿用本题level（源卡难度）；尚非题目难度实测，待教师调整",
+          "estimated_seconds": [
+            60,
+            120
+          ],
+          "time_basis": "未做学生计时；按现有难度给出备课估计区间，待教师确认",
+          "machine_checks": [
+            {
+              "name": "题目ID关联源知识点",
+              "passed": true
+            },
+            {
+              "name": "选项标签唯一且参考标签存在",
+              "passed": true
+            },
+            {
+              "name": "选项文本互异",
+              "passed": true
+            },
+            {
+              "name": "正确路径独立数值复算",
+              "passed": true
+            },
+            {
+              "name": "带量纲求值与独立求值一致",
+              "passed": true
+            },
+            {
+              "name": "干扰路径复算且与正确路径分离",
+              "passed": true
+            }
+          ],
+          "machine_boundary": "只列本次逐题实际执行项目；不把关联知识卡的方向、扫描或一致性检查算作本题已验。概念题未验命题真假。",
+          "human_review_items": [
+            "题干条件是否充分、清楚且符合学段",
+            "参考结论在指定条件下是否唯一",
+            "干扰项是否合理、对应真实认知问题且无答案暗示",
+            "公式或概念锚点是否准确",
+            "建议难度及用时是否适合教学",
+            "语言、装置与安全操作是否恰当"
+          ],
+          "reference_answer_note": "现有参考答案保持；即使本地可以判选项，也仍须教师审核教学可用性"
+        }
+      }
+    },
+    {
+      "id": "diagnostic-sound-03-2",
+      "point_id": "sound-03",
+      "point_title": "音调、响度、音色与听觉范围",
+      "chapter": "引言 · 第一章 声现象",
+      "stem": "在“音调、响度、音色与听觉范围”的模型下，N（在计时区间内完成的完整振动次数）=400 1；t（统计完整振动次数所用的时间）=2 s。条件：N 统计完整振动次数；t 与频率单位相配，f 的单位为 Hz。。求声源振动频率，即每秒完成的振动次数（f）。这些数值是设计示例。",
+      "options": [
+        {
+          "label": "A",
+          "text": "200 Hz"
+        },
+        {
+          "label": "B",
+          "text": "400 Hz"
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "使用由振动次数求频率：N/t，代入得200 Hz。另一结果来自2·N/t，算得400 Hz。\n一次完整振动包含往复过程，但计数时整体只算一次。重复乘 2 会使频率翻倍；代入 400 次、2 s 会得到 400 Hz，而不是 200 Hz。\n知识点条件：比较两个声音时，音调高低可通过频率或周期来描述：单位时间内振动次数越多，频率越高，音调通常越高。响度主要与振动幅度及传播条件有关，音色帮助区分发声体，不能仅用一个频率值概括。人耳通常能听到约 20 Hz 到 20 000 Hz 的声音；低于这一范围的叫次声，高于这一范围的叫超声。噪声和音色等定性判断要结合听觉和实验现象，不由频率公式单独裁决。\n推导依据：在一段已知计时 t 内，数出完成的完整振动次数 N，频率就是 N 除以 t。；若测得一次完整振动所用的时间 T，则一秒内能完成约 1/T 次振动，所以 f = 1/T。；频率与周期互为倒数：频率增大时周期减小，频率减小时周期增大。；音调与频率相关；响度、音色的判断还需要考虑振幅、发声体和传播条件。\n卡片公式各自的适用条件（不是本题共同前提）：\n由振动次数求频率：N 统计完整振动次数；t 与频率单位相配，f 的单位为 Hz。\n由振动周期求频率：T 表示一次完整振动的时间，必须用秒表示，f 的单位为 Hz。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 1,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "f = 2·N/t",
+      "trap_test": {
+        "scenario": "低音演示",
+        "expr": "2*N/t",
+        "ref": 200
+      },
+      "level": "基础",
+      "learning_scope": "初中",
+      "answer_evidence": {
+        "kind": "numeric",
+        "scenario": "低音演示",
+        "parameters": {
+          "f": 200,
+          "T": 0.005,
+          "N": 400,
+          "t": 2
+        },
+        "target": "f",
+        "unit": "Hz",
+        "reference": 200,
+        "correct_proof": {
+          "expression": "N/t",
+          "formula": "由振动次数求频率",
+          "value": 200.0,
+          "when": "N 统计完整振动次数；t 与频率单位相配，f 的单位为 Hz。"
+        },
+        "distractor_expression": "2*N/t",
+        "distractor_value": 400.0,
+        "dimension_matches": true,
+        "independent_evaluation": true
+      },
+      "review": {
+        "confidence": "medium",
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": true,
+          "no_answer_leak_in_options": true
+        },
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。",
+        "material": {
+          "anchors": [
+            {
+              "kind": "公式",
+              "name": "由振动次数求频率",
+              "expression": "N/t",
+              "when": "N 统计完整振动次数；t 与频率单位相配，f 的单位为 Hz。",
+              "display": "N/t"
+            }
+          ],
+          "source": {
+            "nature": "原创设计示例，非教材实测或真实实验记录",
+            "scenario": "低音演示",
+            "parameters": {
+              "f": 200,
+              "T": 0.005,
+              "N": 400,
+              "t": 2
+            },
+            "data": [
+              "声源振动频率，即每秒完成的振动次数：200 Hz",
+              "声源完成一次完整振动所用的周期：0.005 s",
+              "在计时区间内完成的完整振动次数：400 1",
+              "统计完整振动次数所用的时间：2 s"
+            ]
+          },
+          "predicted_errors": [
+            {
+              "option": "B",
+              "text": "400 Hz",
+              "reason": "一次完整振动包含往复过程，但计数时整体只算一次。重复乘 2 会使频率翻倍；代入 400 次、2 s 会得到 400 Hz，而不是 200 Hz。",
+              "expression": "2*N/t",
+              "status": "误答原因预测，待教师确认；未采集学生作答证据"
+            }
+          ],
+          "difficulty_note": "建议难度沿用本题level（源卡难度）；尚非题目难度实测，待教师调整",
+          "estimated_seconds": [
+            60,
+            120
+          ],
+          "time_basis": "未做学生计时；按现有难度给出备课估计区间，待教师确认",
+          "machine_checks": [
+            {
+              "name": "题目ID关联源知识点",
+              "passed": true
+            },
+            {
+              "name": "选项标签唯一且参考标签存在",
+              "passed": true
+            },
+            {
+              "name": "选项文本互异",
+              "passed": true
+            },
+            {
+              "name": "正确路径独立数值复算",
+              "passed": true
+            },
+            {
+              "name": "带量纲求值与独立求值一致",
+              "passed": true
+            },
+            {
+              "name": "干扰路径复算且与正确路径分离",
+              "passed": true
+            }
+          ],
+          "machine_boundary": "只列本次逐题实际执行项目；不把关联知识卡的方向、扫描或一致性检查算作本题已验。概念题未验命题真假。",
+          "human_review_items": [
+            "题干条件是否充分、清楚且符合学段",
+            "参考结论在指定条件下是否唯一",
+            "干扰项是否合理、对应真实认知问题且无答案暗示",
+            "公式或概念锚点是否准确",
+            "建议难度及用时是否适合教学",
+            "语言、装置与安全操作是否恰当"
+          ],
+          "reference_answer_note": "现有参考答案保持；即使本地可以判选项，也仍须教师审核教学可用性"
+        }
+      }
+    },
+    {
+      "id": "diagnostic-sound-03-3",
+      "point_id": "sound-03",
+      "point_title": "音调、响度、音色与听觉范围",
+      "chapter": "引言 · 第一章 声现象",
+      "stem": "关于“音调、响度、音色与听觉范围”，判断这一说法是否成立，并说明依据：\n把音调高低与响度大小当作同一件事。",
+      "options": [
+        {
+          "label": "A",
+          "text": "该说法成立。"
+        },
+        {
+          "label": "B",
+          "text": "该说法不成立。"
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "音调对应声音高低，响度对应声音强弱，描述的听觉特征不同。频率可以帮助比较音调，但不能仅凭频率判断响度；需要人工结合振动幅度和听觉实验核对。\n知识点条件：比较两个声音时，音调高低可通过频率或周期来描述：单位时间内振动次数越多，频率越高，音调通常越高。响度主要与振动幅度及传播条件有关，音色帮助区分发声体，不能仅用一个频率值概括。人耳通常能听到约 20 Hz 到 20 000 Hz 的声音；低于这一范围的叫次声，高于这一范围的叫超声。噪声和音色等定性判断要结合听觉和实验现象，不由频率公式单独裁决。\n推导依据：在一段已知计时 t 内，数出完成的完整振动次数 N，频率就是 N 除以 t。；若测得一次完整振动所用的时间 T，则一秒内能完成约 1/T 次振动，所以 f = 1/T。；频率与周期互为倒数：频率增大时周期减小，频率减小时周期增大。；音调与频率相关；响度、音色的判断还需要考虑振幅、发声体和传播条件。\n卡片公式各自的适用条件（不是本题共同前提）：\n由振动次数求频率：N 统计完整振动次数；t 与频率单位相配，f 的单位为 Hz。\n由振动周期求频率：T 表示一次完整振动的时间，必须用秒表示，f 的单位为 Hz。",
+      "error_type": "概念混淆",
+      "judging": "teacher",
+      "source_error_index": 2,
+      "source_caught_by": "人工审核",
+      "wrong_expr": null,
+      "trap_test": null,
+      "level": "基础",
+      "learning_scope": "初中",
+      "answer_evidence": {
+        "kind": "teacher",
+        "claim_source": "wrong",
+        "reference_only": true,
+        "reason": "概念、操作或无法建立完整定量证据，教师确认条件与结论。"
+      },
+      "review": {
+        "confidence": "medium",
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": false,
+          "no_answer_leak_in_options": true
+        },
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。",
+        "material": {
+          "anchors": [
+            {
+              "kind": "概念或操作",
+              "name": "音调、响度、音色与听觉范围",
+              "claim": "把音调高低与响度大小当作同一件事。",
+              "correction_basis": "音调对应声音高低，响度对应声音强弱，描述的听觉特征不同。频率可以帮助比较音调，但不能仅凭频率判断响度；需要人工结合振动幅度和听觉实验核对。",
+              "note": "概念锚点及命题真假待教师确认；未套用任意第一条公式",
+              "display": "把音调高低与响度大小当作同一件事。"
+            }
+          ],
+          "source": {
+            "nature": "原创概念/操作命题；无真实测量记录",
+            "source_error_index": 2
+          },
+          "predicted_errors": [
+            {
+              "option": "A",
+              "text": "该说法成立。",
+              "reason": "音调对应声音高低，响度对应声音强弱，描述的听觉特征不同。频率可以帮助比较音调，但不能仅凭频率判断响度；需要人工结合振动幅度和听觉实验核对。",
+              "expression": null,
+              "status": "误答原因预测，待教师确认；未采集学生作答证据"
+            }
+          ],
+          "difficulty_note": "建议难度沿用本题level（源卡难度）；尚非题目难度实测，待教师调整",
+          "estimated_seconds": [
+            60,
+            120
+          ],
+          "time_basis": "未做学生计时；按现有难度给出备课估计区间，待教师确认",
+          "machine_checks": [
+            {
+              "name": "题目ID关联源知识点",
+              "passed": true
+            },
+            {
+              "name": "选项标签唯一且参考标签存在",
+              "passed": true
+            },
+            {
+              "name": "选项文本互异",
+              "passed": true
+            }
+          ],
+          "machine_boundary": "只列本次逐题实际执行项目；不把关联知识卡的方向、扫描或一致性检查算作本题已验。概念题未验命题真假。",
+          "human_review_items": [
+            "题干条件是否充分、清楚且符合学段",
+            "参考结论在指定条件下是否唯一",
+            "干扰项是否合理、对应真实认知问题且无答案暗示",
+            "公式或概念锚点是否准确",
+            "建议难度及用时是否适合教学",
+            "语言、装置与安全操作是否恰当"
+          ],
+          "reference_answer_note": "现有参考答案保持；即使本地可以判选项，也仍须教师审核教学可用性"
+        }
+      }
+    },
+    {
+      "id": "diagnostic-sound-03-4",
+      "point_id": "sound-03",
+      "point_title": "音调、响度、音色与听觉范围",
+      "chapter": "引言 · 第一章 声现象",
+      "stem": "关于“音调、响度、音色与听觉范围”，判断这一说法是否成立，并说明依据：\n音色还与发声体的振动方式和波形等特征有关，不可简化成单一频率。",
+      "options": [
+        {
+          "label": "A",
+          "text": "该说法不成立。"
+        },
+        {
+          "label": "B",
+          "text": "该说法成立。"
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "音色还与发声体的振动方式和波形等特征有关，不可简化成单一频率。此类辨析需要结合不同乐器或声源的听辨实验，标记为人工审核。\n知识点条件：比较两个声音时，音调高低可通过频率或周期来描述：单位时间内振动次数越多，频率越高，音调通常越高。响度主要与振动幅度及传播条件有关，音色帮助区分发声体，不能仅用一个频率值概括。人耳通常能听到约 20 Hz 到 20 000 Hz 的声音；低于这一范围的叫次声，高于这一范围的叫超声。噪声和音色等定性判断要结合听觉和实验现象，不由频率公式单独裁决。\n推导依据：在一段已知计时 t 内，数出完成的完整振动次数 N，频率就是 N 除以 t。；若测得一次完整振动所用的时间 T，则一秒内能完成约 1/T 次振动，所以 f = 1/T。；频率与周期互为倒数：频率增大时周期减小，频率减小时周期增大。；音调与频率相关；响度、音色的判断还需要考虑振幅、发声体和传播条件。\n卡片公式各自的适用条件（不是本题共同前提）：\n由振动次数求频率：N 统计完整振动次数；t 与频率单位相配，f 的单位为 Hz。\n由振动周期求频率：T 表示一次完整振动的时间，必须用秒表示，f 的单位为 Hz。",
+      "error_type": "概念混淆",
+      "judging": "teacher",
+      "source_error_index": 3,
+      "source_caught_by": "人工审核",
+      "wrong_expr": null,
+      "trap_test": null,
+      "level": "基础",
+      "learning_scope": "初中",
+      "answer_evidence": {
+        "kind": "teacher",
+        "claim_source": "why",
+        "reference_only": true,
+        "reason": "概念、操作或无法建立完整定量证据，教师确认条件与结论。"
+      },
+      "review": {
+        "confidence": "medium",
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": false,
+          "no_answer_leak_in_options": true
+        },
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。",
+        "material": {
+          "anchors": [
+            {
+              "kind": "概念或操作",
+              "name": "音调、响度、音色与听觉范围",
+              "claim": "认为音色只由一个频率决定，频率相同的声音听起来一定完全相同。",
+              "correction_basis": "音色还与发声体的振动方式和波形等特征有关，不可简化成单一频率。此类辨析需要结合不同乐器或声源的听辨实验，标记为人工审核。",
+              "note": "概念锚点及命题真假待教师确认；未套用任意第一条公式",
+              "display": "认为音色只由一个频率决定，频率相同的声音听起来一定完全相同。"
+            }
+          ],
+          "source": {
+            "nature": "原创概念/操作命题；无真实测量记录",
+            "source_error_index": 3
+          },
+          "predicted_errors": [
+            {
+              "option": "A",
+              "text": "该说法不成立。",
+              "reason": "音色还与发声体的振动方式和波形等特征有关，不可简化成单一频率。此类辨析需要结合不同乐器或声源的听辨实验，标记为人工审核。",
+              "expression": null,
+              "status": "误答原因预测，待教师确认；未采集学生作答证据"
+            }
+          ],
+          "difficulty_note": "建议难度沿用本题level（源卡难度）；尚非题目难度实测，待教师调整",
+          "estimated_seconds": [
+            60,
+            120
+          ],
+          "time_basis": "未做学生计时；按现有难度给出备课估计区间，待教师确认",
+          "machine_checks": [
+            {
+              "name": "题目ID关联源知识点",
+              "passed": true
+            },
+            {
+              "name": "选项标签唯一且参考标签存在",
+              "passed": true
+            },
+            {
+              "name": "选项文本互异",
+              "passed": true
+            }
+          ],
+          "machine_boundary": "只列本次逐题实际执行项目；不把关联知识卡的方向、扫描或一致性检查算作本题已验。概念题未验命题真假。",
+          "human_review_items": [
+            "题干条件是否充分、清楚且符合学段",
+            "参考结论在指定条件下是否唯一",
+            "干扰项是否合理、对应真实认知问题且无答案暗示",
+            "公式或概念锚点是否准确",
+            "建议难度及用时是否适合教学",
+            "语言、装置与安全操作是否恰当"
+          ],
+          "reference_answer_note": "现有参考答案保持；即使本地可以判选项，也仍须教师审核教学可用性"
+        }
+      }
+    }
+  ],
+  "skipped": [],
+  "source_records": {
+    "diagnostic-sound-01-1": {
+      "point": {
+        "id": "sound-01",
+        "title": "声音的产生、传播与声速",
+        "level": "基础",
+        "definition": "声音由物体的振动产生，传播需要介质，在不同介质中的传播快慢不同。已知声音通过的路程和所用时间，可以用路程与时间的比值求声速；这一计算只描述可测量的传播过程，不代替对发声和介质条件的实验判断。",
+        "meaning": "观察声源时，可以用纸屑、薄膜或触摸等方式发现振动；传播时，声音通过固体、液体或气体中的介质传到接收者，真空中不能传播声音。声速把传播路程和时间联系起来；空气温度改变时声速也会变化，因此实验比较要注明条件。控制噪声可在声源处减弱振动，在传播途中隔声或吸声，也可在接收者处使用耳塞等防护。噪声控制不能简单理解成降低声速。",
+        "symbols": {
+          "s": {
+            "desc": "声音在介质中传播的路程",
+            "unit": "m"
+          },
+          "t": {
+            "desc": "声音传播这段路程所用的时间",
+            "unit": "s"
+          },
+          "c": {
+            "desc": "声速，以米每秒表示",
+            "unit": "m/s"
+          },
+          "v": {
+            "desc": "同一声速换算成千米每小时后的数值",
+            "unit": "km/h"
+          },
+          "d": {
+            "desc": "声源到反射面的单程距离，用于另一种测声速方法",
+            "unit": "m"
+          },
+          "t_e": {
+            "desc": "声音发出到接收到回声的往返时间",
+            "unit": "s"
+          },
+          "f": {
+            "desc": "声源振动频率，即每秒完成的振动次数",
+            "unit": "Hz"
+          },
+          "T": {
+            "desc": "声源完成一次完整振动所用的周期",
+            "unit": "s"
+          },
+          "N": {
+            "desc": "在计时区间内完成的完整振动次数",
+            "unit": "1"
+          }
+        },
+        "scenarios": {
+          "近距离直达测量": {
+            "s": 34,
+            "t": 0.1,
+            "c": 340,
+            "v": 1224,
+            "d": 68,
+            "t_e": 0.4
+          },
+          "较远直达测量": {
+            "s": 170,
+            "t": 0.5,
+            "c": 340,
+            "v": 1224,
+            "d": 34,
+            "t_e": 0.2
+          },
+          "0℃附近空气示例": {
+            "s": 33,
+            "t": 0.1,
+            "c": 330,
+            "v": 1188,
+            "d": 68,
+            "t_e": 0.4
+          },
+          "低音演示": {
+            "f": 200,
+            "T": 0.005,
+            "N": 400,
+            "t": 2
+          },
+          "较高音演示": {
+            "f": 500,
+            "T": 0.002,
+            "N": 1000,
+            "t": 2
+          },
+          "次声示例": {
+            "f": 15,
+            "T": 0.0666666666667,
+            "N": 15,
+            "t": 1
+          },
+          "超声示例": {
+            "f": 30000,
+            "T": 3.33333333333e-05,
+            "N": 30000,
+            "t": 1
+          }
+        },
+        "formulas": [
+          {
+            "name": "由直达传播路程和时间测声速",
+            "expr": "c = s/t",
+            "when": "传播路程和时间采用同一段直达传播过程，结果单位为 m/s。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "近距离直达测量",
+                "expr": "s/t",
+                "ref": 340,
+                "note": "34 m ÷ 0.1 s = 340 m/s，独立计算后录入参考值。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "较远直达测量",
+                "expr": "s/t",
+                "ref": 340,
+                "note": "170 m ÷ 0.5 s = 340 m/s，改变测量路程和时间后复算。"
+              },
+              {
+                "type": "direction",
+                "scenario": "近距离直达测量",
+                "var": "s",
+                "lo": 17,
+                "hi": 68,
+                "expr": "s/t",
+                "expect": "up",
+                "note": "传播时间不变时，测得路程增大，按定义算出的速度增大。"
+              },
+              {
+                "type": "scan",
+                "scenario": "近距离直达测量",
+                "var": "t",
+                "lo": 0.02,
+                "hi": 2,
+                "note": "固定一组有限路程，检查正时间范围内计算不出现异常值。"
+              },
+              {
+                "type": "consistency",
+                "scenario": "近距离直达测量",
+                "with": "sound-01|由直达传播路程和时间测声速",
+                "with_expr": "2*d/t_e",
+                "target": "声速，以米每秒表示",
+                "note": "本公式直接求c；参考端显式关系为2*d/t_e。两端使用同一情境和阶段，只核对该关系；with字段仅定位来源，不代表调用另一条被覆盖的公式。",
+                "verification_kind": "独立关系核对"
+              },
+              {
+                "type": "compare",
+                "scenario": "近距离直达测量",
+                "expr": "c",
+                "op": ">",
+                "vs": "100",
+                "note": "本情境的空气声速为数百 m/s，不应落到个位数。"
+              },
+              {
+                "type": "compare",
+                "scenario": "近距离直达测量",
+                "expr": "c",
+                "op": "<",
+                "vs": "1000",
+                "note": "本情境声速数量级为数百 m/s，而非数千 m/s。"
+              }
+            ]
+          },
+          {
+            "name": "米每秒与千米每小时的换算",
+            "expr": "v = 3.6*c",
+            "when": "c 用 m/s 表示、v 用 km/h 表示时，1 m/s = 3.6 km/h。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "近距离直达测量",
+                "expr": "3.6*c",
+                "ref": 1224,
+                "note": "340 m/s × 3.6 = 1224 km/h；先把 1 m 换为 0.001 km、1 s 换为 1/3600 h。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "0℃附近空气示例",
+                "expr": "3.6*c",
+                "ref": 1188,
+                "note": "在 0℃ 附近取空气声速约 330 m/s，330 × 3.6 = 1188 km/h，独立核算后录入。"
+              },
+              {
+                "type": "direction",
+                "scenario": "近距离直达测量",
+                "var": "c",
+                "lo": 100,
+                "hi": 500,
+                "expr": "3.6*c",
+                "expect": "up",
+                "note": "换算比例固定为正数，原速度增大时换算后的速度也增大。"
+              },
+              {
+                "type": "scan",
+                "scenario": "近距离直达测量",
+                "var": "c",
+                "lo": 1,
+                "hi": 1500,
+                "note": "检查正声速范围内的单位换算稳定。"
+              },
+              {
+                "type": "consistency",
+                "scenario": "近距离直达测量",
+                "with": "sound-01|米每秒与千米每小时的换算",
+                "with_expr": "3.6*s/t",
+                "target": "同一声速换算成千米每小时后的数值",
+                "note": "本公式直接求v；参考端显式关系为3.6*s/t。两端使用同一情境和阶段，只核对该关系；with字段仅定位来源，不代表调用另一条被覆盖的公式。",
+                "verification_kind": "独立关系核对"
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "先选定声源与接收位置，明确测量的是声音实际走过的直达路程 s。",
+          "记录声音走完这段路程所用的时间 t；路程和时间的单位要先统一。",
+          "用 c = s/t 求出 m/s；若需要 km/h，再把 m/s 的数值乘以 3.6。",
+          "声音是否由振动产生、传播是否需要介质，仍需依靠观察和实验现象判断。"
+        ],
+        "errors": [
+          {
+            "wrong": "把 m/s 换成 km/h 时把 3.6 除上去，写成 v = c/3.6。",
+            "wrong_expr": "v = c/3.6",
+            "why": "从米每秒换到千米每小时要同时把米换成千米、秒换成小时，数值应乘 3.6。把 340 m/s 除以 3.6 得到约 94.4 km/h，与正确的 1224 km/h 不符；这是量纲相同但方向错误的单位换算，必须靠数值检查发现。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "近距离直达测量",
+              "expr": "c/3.6",
+              "ref": 1224
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "把声速写成路程乘时间，c = s·t。",
+            "wrong_expr": "c = s*t",
+            "why": "声速定义为单位时间内传播的路程，应使用路程除以时间。相乘后单位变成 m·s，不是 m/s，量纲检查能抓住。",
+            "caught_by": "量纲一致性",
+            "trap_test": {
+              "kind": "dimension",
+              "target": "c = s*t",
+              "lhs_dim": "L·T^-1",
+              "rhs_dim": "L·T",
+              "expect": "mismatch",
+              "note": "实际量纲检查得到等号左边为L·T^-1、右边为L·T；两边不是同一物理量，因此该等式不成立。"
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "认为声音能在真空中传播，只是传播得比较慢。",
+            "why": "声波传播依靠介质中的振动传递；真空没有这种介质。需要用真空罩实验现象和机械波概念辨析，不能由声速计算式判定。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "在空气中测得一段直达声传播 34 m 用时 0.10 s。求声速，并换算成 km/h。",
+          "solution": [
+            "由声速定义，c = s/t = 34/0.10 = 340 m/s。",
+            "换算为 km/h：v = 3.6c = 3.6×340 = 1224 km/h。",
+            "检查单位：第一问是 m/s，第二问是 km/h；两者描述同一速度。"
+          ],
+          "answer": "声速为 340 m/s，即 1224 km/h。"
+        },
+        "prereq": [],
+        "next": [
+          "sound-02",
+          "sound-03"
+        ],
+        "tags": [
+          "声音的产生",
+          "介质",
+          "声速",
+          "单位换算",
+          "噪声控制"
+        ],
+        "core": [
+          {
+            "title": "引言：观察、证据与科学探究",
+            "text": "物理研究物质、运动和相互作用。看到纸屑跳动先记录现象，再提出“纸屑跳动是否由振动引起”的问题。依次提出问题、作出猜想、设计实验、收集证据、分析解释、交流与评价；控制变量用于分清因果，重复实验用于检查偶然性。观察不是结论，模型不是实物。物理学支撑航天、能源、信息和医疗等技术；评价技术既看功能，也看证据、资源和影响。"
+          },
+          {
+            "title": "物理学与科技强国",
+            "text": "航天器的运动控制需要力与运动规律，卫星信号依赖电磁波，深海探测要研究压强、材料和测量方法。把工程问题分解为可测的物理量，再用实验和模型检验方案，是物理知识走向技术的途径。以“远处传回的信息是否等于此刻状态”为问题，查阅并比较传播距离、速度与延迟；事实、模型和个人设想分别记录，不用口号代替证据。"
+          },
+          {
+            "title": "声音是什么",
+            "text": "正在发声的音叉接触轻小球，小球被弹开，把微小振动转成可观察现象；制止振动，发声也停止。真空罩中随空气抽出声音减弱，不能凭一次演示声称实现绝对真空。固体、液体、气体可传声，真空不能传声；约340 m/s是常温空气的近似值，不能用于水中声呐。"
+          },
+          {
+            "title": "噪声及其控制",
+            "text": "物理上常把无规则振动产生的声音称为噪声；环境意义上，干扰休息、学习或工作的声音也可能是噪声，音乐也会成为干扰。减弱声源、阻断传播、保护接收者分别对应降低音箱音量、隔声窗、耳塞。分贝表示声级，声级与日常感觉的响度不能简单等同；不把两个分贝数直接相加。"
+          },
+          {
+            "title": "跨学科实践（原创任务）",
+            "text": "设计教室噪声观察记录：选相同测点和时段，记录声源、传播途径与措施；若使用手机声级应用，只比较同设备相对读数，不冒充校准分贝测量。交付平面草图、控制条件和改进前后观察，联系健康与空间设计。"
+          },
+          {
+            "title": "本章素养回顾（原创任务）",
+            "text": "选择本章一个现象，写出结论、成立条件和证据；用另一条本章规律复核解释是否矛盾。指出一次测量或模型的局限，并说明还需什么证据；数值通过不替代概念辨析。"
+          }
+        ],
+        "evidence": [
+          {
+            "kind": "range",
+            "value": 340,
+            "unit": "m/s",
+            "lo": 300,
+            "hi": 380,
+            "note": "普通环境温度附近空气声速数量级，不用于水或极端温度。"
+          }
+        ],
+        "learning_scope": "初中"
+      },
+      "error_index": 0,
+      "chapter": "引言 · 第一章 声现象"
+    },
+    "diagnostic-sound-01-2": {
+      "point": {
+        "id": "sound-01",
+        "title": "声音的产生、传播与声速",
+        "level": "基础",
+        "definition": "声音由物体的振动产生，传播需要介质，在不同介质中的传播快慢不同。已知声音通过的路程和所用时间，可以用路程与时间的比值求声速；这一计算只描述可测量的传播过程，不代替对发声和介质条件的实验判断。",
+        "meaning": "观察声源时，可以用纸屑、薄膜或触摸等方式发现振动；传播时，声音通过固体、液体或气体中的介质传到接收者，真空中不能传播声音。声速把传播路程和时间联系起来；空气温度改变时声速也会变化，因此实验比较要注明条件。控制噪声可在声源处减弱振动，在传播途中隔声或吸声，也可在接收者处使用耳塞等防护。噪声控制不能简单理解成降低声速。",
+        "symbols": {
+          "s": {
+            "desc": "声音在介质中传播的路程",
+            "unit": "m"
+          },
+          "t": {
+            "desc": "声音传播这段路程所用的时间",
+            "unit": "s"
+          },
+          "c": {
+            "desc": "声速，以米每秒表示",
+            "unit": "m/s"
+          },
+          "v": {
+            "desc": "同一声速换算成千米每小时后的数值",
+            "unit": "km/h"
+          },
+          "d": {
+            "desc": "声源到反射面的单程距离，用于另一种测声速方法",
+            "unit": "m"
+          },
+          "t_e": {
+            "desc": "声音发出到接收到回声的往返时间",
+            "unit": "s"
+          },
+          "f": {
+            "desc": "声源振动频率，即每秒完成的振动次数",
+            "unit": "Hz"
+          },
+          "T": {
+            "desc": "声源完成一次完整振动所用的周期",
+            "unit": "s"
+          },
+          "N": {
+            "desc": "在计时区间内完成的完整振动次数",
+            "unit": "1"
+          }
+        },
+        "scenarios": {
+          "近距离直达测量": {
+            "s": 34,
+            "t": 0.1,
+            "c": 340,
+            "v": 1224,
+            "d": 68,
+            "t_e": 0.4
+          },
+          "较远直达测量": {
+            "s": 170,
+            "t": 0.5,
+            "c": 340,
+            "v": 1224,
+            "d": 34,
+            "t_e": 0.2
+          },
+          "0℃附近空气示例": {
+            "s": 33,
+            "t": 0.1,
+            "c": 330,
+            "v": 1188,
+            "d": 68,
+            "t_e": 0.4
+          },
+          "低音演示": {
+            "f": 200,
+            "T": 0.005,
+            "N": 400,
+            "t": 2
+          },
+          "较高音演示": {
+            "f": 500,
+            "T": 0.002,
+            "N": 1000,
+            "t": 2
+          },
+          "次声示例": {
+            "f": 15,
+            "T": 0.0666666666667,
+            "N": 15,
+            "t": 1
+          },
+          "超声示例": {
+            "f": 30000,
+            "T": 3.33333333333e-05,
+            "N": 30000,
+            "t": 1
+          }
+        },
+        "formulas": [
+          {
+            "name": "由直达传播路程和时间测声速",
+            "expr": "c = s/t",
+            "when": "传播路程和时间采用同一段直达传播过程，结果单位为 m/s。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "近距离直达测量",
+                "expr": "s/t",
+                "ref": 340,
+                "note": "34 m ÷ 0.1 s = 340 m/s，独立计算后录入参考值。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "较远直达测量",
+                "expr": "s/t",
+                "ref": 340,
+                "note": "170 m ÷ 0.5 s = 340 m/s，改变测量路程和时间后复算。"
+              },
+              {
+                "type": "direction",
+                "scenario": "近距离直达测量",
+                "var": "s",
+                "lo": 17,
+                "hi": 68,
+                "expr": "s/t",
+                "expect": "up",
+                "note": "传播时间不变时，测得路程增大，按定义算出的速度增大。"
+              },
+              {
+                "type": "scan",
+                "scenario": "近距离直达测量",
+                "var": "t",
+                "lo": 0.02,
+                "hi": 2,
+                "note": "固定一组有限路程，检查正时间范围内计算不出现异常值。"
+              },
+              {
+                "type": "consistency",
+                "scenario": "近距离直达测量",
+                "with": "sound-01|由直达传播路程和时间测声速",
+                "with_expr": "2*d/t_e",
+                "target": "声速，以米每秒表示",
+                "note": "本公式直接求c；参考端显式关系为2*d/t_e。两端使用同一情境和阶段，只核对该关系；with字段仅定位来源，不代表调用另一条被覆盖的公式。",
+                "verification_kind": "独立关系核对"
+              },
+              {
+                "type": "compare",
+                "scenario": "近距离直达测量",
+                "expr": "c",
+                "op": ">",
+                "vs": "100",
+                "note": "本情境的空气声速为数百 m/s，不应落到个位数。"
+              },
+              {
+                "type": "compare",
+                "scenario": "近距离直达测量",
+                "expr": "c",
+                "op": "<",
+                "vs": "1000",
+                "note": "本情境声速数量级为数百 m/s，而非数千 m/s。"
+              }
+            ]
+          },
+          {
+            "name": "米每秒与千米每小时的换算",
+            "expr": "v = 3.6*c",
+            "when": "c 用 m/s 表示、v 用 km/h 表示时，1 m/s = 3.6 km/h。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "近距离直达测量",
+                "expr": "3.6*c",
+                "ref": 1224,
+                "note": "340 m/s × 3.6 = 1224 km/h；先把 1 m 换为 0.001 km、1 s 换为 1/3600 h。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "0℃附近空气示例",
+                "expr": "3.6*c",
+                "ref": 1188,
+                "note": "在 0℃ 附近取空气声速约 330 m/s，330 × 3.6 = 1188 km/h，独立核算后录入。"
+              },
+              {
+                "type": "direction",
+                "scenario": "近距离直达测量",
+                "var": "c",
+                "lo": 100,
+                "hi": 500,
+                "expr": "3.6*c",
+                "expect": "up",
+                "note": "换算比例固定为正数，原速度增大时换算后的速度也增大。"
+              },
+              {
+                "type": "scan",
+                "scenario": "近距离直达测量",
+                "var": "c",
+                "lo": 1,
+                "hi": 1500,
+                "note": "检查正声速范围内的单位换算稳定。"
+              },
+              {
+                "type": "consistency",
+                "scenario": "近距离直达测量",
+                "with": "sound-01|米每秒与千米每小时的换算",
+                "with_expr": "3.6*s/t",
+                "target": "同一声速换算成千米每小时后的数值",
+                "note": "本公式直接求v；参考端显式关系为3.6*s/t。两端使用同一情境和阶段，只核对该关系；with字段仅定位来源，不代表调用另一条被覆盖的公式。",
+                "verification_kind": "独立关系核对"
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "先选定声源与接收位置，明确测量的是声音实际走过的直达路程 s。",
+          "记录声音走完这段路程所用的时间 t；路程和时间的单位要先统一。",
+          "用 c = s/t 求出 m/s；若需要 km/h，再把 m/s 的数值乘以 3.6。",
+          "声音是否由振动产生、传播是否需要介质，仍需依靠观察和实验现象判断。"
+        ],
+        "errors": [
+          {
+            "wrong": "把 m/s 换成 km/h 时把 3.6 除上去，写成 v = c/3.6。",
+            "wrong_expr": "v = c/3.6",
+            "why": "从米每秒换到千米每小时要同时把米换成千米、秒换成小时，数值应乘 3.6。把 340 m/s 除以 3.6 得到约 94.4 km/h，与正确的 1224 km/h 不符；这是量纲相同但方向错误的单位换算，必须靠数值检查发现。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "近距离直达测量",
+              "expr": "c/3.6",
+              "ref": 1224
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "把声速写成路程乘时间，c = s·t。",
+            "wrong_expr": "c = s*t",
+            "why": "声速定义为单位时间内传播的路程，应使用路程除以时间。相乘后单位变成 m·s，不是 m/s，量纲检查能抓住。",
+            "caught_by": "量纲一致性",
+            "trap_test": {
+              "kind": "dimension",
+              "target": "c = s*t",
+              "lhs_dim": "L·T^-1",
+              "rhs_dim": "L·T",
+              "expect": "mismatch",
+              "note": "实际量纲检查得到等号左边为L·T^-1、右边为L·T；两边不是同一物理量，因此该等式不成立。"
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "认为声音能在真空中传播，只是传播得比较慢。",
+            "why": "声波传播依靠介质中的振动传递；真空没有这种介质。需要用真空罩实验现象和机械波概念辨析，不能由声速计算式判定。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "在空气中测得一段直达声传播 34 m 用时 0.10 s。求声速，并换算成 km/h。",
+          "solution": [
+            "由声速定义，c = s/t = 34/0.10 = 340 m/s。",
+            "换算为 km/h：v = 3.6c = 3.6×340 = 1224 km/h。",
+            "检查单位：第一问是 m/s，第二问是 km/h；两者描述同一速度。"
+          ],
+          "answer": "声速为 340 m/s，即 1224 km/h。"
+        },
+        "prereq": [],
+        "next": [
+          "sound-02",
+          "sound-03"
+        ],
+        "tags": [
+          "声音的产生",
+          "介质",
+          "声速",
+          "单位换算",
+          "噪声控制"
+        ],
+        "core": [
+          {
+            "title": "引言：观察、证据与科学探究",
+            "text": "物理研究物质、运动和相互作用。看到纸屑跳动先记录现象，再提出“纸屑跳动是否由振动引起”的问题。依次提出问题、作出猜想、设计实验、收集证据、分析解释、交流与评价；控制变量用于分清因果，重复实验用于检查偶然性。观察不是结论，模型不是实物。物理学支撑航天、能源、信息和医疗等技术；评价技术既看功能，也看证据、资源和影响。"
+          },
+          {
+            "title": "物理学与科技强国",
+            "text": "航天器的运动控制需要力与运动规律，卫星信号依赖电磁波，深海探测要研究压强、材料和测量方法。把工程问题分解为可测的物理量，再用实验和模型检验方案，是物理知识走向技术的途径。以“远处传回的信息是否等于此刻状态”为问题，查阅并比较传播距离、速度与延迟；事实、模型和个人设想分别记录，不用口号代替证据。"
+          },
+          {
+            "title": "声音是什么",
+            "text": "正在发声的音叉接触轻小球，小球被弹开，把微小振动转成可观察现象；制止振动，发声也停止。真空罩中随空气抽出声音减弱，不能凭一次演示声称实现绝对真空。固体、液体、气体可传声，真空不能传声；约340 m/s是常温空气的近似值，不能用于水中声呐。"
+          },
+          {
+            "title": "噪声及其控制",
+            "text": "物理上常把无规则振动产生的声音称为噪声；环境意义上，干扰休息、学习或工作的声音也可能是噪声，音乐也会成为干扰。减弱声源、阻断传播、保护接收者分别对应降低音箱音量、隔声窗、耳塞。分贝表示声级，声级与日常感觉的响度不能简单等同；不把两个分贝数直接相加。"
+          },
+          {
+            "title": "跨学科实践（原创任务）",
+            "text": "设计教室噪声观察记录：选相同测点和时段，记录声源、传播途径与措施；若使用手机声级应用，只比较同设备相对读数，不冒充校准分贝测量。交付平面草图、控制条件和改进前后观察，联系健康与空间设计。"
+          },
+          {
+            "title": "本章素养回顾（原创任务）",
+            "text": "选择本章一个现象，写出结论、成立条件和证据；用另一条本章规律复核解释是否矛盾。指出一次测量或模型的局限，并说明还需什么证据；数值通过不替代概念辨析。"
+          }
+        ],
+        "evidence": [
+          {
+            "kind": "range",
+            "value": 340,
+            "unit": "m/s",
+            "lo": 300,
+            "hi": 380,
+            "note": "普通环境温度附近空气声速数量级，不用于水或极端温度。"
+          }
+        ],
+        "learning_scope": "初中"
+      },
+      "error_index": 1,
+      "chapter": "引言 · 第一章 声现象"
+    },
+    "diagnostic-sound-01-3": {
+      "point": {
+        "id": "sound-01",
+        "title": "声音的产生、传播与声速",
+        "level": "基础",
+        "definition": "声音由物体的振动产生，传播需要介质，在不同介质中的传播快慢不同。已知声音通过的路程和所用时间，可以用路程与时间的比值求声速；这一计算只描述可测量的传播过程，不代替对发声和介质条件的实验判断。",
+        "meaning": "观察声源时，可以用纸屑、薄膜或触摸等方式发现振动；传播时，声音通过固体、液体或气体中的介质传到接收者，真空中不能传播声音。声速把传播路程和时间联系起来；空气温度改变时声速也会变化，因此实验比较要注明条件。控制噪声可在声源处减弱振动，在传播途中隔声或吸声，也可在接收者处使用耳塞等防护。噪声控制不能简单理解成降低声速。",
+        "symbols": {
+          "s": {
+            "desc": "声音在介质中传播的路程",
+            "unit": "m"
+          },
+          "t": {
+            "desc": "声音传播这段路程所用的时间",
+            "unit": "s"
+          },
+          "c": {
+            "desc": "声速，以米每秒表示",
+            "unit": "m/s"
+          },
+          "v": {
+            "desc": "同一声速换算成千米每小时后的数值",
+            "unit": "km/h"
+          },
+          "d": {
+            "desc": "声源到反射面的单程距离，用于另一种测声速方法",
+            "unit": "m"
+          },
+          "t_e": {
+            "desc": "声音发出到接收到回声的往返时间",
+            "unit": "s"
+          },
+          "f": {
+            "desc": "声源振动频率，即每秒完成的振动次数",
+            "unit": "Hz"
+          },
+          "T": {
+            "desc": "声源完成一次完整振动所用的周期",
+            "unit": "s"
+          },
+          "N": {
+            "desc": "在计时区间内完成的完整振动次数",
+            "unit": "1"
+          }
+        },
+        "scenarios": {
+          "近距离直达测量": {
+            "s": 34,
+            "t": 0.1,
+            "c": 340,
+            "v": 1224,
+            "d": 68,
+            "t_e": 0.4
+          },
+          "较远直达测量": {
+            "s": 170,
+            "t": 0.5,
+            "c": 340,
+            "v": 1224,
+            "d": 34,
+            "t_e": 0.2
+          },
+          "0℃附近空气示例": {
+            "s": 33,
+            "t": 0.1,
+            "c": 330,
+            "v": 1188,
+            "d": 68,
+            "t_e": 0.4
+          },
+          "低音演示": {
+            "f": 200,
+            "T": 0.005,
+            "N": 400,
+            "t": 2
+          },
+          "较高音演示": {
+            "f": 500,
+            "T": 0.002,
+            "N": 1000,
+            "t": 2
+          },
+          "次声示例": {
+            "f": 15,
+            "T": 0.0666666666667,
+            "N": 15,
+            "t": 1
+          },
+          "超声示例": {
+            "f": 30000,
+            "T": 3.33333333333e-05,
+            "N": 30000,
+            "t": 1
+          }
+        },
+        "formulas": [
+          {
+            "name": "由直达传播路程和时间测声速",
+            "expr": "c = s/t",
+            "when": "传播路程和时间采用同一段直达传播过程，结果单位为 m/s。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "近距离直达测量",
+                "expr": "s/t",
+                "ref": 340,
+                "note": "34 m ÷ 0.1 s = 340 m/s，独立计算后录入参考值。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "较远直达测量",
+                "expr": "s/t",
+                "ref": 340,
+                "note": "170 m ÷ 0.5 s = 340 m/s，改变测量路程和时间后复算。"
+              },
+              {
+                "type": "direction",
+                "scenario": "近距离直达测量",
+                "var": "s",
+                "lo": 17,
+                "hi": 68,
+                "expr": "s/t",
+                "expect": "up",
+                "note": "传播时间不变时，测得路程增大，按定义算出的速度增大。"
+              },
+              {
+                "type": "scan",
+                "scenario": "近距离直达测量",
+                "var": "t",
+                "lo": 0.02,
+                "hi": 2,
+                "note": "固定一组有限路程，检查正时间范围内计算不出现异常值。"
+              },
+              {
+                "type": "consistency",
+                "scenario": "近距离直达测量",
+                "with": "sound-01|由直达传播路程和时间测声速",
+                "with_expr": "2*d/t_e",
+                "target": "声速，以米每秒表示",
+                "note": "本公式直接求c；参考端显式关系为2*d/t_e。两端使用同一情境和阶段，只核对该关系；with字段仅定位来源，不代表调用另一条被覆盖的公式。",
+                "verification_kind": "独立关系核对"
+              },
+              {
+                "type": "compare",
+                "scenario": "近距离直达测量",
+                "expr": "c",
+                "op": ">",
+                "vs": "100",
+                "note": "本情境的空气声速为数百 m/s，不应落到个位数。"
+              },
+              {
+                "type": "compare",
+                "scenario": "近距离直达测量",
+                "expr": "c",
+                "op": "<",
+                "vs": "1000",
+                "note": "本情境声速数量级为数百 m/s，而非数千 m/s。"
+              }
+            ]
+          },
+          {
+            "name": "米每秒与千米每小时的换算",
+            "expr": "v = 3.6*c",
+            "when": "c 用 m/s 表示、v 用 km/h 表示时，1 m/s = 3.6 km/h。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "近距离直达测量",
+                "expr": "3.6*c",
+                "ref": 1224,
+                "note": "340 m/s × 3.6 = 1224 km/h；先把 1 m 换为 0.001 km、1 s 换为 1/3600 h。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "0℃附近空气示例",
+                "expr": "3.6*c",
+                "ref": 1188,
+                "note": "在 0℃ 附近取空气声速约 330 m/s，330 × 3.6 = 1188 km/h，独立核算后录入。"
+              },
+              {
+                "type": "direction",
+                "scenario": "近距离直达测量",
+                "var": "c",
+                "lo": 100,
+                "hi": 500,
+                "expr": "3.6*c",
+                "expect": "up",
+                "note": "换算比例固定为正数，原速度增大时换算后的速度也增大。"
+              },
+              {
+                "type": "scan",
+                "scenario": "近距离直达测量",
+                "var": "c",
+                "lo": 1,
+                "hi": 1500,
+                "note": "检查正声速范围内的单位换算稳定。"
+              },
+              {
+                "type": "consistency",
+                "scenario": "近距离直达测量",
+                "with": "sound-01|米每秒与千米每小时的换算",
+                "with_expr": "3.6*s/t",
+                "target": "同一声速换算成千米每小时后的数值",
+                "note": "本公式直接求v；参考端显式关系为3.6*s/t。两端使用同一情境和阶段，只核对该关系；with字段仅定位来源，不代表调用另一条被覆盖的公式。",
+                "verification_kind": "独立关系核对"
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "先选定声源与接收位置，明确测量的是声音实际走过的直达路程 s。",
+          "记录声音走完这段路程所用的时间 t；路程和时间的单位要先统一。",
+          "用 c = s/t 求出 m/s；若需要 km/h，再把 m/s 的数值乘以 3.6。",
+          "声音是否由振动产生、传播是否需要介质，仍需依靠观察和实验现象判断。"
+        ],
+        "errors": [
+          {
+            "wrong": "把 m/s 换成 km/h 时把 3.6 除上去，写成 v = c/3.6。",
+            "wrong_expr": "v = c/3.6",
+            "why": "从米每秒换到千米每小时要同时把米换成千米、秒换成小时，数值应乘 3.6。把 340 m/s 除以 3.6 得到约 94.4 km/h，与正确的 1224 km/h 不符；这是量纲相同但方向错误的单位换算，必须靠数值检查发现。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "近距离直达测量",
+              "expr": "c/3.6",
+              "ref": 1224
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "把声速写成路程乘时间，c = s·t。",
+            "wrong_expr": "c = s*t",
+            "why": "声速定义为单位时间内传播的路程，应使用路程除以时间。相乘后单位变成 m·s，不是 m/s，量纲检查能抓住。",
+            "caught_by": "量纲一致性",
+            "trap_test": {
+              "kind": "dimension",
+              "target": "c = s*t",
+              "lhs_dim": "L·T^-1",
+              "rhs_dim": "L·T",
+              "expect": "mismatch",
+              "note": "实际量纲检查得到等号左边为L·T^-1、右边为L·T；两边不是同一物理量，因此该等式不成立。"
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "认为声音能在真空中传播，只是传播得比较慢。",
+            "why": "声波传播依靠介质中的振动传递；真空没有这种介质。需要用真空罩实验现象和机械波概念辨析，不能由声速计算式判定。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "在空气中测得一段直达声传播 34 m 用时 0.10 s。求声速，并换算成 km/h。",
+          "solution": [
+            "由声速定义，c = s/t = 34/0.10 = 340 m/s。",
+            "换算为 km/h：v = 3.6c = 3.6×340 = 1224 km/h。",
+            "检查单位：第一问是 m/s，第二问是 km/h；两者描述同一速度。"
+          ],
+          "answer": "声速为 340 m/s，即 1224 km/h。"
+        },
+        "prereq": [],
+        "next": [
+          "sound-02",
+          "sound-03"
+        ],
+        "tags": [
+          "声音的产生",
+          "介质",
+          "声速",
+          "单位换算",
+          "噪声控制"
+        ],
+        "core": [
+          {
+            "title": "引言：观察、证据与科学探究",
+            "text": "物理研究物质、运动和相互作用。看到纸屑跳动先记录现象，再提出“纸屑跳动是否由振动引起”的问题。依次提出问题、作出猜想、设计实验、收集证据、分析解释、交流与评价；控制变量用于分清因果，重复实验用于检查偶然性。观察不是结论，模型不是实物。物理学支撑航天、能源、信息和医疗等技术；评价技术既看功能，也看证据、资源和影响。"
+          },
+          {
+            "title": "物理学与科技强国",
+            "text": "航天器的运动控制需要力与运动规律，卫星信号依赖电磁波，深海探测要研究压强、材料和测量方法。把工程问题分解为可测的物理量，再用实验和模型检验方案，是物理知识走向技术的途径。以“远处传回的信息是否等于此刻状态”为问题，查阅并比较传播距离、速度与延迟；事实、模型和个人设想分别记录，不用口号代替证据。"
+          },
+          {
+            "title": "声音是什么",
+            "text": "正在发声的音叉接触轻小球，小球被弹开，把微小振动转成可观察现象；制止振动，发声也停止。真空罩中随空气抽出声音减弱，不能凭一次演示声称实现绝对真空。固体、液体、气体可传声，真空不能传声；约340 m/s是常温空气的近似值，不能用于水中声呐。"
+          },
+          {
+            "title": "噪声及其控制",
+            "text": "物理上常把无规则振动产生的声音称为噪声；环境意义上，干扰休息、学习或工作的声音也可能是噪声，音乐也会成为干扰。减弱声源、阻断传播、保护接收者分别对应降低音箱音量、隔声窗、耳塞。分贝表示声级，声级与日常感觉的响度不能简单等同；不把两个分贝数直接相加。"
+          },
+          {
+            "title": "跨学科实践（原创任务）",
+            "text": "设计教室噪声观察记录：选相同测点和时段，记录声源、传播途径与措施；若使用手机声级应用，只比较同设备相对读数，不冒充校准分贝测量。交付平面草图、控制条件和改进前后观察，联系健康与空间设计。"
+          },
+          {
+            "title": "本章素养回顾（原创任务）",
+            "text": "选择本章一个现象，写出结论、成立条件和证据；用另一条本章规律复核解释是否矛盾。指出一次测量或模型的局限，并说明还需什么证据；数值通过不替代概念辨析。"
+          }
+        ],
+        "evidence": [
+          {
+            "kind": "range",
+            "value": 340,
+            "unit": "m/s",
+            "lo": 300,
+            "hi": 380,
+            "note": "普通环境温度附近空气声速数量级，不用于水或极端温度。"
+          }
+        ],
+        "learning_scope": "初中"
+      },
+      "error_index": 2,
+      "chapter": "引言 · 第一章 声现象"
+    },
+    "diagnostic-sound-02-1": {
+      "point": {
+        "id": "sound-02",
+        "title": "回声与声呐测距",
+        "level": "基础",
+        "definition": "声音遇到障碍物反射后返回，若能分辨出返回的声音，就形成回声。测回声时记录的是声音从声源到反射面再返回的往返时间，因此声源到反射面的距离等于声速乘往返时间的一半。",
+        "meaning": "回声测距常用于估计声源到墙面、山体或水下目标的距离。关键不是公式本身，而是先画出传播路径：声音走了一个来回，仪器记录的也是一个来回的时间。若把往返路程直接当成单程距离，答案就会扩大一倍。水下声呐同样依据发射与接收间隔估计目标距离，但实际测量还要考虑水中声速和回波识别条件。",
+        "symbols": {
+          "d": {
+            "desc": "声源到反射面的单程距离",
+            "unit": "m"
+          },
+          "l": {
+            "desc": "声音发出后往返传播的总路程",
+            "unit": "m"
+          },
+          "c": {
+            "desc": "声音在介质中的传播速度",
+            "unit": "m/s"
+          },
+          "t_e": {
+            "desc": "从发声到接收到回声的往返时间",
+            "unit": "s"
+          },
+          "s": {
+            "desc": "直达测声速实验中声音传播的路程",
+            "unit": "m"
+          },
+          "t": {
+            "desc": "直达测声速实验中声音传播的时间",
+            "unit": "s"
+          },
+          "f": {
+            "desc": "声源振动频率，即每秒完成的振动次数",
+            "unit": "Hz"
+          },
+          "T": {
+            "desc": "声源完成一次完整振动所用的周期",
+            "unit": "s"
+          },
+          "N": {
+            "desc": "在计时区间内完成的完整振动次数",
+            "unit": "1"
+          }
+        },
+        "scenarios": {
+          "墙面相距68米": {
+            "d": 68,
+            "l": 136,
+            "c": 340,
+            "t_e": 0.4,
+            "s": 34,
+            "t": 0.1
+          },
+          "墙面相距34米": {
+            "d": 34,
+            "l": 68,
+            "c": 340,
+            "t_e": 0.2,
+            "s": 68,
+            "t": 0.2
+          },
+          "低音演示": {
+            "f": 200,
+            "T": 0.005,
+            "N": 400,
+            "t": 2
+          },
+          "较高音演示": {
+            "f": 500,
+            "T": 0.002,
+            "N": 1000,
+            "t": 2
+          },
+          "次声示例": {
+            "f": 15,
+            "T": 0.0666666666667,
+            "N": 15,
+            "t": 1
+          },
+          "超声示例": {
+            "f": 30000,
+            "T": 3.33333333333e-05,
+            "N": 30000,
+            "t": 1
+          }
+        },
+        "formulas": [
+          {
+            "name": "由回声往返时间求反射面距离",
+            "expr": "d = c*t_e/2",
+            "when": "公式中的时间是发声到收到回声的往返时间；c 为声音在传播介质中的声速。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "墙面相距68米",
+                "expr": "c*t_e/2",
+                "ref": 68,
+                "note": "340 m/s×0.4 s÷2 = 68 m，先算往返路程再取一半。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "墙面相距34米",
+                "expr": "c*t_e/2",
+                "ref": 34,
+                "note": "340 m/s×0.2 s÷2 = 34 m，独立复算。"
+              },
+              {
+                "type": "direction",
+                "scenario": "墙面相距68米",
+                "var": "t_e",
+                "lo": 0.1,
+                "hi": 0.8,
+                "expr": "c*t_e/2",
+                "expect": "up",
+                "note": "声速不变时，往返时间越长，反射面越远。"
+              },
+              {
+                "type": "scan",
+                "scenario": "墙面相距68米",
+                "var": "t_e",
+                "lo": 0.001,
+                "hi": 5,
+                "note": "检查正常正时间范围内测距计算不崩溃。"
+              },
+              {
+                "type": "consistency",
+                "scenario": "墙面相距68米",
+                "with": "sound-02|由回声往返时间求反射面距离",
+                "with_expr": "l/2",
+                "target": "声源到反射面的单程距离",
+                "note": "本公式直接求d；参考端显式关系为l/2。两端使用同一情境和阶段，只核对该关系；with字段仅定位来源，不代表调用另一条被覆盖的公式。",
+                "verification_kind": "独立关系核对"
+              },
+              {
+                "type": "compare",
+                "scenario": "墙面相距68米",
+                "expr": "l",
+                "op": "==",
+                "vs": "2*d",
+                "note": "回声总路程由去程和回程两段相同路程组成。"
+              }
+            ]
+          },
+          {
+            "name": "由已知反射面距离反测声速",
+            "expr": "c = 2*d/t_e",
+            "when": "反射面单程距离 d 已知，时间必须采用发声到收声的往返时间。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "墙面相距68米",
+                "expr": "2*d/t_e",
+                "ref": 340,
+                "note": "2×68 m÷0.4 s = 340 m/s。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "墙面相距34米",
+                "expr": "2*d/t_e",
+                "ref": 340,
+                "note": "2×34 m÷0.2 s = 340 m/s，另一距离情境复算。"
+              },
+              {
+                "type": "direction",
+                "scenario": "墙面相距68米",
+                "var": "d",
+                "lo": 20,
+                "hi": 100,
+                "expr": "2*d/t_e",
+                "expect": "up",
+                "note": "往返时间固定时，反射面距离越大，反推出的声速数值越大。"
+              },
+              {
+                "type": "scan",
+                "scenario": "墙面相距68米",
+                "var": "t_e",
+                "lo": 0.01,
+                "hi": 2,
+                "note": "声速计算的时间不能取零，扫描正时间范围检查数值稳定。"
+              },
+              {
+                "type": "consistency",
+                "scenario": "墙面相距68米",
+                "with": "sound-02|由已知反射面距离反测声速",
+                "with_expr": "s/t",
+                "target": "声音在介质中的传播速度",
+                "note": "本公式直接求c；参考端显式关系为s/t。两端使用同一情境和阶段，只核对该关系；with字段仅定位来源，不代表调用另一条被覆盖的公式。",
+                "verification_kind": "独立关系核对"
+              }
+            ]
+          },
+          {
+            "name": "回声的往返总路程",
+            "expr": "l = c*t_e",
+            "when": "计算声音从发出到返回接收点所走过的总路程。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "墙面相距68米",
+                "expr": "c*t_e",
+                "ref": 136,
+                "note": "340 m/s×0.4 s = 136 m，总路程是单程的两倍。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "墙面相距34米",
+                "expr": "c*t_e",
+                "ref": 68,
+                "note": "340 m/s×0.2 s = 68 m，独立复算。"
+              },
+              {
+                "type": "scan",
+                "scenario": "墙面相距68米",
+                "var": "t_e",
+                "lo": 0.001,
+                "hi": 5,
+                "note": "检查时间变化时总路程计算保持有限。"
+              },
+              {
+                "type": "consistency",
+                "scenario": "墙面相距68米",
+                "with": "sound-02|回声的往返总路程",
+                "with_expr": "2*d",
+                "target": "声音发出后往返传播的总路程",
+                "note": "本公式直接求l；参考端显式关系为2*d。两端使用同一情境和阶段，只核对该关系；with字段仅定位来源，不代表调用另一条被覆盖的公式。",
+                "verification_kind": "独立关系核对"
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "先明确计时起点是发声时刻，计时终点是接收到回声的时刻。",
+          "声音从声源到反射面再返回，传播总路程是单程距离的两倍。",
+          "总路程由声速乘往返时间得到，再除以 2 得到声源到反射面的距离。",
+          "如果题目给的是单程传播时间，就不再额外除以 2；读清楚计时方式是关键。"
+        ],
+        "errors": [
+          {
+            "wrong": "把声源到反射面的距离直接写成 d = c·tₑ，忘记计时记录的是往返时间。",
+            "wrong_expr": "d = c*t_e",
+            "why": "往返时间对应的是去程和回程的总路程。把总路程当单程距离会多算一倍；在 68 m 的墙距情境中，错误写法得到 136 m。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "墙面相距68米",
+              "expr": "c*t_e",
+              "ref": 68
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "把往返时间除以 2 后，又把总路程多除一次，写成 d = c·tₑ/4。",
+            "wrong_expr": "d = c*t_e/4",
+            "why": "公式中的一半已经把往返总路程转成单程距离，不能再重复减半。代入 0.4 s 会得到 34 m，而正确墙距为 68 m。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "墙面相距68米",
+              "expr": "c*t_e/4",
+              "ref": 68
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "认为听见回声只说明障碍物存在，不需要考虑声速和传播时间。",
+            "why": "回声可以用于距离测量，但距离要从介质中的传播速度和往返时间计算。实际声呐还受介质、反射面和回波识别影响，概念判断需人工结合情境审查。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "声呐在水中发出一束声音，0.20 s 后收到目标反射回来的回声。若水中声速取 1500 m/s，求目标距离。",
+          "solution": [
+            "0.20 s 是声音发出到返回的往返时间，不是单程时间。",
+            "目标距离 d = c·tₑ/2 = 1500×0.20÷2 = 150 m。"
+          ],
+          "answer": "目标距声呐约 150 m。"
+        },
+        "prereq": [
+          "sound-01"
+        ],
+        "next": [
+          "sound-03"
+        ],
+        "tags": [
+          "回声",
+          "声呐",
+          "往返时间",
+          "单位换算"
+        ],
+        "core": [
+          {
+            "title": "人耳听不到的声音",
+            "text": "超声频率高于约20000 Hz，次声低于约20 Hz，人耳听觉范围因人而异。超声可用于声呐、探伤、清洗和医学检查；次声可与地震、火山及大型设备振动有关。超声、次声仍是需要介质的声波；超声频率高并不表示在同一介质中传播得更快。"
+          }
+        ],
+        "learning_scope": "初中"
+      },
+      "error_index": 0,
+      "chapter": "引言 · 第一章 声现象"
+    },
+    "diagnostic-sound-02-2": {
+      "point": {
+        "id": "sound-02",
+        "title": "回声与声呐测距",
+        "level": "基础",
+        "definition": "声音遇到障碍物反射后返回，若能分辨出返回的声音，就形成回声。测回声时记录的是声音从声源到反射面再返回的往返时间，因此声源到反射面的距离等于声速乘往返时间的一半。",
+        "meaning": "回声测距常用于估计声源到墙面、山体或水下目标的距离。关键不是公式本身，而是先画出传播路径：声音走了一个来回，仪器记录的也是一个来回的时间。若把往返路程直接当成单程距离，答案就会扩大一倍。水下声呐同样依据发射与接收间隔估计目标距离，但实际测量还要考虑水中声速和回波识别条件。",
+        "symbols": {
+          "d": {
+            "desc": "声源到反射面的单程距离",
+            "unit": "m"
+          },
+          "l": {
+            "desc": "声音发出后往返传播的总路程",
+            "unit": "m"
+          },
+          "c": {
+            "desc": "声音在介质中的传播速度",
+            "unit": "m/s"
+          },
+          "t_e": {
+            "desc": "从发声到接收到回声的往返时间",
+            "unit": "s"
+          },
+          "s": {
+            "desc": "直达测声速实验中声音传播的路程",
+            "unit": "m"
+          },
+          "t": {
+            "desc": "直达测声速实验中声音传播的时间",
+            "unit": "s"
+          },
+          "f": {
+            "desc": "声源振动频率，即每秒完成的振动次数",
+            "unit": "Hz"
+          },
+          "T": {
+            "desc": "声源完成一次完整振动所用的周期",
+            "unit": "s"
+          },
+          "N": {
+            "desc": "在计时区间内完成的完整振动次数",
+            "unit": "1"
+          }
+        },
+        "scenarios": {
+          "墙面相距68米": {
+            "d": 68,
+            "l": 136,
+            "c": 340,
+            "t_e": 0.4,
+            "s": 34,
+            "t": 0.1
+          },
+          "墙面相距34米": {
+            "d": 34,
+            "l": 68,
+            "c": 340,
+            "t_e": 0.2,
+            "s": 68,
+            "t": 0.2
+          },
+          "低音演示": {
+            "f": 200,
+            "T": 0.005,
+            "N": 400,
+            "t": 2
+          },
+          "较高音演示": {
+            "f": 500,
+            "T": 0.002,
+            "N": 1000,
+            "t": 2
+          },
+          "次声示例": {
+            "f": 15,
+            "T": 0.0666666666667,
+            "N": 15,
+            "t": 1
+          },
+          "超声示例": {
+            "f": 30000,
+            "T": 3.33333333333e-05,
+            "N": 30000,
+            "t": 1
+          }
+        },
+        "formulas": [
+          {
+            "name": "由回声往返时间求反射面距离",
+            "expr": "d = c*t_e/2",
+            "when": "公式中的时间是发声到收到回声的往返时间；c 为声音在传播介质中的声速。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "墙面相距68米",
+                "expr": "c*t_e/2",
+                "ref": 68,
+                "note": "340 m/s×0.4 s÷2 = 68 m，先算往返路程再取一半。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "墙面相距34米",
+                "expr": "c*t_e/2",
+                "ref": 34,
+                "note": "340 m/s×0.2 s÷2 = 34 m，独立复算。"
+              },
+              {
+                "type": "direction",
+                "scenario": "墙面相距68米",
+                "var": "t_e",
+                "lo": 0.1,
+                "hi": 0.8,
+                "expr": "c*t_e/2",
+                "expect": "up",
+                "note": "声速不变时，往返时间越长，反射面越远。"
+              },
+              {
+                "type": "scan",
+                "scenario": "墙面相距68米",
+                "var": "t_e",
+                "lo": 0.001,
+                "hi": 5,
+                "note": "检查正常正时间范围内测距计算不崩溃。"
+              },
+              {
+                "type": "consistency",
+                "scenario": "墙面相距68米",
+                "with": "sound-02|由回声往返时间求反射面距离",
+                "with_expr": "l/2",
+                "target": "声源到反射面的单程距离",
+                "note": "本公式直接求d；参考端显式关系为l/2。两端使用同一情境和阶段，只核对该关系；with字段仅定位来源，不代表调用另一条被覆盖的公式。",
+                "verification_kind": "独立关系核对"
+              },
+              {
+                "type": "compare",
+                "scenario": "墙面相距68米",
+                "expr": "l",
+                "op": "==",
+                "vs": "2*d",
+                "note": "回声总路程由去程和回程两段相同路程组成。"
+              }
+            ]
+          },
+          {
+            "name": "由已知反射面距离反测声速",
+            "expr": "c = 2*d/t_e",
+            "when": "反射面单程距离 d 已知，时间必须采用发声到收声的往返时间。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "墙面相距68米",
+                "expr": "2*d/t_e",
+                "ref": 340,
+                "note": "2×68 m÷0.4 s = 340 m/s。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "墙面相距34米",
+                "expr": "2*d/t_e",
+                "ref": 340,
+                "note": "2×34 m÷0.2 s = 340 m/s，另一距离情境复算。"
+              },
+              {
+                "type": "direction",
+                "scenario": "墙面相距68米",
+                "var": "d",
+                "lo": 20,
+                "hi": 100,
+                "expr": "2*d/t_e",
+                "expect": "up",
+                "note": "往返时间固定时，反射面距离越大，反推出的声速数值越大。"
+              },
+              {
+                "type": "scan",
+                "scenario": "墙面相距68米",
+                "var": "t_e",
+                "lo": 0.01,
+                "hi": 2,
+                "note": "声速计算的时间不能取零，扫描正时间范围检查数值稳定。"
+              },
+              {
+                "type": "consistency",
+                "scenario": "墙面相距68米",
+                "with": "sound-02|由已知反射面距离反测声速",
+                "with_expr": "s/t",
+                "target": "声音在介质中的传播速度",
+                "note": "本公式直接求c；参考端显式关系为s/t。两端使用同一情境和阶段，只核对该关系；with字段仅定位来源，不代表调用另一条被覆盖的公式。",
+                "verification_kind": "独立关系核对"
+              }
+            ]
+          },
+          {
+            "name": "回声的往返总路程",
+            "expr": "l = c*t_e",
+            "when": "计算声音从发出到返回接收点所走过的总路程。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "墙面相距68米",
+                "expr": "c*t_e",
+                "ref": 136,
+                "note": "340 m/s×0.4 s = 136 m，总路程是单程的两倍。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "墙面相距34米",
+                "expr": "c*t_e",
+                "ref": 68,
+                "note": "340 m/s×0.2 s = 68 m，独立复算。"
+              },
+              {
+                "type": "scan",
+                "scenario": "墙面相距68米",
+                "var": "t_e",
+                "lo": 0.001,
+                "hi": 5,
+                "note": "检查时间变化时总路程计算保持有限。"
+              },
+              {
+                "type": "consistency",
+                "scenario": "墙面相距68米",
+                "with": "sound-02|回声的往返总路程",
+                "with_expr": "2*d",
+                "target": "声音发出后往返传播的总路程",
+                "note": "本公式直接求l；参考端显式关系为2*d。两端使用同一情境和阶段，只核对该关系；with字段仅定位来源，不代表调用另一条被覆盖的公式。",
+                "verification_kind": "独立关系核对"
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "先明确计时起点是发声时刻，计时终点是接收到回声的时刻。",
+          "声音从声源到反射面再返回，传播总路程是单程距离的两倍。",
+          "总路程由声速乘往返时间得到，再除以 2 得到声源到反射面的距离。",
+          "如果题目给的是单程传播时间，就不再额外除以 2；读清楚计时方式是关键。"
+        ],
+        "errors": [
+          {
+            "wrong": "把声源到反射面的距离直接写成 d = c·tₑ，忘记计时记录的是往返时间。",
+            "wrong_expr": "d = c*t_e",
+            "why": "往返时间对应的是去程和回程的总路程。把总路程当单程距离会多算一倍；在 68 m 的墙距情境中，错误写法得到 136 m。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "墙面相距68米",
+              "expr": "c*t_e",
+              "ref": 68
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "把往返时间除以 2 后，又把总路程多除一次，写成 d = c·tₑ/4。",
+            "wrong_expr": "d = c*t_e/4",
+            "why": "公式中的一半已经把往返总路程转成单程距离，不能再重复减半。代入 0.4 s 会得到 34 m，而正确墙距为 68 m。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "墙面相距68米",
+              "expr": "c*t_e/4",
+              "ref": 68
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "认为听见回声只说明障碍物存在，不需要考虑声速和传播时间。",
+            "why": "回声可以用于距离测量，但距离要从介质中的传播速度和往返时间计算。实际声呐还受介质、反射面和回波识别影响，概念判断需人工结合情境审查。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "声呐在水中发出一束声音，0.20 s 后收到目标反射回来的回声。若水中声速取 1500 m/s，求目标距离。",
+          "solution": [
+            "0.20 s 是声音发出到返回的往返时间，不是单程时间。",
+            "目标距离 d = c·tₑ/2 = 1500×0.20÷2 = 150 m。"
+          ],
+          "answer": "目标距声呐约 150 m。"
+        },
+        "prereq": [
+          "sound-01"
+        ],
+        "next": [
+          "sound-03"
+        ],
+        "tags": [
+          "回声",
+          "声呐",
+          "往返时间",
+          "单位换算"
+        ],
+        "core": [
+          {
+            "title": "人耳听不到的声音",
+            "text": "超声频率高于约20000 Hz，次声低于约20 Hz，人耳听觉范围因人而异。超声可用于声呐、探伤、清洗和医学检查；次声可与地震、火山及大型设备振动有关。超声、次声仍是需要介质的声波；超声频率高并不表示在同一介质中传播得更快。"
+          }
+        ],
+        "learning_scope": "初中"
+      },
+      "error_index": 1,
+      "chapter": "引言 · 第一章 声现象"
+    },
+    "diagnostic-sound-02-3": {
+      "point": {
+        "id": "sound-02",
+        "title": "回声与声呐测距",
+        "level": "基础",
+        "definition": "声音遇到障碍物反射后返回，若能分辨出返回的声音，就形成回声。测回声时记录的是声音从声源到反射面再返回的往返时间，因此声源到反射面的距离等于声速乘往返时间的一半。",
+        "meaning": "回声测距常用于估计声源到墙面、山体或水下目标的距离。关键不是公式本身，而是先画出传播路径：声音走了一个来回，仪器记录的也是一个来回的时间。若把往返路程直接当成单程距离，答案就会扩大一倍。水下声呐同样依据发射与接收间隔估计目标距离，但实际测量还要考虑水中声速和回波识别条件。",
+        "symbols": {
+          "d": {
+            "desc": "声源到反射面的单程距离",
+            "unit": "m"
+          },
+          "l": {
+            "desc": "声音发出后往返传播的总路程",
+            "unit": "m"
+          },
+          "c": {
+            "desc": "声音在介质中的传播速度",
+            "unit": "m/s"
+          },
+          "t_e": {
+            "desc": "从发声到接收到回声的往返时间",
+            "unit": "s"
+          },
+          "s": {
+            "desc": "直达测声速实验中声音传播的路程",
+            "unit": "m"
+          },
+          "t": {
+            "desc": "直达测声速实验中声音传播的时间",
+            "unit": "s"
+          },
+          "f": {
+            "desc": "声源振动频率，即每秒完成的振动次数",
+            "unit": "Hz"
+          },
+          "T": {
+            "desc": "声源完成一次完整振动所用的周期",
+            "unit": "s"
+          },
+          "N": {
+            "desc": "在计时区间内完成的完整振动次数",
+            "unit": "1"
+          }
+        },
+        "scenarios": {
+          "墙面相距68米": {
+            "d": 68,
+            "l": 136,
+            "c": 340,
+            "t_e": 0.4,
+            "s": 34,
+            "t": 0.1
+          },
+          "墙面相距34米": {
+            "d": 34,
+            "l": 68,
+            "c": 340,
+            "t_e": 0.2,
+            "s": 68,
+            "t": 0.2
+          },
+          "低音演示": {
+            "f": 200,
+            "T": 0.005,
+            "N": 400,
+            "t": 2
+          },
+          "较高音演示": {
+            "f": 500,
+            "T": 0.002,
+            "N": 1000,
+            "t": 2
+          },
+          "次声示例": {
+            "f": 15,
+            "T": 0.0666666666667,
+            "N": 15,
+            "t": 1
+          },
+          "超声示例": {
+            "f": 30000,
+            "T": 3.33333333333e-05,
+            "N": 30000,
+            "t": 1
+          }
+        },
+        "formulas": [
+          {
+            "name": "由回声往返时间求反射面距离",
+            "expr": "d = c*t_e/2",
+            "when": "公式中的时间是发声到收到回声的往返时间；c 为声音在传播介质中的声速。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "墙面相距68米",
+                "expr": "c*t_e/2",
+                "ref": 68,
+                "note": "340 m/s×0.4 s÷2 = 68 m，先算往返路程再取一半。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "墙面相距34米",
+                "expr": "c*t_e/2",
+                "ref": 34,
+                "note": "340 m/s×0.2 s÷2 = 34 m，独立复算。"
+              },
+              {
+                "type": "direction",
+                "scenario": "墙面相距68米",
+                "var": "t_e",
+                "lo": 0.1,
+                "hi": 0.8,
+                "expr": "c*t_e/2",
+                "expect": "up",
+                "note": "声速不变时，往返时间越长，反射面越远。"
+              },
+              {
+                "type": "scan",
+                "scenario": "墙面相距68米",
+                "var": "t_e",
+                "lo": 0.001,
+                "hi": 5,
+                "note": "检查正常正时间范围内测距计算不崩溃。"
+              },
+              {
+                "type": "consistency",
+                "scenario": "墙面相距68米",
+                "with": "sound-02|由回声往返时间求反射面距离",
+                "with_expr": "l/2",
+                "target": "声源到反射面的单程距离",
+                "note": "本公式直接求d；参考端显式关系为l/2。两端使用同一情境和阶段，只核对该关系；with字段仅定位来源，不代表调用另一条被覆盖的公式。",
+                "verification_kind": "独立关系核对"
+              },
+              {
+                "type": "compare",
+                "scenario": "墙面相距68米",
+                "expr": "l",
+                "op": "==",
+                "vs": "2*d",
+                "note": "回声总路程由去程和回程两段相同路程组成。"
+              }
+            ]
+          },
+          {
+            "name": "由已知反射面距离反测声速",
+            "expr": "c = 2*d/t_e",
+            "when": "反射面单程距离 d 已知，时间必须采用发声到收声的往返时间。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "墙面相距68米",
+                "expr": "2*d/t_e",
+                "ref": 340,
+                "note": "2×68 m÷0.4 s = 340 m/s。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "墙面相距34米",
+                "expr": "2*d/t_e",
+                "ref": 340,
+                "note": "2×34 m÷0.2 s = 340 m/s，另一距离情境复算。"
+              },
+              {
+                "type": "direction",
+                "scenario": "墙面相距68米",
+                "var": "d",
+                "lo": 20,
+                "hi": 100,
+                "expr": "2*d/t_e",
+                "expect": "up",
+                "note": "往返时间固定时，反射面距离越大，反推出的声速数值越大。"
+              },
+              {
+                "type": "scan",
+                "scenario": "墙面相距68米",
+                "var": "t_e",
+                "lo": 0.01,
+                "hi": 2,
+                "note": "声速计算的时间不能取零，扫描正时间范围检查数值稳定。"
+              },
+              {
+                "type": "consistency",
+                "scenario": "墙面相距68米",
+                "with": "sound-02|由已知反射面距离反测声速",
+                "with_expr": "s/t",
+                "target": "声音在介质中的传播速度",
+                "note": "本公式直接求c；参考端显式关系为s/t。两端使用同一情境和阶段，只核对该关系；with字段仅定位来源，不代表调用另一条被覆盖的公式。",
+                "verification_kind": "独立关系核对"
+              }
+            ]
+          },
+          {
+            "name": "回声的往返总路程",
+            "expr": "l = c*t_e",
+            "when": "计算声音从发出到返回接收点所走过的总路程。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "墙面相距68米",
+                "expr": "c*t_e",
+                "ref": 136,
+                "note": "340 m/s×0.4 s = 136 m，总路程是单程的两倍。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "墙面相距34米",
+                "expr": "c*t_e",
+                "ref": 68,
+                "note": "340 m/s×0.2 s = 68 m，独立复算。"
+              },
+              {
+                "type": "scan",
+                "scenario": "墙面相距68米",
+                "var": "t_e",
+                "lo": 0.001,
+                "hi": 5,
+                "note": "检查时间变化时总路程计算保持有限。"
+              },
+              {
+                "type": "consistency",
+                "scenario": "墙面相距68米",
+                "with": "sound-02|回声的往返总路程",
+                "with_expr": "2*d",
+                "target": "声音发出后往返传播的总路程",
+                "note": "本公式直接求l；参考端显式关系为2*d。两端使用同一情境和阶段，只核对该关系；with字段仅定位来源，不代表调用另一条被覆盖的公式。",
+                "verification_kind": "独立关系核对"
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "先明确计时起点是发声时刻，计时终点是接收到回声的时刻。",
+          "声音从声源到反射面再返回，传播总路程是单程距离的两倍。",
+          "总路程由声速乘往返时间得到，再除以 2 得到声源到反射面的距离。",
+          "如果题目给的是单程传播时间，就不再额外除以 2；读清楚计时方式是关键。"
+        ],
+        "errors": [
+          {
+            "wrong": "把声源到反射面的距离直接写成 d = c·tₑ，忘记计时记录的是往返时间。",
+            "wrong_expr": "d = c*t_e",
+            "why": "往返时间对应的是去程和回程的总路程。把总路程当单程距离会多算一倍；在 68 m 的墙距情境中，错误写法得到 136 m。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "墙面相距68米",
+              "expr": "c*t_e",
+              "ref": 68
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "把往返时间除以 2 后，又把总路程多除一次，写成 d = c·tₑ/4。",
+            "wrong_expr": "d = c*t_e/4",
+            "why": "公式中的一半已经把往返总路程转成单程距离，不能再重复减半。代入 0.4 s 会得到 34 m，而正确墙距为 68 m。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "墙面相距68米",
+              "expr": "c*t_e/4",
+              "ref": 68
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "认为听见回声只说明障碍物存在，不需要考虑声速和传播时间。",
+            "why": "回声可以用于距离测量，但距离要从介质中的传播速度和往返时间计算。实际声呐还受介质、反射面和回波识别影响，概念判断需人工结合情境审查。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "声呐在水中发出一束声音，0.20 s 后收到目标反射回来的回声。若水中声速取 1500 m/s，求目标距离。",
+          "solution": [
+            "0.20 s 是声音发出到返回的往返时间，不是单程时间。",
+            "目标距离 d = c·tₑ/2 = 1500×0.20÷2 = 150 m。"
+          ],
+          "answer": "目标距声呐约 150 m。"
+        },
+        "prereq": [
+          "sound-01"
+        ],
+        "next": [
+          "sound-03"
+        ],
+        "tags": [
+          "回声",
+          "声呐",
+          "往返时间",
+          "单位换算"
+        ],
+        "core": [
+          {
+            "title": "人耳听不到的声音",
+            "text": "超声频率高于约20000 Hz，次声低于约20 Hz，人耳听觉范围因人而异。超声可用于声呐、探伤、清洗和医学检查；次声可与地震、火山及大型设备振动有关。超声、次声仍是需要介质的声波；超声频率高并不表示在同一介质中传播得更快。"
+          }
+        ],
+        "learning_scope": "初中"
+      },
+      "error_index": 2,
+      "chapter": "引言 · 第一章 声现象"
+    },
+    "diagnostic-sound-03-1": {
+      "point": {
+        "id": "sound-03",
+        "title": "音调、响度、音色与听觉范围",
+        "level": "基础",
+        "definition": "音调反映声音的高低，和声源振动频率有关；频率表示单位时间内完成的振动次数，周期表示完成一次振动所用的时间。响度和音色是另外两种声音特性，不能与音调混为一谈。",
+        "meaning": "比较两个声音时，音调高低可通过频率或周期来描述：单位时间内振动次数越多，频率越高，音调通常越高。响度主要与振动幅度及传播条件有关，音色帮助区分发声体，不能仅用一个频率值概括。人耳通常能听到约 20 Hz 到 20 000 Hz 的声音；低于这一范围的叫次声，高于这一范围的叫超声。噪声和音色等定性判断要结合听觉和实验现象，不由频率公式单独裁决。",
+        "symbols": {
+          "f": {
+            "desc": "声源振动频率，即每秒完成的振动次数",
+            "unit": "Hz"
+          },
+          "T": {
+            "desc": "声源完成一次完整振动所用的周期",
+            "unit": "s"
+          },
+          "N": {
+            "desc": "在计时区间内完成的完整振动次数",
+            "unit": "1"
+          },
+          "t": {
+            "desc": "统计完整振动次数所用的时间",
+            "unit": "s"
+          },
+          "d": {
+            "desc": "声源到反射面的单程距离",
+            "unit": "m"
+          },
+          "l": {
+            "desc": "声音发出后往返传播的总路程",
+            "unit": "m"
+          },
+          "c": {
+            "desc": "声音在介质中的传播速度",
+            "unit": "m/s"
+          },
+          "t_e": {
+            "desc": "从发声到接收到回声的往返时间",
+            "unit": "s"
+          },
+          "s": {
+            "desc": "直达测声速实验中声音传播的路程",
+            "unit": "m"
+          }
+        },
+        "scenarios": {
+          "低音演示": {
+            "f": 200,
+            "T": 0.005,
+            "N": 400,
+            "t": 2
+          },
+          "较高音演示": {
+            "f": 500,
+            "T": 0.002,
+            "N": 1000,
+            "t": 2
+          },
+          "次声示例": {
+            "f": 15,
+            "T": 0.0666666666667,
+            "N": 15,
+            "t": 1
+          },
+          "超声示例": {
+            "f": 30000,
+            "T": 3.33333333333e-05,
+            "N": 30000,
+            "t": 1
+          },
+          "墙面相距68米": {
+            "d": 68,
+            "l": 136,
+            "c": 340,
+            "t_e": 0.4,
+            "s": 34,
+            "t": 0.1
+          },
+          "墙面相距34米": {
+            "d": 34,
+            "l": 68,
+            "c": 340,
+            "t_e": 0.2,
+            "s": 68,
+            "t": 0.2
+          }
+        },
+        "formulas": [
+          {
+            "name": "由振动次数求频率",
+            "expr": "f = N/t",
+            "when": "N 统计完整振动次数；t 与频率单位相配，f 的单位为 Hz。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "低音演示",
+                "expr": "N/t",
+                "ref": 200,
+                "note": "400 次完整振动÷2 s = 200 Hz，独立计数核算。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "较高音演示",
+                "expr": "N/t",
+                "ref": 500,
+                "note": "1000 次完整振动÷2 s = 500 Hz。"
+              },
+              {
+                "type": "direction",
+                "scenario": "低音演示",
+                "var": "N",
+                "lo": 100,
+                "hi": 800,
+                "expr": "N/t",
+                "expect": "up",
+                "note": "计时长度相同，完整振动次数越多，频率越高。"
+              },
+              {
+                "type": "scan",
+                "scenario": "较高音演示",
+                "var": "t",
+                "lo": 0.001,
+                "hi": 10,
+                "note": "检查正计时区间中按振动次数求频率不发生异常。"
+              },
+              {
+                "type": "consistency",
+                "scenario": "较高音演示",
+                "with": "sound-03|由振动次数求频率",
+                "with_expr": "1/T",
+                "target": "声源振动频率，即每秒完成的振动次数",
+                "note": "本公式直接求f；参考端显式关系为1/T。两端使用同一情境和阶段，只核对该关系；with字段仅定位来源，不代表调用另一条被覆盖的公式。",
+                "verification_kind": "独立关系核对"
+              },
+              {
+                "type": "compare",
+                "scenario": "次声示例",
+                "expr": "f",
+                "op": "<",
+                "vs": "20",
+                "note": "15 Hz 低于约 20 Hz 的通常可听下限，属于次声范围。"
+              },
+              {
+                "type": "compare",
+                "scenario": "超声示例",
+                "expr": "f",
+                "op": ">",
+                "vs": "20000",
+                "note": "30 000 Hz 高于约 20 000 Hz 的通常可听上限，属于超声范围。"
+              }
+            ]
+          },
+          {
+            "name": "由振动周期求频率",
+            "expr": "f = 1/T",
+            "when": "T 表示一次完整振动的时间，必须用秒表示，f 的单位为 Hz。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "低音演示",
+                "expr": "1/T",
+                "ref": 200,
+                "note": "1÷0.005 s = 200 Hz，参考值由周期倒数独立计算。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "较高音演示",
+                "expr": "1/T",
+                "ref": 500,
+                "note": "1÷0.002 s = 500 Hz。"
+              },
+              {
+                "type": "direction",
+                "scenario": "较高音演示",
+                "var": "T",
+                "lo": 0.001,
+                "hi": 0.01,
+                "expr": "1/T",
+                "expect": "down",
+                "note": "周期越长，每秒能完成的振动次数越少。"
+              },
+              {
+                "type": "scan",
+                "scenario": "较高音演示",
+                "var": "T",
+                "lo": 2e-05,
+                "hi": 0.1,
+                "note": "扫描正周期范围，包括超声和较低频率，检查倒数运算稳定。"
+              },
+              {
+                "type": "consistency",
+                "scenario": "低音演示",
+                "with": "sound-03|由振动周期求频率",
+                "with_expr": "N/t",
+                "target": "声源振动频率，即每秒完成的振动次数",
+                "note": "本公式直接求f；参考端显式关系为N/t。两端使用同一情境和阶段，只核对该关系；with字段仅定位来源，不代表调用另一条被覆盖的公式。",
+                "verification_kind": "独立关系核对"
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "在一段已知计时 t 内，数出完成的完整振动次数 N，频率就是 N 除以 t。",
+          "若测得一次完整振动所用的时间 T，则一秒内能完成约 1/T 次振动，所以 f = 1/T。",
+          "频率与周期互为倒数：频率增大时周期减小，频率减小时周期增大。",
+          "音调与频率相关；响度、音色的判断还需要考虑振幅、发声体和传播条件。"
+        ],
+        "errors": [
+          {
+            "wrong": "统计多次振动时，只用总时间的倒数当频率，写成f=1/t，漏掉振动次数这个因子。",
+            "wrong_expr": "f = 1/t",
+            "why": "周期倒数只适用于 t 是一次完整振动周期的情形。若 2 s 内发生 400 次完整振动，频率应为 200 Hz；把 1/2 当答案会少算 400 倍。两种写法量纲相同，必须用计数情境做数值检查。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "低音演示",
+              "expr": "1/t",
+              "ref": 200
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "把一次完整振动的两个半程都各算作一次完整振动，误写成 f = 2N/t。",
+            "wrong_expr": "f = 2*N/t",
+            "why": "一次完整振动包含往复过程，但计数时整体只算一次。重复乘 2 会使频率翻倍；代入 400 次、2 s 会得到 400 Hz，而不是 200 Hz。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "低音演示",
+              "expr": "2*N/t",
+              "ref": 200
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "把音调高低与响度大小当作同一件事。",
+            "why": "音调对应声音高低，响度对应声音强弱，描述的听觉特征不同。频率可以帮助比较音调，但不能仅凭频率判断响度；需要人工结合振动幅度和听觉实验核对。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "认为音色只由一个频率决定，频率相同的声音听起来一定完全相同。",
+            "why": "音色还与发声体的振动方式和波形等特征有关，不可简化成单一频率。此类辨析需要结合不同乐器或声源的听辨实验，标记为人工审核。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "某声源在 2 s 内完成 1000 次完整振动。求它的频率和周期，并判断其频率是否在通常的可听范围内。",
+          "solution": [
+            "由振动次数求频率：f = N/t = 1000/2 = 500 Hz。",
+            "周期 T = 1/f = 1/500 = 0.002 s。",
+            "500 Hz 位于约 20 Hz 至 20 000 Hz 的通常可听范围内。"
+          ],
+          "answer": "频率为 500 Hz，周期为 0.002 s，位于通常可听范围内。"
+        },
+        "prereq": [
+          "sound-01"
+        ],
+        "next": [],
+        "tags": [
+          "音调",
+          "响度",
+          "音色",
+          "频率",
+          "周期",
+          "次声",
+          "超声"
+        ],
+        "core": [
+          {
+            "title": "声音的特性",
+            "text": "音调指高低，取决于频率；响度指强弱，与振幅、距离和传播条件有关；音色用于辨认声源，与振动波形等有关。钢尺伸出桌边长度改变，振动快慢和音调变化；同一长度用不同力度拨动，主要比较振幅与响度。比较时保留其他条件，不能把声音“高”混同于“大”。"
+          }
+        ],
+        "learning_scope": "初中"
+      },
+      "error_index": 0,
+      "chapter": "引言 · 第一章 声现象"
+    },
+    "diagnostic-sound-03-2": {
+      "point": {
+        "id": "sound-03",
+        "title": "音调、响度、音色与听觉范围",
+        "level": "基础",
+        "definition": "音调反映声音的高低，和声源振动频率有关；频率表示单位时间内完成的振动次数，周期表示完成一次振动所用的时间。响度和音色是另外两种声音特性，不能与音调混为一谈。",
+        "meaning": "比较两个声音时，音调高低可通过频率或周期来描述：单位时间内振动次数越多，频率越高，音调通常越高。响度主要与振动幅度及传播条件有关，音色帮助区分发声体，不能仅用一个频率值概括。人耳通常能听到约 20 Hz 到 20 000 Hz 的声音；低于这一范围的叫次声，高于这一范围的叫超声。噪声和音色等定性判断要结合听觉和实验现象，不由频率公式单独裁决。",
+        "symbols": {
+          "f": {
+            "desc": "声源振动频率，即每秒完成的振动次数",
+            "unit": "Hz"
+          },
+          "T": {
+            "desc": "声源完成一次完整振动所用的周期",
+            "unit": "s"
+          },
+          "N": {
+            "desc": "在计时区间内完成的完整振动次数",
+            "unit": "1"
+          },
+          "t": {
+            "desc": "统计完整振动次数所用的时间",
+            "unit": "s"
+          },
+          "d": {
+            "desc": "声源到反射面的单程距离",
+            "unit": "m"
+          },
+          "l": {
+            "desc": "声音发出后往返传播的总路程",
+            "unit": "m"
+          },
+          "c": {
+            "desc": "声音在介质中的传播速度",
+            "unit": "m/s"
+          },
+          "t_e": {
+            "desc": "从发声到接收到回声的往返时间",
+            "unit": "s"
+          },
+          "s": {
+            "desc": "直达测声速实验中声音传播的路程",
+            "unit": "m"
+          }
+        },
+        "scenarios": {
+          "低音演示": {
+            "f": 200,
+            "T": 0.005,
+            "N": 400,
+            "t": 2
+          },
+          "较高音演示": {
+            "f": 500,
+            "T": 0.002,
+            "N": 1000,
+            "t": 2
+          },
+          "次声示例": {
+            "f": 15,
+            "T": 0.0666666666667,
+            "N": 15,
+            "t": 1
+          },
+          "超声示例": {
+            "f": 30000,
+            "T": 3.33333333333e-05,
+            "N": 30000,
+            "t": 1
+          },
+          "墙面相距68米": {
+            "d": 68,
+            "l": 136,
+            "c": 340,
+            "t_e": 0.4,
+            "s": 34,
+            "t": 0.1
+          },
+          "墙面相距34米": {
+            "d": 34,
+            "l": 68,
+            "c": 340,
+            "t_e": 0.2,
+            "s": 68,
+            "t": 0.2
+          }
+        },
+        "formulas": [
+          {
+            "name": "由振动次数求频率",
+            "expr": "f = N/t",
+            "when": "N 统计完整振动次数；t 与频率单位相配，f 的单位为 Hz。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "低音演示",
+                "expr": "N/t",
+                "ref": 200,
+                "note": "400 次完整振动÷2 s = 200 Hz，独立计数核算。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "较高音演示",
+                "expr": "N/t",
+                "ref": 500,
+                "note": "1000 次完整振动÷2 s = 500 Hz。"
+              },
+              {
+                "type": "direction",
+                "scenario": "低音演示",
+                "var": "N",
+                "lo": 100,
+                "hi": 800,
+                "expr": "N/t",
+                "expect": "up",
+                "note": "计时长度相同，完整振动次数越多，频率越高。"
+              },
+              {
+                "type": "scan",
+                "scenario": "较高音演示",
+                "var": "t",
+                "lo": 0.001,
+                "hi": 10,
+                "note": "检查正计时区间中按振动次数求频率不发生异常。"
+              },
+              {
+                "type": "consistency",
+                "scenario": "较高音演示",
+                "with": "sound-03|由振动次数求频率",
+                "with_expr": "1/T",
+                "target": "声源振动频率，即每秒完成的振动次数",
+                "note": "本公式直接求f；参考端显式关系为1/T。两端使用同一情境和阶段，只核对该关系；with字段仅定位来源，不代表调用另一条被覆盖的公式。",
+                "verification_kind": "独立关系核对"
+              },
+              {
+                "type": "compare",
+                "scenario": "次声示例",
+                "expr": "f",
+                "op": "<",
+                "vs": "20",
+                "note": "15 Hz 低于约 20 Hz 的通常可听下限，属于次声范围。"
+              },
+              {
+                "type": "compare",
+                "scenario": "超声示例",
+                "expr": "f",
+                "op": ">",
+                "vs": "20000",
+                "note": "30 000 Hz 高于约 20 000 Hz 的通常可听上限，属于超声范围。"
+              }
+            ]
+          },
+          {
+            "name": "由振动周期求频率",
+            "expr": "f = 1/T",
+            "when": "T 表示一次完整振动的时间，必须用秒表示，f 的单位为 Hz。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "低音演示",
+                "expr": "1/T",
+                "ref": 200,
+                "note": "1÷0.005 s = 200 Hz，参考值由周期倒数独立计算。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "较高音演示",
+                "expr": "1/T",
+                "ref": 500,
+                "note": "1÷0.002 s = 500 Hz。"
+              },
+              {
+                "type": "direction",
+                "scenario": "较高音演示",
+                "var": "T",
+                "lo": 0.001,
+                "hi": 0.01,
+                "expr": "1/T",
+                "expect": "down",
+                "note": "周期越长，每秒能完成的振动次数越少。"
+              },
+              {
+                "type": "scan",
+                "scenario": "较高音演示",
+                "var": "T",
+                "lo": 2e-05,
+                "hi": 0.1,
+                "note": "扫描正周期范围，包括超声和较低频率，检查倒数运算稳定。"
+              },
+              {
+                "type": "consistency",
+                "scenario": "低音演示",
+                "with": "sound-03|由振动周期求频率",
+                "with_expr": "N/t",
+                "target": "声源振动频率，即每秒完成的振动次数",
+                "note": "本公式直接求f；参考端显式关系为N/t。两端使用同一情境和阶段，只核对该关系；with字段仅定位来源，不代表调用另一条被覆盖的公式。",
+                "verification_kind": "独立关系核对"
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "在一段已知计时 t 内，数出完成的完整振动次数 N，频率就是 N 除以 t。",
+          "若测得一次完整振动所用的时间 T，则一秒内能完成约 1/T 次振动，所以 f = 1/T。",
+          "频率与周期互为倒数：频率增大时周期减小，频率减小时周期增大。",
+          "音调与频率相关；响度、音色的判断还需要考虑振幅、发声体和传播条件。"
+        ],
+        "errors": [
+          {
+            "wrong": "统计多次振动时，只用总时间的倒数当频率，写成f=1/t，漏掉振动次数这个因子。",
+            "wrong_expr": "f = 1/t",
+            "why": "周期倒数只适用于 t 是一次完整振动周期的情形。若 2 s 内发生 400 次完整振动，频率应为 200 Hz；把 1/2 当答案会少算 400 倍。两种写法量纲相同，必须用计数情境做数值检查。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "低音演示",
+              "expr": "1/t",
+              "ref": 200
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "把一次完整振动的两个半程都各算作一次完整振动，误写成 f = 2N/t。",
+            "wrong_expr": "f = 2*N/t",
+            "why": "一次完整振动包含往复过程，但计数时整体只算一次。重复乘 2 会使频率翻倍；代入 400 次、2 s 会得到 400 Hz，而不是 200 Hz。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "低音演示",
+              "expr": "2*N/t",
+              "ref": 200
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "把音调高低与响度大小当作同一件事。",
+            "why": "音调对应声音高低，响度对应声音强弱，描述的听觉特征不同。频率可以帮助比较音调，但不能仅凭频率判断响度；需要人工结合振动幅度和听觉实验核对。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "认为音色只由一个频率决定，频率相同的声音听起来一定完全相同。",
+            "why": "音色还与发声体的振动方式和波形等特征有关，不可简化成单一频率。此类辨析需要结合不同乐器或声源的听辨实验，标记为人工审核。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "某声源在 2 s 内完成 1000 次完整振动。求它的频率和周期，并判断其频率是否在通常的可听范围内。",
+          "solution": [
+            "由振动次数求频率：f = N/t = 1000/2 = 500 Hz。",
+            "周期 T = 1/f = 1/500 = 0.002 s。",
+            "500 Hz 位于约 20 Hz 至 20 000 Hz 的通常可听范围内。"
+          ],
+          "answer": "频率为 500 Hz，周期为 0.002 s，位于通常可听范围内。"
+        },
+        "prereq": [
+          "sound-01"
+        ],
+        "next": [],
+        "tags": [
+          "音调",
+          "响度",
+          "音色",
+          "频率",
+          "周期",
+          "次声",
+          "超声"
+        ],
+        "core": [
+          {
+            "title": "声音的特性",
+            "text": "音调指高低，取决于频率；响度指强弱，与振幅、距离和传播条件有关；音色用于辨认声源，与振动波形等有关。钢尺伸出桌边长度改变，振动快慢和音调变化；同一长度用不同力度拨动，主要比较振幅与响度。比较时保留其他条件，不能把声音“高”混同于“大”。"
+          }
+        ],
+        "learning_scope": "初中"
+      },
+      "error_index": 1,
+      "chapter": "引言 · 第一章 声现象"
+    },
+    "diagnostic-sound-03-3": {
+      "point": {
+        "id": "sound-03",
+        "title": "音调、响度、音色与听觉范围",
+        "level": "基础",
+        "definition": "音调反映声音的高低，和声源振动频率有关；频率表示单位时间内完成的振动次数，周期表示完成一次振动所用的时间。响度和音色是另外两种声音特性，不能与音调混为一谈。",
+        "meaning": "比较两个声音时，音调高低可通过频率或周期来描述：单位时间内振动次数越多，频率越高，音调通常越高。响度主要与振动幅度及传播条件有关，音色帮助区分发声体，不能仅用一个频率值概括。人耳通常能听到约 20 Hz 到 20 000 Hz 的声音；低于这一范围的叫次声，高于这一范围的叫超声。噪声和音色等定性判断要结合听觉和实验现象，不由频率公式单独裁决。",
+        "symbols": {
+          "f": {
+            "desc": "声源振动频率，即每秒完成的振动次数",
+            "unit": "Hz"
+          },
+          "T": {
+            "desc": "声源完成一次完整振动所用的周期",
+            "unit": "s"
+          },
+          "N": {
+            "desc": "在计时区间内完成的完整振动次数",
+            "unit": "1"
+          },
+          "t": {
+            "desc": "统计完整振动次数所用的时间",
+            "unit": "s"
+          },
+          "d": {
+            "desc": "声源到反射面的单程距离",
+            "unit": "m"
+          },
+          "l": {
+            "desc": "声音发出后往返传播的总路程",
+            "unit": "m"
+          },
+          "c": {
+            "desc": "声音在介质中的传播速度",
+            "unit": "m/s"
+          },
+          "t_e": {
+            "desc": "从发声到接收到回声的往返时间",
+            "unit": "s"
+          },
+          "s": {
+            "desc": "直达测声速实验中声音传播的路程",
+            "unit": "m"
+          }
+        },
+        "scenarios": {
+          "低音演示": {
+            "f": 200,
+            "T": 0.005,
+            "N": 400,
+            "t": 2
+          },
+          "较高音演示": {
+            "f": 500,
+            "T": 0.002,
+            "N": 1000,
+            "t": 2
+          },
+          "次声示例": {
+            "f": 15,
+            "T": 0.0666666666667,
+            "N": 15,
+            "t": 1
+          },
+          "超声示例": {
+            "f": 30000,
+            "T": 3.33333333333e-05,
+            "N": 30000,
+            "t": 1
+          },
+          "墙面相距68米": {
+            "d": 68,
+            "l": 136,
+            "c": 340,
+            "t_e": 0.4,
+            "s": 34,
+            "t": 0.1
+          },
+          "墙面相距34米": {
+            "d": 34,
+            "l": 68,
+            "c": 340,
+            "t_e": 0.2,
+            "s": 68,
+            "t": 0.2
+          }
+        },
+        "formulas": [
+          {
+            "name": "由振动次数求频率",
+            "expr": "f = N/t",
+            "when": "N 统计完整振动次数；t 与频率单位相配，f 的单位为 Hz。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "低音演示",
+                "expr": "N/t",
+                "ref": 200,
+                "note": "400 次完整振动÷2 s = 200 Hz，独立计数核算。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "较高音演示",
+                "expr": "N/t",
+                "ref": 500,
+                "note": "1000 次完整振动÷2 s = 500 Hz。"
+              },
+              {
+                "type": "direction",
+                "scenario": "低音演示",
+                "var": "N",
+                "lo": 100,
+                "hi": 800,
+                "expr": "N/t",
+                "expect": "up",
+                "note": "计时长度相同，完整振动次数越多，频率越高。"
+              },
+              {
+                "type": "scan",
+                "scenario": "较高音演示",
+                "var": "t",
+                "lo": 0.001,
+                "hi": 10,
+                "note": "检查正计时区间中按振动次数求频率不发生异常。"
+              },
+              {
+                "type": "consistency",
+                "scenario": "较高音演示",
+                "with": "sound-03|由振动次数求频率",
+                "with_expr": "1/T",
+                "target": "声源振动频率，即每秒完成的振动次数",
+                "note": "本公式直接求f；参考端显式关系为1/T。两端使用同一情境和阶段，只核对该关系；with字段仅定位来源，不代表调用另一条被覆盖的公式。",
+                "verification_kind": "独立关系核对"
+              },
+              {
+                "type": "compare",
+                "scenario": "次声示例",
+                "expr": "f",
+                "op": "<",
+                "vs": "20",
+                "note": "15 Hz 低于约 20 Hz 的通常可听下限，属于次声范围。"
+              },
+              {
+                "type": "compare",
+                "scenario": "超声示例",
+                "expr": "f",
+                "op": ">",
+                "vs": "20000",
+                "note": "30 000 Hz 高于约 20 000 Hz 的通常可听上限，属于超声范围。"
+              }
+            ]
+          },
+          {
+            "name": "由振动周期求频率",
+            "expr": "f = 1/T",
+            "when": "T 表示一次完整振动的时间，必须用秒表示，f 的单位为 Hz。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "低音演示",
+                "expr": "1/T",
+                "ref": 200,
+                "note": "1÷0.005 s = 200 Hz，参考值由周期倒数独立计算。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "较高音演示",
+                "expr": "1/T",
+                "ref": 500,
+                "note": "1÷0.002 s = 500 Hz。"
+              },
+              {
+                "type": "direction",
+                "scenario": "较高音演示",
+                "var": "T",
+                "lo": 0.001,
+                "hi": 0.01,
+                "expr": "1/T",
+                "expect": "down",
+                "note": "周期越长，每秒能完成的振动次数越少。"
+              },
+              {
+                "type": "scan",
+                "scenario": "较高音演示",
+                "var": "T",
+                "lo": 2e-05,
+                "hi": 0.1,
+                "note": "扫描正周期范围，包括超声和较低频率，检查倒数运算稳定。"
+              },
+              {
+                "type": "consistency",
+                "scenario": "低音演示",
+                "with": "sound-03|由振动周期求频率",
+                "with_expr": "N/t",
+                "target": "声源振动频率，即每秒完成的振动次数",
+                "note": "本公式直接求f；参考端显式关系为N/t。两端使用同一情境和阶段，只核对该关系；with字段仅定位来源，不代表调用另一条被覆盖的公式。",
+                "verification_kind": "独立关系核对"
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "在一段已知计时 t 内，数出完成的完整振动次数 N，频率就是 N 除以 t。",
+          "若测得一次完整振动所用的时间 T，则一秒内能完成约 1/T 次振动，所以 f = 1/T。",
+          "频率与周期互为倒数：频率增大时周期减小，频率减小时周期增大。",
+          "音调与频率相关；响度、音色的判断还需要考虑振幅、发声体和传播条件。"
+        ],
+        "errors": [
+          {
+            "wrong": "统计多次振动时，只用总时间的倒数当频率，写成f=1/t，漏掉振动次数这个因子。",
+            "wrong_expr": "f = 1/t",
+            "why": "周期倒数只适用于 t 是一次完整振动周期的情形。若 2 s 内发生 400 次完整振动，频率应为 200 Hz；把 1/2 当答案会少算 400 倍。两种写法量纲相同，必须用计数情境做数值检查。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "低音演示",
+              "expr": "1/t",
+              "ref": 200
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "把一次完整振动的两个半程都各算作一次完整振动，误写成 f = 2N/t。",
+            "wrong_expr": "f = 2*N/t",
+            "why": "一次完整振动包含往复过程，但计数时整体只算一次。重复乘 2 会使频率翻倍；代入 400 次、2 s 会得到 400 Hz，而不是 200 Hz。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "低音演示",
+              "expr": "2*N/t",
+              "ref": 200
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "把音调高低与响度大小当作同一件事。",
+            "why": "音调对应声音高低，响度对应声音强弱，描述的听觉特征不同。频率可以帮助比较音调，但不能仅凭频率判断响度；需要人工结合振动幅度和听觉实验核对。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "认为音色只由一个频率决定，频率相同的声音听起来一定完全相同。",
+            "why": "音色还与发声体的振动方式和波形等特征有关，不可简化成单一频率。此类辨析需要结合不同乐器或声源的听辨实验，标记为人工审核。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "某声源在 2 s 内完成 1000 次完整振动。求它的频率和周期，并判断其频率是否在通常的可听范围内。",
+          "solution": [
+            "由振动次数求频率：f = N/t = 1000/2 = 500 Hz。",
+            "周期 T = 1/f = 1/500 = 0.002 s。",
+            "500 Hz 位于约 20 Hz 至 20 000 Hz 的通常可听范围内。"
+          ],
+          "answer": "频率为 500 Hz，周期为 0.002 s，位于通常可听范围内。"
+        },
+        "prereq": [
+          "sound-01"
+        ],
+        "next": [],
+        "tags": [
+          "音调",
+          "响度",
+          "音色",
+          "频率",
+          "周期",
+          "次声",
+          "超声"
+        ],
+        "core": [
+          {
+            "title": "声音的特性",
+            "text": "音调指高低，取决于频率；响度指强弱，与振幅、距离和传播条件有关；音色用于辨认声源，与振动波形等有关。钢尺伸出桌边长度改变，振动快慢和音调变化；同一长度用不同力度拨动，主要比较振幅与响度。比较时保留其他条件，不能把声音“高”混同于“大”。"
+          }
+        ],
+        "learning_scope": "初中"
+      },
+      "error_index": 2,
+      "chapter": "引言 · 第一章 声现象"
+    },
+    "diagnostic-sound-03-4": {
+      "point": {
+        "id": "sound-03",
+        "title": "音调、响度、音色与听觉范围",
+        "level": "基础",
+        "definition": "音调反映声音的高低，和声源振动频率有关；频率表示单位时间内完成的振动次数，周期表示完成一次振动所用的时间。响度和音色是另外两种声音特性，不能与音调混为一谈。",
+        "meaning": "比较两个声音时，音调高低可通过频率或周期来描述：单位时间内振动次数越多，频率越高，音调通常越高。响度主要与振动幅度及传播条件有关，音色帮助区分发声体，不能仅用一个频率值概括。人耳通常能听到约 20 Hz 到 20 000 Hz 的声音；低于这一范围的叫次声，高于这一范围的叫超声。噪声和音色等定性判断要结合听觉和实验现象，不由频率公式单独裁决。",
+        "symbols": {
+          "f": {
+            "desc": "声源振动频率，即每秒完成的振动次数",
+            "unit": "Hz"
+          },
+          "T": {
+            "desc": "声源完成一次完整振动所用的周期",
+            "unit": "s"
+          },
+          "N": {
+            "desc": "在计时区间内完成的完整振动次数",
+            "unit": "1"
+          },
+          "t": {
+            "desc": "统计完整振动次数所用的时间",
+            "unit": "s"
+          },
+          "d": {
+            "desc": "声源到反射面的单程距离",
+            "unit": "m"
+          },
+          "l": {
+            "desc": "声音发出后往返传播的总路程",
+            "unit": "m"
+          },
+          "c": {
+            "desc": "声音在介质中的传播速度",
+            "unit": "m/s"
+          },
+          "t_e": {
+            "desc": "从发声到接收到回声的往返时间",
+            "unit": "s"
+          },
+          "s": {
+            "desc": "直达测声速实验中声音传播的路程",
+            "unit": "m"
+          }
+        },
+        "scenarios": {
+          "低音演示": {
+            "f": 200,
+            "T": 0.005,
+            "N": 400,
+            "t": 2
+          },
+          "较高音演示": {
+            "f": 500,
+            "T": 0.002,
+            "N": 1000,
+            "t": 2
+          },
+          "次声示例": {
+            "f": 15,
+            "T": 0.0666666666667,
+            "N": 15,
+            "t": 1
+          },
+          "超声示例": {
+            "f": 30000,
+            "T": 3.33333333333e-05,
+            "N": 30000,
+            "t": 1
+          },
+          "墙面相距68米": {
+            "d": 68,
+            "l": 136,
+            "c": 340,
+            "t_e": 0.4,
+            "s": 34,
+            "t": 0.1
+          },
+          "墙面相距34米": {
+            "d": 34,
+            "l": 68,
+            "c": 340,
+            "t_e": 0.2,
+            "s": 68,
+            "t": 0.2
+          }
+        },
+        "formulas": [
+          {
+            "name": "由振动次数求频率",
+            "expr": "f = N/t",
+            "when": "N 统计完整振动次数；t 与频率单位相配，f 的单位为 Hz。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "低音演示",
+                "expr": "N/t",
+                "ref": 200,
+                "note": "400 次完整振动÷2 s = 200 Hz，独立计数核算。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "较高音演示",
+                "expr": "N/t",
+                "ref": 500,
+                "note": "1000 次完整振动÷2 s = 500 Hz。"
+              },
+              {
+                "type": "direction",
+                "scenario": "低音演示",
+                "var": "N",
+                "lo": 100,
+                "hi": 800,
+                "expr": "N/t",
+                "expect": "up",
+                "note": "计时长度相同，完整振动次数越多，频率越高。"
+              },
+              {
+                "type": "scan",
+                "scenario": "较高音演示",
+                "var": "t",
+                "lo": 0.001,
+                "hi": 10,
+                "note": "检查正计时区间中按振动次数求频率不发生异常。"
+              },
+              {
+                "type": "consistency",
+                "scenario": "较高音演示",
+                "with": "sound-03|由振动次数求频率",
+                "with_expr": "1/T",
+                "target": "声源振动频率，即每秒完成的振动次数",
+                "note": "本公式直接求f；参考端显式关系为1/T。两端使用同一情境和阶段，只核对该关系；with字段仅定位来源，不代表调用另一条被覆盖的公式。",
+                "verification_kind": "独立关系核对"
+              },
+              {
+                "type": "compare",
+                "scenario": "次声示例",
+                "expr": "f",
+                "op": "<",
+                "vs": "20",
+                "note": "15 Hz 低于约 20 Hz 的通常可听下限，属于次声范围。"
+              },
+              {
+                "type": "compare",
+                "scenario": "超声示例",
+                "expr": "f",
+                "op": ">",
+                "vs": "20000",
+                "note": "30 000 Hz 高于约 20 000 Hz 的通常可听上限，属于超声范围。"
+              }
+            ]
+          },
+          {
+            "name": "由振动周期求频率",
+            "expr": "f = 1/T",
+            "when": "T 表示一次完整振动的时间，必须用秒表示，f 的单位为 Hz。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "低音演示",
+                "expr": "1/T",
+                "ref": 200,
+                "note": "1÷0.005 s = 200 Hz，参考值由周期倒数独立计算。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "较高音演示",
+                "expr": "1/T",
+                "ref": 500,
+                "note": "1÷0.002 s = 500 Hz。"
+              },
+              {
+                "type": "direction",
+                "scenario": "较高音演示",
+                "var": "T",
+                "lo": 0.001,
+                "hi": 0.01,
+                "expr": "1/T",
+                "expect": "down",
+                "note": "周期越长，每秒能完成的振动次数越少。"
+              },
+              {
+                "type": "scan",
+                "scenario": "较高音演示",
+                "var": "T",
+                "lo": 2e-05,
+                "hi": 0.1,
+                "note": "扫描正周期范围，包括超声和较低频率，检查倒数运算稳定。"
+              },
+              {
+                "type": "consistency",
+                "scenario": "低音演示",
+                "with": "sound-03|由振动周期求频率",
+                "with_expr": "N/t",
+                "target": "声源振动频率，即每秒完成的振动次数",
+                "note": "本公式直接求f；参考端显式关系为N/t。两端使用同一情境和阶段，只核对该关系；with字段仅定位来源，不代表调用另一条被覆盖的公式。",
+                "verification_kind": "独立关系核对"
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "在一段已知计时 t 内，数出完成的完整振动次数 N，频率就是 N 除以 t。",
+          "若测得一次完整振动所用的时间 T，则一秒内能完成约 1/T 次振动，所以 f = 1/T。",
+          "频率与周期互为倒数：频率增大时周期减小，频率减小时周期增大。",
+          "音调与频率相关；响度、音色的判断还需要考虑振幅、发声体和传播条件。"
+        ],
+        "errors": [
+          {
+            "wrong": "统计多次振动时，只用总时间的倒数当频率，写成f=1/t，漏掉振动次数这个因子。",
+            "wrong_expr": "f = 1/t",
+            "why": "周期倒数只适用于 t 是一次完整振动周期的情形。若 2 s 内发生 400 次完整振动，频率应为 200 Hz；把 1/2 当答案会少算 400 倍。两种写法量纲相同，必须用计数情境做数值检查。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "低音演示",
+              "expr": "1/t",
+              "ref": 200
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "把一次完整振动的两个半程都各算作一次完整振动，误写成 f = 2N/t。",
+            "wrong_expr": "f = 2*N/t",
+            "why": "一次完整振动包含往复过程，但计数时整体只算一次。重复乘 2 会使频率翻倍；代入 400 次、2 s 会得到 400 Hz，而不是 200 Hz。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "低音演示",
+              "expr": "2*N/t",
+              "ref": 200
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "把音调高低与响度大小当作同一件事。",
+            "why": "音调对应声音高低，响度对应声音强弱，描述的听觉特征不同。频率可以帮助比较音调，但不能仅凭频率判断响度；需要人工结合振动幅度和听觉实验核对。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "认为音色只由一个频率决定，频率相同的声音听起来一定完全相同。",
+            "why": "音色还与发声体的振动方式和波形等特征有关，不可简化成单一频率。此类辨析需要结合不同乐器或声源的听辨实验，标记为人工审核。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "某声源在 2 s 内完成 1000 次完整振动。求它的频率和周期，并判断其频率是否在通常的可听范围内。",
+          "solution": [
+            "由振动次数求频率：f = N/t = 1000/2 = 500 Hz。",
+            "周期 T = 1/f = 1/500 = 0.002 s。",
+            "500 Hz 位于约 20 Hz 至 20 000 Hz 的通常可听范围内。"
+          ],
+          "answer": "频率为 500 Hz，周期为 0.002 s，位于通常可听范围内。"
+        },
+        "prereq": [
+          "sound-01"
+        ],
+        "next": [],
+        "tags": [
+          "音调",
+          "响度",
+          "音色",
+          "频率",
+          "周期",
+          "次声",
+          "超声"
+        ],
+        "core": [
+          {
+            "title": "声音的特性",
+            "text": "音调指高低，取决于频率；响度指强弱，与振幅、距离和传播条件有关；音色用于辨认声源，与振动波形等有关。钢尺伸出桌边长度改变，振动快慢和音调变化；同一长度用不同力度拨动，主要比较振幅与响度。比较时保留其他条件，不能把声音“高”混同于“大”。"
+          }
+        ],
+        "learning_scope": "初中"
+      },
+      "error_index": 3,
+      "chapter": "引言 · 第一章 声现象"
+    }
+  },
+  "generator_version": "2026-10-04-条件过程返工-8"
+}

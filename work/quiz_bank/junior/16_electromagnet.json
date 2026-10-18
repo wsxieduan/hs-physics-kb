@@ -1,0 +1,5594 @@
+{
+  "segment": "初中",
+  "chapter": "电和磁",
+  "source_file": "16_electromagnet.json",
+  "questions": [
+    {
+      "id": "diagnostic-magnet-01-1",
+      "point_id": "magnet-01",
+      "point_title": "磁体、磁场与电流的磁场",
+      "chapter": "电和磁",
+      "stem": "在“磁体、磁场与电流的磁场”中，仅作已知电学或能量数据的应用，不验证本卡定性规律。线圈电阻在测量期间近似不变，Uc 用 V、Rc 用 Ω。。通过电磁铁线圈的电流的单位为A。下列哪一表达式的量纲与该目标量一致？",
+      "options": [
+        {
+          "label": "A",
+          "text": "Ic = Uc/Rc"
+        },
+        {
+          "label": "B",
+          "text": "Ic = Rc/Uc"
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "已测得线圈两端电压和电阻后，应按欧姆定律用电压除以电阻求电流；反过来相除所得量纲不是安培。\n知识点条件：本节把磁体的磁场和电流的磁效应连起来看：磁体或电流都能建立磁场，磁场可对磁针、磁体等产生作用。通电螺线管的磁极方向与电流方向有关；研究电磁铁强弱时要控制铁芯和线圈匝数等条件。线圈电流可以按欧姆定律计算，但电流数值不是磁场强弱的直接刻度。\n推导依据：将螺线管接入电源后，线圈中有电流并产生磁场。；加入铁芯可增强电磁铁磁性；磁性还会随线圈匝数和电流等因素改变。；若要比较电流影响，控制匝数和铁芯不变，只改变电流。；电流可由线圈端电压和电阻通过欧姆定律求得，磁性强弱仍要实验观察。\n卡片公式各自的适用条件（不是本题共同前提）：\n已知线圈电压求电流：仅作已知电学或能量数据的应用，不验证本卡定性规律。线圈电阻在测量期间近似不变，Uc 用 V、Rc 用 Ω。\n由线圈电流求电压：仅作已知电学或能量数据的应用，不验证本卡定性规律。同一线圈温度等条件稳定，电流和电阻对应一次测量。",
+      "error_type": "量纲一致性",
+      "judging": "auto",
+      "source_error_index": 0,
+      "source_caught_by": "量纲一致性",
+      "wrong_expr": "Ic = Rc/Uc",
+      "trap_test": {
+        "kind": "dimension",
+        "target": "Ic = Rc/Uc",
+        "lhs_dim": "I",
+        "rhs_dim": "I^-1",
+        "expect": "mismatch",
+        "note": "实际量纲检查得到等号左边为I、右边为I^-1；两边不是同一物理量，因此该等式不成立。"
+      },
+      "level": "基础",
+      "learning_scope": "初中",
+      "answer_evidence": {
+        "kind": "dimension",
+        "target": "Ic",
+        "correct_expression": "Ic = Uc/Rc",
+        "distractor_expression": "Ic = Rc/Uc",
+        "target_dimension": "I",
+        "distractor_dimension": "I^-1"
+      },
+      "review": {
+        "confidence": "medium",
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": true,
+          "no_answer_leak_in_options": true
+        },
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。",
+        "material": {
+          "anchors": [
+            {
+              "kind": "公式量纲",
+              "name": "本题目标量与等式",
+              "expression": "Ic = Uc/Rc",
+              "when": "量纲相符是必要条件，不能据此证明系数或物理条件正确",
+              "display": "Ic = Uc/Rc"
+            }
+          ],
+          "source": {
+            "nature": "原创量纲辨析命题；无实测数据",
+            "source_error_index": 0
+          },
+          "predicted_errors": [
+            {
+              "option": "B",
+              "text": "Ic = Rc/Uc",
+              "reason": "已测得线圈两端电压和电阻后，应按欧姆定律用电压除以电阻求电流；反过来相除所得量纲不是安培。",
+              "expression": "Ic = Rc/Uc",
+              "status": "误答原因预测，待教师确认；未采集学生作答证据"
+            }
+          ],
+          "difficulty_note": "建议难度沿用本题level（源卡难度）；尚非题目难度实测，待教师调整",
+          "estimated_seconds": [
+            60,
+            120
+          ],
+          "time_basis": "未做学生计时；按现有难度给出备课估计区间，待教师确认",
+          "machine_checks": [
+            {
+              "name": "题目ID关联源知识点",
+              "passed": true
+            },
+            {
+              "name": "选项标签唯一且参考标签存在",
+              "passed": true
+            },
+            {
+              "name": "选项文本互异",
+              "passed": true
+            },
+            {
+              "name": "正确式量纲一致",
+              "passed": true,
+              "actual": {
+                "type": "dimension",
+                "type_name": "量纲一致性",
+                "formula": "教师审核证据",
+                "ok": true,
+                "detail": "左端I，右端I",
+                "note": "",
+                "error": null,
+                "evaluation_status": "success",
+                "failure_reason": null,
+                "result_dimension": "I",
+                "reference_dimension": "I",
+                "diagnostics": {},
+                "physical_error_identified": false
+              }
+            },
+            {
+              "name": "干扰式量纲冲突",
+              "passed": true,
+              "actual": {
+                "type": "dimension",
+                "type_name": "量纲一致性",
+                "formula": "教师审核证据",
+                "ok": false,
+                "detail": "左端I，右端I^-1",
+                "note": "",
+                "error": null,
+                "evaluation_status": "dimension_conflict",
+                "failure_reason": "dimension_conflict",
+                "result_dimension": "I^-1",
+                "reference_dimension": "I",
+                "diagnostics": {},
+                "physical_error_identified": true
+              }
+            }
+          ],
+          "machine_boundary": "只列本次逐题实际执行项目；不把关联知识卡的方向、扫描或一致性检查算作本题已验。概念题未验命题真假。",
+          "human_review_items": [
+            "题干条件是否充分、清楚且符合学段",
+            "参考结论在指定条件下是否唯一",
+            "干扰项是否合理、对应真实认知问题且无答案暗示",
+            "公式或概念锚点是否准确",
+            "建议难度及用时是否适合教学",
+            "语言、装置与安全操作是否恰当"
+          ],
+          "reference_answer_note": "现有参考答案保持；即使本地可以判选项，也仍须教师审核教学可用性"
+        }
+      }
+    },
+    {
+      "id": "diagnostic-magnet-01-2",
+      "point_id": "magnet-01",
+      "point_title": "磁体、磁场与电流的磁场",
+      "chapter": "电和磁",
+      "stem": "在“磁体、磁场与电流的磁场”的模型下，Uc（电磁铁线圈两端电压）=4 V；Rc（线圈电阻）=20 Ω。条件：仅作已知电学或能量数据的应用，不验证本卡定性规律。线圈电阻在测量期间近似不变，Uc 用 V、Rc 用 Ω。。求通过电磁铁线圈的电流（Ic）。这些数值是设计示例。",
+      "options": [
+        {
+          "label": "A",
+          "text": "200 A"
+        },
+        {
+          "label": "B",
+          "text": "0.2 A"
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "使用已知线圈电压求电流：Uc/Rc，代入得0.2 A。另一结果来自1000·Uc/Rc，算得200 A。\n4 V÷20 Ω=0.2 A；换成毫安是 200 mA，不能仍写作 200 A。\n知识点条件：本节把磁体的磁场和电流的磁效应连起来看：磁体或电流都能建立磁场，磁场可对磁针、磁体等产生作用。通电螺线管的磁极方向与电流方向有关；研究电磁铁强弱时要控制铁芯和线圈匝数等条件。线圈电流可以按欧姆定律计算，但电流数值不是磁场强弱的直接刻度。\n推导依据：将螺线管接入电源后，线圈中有电流并产生磁场。；加入铁芯可增强电磁铁磁性；磁性还会随线圈匝数和电流等因素改变。；若要比较电流影响，控制匝数和铁芯不变，只改变电流。；电流可由线圈端电压和电阻通过欧姆定律求得，磁性强弱仍要实验观察。\n卡片公式各自的适用条件（不是本题共同前提）：\n已知线圈电压求电流：仅作已知电学或能量数据的应用，不验证本卡定性规律。线圈电阻在测量期间近似不变，Uc 用 V、Rc 用 Ω。\n由线圈电流求电压：仅作已知电学或能量数据的应用，不验证本卡定性规律。同一线圈温度等条件稳定，电流和电阻对应一次测量。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 1,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "Ic = 1000·Uc/Rc",
+      "trap_test": {
+        "scenario": "线圈实验一",
+        "expr": "1000*Uc/Rc",
+        "ref": 0.2
+      },
+      "level": "基础",
+      "learning_scope": "初中",
+      "answer_evidence": {
+        "kind": "numeric",
+        "scenario": "线圈实验一",
+        "parameters": {
+          "Uc": 4,
+          "Ic": 0.2,
+          "Rc": 20,
+          "N": 200
+        },
+        "target": "Ic",
+        "unit": "A",
+        "reference": 0.2,
+        "correct_proof": {
+          "expression": "Uc/Rc",
+          "formula": "已知线圈电压求电流",
+          "value": 0.2,
+          "when": "仅作已知电学或能量数据的应用，不验证本卡定性规律。线圈电阻在测量期间近似不变，Uc 用 V、Rc 用 Ω。"
+        },
+        "distractor_expression": "1000*Uc/Rc",
+        "distractor_value": 200.0,
+        "dimension_matches": true,
+        "independent_evaluation": true
+      },
+      "review": {
+        "confidence": "medium",
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": true,
+          "no_answer_leak_in_options": true
+        },
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。",
+        "material": {
+          "anchors": [
+            {
+              "kind": "公式",
+              "name": "已知线圈电压求电流",
+              "expression": "Uc/Rc",
+              "when": "仅作已知电学或能量数据的应用，不验证本卡定性规律。线圈电阻在测量期间近似不变，Uc 用 V、Rc 用 Ω。",
+              "display": "Uc/Rc"
+            }
+          ],
+          "source": {
+            "nature": "原创设计示例，非教材实测或真实实验记录",
+            "scenario": "线圈实验一",
+            "parameters": {
+              "Uc": 4,
+              "Ic": 0.2,
+              "Rc": 20,
+              "N": 200
+            },
+            "data": [
+              "电磁铁线圈两端电压：4 V",
+              "通过电磁铁线圈的电流：0.2 A",
+              "线圈电阻：20 Ω",
+              "线圈匝数，按匝计数：200 1"
+            ]
+          },
+          "predicted_errors": [
+            {
+              "option": "A",
+              "text": "200 A",
+              "reason": "4 V÷20 Ω=0.2 A；换成毫安是 200 mA，不能仍写作 200 A。",
+              "expression": "1000*Uc/Rc",
+              "status": "误答原因预测，待教师确认；未采集学生作答证据"
+            }
+          ],
+          "difficulty_note": "建议难度沿用本题level（源卡难度）；尚非题目难度实测，待教师调整",
+          "estimated_seconds": [
+            60,
+            120
+          ],
+          "time_basis": "未做学生计时；按现有难度给出备课估计区间，待教师确认",
+          "machine_checks": [
+            {
+              "name": "题目ID关联源知识点",
+              "passed": true
+            },
+            {
+              "name": "选项标签唯一且参考标签存在",
+              "passed": true
+            },
+            {
+              "name": "选项文本互异",
+              "passed": true
+            },
+            {
+              "name": "正确路径独立数值复算",
+              "passed": true
+            },
+            {
+              "name": "带量纲求值与独立求值一致",
+              "passed": true
+            },
+            {
+              "name": "干扰路径复算且与正确路径分离",
+              "passed": true
+            }
+          ],
+          "machine_boundary": "只列本次逐题实际执行项目；不把关联知识卡的方向、扫描或一致性检查算作本题已验。概念题未验命题真假。",
+          "human_review_items": [
+            "题干条件是否充分、清楚且符合学段",
+            "参考结论在指定条件下是否唯一",
+            "干扰项是否合理、对应真实认知问题且无答案暗示",
+            "公式或概念锚点是否准确",
+            "建议难度及用时是否适合教学",
+            "语言、装置与安全操作是否恰当"
+          ],
+          "reference_answer_note": "现有参考答案保持；即使本地可以判选项，也仍须教师审核教学可用性"
+        }
+      }
+    },
+    {
+      "id": "diagnostic-magnet-01-3",
+      "point_id": "magnet-01",
+      "point_title": "磁体、磁场与电流的磁场",
+      "chapter": "电和磁",
+      "stem": "关于“磁体、磁场与电流的磁场”，判断这一说法是否成立，并说明依据：\n只增加电压、同时改变线圈匝数和铁芯，还把磁性变化全归因于电流。",
+      "options": [
+        {
+          "label": "A",
+          "text": "该说法不成立。"
+        },
+        {
+          "label": "B",
+          "text": "该说法成立。"
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "探究一个因素影响时要控制其他变量，避免把多个因素的作用混在一起。\n知识点条件：本节把磁体的磁场和电流的磁效应连起来看：磁体或电流都能建立磁场，磁场可对磁针、磁体等产生作用。通电螺线管的磁极方向与电流方向有关；研究电磁铁强弱时要控制铁芯和线圈匝数等条件。线圈电流可以按欧姆定律计算，但电流数值不是磁场强弱的直接刻度。\n推导依据：将螺线管接入电源后，线圈中有电流并产生磁场。；加入铁芯可增强电磁铁磁性；磁性还会随线圈匝数和电流等因素改变。；若要比较电流影响，控制匝数和铁芯不变，只改变电流。；电流可由线圈端电压和电阻通过欧姆定律求得，磁性强弱仍要实验观察。\n卡片公式各自的适用条件（不是本题共同前提）：\n已知线圈电压求电流：仅作已知电学或能量数据的应用，不验证本卡定性规律。线圈电阻在测量期间近似不变，Uc 用 V、Rc 用 Ω。\n由线圈电流求电压：仅作已知电学或能量数据的应用，不验证本卡定性规律。同一线圈温度等条件稳定，电流和电阻对应一次测量。",
+      "error_type": "概念混淆",
+      "judging": "teacher",
+      "source_error_index": 2,
+      "source_caught_by": "人工审核",
+      "wrong_expr": null,
+      "trap_test": null,
+      "level": "基础",
+      "learning_scope": "初中",
+      "answer_evidence": {
+        "kind": "teacher",
+        "claim_source": "wrong",
+        "reference_only": true,
+        "reason": "概念、操作或无法建立完整定量证据，教师确认条件与结论。"
+      },
+      "review": {
+        "confidence": "medium",
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": false,
+          "no_answer_leak_in_options": true
+        },
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。",
+        "material": {
+          "anchors": [
+            {
+              "kind": "概念或操作",
+              "name": "磁体、磁场与电流的磁场",
+              "claim": "只增加电压、同时改变线圈匝数和铁芯，还把磁性变化全归因于电流。",
+              "correction_basis": "探究一个因素影响时要控制其他变量，避免把多个因素的作用混在一起。",
+              "note": "概念锚点及命题真假待教师确认；未套用任意第一条公式",
+              "display": "只增加电压、同时改变线圈匝数和铁芯，还把磁性变化全归因于电流。"
+            }
+          ],
+          "source": {
+            "nature": "原创概念/操作命题；无真实测量记录",
+            "source_error_index": 2
+          },
+          "predicted_errors": [
+            {
+              "option": "B",
+              "text": "该说法成立。",
+              "reason": "探究一个因素影响时要控制其他变量，避免把多个因素的作用混在一起。",
+              "expression": null,
+              "status": "误答原因预测，待教师确认；未采集学生作答证据"
+            }
+          ],
+          "difficulty_note": "建议难度沿用本题level（源卡难度）；尚非题目难度实测，待教师调整",
+          "estimated_seconds": [
+            60,
+            120
+          ],
+          "time_basis": "未做学生计时；按现有难度给出备课估计区间，待教师确认",
+          "machine_checks": [
+            {
+              "name": "题目ID关联源知识点",
+              "passed": true
+            },
+            {
+              "name": "选项标签唯一且参考标签存在",
+              "passed": true
+            },
+            {
+              "name": "选项文本互异",
+              "passed": true
+            }
+          ],
+          "machine_boundary": "只列本次逐题实际执行项目；不把关联知识卡的方向、扫描或一致性检查算作本题已验。概念题未验命题真假。",
+          "human_review_items": [
+            "题干条件是否充分、清楚且符合学段",
+            "参考结论在指定条件下是否唯一",
+            "干扰项是否合理、对应真实认知问题且无答案暗示",
+            "公式或概念锚点是否准确",
+            "建议难度及用时是否适合教学",
+            "语言、装置与安全操作是否恰当"
+          ],
+          "reference_answer_note": "现有参考答案保持；即使本地可以判选项，也仍须教师审核教学可用性"
+        }
+      }
+    },
+    {
+      "id": "diagnostic-magnet-03-1",
+      "point_id": "magnet-03",
+      "point_title": "磁场对电流的作用与电动机",
+      "chapter": "电和磁",
+      "stem": "关于“磁场对电流的作用与电动机”，判断这一说法是否成立，并说明依据：\n受力方向同时取决于电流方向和磁场方向。",
+      "options": [
+        {
+          "label": "A",
+          "text": "该说法成立。"
+        },
+        {
+          "label": "B",
+          "text": "该说法不成立。"
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "受力方向同时取决于电流方向和磁场方向；只改变其中一个条件时，受力方向会相应反转。\n知识点条件：判断通电导体的运动方向时，要同时考虑电流方向和磁场方向，不能只看其中一个。磁场力的大小还受电流、磁场和导体等因素影响，初中阶段主要通过实验辨认方向，不把未学的磁场力定量公式当作必背规律。若电动机带动重物匀速上升，可用已学的功和功率关系估算机械输出；这是机械输出的计算，不是磁场力定律。\n推导依据：通电导体处于磁场中会受力，改变电流或磁场方向可观察受力方向改变。；电动机让线圈在磁场中持续转动，把电能转化为机械能。；重物匀速提升时，输出机械功可按作用力乘沿力方向的距离计算。；用输出功除以工作时间得到平均机械功率，也可反向用功率和时间核对输出功。\n卡片公式各自的适用条件（不是本题共同前提）：\n匀速提升负载的机械功：仅作已知电学或能量数据的应用，不验证本卡定性规律。负载沿作用力方向移动，力近似恒定；输出的力 用 N、输出端位移 用 m。\n由输出功和时间求平均功率：仅作已知电学或能量数据的应用，不验证本卡定性规律。输出功和工作时间对应同一过程，工作时间 大于 0。\n由平均功率和时间核对输出功：仅作已知电学或能量数据的应用，不验证本卡定性规律。平均输出功率在这段时间内近似稳定。",
+      "error_type": "概念混淆",
+      "judging": "teacher",
+      "source_error_index": 0,
+      "source_caught_by": "人工审核",
+      "wrong_expr": null,
+      "trap_test": null,
+      "level": "基础",
+      "learning_scope": "初中",
+      "answer_evidence": {
+        "kind": "teacher",
+        "claim_source": "why",
+        "reference_only": true,
+        "reason": "概念、操作或无法建立完整定量证据，教师确认条件与结论。"
+      },
+      "review": {
+        "confidence": "medium",
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": false,
+          "no_answer_leak_in_options": true
+        },
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。",
+        "material": {
+          "anchors": [
+            {
+              "kind": "概念或操作",
+              "name": "磁场对电流的作用与电动机",
+              "claim": "只改变电流方向就断定导体受力方向一定不变。",
+              "correction_basis": "受力方向同时取决于电流方向和磁场方向；只改变其中一个条件时，受力方向会相应反转。",
+              "note": "概念锚点及命题真假待教师确认；未套用任意第一条公式",
+              "display": "只改变电流方向就断定导体受力方向一定不变。"
+            }
+          ],
+          "source": {
+            "nature": "原创概念/操作命题；无真实测量记录",
+            "source_error_index": 0
+          },
+          "predicted_errors": [
+            {
+              "option": "B",
+              "text": "该说法不成立。",
+              "reason": "受力方向同时取决于电流方向和磁场方向；只改变其中一个条件时，受力方向会相应反转。",
+              "expression": null,
+              "status": "误答原因预测，待教师确认；未采集学生作答证据"
+            }
+          ],
+          "difficulty_note": "建议难度沿用本题level（源卡难度）；尚非题目难度实测，待教师调整",
+          "estimated_seconds": [
+            60,
+            120
+          ],
+          "time_basis": "未做学生计时；按现有难度给出备课估计区间，待教师确认",
+          "machine_checks": [
+            {
+              "name": "题目ID关联源知识点",
+              "passed": true
+            },
+            {
+              "name": "选项标签唯一且参考标签存在",
+              "passed": true
+            },
+            {
+              "name": "选项文本互异",
+              "passed": true
+            }
+          ],
+          "machine_boundary": "只列本次逐题实际执行项目；不把关联知识卡的方向、扫描或一致性检查算作本题已验。概念题未验命题真假。",
+          "human_review_items": [
+            "题干条件是否充分、清楚且符合学段",
+            "参考结论在指定条件下是否唯一",
+            "干扰项是否合理、对应真实认知问题且无答案暗示",
+            "公式或概念锚点是否准确",
+            "建议难度及用时是否适合教学",
+            "语言、装置与安全操作是否恰当"
+          ],
+          "reference_answer_note": "现有参考答案保持；即使本地可以判选项，也仍须教师审核教学可用性"
+        }
+      }
+    },
+    {
+      "id": "diagnostic-magnet-03-2",
+      "point_id": "magnet-03",
+      "point_title": "磁场对电流的作用与电动机",
+      "chapter": "电和磁",
+      "stem": "关于“磁场对电流的作用与电动机”，判断这一说法是否成立，并说明依据：\n将电动机的电输入功率直接视为机械输出功率。",
+      "options": [
+        {
+          "label": "A",
+          "text": "该说法成立。"
+        },
+        {
+          "label": "B",
+          "text": "该说法不成立。"
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "线圈发热、轴承摩擦和空气阻力都会消耗能量，所以电输入功率通常大于机械输出功率。\n知识点条件：判断通电导体的运动方向时，要同时考虑电流方向和磁场方向，不能只看其中一个。磁场力的大小还受电流、磁场和导体等因素影响，初中阶段主要通过实验辨认方向，不把未学的磁场力定量公式当作必背规律。若电动机带动重物匀速上升，可用已学的功和功率关系估算机械输出；这是机械输出的计算，不是磁场力定律。\n推导依据：通电导体处于磁场中会受力，改变电流或磁场方向可观察受力方向改变。；电动机让线圈在磁场中持续转动，把电能转化为机械能。；重物匀速提升时，输出机械功可按作用力乘沿力方向的距离计算。；用输出功除以工作时间得到平均机械功率，也可反向用功率和时间核对输出功。\n卡片公式各自的适用条件（不是本题共同前提）：\n匀速提升负载的机械功：仅作已知电学或能量数据的应用，不验证本卡定性规律。负载沿作用力方向移动，力近似恒定；输出的力 用 N、输出端位移 用 m。\n由输出功和时间求平均功率：仅作已知电学或能量数据的应用，不验证本卡定性规律。输出功和工作时间对应同一过程，工作时间 大于 0。\n由平均功率和时间核对输出功：仅作已知电学或能量数据的应用，不验证本卡定性规律。平均输出功率在这段时间内近似稳定。",
+      "error_type": "概念混淆",
+      "judging": "teacher",
+      "source_error_index": 1,
+      "source_caught_by": "人工审核",
+      "wrong_expr": null,
+      "trap_test": null,
+      "level": "基础",
+      "learning_scope": "初中",
+      "answer_evidence": {
+        "kind": "teacher",
+        "claim_source": "wrong",
+        "reference_only": true,
+        "reason": "概念、操作或无法建立完整定量证据，教师确认条件与结论。"
+      },
+      "review": {
+        "confidence": "medium",
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": false,
+          "no_answer_leak_in_options": true
+        },
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。",
+        "material": {
+          "anchors": [
+            {
+              "kind": "概念或操作",
+              "name": "磁场对电流的作用与电动机",
+              "claim": "把电动机的电输入功率直接当成机械输出功率。",
+              "correction_basis": "线圈发热、轴承摩擦和空气阻力都会消耗能量，所以电输入功率通常大于机械输出功率。",
+              "note": "概念锚点及命题真假待教师确认；未套用任意第一条公式",
+              "display": "把电动机的电输入功率直接当成机械输出功率。"
+            }
+          ],
+          "source": {
+            "nature": "原创概念/操作命题；无真实测量记录",
+            "source_error_index": 1
+          },
+          "predicted_errors": [
+            {
+              "option": "A",
+              "text": "该说法成立。",
+              "reason": "线圈发热、轴承摩擦和空气阻力都会消耗能量，所以电输入功率通常大于机械输出功率。",
+              "expression": null,
+              "status": "误答原因预测，待教师确认；未采集学生作答证据"
+            }
+          ],
+          "difficulty_note": "建议难度沿用本题level（源卡难度）；尚非题目难度实测，待教师调整",
+          "estimated_seconds": [
+            60,
+            120
+          ],
+          "time_basis": "未做学生计时；按现有难度给出备课估计区间，待教师确认",
+          "machine_checks": [
+            {
+              "name": "题目ID关联源知识点",
+              "passed": true
+            },
+            {
+              "name": "选项标签唯一且参考标签存在",
+              "passed": true
+            },
+            {
+              "name": "选项文本互异",
+              "passed": true
+            }
+          ],
+          "machine_boundary": "只列本次逐题实际执行项目；不把关联知识卡的方向、扫描或一致性检查算作本题已验。概念题未验命题真假。",
+          "human_review_items": [
+            "题干条件是否充分、清楚且符合学段",
+            "参考结论在指定条件下是否唯一",
+            "干扰项是否合理、对应真实认知问题且无答案暗示",
+            "公式或概念锚点是否准确",
+            "建议难度及用时是否适合教学",
+            "语言、装置与安全操作是否恰当"
+          ],
+          "reference_answer_note": "现有参考答案保持；即使本地可以判选项，也仍须教师审核教学可用性"
+        }
+      }
+    },
+    {
+      "id": "diagnostic-magnet-03-3",
+      "point_id": "magnet-03",
+      "point_title": "磁场对电流的作用与电动机",
+      "chapter": "电和磁",
+      "stem": "在“磁场对电流的作用与电动机”中，仅作已知电学或能量数据的应用，不验证本卡定性规律。负载沿作用力方向移动，力近似恒定；输出的力 用 N、输出端位移 用 m。。电动机输出的机械功的单位为J。下列哪一表达式的量纲与该目标量一致？",
+      "options": [
+        {
+          "label": "A",
+          "text": "W<sub>出</sub> = F<sub>出</sub>/s<sub>出</sub>"
+        },
+        {
+          "label": "B",
+          "text": "W<sub>出</sub> = F<sub>出</sub>·s<sub>出</sub>"
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "恒力沿运动方向做功要把力与位移相乘；除以距离既算不出焦耳，数值也与题意不符。\n知识点条件：判断通电导体的运动方向时，要同时考虑电流方向和磁场方向，不能只看其中一个。磁场力的大小还受电流、磁场和导体等因素影响，初中阶段主要通过实验辨认方向，不把未学的磁场力定量公式当作必背规律。若电动机带动重物匀速上升，可用已学的功和功率关系估算机械输出；这是机械输出的计算，不是磁场力定律。\n推导依据：通电导体处于磁场中会受力，改变电流或磁场方向可观察受力方向改变。；电动机让线圈在磁场中持续转动，把电能转化为机械能。；重物匀速提升时，输出机械功可按作用力乘沿力方向的距离计算。；用输出功除以工作时间得到平均机械功率，也可反向用功率和时间核对输出功。\n卡片公式各自的适用条件（不是本题共同前提）：\n匀速提升负载的机械功：仅作已知电学或能量数据的应用，不验证本卡定性规律。负载沿作用力方向移动，力近似恒定；输出的力 用 N、输出端位移 用 m。\n由输出功和时间求平均功率：仅作已知电学或能量数据的应用，不验证本卡定性规律。输出功和工作时间对应同一过程，工作时间 大于 0。\n由平均功率和时间核对输出功：仅作已知电学或能量数据的应用，不验证本卡定性规律。平均输出功率在这段时间内近似稳定。",
+      "error_type": "量纲一致性",
+      "judging": "auto",
+      "source_error_index": 2,
+      "source_caught_by": "量纲一致性",
+      "wrong_expr": "W<sub>出</sub> = F<sub>出</sub>/s<sub>出</sub>",
+      "trap_test": {
+        "kind": "dimension",
+        "target": "W_out = F_out/s_out",
+        "expect": "mismatch",
+        "lhs_dim": "M·L^2·T^-2",
+        "rhs_dim": "M·T^-2",
+        "note": "正式引擎验证量纲不一致；不计作同量纲错误数值实测。"
+      },
+      "level": "基础",
+      "learning_scope": "初中",
+      "answer_evidence": {
+        "kind": "dimension",
+        "target": "W_out",
+        "correct_expression": "W_out = F_out*s_out",
+        "distractor_expression": "W_out = F_out/s_out",
+        "target_dimension": "M·L^2·T^-2",
+        "distractor_dimension": "M·T^-2"
+      },
+      "review": {
+        "confidence": "medium",
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": true,
+          "no_answer_leak_in_options": true
+        },
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。",
+        "material": {
+          "anchors": [
+            {
+              "kind": "公式量纲",
+              "name": "本题目标量与等式",
+              "expression": "W_out = F_out*s_out",
+              "when": "量纲相符是必要条件，不能据此证明系数或物理条件正确",
+              "display": "W<sub>出</sub> = F<sub>出</sub>·s<sub>出</sub>"
+            }
+          ],
+          "source": {
+            "nature": "原创量纲辨析命题；无实测数据",
+            "source_error_index": 2
+          },
+          "predicted_errors": [
+            {
+              "option": "A",
+              "text": "W<sub>出</sub> = F<sub>出</sub>/s<sub>出</sub>",
+              "reason": "恒力沿运动方向做功要把力与位移相乘；除以距离既算不出焦耳，数值也与题意不符。",
+              "expression": "W_out = F_out/s_out",
+              "status": "误答原因预测，待教师确认；未采集学生作答证据"
+            }
+          ],
+          "difficulty_note": "建议难度沿用本题level（源卡难度）；尚非题目难度实测，待教师调整",
+          "estimated_seconds": [
+            60,
+            120
+          ],
+          "time_basis": "未做学生计时；按现有难度给出备课估计区间，待教师确认",
+          "machine_checks": [
+            {
+              "name": "题目ID关联源知识点",
+              "passed": true
+            },
+            {
+              "name": "选项标签唯一且参考标签存在",
+              "passed": true
+            },
+            {
+              "name": "选项文本互异",
+              "passed": true
+            },
+            {
+              "name": "正确式量纲一致",
+              "passed": true,
+              "actual": {
+                "type": "dimension",
+                "type_name": "量纲一致性",
+                "formula": "教师审核证据",
+                "ok": true,
+                "detail": "左端M·L^2·T^-2，右端M·L^2·T^-2",
+                "note": "",
+                "error": null,
+                "evaluation_status": "success",
+                "failure_reason": null,
+                "result_dimension": "M·L^2·T^-2",
+                "reference_dimension": "M·L^2·T^-2",
+                "diagnostics": {},
+                "physical_error_identified": false
+              }
+            },
+            {
+              "name": "干扰式量纲冲突",
+              "passed": true,
+              "actual": {
+                "type": "dimension",
+                "type_name": "量纲一致性",
+                "formula": "教师审核证据",
+                "ok": false,
+                "detail": "左端M·L^2·T^-2，右端M·T^-2",
+                "note": "",
+                "error": null,
+                "evaluation_status": "dimension_conflict",
+                "failure_reason": "dimension_conflict",
+                "result_dimension": "M·T^-2",
+                "reference_dimension": "M·L^2·T^-2",
+                "diagnostics": {},
+                "physical_error_identified": true
+              }
+            }
+          ],
+          "machine_boundary": "只列本次逐题实际执行项目；不把关联知识卡的方向、扫描或一致性检查算作本题已验。概念题未验命题真假。",
+          "human_review_items": [
+            "题干条件是否充分、清楚且符合学段",
+            "参考结论在指定条件下是否唯一",
+            "干扰项是否合理、对应真实认知问题且无答案暗示",
+            "公式或概念锚点是否准确",
+            "建议难度及用时是否适合教学",
+            "语言、装置与安全操作是否恰当"
+          ],
+          "reference_answer_note": "现有参考答案保持；即使本地可以判选项，也仍须教师审核教学可用性"
+        }
+      }
+    },
+    {
+      "id": "diagnostic-magnet-03-4",
+      "point_id": "magnet-03",
+      "point_title": "磁场对电流的作用与电动机",
+      "chapter": "电和磁",
+      "stem": "在“磁场对电流的作用与电动机”的模型下，F<sub>出</sub>（电动机对负载所做功对应的平均作用力）=200 N；s<sub>出</sub>（负载沿力方向移动的距离）=3 m。条件：仅作已知电学或能量数据的应用，不验证本卡定性规律。负载沿作用力方向移动，力近似恒定；输出的力 用 N、输出端位移 用 m。。求电动机输出的机械功（W<sub>出</sub>）。这些数值是设计示例。",
+      "options": [
+        {
+          "label": "A",
+          "text": "1200 J"
+        },
+        {
+          "label": "B",
+          "text": "600 J"
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "使用匀速提升负载的机械功：F<sub>出</sub>·s<sub>出</sub>，代入得600 J。另一结果来自F<sub>出</sub>·(2·s<sub>出</sub>)，算得1200 J。\n题目只计匀速提升，功200×3=600 J；未发生的下降路程不能计入本次提升功。\n知识点条件：判断通电导体的运动方向时，要同时考虑电流方向和磁场方向，不能只看其中一个。磁场力的大小还受电流、磁场和导体等因素影响，初中阶段主要通过实验辨认方向，不把未学的磁场力定量公式当作必背规律。若电动机带动重物匀速上升，可用已学的功和功率关系估算机械输出；这是机械输出的计算，不是磁场力定律。\n推导依据：通电导体处于磁场中会受力，改变电流或磁场方向可观察受力方向改变。；电动机让线圈在磁场中持续转动，把电能转化为机械能。；重物匀速提升时，输出机械功可按作用力乘沿力方向的距离计算。；用输出功除以工作时间得到平均机械功率，也可反向用功率和时间核对输出功。\n卡片公式各自的适用条件（不是本题共同前提）：\n匀速提升负载的机械功：仅作已知电学或能量数据的应用，不验证本卡定性规律。负载沿作用力方向移动，力近似恒定；输出的力 用 N、输出端位移 用 m。\n由输出功和时间求平均功率：仅作已知电学或能量数据的应用，不验证本卡定性规律。输出功和工作时间对应同一过程，工作时间 大于 0。\n由平均功率和时间核对输出功：仅作已知电学或能量数据的应用，不验证本卡定性规律。平均输出功率在这段时间内近似稳定。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 3,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "W<sub>出</sub> = F<sub>出</sub>·(2·s<sub>出</sub>)",
+      "trap_test": {
+        "scenario": "电动机提升重物一",
+        "expr": "F_out*(2*s_out)",
+        "ref": 600,
+        "tol": 1e-06
+      },
+      "level": "基础",
+      "learning_scope": "初中",
+      "answer_evidence": {
+        "kind": "numeric",
+        "scenario": "电动机提升重物一",
+        "parameters": {
+          "F_out": 200,
+          "s_out": 3,
+          "W_out": 600,
+          "t_run": 10,
+          "P_out": 60
+        },
+        "target": "W_out",
+        "unit": "J",
+        "reference": 600,
+        "correct_proof": {
+          "expression": "F_out*s_out",
+          "formula": "匀速提升负载的机械功",
+          "value": 600,
+          "when": "仅作已知电学或能量数据的应用，不验证本卡定性规律。负载沿作用力方向移动，力近似恒定；输出的力 用 N、输出端位移 用 m。"
+        },
+        "distractor_expression": "F_out*(2*s_out)",
+        "distractor_value": 1200.0,
+        "dimension_matches": true,
+        "independent_evaluation": true
+      },
+      "review": {
+        "confidence": "medium",
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": true,
+          "no_answer_leak_in_options": true
+        },
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。",
+        "material": {
+          "anchors": [
+            {
+              "kind": "公式",
+              "name": "匀速提升负载的机械功",
+              "expression": "F_out*s_out",
+              "when": "仅作已知电学或能量数据的应用，不验证本卡定性规律。负载沿作用力方向移动，力近似恒定；输出的力 用 N、输出端位移 用 m。",
+              "display": "F<sub>出</sub>·s<sub>出</sub>"
+            }
+          ],
+          "source": {
+            "nature": "原创设计示例，非教材实测或真实实验记录",
+            "scenario": "电动机提升重物一",
+            "parameters": {
+              "F_out": 200,
+              "s_out": 3,
+              "W_out": 600,
+              "t_run": 10,
+              "P_out": 60
+            },
+            "data": [
+              "电动机对负载所做功对应的平均作用力：200 N",
+              "负载沿力方向移动的距离：3 m",
+              "电动机输出的机械功：600 J",
+              "电动机工作时间：10 s",
+              "电动机输出的平均机械功率：60 W"
+            ]
+          },
+          "predicted_errors": [
+            {
+              "option": "A",
+              "text": "1200 J",
+              "reason": "题目只计匀速提升，功200×3=600 J；未发生的下降路程不能计入本次提升功。",
+              "expression": "F_out*(2*s_out)",
+              "status": "误答原因预测，待教师确认；未采集学生作答证据"
+            }
+          ],
+          "difficulty_note": "建议难度沿用本题level（源卡难度）；尚非题目难度实测，待教师调整",
+          "estimated_seconds": [
+            60,
+            120
+          ],
+          "time_basis": "未做学生计时；按现有难度给出备课估计区间，待教师确认",
+          "machine_checks": [
+            {
+              "name": "题目ID关联源知识点",
+              "passed": true
+            },
+            {
+              "name": "选项标签唯一且参考标签存在",
+              "passed": true
+            },
+            {
+              "name": "选项文本互异",
+              "passed": true
+            },
+            {
+              "name": "正确路径独立数值复算",
+              "passed": true
+            },
+            {
+              "name": "带量纲求值与独立求值一致",
+              "passed": true
+            },
+            {
+              "name": "干扰路径复算且与正确路径分离",
+              "passed": true
+            }
+          ],
+          "machine_boundary": "只列本次逐题实际执行项目；不把关联知识卡的方向、扫描或一致性检查算作本题已验。概念题未验命题真假。",
+          "human_review_items": [
+            "题干条件是否充分、清楚且符合学段",
+            "参考结论在指定条件下是否唯一",
+            "干扰项是否合理、对应真实认知问题且无答案暗示",
+            "公式或概念锚点是否准确",
+            "建议难度及用时是否适合教学",
+            "语言、装置与安全操作是否恰当"
+          ],
+          "reference_answer_note": "现有参考答案保持；即使本地可以判选项，也仍须教师审核教学可用性"
+        }
+      }
+    },
+    {
+      "id": "diagnostic-magnet-04-1",
+      "point_id": "magnet-04",
+      "point_title": "安装直流电动机模型",
+      "chapter": "电和磁",
+      "stem": "关于“安装直流电动机模型”，判断这一说法是否成立，并说明依据：\n电刷未接触或线圈卡住时，仍把不转归因于磁场方向错误。",
+      "options": [
+        {
+          "label": "A",
+          "text": "该说法成立。"
+        },
+        {
+          "label": "B",
+          "text": "该说法不成立。"
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "线圈不转可能是断路、接触不良或机械卡滞；应先逐项检查，再调整磁场或电流方向。\n知识点条件：模型安装和调试要逐项检查电路是否闭合、线圈是否卡住、电刷是否接触良好以及磁场是否存在。若已测得线圈端电压和电阻，可用欧姆定律估算电流；电功率可由电压和电流求得，再乘工作时间估算输入电能。电动机的实际机械输出小于输入电能，不可把输入电能全部当成有用功。\n推导依据：先按模型结构连接电源、电刷和线圈，并检查线圈能自由转动。；确认磁场存在且电路接触良好后，再短时通电观察线圈是否持续转动。；测量电压和电流后，可用 P<sub>入</sub>=U<sub>m</sub>·I<sub>m</sub> 估算模型的电输入功率。；若功率近似稳定，再用输入功率乘通电时间估算电输入电能，并与电能除以时间复核。\n卡片公式各自的适用条件（不是本题共同前提）：\n已测电压和电流求输入功率：仅作已知电学或能量数据的应用，不验证本卡定性规律。电压和电流对应同一时刻的直流测量，输入功率按电压乘电流估算。\n由输入功率和时间求电输入电能：仅作已知电学或能量数据的应用，不验证本卡定性规律。输入功率在这段通电时间内近似稳定。\n由电能和时间核对输入功率：仅作已知电学或能量数据的应用，不验证本卡定性规律。电能和时间对应同一通电过程，通电时间 大于 0。",
+      "error_type": "概念混淆",
+      "judging": "teacher",
+      "source_error_index": 0,
+      "source_caught_by": "人工审核",
+      "wrong_expr": null,
+      "trap_test": null,
+      "level": "基础",
+      "learning_scope": "初中",
+      "answer_evidence": {
+        "kind": "teacher",
+        "claim_source": "wrong",
+        "reference_only": true,
+        "reason": "概念、操作或无法建立完整定量证据，教师确认条件与结论。"
+      },
+      "review": {
+        "confidence": "medium",
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": false,
+          "no_answer_leak_in_options": true
+        },
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。",
+        "material": {
+          "anchors": [
+            {
+              "kind": "概念或操作",
+              "name": "安装直流电动机模型",
+              "claim": "电刷未接触或线圈卡住时，仍把不转归因于磁场方向错误。",
+              "correction_basis": "线圈不转可能是断路、接触不良或机械卡滞；应先逐项检查，再调整磁场或电流方向。",
+              "note": "概念锚点及命题真假待教师确认；未套用任意第一条公式",
+              "display": "电刷未接触或线圈卡住时，仍把不转归因于磁场方向错误。"
+            }
+          ],
+          "source": {
+            "nature": "原创概念/操作命题；无真实测量记录",
+            "source_error_index": 0
+          },
+          "predicted_errors": [
+            {
+              "option": "A",
+              "text": "该说法成立。",
+              "reason": "线圈不转可能是断路、接触不良或机械卡滞；应先逐项检查，再调整磁场或电流方向。",
+              "expression": null,
+              "status": "误答原因预测，待教师确认；未采集学生作答证据"
+            }
+          ],
+          "difficulty_note": "建议难度沿用本题level（源卡难度）；尚非题目难度实测，待教师调整",
+          "estimated_seconds": [
+            60,
+            120
+          ],
+          "time_basis": "未做学生计时；按现有难度给出备课估计区间，待教师确认",
+          "machine_checks": [
+            {
+              "name": "题目ID关联源知识点",
+              "passed": true
+            },
+            {
+              "name": "选项标签唯一且参考标签存在",
+              "passed": true
+            },
+            {
+              "name": "选项文本互异",
+              "passed": true
+            }
+          ],
+          "machine_boundary": "只列本次逐题实际执行项目；不把关联知识卡的方向、扫描或一致性检查算作本题已验。概念题未验命题真假。",
+          "human_review_items": [
+            "题干条件是否充分、清楚且符合学段",
+            "参考结论在指定条件下是否唯一",
+            "干扰项是否合理、对应真实认知问题且无答案暗示",
+            "公式或概念锚点是否准确",
+            "建议难度及用时是否适合教学",
+            "语言、装置与安全操作是否恰当"
+          ],
+          "reference_answer_note": "现有参考答案保持；即使本地可以判选项，也仍须教师审核教学可用性"
+        }
+      }
+    },
+    {
+      "id": "diagnostic-magnet-04-2",
+      "point_id": "magnet-04",
+      "point_title": "安装直流电动机模型",
+      "chapter": "电和磁",
+      "stem": "在“安装直流电动机模型”中，仅作已知电学或能量数据的应用，不验证本卡定性规律。电压和电流对应同一时刻的直流测量，输入功率按电压乘电流估算。。电动机模型的电输入功率的单位为W。下列哪一表达式的量纲与该目标量一致？",
+      "options": [
+        {
+          "label": "A",
+          "text": "P<sub>入</sub> = U<sub>m</sub>/I<sub>m</sub>"
+        },
+        {
+          "label": "B",
+          "text": "P<sub>入</sub> = U<sub>m</sub>·I<sub>m</sub>"
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "电功率等于电压乘电流；电压除以电流得到的是电阻，不能表示输入功率。\n知识点条件：模型安装和调试要逐项检查电路是否闭合、线圈是否卡住、电刷是否接触良好以及磁场是否存在。若已测得线圈端电压和电阻，可用欧姆定律估算电流；电功率可由电压和电流求得，再乘工作时间估算输入电能。电动机的实际机械输出小于输入电能，不可把输入电能全部当成有用功。\n推导依据：先按模型结构连接电源、电刷和线圈，并检查线圈能自由转动。；确认磁场存在且电路接触良好后，再短时通电观察线圈是否持续转动。；测量电压和电流后，可用 P<sub>入</sub>=U<sub>m</sub>·I<sub>m</sub> 估算模型的电输入功率。；若功率近似稳定，再用输入功率乘通电时间估算电输入电能，并与电能除以时间复核。\n卡片公式各自的适用条件（不是本题共同前提）：\n已测电压和电流求输入功率：仅作已知电学或能量数据的应用，不验证本卡定性规律。电压和电流对应同一时刻的直流测量，输入功率按电压乘电流估算。\n由输入功率和时间求电输入电能：仅作已知电学或能量数据的应用，不验证本卡定性规律。输入功率在这段通电时间内近似稳定。\n由电能和时间核对输入功率：仅作已知电学或能量数据的应用，不验证本卡定性规律。电能和时间对应同一通电过程，通电时间 大于 0。",
+      "error_type": "量纲一致性",
+      "judging": "auto",
+      "source_error_index": 1,
+      "source_caught_by": "量纲一致性",
+      "wrong_expr": "P<sub>入</sub> = U<sub>m</sub>/I<sub>m</sub>",
+      "trap_test": {
+        "kind": "dimension",
+        "target": "P_in = U_m/I_m",
+        "lhs_dim": "M·L^2·T^-3",
+        "rhs_dim": "M·L^2·T^-3·I^-2",
+        "expect": "mismatch",
+        "note": "实际量纲检查得到等号左边为M·L^2·T^-3、右边为M·L^2·T^-3·I^-2；两边不是同一物理量，因此该等式不成立。"
+      },
+      "level": "基础",
+      "learning_scope": "初中",
+      "answer_evidence": {
+        "kind": "dimension",
+        "target": "P_in",
+        "correct_expression": "P_in = U_m*I_m",
+        "distractor_expression": "P_in = U_m/I_m",
+        "target_dimension": "M·L^2·T^-3",
+        "distractor_dimension": "M·L^2·T^-3·I^-2"
+      },
+      "review": {
+        "confidence": "medium",
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": true,
+          "no_answer_leak_in_options": true
+        },
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。",
+        "material": {
+          "anchors": [
+            {
+              "kind": "公式量纲",
+              "name": "本题目标量与等式",
+              "expression": "P_in = U_m*I_m",
+              "when": "量纲相符是必要条件，不能据此证明系数或物理条件正确",
+              "display": "P<sub>入</sub> = U<sub>m</sub>·I<sub>m</sub>"
+            }
+          ],
+          "source": {
+            "nature": "原创量纲辨析命题；无实测数据",
+            "source_error_index": 1
+          },
+          "predicted_errors": [
+            {
+              "option": "A",
+              "text": "P<sub>入</sub> = U<sub>m</sub>/I<sub>m</sub>",
+              "reason": "电功率等于电压乘电流；电压除以电流得到的是电阻，不能表示输入功率。",
+              "expression": "P_in = U_m/I_m",
+              "status": "误答原因预测，待教师确认；未采集学生作答证据"
+            }
+          ],
+          "difficulty_note": "建议难度沿用本题level（源卡难度）；尚非题目难度实测，待教师调整",
+          "estimated_seconds": [
+            60,
+            120
+          ],
+          "time_basis": "未做学生计时；按现有难度给出备课估计区间，待教师确认",
+          "machine_checks": [
+            {
+              "name": "题目ID关联源知识点",
+              "passed": true
+            },
+            {
+              "name": "选项标签唯一且参考标签存在",
+              "passed": true
+            },
+            {
+              "name": "选项文本互异",
+              "passed": true
+            },
+            {
+              "name": "正确式量纲一致",
+              "passed": true,
+              "actual": {
+                "type": "dimension",
+                "type_name": "量纲一致性",
+                "formula": "教师审核证据",
+                "ok": true,
+                "detail": "左端M·L^2·T^-3，右端M·L^2·T^-3",
+                "note": "",
+                "error": null,
+                "evaluation_status": "success",
+                "failure_reason": null,
+                "result_dimension": "M·L^2·T^-3",
+                "reference_dimension": "M·L^2·T^-3",
+                "diagnostics": {},
+                "physical_error_identified": false
+              }
+            },
+            {
+              "name": "干扰式量纲冲突",
+              "passed": true,
+              "actual": {
+                "type": "dimension",
+                "type_name": "量纲一致性",
+                "formula": "教师审核证据",
+                "ok": false,
+                "detail": "左端M·L^2·T^-3，右端M·L^2·T^-3·I^-2",
+                "note": "",
+                "error": null,
+                "evaluation_status": "dimension_conflict",
+                "failure_reason": "dimension_conflict",
+                "result_dimension": "M·L^2·T^-3·I^-2",
+                "reference_dimension": "M·L^2·T^-3",
+                "diagnostics": {},
+                "physical_error_identified": true
+              }
+            }
+          ],
+          "machine_boundary": "只列本次逐题实际执行项目；不把关联知识卡的方向、扫描或一致性检查算作本题已验。概念题未验命题真假。",
+          "human_review_items": [
+            "题干条件是否充分、清楚且符合学段",
+            "参考结论在指定条件下是否唯一",
+            "干扰项是否合理、对应真实认知问题且无答案暗示",
+            "公式或概念锚点是否准确",
+            "建议难度及用时是否适合教学",
+            "语言、装置与安全操作是否恰当"
+          ],
+          "reference_answer_note": "现有参考答案保持；即使本地可以判选项，也仍须教师审核教学可用性"
+        }
+      }
+    },
+    {
+      "id": "diagnostic-magnet-04-3",
+      "point_id": "magnet-04",
+      "point_title": "安装直流电动机模型",
+      "chapter": "电和磁",
+      "stem": "在“安装直流电动机模型”中，仅作已知电学或能量数据的应用，不验证本卡定性规律。电压和电流对应同一时刻的直流测量，输入功率按电压乘电流估算。。电动机模型的电输入功率的单位为W。下列哪一表达式的量纲与该目标量一致？",
+      "options": [
+        {
+          "label": "A",
+          "text": "P<sub>入</sub> = U<sub>m</sub>/I<sub>m</sub>"
+        },
+        {
+          "label": "B",
+          "text": "P<sub>入</sub> = U<sub>m</sub>·I<sub>m</sub>"
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "正确输入功率6×0.3=1.8 W；6÷0.3=20的量纲是Ω，不能标为W。\n知识点条件：模型安装和调试要逐项检查电路是否闭合、线圈是否卡住、电刷是否接触良好以及磁场是否存在。若已测得线圈端电压和电阻，可用欧姆定律估算电流；电功率可由电压和电流求得，再乘工作时间估算输入电能。电动机的实际机械输出小于输入电能，不可把输入电能全部当成有用功。\n推导依据：先按模型结构连接电源、电刷和线圈，并检查线圈能自由转动。；确认磁场存在且电路接触良好后，再短时通电观察线圈是否持续转动。；测量电压和电流后，可用 P<sub>入</sub>=U<sub>m</sub>·I<sub>m</sub> 估算模型的电输入功率。；若功率近似稳定，再用输入功率乘通电时间估算电输入电能，并与电能除以时间复核。\n卡片公式各自的适用条件（不是本题共同前提）：\n已测电压和电流求输入功率：仅作已知电学或能量数据的应用，不验证本卡定性规律。电压和电流对应同一时刻的直流测量，输入功率按电压乘电流估算。\n由输入功率和时间求电输入电能：仅作已知电学或能量数据的应用，不验证本卡定性规律。输入功率在这段通电时间内近似稳定。\n由电能和时间核对输入功率：仅作已知电学或能量数据的应用，不验证本卡定性规律。电能和时间对应同一通电过程，通电时间 大于 0。",
+      "error_type": "量纲一致性",
+      "judging": "auto",
+      "source_error_index": 2,
+      "source_caught_by": "量纲一致性",
+      "wrong_expr": "P<sub>入</sub> = U<sub>m</sub>/I<sub>m</sub>",
+      "trap_test": {
+        "kind": "dimension",
+        "target": "P_in = U_m/I_m",
+        "expect": "mismatch",
+        "lhs_dim": "M·L^2·T^-3",
+        "rhs_dim": "M·L^2·T^-3·I^-2",
+        "note": "正式引擎验证量纲不一致；不计作同量纲错误数值实测。"
+      },
+      "level": "基础",
+      "learning_scope": "初中",
+      "answer_evidence": {
+        "kind": "dimension",
+        "target": "P_in",
+        "correct_expression": "P_in = U_m*I_m",
+        "distractor_expression": "P_in = U_m/I_m",
+        "target_dimension": "M·L^2·T^-3",
+        "distractor_dimension": "M·L^2·T^-3·I^-2"
+      },
+      "review": {
+        "confidence": "medium",
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": true,
+          "no_answer_leak_in_options": true
+        },
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。",
+        "material": {
+          "anchors": [
+            {
+              "kind": "公式量纲",
+              "name": "本题目标量与等式",
+              "expression": "P_in = U_m*I_m",
+              "when": "量纲相符是必要条件，不能据此证明系数或物理条件正确",
+              "display": "P<sub>入</sub> = U<sub>m</sub>·I<sub>m</sub>"
+            }
+          ],
+          "source": {
+            "nature": "原创量纲辨析命题；无实测数据",
+            "source_error_index": 2
+          },
+          "predicted_errors": [
+            {
+              "option": "A",
+              "text": "P<sub>入</sub> = U<sub>m</sub>/I<sub>m</sub>",
+              "reason": "正确输入功率6×0.3=1.8 W；6÷0.3=20的量纲是Ω，不能标为W。",
+              "expression": "P_in = U_m/I_m",
+              "status": "误答原因预测，待教师确认；未采集学生作答证据"
+            }
+          ],
+          "difficulty_note": "建议难度沿用本题level（源卡难度）；尚非题目难度实测，待教师调整",
+          "estimated_seconds": [
+            60,
+            120
+          ],
+          "time_basis": "未做学生计时；按现有难度给出备课估计区间，待教师确认",
+          "machine_checks": [
+            {
+              "name": "题目ID关联源知识点",
+              "passed": true
+            },
+            {
+              "name": "选项标签唯一且参考标签存在",
+              "passed": true
+            },
+            {
+              "name": "选项文本互异",
+              "passed": true
+            },
+            {
+              "name": "正确式量纲一致",
+              "passed": true,
+              "actual": {
+                "type": "dimension",
+                "type_name": "量纲一致性",
+                "formula": "教师审核证据",
+                "ok": true,
+                "detail": "左端M·L^2·T^-3，右端M·L^2·T^-3",
+                "note": "",
+                "error": null,
+                "evaluation_status": "success",
+                "failure_reason": null,
+                "result_dimension": "M·L^2·T^-3",
+                "reference_dimension": "M·L^2·T^-3",
+                "diagnostics": {},
+                "physical_error_identified": false
+              }
+            },
+            {
+              "name": "干扰式量纲冲突",
+              "passed": true,
+              "actual": {
+                "type": "dimension",
+                "type_name": "量纲一致性",
+                "formula": "教师审核证据",
+                "ok": false,
+                "detail": "左端M·L^2·T^-3，右端M·L^2·T^-3·I^-2",
+                "note": "",
+                "error": null,
+                "evaluation_status": "dimension_conflict",
+                "failure_reason": "dimension_conflict",
+                "result_dimension": "M·L^2·T^-3·I^-2",
+                "reference_dimension": "M·L^2·T^-3",
+                "diagnostics": {},
+                "physical_error_identified": true
+              }
+            }
+          ],
+          "machine_boundary": "只列本次逐题实际执行项目；不把关联知识卡的方向、扫描或一致性检查算作本题已验。概念题未验命题真假。",
+          "human_review_items": [
+            "题干条件是否充分、清楚且符合学段",
+            "参考结论在指定条件下是否唯一",
+            "干扰项是否合理、对应真实认知问题且无答案暗示",
+            "公式或概念锚点是否准确",
+            "建议难度及用时是否适合教学",
+            "语言、装置与安全操作是否恰当"
+          ],
+          "reference_answer_note": "现有参考答案保持；即使本地可以判选项，也仍须教师审核教学可用性"
+        }
+      }
+    },
+    {
+      "id": "diagnostic-magnet-04-4",
+      "point_id": "magnet-04",
+      "point_title": "安装直流电动机模型",
+      "chapter": "电和磁",
+      "stem": "在“安装直流电动机模型”的模型下，U<sub>m</sub>（电动机模型线圈两端电压）=6 V；I<sub>m</sub>（通过电动机模型线圈的电流）=0.3 A。条件：仅作已知电学或能量数据的应用，不验证本卡定性规律。电压和电流对应同一时刻的直流测量，输入功率按电压乘电流估算。。求电动机模型的电输入功率（P<sub>入</sub>）。这些数值是设计示例。",
+      "options": [
+        {
+          "label": "A",
+          "text": "1.8 W"
+        },
+        {
+          "label": "B",
+          "text": "0.0018 W"
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "使用已测电压和电流求输入功率：U<sub>m</sub>·I<sub>m</sub>，代入得1.8 W。另一结果来自U<sub>m</sub>·(I<sub>m</sub>/1000)，算得0.0018 W。\n6 V乘0.3 A为1.8 W；重复除千导致误算0.0018 W。\n知识点条件：模型安装和调试要逐项检查电路是否闭合、线圈是否卡住、电刷是否接触良好以及磁场是否存在。若已测得线圈端电压和电阻，可用欧姆定律估算电流；电功率可由电压和电流求得，再乘工作时间估算输入电能。电动机的实际机械输出小于输入电能，不可把输入电能全部当成有用功。\n推导依据：先按模型结构连接电源、电刷和线圈，并检查线圈能自由转动。；确认磁场存在且电路接触良好后，再短时通电观察线圈是否持续转动。；测量电压和电流后，可用 P<sub>入</sub>=U<sub>m</sub>·I<sub>m</sub> 估算模型的电输入功率。；若功率近似稳定，再用输入功率乘通电时间估算电输入电能，并与电能除以时间复核。\n卡片公式各自的适用条件（不是本题共同前提）：\n已测电压和电流求输入功率：仅作已知电学或能量数据的应用，不验证本卡定性规律。电压和电流对应同一时刻的直流测量，输入功率按电压乘电流估算。\n由输入功率和时间求电输入电能：仅作已知电学或能量数据的应用，不验证本卡定性规律。输入功率在这段通电时间内近似稳定。\n由电能和时间核对输入功率：仅作已知电学或能量数据的应用，不验证本卡定性规律。电能和时间对应同一通电过程，通电时间 大于 0。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 3,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "P<sub>入</sub> = U<sub>m</sub>·(I<sub>m</sub>/1000)",
+      "trap_test": {
+        "scenario": "直流电动机模型一",
+        "expr": "U_m*(I_m/1000)",
+        "ref": 1.8,
+        "tol": 1e-06
+      },
+      "level": "基础",
+      "learning_scope": "初中",
+      "answer_evidence": {
+        "kind": "numeric",
+        "scenario": "直流电动机模型一",
+        "parameters": {
+          "U_m": 6,
+          "I_m": 0.3,
+          "R_m": 20,
+          "P_in": 1.8,
+          "E_in": 36,
+          "t_m": 20
+        },
+        "target": "P_in",
+        "unit": "W",
+        "reference": 1.8,
+        "correct_proof": {
+          "expression": "U_m*I_m",
+          "formula": "已测电压和电流求输入功率",
+          "value": 1.7999999999999998,
+          "when": "仅作已知电学或能量数据的应用，不验证本卡定性规律。电压和电流对应同一时刻的直流测量，输入功率按电压乘电流估算。"
+        },
+        "distractor_expression": "U_m*(I_m/1000)",
+        "distractor_value": 0.0018,
+        "dimension_matches": true,
+        "independent_evaluation": true
+      },
+      "review": {
+        "confidence": "medium",
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": true,
+          "no_answer_leak_in_options": true
+        },
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。",
+        "material": {
+          "anchors": [
+            {
+              "kind": "公式",
+              "name": "已测电压和电流求输入功率",
+              "expression": "U_m*I_m",
+              "when": "仅作已知电学或能量数据的应用，不验证本卡定性规律。电压和电流对应同一时刻的直流测量，输入功率按电压乘电流估算。",
+              "display": "U<sub>m</sub>·I<sub>m</sub>"
+            }
+          ],
+          "source": {
+            "nature": "原创设计示例，非教材实测或真实实验记录",
+            "scenario": "直流电动机模型一",
+            "parameters": {
+              "U_m": 6,
+              "I_m": 0.3,
+              "R_m": 20,
+              "P_in": 1.8,
+              "E_in": 36,
+              "t_m": 20
+            },
+            "data": [
+              "电动机模型线圈两端电压：6 V",
+              "通过电动机模型线圈的电流：0.3 A",
+              "线圈电阻：20 Ω",
+              "电动机模型的电输入功率：1.8 W",
+              "电动机模型在这段时间内的电输入电能：36 J",
+              "电动机模型通电时间：20 s"
+            ]
+          },
+          "predicted_errors": [
+            {
+              "option": "B",
+              "text": "0.0018 W",
+              "reason": "6 V乘0.3 A为1.8 W；重复除千导致误算0.0018 W。",
+              "expression": "U_m*(I_m/1000)",
+              "status": "误答原因预测，待教师确认；未采集学生作答证据"
+            }
+          ],
+          "difficulty_note": "建议难度沿用本题level（源卡难度）；尚非题目难度实测，待教师调整",
+          "estimated_seconds": [
+            60,
+            120
+          ],
+          "time_basis": "未做学生计时；按现有难度给出备课估计区间，待教师确认",
+          "machine_checks": [
+            {
+              "name": "题目ID关联源知识点",
+              "passed": true
+            },
+            {
+              "name": "选项标签唯一且参考标签存在",
+              "passed": true
+            },
+            {
+              "name": "选项文本互异",
+              "passed": true
+            },
+            {
+              "name": "正确路径独立数值复算",
+              "passed": true
+            },
+            {
+              "name": "带量纲求值与独立求值一致",
+              "passed": true
+            },
+            {
+              "name": "干扰路径复算且与正确路径分离",
+              "passed": true
+            }
+          ],
+          "machine_boundary": "只列本次逐题实际执行项目；不把关联知识卡的方向、扫描或一致性检查算作本题已验。概念题未验命题真假。",
+          "human_review_items": [
+            "题干条件是否充分、清楚且符合学段",
+            "参考结论在指定条件下是否唯一",
+            "干扰项是否合理、对应真实认知问题且无答案暗示",
+            "公式或概念锚点是否准确",
+            "建议难度及用时是否适合教学",
+            "语言、装置与安全操作是否恰当"
+          ],
+          "reference_answer_note": "现有参考答案保持；即使本地可以判选项，也仍须教师审核教学可用性"
+        }
+      }
+    },
+    {
+      "id": "diagnostic-magnet-02-1",
+      "point_id": "magnet-02",
+      "point_title": "电磁感应与发电机",
+      "chapter": "电和磁",
+      "stem": "在“电磁感应与发电机”中，仅作已知电学或能量数据的应用，不验证本卡定性规律。感应电压已由仪表测得，闭合回路近似服从欧姆定律。。感应电流的单位为A。下列哪一表达式的量纲与该目标量一致？",
+      "options": [
+        {
+          "label": "A",
+          "text": "I<sub>感</sub> = U<sub>感</sub>/R<sub>回路</sub>"
+        },
+        {
+          "label": "B",
+          "text": "I<sub>感</sub> = U<sub>感</sub>·R<sub>回路</sub>"
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "感应电路测得电压后仍按欧姆定律求电流，应当除以电阻；相乘的单位不是 A。\n知识点条件：磁体与线圈相对运动或线圈所在磁场发生变化时，可能出现感应电流；磁场不变且没有相对运动时，通常没有持续感应电流。实验中电流表用于观察感应电流，方向变化可由指针偏转方向判断。以下电学关系只在感应电压已经测出后用于计算回路电流，不负责预测感应电压大小。\n推导依据：将线圈与电流表连成闭合回路，并使磁体与线圈发生相对运动。；观察电流表是否偏转，确认是否产生感应电流。；若需定量计算，先测得感应电压和回路电阻，再用欧姆定律求电流。；改变运动方向或磁场方向观察电流方向变化，不用此电路公式预测感应电压。\n卡片公式各自的适用条件（不是本题共同前提）：\n已测感应电压求回路电流：仅作已知电学或能量数据的应用，不验证本卡定性规律。感应电压已由仪表测得，闭合回路近似服从欧姆定律。\n由感应电流和回路电阻求电压：仅作已知电学或能量数据的应用，不验证本卡定性规律。电路闭合，感应电流与回路电阻描述同一测量状态。",
+      "error_type": "量纲一致性",
+      "judging": "auto",
+      "source_error_index": 0,
+      "source_caught_by": "量纲一致性",
+      "wrong_expr": "I<sub>感</sub> = U<sub>感</sub>·R<sub>回路</sub>",
+      "trap_test": {
+        "kind": "dimension",
+        "target": "I_ind = U_ind*R_loop",
+        "lhs_dim": "I",
+        "rhs_dim": "M^2·L^4·T^-6·I^-3",
+        "expect": "mismatch",
+        "note": "实际量纲检查得到等号左边为I、右边为M^2·L^4·T^-6·I^-3；两边不是同一物理量，因此该等式不成立。"
+      },
+      "level": "基础",
+      "learning_scope": "初中",
+      "answer_evidence": {
+        "kind": "dimension",
+        "target": "I_ind",
+        "correct_expression": "I_ind = U_ind/R_loop",
+        "distractor_expression": "I_ind = U_ind*R_loop",
+        "target_dimension": "I",
+        "distractor_dimension": "M^2·L^4·T^-6·I^-3"
+      },
+      "review": {
+        "confidence": "medium",
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": true,
+          "no_answer_leak_in_options": true
+        },
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。",
+        "material": {
+          "anchors": [
+            {
+              "kind": "公式量纲",
+              "name": "本题目标量与等式",
+              "expression": "I_ind = U_ind/R_loop",
+              "when": "量纲相符是必要条件，不能据此证明系数或物理条件正确",
+              "display": "I<sub>感</sub> = U<sub>感</sub>/R<sub>回路</sub>"
+            }
+          ],
+          "source": {
+            "nature": "原创量纲辨析命题；无实测数据",
+            "source_error_index": 0
+          },
+          "predicted_errors": [
+            {
+              "option": "B",
+              "text": "I<sub>感</sub> = U<sub>感</sub>·R<sub>回路</sub>",
+              "reason": "感应电路测得电压后仍按欧姆定律求电流，应当除以电阻；相乘的单位不是 A。",
+              "expression": "I_ind = U_ind*R_loop",
+              "status": "误答原因预测，待教师确认；未采集学生作答证据"
+            }
+          ],
+          "difficulty_note": "建议难度沿用本题level（源卡难度）；尚非题目难度实测，待教师调整",
+          "estimated_seconds": [
+            60,
+            120
+          ],
+          "time_basis": "未做学生计时；按现有难度给出备课估计区间，待教师确认",
+          "machine_checks": [
+            {
+              "name": "题目ID关联源知识点",
+              "passed": true
+            },
+            {
+              "name": "选项标签唯一且参考标签存在",
+              "passed": true
+            },
+            {
+              "name": "选项文本互异",
+              "passed": true
+            },
+            {
+              "name": "正确式量纲一致",
+              "passed": true,
+              "actual": {
+                "type": "dimension",
+                "type_name": "量纲一致性",
+                "formula": "教师审核证据",
+                "ok": true,
+                "detail": "左端I，右端I",
+                "note": "",
+                "error": null,
+                "evaluation_status": "success",
+                "failure_reason": null,
+                "result_dimension": "I",
+                "reference_dimension": "I",
+                "diagnostics": {},
+                "physical_error_identified": false
+              }
+            },
+            {
+              "name": "干扰式量纲冲突",
+              "passed": true,
+              "actual": {
+                "type": "dimension",
+                "type_name": "量纲一致性",
+                "formula": "教师审核证据",
+                "ok": false,
+                "detail": "左端I，右端M^2·L^4·T^-6·I^-3",
+                "note": "",
+                "error": null,
+                "evaluation_status": "dimension_conflict",
+                "failure_reason": "dimension_conflict",
+                "result_dimension": "M^2·L^4·T^-6·I^-3",
+                "reference_dimension": "I",
+                "diagnostics": {},
+                "physical_error_identified": true
+              }
+            }
+          ],
+          "machine_boundary": "只列本次逐题实际执行项目；不把关联知识卡的方向、扫描或一致性检查算作本题已验。概念题未验命题真假。",
+          "human_review_items": [
+            "题干条件是否充分、清楚且符合学段",
+            "参考结论在指定条件下是否唯一",
+            "干扰项是否合理、对应真实认知问题且无答案暗示",
+            "公式或概念锚点是否准确",
+            "建议难度及用时是否适合教学",
+            "语言、装置与安全操作是否恰当"
+          ],
+          "reference_answer_note": "现有参考答案保持；即使本地可以判选项，也仍须教师审核教学可用性"
+        }
+      }
+    },
+    {
+      "id": "diagnostic-magnet-02-2",
+      "point_id": "magnet-02",
+      "point_title": "电磁感应与发电机",
+      "chapter": "电和磁",
+      "stem": "在“电磁感应与发电机”的模型下，U<sub>感</sub>（感应电压）=0.6 V；R<sub>回路</sub>（感应电路总电阻）=3 Ω。条件：仅作已知电学或能量数据的应用，不验证本卡定性规律。感应电压已由仪表测得，闭合回路近似服从欧姆定律。。求感应电流（I<sub>感</sub>）。这些数值是设计示例。",
+      "options": [
+        {
+          "label": "A",
+          "text": "200 A"
+        },
+        {
+          "label": "B",
+          "text": "0.2 A"
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "使用已测感应电压求回路电流：U<sub>感</sub>/R<sub>回路</sub>，代入得0.2 A。另一结果来自1000·U<sub>感</sub>/R<sub>回路</sub>，算得200 A。\n0.6 V÷3 Ω=0.2 A=200 mA；若把换算后的 200 写成 A，会大 1000 倍。\n知识点条件：磁体与线圈相对运动或线圈所在磁场发生变化时，可能出现感应电流；磁场不变且没有相对运动时，通常没有持续感应电流。实验中电流表用于观察感应电流，方向变化可由指针偏转方向判断。以下电学关系只在感应电压已经测出后用于计算回路电流，不负责预测感应电压大小。\n推导依据：将线圈与电流表连成闭合回路，并使磁体与线圈发生相对运动。；观察电流表是否偏转，确认是否产生感应电流。；若需定量计算，先测得感应电压和回路电阻，再用欧姆定律求电流。；改变运动方向或磁场方向观察电流方向变化，不用此电路公式预测感应电压。\n卡片公式各自的适用条件（不是本题共同前提）：\n已测感应电压求回路电流：仅作已知电学或能量数据的应用，不验证本卡定性规律。感应电压已由仪表测得，闭合回路近似服从欧姆定律。\n由感应电流和回路电阻求电压：仅作已知电学或能量数据的应用，不验证本卡定性规律。电路闭合，感应电流与回路电阻描述同一测量状态。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 1,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "I<sub>感</sub> = 1000·U<sub>感</sub>/R<sub>回路</sub>",
+      "trap_test": {
+        "scenario": "线圈感应一",
+        "expr": "1000*U_ind/R_loop",
+        "ref": 0.2
+      },
+      "level": "基础",
+      "learning_scope": "初中",
+      "answer_evidence": {
+        "kind": "numeric",
+        "scenario": "线圈感应一",
+        "parameters": {
+          "U_ind": 0.6,
+          "I_ind": 0.2,
+          "R_loop": 3
+        },
+        "target": "I_ind",
+        "unit": "A",
+        "reference": 0.2,
+        "correct_proof": {
+          "expression": "U_ind/R_loop",
+          "formula": "已测感应电压求回路电流",
+          "value": 0.19999999999999998,
+          "when": "仅作已知电学或能量数据的应用，不验证本卡定性规律。感应电压已由仪表测得，闭合回路近似服从欧姆定律。"
+        },
+        "distractor_expression": "1000*U_ind/R_loop",
+        "distractor_value": 200.0,
+        "dimension_matches": true,
+        "independent_evaluation": true
+      },
+      "review": {
+        "confidence": "medium",
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": true,
+          "no_answer_leak_in_options": true
+        },
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。",
+        "material": {
+          "anchors": [
+            {
+              "kind": "公式",
+              "name": "已测感应电压求回路电流",
+              "expression": "U_ind/R_loop",
+              "when": "仅作已知电学或能量数据的应用，不验证本卡定性规律。感应电压已由仪表测得，闭合回路近似服从欧姆定律。",
+              "display": "U<sub>感</sub>/R<sub>回路</sub>"
+            }
+          ],
+          "source": {
+            "nature": "原创设计示例，非教材实测或真实实验记录",
+            "scenario": "线圈感应一",
+            "parameters": {
+              "U_ind": 0.6,
+              "I_ind": 0.2,
+              "R_loop": 3
+            },
+            "data": [
+              "感应电压：0.6 V",
+              "感应电流：0.2 A",
+              "感应电路总电阻：3 Ω"
+            ]
+          },
+          "predicted_errors": [
+            {
+              "option": "A",
+              "text": "200 A",
+              "reason": "0.6 V÷3 Ω=0.2 A=200 mA；若把换算后的 200 写成 A，会大 1000 倍。",
+              "expression": "1000*U_ind/R_loop",
+              "status": "误答原因预测，待教师确认；未采集学生作答证据"
+            }
+          ],
+          "difficulty_note": "建议难度沿用本题level（源卡难度）；尚非题目难度实测，待教师调整",
+          "estimated_seconds": [
+            60,
+            120
+          ],
+          "time_basis": "未做学生计时；按现有难度给出备课估计区间，待教师确认",
+          "machine_checks": [
+            {
+              "name": "题目ID关联源知识点",
+              "passed": true
+            },
+            {
+              "name": "选项标签唯一且参考标签存在",
+              "passed": true
+            },
+            {
+              "name": "选项文本互异",
+              "passed": true
+            },
+            {
+              "name": "正确路径独立数值复算",
+              "passed": true
+            },
+            {
+              "name": "带量纲求值与独立求值一致",
+              "passed": true
+            },
+            {
+              "name": "干扰路径复算且与正确路径分离",
+              "passed": true
+            }
+          ],
+          "machine_boundary": "只列本次逐题实际执行项目；不把关联知识卡的方向、扫描或一致性检查算作本题已验。概念题未验命题真假。",
+          "human_review_items": [
+            "题干条件是否充分、清楚且符合学段",
+            "参考结论在指定条件下是否唯一",
+            "干扰项是否合理、对应真实认知问题且无答案暗示",
+            "公式或概念锚点是否准确",
+            "建议难度及用时是否适合教学",
+            "语言、装置与安全操作是否恰当"
+          ],
+          "reference_answer_note": "现有参考答案保持；即使本地可以判选项，也仍须教师审核教学可用性"
+        }
+      }
+    },
+    {
+      "id": "diagnostic-magnet-02-3",
+      "point_id": "magnet-02",
+      "point_title": "电磁感应与发电机",
+      "chapter": "电和磁",
+      "stem": "关于“电磁感应与发电机”，判断这一说法是否成立，并说明依据：\n只要线圈和磁体静止放在一起就一定有持续感应电流。",
+      "options": [
+        {
+          "label": "A",
+          "text": "该说法不成立。"
+        },
+        {
+          "label": "B",
+          "text": "该说法成立。"
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "需要磁场变化或导体与磁场发生相对运动；静止且磁场不变时没有持续感应电流。\n知识点条件：磁体与线圈相对运动或线圈所在磁场发生变化时，可能出现感应电流；磁场不变且没有相对运动时，通常没有持续感应电流。实验中电流表用于观察感应电流，方向变化可由指针偏转方向判断。以下电学关系只在感应电压已经测出后用于计算回路电流，不负责预测感应电压大小。\n推导依据：将线圈与电流表连成闭合回路，并使磁体与线圈发生相对运动。；观察电流表是否偏转，确认是否产生感应电流。；若需定量计算，先测得感应电压和回路电阻，再用欧姆定律求电流。；改变运动方向或磁场方向观察电流方向变化，不用此电路公式预测感应电压。\n卡片公式各自的适用条件（不是本题共同前提）：\n已测感应电压求回路电流：仅作已知电学或能量数据的应用，不验证本卡定性规律。感应电压已由仪表测得，闭合回路近似服从欧姆定律。\n由感应电流和回路电阻求电压：仅作已知电学或能量数据的应用，不验证本卡定性规律。电路闭合，感应电流与回路电阻描述同一测量状态。",
+      "error_type": "概念混淆",
+      "judging": "teacher",
+      "source_error_index": 2,
+      "source_caught_by": "人工审核",
+      "wrong_expr": null,
+      "trap_test": null,
+      "level": "基础",
+      "learning_scope": "初中",
+      "answer_evidence": {
+        "kind": "teacher",
+        "claim_source": "wrong",
+        "reference_only": true,
+        "reason": "概念、操作或无法建立完整定量证据，教师确认条件与结论。"
+      },
+      "review": {
+        "confidence": "medium",
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": false,
+          "no_answer_leak_in_options": true
+        },
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。",
+        "material": {
+          "anchors": [
+            {
+              "kind": "概念或操作",
+              "name": "电磁感应与发电机",
+              "claim": "认为只要线圈和磁体静止放在一起就一定有持续感应电流。",
+              "correction_basis": "需要磁场变化或导体与磁场发生相对运动；静止且磁场不变时没有持续感应电流。",
+              "note": "概念锚点及命题真假待教师确认；未套用任意第一条公式",
+              "display": "认为只要线圈和磁体静止放在一起就一定有持续感应电流。"
+            }
+          ],
+          "source": {
+            "nature": "原创概念/操作命题；无真实测量记录",
+            "source_error_index": 2
+          },
+          "predicted_errors": [
+            {
+              "option": "B",
+              "text": "该说法成立。",
+              "reason": "需要磁场变化或导体与磁场发生相对运动；静止且磁场不变时没有持续感应电流。",
+              "expression": null,
+              "status": "误答原因预测，待教师确认；未采集学生作答证据"
+            }
+          ],
+          "difficulty_note": "建议难度沿用本题level（源卡难度）；尚非题目难度实测，待教师调整",
+          "estimated_seconds": [
+            60,
+            120
+          ],
+          "time_basis": "未做学生计时；按现有难度给出备课估计区间，待教师确认",
+          "machine_checks": [
+            {
+              "name": "题目ID关联源知识点",
+              "passed": true
+            },
+            {
+              "name": "选项标签唯一且参考标签存在",
+              "passed": true
+            },
+            {
+              "name": "选项文本互异",
+              "passed": true
+            }
+          ],
+          "machine_boundary": "只列本次逐题实际执行项目；不把关联知识卡的方向、扫描或一致性检查算作本题已验。概念题未验命题真假。",
+          "human_review_items": [
+            "题干条件是否充分、清楚且符合学段",
+            "参考结论在指定条件下是否唯一",
+            "干扰项是否合理、对应真实认知问题且无答案暗示",
+            "公式或概念锚点是否准确",
+            "建议难度及用时是否适合教学",
+            "语言、装置与安全操作是否恰当"
+          ],
+          "reference_answer_note": "现有参考答案保持；即使本地可以判选项，也仍须教师审核教学可用性"
+        }
+      }
+    }
+  ],
+  "skipped": [],
+  "source_records": {
+    "diagnostic-magnet-01-1": {
+      "point": {
+        "id": "magnet-01",
+        "title": "磁体、磁场与电流的磁场",
+        "level": "基础",
+        "definition": "磁体周围存在磁场，磁极间会相互作用；磁场方向可用小磁针静止时北极所指方向描述。通电导线和通电螺线管周围也会产生磁场，线圈中插入铁芯可制成电磁铁。",
+        "meaning": "本节把磁体的磁场和电流的磁效应连起来看：磁体或电流都能建立磁场，磁场可对磁针、磁体等产生作用。通电螺线管的磁极方向与电流方向有关；研究电磁铁强弱时要控制铁芯和线圈匝数等条件。线圈电流可以按欧姆定律计算，但电流数值不是磁场强弱的直接刻度。",
+        "symbols": {
+          "Uc": {
+            "desc": "电磁铁线圈两端电压",
+            "unit": "V"
+          },
+          "Ic": {
+            "desc": "通过电磁铁线圈的电流",
+            "unit": "A"
+          },
+          "Rc": {
+            "desc": "线圈电阻",
+            "unit": "Ω"
+          },
+          "N": {
+            "desc": "线圈匝数，按匝计数",
+            "unit": "1"
+          },
+          "U_ind": {
+            "desc": "感应电路两端已测得的电压",
+            "unit": "V"
+          },
+          "I_ind": {
+            "desc": "闭合回路中的感应电流",
+            "unit": "A"
+          },
+          "R_loop": {
+            "desc": "感应电路总电阻",
+            "unit": "Ω"
+          }
+        },
+        "scenarios": {
+          "线圈实验一": {
+            "Uc": 4,
+            "Ic": 0.2,
+            "Rc": 20,
+            "N": 200
+          },
+          "线圈实验二": {
+            "Uc": 6,
+            "Ic": 0.3,
+            "Rc": 20,
+            "N": 200
+          },
+          "线圈感应一": {
+            "U_ind": 0.6,
+            "I_ind": 0.2,
+            "R_loop": 3
+          },
+          "线圈感应二": {
+            "U_ind": 1.5,
+            "I_ind": 0.3,
+            "R_loop": 5
+          }
+        },
+        "formulas": [
+          {
+            "name": "已知线圈电压求电流",
+            "expr": "Ic = Uc/Rc",
+            "when": "仅作已知电学或能量数据的应用，不验证本卡定性规律。线圈电阻在测量期间近似不变，Uc 用 V、Rc 用 Ω。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "线圈实验一",
+                "expr": "Uc/Rc",
+                "ref": 0.2,
+                "note": "4 V÷20 Ω=0.2 A。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "线圈实验二",
+                "expr": "Uc/Rc",
+                "ref": 0.3,
+                "note": "6 V÷20 Ω=0.3 A，电压提高后电流增大。"
+              },
+              {
+                "type": "direction",
+                "scenario": "线圈实验一",
+                "var": "Uc",
+                "lo": 0,
+                "hi": 24,
+                "expr": "Uc/Rc",
+                "expect": "up",
+                "note": "线圈电阻固定时，提高电压会增大线圈电流。"
+              },
+              {
+                "type": "scan",
+                "scenario": "线圈实验一",
+                "var": "Uc",
+                "lo": 0,
+                "hi": 100,
+                "note": "扫描非负线圈电压，电流计算稳定。"
+              },
+              {
+                "type": "consistency",
+                "scenario": "线圈实验一",
+                "with": "magnet-01|已知线圈电压求电流",
+                "with_expr": "Ic",
+                "target": "通过电磁铁线圈的电流",
+                "note": "直接求本公式输出，与情境中另列的Ic设计基准核对；数据是设计示例，不是实测。用于核对定义、反算或边界值，不宣称不同物理原理互证。",
+                "verification_kind": "独立设计情境数据核对",
+                "tol": 1e-06
+              }
+            ]
+          },
+          {
+            "name": "由线圈电流求电压",
+            "expr": "Uc = Ic*Rc",
+            "when": "仅作已知电学或能量数据的应用，不验证本卡定性规律。同一线圈温度等条件稳定，电流和电阻对应一次测量。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "线圈实验一",
+                "expr": "Ic*Rc",
+                "ref": 4,
+                "note": "0.2 A×20 Ω=4 V。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "线圈实验二",
+                "expr": "Ic*Rc",
+                "ref": 6,
+                "note": "0.3 A×20 Ω=6 V。"
+              },
+              {
+                "type": "scan",
+                "scenario": "线圈实验一",
+                "var": "Ic",
+                "lo": 0,
+                "hi": 10,
+                "note": "扫描非负线圈电流，电压反算有限。"
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "将螺线管接入电源后，线圈中有电流并产生磁场。",
+          "加入铁芯可增强电磁铁磁性；磁性还会随线圈匝数和电流等因素改变。",
+          "若要比较电流影响，控制匝数和铁芯不变，只改变电流。",
+          "电流可由线圈端电压和电阻通过欧姆定律求得，磁性强弱仍要实验观察。"
+        ],
+        "errors": [
+          {
+            "wrong": "把线圈电流写成电阻除以电压。",
+            "wrong_expr": "Ic = Rc/Uc",
+            "why": "已测得线圈两端电压和电阻后，应按欧姆定律用电压除以电阻求电流；反过来相除所得量纲不是安培。",
+            "caught_by": "量纲一致性",
+            "trap_test": {
+              "kind": "dimension",
+              "target": "Ic = Rc/Uc",
+              "lhs_dim": "I",
+              "rhs_dim": "I^-1",
+              "expect": "mismatch",
+              "note": "实际量纲检查得到等号左边为I、右边为I^-1；两边不是同一物理量，因此该等式不成立。"
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "把线圈电流换算成 mA 后仍把数值标成 A，导致电流大 1000 倍。",
+            "wrong_expr": "Ic = 1000*Uc/Rc",
+            "why": "4 V÷20 Ω=0.2 A；换成毫安是 200 mA，不能仍写作 200 A。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "线圈实验一",
+              "expr": "1000*Uc/Rc",
+              "ref": 0.2
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "只增加电压、同时改变线圈匝数和铁芯，还把磁性变化全归因于电流。",
+            "why": "探究一个因素影响时要控制其他变量，避免把多个因素的作用混在一起。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "某电磁铁线圈电阻为 20 Ω，接入 6 V 电源，求线圈电流。",
+          "solution": [
+            "Ic=Uc/Rc=6/20=0.3 A。",
+            "该结果描述线圈电流，不等同于磁场强度。"
+          ],
+          "answer": "线圈电流为 0.3 A。"
+        },
+        "prereq": [
+          "ohm-01"
+        ],
+        "next": [
+          "magnet-03"
+        ],
+        "tags": [
+          "磁体",
+          "磁极",
+          "磁场",
+          "磁感线",
+          "地磁场",
+          "电流的磁效应",
+          "电磁铁",
+          "控制变量"
+        ],
+        "core": [
+          {
+            "title": "磁体与磁场",
+            "text": "磁体有南北两极，同名排斥、异名吸引，磁极附近磁性较强。磁场方向规定为该处小磁针静止时N极所指方向；磁体外部磁场线从N极指向S极，内部从S极到N极形成闭合线。磁场线是描述工具，不是实际存在的一根根线；地理北附近大致是地磁南极，不能把两种“北”混为一谈。"
+          },
+          {
+            "title": "电流磁场与通电螺线管",
+            "text": "奥斯特实验说明通电导线周围有磁场。螺线管外部磁场类似条形磁体；右手四指沿线圈常规电流方向弯曲，拇指所指的一端为N极。先依据接线与绕向判断电流，不能只看电源正极在纸面的左或右。反接电源且绕向不变时磁极互换，外部磁场线仍从N到S；线圈内磁场方向沿S到N。"
+          },
+          {
+            "title": "电磁铁与继电器应用",
+            "text": "在同一装置、未饱和的比较范围内，电流较大、匝数较多或合适铁芯通常使磁性增强；比较电流时保持匝数和铁芯，比较匝数时保持电流和铁芯。电磁继电器可用小电流控制电磁铁吸动衔铁，改变另一路触点通断；控制电路与被控电路区分。此处为应用补充，未把继电器冒称2024苏科版独立必修小节。"
+          },
+          {
+            "title": "本章素养回顾（原创任务）",
+            "text": "选择本章一个现象，写出结论、成立条件和证据；用另一条本章规律复核解释是否矛盾。指出一次测量或模型的局限，并说明还需什么证据；数值通过不替代概念辨析。"
+          }
+        ],
+        "experiments": [
+          {
+            "title": "探究通电螺线管外部磁场方向",
+            "purpose": "用小磁针实际方向识别磁极并核对右手规则。",
+            "apparatus": "低压电源、螺线管、小磁针、开关、导线。",
+            "variables": "绕向不变，改变电流方向；观察小磁针N极方向。",
+            "steps": [
+              "先记录不通电时小磁针方向，辨N极。",
+              "短时通电，在两端及外侧布小磁针，记录N极指向与线圈电流绕向。",
+              "断电反接电源再观察，把磁极判断与外部N到S方向对应。"
+            ],
+            "data": "设计示例（非实测）：一个接法观察右端外侧磁针N极向右，判右端为螺线管N极；反接后相反。",
+            "conclusion": "用右手四指顺常规电流，拇指指N端；外部磁场从N到S，反接磁极互换。",
+            "limits": "绕向画错、磁针太近其他磁体、线圈过热会干扰；电流换算只是配套测量，不能当磁极方向证据。",
+            "kind": "学生必做"
+          },
+          {
+            "title": "探究电磁铁磁性强弱",
+            "purpose": "控制变量比较电流、匝数及铁芯的作用。",
+            "apparatus": "同规格铁芯、线圈、低压限流电路、小铁件、电流表。",
+            "variables": "分别改一个因素，保持其他条件；观察吸起同类铁件数量等指标。",
+            "steps": [
+              "同一线圈铁芯下改变电流并记录吸起数量。",
+              "更换匝数但恢复相同电流和同种铁芯。",
+              "相同电流匝数比较有无铁芯，重复检查。"
+            ],
+            "data": "设计示例（非实测）：0.1、0.2 A同线圈可吸起4、8件是示例趋势，不据此断言任何装置都严格两倍。",
+            "conclusion": "适用范围内电流增大、匝数增加、合适铁芯通常增强磁性。",
+            "limits": "铁件形状、剩磁、温升、饱和影响指标；同时改电压匝数铁芯不能独立归因。",
+            "kind": "教材应用补充"
+          }
+        ],
+        "learning_scope": "初中"
+      },
+      "error_index": 0,
+      "chapter": "电和磁"
+    },
+    "diagnostic-magnet-01-2": {
+      "point": {
+        "id": "magnet-01",
+        "title": "磁体、磁场与电流的磁场",
+        "level": "基础",
+        "definition": "磁体周围存在磁场，磁极间会相互作用；磁场方向可用小磁针静止时北极所指方向描述。通电导线和通电螺线管周围也会产生磁场，线圈中插入铁芯可制成电磁铁。",
+        "meaning": "本节把磁体的磁场和电流的磁效应连起来看：磁体或电流都能建立磁场，磁场可对磁针、磁体等产生作用。通电螺线管的磁极方向与电流方向有关；研究电磁铁强弱时要控制铁芯和线圈匝数等条件。线圈电流可以按欧姆定律计算，但电流数值不是磁场强弱的直接刻度。",
+        "symbols": {
+          "Uc": {
+            "desc": "电磁铁线圈两端电压",
+            "unit": "V"
+          },
+          "Ic": {
+            "desc": "通过电磁铁线圈的电流",
+            "unit": "A"
+          },
+          "Rc": {
+            "desc": "线圈电阻",
+            "unit": "Ω"
+          },
+          "N": {
+            "desc": "线圈匝数，按匝计数",
+            "unit": "1"
+          },
+          "U_ind": {
+            "desc": "感应电路两端已测得的电压",
+            "unit": "V"
+          },
+          "I_ind": {
+            "desc": "闭合回路中的感应电流",
+            "unit": "A"
+          },
+          "R_loop": {
+            "desc": "感应电路总电阻",
+            "unit": "Ω"
+          }
+        },
+        "scenarios": {
+          "线圈实验一": {
+            "Uc": 4,
+            "Ic": 0.2,
+            "Rc": 20,
+            "N": 200
+          },
+          "线圈实验二": {
+            "Uc": 6,
+            "Ic": 0.3,
+            "Rc": 20,
+            "N": 200
+          },
+          "线圈感应一": {
+            "U_ind": 0.6,
+            "I_ind": 0.2,
+            "R_loop": 3
+          },
+          "线圈感应二": {
+            "U_ind": 1.5,
+            "I_ind": 0.3,
+            "R_loop": 5
+          }
+        },
+        "formulas": [
+          {
+            "name": "已知线圈电压求电流",
+            "expr": "Ic = Uc/Rc",
+            "when": "仅作已知电学或能量数据的应用，不验证本卡定性规律。线圈电阻在测量期间近似不变，Uc 用 V、Rc 用 Ω。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "线圈实验一",
+                "expr": "Uc/Rc",
+                "ref": 0.2,
+                "note": "4 V÷20 Ω=0.2 A。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "线圈实验二",
+                "expr": "Uc/Rc",
+                "ref": 0.3,
+                "note": "6 V÷20 Ω=0.3 A，电压提高后电流增大。"
+              },
+              {
+                "type": "direction",
+                "scenario": "线圈实验一",
+                "var": "Uc",
+                "lo": 0,
+                "hi": 24,
+                "expr": "Uc/Rc",
+                "expect": "up",
+                "note": "线圈电阻固定时，提高电压会增大线圈电流。"
+              },
+              {
+                "type": "scan",
+                "scenario": "线圈实验一",
+                "var": "Uc",
+                "lo": 0,
+                "hi": 100,
+                "note": "扫描非负线圈电压，电流计算稳定。"
+              },
+              {
+                "type": "consistency",
+                "scenario": "线圈实验一",
+                "with": "magnet-01|已知线圈电压求电流",
+                "with_expr": "Ic",
+                "target": "通过电磁铁线圈的电流",
+                "note": "直接求本公式输出，与情境中另列的Ic设计基准核对；数据是设计示例，不是实测。用于核对定义、反算或边界值，不宣称不同物理原理互证。",
+                "verification_kind": "独立设计情境数据核对",
+                "tol": 1e-06
+              }
+            ]
+          },
+          {
+            "name": "由线圈电流求电压",
+            "expr": "Uc = Ic*Rc",
+            "when": "仅作已知电学或能量数据的应用，不验证本卡定性规律。同一线圈温度等条件稳定，电流和电阻对应一次测量。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "线圈实验一",
+                "expr": "Ic*Rc",
+                "ref": 4,
+                "note": "0.2 A×20 Ω=4 V。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "线圈实验二",
+                "expr": "Ic*Rc",
+                "ref": 6,
+                "note": "0.3 A×20 Ω=6 V。"
+              },
+              {
+                "type": "scan",
+                "scenario": "线圈实验一",
+                "var": "Ic",
+                "lo": 0,
+                "hi": 10,
+                "note": "扫描非负线圈电流，电压反算有限。"
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "将螺线管接入电源后，线圈中有电流并产生磁场。",
+          "加入铁芯可增强电磁铁磁性；磁性还会随线圈匝数和电流等因素改变。",
+          "若要比较电流影响，控制匝数和铁芯不变，只改变电流。",
+          "电流可由线圈端电压和电阻通过欧姆定律求得，磁性强弱仍要实验观察。"
+        ],
+        "errors": [
+          {
+            "wrong": "把线圈电流写成电阻除以电压。",
+            "wrong_expr": "Ic = Rc/Uc",
+            "why": "已测得线圈两端电压和电阻后，应按欧姆定律用电压除以电阻求电流；反过来相除所得量纲不是安培。",
+            "caught_by": "量纲一致性",
+            "trap_test": {
+              "kind": "dimension",
+              "target": "Ic = Rc/Uc",
+              "lhs_dim": "I",
+              "rhs_dim": "I^-1",
+              "expect": "mismatch",
+              "note": "实际量纲检查得到等号左边为I、右边为I^-1；两边不是同一物理量，因此该等式不成立。"
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "把线圈电流换算成 mA 后仍把数值标成 A，导致电流大 1000 倍。",
+            "wrong_expr": "Ic = 1000*Uc/Rc",
+            "why": "4 V÷20 Ω=0.2 A；换成毫安是 200 mA，不能仍写作 200 A。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "线圈实验一",
+              "expr": "1000*Uc/Rc",
+              "ref": 0.2
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "只增加电压、同时改变线圈匝数和铁芯，还把磁性变化全归因于电流。",
+            "why": "探究一个因素影响时要控制其他变量，避免把多个因素的作用混在一起。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "某电磁铁线圈电阻为 20 Ω，接入 6 V 电源，求线圈电流。",
+          "solution": [
+            "Ic=Uc/Rc=6/20=0.3 A。",
+            "该结果描述线圈电流，不等同于磁场强度。"
+          ],
+          "answer": "线圈电流为 0.3 A。"
+        },
+        "prereq": [
+          "ohm-01"
+        ],
+        "next": [
+          "magnet-03"
+        ],
+        "tags": [
+          "磁体",
+          "磁极",
+          "磁场",
+          "磁感线",
+          "地磁场",
+          "电流的磁效应",
+          "电磁铁",
+          "控制变量"
+        ],
+        "core": [
+          {
+            "title": "磁体与磁场",
+            "text": "磁体有南北两极，同名排斥、异名吸引，磁极附近磁性较强。磁场方向规定为该处小磁针静止时N极所指方向；磁体外部磁场线从N极指向S极，内部从S极到N极形成闭合线。磁场线是描述工具，不是实际存在的一根根线；地理北附近大致是地磁南极，不能把两种“北”混为一谈。"
+          },
+          {
+            "title": "电流磁场与通电螺线管",
+            "text": "奥斯特实验说明通电导线周围有磁场。螺线管外部磁场类似条形磁体；右手四指沿线圈常规电流方向弯曲，拇指所指的一端为N极。先依据接线与绕向判断电流，不能只看电源正极在纸面的左或右。反接电源且绕向不变时磁极互换，外部磁场线仍从N到S；线圈内磁场方向沿S到N。"
+          },
+          {
+            "title": "电磁铁与继电器应用",
+            "text": "在同一装置、未饱和的比较范围内，电流较大、匝数较多或合适铁芯通常使磁性增强；比较电流时保持匝数和铁芯，比较匝数时保持电流和铁芯。电磁继电器可用小电流控制电磁铁吸动衔铁，改变另一路触点通断；控制电路与被控电路区分。此处为应用补充，未把继电器冒称2024苏科版独立必修小节。"
+          },
+          {
+            "title": "本章素养回顾（原创任务）",
+            "text": "选择本章一个现象，写出结论、成立条件和证据；用另一条本章规律复核解释是否矛盾。指出一次测量或模型的局限，并说明还需什么证据；数值通过不替代概念辨析。"
+          }
+        ],
+        "experiments": [
+          {
+            "title": "探究通电螺线管外部磁场方向",
+            "purpose": "用小磁针实际方向识别磁极并核对右手规则。",
+            "apparatus": "低压电源、螺线管、小磁针、开关、导线。",
+            "variables": "绕向不变，改变电流方向；观察小磁针N极方向。",
+            "steps": [
+              "先记录不通电时小磁针方向，辨N极。",
+              "短时通电，在两端及外侧布小磁针，记录N极指向与线圈电流绕向。",
+              "断电反接电源再观察，把磁极判断与外部N到S方向对应。"
+            ],
+            "data": "设计示例（非实测）：一个接法观察右端外侧磁针N极向右，判右端为螺线管N极；反接后相反。",
+            "conclusion": "用右手四指顺常规电流，拇指指N端；外部磁场从N到S，反接磁极互换。",
+            "limits": "绕向画错、磁针太近其他磁体、线圈过热会干扰；电流换算只是配套测量，不能当磁极方向证据。",
+            "kind": "学生必做"
+          },
+          {
+            "title": "探究电磁铁磁性强弱",
+            "purpose": "控制变量比较电流、匝数及铁芯的作用。",
+            "apparatus": "同规格铁芯、线圈、低压限流电路、小铁件、电流表。",
+            "variables": "分别改一个因素，保持其他条件；观察吸起同类铁件数量等指标。",
+            "steps": [
+              "同一线圈铁芯下改变电流并记录吸起数量。",
+              "更换匝数但恢复相同电流和同种铁芯。",
+              "相同电流匝数比较有无铁芯，重复检查。"
+            ],
+            "data": "设计示例（非实测）：0.1、0.2 A同线圈可吸起4、8件是示例趋势，不据此断言任何装置都严格两倍。",
+            "conclusion": "适用范围内电流增大、匝数增加、合适铁芯通常增强磁性。",
+            "limits": "铁件形状、剩磁、温升、饱和影响指标；同时改电压匝数铁芯不能独立归因。",
+            "kind": "教材应用补充"
+          }
+        ],
+        "learning_scope": "初中"
+      },
+      "error_index": 1,
+      "chapter": "电和磁"
+    },
+    "diagnostic-magnet-01-3": {
+      "point": {
+        "id": "magnet-01",
+        "title": "磁体、磁场与电流的磁场",
+        "level": "基础",
+        "definition": "磁体周围存在磁场，磁极间会相互作用；磁场方向可用小磁针静止时北极所指方向描述。通电导线和通电螺线管周围也会产生磁场，线圈中插入铁芯可制成电磁铁。",
+        "meaning": "本节把磁体的磁场和电流的磁效应连起来看：磁体或电流都能建立磁场，磁场可对磁针、磁体等产生作用。通电螺线管的磁极方向与电流方向有关；研究电磁铁强弱时要控制铁芯和线圈匝数等条件。线圈电流可以按欧姆定律计算，但电流数值不是磁场强弱的直接刻度。",
+        "symbols": {
+          "Uc": {
+            "desc": "电磁铁线圈两端电压",
+            "unit": "V"
+          },
+          "Ic": {
+            "desc": "通过电磁铁线圈的电流",
+            "unit": "A"
+          },
+          "Rc": {
+            "desc": "线圈电阻",
+            "unit": "Ω"
+          },
+          "N": {
+            "desc": "线圈匝数，按匝计数",
+            "unit": "1"
+          },
+          "U_ind": {
+            "desc": "感应电路两端已测得的电压",
+            "unit": "V"
+          },
+          "I_ind": {
+            "desc": "闭合回路中的感应电流",
+            "unit": "A"
+          },
+          "R_loop": {
+            "desc": "感应电路总电阻",
+            "unit": "Ω"
+          }
+        },
+        "scenarios": {
+          "线圈实验一": {
+            "Uc": 4,
+            "Ic": 0.2,
+            "Rc": 20,
+            "N": 200
+          },
+          "线圈实验二": {
+            "Uc": 6,
+            "Ic": 0.3,
+            "Rc": 20,
+            "N": 200
+          },
+          "线圈感应一": {
+            "U_ind": 0.6,
+            "I_ind": 0.2,
+            "R_loop": 3
+          },
+          "线圈感应二": {
+            "U_ind": 1.5,
+            "I_ind": 0.3,
+            "R_loop": 5
+          }
+        },
+        "formulas": [
+          {
+            "name": "已知线圈电压求电流",
+            "expr": "Ic = Uc/Rc",
+            "when": "仅作已知电学或能量数据的应用，不验证本卡定性规律。线圈电阻在测量期间近似不变，Uc 用 V、Rc 用 Ω。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "线圈实验一",
+                "expr": "Uc/Rc",
+                "ref": 0.2,
+                "note": "4 V÷20 Ω=0.2 A。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "线圈实验二",
+                "expr": "Uc/Rc",
+                "ref": 0.3,
+                "note": "6 V÷20 Ω=0.3 A，电压提高后电流增大。"
+              },
+              {
+                "type": "direction",
+                "scenario": "线圈实验一",
+                "var": "Uc",
+                "lo": 0,
+                "hi": 24,
+                "expr": "Uc/Rc",
+                "expect": "up",
+                "note": "线圈电阻固定时，提高电压会增大线圈电流。"
+              },
+              {
+                "type": "scan",
+                "scenario": "线圈实验一",
+                "var": "Uc",
+                "lo": 0,
+                "hi": 100,
+                "note": "扫描非负线圈电压，电流计算稳定。"
+              },
+              {
+                "type": "consistency",
+                "scenario": "线圈实验一",
+                "with": "magnet-01|已知线圈电压求电流",
+                "with_expr": "Ic",
+                "target": "通过电磁铁线圈的电流",
+                "note": "直接求本公式输出，与情境中另列的Ic设计基准核对；数据是设计示例，不是实测。用于核对定义、反算或边界值，不宣称不同物理原理互证。",
+                "verification_kind": "独立设计情境数据核对",
+                "tol": 1e-06
+              }
+            ]
+          },
+          {
+            "name": "由线圈电流求电压",
+            "expr": "Uc = Ic*Rc",
+            "when": "仅作已知电学或能量数据的应用，不验证本卡定性规律。同一线圈温度等条件稳定，电流和电阻对应一次测量。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "线圈实验一",
+                "expr": "Ic*Rc",
+                "ref": 4,
+                "note": "0.2 A×20 Ω=4 V。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "线圈实验二",
+                "expr": "Ic*Rc",
+                "ref": 6,
+                "note": "0.3 A×20 Ω=6 V。"
+              },
+              {
+                "type": "scan",
+                "scenario": "线圈实验一",
+                "var": "Ic",
+                "lo": 0,
+                "hi": 10,
+                "note": "扫描非负线圈电流，电压反算有限。"
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "将螺线管接入电源后，线圈中有电流并产生磁场。",
+          "加入铁芯可增强电磁铁磁性；磁性还会随线圈匝数和电流等因素改变。",
+          "若要比较电流影响，控制匝数和铁芯不变，只改变电流。",
+          "电流可由线圈端电压和电阻通过欧姆定律求得，磁性强弱仍要实验观察。"
+        ],
+        "errors": [
+          {
+            "wrong": "把线圈电流写成电阻除以电压。",
+            "wrong_expr": "Ic = Rc/Uc",
+            "why": "已测得线圈两端电压和电阻后，应按欧姆定律用电压除以电阻求电流；反过来相除所得量纲不是安培。",
+            "caught_by": "量纲一致性",
+            "trap_test": {
+              "kind": "dimension",
+              "target": "Ic = Rc/Uc",
+              "lhs_dim": "I",
+              "rhs_dim": "I^-1",
+              "expect": "mismatch",
+              "note": "实际量纲检查得到等号左边为I、右边为I^-1；两边不是同一物理量，因此该等式不成立。"
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "把线圈电流换算成 mA 后仍把数值标成 A，导致电流大 1000 倍。",
+            "wrong_expr": "Ic = 1000*Uc/Rc",
+            "why": "4 V÷20 Ω=0.2 A；换成毫安是 200 mA，不能仍写作 200 A。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "线圈实验一",
+              "expr": "1000*Uc/Rc",
+              "ref": 0.2
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "只增加电压、同时改变线圈匝数和铁芯，还把磁性变化全归因于电流。",
+            "why": "探究一个因素影响时要控制其他变量，避免把多个因素的作用混在一起。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "某电磁铁线圈电阻为 20 Ω，接入 6 V 电源，求线圈电流。",
+          "solution": [
+            "Ic=Uc/Rc=6/20=0.3 A。",
+            "该结果描述线圈电流，不等同于磁场强度。"
+          ],
+          "answer": "线圈电流为 0.3 A。"
+        },
+        "prereq": [
+          "ohm-01"
+        ],
+        "next": [
+          "magnet-03"
+        ],
+        "tags": [
+          "磁体",
+          "磁极",
+          "磁场",
+          "磁感线",
+          "地磁场",
+          "电流的磁效应",
+          "电磁铁",
+          "控制变量"
+        ],
+        "core": [
+          {
+            "title": "磁体与磁场",
+            "text": "磁体有南北两极，同名排斥、异名吸引，磁极附近磁性较强。磁场方向规定为该处小磁针静止时N极所指方向；磁体外部磁场线从N极指向S极，内部从S极到N极形成闭合线。磁场线是描述工具，不是实际存在的一根根线；地理北附近大致是地磁南极，不能把两种“北”混为一谈。"
+          },
+          {
+            "title": "电流磁场与通电螺线管",
+            "text": "奥斯特实验说明通电导线周围有磁场。螺线管外部磁场类似条形磁体；右手四指沿线圈常规电流方向弯曲，拇指所指的一端为N极。先依据接线与绕向判断电流，不能只看电源正极在纸面的左或右。反接电源且绕向不变时磁极互换，外部磁场线仍从N到S；线圈内磁场方向沿S到N。"
+          },
+          {
+            "title": "电磁铁与继电器应用",
+            "text": "在同一装置、未饱和的比较范围内，电流较大、匝数较多或合适铁芯通常使磁性增强；比较电流时保持匝数和铁芯，比较匝数时保持电流和铁芯。电磁继电器可用小电流控制电磁铁吸动衔铁，改变另一路触点通断；控制电路与被控电路区分。此处为应用补充，未把继电器冒称2024苏科版独立必修小节。"
+          },
+          {
+            "title": "本章素养回顾（原创任务）",
+            "text": "选择本章一个现象，写出结论、成立条件和证据；用另一条本章规律复核解释是否矛盾。指出一次测量或模型的局限，并说明还需什么证据；数值通过不替代概念辨析。"
+          }
+        ],
+        "experiments": [
+          {
+            "title": "探究通电螺线管外部磁场方向",
+            "purpose": "用小磁针实际方向识别磁极并核对右手规则。",
+            "apparatus": "低压电源、螺线管、小磁针、开关、导线。",
+            "variables": "绕向不变，改变电流方向；观察小磁针N极方向。",
+            "steps": [
+              "先记录不通电时小磁针方向，辨N极。",
+              "短时通电，在两端及外侧布小磁针，记录N极指向与线圈电流绕向。",
+              "断电反接电源再观察，把磁极判断与外部N到S方向对应。"
+            ],
+            "data": "设计示例（非实测）：一个接法观察右端外侧磁针N极向右，判右端为螺线管N极；反接后相反。",
+            "conclusion": "用右手四指顺常规电流，拇指指N端；外部磁场从N到S，反接磁极互换。",
+            "limits": "绕向画错、磁针太近其他磁体、线圈过热会干扰；电流换算只是配套测量，不能当磁极方向证据。",
+            "kind": "学生必做"
+          },
+          {
+            "title": "探究电磁铁磁性强弱",
+            "purpose": "控制变量比较电流、匝数及铁芯的作用。",
+            "apparatus": "同规格铁芯、线圈、低压限流电路、小铁件、电流表。",
+            "variables": "分别改一个因素，保持其他条件；观察吸起同类铁件数量等指标。",
+            "steps": [
+              "同一线圈铁芯下改变电流并记录吸起数量。",
+              "更换匝数但恢复相同电流和同种铁芯。",
+              "相同电流匝数比较有无铁芯，重复检查。"
+            ],
+            "data": "设计示例（非实测）：0.1、0.2 A同线圈可吸起4、8件是示例趋势，不据此断言任何装置都严格两倍。",
+            "conclusion": "适用范围内电流增大、匝数增加、合适铁芯通常增强磁性。",
+            "limits": "铁件形状、剩磁、温升、饱和影响指标；同时改电压匝数铁芯不能独立归因。",
+            "kind": "教材应用补充"
+          }
+        ],
+        "learning_scope": "初中"
+      },
+      "error_index": 2,
+      "chapter": "电和磁"
+    },
+    "diagnostic-magnet-03-1": {
+      "point": {
+        "id": "magnet-03",
+        "title": "磁场对电流的作用与电动机",
+        "level": "基础",
+        "definition": "通电导体放在磁场中会受到磁场的作用力；改变电流方向或磁场方向，导体受力方向会改变。电动机利用这一作用使线圈转动，把输入的电能转化为机械能，同时也会有一部分能量转化为内能。",
+        "meaning": "判断通电导体的运动方向时，要同时考虑电流方向和磁场方向，不能只看其中一个。磁场力的大小还受电流、磁场和导体等因素影响，初中阶段主要通过实验辨认方向，不把未学的磁场力定量公式当作必背规律。若电动机带动重物匀速上升，可用已学的功和功率关系估算机械输出；这是机械输出的计算，不是磁场力定律。",
+        "symbols": {
+          "F_out": {
+            "desc": "电动机对负载所做功对应的平均作用力",
+            "unit": "N"
+          },
+          "s_out": {
+            "desc": "负载沿力方向移动的距离",
+            "unit": "m"
+          },
+          "W_out": {
+            "desc": "电动机输出的机械功",
+            "unit": "J"
+          },
+          "t_run": {
+            "desc": "电动机工作时间",
+            "unit": "s"
+          },
+          "P_out": {
+            "desc": "电动机输出的平均机械功率",
+            "unit": "W"
+          }
+        },
+        "scenarios": {
+          "电动机提升重物一": {
+            "F_out": 200,
+            "s_out": 3,
+            "W_out": 600,
+            "t_run": 10,
+            "P_out": 60
+          },
+          "电动机提升重物二": {
+            "F_out": 500,
+            "s_out": 2,
+            "W_out": 1000,
+            "t_run": 20,
+            "P_out": 50
+          }
+        },
+        "formulas": [
+          {
+            "name": "匀速提升负载的机械功",
+            "expr": "W_out = F_out*s_out",
+            "when": "仅作已知电学或能量数据的应用，不验证本卡定性规律。负载沿作用力方向移动，力近似恒定；输出的力 用 N、输出端位移 用 m。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "电动机提升重物一",
+                "expr": "F_out*s_out",
+                "ref": 600,
+                "note": "200 N×3 m=600 J。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "电动机提升重物二",
+                "expr": "F_out*s_out",
+                "ref": 1000,
+                "note": "500 N×2 m=1000 J。"
+              },
+              {
+                "type": "direction",
+                "scenario": "电动机提升重物一",
+                "var": "s_out",
+                "lo": 0,
+                "hi": 10,
+                "expr": "F_out*s_out",
+                "expect": "up",
+                "note": "作用力固定时，提升距离越大，输出机械功越多。"
+              },
+              {
+                "type": "scan",
+                "scenario": "电动机提升重物一",
+                "var": "s_out",
+                "lo": 0,
+                "hi": 100,
+                "note": "扫描非负提升距离，机械功计算保持有限。"
+              },
+              {
+                "type": "consistency",
+                "scenario": "电动机提升重物一",
+                "with": "magnet-03|匀速提升负载的机械功",
+                "with_expr": "P_out*t_run",
+                "target": "电动机输出的机械功",
+                "note": "本公式直接求W_out；参考端显式关系为P_out*t_run。两端使用同一情境和阶段，只核对该关系；with字段仅定位来源，不代表调用另一条被覆盖的公式。",
+                "verification_kind": "独立关系核对"
+              }
+            ]
+          },
+          {
+            "name": "由输出功和时间求平均功率",
+            "expr": "P_out = W_out/t_run",
+            "when": "仅作已知电学或能量数据的应用，不验证本卡定性规律。输出功和工作时间对应同一过程，工作时间 大于 0。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "电动机提升重物一",
+                "expr": "W_out/t_run",
+                "ref": 60,
+                "note": "600 J÷10 s=60 W。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "电动机提升重物二",
+                "expr": "W_out/t_run",
+                "ref": 50,
+                "note": "1000 J÷20 s=50 W。"
+              },
+              {
+                "type": "direction",
+                "scenario": "电动机提升重物一",
+                "var": "W_out",
+                "lo": 0,
+                "hi": 1200,
+                "expr": "W_out/t_run",
+                "expect": "up",
+                "note": "工作时间固定时，输出功越大，平均功率越大。"
+              },
+              {
+                "type": "scan",
+                "scenario": "电动机提升重物一",
+                "var": "t_run",
+                "lo": 0.1,
+                "hi": 1000,
+                "note": "扫描正工作时间，平均功率不除以零。"
+              }
+            ]
+          },
+          {
+            "name": "由平均功率和时间核对输出功",
+            "expr": "W_out = P_out*t_run",
+            "when": "仅作已知电学或能量数据的应用，不验证本卡定性规律。平均输出功率在这段时间内近似稳定。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "电动机提升重物一",
+                "expr": "P_out*t_run",
+                "ref": 600,
+                "note": "60 W×10 s=600 J。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "电动机提升重物二",
+                "expr": "P_out*t_run",
+                "ref": 1000,
+                "note": "50 W×20 s=1000 J。"
+              },
+              {
+                "type": "scan",
+                "scenario": "电动机提升重物一",
+                "var": "t_run",
+                "lo": 0,
+                "hi": 1000,
+                "note": "扫描非负运行时间，输出功计算稳定。"
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "通电导体处于磁场中会受力，改变电流或磁场方向可观察受力方向改变。",
+          "电动机让线圈在磁场中持续转动，把电能转化为机械能。",
+          "重物匀速提升时，输出机械功可按作用力乘沿力方向的距离计算。",
+          "用输出功除以工作时间得到平均机械功率，也可反向用功率和时间核对输出功。"
+        ],
+        "errors": [
+          {
+            "wrong": "只改变电流方向就断定导体受力方向一定不变。",
+            "why": "受力方向同时取决于电流方向和磁场方向；只改变其中一个条件时，受力方向会相应反转。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "把电动机的电输入功率直接当成机械输出功率。",
+            "why": "线圈发热、轴承摩擦和空气阻力都会消耗能量，所以电输入功率通常大于机械输出功率。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "匀速提升 200 N 的重物 3 m 时，把机械功算成 200/3 J。",
+            "wrong_expr": "W_out = F_out/s_out",
+            "why": "恒力沿运动方向做功要把力与位移相乘；除以距离既算不出焦耳，数值也与题意不符。",
+            "caught_by": "量纲一致性",
+            "trap_test": {
+              "kind": "dimension",
+              "target": "W_out = F_out/s_out",
+              "expect": "mismatch",
+              "lhs_dim": "M·L^2·T^-2",
+              "rhs_dim": "M·T^-2",
+              "note": "正式引擎验证量纲不一致；不计作同量纲错误数值实测。"
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "把重物单次上升3 m误当上升后下降共6 m做提升功。",
+            "wrong_expr": "W_out = F_out*(2*s_out)",
+            "why": "题目只计匀速提升，功200×3=600 J；未发生的下降路程不能计入本次提升功。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "电动机提升重物一",
+              "expr": "F_out*(2*s_out)",
+              "ref": 600,
+              "tol": 1e-06
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "电动机匀速提升重 200 N 的物体 3 m，用时 10 s，求机械输出功和平均输出功率。",
+          "solution": [
+            "W_out=F_out*s_out=200×3=600 J。",
+            "P_out=W_out/t_run=600/10=60 W。"
+          ],
+          "answer": "机械输出功为 600 J，平均输出功率为 60 W。"
+        },
+        "prereq": [
+          "fmotion-01",
+          "machine-02",
+          "machine-05"
+        ],
+        "next": [
+          "magnet-04"
+        ],
+        "tags": [
+          "磁场对电流的作用",
+          "电动机",
+          "受力方向",
+          "电能转化",
+          "机械输出功",
+          "机械功率"
+        ],
+        "core": [
+          {
+            "title": "磁场对电流的作用与电动机",
+            "text": "磁场中的通电导线在适当方向下受力，受力方向与电流方向、磁场方向有关，只反转其中之一受力反转，同时反转两者方向保持。电动机利用这一作用把电能转为机械能；换向器周期性改变线圈电流方向，使转动可持续。导线平行磁场等边界下可能不受磁力，不能只说“有电流就一定动”。"
+          }
+        ],
+        "learning_scope": "初中"
+      },
+      "error_index": 0,
+      "chapter": "电和磁"
+    },
+    "diagnostic-magnet-03-2": {
+      "point": {
+        "id": "magnet-03",
+        "title": "磁场对电流的作用与电动机",
+        "level": "基础",
+        "definition": "通电导体放在磁场中会受到磁场的作用力；改变电流方向或磁场方向，导体受力方向会改变。电动机利用这一作用使线圈转动，把输入的电能转化为机械能，同时也会有一部分能量转化为内能。",
+        "meaning": "判断通电导体的运动方向时，要同时考虑电流方向和磁场方向，不能只看其中一个。磁场力的大小还受电流、磁场和导体等因素影响，初中阶段主要通过实验辨认方向，不把未学的磁场力定量公式当作必背规律。若电动机带动重物匀速上升，可用已学的功和功率关系估算机械输出；这是机械输出的计算，不是磁场力定律。",
+        "symbols": {
+          "F_out": {
+            "desc": "电动机对负载所做功对应的平均作用力",
+            "unit": "N"
+          },
+          "s_out": {
+            "desc": "负载沿力方向移动的距离",
+            "unit": "m"
+          },
+          "W_out": {
+            "desc": "电动机输出的机械功",
+            "unit": "J"
+          },
+          "t_run": {
+            "desc": "电动机工作时间",
+            "unit": "s"
+          },
+          "P_out": {
+            "desc": "电动机输出的平均机械功率",
+            "unit": "W"
+          }
+        },
+        "scenarios": {
+          "电动机提升重物一": {
+            "F_out": 200,
+            "s_out": 3,
+            "W_out": 600,
+            "t_run": 10,
+            "P_out": 60
+          },
+          "电动机提升重物二": {
+            "F_out": 500,
+            "s_out": 2,
+            "W_out": 1000,
+            "t_run": 20,
+            "P_out": 50
+          }
+        },
+        "formulas": [
+          {
+            "name": "匀速提升负载的机械功",
+            "expr": "W_out = F_out*s_out",
+            "when": "仅作已知电学或能量数据的应用，不验证本卡定性规律。负载沿作用力方向移动，力近似恒定；输出的力 用 N、输出端位移 用 m。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "电动机提升重物一",
+                "expr": "F_out*s_out",
+                "ref": 600,
+                "note": "200 N×3 m=600 J。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "电动机提升重物二",
+                "expr": "F_out*s_out",
+                "ref": 1000,
+                "note": "500 N×2 m=1000 J。"
+              },
+              {
+                "type": "direction",
+                "scenario": "电动机提升重物一",
+                "var": "s_out",
+                "lo": 0,
+                "hi": 10,
+                "expr": "F_out*s_out",
+                "expect": "up",
+                "note": "作用力固定时，提升距离越大，输出机械功越多。"
+              },
+              {
+                "type": "scan",
+                "scenario": "电动机提升重物一",
+                "var": "s_out",
+                "lo": 0,
+                "hi": 100,
+                "note": "扫描非负提升距离，机械功计算保持有限。"
+              },
+              {
+                "type": "consistency",
+                "scenario": "电动机提升重物一",
+                "with": "magnet-03|匀速提升负载的机械功",
+                "with_expr": "P_out*t_run",
+                "target": "电动机输出的机械功",
+                "note": "本公式直接求W_out；参考端显式关系为P_out*t_run。两端使用同一情境和阶段，只核对该关系；with字段仅定位来源，不代表调用另一条被覆盖的公式。",
+                "verification_kind": "独立关系核对"
+              }
+            ]
+          },
+          {
+            "name": "由输出功和时间求平均功率",
+            "expr": "P_out = W_out/t_run",
+            "when": "仅作已知电学或能量数据的应用，不验证本卡定性规律。输出功和工作时间对应同一过程，工作时间 大于 0。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "电动机提升重物一",
+                "expr": "W_out/t_run",
+                "ref": 60,
+                "note": "600 J÷10 s=60 W。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "电动机提升重物二",
+                "expr": "W_out/t_run",
+                "ref": 50,
+                "note": "1000 J÷20 s=50 W。"
+              },
+              {
+                "type": "direction",
+                "scenario": "电动机提升重物一",
+                "var": "W_out",
+                "lo": 0,
+                "hi": 1200,
+                "expr": "W_out/t_run",
+                "expect": "up",
+                "note": "工作时间固定时，输出功越大，平均功率越大。"
+              },
+              {
+                "type": "scan",
+                "scenario": "电动机提升重物一",
+                "var": "t_run",
+                "lo": 0.1,
+                "hi": 1000,
+                "note": "扫描正工作时间，平均功率不除以零。"
+              }
+            ]
+          },
+          {
+            "name": "由平均功率和时间核对输出功",
+            "expr": "W_out = P_out*t_run",
+            "when": "仅作已知电学或能量数据的应用，不验证本卡定性规律。平均输出功率在这段时间内近似稳定。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "电动机提升重物一",
+                "expr": "P_out*t_run",
+                "ref": 600,
+                "note": "60 W×10 s=600 J。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "电动机提升重物二",
+                "expr": "P_out*t_run",
+                "ref": 1000,
+                "note": "50 W×20 s=1000 J。"
+              },
+              {
+                "type": "scan",
+                "scenario": "电动机提升重物一",
+                "var": "t_run",
+                "lo": 0,
+                "hi": 1000,
+                "note": "扫描非负运行时间，输出功计算稳定。"
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "通电导体处于磁场中会受力，改变电流或磁场方向可观察受力方向改变。",
+          "电动机让线圈在磁场中持续转动，把电能转化为机械能。",
+          "重物匀速提升时，输出机械功可按作用力乘沿力方向的距离计算。",
+          "用输出功除以工作时间得到平均机械功率，也可反向用功率和时间核对输出功。"
+        ],
+        "errors": [
+          {
+            "wrong": "只改变电流方向就断定导体受力方向一定不变。",
+            "why": "受力方向同时取决于电流方向和磁场方向；只改变其中一个条件时，受力方向会相应反转。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "把电动机的电输入功率直接当成机械输出功率。",
+            "why": "线圈发热、轴承摩擦和空气阻力都会消耗能量，所以电输入功率通常大于机械输出功率。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "匀速提升 200 N 的重物 3 m 时，把机械功算成 200/3 J。",
+            "wrong_expr": "W_out = F_out/s_out",
+            "why": "恒力沿运动方向做功要把力与位移相乘；除以距离既算不出焦耳，数值也与题意不符。",
+            "caught_by": "量纲一致性",
+            "trap_test": {
+              "kind": "dimension",
+              "target": "W_out = F_out/s_out",
+              "expect": "mismatch",
+              "lhs_dim": "M·L^2·T^-2",
+              "rhs_dim": "M·T^-2",
+              "note": "正式引擎验证量纲不一致；不计作同量纲错误数值实测。"
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "把重物单次上升3 m误当上升后下降共6 m做提升功。",
+            "wrong_expr": "W_out = F_out*(2*s_out)",
+            "why": "题目只计匀速提升，功200×3=600 J；未发生的下降路程不能计入本次提升功。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "电动机提升重物一",
+              "expr": "F_out*(2*s_out)",
+              "ref": 600,
+              "tol": 1e-06
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "电动机匀速提升重 200 N 的物体 3 m，用时 10 s，求机械输出功和平均输出功率。",
+          "solution": [
+            "W_out=F_out*s_out=200×3=600 J。",
+            "P_out=W_out/t_run=600/10=60 W。"
+          ],
+          "answer": "机械输出功为 600 J，平均输出功率为 60 W。"
+        },
+        "prereq": [
+          "fmotion-01",
+          "machine-02",
+          "machine-05"
+        ],
+        "next": [
+          "magnet-04"
+        ],
+        "tags": [
+          "磁场对电流的作用",
+          "电动机",
+          "受力方向",
+          "电能转化",
+          "机械输出功",
+          "机械功率"
+        ],
+        "core": [
+          {
+            "title": "磁场对电流的作用与电动机",
+            "text": "磁场中的通电导线在适当方向下受力，受力方向与电流方向、磁场方向有关，只反转其中之一受力反转，同时反转两者方向保持。电动机利用这一作用把电能转为机械能；换向器周期性改变线圈电流方向，使转动可持续。导线平行磁场等边界下可能不受磁力，不能只说“有电流就一定动”。"
+          }
+        ],
+        "learning_scope": "初中"
+      },
+      "error_index": 1,
+      "chapter": "电和磁"
+    },
+    "diagnostic-magnet-03-3": {
+      "point": {
+        "id": "magnet-03",
+        "title": "磁场对电流的作用与电动机",
+        "level": "基础",
+        "definition": "通电导体放在磁场中会受到磁场的作用力；改变电流方向或磁场方向，导体受力方向会改变。电动机利用这一作用使线圈转动，把输入的电能转化为机械能，同时也会有一部分能量转化为内能。",
+        "meaning": "判断通电导体的运动方向时，要同时考虑电流方向和磁场方向，不能只看其中一个。磁场力的大小还受电流、磁场和导体等因素影响，初中阶段主要通过实验辨认方向，不把未学的磁场力定量公式当作必背规律。若电动机带动重物匀速上升，可用已学的功和功率关系估算机械输出；这是机械输出的计算，不是磁场力定律。",
+        "symbols": {
+          "F_out": {
+            "desc": "电动机对负载所做功对应的平均作用力",
+            "unit": "N"
+          },
+          "s_out": {
+            "desc": "负载沿力方向移动的距离",
+            "unit": "m"
+          },
+          "W_out": {
+            "desc": "电动机输出的机械功",
+            "unit": "J"
+          },
+          "t_run": {
+            "desc": "电动机工作时间",
+            "unit": "s"
+          },
+          "P_out": {
+            "desc": "电动机输出的平均机械功率",
+            "unit": "W"
+          }
+        },
+        "scenarios": {
+          "电动机提升重物一": {
+            "F_out": 200,
+            "s_out": 3,
+            "W_out": 600,
+            "t_run": 10,
+            "P_out": 60
+          },
+          "电动机提升重物二": {
+            "F_out": 500,
+            "s_out": 2,
+            "W_out": 1000,
+            "t_run": 20,
+            "P_out": 50
+          }
+        },
+        "formulas": [
+          {
+            "name": "匀速提升负载的机械功",
+            "expr": "W_out = F_out*s_out",
+            "when": "仅作已知电学或能量数据的应用，不验证本卡定性规律。负载沿作用力方向移动，力近似恒定；输出的力 用 N、输出端位移 用 m。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "电动机提升重物一",
+                "expr": "F_out*s_out",
+                "ref": 600,
+                "note": "200 N×3 m=600 J。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "电动机提升重物二",
+                "expr": "F_out*s_out",
+                "ref": 1000,
+                "note": "500 N×2 m=1000 J。"
+              },
+              {
+                "type": "direction",
+                "scenario": "电动机提升重物一",
+                "var": "s_out",
+                "lo": 0,
+                "hi": 10,
+                "expr": "F_out*s_out",
+                "expect": "up",
+                "note": "作用力固定时，提升距离越大，输出机械功越多。"
+              },
+              {
+                "type": "scan",
+                "scenario": "电动机提升重物一",
+                "var": "s_out",
+                "lo": 0,
+                "hi": 100,
+                "note": "扫描非负提升距离，机械功计算保持有限。"
+              },
+              {
+                "type": "consistency",
+                "scenario": "电动机提升重物一",
+                "with": "magnet-03|匀速提升负载的机械功",
+                "with_expr": "P_out*t_run",
+                "target": "电动机输出的机械功",
+                "note": "本公式直接求W_out；参考端显式关系为P_out*t_run。两端使用同一情境和阶段，只核对该关系；with字段仅定位来源，不代表调用另一条被覆盖的公式。",
+                "verification_kind": "独立关系核对"
+              }
+            ]
+          },
+          {
+            "name": "由输出功和时间求平均功率",
+            "expr": "P_out = W_out/t_run",
+            "when": "仅作已知电学或能量数据的应用，不验证本卡定性规律。输出功和工作时间对应同一过程，工作时间 大于 0。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "电动机提升重物一",
+                "expr": "W_out/t_run",
+                "ref": 60,
+                "note": "600 J÷10 s=60 W。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "电动机提升重物二",
+                "expr": "W_out/t_run",
+                "ref": 50,
+                "note": "1000 J÷20 s=50 W。"
+              },
+              {
+                "type": "direction",
+                "scenario": "电动机提升重物一",
+                "var": "W_out",
+                "lo": 0,
+                "hi": 1200,
+                "expr": "W_out/t_run",
+                "expect": "up",
+                "note": "工作时间固定时，输出功越大，平均功率越大。"
+              },
+              {
+                "type": "scan",
+                "scenario": "电动机提升重物一",
+                "var": "t_run",
+                "lo": 0.1,
+                "hi": 1000,
+                "note": "扫描正工作时间，平均功率不除以零。"
+              }
+            ]
+          },
+          {
+            "name": "由平均功率和时间核对输出功",
+            "expr": "W_out = P_out*t_run",
+            "when": "仅作已知电学或能量数据的应用，不验证本卡定性规律。平均输出功率在这段时间内近似稳定。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "电动机提升重物一",
+                "expr": "P_out*t_run",
+                "ref": 600,
+                "note": "60 W×10 s=600 J。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "电动机提升重物二",
+                "expr": "P_out*t_run",
+                "ref": 1000,
+                "note": "50 W×20 s=1000 J。"
+              },
+              {
+                "type": "scan",
+                "scenario": "电动机提升重物一",
+                "var": "t_run",
+                "lo": 0,
+                "hi": 1000,
+                "note": "扫描非负运行时间，输出功计算稳定。"
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "通电导体处于磁场中会受力，改变电流或磁场方向可观察受力方向改变。",
+          "电动机让线圈在磁场中持续转动，把电能转化为机械能。",
+          "重物匀速提升时，输出机械功可按作用力乘沿力方向的距离计算。",
+          "用输出功除以工作时间得到平均机械功率，也可反向用功率和时间核对输出功。"
+        ],
+        "errors": [
+          {
+            "wrong": "只改变电流方向就断定导体受力方向一定不变。",
+            "why": "受力方向同时取决于电流方向和磁场方向；只改变其中一个条件时，受力方向会相应反转。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "把电动机的电输入功率直接当成机械输出功率。",
+            "why": "线圈发热、轴承摩擦和空气阻力都会消耗能量，所以电输入功率通常大于机械输出功率。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "匀速提升 200 N 的重物 3 m 时，把机械功算成 200/3 J。",
+            "wrong_expr": "W_out = F_out/s_out",
+            "why": "恒力沿运动方向做功要把力与位移相乘；除以距离既算不出焦耳，数值也与题意不符。",
+            "caught_by": "量纲一致性",
+            "trap_test": {
+              "kind": "dimension",
+              "target": "W_out = F_out/s_out",
+              "expect": "mismatch",
+              "lhs_dim": "M·L^2·T^-2",
+              "rhs_dim": "M·T^-2",
+              "note": "正式引擎验证量纲不一致；不计作同量纲错误数值实测。"
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "把重物单次上升3 m误当上升后下降共6 m做提升功。",
+            "wrong_expr": "W_out = F_out*(2*s_out)",
+            "why": "题目只计匀速提升，功200×3=600 J；未发生的下降路程不能计入本次提升功。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "电动机提升重物一",
+              "expr": "F_out*(2*s_out)",
+              "ref": 600,
+              "tol": 1e-06
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "电动机匀速提升重 200 N 的物体 3 m，用时 10 s，求机械输出功和平均输出功率。",
+          "solution": [
+            "W_out=F_out*s_out=200×3=600 J。",
+            "P_out=W_out/t_run=600/10=60 W。"
+          ],
+          "answer": "机械输出功为 600 J，平均输出功率为 60 W。"
+        },
+        "prereq": [
+          "fmotion-01",
+          "machine-02",
+          "machine-05"
+        ],
+        "next": [
+          "magnet-04"
+        ],
+        "tags": [
+          "磁场对电流的作用",
+          "电动机",
+          "受力方向",
+          "电能转化",
+          "机械输出功",
+          "机械功率"
+        ],
+        "core": [
+          {
+            "title": "磁场对电流的作用与电动机",
+            "text": "磁场中的通电导线在适当方向下受力，受力方向与电流方向、磁场方向有关，只反转其中之一受力反转，同时反转两者方向保持。电动机利用这一作用把电能转为机械能；换向器周期性改变线圈电流方向，使转动可持续。导线平行磁场等边界下可能不受磁力，不能只说“有电流就一定动”。"
+          }
+        ],
+        "learning_scope": "初中"
+      },
+      "error_index": 2,
+      "chapter": "电和磁"
+    },
+    "diagnostic-magnet-03-4": {
+      "point": {
+        "id": "magnet-03",
+        "title": "磁场对电流的作用与电动机",
+        "level": "基础",
+        "definition": "通电导体放在磁场中会受到磁场的作用力；改变电流方向或磁场方向，导体受力方向会改变。电动机利用这一作用使线圈转动，把输入的电能转化为机械能，同时也会有一部分能量转化为内能。",
+        "meaning": "判断通电导体的运动方向时，要同时考虑电流方向和磁场方向，不能只看其中一个。磁场力的大小还受电流、磁场和导体等因素影响，初中阶段主要通过实验辨认方向，不把未学的磁场力定量公式当作必背规律。若电动机带动重物匀速上升，可用已学的功和功率关系估算机械输出；这是机械输出的计算，不是磁场力定律。",
+        "symbols": {
+          "F_out": {
+            "desc": "电动机对负载所做功对应的平均作用力",
+            "unit": "N"
+          },
+          "s_out": {
+            "desc": "负载沿力方向移动的距离",
+            "unit": "m"
+          },
+          "W_out": {
+            "desc": "电动机输出的机械功",
+            "unit": "J"
+          },
+          "t_run": {
+            "desc": "电动机工作时间",
+            "unit": "s"
+          },
+          "P_out": {
+            "desc": "电动机输出的平均机械功率",
+            "unit": "W"
+          }
+        },
+        "scenarios": {
+          "电动机提升重物一": {
+            "F_out": 200,
+            "s_out": 3,
+            "W_out": 600,
+            "t_run": 10,
+            "P_out": 60
+          },
+          "电动机提升重物二": {
+            "F_out": 500,
+            "s_out": 2,
+            "W_out": 1000,
+            "t_run": 20,
+            "P_out": 50
+          }
+        },
+        "formulas": [
+          {
+            "name": "匀速提升负载的机械功",
+            "expr": "W_out = F_out*s_out",
+            "when": "仅作已知电学或能量数据的应用，不验证本卡定性规律。负载沿作用力方向移动，力近似恒定；输出的力 用 N、输出端位移 用 m。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "电动机提升重物一",
+                "expr": "F_out*s_out",
+                "ref": 600,
+                "note": "200 N×3 m=600 J。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "电动机提升重物二",
+                "expr": "F_out*s_out",
+                "ref": 1000,
+                "note": "500 N×2 m=1000 J。"
+              },
+              {
+                "type": "direction",
+                "scenario": "电动机提升重物一",
+                "var": "s_out",
+                "lo": 0,
+                "hi": 10,
+                "expr": "F_out*s_out",
+                "expect": "up",
+                "note": "作用力固定时，提升距离越大，输出机械功越多。"
+              },
+              {
+                "type": "scan",
+                "scenario": "电动机提升重物一",
+                "var": "s_out",
+                "lo": 0,
+                "hi": 100,
+                "note": "扫描非负提升距离，机械功计算保持有限。"
+              },
+              {
+                "type": "consistency",
+                "scenario": "电动机提升重物一",
+                "with": "magnet-03|匀速提升负载的机械功",
+                "with_expr": "P_out*t_run",
+                "target": "电动机输出的机械功",
+                "note": "本公式直接求W_out；参考端显式关系为P_out*t_run。两端使用同一情境和阶段，只核对该关系；with字段仅定位来源，不代表调用另一条被覆盖的公式。",
+                "verification_kind": "独立关系核对"
+              }
+            ]
+          },
+          {
+            "name": "由输出功和时间求平均功率",
+            "expr": "P_out = W_out/t_run",
+            "when": "仅作已知电学或能量数据的应用，不验证本卡定性规律。输出功和工作时间对应同一过程，工作时间 大于 0。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "电动机提升重物一",
+                "expr": "W_out/t_run",
+                "ref": 60,
+                "note": "600 J÷10 s=60 W。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "电动机提升重物二",
+                "expr": "W_out/t_run",
+                "ref": 50,
+                "note": "1000 J÷20 s=50 W。"
+              },
+              {
+                "type": "direction",
+                "scenario": "电动机提升重物一",
+                "var": "W_out",
+                "lo": 0,
+                "hi": 1200,
+                "expr": "W_out/t_run",
+                "expect": "up",
+                "note": "工作时间固定时，输出功越大，平均功率越大。"
+              },
+              {
+                "type": "scan",
+                "scenario": "电动机提升重物一",
+                "var": "t_run",
+                "lo": 0.1,
+                "hi": 1000,
+                "note": "扫描正工作时间，平均功率不除以零。"
+              }
+            ]
+          },
+          {
+            "name": "由平均功率和时间核对输出功",
+            "expr": "W_out = P_out*t_run",
+            "when": "仅作已知电学或能量数据的应用，不验证本卡定性规律。平均输出功率在这段时间内近似稳定。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "电动机提升重物一",
+                "expr": "P_out*t_run",
+                "ref": 600,
+                "note": "60 W×10 s=600 J。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "电动机提升重物二",
+                "expr": "P_out*t_run",
+                "ref": 1000,
+                "note": "50 W×20 s=1000 J。"
+              },
+              {
+                "type": "scan",
+                "scenario": "电动机提升重物一",
+                "var": "t_run",
+                "lo": 0,
+                "hi": 1000,
+                "note": "扫描非负运行时间，输出功计算稳定。"
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "通电导体处于磁场中会受力，改变电流或磁场方向可观察受力方向改变。",
+          "电动机让线圈在磁场中持续转动，把电能转化为机械能。",
+          "重物匀速提升时，输出机械功可按作用力乘沿力方向的距离计算。",
+          "用输出功除以工作时间得到平均机械功率，也可反向用功率和时间核对输出功。"
+        ],
+        "errors": [
+          {
+            "wrong": "只改变电流方向就断定导体受力方向一定不变。",
+            "why": "受力方向同时取决于电流方向和磁场方向；只改变其中一个条件时，受力方向会相应反转。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "把电动机的电输入功率直接当成机械输出功率。",
+            "why": "线圈发热、轴承摩擦和空气阻力都会消耗能量，所以电输入功率通常大于机械输出功率。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "匀速提升 200 N 的重物 3 m 时，把机械功算成 200/3 J。",
+            "wrong_expr": "W_out = F_out/s_out",
+            "why": "恒力沿运动方向做功要把力与位移相乘；除以距离既算不出焦耳，数值也与题意不符。",
+            "caught_by": "量纲一致性",
+            "trap_test": {
+              "kind": "dimension",
+              "target": "W_out = F_out/s_out",
+              "expect": "mismatch",
+              "lhs_dim": "M·L^2·T^-2",
+              "rhs_dim": "M·T^-2",
+              "note": "正式引擎验证量纲不一致；不计作同量纲错误数值实测。"
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "把重物单次上升3 m误当上升后下降共6 m做提升功。",
+            "wrong_expr": "W_out = F_out*(2*s_out)",
+            "why": "题目只计匀速提升，功200×3=600 J；未发生的下降路程不能计入本次提升功。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "电动机提升重物一",
+              "expr": "F_out*(2*s_out)",
+              "ref": 600,
+              "tol": 1e-06
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "电动机匀速提升重 200 N 的物体 3 m，用时 10 s，求机械输出功和平均输出功率。",
+          "solution": [
+            "W_out=F_out*s_out=200×3=600 J。",
+            "P_out=W_out/t_run=600/10=60 W。"
+          ],
+          "answer": "机械输出功为 600 J，平均输出功率为 60 W。"
+        },
+        "prereq": [
+          "fmotion-01",
+          "machine-02",
+          "machine-05"
+        ],
+        "next": [
+          "magnet-04"
+        ],
+        "tags": [
+          "磁场对电流的作用",
+          "电动机",
+          "受力方向",
+          "电能转化",
+          "机械输出功",
+          "机械功率"
+        ],
+        "core": [
+          {
+            "title": "磁场对电流的作用与电动机",
+            "text": "磁场中的通电导线在适当方向下受力，受力方向与电流方向、磁场方向有关，只反转其中之一受力反转，同时反转两者方向保持。电动机利用这一作用把电能转为机械能；换向器周期性改变线圈电流方向，使转动可持续。导线平行磁场等边界下可能不受磁力，不能只说“有电流就一定动”。"
+          }
+        ],
+        "learning_scope": "初中"
+      },
+      "error_index": 3,
+      "chapter": "电和磁"
+    },
+    "diagnostic-magnet-04-1": {
+      "point": {
+        "id": "magnet-04",
+        "title": "安装直流电动机模型",
+        "level": "基础",
+        "definition": "直流电动机模型由磁体、线圈、换向器、电刷和电源等部分组成。安装时要保证线圈能灵活转动、接线可靠；换向器在适当时刻改变线圈中的电流方向，使线圈受到的转动力矩保持同一转向。",
+        "meaning": "模型安装和调试要逐项检查电路是否闭合、线圈是否卡住、电刷是否接触良好以及磁场是否存在。若已测得线圈端电压和电阻，可用欧姆定律估算电流；电功率可由电压和电流求得，再乘工作时间估算输入电能。电动机的实际机械输出小于输入电能，不可把输入电能全部当成有用功。",
+        "symbols": {
+          "U_m": {
+            "desc": "电动机模型线圈两端电压",
+            "unit": "V"
+          },
+          "I_m": {
+            "desc": "通过电动机模型线圈的电流",
+            "unit": "A"
+          },
+          "R_m": {
+            "desc": "线圈电阻",
+            "unit": "Ω"
+          },
+          "P_in": {
+            "desc": "电动机模型的电输入功率",
+            "unit": "W"
+          },
+          "E_in": {
+            "desc": "电动机模型在这段时间内的电输入电能",
+            "unit": "J"
+          },
+          "t_m": {
+            "desc": "电动机模型通电时间",
+            "unit": "s"
+          }
+        },
+        "scenarios": {
+          "直流电动机模型一": {
+            "U_m": 6,
+            "I_m": 0.3,
+            "R_m": 20,
+            "P_in": 1.8,
+            "E_in": 36,
+            "t_m": 20
+          },
+          "直流电动机模型二": {
+            "U_m": 12,
+            "I_m": 0.5,
+            "R_m": 24,
+            "P_in": 6,
+            "E_in": 120,
+            "t_m": 20
+          }
+        },
+        "formulas": [
+          {
+            "name": "已测电压和电流求输入功率",
+            "expr": "P_in = U_m*I_m",
+            "when": "仅作已知电学或能量数据的应用，不验证本卡定性规律。电压和电流对应同一时刻的直流测量，输入功率按电压乘电流估算。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "直流电动机模型一",
+                "expr": "U_m*I_m",
+                "ref": 1.8,
+                "note": "6 V×0.3 A=1.8 W。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "直流电动机模型二",
+                "expr": "U_m*I_m",
+                "ref": 6,
+                "note": "12 V×0.5 A=6 W。"
+              },
+              {
+                "type": "direction",
+                "scenario": "直流电动机模型一",
+                "var": "I_m",
+                "lo": 0,
+                "hi": 2,
+                "expr": "U_m*I_m",
+                "expect": "up",
+                "note": "电压固定时，电流越大，输入电功率越大。"
+              },
+              {
+                "type": "scan",
+                "scenario": "直流电动机模型一",
+                "var": "I_m",
+                "lo": 0,
+                "hi": 10,
+                "note": "扫描非负电流，输入功率计算稳定。"
+              },
+              {
+                "type": "consistency",
+                "scenario": "直流电动机模型一",
+                "with": "magnet-04|已测电压和电流求输入功率",
+                "with_expr": "E_in/t_m",
+                "target": "电动机模型的电输入功率",
+                "note": "本公式直接求P_in；参考端显式关系为E_in/t_m。两端使用同一情境和阶段，只核对该关系；with字段仅定位来源，不代表调用另一条被覆盖的公式。",
+                "verification_kind": "独立关系核对"
+              }
+            ]
+          },
+          {
+            "name": "由输入功率和时间求电输入电能",
+            "expr": "E_in = P_in*t_m",
+            "when": "仅作已知电学或能量数据的应用，不验证本卡定性规律。输入功率在这段通电时间内近似稳定。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "直流电动机模型一",
+                "expr": "P_in*t_m",
+                "ref": 36,
+                "note": "1.8 W×20 s=36 J。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "直流电动机模型二",
+                "expr": "P_in*t_m",
+                "ref": 120,
+                "note": "6 W×20 s=120 J。"
+              },
+              {
+                "type": "direction",
+                "scenario": "直流电动机模型一",
+                "var": "t_m",
+                "lo": 0,
+                "hi": 100,
+                "expr": "P_in*t_m",
+                "expect": "up",
+                "note": "功率固定时，通电时间越长，输入电能越多。"
+              },
+              {
+                "type": "scan",
+                "scenario": "直流电动机模型一",
+                "var": "t_m",
+                "lo": 0,
+                "hi": 10000,
+                "note": "扫描非负通电时间，输入电能计算有限。"
+              }
+            ]
+          },
+          {
+            "name": "由电能和时间核对输入功率",
+            "expr": "P_in = E_in/t_m",
+            "when": "仅作已知电学或能量数据的应用，不验证本卡定性规律。电能和时间对应同一通电过程，通电时间 大于 0。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "直流电动机模型一",
+                "expr": "E_in/t_m",
+                "ref": 1.8,
+                "note": "36 J÷20 s=1.8 W。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "直流电动机模型二",
+                "expr": "E_in/t_m",
+                "ref": 6,
+                "note": "120 J÷20 s=6 W。"
+              },
+              {
+                "type": "scan",
+                "scenario": "直流电动机模型一",
+                "var": "t_m",
+                "lo": 0.1,
+                "hi": 10000,
+                "note": "扫描正时间，反算输入功率时不除以零。"
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "先按模型结构连接电源、电刷和线圈，并检查线圈能自由转动。",
+          "确认磁场存在且电路接触良好后，再短时通电观察线圈是否持续转动。",
+          "测量电压和电流后，可用 P_in=U_m*I_m 估算模型的电输入功率。",
+          "若功率近似稳定，再用输入功率乘通电时间估算电输入电能，并与电能除以时间复核。"
+        ],
+        "errors": [
+          {
+            "wrong": "电刷未接触或线圈卡住时，仍把不转归因于磁场方向错误。",
+            "why": "线圈不转可能是断路、接触不良或机械卡滞；应先逐项检查，再调整磁场或电流方向。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "把电输入功率写成电压除以电流。",
+            "wrong_expr": "P_in = U_m/I_m",
+            "why": "电功率等于电压乘电流；电压除以电流得到的是电阻，不能表示输入功率。",
+            "caught_by": "量纲一致性",
+            "trap_test": {
+              "kind": "dimension",
+              "target": "P_in = U_m/I_m",
+              "lhs_dim": "M·L^2·T^-3",
+              "rhs_dim": "M·L^2·T^-3·I^-2",
+              "expect": "mismatch",
+              "note": "实际量纲检查得到等号左边为M·L^2·T^-3、右边为M·L^2·T^-3·I^-2；两边不是同一物理量，因此该等式不成立。"
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "6 V、0.3 A的模型错误用电压除以电流，标作20 W。",
+            "wrong_expr": "P_in = U_m/I_m",
+            "why": "正确输入功率6×0.3=1.8 W；6÷0.3=20的量纲是Ω，不能标为W。",
+            "caught_by": "量纲一致性",
+            "trap_test": {
+              "kind": "dimension",
+              "target": "P_in = U_m/I_m",
+              "expect": "mismatch",
+              "lhs_dim": "M·L^2·T^-3",
+              "rhs_dim": "M·L^2·T^-3·I^-2",
+              "note": "正式引擎验证量纲不一致；不计作同量纲错误数值实测。"
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "把0.3 A误作0.3 mA换成安培。",
+            "wrong_expr": "P_in = U_m*(I_m/1000)",
+            "why": "6 V乘0.3 A为1.8 W；重复除千导致误算0.0018 W。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "直流电动机模型一",
+              "expr": "U_m*(I_m/1000)",
+              "ref": 1.8,
+              "tol": 1e-06
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "直流电动机模型工作时测得 6 V、0.3 A，连续通电 20 s，估算输入功率和输入电能。",
+          "solution": [
+            "P_in=U_m*I_m=6×0.3=1.8 W。",
+            "E_in=P_in*t_m=1.8×20=36 J。"
+          ],
+          "answer": "输入功率为 1.8 W，20 s 内输入电能为 36 J。"
+        },
+        "prereq": [
+          "magnet-01",
+          "power-02",
+          "circuit-01"
+        ],
+        "next": [
+          "magnet-02"
+        ],
+        "tags": [
+          "直流电动机模型",
+          "换向器",
+          "电刷",
+          "线圈",
+          "输入电功率",
+          "输入电能"
+        ],
+        "core": [
+          {
+            "title": "低压直流电动机模型",
+            "text": "用低压电源、线圈、磁体和支撑接点构成模型，先检查回路、接触和自由转动，再通电观察，避免堵转长时间通电。换向器或示范线圈半刮绝缘的做法使适当阶段通断或换向；裸导线短路不是简化模型。该模型属于教材实践补充，不据功率计算声称安装步骤已经自动验证。"
+          }
+        ],
+        "learning_scope": "初中"
+      },
+      "error_index": 0,
+      "chapter": "电和磁"
+    },
+    "diagnostic-magnet-04-2": {
+      "point": {
+        "id": "magnet-04",
+        "title": "安装直流电动机模型",
+        "level": "基础",
+        "definition": "直流电动机模型由磁体、线圈、换向器、电刷和电源等部分组成。安装时要保证线圈能灵活转动、接线可靠；换向器在适当时刻改变线圈中的电流方向，使线圈受到的转动力矩保持同一转向。",
+        "meaning": "模型安装和调试要逐项检查电路是否闭合、线圈是否卡住、电刷是否接触良好以及磁场是否存在。若已测得线圈端电压和电阻，可用欧姆定律估算电流；电功率可由电压和电流求得，再乘工作时间估算输入电能。电动机的实际机械输出小于输入电能，不可把输入电能全部当成有用功。",
+        "symbols": {
+          "U_m": {
+            "desc": "电动机模型线圈两端电压",
+            "unit": "V"
+          },
+          "I_m": {
+            "desc": "通过电动机模型线圈的电流",
+            "unit": "A"
+          },
+          "R_m": {
+            "desc": "线圈电阻",
+            "unit": "Ω"
+          },
+          "P_in": {
+            "desc": "电动机模型的电输入功率",
+            "unit": "W"
+          },
+          "E_in": {
+            "desc": "电动机模型在这段时间内的电输入电能",
+            "unit": "J"
+          },
+          "t_m": {
+            "desc": "电动机模型通电时间",
+            "unit": "s"
+          }
+        },
+        "scenarios": {
+          "直流电动机模型一": {
+            "U_m": 6,
+            "I_m": 0.3,
+            "R_m": 20,
+            "P_in": 1.8,
+            "E_in": 36,
+            "t_m": 20
+          },
+          "直流电动机模型二": {
+            "U_m": 12,
+            "I_m": 0.5,
+            "R_m": 24,
+            "P_in": 6,
+            "E_in": 120,
+            "t_m": 20
+          }
+        },
+        "formulas": [
+          {
+            "name": "已测电压和电流求输入功率",
+            "expr": "P_in = U_m*I_m",
+            "when": "仅作已知电学或能量数据的应用，不验证本卡定性规律。电压和电流对应同一时刻的直流测量，输入功率按电压乘电流估算。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "直流电动机模型一",
+                "expr": "U_m*I_m",
+                "ref": 1.8,
+                "note": "6 V×0.3 A=1.8 W。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "直流电动机模型二",
+                "expr": "U_m*I_m",
+                "ref": 6,
+                "note": "12 V×0.5 A=6 W。"
+              },
+              {
+                "type": "direction",
+                "scenario": "直流电动机模型一",
+                "var": "I_m",
+                "lo": 0,
+                "hi": 2,
+                "expr": "U_m*I_m",
+                "expect": "up",
+                "note": "电压固定时，电流越大，输入电功率越大。"
+              },
+              {
+                "type": "scan",
+                "scenario": "直流电动机模型一",
+                "var": "I_m",
+                "lo": 0,
+                "hi": 10,
+                "note": "扫描非负电流，输入功率计算稳定。"
+              },
+              {
+                "type": "consistency",
+                "scenario": "直流电动机模型一",
+                "with": "magnet-04|已测电压和电流求输入功率",
+                "with_expr": "E_in/t_m",
+                "target": "电动机模型的电输入功率",
+                "note": "本公式直接求P_in；参考端显式关系为E_in/t_m。两端使用同一情境和阶段，只核对该关系；with字段仅定位来源，不代表调用另一条被覆盖的公式。",
+                "verification_kind": "独立关系核对"
+              }
+            ]
+          },
+          {
+            "name": "由输入功率和时间求电输入电能",
+            "expr": "E_in = P_in*t_m",
+            "when": "仅作已知电学或能量数据的应用，不验证本卡定性规律。输入功率在这段通电时间内近似稳定。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "直流电动机模型一",
+                "expr": "P_in*t_m",
+                "ref": 36,
+                "note": "1.8 W×20 s=36 J。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "直流电动机模型二",
+                "expr": "P_in*t_m",
+                "ref": 120,
+                "note": "6 W×20 s=120 J。"
+              },
+              {
+                "type": "direction",
+                "scenario": "直流电动机模型一",
+                "var": "t_m",
+                "lo": 0,
+                "hi": 100,
+                "expr": "P_in*t_m",
+                "expect": "up",
+                "note": "功率固定时，通电时间越长，输入电能越多。"
+              },
+              {
+                "type": "scan",
+                "scenario": "直流电动机模型一",
+                "var": "t_m",
+                "lo": 0,
+                "hi": 10000,
+                "note": "扫描非负通电时间，输入电能计算有限。"
+              }
+            ]
+          },
+          {
+            "name": "由电能和时间核对输入功率",
+            "expr": "P_in = E_in/t_m",
+            "when": "仅作已知电学或能量数据的应用，不验证本卡定性规律。电能和时间对应同一通电过程，通电时间 大于 0。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "直流电动机模型一",
+                "expr": "E_in/t_m",
+                "ref": 1.8,
+                "note": "36 J÷20 s=1.8 W。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "直流电动机模型二",
+                "expr": "E_in/t_m",
+                "ref": 6,
+                "note": "120 J÷20 s=6 W。"
+              },
+              {
+                "type": "scan",
+                "scenario": "直流电动机模型一",
+                "var": "t_m",
+                "lo": 0.1,
+                "hi": 10000,
+                "note": "扫描正时间，反算输入功率时不除以零。"
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "先按模型结构连接电源、电刷和线圈，并检查线圈能自由转动。",
+          "确认磁场存在且电路接触良好后，再短时通电观察线圈是否持续转动。",
+          "测量电压和电流后，可用 P_in=U_m*I_m 估算模型的电输入功率。",
+          "若功率近似稳定，再用输入功率乘通电时间估算电输入电能，并与电能除以时间复核。"
+        ],
+        "errors": [
+          {
+            "wrong": "电刷未接触或线圈卡住时，仍把不转归因于磁场方向错误。",
+            "why": "线圈不转可能是断路、接触不良或机械卡滞；应先逐项检查，再调整磁场或电流方向。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "把电输入功率写成电压除以电流。",
+            "wrong_expr": "P_in = U_m/I_m",
+            "why": "电功率等于电压乘电流；电压除以电流得到的是电阻，不能表示输入功率。",
+            "caught_by": "量纲一致性",
+            "trap_test": {
+              "kind": "dimension",
+              "target": "P_in = U_m/I_m",
+              "lhs_dim": "M·L^2·T^-3",
+              "rhs_dim": "M·L^2·T^-3·I^-2",
+              "expect": "mismatch",
+              "note": "实际量纲检查得到等号左边为M·L^2·T^-3、右边为M·L^2·T^-3·I^-2；两边不是同一物理量，因此该等式不成立。"
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "6 V、0.3 A的模型错误用电压除以电流，标作20 W。",
+            "wrong_expr": "P_in = U_m/I_m",
+            "why": "正确输入功率6×0.3=1.8 W；6÷0.3=20的量纲是Ω，不能标为W。",
+            "caught_by": "量纲一致性",
+            "trap_test": {
+              "kind": "dimension",
+              "target": "P_in = U_m/I_m",
+              "expect": "mismatch",
+              "lhs_dim": "M·L^2·T^-3",
+              "rhs_dim": "M·L^2·T^-3·I^-2",
+              "note": "正式引擎验证量纲不一致；不计作同量纲错误数值实测。"
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "把0.3 A误作0.3 mA换成安培。",
+            "wrong_expr": "P_in = U_m*(I_m/1000)",
+            "why": "6 V乘0.3 A为1.8 W；重复除千导致误算0.0018 W。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "直流电动机模型一",
+              "expr": "U_m*(I_m/1000)",
+              "ref": 1.8,
+              "tol": 1e-06
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "直流电动机模型工作时测得 6 V、0.3 A，连续通电 20 s，估算输入功率和输入电能。",
+          "solution": [
+            "P_in=U_m*I_m=6×0.3=1.8 W。",
+            "E_in=P_in*t_m=1.8×20=36 J。"
+          ],
+          "answer": "输入功率为 1.8 W，20 s 内输入电能为 36 J。"
+        },
+        "prereq": [
+          "magnet-01",
+          "power-02",
+          "circuit-01"
+        ],
+        "next": [
+          "magnet-02"
+        ],
+        "tags": [
+          "直流电动机模型",
+          "换向器",
+          "电刷",
+          "线圈",
+          "输入电功率",
+          "输入电能"
+        ],
+        "core": [
+          {
+            "title": "低压直流电动机模型",
+            "text": "用低压电源、线圈、磁体和支撑接点构成模型，先检查回路、接触和自由转动，再通电观察，避免堵转长时间通电。换向器或示范线圈半刮绝缘的做法使适当阶段通断或换向；裸导线短路不是简化模型。该模型属于教材实践补充，不据功率计算声称安装步骤已经自动验证。"
+          }
+        ],
+        "learning_scope": "初中"
+      },
+      "error_index": 1,
+      "chapter": "电和磁"
+    },
+    "diagnostic-magnet-04-3": {
+      "point": {
+        "id": "magnet-04",
+        "title": "安装直流电动机模型",
+        "level": "基础",
+        "definition": "直流电动机模型由磁体、线圈、换向器、电刷和电源等部分组成。安装时要保证线圈能灵活转动、接线可靠；换向器在适当时刻改变线圈中的电流方向，使线圈受到的转动力矩保持同一转向。",
+        "meaning": "模型安装和调试要逐项检查电路是否闭合、线圈是否卡住、电刷是否接触良好以及磁场是否存在。若已测得线圈端电压和电阻，可用欧姆定律估算电流；电功率可由电压和电流求得，再乘工作时间估算输入电能。电动机的实际机械输出小于输入电能，不可把输入电能全部当成有用功。",
+        "symbols": {
+          "U_m": {
+            "desc": "电动机模型线圈两端电压",
+            "unit": "V"
+          },
+          "I_m": {
+            "desc": "通过电动机模型线圈的电流",
+            "unit": "A"
+          },
+          "R_m": {
+            "desc": "线圈电阻",
+            "unit": "Ω"
+          },
+          "P_in": {
+            "desc": "电动机模型的电输入功率",
+            "unit": "W"
+          },
+          "E_in": {
+            "desc": "电动机模型在这段时间内的电输入电能",
+            "unit": "J"
+          },
+          "t_m": {
+            "desc": "电动机模型通电时间",
+            "unit": "s"
+          }
+        },
+        "scenarios": {
+          "直流电动机模型一": {
+            "U_m": 6,
+            "I_m": 0.3,
+            "R_m": 20,
+            "P_in": 1.8,
+            "E_in": 36,
+            "t_m": 20
+          },
+          "直流电动机模型二": {
+            "U_m": 12,
+            "I_m": 0.5,
+            "R_m": 24,
+            "P_in": 6,
+            "E_in": 120,
+            "t_m": 20
+          }
+        },
+        "formulas": [
+          {
+            "name": "已测电压和电流求输入功率",
+            "expr": "P_in = U_m*I_m",
+            "when": "仅作已知电学或能量数据的应用，不验证本卡定性规律。电压和电流对应同一时刻的直流测量，输入功率按电压乘电流估算。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "直流电动机模型一",
+                "expr": "U_m*I_m",
+                "ref": 1.8,
+                "note": "6 V×0.3 A=1.8 W。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "直流电动机模型二",
+                "expr": "U_m*I_m",
+                "ref": 6,
+                "note": "12 V×0.5 A=6 W。"
+              },
+              {
+                "type": "direction",
+                "scenario": "直流电动机模型一",
+                "var": "I_m",
+                "lo": 0,
+                "hi": 2,
+                "expr": "U_m*I_m",
+                "expect": "up",
+                "note": "电压固定时，电流越大，输入电功率越大。"
+              },
+              {
+                "type": "scan",
+                "scenario": "直流电动机模型一",
+                "var": "I_m",
+                "lo": 0,
+                "hi": 10,
+                "note": "扫描非负电流，输入功率计算稳定。"
+              },
+              {
+                "type": "consistency",
+                "scenario": "直流电动机模型一",
+                "with": "magnet-04|已测电压和电流求输入功率",
+                "with_expr": "E_in/t_m",
+                "target": "电动机模型的电输入功率",
+                "note": "本公式直接求P_in；参考端显式关系为E_in/t_m。两端使用同一情境和阶段，只核对该关系；with字段仅定位来源，不代表调用另一条被覆盖的公式。",
+                "verification_kind": "独立关系核对"
+              }
+            ]
+          },
+          {
+            "name": "由输入功率和时间求电输入电能",
+            "expr": "E_in = P_in*t_m",
+            "when": "仅作已知电学或能量数据的应用，不验证本卡定性规律。输入功率在这段通电时间内近似稳定。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "直流电动机模型一",
+                "expr": "P_in*t_m",
+                "ref": 36,
+                "note": "1.8 W×20 s=36 J。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "直流电动机模型二",
+                "expr": "P_in*t_m",
+                "ref": 120,
+                "note": "6 W×20 s=120 J。"
+              },
+              {
+                "type": "direction",
+                "scenario": "直流电动机模型一",
+                "var": "t_m",
+                "lo": 0,
+                "hi": 100,
+                "expr": "P_in*t_m",
+                "expect": "up",
+                "note": "功率固定时，通电时间越长，输入电能越多。"
+              },
+              {
+                "type": "scan",
+                "scenario": "直流电动机模型一",
+                "var": "t_m",
+                "lo": 0,
+                "hi": 10000,
+                "note": "扫描非负通电时间，输入电能计算有限。"
+              }
+            ]
+          },
+          {
+            "name": "由电能和时间核对输入功率",
+            "expr": "P_in = E_in/t_m",
+            "when": "仅作已知电学或能量数据的应用，不验证本卡定性规律。电能和时间对应同一通电过程，通电时间 大于 0。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "直流电动机模型一",
+                "expr": "E_in/t_m",
+                "ref": 1.8,
+                "note": "36 J÷20 s=1.8 W。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "直流电动机模型二",
+                "expr": "E_in/t_m",
+                "ref": 6,
+                "note": "120 J÷20 s=6 W。"
+              },
+              {
+                "type": "scan",
+                "scenario": "直流电动机模型一",
+                "var": "t_m",
+                "lo": 0.1,
+                "hi": 10000,
+                "note": "扫描正时间，反算输入功率时不除以零。"
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "先按模型结构连接电源、电刷和线圈，并检查线圈能自由转动。",
+          "确认磁场存在且电路接触良好后，再短时通电观察线圈是否持续转动。",
+          "测量电压和电流后，可用 P_in=U_m*I_m 估算模型的电输入功率。",
+          "若功率近似稳定，再用输入功率乘通电时间估算电输入电能，并与电能除以时间复核。"
+        ],
+        "errors": [
+          {
+            "wrong": "电刷未接触或线圈卡住时，仍把不转归因于磁场方向错误。",
+            "why": "线圈不转可能是断路、接触不良或机械卡滞；应先逐项检查，再调整磁场或电流方向。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "把电输入功率写成电压除以电流。",
+            "wrong_expr": "P_in = U_m/I_m",
+            "why": "电功率等于电压乘电流；电压除以电流得到的是电阻，不能表示输入功率。",
+            "caught_by": "量纲一致性",
+            "trap_test": {
+              "kind": "dimension",
+              "target": "P_in = U_m/I_m",
+              "lhs_dim": "M·L^2·T^-3",
+              "rhs_dim": "M·L^2·T^-3·I^-2",
+              "expect": "mismatch",
+              "note": "实际量纲检查得到等号左边为M·L^2·T^-3、右边为M·L^2·T^-3·I^-2；两边不是同一物理量，因此该等式不成立。"
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "6 V、0.3 A的模型错误用电压除以电流，标作20 W。",
+            "wrong_expr": "P_in = U_m/I_m",
+            "why": "正确输入功率6×0.3=1.8 W；6÷0.3=20的量纲是Ω，不能标为W。",
+            "caught_by": "量纲一致性",
+            "trap_test": {
+              "kind": "dimension",
+              "target": "P_in = U_m/I_m",
+              "expect": "mismatch",
+              "lhs_dim": "M·L^2·T^-3",
+              "rhs_dim": "M·L^2·T^-3·I^-2",
+              "note": "正式引擎验证量纲不一致；不计作同量纲错误数值实测。"
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "把0.3 A误作0.3 mA换成安培。",
+            "wrong_expr": "P_in = U_m*(I_m/1000)",
+            "why": "6 V乘0.3 A为1.8 W；重复除千导致误算0.0018 W。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "直流电动机模型一",
+              "expr": "U_m*(I_m/1000)",
+              "ref": 1.8,
+              "tol": 1e-06
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "直流电动机模型工作时测得 6 V、0.3 A，连续通电 20 s，估算输入功率和输入电能。",
+          "solution": [
+            "P_in=U_m*I_m=6×0.3=1.8 W。",
+            "E_in=P_in*t_m=1.8×20=36 J。"
+          ],
+          "answer": "输入功率为 1.8 W，20 s 内输入电能为 36 J。"
+        },
+        "prereq": [
+          "magnet-01",
+          "power-02",
+          "circuit-01"
+        ],
+        "next": [
+          "magnet-02"
+        ],
+        "tags": [
+          "直流电动机模型",
+          "换向器",
+          "电刷",
+          "线圈",
+          "输入电功率",
+          "输入电能"
+        ],
+        "core": [
+          {
+            "title": "低压直流电动机模型",
+            "text": "用低压电源、线圈、磁体和支撑接点构成模型，先检查回路、接触和自由转动，再通电观察，避免堵转长时间通电。换向器或示范线圈半刮绝缘的做法使适当阶段通断或换向；裸导线短路不是简化模型。该模型属于教材实践补充，不据功率计算声称安装步骤已经自动验证。"
+          }
+        ],
+        "learning_scope": "初中"
+      },
+      "error_index": 2,
+      "chapter": "电和磁"
+    },
+    "diagnostic-magnet-04-4": {
+      "point": {
+        "id": "magnet-04",
+        "title": "安装直流电动机模型",
+        "level": "基础",
+        "definition": "直流电动机模型由磁体、线圈、换向器、电刷和电源等部分组成。安装时要保证线圈能灵活转动、接线可靠；换向器在适当时刻改变线圈中的电流方向，使线圈受到的转动力矩保持同一转向。",
+        "meaning": "模型安装和调试要逐项检查电路是否闭合、线圈是否卡住、电刷是否接触良好以及磁场是否存在。若已测得线圈端电压和电阻，可用欧姆定律估算电流；电功率可由电压和电流求得，再乘工作时间估算输入电能。电动机的实际机械输出小于输入电能，不可把输入电能全部当成有用功。",
+        "symbols": {
+          "U_m": {
+            "desc": "电动机模型线圈两端电压",
+            "unit": "V"
+          },
+          "I_m": {
+            "desc": "通过电动机模型线圈的电流",
+            "unit": "A"
+          },
+          "R_m": {
+            "desc": "线圈电阻",
+            "unit": "Ω"
+          },
+          "P_in": {
+            "desc": "电动机模型的电输入功率",
+            "unit": "W"
+          },
+          "E_in": {
+            "desc": "电动机模型在这段时间内的电输入电能",
+            "unit": "J"
+          },
+          "t_m": {
+            "desc": "电动机模型通电时间",
+            "unit": "s"
+          }
+        },
+        "scenarios": {
+          "直流电动机模型一": {
+            "U_m": 6,
+            "I_m": 0.3,
+            "R_m": 20,
+            "P_in": 1.8,
+            "E_in": 36,
+            "t_m": 20
+          },
+          "直流电动机模型二": {
+            "U_m": 12,
+            "I_m": 0.5,
+            "R_m": 24,
+            "P_in": 6,
+            "E_in": 120,
+            "t_m": 20
+          }
+        },
+        "formulas": [
+          {
+            "name": "已测电压和电流求输入功率",
+            "expr": "P_in = U_m*I_m",
+            "when": "仅作已知电学或能量数据的应用，不验证本卡定性规律。电压和电流对应同一时刻的直流测量，输入功率按电压乘电流估算。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "直流电动机模型一",
+                "expr": "U_m*I_m",
+                "ref": 1.8,
+                "note": "6 V×0.3 A=1.8 W。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "直流电动机模型二",
+                "expr": "U_m*I_m",
+                "ref": 6,
+                "note": "12 V×0.5 A=6 W。"
+              },
+              {
+                "type": "direction",
+                "scenario": "直流电动机模型一",
+                "var": "I_m",
+                "lo": 0,
+                "hi": 2,
+                "expr": "U_m*I_m",
+                "expect": "up",
+                "note": "电压固定时，电流越大，输入电功率越大。"
+              },
+              {
+                "type": "scan",
+                "scenario": "直流电动机模型一",
+                "var": "I_m",
+                "lo": 0,
+                "hi": 10,
+                "note": "扫描非负电流，输入功率计算稳定。"
+              },
+              {
+                "type": "consistency",
+                "scenario": "直流电动机模型一",
+                "with": "magnet-04|已测电压和电流求输入功率",
+                "with_expr": "E_in/t_m",
+                "target": "电动机模型的电输入功率",
+                "note": "本公式直接求P_in；参考端显式关系为E_in/t_m。两端使用同一情境和阶段，只核对该关系；with字段仅定位来源，不代表调用另一条被覆盖的公式。",
+                "verification_kind": "独立关系核对"
+              }
+            ]
+          },
+          {
+            "name": "由输入功率和时间求电输入电能",
+            "expr": "E_in = P_in*t_m",
+            "when": "仅作已知电学或能量数据的应用，不验证本卡定性规律。输入功率在这段通电时间内近似稳定。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "直流电动机模型一",
+                "expr": "P_in*t_m",
+                "ref": 36,
+                "note": "1.8 W×20 s=36 J。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "直流电动机模型二",
+                "expr": "P_in*t_m",
+                "ref": 120,
+                "note": "6 W×20 s=120 J。"
+              },
+              {
+                "type": "direction",
+                "scenario": "直流电动机模型一",
+                "var": "t_m",
+                "lo": 0,
+                "hi": 100,
+                "expr": "P_in*t_m",
+                "expect": "up",
+                "note": "功率固定时，通电时间越长，输入电能越多。"
+              },
+              {
+                "type": "scan",
+                "scenario": "直流电动机模型一",
+                "var": "t_m",
+                "lo": 0,
+                "hi": 10000,
+                "note": "扫描非负通电时间，输入电能计算有限。"
+              }
+            ]
+          },
+          {
+            "name": "由电能和时间核对输入功率",
+            "expr": "P_in = E_in/t_m",
+            "when": "仅作已知电学或能量数据的应用，不验证本卡定性规律。电能和时间对应同一通电过程，通电时间 大于 0。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "直流电动机模型一",
+                "expr": "E_in/t_m",
+                "ref": 1.8,
+                "note": "36 J÷20 s=1.8 W。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "直流电动机模型二",
+                "expr": "E_in/t_m",
+                "ref": 6,
+                "note": "120 J÷20 s=6 W。"
+              },
+              {
+                "type": "scan",
+                "scenario": "直流电动机模型一",
+                "var": "t_m",
+                "lo": 0.1,
+                "hi": 10000,
+                "note": "扫描正时间，反算输入功率时不除以零。"
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "先按模型结构连接电源、电刷和线圈，并检查线圈能自由转动。",
+          "确认磁场存在且电路接触良好后，再短时通电观察线圈是否持续转动。",
+          "测量电压和电流后，可用 P_in=U_m*I_m 估算模型的电输入功率。",
+          "若功率近似稳定，再用输入功率乘通电时间估算电输入电能，并与电能除以时间复核。"
+        ],
+        "errors": [
+          {
+            "wrong": "电刷未接触或线圈卡住时，仍把不转归因于磁场方向错误。",
+            "why": "线圈不转可能是断路、接触不良或机械卡滞；应先逐项检查，再调整磁场或电流方向。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "把电输入功率写成电压除以电流。",
+            "wrong_expr": "P_in = U_m/I_m",
+            "why": "电功率等于电压乘电流；电压除以电流得到的是电阻，不能表示输入功率。",
+            "caught_by": "量纲一致性",
+            "trap_test": {
+              "kind": "dimension",
+              "target": "P_in = U_m/I_m",
+              "lhs_dim": "M·L^2·T^-3",
+              "rhs_dim": "M·L^2·T^-3·I^-2",
+              "expect": "mismatch",
+              "note": "实际量纲检查得到等号左边为M·L^2·T^-3、右边为M·L^2·T^-3·I^-2；两边不是同一物理量，因此该等式不成立。"
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "6 V、0.3 A的模型错误用电压除以电流，标作20 W。",
+            "wrong_expr": "P_in = U_m/I_m",
+            "why": "正确输入功率6×0.3=1.8 W；6÷0.3=20的量纲是Ω，不能标为W。",
+            "caught_by": "量纲一致性",
+            "trap_test": {
+              "kind": "dimension",
+              "target": "P_in = U_m/I_m",
+              "expect": "mismatch",
+              "lhs_dim": "M·L^2·T^-3",
+              "rhs_dim": "M·L^2·T^-3·I^-2",
+              "note": "正式引擎验证量纲不一致；不计作同量纲错误数值实测。"
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "把0.3 A误作0.3 mA换成安培。",
+            "wrong_expr": "P_in = U_m*(I_m/1000)",
+            "why": "6 V乘0.3 A为1.8 W；重复除千导致误算0.0018 W。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "直流电动机模型一",
+              "expr": "U_m*(I_m/1000)",
+              "ref": 1.8,
+              "tol": 1e-06
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "直流电动机模型工作时测得 6 V、0.3 A，连续通电 20 s，估算输入功率和输入电能。",
+          "solution": [
+            "P_in=U_m*I_m=6×0.3=1.8 W。",
+            "E_in=P_in*t_m=1.8×20=36 J。"
+          ],
+          "answer": "输入功率为 1.8 W，20 s 内输入电能为 36 J。"
+        },
+        "prereq": [
+          "magnet-01",
+          "power-02",
+          "circuit-01"
+        ],
+        "next": [
+          "magnet-02"
+        ],
+        "tags": [
+          "直流电动机模型",
+          "换向器",
+          "电刷",
+          "线圈",
+          "输入电功率",
+          "输入电能"
+        ],
+        "core": [
+          {
+            "title": "低压直流电动机模型",
+            "text": "用低压电源、线圈、磁体和支撑接点构成模型，先检查回路、接触和自由转动，再通电观察，避免堵转长时间通电。换向器或示范线圈半刮绝缘的做法使适当阶段通断或换向；裸导线短路不是简化模型。该模型属于教材实践补充，不据功率计算声称安装步骤已经自动验证。"
+          }
+        ],
+        "learning_scope": "初中"
+      },
+      "error_index": 3,
+      "chapter": "电和磁"
+    },
+    "diagnostic-magnet-02-1": {
+      "point": {
+        "id": "magnet-02",
+        "title": "电磁感应与发电机",
+        "level": "基础",
+        "definition": "闭合电路的一部分导体在磁场中做切割磁感线运动时，电路中会产生感应电流，这种现象叫电磁感应。感应电流方向与导体运动方向和磁场方向有关。 发电机利用电磁感应把机械能转化为电能。",
+        "meaning": "磁体与线圈相对运动或线圈所在磁场发生变化时，可能出现感应电流；磁场不变且没有相对运动时，通常没有持续感应电流。实验中电流表用于观察感应电流，方向变化可由指针偏转方向判断。以下电学关系只在感应电压已经测出后用于计算回路电流，不负责预测感应电压大小。",
+        "symbols": {
+          "U_ind": {
+            "desc": "感应电压",
+            "unit": "V"
+          },
+          "I_ind": {
+            "desc": "感应电流",
+            "unit": "A"
+          },
+          "R_loop": {
+            "desc": "感应电路总电阻",
+            "unit": "Ω"
+          },
+          "P_ind": {
+            "desc": "感应电源输出的电功率",
+            "unit": "W"
+          }
+        },
+        "scenarios": {
+          "线圈感应一": {
+            "U_ind": 0.6,
+            "I_ind": 0.2,
+            "R_loop": 3
+          },
+          "线圈感应二": {
+            "U_ind": 1.5,
+            "I_ind": 0.3,
+            "R_loop": 5
+          },
+          "小型线圈负载": {
+            "P_ind": 0.6,
+            "U_ind": 3,
+            "I_ind": 0.2
+          },
+          "较大负载": {
+            "P_ind": 2,
+            "U_ind": 10,
+            "I_ind": 0.2
+          }
+        },
+        "formulas": [
+          {
+            "name": "已测感应电压求回路电流",
+            "expr": "I_ind = U_ind/R_loop",
+            "when": "仅作已知电学或能量数据的应用，不验证本卡定性规律。感应电压已由仪表测得，闭合回路近似服从欧姆定律。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "线圈感应一",
+                "expr": "U_ind/R_loop",
+                "ref": 0.2,
+                "note": "0.6 V÷3 Ω=0.2 A。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "线圈感应二",
+                "expr": "U_ind/R_loop",
+                "ref": 0.3,
+                "note": "1.5 V÷5 Ω=0.3 A。"
+              },
+              {
+                "type": "direction",
+                "scenario": "线圈感应一",
+                "var": "U_ind",
+                "lo": 0,
+                "hi": 5,
+                "expr": "U_ind/R_loop",
+                "expect": "up",
+                "note": "回路电阻不变时，已测感应电压越大，感应电流越大。"
+              },
+              {
+                "type": "scan",
+                "scenario": "线圈感应一",
+                "var": "R_loop",
+                "lo": 0.1,
+                "hi": 100,
+                "note": "扫描正回路电阻，感应电流计算稳定。"
+              },
+              {
+                "type": "consistency",
+                "scenario": "线圈感应一",
+                "with": "magnet-02|已测感应电压求回路电流",
+                "with_expr": "I_ind",
+                "target": "感应电流",
+                "note": "直接求本公式输出，与情境中另列的I_ind设计基准核对；数据是设计示例，不是实测。用于核对定义、反算或边界值，不宣称不同物理原理互证。",
+                "verification_kind": "独立设计情境数据核对",
+                "tol": 1e-06
+              }
+            ]
+          },
+          {
+            "name": "由感应电流和回路电阻求电压",
+            "expr": "U_ind = I_ind*R_loop",
+            "when": "仅作已知电学或能量数据的应用，不验证本卡定性规律。电路闭合，感应电流与回路电阻描述同一测量状态。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "线圈感应一",
+                "expr": "I_ind*R_loop",
+                "ref": 0.6,
+                "note": "0.2 A×3 Ω=0.6 V。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "线圈感应二",
+                "expr": "I_ind*R_loop",
+                "ref": 1.5,
+                "note": "0.3 A×5 Ω=1.5 V。"
+              },
+              {
+                "type": "scan",
+                "scenario": "线圈感应一",
+                "var": "I_ind",
+                "lo": 0,
+                "hi": 10,
+                "note": "扫描非负电流读数，反算电压有限。"
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "将线圈与电流表连成闭合回路，并使磁体与线圈发生相对运动。",
+          "观察电流表是否偏转，确认是否产生感应电流。",
+          "若需定量计算，先测得感应电压和回路电阻，再用欧姆定律求电流。",
+          "改变运动方向或磁场方向观察电流方向变化，不用此电路公式预测感应电压。"
+        ],
+        "errors": [
+          {
+            "wrong": "把感应电流写成感应电压乘以回路电阻。",
+            "wrong_expr": "I_ind = U_ind*R_loop",
+            "why": "感应电路测得电压后仍按欧姆定律求电流，应当除以电阻；相乘的单位不是 A。",
+            "caught_by": "量纲一致性",
+            "trap_test": {
+              "kind": "dimension",
+              "target": "I_ind = U_ind*R_loop",
+              "lhs_dim": "I",
+              "rhs_dim": "M^2·L^4·T^-6·I^-3",
+              "expect": "mismatch",
+              "note": "实际量纲检查得到等号左边为I、右边为M^2·L^4·T^-6·I^-3；两边不是同一物理量，因此该等式不成立。"
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "把感应电流换算成 mA 后仍将毫安数值标作 A。",
+            "wrong_expr": "I_ind = 1000*U_ind/R_loop",
+            "why": "0.6 V÷3 Ω=0.2 A=200 mA；若把换算后的 200 写成 A，会大 1000 倍。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "线圈感应一",
+              "expr": "1000*U_ind/R_loop",
+              "ref": 0.2
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "认为只要线圈和磁体静止放在一起就一定有持续感应电流。",
+            "why": "需要磁场变化或导体与磁场发生相对运动；静止且磁场不变时没有持续感应电流。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "电磁感应实验中测得回路电压 0.6 V，回路电阻为 3 Ω，求感应电流。",
+          "solution": [
+            "I_ind=U_ind/R_loop=0.6/3=0.2 A。",
+            "电压是实验测量值，本式不预测感应电压如何产生。"
+          ],
+          "answer": "感应电流为 0.2 A。"
+        },
+        "prereq": [
+          "ohm-01",
+          "circuit-02"
+        ],
+        "next": [],
+        "tags": [
+          "电磁感应",
+          "感应电流",
+          "磁场变化",
+          "相对运动",
+          "电流表"
+        ],
+        "core": [
+          {
+            "title": "电磁感应与发电机",
+            "text": "闭合电路的一部分导体在磁场中作切割磁感线运动，可产生感应电流；改变切割方向或磁场方向，电流方向可能反转。电路断开可有感应电压，但没有闭合回路的持续感应电流。沿磁感线运动或磁体和线圈无变化时不能保证出现电流。发电机把机械能转为电能，与电动机能量转化相反；欧姆定律只在感应电压已测出后求电流，不验证感应产生条件。"
+          }
+        ],
+        "experiments": [
+          {
+            "title": "探究导体在磁场中产生感应电流的条件",
+            "purpose": "观察闭合、切割方向和磁场方向的作用。",
+            "apparatus": "蹄形磁体、直导体、灵敏电流计、开关、导线。",
+            "variables": "闭合与断开回路，切割与沿场方向运动，反转运动或磁场；观察指针。",
+            "steps": [
+              "连闭合回路，静止导体作对照。",
+              "让导体切割磁感线，再反向切割；保持其余条件。",
+              "沿磁感线移动或断开回路作对照，再反转磁场比较方向。"
+            ],
+            "data": "设计示例（非实测）：静止不持续偏转；切割时偏转；只反运动或磁场方向，偏转方向相反。",
+            "conclusion": "闭合回路、适当切割运动可产生电流；回路断开虽可能有电压但不形成该闭合电流。",
+            "limits": "接触、表灵敏度、运动太慢可使偏转不明显，没观察到不必然证明不存在感应电压。",
+            "kind": "学生必做"
+          }
+        ],
+        "learning_scope": "初中"
+      },
+      "error_index": 0,
+      "chapter": "电和磁"
+    },
+    "diagnostic-magnet-02-2": {
+      "point": {
+        "id": "magnet-02",
+        "title": "电磁感应与发电机",
+        "level": "基础",
+        "definition": "闭合电路的一部分导体在磁场中做切割磁感线运动时，电路中会产生感应电流，这种现象叫电磁感应。感应电流方向与导体运动方向和磁场方向有关。 发电机利用电磁感应把机械能转化为电能。",
+        "meaning": "磁体与线圈相对运动或线圈所在磁场发生变化时，可能出现感应电流；磁场不变且没有相对运动时，通常没有持续感应电流。实验中电流表用于观察感应电流，方向变化可由指针偏转方向判断。以下电学关系只在感应电压已经测出后用于计算回路电流，不负责预测感应电压大小。",
+        "symbols": {
+          "U_ind": {
+            "desc": "感应电压",
+            "unit": "V"
+          },
+          "I_ind": {
+            "desc": "感应电流",
+            "unit": "A"
+          },
+          "R_loop": {
+            "desc": "感应电路总电阻",
+            "unit": "Ω"
+          },
+          "P_ind": {
+            "desc": "感应电源输出的电功率",
+            "unit": "W"
+          }
+        },
+        "scenarios": {
+          "线圈感应一": {
+            "U_ind": 0.6,
+            "I_ind": 0.2,
+            "R_loop": 3
+          },
+          "线圈感应二": {
+            "U_ind": 1.5,
+            "I_ind": 0.3,
+            "R_loop": 5
+          },
+          "小型线圈负载": {
+            "P_ind": 0.6,
+            "U_ind": 3,
+            "I_ind": 0.2
+          },
+          "较大负载": {
+            "P_ind": 2,
+            "U_ind": 10,
+            "I_ind": 0.2
+          }
+        },
+        "formulas": [
+          {
+            "name": "已测感应电压求回路电流",
+            "expr": "I_ind = U_ind/R_loop",
+            "when": "仅作已知电学或能量数据的应用，不验证本卡定性规律。感应电压已由仪表测得，闭合回路近似服从欧姆定律。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "线圈感应一",
+                "expr": "U_ind/R_loop",
+                "ref": 0.2,
+                "note": "0.6 V÷3 Ω=0.2 A。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "线圈感应二",
+                "expr": "U_ind/R_loop",
+                "ref": 0.3,
+                "note": "1.5 V÷5 Ω=0.3 A。"
+              },
+              {
+                "type": "direction",
+                "scenario": "线圈感应一",
+                "var": "U_ind",
+                "lo": 0,
+                "hi": 5,
+                "expr": "U_ind/R_loop",
+                "expect": "up",
+                "note": "回路电阻不变时，已测感应电压越大，感应电流越大。"
+              },
+              {
+                "type": "scan",
+                "scenario": "线圈感应一",
+                "var": "R_loop",
+                "lo": 0.1,
+                "hi": 100,
+                "note": "扫描正回路电阻，感应电流计算稳定。"
+              },
+              {
+                "type": "consistency",
+                "scenario": "线圈感应一",
+                "with": "magnet-02|已测感应电压求回路电流",
+                "with_expr": "I_ind",
+                "target": "感应电流",
+                "note": "直接求本公式输出，与情境中另列的I_ind设计基准核对；数据是设计示例，不是实测。用于核对定义、反算或边界值，不宣称不同物理原理互证。",
+                "verification_kind": "独立设计情境数据核对",
+                "tol": 1e-06
+              }
+            ]
+          },
+          {
+            "name": "由感应电流和回路电阻求电压",
+            "expr": "U_ind = I_ind*R_loop",
+            "when": "仅作已知电学或能量数据的应用，不验证本卡定性规律。电路闭合，感应电流与回路电阻描述同一测量状态。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "线圈感应一",
+                "expr": "I_ind*R_loop",
+                "ref": 0.6,
+                "note": "0.2 A×3 Ω=0.6 V。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "线圈感应二",
+                "expr": "I_ind*R_loop",
+                "ref": 1.5,
+                "note": "0.3 A×5 Ω=1.5 V。"
+              },
+              {
+                "type": "scan",
+                "scenario": "线圈感应一",
+                "var": "I_ind",
+                "lo": 0,
+                "hi": 10,
+                "note": "扫描非负电流读数，反算电压有限。"
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "将线圈与电流表连成闭合回路，并使磁体与线圈发生相对运动。",
+          "观察电流表是否偏转，确认是否产生感应电流。",
+          "若需定量计算，先测得感应电压和回路电阻，再用欧姆定律求电流。",
+          "改变运动方向或磁场方向观察电流方向变化，不用此电路公式预测感应电压。"
+        ],
+        "errors": [
+          {
+            "wrong": "把感应电流写成感应电压乘以回路电阻。",
+            "wrong_expr": "I_ind = U_ind*R_loop",
+            "why": "感应电路测得电压后仍按欧姆定律求电流，应当除以电阻；相乘的单位不是 A。",
+            "caught_by": "量纲一致性",
+            "trap_test": {
+              "kind": "dimension",
+              "target": "I_ind = U_ind*R_loop",
+              "lhs_dim": "I",
+              "rhs_dim": "M^2·L^4·T^-6·I^-3",
+              "expect": "mismatch",
+              "note": "实际量纲检查得到等号左边为I、右边为M^2·L^4·T^-6·I^-3；两边不是同一物理量，因此该等式不成立。"
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "把感应电流换算成 mA 后仍将毫安数值标作 A。",
+            "wrong_expr": "I_ind = 1000*U_ind/R_loop",
+            "why": "0.6 V÷3 Ω=0.2 A=200 mA；若把换算后的 200 写成 A，会大 1000 倍。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "线圈感应一",
+              "expr": "1000*U_ind/R_loop",
+              "ref": 0.2
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "认为只要线圈和磁体静止放在一起就一定有持续感应电流。",
+            "why": "需要磁场变化或导体与磁场发生相对运动；静止且磁场不变时没有持续感应电流。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "电磁感应实验中测得回路电压 0.6 V，回路电阻为 3 Ω，求感应电流。",
+          "solution": [
+            "I_ind=U_ind/R_loop=0.6/3=0.2 A。",
+            "电压是实验测量值，本式不预测感应电压如何产生。"
+          ],
+          "answer": "感应电流为 0.2 A。"
+        },
+        "prereq": [
+          "ohm-01",
+          "circuit-02"
+        ],
+        "next": [],
+        "tags": [
+          "电磁感应",
+          "感应电流",
+          "磁场变化",
+          "相对运动",
+          "电流表"
+        ],
+        "core": [
+          {
+            "title": "电磁感应与发电机",
+            "text": "闭合电路的一部分导体在磁场中作切割磁感线运动，可产生感应电流；改变切割方向或磁场方向，电流方向可能反转。电路断开可有感应电压，但没有闭合回路的持续感应电流。沿磁感线运动或磁体和线圈无变化时不能保证出现电流。发电机把机械能转为电能，与电动机能量转化相反；欧姆定律只在感应电压已测出后求电流，不验证感应产生条件。"
+          }
+        ],
+        "experiments": [
+          {
+            "title": "探究导体在磁场中产生感应电流的条件",
+            "purpose": "观察闭合、切割方向和磁场方向的作用。",
+            "apparatus": "蹄形磁体、直导体、灵敏电流计、开关、导线。",
+            "variables": "闭合与断开回路，切割与沿场方向运动，反转运动或磁场；观察指针。",
+            "steps": [
+              "连闭合回路，静止导体作对照。",
+              "让导体切割磁感线，再反向切割；保持其余条件。",
+              "沿磁感线移动或断开回路作对照，再反转磁场比较方向。"
+            ],
+            "data": "设计示例（非实测）：静止不持续偏转；切割时偏转；只反运动或磁场方向，偏转方向相反。",
+            "conclusion": "闭合回路、适当切割运动可产生电流；回路断开虽可能有电压但不形成该闭合电流。",
+            "limits": "接触、表灵敏度、运动太慢可使偏转不明显，没观察到不必然证明不存在感应电压。",
+            "kind": "学生必做"
+          }
+        ],
+        "learning_scope": "初中"
+      },
+      "error_index": 1,
+      "chapter": "电和磁"
+    },
+    "diagnostic-magnet-02-3": {
+      "point": {
+        "id": "magnet-02",
+        "title": "电磁感应与发电机",
+        "level": "基础",
+        "definition": "闭合电路的一部分导体在磁场中做切割磁感线运动时，电路中会产生感应电流，这种现象叫电磁感应。感应电流方向与导体运动方向和磁场方向有关。 发电机利用电磁感应把机械能转化为电能。",
+        "meaning": "磁体与线圈相对运动或线圈所在磁场发生变化时，可能出现感应电流；磁场不变且没有相对运动时，通常没有持续感应电流。实验中电流表用于观察感应电流，方向变化可由指针偏转方向判断。以下电学关系只在感应电压已经测出后用于计算回路电流，不负责预测感应电压大小。",
+        "symbols": {
+          "U_ind": {
+            "desc": "感应电压",
+            "unit": "V"
+          },
+          "I_ind": {
+            "desc": "感应电流",
+            "unit": "A"
+          },
+          "R_loop": {
+            "desc": "感应电路总电阻",
+            "unit": "Ω"
+          },
+          "P_ind": {
+            "desc": "感应电源输出的电功率",
+            "unit": "W"
+          }
+        },
+        "scenarios": {
+          "线圈感应一": {
+            "U_ind": 0.6,
+            "I_ind": 0.2,
+            "R_loop": 3
+          },
+          "线圈感应二": {
+            "U_ind": 1.5,
+            "I_ind": 0.3,
+            "R_loop": 5
+          },
+          "小型线圈负载": {
+            "P_ind": 0.6,
+            "U_ind": 3,
+            "I_ind": 0.2
+          },
+          "较大负载": {
+            "P_ind": 2,
+            "U_ind": 10,
+            "I_ind": 0.2
+          }
+        },
+        "formulas": [
+          {
+            "name": "已测感应电压求回路电流",
+            "expr": "I_ind = U_ind/R_loop",
+            "when": "仅作已知电学或能量数据的应用，不验证本卡定性规律。感应电压已由仪表测得，闭合回路近似服从欧姆定律。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "线圈感应一",
+                "expr": "U_ind/R_loop",
+                "ref": 0.2,
+                "note": "0.6 V÷3 Ω=0.2 A。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "线圈感应二",
+                "expr": "U_ind/R_loop",
+                "ref": 0.3,
+                "note": "1.5 V÷5 Ω=0.3 A。"
+              },
+              {
+                "type": "direction",
+                "scenario": "线圈感应一",
+                "var": "U_ind",
+                "lo": 0,
+                "hi": 5,
+                "expr": "U_ind/R_loop",
+                "expect": "up",
+                "note": "回路电阻不变时，已测感应电压越大，感应电流越大。"
+              },
+              {
+                "type": "scan",
+                "scenario": "线圈感应一",
+                "var": "R_loop",
+                "lo": 0.1,
+                "hi": 100,
+                "note": "扫描正回路电阻，感应电流计算稳定。"
+              },
+              {
+                "type": "consistency",
+                "scenario": "线圈感应一",
+                "with": "magnet-02|已测感应电压求回路电流",
+                "with_expr": "I_ind",
+                "target": "感应电流",
+                "note": "直接求本公式输出，与情境中另列的I_ind设计基准核对；数据是设计示例，不是实测。用于核对定义、反算或边界值，不宣称不同物理原理互证。",
+                "verification_kind": "独立设计情境数据核对",
+                "tol": 1e-06
+              }
+            ]
+          },
+          {
+            "name": "由感应电流和回路电阻求电压",
+            "expr": "U_ind = I_ind*R_loop",
+            "when": "仅作已知电学或能量数据的应用，不验证本卡定性规律。电路闭合，感应电流与回路电阻描述同一测量状态。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "线圈感应一",
+                "expr": "I_ind*R_loop",
+                "ref": 0.6,
+                "note": "0.2 A×3 Ω=0.6 V。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "线圈感应二",
+                "expr": "I_ind*R_loop",
+                "ref": 1.5,
+                "note": "0.3 A×5 Ω=1.5 V。"
+              },
+              {
+                "type": "scan",
+                "scenario": "线圈感应一",
+                "var": "I_ind",
+                "lo": 0,
+                "hi": 10,
+                "note": "扫描非负电流读数，反算电压有限。"
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "将线圈与电流表连成闭合回路，并使磁体与线圈发生相对运动。",
+          "观察电流表是否偏转，确认是否产生感应电流。",
+          "若需定量计算，先测得感应电压和回路电阻，再用欧姆定律求电流。",
+          "改变运动方向或磁场方向观察电流方向变化，不用此电路公式预测感应电压。"
+        ],
+        "errors": [
+          {
+            "wrong": "把感应电流写成感应电压乘以回路电阻。",
+            "wrong_expr": "I_ind = U_ind*R_loop",
+            "why": "感应电路测得电压后仍按欧姆定律求电流，应当除以电阻；相乘的单位不是 A。",
+            "caught_by": "量纲一致性",
+            "trap_test": {
+              "kind": "dimension",
+              "target": "I_ind = U_ind*R_loop",
+              "lhs_dim": "I",
+              "rhs_dim": "M^2·L^4·T^-6·I^-3",
+              "expect": "mismatch",
+              "note": "实际量纲检查得到等号左边为I、右边为M^2·L^4·T^-6·I^-3；两边不是同一物理量，因此该等式不成立。"
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "把感应电流换算成 mA 后仍将毫安数值标作 A。",
+            "wrong_expr": "I_ind = 1000*U_ind/R_loop",
+            "why": "0.6 V÷3 Ω=0.2 A=200 mA；若把换算后的 200 写成 A，会大 1000 倍。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "线圈感应一",
+              "expr": "1000*U_ind/R_loop",
+              "ref": 0.2
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "认为只要线圈和磁体静止放在一起就一定有持续感应电流。",
+            "why": "需要磁场变化或导体与磁场发生相对运动；静止且磁场不变时没有持续感应电流。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "电磁感应实验中测得回路电压 0.6 V，回路电阻为 3 Ω，求感应电流。",
+          "solution": [
+            "I_ind=U_ind/R_loop=0.6/3=0.2 A。",
+            "电压是实验测量值，本式不预测感应电压如何产生。"
+          ],
+          "answer": "感应电流为 0.2 A。"
+        },
+        "prereq": [
+          "ohm-01",
+          "circuit-02"
+        ],
+        "next": [],
+        "tags": [
+          "电磁感应",
+          "感应电流",
+          "磁场变化",
+          "相对运动",
+          "电流表"
+        ],
+        "core": [
+          {
+            "title": "电磁感应与发电机",
+            "text": "闭合电路的一部分导体在磁场中作切割磁感线运动，可产生感应电流；改变切割方向或磁场方向，电流方向可能反转。电路断开可有感应电压，但没有闭合回路的持续感应电流。沿磁感线运动或磁体和线圈无变化时不能保证出现电流。发电机把机械能转为电能，与电动机能量转化相反；欧姆定律只在感应电压已测出后求电流，不验证感应产生条件。"
+          }
+        ],
+        "experiments": [
+          {
+            "title": "探究导体在磁场中产生感应电流的条件",
+            "purpose": "观察闭合、切割方向和磁场方向的作用。",
+            "apparatus": "蹄形磁体、直导体、灵敏电流计、开关、导线。",
+            "variables": "闭合与断开回路，切割与沿场方向运动，反转运动或磁场；观察指针。",
+            "steps": [
+              "连闭合回路，静止导体作对照。",
+              "让导体切割磁感线，再反向切割；保持其余条件。",
+              "沿磁感线移动或断开回路作对照，再反转磁场比较方向。"
+            ],
+            "data": "设计示例（非实测）：静止不持续偏转；切割时偏转；只反运动或磁场方向，偏转方向相反。",
+            "conclusion": "闭合回路、适当切割运动可产生电流；回路断开虽可能有电压但不形成该闭合电流。",
+            "limits": "接触、表灵敏度、运动太慢可使偏转不明显，没观察到不必然证明不存在感应电压。",
+            "kind": "学生必做"
+          }
+        ],
+        "learning_scope": "初中"
+      },
+      "error_index": 2,
+      "chapter": "电和磁"
+    }
+  },
+  "generator_version": "2026-10-04-条件过程返工-8"
+}

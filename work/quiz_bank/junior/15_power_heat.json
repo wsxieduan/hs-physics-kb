@@ -1,0 +1,3741 @@
+{
+  "segment": "初中",
+  "chapter": "电功和电热",
+  "source_file": "15_power_heat.json",
+  "questions": [
+    {
+      "id": "diagnostic-power-01-1",
+      "point_id": "power-01",
+      "point_title": "电能表与电功",
+      "chapter": "电功和电热",
+      "stem": "在“电能表与电功”中，U 用 V、I 用 A、t 用 s，算出的电功单位为 J。。电流所做的电功的单位为J。下列哪一表达式的量纲与该目标量一致？",
+      "options": [
+        {
+          "label": "A",
+          "text": "We = U·I·t"
+        },
+        {
+          "label": "B",
+          "text": "We = U·I"
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "U·I 的单位是 W，是功率；求一段时间内的电功还要乘 t。\n知识点条件：电功的国际单位是焦耳（J），电能表常用千瓦时（kWh）。1 kWh=3.6×10⁶ J。电功公式中的电压、电流和时间必须属于同一用电过程；将小时换算成秒后可求 J，也可直接以 kW 和 h 计算 kWh。\n推导依据：电功由用电器两端电压、通过的电流和通电时间共同决定。；以 V、A、s 代入，电压乘电流乘时间得到 J。；电能表读数若以 kWh 给出，可用 1 kWh=3.6×10⁶ J 换算为焦耳。\n卡片公式各自的适用条件（不是本题共同前提）：\n电压电流和时间求电功：U 用 V、I 用 A、t 用 s，算出的电功单位为 J。\n千瓦时换算为焦耳：输入电能用 kWh 表示，换算结果用 J 表示。",
+      "error_type": "量纲一致性",
+      "judging": "auto",
+      "source_error_index": 0,
+      "source_caught_by": "量纲一致性",
+      "wrong_expr": "We = U·I",
+      "trap_test": {
+        "kind": "dimension",
+        "target": "We = U*I",
+        "lhs_dim": "M·L^2·T^-2",
+        "rhs_dim": "M·L^2·T^-3",
+        "expect": "mismatch",
+        "note": "实际量纲检查得到等号左边为M·L^2·T^-2、右边为M·L^2·T^-3；两边不是同一物理量，因此该等式不成立。"
+      },
+      "level": "基础",
+      "learning_scope": "初中",
+      "answer_evidence": {
+        "kind": "dimension",
+        "target": "We",
+        "correct_expression": "We = U*I*t",
+        "distractor_expression": "We = U*I",
+        "target_dimension": "M·L^2·T^-2",
+        "distractor_dimension": "M·L^2·T^-3"
+      },
+      "review": {
+        "confidence": "medium",
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": true,
+          "no_answer_leak_in_options": true
+        },
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。",
+        "material": {
+          "anchors": [
+            {
+              "kind": "公式量纲",
+              "name": "本题目标量与等式",
+              "expression": "We = U*I*t",
+              "when": "量纲相符是必要条件，不能据此证明系数或物理条件正确",
+              "display": "We = U·I·t"
+            }
+          ],
+          "source": {
+            "nature": "原创量纲辨析命题；无实测数据",
+            "source_error_index": 0
+          },
+          "predicted_errors": [
+            {
+              "option": "B",
+              "text": "We = U·I",
+              "reason": "U*I 的单位是 W，是功率；求一段时间内的电功还要乘 t。",
+              "expression": "We = U*I",
+              "status": "误答原因预测，待教师确认；未采集学生作答证据"
+            }
+          ],
+          "difficulty_note": "建议难度沿用本题level（源卡难度）；尚非题目难度实测，待教师调整",
+          "estimated_seconds": [
+            60,
+            120
+          ],
+          "time_basis": "未做学生计时；按现有难度给出备课估计区间，待教师确认",
+          "machine_checks": [
+            {
+              "name": "题目ID关联源知识点",
+              "passed": true
+            },
+            {
+              "name": "选项标签唯一且参考标签存在",
+              "passed": true
+            },
+            {
+              "name": "选项文本互异",
+              "passed": true
+            },
+            {
+              "name": "正确式量纲一致",
+              "passed": true,
+              "actual": {
+                "type": "dimension",
+                "type_name": "量纲一致性",
+                "formula": "教师审核证据",
+                "ok": true,
+                "detail": "左端M·L^2·T^-2，右端M·L^2·T^-2",
+                "note": "",
+                "error": null,
+                "evaluation_status": "success",
+                "failure_reason": null,
+                "result_dimension": "M·L^2·T^-2",
+                "reference_dimension": "M·L^2·T^-2",
+                "diagnostics": {},
+                "physical_error_identified": false
+              }
+            },
+            {
+              "name": "干扰式量纲冲突",
+              "passed": true,
+              "actual": {
+                "type": "dimension",
+                "type_name": "量纲一致性",
+                "formula": "教师审核证据",
+                "ok": false,
+                "detail": "左端M·L^2·T^-2，右端M·L^2·T^-3",
+                "note": "",
+                "error": null,
+                "evaluation_status": "dimension_conflict",
+                "failure_reason": "dimension_conflict",
+                "result_dimension": "M·L^2·T^-3",
+                "reference_dimension": "M·L^2·T^-2",
+                "diagnostics": {},
+                "physical_error_identified": true
+              }
+            }
+          ],
+          "machine_boundary": "只列本次逐题实际执行项目；不把关联知识卡的方向、扫描或一致性检查算作本题已验。概念题未验命题真假。",
+          "human_review_items": [
+            "题干条件是否充分、清楚且符合学段",
+            "参考结论在指定条件下是否唯一",
+            "干扰项是否合理、对应真实认知问题且无答案暗示",
+            "公式或概念锚点是否准确",
+            "建议难度及用时是否适合教学",
+            "语言、装置与安全操作是否恰当"
+          ],
+          "reference_answer_note": "现有参考答案保持；即使本地可以判选项，也仍须教师审核教学可用性"
+        }
+      }
+    },
+    {
+      "id": "diagnostic-power-01-2",
+      "point_id": "power-01",
+      "point_title": "电能表与电功",
+      "chapter": "电功和电热",
+      "stem": "在“电能表与电功”的模型下，E<sub>kWh</sub>（以千瓦时表示的电能）=0.22 kWh。条件：输入电能用 kWh 表示，换算结果用 J 表示。。求以焦耳表示的同一电能（EJ）。这些数值是设计示例。",
+      "options": [
+        {
+          "label": "A",
+          "text": "792000 J"
+        },
+        {
+          "label": "B",
+          "text": "220 J"
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "使用千瓦时换算为焦耳：3600000·E<sub>kWh</sub>，代入得792000 J。另一结果来自1000·E<sub>kWh</sub>，算得220 J。\n1 kWh=1000 W×3600 s=3 600 000 J；只乘 1000 漏掉小时到秒的换算。\n知识点条件：电功的国际单位是焦耳（J），电能表常用千瓦时（kWh）。1 kWh=3.6×10⁶ J。电功公式中的电压、电流和时间必须属于同一用电过程；将小时换算成秒后可求 J，也可直接以 kW 和 h 计算 kWh。\n推导依据：电功由用电器两端电压、通过的电流和通电时间共同决定。；以 V、A、s 代入，电压乘电流乘时间得到 J。；电能表读数若以 kWh 给出，可用 1 kWh=3.6×10⁶ J 换算为焦耳。\n卡片公式各自的适用条件（不是本题共同前提）：\n电压电流和时间求电功：U 用 V、I 用 A、t 用 s，算出的电功单位为 J。\n千瓦时换算为焦耳：输入电能用 kWh 表示，换算结果用 J 表示。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 1,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "EJ = 1000·E<sub>kWh</sub>",
+      "trap_test": {
+        "scenario": "220伏灯工作一小时",
+        "expr": "1000*E_kWh",
+        "ref": 792000
+      },
+      "level": "基础",
+      "learning_scope": "初中",
+      "answer_evidence": {
+        "kind": "numeric",
+        "scenario": "220伏灯工作一小时",
+        "parameters": {
+          "U": 220,
+          "I": 1,
+          "t": 3600,
+          "We": 792000,
+          "E_kWh": 0.22,
+          "EJ": 792000
+        },
+        "target": "EJ",
+        "unit": "J",
+        "reference": 792000,
+        "correct_proof": {
+          "expression": "3600000*E_kWh",
+          "formula": "千瓦时换算为焦耳",
+          "value": 792000.0,
+          "when": "输入电能用 kWh 表示，换算结果用 J 表示。"
+        },
+        "distractor_expression": "1000*E_kWh",
+        "distractor_value": 220.0,
+        "dimension_matches": true,
+        "independent_evaluation": true
+      },
+      "review": {
+        "confidence": "medium",
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": true,
+          "no_answer_leak_in_options": true
+        },
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。",
+        "material": {
+          "anchors": [
+            {
+              "kind": "公式",
+              "name": "千瓦时换算为焦耳",
+              "expression": "3600000*E_kWh",
+              "when": "输入电能用 kWh 表示，换算结果用 J 表示。",
+              "display": "3600000·E<sub>kWh</sub>"
+            }
+          ],
+          "source": {
+            "nature": "原创设计示例，非教材实测或真实实验记录",
+            "scenario": "220伏灯工作一小时",
+            "parameters": {
+              "U": 220,
+              "I": 1,
+              "t": 3600,
+              "We": 792000,
+              "E_kWh": 0.22,
+              "EJ": 792000
+            },
+            "data": [
+              "用电器两端电压：220 V",
+              "通过用电器的电流：1 A",
+              "通电时间：3600 s",
+              "电流所做的电功：792000 J",
+              "以千瓦时表示的电能：0.22 kWh",
+              "以焦耳表示的同一电能：792000 J"
+            ]
+          },
+          "predicted_errors": [
+            {
+              "option": "B",
+              "text": "220 J",
+              "reason": "1 kWh=1000 W×3600 s=3 600 000 J；只乘 1000 漏掉小时到秒的换算。",
+              "expression": "1000*E_kWh",
+              "status": "误答原因预测，待教师确认；未采集学生作答证据"
+            }
+          ],
+          "difficulty_note": "建议难度沿用本题level（源卡难度）；尚非题目难度实测，待教师调整",
+          "estimated_seconds": [
+            60,
+            120
+          ],
+          "time_basis": "未做学生计时；按现有难度给出备课估计区间，待教师确认",
+          "machine_checks": [
+            {
+              "name": "题目ID关联源知识点",
+              "passed": true
+            },
+            {
+              "name": "选项标签唯一且参考标签存在",
+              "passed": true
+            },
+            {
+              "name": "选项文本互异",
+              "passed": true
+            },
+            {
+              "name": "正确路径独立数值复算",
+              "passed": true
+            },
+            {
+              "name": "带量纲求值与独立求值一致",
+              "passed": true
+            },
+            {
+              "name": "干扰路径复算且与正确路径分离",
+              "passed": true
+            }
+          ],
+          "machine_boundary": "只列本次逐题实际执行项目；不把关联知识卡的方向、扫描或一致性检查算作本题已验。概念题未验命题真假。",
+          "human_review_items": [
+            "题干条件是否充分、清楚且符合学段",
+            "参考结论在指定条件下是否唯一",
+            "干扰项是否合理、对应真实认知问题且无答案暗示",
+            "公式或概念锚点是否准确",
+            "建议难度及用时是否适合教学",
+            "语言、装置与安全操作是否恰当"
+          ],
+          "reference_answer_note": "现有参考答案保持；即使本地可以判选项，也仍须教师审核教学可用性"
+        }
+      }
+    },
+    {
+      "id": "diagnostic-power-02-1",
+      "point_id": "power-02",
+      "point_title": "电功率",
+      "chapter": "电功和电热",
+      "stem": "关于“电功率”，判断这一说法是否成立，并说明依据：\n功率表示做功或用电的快慢，电能表示一段时间内做功的总量。",
+      "options": [
+        {
+          "label": "A",
+          "text": "该说法不成立。"
+        },
+        {
+          "label": "B",
+          "text": "该说法成立。"
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "功率表示做功或用电的快慢，电能表示一段时间内做功的总量；前者单位是 W，后者常用 J 或 kWh，二者不能混淆。\n知识点条件：额定功率是用电器在额定电压下工作的功率。实际功率取决于实际电压和电流，不能只看铭牌就断言任意电压下的实际功率。比较功率时要区分功率大小与已经消耗的总电能：持续时间不同，耗电量也不同。\n推导依据：电功率定义为单位时间内完成的电功，P=We/t。；电功 We=UIt，代入 P=We/t 可得 P=UI。；使用时检查额定与实际条件，并标明功率单位 W。\n卡片公式各自的适用条件（不是本题共同前提）：\n电压与电流求电功率：U 用 V、I 用 A，所得功率 P 用 W。\n由电功和时间求功率：We 是时间 t 内完成的电功，t 用 s。",
+      "error_type": "概念混淆",
+      "judging": "teacher",
+      "source_error_index": 0,
+      "source_caught_by": "人工审核",
+      "wrong_expr": null,
+      "trap_test": null,
+      "level": "基础",
+      "learning_scope": "初中",
+      "answer_evidence": {
+        "kind": "teacher",
+        "claim_source": "why",
+        "reference_only": true,
+        "reason": "概念、操作或无法建立完整定量证据，教师确认条件与结论。"
+      },
+      "review": {
+        "confidence": "medium",
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": false,
+          "no_answer_leak_in_options": true
+        },
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。",
+        "material": {
+          "anchors": [
+            {
+              "kind": "概念或操作",
+              "name": "电功率",
+              "claim": "把功率当作总电能，忽略做功时间。",
+              "correction_basis": "功率表示做功或用电的快慢，电能表示一段时间内做功的总量；前者单位是 W，后者常用 J 或 kWh，二者不能混淆。",
+              "note": "概念锚点及命题真假待教师确认；未套用任意第一条公式",
+              "display": "把功率当作总电能，忽略做功时间。"
+            },
+            {
+              "kind": "数值反例补充",
+              "name": "人工标签保留的指定数值反例",
+              "display": "P = U·I",
+              "note": "这是原创设计反例，机器仅验证指定模型、数据及量纲；自然语言命题、学生认知与装置仍待教师确认。 功率220 W与一小时电能792000 J不是同一物理量；错误把电能当功率首先被目标量纲门禁拒绝。"
+            }
+          ],
+          "source": {
+            "nature": "原创概念/操作命题；无真实测量记录",
+            "source_error_index": 0
+          },
+          "predicted_errors": [
+            {
+              "option": "A",
+              "text": "该说法不成立。",
+              "reason": "功率表示做功或用电的快慢，电能表示一段时间内做功的总量；前者单位是 W，后者常用 J 或 kWh，二者不能混淆。",
+              "expression": null,
+              "status": "误答原因预测，待教师确认；未采集学生作答证据"
+            }
+          ],
+          "difficulty_note": "建议难度沿用本题level（源卡难度）；尚非题目难度实测，待教师调整",
+          "estimated_seconds": [
+            60,
+            120
+          ],
+          "time_basis": "未做学生计时；按现有难度给出备课估计区间，待教师确认",
+          "machine_checks": [
+            {
+              "name": "题目ID关联源知识点",
+              "passed": true
+            },
+            {
+              "name": "选项标签唯一且参考标签存在",
+              "passed": true
+            },
+            {
+              "name": "选项文本互异",
+              "passed": true
+            },
+            {
+              "name": "指定反例正确控制正式求值通过",
+              "passed": true,
+              "actual": {
+                "type": "numeric",
+                "type_name": "数值代入",
+                "formula": "补充反例正确控制",
+                "ok": true,
+                "detail": "情境「None」：算得P=220；参考220；有效容差2.2e-08",
+                "note": "",
+                "error": null,
+                "evaluation_status": "success",
+                "failure_reason": null,
+                "result_dimension": "M·L^2·T^-3",
+                "reference_dimension": "M·L^2·T^-3",
+                "diagnostics": {
+                  "primary_expression": "U·I",
+                  "target_expression": "P",
+                  "follows_primary_formula_changes": true,
+                  "primary_source_rhs": "U·I",
+                  "numeric_reference": 220,
+                  "actual_variables": [
+                    "I",
+                    "U"
+                  ],
+                  "target_variables": [
+                    "P"
+                  ],
+                  "rtol": 1e-10,
+                  "atol": 0.0,
+                  "effective_limit": 2.2000000000000002e-08,
+                  "declared_limit": 2.2000000000000002e-08,
+                  "capped_by_default": false,
+                  "scale": 220.0,
+                  "policy": "显式rtol/atol（严于默认，照此执行）",
+                  "expected_zero": false,
+                  "zero_basis": null,
+                  "actual_value": 220.0,
+                  "reference_value": 220
+                },
+                "physical_error_identified": false
+              }
+            },
+            {
+              "name": "指定反例错误注入被拒绝（非求值失败）",
+              "passed": true,
+              "actual": {
+                "type": "numeric",
+                "type_name": "数值代入",
+                "formula": "补充反例错误注入",
+                "ok": false,
+                "detail": "被测结果与实际目标量纲不同",
+                "note": "",
+                "error": null,
+                "evaluation_status": "dimension_conflict",
+                "failure_reason": "dimension_conflict",
+                "result_dimension": "M·L^2·T^-2",
+                "reference_dimension": "M·L^2·T^-3",
+                "diagnostics": {
+                  "primary_expression": "We",
+                  "target_expression": "P",
+                  "follows_primary_formula_changes": false,
+                  "primary_source_rhs": "U·I",
+                  "numeric_reference": 220,
+                  "actual_variables": [
+                    "We"
+                  ],
+                  "target_variables": [
+                    "P"
+                  ]
+                },
+                "physical_error_identified": true
+              }
+            }
+          ],
+          "machine_boundary": "只列本次逐题实际执行项目；不把关联知识卡的方向、扫描或一致性检查算作本题已验。概念题未验命题真假。",
+          "human_review_items": [
+            "题干条件是否充分、清楚且符合学段",
+            "参考结论在指定条件下是否唯一",
+            "干扰项是否合理、对应真实认知问题且无答案暗示",
+            "公式或概念锚点是否准确",
+            "建议难度及用时是否适合教学",
+            "语言、装置与安全操作是否恰当"
+          ],
+          "reference_answer_note": "现有参考答案保持；即使本地可以判选项，也仍须教师审核教学可用性"
+        }
+      }
+    },
+    {
+      "id": "diagnostic-power-02-2",
+      "point_id": "power-02",
+      "point_title": "电功率",
+      "chapter": "电功和电热",
+      "stem": "在“电功率”的模型下，U（用电器两端电压）=220 V；I（通过用电器的电流）=1 A。条件：U 用 V、I 用 A，所得功率 P 用 W。。求电功率（P）。这些数值是设计示例。",
+      "options": [
+        {
+          "label": "A",
+          "text": "0.22 W"
+        },
+        {
+          "label": "B",
+          "text": "220 W"
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "使用电压与电流求电功率：U·I，代入得220 W。另一结果来自U·I/1000，算得0.22 W。\n220 V×1 A=220 W；若要改写成 kW 才是 0.22 kW，不能把 0.22 标成 W。\n知识点条件：额定功率是用电器在额定电压下工作的功率。实际功率取决于实际电压和电流，不能只看铭牌就断言任意电压下的实际功率。比较功率时要区分功率大小与已经消耗的总电能：持续时间不同，耗电量也不同。\n推导依据：电功率定义为单位时间内完成的电功，P=We/t。；电功 We=UIt，代入 P=We/t 可得 P=UI。；使用时检查额定与实际条件，并标明功率单位 W。\n卡片公式各自的适用条件（不是本题共同前提）：\n电压与电流求电功率：U 用 V、I 用 A，所得功率 P 用 W。\n由电功和时间求功率：We 是时间 t 内完成的电功，t 用 s。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 1,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "P = U·I/1000",
+      "trap_test": {
+        "scenario": "小灯泡一",
+        "expr": "U*I/1000",
+        "ref": 220
+      },
+      "level": "基础",
+      "learning_scope": "初中",
+      "answer_evidence": {
+        "kind": "numeric",
+        "scenario": "小灯泡一",
+        "parameters": {
+          "U": 220,
+          "I": 1,
+          "P": 220,
+          "We": 792000,
+          "t": 3600
+        },
+        "target": "P",
+        "unit": "W",
+        "reference": 220,
+        "correct_proof": {
+          "expression": "U*I",
+          "formula": "电压与电流求电功率",
+          "value": 220,
+          "when": "U 用 V、I 用 A，所得功率 P 用 W。"
+        },
+        "distractor_expression": "U*I/1000",
+        "distractor_value": 0.22,
+        "dimension_matches": true,
+        "independent_evaluation": true
+      },
+      "review": {
+        "confidence": "medium",
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": true,
+          "no_answer_leak_in_options": true
+        },
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。",
+        "material": {
+          "anchors": [
+            {
+              "kind": "公式",
+              "name": "电压与电流求电功率",
+              "expression": "U*I",
+              "when": "U 用 V、I 用 A，所得功率 P 用 W。",
+              "display": "U·I"
+            }
+          ],
+          "source": {
+            "nature": "原创设计示例，非教材实测或真实实验记录",
+            "scenario": "小灯泡一",
+            "parameters": {
+              "U": 220,
+              "I": 1,
+              "P": 220,
+              "We": 792000,
+              "t": 3600
+            },
+            "data": [
+              "用电器两端电压：220 V",
+              "通过用电器的电流：1 A",
+              "电功率：220 W",
+              "一段时间内完成的电功：792000 J",
+              "完成该电功所用时间：3600 s"
+            ]
+          },
+          "predicted_errors": [
+            {
+              "option": "A",
+              "text": "0.22 W",
+              "reason": "220 V×1 A=220 W；若要改写成 kW 才是 0.22 kW，不能把 0.22 标成 W。",
+              "expression": "U*I/1000",
+              "status": "误答原因预测，待教师确认；未采集学生作答证据"
+            }
+          ],
+          "difficulty_note": "建议难度沿用本题level（源卡难度）；尚非题目难度实测，待教师调整",
+          "estimated_seconds": [
+            60,
+            120
+          ],
+          "time_basis": "未做学生计时；按现有难度给出备课估计区间，待教师确认",
+          "machine_checks": [
+            {
+              "name": "题目ID关联源知识点",
+              "passed": true
+            },
+            {
+              "name": "选项标签唯一且参考标签存在",
+              "passed": true
+            },
+            {
+              "name": "选项文本互异",
+              "passed": true
+            },
+            {
+              "name": "正确路径独立数值复算",
+              "passed": true
+            },
+            {
+              "name": "带量纲求值与独立求值一致",
+              "passed": true
+            },
+            {
+              "name": "干扰路径复算且与正确路径分离",
+              "passed": true
+            }
+          ],
+          "machine_boundary": "只列本次逐题实际执行项目；不把关联知识卡的方向、扫描或一致性检查算作本题已验。概念题未验命题真假。",
+          "human_review_items": [
+            "题干条件是否充分、清楚且符合学段",
+            "参考结论在指定条件下是否唯一",
+            "干扰项是否合理、对应真实认知问题且无答案暗示",
+            "公式或概念锚点是否准确",
+            "建议难度及用时是否适合教学",
+            "语言、装置与安全操作是否恰当"
+          ],
+          "reference_answer_note": "现有参考答案保持；即使本地可以判选项，也仍须教师审核教学可用性"
+        }
+      }
+    },
+    {
+      "id": "diagnostic-power-02-3",
+      "point_id": "power-02",
+      "point_title": "电功率",
+      "chapter": "电功和电热",
+      "stem": "在“电功率”中，U 用 V、I 用 A，所得功率 P 用 W。。电功率的单位为W。下列哪一表达式的量纲与该目标量一致？",
+      "options": [
+        {
+          "label": "A",
+          "text": "P = U/I"
+        },
+        {
+          "label": "B",
+          "text": "P = U·I"
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "电功率可由电压与电流相乘得到；电压除以电流不是瓦特，单位组合也不同，因此不能用它表示功率。\n知识点条件：额定功率是用电器在额定电压下工作的功率。实际功率取决于实际电压和电流，不能只看铭牌就断言任意电压下的实际功率。比较功率时要区分功率大小与已经消耗的总电能：持续时间不同，耗电量也不同。\n推导依据：电功率定义为单位时间内完成的电功，P=We/t。；电功 We=UIt，代入 P=We/t 可得 P=UI。；使用时检查额定与实际条件，并标明功率单位 W。\n卡片公式各自的适用条件（不是本题共同前提）：\n电压与电流求电功率：U 用 V、I 用 A，所得功率 P 用 W。\n由电功和时间求功率：We 是时间 t 内完成的电功，t 用 s。",
+      "error_type": "量纲一致性",
+      "judging": "auto",
+      "source_error_index": 2,
+      "source_caught_by": "量纲一致性",
+      "wrong_expr": "P = U/I",
+      "trap_test": {
+        "kind": "dimension",
+        "target": "P = U/I",
+        "lhs_dim": "M·L^2·T^-3",
+        "rhs_dim": "M·L^2·T^-3·I^-2",
+        "expect": "mismatch",
+        "note": "实际量纲检查得到等号左边为M·L^2·T^-3、右边为M·L^2·T^-3·I^-2；两边不是同一物理量，因此该等式不成立。"
+      },
+      "level": "基础",
+      "learning_scope": "初中",
+      "answer_evidence": {
+        "kind": "dimension",
+        "target": "P",
+        "correct_expression": "P = U*I",
+        "distractor_expression": "P = U/I",
+        "target_dimension": "M·L^2·T^-3",
+        "distractor_dimension": "M·L^2·T^-3·I^-2"
+      },
+      "review": {
+        "confidence": "medium",
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": true,
+          "no_answer_leak_in_options": true
+        },
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。",
+        "material": {
+          "anchors": [
+            {
+              "kind": "公式量纲",
+              "name": "本题目标量与等式",
+              "expression": "P = U*I",
+              "when": "量纲相符是必要条件，不能据此证明系数或物理条件正确",
+              "display": "P = U·I"
+            }
+          ],
+          "source": {
+            "nature": "原创量纲辨析命题；无实测数据",
+            "source_error_index": 2
+          },
+          "predicted_errors": [
+            {
+              "option": "A",
+              "text": "P = U/I",
+              "reason": "电功率可由电压与电流相乘得到；电压除以电流不是瓦特，单位组合也不同，因此不能用它表示功率。",
+              "expression": "P = U/I",
+              "status": "误答原因预测，待教师确认；未采集学生作答证据"
+            }
+          ],
+          "difficulty_note": "建议难度沿用本题level（源卡难度）；尚非题目难度实测，待教师调整",
+          "estimated_seconds": [
+            60,
+            120
+          ],
+          "time_basis": "未做学生计时；按现有难度给出备课估计区间，待教师确认",
+          "machine_checks": [
+            {
+              "name": "题目ID关联源知识点",
+              "passed": true
+            },
+            {
+              "name": "选项标签唯一且参考标签存在",
+              "passed": true
+            },
+            {
+              "name": "选项文本互异",
+              "passed": true
+            },
+            {
+              "name": "正确式量纲一致",
+              "passed": true,
+              "actual": {
+                "type": "dimension",
+                "type_name": "量纲一致性",
+                "formula": "教师审核证据",
+                "ok": true,
+                "detail": "左端M·L^2·T^-3，右端M·L^2·T^-3",
+                "note": "",
+                "error": null,
+                "evaluation_status": "success",
+                "failure_reason": null,
+                "result_dimension": "M·L^2·T^-3",
+                "reference_dimension": "M·L^2·T^-3",
+                "diagnostics": {},
+                "physical_error_identified": false
+              }
+            },
+            {
+              "name": "干扰式量纲冲突",
+              "passed": true,
+              "actual": {
+                "type": "dimension",
+                "type_name": "量纲一致性",
+                "formula": "教师审核证据",
+                "ok": false,
+                "detail": "左端M·L^2·T^-3，右端M·L^2·T^-3·I^-2",
+                "note": "",
+                "error": null,
+                "evaluation_status": "dimension_conflict",
+                "failure_reason": "dimension_conflict",
+                "result_dimension": "M·L^2·T^-3·I^-2",
+                "reference_dimension": "M·L^2·T^-3",
+                "diagnostics": {},
+                "physical_error_identified": true
+              }
+            }
+          ],
+          "machine_boundary": "只列本次逐题实际执行项目；不把关联知识卡的方向、扫描或一致性检查算作本题已验。概念题未验命题真假。",
+          "human_review_items": [
+            "题干条件是否充分、清楚且符合学段",
+            "参考结论在指定条件下是否唯一",
+            "干扰项是否合理、对应真实认知问题且无答案暗示",
+            "公式或概念锚点是否准确",
+            "建议难度及用时是否适合教学",
+            "语言、装置与安全操作是否恰当"
+          ],
+          "reference_answer_note": "现有参考答案保持；即使本地可以判选项，也仍须教师审核教学可用性"
+        }
+      }
+    },
+    {
+      "id": "diagnostic-power-03-1",
+      "point_id": "power-03",
+      "point_title": "电热器 电流的热效应",
+      "chapter": "电功和电热",
+      "stem": "在“电热器 电流的热效应”中，计算电流通过电阻产生的热量，I 用 A、R 用 Ω、t 用 s。。电阻产生的热量的单位为J。下列哪一表达式的量纲与该目标量一致？",
+      "options": [
+        {
+          "label": "A",
+          "text": "Q = I²·R·t"
+        },
+        {
+          "label": "B",
+          "text": "Q = I·R·t"
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "十欧电阻中 2 A 电流通过 5 s，焦耳热为 200 J；漏掉平方会得到 100 J。\n知识点条件：焦耳热公式 Q=I²Rt 适用于电流通过电阻产生的热量计算。电流增大对发热影响尤其明显，因为电流以平方出现。对电动机等非纯电阻用电器，电能还会转化为机械能等形式，不能简单认为电功全部等于电热。\n推导依据：电流通过电阻时将部分电能转化为内能。；实验表明电流增大时发热明显增强，关系中出现电流平方。；综合电流、电阻和通电时间得到 Q=I²Rt。；对纯电阻有 U=IR，因此 UIt 与 I²Rt 相等。\n卡片公式各自的适用条件（不是本题共同前提）：\n焦耳定律：计算电流通过电阻产生的热量，I 用 A、R 用 Ω、t 用 s。",
+      "error_type": "量纲一致性",
+      "judging": "auto",
+      "source_error_index": 0,
+      "source_caught_by": "量纲一致性",
+      "wrong_expr": "Q = I·R·t",
+      "trap_test": {
+        "kind": "dimension",
+        "target": "Q = I*R*t",
+        "expect": "mismatch",
+        "lhs_dim": "M·L^2·T^-2",
+        "rhs_dim": "M·L^2·T^-2·I^-1",
+        "note": "正式引擎验证量纲不一致；不计作同量纲错误数值实测。"
+      },
+      "level": "基础",
+      "learning_scope": "初中",
+      "answer_evidence": {
+        "kind": "dimension",
+        "target": "Q",
+        "correct_expression": "Q = I^2*R*t",
+        "distractor_expression": "Q = I*R*t",
+        "target_dimension": "M·L^2·T^-2",
+        "distractor_dimension": "M·L^2·T^-2·I^-1"
+      },
+      "review": {
+        "confidence": "medium",
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": true,
+          "no_answer_leak_in_options": true
+        },
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。",
+        "material": {
+          "anchors": [
+            {
+              "kind": "公式量纲",
+              "name": "本题目标量与等式",
+              "expression": "Q = I^2*R*t",
+              "when": "量纲相符是必要条件，不能据此证明系数或物理条件正确",
+              "display": "Q = I²·R·t"
+            }
+          ],
+          "source": {
+            "nature": "原创量纲辨析命题；无实测数据",
+            "source_error_index": 0
+          },
+          "predicted_errors": [
+            {
+              "option": "B",
+              "text": "Q = I·R·t",
+              "reason": "十欧电阻中 2 A 电流通过 5 s，焦耳热为 200 J；漏掉平方会得到 100 J。",
+              "expression": "Q = I*R*t",
+              "status": "误答原因预测，待教师确认；未采集学生作答证据"
+            }
+          ],
+          "difficulty_note": "建议难度沿用本题level（源卡难度）；尚非题目难度实测，待教师调整",
+          "estimated_seconds": [
+            60,
+            120
+          ],
+          "time_basis": "未做学生计时；按现有难度给出备课估计区间，待教师确认",
+          "machine_checks": [
+            {
+              "name": "题目ID关联源知识点",
+              "passed": true
+            },
+            {
+              "name": "选项标签唯一且参考标签存在",
+              "passed": true
+            },
+            {
+              "name": "选项文本互异",
+              "passed": true
+            },
+            {
+              "name": "正确式量纲一致",
+              "passed": true,
+              "actual": {
+                "type": "dimension",
+                "type_name": "量纲一致性",
+                "formula": "教师审核证据",
+                "ok": true,
+                "detail": "左端M·L^2·T^-2，右端M·L^2·T^-2",
+                "note": "",
+                "error": null,
+                "evaluation_status": "success",
+                "failure_reason": null,
+                "result_dimension": "M·L^2·T^-2",
+                "reference_dimension": "M·L^2·T^-2",
+                "diagnostics": {},
+                "physical_error_identified": false
+              }
+            },
+            {
+              "name": "干扰式量纲冲突",
+              "passed": true,
+              "actual": {
+                "type": "dimension",
+                "type_name": "量纲一致性",
+                "formula": "教师审核证据",
+                "ok": false,
+                "detail": "左端M·L^2·T^-2，右端M·L^2·T^-2·I^-1",
+                "note": "",
+                "error": null,
+                "evaluation_status": "dimension_conflict",
+                "failure_reason": "dimension_conflict",
+                "result_dimension": "M·L^2·T^-2·I^-1",
+                "reference_dimension": "M·L^2·T^-2",
+                "diagnostics": {},
+                "physical_error_identified": true
+              }
+            }
+          ],
+          "machine_boundary": "只列本次逐题实际执行项目；不把关联知识卡的方向、扫描或一致性检查算作本题已验。概念题未验命题真假。",
+          "human_review_items": [
+            "题干条件是否充分、清楚且符合学段",
+            "参考结论在指定条件下是否唯一",
+            "干扰项是否合理、对应真实认知问题且无答案暗示",
+            "公式或概念锚点是否准确",
+            "建议难度及用时是否适合教学",
+            "语言、装置与安全操作是否恰当"
+          ],
+          "reference_answer_note": "现有参考答案保持；即使本地可以判选项，也仍须教师审核教学可用性"
+        }
+      }
+    },
+    {
+      "id": "diagnostic-power-03-2",
+      "point_id": "power-03",
+      "point_title": "电热器 电流的热效应",
+      "chapter": "电功和电热",
+      "stem": "关于“电热器 电流的热效应”，判断这一说法是否成立，并说明依据：\n非纯电阻用电器还会输出机械能、光能或声能等。",
+      "options": [
+        {
+          "label": "A",
+          "text": "该说法成立。"
+        },
+        {
+          "label": "B",
+          "text": "该说法不成立。"
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "非纯电阻用电器还会输出机械能、光能或声能等；必须区分电功与电热。\n知识点条件：焦耳热公式 Q=I²Rt 适用于电流通过电阻产生的热量计算。电流增大对发热影响尤其明显，因为电流以平方出现。对电动机等非纯电阻用电器，电能还会转化为机械能等形式，不能简单认为电功全部等于电热。\n推导依据：电流通过电阻时将部分电能转化为内能。；实验表明电流增大时发热明显增强，关系中出现电流平方。；综合电流、电阻和通电时间得到 Q=I²Rt。；对纯电阻有 U=IR，因此 UIt 与 I²Rt 相等。\n卡片公式各自的适用条件（不是本题共同前提）：\n焦耳定律：计算电流通过电阻产生的热量，I 用 A、R 用 Ω、t 用 s。",
+      "error_type": "概念混淆",
+      "judging": "teacher",
+      "source_error_index": 1,
+      "source_caught_by": "人工审核",
+      "wrong_expr": null,
+      "trap_test": null,
+      "level": "基础",
+      "learning_scope": "初中",
+      "answer_evidence": {
+        "kind": "teacher",
+        "claim_source": "why",
+        "reference_only": true,
+        "reason": "概念、操作或无法建立完整定量证据，教师确认条件与结论。"
+      },
+      "review": {
+        "confidence": "medium",
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": false,
+          "no_answer_leak_in_options": true
+        },
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。",
+        "material": {
+          "anchors": [
+            {
+              "kind": "概念或操作",
+              "name": "电热器 电流的热效应",
+              "claim": "认为电动机等所有用电器的电功都全部变成电热。",
+              "correction_basis": "非纯电阻用电器还会输出机械能、光能或声能等；必须区分电功与电热。",
+              "note": "概念锚点及命题真假待教师确认；未套用任意第一条公式",
+              "display": "认为电动机等所有用电器的电功都全部变成电热。"
+            }
+          ],
+          "source": {
+            "nature": "原创概念/操作命题；无真实测量记录",
+            "source_error_index": 1
+          },
+          "predicted_errors": [
+            {
+              "option": "B",
+              "text": "该说法不成立。",
+              "reason": "非纯电阻用电器还会输出机械能、光能或声能等；必须区分电功与电热。",
+              "expression": null,
+              "status": "误答原因预测，待教师确认；未采集学生作答证据"
+            }
+          ],
+          "difficulty_note": "建议难度沿用本题level（源卡难度）；尚非题目难度实测，待教师调整",
+          "estimated_seconds": [
+            60,
+            120
+          ],
+          "time_basis": "未做学生计时；按现有难度给出备课估计区间，待教师确认",
+          "machine_checks": [
+            {
+              "name": "题目ID关联源知识点",
+              "passed": true
+            },
+            {
+              "name": "选项标签唯一且参考标签存在",
+              "passed": true
+            },
+            {
+              "name": "选项文本互异",
+              "passed": true
+            }
+          ],
+          "machine_boundary": "只列本次逐题实际执行项目；不把关联知识卡的方向、扫描或一致性检查算作本题已验。概念题未验命题真假。",
+          "human_review_items": [
+            "题干条件是否充分、清楚且符合学段",
+            "参考结论在指定条件下是否唯一",
+            "干扰项是否合理、对应真实认知问题且无答案暗示",
+            "公式或概念锚点是否准确",
+            "建议难度及用时是否适合教学",
+            "语言、装置与安全操作是否恰当"
+          ],
+          "reference_answer_note": "现有参考答案保持；即使本地可以判选项，也仍须教师审核教学可用性"
+        }
+      }
+    },
+    {
+      "id": "diagnostic-power-03-3",
+      "point_id": "power-03",
+      "point_title": "电热器 电流的热效应",
+      "chapter": "电功和电热",
+      "stem": "在“电热器 电流的热效应”的模型下，I（通过电阻的电流）=2 A；R（电阻）=10 Ω；t（通电时间）=5 s。条件：计算电流通过电阻产生的热量，I 用 A、R 用 Ω、t 用 s。。求电阻产生的热量（Q）。这些数值是设计示例。",
+      "options": [
+        {
+          "label": "A",
+          "text": "200 J"
+        },
+        {
+          "label": "B",
+          "text": "2e+08 J"
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "使用焦耳定律：I²·R·t，代入得200 J。另一结果来自(1000·I)²·R·t，算得2e+08 J。\n以A表示电流应取2，正确热量200 J；误把mA的数值当A使热量大百万倍。\n知识点条件：焦耳热公式 Q=I²Rt 适用于电流通过电阻产生的热量计算。电流增大对发热影响尤其明显，因为电流以平方出现。对电动机等非纯电阻用电器，电能还会转化为机械能等形式，不能简单认为电功全部等于电热。\n推导依据：电流通过电阻时将部分电能转化为内能。；实验表明电流增大时发热明显增强，关系中出现电流平方。；综合电流、电阻和通电时间得到 Q=I²Rt。；对纯电阻有 U=IR，因此 UIt 与 I²Rt 相等。\n卡片公式各自的适用条件（不是本题共同前提）：\n焦耳定律：计算电流通过电阻产生的热量，I 用 A、R 用 Ω、t 用 s。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 2,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "Q = (1000·I)²·R·t",
+      "trap_test": {
+        "scenario": "十欧电阻",
+        "expr": "(1000*I)^2*R*t",
+        "ref": 200,
+        "tol": 1e-06
+      },
+      "level": "基础",
+      "learning_scope": "初中",
+      "answer_evidence": {
+        "kind": "numeric",
+        "scenario": "十欧电阻",
+        "parameters": {
+          "Q": 200,
+          "I": 2,
+          "R": 10,
+          "t": 5,
+          "U": 20,
+          "We": 200
+        },
+        "target": "Q",
+        "unit": "J",
+        "reference": 200,
+        "correct_proof": {
+          "expression": "I^2*R*t",
+          "formula": "焦耳定律",
+          "value": 200,
+          "when": "计算电流通过电阻产生的热量，I 用 A、R 用 Ω、t 用 s。"
+        },
+        "distractor_expression": "(1000*I)^2*R*t",
+        "distractor_value": 200000000.0,
+        "dimension_matches": true,
+        "independent_evaluation": true
+      },
+      "review": {
+        "confidence": "medium",
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": true,
+          "no_answer_leak_in_options": true
+        },
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。",
+        "material": {
+          "anchors": [
+            {
+              "kind": "公式",
+              "name": "焦耳定律",
+              "expression": "I^2*R*t",
+              "when": "计算电流通过电阻产生的热量，I 用 A、R 用 Ω、t 用 s。",
+              "display": "I²·R·t"
+            }
+          ],
+          "source": {
+            "nature": "原创设计示例，非教材实测或真实实验记录",
+            "scenario": "十欧电阻",
+            "parameters": {
+              "Q": 200,
+              "I": 2,
+              "R": 10,
+              "t": 5,
+              "U": 20,
+              "We": 200
+            },
+            "data": [
+              "电阻产生的热量：200 J",
+              "通过电阻的电流：2 A",
+              "电阻：10 Ω",
+              "通电时间：5 s",
+              "电阻两端电压：20 V",
+              "纯电阻电路中的电功：200 J"
+            ]
+          },
+          "predicted_errors": [
+            {
+              "option": "B",
+              "text": "2e+08 J",
+              "reason": "以A表示电流应取2，正确热量200 J；误把mA的数值当A使热量大百万倍。",
+              "expression": "(1000*I)^2*R*t",
+              "status": "误答原因预测，待教师确认；未采集学生作答证据"
+            }
+          ],
+          "difficulty_note": "建议难度沿用本题level（源卡难度）；尚非题目难度实测，待教师调整",
+          "estimated_seconds": [
+            60,
+            120
+          ],
+          "time_basis": "未做学生计时；按现有难度给出备课估计区间，待教师确认",
+          "machine_checks": [
+            {
+              "name": "题目ID关联源知识点",
+              "passed": true
+            },
+            {
+              "name": "选项标签唯一且参考标签存在",
+              "passed": true
+            },
+            {
+              "name": "选项文本互异",
+              "passed": true
+            },
+            {
+              "name": "正确路径独立数值复算",
+              "passed": true
+            },
+            {
+              "name": "带量纲求值与独立求值一致",
+              "passed": true
+            },
+            {
+              "name": "干扰路径复算且与正确路径分离",
+              "passed": true
+            }
+          ],
+          "machine_boundary": "只列本次逐题实际执行项目；不把关联知识卡的方向、扫描或一致性检查算作本题已验。概念题未验命题真假。",
+          "human_review_items": [
+            "题干条件是否充分、清楚且符合学段",
+            "参考结论在指定条件下是否唯一",
+            "干扰项是否合理、对应真实认知问题且无答案暗示",
+            "公式或概念锚点是否准确",
+            "建议难度及用时是否适合教学",
+            "语言、装置与安全操作是否恰当"
+          ],
+          "reference_answer_note": "现有参考答案保持；即使本地可以判选项，也仍须教师审核教学可用性"
+        }
+      }
+    },
+    {
+      "id": "diagnostic-power-04-1",
+      "point_id": "power-04",
+      "point_title": "家庭电路与安全用电",
+      "chapter": "电功和电热",
+      "stem": "在“家庭电路与安全用电”的模型下，P<sub>总</sub>（同时工作的用电器总功率）=2000 W；U（家庭电路电压）=220 V。条件：家庭用电器并联且电压近似相同；同时工作的总功率记作 P总，U 为电源电压。。求家庭电路干路电流估算值（I<sub>总</sub>）。这些数值是设计示例。",
+      "options": [
+        {
+          "label": "A",
+          "text": "4.54545 A"
+        },
+        {
+          "label": "B",
+          "text": "9.09091 A"
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "使用由家庭电器总功率估算干路电流：P<sub>总</sub>/U，代入得9.09091 A。另一结果来自P<sub>总</sub>/(2·U)，算得4.54545 A。\n功率关系为 P=UI，故 I=P/U；额外除以 2 会把负载电流低估一半。\n知识点条件：估算家庭电路电流时，可把并联用电器的总功率除以供电电压。该关系用于判断大功率电器同时工作时的负载大小，不能代替查看插座、导线和断路器的额定参数。安全使用还要避免湿手触电、破损电线和私拉乱接；保险丝不可随意换成更粗规格。\n推导依据：把同时工作的用电器功率相加，得到总功率 P<sub>总</sub>。；使用 P=UI 反求电流，得到 I<sub>总</sub>=P<sub>总</sub>/U。；将估算电流与线路、插座和保护装置的额定值比较；不能仅凭估算替代安全规范。\n卡片公式各自的适用条件（不是本题共同前提）：\n由家庭电器总功率估算干路电流：家庭用电器并联且电压近似相同；同时工作的总功率记作 P总，U 为电源电压。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 0,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "I<sub>总</sub> = P<sub>总</sub>/(2·U)",
+      "trap_test": {
+        "scenario": "两千瓦家电",
+        "expr": "P_total/(2*U)",
+        "ref": 9.090909090909092
+      },
+      "level": "基础",
+      "learning_scope": "初中",
+      "answer_evidence": {
+        "kind": "numeric",
+        "scenario": "两千瓦家电",
+        "parameters": {
+          "P_total": 2000,
+          "U": 220,
+          "I_total": 9.090909090909092,
+          "I": 9.090909090909092
+        },
+        "target": "I_total",
+        "unit": "A",
+        "reference": 9.090909090909092,
+        "correct_proof": {
+          "expression": "P_total/U",
+          "formula": "由家庭电器总功率估算干路电流",
+          "value": 9.090909090909092,
+          "when": "家庭用电器并联且电压近似相同；同时工作的总功率记作 P总，U 为电源电压。"
+        },
+        "distractor_expression": "P_total/(2*U)",
+        "distractor_value": 4.545454545454546,
+        "dimension_matches": true,
+        "independent_evaluation": true
+      },
+      "review": {
+        "confidence": "medium",
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": true,
+          "no_answer_leak_in_options": true
+        },
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。",
+        "material": {
+          "anchors": [
+            {
+              "kind": "公式",
+              "name": "由家庭电器总功率估算干路电流",
+              "expression": "P_total/U",
+              "when": "家庭用电器并联且电压近似相同；同时工作的总功率记作 P总，U 为电源电压。",
+              "display": "P<sub>总</sub>/U"
+            }
+          ],
+          "source": {
+            "nature": "原创设计示例，非教材实测或真实实验记录",
+            "scenario": "两千瓦家电",
+            "parameters": {
+              "P_total": 2000,
+              "U": 220,
+              "I_total": 9.090909090909092,
+              "I": 9.090909090909092
+            },
+            "data": [
+              "同时工作的用电器总功率：2000 W",
+              "家庭电路电压：220 V",
+              "家庭电路干路电流估算值：9.090909090909092 A",
+              "由电功率关系对应的电流：9.090909090909092 A"
+            ]
+          },
+          "predicted_errors": [
+            {
+              "option": "A",
+              "text": "4.54545 A",
+              "reason": "功率关系为 P=UI，故 I=P/U；额外除以 2 会把负载电流低估一半。",
+              "expression": "P_total/(2*U)",
+              "status": "误答原因预测，待教师确认；未采集学生作答证据"
+            }
+          ],
+          "difficulty_note": "建议难度沿用本题level（源卡难度）；尚非题目难度实测，待教师调整",
+          "estimated_seconds": [
+            60,
+            120
+          ],
+          "time_basis": "未做学生计时；按现有难度给出备课估计区间，待教师确认",
+          "machine_checks": [
+            {
+              "name": "题目ID关联源知识点",
+              "passed": true
+            },
+            {
+              "name": "选项标签唯一且参考标签存在",
+              "passed": true
+            },
+            {
+              "name": "选项文本互异",
+              "passed": true
+            },
+            {
+              "name": "正确路径独立数值复算",
+              "passed": true
+            },
+            {
+              "name": "带量纲求值与独立求值一致",
+              "passed": true
+            },
+            {
+              "name": "干扰路径复算且与正确路径分离",
+              "passed": true
+            }
+          ],
+          "machine_boundary": "只列本次逐题实际执行项目；不把关联知识卡的方向、扫描或一致性检查算作本题已验。概念题未验命题真假。",
+          "human_review_items": [
+            "题干条件是否充分、清楚且符合学段",
+            "参考结论在指定条件下是否唯一",
+            "干扰项是否合理、对应真实认知问题且无答案暗示",
+            "公式或概念锚点是否准确",
+            "建议难度及用时是否适合教学",
+            "语言、装置与安全操作是否恰当"
+          ],
+          "reference_answer_note": "现有参考答案保持；即使本地可以判选项，也仍须教师审核教学可用性"
+        }
+      }
+    },
+    {
+      "id": "diagnostic-power-04-2",
+      "point_id": "power-04",
+      "point_title": "家庭电路与安全用电",
+      "chapter": "电功和电热",
+      "stem": "关于“家庭电路与安全用电”，判断这一说法是否成立，并说明依据：\n保险丝规格过大会失去过载保护作用。",
+      "options": [
+        {
+          "label": "A",
+          "text": "该说法成立。"
+        },
+        {
+          "label": "B",
+          "text": "该说法不成立。"
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "保险丝规格过大会失去过载保护作用；家庭电路检修需先断电并由合格人员处理。\n知识点条件：估算家庭电路电流时，可把并联用电器的总功率除以供电电压。该关系用于判断大功率电器同时工作时的负载大小，不能代替查看插座、导线和断路器的额定参数。安全使用还要避免湿手触电、破损电线和私拉乱接；保险丝不可随意换成更粗规格。\n推导依据：把同时工作的用电器功率相加，得到总功率 P<sub>总</sub>。；使用 P=UI 反求电流，得到 I<sub>总</sub>=P<sub>总</sub>/U。；将估算电流与线路、插座和保护装置的额定值比较；不能仅凭估算替代安全规范。\n卡片公式各自的适用条件（不是本题共同前提）：\n由家庭电器总功率估算干路电流：家庭用电器并联且电压近似相同；同时工作的总功率记作 P总，U 为电源电压。",
+      "error_type": "概念混淆",
+      "judging": "teacher",
+      "source_error_index": 1,
+      "source_caught_by": "人工审核",
+      "wrong_expr": null,
+      "trap_test": null,
+      "level": "基础",
+      "learning_scope": "初中",
+      "answer_evidence": {
+        "kind": "teacher",
+        "claim_source": "why",
+        "reference_only": true,
+        "reason": "概念、操作或无法建立完整定量证据，教师确认条件与结论。"
+      },
+      "review": {
+        "confidence": "medium",
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": false,
+          "no_answer_leak_in_options": true
+        },
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。",
+        "material": {
+          "anchors": [
+            {
+              "kind": "概念或操作",
+              "name": "家庭电路与安全用电",
+              "claim": "认为保险丝越粗越安全，或在带电状态下更换保险丝。",
+              "correction_basis": "保险丝规格过大会失去过载保护作用；家庭电路检修需先断电并由合格人员处理。",
+              "note": "概念锚点及命题真假待教师确认；未套用任意第一条公式",
+              "display": "认为保险丝越粗越安全，或在带电状态下更换保险丝。"
+            }
+          ],
+          "source": {
+            "nature": "原创概念/操作命题；无真实测量记录",
+            "source_error_index": 1
+          },
+          "predicted_errors": [
+            {
+              "option": "B",
+              "text": "该说法不成立。",
+              "reason": "保险丝规格过大会失去过载保护作用；家庭电路检修需先断电并由合格人员处理。",
+              "expression": null,
+              "status": "误答原因预测，待教师确认；未采集学生作答证据"
+            }
+          ],
+          "difficulty_note": "建议难度沿用本题level（源卡难度）；尚非题目难度实测，待教师调整",
+          "estimated_seconds": [
+            60,
+            120
+          ],
+          "time_basis": "未做学生计时；按现有难度给出备课估计区间，待教师确认",
+          "machine_checks": [
+            {
+              "name": "题目ID关联源知识点",
+              "passed": true
+            },
+            {
+              "name": "选项标签唯一且参考标签存在",
+              "passed": true
+            },
+            {
+              "name": "选项文本互异",
+              "passed": true
+            }
+          ],
+          "machine_boundary": "只列本次逐题实际执行项目；不把关联知识卡的方向、扫描或一致性检查算作本题已验。概念题未验命题真假。",
+          "human_review_items": [
+            "题干条件是否充分、清楚且符合学段",
+            "参考结论在指定条件下是否唯一",
+            "干扰项是否合理、对应真实认知问题且无答案暗示",
+            "公式或概念锚点是否准确",
+            "建议难度及用时是否适合教学",
+            "语言、装置与安全操作是否恰当"
+          ],
+          "reference_answer_note": "现有参考答案保持；即使本地可以判选项，也仍须教师审核教学可用性"
+        }
+      }
+    }
+  ],
+  "skipped": [],
+  "source_records": {
+    "diagnostic-power-01-1": {
+      "point": {
+        "id": "power-01",
+        "title": "电能表与电功",
+        "level": "基础",
+        "definition": "电流通过用电器时，电能可以转化为其他形式的能量。电流做的功叫电功，电功的大小与用电器两端电压、通过的电流和通电时间有关。常用电能表记录家庭用电量，千瓦时也叫度。",
+        "meaning": "电功的国际单位是焦耳（J），电能表常用千瓦时（kWh）。1 kWh=3.6×10^6 J。电功公式中的电压、电流和时间必须属于同一用电过程；将小时换算成秒后可求 J，也可直接以 kW 和 h 计算 kWh。",
+        "symbols": {
+          "U": {
+            "desc": "用电器两端电压",
+            "unit": "V"
+          },
+          "I": {
+            "desc": "通过用电器的电流",
+            "unit": "A"
+          },
+          "t": {
+            "desc": "通电时间",
+            "unit": "s"
+          },
+          "We": {
+            "desc": "电流所做的电功",
+            "unit": "J"
+          },
+          "E_kWh": {
+            "desc": "以千瓦时表示的电能",
+            "unit": "kWh"
+          },
+          "EJ": {
+            "desc": "以焦耳表示的同一电能",
+            "unit": "J"
+          }
+        },
+        "scenarios": {
+          "220伏灯工作一小时": {
+            "U": 220,
+            "I": 1,
+            "t": 3600,
+            "We": 792000,
+            "E_kWh": 0.22,
+            "EJ": 792000
+          },
+          "220伏灯工作两小时": {
+            "U": 220,
+            "I": 0.5,
+            "t": 7200,
+            "We": 792000,
+            "E_kWh": 0.22,
+            "EJ": 792000
+          }
+        },
+        "formulas": [
+          {
+            "name": "电压电流和时间求电功",
+            "expr": "We = U*I*t",
+            "when": "U 用 V、I 用 A、t 用 s，算出的电功单位为 J。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "220伏灯工作一小时",
+                "expr": "U*I*t",
+                "ref": 792000,
+                "note": "220 V×1 A×3600 s=792 000 J。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "220伏灯工作两小时",
+                "expr": "U*I*t",
+                "ref": 792000,
+                "note": "220 V×0.5 A×7200 s=792 000 J。"
+              },
+              {
+                "type": "direction",
+                "scenario": "220伏灯工作一小时",
+                "var": "t",
+                "lo": 0,
+                "hi": 10000,
+                "expr": "U*I*t",
+                "expect": "up",
+                "note": "电压和电流固定时，通电时间越长，电功越多。"
+              },
+              {
+                "type": "scan",
+                "scenario": "220伏灯工作一小时",
+                "var": "t",
+                "lo": 0,
+                "hi": 1000000,
+                "note": "扫描非负通电时间，电功线性增加。"
+              },
+              {
+                "type": "consistency",
+                "scenario": "220伏灯工作一小时",
+                "with": "power-01|电压电流和时间求电功",
+                "with_expr": "3600000*E_kWh",
+                "target": "电流所做的电功",
+                "note": "本公式直接求We；参考端显式关系为3600000*E_kWh。两端使用同一情境和阶段，只核对该关系；with字段仅定位来源，不代表调用另一条被覆盖的公式。",
+                "verification_kind": "独立关系核对"
+              }
+            ]
+          },
+          {
+            "name": "千瓦时换算为焦耳",
+            "expr": "EJ = 3600000*E_kWh",
+            "when": "输入电能用 kWh 表示，换算结果用 J 表示。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "220伏灯工作一小时",
+                "expr": "3600000*E_kWh",
+                "ref": 792000,
+                "note": "0.22 kWh×3.6×10^6 J/kWh=792 000 J。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "220伏灯工作两小时",
+                "expr": "3600000*E_kWh",
+                "ref": 792000,
+                "note": "同一电能的 kWh 与 J 数值表示相符。"
+              },
+              {
+                "type": "scan",
+                "scenario": "220伏灯工作一小时",
+                "var": "E_kWh",
+                "lo": 0,
+                "hi": 1000,
+                "note": "扫描非负电能表读数，换算结果保持有限。"
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "电功由用电器两端电压、通过的电流和通电时间共同决定。",
+          "以 V、A、s 代入，电压乘电流乘时间得到 J。",
+          "电能表读数若以 kWh 给出，可用 1 kWh=3.6×10^6 J 换算为焦耳。"
+        ],
+        "errors": [
+          {
+            "wrong": "把电功写成电压乘电流，不计通电时间。",
+            "wrong_expr": "We = U*I",
+            "why": "U*I 的单位是 W，是功率；求一段时间内的电功还要乘 t。",
+            "caught_by": "量纲一致性",
+            "trap_test": {
+              "kind": "dimension",
+              "target": "We = U*I",
+              "lhs_dim": "M·L^2·T^-2",
+              "rhs_dim": "M·L^2·T^-3",
+              "expect": "mismatch",
+              "note": "实际量纲检查得到等号左边为M·L^2·T^-2、右边为M·L^2·T^-3；两边不是同一物理量，因此该等式不成立。"
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "把 1 kWh 当成 1000 J，而不是 3.6×10^6 J。",
+            "wrong_expr": "EJ = 1000*E_kWh",
+            "why": "1 kWh=1000 W×3600 s=3 600 000 J；只乘 1000 漏掉小时到秒的换算。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "220伏灯工作一小时",
+              "expr": "1000*E_kWh",
+              "ref": 792000
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "一盏 220 V、1 A 的灯连续工作 1 h，求耗电量的 J 和 kWh 表示。",
+          "solution": [
+            "1 h=3600 s。",
+            "We=220×1×3600=792 000 J。",
+            "0.22 kWh×3.6×10^6=792 000 J。"
+          ],
+          "answer": "耗电量为 792 000 J，即 0.22 kWh。"
+        },
+        "prereq": [
+          "ohm-01"
+        ],
+        "next": [
+          "power-02"
+        ],
+        "tags": [
+          "电功",
+          "电能",
+          "电能表",
+          "千瓦时",
+          "焦耳"
+        ],
+        "core": [
+          {
+            "title": "电能表与电功",
+            "text": "电能表前后示数差表示用电量，kW·h即常说的一度电，1 kW·h=3600000 J。若表常数为每千瓦时若干转或脉冲，用计数除以常数得电能；在设备功率稳定、计时明确时可再估功率。电能表不是直接读瞬时电流的仪表，不能把kW和kW·h互换。"
+          },
+          {
+            "title": "本章素养回顾（原创任务）",
+            "text": "选择本章一个现象，写出结论、成立条件和证据；用另一条本章规律复核解释是否矛盾。指出一次测量或模型的局限，并说明还需什么证据；数值通过不替代概念辨析。"
+          }
+        ],
+        "evidence": [
+          {
+            "kind": "conversion",
+            "value": 1,
+            "from_unit": "kW·h",
+            "expected": 3600000,
+            "to_unit": "J",
+            "note": "1000 J/s乘3600 s=3600000 J。"
+          }
+        ],
+        "learning_scope": "初中"
+      },
+      "error_index": 0,
+      "chapter": "电功和电热"
+    },
+    "diagnostic-power-01-2": {
+      "point": {
+        "id": "power-01",
+        "title": "电能表与电功",
+        "level": "基础",
+        "definition": "电流通过用电器时，电能可以转化为其他形式的能量。电流做的功叫电功，电功的大小与用电器两端电压、通过的电流和通电时间有关。常用电能表记录家庭用电量，千瓦时也叫度。",
+        "meaning": "电功的国际单位是焦耳（J），电能表常用千瓦时（kWh）。1 kWh=3.6×10^6 J。电功公式中的电压、电流和时间必须属于同一用电过程；将小时换算成秒后可求 J，也可直接以 kW 和 h 计算 kWh。",
+        "symbols": {
+          "U": {
+            "desc": "用电器两端电压",
+            "unit": "V"
+          },
+          "I": {
+            "desc": "通过用电器的电流",
+            "unit": "A"
+          },
+          "t": {
+            "desc": "通电时间",
+            "unit": "s"
+          },
+          "We": {
+            "desc": "电流所做的电功",
+            "unit": "J"
+          },
+          "E_kWh": {
+            "desc": "以千瓦时表示的电能",
+            "unit": "kWh"
+          },
+          "EJ": {
+            "desc": "以焦耳表示的同一电能",
+            "unit": "J"
+          }
+        },
+        "scenarios": {
+          "220伏灯工作一小时": {
+            "U": 220,
+            "I": 1,
+            "t": 3600,
+            "We": 792000,
+            "E_kWh": 0.22,
+            "EJ": 792000
+          },
+          "220伏灯工作两小时": {
+            "U": 220,
+            "I": 0.5,
+            "t": 7200,
+            "We": 792000,
+            "E_kWh": 0.22,
+            "EJ": 792000
+          }
+        },
+        "formulas": [
+          {
+            "name": "电压电流和时间求电功",
+            "expr": "We = U*I*t",
+            "when": "U 用 V、I 用 A、t 用 s，算出的电功单位为 J。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "220伏灯工作一小时",
+                "expr": "U*I*t",
+                "ref": 792000,
+                "note": "220 V×1 A×3600 s=792 000 J。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "220伏灯工作两小时",
+                "expr": "U*I*t",
+                "ref": 792000,
+                "note": "220 V×0.5 A×7200 s=792 000 J。"
+              },
+              {
+                "type": "direction",
+                "scenario": "220伏灯工作一小时",
+                "var": "t",
+                "lo": 0,
+                "hi": 10000,
+                "expr": "U*I*t",
+                "expect": "up",
+                "note": "电压和电流固定时，通电时间越长，电功越多。"
+              },
+              {
+                "type": "scan",
+                "scenario": "220伏灯工作一小时",
+                "var": "t",
+                "lo": 0,
+                "hi": 1000000,
+                "note": "扫描非负通电时间，电功线性增加。"
+              },
+              {
+                "type": "consistency",
+                "scenario": "220伏灯工作一小时",
+                "with": "power-01|电压电流和时间求电功",
+                "with_expr": "3600000*E_kWh",
+                "target": "电流所做的电功",
+                "note": "本公式直接求We；参考端显式关系为3600000*E_kWh。两端使用同一情境和阶段，只核对该关系；with字段仅定位来源，不代表调用另一条被覆盖的公式。",
+                "verification_kind": "独立关系核对"
+              }
+            ]
+          },
+          {
+            "name": "千瓦时换算为焦耳",
+            "expr": "EJ = 3600000*E_kWh",
+            "when": "输入电能用 kWh 表示，换算结果用 J 表示。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "220伏灯工作一小时",
+                "expr": "3600000*E_kWh",
+                "ref": 792000,
+                "note": "0.22 kWh×3.6×10^6 J/kWh=792 000 J。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "220伏灯工作两小时",
+                "expr": "3600000*E_kWh",
+                "ref": 792000,
+                "note": "同一电能的 kWh 与 J 数值表示相符。"
+              },
+              {
+                "type": "scan",
+                "scenario": "220伏灯工作一小时",
+                "var": "E_kWh",
+                "lo": 0,
+                "hi": 1000,
+                "note": "扫描非负电能表读数，换算结果保持有限。"
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "电功由用电器两端电压、通过的电流和通电时间共同决定。",
+          "以 V、A、s 代入，电压乘电流乘时间得到 J。",
+          "电能表读数若以 kWh 给出，可用 1 kWh=3.6×10^6 J 换算为焦耳。"
+        ],
+        "errors": [
+          {
+            "wrong": "把电功写成电压乘电流，不计通电时间。",
+            "wrong_expr": "We = U*I",
+            "why": "U*I 的单位是 W，是功率；求一段时间内的电功还要乘 t。",
+            "caught_by": "量纲一致性",
+            "trap_test": {
+              "kind": "dimension",
+              "target": "We = U*I",
+              "lhs_dim": "M·L^2·T^-2",
+              "rhs_dim": "M·L^2·T^-3",
+              "expect": "mismatch",
+              "note": "实际量纲检查得到等号左边为M·L^2·T^-2、右边为M·L^2·T^-3；两边不是同一物理量，因此该等式不成立。"
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "把 1 kWh 当成 1000 J，而不是 3.6×10^6 J。",
+            "wrong_expr": "EJ = 1000*E_kWh",
+            "why": "1 kWh=1000 W×3600 s=3 600 000 J；只乘 1000 漏掉小时到秒的换算。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "220伏灯工作一小时",
+              "expr": "1000*E_kWh",
+              "ref": 792000
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "一盏 220 V、1 A 的灯连续工作 1 h，求耗电量的 J 和 kWh 表示。",
+          "solution": [
+            "1 h=3600 s。",
+            "We=220×1×3600=792 000 J。",
+            "0.22 kWh×3.6×10^6=792 000 J。"
+          ],
+          "answer": "耗电量为 792 000 J，即 0.22 kWh。"
+        },
+        "prereq": [
+          "ohm-01"
+        ],
+        "next": [
+          "power-02"
+        ],
+        "tags": [
+          "电功",
+          "电能",
+          "电能表",
+          "千瓦时",
+          "焦耳"
+        ],
+        "core": [
+          {
+            "title": "电能表与电功",
+            "text": "电能表前后示数差表示用电量，kW·h即常说的一度电，1 kW·h=3600000 J。若表常数为每千瓦时若干转或脉冲，用计数除以常数得电能；在设备功率稳定、计时明确时可再估功率。电能表不是直接读瞬时电流的仪表，不能把kW和kW·h互换。"
+          },
+          {
+            "title": "本章素养回顾（原创任务）",
+            "text": "选择本章一个现象，写出结论、成立条件和证据；用另一条本章规律复核解释是否矛盾。指出一次测量或模型的局限，并说明还需什么证据；数值通过不替代概念辨析。"
+          }
+        ],
+        "evidence": [
+          {
+            "kind": "conversion",
+            "value": 1,
+            "from_unit": "kW·h",
+            "expected": 3600000,
+            "to_unit": "J",
+            "note": "1000 J/s乘3600 s=3600000 J。"
+          }
+        ],
+        "learning_scope": "初中"
+      },
+      "error_index": 1,
+      "chapter": "电功和电热"
+    },
+    "diagnostic-power-02-1": {
+      "point": {
+        "id": "power-02",
+        "title": "电功率",
+        "level": "基础",
+        "definition": "电功率表示电流做功的快慢，等于单位时间内完成的电功。对用电器，电功率也可由其两端电压与通过电流的乘积求得，单位为瓦特（W）。",
+        "meaning": "额定功率是用电器在额定电压下工作的功率。实际功率取决于实际电压和电流，不能只看铭牌就断言任意电压下的实际功率。比较功率时要区分功率大小与已经消耗的总电能：持续时间不同，耗电量也不同。",
+        "symbols": {
+          "U": {
+            "desc": "用电器两端电压",
+            "unit": "V"
+          },
+          "I": {
+            "desc": "通过用电器的电流",
+            "unit": "A"
+          },
+          "P": {
+            "desc": "电功率",
+            "unit": "W"
+          },
+          "We": {
+            "desc": "一段时间内完成的电功",
+            "unit": "J"
+          },
+          "t": {
+            "desc": "完成该电功所用时间",
+            "unit": "s"
+          },
+          "Q": {
+            "desc": "电阻产生的热量",
+            "unit": "J"
+          },
+          "R": {
+            "desc": "电阻",
+            "unit": "Ω"
+          }
+        },
+        "scenarios": {
+          "小灯泡一": {
+            "U": 220,
+            "I": 1,
+            "P": 220,
+            "We": 792000,
+            "t": 3600
+          },
+          "小灯泡二": {
+            "U": 220,
+            "I": 0.5,
+            "P": 110,
+            "We": 792000,
+            "t": 7200
+          },
+          "十欧电阻": {
+            "Q": 200,
+            "I": 2,
+            "R": 10,
+            "t": 5,
+            "U": 20,
+            "We": 200
+          },
+          "五欧电阻": {
+            "Q": 180,
+            "I": 3,
+            "R": 5,
+            "t": 4,
+            "U": 15,
+            "We": 180
+          }
+        },
+        "formulas": [
+          {
+            "name": "电压与电流求电功率",
+            "expr": "P = U*I",
+            "when": "U 用 V、I 用 A，所得功率 P 用 W。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "小灯泡一",
+                "expr": "U*I",
+                "ref": 220,
+                "note": "220 V×1 A=220 W。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "小灯泡二",
+                "expr": "U*I",
+                "ref": 110,
+                "note": "220 V×0.5 A=110 W。"
+              },
+              {
+                "type": "direction",
+                "scenario": "小灯泡一",
+                "var": "I",
+                "lo": 0,
+                "hi": 5,
+                "expr": "U*I",
+                "expect": "up",
+                "note": "电压固定时，电流增大，计算功率增大。"
+              },
+              {
+                "type": "scan",
+                "scenario": "小灯泡一",
+                "var": "I",
+                "lo": 0,
+                "hi": 100,
+                "note": "扫描非负电流，功率计算稳定。"
+              },
+              {
+                "type": "consistency",
+                "scenario": "小灯泡一",
+                "with": "power-02|电压与电流求电功率",
+                "with_expr": "We/t",
+                "target": "电功率",
+                "note": "本公式直接求P；参考端显式关系为We/t。两端使用同一情境和阶段，只核对该关系；with字段仅定位来源，不代表调用另一条被覆盖的公式。",
+                "verification_kind": "独立关系核对"
+              },
+              {
+                "type": "numeric",
+                "scenario": "小灯泡一",
+                "ref": 220,
+                "rtol": 1e-10,
+                "atol": 0,
+                "note": "设计示例；人工标签保留的指定反例正确控制。功率220 W与一小时电能792000 J不是同一物理量；错误把电能当功率首先被目标量纲门禁拒绝。"
+              }
+            ]
+          },
+          {
+            "name": "由电功和时间求功率",
+            "expr": "P = We/t",
+            "when": "We 是时间 t 内完成的电功，t 用 s。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "小灯泡一",
+                "expr": "We/t",
+                "ref": 220,
+                "note": "792 000 J÷3600 s=220 W。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "小灯泡二",
+                "expr": "We/t",
+                "ref": 110,
+                "note": "792 000 J÷7200 s=110 W。"
+              },
+              {
+                "type": "direction",
+                "scenario": "小灯泡一",
+                "var": "t",
+                "lo": 1,
+                "hi": 10000,
+                "expr": "We/t",
+                "expect": "down",
+                "note": "电功固定时，完成时间越长，平均功率越小。"
+              },
+              {
+                "type": "scan",
+                "scenario": "小灯泡一",
+                "var": "t",
+                "lo": 0.1,
+                "hi": 1000000,
+                "note": "扫描正时间范围，避免除以零。"
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "电功率定义为单位时间内完成的电功，P=We/t。",
+          "电功 We=UIt，代入 P=We/t 可得 P=UI。",
+          "使用时检查额定与实际条件，并标明功率单位 W。"
+        ],
+        "errors": [
+          {
+            "wrong": "把功率当作总电能，忽略做功时间。",
+            "why": "功率表示做功或用电的快慢，电能表示一段时间内做功的总量；前者单位是 W，后者常用 J 或 kWh，二者不能混淆。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            },
+            "automation_review": {
+              "status": "指定反例已补验；原人工审核标签保留",
+              "basis": "功率220 W与一小时电能792000 J不是同一物理量；错误把电能当功率首先被目标量纲门禁拒绝。",
+              "scenario": "小灯泡一",
+              "correct_expression": "P = U*I",
+              "wrong_expression": "We",
+              "correct_value": 220,
+              "wrong_value": 792000,
+              "unit": "W",
+              "wrong_status": "dimension_conflict",
+              "note": "这是原创设计反例，机器仅验证指定模型、数据及量纲；自然语言命题、学生认知与装置仍待教师确认。"
+            }
+          },
+          {
+            "wrong": "把以 kW 表示的功率数值直接标成 W，换算时多除以 1000。",
+            "wrong_expr": "P = U*I/1000",
+            "why": "220 V×1 A=220 W；若要改写成 kW 才是 0.22 kW，不能把 0.22 标成 W。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "小灯泡一",
+              "expr": "U*I/1000",
+              "ref": 220
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "把电功率写成 U/I。",
+            "wrong_expr": "P = U/I",
+            "why": "电功率可由电压与电流相乘得到；电压除以电流不是瓦特，单位组合也不同，因此不能用它表示功率。",
+            "caught_by": "量纲一致性",
+            "trap_test": {
+              "kind": "dimension",
+              "target": "P = U/I",
+              "lhs_dim": "M·L^2·T^-3",
+              "rhs_dim": "M·L^2·T^-3·I^-2",
+              "expect": "mismatch",
+              "note": "实际量纲检查得到等号左边为M·L^2·T^-3、右边为M·L^2·T^-3·I^-2；两边不是同一物理量，因此该等式不成立。"
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "用电器两端电压 220 V，通过电流 0.5 A，求电功率。",
+          "solution": [
+            "P=UI=220×0.5=110 W。",
+            "功率单位为 W，结果表示该用电器每秒转化的电能。"
+          ],
+          "answer": "电功率为 110 W。"
+        },
+        "prereq": [
+          "power-01"
+        ],
+        "next": [
+          "power-03"
+        ],
+        "tags": [
+          "额定功率",
+          "实际功率",
+          "瓦特"
+        ],
+        "core": [
+          {
+            "title": "电功率与额定状态",
+            "text": "额定电压是正常工作设计电压，额定功率是在额定电压下的功率，实际功率由实际电压和电流决定。灯泡亮度主要与实际功率有关；相同额定电压下额定功率不同并不表示任何接法都按铭牌发光。不同工作温度下灯丝电阻改变，不能把所有实际状态都当定值电阻。"
+          }
+        ],
+        "experiments": [
+          {
+            "title": "测量小灯泡电功率",
+            "purpose": "在额定及不同实际电压下测功率并比较亮度。",
+            "apparatus": "低压电源、标额定电压小灯泡、两表、变阻器、开关。",
+            "variables": "改灯泡两端电压，记录电流和亮度，避免超额定过多。",
+            "steps": [
+              "断电连接电流表串联、电压表并联灯两端，变阻器最大值。",
+              "缓慢调至额定电压并读电流，计算相乘功率。",
+              "在安全的稍低电压下重复，比较实际功率与亮度，不盲目加压。"
+            ],
+            "data": "设计示例（非实测）：额定2.5 V时0.30 A，功率0.75 W；2.0 V时0.26 A，功率0.52 W。",
+            "conclusion": "额定状态功率须由额定电压下的电流计算；灯丝非恒定电阻。",
+            "limits": "不同电压功率不应平均成“额定功率”；本项为教材重要实验，不混称22项必做。",
+            "kind": "教材重要实验"
+          }
+        ],
+        "evidence": [
+          {
+            "kind": "conversion",
+            "value": 0.75,
+            "from_unit": "kW",
+            "expected": 750,
+            "to_unit": "W",
+            "note": "千瓦转瓦乘1000。"
+          }
+        ],
+        "learning_scope": "初中"
+      },
+      "error_index": 0,
+      "chapter": "电功和电热"
+    },
+    "diagnostic-power-02-2": {
+      "point": {
+        "id": "power-02",
+        "title": "电功率",
+        "level": "基础",
+        "definition": "电功率表示电流做功的快慢，等于单位时间内完成的电功。对用电器，电功率也可由其两端电压与通过电流的乘积求得，单位为瓦特（W）。",
+        "meaning": "额定功率是用电器在额定电压下工作的功率。实际功率取决于实际电压和电流，不能只看铭牌就断言任意电压下的实际功率。比较功率时要区分功率大小与已经消耗的总电能：持续时间不同，耗电量也不同。",
+        "symbols": {
+          "U": {
+            "desc": "用电器两端电压",
+            "unit": "V"
+          },
+          "I": {
+            "desc": "通过用电器的电流",
+            "unit": "A"
+          },
+          "P": {
+            "desc": "电功率",
+            "unit": "W"
+          },
+          "We": {
+            "desc": "一段时间内完成的电功",
+            "unit": "J"
+          },
+          "t": {
+            "desc": "完成该电功所用时间",
+            "unit": "s"
+          },
+          "Q": {
+            "desc": "电阻产生的热量",
+            "unit": "J"
+          },
+          "R": {
+            "desc": "电阻",
+            "unit": "Ω"
+          }
+        },
+        "scenarios": {
+          "小灯泡一": {
+            "U": 220,
+            "I": 1,
+            "P": 220,
+            "We": 792000,
+            "t": 3600
+          },
+          "小灯泡二": {
+            "U": 220,
+            "I": 0.5,
+            "P": 110,
+            "We": 792000,
+            "t": 7200
+          },
+          "十欧电阻": {
+            "Q": 200,
+            "I": 2,
+            "R": 10,
+            "t": 5,
+            "U": 20,
+            "We": 200
+          },
+          "五欧电阻": {
+            "Q": 180,
+            "I": 3,
+            "R": 5,
+            "t": 4,
+            "U": 15,
+            "We": 180
+          }
+        },
+        "formulas": [
+          {
+            "name": "电压与电流求电功率",
+            "expr": "P = U*I",
+            "when": "U 用 V、I 用 A，所得功率 P 用 W。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "小灯泡一",
+                "expr": "U*I",
+                "ref": 220,
+                "note": "220 V×1 A=220 W。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "小灯泡二",
+                "expr": "U*I",
+                "ref": 110,
+                "note": "220 V×0.5 A=110 W。"
+              },
+              {
+                "type": "direction",
+                "scenario": "小灯泡一",
+                "var": "I",
+                "lo": 0,
+                "hi": 5,
+                "expr": "U*I",
+                "expect": "up",
+                "note": "电压固定时，电流增大，计算功率增大。"
+              },
+              {
+                "type": "scan",
+                "scenario": "小灯泡一",
+                "var": "I",
+                "lo": 0,
+                "hi": 100,
+                "note": "扫描非负电流，功率计算稳定。"
+              },
+              {
+                "type": "consistency",
+                "scenario": "小灯泡一",
+                "with": "power-02|电压与电流求电功率",
+                "with_expr": "We/t",
+                "target": "电功率",
+                "note": "本公式直接求P；参考端显式关系为We/t。两端使用同一情境和阶段，只核对该关系；with字段仅定位来源，不代表调用另一条被覆盖的公式。",
+                "verification_kind": "独立关系核对"
+              },
+              {
+                "type": "numeric",
+                "scenario": "小灯泡一",
+                "ref": 220,
+                "rtol": 1e-10,
+                "atol": 0,
+                "note": "设计示例；人工标签保留的指定反例正确控制。功率220 W与一小时电能792000 J不是同一物理量；错误把电能当功率首先被目标量纲门禁拒绝。"
+              }
+            ]
+          },
+          {
+            "name": "由电功和时间求功率",
+            "expr": "P = We/t",
+            "when": "We 是时间 t 内完成的电功，t 用 s。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "小灯泡一",
+                "expr": "We/t",
+                "ref": 220,
+                "note": "792 000 J÷3600 s=220 W。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "小灯泡二",
+                "expr": "We/t",
+                "ref": 110,
+                "note": "792 000 J÷7200 s=110 W。"
+              },
+              {
+                "type": "direction",
+                "scenario": "小灯泡一",
+                "var": "t",
+                "lo": 1,
+                "hi": 10000,
+                "expr": "We/t",
+                "expect": "down",
+                "note": "电功固定时，完成时间越长，平均功率越小。"
+              },
+              {
+                "type": "scan",
+                "scenario": "小灯泡一",
+                "var": "t",
+                "lo": 0.1,
+                "hi": 1000000,
+                "note": "扫描正时间范围，避免除以零。"
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "电功率定义为单位时间内完成的电功，P=We/t。",
+          "电功 We=UIt，代入 P=We/t 可得 P=UI。",
+          "使用时检查额定与实际条件，并标明功率单位 W。"
+        ],
+        "errors": [
+          {
+            "wrong": "把功率当作总电能，忽略做功时间。",
+            "why": "功率表示做功或用电的快慢，电能表示一段时间内做功的总量；前者单位是 W，后者常用 J 或 kWh，二者不能混淆。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            },
+            "automation_review": {
+              "status": "指定反例已补验；原人工审核标签保留",
+              "basis": "功率220 W与一小时电能792000 J不是同一物理量；错误把电能当功率首先被目标量纲门禁拒绝。",
+              "scenario": "小灯泡一",
+              "correct_expression": "P = U*I",
+              "wrong_expression": "We",
+              "correct_value": 220,
+              "wrong_value": 792000,
+              "unit": "W",
+              "wrong_status": "dimension_conflict",
+              "note": "这是原创设计反例，机器仅验证指定模型、数据及量纲；自然语言命题、学生认知与装置仍待教师确认。"
+            }
+          },
+          {
+            "wrong": "把以 kW 表示的功率数值直接标成 W，换算时多除以 1000。",
+            "wrong_expr": "P = U*I/1000",
+            "why": "220 V×1 A=220 W；若要改写成 kW 才是 0.22 kW，不能把 0.22 标成 W。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "小灯泡一",
+              "expr": "U*I/1000",
+              "ref": 220
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "把电功率写成 U/I。",
+            "wrong_expr": "P = U/I",
+            "why": "电功率可由电压与电流相乘得到；电压除以电流不是瓦特，单位组合也不同，因此不能用它表示功率。",
+            "caught_by": "量纲一致性",
+            "trap_test": {
+              "kind": "dimension",
+              "target": "P = U/I",
+              "lhs_dim": "M·L^2·T^-3",
+              "rhs_dim": "M·L^2·T^-3·I^-2",
+              "expect": "mismatch",
+              "note": "实际量纲检查得到等号左边为M·L^2·T^-3、右边为M·L^2·T^-3·I^-2；两边不是同一物理量，因此该等式不成立。"
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "用电器两端电压 220 V，通过电流 0.5 A，求电功率。",
+          "solution": [
+            "P=UI=220×0.5=110 W。",
+            "功率单位为 W，结果表示该用电器每秒转化的电能。"
+          ],
+          "answer": "电功率为 110 W。"
+        },
+        "prereq": [
+          "power-01"
+        ],
+        "next": [
+          "power-03"
+        ],
+        "tags": [
+          "额定功率",
+          "实际功率",
+          "瓦特"
+        ],
+        "core": [
+          {
+            "title": "电功率与额定状态",
+            "text": "额定电压是正常工作设计电压，额定功率是在额定电压下的功率，实际功率由实际电压和电流决定。灯泡亮度主要与实际功率有关；相同额定电压下额定功率不同并不表示任何接法都按铭牌发光。不同工作温度下灯丝电阻改变，不能把所有实际状态都当定值电阻。"
+          }
+        ],
+        "experiments": [
+          {
+            "title": "测量小灯泡电功率",
+            "purpose": "在额定及不同实际电压下测功率并比较亮度。",
+            "apparatus": "低压电源、标额定电压小灯泡、两表、变阻器、开关。",
+            "variables": "改灯泡两端电压，记录电流和亮度，避免超额定过多。",
+            "steps": [
+              "断电连接电流表串联、电压表并联灯两端，变阻器最大值。",
+              "缓慢调至额定电压并读电流，计算相乘功率。",
+              "在安全的稍低电压下重复，比较实际功率与亮度，不盲目加压。"
+            ],
+            "data": "设计示例（非实测）：额定2.5 V时0.30 A，功率0.75 W；2.0 V时0.26 A，功率0.52 W。",
+            "conclusion": "额定状态功率须由额定电压下的电流计算；灯丝非恒定电阻。",
+            "limits": "不同电压功率不应平均成“额定功率”；本项为教材重要实验，不混称22项必做。",
+            "kind": "教材重要实验"
+          }
+        ],
+        "evidence": [
+          {
+            "kind": "conversion",
+            "value": 0.75,
+            "from_unit": "kW",
+            "expected": 750,
+            "to_unit": "W",
+            "note": "千瓦转瓦乘1000。"
+          }
+        ],
+        "learning_scope": "初中"
+      },
+      "error_index": 1,
+      "chapter": "电功和电热"
+    },
+    "diagnostic-power-02-3": {
+      "point": {
+        "id": "power-02",
+        "title": "电功率",
+        "level": "基础",
+        "definition": "电功率表示电流做功的快慢，等于单位时间内完成的电功。对用电器，电功率也可由其两端电压与通过电流的乘积求得，单位为瓦特（W）。",
+        "meaning": "额定功率是用电器在额定电压下工作的功率。实际功率取决于实际电压和电流，不能只看铭牌就断言任意电压下的实际功率。比较功率时要区分功率大小与已经消耗的总电能：持续时间不同，耗电量也不同。",
+        "symbols": {
+          "U": {
+            "desc": "用电器两端电压",
+            "unit": "V"
+          },
+          "I": {
+            "desc": "通过用电器的电流",
+            "unit": "A"
+          },
+          "P": {
+            "desc": "电功率",
+            "unit": "W"
+          },
+          "We": {
+            "desc": "一段时间内完成的电功",
+            "unit": "J"
+          },
+          "t": {
+            "desc": "完成该电功所用时间",
+            "unit": "s"
+          },
+          "Q": {
+            "desc": "电阻产生的热量",
+            "unit": "J"
+          },
+          "R": {
+            "desc": "电阻",
+            "unit": "Ω"
+          }
+        },
+        "scenarios": {
+          "小灯泡一": {
+            "U": 220,
+            "I": 1,
+            "P": 220,
+            "We": 792000,
+            "t": 3600
+          },
+          "小灯泡二": {
+            "U": 220,
+            "I": 0.5,
+            "P": 110,
+            "We": 792000,
+            "t": 7200
+          },
+          "十欧电阻": {
+            "Q": 200,
+            "I": 2,
+            "R": 10,
+            "t": 5,
+            "U": 20,
+            "We": 200
+          },
+          "五欧电阻": {
+            "Q": 180,
+            "I": 3,
+            "R": 5,
+            "t": 4,
+            "U": 15,
+            "We": 180
+          }
+        },
+        "formulas": [
+          {
+            "name": "电压与电流求电功率",
+            "expr": "P = U*I",
+            "when": "U 用 V、I 用 A，所得功率 P 用 W。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "小灯泡一",
+                "expr": "U*I",
+                "ref": 220,
+                "note": "220 V×1 A=220 W。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "小灯泡二",
+                "expr": "U*I",
+                "ref": 110,
+                "note": "220 V×0.5 A=110 W。"
+              },
+              {
+                "type": "direction",
+                "scenario": "小灯泡一",
+                "var": "I",
+                "lo": 0,
+                "hi": 5,
+                "expr": "U*I",
+                "expect": "up",
+                "note": "电压固定时，电流增大，计算功率增大。"
+              },
+              {
+                "type": "scan",
+                "scenario": "小灯泡一",
+                "var": "I",
+                "lo": 0,
+                "hi": 100,
+                "note": "扫描非负电流，功率计算稳定。"
+              },
+              {
+                "type": "consistency",
+                "scenario": "小灯泡一",
+                "with": "power-02|电压与电流求电功率",
+                "with_expr": "We/t",
+                "target": "电功率",
+                "note": "本公式直接求P；参考端显式关系为We/t。两端使用同一情境和阶段，只核对该关系；with字段仅定位来源，不代表调用另一条被覆盖的公式。",
+                "verification_kind": "独立关系核对"
+              },
+              {
+                "type": "numeric",
+                "scenario": "小灯泡一",
+                "ref": 220,
+                "rtol": 1e-10,
+                "atol": 0,
+                "note": "设计示例；人工标签保留的指定反例正确控制。功率220 W与一小时电能792000 J不是同一物理量；错误把电能当功率首先被目标量纲门禁拒绝。"
+              }
+            ]
+          },
+          {
+            "name": "由电功和时间求功率",
+            "expr": "P = We/t",
+            "when": "We 是时间 t 内完成的电功，t 用 s。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "小灯泡一",
+                "expr": "We/t",
+                "ref": 220,
+                "note": "792 000 J÷3600 s=220 W。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "小灯泡二",
+                "expr": "We/t",
+                "ref": 110,
+                "note": "792 000 J÷7200 s=110 W。"
+              },
+              {
+                "type": "direction",
+                "scenario": "小灯泡一",
+                "var": "t",
+                "lo": 1,
+                "hi": 10000,
+                "expr": "We/t",
+                "expect": "down",
+                "note": "电功固定时，完成时间越长，平均功率越小。"
+              },
+              {
+                "type": "scan",
+                "scenario": "小灯泡一",
+                "var": "t",
+                "lo": 0.1,
+                "hi": 1000000,
+                "note": "扫描正时间范围，避免除以零。"
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "电功率定义为单位时间内完成的电功，P=We/t。",
+          "电功 We=UIt，代入 P=We/t 可得 P=UI。",
+          "使用时检查额定与实际条件，并标明功率单位 W。"
+        ],
+        "errors": [
+          {
+            "wrong": "把功率当作总电能，忽略做功时间。",
+            "why": "功率表示做功或用电的快慢，电能表示一段时间内做功的总量；前者单位是 W，后者常用 J 或 kWh，二者不能混淆。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            },
+            "automation_review": {
+              "status": "指定反例已补验；原人工审核标签保留",
+              "basis": "功率220 W与一小时电能792000 J不是同一物理量；错误把电能当功率首先被目标量纲门禁拒绝。",
+              "scenario": "小灯泡一",
+              "correct_expression": "P = U*I",
+              "wrong_expression": "We",
+              "correct_value": 220,
+              "wrong_value": 792000,
+              "unit": "W",
+              "wrong_status": "dimension_conflict",
+              "note": "这是原创设计反例，机器仅验证指定模型、数据及量纲；自然语言命题、学生认知与装置仍待教师确认。"
+            }
+          },
+          {
+            "wrong": "把以 kW 表示的功率数值直接标成 W，换算时多除以 1000。",
+            "wrong_expr": "P = U*I/1000",
+            "why": "220 V×1 A=220 W；若要改写成 kW 才是 0.22 kW，不能把 0.22 标成 W。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "小灯泡一",
+              "expr": "U*I/1000",
+              "ref": 220
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "把电功率写成 U/I。",
+            "wrong_expr": "P = U/I",
+            "why": "电功率可由电压与电流相乘得到；电压除以电流不是瓦特，单位组合也不同，因此不能用它表示功率。",
+            "caught_by": "量纲一致性",
+            "trap_test": {
+              "kind": "dimension",
+              "target": "P = U/I",
+              "lhs_dim": "M·L^2·T^-3",
+              "rhs_dim": "M·L^2·T^-3·I^-2",
+              "expect": "mismatch",
+              "note": "实际量纲检查得到等号左边为M·L^2·T^-3、右边为M·L^2·T^-3·I^-2；两边不是同一物理量，因此该等式不成立。"
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "用电器两端电压 220 V，通过电流 0.5 A，求电功率。",
+          "solution": [
+            "P=UI=220×0.5=110 W。",
+            "功率单位为 W，结果表示该用电器每秒转化的电能。"
+          ],
+          "answer": "电功率为 110 W。"
+        },
+        "prereq": [
+          "power-01"
+        ],
+        "next": [
+          "power-03"
+        ],
+        "tags": [
+          "额定功率",
+          "实际功率",
+          "瓦特"
+        ],
+        "core": [
+          {
+            "title": "电功率与额定状态",
+            "text": "额定电压是正常工作设计电压，额定功率是在额定电压下的功率，实际功率由实际电压和电流决定。灯泡亮度主要与实际功率有关；相同额定电压下额定功率不同并不表示任何接法都按铭牌发光。不同工作温度下灯丝电阻改变，不能把所有实际状态都当定值电阻。"
+          }
+        ],
+        "experiments": [
+          {
+            "title": "测量小灯泡电功率",
+            "purpose": "在额定及不同实际电压下测功率并比较亮度。",
+            "apparatus": "低压电源、标额定电压小灯泡、两表、变阻器、开关。",
+            "variables": "改灯泡两端电压，记录电流和亮度，避免超额定过多。",
+            "steps": [
+              "断电连接电流表串联、电压表并联灯两端，变阻器最大值。",
+              "缓慢调至额定电压并读电流，计算相乘功率。",
+              "在安全的稍低电压下重复，比较实际功率与亮度，不盲目加压。"
+            ],
+            "data": "设计示例（非实测）：额定2.5 V时0.30 A，功率0.75 W；2.0 V时0.26 A，功率0.52 W。",
+            "conclusion": "额定状态功率须由额定电压下的电流计算；灯丝非恒定电阻。",
+            "limits": "不同电压功率不应平均成“额定功率”；本项为教材重要实验，不混称22项必做。",
+            "kind": "教材重要实验"
+          }
+        ],
+        "evidence": [
+          {
+            "kind": "conversion",
+            "value": 0.75,
+            "from_unit": "kW",
+            "expected": 750,
+            "to_unit": "W",
+            "note": "千瓦转瓦乘1000。"
+          }
+        ],
+        "learning_scope": "初中"
+      },
+      "error_index": 2,
+      "chapter": "电功和电热"
+    },
+    "diagnostic-power-03-1": {
+      "point": {
+        "id": "power-03",
+        "title": "电热器 电流的热效应",
+        "level": "基础",
+        "definition": "电流通过导体时会产生热量，电流通过电阻产生的热量与电流的平方、电阻和通电时间有关，这个规律叫焦耳定律。纯电阻电路中，电能可全部转化为内能。",
+        "meaning": "焦耳热公式 Q=I²Rt 适用于电流通过电阻产生的热量计算。电流增大对发热影响尤其明显，因为电流以平方出现。对电动机等非纯电阻用电器，电能还会转化为机械能等形式，不能简单认为电功全部等于电热。",
+        "symbols": {
+          "Q": {
+            "desc": "电阻产生的热量",
+            "unit": "J"
+          },
+          "I": {
+            "desc": "通过电阻的电流",
+            "unit": "A"
+          },
+          "R": {
+            "desc": "电阻",
+            "unit": "Ω"
+          },
+          "t": {
+            "desc": "通电时间",
+            "unit": "s"
+          },
+          "U": {
+            "desc": "电阻两端电压",
+            "unit": "V"
+          },
+          "We": {
+            "desc": "纯电阻电路中的电功",
+            "unit": "J"
+          },
+          "P": {
+            "desc": "电功率",
+            "unit": "W"
+          }
+        },
+        "scenarios": {
+          "十欧电阻": {
+            "Q": 200,
+            "I": 2,
+            "R": 10,
+            "t": 5,
+            "U": 20,
+            "We": 200
+          },
+          "五欧电阻": {
+            "Q": 180,
+            "I": 3,
+            "R": 5,
+            "t": 4,
+            "U": 15,
+            "We": 180
+          },
+          "小灯泡一": {
+            "U": 220,
+            "I": 1,
+            "P": 220,
+            "We": 792000,
+            "t": 3600
+          },
+          "小灯泡二": {
+            "U": 220,
+            "I": 0.5,
+            "P": 110,
+            "We": 792000,
+            "t": 7200
+          }
+        },
+        "formulas": [
+          {
+            "name": "焦耳定律",
+            "expr": "Q = I^2*R*t",
+            "when": "计算电流通过电阻产生的热量，I 用 A、R 用 Ω、t 用 s。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "十欧电阻",
+                "expr": "I^2*R*t",
+                "ref": 200,
+                "note": "2^2×10×5=200 J。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "五欧电阻",
+                "expr": "I^2*R*t",
+                "ref": 180,
+                "note": "3^2×5×4=180 J。"
+              },
+              {
+                "type": "direction",
+                "scenario": "十欧电阻",
+                "var": "I",
+                "lo": 0,
+                "hi": 10,
+                "expr": "I^2*R*t",
+                "expect": "up",
+                "note": "电阻和时间固定时，电流增大，热量按电流平方增大。"
+              },
+              {
+                "type": "scan",
+                "scenario": "十欧电阻",
+                "var": "I",
+                "lo": 0,
+                "hi": 100,
+                "note": "扫描非负电流，焦耳热保持非负并有限。"
+              },
+              {
+                "type": "consistency",
+                "scenario": "十欧电阻",
+                "with": "power-03|焦耳定律",
+                "with_expr": "U*I*t",
+                "target": "电阻产生的热量",
+                "note": "本公式直接求Q；参考端显式关系为U*I*t。两端使用同一情境和阶段，只核对该关系；with字段仅定位来源，不代表调用另一条被覆盖的公式。",
+                "verification_kind": "独立关系核对"
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "电流通过电阻时将部分电能转化为内能。",
+          "实验表明电流增大时发热明显增强，关系中出现电流平方。",
+          "综合电流、电阻和通电时间得到 Q=I²Rt。",
+          "对纯电阻有 U=IR，因此 UIt 与 I²Rt 相等。"
+        ],
+        "errors": [
+          {
+            "wrong": "使用焦耳定律时漏掉电流平方，写成 Q=IRt。",
+            "wrong_expr": "Q = I*R*t",
+            "why": "十欧电阻中 2 A 电流通过 5 s，焦耳热为 200 J；漏掉平方会得到 100 J。",
+            "caught_by": "量纲一致性",
+            "trap_test": {
+              "kind": "dimension",
+              "target": "Q = I*R*t",
+              "expect": "mismatch",
+              "lhs_dim": "M·L^2·T^-2",
+              "rhs_dim": "M·L^2·T^-2·I^-1",
+              "note": "正式引擎验证量纲不一致；不计作同量纲错误数值实测。"
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "认为电动机等所有用电器的电功都全部变成电热。",
+            "why": "非纯电阻用电器还会输出机械能、光能或声能等；必须区分电功与电热。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "把2 A换成2000 mA的数值后仍按A代入。",
+            "wrong_expr": "Q = (1000*I)^2*R*t",
+            "why": "以A表示电流应取2，正确热量200 J；误把mA的数值当A使热量大百万倍。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "十欧电阻",
+              "expr": "(1000*I)^2*R*t",
+              "ref": 200,
+              "tol": 1e-06
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "10 Ω 电阻通过 2 A 电流 5 s，求产生的热量。",
+          "solution": [
+            "Q=I²Rt=2²×10×5=200 J。",
+            "若为纯电阻，电功也为 200 J。"
+          ],
+          "answer": "产生 200 J 热量。"
+        },
+        "prereq": [
+          "ohm-01",
+          "power-01"
+        ],
+        "next": [],
+        "tags": [
+          "焦耳定律",
+          "电热",
+          "纯电阻",
+          "电能转化"
+        ],
+        "core": [
+          {
+            "title": "电热器与焦耳定律",
+            "text": "电热器利用电流热效应；焦耳热与电流平方、电阻、通电时间相关。串联同电流同时间可比较电阻影响；同电阻同时间可比较电流影响。纯电阻电热器可近似把电功等同电热；电动机还输出机械能，不能把全部电能都算成电热。保险丝利用过大电流产生热量使其熔断，不用铜铁丝替代。"
+          }
+        ],
+        "learning_scope": "初中"
+      },
+      "error_index": 0,
+      "chapter": "电功和电热"
+    },
+    "diagnostic-power-03-2": {
+      "point": {
+        "id": "power-03",
+        "title": "电热器 电流的热效应",
+        "level": "基础",
+        "definition": "电流通过导体时会产生热量，电流通过电阻产生的热量与电流的平方、电阻和通电时间有关，这个规律叫焦耳定律。纯电阻电路中，电能可全部转化为内能。",
+        "meaning": "焦耳热公式 Q=I²Rt 适用于电流通过电阻产生的热量计算。电流增大对发热影响尤其明显，因为电流以平方出现。对电动机等非纯电阻用电器，电能还会转化为机械能等形式，不能简单认为电功全部等于电热。",
+        "symbols": {
+          "Q": {
+            "desc": "电阻产生的热量",
+            "unit": "J"
+          },
+          "I": {
+            "desc": "通过电阻的电流",
+            "unit": "A"
+          },
+          "R": {
+            "desc": "电阻",
+            "unit": "Ω"
+          },
+          "t": {
+            "desc": "通电时间",
+            "unit": "s"
+          },
+          "U": {
+            "desc": "电阻两端电压",
+            "unit": "V"
+          },
+          "We": {
+            "desc": "纯电阻电路中的电功",
+            "unit": "J"
+          },
+          "P": {
+            "desc": "电功率",
+            "unit": "W"
+          }
+        },
+        "scenarios": {
+          "十欧电阻": {
+            "Q": 200,
+            "I": 2,
+            "R": 10,
+            "t": 5,
+            "U": 20,
+            "We": 200
+          },
+          "五欧电阻": {
+            "Q": 180,
+            "I": 3,
+            "R": 5,
+            "t": 4,
+            "U": 15,
+            "We": 180
+          },
+          "小灯泡一": {
+            "U": 220,
+            "I": 1,
+            "P": 220,
+            "We": 792000,
+            "t": 3600
+          },
+          "小灯泡二": {
+            "U": 220,
+            "I": 0.5,
+            "P": 110,
+            "We": 792000,
+            "t": 7200
+          }
+        },
+        "formulas": [
+          {
+            "name": "焦耳定律",
+            "expr": "Q = I^2*R*t",
+            "when": "计算电流通过电阻产生的热量，I 用 A、R 用 Ω、t 用 s。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "十欧电阻",
+                "expr": "I^2*R*t",
+                "ref": 200,
+                "note": "2^2×10×5=200 J。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "五欧电阻",
+                "expr": "I^2*R*t",
+                "ref": 180,
+                "note": "3^2×5×4=180 J。"
+              },
+              {
+                "type": "direction",
+                "scenario": "十欧电阻",
+                "var": "I",
+                "lo": 0,
+                "hi": 10,
+                "expr": "I^2*R*t",
+                "expect": "up",
+                "note": "电阻和时间固定时，电流增大，热量按电流平方增大。"
+              },
+              {
+                "type": "scan",
+                "scenario": "十欧电阻",
+                "var": "I",
+                "lo": 0,
+                "hi": 100,
+                "note": "扫描非负电流，焦耳热保持非负并有限。"
+              },
+              {
+                "type": "consistency",
+                "scenario": "十欧电阻",
+                "with": "power-03|焦耳定律",
+                "with_expr": "U*I*t",
+                "target": "电阻产生的热量",
+                "note": "本公式直接求Q；参考端显式关系为U*I*t。两端使用同一情境和阶段，只核对该关系；with字段仅定位来源，不代表调用另一条被覆盖的公式。",
+                "verification_kind": "独立关系核对"
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "电流通过电阻时将部分电能转化为内能。",
+          "实验表明电流增大时发热明显增强，关系中出现电流平方。",
+          "综合电流、电阻和通电时间得到 Q=I²Rt。",
+          "对纯电阻有 U=IR，因此 UIt 与 I²Rt 相等。"
+        ],
+        "errors": [
+          {
+            "wrong": "使用焦耳定律时漏掉电流平方，写成 Q=IRt。",
+            "wrong_expr": "Q = I*R*t",
+            "why": "十欧电阻中 2 A 电流通过 5 s，焦耳热为 200 J；漏掉平方会得到 100 J。",
+            "caught_by": "量纲一致性",
+            "trap_test": {
+              "kind": "dimension",
+              "target": "Q = I*R*t",
+              "expect": "mismatch",
+              "lhs_dim": "M·L^2·T^-2",
+              "rhs_dim": "M·L^2·T^-2·I^-1",
+              "note": "正式引擎验证量纲不一致；不计作同量纲错误数值实测。"
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "认为电动机等所有用电器的电功都全部变成电热。",
+            "why": "非纯电阻用电器还会输出机械能、光能或声能等；必须区分电功与电热。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "把2 A换成2000 mA的数值后仍按A代入。",
+            "wrong_expr": "Q = (1000*I)^2*R*t",
+            "why": "以A表示电流应取2，正确热量200 J；误把mA的数值当A使热量大百万倍。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "十欧电阻",
+              "expr": "(1000*I)^2*R*t",
+              "ref": 200,
+              "tol": 1e-06
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "10 Ω 电阻通过 2 A 电流 5 s，求产生的热量。",
+          "solution": [
+            "Q=I²Rt=2²×10×5=200 J。",
+            "若为纯电阻，电功也为 200 J。"
+          ],
+          "answer": "产生 200 J 热量。"
+        },
+        "prereq": [
+          "ohm-01",
+          "power-01"
+        ],
+        "next": [],
+        "tags": [
+          "焦耳定律",
+          "电热",
+          "纯电阻",
+          "电能转化"
+        ],
+        "core": [
+          {
+            "title": "电热器与焦耳定律",
+            "text": "电热器利用电流热效应；焦耳热与电流平方、电阻、通电时间相关。串联同电流同时间可比较电阻影响；同电阻同时间可比较电流影响。纯电阻电热器可近似把电功等同电热；电动机还输出机械能，不能把全部电能都算成电热。保险丝利用过大电流产生热量使其熔断，不用铜铁丝替代。"
+          }
+        ],
+        "learning_scope": "初中"
+      },
+      "error_index": 1,
+      "chapter": "电功和电热"
+    },
+    "diagnostic-power-03-3": {
+      "point": {
+        "id": "power-03",
+        "title": "电热器 电流的热效应",
+        "level": "基础",
+        "definition": "电流通过导体时会产生热量，电流通过电阻产生的热量与电流的平方、电阻和通电时间有关，这个规律叫焦耳定律。纯电阻电路中，电能可全部转化为内能。",
+        "meaning": "焦耳热公式 Q=I²Rt 适用于电流通过电阻产生的热量计算。电流增大对发热影响尤其明显，因为电流以平方出现。对电动机等非纯电阻用电器，电能还会转化为机械能等形式，不能简单认为电功全部等于电热。",
+        "symbols": {
+          "Q": {
+            "desc": "电阻产生的热量",
+            "unit": "J"
+          },
+          "I": {
+            "desc": "通过电阻的电流",
+            "unit": "A"
+          },
+          "R": {
+            "desc": "电阻",
+            "unit": "Ω"
+          },
+          "t": {
+            "desc": "通电时间",
+            "unit": "s"
+          },
+          "U": {
+            "desc": "电阻两端电压",
+            "unit": "V"
+          },
+          "We": {
+            "desc": "纯电阻电路中的电功",
+            "unit": "J"
+          },
+          "P": {
+            "desc": "电功率",
+            "unit": "W"
+          }
+        },
+        "scenarios": {
+          "十欧电阻": {
+            "Q": 200,
+            "I": 2,
+            "R": 10,
+            "t": 5,
+            "U": 20,
+            "We": 200
+          },
+          "五欧电阻": {
+            "Q": 180,
+            "I": 3,
+            "R": 5,
+            "t": 4,
+            "U": 15,
+            "We": 180
+          },
+          "小灯泡一": {
+            "U": 220,
+            "I": 1,
+            "P": 220,
+            "We": 792000,
+            "t": 3600
+          },
+          "小灯泡二": {
+            "U": 220,
+            "I": 0.5,
+            "P": 110,
+            "We": 792000,
+            "t": 7200
+          }
+        },
+        "formulas": [
+          {
+            "name": "焦耳定律",
+            "expr": "Q = I^2*R*t",
+            "when": "计算电流通过电阻产生的热量，I 用 A、R 用 Ω、t 用 s。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "十欧电阻",
+                "expr": "I^2*R*t",
+                "ref": 200,
+                "note": "2^2×10×5=200 J。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "五欧电阻",
+                "expr": "I^2*R*t",
+                "ref": 180,
+                "note": "3^2×5×4=180 J。"
+              },
+              {
+                "type": "direction",
+                "scenario": "十欧电阻",
+                "var": "I",
+                "lo": 0,
+                "hi": 10,
+                "expr": "I^2*R*t",
+                "expect": "up",
+                "note": "电阻和时间固定时，电流增大，热量按电流平方增大。"
+              },
+              {
+                "type": "scan",
+                "scenario": "十欧电阻",
+                "var": "I",
+                "lo": 0,
+                "hi": 100,
+                "note": "扫描非负电流，焦耳热保持非负并有限。"
+              },
+              {
+                "type": "consistency",
+                "scenario": "十欧电阻",
+                "with": "power-03|焦耳定律",
+                "with_expr": "U*I*t",
+                "target": "电阻产生的热量",
+                "note": "本公式直接求Q；参考端显式关系为U*I*t。两端使用同一情境和阶段，只核对该关系；with字段仅定位来源，不代表调用另一条被覆盖的公式。",
+                "verification_kind": "独立关系核对"
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "电流通过电阻时将部分电能转化为内能。",
+          "实验表明电流增大时发热明显增强，关系中出现电流平方。",
+          "综合电流、电阻和通电时间得到 Q=I²Rt。",
+          "对纯电阻有 U=IR，因此 UIt 与 I²Rt 相等。"
+        ],
+        "errors": [
+          {
+            "wrong": "使用焦耳定律时漏掉电流平方，写成 Q=IRt。",
+            "wrong_expr": "Q = I*R*t",
+            "why": "十欧电阻中 2 A 电流通过 5 s，焦耳热为 200 J；漏掉平方会得到 100 J。",
+            "caught_by": "量纲一致性",
+            "trap_test": {
+              "kind": "dimension",
+              "target": "Q = I*R*t",
+              "expect": "mismatch",
+              "lhs_dim": "M·L^2·T^-2",
+              "rhs_dim": "M·L^2·T^-2·I^-1",
+              "note": "正式引擎验证量纲不一致；不计作同量纲错误数值实测。"
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "认为电动机等所有用电器的电功都全部变成电热。",
+            "why": "非纯电阻用电器还会输出机械能、光能或声能等；必须区分电功与电热。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "把2 A换成2000 mA的数值后仍按A代入。",
+            "wrong_expr": "Q = (1000*I)^2*R*t",
+            "why": "以A表示电流应取2，正确热量200 J；误把mA的数值当A使热量大百万倍。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "十欧电阻",
+              "expr": "(1000*I)^2*R*t",
+              "ref": 200,
+              "tol": 1e-06
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "10 Ω 电阻通过 2 A 电流 5 s，求产生的热量。",
+          "solution": [
+            "Q=I²Rt=2²×10×5=200 J。",
+            "若为纯电阻，电功也为 200 J。"
+          ],
+          "answer": "产生 200 J 热量。"
+        },
+        "prereq": [
+          "ohm-01",
+          "power-01"
+        ],
+        "next": [],
+        "tags": [
+          "焦耳定律",
+          "电热",
+          "纯电阻",
+          "电能转化"
+        ],
+        "core": [
+          {
+            "title": "电热器与焦耳定律",
+            "text": "电热器利用电流热效应；焦耳热与电流平方、电阻、通电时间相关。串联同电流同时间可比较电阻影响；同电阻同时间可比较电流影响。纯电阻电热器可近似把电功等同电热；电动机还输出机械能，不能把全部电能都算成电热。保险丝利用过大电流产生热量使其熔断，不用铜铁丝替代。"
+          }
+        ],
+        "learning_scope": "初中"
+      },
+      "error_index": 2,
+      "chapter": "电功和电热"
+    },
+    "diagnostic-power-04-1": {
+      "point": {
+        "id": "power-04",
+        "title": "家庭电路与安全用电",
+        "level": "基础",
+        "definition": "家庭电路中的用电器通常并联接入，额定电压约为 220 V。多个用电器同时工作时，总功率增加，干路电流随之增大；超过导线和开关允许值可能造成过热，保险装置用于在异常电流时切断电路。",
+        "meaning": "估算家庭电路电流时，可把并联用电器的总功率除以供电电压。该关系用于判断大功率电器同时工作时的负载大小，不能代替查看插座、导线和断路器的额定参数。安全使用还要避免湿手触电、破损电线和私拉乱接；保险丝不可随意换成更粗规格。",
+        "symbols": {
+          "P_total": {
+            "desc": "同时工作的用电器总功率",
+            "unit": "W"
+          },
+          "U": {
+            "desc": "家庭电路电压",
+            "unit": "V"
+          },
+          "I_total": {
+            "desc": "家庭电路干路电流估算值",
+            "unit": "A"
+          },
+          "I": {
+            "desc": "由电功率关系对应的电流",
+            "unit": "A"
+          }
+        },
+        "scenarios": {
+          "两千瓦家电": {
+            "P_total": 2000,
+            "U": 220,
+            "I_total": 9.090909090909092,
+            "I": 9.090909090909092
+          },
+          "三点三千瓦负载": {
+            "P_total": 3300,
+            "U": 220,
+            "I_total": 15,
+            "I": 15
+          }
+        },
+        "formulas": [
+          {
+            "name": "由家庭电器总功率估算干路电流",
+            "expr": "I_total = P_total/U",
+            "when": "家庭用电器并联且电压近似相同；同时工作的总功率记作 P总，U 为电源电压。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "两千瓦家电",
+                "expr": "P_total/U",
+                "ref": 9.090909090909092,
+                "note": "总功率 2000 W、供电电压 220 V，干路电流约 9.1 A。 "
+              },
+              {
+                "type": "numeric",
+                "scenario": "三点三千瓦负载",
+                "expr": "P_total/U",
+                "ref": 15,
+                "note": "3300 W 负载在 220 V 下电流约为 15 A。 "
+              },
+              {
+                "type": "direction",
+                "scenario": "两千瓦家电",
+                "var": "P_total",
+                "lo": 100,
+                "hi": 10000,
+                "expr": "P_total/U",
+                "expect": "up",
+                "note": "电压固定时，同时工作的总功率越大，干路电流越大。 "
+              },
+              {
+                "type": "scan",
+                "scenario": "两千瓦家电",
+                "var": "P_total",
+                "lo": 0,
+                "hi": 100000,
+                "note": "扫描非负功率，电流估值保持有限。 "
+              },
+              {
+                "type": "consistency",
+                "scenario": "两千瓦家电",
+                "with": "power-04|由家庭电器总功率估算干路电流",
+                "with_expr": "I_total",
+                "target": "家庭电路干路电流估算值",
+                "note": "直接求本公式输出，与情境中另列的I_total设计基准核对；数据是设计示例，不是实测。用于核对定义、反算或边界值，不宣称不同物理原理互证。",
+                "verification_kind": "独立设计情境数据核对"
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "把同时工作的用电器功率相加，得到总功率 P_total。",
+          "使用 P=UI 反求电流，得到 I_total=P_total/U。",
+          "将估算电流与线路、插座和保护装置的额定值比较；不能仅凭估算替代安全规范。"
+        ],
+        "errors": [
+          {
+            "wrong": "估算家庭电路电流时把总功率除以两倍电压。",
+            "wrong_expr": "I_total = P_total/(2*U)",
+            "why": "功率关系为 P=UI，故 I=P/U；额外除以 2 会把负载电流低估一半。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "两千瓦家电",
+              "expr": "P_total/(2*U)",
+              "ref": 9.090909090909092
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "认为保险丝越粗越安全，或在带电状态下更换保险丝。",
+            "why": "保险丝规格过大会失去过载保护作用；家庭电路检修需先断电并由合格人员处理。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "一台 2.2 kW 电热水器接在 220 V 家庭电路中，估算工作电流。",
+          "solution": [
+            "先把功率换成瓦：2.2 kW=2200 W。",
+            "I=P/U=2200/220=10 A。",
+            "再按设备和线路额定参数判断能否安全使用。"
+          ],
+          "answer": "工作电流约为 10 A。"
+        },
+        "prereq": [
+          "power-02"
+        ],
+        "next": [],
+        "tags": [
+          "家庭电路",
+          "过载",
+          "额定电流",
+          "安全用电",
+          "总功率"
+        ],
+        "core": [
+          {
+            "title": "家庭电路组成与接地",
+            "text": "家庭电路通常含进户线、电能表、总开关和保护装置、分支开关、用电器与插座。火线与零线间额定电压按教学模型取220 V，各用电器并联；单极开关接火线，熄灯后也须避免用电器内部仍处带电状态。保护接地把可触及金属外壳可靠连接到保护导体，不能当作工作零线；接地、过流保护和漏电保护各有作用，不相互替代。"
+          },
+          {
+            "title": "测电笔、故障与安全边界",
+            "text": "传统氖管测电笔中，高阻限流与人体对地形成很小电流，接触火线可能发光；使用示意中手接尾部金属帽，不接笔尖等前端金属。它不能完整证明设备断电，更不能取代专业验电。触电、漏电、总功率过大和短路须区分；保护装置动作不能单凭一现象唯一判故障。课堂只用低压模型演示开关位置、并联和故障，不让学生拆修、试触或检修带电家庭电路；现实故障由合格人员处理。"
+          }
+        ],
+        "learning_scope": "初中"
+      },
+      "error_index": 0,
+      "chapter": "电功和电热"
+    },
+    "diagnostic-power-04-2": {
+      "point": {
+        "id": "power-04",
+        "title": "家庭电路与安全用电",
+        "level": "基础",
+        "definition": "家庭电路中的用电器通常并联接入，额定电压约为 220 V。多个用电器同时工作时，总功率增加，干路电流随之增大；超过导线和开关允许值可能造成过热，保险装置用于在异常电流时切断电路。",
+        "meaning": "估算家庭电路电流时，可把并联用电器的总功率除以供电电压。该关系用于判断大功率电器同时工作时的负载大小，不能代替查看插座、导线和断路器的额定参数。安全使用还要避免湿手触电、破损电线和私拉乱接；保险丝不可随意换成更粗规格。",
+        "symbols": {
+          "P_total": {
+            "desc": "同时工作的用电器总功率",
+            "unit": "W"
+          },
+          "U": {
+            "desc": "家庭电路电压",
+            "unit": "V"
+          },
+          "I_total": {
+            "desc": "家庭电路干路电流估算值",
+            "unit": "A"
+          },
+          "I": {
+            "desc": "由电功率关系对应的电流",
+            "unit": "A"
+          }
+        },
+        "scenarios": {
+          "两千瓦家电": {
+            "P_total": 2000,
+            "U": 220,
+            "I_total": 9.090909090909092,
+            "I": 9.090909090909092
+          },
+          "三点三千瓦负载": {
+            "P_total": 3300,
+            "U": 220,
+            "I_total": 15,
+            "I": 15
+          }
+        },
+        "formulas": [
+          {
+            "name": "由家庭电器总功率估算干路电流",
+            "expr": "I_total = P_total/U",
+            "when": "家庭用电器并联且电压近似相同；同时工作的总功率记作 P总，U 为电源电压。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "两千瓦家电",
+                "expr": "P_total/U",
+                "ref": 9.090909090909092,
+                "note": "总功率 2000 W、供电电压 220 V，干路电流约 9.1 A。 "
+              },
+              {
+                "type": "numeric",
+                "scenario": "三点三千瓦负载",
+                "expr": "P_total/U",
+                "ref": 15,
+                "note": "3300 W 负载在 220 V 下电流约为 15 A。 "
+              },
+              {
+                "type": "direction",
+                "scenario": "两千瓦家电",
+                "var": "P_total",
+                "lo": 100,
+                "hi": 10000,
+                "expr": "P_total/U",
+                "expect": "up",
+                "note": "电压固定时，同时工作的总功率越大，干路电流越大。 "
+              },
+              {
+                "type": "scan",
+                "scenario": "两千瓦家电",
+                "var": "P_total",
+                "lo": 0,
+                "hi": 100000,
+                "note": "扫描非负功率，电流估值保持有限。 "
+              },
+              {
+                "type": "consistency",
+                "scenario": "两千瓦家电",
+                "with": "power-04|由家庭电器总功率估算干路电流",
+                "with_expr": "I_total",
+                "target": "家庭电路干路电流估算值",
+                "note": "直接求本公式输出，与情境中另列的I_total设计基准核对；数据是设计示例，不是实测。用于核对定义、反算或边界值，不宣称不同物理原理互证。",
+                "verification_kind": "独立设计情境数据核对"
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "把同时工作的用电器功率相加，得到总功率 P_total。",
+          "使用 P=UI 反求电流，得到 I_total=P_total/U。",
+          "将估算电流与线路、插座和保护装置的额定值比较；不能仅凭估算替代安全规范。"
+        ],
+        "errors": [
+          {
+            "wrong": "估算家庭电路电流时把总功率除以两倍电压。",
+            "wrong_expr": "I_total = P_total/(2*U)",
+            "why": "功率关系为 P=UI，故 I=P/U；额外除以 2 会把负载电流低估一半。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "两千瓦家电",
+              "expr": "P_total/(2*U)",
+              "ref": 9.090909090909092
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "认为保险丝越粗越安全，或在带电状态下更换保险丝。",
+            "why": "保险丝规格过大会失去过载保护作用；家庭电路检修需先断电并由合格人员处理。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "一台 2.2 kW 电热水器接在 220 V 家庭电路中，估算工作电流。",
+          "solution": [
+            "先把功率换成瓦：2.2 kW=2200 W。",
+            "I=P/U=2200/220=10 A。",
+            "再按设备和线路额定参数判断能否安全使用。"
+          ],
+          "answer": "工作电流约为 10 A。"
+        },
+        "prereq": [
+          "power-02"
+        ],
+        "next": [],
+        "tags": [
+          "家庭电路",
+          "过载",
+          "额定电流",
+          "安全用电",
+          "总功率"
+        ],
+        "core": [
+          {
+            "title": "家庭电路组成与接地",
+            "text": "家庭电路通常含进户线、电能表、总开关和保护装置、分支开关、用电器与插座。火线与零线间额定电压按教学模型取220 V，各用电器并联；单极开关接火线，熄灯后也须避免用电器内部仍处带电状态。保护接地把可触及金属外壳可靠连接到保护导体，不能当作工作零线；接地、过流保护和漏电保护各有作用，不相互替代。"
+          },
+          {
+            "title": "测电笔、故障与安全边界",
+            "text": "传统氖管测电笔中，高阻限流与人体对地形成很小电流，接触火线可能发光；使用示意中手接尾部金属帽，不接笔尖等前端金属。它不能完整证明设备断电，更不能取代专业验电。触电、漏电、总功率过大和短路须区分；保护装置动作不能单凭一现象唯一判故障。课堂只用低压模型演示开关位置、并联和故障，不让学生拆修、试触或检修带电家庭电路；现实故障由合格人员处理。"
+          }
+        ],
+        "learning_scope": "初中"
+      },
+      "error_index": 1,
+      "chapter": "电功和电热"
+    }
+  },
+  "generator_version": "2026-10-04-条件过程返工-8"
+}

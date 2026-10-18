@@ -1,0 +1,4129 @@
+{
+  "segment": "初中",
+  "chapter": "测量工具与数据处理",
+  "source_file": "19_tools.json",
+  "questions": [
+    {
+      "id": "diagnostic-tool-01-1",
+      "point_id": "tool-01",
+      "point_title": "刻度尺的使用与估读",
+      "chapter": "测量工具与数据处理",
+      "stem": "在“刻度尺的使用与估读”的模型下，x<sub>1</sub>（第一次起点位置）=0.01 m；x<sub>2</sub>（第一次终点位置）=0.0426 m。条件：两读数在同一尺上，单位统一；这里数值使用米。。求第一次测得长度（L）。这些数值是设计示例。",
+      "options": [
+        {
+          "label": "A",
+          "text": "0.0326 m"
+        },
+        {
+          "label": "B",
+          "text": "0.0426 m"
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "使用两位置之差：x<sub>2</sub>-x<sub>1</sub>，代入得0.0326 m。另一结果来自x<sub>2</sub>，算得0.0426 m。\n用非零刻线起测后，终点读数包含被移动的起点位置。4.26 cm的终点和1.00 cm的起点应相减，不是4.26 cm长。\n知识点条件：先认量程、分度值和零刻线，将刻度面贴近物体并平行放置，视线正对刻度面。零端磨损可以从完整的整数刻线起测，但必须减去起点。估读位体现测量精度，不能把准确刻度的位数当作完整结果；数字仪器则按实际显示精度记录。重复测量能减小部分偶然误差，不能修复斜视与尺本身的偏差。\n学习分工：本卡讲刻度尺的放置、分度值和估读，重复测量与数据记录见实验卡（jexp-01），可点击下方知识关系回看。这一链接是相关内容推荐，不表示必须先后学习。\n推导依据：贴近尺面并选择起点，读到毫米下一位。；起点非零时用终点减起点，得到被测长度。；改变起点再次测量，比较两次差值并保留原仪器精度。\n卡片公式各自的适用条件（不是本题共同前提）：\n两位置之差：两读数在同一尺上，单位统一；这里数值使用米。\n独立复测长度：y1、y2是另一次复测中同一薄板两端的坐标，使用同一长度单位及同一把尺的零点。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 0,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "L = x<sub>2</sub>",
+      "trap_test": {
+        "scenario": "薄板甲",
+        "expr": "x2",
+        "ref": 0.0326
+      },
+      "level": "基础",
+      "learning_scope": "初中",
+      "answer_evidence": {
+        "kind": "numeric",
+        "scenario": "薄板甲",
+        "parameters": {
+          "x1": 0.01,
+          "x2": 0.0426,
+          "y1": 0.02,
+          "y2": 0.0526,
+          "L": 0.0326,
+          "Y": 0.0326
+        },
+        "target": "L",
+        "unit": "m",
+        "reference": 0.0326,
+        "correct_proof": {
+          "expression": "x2-x1",
+          "formula": "两位置之差",
+          "value": 0.0326,
+          "when": "两读数在同一尺上，单位统一；这里数值使用米。"
+        },
+        "distractor_expression": "x2",
+        "distractor_value": 0.0426,
+        "dimension_matches": true,
+        "independent_evaluation": true
+      },
+      "review": {
+        "confidence": "medium",
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": true,
+          "no_answer_leak_in_options": true
+        },
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。",
+        "material": {
+          "anchors": [
+            {
+              "kind": "公式",
+              "name": "两位置之差",
+              "expression": "x2-x1",
+              "when": "两读数在同一尺上，单位统一；这里数值使用米。",
+              "display": "x<sub>2</sub>-x<sub>1</sub>"
+            }
+          ],
+          "source": {
+            "nature": "原创设计示例，非教材实测或真实实验记录",
+            "scenario": "薄板甲",
+            "parameters": {
+              "x1": 0.01,
+              "x2": 0.0426,
+              "y1": 0.02,
+              "y2": 0.0526,
+              "L": 0.0326,
+              "Y": 0.0326
+            },
+            "data": [
+              "第一次起点位置：0.01 m",
+              "第一次终点位置：0.0426 m",
+              "复测起点位置：0.02 m",
+              "复测终点位置：0.0526 m",
+              "第一次测得长度：0.0326 m",
+              "独立复测长度：0.0326 m"
+            ]
+          },
+          "predicted_errors": [
+            {
+              "option": "B",
+              "text": "0.0426 m",
+              "reason": "用非零刻线起测后，终点读数包含被移动的起点位置。4.26 cm的终点和1.00 cm的起点应相减，不是4.26 cm长。",
+              "expression": "x2",
+              "status": "误答原因预测，待教师确认；未采集学生作答证据"
+            }
+          ],
+          "difficulty_note": "建议难度沿用本题level（源卡难度）；尚非题目难度实测，待教师调整",
+          "estimated_seconds": [
+            60,
+            120
+          ],
+          "time_basis": "未做学生计时；按现有难度给出备课估计区间，待教师确认",
+          "machine_checks": [
+            {
+              "name": "题目ID关联源知识点",
+              "passed": true
+            },
+            {
+              "name": "选项标签唯一且参考标签存在",
+              "passed": true
+            },
+            {
+              "name": "选项文本互异",
+              "passed": true
+            },
+            {
+              "name": "正确路径独立数值复算",
+              "passed": true
+            },
+            {
+              "name": "带量纲求值与独立求值一致",
+              "passed": true
+            },
+            {
+              "name": "干扰路径复算且与正确路径分离",
+              "passed": true
+            }
+          ],
+          "machine_boundary": "只列本次逐题实际执行项目；不把关联知识卡的方向、扫描或一致性检查算作本题已验。概念题未验命题真假。",
+          "human_review_items": [
+            "题干条件是否充分、清楚且符合学段",
+            "参考结论在指定条件下是否唯一",
+            "干扰项是否合理、对应真实认知问题且无答案暗示",
+            "公式或概念锚点是否准确",
+            "建议难度及用时是否适合教学",
+            "语言、装置与安全操作是否恰当"
+          ],
+          "reference_answer_note": "现有参考答案保持；即使本地可以判选项，也仍须教师审核教学可用性"
+        }
+      }
+    },
+    {
+      "id": "diagnostic-tool-01-2",
+      "point_id": "tool-01",
+      "point_title": "刻度尺的使用与估读",
+      "chapter": "测量工具与数据处理",
+      "stem": "关于“刻度尺的使用与估读”，判断这一说法是否成立，并说明依据：\n普通毫米刻度尺按中学估读约定测得3.26 cm时，完整记录可以写成3.2 cm。",
+      "options": [
+        {
+          "label": "A",
+          "text": "该说法成立。"
+        },
+        {
+          "label": "B",
+          "text": "该说法不成立。"
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "普通毫米尺按中学约定应估读到0.1 mm，记录如3.26 cm；只记3.2 cm丢失了测量精度信息。补位必须来自实际观察，不能任意添数字。\n知识点条件：先认量程、分度值和零刻线，将刻度面贴近物体并平行放置，视线正对刻度面。零端磨损可以从完整的整数刻线起测，但必须减去起点。估读位体现测量精度，不能把准确刻度的位数当作完整结果；数字仪器则按实际显示精度记录。重复测量能减小部分偶然误差，不能修复斜视与尺本身的偏差。\n学习分工：本卡讲刻度尺的放置、分度值和估读，重复测量与数据记录见实验卡（jexp-01），可点击下方知识关系回看。这一链接是相关内容推荐，不表示必须先后学习。\n推导依据：贴近尺面并选择起点，读到毫米下一位。；起点非零时用终点减起点，得到被测长度。；改变起点再次测量，比较两次差值并保留原仪器精度。\n卡片公式各自的适用条件（不是本题共同前提）：\n两位置之差：两读数在同一尺上，单位统一；这里数值使用米。\n独立复测长度：y1、y2是另一次复测中同一薄板两端的坐标，使用同一长度单位及同一把尺的零点。",
+      "error_type": "概念混淆",
+      "judging": "teacher",
+      "source_error_index": 1,
+      "source_caught_by": "人工审核",
+      "wrong_expr": null,
+      "trap_test": null,
+      "level": "基础",
+      "learning_scope": "初中",
+      "answer_evidence": {
+        "kind": "teacher",
+        "claim_source": "执行方明确命题",
+        "reference_only": true,
+        "reason": "概念、操作或无法建立完整定量证据，教师确认条件与结论。"
+      },
+      "review": {
+        "confidence": "medium",
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": false,
+          "no_answer_leak_in_options": true
+        },
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。",
+        "material": {
+          "anchors": [
+            {
+              "kind": "概念或操作",
+              "name": "刻度尺的使用与估读",
+              "claim": "毫米分度尺只记3.2 cm，漏写估读位。",
+              "correction_basis": "普通毫米尺按中学约定应估读到0.1 mm，记录如3.26 cm；只记3.2 cm丢失了测量精度信息。补位必须来自实际观察，不能任意添数字。",
+              "note": "概念锚点及命题真假待教师确认；未套用任意第一条公式",
+              "display": "毫米分度尺只记3.2 cm，漏写估读位。"
+            }
+          ],
+          "source": {
+            "nature": "原创概念/操作命题；无真实测量记录",
+            "source_error_index": 1
+          },
+          "predicted_errors": [
+            {
+              "option": "A",
+              "text": "该说法成立。",
+              "reason": "普通毫米尺按中学约定应估读到0.1 mm，记录如3.26 cm；只记3.2 cm丢失了测量精度信息。补位必须来自实际观察，不能任意添数字。",
+              "expression": null,
+              "status": "误答原因预测，待教师确认；未采集学生作答证据"
+            }
+          ],
+          "difficulty_note": "建议难度沿用本题level（源卡难度）；尚非题目难度实测，待教师调整",
+          "estimated_seconds": [
+            60,
+            120
+          ],
+          "time_basis": "未做学生计时；按现有难度给出备课估计区间，待教师确认",
+          "machine_checks": [
+            {
+              "name": "题目ID关联源知识点",
+              "passed": true
+            },
+            {
+              "name": "选项标签唯一且参考标签存在",
+              "passed": true
+            },
+            {
+              "name": "选项文本互异",
+              "passed": true
+            }
+          ],
+          "machine_boundary": "只列本次逐题实际执行项目；不把关联知识卡的方向、扫描或一致性检查算作本题已验。概念题未验命题真假。",
+          "human_review_items": [
+            "题干条件是否充分、清楚且符合学段",
+            "参考结论在指定条件下是否唯一",
+            "干扰项是否合理、对应真实认知问题且无答案暗示",
+            "公式或概念锚点是否准确",
+            "建议难度及用时是否适合教学",
+            "语言、装置与安全操作是否恰当"
+          ],
+          "reference_answer_note": "现有参考答案保持；即使本地可以判选项，也仍须教师审核教学可用性"
+        }
+      }
+    },
+    {
+      "id": "diagnostic-tool-02-1",
+      "point_id": "tool-02",
+      "point_title": "游标卡尺的读数",
+      "chapter": "测量工具与数据处理",
+      "stem": "在“游标卡尺的读数”的模型下，x（主尺整毫米位置）=0.012 m；n（游标对齐格数）=23 1；d（游标分度差）=2e-05 m。条件：标准毫米主尺、对应分度差的游标；计算数值先统一为米。。求卡尺读数（L）。这些数值是设计示例。",
+      "options": [
+        {
+          "label": "A",
+          "text": "0.01246 m"
+        },
+        {
+          "label": "B",
+          "text": "0.01223 m"
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "使用主尺加游标增量：x+n·d，代入得0.01246 m。另一结果来自x+n·d/2，算得0.01223 m。\n格数不是毫米数，必须乘该游标的0.02 mm分度差；12 mm主尺与23格对应12.46 mm，错按0.01 mm每格得到12.23 mm。错读每格0.01 mm是本规格实际每格0.02 mm的一半，所以错误式仍带长度量纲。\n知识点条件：主尺读游标零线左侧的整毫米，再找一条与主尺重合的游标刻线。外测量爪测外径或厚度，内测量爪测内径，深度尺测孔深。先校零并保持接触适度，歪放、卡得过紧和看错游标零线都引入偏差。游标与螺旋测微器的读数规则不同；本卡是精密工具拓展，不把它宣称为苏科初中必做实验。\n推导依据：标准游标分度差由主尺与游标格距的差决定，先确认规格。；读游标零线左侧整毫米，再用对齐格数乘分度差。；主尺与游标增量相加；校准标准块检查读数，没有额外估读位。\n卡片公式各自的适用条件（不是本题共同前提）：\n主尺加游标增量：标准毫米主尺、对应分度差的游标；计算数值先统一为米。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 0,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "L = x+n·d/2",
+      "trap_test": {
+        "scenario": "五十分度",
+        "expr": "x+n*d/2",
+        "ref": 0.01246
+      },
+      "level": "基础",
+      "learning_scope": "高中测量拓展",
+      "answer_evidence": {
+        "kind": "numeric",
+        "scenario": "五十分度",
+        "parameters": {
+          "x": 0.012,
+          "n": 23,
+          "d": 2e-05,
+          "L": 0.01246,
+          "D": 0.01246
+        },
+        "target": "L",
+        "unit": "m",
+        "reference": 0.01246,
+        "correct_proof": {
+          "expression": "x+n*d",
+          "formula": "主尺加游标增量",
+          "value": 0.01246,
+          "when": "标准毫米主尺、对应分度差的游标；计算数值先统一为米。"
+        },
+        "distractor_expression": "x+n*d/2",
+        "distractor_value": 0.01223,
+        "dimension_matches": true,
+        "independent_evaluation": true
+      },
+      "review": {
+        "confidence": "medium",
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": true,
+          "no_answer_leak_in_options": true
+        },
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。",
+        "material": {
+          "anchors": [
+            {
+              "kind": "公式",
+              "name": "主尺加游标增量",
+              "expression": "x+n*d",
+              "when": "标准毫米主尺、对应分度差的游标；计算数值先统一为米。",
+              "display": "x+n·d"
+            }
+          ],
+          "source": {
+            "nature": "原创设计示例，非教材实测或真实实验记录",
+            "scenario": "五十分度",
+            "parameters": {
+              "x": 0.012,
+              "n": 23,
+              "d": 2e-05,
+              "L": 0.01246,
+              "D": 0.01246
+            },
+            "data": [
+              "主尺整毫米位置：0.012 m",
+              "游标对齐格数：23 1",
+              "游标分度差：2e-05 m",
+              "卡尺读数：0.01246 m",
+              "独立校准长度：0.01246 m"
+            ]
+          },
+          "predicted_errors": [
+            {
+              "option": "B",
+              "text": "0.01223 m",
+              "reason": "格数不是毫米数，必须乘该游标的0.02 mm分度差；12 mm主尺与23格对应12.46 mm，错按0.01 mm每格得到12.23 mm。错读每格0.01 mm是本规格实际每格0.02 mm的一半，所以错误式仍带长度量纲。",
+              "expression": "x+n*d/2",
+              "status": "误答原因预测，待教师确认；未采集学生作答证据"
+            }
+          ],
+          "difficulty_note": "建议难度沿用本题level（源卡难度）；尚非题目难度实测，待教师调整",
+          "estimated_seconds": [
+            60,
+            120
+          ],
+          "time_basis": "未做学生计时；按现有难度给出备课估计区间，待教师确认",
+          "machine_checks": [
+            {
+              "name": "题目ID关联源知识点",
+              "passed": true
+            },
+            {
+              "name": "选项标签唯一且参考标签存在",
+              "passed": true
+            },
+            {
+              "name": "选项文本互异",
+              "passed": true
+            },
+            {
+              "name": "正确路径独立数值复算",
+              "passed": true
+            },
+            {
+              "name": "带量纲求值与独立求值一致",
+              "passed": true
+            },
+            {
+              "name": "干扰路径复算且与正确路径分离",
+              "passed": true
+            }
+          ],
+          "machine_boundary": "只列本次逐题实际执行项目；不把关联知识卡的方向、扫描或一致性检查算作本题已验。概念题未验命题真假。",
+          "human_review_items": [
+            "题干条件是否充分、清楚且符合学段",
+            "参考结论在指定条件下是否唯一",
+            "干扰项是否合理、对应真实认知问题且无答案暗示",
+            "公式或概念锚点是否准确",
+            "建议难度及用时是否适合教学",
+            "语言、装置与安全操作是否恰当"
+          ],
+          "reference_answer_note": "现有参考答案保持；即使本地可以判选项，也仍须教师审核教学可用性"
+        }
+      }
+    },
+    {
+      "id": "diagnostic-tool-02-2",
+      "point_id": "tool-02",
+      "point_title": "游标卡尺的读数",
+      "chapter": "测量工具与数据处理",
+      "stem": "关于“游标卡尺的读数”，判断这一说法是否成立，并说明依据：\n给游标读数额外估读一位或把内外测量爪混用。",
+      "options": [
+        {
+          "label": "A",
+          "text": "该说法不成立。"
+        },
+        {
+          "label": "B",
+          "text": "该说法成立。"
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "游标根据刻线对齐读数，不按普通连续刻度另估一位。不同测量爪对应不同接触位置，必须先确认对象和校零，不能仅凭计算正确判断操作正确。\n知识点条件：主尺读游标零线左侧的整毫米，再找一条与主尺重合的游标刻线。外测量爪测外径或厚度，内测量爪测内径，深度尺测孔深。先校零并保持接触适度，歪放、卡得过紧和看错游标零线都引入偏差。游标与螺旋测微器的读数规则不同；本卡是精密工具拓展，不把它宣称为苏科初中必做实验。\n推导依据：标准游标分度差由主尺与游标格距的差决定，先确认规格。；读游标零线左侧整毫米，再用对齐格数乘分度差。；主尺与游标增量相加；校准标准块检查读数，没有额外估读位。\n卡片公式各自的适用条件（不是本题共同前提）：\n主尺加游标增量：标准毫米主尺、对应分度差的游标；计算数值先统一为米。",
+      "error_type": "概念混淆",
+      "judging": "teacher",
+      "source_error_index": 1,
+      "source_caught_by": "人工审核",
+      "wrong_expr": null,
+      "trap_test": null,
+      "level": "基础",
+      "learning_scope": "高中测量拓展",
+      "answer_evidence": {
+        "kind": "teacher",
+        "claim_source": "wrong",
+        "reference_only": true,
+        "reason": "概念、操作或无法建立完整定量证据，教师确认条件与结论。"
+      },
+      "review": {
+        "confidence": "medium",
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": false,
+          "no_answer_leak_in_options": true
+        },
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。",
+        "material": {
+          "anchors": [
+            {
+              "kind": "概念或操作",
+              "name": "游标卡尺的读数",
+              "claim": "给游标读数额外估读一位或把内外测量爪混用。",
+              "correction_basis": "游标根据刻线对齐读数，不按普通连续刻度另估一位。不同测量爪对应不同接触位置，必须先确认对象和校零，不能仅凭计算正确判断操作正确。",
+              "note": "概念锚点及命题真假待教师确认；未套用任意第一条公式",
+              "display": "给游标读数额外估读一位或把内外测量爪混用。"
+            }
+          ],
+          "source": {
+            "nature": "原创概念/操作命题；无真实测量记录",
+            "source_error_index": 1
+          },
+          "predicted_errors": [
+            {
+              "option": "B",
+              "text": "该说法成立。",
+              "reason": "游标根据刻线对齐读数，不按普通连续刻度另估一位。不同测量爪对应不同接触位置，必须先确认对象和校零，不能仅凭计算正确判断操作正确。",
+              "expression": null,
+              "status": "误答原因预测，待教师确认；未采集学生作答证据"
+            }
+          ],
+          "difficulty_note": "建议难度沿用本题level（源卡难度）；尚非题目难度实测，待教师调整",
+          "estimated_seconds": [
+            60,
+            120
+          ],
+          "time_basis": "未做学生计时；按现有难度给出备课估计区间，待教师确认",
+          "machine_checks": [
+            {
+              "name": "题目ID关联源知识点",
+              "passed": true
+            },
+            {
+              "name": "选项标签唯一且参考标签存在",
+              "passed": true
+            },
+            {
+              "name": "选项文本互异",
+              "passed": true
+            }
+          ],
+          "machine_boundary": "只列本次逐题实际执行项目；不把关联知识卡的方向、扫描或一致性检查算作本题已验。概念题未验命题真假。",
+          "human_review_items": [
+            "题干条件是否充分、清楚且符合学段",
+            "参考结论在指定条件下是否唯一",
+            "干扰项是否合理、对应真实认知问题且无答案暗示",
+            "公式或概念锚点是否准确",
+            "建议难度及用时是否适合教学",
+            "语言、装置与安全操作是否恰当"
+          ],
+          "reference_answer_note": "现有参考答案保持；即使本地可以判选项，也仍须教师审核教学可用性"
+        }
+      }
+    },
+    {
+      "id": "diagnostic-tool-03-1",
+      "point_id": "tool-03",
+      "point_title": "螺旋测微器的读数",
+      "chapter": "测量工具与数据处理",
+      "stem": "在“螺旋测微器的读数”的模型下，x（固定刻度含半毫米）=0.0055 m；n（可动刻度含估读格数）=27.6 1；d（每格前进长度）=1e-05 m；z（有符号零点误差）=6e-06 m；h<sub>0</sub>（固定套筒半毫米间隔）=0.0005 m。条件：常用螺距0.5 mm、圆周50分度，符号表与情境数值统一为米。。求修正后直径（D）。这些数值是设计示例。",
+      "options": [
+        {
+          "label": "A",
+          "text": "0.00577 m"
+        },
+        {
+          "label": "B",
+          "text": "0.00527 m"
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "使用示值减零误差：x+n·d-z，代入得0.00577 m。另一结果来自x-h<sub>0</sub>+n·d-z，算得0.00527 m。\n固定套筒的半毫米也是已经露出的准确刻度，遗漏它会使直径少0.500 mm。零点修正无法补偿漏掉半毫米这一读数错误。半毫米间隔作为有长度单位的量扣除，不把0.0005当作无量纲数相减。\n知识点条件：固定刻度要检查半毫米刻线是否露出，可动刻度对准基准线读到估读位。测量前校零，接近物体时使用棘轮，听到适当打滑后停止，避免旋紧主体压坏物体。闭合时仪器显示的有符号零误差应从示值减去；正零误差使示值偏大，负零误差相反。这里只讨论常用规格，其他螺距须按铭牌确认。\n推导依据：固定刻度先看整毫米和露出的半毫米。；螺距除圆周格数得到每格前进长度，读可动刻度并估读一位。；示值减有符号零误差，用棘轮保证测量压力不过大。\n卡片公式各自的适用条件（不是本题共同前提）：\n示值减零误差：常用螺距0.5 mm、圆周50分度，符号表与情境数值统一为米。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 0,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "D = x-h<sub>0</sub>+n·d-z",
+      "trap_test": {
+        "scenario": "正零误差",
+        "expr": "x-h0+n*d-z",
+        "ref": 0.00577
+      },
+      "level": "基础",
+      "learning_scope": "高中测量拓展",
+      "answer_evidence": {
+        "kind": "numeric",
+        "scenario": "正零误差",
+        "parameters": {
+          "x": 0.0055,
+          "n": 27.6,
+          "d": 1e-05,
+          "z": 6e-06,
+          "D": 0.00577,
+          "D0": 0.00577,
+          "h0": 0.0005
+        },
+        "target": "D",
+        "unit": "m",
+        "reference": 0.00577,
+        "correct_proof": {
+          "expression": "x+n*d-z",
+          "formula": "示值减零误差",
+          "value": 0.00577,
+          "when": "常用螺距0.5 mm、圆周50分度，符号表与情境数值统一为米。"
+        },
+        "distractor_expression": "x-h0+n*d-z",
+        "distractor_value": 0.0052699999999999995,
+        "dimension_matches": true,
+        "independent_evaluation": true
+      },
+      "review": {
+        "confidence": "medium",
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": true,
+          "no_answer_leak_in_options": true
+        },
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。",
+        "material": {
+          "anchors": [
+            {
+              "kind": "公式",
+              "name": "示值减零误差",
+              "expression": "x+n*d-z",
+              "when": "常用螺距0.5 mm、圆周50分度，符号表与情境数值统一为米。",
+              "display": "x+n·d-z"
+            }
+          ],
+          "source": {
+            "nature": "原创设计示例，非教材实测或真实实验记录",
+            "scenario": "正零误差",
+            "parameters": {
+              "x": 0.0055,
+              "n": 27.6,
+              "d": 1e-05,
+              "z": 6e-06,
+              "D": 0.00577,
+              "D0": 0.00577,
+              "h0": 0.0005
+            },
+            "data": [
+              "固定刻度含半毫米：0.0055 m",
+              "可动刻度含估读格数：27.6 1",
+              "每格前进长度：1e-05 m",
+              "有符号零点误差：6e-06 m",
+              "修正后直径：0.00577 m",
+              "独立标准块长度：0.00577 m",
+              "固定套筒半毫米间隔：0.0005 m"
+            ]
+          },
+          "predicted_errors": [
+            {
+              "option": "B",
+              "text": "0.00527 m",
+              "reason": "固定套筒的半毫米也是已经露出的准确刻度，遗漏它会使直径少0.500 mm。零点修正无法补偿漏掉半毫米这一读数错误。半毫米间隔作为有长度单位的量扣除，不把0.0005当作无量纲数相减。",
+              "expression": "x-h0+n*d-z",
+              "status": "误答原因预测，待教师确认；未采集学生作答证据"
+            }
+          ],
+          "difficulty_note": "建议难度沿用本题level（源卡难度）；尚非题目难度实测，待教师调整",
+          "estimated_seconds": [
+            60,
+            120
+          ],
+          "time_basis": "未做学生计时；按现有难度给出备课估计区间，待教师确认",
+          "machine_checks": [
+            {
+              "name": "题目ID关联源知识点",
+              "passed": true
+            },
+            {
+              "name": "选项标签唯一且参考标签存在",
+              "passed": true
+            },
+            {
+              "name": "选项文本互异",
+              "passed": true
+            },
+            {
+              "name": "正确路径独立数值复算",
+              "passed": true
+            },
+            {
+              "name": "带量纲求值与独立求值一致",
+              "passed": true
+            },
+            {
+              "name": "干扰路径复算且与正确路径分离",
+              "passed": true
+            }
+          ],
+          "machine_boundary": "只列本次逐题实际执行项目；不把关联知识卡的方向、扫描或一致性检查算作本题已验。概念题未验命题真假。",
+          "human_review_items": [
+            "题干条件是否充分、清楚且符合学段",
+            "参考结论在指定条件下是否唯一",
+            "干扰项是否合理、对应真实认知问题且无答案暗示",
+            "公式或概念锚点是否准确",
+            "建议难度及用时是否适合教学",
+            "语言、装置与安全操作是否恰当"
+          ],
+          "reference_answer_note": "现有参考答案保持；即使本地可以判选项，也仍须教师审核教学可用性"
+        }
+      }
+    },
+    {
+      "id": "diagnostic-tool-03-2",
+      "point_id": "tool-03",
+      "point_title": "螺旋测微器的读数",
+      "chapter": "测量工具与数据处理",
+      "stem": "关于“螺旋测微器的读数”，判断这一说法是否成立，并说明依据：\n用主体旋钮硬拧测量面，或不顾正负把零误差总加上。",
+      "options": [
+        {
+          "label": "A",
+          "text": "该说法不成立。"
+        },
+        {
+          "label": "B",
+          "text": "该说法成立。"
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "棘轮限制测量压力，过紧会压缩软物体或损伤仪器；修正须用示值减有符号零误差，不能靠猜测方向。估读位也须来自刻度观察。\n知识点条件：固定刻度要检查半毫米刻线是否露出，可动刻度对准基准线读到估读位。测量前校零，接近物体时使用棘轮，听到适当打滑后停止，避免旋紧主体压坏物体。闭合时仪器显示的有符号零误差应从示值减去；正零误差使示值偏大，负零误差相反。这里只讨论常用规格，其他螺距须按铭牌确认。\n推导依据：固定刻度先看整毫米和露出的半毫米。；螺距除圆周格数得到每格前进长度，读可动刻度并估读一位。；示值减有符号零误差，用棘轮保证测量压力不过大。\n卡片公式各自的适用条件（不是本题共同前提）：\n示值减零误差：常用螺距0.5 mm、圆周50分度，符号表与情境数值统一为米。",
+      "error_type": "概念混淆",
+      "judging": "teacher",
+      "source_error_index": 1,
+      "source_caught_by": "人工审核",
+      "wrong_expr": null,
+      "trap_test": null,
+      "level": "基础",
+      "learning_scope": "高中测量拓展",
+      "answer_evidence": {
+        "kind": "teacher",
+        "claim_source": "wrong",
+        "reference_only": true,
+        "reason": "概念、操作或无法建立完整定量证据，教师确认条件与结论。"
+      },
+      "review": {
+        "confidence": "medium",
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": false,
+          "no_answer_leak_in_options": true
+        },
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。",
+        "material": {
+          "anchors": [
+            {
+              "kind": "概念或操作",
+              "name": "螺旋测微器的读数",
+              "claim": "用主体旋钮硬拧测量面，或不顾正负把零误差总加上。",
+              "correction_basis": "棘轮限制测量压力，过紧会压缩软物体或损伤仪器；修正须用示值减有符号零误差，不能靠猜测方向。估读位也须来自刻度观察。",
+              "note": "概念锚点及命题真假待教师确认；未套用任意第一条公式",
+              "display": "用主体旋钮硬拧测量面，或不顾正负把零误差总加上。"
+            }
+          ],
+          "source": {
+            "nature": "原创概念/操作命题；无真实测量记录",
+            "source_error_index": 1
+          },
+          "predicted_errors": [
+            {
+              "option": "B",
+              "text": "该说法成立。",
+              "reason": "棘轮限制测量压力，过紧会压缩软物体或损伤仪器；修正须用示值减有符号零误差，不能靠猜测方向。估读位也须来自刻度观察。",
+              "expression": null,
+              "status": "误答原因预测，待教师确认；未采集学生作答证据"
+            }
+          ],
+          "difficulty_note": "建议难度沿用本题level（源卡难度）；尚非题目难度实测，待教师调整",
+          "estimated_seconds": [
+            60,
+            120
+          ],
+          "time_basis": "未做学生计时；按现有难度给出备课估计区间，待教师确认",
+          "machine_checks": [
+            {
+              "name": "题目ID关联源知识点",
+              "passed": true
+            },
+            {
+              "name": "选项标签唯一且参考标签存在",
+              "passed": true
+            },
+            {
+              "name": "选项文本互异",
+              "passed": true
+            }
+          ],
+          "machine_boundary": "只列本次逐题实际执行项目；不把关联知识卡的方向、扫描或一致性检查算作本题已验。概念题未验命题真假。",
+          "human_review_items": [
+            "题干条件是否充分、清楚且符合学段",
+            "参考结论在指定条件下是否唯一",
+            "干扰项是否合理、对应真实认知问题且无答案暗示",
+            "公式或概念锚点是否准确",
+            "建议难度及用时是否适合教学",
+            "语言、装置与安全操作是否恰当"
+          ],
+          "reference_answer_note": "现有参考答案保持；即使本地可以判选项，也仍须教师审核教学可用性"
+        }
+      }
+    },
+    {
+      "id": "diagnostic-tool-04-1",
+      "point_id": "tool-04",
+      "point_title": "弹簧测力计的使用",
+      "chapter": "测量工具与数据处理",
+      "stem": "在“弹簧测力计的使用”的模型下，n（零位后刻度格数）=6 1；d（每格对应力）=0.5 N。条件：0到5 N量程、已沿测力方向调零。。求测力计示值（F）。这些数值是设计示例。",
+      "options": [
+        {
+          "label": "A",
+          "text": "6 N"
+        },
+        {
+          "label": "B",
+          "text": "3 N"
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "使用刻度换算拉力：n·d，代入得3 N。另一结果来自n·2·d，算得6 N。\n示值由分度值和格数共同决定，格数本身没有牛顿的含义；6格乘0.5 N才是3 N，不能读成6 N，更不能直接记成6 kg。\n知识点条件：先认量程和分度值，按实际测量方向校零，拉力方向与弹簧轴线一致并避免外壳摩擦。示值稳定时视线正对刻度，不能超过量程。用测力计测物体重力还要求物体平衡且无其他支持；加速提起时拉力未必等于重力。数值校验只验证刻度换算和校准，方向、姿势与量程选择还要观察。\n推导依据：沿实际测力方向校零，并核对量程与分度值。；格数乘分度值给出拉力，刻度格数本身不是质量。；用静止砝码重力校准，非平衡时不直接将拉力等同重力。\n卡片公式各自的适用条件（不是本题共同前提）：\n刻度换算拉力：0到5 N量程、已沿测力方向调零。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 0,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "F = n·2·d",
+      "trap_test": {
+        "scenario": "平衡校准甲",
+        "expr": "n*2*d",
+        "ref": 3
+      },
+      "level": "基础",
+      "learning_scope": "初中",
+      "answer_evidence": {
+        "kind": "numeric",
+        "scenario": "平衡校准甲",
+        "parameters": {
+          "n": 6,
+          "d": 0.5,
+          "m": 0.3,
+          "g": 10,
+          "F": 3
+        },
+        "target": "F",
+        "unit": "N",
+        "reference": 3,
+        "correct_proof": {
+          "expression": "n*d",
+          "formula": "刻度换算拉力",
+          "value": 3.0,
+          "when": "0到5 N量程、已沿测力方向调零。"
+        },
+        "distractor_expression": "n*2*d",
+        "distractor_value": 6.0,
+        "dimension_matches": true,
+        "independent_evaluation": true
+      },
+      "review": {
+        "confidence": "medium",
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": true,
+          "no_answer_leak_in_options": true
+        },
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。",
+        "material": {
+          "anchors": [
+            {
+              "kind": "公式",
+              "name": "刻度换算拉力",
+              "expression": "n*d",
+              "when": "0到5 N量程、已沿测力方向调零。",
+              "display": "n·d"
+            }
+          ],
+          "source": {
+            "nature": "原创设计示例，非教材实测或真实实验记录",
+            "scenario": "平衡校准甲",
+            "parameters": {
+              "n": 6,
+              "d": 0.5,
+              "m": 0.3,
+              "g": 10,
+              "F": 3
+            },
+            "data": [
+              "零位后刻度格数：6 1",
+              "每格对应力：0.5 N",
+              "校准砝码质量：0.3 kg",
+              "重力加速度：10 m/s^2",
+              "测力计示值：3 N"
+            ]
+          },
+          "predicted_errors": [
+            {
+              "option": "A",
+              "text": "6 N",
+              "reason": "示值由分度值和格数共同决定，格数本身没有牛顿的含义；6格乘0.5 N才是3 N，不能读成6 N，更不能直接记成6 kg。",
+              "expression": "n*2*d",
+              "status": "误答原因预测，待教师确认；未采集学生作答证据"
+            }
+          ],
+          "difficulty_note": "建议难度沿用本题level（源卡难度）；尚非题目难度实测，待教师调整",
+          "estimated_seconds": [
+            60,
+            120
+          ],
+          "time_basis": "未做学生计时；按现有难度给出备课估计区间，待教师确认",
+          "machine_checks": [
+            {
+              "name": "题目ID关联源知识点",
+              "passed": true
+            },
+            {
+              "name": "选项标签唯一且参考标签存在",
+              "passed": true
+            },
+            {
+              "name": "选项文本互异",
+              "passed": true
+            },
+            {
+              "name": "正确路径独立数值复算",
+              "passed": true
+            },
+            {
+              "name": "带量纲求值与独立求值一致",
+              "passed": true
+            },
+            {
+              "name": "干扰路径复算且与正确路径分离",
+              "passed": true
+            }
+          ],
+          "machine_boundary": "只列本次逐题实际执行项目；不把关联知识卡的方向、扫描或一致性检查算作本题已验。概念题未验命题真假。",
+          "human_review_items": [
+            "题干条件是否充分、清楚且符合学段",
+            "参考结论在指定条件下是否唯一",
+            "干扰项是否合理、对应真实认知问题且无答案暗示",
+            "公式或概念锚点是否准确",
+            "建议难度及用时是否适合教学",
+            "语言、装置与安全操作是否恰当"
+          ],
+          "reference_answer_note": "现有参考答案保持；即使本地可以判选项，也仍须教师审核教学可用性"
+        }
+      }
+    },
+    {
+      "id": "diagnostic-tool-04-2",
+      "point_id": "tool-04",
+      "point_title": "弹簧测力计的使用",
+      "chapter": "测量工具与数据处理",
+      "stem": "关于“弹簧测力计的使用”，判断这一说法是否成立，并说明依据：\n力应沿弹簧轴线施加，侧向摩擦会改变伸长与示值。",
+      "options": [
+        {
+          "label": "A",
+          "text": "该说法不成立。"
+        },
+        {
+          "label": "B",
+          "text": "该说法成立。"
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "力应沿弹簧轴线施加，侧向摩擦会改变伸长与示值；只有平衡且无其他竖直支持时悬挂拉力才等于重力，运动状态必须单独判断。\n知识点条件：先认量程和分度值，按实际测量方向校零，拉力方向与弹簧轴线一致并避免外壳摩擦。示值稳定时视线正对刻度，不能超过量程。用测力计测物体重力还要求物体平衡且无其他支持；加速提起时拉力未必等于重力。数值校验只验证刻度换算和校准，方向、姿势与量程选择还要观察。\n推导依据：沿实际测力方向校零，并核对量程与分度值。；格数乘分度值给出拉力，刻度格数本身不是质量。；用静止砝码重力校准，非平衡时不直接将拉力等同重力。\n卡片公式各自的适用条件（不是本题共同前提）：\n刻度换算拉力：0到5 N量程、已沿测力方向调零。",
+      "error_type": "概念混淆",
+      "judging": "teacher",
+      "source_error_index": 1,
+      "source_caught_by": "人工审核",
+      "wrong_expr": null,
+      "trap_test": null,
+      "level": "基础",
+      "learning_scope": "初中",
+      "answer_evidence": {
+        "kind": "teacher",
+        "claim_source": "why",
+        "reference_only": true,
+        "reason": "概念、操作或无法建立完整定量证据，教师确认条件与结论。"
+      },
+      "review": {
+        "confidence": "medium",
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": false,
+          "no_answer_leak_in_options": true
+        },
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。",
+        "material": {
+          "anchors": [
+            {
+              "kind": "概念或操作",
+              "name": "弹簧测力计的使用",
+              "claim": "斜拉弹簧或在加速上提时一律把拉力当重力。",
+              "correction_basis": "力应沿弹簧轴线施加，侧向摩擦会改变伸长与示值；只有平衡且无其他竖直支持时悬挂拉力才等于重力，运动状态必须单独判断。",
+              "note": "概念锚点及命题真假待教师确认；未套用任意第一条公式",
+              "display": "斜拉弹簧或在加速上提时一律把拉力当重力。"
+            }
+          ],
+          "source": {
+            "nature": "原创概念/操作命题；无真实测量记录",
+            "source_error_index": 1
+          },
+          "predicted_errors": [
+            {
+              "option": "A",
+              "text": "该说法不成立。",
+              "reason": "力应沿弹簧轴线施加，侧向摩擦会改变伸长与示值；只有平衡且无其他竖直支持时悬挂拉力才等于重力，运动状态必须单独判断。",
+              "expression": null,
+              "status": "误答原因预测，待教师确认；未采集学生作答证据"
+            }
+          ],
+          "difficulty_note": "建议难度沿用本题level（源卡难度）；尚非题目难度实测，待教师调整",
+          "estimated_seconds": [
+            60,
+            120
+          ],
+          "time_basis": "未做学生计时；按现有难度给出备课估计区间，待教师确认",
+          "machine_checks": [
+            {
+              "name": "题目ID关联源知识点",
+              "passed": true
+            },
+            {
+              "name": "选项标签唯一且参考标签存在",
+              "passed": true
+            },
+            {
+              "name": "选项文本互异",
+              "passed": true
+            }
+          ],
+          "machine_boundary": "只列本次逐题实际执行项目；不把关联知识卡的方向、扫描或一致性检查算作本题已验。概念题未验命题真假。",
+          "human_review_items": [
+            "题干条件是否充分、清楚且符合学段",
+            "参考结论在指定条件下是否唯一",
+            "干扰项是否合理、对应真实认知问题且无答案暗示",
+            "公式或概念锚点是否准确",
+            "建议难度及用时是否适合教学",
+            "语言、装置与安全操作是否恰当"
+          ],
+          "reference_answer_note": "现有参考答案保持；即使本地可以判选项，也仍须教师审核教学可用性"
+        }
+      }
+    },
+    {
+      "id": "diagnostic-tool-05-1",
+      "point_id": "tool-05",
+      "point_title": "托盘天平的使用与密度测量",
+      "chapter": "测量工具与数据处理",
+      "stem": "在“托盘天平的使用与密度测量”的模型下，mc（砝码质量）=0.08 kg；my（游码示值）=0.004 kg。条件：天平已调平，物体在规定托盘；mc是砝码总质量，my是按游码标尺读取的质量，单位一致。。求游码与砝码合计质量（m）。这些数值是设计示例。",
+      "options": [
+        {
+          "label": "A",
+          "text": "0.084 kg"
+        },
+        {
+          "label": "B",
+          "text": "0.08 kg"
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "使用砝码加游码：mc+my，代入得0.084 kg。另一结果来自mc，算得0.08 kg。\n游码在标尺上移动也提供平衡作用，示值必须与砝码相加；80 g砝码与4 g游码合为84 g，不是80 g。称量时重新调螺母不能弥补漏读。\n知识点条件：固体先测干燥质量，再用排水法测不溶、不吸水固体体积，避免带水使质量偏大。液体可先称杯与液体总质量，再向量筒倒一部分，称剩余杯与液体，质量差对应倒入量筒的体积；这样避免杯壁残留不计入体积却计入质量。比较同一份物质，不能把量筒总体积和差量质量随意配对。\n学习分工：本卡讲天平的调平、称量和仪器配对，完整密度测量方案见实验卡（jexp-05），可点击下方知识关系回看。这一链接是相关内容推荐，不表示必须先后学习。\n推导依据：空载调平，称量时固定平衡螺母并读砝码与游码总质量。；固体先称干燥质量再排水；液体用倒出前后质量差。；用对应那一份样品的质量除以体积，统一到同一单位体系。\n卡片公式各自的适用条件（不是本题共同前提）：\n砝码加游码：天平已调平，物体在规定托盘；mc是砝码总质量，my是按游码标尺读取的质量，单位一致。\n液体密度差量法：倒出前后质量之差与量筒中这一份液体的体积配对。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 0,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "m = mc",
+      "trap_test": {
+        "scenario": "液体甲",
+        "expr": "mc",
+        "ref": 0.084
+      },
+      "level": "基础",
+      "learning_scope": "初中",
+      "answer_evidence": {
+        "kind": "numeric",
+        "scenario": "液体甲",
+        "parameters": {
+          "mc": 0.08,
+          "my": 0.004,
+          "m": 0.084,
+          "m1": 0.084,
+          "m2": 0.044,
+          "V": 5e-05,
+          "rho": 800
+        },
+        "target": "m",
+        "unit": "kg",
+        "reference": 0.084,
+        "correct_proof": {
+          "expression": "mc+my",
+          "formula": "砝码加游码",
+          "value": 0.084,
+          "when": "天平已调平，物体在规定托盘；mc是砝码总质量，my是按游码标尺读取的质量，单位一致。"
+        },
+        "distractor_expression": "mc",
+        "distractor_value": 0.08,
+        "dimension_matches": true,
+        "independent_evaluation": true
+      },
+      "review": {
+        "confidence": "medium",
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": true,
+          "no_answer_leak_in_options": true
+        },
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。",
+        "material": {
+          "anchors": [
+            {
+              "kind": "公式",
+              "name": "砝码加游码",
+              "expression": "mc+my",
+              "when": "天平已调平，物体在规定托盘；mc是砝码总质量，my是按游码标尺读取的质量，单位一致。",
+              "display": "mc+my"
+            }
+          ],
+          "source": {
+            "nature": "原创设计示例，非教材实测或真实实验记录",
+            "scenario": "液体甲",
+            "parameters": {
+              "mc": 0.08,
+              "my": 0.004,
+              "m": 0.084,
+              "m1": 0.084,
+              "m2": 0.044,
+              "V": 5e-05,
+              "rho": 800
+            },
+            "data": [
+              "砝码质量：0.08 kg",
+              "游码示值：0.004 kg",
+              "游码与砝码合计质量：0.084 kg",
+              "杯和液体倒出前质量：0.084 kg",
+              "倒出后杯和剩液质量：0.044 kg",
+              "倒入量筒的液体体积：5e-05 m^3",
+              "液体密度：800 kg/m^3"
+            ]
+          },
+          "predicted_errors": [
+            {
+              "option": "B",
+              "text": "0.08 kg",
+              "reason": "游码在标尺上移动也提供平衡作用，示值必须与砝码相加；80 g砝码与4 g游码合为84 g，不是80 g。称量时重新调螺母不能弥补漏读。",
+              "expression": "mc",
+              "status": "误答原因预测，待教师确认；未采集学生作答证据"
+            }
+          ],
+          "difficulty_note": "建议难度沿用本题level（源卡难度）；尚非题目难度实测，待教师调整",
+          "estimated_seconds": [
+            60,
+            120
+          ],
+          "time_basis": "未做学生计时；按现有难度给出备课估计区间，待教师确认",
+          "machine_checks": [
+            {
+              "name": "题目ID关联源知识点",
+              "passed": true
+            },
+            {
+              "name": "选项标签唯一且参考标签存在",
+              "passed": true
+            },
+            {
+              "name": "选项文本互异",
+              "passed": true
+            },
+            {
+              "name": "正确路径独立数值复算",
+              "passed": true
+            },
+            {
+              "name": "带量纲求值与独立求值一致",
+              "passed": true
+            },
+            {
+              "name": "干扰路径复算且与正确路径分离",
+              "passed": true
+            }
+          ],
+          "machine_boundary": "只列本次逐题实际执行项目；不把关联知识卡的方向、扫描或一致性检查算作本题已验。概念题未验命题真假。",
+          "human_review_items": [
+            "题干条件是否充分、清楚且符合学段",
+            "参考结论在指定条件下是否唯一",
+            "干扰项是否合理、对应真实认知问题且无答案暗示",
+            "公式或概念锚点是否准确",
+            "建议难度及用时是否适合教学",
+            "语言、装置与安全操作是否恰当"
+          ],
+          "reference_answer_note": "现有参考答案保持；即使本地可以判选项，也仍须教师审核教学可用性"
+        }
+      }
+    },
+    {
+      "id": "diagnostic-tool-05-2",
+      "point_id": "tool-05",
+      "point_title": "托盘天平的使用与密度测量",
+      "chapter": "测量工具与数据处理",
+      "stem": "关于“托盘天平的使用与密度测量”，判断这一说法是否成立，并说明依据：\n调平衡只用于称量前的空载校零，称量中移动会改变仪器条件。",
+      "options": [
+        {
+          "label": "A",
+          "text": "该说法不成立。"
+        },
+        {
+          "label": "B",
+          "text": "该说法成立。"
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "调平衡只用于称量前的空载校零，称量中移动会改变仪器条件；固体附着水增加被称质量，所得密度可能偏大。必须区分误差来源与配对样本。\n知识点条件：固体先测干燥质量，再用排水法测不溶、不吸水固体体积，避免带水使质量偏大。液体可先称杯与液体总质量，再向量筒倒一部分，称剩余杯与液体，质量差对应倒入量筒的体积；这样避免杯壁残留不计入体积却计入质量。比较同一份物质，不能把量筒总体积和差量质量随意配对。\n学习分工：本卡讲天平的调平、称量和仪器配对，完整密度测量方案见实验卡（jexp-05），可点击下方知识关系回看。这一链接是相关内容推荐，不表示必须先后学习。\n推导依据：空载调平，称量时固定平衡螺母并读砝码与游码总质量。；固体先称干燥质量再排水；液体用倒出前后质量差。；用对应那一份样品的质量除以体积，统一到同一单位体系。\n卡片公式各自的适用条件（不是本题共同前提）：\n砝码加游码：天平已调平，物体在规定托盘；mc是砝码总质量，my是按游码标尺读取的质量，单位一致。\n液体密度差量法：倒出前后质量之差与量筒中这一份液体的体积配对。",
+      "error_type": "概念混淆",
+      "judging": "teacher",
+      "source_error_index": 1,
+      "source_caught_by": "人工审核",
+      "wrong_expr": null,
+      "trap_test": null,
+      "level": "基础",
+      "learning_scope": "初中",
+      "answer_evidence": {
+        "kind": "teacher",
+        "claim_source": "why",
+        "reference_only": true,
+        "reason": "概念、操作或无法建立完整定量证据，教师确认条件与结论。"
+      },
+      "review": {
+        "confidence": "medium",
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": false,
+          "no_answer_leak_in_options": true
+        },
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。",
+        "material": {
+          "anchors": [
+            {
+              "kind": "概念或操作",
+              "name": "托盘天平的使用与密度测量",
+              "claim": "称量时移动平衡螺母，或先排水后称带水固体。",
+              "correction_basis": "调平衡只用于称量前的空载校零，称量中移动会改变仪器条件；固体附着水增加被称质量，所得密度可能偏大。必须区分误差来源与配对样本。",
+              "note": "概念锚点及命题真假待教师确认；未套用任意第一条公式",
+              "display": "称量时移动平衡螺母，或先排水后称带水固体。"
+            }
+          ],
+          "source": {
+            "nature": "原创概念/操作命题；无真实测量记录",
+            "source_error_index": 1
+          },
+          "predicted_errors": [
+            {
+              "option": "A",
+              "text": "该说法不成立。",
+              "reason": "调平衡只用于称量前的空载校零，称量中移动会改变仪器条件；固体附着水增加被称质量，所得密度可能偏大。必须区分误差来源与配对样本。",
+              "expression": null,
+              "status": "误答原因预测，待教师确认；未采集学生作答证据"
+            }
+          ],
+          "difficulty_note": "建议难度沿用本题level（源卡难度）；尚非题目难度实测，待教师调整",
+          "estimated_seconds": [
+            60,
+            120
+          ],
+          "time_basis": "未做学生计时；按现有难度给出备课估计区间，待教师确认",
+          "machine_checks": [
+            {
+              "name": "题目ID关联源知识点",
+              "passed": true
+            },
+            {
+              "name": "选项标签唯一且参考标签存在",
+              "passed": true
+            },
+            {
+              "name": "选项文本互异",
+              "passed": true
+            }
+          ],
+          "machine_boundary": "只列本次逐题实际执行项目；不把关联知识卡的方向、扫描或一致性检查算作本题已验。概念题未验命题真假。",
+          "human_review_items": [
+            "题干条件是否充分、清楚且符合学段",
+            "参考结论在指定条件下是否唯一",
+            "干扰项是否合理、对应真实认知问题且无答案暗示",
+            "公式或概念锚点是否准确",
+            "建议难度及用时是否适合教学",
+            "语言、装置与安全操作是否恰当"
+          ],
+          "reference_answer_note": "现有参考答案保持；即使本地可以判选项，也仍须教师审核教学可用性"
+        }
+      }
+    },
+    {
+      "id": "diagnostic-tool-06-1",
+      "point_id": "tool-06",
+      "point_title": "量筒与液体体积读数",
+      "chapter": "测量工具与数据处理",
+      "stem": "在“量筒与液体体积读数”的模型下，V<sub>m</sub>l（量筒读数的毫升数值）=50 mL。条件：同一体积的单位换算；V<sub>m</sub>l输入毫升数值，V输出立方米数值。。求液体体积的立方米数值（V）。这些数值是设计示例。",
+      "options": [
+        {
+          "label": "A",
+          "text": "5e-05 m³"
+        },
+        {
+          "label": "B",
+          "text": "0.05 m³"
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "使用毫升换立方米：V<sub>m</sub>l/1000000，代入得5e-05 m³。另一结果来自V<sub>m</sub>l/1000，算得0.05 m³。\n1 mL=1 cm³=10⁻⁶ m³，因此毫升数除一百万；50 mL是0.00005 m³而不是0.05 m³，错误相差一千倍但量纲相同。\n知识点条件：先选择合适量程、分度值，读水的凹面最低处时避免俯视和仰视；一般刻度视差情境下俯视读数偏大、仰视偏小。1毫升等于1立方厘米，换算到立方米须用体积倍率。测固体排水体积还要求完全浸没、不溶不吸水、消除气泡；沉浮不同对象需要适当辅助方法，量筒读数不是总能直接当固体体积。\n推导依据：水平放量筒，平视凹液面最低处。；毫升与立方厘米数值相同，但立方米换算需立方倍率。；标准体积校准只核对量值，读数视差仍需实际操作审查。\n卡片公式各自的适用条件（不是本题共同前提）：\n毫升换立方米：同一体积的单位换算；V<sub>m</sub>l输入毫升数值，V输出立方米数值。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 0,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "V = V<sub>m</sub>l/1000",
+      "trap_test": {
+        "scenario": "五十毫升",
+        "expr": "V_ml/1000",
+        "ref": 5e-05
+      },
+      "level": "基础",
+      "learning_scope": "初中",
+      "answer_evidence": {
+        "kind": "numeric",
+        "scenario": "五十毫升",
+        "parameters": {
+          "V": 5e-05,
+          "V_ml": 50,
+          "V0": 5e-05
+        },
+        "target": "V",
+        "unit": "m^3",
+        "reference": 5e-05,
+        "correct_proof": {
+          "expression": "V_ml/1000000",
+          "formula": "毫升换立方米",
+          "value": 5e-05,
+          "when": "同一体积的单位换算；V_ml输入毫升数值，V输出立方米数值。"
+        },
+        "distractor_expression": "V_ml/1000",
+        "distractor_value": 0.05,
+        "dimension_matches": true,
+        "independent_evaluation": true
+      },
+      "review": {
+        "confidence": "medium",
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": true,
+          "no_answer_leak_in_options": true
+        },
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。",
+        "material": {
+          "anchors": [
+            {
+              "kind": "公式",
+              "name": "毫升换立方米",
+              "expression": "V_ml/1000000",
+              "when": "同一体积的单位换算；V_ml输入毫升数值，V输出立方米数值。",
+              "display": "V<sub>m</sub>l/1000000"
+            }
+          ],
+          "source": {
+            "nature": "原创设计示例，非教材实测或真实实验记录",
+            "scenario": "五十毫升",
+            "parameters": {
+              "V": 5e-05,
+              "V_ml": 50,
+              "V0": 5e-05
+            },
+            "data": [
+              "液体体积的立方米数值：5e-05 m^3",
+              "量筒读数的毫升数值：50 mL",
+              "独立量取校准体积：5e-05 m^3"
+            ]
+          },
+          "predicted_errors": [
+            {
+              "option": "B",
+              "text": "0.05 m³",
+              "reason": "1 mL=1 cm³=10⁻⁶ m³，因此毫升数除一百万；50 mL是0.00005 m³而不是0.05 m³，错误相差一千倍但量纲相同。",
+              "expression": "V_ml/1000",
+              "status": "误答原因预测，待教师确认；未采集学生作答证据"
+            }
+          ],
+          "difficulty_note": "建议难度沿用本题level（源卡难度）；尚非题目难度实测，待教师调整",
+          "estimated_seconds": [
+            60,
+            120
+          ],
+          "time_basis": "未做学生计时；按现有难度给出备课估计区间，待教师确认",
+          "machine_checks": [
+            {
+              "name": "题目ID关联源知识点",
+              "passed": true
+            },
+            {
+              "name": "选项标签唯一且参考标签存在",
+              "passed": true
+            },
+            {
+              "name": "选项文本互异",
+              "passed": true
+            },
+            {
+              "name": "正确路径独立数值复算",
+              "passed": true
+            },
+            {
+              "name": "带量纲求值与独立求值一致",
+              "passed": true
+            },
+            {
+              "name": "干扰路径复算且与正确路径分离",
+              "passed": true
+            }
+          ],
+          "machine_boundary": "只列本次逐题实际执行项目；不把关联知识卡的方向、扫描或一致性检查算作本题已验。概念题未验命题真假。",
+          "human_review_items": [
+            "题干条件是否充分、清楚且符合学段",
+            "参考结论在指定条件下是否唯一",
+            "干扰项是否合理、对应真实认知问题且无答案暗示",
+            "公式或概念锚点是否准确",
+            "建议难度及用时是否适合教学",
+            "语言、装置与安全操作是否恰当"
+          ],
+          "reference_answer_note": "现有参考答案保持；即使本地可以判选项，也仍须教师审核教学可用性"
+        }
+      }
+    },
+    {
+      "id": "diagnostic-tool-06-2",
+      "point_id": "tool-06",
+      "point_title": "量筒与液体体积读数",
+      "chapter": "测量工具与数据处理",
+      "stem": "关于“量筒与液体体积读数”，判断这一说法是否成立，并说明依据：\n正常视线应与凹液面最低处相平，俯视通常偏大、仰视通常偏小。",
+      "options": [
+        {
+          "label": "A",
+          "text": "该说法不成立。"
+        },
+        {
+          "label": "B",
+          "text": "该说法成立。"
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "正常视线应与凹液面最低处相平，俯视通常偏大、仰视通常偏小；弯月面读哪一处与液体类型有关，不能把水的规则直接套给凸液面。\n知识点条件：先选择合适量程、分度值，读水的凹面最低处时避免俯视和仰视；一般刻度视差情境下俯视读数偏大、仰视偏小。1毫升等于1立方厘米，换算到立方米须用体积倍率。测固体排水体积还要求完全浸没、不溶不吸水、消除气泡；沉浮不同对象需要适当辅助方法，量筒读数不是总能直接当固体体积。\n推导依据：水平放量筒，平视凹液面最低处。；毫升与立方厘米数值相同，但立方米换算需立方倍率。；标准体积校准只核对量值，读数视差仍需实际操作审查。\n卡片公式各自的适用条件（不是本题共同前提）：\n毫升换立方米：同一体积的单位换算；V<sub>m</sub>l输入毫升数值，V输出立方米数值。",
+      "error_type": "概念混淆",
+      "judging": "teacher",
+      "source_error_index": 1,
+      "source_caught_by": "人工审核",
+      "wrong_expr": null,
+      "trap_test": null,
+      "level": "基础",
+      "learning_scope": "初中",
+      "answer_evidence": {
+        "kind": "teacher",
+        "claim_source": "why",
+        "reference_only": true,
+        "reason": "概念、操作或无法建立完整定量证据，教师确认条件与结论。"
+      },
+      "review": {
+        "confidence": "medium",
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": false,
+          "no_answer_leak_in_options": true
+        },
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。",
+        "material": {
+          "anchors": [
+            {
+              "kind": "概念或操作",
+              "name": "量筒与液体体积读数",
+              "claim": "俯视或仰视凹液面，或读凹面的上沿。",
+              "correction_basis": "正常视线应与凹液面最低处相平，俯视通常偏大、仰视通常偏小；弯月面读哪一处与液体类型有关，不能把水的规则直接套给凸液面。",
+              "note": "概念锚点及命题真假待教师确认；未套用任意第一条公式",
+              "display": "俯视或仰视凹液面，或读凹面的上沿。"
+            }
+          ],
+          "source": {
+            "nature": "原创概念/操作命题；无真实测量记录",
+            "source_error_index": 1
+          },
+          "predicted_errors": [
+            {
+              "option": "A",
+              "text": "该说法不成立。",
+              "reason": "正常视线应与凹液面最低处相平，俯视通常偏大、仰视通常偏小；弯月面读哪一处与液体类型有关，不能把水的规则直接套给凸液面。",
+              "expression": null,
+              "status": "误答原因预测，待教师确认；未采集学生作答证据"
+            }
+          ],
+          "difficulty_note": "建议难度沿用本题level（源卡难度）；尚非题目难度实测，待教师调整",
+          "estimated_seconds": [
+            60,
+            120
+          ],
+          "time_basis": "未做学生计时；按现有难度给出备课估计区间，待教师确认",
+          "machine_checks": [
+            {
+              "name": "题目ID关联源知识点",
+              "passed": true
+            },
+            {
+              "name": "选项标签唯一且参考标签存在",
+              "passed": true
+            },
+            {
+              "name": "选项文本互异",
+              "passed": true
+            }
+          ],
+          "machine_boundary": "只列本次逐题实际执行项目；不把关联知识卡的方向、扫描或一致性检查算作本题已验。概念题未验命题真假。",
+          "human_review_items": [
+            "题干条件是否充分、清楚且符合学段",
+            "参考结论在指定条件下是否唯一",
+            "干扰项是否合理、对应真实认知问题且无答案暗示",
+            "公式或概念锚点是否准确",
+            "建议难度及用时是否适合教学",
+            "语言、装置与安全操作是否恰当"
+          ],
+          "reference_answer_note": "现有参考答案保持；即使本地可以判选项，也仍须教师审核教学可用性"
+        }
+      }
+    },
+    {
+      "id": "diagnostic-tool-07-1",
+      "point_id": "tool-07",
+      "point_title": "有效数字与测量误差",
+      "chapter": "测量工具与数据处理",
+      "stem": "在“有效数字与测量误差”的模型下，L1（第一次长度）=0.0325 m；L2（第二次长度）=0.0326 m；L3（第三次长度）=0.0327 m。条件：三次测量同一不变长度，单位与测量方法一致；算术平均不消除共同系统误差。。求重复测量平均长度（L）。这些数值是设计示例。",
+      "options": [
+        {
+          "label": "A",
+          "text": "0.0326 m"
+        },
+        {
+          "label": "B",
+          "text": "0.0978 m"
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "使用三次测量平均：(L1+L2+L3)/3，代入得0.0326 m。另一结果来自L1+L2+L3，算得0.0978 m。\n对同一对象重复测量应求平均，直接相加会把长度扩大三倍。这个算术错误可以避免，与读数末位随机波动造成的测量误差不是一回事。\n知识点条件：系统误差由校准、仪器或固定方法引起，多次平均不能消除；偶然误差使重复读数散布，合理重复取平均可减小其影响。不能为了末位好看随意补位，也不能说多次测量一定等于真实值。初中先按仪器约定精度记录平均值，再学习不确定度的完整表达；计算器多显示几位不代表测量更精确。\n推导依据：同样品、同仪器、同单位重复读数。；重复读数求平均，再按原仪器的测量精度保留位数。；用校准检查固定偏差；平均只能减小部分偶然影响。\n卡片公式各自的适用条件（不是本题共同前提）：\n三次测量平均：三次测量同一不变长度，单位与测量方法一致；算术平均不消除共同系统误差。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 0,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "L = L1+L2+L3",
+      "trap_test": {
+        "scenario": "样件甲",
+        "expr": "L1+L2+L3",
+        "ref": 0.0326
+      },
+      "level": "基础",
+      "learning_scope": "初中",
+      "answer_evidence": {
+        "kind": "numeric",
+        "scenario": "样件甲",
+        "parameters": {
+          "L1": 0.0325,
+          "L2": 0.0326,
+          "L3": 0.0327,
+          "L": 0.0326,
+          "D": 0.0326
+        },
+        "target": "L",
+        "unit": "m",
+        "reference": 0.0326,
+        "correct_proof": {
+          "expression": "(L1+L2+L3)/3",
+          "formula": "三次测量平均",
+          "value": 0.0326,
+          "when": "三次测量同一不变长度，单位与测量方法一致；算术平均不消除共同系统误差。"
+        },
+        "distractor_expression": "L1+L2+L3",
+        "distractor_value": 0.0978,
+        "dimension_matches": true,
+        "independent_evaluation": true
+      },
+      "review": {
+        "confidence": "medium",
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": true,
+          "no_answer_leak_in_options": true
+        },
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。",
+        "material": {
+          "anchors": [
+            {
+              "kind": "公式",
+              "name": "三次测量平均",
+              "expression": "(L1+L2+L3)/3",
+              "when": "三次测量同一不变长度，单位与测量方法一致；算术平均不消除共同系统误差。",
+              "display": "(L1+L2+L3)/3"
+            }
+          ],
+          "source": {
+            "nature": "原创设计示例，非教材实测或真实实验记录",
+            "scenario": "样件甲",
+            "parameters": {
+              "L1": 0.0325,
+              "L2": 0.0326,
+              "L3": 0.0327,
+              "L": 0.0326,
+              "D": 0.0326
+            },
+            "data": [
+              "第一次长度：0.0325 m",
+              "第二次长度：0.0326 m",
+              "第三次长度：0.0327 m",
+              "重复测量平均长度：0.0326 m",
+              "独立校准样件长度：0.0326 m"
+            ]
+          },
+          "predicted_errors": [
+            {
+              "option": "B",
+              "text": "0.0978 m",
+              "reason": "对同一对象重复测量应求平均，直接相加会把长度扩大三倍。这个算术错误可以避免，与读数末位随机波动造成的测量误差不是一回事。",
+              "expression": "L1+L2+L3",
+              "status": "误答原因预测，待教师确认；未采集学生作答证据"
+            }
+          ],
+          "difficulty_note": "建议难度沿用本题level（源卡难度）；尚非题目难度实测，待教师调整",
+          "estimated_seconds": [
+            60,
+            120
+          ],
+          "time_basis": "未做学生计时；按现有难度给出备课估计区间，待教师确认",
+          "machine_checks": [
+            {
+              "name": "题目ID关联源知识点",
+              "passed": true
+            },
+            {
+              "name": "选项标签唯一且参考标签存在",
+              "passed": true
+            },
+            {
+              "name": "选项文本互异",
+              "passed": true
+            },
+            {
+              "name": "正确路径独立数值复算",
+              "passed": true
+            },
+            {
+              "name": "带量纲求值与独立求值一致",
+              "passed": true
+            },
+            {
+              "name": "干扰路径复算且与正确路径分离",
+              "passed": true
+            }
+          ],
+          "machine_boundary": "只列本次逐题实际执行项目；不把关联知识卡的方向、扫描或一致性检查算作本题已验。概念题未验命题真假。",
+          "human_review_items": [
+            "题干条件是否充分、清楚且符合学段",
+            "参考结论在指定条件下是否唯一",
+            "干扰项是否合理、对应真实认知问题且无答案暗示",
+            "公式或概念锚点是否准确",
+            "建议难度及用时是否适合教学",
+            "语言、装置与安全操作是否恰当"
+          ],
+          "reference_answer_note": "现有参考答案保持；即使本地可以判选项，也仍须教师审核教学可用性"
+        }
+      }
+    },
+    {
+      "id": "diagnostic-tool-07-2",
+      "point_id": "tool-07",
+      "point_title": "有效数字与测量误差",
+      "chapter": "测量工具与数据处理",
+      "stem": "关于“有效数字与测量误差”，判断这一说法是否成立，并说明依据：\n多测几次能消除所有误差，或把错用刻度说成不可避免误差。",
+      "options": [
+        {
+          "label": "A",
+          "text": "该说法成立。"
+        },
+        {
+          "label": "B",
+          "text": "该说法不成立。"
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "平均只能减小部分偶然影响，固定零偏不会因重复消失；读错格数、漏单位等属于可避免错误。系统误差需校准和改进方法，不能靠增加计算位数修复。\n知识点条件：系统误差由校准、仪器或固定方法引起，多次平均不能消除；偶然误差使重复读数散布，合理重复取平均可减小其影响。不能为了末位好看随意补位，也不能说多次测量一定等于真实值。初中先按仪器约定精度记录平均值，再学习不确定度的完整表达；计算器多显示几位不代表测量更精确。\n推导依据：同样品、同仪器、同单位重复读数。；重复读数求平均，再按原仪器的测量精度保留位数。；用校准检查固定偏差；平均只能减小部分偶然影响。\n卡片公式各自的适用条件（不是本题共同前提）：\n三次测量平均：三次测量同一不变长度，单位与测量方法一致；算术平均不消除共同系统误差。",
+      "error_type": "概念混淆",
+      "judging": "teacher",
+      "source_error_index": 1,
+      "source_caught_by": "人工审核",
+      "wrong_expr": null,
+      "trap_test": null,
+      "level": "基础",
+      "learning_scope": "初中",
+      "answer_evidence": {
+        "kind": "teacher",
+        "claim_source": "wrong",
+        "reference_only": true,
+        "reason": "概念、操作或无法建立完整定量证据，教师确认条件与结论。"
+      },
+      "review": {
+        "confidence": "medium",
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": false,
+          "no_answer_leak_in_options": true
+        },
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。",
+        "material": {
+          "anchors": [
+            {
+              "kind": "概念或操作",
+              "name": "有效数字与测量误差",
+              "claim": "认为多测几次能消除所有误差，或把错用刻度说成不可避免误差。",
+              "correction_basis": "平均只能减小部分偶然影响，固定零偏不会因重复消失；读错格数、漏单位等属于可避免错误。系统误差需校准和改进方法，不能靠增加计算位数修复。",
+              "note": "概念锚点及命题真假待教师确认；未套用任意第一条公式",
+              "display": "认为多测几次能消除所有误差，或把错用刻度说成不可避免误差。"
+            }
+          ],
+          "source": {
+            "nature": "原创概念/操作命题；无真实测量记录",
+            "source_error_index": 1
+          },
+          "predicted_errors": [
+            {
+              "option": "A",
+              "text": "该说法成立。",
+              "reason": "平均只能减小部分偶然影响，固定零偏不会因重复消失；读错格数、漏单位等属于可避免错误。系统误差需校准和改进方法，不能靠增加计算位数修复。",
+              "expression": null,
+              "status": "误答原因预测，待教师确认；未采集学生作答证据"
+            }
+          ],
+          "difficulty_note": "建议难度沿用本题level（源卡难度）；尚非题目难度实测，待教师调整",
+          "estimated_seconds": [
+            60,
+            120
+          ],
+          "time_basis": "未做学生计时；按现有难度给出备课估计区间，待教师确认",
+          "machine_checks": [
+            {
+              "name": "题目ID关联源知识点",
+              "passed": true
+            },
+            {
+              "name": "选项标签唯一且参考标签存在",
+              "passed": true
+            },
+            {
+              "name": "选项文本互异",
+              "passed": true
+            }
+          ],
+          "machine_boundary": "只列本次逐题实际执行项目；不把关联知识卡的方向、扫描或一致性检查算作本题已验。概念题未验命题真假。",
+          "human_review_items": [
+            "题干条件是否充分、清楚且符合学段",
+            "参考结论在指定条件下是否唯一",
+            "干扰项是否合理、对应真实认知问题且无答案暗示",
+            "公式或概念锚点是否准确",
+            "建议难度及用时是否适合教学",
+            "语言、装置与安全操作是否恰当"
+          ],
+          "reference_answer_note": "现有参考答案保持；即使本地可以判选项，也仍须教师审核教学可用性"
+        }
+      }
+    }
+  ],
+  "skipped": [],
+  "source_records": {
+    "diagnostic-tool-01-1": {
+      "point": {
+        "id": "tool-01",
+        "title": "刻度尺的使用与估读",
+        "level": "基础",
+        "definition": "刻度尺测量长度时要读出起点和终点的位置，并取两读数之差。对于毫米分度的普通刻度尺，按中学读数约定估读到0.1毫米，记录数值与单位。",
+        "meaning": "先认量程、分度值和零刻线，将刻度面贴近物体并平行放置，视线正对刻度面。零端磨损可以从完整的整数刻线起测，但必须减去起点。估读位体现测量精度，不能把准确刻度的位数当作完整结果；数字仪器则按实际显示精度记录。重复测量能减小部分偶然误差，不能修复斜视与尺本身的偏差。\n学习分工：本卡讲刻度尺的放置、分度值和估读，重复测量与数据记录见实验卡（jexp-01），可点击下方知识关系回看。这一链接是相关内容推荐，不表示必须先后学习。",
+        "symbols": {
+          "L": {
+            "desc": "第一次测得长度",
+            "unit": "m"
+          },
+          "Y": {
+            "desc": "独立复测长度",
+            "unit": "m"
+          },
+          "x1": {
+            "desc": "第一次起点位置",
+            "unit": "m"
+          },
+          "x2": {
+            "desc": "第一次终点位置",
+            "unit": "m"
+          },
+          "y1": {
+            "desc": "复测起点位置",
+            "unit": "m"
+          },
+          "y2": {
+            "desc": "复测终点位置",
+            "unit": "m"
+          }
+        },
+        "scenarios": {
+          "薄板甲": {
+            "x1": 0.01,
+            "x2": 0.0426,
+            "y1": 0.02,
+            "y2": 0.0526,
+            "L": 0.0326,
+            "Y": 0.0326
+          },
+          "薄板乙": {
+            "x1": 0.02,
+            "x2": 0.0548,
+            "y1": 0.03,
+            "y2": 0.0648,
+            "L": 0.0348,
+            "Y": 0.0348
+          }
+        },
+        "formulas": [
+          {
+            "name": "两位置之差",
+            "expr": "L = x2-x1",
+            "when": "两读数在同一尺上，单位统一；这里数值使用米。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "薄板甲",
+                "ref": 0.0326,
+                "note": "4.26 cm减1.00 cm为3.26 cm。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "薄板乙",
+                "ref": 0.0348,
+                "note": "5.48 cm减2.00 cm为3.48 cm。"
+              },
+              {
+                "type": "scan",
+                "scenario": "薄板甲",
+                "var": "x2",
+                "lo": 0.011,
+                "hi": 0.1,
+                "note": "扫描本条适用范围内的参数，奇点和越量程操作不在有效范围内。"
+              },
+              {
+                "type": "consistency",
+                "scenario": "薄板甲",
+                "with": "tool-01|两位置之差",
+                "with_expr": "y2-y1",
+                "note": "本公式直接求L；参考端显式关系为y2-y1。两端使用同一情境和阶段，只核对该关系；with字段仅定位来源，不代表调用另一条被覆盖的公式。",
+                "target": "第一次测得长度",
+                "verification_kind": "独立关系核对",
+                "tol": 3.260000000000001e-07
+              }
+            ]
+          },
+          {
+            "name": "独立复测长度",
+            "expr": "Y = y2-y1",
+            "when": "y1、y2是另一次复测中同一薄板两端的坐标，使用同一长度单位及同一把尺的零点。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "薄板甲",
+                "ref": 0.0326,
+                "note": "复测5.26 cm减2.00 cm。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "薄板乙",
+                "ref": 0.0348,
+                "note": "复测6.48 cm减3.00 cm。"
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "贴近尺面并选择起点，读到毫米下一位。",
+          "起点非零时用终点减起点，得到被测长度。",
+          "改变起点再次测量，比较两次差值并保留原仪器精度。"
+        ],
+        "errors": [
+          {
+            "wrong": "零端磨损时仍把终点读数当长度，忘记减去起点。",
+            "wrong_expr": "L = x2",
+            "why": "用非零刻线起测后，终点读数包含被移动的起点位置。4.26 cm的终点和1.00 cm的起点应相减，不是4.26 cm长。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "薄板甲",
+              "expr": "x2",
+              "ref": 0.0326
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "毫米分度尺只记3.2 cm，漏写估读位。",
+            "why": "普通毫米尺按中学约定应估读到0.1 mm，记录如3.26 cm；只记3.2 cm丢失了测量精度信息。补位必须来自实际观察，不能任意添数字。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "用毫米分度尺从1.00 cm量至4.26 cm，复测从2.00 cm至5.26 cm，求薄板长度。",
+          "solution": [
+            "两次起点均不为零，分别用终点减起点。",
+            "两次均得3.26 cm，按估读位记录并统一单位。"
+          ],
+          "answer": "薄板长度为3.26 cm，即0.0326 m。"
+        },
+        "prereq": [
+          "motion-03"
+        ],
+        "next": [
+          "motion-01",
+          "jexp-01"
+        ],
+        "tags": [
+          "刻度尺的使用与估读",
+          "条件与边界",
+          "实验与证据"
+        ],
+        "core": [
+          {
+            "title": "刻度尺的使用与估读：方法与边界",
+            "text": "先认量程、分度值和零刻线，将刻度面贴近物体并平行放置，视线正对刻度面。零端磨损可以从完整的整数刻线起测，但必须减去起点。估读位体现测量精度，不能把准确刻度的位数当作完整结果；数字仪器则按实际显示精度记录。重复测量能减小部分偶然误差，不能修复斜视与尺本身的偏差。"
+          }
+        ],
+        "learning_scope": "初中"
+      },
+      "error_index": 0,
+      "chapter": "测量工具与数据处理"
+    },
+    "diagnostic-tool-01-2": {
+      "point": {
+        "id": "tool-01",
+        "title": "刻度尺的使用与估读",
+        "level": "基础",
+        "definition": "刻度尺测量长度时要读出起点和终点的位置，并取两读数之差。对于毫米分度的普通刻度尺，按中学读数约定估读到0.1毫米，记录数值与单位。",
+        "meaning": "先认量程、分度值和零刻线，将刻度面贴近物体并平行放置，视线正对刻度面。零端磨损可以从完整的整数刻线起测，但必须减去起点。估读位体现测量精度，不能把准确刻度的位数当作完整结果；数字仪器则按实际显示精度记录。重复测量能减小部分偶然误差，不能修复斜视与尺本身的偏差。\n学习分工：本卡讲刻度尺的放置、分度值和估读，重复测量与数据记录见实验卡（jexp-01），可点击下方知识关系回看。这一链接是相关内容推荐，不表示必须先后学习。",
+        "symbols": {
+          "L": {
+            "desc": "第一次测得长度",
+            "unit": "m"
+          },
+          "Y": {
+            "desc": "独立复测长度",
+            "unit": "m"
+          },
+          "x1": {
+            "desc": "第一次起点位置",
+            "unit": "m"
+          },
+          "x2": {
+            "desc": "第一次终点位置",
+            "unit": "m"
+          },
+          "y1": {
+            "desc": "复测起点位置",
+            "unit": "m"
+          },
+          "y2": {
+            "desc": "复测终点位置",
+            "unit": "m"
+          }
+        },
+        "scenarios": {
+          "薄板甲": {
+            "x1": 0.01,
+            "x2": 0.0426,
+            "y1": 0.02,
+            "y2": 0.0526,
+            "L": 0.0326,
+            "Y": 0.0326
+          },
+          "薄板乙": {
+            "x1": 0.02,
+            "x2": 0.0548,
+            "y1": 0.03,
+            "y2": 0.0648,
+            "L": 0.0348,
+            "Y": 0.0348
+          }
+        },
+        "formulas": [
+          {
+            "name": "两位置之差",
+            "expr": "L = x2-x1",
+            "when": "两读数在同一尺上，单位统一；这里数值使用米。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "薄板甲",
+                "ref": 0.0326,
+                "note": "4.26 cm减1.00 cm为3.26 cm。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "薄板乙",
+                "ref": 0.0348,
+                "note": "5.48 cm减2.00 cm为3.48 cm。"
+              },
+              {
+                "type": "scan",
+                "scenario": "薄板甲",
+                "var": "x2",
+                "lo": 0.011,
+                "hi": 0.1,
+                "note": "扫描本条适用范围内的参数，奇点和越量程操作不在有效范围内。"
+              },
+              {
+                "type": "consistency",
+                "scenario": "薄板甲",
+                "with": "tool-01|两位置之差",
+                "with_expr": "y2-y1",
+                "note": "本公式直接求L；参考端显式关系为y2-y1。两端使用同一情境和阶段，只核对该关系；with字段仅定位来源，不代表调用另一条被覆盖的公式。",
+                "target": "第一次测得长度",
+                "verification_kind": "独立关系核对",
+                "tol": 3.260000000000001e-07
+              }
+            ]
+          },
+          {
+            "name": "独立复测长度",
+            "expr": "Y = y2-y1",
+            "when": "y1、y2是另一次复测中同一薄板两端的坐标，使用同一长度单位及同一把尺的零点。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "薄板甲",
+                "ref": 0.0326,
+                "note": "复测5.26 cm减2.00 cm。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "薄板乙",
+                "ref": 0.0348,
+                "note": "复测6.48 cm减3.00 cm。"
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "贴近尺面并选择起点，读到毫米下一位。",
+          "起点非零时用终点减起点，得到被测长度。",
+          "改变起点再次测量，比较两次差值并保留原仪器精度。"
+        ],
+        "errors": [
+          {
+            "wrong": "零端磨损时仍把终点读数当长度，忘记减去起点。",
+            "wrong_expr": "L = x2",
+            "why": "用非零刻线起测后，终点读数包含被移动的起点位置。4.26 cm的终点和1.00 cm的起点应相减，不是4.26 cm长。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "薄板甲",
+              "expr": "x2",
+              "ref": 0.0326
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "毫米分度尺只记3.2 cm，漏写估读位。",
+            "why": "普通毫米尺按中学约定应估读到0.1 mm，记录如3.26 cm；只记3.2 cm丢失了测量精度信息。补位必须来自实际观察，不能任意添数字。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "用毫米分度尺从1.00 cm量至4.26 cm，复测从2.00 cm至5.26 cm，求薄板长度。",
+          "solution": [
+            "两次起点均不为零，分别用终点减起点。",
+            "两次均得3.26 cm，按估读位记录并统一单位。"
+          ],
+          "answer": "薄板长度为3.26 cm，即0.0326 m。"
+        },
+        "prereq": [
+          "motion-03"
+        ],
+        "next": [
+          "motion-01",
+          "jexp-01"
+        ],
+        "tags": [
+          "刻度尺的使用与估读",
+          "条件与边界",
+          "实验与证据"
+        ],
+        "core": [
+          {
+            "title": "刻度尺的使用与估读：方法与边界",
+            "text": "先认量程、分度值和零刻线，将刻度面贴近物体并平行放置，视线正对刻度面。零端磨损可以从完整的整数刻线起测，但必须减去起点。估读位体现测量精度，不能把准确刻度的位数当作完整结果；数字仪器则按实际显示精度记录。重复测量能减小部分偶然误差，不能修复斜视与尺本身的偏差。"
+          }
+        ],
+        "learning_scope": "初中"
+      },
+      "error_index": 1,
+      "chapter": "测量工具与数据处理"
+    },
+    "diagnostic-tool-02-1": {
+      "point": {
+        "id": "tool-02",
+        "title": "游标卡尺的读数",
+        "level": "基础",
+        "definition": "游标卡尺用主尺毫米数加上游标对齐格数乘分度差读数。标准10、20、50分度游标的分度差分别为0.1、0.05、0.02毫米，通常不另作估读。",
+        "meaning": "主尺读游标零线左侧的整毫米，再找一条与主尺重合的游标刻线。外测量爪测外径或厚度，内测量爪测内径，深度尺测孔深。先校零并保持接触适度，歪放、卡得过紧和看错游标零线都引入偏差。游标与螺旋测微器的读数规则不同；本卡是精密工具拓展，不把它宣称为苏科初中必做实验。",
+        "symbols": {
+          "L": {
+            "desc": "卡尺读数",
+            "unit": "m"
+          },
+          "x": {
+            "desc": "主尺整毫米位置",
+            "unit": "m"
+          },
+          "n": {
+            "desc": "游标对齐格数",
+            "unit": "1"
+          },
+          "d": {
+            "desc": "游标分度差",
+            "unit": "m"
+          },
+          "D": {
+            "desc": "独立校准长度",
+            "unit": "m"
+          }
+        },
+        "scenarios": {
+          "五十分度": {
+            "x": 0.012,
+            "n": 23,
+            "d": 2e-05,
+            "L": 0.01246,
+            "D": 0.01246
+          },
+          "二十分度": {
+            "x": 0.01,
+            "n": 7,
+            "d": 5e-05,
+            "L": 0.01035,
+            "D": 0.01035
+          },
+          "十分度": {
+            "x": 0.02,
+            "n": 6,
+            "d": 0.0001,
+            "L": 0.0206,
+            "D": 0.0206
+          }
+        },
+        "formulas": [
+          {
+            "name": "主尺加游标增量",
+            "expr": "L = x+n*d",
+            "when": "标准毫米主尺、对应分度差的游标；计算数值先统一为米。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "五十分度",
+                "ref": 0.01246,
+                "note": "12 mm加23×0.02 mm，得12.46 mm。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "二十分度",
+                "ref": 0.01035,
+                "note": "10 mm加7×0.05 mm，得10.35 mm。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "十分度",
+                "ref": 0.0206,
+                "note": "20 mm加6×0.1 mm，得20.6 mm。"
+              },
+              {
+                "type": "scan",
+                "scenario": "五十分度",
+                "var": "x",
+                "lo": 0,
+                "hi": 0.1,
+                "note": "扫描本条适用范围内的参数，奇点和越量程操作不在有效范围内。"
+              },
+              {
+                "type": "consistency",
+                "scenario": "五十分度",
+                "with": "tool-02|主尺加游标增量",
+                "with_expr": "D",
+                "note": "直接求本公式输出，与情境中另列的D设计基准核对；数据是设计示例，不是实测。用于核对定义、反算或边界值，不宣称不同物理原理互证。",
+                "target": "卡尺读数",
+                "verification_kind": "独立设计情境数据核对",
+                "tol": 1.2460000000000002e-07
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "标准游标分度差由主尺与游标格距的差决定，先确认规格。",
+          "读游标零线左侧整毫米，再用对齐格数乘分度差。",
+          "主尺与游标增量相加；校准标准块检查读数，没有额外估读位。"
+        ],
+        "errors": [
+          {
+            "wrong": "50分度游标第23格对齐时，把游标增量当0.23 mm而非0.46 mm。",
+            "wrong_expr": "L = x+n*d/2",
+            "why": "格数不是毫米数，必须乘该游标的0.02 mm分度差；12 mm主尺与23格对应12.46 mm，错按0.01 mm每格得到12.23 mm。错读每格0.01 mm是本规格实际每格0.02 mm的一半，所以错误式仍带长度量纲。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "五十分度",
+              "expr": "x+n*d/2",
+              "ref": 0.01246
+            },
+            "diagnostic": {
+              "style": "量具读数",
+              "stem": "游标主尺读数12.00 mm，23格对齐，实际每格0.02 mm，无零误差。长度应为多少？",
+              "options": [
+                "12.46 mm；主尺读数加游标读数。",
+                "12.23 mm；按每格0.01 mm读数。"
+              ],
+              "answer": 0,
+              "explanation": "格数不是毫米数，必须乘该游标的0.02 mm分度差；12 mm主尺与23格对应12.46 mm，错按0.01 mm每格得到12.23 mm。错读每格0.01 mm是本规格实际每格0.02 mm的一半，所以错误式仍带长度量纲。"
+            }
+          },
+          {
+            "wrong": "给游标读数额外估读一位或把内外测量爪混用。",
+            "why": "游标根据刻线对齐读数，不按普通连续刻度另估一位。不同测量爪对应不同接触位置，必须先确认对象和校零，不能仅凭计算正确判断操作正确。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "50分度游标主尺读12 mm，第23条线对齐；另用标准块校准长度为12.46 mm，求卡尺读数。",
+          "solution": [
+            "分度差为0.02 mm，游标部分为23×0.02=0.46 mm。",
+            "主尺12 mm与增量相加，和校准长度比较。"
+          ],
+          "answer": "读数12.46 mm，不另加估读位。"
+        },
+        "prereq": [
+          "tool-01"
+        ],
+        "next": [
+          "prop-02"
+        ],
+        "tags": [
+          "游标卡尺的读数",
+          "条件与边界",
+          "实验与证据"
+        ],
+        "core": [
+          {
+            "title": "游标卡尺的读数：方法与边界",
+            "text": "主尺读游标零线左侧的整毫米，再找一条与主尺重合的游标刻线。外测量爪测外径或厚度，内测量爪测内径，深度尺测孔深。先校零并保持接触适度，歪放、卡得过紧和看错游标零线都引入偏差。游标与螺旋测微器的读数规则不同；本卡是精密工具拓展，不把它宣称为苏科初中必做实验。"
+          }
+        ],
+        "learning_scope": "高中测量拓展"
+      },
+      "error_index": 0,
+      "chapter": "测量工具与数据处理"
+    },
+    "diagnostic-tool-02-2": {
+      "point": {
+        "id": "tool-02",
+        "title": "游标卡尺的读数",
+        "level": "基础",
+        "definition": "游标卡尺用主尺毫米数加上游标对齐格数乘分度差读数。标准10、20、50分度游标的分度差分别为0.1、0.05、0.02毫米，通常不另作估读。",
+        "meaning": "主尺读游标零线左侧的整毫米，再找一条与主尺重合的游标刻线。外测量爪测外径或厚度，内测量爪测内径，深度尺测孔深。先校零并保持接触适度，歪放、卡得过紧和看错游标零线都引入偏差。游标与螺旋测微器的读数规则不同；本卡是精密工具拓展，不把它宣称为苏科初中必做实验。",
+        "symbols": {
+          "L": {
+            "desc": "卡尺读数",
+            "unit": "m"
+          },
+          "x": {
+            "desc": "主尺整毫米位置",
+            "unit": "m"
+          },
+          "n": {
+            "desc": "游标对齐格数",
+            "unit": "1"
+          },
+          "d": {
+            "desc": "游标分度差",
+            "unit": "m"
+          },
+          "D": {
+            "desc": "独立校准长度",
+            "unit": "m"
+          }
+        },
+        "scenarios": {
+          "五十分度": {
+            "x": 0.012,
+            "n": 23,
+            "d": 2e-05,
+            "L": 0.01246,
+            "D": 0.01246
+          },
+          "二十分度": {
+            "x": 0.01,
+            "n": 7,
+            "d": 5e-05,
+            "L": 0.01035,
+            "D": 0.01035
+          },
+          "十分度": {
+            "x": 0.02,
+            "n": 6,
+            "d": 0.0001,
+            "L": 0.0206,
+            "D": 0.0206
+          }
+        },
+        "formulas": [
+          {
+            "name": "主尺加游标增量",
+            "expr": "L = x+n*d",
+            "when": "标准毫米主尺、对应分度差的游标；计算数值先统一为米。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "五十分度",
+                "ref": 0.01246,
+                "note": "12 mm加23×0.02 mm，得12.46 mm。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "二十分度",
+                "ref": 0.01035,
+                "note": "10 mm加7×0.05 mm，得10.35 mm。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "十分度",
+                "ref": 0.0206,
+                "note": "20 mm加6×0.1 mm，得20.6 mm。"
+              },
+              {
+                "type": "scan",
+                "scenario": "五十分度",
+                "var": "x",
+                "lo": 0,
+                "hi": 0.1,
+                "note": "扫描本条适用范围内的参数，奇点和越量程操作不在有效范围内。"
+              },
+              {
+                "type": "consistency",
+                "scenario": "五十分度",
+                "with": "tool-02|主尺加游标增量",
+                "with_expr": "D",
+                "note": "直接求本公式输出，与情境中另列的D设计基准核对；数据是设计示例，不是实测。用于核对定义、反算或边界值，不宣称不同物理原理互证。",
+                "target": "卡尺读数",
+                "verification_kind": "独立设计情境数据核对",
+                "tol": 1.2460000000000002e-07
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "标准游标分度差由主尺与游标格距的差决定，先确认规格。",
+          "读游标零线左侧整毫米，再用对齐格数乘分度差。",
+          "主尺与游标增量相加；校准标准块检查读数，没有额外估读位。"
+        ],
+        "errors": [
+          {
+            "wrong": "50分度游标第23格对齐时，把游标增量当0.23 mm而非0.46 mm。",
+            "wrong_expr": "L = x+n*d/2",
+            "why": "格数不是毫米数，必须乘该游标的0.02 mm分度差；12 mm主尺与23格对应12.46 mm，错按0.01 mm每格得到12.23 mm。错读每格0.01 mm是本规格实际每格0.02 mm的一半，所以错误式仍带长度量纲。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "五十分度",
+              "expr": "x+n*d/2",
+              "ref": 0.01246
+            },
+            "diagnostic": {
+              "style": "量具读数",
+              "stem": "游标主尺读数12.00 mm，23格对齐，实际每格0.02 mm，无零误差。长度应为多少？",
+              "options": [
+                "12.46 mm；主尺读数加游标读数。",
+                "12.23 mm；按每格0.01 mm读数。"
+              ],
+              "answer": 0,
+              "explanation": "格数不是毫米数，必须乘该游标的0.02 mm分度差；12 mm主尺与23格对应12.46 mm，错按0.01 mm每格得到12.23 mm。错读每格0.01 mm是本规格实际每格0.02 mm的一半，所以错误式仍带长度量纲。"
+            }
+          },
+          {
+            "wrong": "给游标读数额外估读一位或把内外测量爪混用。",
+            "why": "游标根据刻线对齐读数，不按普通连续刻度另估一位。不同测量爪对应不同接触位置，必须先确认对象和校零，不能仅凭计算正确判断操作正确。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "50分度游标主尺读12 mm，第23条线对齐；另用标准块校准长度为12.46 mm，求卡尺读数。",
+          "solution": [
+            "分度差为0.02 mm，游标部分为23×0.02=0.46 mm。",
+            "主尺12 mm与增量相加，和校准长度比较。"
+          ],
+          "answer": "读数12.46 mm，不另加估读位。"
+        },
+        "prereq": [
+          "tool-01"
+        ],
+        "next": [
+          "prop-02"
+        ],
+        "tags": [
+          "游标卡尺的读数",
+          "条件与边界",
+          "实验与证据"
+        ],
+        "core": [
+          {
+            "title": "游标卡尺的读数：方法与边界",
+            "text": "主尺读游标零线左侧的整毫米，再找一条与主尺重合的游标刻线。外测量爪测外径或厚度，内测量爪测内径，深度尺测孔深。先校零并保持接触适度，歪放、卡得过紧和看错游标零线都引入偏差。游标与螺旋测微器的读数规则不同；本卡是精密工具拓展，不把它宣称为苏科初中必做实验。"
+          }
+        ],
+        "learning_scope": "高中测量拓展"
+      },
+      "error_index": 1,
+      "chapter": "测量工具与数据处理"
+    },
+    "diagnostic-tool-03-1": {
+      "point": {
+        "id": "tool-03",
+        "title": "螺旋测微器的读数",
+        "level": "基础",
+        "definition": "常用螺旋测微器以固定套筒刻度加可动套筒读数测长度。螺距0.5毫米、圆周50分度时每格0.01毫米，按中学约定估读到0.001毫米，并修正零点误差。",
+        "meaning": "固定刻度要检查半毫米刻线是否露出，可动刻度对准基准线读到估读位。测量前校零，接近物体时使用棘轮，听到适当打滑后停止，避免旋紧主体压坏物体。闭合时仪器显示的有符号零误差应从示值减去；正零误差使示值偏大，负零误差相反。这里只讨论常用规格，其他螺距须按铭牌确认。",
+        "symbols": {
+          "D": {
+            "desc": "修正后直径",
+            "unit": "m"
+          },
+          "x": {
+            "desc": "固定刻度含半毫米",
+            "unit": "m"
+          },
+          "n": {
+            "desc": "可动刻度含估读格数",
+            "unit": "1"
+          },
+          "d": {
+            "desc": "每格前进长度",
+            "unit": "m"
+          },
+          "z": {
+            "desc": "有符号零点误差",
+            "unit": "m"
+          },
+          "D0": {
+            "desc": "独立标准块长度",
+            "unit": "m"
+          },
+          "h0": {
+            "desc": "固定套筒半毫米间隔",
+            "unit": "m"
+          }
+        },
+        "scenarios": {
+          "正零误差": {
+            "x": 0.0055,
+            "n": 27.6,
+            "d": 1e-05,
+            "z": 6e-06,
+            "D": 0.00577,
+            "D0": 0.00577,
+            "h0": 0.0005
+          },
+          "负零误差": {
+            "x": 0.003,
+            "n": 18.4,
+            "d": 1e-05,
+            "z": -4e-06,
+            "D": 0.003188,
+            "D0": 0.003188,
+            "h0": 0.0005
+          }
+        },
+        "formulas": [
+          {
+            "name": "示值减零误差",
+            "expr": "D = x+n*d-z",
+            "when": "常用螺距0.5 mm、圆周50分度，符号表与情境数值统一为米。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "正零误差",
+                "ref": 0.00577,
+                "note": "5.5+0.276-0.006=5.770 mm。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "负零误差",
+                "ref": 0.003188,
+                "note": "3+0.184-(-0.004)=3.188 mm。"
+              },
+              {
+                "type": "scan",
+                "scenario": "正零误差",
+                "var": "x",
+                "lo": 0.0005,
+                "hi": 0.02,
+                "note": "扫描本条适用范围内的参数，奇点和越量程操作不在有效范围内。"
+              },
+              {
+                "type": "consistency",
+                "scenario": "正零误差",
+                "with": "tool-03|示值减零误差",
+                "with_expr": "D0",
+                "note": "直接求本公式输出，与情境中另列的D0设计基准核对；数据是设计示例，不是实测。用于核对定义、反算或边界值，不宣称不同物理原理互证。",
+                "target": "修正后直径",
+                "verification_kind": "独立设计情境数据核对",
+                "tol": 5.770000000000001e-08
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "固定刻度先看整毫米和露出的半毫米。",
+          "螺距除圆周格数得到每格前进长度，读可动刻度并估读一位。",
+          "示值减有符号零误差，用棘轮保证测量压力不过大。"
+        ],
+        "errors": [
+          {
+            "wrong": "看到半毫米刻线却漏读0.5 mm。",
+            "wrong_expr": "D = x-h0+n*d-z",
+            "why": "固定套筒的半毫米也是已经露出的准确刻度，遗漏它会使直径少0.500 mm。零点修正无法补偿漏掉半毫米这一读数错误。半毫米间隔作为有长度单位的量扣除，不把0.0005当作无量纲数相减。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "正零误差",
+              "expr": "x-h0+n*d-z",
+              "ref": 0.00577
+            },
+            "diagnostic": {
+              "style": "量具读数",
+              "stem": "螺旋测微器固定套筒5.500 mm，可动套筒读到27.6格（含估读），每格0.01 mm，正零误差0.006 mm。修正读数应是多少？",
+              "options": [
+                "5.770 mm；5.500+0.276−0.006。",
+                "5.270 mm；额外扣掉已计入主尺的0.500 mm。"
+              ],
+              "answer": 0,
+              "explanation": "固定套筒的半毫米也是已经露出的准确刻度，遗漏它会使直径少0.500 mm。零点修正无法补偿漏掉半毫米这一读数错误。半毫米间隔作为有长度单位的量扣除，不把0.0005当作无量纲数相减。"
+            }
+          },
+          {
+            "wrong": "用主体旋钮硬拧测量面，或不顾正负把零误差总加上。",
+            "why": "棘轮限制测量压力，过紧会压缩软物体或损伤仪器；修正须用示值减有符号零误差，不能靠猜测方向。估读位也须来自刻度观察。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "螺旋测微器固定刻度5.5 mm，可动刻度27.6格，每格0.01 mm，零误差+0.006 mm，求长度。",
+          "solution": [
+            "示值5.5+27.6×0.01=5.776 mm。",
+            "减正零误差0.006 mm，按0.001 mm记录。"
+          ],
+          "answer": "修正后长度为5.770 mm。"
+        },
+        "prereq": [
+          "tool-01"
+        ],
+        "next": [
+          "prop-02"
+        ],
+        "tags": [
+          "螺旋测微器的读数",
+          "条件与边界",
+          "实验与证据"
+        ],
+        "core": [
+          {
+            "title": "螺旋测微器的读数：方法与边界",
+            "text": "固定刻度要检查半毫米刻线是否露出，可动刻度对准基准线读到估读位。测量前校零，接近物体时使用棘轮，听到适当打滑后停止，避免旋紧主体压坏物体。闭合时仪器显示的有符号零误差应从示值减去；正零误差使示值偏大，负零误差相反。这里只讨论常用规格，其他螺距须按铭牌确认。"
+          }
+        ],
+        "learning_scope": "高中测量拓展"
+      },
+      "error_index": 0,
+      "chapter": "测量工具与数据处理"
+    },
+    "diagnostic-tool-03-2": {
+      "point": {
+        "id": "tool-03",
+        "title": "螺旋测微器的读数",
+        "level": "基础",
+        "definition": "常用螺旋测微器以固定套筒刻度加可动套筒读数测长度。螺距0.5毫米、圆周50分度时每格0.01毫米，按中学约定估读到0.001毫米，并修正零点误差。",
+        "meaning": "固定刻度要检查半毫米刻线是否露出，可动刻度对准基准线读到估读位。测量前校零，接近物体时使用棘轮，听到适当打滑后停止，避免旋紧主体压坏物体。闭合时仪器显示的有符号零误差应从示值减去；正零误差使示值偏大，负零误差相反。这里只讨论常用规格，其他螺距须按铭牌确认。",
+        "symbols": {
+          "D": {
+            "desc": "修正后直径",
+            "unit": "m"
+          },
+          "x": {
+            "desc": "固定刻度含半毫米",
+            "unit": "m"
+          },
+          "n": {
+            "desc": "可动刻度含估读格数",
+            "unit": "1"
+          },
+          "d": {
+            "desc": "每格前进长度",
+            "unit": "m"
+          },
+          "z": {
+            "desc": "有符号零点误差",
+            "unit": "m"
+          },
+          "D0": {
+            "desc": "独立标准块长度",
+            "unit": "m"
+          },
+          "h0": {
+            "desc": "固定套筒半毫米间隔",
+            "unit": "m"
+          }
+        },
+        "scenarios": {
+          "正零误差": {
+            "x": 0.0055,
+            "n": 27.6,
+            "d": 1e-05,
+            "z": 6e-06,
+            "D": 0.00577,
+            "D0": 0.00577,
+            "h0": 0.0005
+          },
+          "负零误差": {
+            "x": 0.003,
+            "n": 18.4,
+            "d": 1e-05,
+            "z": -4e-06,
+            "D": 0.003188,
+            "D0": 0.003188,
+            "h0": 0.0005
+          }
+        },
+        "formulas": [
+          {
+            "name": "示值减零误差",
+            "expr": "D = x+n*d-z",
+            "when": "常用螺距0.5 mm、圆周50分度，符号表与情境数值统一为米。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "正零误差",
+                "ref": 0.00577,
+                "note": "5.5+0.276-0.006=5.770 mm。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "负零误差",
+                "ref": 0.003188,
+                "note": "3+0.184-(-0.004)=3.188 mm。"
+              },
+              {
+                "type": "scan",
+                "scenario": "正零误差",
+                "var": "x",
+                "lo": 0.0005,
+                "hi": 0.02,
+                "note": "扫描本条适用范围内的参数，奇点和越量程操作不在有效范围内。"
+              },
+              {
+                "type": "consistency",
+                "scenario": "正零误差",
+                "with": "tool-03|示值减零误差",
+                "with_expr": "D0",
+                "note": "直接求本公式输出，与情境中另列的D0设计基准核对；数据是设计示例，不是实测。用于核对定义、反算或边界值，不宣称不同物理原理互证。",
+                "target": "修正后直径",
+                "verification_kind": "独立设计情境数据核对",
+                "tol": 5.770000000000001e-08
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "固定刻度先看整毫米和露出的半毫米。",
+          "螺距除圆周格数得到每格前进长度，读可动刻度并估读一位。",
+          "示值减有符号零误差，用棘轮保证测量压力不过大。"
+        ],
+        "errors": [
+          {
+            "wrong": "看到半毫米刻线却漏读0.5 mm。",
+            "wrong_expr": "D = x-h0+n*d-z",
+            "why": "固定套筒的半毫米也是已经露出的准确刻度，遗漏它会使直径少0.500 mm。零点修正无法补偿漏掉半毫米这一读数错误。半毫米间隔作为有长度单位的量扣除，不把0.0005当作无量纲数相减。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "正零误差",
+              "expr": "x-h0+n*d-z",
+              "ref": 0.00577
+            },
+            "diagnostic": {
+              "style": "量具读数",
+              "stem": "螺旋测微器固定套筒5.500 mm，可动套筒读到27.6格（含估读），每格0.01 mm，正零误差0.006 mm。修正读数应是多少？",
+              "options": [
+                "5.770 mm；5.500+0.276−0.006。",
+                "5.270 mm；额外扣掉已计入主尺的0.500 mm。"
+              ],
+              "answer": 0,
+              "explanation": "固定套筒的半毫米也是已经露出的准确刻度，遗漏它会使直径少0.500 mm。零点修正无法补偿漏掉半毫米这一读数错误。半毫米间隔作为有长度单位的量扣除，不把0.0005当作无量纲数相减。"
+            }
+          },
+          {
+            "wrong": "用主体旋钮硬拧测量面，或不顾正负把零误差总加上。",
+            "why": "棘轮限制测量压力，过紧会压缩软物体或损伤仪器；修正须用示值减有符号零误差，不能靠猜测方向。估读位也须来自刻度观察。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "螺旋测微器固定刻度5.5 mm，可动刻度27.6格，每格0.01 mm，零误差+0.006 mm，求长度。",
+          "solution": [
+            "示值5.5+27.6×0.01=5.776 mm。",
+            "减正零误差0.006 mm，按0.001 mm记录。"
+          ],
+          "answer": "修正后长度为5.770 mm。"
+        },
+        "prereq": [
+          "tool-01"
+        ],
+        "next": [
+          "prop-02"
+        ],
+        "tags": [
+          "螺旋测微器的读数",
+          "条件与边界",
+          "实验与证据"
+        ],
+        "core": [
+          {
+            "title": "螺旋测微器的读数：方法与边界",
+            "text": "固定刻度要检查半毫米刻线是否露出，可动刻度对准基准线读到估读位。测量前校零，接近物体时使用棘轮，听到适当打滑后停止，避免旋紧主体压坏物体。闭合时仪器显示的有符号零误差应从示值减去；正零误差使示值偏大，负零误差相反。这里只讨论常用规格，其他螺距须按铭牌确认。"
+          }
+        ],
+        "learning_scope": "高中测量拓展"
+      },
+      "error_index": 1,
+      "chapter": "测量工具与数据处理"
+    },
+    "diagnostic-tool-04-1": {
+      "point": {
+        "id": "tool-04",
+        "title": "弹簧测力计的使用",
+        "level": "基础",
+        "definition": "弹簧测力计利用有效范围内弹簧伸长随拉力增大的特点测量力，示值单位为牛顿。它测的是沿弹簧轴线的拉力大小，不能直接把示值看成质量。",
+        "meaning": "先认量程和分度值，按实际测量方向校零，拉力方向与弹簧轴线一致并避免外壳摩擦。示值稳定时视线正对刻度，不能超过量程。用测力计测物体重力还要求物体平衡且无其他支持；加速提起时拉力未必等于重力。数值校验只验证刻度换算和校准，方向、姿势与量程选择还要观察。",
+        "symbols": {
+          "F": {
+            "desc": "测力计示值",
+            "unit": "N"
+          },
+          "n": {
+            "desc": "零位后刻度格数",
+            "unit": "1"
+          },
+          "d": {
+            "desc": "每格对应力",
+            "unit": "N"
+          },
+          "m": {
+            "desc": "校准砝码质量",
+            "unit": "kg"
+          },
+          "g": {
+            "desc": "重力加速度",
+            "unit": "m/s^2"
+          }
+        },
+        "scenarios": {
+          "平衡校准甲": {
+            "n": 6,
+            "d": 0.5,
+            "m": 0.3,
+            "g": 10,
+            "F": 3
+          },
+          "平衡校准乙": {
+            "n": 8,
+            "d": 0.5,
+            "m": 0.4,
+            "g": 10,
+            "F": 4
+          }
+        },
+        "formulas": [
+          {
+            "name": "刻度换算拉力",
+            "expr": "F = n*d",
+            "when": "0到5 N量程、已沿测力方向调零。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "平衡校准甲",
+                "ref": 3,
+                "note": "6格，每格0.5 N，示值3 N。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "平衡校准乙",
+                "ref": 4,
+                "note": "8格，每格0.5 N，示值4 N。"
+              },
+              {
+                "type": "scan",
+                "scenario": "平衡校准甲",
+                "var": "n",
+                "lo": 0,
+                "hi": 10,
+                "note": "扫描本条适用范围内的参数，奇点和越量程操作不在有效范围内。"
+              },
+              {
+                "type": "consistency",
+                "scenario": "平衡校准甲",
+                "with": "tool-04|刻度换算拉力",
+                "with_expr": "m*g",
+                "note": "本公式直接求F；参考端显式关系为m*g。两端使用同一情境和阶段，只核对该关系；with字段仅定位来源，不代表调用另一条被覆盖的公式。",
+                "target": "测力计示值",
+                "verification_kind": "独立关系核对"
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "沿实际测力方向校零，并核对量程与分度值。",
+          "格数乘分度值给出拉力，刻度格数本身不是质量。",
+          "用静止砝码重力校准，非平衡时不直接将拉力等同重力。"
+        ],
+        "errors": [
+          {
+            "wrong": "把0.5 N一格误当1 N一格，读数翻倍。",
+            "wrong_expr": "F = n*2*d",
+            "why": "示值由分度值和格数共同决定，格数本身没有牛顿的含义；6格乘0.5 N才是3 N，不能读成6 N，更不能直接记成6 kg。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "平衡校准甲",
+              "expr": "n*2*d",
+              "ref": 3
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "斜拉弹簧或在加速上提时一律把拉力当重力。",
+            "why": "力应沿弹簧轴线施加，侧向摩擦会改变伸长与示值；只有平衡且无其他竖直支持时悬挂拉力才等于重力，运动状态必须单独判断。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "0到5 N测力计每格0.5 N，沿轴线悬挂0.30 kg砝码，g取10 m/s²，稳定时在第6格。",
+          "solution": [
+            "按刻度读数6×0.5=3.0 N，没有超过量程。",
+            "按重力0.30×10=3.0 N核对静止平衡。"
+          ],
+          "answer": "拉力示值3.0 N，与校准重力一致。"
+        },
+        "prereq": [
+          "force-01"
+        ],
+        "next": [
+          "fmotion-01"
+        ],
+        "tags": [
+          "弹簧测力计的使用",
+          "条件与边界",
+          "实验与证据"
+        ],
+        "core": [
+          {
+            "title": "弹簧测力计的使用：方法与边界",
+            "text": "先认量程和分度值，按实际测量方向校零，拉力方向与弹簧轴线一致并避免外壳摩擦。示值稳定时视线正对刻度，不能超过量程。用测力计测物体重力还要求物体平衡且无其他支持；加速提起时拉力未必等于重力。数值校验只验证刻度换算和校准，方向、姿势与量程选择还要观察。"
+          }
+        ],
+        "learning_scope": "初中"
+      },
+      "error_index": 0,
+      "chapter": "测量工具与数据处理"
+    },
+    "diagnostic-tool-04-2": {
+      "point": {
+        "id": "tool-04",
+        "title": "弹簧测力计的使用",
+        "level": "基础",
+        "definition": "弹簧测力计利用有效范围内弹簧伸长随拉力增大的特点测量力，示值单位为牛顿。它测的是沿弹簧轴线的拉力大小，不能直接把示值看成质量。",
+        "meaning": "先认量程和分度值，按实际测量方向校零，拉力方向与弹簧轴线一致并避免外壳摩擦。示值稳定时视线正对刻度，不能超过量程。用测力计测物体重力还要求物体平衡且无其他支持；加速提起时拉力未必等于重力。数值校验只验证刻度换算和校准，方向、姿势与量程选择还要观察。",
+        "symbols": {
+          "F": {
+            "desc": "测力计示值",
+            "unit": "N"
+          },
+          "n": {
+            "desc": "零位后刻度格数",
+            "unit": "1"
+          },
+          "d": {
+            "desc": "每格对应力",
+            "unit": "N"
+          },
+          "m": {
+            "desc": "校准砝码质量",
+            "unit": "kg"
+          },
+          "g": {
+            "desc": "重力加速度",
+            "unit": "m/s^2"
+          }
+        },
+        "scenarios": {
+          "平衡校准甲": {
+            "n": 6,
+            "d": 0.5,
+            "m": 0.3,
+            "g": 10,
+            "F": 3
+          },
+          "平衡校准乙": {
+            "n": 8,
+            "d": 0.5,
+            "m": 0.4,
+            "g": 10,
+            "F": 4
+          }
+        },
+        "formulas": [
+          {
+            "name": "刻度换算拉力",
+            "expr": "F = n*d",
+            "when": "0到5 N量程、已沿测力方向调零。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "平衡校准甲",
+                "ref": 3,
+                "note": "6格，每格0.5 N，示值3 N。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "平衡校准乙",
+                "ref": 4,
+                "note": "8格，每格0.5 N，示值4 N。"
+              },
+              {
+                "type": "scan",
+                "scenario": "平衡校准甲",
+                "var": "n",
+                "lo": 0,
+                "hi": 10,
+                "note": "扫描本条适用范围内的参数，奇点和越量程操作不在有效范围内。"
+              },
+              {
+                "type": "consistency",
+                "scenario": "平衡校准甲",
+                "with": "tool-04|刻度换算拉力",
+                "with_expr": "m*g",
+                "note": "本公式直接求F；参考端显式关系为m*g。两端使用同一情境和阶段，只核对该关系；with字段仅定位来源，不代表调用另一条被覆盖的公式。",
+                "target": "测力计示值",
+                "verification_kind": "独立关系核对"
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "沿实际测力方向校零，并核对量程与分度值。",
+          "格数乘分度值给出拉力，刻度格数本身不是质量。",
+          "用静止砝码重力校准，非平衡时不直接将拉力等同重力。"
+        ],
+        "errors": [
+          {
+            "wrong": "把0.5 N一格误当1 N一格，读数翻倍。",
+            "wrong_expr": "F = n*2*d",
+            "why": "示值由分度值和格数共同决定，格数本身没有牛顿的含义；6格乘0.5 N才是3 N，不能读成6 N，更不能直接记成6 kg。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "平衡校准甲",
+              "expr": "n*2*d",
+              "ref": 3
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "斜拉弹簧或在加速上提时一律把拉力当重力。",
+            "why": "力应沿弹簧轴线施加，侧向摩擦会改变伸长与示值；只有平衡且无其他竖直支持时悬挂拉力才等于重力，运动状态必须单独判断。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "0到5 N测力计每格0.5 N，沿轴线悬挂0.30 kg砝码，g取10 m/s²，稳定时在第6格。",
+          "solution": [
+            "按刻度读数6×0.5=3.0 N，没有超过量程。",
+            "按重力0.30×10=3.0 N核对静止平衡。"
+          ],
+          "answer": "拉力示值3.0 N，与校准重力一致。"
+        },
+        "prereq": [
+          "force-01"
+        ],
+        "next": [
+          "fmotion-01"
+        ],
+        "tags": [
+          "弹簧测力计的使用",
+          "条件与边界",
+          "实验与证据"
+        ],
+        "core": [
+          {
+            "title": "弹簧测力计的使用：方法与边界",
+            "text": "先认量程和分度值，按实际测量方向校零，拉力方向与弹簧轴线一致并避免外壳摩擦。示值稳定时视线正对刻度，不能超过量程。用测力计测物体重力还要求物体平衡且无其他支持；加速提起时拉力未必等于重力。数值校验只验证刻度换算和校准，方向、姿势与量程选择还要观察。"
+          }
+        ],
+        "learning_scope": "初中"
+      },
+      "error_index": 1,
+      "chapter": "测量工具与数据处理"
+    },
+    "diagnostic-tool-05-1": {
+      "point": {
+        "id": "tool-05",
+        "title": "托盘天平的使用与密度测量",
+        "level": "基础",
+        "definition": "托盘天平以砝码质量和游码示值相加测物体质量。使用前游码归零再调平衡螺母，称量时左物右码并用镊子取砝码，不能在称量过程中再调平衡螺母。",
+        "meaning": "固体先测干燥质量，再用排水法测不溶、不吸水固体体积，避免带水使质量偏大。液体可先称杯与液体总质量，再向量筒倒一部分，称剩余杯与液体，质量差对应倒入量筒的体积；这样避免杯壁残留不计入体积却计入质量。比较同一份物质，不能把量筒总体积和差量质量随意配对。\n学习分工：本卡讲天平的调平、称量和仪器配对，完整密度测量方案见实验卡（jexp-05），可点击下方知识关系回看。这一链接是相关内容推荐，不表示必须先后学习。",
+        "symbols": {
+          "m": {
+            "desc": "游码与砝码合计质量",
+            "unit": "kg"
+          },
+          "m1": {
+            "desc": "杯和液体倒出前质量",
+            "unit": "kg"
+          },
+          "m2": {
+            "desc": "倒出后杯和剩液质量",
+            "unit": "kg"
+          },
+          "V": {
+            "desc": "倒入量筒的液体体积",
+            "unit": "m^3"
+          },
+          "rho": {
+            "desc": "液体密度",
+            "unit": "kg/m^3"
+          },
+          "mc": {
+            "desc": "砝码质量",
+            "unit": "kg"
+          },
+          "my": {
+            "desc": "游码示值",
+            "unit": "kg"
+          }
+        },
+        "scenarios": {
+          "液体甲": {
+            "mc": 0.08,
+            "my": 0.004,
+            "m": 0.084,
+            "m1": 0.084,
+            "m2": 0.044,
+            "V": 5e-05,
+            "rho": 800
+          },
+          "液体乙": {
+            "mc": 0.1,
+            "my": 0.002,
+            "m": 0.102,
+            "m1": 0.102,
+            "m2": 0.042,
+            "V": 6e-05,
+            "rho": 1000
+          }
+        },
+        "formulas": [
+          {
+            "name": "砝码加游码",
+            "expr": "m = mc+my",
+            "when": "天平已调平，物体在规定托盘；mc是砝码总质量，my是按游码标尺读取的质量，单位一致。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "液体甲",
+                "ref": 0.084,
+                "note": "80 g砝码与4 g游码为84 g。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "液体乙",
+                "ref": 0.102,
+                "note": "100 g砝码与2 g游码为102 g。"
+              },
+              {
+                "type": "scan",
+                "scenario": "液体甲",
+                "var": "my",
+                "lo": 0,
+                "hi": 0.005,
+                "note": "扫描本条适用范围内的参数，奇点和越量程操作不在有效范围内。"
+              },
+              {
+                "type": "consistency",
+                "scenario": "液体甲",
+                "with": "tool-05|砝码加游码",
+                "with_expr": "rho*V+m2",
+                "note": "本公式直接求m；参考端显式关系为rho*V+m2。两端使用同一情境和阶段，只核对该关系；with字段仅定位来源，不代表调用另一条被覆盖的公式。",
+                "target": "游码与砝码合计质量",
+                "verification_kind": "独立关系核对",
+                "tol": 8.400000000000001e-07
+              }
+            ]
+          },
+          {
+            "name": "液体密度差量法",
+            "expr": "rho = (m1-m2)/V",
+            "when": "倒出前后质量之差与量筒中这一份液体的体积配对。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "液体甲",
+                "ref": 800,
+                "note": "40 g除50 cm³，得0.8 g/cm³。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "液体乙",
+                "ref": 1000,
+                "note": "60 g除60 cm³，得1 g/cm³。"
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "空载调平，称量时固定平衡螺母并读砝码与游码总质量。",
+          "固体先称干燥质量再排水；液体用倒出前后质量差。",
+          "用对应那一份样品的质量除以体积，统一到同一单位体系。"
+        ],
+        "errors": [
+          {
+            "wrong": "天平读数只计砝码，漏掉游码质量。",
+            "wrong_expr": "m = mc",
+            "why": "游码在标尺上移动也提供平衡作用，示值必须与砝码相加；80 g砝码与4 g游码合为84 g，不是80 g。称量时重新调螺母不能弥补漏读。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "液体甲",
+              "expr": "mc",
+              "ref": 0.084
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "称量时移动平衡螺母，或先排水后称带水固体。",
+            "why": "调平衡只用于称量前的空载校零，称量中移动会改变仪器条件；固体附着水增加被称质量，所得密度可能偏大。必须区分误差来源与配对样本。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "液体与杯总质量84 g，倒出后44 g，量筒中液体体积50 cm³，求这一份液体密度。",
+          "solution": [
+            "倒出质量84-44=40 g，与量筒中液体是同一份。",
+            "密度40/50=0.8 g/cm³，再换为kg/m³。"
+          ],
+          "answer": "液体密度为800 kg/m³。"
+        },
+        "prereq": [
+          "prop-01"
+        ],
+        "next": [
+          "prop-02",
+          "jexp-05"
+        ],
+        "tags": [
+          "托盘天平的使用与密度测量",
+          "条件与边界",
+          "实验与证据"
+        ],
+        "core": [
+          {
+            "title": "托盘天平的使用与密度测量：方法与边界",
+            "text": "固体先测干燥质量，再用排水法测不溶、不吸水固体体积，避免带水使质量偏大。液体可先称杯与液体总质量，再向量筒倒一部分，称剩余杯与液体，质量差对应倒入量筒的体积；这样避免杯壁残留不计入体积却计入质量。比较同一份物质，不能把量筒总体积和差量质量随意配对。"
+          }
+        ],
+        "learning_scope": "初中"
+      },
+      "error_index": 0,
+      "chapter": "测量工具与数据处理"
+    },
+    "diagnostic-tool-05-2": {
+      "point": {
+        "id": "tool-05",
+        "title": "托盘天平的使用与密度测量",
+        "level": "基础",
+        "definition": "托盘天平以砝码质量和游码示值相加测物体质量。使用前游码归零再调平衡螺母，称量时左物右码并用镊子取砝码，不能在称量过程中再调平衡螺母。",
+        "meaning": "固体先测干燥质量，再用排水法测不溶、不吸水固体体积，避免带水使质量偏大。液体可先称杯与液体总质量，再向量筒倒一部分，称剩余杯与液体，质量差对应倒入量筒的体积；这样避免杯壁残留不计入体积却计入质量。比较同一份物质，不能把量筒总体积和差量质量随意配对。\n学习分工：本卡讲天平的调平、称量和仪器配对，完整密度测量方案见实验卡（jexp-05），可点击下方知识关系回看。这一链接是相关内容推荐，不表示必须先后学习。",
+        "symbols": {
+          "m": {
+            "desc": "游码与砝码合计质量",
+            "unit": "kg"
+          },
+          "m1": {
+            "desc": "杯和液体倒出前质量",
+            "unit": "kg"
+          },
+          "m2": {
+            "desc": "倒出后杯和剩液质量",
+            "unit": "kg"
+          },
+          "V": {
+            "desc": "倒入量筒的液体体积",
+            "unit": "m^3"
+          },
+          "rho": {
+            "desc": "液体密度",
+            "unit": "kg/m^3"
+          },
+          "mc": {
+            "desc": "砝码质量",
+            "unit": "kg"
+          },
+          "my": {
+            "desc": "游码示值",
+            "unit": "kg"
+          }
+        },
+        "scenarios": {
+          "液体甲": {
+            "mc": 0.08,
+            "my": 0.004,
+            "m": 0.084,
+            "m1": 0.084,
+            "m2": 0.044,
+            "V": 5e-05,
+            "rho": 800
+          },
+          "液体乙": {
+            "mc": 0.1,
+            "my": 0.002,
+            "m": 0.102,
+            "m1": 0.102,
+            "m2": 0.042,
+            "V": 6e-05,
+            "rho": 1000
+          }
+        },
+        "formulas": [
+          {
+            "name": "砝码加游码",
+            "expr": "m = mc+my",
+            "when": "天平已调平，物体在规定托盘；mc是砝码总质量，my是按游码标尺读取的质量，单位一致。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "液体甲",
+                "ref": 0.084,
+                "note": "80 g砝码与4 g游码为84 g。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "液体乙",
+                "ref": 0.102,
+                "note": "100 g砝码与2 g游码为102 g。"
+              },
+              {
+                "type": "scan",
+                "scenario": "液体甲",
+                "var": "my",
+                "lo": 0,
+                "hi": 0.005,
+                "note": "扫描本条适用范围内的参数，奇点和越量程操作不在有效范围内。"
+              },
+              {
+                "type": "consistency",
+                "scenario": "液体甲",
+                "with": "tool-05|砝码加游码",
+                "with_expr": "rho*V+m2",
+                "note": "本公式直接求m；参考端显式关系为rho*V+m2。两端使用同一情境和阶段，只核对该关系；with字段仅定位来源，不代表调用另一条被覆盖的公式。",
+                "target": "游码与砝码合计质量",
+                "verification_kind": "独立关系核对",
+                "tol": 8.400000000000001e-07
+              }
+            ]
+          },
+          {
+            "name": "液体密度差量法",
+            "expr": "rho = (m1-m2)/V",
+            "when": "倒出前后质量之差与量筒中这一份液体的体积配对。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "液体甲",
+                "ref": 800,
+                "note": "40 g除50 cm³，得0.8 g/cm³。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "液体乙",
+                "ref": 1000,
+                "note": "60 g除60 cm³，得1 g/cm³。"
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "空载调平，称量时固定平衡螺母并读砝码与游码总质量。",
+          "固体先称干燥质量再排水；液体用倒出前后质量差。",
+          "用对应那一份样品的质量除以体积，统一到同一单位体系。"
+        ],
+        "errors": [
+          {
+            "wrong": "天平读数只计砝码，漏掉游码质量。",
+            "wrong_expr": "m = mc",
+            "why": "游码在标尺上移动也提供平衡作用，示值必须与砝码相加；80 g砝码与4 g游码合为84 g，不是80 g。称量时重新调螺母不能弥补漏读。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "液体甲",
+              "expr": "mc",
+              "ref": 0.084
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "称量时移动平衡螺母，或先排水后称带水固体。",
+            "why": "调平衡只用于称量前的空载校零，称量中移动会改变仪器条件；固体附着水增加被称质量，所得密度可能偏大。必须区分误差来源与配对样本。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "液体与杯总质量84 g，倒出后44 g，量筒中液体体积50 cm³，求这一份液体密度。",
+          "solution": [
+            "倒出质量84-44=40 g，与量筒中液体是同一份。",
+            "密度40/50=0.8 g/cm³，再换为kg/m³。"
+          ],
+          "answer": "液体密度为800 kg/m³。"
+        },
+        "prereq": [
+          "prop-01"
+        ],
+        "next": [
+          "prop-02",
+          "jexp-05"
+        ],
+        "tags": [
+          "托盘天平的使用与密度测量",
+          "条件与边界",
+          "实验与证据"
+        ],
+        "core": [
+          {
+            "title": "托盘天平的使用与密度测量：方法与边界",
+            "text": "固体先测干燥质量，再用排水法测不溶、不吸水固体体积，避免带水使质量偏大。液体可先称杯与液体总质量，再向量筒倒一部分，称剩余杯与液体，质量差对应倒入量筒的体积；这样避免杯壁残留不计入体积却计入质量。比较同一份物质，不能把量筒总体积和差量质量随意配对。"
+          }
+        ],
+        "learning_scope": "初中"
+      },
+      "error_index": 1,
+      "chapter": "测量工具与数据处理"
+    },
+    "diagnostic-tool-06-1": {
+      "point": {
+        "id": "tool-06",
+        "title": "量筒与液体体积读数",
+        "level": "基础",
+        "definition": "量筒按刻度测液体体积，读数时平放在水平桌面，视线与弯月面规定位置相平。水等凹液面读最低处，水银等凸液面读最高处，但课堂不使用水银练习。",
+        "meaning": "先选择合适量程、分度值，读水的凹面最低处时避免俯视和仰视；一般刻度视差情境下俯视读数偏大、仰视偏小。1毫升等于1立方厘米，换算到立方米须用体积倍率。测固体排水体积还要求完全浸没、不溶不吸水、消除气泡；沉浮不同对象需要适当辅助方法，量筒读数不是总能直接当固体体积。",
+        "symbols": {
+          "V": {
+            "desc": "液体体积的立方米数值",
+            "unit": "m^3"
+          },
+          "V_ml": {
+            "desc": "量筒读数的毫升数值",
+            "unit": "mL"
+          },
+          "V0": {
+            "desc": "独立量取校准体积",
+            "unit": "m^3"
+          }
+        },
+        "scenarios": {
+          "五十毫升": {
+            "V": 5e-05,
+            "V_ml": 50,
+            "V0": 5e-05
+          },
+          "八十毫升": {
+            "V": 8e-05,
+            "V_ml": 80,
+            "V0": 8e-05
+          }
+        },
+        "formulas": [
+          {
+            "name": "毫升换立方米",
+            "expr": "V = V_ml/1000000",
+            "when": "同一体积的单位换算；V_ml输入毫升数值，V输出立方米数值。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "五十毫升",
+                "ref": 5e-05,
+                "note": "50 mL为50 cm³，即5×10⁻⁵ m³。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "八十毫升",
+                "ref": 8e-05,
+                "note": "80 mL为8×10⁻⁵ m³。"
+              },
+              {
+                "type": "scan",
+                "scenario": "五十毫升",
+                "var": "V_ml",
+                "lo": 1,
+                "hi": 100,
+                "note": "扫描本条适用范围内的参数，奇点和越量程操作不在有效范围内。"
+              },
+              {
+                "type": "consistency",
+                "scenario": "五十毫升",
+                "with": "tool-06|毫升换立方米",
+                "with_expr": "V0",
+                "note": "直接求本公式输出，与情境中另列的V0设计基准核对；数据是设计示例，不是实测。用于核对定义、反算或边界值，不宣称不同物理原理互证。",
+                "target": "液体体积的立方米数值",
+                "verification_kind": "独立设计情境数据核对",
+                "tol": 5e-10
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "水平放量筒，平视凹液面最低处。",
+          "毫升与立方厘米数值相同，但立方米换算需立方倍率。",
+          "标准体积校准只核对量值，读数视差仍需实际操作审查。"
+        ],
+        "errors": [
+          {
+            "wrong": "把毫升换立方米时只除1000，误把体积倍率当长度倍率。",
+            "wrong_expr": "V = V_ml/1000",
+            "why": "1 mL=1 cm³=10⁻⁶ m³，因此毫升数除一百万；50 mL是0.00005 m³而不是0.05 m³，错误相差一千倍但量纲相同。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "五十毫升",
+              "expr": "V_ml/1000",
+              "ref": 5e-05
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "俯视或仰视凹液面，或读凹面的上沿。",
+            "why": "正常视线应与凹液面最低处相平，俯视通常偏大、仰视通常偏小；弯月面读哪一处与液体类型有关，不能把水的规则直接套给凸液面。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "量筒正确读水体积50 mL，另校准量取体积为50 cm³，换成立方米并说明读数视线。",
+          "solution": [
+            "视线与水的凹液面最低处相平。",
+            "1 mL=10⁻⁶ m³，50 mL乘这一体积倍率。"
+          ],
+          "answer": "体积5.0×10⁻⁵ m³；应平视凹面最低处。"
+        },
+        "prereq": [
+          "motion-03"
+        ],
+        "next": [
+          "pressure-04"
+        ],
+        "tags": [
+          "量筒与液体体积读数",
+          "条件与边界",
+          "实验与证据"
+        ],
+        "core": [
+          {
+            "title": "量筒与液体体积读数：方法与边界",
+            "text": "先选择合适量程、分度值，读水的凹面最低处时避免俯视和仰视；一般刻度视差情境下俯视读数偏大、仰视偏小。1毫升等于1立方厘米，换算到立方米须用体积倍率。测固体排水体积还要求完全浸没、不溶不吸水、消除气泡；沉浮不同对象需要适当辅助方法，量筒读数不是总能直接当固体体积。"
+          }
+        ],
+        "learning_scope": "初中"
+      },
+      "error_index": 0,
+      "chapter": "测量工具与数据处理"
+    },
+    "diagnostic-tool-06-2": {
+      "point": {
+        "id": "tool-06",
+        "title": "量筒与液体体积读数",
+        "level": "基础",
+        "definition": "量筒按刻度测液体体积，读数时平放在水平桌面，视线与弯月面规定位置相平。水等凹液面读最低处，水银等凸液面读最高处，但课堂不使用水银练习。",
+        "meaning": "先选择合适量程、分度值，读水的凹面最低处时避免俯视和仰视；一般刻度视差情境下俯视读数偏大、仰视偏小。1毫升等于1立方厘米，换算到立方米须用体积倍率。测固体排水体积还要求完全浸没、不溶不吸水、消除气泡；沉浮不同对象需要适当辅助方法，量筒读数不是总能直接当固体体积。",
+        "symbols": {
+          "V": {
+            "desc": "液体体积的立方米数值",
+            "unit": "m^3"
+          },
+          "V_ml": {
+            "desc": "量筒读数的毫升数值",
+            "unit": "mL"
+          },
+          "V0": {
+            "desc": "独立量取校准体积",
+            "unit": "m^3"
+          }
+        },
+        "scenarios": {
+          "五十毫升": {
+            "V": 5e-05,
+            "V_ml": 50,
+            "V0": 5e-05
+          },
+          "八十毫升": {
+            "V": 8e-05,
+            "V_ml": 80,
+            "V0": 8e-05
+          }
+        },
+        "formulas": [
+          {
+            "name": "毫升换立方米",
+            "expr": "V = V_ml/1000000",
+            "when": "同一体积的单位换算；V_ml输入毫升数值，V输出立方米数值。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "五十毫升",
+                "ref": 5e-05,
+                "note": "50 mL为50 cm³，即5×10⁻⁵ m³。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "八十毫升",
+                "ref": 8e-05,
+                "note": "80 mL为8×10⁻⁵ m³。"
+              },
+              {
+                "type": "scan",
+                "scenario": "五十毫升",
+                "var": "V_ml",
+                "lo": 1,
+                "hi": 100,
+                "note": "扫描本条适用范围内的参数，奇点和越量程操作不在有效范围内。"
+              },
+              {
+                "type": "consistency",
+                "scenario": "五十毫升",
+                "with": "tool-06|毫升换立方米",
+                "with_expr": "V0",
+                "note": "直接求本公式输出，与情境中另列的V0设计基准核对；数据是设计示例，不是实测。用于核对定义、反算或边界值，不宣称不同物理原理互证。",
+                "target": "液体体积的立方米数值",
+                "verification_kind": "独立设计情境数据核对",
+                "tol": 5e-10
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "水平放量筒，平视凹液面最低处。",
+          "毫升与立方厘米数值相同，但立方米换算需立方倍率。",
+          "标准体积校准只核对量值，读数视差仍需实际操作审查。"
+        ],
+        "errors": [
+          {
+            "wrong": "把毫升换立方米时只除1000，误把体积倍率当长度倍率。",
+            "wrong_expr": "V = V_ml/1000",
+            "why": "1 mL=1 cm³=10⁻⁶ m³，因此毫升数除一百万；50 mL是0.00005 m³而不是0.05 m³，错误相差一千倍但量纲相同。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "五十毫升",
+              "expr": "V_ml/1000",
+              "ref": 5e-05
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "俯视或仰视凹液面，或读凹面的上沿。",
+            "why": "正常视线应与凹液面最低处相平，俯视通常偏大、仰视通常偏小；弯月面读哪一处与液体类型有关，不能把水的规则直接套给凸液面。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "量筒正确读水体积50 mL，另校准量取体积为50 cm³，换成立方米并说明读数视线。",
+          "solution": [
+            "视线与水的凹液面最低处相平。",
+            "1 mL=10⁻⁶ m³，50 mL乘这一体积倍率。"
+          ],
+          "answer": "体积5.0×10⁻⁵ m³；应平视凹面最低处。"
+        },
+        "prereq": [
+          "motion-03"
+        ],
+        "next": [
+          "pressure-04"
+        ],
+        "tags": [
+          "量筒与液体体积读数",
+          "条件与边界",
+          "实验与证据"
+        ],
+        "core": [
+          {
+            "title": "量筒与液体体积读数：方法与边界",
+            "text": "先选择合适量程、分度值，读水的凹面最低处时避免俯视和仰视；一般刻度视差情境下俯视读数偏大、仰视偏小。1毫升等于1立方厘米，换算到立方米须用体积倍率。测固体排水体积还要求完全浸没、不溶不吸水、消除气泡；沉浮不同对象需要适当辅助方法，量筒读数不是总能直接当固体体积。"
+          }
+        ],
+        "learning_scope": "初中"
+      },
+      "error_index": 1,
+      "chapter": "测量工具与数据处理"
+    },
+    "diagnostic-tool-07-1": {
+      "point": {
+        "id": "tool-07",
+        "title": "有效数字与测量误差",
+        "level": "基础",
+        "definition": "测量记录的末位表达有限精度，平均值应保留与测量能力相称的小数位。误差是测量值偏离真实值的差异，无法完全消除；错误是读错、用错方法等可以避免的行为。",
+        "meaning": "系统误差由校准、仪器或固定方法引起，多次平均不能消除；偶然误差使重复读数散布，合理重复取平均可减小其影响。不能为了末位好看随意补位，也不能说多次测量一定等于真实值。初中先按仪器约定精度记录平均值，再学习不确定度的完整表达；计算器多显示几位不代表测量更精确。",
+        "symbols": {
+          "L": {
+            "desc": "重复测量平均长度",
+            "unit": "m"
+          },
+          "L1": {
+            "desc": "第一次长度",
+            "unit": "m"
+          },
+          "L2": {
+            "desc": "第二次长度",
+            "unit": "m"
+          },
+          "L3": {
+            "desc": "第三次长度",
+            "unit": "m"
+          },
+          "D": {
+            "desc": "独立校准样件长度",
+            "unit": "m"
+          }
+        },
+        "scenarios": {
+          "样件甲": {
+            "L1": 0.0325,
+            "L2": 0.0326,
+            "L3": 0.0327,
+            "L": 0.0326,
+            "D": 0.0326
+          },
+          "样件乙": {
+            "L1": 0.0451,
+            "L2": 0.0452,
+            "L3": 0.0453,
+            "L": 0.0452,
+            "D": 0.0452
+          }
+        },
+        "formulas": [
+          {
+            "name": "三次测量平均",
+            "expr": "L = (L1+L2+L3)/3",
+            "when": "三次测量同一不变长度，单位与测量方法一致；算术平均不消除共同系统误差。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "样件甲",
+                "ref": 0.0326,
+                "note": "3.25、3.26、3.27 cm的平均为3.26 cm。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "样件乙",
+                "ref": 0.0452,
+                "note": "4.51、4.52、4.53 cm的平均为4.52 cm。"
+              },
+              {
+                "type": "scan",
+                "scenario": "样件甲",
+                "var": "L1",
+                "lo": 0.032,
+                "hi": 0.033,
+                "note": "扫描本条适用范围内的参数，奇点和越量程操作不在有效范围内。"
+              },
+              {
+                "type": "consistency",
+                "scenario": "样件甲",
+                "with": "tool-07|三次测量平均",
+                "with_expr": "D",
+                "note": "直接求本公式输出，与情境中另列的D设计基准核对；数据是设计示例，不是实测。用于核对定义、反算或边界值，不宣称不同物理原理互证。",
+                "target": "重复测量平均长度",
+                "verification_kind": "独立设计情境数据核对",
+                "tol": 3.26e-07
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "同样品、同仪器、同单位重复读数。",
+          "重复读数求平均，再按原仪器的测量精度保留位数。",
+          "用校准检查固定偏差；平均只能减小部分偶然影响。"
+        ],
+        "errors": [
+          {
+            "wrong": "把三次读数相加而不除以测量次数。",
+            "wrong_expr": "L = L1+L2+L3",
+            "why": "对同一对象重复测量应求平均，直接相加会把长度扩大三倍。这个算术错误可以避免，与读数末位随机波动造成的测量误差不是一回事。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "样件甲",
+              "expr": "L1+L2+L3",
+              "ref": 0.0326
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "认为多测几次能消除所有误差，或把错用刻度说成不可避免误差。",
+            "why": "平均只能减小部分偶然影响，固定零偏不会因重复消失；读错格数、漏单位等属于可避免错误。系统误差需校准和改进方法，不能靠增加计算位数修复。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "用同一毫米分度尺三次测得3.25、3.26、3.27 cm，求平均并说明能否消除零点偏差。",
+          "solution": [
+            "三次和为9.78 cm，除以3得3.26 cm。",
+            "按原测量精度记3.26 cm；固定零偏需校准，平均不能消除。"
+          ],
+          "answer": "平均长度3.26 cm，仍需检查系统误差。"
+        },
+        "prereq": [
+          "tool-01"
+        ],
+        "next": [
+          "motion-01"
+        ],
+        "tags": [
+          "有效数字与测量误差",
+          "条件与边界",
+          "实验与证据"
+        ],
+        "core": [
+          {
+            "title": "有效数字与测量误差：方法与边界",
+            "text": "系统误差由校准、仪器或固定方法引起，多次平均不能消除；偶然误差使重复读数散布，合理重复取平均可减小其影响。不能为了末位好看随意补位，也不能说多次测量一定等于真实值。初中先按仪器约定精度记录平均值，再学习不确定度的完整表达；计算器多显示几位不代表测量更精确。"
+          }
+        ],
+        "learning_scope": "初中"
+      },
+      "error_index": 0,
+      "chapter": "测量工具与数据处理"
+    },
+    "diagnostic-tool-07-2": {
+      "point": {
+        "id": "tool-07",
+        "title": "有效数字与测量误差",
+        "level": "基础",
+        "definition": "测量记录的末位表达有限精度，平均值应保留与测量能力相称的小数位。误差是测量值偏离真实值的差异，无法完全消除；错误是读错、用错方法等可以避免的行为。",
+        "meaning": "系统误差由校准、仪器或固定方法引起，多次平均不能消除；偶然误差使重复读数散布，合理重复取平均可减小其影响。不能为了末位好看随意补位，也不能说多次测量一定等于真实值。初中先按仪器约定精度记录平均值，再学习不确定度的完整表达；计算器多显示几位不代表测量更精确。",
+        "symbols": {
+          "L": {
+            "desc": "重复测量平均长度",
+            "unit": "m"
+          },
+          "L1": {
+            "desc": "第一次长度",
+            "unit": "m"
+          },
+          "L2": {
+            "desc": "第二次长度",
+            "unit": "m"
+          },
+          "L3": {
+            "desc": "第三次长度",
+            "unit": "m"
+          },
+          "D": {
+            "desc": "独立校准样件长度",
+            "unit": "m"
+          }
+        },
+        "scenarios": {
+          "样件甲": {
+            "L1": 0.0325,
+            "L2": 0.0326,
+            "L3": 0.0327,
+            "L": 0.0326,
+            "D": 0.0326
+          },
+          "样件乙": {
+            "L1": 0.0451,
+            "L2": 0.0452,
+            "L3": 0.0453,
+            "L": 0.0452,
+            "D": 0.0452
+          }
+        },
+        "formulas": [
+          {
+            "name": "三次测量平均",
+            "expr": "L = (L1+L2+L3)/3",
+            "when": "三次测量同一不变长度，单位与测量方法一致；算术平均不消除共同系统误差。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "样件甲",
+                "ref": 0.0326,
+                "note": "3.25、3.26、3.27 cm的平均为3.26 cm。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "样件乙",
+                "ref": 0.0452,
+                "note": "4.51、4.52、4.53 cm的平均为4.52 cm。"
+              },
+              {
+                "type": "scan",
+                "scenario": "样件甲",
+                "var": "L1",
+                "lo": 0.032,
+                "hi": 0.033,
+                "note": "扫描本条适用范围内的参数，奇点和越量程操作不在有效范围内。"
+              },
+              {
+                "type": "consistency",
+                "scenario": "样件甲",
+                "with": "tool-07|三次测量平均",
+                "with_expr": "D",
+                "note": "直接求本公式输出，与情境中另列的D设计基准核对；数据是设计示例，不是实测。用于核对定义、反算或边界值，不宣称不同物理原理互证。",
+                "target": "重复测量平均长度",
+                "verification_kind": "独立设计情境数据核对",
+                "tol": 3.26e-07
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "同样品、同仪器、同单位重复读数。",
+          "重复读数求平均，再按原仪器的测量精度保留位数。",
+          "用校准检查固定偏差；平均只能减小部分偶然影响。"
+        ],
+        "errors": [
+          {
+            "wrong": "把三次读数相加而不除以测量次数。",
+            "wrong_expr": "L = L1+L2+L3",
+            "why": "对同一对象重复测量应求平均，直接相加会把长度扩大三倍。这个算术错误可以避免，与读数末位随机波动造成的测量误差不是一回事。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "样件甲",
+              "expr": "L1+L2+L3",
+              "ref": 0.0326
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "认为多测几次能消除所有误差，或把错用刻度说成不可避免误差。",
+            "why": "平均只能减小部分偶然影响，固定零偏不会因重复消失；读错格数、漏单位等属于可避免错误。系统误差需校准和改进方法，不能靠增加计算位数修复。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "用同一毫米分度尺三次测得3.25、3.26、3.27 cm，求平均并说明能否消除零点偏差。",
+          "solution": [
+            "三次和为9.78 cm，除以3得3.26 cm。",
+            "按原测量精度记3.26 cm；固定零偏需校准，平均不能消除。"
+          ],
+          "answer": "平均长度3.26 cm，仍需检查系统误差。"
+        },
+        "prereq": [
+          "tool-01"
+        ],
+        "next": [
+          "motion-01"
+        ],
+        "tags": [
+          "有效数字与测量误差",
+          "条件与边界",
+          "实验与证据"
+        ],
+        "core": [
+          {
+            "title": "有效数字与测量误差：方法与边界",
+            "text": "系统误差由校准、仪器或固定方法引起，多次平均不能消除；偶然误差使重复读数散布，合理重复取平均可减小其影响。不能为了末位好看随意补位，也不能说多次测量一定等于真实值。初中先按仪器约定精度记录平均值，再学习不确定度的完整表达；计算器多显示几位不代表测量更精确。"
+          }
+        ],
+        "learning_scope": "初中"
+      },
+      "error_index": 1,
+      "chapter": "测量工具与数据处理"
+    }
+  },
+  "generator_version": "2026-10-04-条件过程返工-8"
+}

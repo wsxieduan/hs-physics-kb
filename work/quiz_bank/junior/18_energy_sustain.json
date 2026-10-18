@@ -1,0 +1,5975 @@
+{
+  "segment": "初中",
+  "chapter": "能源与可持续发展",
+  "source_file": "18_energy_sustain.json",
+  "questions": [
+    {
+      "id": "diagnostic-sustain-01-1",
+      "point_id": "sustain-01",
+      "point_title": "能源利用与社会发展中的耗电估算",
+      "chapter": "能源与可持续发展",
+      "stem": "在“能源利用与社会发展中的耗电估算”中，P 用 kW、t 用 h，所得电能 E 用 kWh。。消耗的电能的单位为kWh。下列哪一表达式的量纲与该目标量一致？",
+      "options": [
+        {
+          "label": "A",
+          "text": "E = P/t"
+        },
+        {
+          "label": "B",
+          "text": "E = P·t"
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "耗电量等于功率乘以时间；功率再除以时间会得到功率变化率，不是电能。\n知识点条件：社会发展会带来更多能源需求，因此既要保证合理用能，也要减少不必要的浪费。比较同一项用电服务的耗电量时，应确认功率和使用时间的单位一致；当功率用 kW、时间用 h 时，乘积直接得到 kWh。该关系只计算用电量，不足以单独评价能源来源的环境影响或可持续性。\n推导依据：读取用电器铭牌或题目给出的工作功率。；把功率统一成 kW、时间统一成 h。；功率乘以使用时间，得到以 kWh 表示的电能。；同一类服务下比较不同设备或不同时长的耗电量，避免只凭额定功率判断。\n卡片公式各自的适用条件（不是本题共同前提）：\n功率和时间求耗电量：P 用 kW、t 用 h，所得电能 E 用 kWh。\n由耗电量和使用时间求平均功率：电能 E 用 kWh、时间 t 用 h，所得平均功率 P 用 kW。",
+      "error_type": "量纲一致性",
+      "judging": "auto",
+      "source_error_index": 0,
+      "source_caught_by": "量纲一致性",
+      "wrong_expr": "E = P/t",
+      "trap_test": {
+        "kind": "dimension",
+        "target": "E = P/t",
+        "lhs_dim": "M·L^2·T^-2",
+        "rhs_dim": "M·L^2·T^-4",
+        "expect": "mismatch",
+        "note": "实际量纲检查得到等号左边为M·L^2·T^-2、右边为M·L^2·T^-4；两边不是同一物理量，因此该等式不成立。"
+      },
+      "level": "基础",
+      "learning_scope": "初中",
+      "answer_evidence": {
+        "kind": "dimension",
+        "target": "E",
+        "correct_expression": "E = P*t",
+        "distractor_expression": "E = P/t",
+        "target_dimension": "M·L^2·T^-2",
+        "distractor_dimension": "M·L^2·T^-4"
+      },
+      "review": {
+        "confidence": "medium",
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": true,
+          "no_answer_leak_in_options": true
+        },
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。",
+        "material": {
+          "anchors": [
+            {
+              "kind": "公式量纲",
+              "name": "本题目标量与等式",
+              "expression": "E = P*t",
+              "when": "量纲相符是必要条件，不能据此证明系数或物理条件正确",
+              "display": "E = P·t"
+            }
+          ],
+          "source": {
+            "nature": "原创量纲辨析命题；无实测数据",
+            "source_error_index": 0
+          },
+          "predicted_errors": [
+            {
+              "option": "A",
+              "text": "E = P/t",
+              "reason": "耗电量等于功率乘以时间；功率再除以时间会得到功率变化率，不是电能。",
+              "expression": "E = P/t",
+              "status": "误答原因预测，待教师确认；未采集学生作答证据"
+            }
+          ],
+          "difficulty_note": "建议难度沿用本题level（源卡难度）；尚非题目难度实测，待教师调整",
+          "estimated_seconds": [
+            60,
+            120
+          ],
+          "time_basis": "未做学生计时；按现有难度给出备课估计区间，待教师确认",
+          "machine_checks": [
+            {
+              "name": "题目ID关联源知识点",
+              "passed": true
+            },
+            {
+              "name": "选项标签唯一且参考标签存在",
+              "passed": true
+            },
+            {
+              "name": "选项文本互异",
+              "passed": true
+            },
+            {
+              "name": "正确式量纲一致",
+              "passed": true,
+              "actual": {
+                "type": "dimension",
+                "type_name": "量纲一致性",
+                "formula": "教师审核证据",
+                "ok": true,
+                "detail": "左端M·L^2·T^-2，右端M·L^2·T^-2",
+                "note": "",
+                "error": null,
+                "evaluation_status": "success",
+                "failure_reason": null,
+                "result_dimension": "M·L^2·T^-2",
+                "reference_dimension": "M·L^2·T^-2",
+                "diagnostics": {},
+                "physical_error_identified": false
+              }
+            },
+            {
+              "name": "干扰式量纲冲突",
+              "passed": true,
+              "actual": {
+                "type": "dimension",
+                "type_name": "量纲一致性",
+                "formula": "教师审核证据",
+                "ok": false,
+                "detail": "左端M·L^2·T^-2，右端M·L^2·T^-4",
+                "note": "",
+                "error": null,
+                "evaluation_status": "dimension_conflict",
+                "failure_reason": "dimension_conflict",
+                "result_dimension": "M·L^2·T^-4",
+                "reference_dimension": "M·L^2·T^-2",
+                "diagnostics": {},
+                "physical_error_identified": true
+              }
+            }
+          ],
+          "machine_boundary": "只列本次逐题实际执行项目；不把关联知识卡的方向、扫描或一致性检查算作本题已验。概念题未验命题真假。",
+          "human_review_items": [
+            "题干条件是否充分、清楚且符合学段",
+            "参考结论在指定条件下是否唯一",
+            "干扰项是否合理、对应真实认知问题且无答案暗示",
+            "公式或概念锚点是否准确",
+            "建议难度及用时是否适合教学",
+            "语言、装置与安全操作是否恰当"
+          ],
+          "reference_answer_note": "现有参考答案保持；即使本地可以判选项，也仍须教师审核教学可用性"
+        }
+      }
+    },
+    {
+      "id": "diagnostic-sustain-01-2",
+      "point_id": "sustain-01",
+      "point_title": "能源利用与社会发展中的耗电估算",
+      "chapter": "能源与可持续发展",
+      "stem": "在“能源利用与社会发展中的耗电估算”中，P 用 kW、t 用 h，所得电能 E 用 kWh。。消耗的电能的单位为kWh。下列哪一表达式的量纲与该目标量一致？",
+      "options": [
+        {
+          "label": "A",
+          "text": "E = P/t"
+        },
+        {
+          "label": "B",
+          "text": "E = P·t"
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "0.01 kW×5 h=0.05 kWh；除法结果不仅数值错误，单位也不能表示耗电量。\n知识点条件：社会发展会带来更多能源需求，因此既要保证合理用能，也要减少不必要的浪费。比较同一项用电服务的耗电量时，应确认功率和使用时间的单位一致；当功率用 kW、时间用 h 时，乘积直接得到 kWh。该关系只计算用电量，不足以单独评价能源来源的环境影响或可持续性。\n推导依据：读取用电器铭牌或题目给出的工作功率。；把功率统一成 kW、时间统一成 h。；功率乘以使用时间，得到以 kWh 表示的电能。；同一类服务下比较不同设备或不同时长的耗电量，避免只凭额定功率判断。\n卡片公式各自的适用条件（不是本题共同前提）：\n功率和时间求耗电量：P 用 kW、t 用 h，所得电能 E 用 kWh。\n由耗电量和使用时间求平均功率：电能 E 用 kWh、时间 t 用 h，所得平均功率 P 用 kW。",
+      "error_type": "量纲一致性",
+      "judging": "auto",
+      "source_error_index": 1,
+      "source_caught_by": "量纲一致性",
+      "wrong_expr": "E = P/t",
+      "trap_test": {
+        "kind": "dimension",
+        "target": "E = P/t",
+        "expect": "mismatch",
+        "lhs_dim": "M·L^2·T^-2",
+        "rhs_dim": "M·L^2·T^-4",
+        "note": "正式引擎验证量纲不一致；不计作同量纲错误数值实测。"
+      },
+      "level": "基础",
+      "learning_scope": "初中",
+      "answer_evidence": {
+        "kind": "dimension",
+        "target": "E",
+        "correct_expression": "E = P*t",
+        "distractor_expression": "E = P/t",
+        "target_dimension": "M·L^2·T^-2",
+        "distractor_dimension": "M·L^2·T^-4"
+      },
+      "review": {
+        "confidence": "medium",
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": true,
+          "no_answer_leak_in_options": true
+        },
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。",
+        "material": {
+          "anchors": [
+            {
+              "kind": "公式量纲",
+              "name": "本题目标量与等式",
+              "expression": "E = P*t",
+              "when": "量纲相符是必要条件，不能据此证明系数或物理条件正确",
+              "display": "E = P·t"
+            }
+          ],
+          "source": {
+            "nature": "原创量纲辨析命题；无实测数据",
+            "source_error_index": 1
+          },
+          "predicted_errors": [
+            {
+              "option": "A",
+              "text": "E = P/t",
+              "reason": "0.01 kW×5 h=0.05 kWh；除法结果不仅数值错误，单位也不能表示耗电量。",
+              "expression": "E = P/t",
+              "status": "误答原因预测，待教师确认；未采集学生作答证据"
+            }
+          ],
+          "difficulty_note": "建议难度沿用本题level（源卡难度）；尚非题目难度实测，待教师调整",
+          "estimated_seconds": [
+            60,
+            120
+          ],
+          "time_basis": "未做学生计时；按现有难度给出备课估计区间，待教师确认",
+          "machine_checks": [
+            {
+              "name": "题目ID关联源知识点",
+              "passed": true
+            },
+            {
+              "name": "选项标签唯一且参考标签存在",
+              "passed": true
+            },
+            {
+              "name": "选项文本互异",
+              "passed": true
+            },
+            {
+              "name": "正确式量纲一致",
+              "passed": true,
+              "actual": {
+                "type": "dimension",
+                "type_name": "量纲一致性",
+                "formula": "教师审核证据",
+                "ok": true,
+                "detail": "左端M·L^2·T^-2，右端M·L^2·T^-2",
+                "note": "",
+                "error": null,
+                "evaluation_status": "success",
+                "failure_reason": null,
+                "result_dimension": "M·L^2·T^-2",
+                "reference_dimension": "M·L^2·T^-2",
+                "diagnostics": {},
+                "physical_error_identified": false
+              }
+            },
+            {
+              "name": "干扰式量纲冲突",
+              "passed": true,
+              "actual": {
+                "type": "dimension",
+                "type_name": "量纲一致性",
+                "formula": "教师审核证据",
+                "ok": false,
+                "detail": "左端M·L^2·T^-2，右端M·L^2·T^-4",
+                "note": "",
+                "error": null,
+                "evaluation_status": "dimension_conflict",
+                "failure_reason": "dimension_conflict",
+                "result_dimension": "M·L^2·T^-4",
+                "reference_dimension": "M·L^2·T^-2",
+                "diagnostics": {},
+                "physical_error_identified": true
+              }
+            }
+          ],
+          "machine_boundary": "只列本次逐题实际执行项目；不把关联知识卡的方向、扫描或一致性检查算作本题已验。概念题未验命题真假。",
+          "human_review_items": [
+            "题干条件是否充分、清楚且符合学段",
+            "参考结论在指定条件下是否唯一",
+            "干扰项是否合理、对应真实认知问题且无答案暗示",
+            "公式或概念锚点是否准确",
+            "建议难度及用时是否适合教学",
+            "语言、装置与安全操作是否恰当"
+          ],
+          "reference_answer_note": "现有参考答案保持；即使本地可以判选项，也仍须教师审核教学可用性"
+        }
+      }
+    },
+    {
+      "id": "diagnostic-sustain-01-3",
+      "point_id": "sustain-01",
+      "point_title": "能源利用与社会发展中的耗电估算",
+      "chapter": "能源与可持续发展",
+      "stem": "关于“能源利用与社会发展中的耗电估算”，判断这一说法是否成立，并说明依据：\n耗电量还取决于使用时间。",
+      "options": [
+        {
+          "label": "A",
+          "text": "该说法成立。"
+        },
+        {
+          "label": "B",
+          "text": "该说法不成立。"
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "耗电量还取决于使用时间；小功率设备长时间运行也可能耗电更多。\n知识点条件：社会发展会带来更多能源需求，因此既要保证合理用能，也要减少不必要的浪费。比较同一项用电服务的耗电量时，应确认功率和使用时间的单位一致；当功率用 kW、时间用 h 时，乘积直接得到 kWh。该关系只计算用电量，不足以单独评价能源来源的环境影响或可持续性。\n推导依据：读取用电器铭牌或题目给出的工作功率。；把功率统一成 kW、时间统一成 h。；功率乘以使用时间，得到以 kWh 表示的电能。；同一类服务下比较不同设备或不同时长的耗电量，避免只凭额定功率判断。\n卡片公式各自的适用条件（不是本题共同前提）：\n功率和时间求耗电量：P 用 kW、t 用 h，所得电能 E 用 kWh。\n由耗电量和使用时间求平均功率：电能 E 用 kWh、时间 t 用 h，所得平均功率 P 用 kW。",
+      "error_type": "概念混淆",
+      "judging": "teacher",
+      "source_error_index": 2,
+      "source_caught_by": "人工审核",
+      "wrong_expr": null,
+      "trap_test": null,
+      "level": "基础",
+      "learning_scope": "初中",
+      "answer_evidence": {
+        "kind": "teacher",
+        "claim_source": "why",
+        "reference_only": true,
+        "reason": "概念、操作或无法建立完整定量证据，教师确认条件与结论。"
+      },
+      "review": {
+        "confidence": "medium",
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": false,
+          "no_answer_leak_in_options": true
+        },
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。",
+        "material": {
+          "anchors": [
+            {
+              "kind": "概念或操作",
+              "name": "能源利用与社会发展中的耗电估算",
+              "claim": "只看额定功率较小，就断定设备一定更节能而不看使用时长。",
+              "correction_basis": "耗电量还取决于使用时间；小功率设备长时间运行也可能耗电更多。",
+              "note": "概念锚点及命题真假待教师确认；未套用任意第一条公式",
+              "display": "只看额定功率较小，就断定设备一定更节能而不看使用时长。"
+            }
+          ],
+          "source": {
+            "nature": "原创概念/操作命题；无真实测量记录",
+            "source_error_index": 2
+          },
+          "predicted_errors": [
+            {
+              "option": "B",
+              "text": "该说法不成立。",
+              "reason": "耗电量还取决于使用时间；小功率设备长时间运行也可能耗电更多。",
+              "expression": null,
+              "status": "误答原因预测，待教师确认；未采集学生作答证据"
+            }
+          ],
+          "difficulty_note": "建议难度沿用本题level（源卡难度）；尚非题目难度实测，待教师调整",
+          "estimated_seconds": [
+            60,
+            120
+          ],
+          "time_basis": "未做学生计时；按现有难度给出备课估计区间，待教师确认",
+          "machine_checks": [
+            {
+              "name": "题目ID关联源知识点",
+              "passed": true
+            },
+            {
+              "name": "选项标签唯一且参考标签存在",
+              "passed": true
+            },
+            {
+              "name": "选项文本互异",
+              "passed": true
+            }
+          ],
+          "machine_boundary": "只列本次逐题实际执行项目；不把关联知识卡的方向、扫描或一致性检查算作本题已验。概念题未验命题真假。",
+          "human_review_items": [
+            "题干条件是否充分、清楚且符合学段",
+            "参考结论在指定条件下是否唯一",
+            "干扰项是否合理、对应真实认知问题且无答案暗示",
+            "公式或概念锚点是否准确",
+            "建议难度及用时是否适合教学",
+            "语言、装置与安全操作是否恰当"
+          ],
+          "reference_answer_note": "现有参考答案保持；即使本地可以判选项，也仍须教师审核教学可用性"
+        }
+      }
+    },
+    {
+      "id": "diagnostic-sustain-01-4",
+      "point_id": "sustain-01",
+      "point_title": "能源利用与社会发展中的耗电估算",
+      "chapter": "能源与可持续发展",
+      "stem": "在“能源利用与社会发展中的耗电估算”的模型下，P（用电器的工作功率）=0.01 kW；t（用电时间）=5 h。条件：P 用 kW、t 用 h，所得电能 E 用 kWh。。求消耗的电能（E）。这些数值是设计示例。",
+      "options": [
+        {
+          "label": "A",
+          "text": "0.05 kWh"
+        },
+        {
+          "label": "B",
+          "text": "0.000833333 kWh"
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "使用功率和时间求耗电量：P·t，代入得0.05 kWh。另一结果来自P·t/60，算得0.000833333 kWh。\n时间实际5 h，能耗0.05 kWh；误作5 min才需要除60，结果小60倍。\n知识点条件：社会发展会带来更多能源需求，因此既要保证合理用能，也要减少不必要的浪费。比较同一项用电服务的耗电量时，应确认功率和使用时间的单位一致；当功率用 kW、时间用 h 时，乘积直接得到 kWh。该关系只计算用电量，不足以单独评价能源来源的环境影响或可持续性。\n推导依据：读取用电器铭牌或题目给出的工作功率。；把功率统一成 kW、时间统一成 h。；功率乘以使用时间，得到以 kWh 表示的电能。；同一类服务下比较不同设备或不同时长的耗电量，避免只凭额定功率判断。\n卡片公式各自的适用条件（不是本题共同前提）：\n功率和时间求耗电量：P 用 kW、t 用 h，所得电能 E 用 kWh。\n由耗电量和使用时间求平均功率：电能 E 用 kWh、时间 t 用 h，所得平均功率 P 用 kW。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 3,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "E = P·t/60",
+      "trap_test": {
+        "scenario": "LED灯五小时",
+        "expr": "P*t/60",
+        "ref": 0.05,
+        "tol": 5e-08
+      },
+      "level": "基础",
+      "learning_scope": "初中",
+      "answer_evidence": {
+        "kind": "numeric",
+        "scenario": "LED灯五小时",
+        "parameters": {
+          "P": 0.01,
+          "t": 5,
+          "E": 0.05
+        },
+        "target": "E",
+        "unit": "kWh",
+        "reference": 0.05,
+        "correct_proof": {
+          "expression": "P*t",
+          "formula": "功率和时间求耗电量",
+          "value": 0.05,
+          "when": "P 用 kW、t 用 h，所得电能 E 用 kWh。"
+        },
+        "distractor_expression": "P*t/60",
+        "distractor_value": 0.0008333333333333334,
+        "dimension_matches": true,
+        "independent_evaluation": true
+      },
+      "review": {
+        "confidence": "medium",
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": true,
+          "no_answer_leak_in_options": true
+        },
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。",
+        "material": {
+          "anchors": [
+            {
+              "kind": "公式",
+              "name": "功率和时间求耗电量",
+              "expression": "P*t",
+              "when": "P 用 kW、t 用 h，所得电能 E 用 kWh。",
+              "display": "P·t"
+            }
+          ],
+          "source": {
+            "nature": "原创设计示例，非教材实测或真实实验记录",
+            "scenario": "LED灯五小时",
+            "parameters": {
+              "P": 0.01,
+              "t": 5,
+              "E": 0.05
+            },
+            "data": [
+              "用电器的工作功率：0.01 kW",
+              "用电时间：5 h",
+              "消耗的电能：0.05 kWh"
+            ]
+          },
+          "predicted_errors": [
+            {
+              "option": "B",
+              "text": "0.000833333 kWh",
+              "reason": "时间实际5 h，能耗0.05 kWh；误作5 min才需要除60，结果小60倍。",
+              "expression": "P*t/60",
+              "status": "误答原因预测，待教师确认；未采集学生作答证据"
+            }
+          ],
+          "difficulty_note": "建议难度沿用本题level（源卡难度）；尚非题目难度实测，待教师调整",
+          "estimated_seconds": [
+            60,
+            120
+          ],
+          "time_basis": "未做学生计时；按现有难度给出备课估计区间，待教师确认",
+          "machine_checks": [
+            {
+              "name": "题目ID关联源知识点",
+              "passed": true
+            },
+            {
+              "name": "选项标签唯一且参考标签存在",
+              "passed": true
+            },
+            {
+              "name": "选项文本互异",
+              "passed": true
+            },
+            {
+              "name": "正确路径独立数值复算",
+              "passed": true
+            },
+            {
+              "name": "带量纲求值与独立求值一致",
+              "passed": true
+            },
+            {
+              "name": "干扰路径复算且与正确路径分离",
+              "passed": true
+            }
+          ],
+          "machine_boundary": "只列本次逐题实际执行项目；不把关联知识卡的方向、扫描或一致性检查算作本题已验。概念题未验命题真假。",
+          "human_review_items": [
+            "题干条件是否充分、清楚且符合学段",
+            "参考结论在指定条件下是否唯一",
+            "干扰项是否合理、对应真实认知问题且无答案暗示",
+            "公式或概念锚点是否准确",
+            "建议难度及用时是否适合教学",
+            "语言、装置与安全操作是否恰当"
+          ],
+          "reference_answer_note": "现有参考答案保持；即使本地可以判选项，也仍须教师审核教学可用性"
+        }
+      }
+    },
+    {
+      "id": "diagnostic-sustain-03-1",
+      "point_id": "sustain-03",
+      "point_title": "核能",
+      "chapter": "能源与可持续发展",
+      "stem": "关于“核能”，判断这一说法是否成立，并说明依据：\n核电站先通过裂变加热介质，再驱动汽轮机和发电机，能量经历多个转化环节。",
+      "options": [
+        {
+          "label": "A",
+          "text": "该说法不成立。"
+        },
+        {
+          "label": "B",
+          "text": "该说法成立。"
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "核电站先通过裂变加热介质，再驱动汽轮机和发电机，能量经历多个转化环节。\n知识点条件：核电站不是把核能直接变成电能：能量会经历核能、内能、机械能和电能等形式的转化。若已知电站对外输出的电功率，可以用功率乘运行时间估算一段时间输出的电能；这是通用电功率关系的应用，不是核反应释放能量的预测公式。讨论核能时还应区分运行排放、核废料管理和事故风险等不同问题。\n推导依据：核裂变释放的核能先转化为内能，再驱动汽轮机和发电机。；电站输出电功率表示单位时间输出的电能。；当功率近似稳定时，用输出功率乘运行时间估算输出电能。；这一估算只计算已知的电功率输出，不从反应物质量推算核反应能量。\n卡片公式各自的适用条件（不是本题共同前提）：\n由电功率估算核电站输出电能：仅作已知电学或能量数据的应用，不验证本卡定性规律。对外电功率在所计时间内近似稳定，时间用 s、电功率用 W。\n由输出电能和时间求平均电功率：仅作已知电学或能量数据的应用，不验证本卡定性规律。输出电能和时间对应同一过程，通电时间 大于 0。",
+      "error_type": "概念混淆",
+      "judging": "teacher",
+      "source_error_index": 0,
+      "source_caught_by": "人工审核",
+      "wrong_expr": null,
+      "trap_test": null,
+      "level": "基础",
+      "learning_scope": "初中",
+      "answer_evidence": {
+        "kind": "teacher",
+        "claim_source": "why",
+        "reference_only": true,
+        "reason": "概念、操作或无法建立完整定量证据，教师确认条件与结论。"
+      },
+      "review": {
+        "confidence": "medium",
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": false,
+          "no_answer_leak_in_options": true
+        },
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。",
+        "material": {
+          "anchors": [
+            {
+              "kind": "概念或操作",
+              "name": "核能",
+              "claim": "把核能说成在电站内一步直接变成电能。",
+              "correction_basis": "核电站先通过裂变加热介质，再驱动汽轮机和发电机，能量经历多个转化环节。",
+              "note": "概念锚点及命题真假待教师确认；未套用任意第一条公式",
+              "display": "把核能说成在电站内一步直接变成电能。"
+            }
+          ],
+          "source": {
+            "nature": "原创概念/操作命题；无真实测量记录",
+            "source_error_index": 0
+          },
+          "predicted_errors": [
+            {
+              "option": "A",
+              "text": "该说法不成立。",
+              "reason": "核电站先通过裂变加热介质，再驱动汽轮机和发电机，能量经历多个转化环节。",
+              "expression": null,
+              "status": "误答原因预测，待教师确认；未采集学生作答证据"
+            }
+          ],
+          "difficulty_note": "建议难度沿用本题level（源卡难度）；尚非题目难度实测，待教师调整",
+          "estimated_seconds": [
+            60,
+            120
+          ],
+          "time_basis": "未做学生计时；按现有难度给出备课估计区间，待教师确认",
+          "machine_checks": [
+            {
+              "name": "题目ID关联源知识点",
+              "passed": true
+            },
+            {
+              "name": "选项标签唯一且参考标签存在",
+              "passed": true
+            },
+            {
+              "name": "选项文本互异",
+              "passed": true
+            }
+          ],
+          "machine_boundary": "只列本次逐题实际执行项目；不把关联知识卡的方向、扫描或一致性检查算作本题已验。概念题未验命题真假。",
+          "human_review_items": [
+            "题干条件是否充分、清楚且符合学段",
+            "参考结论在指定条件下是否唯一",
+            "干扰项是否合理、对应真实认知问题且无答案暗示",
+            "公式或概念锚点是否准确",
+            "建议难度及用时是否适合教学",
+            "语言、装置与安全操作是否恰当"
+          ],
+          "reference_answer_note": "现有参考答案保持；即使本地可以判选项，也仍须教师审核教学可用性"
+        }
+      }
+    },
+    {
+      "id": "diagnostic-sustain-03-2",
+      "point_id": "sustain-03",
+      "point_title": "核能",
+      "chapter": "能源与可持续发展",
+      "stem": "在“核能”中，仅作已知电学或能量数据的应用，不验证本卡定性规律。对外电功率在所计时间内近似稳定，时间用 s、电功率用 W。。这段时间输出的电能的单位为J。下列哪一表达式的量纲与该目标量一致？",
+      "options": [
+        {
+          "label": "A",
+          "text": "E<sub>电</sub> = P<sub>电</sub>·t<sub>n</sub>"
+        },
+        {
+          "label": "B",
+          "text": "E<sub>电</sub> = P<sub>电</sub>/t<sub>n</sub>"
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "输出电能是功率对时间的累积，应将功率乘运行时间；相除得到的单位也不再是焦耳。\n知识点条件：核电站不是把核能直接变成电能：能量会经历核能、内能、机械能和电能等形式的转化。若已知电站对外输出的电功率，可以用功率乘运行时间估算一段时间输出的电能；这是通用电功率关系的应用，不是核反应释放能量的预测公式。讨论核能时还应区分运行排放、核废料管理和事故风险等不同问题。\n推导依据：核裂变释放的核能先转化为内能，再驱动汽轮机和发电机。；电站输出电功率表示单位时间输出的电能。；当功率近似稳定时，用输出功率乘运行时间估算输出电能。；这一估算只计算已知的电功率输出，不从反应物质量推算核反应能量。\n卡片公式各自的适用条件（不是本题共同前提）：\n由电功率估算核电站输出电能：仅作已知电学或能量数据的应用，不验证本卡定性规律。对外电功率在所计时间内近似稳定，时间用 s、电功率用 W。\n由输出电能和时间求平均电功率：仅作已知电学或能量数据的应用，不验证本卡定性规律。输出电能和时间对应同一过程，通电时间 大于 0。",
+      "error_type": "量纲一致性",
+      "judging": "auto",
+      "source_error_index": 1,
+      "source_caught_by": "量纲一致性",
+      "wrong_expr": "E<sub>电</sub> = P<sub>电</sub>/t<sub>n</sub>",
+      "trap_test": {
+        "kind": "dimension",
+        "target": "E_el = P_el/t_n",
+        "lhs_dim": "M·L^2·T^-2",
+        "rhs_dim": "M·L^2·T^-4",
+        "expect": "mismatch",
+        "note": "实际量纲检查得到等号左边为M·L^2·T^-2、右边为M·L^2·T^-4；两边不是同一物理量，因此该等式不成立。"
+      },
+      "level": "基础",
+      "learning_scope": "初中",
+      "answer_evidence": {
+        "kind": "dimension",
+        "target": "E_el",
+        "correct_expression": "E_el = P_el*t_n",
+        "distractor_expression": "E_el = P_el/t_n",
+        "target_dimension": "M·L^2·T^-2",
+        "distractor_dimension": "M·L^2·T^-4"
+      },
+      "review": {
+        "confidence": "medium",
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": true,
+          "no_answer_leak_in_options": true
+        },
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。",
+        "material": {
+          "anchors": [
+            {
+              "kind": "公式量纲",
+              "name": "本题目标量与等式",
+              "expression": "E_el = P_el*t_n",
+              "when": "量纲相符是必要条件，不能据此证明系数或物理条件正确",
+              "display": "E<sub>电</sub> = P<sub>电</sub>·t<sub>n</sub>"
+            }
+          ],
+          "source": {
+            "nature": "原创量纲辨析命题；无实测数据",
+            "source_error_index": 1
+          },
+          "predicted_errors": [
+            {
+              "option": "B",
+              "text": "E<sub>电</sub> = P<sub>电</sub>/t<sub>n</sub>",
+              "reason": "输出电能是功率对时间的累积，应将功率乘运行时间；相除得到的单位也不再是焦耳。",
+              "expression": "E_el = P_el/t_n",
+              "status": "误答原因预测，待教师确认；未采集学生作答证据"
+            }
+          ],
+          "difficulty_note": "建议难度沿用本题level（源卡难度）；尚非题目难度实测，待教师调整",
+          "estimated_seconds": [
+            60,
+            120
+          ],
+          "time_basis": "未做学生计时；按现有难度给出备课估计区间，待教师确认",
+          "machine_checks": [
+            {
+              "name": "题目ID关联源知识点",
+              "passed": true
+            },
+            {
+              "name": "选项标签唯一且参考标签存在",
+              "passed": true
+            },
+            {
+              "name": "选项文本互异",
+              "passed": true
+            },
+            {
+              "name": "正确式量纲一致",
+              "passed": true,
+              "actual": {
+                "type": "dimension",
+                "type_name": "量纲一致性",
+                "formula": "教师审核证据",
+                "ok": true,
+                "detail": "左端M·L^2·T^-2，右端M·L^2·T^-2",
+                "note": "",
+                "error": null,
+                "evaluation_status": "success",
+                "failure_reason": null,
+                "result_dimension": "M·L^2·T^-2",
+                "reference_dimension": "M·L^2·T^-2",
+                "diagnostics": {},
+                "physical_error_identified": false
+              }
+            },
+            {
+              "name": "干扰式量纲冲突",
+              "passed": true,
+              "actual": {
+                "type": "dimension",
+                "type_name": "量纲一致性",
+                "formula": "教师审核证据",
+                "ok": false,
+                "detail": "左端M·L^2·T^-2，右端M·L^2·T^-4",
+                "note": "",
+                "error": null,
+                "evaluation_status": "dimension_conflict",
+                "failure_reason": "dimension_conflict",
+                "result_dimension": "M·L^2·T^-4",
+                "reference_dimension": "M·L^2·T^-2",
+                "diagnostics": {},
+                "physical_error_identified": true
+              }
+            }
+          ],
+          "machine_boundary": "只列本次逐题实际执行项目；不把关联知识卡的方向、扫描或一致性检查算作本题已验。概念题未验命题真假。",
+          "human_review_items": [
+            "题干条件是否充分、清楚且符合学段",
+            "参考结论在指定条件下是否唯一",
+            "干扰项是否合理、对应真实认知问题且无答案暗示",
+            "公式或概念锚点是否准确",
+            "建议难度及用时是否适合教学",
+            "语言、装置与安全操作是否恰当"
+          ],
+          "reference_answer_note": "现有参考答案保持；即使本地可以判选项，也仍须教师审核教学可用性"
+        }
+      }
+    },
+    {
+      "id": "diagnostic-sustain-03-3",
+      "point_id": "sustain-03",
+      "point_title": "核能",
+      "chapter": "能源与可持续发展",
+      "stem": "在“核能”的模型下，P<sub>电</sub>（核电站对外输出的电功率）=1e+09 W；t<sub>n</sub>（持续输出的时间）=3600 s。条件：仅作已知电学或能量数据的应用，不验证本卡定性规律。对外电功率在所计时间内近似稳定，时间用 s、电功率用 W。。求这段时间输出的电能（E<sub>电</sub>）。这些数值是设计示例。",
+      "options": [
+        {
+          "label": "A",
+          "text": "1e+09 J"
+        },
+        {
+          "label": "B",
+          "text": "3.6e+12 J"
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "使用由电功率估算核电站输出电能：P<sub>电</sub>·t<sub>n</sub>，代入得3.6e+12 J。另一结果来自P<sub>电</sub>·(t<sub>n</sub>/3600)，算得1e+09 J。\n题目给出的运行时间已是秒，重复除以 3600 会把应有输出电能缩小 3600 倍。\n知识点条件：核电站不是把核能直接变成电能：能量会经历核能、内能、机械能和电能等形式的转化。若已知电站对外输出的电功率，可以用功率乘运行时间估算一段时间输出的电能；这是通用电功率关系的应用，不是核反应释放能量的预测公式。讨论核能时还应区分运行排放、核废料管理和事故风险等不同问题。\n推导依据：核裂变释放的核能先转化为内能，再驱动汽轮机和发电机。；电站输出电功率表示单位时间输出的电能。；当功率近似稳定时，用输出功率乘运行时间估算输出电能。；这一估算只计算已知的电功率输出，不从反应物质量推算核反应能量。\n卡片公式各自的适用条件（不是本题共同前提）：\n由电功率估算核电站输出电能：仅作已知电学或能量数据的应用，不验证本卡定性规律。对外电功率在所计时间内近似稳定，时间用 s、电功率用 W。\n由输出电能和时间求平均电功率：仅作已知电学或能量数据的应用，不验证本卡定性规律。输出电能和时间对应同一过程，通电时间 大于 0。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 2,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "E<sub>电</sub> = P<sub>电</sub>·(t<sub>n</sub>/3600)",
+      "trap_test": {
+        "scenario": "核电站一小时输出",
+        "expr": "P_el*(t_n/3600)",
+        "ref": 3600000000000
+      },
+      "level": "基础",
+      "learning_scope": "初中",
+      "answer_evidence": {
+        "kind": "numeric",
+        "scenario": "核电站一小时输出",
+        "parameters": {
+          "P_el": 1000000000,
+          "t_n": 3600,
+          "E_el": 3600000000000
+        },
+        "target": "E_el",
+        "unit": "J",
+        "reference": 3600000000000,
+        "correct_proof": {
+          "expression": "P_el*t_n",
+          "formula": "由电功率估算核电站输出电能",
+          "value": 3600000000000,
+          "when": "仅作已知电学或能量数据的应用，不验证本卡定性规律。对外电功率在所计时间内近似稳定，时间用 s、电功率用 W。"
+        },
+        "distractor_expression": "P_el*(t_n/3600)",
+        "distractor_value": 1000000000.0,
+        "dimension_matches": true,
+        "independent_evaluation": true
+      },
+      "review": {
+        "confidence": "medium",
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": true,
+          "no_answer_leak_in_options": true
+        },
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。",
+        "material": {
+          "anchors": [
+            {
+              "kind": "公式",
+              "name": "由电功率估算核电站输出电能",
+              "expression": "P_el*t_n",
+              "when": "仅作已知电学或能量数据的应用，不验证本卡定性规律。对外电功率在所计时间内近似稳定，时间用 s、电功率用 W。",
+              "display": "P<sub>电</sub>·t<sub>n</sub>"
+            }
+          ],
+          "source": {
+            "nature": "原创设计示例，非教材实测或真实实验记录",
+            "scenario": "核电站一小时输出",
+            "parameters": {
+              "P_el": 1000000000,
+              "t_n": 3600,
+              "E_el": 3600000000000
+            },
+            "data": [
+              "核电站对外输出的电功率：1000000000 W",
+              "持续输出的时间：3600 s",
+              "这段时间输出的电能：3600000000000 J"
+            ]
+          },
+          "predicted_errors": [
+            {
+              "option": "A",
+              "text": "1e+09 J",
+              "reason": "题目给出的运行时间已是秒，重复除以 3600 会把应有输出电能缩小 3600 倍。",
+              "expression": "P_el*(t_n/3600)",
+              "status": "误答原因预测，待教师确认；未采集学生作答证据"
+            }
+          ],
+          "difficulty_note": "建议难度沿用本题level（源卡难度）；尚非题目难度实测，待教师调整",
+          "estimated_seconds": [
+            60,
+            120
+          ],
+          "time_basis": "未做学生计时；按现有难度给出备课估计区间，待教师确认",
+          "machine_checks": [
+            {
+              "name": "题目ID关联源知识点",
+              "passed": true
+            },
+            {
+              "name": "选项标签唯一且参考标签存在",
+              "passed": true
+            },
+            {
+              "name": "选项文本互异",
+              "passed": true
+            },
+            {
+              "name": "正确路径独立数值复算",
+              "passed": true
+            },
+            {
+              "name": "带量纲求值与独立求值一致",
+              "passed": true
+            },
+            {
+              "name": "干扰路径复算且与正确路径分离",
+              "passed": true
+            }
+          ],
+          "machine_boundary": "只列本次逐题实际执行项目；不把关联知识卡的方向、扫描或一致性检查算作本题已验。概念题未验命题真假。",
+          "human_review_items": [
+            "题干条件是否充分、清楚且符合学段",
+            "参考结论在指定条件下是否唯一",
+            "干扰项是否合理、对应真实认知问题且无答案暗示",
+            "公式或概念锚点是否准确",
+            "建议难度及用时是否适合教学",
+            "语言、装置与安全操作是否恰当"
+          ],
+          "reference_answer_note": "现有参考答案保持；即使本地可以判选项，也仍须教师审核教学可用性"
+        }
+      }
+    },
+    {
+      "id": "diagnostic-sustain-04-1",
+      "point_id": "sustain-04",
+      "point_title": "太阳能",
+      "chapter": "能源与可持续发展",
+      "stem": "关于“太阳能”，判断这一说法是否成立，并说明依据：\n把太阳能热水器的太阳输入能量直接等同于水吸收的热量。",
+      "options": [
+        {
+          "label": "A",
+          "text": "该说法不成立。"
+        },
+        {
+          "label": "B",
+          "text": "该说法成立。"
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "太阳辐射到水之间会经过集热器和管路，途中有反射与散热，水吸收的热量只是输入能量的一部分。\n知识点条件：估算太阳能热水器把水加热所需能量时，可把水看作吸收热量的物体，用水的比热容、质量和升高的温度计算吸收的热量。该关系只描述水获得的热量，不等于太阳辐射总能量；由于装置存在反射、散热等损失，太阳提供的能量通常更大。太阳能可再生，但并非任何时间和地点都能稳定提供相同功率。\n推导依据：太阳辐射能被集热器吸收，并传给水。；先确定被加热水的质量和温度变化。；按水的比热容关系计算水吸收的热量。；由于集热器和管路会向环境散热，太阳输入能量不能简单等同于水获得的热量。\n卡片公式各自的适用条件（不是本题共同前提）：\n估算水吸收的热量：只计算水吸收的热量，忽略容器热容和散热；水的比热容用 J/kg/℃。\n由吸收热量估算水的升温：水的质量和比热容已知且非零，暂不计热损失。",
+      "error_type": "概念混淆",
+      "judging": "teacher",
+      "source_error_index": 0,
+      "source_caught_by": "人工审核",
+      "wrong_expr": null,
+      "trap_test": null,
+      "level": "基础",
+      "learning_scope": "初中",
+      "answer_evidence": {
+        "kind": "teacher",
+        "claim_source": "wrong",
+        "reference_only": true,
+        "reason": "概念、操作或无法建立完整定量证据，教师确认条件与结论。"
+      },
+      "review": {
+        "confidence": "medium",
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": false,
+          "no_answer_leak_in_options": true
+        },
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。",
+        "material": {
+          "anchors": [
+            {
+              "kind": "概念或操作",
+              "name": "太阳能",
+              "claim": "把太阳能热水器的太阳输入能量直接等同于水吸收的热量。",
+              "correction_basis": "太阳辐射到水之间会经过集热器和管路，途中有反射与散热，水吸收的热量只是输入能量的一部分。",
+              "note": "概念锚点及命题真假待教师确认；未套用任意第一条公式",
+              "display": "把太阳能热水器的太阳输入能量直接等同于水吸收的热量。"
+            }
+          ],
+          "source": {
+            "nature": "原创概念/操作命题；无真实测量记录",
+            "source_error_index": 0
+          },
+          "predicted_errors": [
+            {
+              "option": "B",
+              "text": "该说法成立。",
+              "reason": "太阳辐射到水之间会经过集热器和管路，途中有反射与散热，水吸收的热量只是输入能量的一部分。",
+              "expression": null,
+              "status": "误答原因预测，待教师确认；未采集学生作答证据"
+            }
+          ],
+          "difficulty_note": "建议难度沿用本题level（源卡难度）；尚非题目难度实测，待教师调整",
+          "estimated_seconds": [
+            60,
+            120
+          ],
+          "time_basis": "未做学生计时；按现有难度给出备课估计区间，待教师确认",
+          "machine_checks": [
+            {
+              "name": "题目ID关联源知识点",
+              "passed": true
+            },
+            {
+              "name": "选项标签唯一且参考标签存在",
+              "passed": true
+            },
+            {
+              "name": "选项文本互异",
+              "passed": true
+            }
+          ],
+          "machine_boundary": "只列本次逐题实际执行项目；不把关联知识卡的方向、扫描或一致性检查算作本题已验。概念题未验命题真假。",
+          "human_review_items": [
+            "题干条件是否充分、清楚且符合学段",
+            "参考结论在指定条件下是否唯一",
+            "干扰项是否合理、对应真实认知问题且无答案暗示",
+            "公式或概念锚点是否准确",
+            "建议难度及用时是否适合教学",
+            "语言、装置与安全操作是否恰当"
+          ],
+          "reference_answer_note": "现有参考答案保持；即使本地可以判选项，也仍须教师审核教学可用性"
+        }
+      }
+    },
+    {
+      "id": "diagnostic-sustain-04-2",
+      "point_id": "sustain-04",
+      "point_title": "太阳能",
+      "chapter": "能源与可持续发展",
+      "stem": "在“太阳能”中，只计算水吸收的热量，忽略容器热容和散热；水的比热容用 J/kg/℃。。水吸收的热量的单位为J。下列哪一表达式的量纲与该目标量一致？",
+      "options": [
+        {
+          "label": "A",
+          "text": "Q<sub>水</sub> = c<sub>水</sub>·m<sub>水</sub>/dT"
+        },
+        {
+          "label": "B",
+          "text": "Q<sub>水</sub> = c<sub>水</sub>·m<sub>水</sub>·dT"
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "水的吸热量随温升增大而增大；公式中应乘温升，除以温升还会破坏焦耳的量纲。\n知识点条件：估算太阳能热水器把水加热所需能量时，可把水看作吸收热量的物体，用水的比热容、质量和升高的温度计算吸收的热量。该关系只描述水获得的热量，不等于太阳辐射总能量；由于装置存在反射、散热等损失，太阳提供的能量通常更大。太阳能可再生，但并非任何时间和地点都能稳定提供相同功率。\n推导依据：太阳辐射能被集热器吸收，并传给水。；先确定被加热水的质量和温度变化。；按水的比热容关系计算水吸收的热量。；由于集热器和管路会向环境散热，太阳输入能量不能简单等同于水获得的热量。\n卡片公式各自的适用条件（不是本题共同前提）：\n估算水吸收的热量：只计算水吸收的热量，忽略容器热容和散热；水的比热容用 J/kg/℃。\n由吸收热量估算水的升温：水的质量和比热容已知且非零，暂不计热损失。",
+      "error_type": "量纲一致性",
+      "judging": "auto",
+      "source_error_index": 1,
+      "source_caught_by": "量纲一致性",
+      "wrong_expr": "Q<sub>水</sub> = c<sub>水</sub>·m<sub>水</sub>/dT",
+      "trap_test": {
+        "kind": "dimension",
+        "target": "Q_water = c_water*m_water/dT",
+        "lhs_dim": "M·L^2·T^-2",
+        "rhs_dim": "M·L^2·T^-2·K^-2",
+        "expect": "mismatch",
+        "note": "实际量纲检查得到等号左边为M·L^2·T^-2、右边为M·L^2·T^-2·K^-2；两边不是同一物理量，因此该等式不成立。"
+      },
+      "level": "基础",
+      "learning_scope": "初中",
+      "answer_evidence": {
+        "kind": "dimension",
+        "target": "Q_water",
+        "correct_expression": "Q_water = c_water*m_water*dT",
+        "distractor_expression": "Q_water = c_water*m_water/dT",
+        "target_dimension": "M·L^2·T^-2",
+        "distractor_dimension": "M·L^2·T^-2·K^-2"
+      },
+      "review": {
+        "confidence": "medium",
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": true,
+          "no_answer_leak_in_options": true
+        },
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。",
+        "material": {
+          "anchors": [
+            {
+              "kind": "公式量纲",
+              "name": "本题目标量与等式",
+              "expression": "Q_water = c_water*m_water*dT",
+              "when": "量纲相符是必要条件，不能据此证明系数或物理条件正确",
+              "display": "Q<sub>水</sub> = c<sub>水</sub>·m<sub>水</sub>·dT"
+            }
+          ],
+          "source": {
+            "nature": "原创量纲辨析命题；无实测数据",
+            "source_error_index": 1
+          },
+          "predicted_errors": [
+            {
+              "option": "A",
+              "text": "Q<sub>水</sub> = c<sub>水</sub>·m<sub>水</sub>/dT",
+              "reason": "水的吸热量随温升增大而增大；公式中应乘温升，除以温升还会破坏焦耳的量纲。",
+              "expression": "Q_water = c_water*m_water/dT",
+              "status": "误答原因预测，待教师确认；未采集学生作答证据"
+            }
+          ],
+          "difficulty_note": "建议难度沿用本题level（源卡难度）；尚非题目难度实测，待教师调整",
+          "estimated_seconds": [
+            60,
+            120
+          ],
+          "time_basis": "未做学生计时；按现有难度给出备课估计区间，待教师确认",
+          "machine_checks": [
+            {
+              "name": "题目ID关联源知识点",
+              "passed": true
+            },
+            {
+              "name": "选项标签唯一且参考标签存在",
+              "passed": true
+            },
+            {
+              "name": "选项文本互异",
+              "passed": true
+            },
+            {
+              "name": "正确式量纲一致",
+              "passed": true,
+              "actual": {
+                "type": "dimension",
+                "type_name": "量纲一致性",
+                "formula": "教师审核证据",
+                "ok": true,
+                "detail": "左端M·L^2·T^-2，右端M·L^2·T^-2",
+                "note": "",
+                "error": null,
+                "evaluation_status": "success",
+                "failure_reason": null,
+                "result_dimension": "M·L^2·T^-2",
+                "reference_dimension": "M·L^2·T^-2",
+                "diagnostics": {},
+                "physical_error_identified": false
+              }
+            },
+            {
+              "name": "干扰式量纲冲突",
+              "passed": true,
+              "actual": {
+                "type": "dimension",
+                "type_name": "量纲一致性",
+                "formula": "教师审核证据",
+                "ok": false,
+                "detail": "左端M·L^2·T^-2，右端M·L^2·T^-2·K^-2",
+                "note": "",
+                "error": null,
+                "evaluation_status": "dimension_conflict",
+                "failure_reason": "dimension_conflict",
+                "result_dimension": "M·L^2·T^-2·K^-2",
+                "reference_dimension": "M·L^2·T^-2",
+                "diagnostics": {},
+                "physical_error_identified": true
+              }
+            }
+          ],
+          "machine_boundary": "只列本次逐题实际执行项目；不把关联知识卡的方向、扫描或一致性检查算作本题已验。概念题未验命题真假。",
+          "human_review_items": [
+            "题干条件是否充分、清楚且符合学段",
+            "参考结论在指定条件下是否唯一",
+            "干扰项是否合理、对应真实认知问题且无答案暗示",
+            "公式或概念锚点是否准确",
+            "建议难度及用时是否适合教学",
+            "语言、装置与安全操作是否恰当"
+          ],
+          "reference_answer_note": "现有参考答案保持；即使本地可以判选项，也仍须教师审核教学可用性"
+        }
+      }
+    },
+    {
+      "id": "diagnostic-sustain-04-3",
+      "point_id": "sustain-04",
+      "point_title": "太阳能",
+      "chapter": "能源与可持续发展",
+      "stem": "在“太阳能”中，只计算水吸收的热量，忽略容器热容和散热；水的比热容用 J/kg/℃。。水吸收的热量的单位为J。下列哪一表达式的量纲与该目标量一致？",
+      "options": [
+        {
+          "label": "A",
+          "text": "Q<sub>水</sub> = c<sub>水</sub>·m<sub>水</sub>/dT"
+        },
+        {
+          "label": "B",
+          "text": "Q<sub>水</sub> = c<sub>水</sub>·m<sub>水</sub>·dT"
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "按 4200 J/kg/℃、0.2 kg 和 15 ℃ 相乘，结果为 12600 J；不能把温升放到分母。\n知识点条件：估算太阳能热水器把水加热所需能量时，可把水看作吸收热量的物体，用水的比热容、质量和升高的温度计算吸收的热量。该关系只描述水获得的热量，不等于太阳辐射总能量；由于装置存在反射、散热等损失，太阳提供的能量通常更大。太阳能可再生，但并非任何时间和地点都能稳定提供相同功率。\n推导依据：太阳辐射能被集热器吸收，并传给水。；先确定被加热水的质量和温度变化。；按水的比热容关系计算水吸收的热量。；由于集热器和管路会向环境散热，太阳输入能量不能简单等同于水获得的热量。\n卡片公式各自的适用条件（不是本题共同前提）：\n估算水吸收的热量：只计算水吸收的热量，忽略容器热容和散热；水的比热容用 J/kg/℃。\n由吸收热量估算水的升温：水的质量和比热容已知且非零，暂不计热损失。",
+      "error_type": "量纲一致性",
+      "judging": "auto",
+      "source_error_index": 2,
+      "source_caught_by": "量纲一致性",
+      "wrong_expr": "Q<sub>水</sub> = c<sub>水</sub>·m<sub>水</sub>/dT",
+      "trap_test": {
+        "kind": "dimension",
+        "target": "Q_water = c_water*m_water/dT",
+        "expect": "mismatch",
+        "lhs_dim": "M·L^2·T^-2",
+        "rhs_dim": "M·L^2·T^-2·K^-2",
+        "note": "正式引擎验证量纲不一致；不计作同量纲错误数值实测。"
+      },
+      "level": "基础",
+      "learning_scope": "初中",
+      "answer_evidence": {
+        "kind": "dimension",
+        "target": "Q_water",
+        "correct_expression": "Q_water = c_water*m_water*dT",
+        "distractor_expression": "Q_water = c_water*m_water/dT",
+        "target_dimension": "M·L^2·T^-2",
+        "distractor_dimension": "M·L^2·T^-2·K^-2"
+      },
+      "review": {
+        "confidence": "medium",
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": true,
+          "no_answer_leak_in_options": true
+        },
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。",
+        "material": {
+          "anchors": [
+            {
+              "kind": "公式量纲",
+              "name": "本题目标量与等式",
+              "expression": "Q_water = c_water*m_water*dT",
+              "when": "量纲相符是必要条件，不能据此证明系数或物理条件正确",
+              "display": "Q<sub>水</sub> = c<sub>水</sub>·m<sub>水</sub>·dT"
+            }
+          ],
+          "source": {
+            "nature": "原创量纲辨析命题；无实测数据",
+            "source_error_index": 2
+          },
+          "predicted_errors": [
+            {
+              "option": "A",
+              "text": "Q<sub>水</sub> = c<sub>水</sub>·m<sub>水</sub>/dT",
+              "reason": "按 4200 J/kg/℃、0.2 kg 和 15 ℃ 相乘，结果为 12600 J；不能把温升放到分母。",
+              "expression": "Q_water = c_water*m_water/dT",
+              "status": "误答原因预测，待教师确认；未采集学生作答证据"
+            }
+          ],
+          "difficulty_note": "建议难度沿用本题level（源卡难度）；尚非题目难度实测，待教师调整",
+          "estimated_seconds": [
+            60,
+            120
+          ],
+          "time_basis": "未做学生计时；按现有难度给出备课估计区间，待教师确认",
+          "machine_checks": [
+            {
+              "name": "题目ID关联源知识点",
+              "passed": true
+            },
+            {
+              "name": "选项标签唯一且参考标签存在",
+              "passed": true
+            },
+            {
+              "name": "选项文本互异",
+              "passed": true
+            },
+            {
+              "name": "正确式量纲一致",
+              "passed": true,
+              "actual": {
+                "type": "dimension",
+                "type_name": "量纲一致性",
+                "formula": "教师审核证据",
+                "ok": true,
+                "detail": "左端M·L^2·T^-2，右端M·L^2·T^-2",
+                "note": "",
+                "error": null,
+                "evaluation_status": "success",
+                "failure_reason": null,
+                "result_dimension": "M·L^2·T^-2",
+                "reference_dimension": "M·L^2·T^-2",
+                "diagnostics": {},
+                "physical_error_identified": false
+              }
+            },
+            {
+              "name": "干扰式量纲冲突",
+              "passed": true,
+              "actual": {
+                "type": "dimension",
+                "type_name": "量纲一致性",
+                "formula": "教师审核证据",
+                "ok": false,
+                "detail": "左端M·L^2·T^-2，右端M·L^2·T^-2·K^-2",
+                "note": "",
+                "error": null,
+                "evaluation_status": "dimension_conflict",
+                "failure_reason": "dimension_conflict",
+                "result_dimension": "M·L^2·T^-2·K^-2",
+                "reference_dimension": "M·L^2·T^-2",
+                "diagnostics": {},
+                "physical_error_identified": true
+              }
+            }
+          ],
+          "machine_boundary": "只列本次逐题实际执行项目；不把关联知识卡的方向、扫描或一致性检查算作本题已验。概念题未验命题真假。",
+          "human_review_items": [
+            "题干条件是否充分、清楚且符合学段",
+            "参考结论在指定条件下是否唯一",
+            "干扰项是否合理、对应真实认知问题且无答案暗示",
+            "公式或概念锚点是否准确",
+            "建议难度及用时是否适合教学",
+            "语言、装置与安全操作是否恰当"
+          ],
+          "reference_answer_note": "现有参考答案保持；即使本地可以判选项，也仍须教师审核教学可用性"
+        }
+      }
+    },
+    {
+      "id": "diagnostic-sustain-04-4",
+      "point_id": "sustain-04",
+      "point_title": "太阳能",
+      "chapter": "能源与可持续发展",
+      "stem": "在“太阳能”的模型下，c<sub>水</sub>（水的比热容）=4200 J/kg/℃；m<sub>水</sub>（被加热水的质量）=0.2 kg；dT（水升高的温度）=15 ℃。条件：只计算水吸收的热量，忽略容器热容和散热；水的比热容用 J/kg/℃。。求水吸收的热量（Q<sub>水</sub>）。这些数值是设计示例。",
+      "options": [
+        {
+          "label": "A",
+          "text": "12600 J"
+        },
+        {
+          "label": "B",
+          "text": "1.26e+07 J"
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "使用估算水吸收的热量：c<sub>水</sub>·m<sub>水</sub>·dT，代入得12600 J。另一结果来自c<sub>水</sub>·(1000·m<sub>水</sub>)·dT，算得1.26e+07 J。\n水质量应0.2 kg，吸热12600 J；按200 kg会误大千倍。\n知识点条件：估算太阳能热水器把水加热所需能量时，可把水看作吸收热量的物体，用水的比热容、质量和升高的温度计算吸收的热量。该关系只描述水获得的热量，不等于太阳辐射总能量；由于装置存在反射、散热等损失，太阳提供的能量通常更大。太阳能可再生，但并非任何时间和地点都能稳定提供相同功率。\n推导依据：太阳辐射能被集热器吸收，并传给水。；先确定被加热水的质量和温度变化。；按水的比热容关系计算水吸收的热量。；由于集热器和管路会向环境散热，太阳输入能量不能简单等同于水获得的热量。\n卡片公式各自的适用条件（不是本题共同前提）：\n估算水吸收的热量：只计算水吸收的热量，忽略容器热容和散热；水的比热容用 J/kg/℃。\n由吸收热量估算水的升温：水的质量和比热容已知且非零，暂不计热损失。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 3,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "Q<sub>水</sub> = c<sub>水</sub>·(1000·m<sub>水</sub>)·dT",
+      "trap_test": {
+        "scenario": "太阳能热水器一",
+        "expr": "c_water*(1000*m_water)*dT",
+        "ref": 12600,
+        "tol": 1e-06
+      },
+      "level": "基础",
+      "learning_scope": "初中",
+      "answer_evidence": {
+        "kind": "numeric",
+        "scenario": "太阳能热水器一",
+        "parameters": {
+          "c_water": 4200,
+          "m_water": 0.2,
+          "dT": 15,
+          "Q_water": 12600
+        },
+        "target": "Q_water",
+        "unit": "J",
+        "reference": 12600,
+        "correct_proof": {
+          "expression": "c_water*m_water*dT",
+          "formula": "估算水吸收的热量",
+          "value": 12600.0,
+          "when": "只计算水吸收的热量，忽略容器热容和散热；水的比热容用 J/kg/℃。"
+        },
+        "distractor_expression": "c_water*(1000*m_water)*dT",
+        "distractor_value": 12600000.0,
+        "dimension_matches": true,
+        "independent_evaluation": true
+      },
+      "review": {
+        "confidence": "medium",
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": true,
+          "no_answer_leak_in_options": true
+        },
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。",
+        "material": {
+          "anchors": [
+            {
+              "kind": "公式",
+              "name": "估算水吸收的热量",
+              "expression": "c_water*m_water*dT",
+              "when": "只计算水吸收的热量，忽略容器热容和散热；水的比热容用 J/kg/℃。",
+              "display": "c<sub>水</sub>·m<sub>水</sub>·dT"
+            }
+          ],
+          "source": {
+            "nature": "原创设计示例，非教材实测或真实实验记录",
+            "scenario": "太阳能热水器一",
+            "parameters": {
+              "c_water": 4200,
+              "m_water": 0.2,
+              "dT": 15,
+              "Q_water": 12600
+            },
+            "data": [
+              "水的比热容：4200 J/kg/℃",
+              "被加热水的质量：0.2 kg",
+              "水升高的温度：15 ℃",
+              "水吸收的热量：12600 J"
+            ]
+          },
+          "predicted_errors": [
+            {
+              "option": "B",
+              "text": "1.26e+07 J",
+              "reason": "水质量应0.2 kg，吸热12600 J；按200 kg会误大千倍。",
+              "expression": "c_water*(1000*m_water)*dT",
+              "status": "误答原因预测，待教师确认；未采集学生作答证据"
+            }
+          ],
+          "difficulty_note": "建议难度沿用本题level（源卡难度）；尚非题目难度实测，待教师调整",
+          "estimated_seconds": [
+            60,
+            120
+          ],
+          "time_basis": "未做学生计时；按现有难度给出备课估计区间，待教师确认",
+          "machine_checks": [
+            {
+              "name": "题目ID关联源知识点",
+              "passed": true
+            },
+            {
+              "name": "选项标签唯一且参考标签存在",
+              "passed": true
+            },
+            {
+              "name": "选项文本互异",
+              "passed": true
+            },
+            {
+              "name": "正确路径独立数值复算",
+              "passed": true
+            },
+            {
+              "name": "带量纲求值与独立求值一致",
+              "passed": true
+            },
+            {
+              "name": "干扰路径复算且与正确路径分离",
+              "passed": true
+            }
+          ],
+          "machine_boundary": "只列本次逐题实际执行项目；不把关联知识卡的方向、扫描或一致性检查算作本题已验。概念题未验命题真假。",
+          "human_review_items": [
+            "题干条件是否充分、清楚且符合学段",
+            "参考结论在指定条件下是否唯一",
+            "干扰项是否合理、对应真实认知问题且无答案暗示",
+            "公式或概念锚点是否准确",
+            "建议难度及用时是否适合教学",
+            "语言、装置与安全操作是否恰当"
+          ],
+          "reference_answer_note": "现有参考答案保持；即使本地可以判选项，也仍须教师审核教学可用性"
+        }
+      }
+    },
+    {
+      "id": "diagnostic-sustain-02-1",
+      "point_id": "sustain-02",
+      "point_title": "能量转化的基本规律",
+      "chapter": "能源与可持续发展",
+      "stem": "在“能量转化的基本规律”的模型下，E<sub>入</sub>（设备输入的能量）=100 J；E<sub>有用</sub>（转化得到的有用能量）=80 J。条件：有用能量与输入能量使用相同单位，输入能量大于零。。求能量利用效率，以小数表示（η）。这些数值是设计示例。",
+      "options": [
+        {
+          "label": "A",
+          "text": "1.25 1"
+        },
+        {
+          "label": "B",
+          "text": "0.8 1"
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "使用能量利用效率：E<sub>有用</sub>/E<sub>入</sub>，代入得0.8 1。另一结果来自E<sub>入</sub>/E<sub>有用</sub>，算得1.25 1。\n效率是有用输出占输入的比例；高效电机情境中为 80/100=0.8，而不是 1.25。\n知识点条件：分析能量转化时要先划定研究对象和过程，再把输入、有用输出以及转化到环境中的其他能量分别列出。能量守恒不表示每一部分能量都同样容易利用；效率是有用能量与输入能量之比，不能超过 100%。本节的能量账目关系可用于检查转换过程是否漏项，效率关系用于比较装置利用输入能量的程度。\n推导依据：给能量转换过程划定系统边界，统计输入能量。；把输出分成完成目标的有用能量与其他转化能量。；能量守恒要求输入与全部输出相等。；有用输出除以输入能量得到效率，可乘 100% 表示百分数。\n卡片公式各自的适用条件（不是本题共同前提）：\n能量输入与各输出的平衡：按给定系统边界统计全部有用输出与损耗，能量单位一致。\n能量利用效率：有用能量与输入能量使用相同单位，输入能量大于零。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 0,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "η = E<sub>入</sub>/E<sub>有用</sub>",
+      "trap_test": {
+        "scenario": "高效电机",
+        "expr": "E_in/E_use",
+        "ref": 0.8
+      },
+      "level": "基础",
+      "learning_scope": "初中",
+      "answer_evidence": {
+        "kind": "numeric",
+        "scenario": "高效电机",
+        "parameters": {
+          "E_in": 100,
+          "E_use": 80,
+          "E_loss": 20,
+          "eta": 0.8
+        },
+        "target": "eta",
+        "unit": "1",
+        "reference": 0.8,
+        "correct_proof": {
+          "expression": "E_use/E_in",
+          "formula": "能量利用效率",
+          "value": 0.8,
+          "when": "有用能量与输入能量使用相同单位，输入能量大于零。"
+        },
+        "distractor_expression": "E_in/E_use",
+        "distractor_value": 1.25,
+        "dimension_matches": true,
+        "independent_evaluation": true
+      },
+      "review": {
+        "confidence": "medium",
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": true,
+          "no_answer_leak_in_options": true
+        },
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。",
+        "material": {
+          "anchors": [
+            {
+              "kind": "公式",
+              "name": "能量利用效率",
+              "expression": "E_use/E_in",
+              "when": "有用能量与输入能量使用相同单位，输入能量大于零。",
+              "display": "E<sub>有用</sub>/E<sub>入</sub>"
+            }
+          ],
+          "source": {
+            "nature": "原创设计示例，非教材实测或真实实验记录",
+            "scenario": "高效电机",
+            "parameters": {
+              "E_in": 100,
+              "E_use": 80,
+              "E_loss": 20,
+              "eta": 0.8
+            },
+            "data": [
+              "设备输入的能量：100 J",
+              "转化得到的有用能量：80 J",
+              "未成为目标有用输出的能量：20 J",
+              "能量利用效率，以小数表示：0.8 1"
+            ]
+          },
+          "predicted_errors": [
+            {
+              "option": "A",
+              "text": "1.25 1",
+              "reason": "效率是有用输出占输入的比例；高效电机情境中为 80/100=0.8，而不是 1.25。",
+              "expression": "E_in/E_use",
+              "status": "误答原因预测，待教师确认；未采集学生作答证据"
+            }
+          ],
+          "difficulty_note": "建议难度沿用本题level（源卡难度）；尚非题目难度实测，待教师调整",
+          "estimated_seconds": [
+            60,
+            120
+          ],
+          "time_basis": "未做学生计时；按现有难度给出备课估计区间，待教师确认",
+          "machine_checks": [
+            {
+              "name": "题目ID关联源知识点",
+              "passed": true
+            },
+            {
+              "name": "选项标签唯一且参考标签存在",
+              "passed": true
+            },
+            {
+              "name": "选项文本互异",
+              "passed": true
+            },
+            {
+              "name": "正确路径独立数值复算",
+              "passed": true
+            },
+            {
+              "name": "带量纲求值与独立求值一致",
+              "passed": true
+            },
+            {
+              "name": "干扰路径复算且与正确路径分离",
+              "passed": true
+            }
+          ],
+          "machine_boundary": "只列本次逐题实际执行项目；不把关联知识卡的方向、扫描或一致性检查算作本题已验。概念题未验命题真假。",
+          "human_review_items": [
+            "题干条件是否充分、清楚且符合学段",
+            "参考结论在指定条件下是否唯一",
+            "干扰项是否合理、对应真实认知问题且无答案暗示",
+            "公式或概念锚点是否准确",
+            "建议难度及用时是否适合教学",
+            "语言、装置与安全操作是否恰当"
+          ],
+          "reference_answer_note": "现有参考答案保持；即使本地可以判选项，也仍须教师审核教学可用性"
+        }
+      }
+    },
+    {
+      "id": "diagnostic-sustain-02-2",
+      "point_id": "sustain-02",
+      "point_title": "能量转化的基本规律",
+      "chapter": "能源与可持续发展",
+      "stem": "关于“能量转化的基本规律”，判断这一说法是否成立，并说明依据：\n可再生能源没有任何环境影响，或认为能量损耗意味着能量消失。",
+      "options": [
+        {
+          "label": "A",
+          "text": "该说法成立。"
+        },
+        {
+          "label": "B",
+          "text": "该说法不成立。"
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "可再生能源的利用仍可能影响生态和土地；损耗能量通常转化为不易利用的热、声等形式，并未违反能量守恒。\n知识点条件：分析能量转化时要先划定研究对象和过程，再把输入、有用输出以及转化到环境中的其他能量分别列出。能量守恒不表示每一部分能量都同样容易利用；效率是有用能量与输入能量之比，不能超过 100%。本节的能量账目关系可用于检查转换过程是否漏项，效率关系用于比较装置利用输入能量的程度。\n推导依据：给能量转换过程划定系统边界，统计输入能量。；把输出分成完成目标的有用能量与其他转化能量。；能量守恒要求输入与全部输出相等。；有用输出除以输入能量得到效率，可乘 100% 表示百分数。\n卡片公式各自的适用条件（不是本题共同前提）：\n能量输入与各输出的平衡：按给定系统边界统计全部有用输出与损耗，能量单位一致。\n能量利用效率：有用能量与输入能量使用相同单位，输入能量大于零。",
+      "error_type": "概念混淆",
+      "judging": "teacher",
+      "source_error_index": 1,
+      "source_caught_by": "人工审核",
+      "wrong_expr": null,
+      "trap_test": null,
+      "level": "基础",
+      "learning_scope": "初中",
+      "answer_evidence": {
+        "kind": "teacher",
+        "claim_source": "wrong",
+        "reference_only": true,
+        "reason": "概念、操作或无法建立完整定量证据，教师确认条件与结论。"
+      },
+      "review": {
+        "confidence": "medium",
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": false,
+          "no_answer_leak_in_options": true
+        },
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。",
+        "material": {
+          "anchors": [
+            {
+              "kind": "概念或操作",
+              "name": "能量转化的基本规律",
+              "claim": "认为可再生能源没有任何环境影响，或认为能量损耗意味着能量消失。",
+              "correction_basis": "可再生能源的利用仍可能影响生态和土地；损耗能量通常转化为不易利用的热、声等形式，并未违反能量守恒。",
+              "note": "概念锚点及命题真假待教师确认；未套用任意第一条公式",
+              "display": "认为可再生能源没有任何环境影响，或认为能量损耗意味着能量消失。"
+            }
+          ],
+          "source": {
+            "nature": "原创概念/操作命题；无真实测量记录",
+            "source_error_index": 1
+          },
+          "predicted_errors": [
+            {
+              "option": "A",
+              "text": "该说法成立。",
+              "reason": "可再生能源的利用仍可能影响生态和土地；损耗能量通常转化为不易利用的热、声等形式，并未违反能量守恒。",
+              "expression": null,
+              "status": "误答原因预测，待教师确认；未采集学生作答证据"
+            }
+          ],
+          "difficulty_note": "建议难度沿用本题level（源卡难度）；尚非题目难度实测，待教师调整",
+          "estimated_seconds": [
+            60,
+            120
+          ],
+          "time_basis": "未做学生计时；按现有难度给出备课估计区间，待教师确认",
+          "machine_checks": [
+            {
+              "name": "题目ID关联源知识点",
+              "passed": true
+            },
+            {
+              "name": "选项标签唯一且参考标签存在",
+              "passed": true
+            },
+            {
+              "name": "选项文本互异",
+              "passed": true
+            }
+          ],
+          "machine_boundary": "只列本次逐题实际执行项目；不把关联知识卡的方向、扫描或一致性检查算作本题已验。概念题未验命题真假。",
+          "human_review_items": [
+            "题干条件是否充分、清楚且符合学段",
+            "参考结论在指定条件下是否唯一",
+            "干扰项是否合理、对应真实认知问题且无答案暗示",
+            "公式或概念锚点是否准确",
+            "建议难度及用时是否适合教学",
+            "语言、装置与安全操作是否恰当"
+          ],
+          "reference_answer_note": "现有参考答案保持；即使本地可以判选项，也仍须教师审核教学可用性"
+        }
+      }
+    },
+    {
+      "id": "diagnostic-sustain-05-1",
+      "point_id": "sustain-05",
+      "point_title": "能源与可持续发展",
+      "chapter": "能源与可持续发展",
+      "stem": "在“能源与可持续发展”的模型下，E<sub>旧</sub>（旧设备在该时段消耗的电能）=216000 J；E<sub>新</sub>（新设备在该时段消耗的电能）=36000 J。条件：新旧方案提供相同服务，且旧方案耗能不小于新方案。。求新设备相对旧设备减少的耗电量（E<sub>节</sub>）。这些数值是设计示例。",
+      "options": [
+        {
+          "label": "A",
+          "text": "180000 J"
+        },
+        {
+          "label": "B",
+          "text": "252000 J"
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "使用由新旧设备耗电量求节能量：E<sub>旧</sub>-E<sub>新</sub>，代入得180000 J。另一结果来自E<sub>旧</sub>+E<sub>新</sub>，算得252000 J。\n节能量是旧设备比新设备多消耗的部分，应做差而不是相加。比较之前先统一时间范围和所提供的服务。\n知识点条件：比较节能措施时，先确保新旧方案提供相同的照明、出行或生产服务，再比较同一使用时长内的耗电量差。功率较低并不自动意味着更可持续，还要考虑设备寿命、发电结构、材料和回收等因素。本条用新旧设备的耗电量差做一个边界清楚的定量例子，不把单次能耗计算冒充完整的生命周期评价。\n推导依据：先确定新旧方案提供的是同一项服务，使用时长也相同。；分别按功率乘时间计算两种设备消耗的电能。；用旧设备耗电量减去新设备耗电量，得到该时段的节能量。；完整的可持续性判断还要比较能源来源、排放、设备寿命和回收，不能只靠这一个能耗差。\n卡片公式各自的适用条件（不是本题共同前提）：\n计算旧设备在相同服务时段的耗电量：功率近似稳定，时间用 s、功率用 W，所得能量为 J。\n计算新设备在相同服务时段的耗电量：新设备功率近似稳定，且新旧设备工作时间相同。\n由新旧设备耗电量求节能量：新旧方案提供相同服务，且旧方案耗能不小于新方案。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 0,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "E<sub>节</sub> = E<sub>旧</sub>+E<sub>新</sub>",
+      "trap_test": {
+        "scenario": "节能灯具一",
+        "expr": "E_old+E_new",
+        "ref": 180000
+      },
+      "level": "基础",
+      "learning_scope": "初中",
+      "answer_evidence": {
+        "kind": "numeric",
+        "scenario": "节能灯具一",
+        "parameters": {
+          "P_old": 60,
+          "P_new": 10,
+          "t_use": 3600,
+          "E_old": 216000,
+          "E_new": 36000,
+          "E_save": 180000
+        },
+        "target": "E_save",
+        "unit": "J",
+        "reference": 180000,
+        "correct_proof": {
+          "expression": "E_old-E_new",
+          "formula": "由新旧设备耗电量求节能量",
+          "value": 180000,
+          "when": "新旧方案提供相同服务，且旧方案耗能不小于新方案。"
+        },
+        "distractor_expression": "E_old+E_new",
+        "distractor_value": 252000.0,
+        "dimension_matches": true,
+        "independent_evaluation": true
+      },
+      "review": {
+        "confidence": "medium",
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": true,
+          "no_answer_leak_in_options": true
+        },
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。",
+        "material": {
+          "anchors": [
+            {
+              "kind": "公式",
+              "name": "由新旧设备耗电量求节能量",
+              "expression": "E_old-E_new",
+              "when": "新旧方案提供相同服务，且旧方案耗能不小于新方案。",
+              "display": "E<sub>旧</sub>-E<sub>新</sub>"
+            }
+          ],
+          "source": {
+            "nature": "原创设计示例，非教材实测或真实实验记录",
+            "scenario": "节能灯具一",
+            "parameters": {
+              "P_old": 60,
+              "P_new": 10,
+              "t_use": 3600,
+              "E_old": 216000,
+              "E_new": 36000,
+              "E_save": 180000
+            },
+            "data": [
+              "旧设备功率：60 W",
+              "新设备功率：10 W",
+              "两种设备提供相同服务的使用时间：3600 s",
+              "旧设备在该时段消耗的电能：216000 J",
+              "新设备在该时段消耗的电能：36000 J",
+              "新设备相对旧设备减少的耗电量：180000 J"
+            ]
+          },
+          "predicted_errors": [
+            {
+              "option": "B",
+              "text": "252000 J",
+              "reason": "节能量是旧设备比新设备多消耗的部分，应做差而不是相加。比较之前先统一时间范围和所提供的服务。",
+              "expression": "E_old+E_new",
+              "status": "误答原因预测，待教师确认；未采集学生作答证据"
+            }
+          ],
+          "difficulty_note": "建议难度沿用本题level（源卡难度）；尚非题目难度实测，待教师调整",
+          "estimated_seconds": [
+            60,
+            120
+          ],
+          "time_basis": "未做学生计时；按现有难度给出备课估计区间，待教师确认",
+          "machine_checks": [
+            {
+              "name": "题目ID关联源知识点",
+              "passed": true
+            },
+            {
+              "name": "选项标签唯一且参考标签存在",
+              "passed": true
+            },
+            {
+              "name": "选项文本互异",
+              "passed": true
+            },
+            {
+              "name": "正确路径独立数值复算",
+              "passed": true
+            },
+            {
+              "name": "带量纲求值与独立求值一致",
+              "passed": true
+            },
+            {
+              "name": "干扰路径复算且与正确路径分离",
+              "passed": true
+            }
+          ],
+          "machine_boundary": "只列本次逐题实际执行项目；不把关联知识卡的方向、扫描或一致性检查算作本题已验。概念题未验命题真假。",
+          "human_review_items": [
+            "题干条件是否充分、清楚且符合学段",
+            "参考结论在指定条件下是否唯一",
+            "干扰项是否合理、对应真实认知问题且无答案暗示",
+            "公式或概念锚点是否准确",
+            "建议难度及用时是否适合教学",
+            "语言、装置与安全操作是否恰当"
+          ],
+          "reference_answer_note": "现有参考答案保持；即使本地可以判选项，也仍须教师审核教学可用性"
+        }
+      }
+    },
+    {
+      "id": "diagnostic-sustain-05-2",
+      "point_id": "sustain-05",
+      "point_title": "能源与可持续发展",
+      "chapter": "能源与可持续发展",
+      "stem": "关于“能源与可持续发展”，判断这一说法是否成立，并说明依据：\n要比较相同服务，必须统一照明时长等条件。",
+      "options": [
+        {
+          "label": "A",
+          "text": "该说法不成立。"
+        },
+        {
+          "label": "B",
+          "text": "该说法成立。"
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "要比较相同服务，必须统一照明时长等条件。比较之前先统一时间范围和所提供的服务。\n知识点条件：比较节能措施时，先确保新旧方案提供相同的照明、出行或生产服务，再比较同一使用时长内的耗电量差。功率较低并不自动意味着更可持续，还要考虑设备寿命、发电结构、材料和回收等因素。本条用新旧设备的耗电量差做一个边界清楚的定量例子，不把单次能耗计算冒充完整的生命周期评价。\n推导依据：先确定新旧方案提供的是同一项服务，使用时长也相同。；分别按功率乘时间计算两种设备消耗的电能。；用旧设备耗电量减去新设备耗电量，得到该时段的节能量。；完整的可持续性判断还要比较能源来源、排放、设备寿命和回收，不能只靠这一个能耗差。\n卡片公式各自的适用条件（不是本题共同前提）：\n计算旧设备在相同服务时段的耗电量：功率近似稳定，时间用 s、功率用 W，所得能量为 J。\n计算新设备在相同服务时段的耗电量：新设备功率近似稳定，且新旧设备工作时间相同。\n由新旧设备耗电量求节能量：新旧方案提供相同服务，且旧方案耗能不小于新方案。",
+      "error_type": "概念混淆",
+      "judging": "teacher",
+      "source_error_index": 1,
+      "source_caught_by": "人工审核",
+      "wrong_expr": null,
+      "trap_test": null,
+      "level": "基础",
+      "learning_scope": "初中",
+      "answer_evidence": {
+        "kind": "teacher",
+        "claim_source": "why",
+        "reference_only": true,
+        "reason": "概念、操作或无法建立完整定量证据，教师确认条件与结论。"
+      },
+      "review": {
+        "confidence": "medium",
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": false,
+          "no_answer_leak_in_options": true
+        },
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。",
+        "material": {
+          "anchors": [
+            {
+              "kind": "概念或操作",
+              "name": "能源与可持续发展",
+              "claim": "比较灯具节能量时让旧灯和新灯使用不同时间。",
+              "correction_basis": "要比较相同服务，必须统一照明时长等条件。比较之前先统一时间范围和所提供的服务。",
+              "note": "概念锚点及命题真假待教师确认；未套用任意第一条公式",
+              "display": "比较灯具节能量时让旧灯和新灯使用不同时间。"
+            }
+          ],
+          "source": {
+            "nature": "原创概念/操作命题；无真实测量记录",
+            "source_error_index": 1
+          },
+          "predicted_errors": [
+            {
+              "option": "A",
+              "text": "该说法不成立。",
+              "reason": "要比较相同服务，必须统一照明时长等条件。比较之前先统一时间范围和所提供的服务。",
+              "expression": null,
+              "status": "误答原因预测，待教师确认；未采集学生作答证据"
+            }
+          ],
+          "difficulty_note": "建议难度沿用本题level（源卡难度）；尚非题目难度实测，待教师调整",
+          "estimated_seconds": [
+            60,
+            120
+          ],
+          "time_basis": "未做学生计时；按现有难度给出备课估计区间，待教师确认",
+          "machine_checks": [
+            {
+              "name": "题目ID关联源知识点",
+              "passed": true
+            },
+            {
+              "name": "选项标签唯一且参考标签存在",
+              "passed": true
+            },
+            {
+              "name": "选项文本互异",
+              "passed": true
+            }
+          ],
+          "machine_boundary": "只列本次逐题实际执行项目；不把关联知识卡的方向、扫描或一致性检查算作本题已验。概念题未验命题真假。",
+          "human_review_items": [
+            "题干条件是否充分、清楚且符合学段",
+            "参考结论在指定条件下是否唯一",
+            "干扰项是否合理、对应真实认知问题且无答案暗示",
+            "公式或概念锚点是否准确",
+            "建议难度及用时是否适合教学",
+            "语言、装置与安全操作是否恰当"
+          ],
+          "reference_answer_note": "现有参考答案保持；即使本地可以判选项，也仍须教师审核教学可用性"
+        }
+      }
+    },
+    {
+      "id": "diagnostic-sustain-05-3",
+      "point_id": "sustain-05",
+      "point_title": "能源与可持续发展",
+      "chapter": "能源与可持续发展",
+      "stem": "关于“能源与可持续发展”，判断这一说法是否成立，并说明依据：\n生命周期评价还涉及制造、运输、发电来源、维护和回收等边界。",
+      "options": [
+        {
+          "label": "A",
+          "text": "该说法不成立。"
+        },
+        {
+          "label": "B",
+          "text": "该说法成立。"
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "生命周期评价还涉及制造、运输、发电来源、维护和回收等边界。比较之前先统一时间范围和所提供的服务。\n知识点条件：比较节能措施时，先确保新旧方案提供相同的照明、出行或生产服务，再比较同一使用时长内的耗电量差。功率较低并不自动意味着更可持续，还要考虑设备寿命、发电结构、材料和回收等因素。本条用新旧设备的耗电量差做一个边界清楚的定量例子，不把单次能耗计算冒充完整的生命周期评价。\n推导依据：先确定新旧方案提供的是同一项服务，使用时长也相同。；分别按功率乘时间计算两种设备消耗的电能。；用旧设备耗电量减去新设备耗电量，得到该时段的节能量。；完整的可持续性判断还要比较能源来源、排放、设备寿命和回收，不能只靠这一个能耗差。\n卡片公式各自的适用条件（不是本题共同前提）：\n计算旧设备在相同服务时段的耗电量：功率近似稳定，时间用 s、功率用 W，所得能量为 J。\n计算新设备在相同服务时段的耗电量：新设备功率近似稳定，且新旧设备工作时间相同。\n由新旧设备耗电量求节能量：新旧方案提供相同服务，且旧方案耗能不小于新方案。",
+      "error_type": "概念混淆",
+      "judging": "teacher",
+      "source_error_index": 2,
+      "source_caught_by": "人工审核",
+      "wrong_expr": null,
+      "trap_test": null,
+      "level": "基础",
+      "learning_scope": "初中",
+      "answer_evidence": {
+        "kind": "teacher",
+        "claim_source": "why",
+        "reference_only": true,
+        "reason": "概念、操作或无法建立完整定量证据，教师确认条件与结论。"
+      },
+      "review": {
+        "confidence": "medium",
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": false,
+          "no_answer_leak_in_options": true
+        },
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。",
+        "material": {
+          "anchors": [
+            {
+              "kind": "概念或操作",
+              "name": "能源与可持续发展",
+              "claim": "仅凭一次电费差值就断定一种能源在全生命周期都更可持续。",
+              "correction_basis": "生命周期评价还涉及制造、运输、发电来源、维护和回收等边界。比较之前先统一时间范围和所提供的服务。",
+              "note": "概念锚点及命题真假待教师确认；未套用任意第一条公式",
+              "display": "仅凭一次电费差值就断定一种能源在全生命周期都更可持续。"
+            }
+          ],
+          "source": {
+            "nature": "原创概念/操作命题；无真实测量记录",
+            "source_error_index": 2
+          },
+          "predicted_errors": [
+            {
+              "option": "A",
+              "text": "该说法不成立。",
+              "reason": "生命周期评价还涉及制造、运输、发电来源、维护和回收等边界。比较之前先统一时间范围和所提供的服务。",
+              "expression": null,
+              "status": "误答原因预测，待教师确认；未采集学生作答证据"
+            }
+          ],
+          "difficulty_note": "建议难度沿用本题level（源卡难度）；尚非题目难度实测，待教师调整",
+          "estimated_seconds": [
+            60,
+            120
+          ],
+          "time_basis": "未做学生计时；按现有难度给出备课估计区间，待教师确认",
+          "machine_checks": [
+            {
+              "name": "题目ID关联源知识点",
+              "passed": true
+            },
+            {
+              "name": "选项标签唯一且参考标签存在",
+              "passed": true
+            },
+            {
+              "name": "选项文本互异",
+              "passed": true
+            }
+          ],
+          "machine_boundary": "只列本次逐题实际执行项目；不把关联知识卡的方向、扫描或一致性检查算作本题已验。概念题未验命题真假。",
+          "human_review_items": [
+            "题干条件是否充分、清楚且符合学段",
+            "参考结论在指定条件下是否唯一",
+            "干扰项是否合理、对应真实认知问题且无答案暗示",
+            "公式或概念锚点是否准确",
+            "建议难度及用时是否适合教学",
+            "语言、装置与安全操作是否恰当"
+          ],
+          "reference_answer_note": "现有参考答案保持；即使本地可以判选项，也仍须教师审核教学可用性"
+        }
+      }
+    }
+  ],
+  "skipped": [],
+  "source_records": {
+    "diagnostic-sustain-01-1": {
+      "point": {
+        "id": "sustain-01",
+        "title": "能源利用与社会发展中的耗电估算",
+        "level": "基础",
+        "definition": "能源利用支撑照明、交通、生产和现代生活。对电器而言，在功率近似稳定时，消耗的电能与功率和使用时间有关；用电能表记录的千瓦时可以直接用于生活中的用电估算。",
+        "meaning": "社会发展会带来更多能源需求，因此既要保证合理用能，也要减少不必要的浪费。比较同一项用电服务的耗电量时，应确认功率和使用时间的单位一致；当功率用 kW、时间用 h 时，乘积直接得到 kWh。该关系只计算用电量，不足以单独评价能源来源的环境影响或可持续性。",
+        "symbols": {
+          "P": {
+            "desc": "用电器的工作功率",
+            "unit": "kW"
+          },
+          "t": {
+            "desc": "用电时间",
+            "unit": "h"
+          },
+          "E": {
+            "desc": "消耗的电能",
+            "unit": "kWh"
+          }
+        },
+        "scenarios": {
+          "LED灯五小时": {
+            "P": 0.01,
+            "t": 5,
+            "E": 0.05
+          },
+          "教室照明十小时": {
+            "P": 0.04,
+            "t": 10,
+            "E": 0.4
+          }
+        },
+        "formulas": [
+          {
+            "name": "功率和时间求耗电量",
+            "expr": "E = P*t",
+            "when": "P 用 kW、t 用 h，所得电能 E 用 kWh。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "LED灯五小时",
+                "expr": "P*t",
+                "ref": 0.05,
+                "note": "0.01 kW×5 h=0.05 kWh。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "教室照明十小时",
+                "expr": "P*t",
+                "ref": 0.4,
+                "note": "0.04 kW×10 h=0.4 kWh。"
+              },
+              {
+                "type": "direction",
+                "scenario": "LED灯五小时",
+                "var": "t",
+                "lo": 0,
+                "hi": 100,
+                "expr": "P*t",
+                "expect": "up",
+                "note": "功率固定时，使用时间越长，耗电量越多。"
+              },
+              {
+                "type": "scan",
+                "scenario": "LED灯五小时",
+                "var": "t",
+                "lo": 0,
+                "hi": 10000,
+                "note": "扫描非负使用时间，电能计算线性稳定。"
+              },
+              {
+                "type": "consistency",
+                "scenario": "LED灯五小时",
+                "with": "sustain-01|功率和时间求耗电量",
+                "with_expr": "E",
+                "target": "消耗的电能",
+                "note": "直接求本公式输出，与情境中另列的E设计基准核对；数据是设计示例，不是实测。用于核对定义、反算或边界值，不宣称不同物理原理互证。",
+                "verification_kind": "独立设计情境数据核对",
+                "tol": 5.000000000000001e-07
+              }
+            ]
+          },
+          {
+            "name": "由耗电量和使用时间求平均功率",
+            "expr": "P = E/t",
+            "when": "电能 E 用 kWh、时间 t 用 h，所得平均功率 P 用 kW。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "LED灯五小时",
+                "expr": "E/t",
+                "ref": 0.01,
+                "note": "0.05 kWh÷5 h=0.01 kW。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "教室照明十小时",
+                "expr": "E/t",
+                "ref": 0.04,
+                "note": "0.4 kWh÷10 h=0.04 kW。"
+              },
+              {
+                "type": "direction",
+                "scenario": "LED灯五小时",
+                "var": "E",
+                "lo": 0,
+                "hi": 1,
+                "expr": "E/t",
+                "expect": "up",
+                "note": "时间固定时，耗电量越多，平均功率越大。"
+              },
+              {
+                "type": "scan",
+                "scenario": "LED灯五小时",
+                "var": "t",
+                "lo": 0.01,
+                "hi": 10000,
+                "note": "扫描正时间，反算平均功率时不除以零。"
+              },
+              {
+                "type": "consistency",
+                "scenario": "LED灯五小时",
+                "with": "sustain-01|由耗电量和使用时间求平均功率",
+                "with_expr": "P",
+                "target": "用电器的工作功率",
+                "note": "直接求本公式输出，与情境中另列的P设计基准核对；数据是设计示例，不是实测。用于核对定义、反算或边界值，不宣称不同物理原理互证。",
+                "verification_kind": "独立设计情境数据核对",
+                "tol": 1.0000000000000001e-07
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "读取用电器铭牌或题目给出的工作功率。",
+          "把功率统一成 kW、时间统一成 h。",
+          "功率乘以使用时间，得到以 kWh 表示的电能。",
+          "同一类服务下比较不同设备或不同时长的耗电量，避免只凭额定功率判断。"
+        ],
+        "errors": [
+          {
+            "wrong": "把耗电量写成功率除以使用时间。",
+            "wrong_expr": "E = P/t",
+            "why": "耗电量等于功率乘以时间；功率再除以时间会得到功率变化率，不是电能。",
+            "caught_by": "量纲一致性",
+            "trap_test": {
+              "kind": "dimension",
+              "target": "E = P/t",
+              "lhs_dim": "M·L^2·T^-2",
+              "rhs_dim": "M·L^2·T^-4",
+              "expect": "mismatch",
+              "note": "实际量纲检查得到等号左边为M·L^2·T^-2、右边为M·L^2·T^-4；两边不是同一物理量，因此该等式不成立。"
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "LED灯功率为 0.01 kW、使用 5 h，却把耗电量写成 0.002 kWh。",
+            "wrong_expr": "E = P/t",
+            "why": "0.01 kW×5 h=0.05 kWh；除法结果不仅数值错误，单位也不能表示耗电量。",
+            "caught_by": "量纲一致性",
+            "trap_test": {
+              "kind": "dimension",
+              "target": "E = P/t",
+              "expect": "mismatch",
+              "lhs_dim": "M·L^2·T^-2",
+              "rhs_dim": "M·L^2·T^-4",
+              "note": "正式引擎验证量纲不一致；不计作同量纲错误数值实测。"
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "只看额定功率较小，就断定设备一定更节能而不看使用时长。",
+            "why": "耗电量还取决于使用时间；小功率设备长时间运行也可能耗电更多。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "把5 h误作5 min换成小时。",
+            "wrong_expr": "E = P*t/60",
+            "why": "时间实际5 h，能耗0.05 kWh；误作5 min才需要除60，结果小60倍。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "LED灯五小时",
+              "expr": "P*t/60",
+              "ref": 0.05,
+              "tol": 5e-08
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "一盏功率为 0.01 kW 的 LED 灯连续使用 5 h，求消耗的电能。",
+          "solution": [
+            "E=P*t=0.01×5=0.05 kWh。",
+            "此结果只描述这段时间的用电量，不代表整套能源方案的环境影响。"
+          ],
+          "answer": "消耗电能为 0.05 kWh。"
+        },
+        "prereq": [
+          "power-01",
+          "power-02"
+        ],
+        "next": [
+          "sustain-03"
+        ],
+        "tags": [
+          "节能",
+          "电能",
+          "功率",
+          "使用时间",
+          "千瓦时"
+        ],
+        "core": [
+          {
+            "title": "能源利用与社会发展",
+            "text": "能源是可提供能量的资源。煤、石油、天然气为化石能源，按形成速度通常属不可再生；太阳、风、水等属可再生。一次能源来自自然界，电能等二次能源通常需转化制得。不同方案要比较供应、效率、污染、资源和安全，不能把“电器没有排烟”当全链条零排放。"
+          },
+          {
+            "title": "本章素养回顾（原创任务）",
+            "text": "选择本章一个现象，写出结论、成立条件和证据；用另一条本章规律复核解释是否矛盾。指出一次测量或模型的局限，并说明还需什么证据；数值通过不替代概念辨析。"
+          }
+        ],
+        "learning_scope": "初中"
+      },
+      "error_index": 0,
+      "chapter": "能源与可持续发展"
+    },
+    "diagnostic-sustain-01-2": {
+      "point": {
+        "id": "sustain-01",
+        "title": "能源利用与社会发展中的耗电估算",
+        "level": "基础",
+        "definition": "能源利用支撑照明、交通、生产和现代生活。对电器而言，在功率近似稳定时，消耗的电能与功率和使用时间有关；用电能表记录的千瓦时可以直接用于生活中的用电估算。",
+        "meaning": "社会发展会带来更多能源需求，因此既要保证合理用能，也要减少不必要的浪费。比较同一项用电服务的耗电量时，应确认功率和使用时间的单位一致；当功率用 kW、时间用 h 时，乘积直接得到 kWh。该关系只计算用电量，不足以单独评价能源来源的环境影响或可持续性。",
+        "symbols": {
+          "P": {
+            "desc": "用电器的工作功率",
+            "unit": "kW"
+          },
+          "t": {
+            "desc": "用电时间",
+            "unit": "h"
+          },
+          "E": {
+            "desc": "消耗的电能",
+            "unit": "kWh"
+          }
+        },
+        "scenarios": {
+          "LED灯五小时": {
+            "P": 0.01,
+            "t": 5,
+            "E": 0.05
+          },
+          "教室照明十小时": {
+            "P": 0.04,
+            "t": 10,
+            "E": 0.4
+          }
+        },
+        "formulas": [
+          {
+            "name": "功率和时间求耗电量",
+            "expr": "E = P*t",
+            "when": "P 用 kW、t 用 h，所得电能 E 用 kWh。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "LED灯五小时",
+                "expr": "P*t",
+                "ref": 0.05,
+                "note": "0.01 kW×5 h=0.05 kWh。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "教室照明十小时",
+                "expr": "P*t",
+                "ref": 0.4,
+                "note": "0.04 kW×10 h=0.4 kWh。"
+              },
+              {
+                "type": "direction",
+                "scenario": "LED灯五小时",
+                "var": "t",
+                "lo": 0,
+                "hi": 100,
+                "expr": "P*t",
+                "expect": "up",
+                "note": "功率固定时，使用时间越长，耗电量越多。"
+              },
+              {
+                "type": "scan",
+                "scenario": "LED灯五小时",
+                "var": "t",
+                "lo": 0,
+                "hi": 10000,
+                "note": "扫描非负使用时间，电能计算线性稳定。"
+              },
+              {
+                "type": "consistency",
+                "scenario": "LED灯五小时",
+                "with": "sustain-01|功率和时间求耗电量",
+                "with_expr": "E",
+                "target": "消耗的电能",
+                "note": "直接求本公式输出，与情境中另列的E设计基准核对；数据是设计示例，不是实测。用于核对定义、反算或边界值，不宣称不同物理原理互证。",
+                "verification_kind": "独立设计情境数据核对",
+                "tol": 5.000000000000001e-07
+              }
+            ]
+          },
+          {
+            "name": "由耗电量和使用时间求平均功率",
+            "expr": "P = E/t",
+            "when": "电能 E 用 kWh、时间 t 用 h，所得平均功率 P 用 kW。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "LED灯五小时",
+                "expr": "E/t",
+                "ref": 0.01,
+                "note": "0.05 kWh÷5 h=0.01 kW。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "教室照明十小时",
+                "expr": "E/t",
+                "ref": 0.04,
+                "note": "0.4 kWh÷10 h=0.04 kW。"
+              },
+              {
+                "type": "direction",
+                "scenario": "LED灯五小时",
+                "var": "E",
+                "lo": 0,
+                "hi": 1,
+                "expr": "E/t",
+                "expect": "up",
+                "note": "时间固定时，耗电量越多，平均功率越大。"
+              },
+              {
+                "type": "scan",
+                "scenario": "LED灯五小时",
+                "var": "t",
+                "lo": 0.01,
+                "hi": 10000,
+                "note": "扫描正时间，反算平均功率时不除以零。"
+              },
+              {
+                "type": "consistency",
+                "scenario": "LED灯五小时",
+                "with": "sustain-01|由耗电量和使用时间求平均功率",
+                "with_expr": "P",
+                "target": "用电器的工作功率",
+                "note": "直接求本公式输出，与情境中另列的P设计基准核对；数据是设计示例，不是实测。用于核对定义、反算或边界值，不宣称不同物理原理互证。",
+                "verification_kind": "独立设计情境数据核对",
+                "tol": 1.0000000000000001e-07
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "读取用电器铭牌或题目给出的工作功率。",
+          "把功率统一成 kW、时间统一成 h。",
+          "功率乘以使用时间，得到以 kWh 表示的电能。",
+          "同一类服务下比较不同设备或不同时长的耗电量，避免只凭额定功率判断。"
+        ],
+        "errors": [
+          {
+            "wrong": "把耗电量写成功率除以使用时间。",
+            "wrong_expr": "E = P/t",
+            "why": "耗电量等于功率乘以时间；功率再除以时间会得到功率变化率，不是电能。",
+            "caught_by": "量纲一致性",
+            "trap_test": {
+              "kind": "dimension",
+              "target": "E = P/t",
+              "lhs_dim": "M·L^2·T^-2",
+              "rhs_dim": "M·L^2·T^-4",
+              "expect": "mismatch",
+              "note": "实际量纲检查得到等号左边为M·L^2·T^-2、右边为M·L^2·T^-4；两边不是同一物理量，因此该等式不成立。"
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "LED灯功率为 0.01 kW、使用 5 h，却把耗电量写成 0.002 kWh。",
+            "wrong_expr": "E = P/t",
+            "why": "0.01 kW×5 h=0.05 kWh；除法结果不仅数值错误，单位也不能表示耗电量。",
+            "caught_by": "量纲一致性",
+            "trap_test": {
+              "kind": "dimension",
+              "target": "E = P/t",
+              "expect": "mismatch",
+              "lhs_dim": "M·L^2·T^-2",
+              "rhs_dim": "M·L^2·T^-4",
+              "note": "正式引擎验证量纲不一致；不计作同量纲错误数值实测。"
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "只看额定功率较小，就断定设备一定更节能而不看使用时长。",
+            "why": "耗电量还取决于使用时间；小功率设备长时间运行也可能耗电更多。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "把5 h误作5 min换成小时。",
+            "wrong_expr": "E = P*t/60",
+            "why": "时间实际5 h，能耗0.05 kWh；误作5 min才需要除60，结果小60倍。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "LED灯五小时",
+              "expr": "P*t/60",
+              "ref": 0.05,
+              "tol": 5e-08
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "一盏功率为 0.01 kW 的 LED 灯连续使用 5 h，求消耗的电能。",
+          "solution": [
+            "E=P*t=0.01×5=0.05 kWh。",
+            "此结果只描述这段时间的用电量，不代表整套能源方案的环境影响。"
+          ],
+          "answer": "消耗电能为 0.05 kWh。"
+        },
+        "prereq": [
+          "power-01",
+          "power-02"
+        ],
+        "next": [
+          "sustain-03"
+        ],
+        "tags": [
+          "节能",
+          "电能",
+          "功率",
+          "使用时间",
+          "千瓦时"
+        ],
+        "core": [
+          {
+            "title": "能源利用与社会发展",
+            "text": "能源是可提供能量的资源。煤、石油、天然气为化石能源，按形成速度通常属不可再生；太阳、风、水等属可再生。一次能源来自自然界，电能等二次能源通常需转化制得。不同方案要比较供应、效率、污染、资源和安全，不能把“电器没有排烟”当全链条零排放。"
+          },
+          {
+            "title": "本章素养回顾（原创任务）",
+            "text": "选择本章一个现象，写出结论、成立条件和证据；用另一条本章规律复核解释是否矛盾。指出一次测量或模型的局限，并说明还需什么证据；数值通过不替代概念辨析。"
+          }
+        ],
+        "learning_scope": "初中"
+      },
+      "error_index": 1,
+      "chapter": "能源与可持续发展"
+    },
+    "diagnostic-sustain-01-3": {
+      "point": {
+        "id": "sustain-01",
+        "title": "能源利用与社会发展中的耗电估算",
+        "level": "基础",
+        "definition": "能源利用支撑照明、交通、生产和现代生活。对电器而言，在功率近似稳定时，消耗的电能与功率和使用时间有关；用电能表记录的千瓦时可以直接用于生活中的用电估算。",
+        "meaning": "社会发展会带来更多能源需求，因此既要保证合理用能，也要减少不必要的浪费。比较同一项用电服务的耗电量时，应确认功率和使用时间的单位一致；当功率用 kW、时间用 h 时，乘积直接得到 kWh。该关系只计算用电量，不足以单独评价能源来源的环境影响或可持续性。",
+        "symbols": {
+          "P": {
+            "desc": "用电器的工作功率",
+            "unit": "kW"
+          },
+          "t": {
+            "desc": "用电时间",
+            "unit": "h"
+          },
+          "E": {
+            "desc": "消耗的电能",
+            "unit": "kWh"
+          }
+        },
+        "scenarios": {
+          "LED灯五小时": {
+            "P": 0.01,
+            "t": 5,
+            "E": 0.05
+          },
+          "教室照明十小时": {
+            "P": 0.04,
+            "t": 10,
+            "E": 0.4
+          }
+        },
+        "formulas": [
+          {
+            "name": "功率和时间求耗电量",
+            "expr": "E = P*t",
+            "when": "P 用 kW、t 用 h，所得电能 E 用 kWh。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "LED灯五小时",
+                "expr": "P*t",
+                "ref": 0.05,
+                "note": "0.01 kW×5 h=0.05 kWh。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "教室照明十小时",
+                "expr": "P*t",
+                "ref": 0.4,
+                "note": "0.04 kW×10 h=0.4 kWh。"
+              },
+              {
+                "type": "direction",
+                "scenario": "LED灯五小时",
+                "var": "t",
+                "lo": 0,
+                "hi": 100,
+                "expr": "P*t",
+                "expect": "up",
+                "note": "功率固定时，使用时间越长，耗电量越多。"
+              },
+              {
+                "type": "scan",
+                "scenario": "LED灯五小时",
+                "var": "t",
+                "lo": 0,
+                "hi": 10000,
+                "note": "扫描非负使用时间，电能计算线性稳定。"
+              },
+              {
+                "type": "consistency",
+                "scenario": "LED灯五小时",
+                "with": "sustain-01|功率和时间求耗电量",
+                "with_expr": "E",
+                "target": "消耗的电能",
+                "note": "直接求本公式输出，与情境中另列的E设计基准核对；数据是设计示例，不是实测。用于核对定义、反算或边界值，不宣称不同物理原理互证。",
+                "verification_kind": "独立设计情境数据核对",
+                "tol": 5.000000000000001e-07
+              }
+            ]
+          },
+          {
+            "name": "由耗电量和使用时间求平均功率",
+            "expr": "P = E/t",
+            "when": "电能 E 用 kWh、时间 t 用 h，所得平均功率 P 用 kW。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "LED灯五小时",
+                "expr": "E/t",
+                "ref": 0.01,
+                "note": "0.05 kWh÷5 h=0.01 kW。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "教室照明十小时",
+                "expr": "E/t",
+                "ref": 0.04,
+                "note": "0.4 kWh÷10 h=0.04 kW。"
+              },
+              {
+                "type": "direction",
+                "scenario": "LED灯五小时",
+                "var": "E",
+                "lo": 0,
+                "hi": 1,
+                "expr": "E/t",
+                "expect": "up",
+                "note": "时间固定时，耗电量越多，平均功率越大。"
+              },
+              {
+                "type": "scan",
+                "scenario": "LED灯五小时",
+                "var": "t",
+                "lo": 0.01,
+                "hi": 10000,
+                "note": "扫描正时间，反算平均功率时不除以零。"
+              },
+              {
+                "type": "consistency",
+                "scenario": "LED灯五小时",
+                "with": "sustain-01|由耗电量和使用时间求平均功率",
+                "with_expr": "P",
+                "target": "用电器的工作功率",
+                "note": "直接求本公式输出，与情境中另列的P设计基准核对；数据是设计示例，不是实测。用于核对定义、反算或边界值，不宣称不同物理原理互证。",
+                "verification_kind": "独立设计情境数据核对",
+                "tol": 1.0000000000000001e-07
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "读取用电器铭牌或题目给出的工作功率。",
+          "把功率统一成 kW、时间统一成 h。",
+          "功率乘以使用时间，得到以 kWh 表示的电能。",
+          "同一类服务下比较不同设备或不同时长的耗电量，避免只凭额定功率判断。"
+        ],
+        "errors": [
+          {
+            "wrong": "把耗电量写成功率除以使用时间。",
+            "wrong_expr": "E = P/t",
+            "why": "耗电量等于功率乘以时间；功率再除以时间会得到功率变化率，不是电能。",
+            "caught_by": "量纲一致性",
+            "trap_test": {
+              "kind": "dimension",
+              "target": "E = P/t",
+              "lhs_dim": "M·L^2·T^-2",
+              "rhs_dim": "M·L^2·T^-4",
+              "expect": "mismatch",
+              "note": "实际量纲检查得到等号左边为M·L^2·T^-2、右边为M·L^2·T^-4；两边不是同一物理量，因此该等式不成立。"
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "LED灯功率为 0.01 kW、使用 5 h，却把耗电量写成 0.002 kWh。",
+            "wrong_expr": "E = P/t",
+            "why": "0.01 kW×5 h=0.05 kWh；除法结果不仅数值错误，单位也不能表示耗电量。",
+            "caught_by": "量纲一致性",
+            "trap_test": {
+              "kind": "dimension",
+              "target": "E = P/t",
+              "expect": "mismatch",
+              "lhs_dim": "M·L^2·T^-2",
+              "rhs_dim": "M·L^2·T^-4",
+              "note": "正式引擎验证量纲不一致；不计作同量纲错误数值实测。"
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "只看额定功率较小，就断定设备一定更节能而不看使用时长。",
+            "why": "耗电量还取决于使用时间；小功率设备长时间运行也可能耗电更多。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "把5 h误作5 min换成小时。",
+            "wrong_expr": "E = P*t/60",
+            "why": "时间实际5 h，能耗0.05 kWh；误作5 min才需要除60，结果小60倍。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "LED灯五小时",
+              "expr": "P*t/60",
+              "ref": 0.05,
+              "tol": 5e-08
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "一盏功率为 0.01 kW 的 LED 灯连续使用 5 h，求消耗的电能。",
+          "solution": [
+            "E=P*t=0.01×5=0.05 kWh。",
+            "此结果只描述这段时间的用电量，不代表整套能源方案的环境影响。"
+          ],
+          "answer": "消耗电能为 0.05 kWh。"
+        },
+        "prereq": [
+          "power-01",
+          "power-02"
+        ],
+        "next": [
+          "sustain-03"
+        ],
+        "tags": [
+          "节能",
+          "电能",
+          "功率",
+          "使用时间",
+          "千瓦时"
+        ],
+        "core": [
+          {
+            "title": "能源利用与社会发展",
+            "text": "能源是可提供能量的资源。煤、石油、天然气为化石能源，按形成速度通常属不可再生；太阳、风、水等属可再生。一次能源来自自然界，电能等二次能源通常需转化制得。不同方案要比较供应、效率、污染、资源和安全，不能把“电器没有排烟”当全链条零排放。"
+          },
+          {
+            "title": "本章素养回顾（原创任务）",
+            "text": "选择本章一个现象，写出结论、成立条件和证据；用另一条本章规律复核解释是否矛盾。指出一次测量或模型的局限，并说明还需什么证据；数值通过不替代概念辨析。"
+          }
+        ],
+        "learning_scope": "初中"
+      },
+      "error_index": 2,
+      "chapter": "能源与可持续发展"
+    },
+    "diagnostic-sustain-01-4": {
+      "point": {
+        "id": "sustain-01",
+        "title": "能源利用与社会发展中的耗电估算",
+        "level": "基础",
+        "definition": "能源利用支撑照明、交通、生产和现代生活。对电器而言，在功率近似稳定时，消耗的电能与功率和使用时间有关；用电能表记录的千瓦时可以直接用于生活中的用电估算。",
+        "meaning": "社会发展会带来更多能源需求，因此既要保证合理用能，也要减少不必要的浪费。比较同一项用电服务的耗电量时，应确认功率和使用时间的单位一致；当功率用 kW、时间用 h 时，乘积直接得到 kWh。该关系只计算用电量，不足以单独评价能源来源的环境影响或可持续性。",
+        "symbols": {
+          "P": {
+            "desc": "用电器的工作功率",
+            "unit": "kW"
+          },
+          "t": {
+            "desc": "用电时间",
+            "unit": "h"
+          },
+          "E": {
+            "desc": "消耗的电能",
+            "unit": "kWh"
+          }
+        },
+        "scenarios": {
+          "LED灯五小时": {
+            "P": 0.01,
+            "t": 5,
+            "E": 0.05
+          },
+          "教室照明十小时": {
+            "P": 0.04,
+            "t": 10,
+            "E": 0.4
+          }
+        },
+        "formulas": [
+          {
+            "name": "功率和时间求耗电量",
+            "expr": "E = P*t",
+            "when": "P 用 kW、t 用 h，所得电能 E 用 kWh。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "LED灯五小时",
+                "expr": "P*t",
+                "ref": 0.05,
+                "note": "0.01 kW×5 h=0.05 kWh。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "教室照明十小时",
+                "expr": "P*t",
+                "ref": 0.4,
+                "note": "0.04 kW×10 h=0.4 kWh。"
+              },
+              {
+                "type": "direction",
+                "scenario": "LED灯五小时",
+                "var": "t",
+                "lo": 0,
+                "hi": 100,
+                "expr": "P*t",
+                "expect": "up",
+                "note": "功率固定时，使用时间越长，耗电量越多。"
+              },
+              {
+                "type": "scan",
+                "scenario": "LED灯五小时",
+                "var": "t",
+                "lo": 0,
+                "hi": 10000,
+                "note": "扫描非负使用时间，电能计算线性稳定。"
+              },
+              {
+                "type": "consistency",
+                "scenario": "LED灯五小时",
+                "with": "sustain-01|功率和时间求耗电量",
+                "with_expr": "E",
+                "target": "消耗的电能",
+                "note": "直接求本公式输出，与情境中另列的E设计基准核对；数据是设计示例，不是实测。用于核对定义、反算或边界值，不宣称不同物理原理互证。",
+                "verification_kind": "独立设计情境数据核对",
+                "tol": 5.000000000000001e-07
+              }
+            ]
+          },
+          {
+            "name": "由耗电量和使用时间求平均功率",
+            "expr": "P = E/t",
+            "when": "电能 E 用 kWh、时间 t 用 h，所得平均功率 P 用 kW。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "LED灯五小时",
+                "expr": "E/t",
+                "ref": 0.01,
+                "note": "0.05 kWh÷5 h=0.01 kW。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "教室照明十小时",
+                "expr": "E/t",
+                "ref": 0.04,
+                "note": "0.4 kWh÷10 h=0.04 kW。"
+              },
+              {
+                "type": "direction",
+                "scenario": "LED灯五小时",
+                "var": "E",
+                "lo": 0,
+                "hi": 1,
+                "expr": "E/t",
+                "expect": "up",
+                "note": "时间固定时，耗电量越多，平均功率越大。"
+              },
+              {
+                "type": "scan",
+                "scenario": "LED灯五小时",
+                "var": "t",
+                "lo": 0.01,
+                "hi": 10000,
+                "note": "扫描正时间，反算平均功率时不除以零。"
+              },
+              {
+                "type": "consistency",
+                "scenario": "LED灯五小时",
+                "with": "sustain-01|由耗电量和使用时间求平均功率",
+                "with_expr": "P",
+                "target": "用电器的工作功率",
+                "note": "直接求本公式输出，与情境中另列的P设计基准核对；数据是设计示例，不是实测。用于核对定义、反算或边界值，不宣称不同物理原理互证。",
+                "verification_kind": "独立设计情境数据核对",
+                "tol": 1.0000000000000001e-07
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "读取用电器铭牌或题目给出的工作功率。",
+          "把功率统一成 kW、时间统一成 h。",
+          "功率乘以使用时间，得到以 kWh 表示的电能。",
+          "同一类服务下比较不同设备或不同时长的耗电量，避免只凭额定功率判断。"
+        ],
+        "errors": [
+          {
+            "wrong": "把耗电量写成功率除以使用时间。",
+            "wrong_expr": "E = P/t",
+            "why": "耗电量等于功率乘以时间；功率再除以时间会得到功率变化率，不是电能。",
+            "caught_by": "量纲一致性",
+            "trap_test": {
+              "kind": "dimension",
+              "target": "E = P/t",
+              "lhs_dim": "M·L^2·T^-2",
+              "rhs_dim": "M·L^2·T^-4",
+              "expect": "mismatch",
+              "note": "实际量纲检查得到等号左边为M·L^2·T^-2、右边为M·L^2·T^-4；两边不是同一物理量，因此该等式不成立。"
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "LED灯功率为 0.01 kW、使用 5 h，却把耗电量写成 0.002 kWh。",
+            "wrong_expr": "E = P/t",
+            "why": "0.01 kW×5 h=0.05 kWh；除法结果不仅数值错误，单位也不能表示耗电量。",
+            "caught_by": "量纲一致性",
+            "trap_test": {
+              "kind": "dimension",
+              "target": "E = P/t",
+              "expect": "mismatch",
+              "lhs_dim": "M·L^2·T^-2",
+              "rhs_dim": "M·L^2·T^-4",
+              "note": "正式引擎验证量纲不一致；不计作同量纲错误数值实测。"
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "只看额定功率较小，就断定设备一定更节能而不看使用时长。",
+            "why": "耗电量还取决于使用时间；小功率设备长时间运行也可能耗电更多。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "把5 h误作5 min换成小时。",
+            "wrong_expr": "E = P*t/60",
+            "why": "时间实际5 h，能耗0.05 kWh；误作5 min才需要除60，结果小60倍。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "LED灯五小时",
+              "expr": "P*t/60",
+              "ref": 0.05,
+              "tol": 5e-08
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "一盏功率为 0.01 kW 的 LED 灯连续使用 5 h，求消耗的电能。",
+          "solution": [
+            "E=P*t=0.01×5=0.05 kWh。",
+            "此结果只描述这段时间的用电量，不代表整套能源方案的环境影响。"
+          ],
+          "answer": "消耗电能为 0.05 kWh。"
+        },
+        "prereq": [
+          "power-01",
+          "power-02"
+        ],
+        "next": [
+          "sustain-03"
+        ],
+        "tags": [
+          "节能",
+          "电能",
+          "功率",
+          "使用时间",
+          "千瓦时"
+        ],
+        "core": [
+          {
+            "title": "能源利用与社会发展",
+            "text": "能源是可提供能量的资源。煤、石油、天然气为化石能源，按形成速度通常属不可再生；太阳、风、水等属可再生。一次能源来自自然界，电能等二次能源通常需转化制得。不同方案要比较供应、效率、污染、资源和安全，不能把“电器没有排烟”当全链条零排放。"
+          },
+          {
+            "title": "本章素养回顾（原创任务）",
+            "text": "选择本章一个现象，写出结论、成立条件和证据；用另一条本章规律复核解释是否矛盾。指出一次测量或模型的局限，并说明还需什么证据；数值通过不替代概念辨析。"
+          }
+        ],
+        "learning_scope": "初中"
+      },
+      "error_index": 3,
+      "chapter": "能源与可持续发展"
+    },
+    "diagnostic-sustain-03-1": {
+      "point": {
+        "id": "sustain-03",
+        "title": "核能",
+        "level": "基础",
+        "definition": "核能储存在原子核内部，核裂变和核聚变过程都能释放核能。核电站主要利用核裂变释放的能量加热介质，再通过汽轮机和发电机把能量逐步转化为电能；初中阶段认识其原理链条和安全、环境影响，不要求使用质能方程计算。",
+        "meaning": "核电站不是把核能直接变成电能：能量会经历核能、内能、机械能和电能等形式的转化。若已知电站对外输出的电功率，可以用功率乘运行时间估算一段时间输出的电能；这是通用电功率关系的应用，不是核反应释放能量的预测公式。讨论核能时还应区分运行排放、核废料管理和事故风险等不同问题。",
+        "symbols": {
+          "P_el": {
+            "desc": "核电站对外输出的电功率",
+            "unit": "W"
+          },
+          "t_n": {
+            "desc": "持续输出的时间",
+            "unit": "s"
+          },
+          "E_el": {
+            "desc": "这段时间输出的电能",
+            "unit": "J"
+          }
+        },
+        "scenarios": {
+          "核电站一小时输出": {
+            "P_el": 1000000000,
+            "t_n": 3600,
+            "E_el": 3600000000000
+          },
+          "核电站两小时输出": {
+            "P_el": 500000000,
+            "t_n": 7200,
+            "E_el": 3600000000000
+          }
+        },
+        "formulas": [
+          {
+            "name": "由电功率估算核电站输出电能",
+            "expr": "E_el = P_el*t_n",
+            "when": "仅作已知电学或能量数据的应用，不验证本卡定性规律。对外电功率在所计时间内近似稳定，时间用 s、电功率用 W。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "核电站一小时输出",
+                "expr": "P_el*t_n",
+                "ref": 3600000000000,
+                "note": "1.0×10^9 W×3600 s=3.6×10^12 J。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "核电站两小时输出",
+                "expr": "P_el*t_n",
+                "ref": 3600000000000,
+                "note": "5.0×10^8 W×7200 s=3.6×10^12 J。"
+              },
+              {
+                "type": "direction",
+                "scenario": "核电站一小时输出",
+                "var": "t_n",
+                "lo": 0,
+                "hi": 100000,
+                "expr": "P_el*t_n",
+                "expect": "up",
+                "note": "输出功率固定时，运行时间越长，累计输出电能越多。"
+              },
+              {
+                "type": "scan",
+                "scenario": "核电站一小时输出",
+                "var": "t_n",
+                "lo": 0,
+                "hi": 10000000,
+                "note": "扫描非负运行时间，输出电能保持有限。"
+              },
+              {
+                "type": "consistency",
+                "scenario": "核电站一小时输出",
+                "with": "sustain-03|由电功率估算核电站输出电能",
+                "with_expr": "E_el",
+                "target": "这段时间输出的电能",
+                "note": "直接求本公式输出，与情境中另列的E_el设计基准核对；数据是设计示例，不是实测。用于核对定义、反算或边界值，不宣称不同物理原理互证。",
+                "verification_kind": "独立设计情境数据核对"
+              }
+            ]
+          },
+          {
+            "name": "由输出电能和时间求平均电功率",
+            "expr": "P_el = E_el/t_n",
+            "when": "仅作已知电学或能量数据的应用，不验证本卡定性规律。输出电能和时间对应同一过程，通电时间 大于 0。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "核电站一小时输出",
+                "expr": "E_el/t_n",
+                "ref": 1000000000,
+                "note": "3.6×10^12 J÷3600 s=1.0×10^9 W。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "核电站两小时输出",
+                "expr": "E_el/t_n",
+                "ref": 500000000,
+                "note": "3.6×10^12 J÷7200 s=5.0×10^8 W。"
+              },
+              {
+                "type": "direction",
+                "scenario": "核电站一小时输出",
+                "var": "E_el",
+                "lo": 0,
+                "hi": 10000000000000,
+                "expr": "E_el/t_n",
+                "expect": "up",
+                "note": "时间固定时，输出电能越多，平均电功率越大。"
+              },
+              {
+                "type": "scan",
+                "scenario": "核电站一小时输出",
+                "var": "t_n",
+                "lo": 0.1,
+                "hi": 10000000,
+                "note": "扫描正时间，反算功率时不会除以零。"
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "核裂变释放的核能先转化为内能，再驱动汽轮机和发电机。",
+          "电站输出电功率表示单位时间输出的电能。",
+          "当功率近似稳定时，用输出功率乘运行时间估算输出电能。",
+          "这一估算只计算已知的电功率输出，不从反应物质量推算核反应能量。"
+        ],
+        "errors": [
+          {
+            "wrong": "把核能说成在电站内一步直接变成电能。",
+            "why": "核电站先通过裂变加热介质，再驱动汽轮机和发电机，能量经历多个转化环节。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "把输出电能写成输出功率除以运行时间。",
+            "wrong_expr": "E_el = P_el/t_n",
+            "why": "输出电能是功率对时间的累积，应将功率乘运行时间；相除得到的单位也不再是焦耳。",
+            "caught_by": "量纲一致性",
+            "trap_test": {
+              "kind": "dimension",
+              "target": "E_el = P_el/t_n",
+              "lhs_dim": "M·L^2·T^-2",
+              "rhs_dim": "M·L^2·T^-4",
+              "expect": "mismatch",
+              "note": "实际量纲检查得到等号左边为M·L^2·T^-2、右边为M·L^2·T^-4；两边不是同一物理量，因此该等式不成立。"
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "核电站 1.0×10^9 W 运行 3600 s，误将时间除以 3600 再代入。",
+            "wrong_expr": "E_el = P_el*(t_n/3600)",
+            "why": "题目给出的运行时间已是秒，重复除以 3600 会把应有输出电能缩小 3600 倍。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "核电站一小时输出",
+              "expr": "P_el*(t_n/3600)",
+              "ref": 3600000000000
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "某发电装置对外输出功率为 1.0×10^9 W，若连续输出 3600 s，估算输出电能。",
+          "solution": [
+            "E_el=P_el*t_n=1.0×10^9×3600=3.6×10^12 J。",
+            "这是输出电能估算，不能据此倒推核燃料释放能量。"
+          ],
+          "answer": "输出电能约为 3.6×10^12 J。"
+        },
+        "prereq": [
+          "power-02",
+          "energy-04"
+        ],
+        "next": [
+          "sustain-04"
+        ],
+        "tags": [
+          "核能",
+          "核裂变",
+          "核聚变",
+          "核电站",
+          "能量转化",
+          "运行风险"
+        ],
+        "core": [
+          {
+            "title": "核能",
+            "text": "裂变把重原子核分成较轻核，聚变使轻核结合成较重核，在相应反应条件下可释放能量。核电站使用受控裂变链式反应加热工质，经汽轮机、发电机转为电能；太阳能量主要来自核聚变。核废料、辐射防护和事故风险都需专业管理，不把核能等同化学燃烧。"
+          }
+        ],
+        "learning_scope": "初中"
+      },
+      "error_index": 0,
+      "chapter": "能源与可持续发展"
+    },
+    "diagnostic-sustain-03-2": {
+      "point": {
+        "id": "sustain-03",
+        "title": "核能",
+        "level": "基础",
+        "definition": "核能储存在原子核内部，核裂变和核聚变过程都能释放核能。核电站主要利用核裂变释放的能量加热介质，再通过汽轮机和发电机把能量逐步转化为电能；初中阶段认识其原理链条和安全、环境影响，不要求使用质能方程计算。",
+        "meaning": "核电站不是把核能直接变成电能：能量会经历核能、内能、机械能和电能等形式的转化。若已知电站对外输出的电功率，可以用功率乘运行时间估算一段时间输出的电能；这是通用电功率关系的应用，不是核反应释放能量的预测公式。讨论核能时还应区分运行排放、核废料管理和事故风险等不同问题。",
+        "symbols": {
+          "P_el": {
+            "desc": "核电站对外输出的电功率",
+            "unit": "W"
+          },
+          "t_n": {
+            "desc": "持续输出的时间",
+            "unit": "s"
+          },
+          "E_el": {
+            "desc": "这段时间输出的电能",
+            "unit": "J"
+          }
+        },
+        "scenarios": {
+          "核电站一小时输出": {
+            "P_el": 1000000000,
+            "t_n": 3600,
+            "E_el": 3600000000000
+          },
+          "核电站两小时输出": {
+            "P_el": 500000000,
+            "t_n": 7200,
+            "E_el": 3600000000000
+          }
+        },
+        "formulas": [
+          {
+            "name": "由电功率估算核电站输出电能",
+            "expr": "E_el = P_el*t_n",
+            "when": "仅作已知电学或能量数据的应用，不验证本卡定性规律。对外电功率在所计时间内近似稳定，时间用 s、电功率用 W。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "核电站一小时输出",
+                "expr": "P_el*t_n",
+                "ref": 3600000000000,
+                "note": "1.0×10^9 W×3600 s=3.6×10^12 J。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "核电站两小时输出",
+                "expr": "P_el*t_n",
+                "ref": 3600000000000,
+                "note": "5.0×10^8 W×7200 s=3.6×10^12 J。"
+              },
+              {
+                "type": "direction",
+                "scenario": "核电站一小时输出",
+                "var": "t_n",
+                "lo": 0,
+                "hi": 100000,
+                "expr": "P_el*t_n",
+                "expect": "up",
+                "note": "输出功率固定时，运行时间越长，累计输出电能越多。"
+              },
+              {
+                "type": "scan",
+                "scenario": "核电站一小时输出",
+                "var": "t_n",
+                "lo": 0,
+                "hi": 10000000,
+                "note": "扫描非负运行时间，输出电能保持有限。"
+              },
+              {
+                "type": "consistency",
+                "scenario": "核电站一小时输出",
+                "with": "sustain-03|由电功率估算核电站输出电能",
+                "with_expr": "E_el",
+                "target": "这段时间输出的电能",
+                "note": "直接求本公式输出，与情境中另列的E_el设计基准核对；数据是设计示例，不是实测。用于核对定义、反算或边界值，不宣称不同物理原理互证。",
+                "verification_kind": "独立设计情境数据核对"
+              }
+            ]
+          },
+          {
+            "name": "由输出电能和时间求平均电功率",
+            "expr": "P_el = E_el/t_n",
+            "when": "仅作已知电学或能量数据的应用，不验证本卡定性规律。输出电能和时间对应同一过程，通电时间 大于 0。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "核电站一小时输出",
+                "expr": "E_el/t_n",
+                "ref": 1000000000,
+                "note": "3.6×10^12 J÷3600 s=1.0×10^9 W。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "核电站两小时输出",
+                "expr": "E_el/t_n",
+                "ref": 500000000,
+                "note": "3.6×10^12 J÷7200 s=5.0×10^8 W。"
+              },
+              {
+                "type": "direction",
+                "scenario": "核电站一小时输出",
+                "var": "E_el",
+                "lo": 0,
+                "hi": 10000000000000,
+                "expr": "E_el/t_n",
+                "expect": "up",
+                "note": "时间固定时，输出电能越多，平均电功率越大。"
+              },
+              {
+                "type": "scan",
+                "scenario": "核电站一小时输出",
+                "var": "t_n",
+                "lo": 0.1,
+                "hi": 10000000,
+                "note": "扫描正时间，反算功率时不会除以零。"
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "核裂变释放的核能先转化为内能，再驱动汽轮机和发电机。",
+          "电站输出电功率表示单位时间输出的电能。",
+          "当功率近似稳定时，用输出功率乘运行时间估算输出电能。",
+          "这一估算只计算已知的电功率输出，不从反应物质量推算核反应能量。"
+        ],
+        "errors": [
+          {
+            "wrong": "把核能说成在电站内一步直接变成电能。",
+            "why": "核电站先通过裂变加热介质，再驱动汽轮机和发电机，能量经历多个转化环节。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "把输出电能写成输出功率除以运行时间。",
+            "wrong_expr": "E_el = P_el/t_n",
+            "why": "输出电能是功率对时间的累积，应将功率乘运行时间；相除得到的单位也不再是焦耳。",
+            "caught_by": "量纲一致性",
+            "trap_test": {
+              "kind": "dimension",
+              "target": "E_el = P_el/t_n",
+              "lhs_dim": "M·L^2·T^-2",
+              "rhs_dim": "M·L^2·T^-4",
+              "expect": "mismatch",
+              "note": "实际量纲检查得到等号左边为M·L^2·T^-2、右边为M·L^2·T^-4；两边不是同一物理量，因此该等式不成立。"
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "核电站 1.0×10^9 W 运行 3600 s，误将时间除以 3600 再代入。",
+            "wrong_expr": "E_el = P_el*(t_n/3600)",
+            "why": "题目给出的运行时间已是秒，重复除以 3600 会把应有输出电能缩小 3600 倍。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "核电站一小时输出",
+              "expr": "P_el*(t_n/3600)",
+              "ref": 3600000000000
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "某发电装置对外输出功率为 1.0×10^9 W，若连续输出 3600 s，估算输出电能。",
+          "solution": [
+            "E_el=P_el*t_n=1.0×10^9×3600=3.6×10^12 J。",
+            "这是输出电能估算，不能据此倒推核燃料释放能量。"
+          ],
+          "answer": "输出电能约为 3.6×10^12 J。"
+        },
+        "prereq": [
+          "power-02",
+          "energy-04"
+        ],
+        "next": [
+          "sustain-04"
+        ],
+        "tags": [
+          "核能",
+          "核裂变",
+          "核聚变",
+          "核电站",
+          "能量转化",
+          "运行风险"
+        ],
+        "core": [
+          {
+            "title": "核能",
+            "text": "裂变把重原子核分成较轻核，聚变使轻核结合成较重核，在相应反应条件下可释放能量。核电站使用受控裂变链式反应加热工质，经汽轮机、发电机转为电能；太阳能量主要来自核聚变。核废料、辐射防护和事故风险都需专业管理，不把核能等同化学燃烧。"
+          }
+        ],
+        "learning_scope": "初中"
+      },
+      "error_index": 1,
+      "chapter": "能源与可持续发展"
+    },
+    "diagnostic-sustain-03-3": {
+      "point": {
+        "id": "sustain-03",
+        "title": "核能",
+        "level": "基础",
+        "definition": "核能储存在原子核内部，核裂变和核聚变过程都能释放核能。核电站主要利用核裂变释放的能量加热介质，再通过汽轮机和发电机把能量逐步转化为电能；初中阶段认识其原理链条和安全、环境影响，不要求使用质能方程计算。",
+        "meaning": "核电站不是把核能直接变成电能：能量会经历核能、内能、机械能和电能等形式的转化。若已知电站对外输出的电功率，可以用功率乘运行时间估算一段时间输出的电能；这是通用电功率关系的应用，不是核反应释放能量的预测公式。讨论核能时还应区分运行排放、核废料管理和事故风险等不同问题。",
+        "symbols": {
+          "P_el": {
+            "desc": "核电站对外输出的电功率",
+            "unit": "W"
+          },
+          "t_n": {
+            "desc": "持续输出的时间",
+            "unit": "s"
+          },
+          "E_el": {
+            "desc": "这段时间输出的电能",
+            "unit": "J"
+          }
+        },
+        "scenarios": {
+          "核电站一小时输出": {
+            "P_el": 1000000000,
+            "t_n": 3600,
+            "E_el": 3600000000000
+          },
+          "核电站两小时输出": {
+            "P_el": 500000000,
+            "t_n": 7200,
+            "E_el": 3600000000000
+          }
+        },
+        "formulas": [
+          {
+            "name": "由电功率估算核电站输出电能",
+            "expr": "E_el = P_el*t_n",
+            "when": "仅作已知电学或能量数据的应用，不验证本卡定性规律。对外电功率在所计时间内近似稳定，时间用 s、电功率用 W。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "核电站一小时输出",
+                "expr": "P_el*t_n",
+                "ref": 3600000000000,
+                "note": "1.0×10^9 W×3600 s=3.6×10^12 J。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "核电站两小时输出",
+                "expr": "P_el*t_n",
+                "ref": 3600000000000,
+                "note": "5.0×10^8 W×7200 s=3.6×10^12 J。"
+              },
+              {
+                "type": "direction",
+                "scenario": "核电站一小时输出",
+                "var": "t_n",
+                "lo": 0,
+                "hi": 100000,
+                "expr": "P_el*t_n",
+                "expect": "up",
+                "note": "输出功率固定时，运行时间越长，累计输出电能越多。"
+              },
+              {
+                "type": "scan",
+                "scenario": "核电站一小时输出",
+                "var": "t_n",
+                "lo": 0,
+                "hi": 10000000,
+                "note": "扫描非负运行时间，输出电能保持有限。"
+              },
+              {
+                "type": "consistency",
+                "scenario": "核电站一小时输出",
+                "with": "sustain-03|由电功率估算核电站输出电能",
+                "with_expr": "E_el",
+                "target": "这段时间输出的电能",
+                "note": "直接求本公式输出，与情境中另列的E_el设计基准核对；数据是设计示例，不是实测。用于核对定义、反算或边界值，不宣称不同物理原理互证。",
+                "verification_kind": "独立设计情境数据核对"
+              }
+            ]
+          },
+          {
+            "name": "由输出电能和时间求平均电功率",
+            "expr": "P_el = E_el/t_n",
+            "when": "仅作已知电学或能量数据的应用，不验证本卡定性规律。输出电能和时间对应同一过程，通电时间 大于 0。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "核电站一小时输出",
+                "expr": "E_el/t_n",
+                "ref": 1000000000,
+                "note": "3.6×10^12 J÷3600 s=1.0×10^9 W。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "核电站两小时输出",
+                "expr": "E_el/t_n",
+                "ref": 500000000,
+                "note": "3.6×10^12 J÷7200 s=5.0×10^8 W。"
+              },
+              {
+                "type": "direction",
+                "scenario": "核电站一小时输出",
+                "var": "E_el",
+                "lo": 0,
+                "hi": 10000000000000,
+                "expr": "E_el/t_n",
+                "expect": "up",
+                "note": "时间固定时，输出电能越多，平均电功率越大。"
+              },
+              {
+                "type": "scan",
+                "scenario": "核电站一小时输出",
+                "var": "t_n",
+                "lo": 0.1,
+                "hi": 10000000,
+                "note": "扫描正时间，反算功率时不会除以零。"
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "核裂变释放的核能先转化为内能，再驱动汽轮机和发电机。",
+          "电站输出电功率表示单位时间输出的电能。",
+          "当功率近似稳定时，用输出功率乘运行时间估算输出电能。",
+          "这一估算只计算已知的电功率输出，不从反应物质量推算核反应能量。"
+        ],
+        "errors": [
+          {
+            "wrong": "把核能说成在电站内一步直接变成电能。",
+            "why": "核电站先通过裂变加热介质，再驱动汽轮机和发电机，能量经历多个转化环节。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "把输出电能写成输出功率除以运行时间。",
+            "wrong_expr": "E_el = P_el/t_n",
+            "why": "输出电能是功率对时间的累积，应将功率乘运行时间；相除得到的单位也不再是焦耳。",
+            "caught_by": "量纲一致性",
+            "trap_test": {
+              "kind": "dimension",
+              "target": "E_el = P_el/t_n",
+              "lhs_dim": "M·L^2·T^-2",
+              "rhs_dim": "M·L^2·T^-4",
+              "expect": "mismatch",
+              "note": "实际量纲检查得到等号左边为M·L^2·T^-2、右边为M·L^2·T^-4；两边不是同一物理量，因此该等式不成立。"
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "核电站 1.0×10^9 W 运行 3600 s，误将时间除以 3600 再代入。",
+            "wrong_expr": "E_el = P_el*(t_n/3600)",
+            "why": "题目给出的运行时间已是秒，重复除以 3600 会把应有输出电能缩小 3600 倍。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "核电站一小时输出",
+              "expr": "P_el*(t_n/3600)",
+              "ref": 3600000000000
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "某发电装置对外输出功率为 1.0×10^9 W，若连续输出 3600 s，估算输出电能。",
+          "solution": [
+            "E_el=P_el*t_n=1.0×10^9×3600=3.6×10^12 J。",
+            "这是输出电能估算，不能据此倒推核燃料释放能量。"
+          ],
+          "answer": "输出电能约为 3.6×10^12 J。"
+        },
+        "prereq": [
+          "power-02",
+          "energy-04"
+        ],
+        "next": [
+          "sustain-04"
+        ],
+        "tags": [
+          "核能",
+          "核裂变",
+          "核聚变",
+          "核电站",
+          "能量转化",
+          "运行风险"
+        ],
+        "core": [
+          {
+            "title": "核能",
+            "text": "裂变把重原子核分成较轻核，聚变使轻核结合成较重核，在相应反应条件下可释放能量。核电站使用受控裂变链式反应加热工质，经汽轮机、发电机转为电能；太阳能量主要来自核聚变。核废料、辐射防护和事故风险都需专业管理，不把核能等同化学燃烧。"
+          }
+        ],
+        "learning_scope": "初中"
+      },
+      "error_index": 2,
+      "chapter": "能源与可持续发展"
+    },
+    "diagnostic-sustain-04-1": {
+      "point": {
+        "id": "sustain-04",
+        "title": "太阳能",
+        "level": "基础",
+        "definition": "太阳能来自太阳辐射，属于可再生能源，可用于光热和光伏等技术。太阳能热水器把辐射能转移给水的内能；太阳能电池则把部分光能转化为电能。设备的实际利用还受天气、面积、朝向和转换效率影响。",
+        "meaning": "估算太阳能热水器把水加热所需能量时，可把水看作吸收热量的物体，用水的比热容、质量和升高的温度计算吸收的热量。该关系只描述水获得的热量，不等于太阳辐射总能量；由于装置存在反射、散热等损失，太阳提供的能量通常更大。太阳能可再生，但并非任何时间和地点都能稳定提供相同功率。",
+        "symbols": {
+          "c_water": {
+            "desc": "水的比热容",
+            "unit": "J/kg/℃"
+          },
+          "m_water": {
+            "desc": "被加热水的质量",
+            "unit": "kg"
+          },
+          "dT": {
+            "desc": "水升高的温度",
+            "unit": "℃"
+          },
+          "Q_water": {
+            "desc": "水吸收的热量",
+            "unit": "J"
+          }
+        },
+        "scenarios": {
+          "太阳能热水器一": {
+            "c_water": 4200,
+            "m_water": 0.2,
+            "dT": 15,
+            "Q_water": 12600
+          },
+          "太阳能热水器二": {
+            "c_water": 4200,
+            "m_water": 0.5,
+            "dT": 20,
+            "Q_water": 42000
+          }
+        },
+        "formulas": [
+          {
+            "name": "估算水吸收的热量",
+            "expr": "Q_water = c_water*m_water*dT",
+            "when": "只计算水吸收的热量，忽略容器热容和散热；水的比热容用 J/kg/℃。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "太阳能热水器一",
+                "expr": "c_water*m_water*dT",
+                "ref": 12600,
+                "note": "4200×0.2×15=12600 J。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "太阳能热水器二",
+                "expr": "c_water*m_water*dT",
+                "ref": 42000,
+                "note": "4200×0.5×20=42000 J。"
+              },
+              {
+                "type": "direction",
+                "scenario": "太阳能热水器一",
+                "var": "m_water",
+                "lo": 0,
+                "hi": 5,
+                "expr": "c_water*m_water*dT",
+                "expect": "up",
+                "note": "比热容和升温值固定时，水越多，吸收热量越多。"
+              },
+              {
+                "type": "scan",
+                "scenario": "太阳能热水器一",
+                "var": "dT",
+                "lo": 0,
+                "hi": 100,
+                "note": "扫描非负升温范围，吸热量计算稳定。"
+              },
+              {
+                "type": "consistency",
+                "scenario": "太阳能热水器一",
+                "with": "sustain-04|估算水吸收的热量",
+                "with_expr": "Q_water",
+                "target": "水吸收的热量",
+                "note": "直接求本公式输出，与情境中另列的Q_water设计基准核对；数据是设计示例，不是实测。用于核对定义、反算或边界值，不宣称不同物理原理互证。",
+                "verification_kind": "独立设计情境数据核对"
+              }
+            ]
+          },
+          {
+            "name": "由吸收热量估算水的升温",
+            "expr": "dT = Q_water/(c_water*m_water)",
+            "when": "水的质量和比热容已知且非零，暂不计热损失。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "太阳能热水器一",
+                "expr": "Q_water/(c_water*m_water)",
+                "ref": 15,
+                "note": "12600÷(4200×0.2)=15 ℃。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "太阳能热水器二",
+                "expr": "Q_water/(c_water*m_water)",
+                "ref": 20,
+                "note": "42000÷(4200×0.5)=20 ℃。"
+              },
+              {
+                "type": "direction",
+                "scenario": "太阳能热水器一",
+                "var": "Q_water",
+                "lo": 0,
+                "hi": 100000,
+                "expr": "Q_water/(c_water*m_water)",
+                "expect": "up",
+                "note": "水的质量和比热容固定时，吸收热量越多，升温越大。"
+              },
+              {
+                "type": "scan",
+                "scenario": "太阳能热水器一",
+                "var": "m_water",
+                "lo": 0.001,
+                "hi": 100,
+                "note": "扫描正水质量，反算升温时不除以零。"
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "太阳辐射能被集热器吸收，并传给水。",
+          "先确定被加热水的质量和温度变化。",
+          "按水的比热容关系计算水吸收的热量。",
+          "由于集热器和管路会向环境散热，太阳输入能量不能简单等同于水获得的热量。"
+        ],
+        "errors": [
+          {
+            "wrong": "把太阳能热水器的太阳输入能量直接等同于水吸收的热量。",
+            "why": "太阳辐射到水之间会经过集热器和管路，途中有反射与散热，水吸收的热量只是输入能量的一部分。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "把水吸收的热量算成比热容乘质量再除以升温。",
+            "wrong_expr": "Q_water = c_water*m_water/dT",
+            "why": "水的吸热量随温升增大而增大；公式中应乘温升，除以温升还会破坏焦耳的量纲。",
+            "caught_by": "量纲一致性",
+            "trap_test": {
+              "kind": "dimension",
+              "target": "Q_water = c_water*m_water/dT",
+              "lhs_dim": "M·L^2·T^-2",
+              "rhs_dim": "M·L^2·T^-2·K^-2",
+              "expect": "mismatch",
+              "note": "实际量纲检查得到等号左边为M·L^2·T^-2、右边为M·L^2·T^-2·K^-2；两边不是同一物理量，因此该等式不成立。"
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "0.2 kg 水升高 15 ℃，误将热量算成 56 J。",
+            "wrong_expr": "Q_water = c_water*m_water/dT",
+            "why": "按 4200 J/kg/℃、0.2 kg 和 15 ℃ 相乘，结果为 12600 J；不能把温升放到分母。",
+            "caught_by": "量纲一致性",
+            "trap_test": {
+              "kind": "dimension",
+              "target": "Q_water = c_water*m_water/dT",
+              "expect": "mismatch",
+              "lhs_dim": "M·L^2·T^-2",
+              "rhs_dim": "M·L^2·T^-2·K^-2",
+              "note": "正式引擎验证量纲不一致；不计作同量纲错误数值实测。"
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "把0.2 kg的200 g数值仍按kg代入。",
+            "wrong_expr": "Q_water = c_water*(1000*m_water)*dT",
+            "why": "水质量应0.2 kg，吸热12600 J；按200 kg会误大千倍。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "太阳能热水器一",
+              "expr": "c_water*(1000*m_water)*dT",
+              "ref": 12600,
+              "tol": 1e-06
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "太阳能热水器使0.2 kg水温升高15 ℃，水的比热容4200 J/(kg·℃)，无物态变化，忽略散热，估算吸收热量。",
+          "solution": [
+            "Q_water=c_water*m_water*dT。",
+            "代入 4200×0.2×15=12600 J。",
+            "太阳能集热器实际输入能量还需考虑散热损失。"
+          ],
+          "answer": "水吸收的热量约为 1.26×10^4 J。"
+        },
+        "prereq": [
+          "energy-02",
+          "energy-03"
+        ],
+        "next": [
+          "sustain-02"
+        ],
+        "tags": [
+          "太阳能",
+          "光热利用",
+          "光伏",
+          "比热容",
+          "热水器",
+          "可再生能源"
+        ],
+        "core": [
+          {
+            "title": "太阳能",
+            "text": "太阳能可用于光热和光伏，分别把辐射能用于加热或转为电能，太阳辐射不是各地全天恒定的输入。可再生不代表设备无需材料、制造或维护，也不代表没有环境影响。比较热水器先计算水吸热，再讨论集热损失；不把水吸热量直接当全部太阳输入能量。"
+          }
+        ],
+        "learning_scope": "初中"
+      },
+      "error_index": 0,
+      "chapter": "能源与可持续发展"
+    },
+    "diagnostic-sustain-04-2": {
+      "point": {
+        "id": "sustain-04",
+        "title": "太阳能",
+        "level": "基础",
+        "definition": "太阳能来自太阳辐射，属于可再生能源，可用于光热和光伏等技术。太阳能热水器把辐射能转移给水的内能；太阳能电池则把部分光能转化为电能。设备的实际利用还受天气、面积、朝向和转换效率影响。",
+        "meaning": "估算太阳能热水器把水加热所需能量时，可把水看作吸收热量的物体，用水的比热容、质量和升高的温度计算吸收的热量。该关系只描述水获得的热量，不等于太阳辐射总能量；由于装置存在反射、散热等损失，太阳提供的能量通常更大。太阳能可再生，但并非任何时间和地点都能稳定提供相同功率。",
+        "symbols": {
+          "c_water": {
+            "desc": "水的比热容",
+            "unit": "J/kg/℃"
+          },
+          "m_water": {
+            "desc": "被加热水的质量",
+            "unit": "kg"
+          },
+          "dT": {
+            "desc": "水升高的温度",
+            "unit": "℃"
+          },
+          "Q_water": {
+            "desc": "水吸收的热量",
+            "unit": "J"
+          }
+        },
+        "scenarios": {
+          "太阳能热水器一": {
+            "c_water": 4200,
+            "m_water": 0.2,
+            "dT": 15,
+            "Q_water": 12600
+          },
+          "太阳能热水器二": {
+            "c_water": 4200,
+            "m_water": 0.5,
+            "dT": 20,
+            "Q_water": 42000
+          }
+        },
+        "formulas": [
+          {
+            "name": "估算水吸收的热量",
+            "expr": "Q_water = c_water*m_water*dT",
+            "when": "只计算水吸收的热量，忽略容器热容和散热；水的比热容用 J/kg/℃。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "太阳能热水器一",
+                "expr": "c_water*m_water*dT",
+                "ref": 12600,
+                "note": "4200×0.2×15=12600 J。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "太阳能热水器二",
+                "expr": "c_water*m_water*dT",
+                "ref": 42000,
+                "note": "4200×0.5×20=42000 J。"
+              },
+              {
+                "type": "direction",
+                "scenario": "太阳能热水器一",
+                "var": "m_water",
+                "lo": 0,
+                "hi": 5,
+                "expr": "c_water*m_water*dT",
+                "expect": "up",
+                "note": "比热容和升温值固定时，水越多，吸收热量越多。"
+              },
+              {
+                "type": "scan",
+                "scenario": "太阳能热水器一",
+                "var": "dT",
+                "lo": 0,
+                "hi": 100,
+                "note": "扫描非负升温范围，吸热量计算稳定。"
+              },
+              {
+                "type": "consistency",
+                "scenario": "太阳能热水器一",
+                "with": "sustain-04|估算水吸收的热量",
+                "with_expr": "Q_water",
+                "target": "水吸收的热量",
+                "note": "直接求本公式输出，与情境中另列的Q_water设计基准核对；数据是设计示例，不是实测。用于核对定义、反算或边界值，不宣称不同物理原理互证。",
+                "verification_kind": "独立设计情境数据核对"
+              }
+            ]
+          },
+          {
+            "name": "由吸收热量估算水的升温",
+            "expr": "dT = Q_water/(c_water*m_water)",
+            "when": "水的质量和比热容已知且非零，暂不计热损失。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "太阳能热水器一",
+                "expr": "Q_water/(c_water*m_water)",
+                "ref": 15,
+                "note": "12600÷(4200×0.2)=15 ℃。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "太阳能热水器二",
+                "expr": "Q_water/(c_water*m_water)",
+                "ref": 20,
+                "note": "42000÷(4200×0.5)=20 ℃。"
+              },
+              {
+                "type": "direction",
+                "scenario": "太阳能热水器一",
+                "var": "Q_water",
+                "lo": 0,
+                "hi": 100000,
+                "expr": "Q_water/(c_water*m_water)",
+                "expect": "up",
+                "note": "水的质量和比热容固定时，吸收热量越多，升温越大。"
+              },
+              {
+                "type": "scan",
+                "scenario": "太阳能热水器一",
+                "var": "m_water",
+                "lo": 0.001,
+                "hi": 100,
+                "note": "扫描正水质量，反算升温时不除以零。"
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "太阳辐射能被集热器吸收，并传给水。",
+          "先确定被加热水的质量和温度变化。",
+          "按水的比热容关系计算水吸收的热量。",
+          "由于集热器和管路会向环境散热，太阳输入能量不能简单等同于水获得的热量。"
+        ],
+        "errors": [
+          {
+            "wrong": "把太阳能热水器的太阳输入能量直接等同于水吸收的热量。",
+            "why": "太阳辐射到水之间会经过集热器和管路，途中有反射与散热，水吸收的热量只是输入能量的一部分。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "把水吸收的热量算成比热容乘质量再除以升温。",
+            "wrong_expr": "Q_water = c_water*m_water/dT",
+            "why": "水的吸热量随温升增大而增大；公式中应乘温升，除以温升还会破坏焦耳的量纲。",
+            "caught_by": "量纲一致性",
+            "trap_test": {
+              "kind": "dimension",
+              "target": "Q_water = c_water*m_water/dT",
+              "lhs_dim": "M·L^2·T^-2",
+              "rhs_dim": "M·L^2·T^-2·K^-2",
+              "expect": "mismatch",
+              "note": "实际量纲检查得到等号左边为M·L^2·T^-2、右边为M·L^2·T^-2·K^-2；两边不是同一物理量，因此该等式不成立。"
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "0.2 kg 水升高 15 ℃，误将热量算成 56 J。",
+            "wrong_expr": "Q_water = c_water*m_water/dT",
+            "why": "按 4200 J/kg/℃、0.2 kg 和 15 ℃ 相乘，结果为 12600 J；不能把温升放到分母。",
+            "caught_by": "量纲一致性",
+            "trap_test": {
+              "kind": "dimension",
+              "target": "Q_water = c_water*m_water/dT",
+              "expect": "mismatch",
+              "lhs_dim": "M·L^2·T^-2",
+              "rhs_dim": "M·L^2·T^-2·K^-2",
+              "note": "正式引擎验证量纲不一致；不计作同量纲错误数值实测。"
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "把0.2 kg的200 g数值仍按kg代入。",
+            "wrong_expr": "Q_water = c_water*(1000*m_water)*dT",
+            "why": "水质量应0.2 kg，吸热12600 J；按200 kg会误大千倍。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "太阳能热水器一",
+              "expr": "c_water*(1000*m_water)*dT",
+              "ref": 12600,
+              "tol": 1e-06
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "太阳能热水器使0.2 kg水温升高15 ℃，水的比热容4200 J/(kg·℃)，无物态变化，忽略散热，估算吸收热量。",
+          "solution": [
+            "Q_water=c_water*m_water*dT。",
+            "代入 4200×0.2×15=12600 J。",
+            "太阳能集热器实际输入能量还需考虑散热损失。"
+          ],
+          "answer": "水吸收的热量约为 1.26×10^4 J。"
+        },
+        "prereq": [
+          "energy-02",
+          "energy-03"
+        ],
+        "next": [
+          "sustain-02"
+        ],
+        "tags": [
+          "太阳能",
+          "光热利用",
+          "光伏",
+          "比热容",
+          "热水器",
+          "可再生能源"
+        ],
+        "core": [
+          {
+            "title": "太阳能",
+            "text": "太阳能可用于光热和光伏，分别把辐射能用于加热或转为电能，太阳辐射不是各地全天恒定的输入。可再生不代表设备无需材料、制造或维护，也不代表没有环境影响。比较热水器先计算水吸热，再讨论集热损失；不把水吸热量直接当全部太阳输入能量。"
+          }
+        ],
+        "learning_scope": "初中"
+      },
+      "error_index": 1,
+      "chapter": "能源与可持续发展"
+    },
+    "diagnostic-sustain-04-3": {
+      "point": {
+        "id": "sustain-04",
+        "title": "太阳能",
+        "level": "基础",
+        "definition": "太阳能来自太阳辐射，属于可再生能源，可用于光热和光伏等技术。太阳能热水器把辐射能转移给水的内能；太阳能电池则把部分光能转化为电能。设备的实际利用还受天气、面积、朝向和转换效率影响。",
+        "meaning": "估算太阳能热水器把水加热所需能量时，可把水看作吸收热量的物体，用水的比热容、质量和升高的温度计算吸收的热量。该关系只描述水获得的热量，不等于太阳辐射总能量；由于装置存在反射、散热等损失，太阳提供的能量通常更大。太阳能可再生，但并非任何时间和地点都能稳定提供相同功率。",
+        "symbols": {
+          "c_water": {
+            "desc": "水的比热容",
+            "unit": "J/kg/℃"
+          },
+          "m_water": {
+            "desc": "被加热水的质量",
+            "unit": "kg"
+          },
+          "dT": {
+            "desc": "水升高的温度",
+            "unit": "℃"
+          },
+          "Q_water": {
+            "desc": "水吸收的热量",
+            "unit": "J"
+          }
+        },
+        "scenarios": {
+          "太阳能热水器一": {
+            "c_water": 4200,
+            "m_water": 0.2,
+            "dT": 15,
+            "Q_water": 12600
+          },
+          "太阳能热水器二": {
+            "c_water": 4200,
+            "m_water": 0.5,
+            "dT": 20,
+            "Q_water": 42000
+          }
+        },
+        "formulas": [
+          {
+            "name": "估算水吸收的热量",
+            "expr": "Q_water = c_water*m_water*dT",
+            "when": "只计算水吸收的热量，忽略容器热容和散热；水的比热容用 J/kg/℃。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "太阳能热水器一",
+                "expr": "c_water*m_water*dT",
+                "ref": 12600,
+                "note": "4200×0.2×15=12600 J。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "太阳能热水器二",
+                "expr": "c_water*m_water*dT",
+                "ref": 42000,
+                "note": "4200×0.5×20=42000 J。"
+              },
+              {
+                "type": "direction",
+                "scenario": "太阳能热水器一",
+                "var": "m_water",
+                "lo": 0,
+                "hi": 5,
+                "expr": "c_water*m_water*dT",
+                "expect": "up",
+                "note": "比热容和升温值固定时，水越多，吸收热量越多。"
+              },
+              {
+                "type": "scan",
+                "scenario": "太阳能热水器一",
+                "var": "dT",
+                "lo": 0,
+                "hi": 100,
+                "note": "扫描非负升温范围，吸热量计算稳定。"
+              },
+              {
+                "type": "consistency",
+                "scenario": "太阳能热水器一",
+                "with": "sustain-04|估算水吸收的热量",
+                "with_expr": "Q_water",
+                "target": "水吸收的热量",
+                "note": "直接求本公式输出，与情境中另列的Q_water设计基准核对；数据是设计示例，不是实测。用于核对定义、反算或边界值，不宣称不同物理原理互证。",
+                "verification_kind": "独立设计情境数据核对"
+              }
+            ]
+          },
+          {
+            "name": "由吸收热量估算水的升温",
+            "expr": "dT = Q_water/(c_water*m_water)",
+            "when": "水的质量和比热容已知且非零，暂不计热损失。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "太阳能热水器一",
+                "expr": "Q_water/(c_water*m_water)",
+                "ref": 15,
+                "note": "12600÷(4200×0.2)=15 ℃。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "太阳能热水器二",
+                "expr": "Q_water/(c_water*m_water)",
+                "ref": 20,
+                "note": "42000÷(4200×0.5)=20 ℃。"
+              },
+              {
+                "type": "direction",
+                "scenario": "太阳能热水器一",
+                "var": "Q_water",
+                "lo": 0,
+                "hi": 100000,
+                "expr": "Q_water/(c_water*m_water)",
+                "expect": "up",
+                "note": "水的质量和比热容固定时，吸收热量越多，升温越大。"
+              },
+              {
+                "type": "scan",
+                "scenario": "太阳能热水器一",
+                "var": "m_water",
+                "lo": 0.001,
+                "hi": 100,
+                "note": "扫描正水质量，反算升温时不除以零。"
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "太阳辐射能被集热器吸收，并传给水。",
+          "先确定被加热水的质量和温度变化。",
+          "按水的比热容关系计算水吸收的热量。",
+          "由于集热器和管路会向环境散热，太阳输入能量不能简单等同于水获得的热量。"
+        ],
+        "errors": [
+          {
+            "wrong": "把太阳能热水器的太阳输入能量直接等同于水吸收的热量。",
+            "why": "太阳辐射到水之间会经过集热器和管路，途中有反射与散热，水吸收的热量只是输入能量的一部分。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "把水吸收的热量算成比热容乘质量再除以升温。",
+            "wrong_expr": "Q_water = c_water*m_water/dT",
+            "why": "水的吸热量随温升增大而增大；公式中应乘温升，除以温升还会破坏焦耳的量纲。",
+            "caught_by": "量纲一致性",
+            "trap_test": {
+              "kind": "dimension",
+              "target": "Q_water = c_water*m_water/dT",
+              "lhs_dim": "M·L^2·T^-2",
+              "rhs_dim": "M·L^2·T^-2·K^-2",
+              "expect": "mismatch",
+              "note": "实际量纲检查得到等号左边为M·L^2·T^-2、右边为M·L^2·T^-2·K^-2；两边不是同一物理量，因此该等式不成立。"
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "0.2 kg 水升高 15 ℃，误将热量算成 56 J。",
+            "wrong_expr": "Q_water = c_water*m_water/dT",
+            "why": "按 4200 J/kg/℃、0.2 kg 和 15 ℃ 相乘，结果为 12600 J；不能把温升放到分母。",
+            "caught_by": "量纲一致性",
+            "trap_test": {
+              "kind": "dimension",
+              "target": "Q_water = c_water*m_water/dT",
+              "expect": "mismatch",
+              "lhs_dim": "M·L^2·T^-2",
+              "rhs_dim": "M·L^2·T^-2·K^-2",
+              "note": "正式引擎验证量纲不一致；不计作同量纲错误数值实测。"
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "把0.2 kg的200 g数值仍按kg代入。",
+            "wrong_expr": "Q_water = c_water*(1000*m_water)*dT",
+            "why": "水质量应0.2 kg，吸热12600 J；按200 kg会误大千倍。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "太阳能热水器一",
+              "expr": "c_water*(1000*m_water)*dT",
+              "ref": 12600,
+              "tol": 1e-06
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "太阳能热水器使0.2 kg水温升高15 ℃，水的比热容4200 J/(kg·℃)，无物态变化，忽略散热，估算吸收热量。",
+          "solution": [
+            "Q_water=c_water*m_water*dT。",
+            "代入 4200×0.2×15=12600 J。",
+            "太阳能集热器实际输入能量还需考虑散热损失。"
+          ],
+          "answer": "水吸收的热量约为 1.26×10^4 J。"
+        },
+        "prereq": [
+          "energy-02",
+          "energy-03"
+        ],
+        "next": [
+          "sustain-02"
+        ],
+        "tags": [
+          "太阳能",
+          "光热利用",
+          "光伏",
+          "比热容",
+          "热水器",
+          "可再生能源"
+        ],
+        "core": [
+          {
+            "title": "太阳能",
+            "text": "太阳能可用于光热和光伏，分别把辐射能用于加热或转为电能，太阳辐射不是各地全天恒定的输入。可再生不代表设备无需材料、制造或维护，也不代表没有环境影响。比较热水器先计算水吸热，再讨论集热损失；不把水吸热量直接当全部太阳输入能量。"
+          }
+        ],
+        "learning_scope": "初中"
+      },
+      "error_index": 2,
+      "chapter": "能源与可持续发展"
+    },
+    "diagnostic-sustain-04-4": {
+      "point": {
+        "id": "sustain-04",
+        "title": "太阳能",
+        "level": "基础",
+        "definition": "太阳能来自太阳辐射，属于可再生能源，可用于光热和光伏等技术。太阳能热水器把辐射能转移给水的内能；太阳能电池则把部分光能转化为电能。设备的实际利用还受天气、面积、朝向和转换效率影响。",
+        "meaning": "估算太阳能热水器把水加热所需能量时，可把水看作吸收热量的物体，用水的比热容、质量和升高的温度计算吸收的热量。该关系只描述水获得的热量，不等于太阳辐射总能量；由于装置存在反射、散热等损失，太阳提供的能量通常更大。太阳能可再生，但并非任何时间和地点都能稳定提供相同功率。",
+        "symbols": {
+          "c_water": {
+            "desc": "水的比热容",
+            "unit": "J/kg/℃"
+          },
+          "m_water": {
+            "desc": "被加热水的质量",
+            "unit": "kg"
+          },
+          "dT": {
+            "desc": "水升高的温度",
+            "unit": "℃"
+          },
+          "Q_water": {
+            "desc": "水吸收的热量",
+            "unit": "J"
+          }
+        },
+        "scenarios": {
+          "太阳能热水器一": {
+            "c_water": 4200,
+            "m_water": 0.2,
+            "dT": 15,
+            "Q_water": 12600
+          },
+          "太阳能热水器二": {
+            "c_water": 4200,
+            "m_water": 0.5,
+            "dT": 20,
+            "Q_water": 42000
+          }
+        },
+        "formulas": [
+          {
+            "name": "估算水吸收的热量",
+            "expr": "Q_water = c_water*m_water*dT",
+            "when": "只计算水吸收的热量，忽略容器热容和散热；水的比热容用 J/kg/℃。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "太阳能热水器一",
+                "expr": "c_water*m_water*dT",
+                "ref": 12600,
+                "note": "4200×0.2×15=12600 J。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "太阳能热水器二",
+                "expr": "c_water*m_water*dT",
+                "ref": 42000,
+                "note": "4200×0.5×20=42000 J。"
+              },
+              {
+                "type": "direction",
+                "scenario": "太阳能热水器一",
+                "var": "m_water",
+                "lo": 0,
+                "hi": 5,
+                "expr": "c_water*m_water*dT",
+                "expect": "up",
+                "note": "比热容和升温值固定时，水越多，吸收热量越多。"
+              },
+              {
+                "type": "scan",
+                "scenario": "太阳能热水器一",
+                "var": "dT",
+                "lo": 0,
+                "hi": 100,
+                "note": "扫描非负升温范围，吸热量计算稳定。"
+              },
+              {
+                "type": "consistency",
+                "scenario": "太阳能热水器一",
+                "with": "sustain-04|估算水吸收的热量",
+                "with_expr": "Q_water",
+                "target": "水吸收的热量",
+                "note": "直接求本公式输出，与情境中另列的Q_water设计基准核对；数据是设计示例，不是实测。用于核对定义、反算或边界值，不宣称不同物理原理互证。",
+                "verification_kind": "独立设计情境数据核对"
+              }
+            ]
+          },
+          {
+            "name": "由吸收热量估算水的升温",
+            "expr": "dT = Q_water/(c_water*m_water)",
+            "when": "水的质量和比热容已知且非零，暂不计热损失。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "太阳能热水器一",
+                "expr": "Q_water/(c_water*m_water)",
+                "ref": 15,
+                "note": "12600÷(4200×0.2)=15 ℃。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "太阳能热水器二",
+                "expr": "Q_water/(c_water*m_water)",
+                "ref": 20,
+                "note": "42000÷(4200×0.5)=20 ℃。"
+              },
+              {
+                "type": "direction",
+                "scenario": "太阳能热水器一",
+                "var": "Q_water",
+                "lo": 0,
+                "hi": 100000,
+                "expr": "Q_water/(c_water*m_water)",
+                "expect": "up",
+                "note": "水的质量和比热容固定时，吸收热量越多，升温越大。"
+              },
+              {
+                "type": "scan",
+                "scenario": "太阳能热水器一",
+                "var": "m_water",
+                "lo": 0.001,
+                "hi": 100,
+                "note": "扫描正水质量，反算升温时不除以零。"
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "太阳辐射能被集热器吸收，并传给水。",
+          "先确定被加热水的质量和温度变化。",
+          "按水的比热容关系计算水吸收的热量。",
+          "由于集热器和管路会向环境散热，太阳输入能量不能简单等同于水获得的热量。"
+        ],
+        "errors": [
+          {
+            "wrong": "把太阳能热水器的太阳输入能量直接等同于水吸收的热量。",
+            "why": "太阳辐射到水之间会经过集热器和管路，途中有反射与散热，水吸收的热量只是输入能量的一部分。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "把水吸收的热量算成比热容乘质量再除以升温。",
+            "wrong_expr": "Q_water = c_water*m_water/dT",
+            "why": "水的吸热量随温升增大而增大；公式中应乘温升，除以温升还会破坏焦耳的量纲。",
+            "caught_by": "量纲一致性",
+            "trap_test": {
+              "kind": "dimension",
+              "target": "Q_water = c_water*m_water/dT",
+              "lhs_dim": "M·L^2·T^-2",
+              "rhs_dim": "M·L^2·T^-2·K^-2",
+              "expect": "mismatch",
+              "note": "实际量纲检查得到等号左边为M·L^2·T^-2、右边为M·L^2·T^-2·K^-2；两边不是同一物理量，因此该等式不成立。"
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "0.2 kg 水升高 15 ℃，误将热量算成 56 J。",
+            "wrong_expr": "Q_water = c_water*m_water/dT",
+            "why": "按 4200 J/kg/℃、0.2 kg 和 15 ℃ 相乘，结果为 12600 J；不能把温升放到分母。",
+            "caught_by": "量纲一致性",
+            "trap_test": {
+              "kind": "dimension",
+              "target": "Q_water = c_water*m_water/dT",
+              "expect": "mismatch",
+              "lhs_dim": "M·L^2·T^-2",
+              "rhs_dim": "M·L^2·T^-2·K^-2",
+              "note": "正式引擎验证量纲不一致；不计作同量纲错误数值实测。"
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "把0.2 kg的200 g数值仍按kg代入。",
+            "wrong_expr": "Q_water = c_water*(1000*m_water)*dT",
+            "why": "水质量应0.2 kg，吸热12600 J；按200 kg会误大千倍。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "太阳能热水器一",
+              "expr": "c_water*(1000*m_water)*dT",
+              "ref": 12600,
+              "tol": 1e-06
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "太阳能热水器使0.2 kg水温升高15 ℃，水的比热容4200 J/(kg·℃)，无物态变化，忽略散热，估算吸收热量。",
+          "solution": [
+            "Q_water=c_water*m_water*dT。",
+            "代入 4200×0.2×15=12600 J。",
+            "太阳能集热器实际输入能量还需考虑散热损失。"
+          ],
+          "answer": "水吸收的热量约为 1.26×10^4 J。"
+        },
+        "prereq": [
+          "energy-02",
+          "energy-03"
+        ],
+        "next": [
+          "sustain-02"
+        ],
+        "tags": [
+          "太阳能",
+          "光热利用",
+          "光伏",
+          "比热容",
+          "热水器",
+          "可再生能源"
+        ],
+        "core": [
+          {
+            "title": "太阳能",
+            "text": "太阳能可用于光热和光伏，分别把辐射能用于加热或转为电能，太阳辐射不是各地全天恒定的输入。可再生不代表设备无需材料、制造或维护，也不代表没有环境影响。比较热水器先计算水吸热，再讨论集热损失；不把水吸热量直接当全部太阳输入能量。"
+          }
+        ],
+        "learning_scope": "初中"
+      },
+      "error_index": 3,
+      "chapter": "能源与可持续发展"
+    },
+    "diagnostic-sustain-02-1": {
+      "point": {
+        "id": "sustain-02",
+        "title": "能量转化的基本规律",
+        "level": "基础",
+        "definition": "能量可以从一种形式转化为另一种形式，也可以在物体之间传递；在转化和传递过程中，能量总量保持不变。实际装置中一部分能量会转化为不便利用的形式，能量利用效率表示有用输出占输入的比例。",
+        "meaning": "分析能量转化时要先划定研究对象和过程，再把输入、有用输出以及转化到环境中的其他能量分别列出。能量守恒不表示每一部分能量都同样容易利用；效率是有用能量与输入能量之比，不能超过 100%。本节的能量账目关系可用于检查转换过程是否漏项，效率关系用于比较装置利用输入能量的程度。",
+        "symbols": {
+          "E_in": {
+            "desc": "设备输入的能量",
+            "unit": "J"
+          },
+          "E_use": {
+            "desc": "转化得到的有用能量",
+            "unit": "J"
+          },
+          "E_loss": {
+            "desc": "未成为目标有用输出的能量",
+            "unit": "J"
+          },
+          "eta": {
+            "desc": "能量利用效率，以小数表示",
+            "unit": "1"
+          },
+          "P": {
+            "desc": "用电器功率",
+            "unit": "kW"
+          },
+          "t": {
+            "desc": "使用时间",
+            "unit": "h"
+          },
+          "E": {
+            "desc": "使用期间消耗的电能",
+            "unit": "kWh"
+          },
+          "P_old": {
+            "desc": "原用电器功率",
+            "unit": "kW"
+          },
+          "P_new": {
+            "desc": "替换后用电器功率",
+            "unit": "kW"
+          },
+          "E_save": {
+            "desc": "替换后节省的电能",
+            "unit": "kWh"
+          }
+        },
+        "scenarios": {
+          "高效电机": {
+            "E_in": 100,
+            "E_use": 80,
+            "E_loss": 20,
+            "eta": 0.8
+          },
+          "发电装置": {
+            "E_in": 100,
+            "E_use": 60,
+            "E_loss": 40,
+            "eta": 0.6
+          },
+          "LED灯五小时": {
+            "P": 0.01,
+            "t": 5,
+            "E": 0.05,
+            "P_old": 0.06,
+            "P_new": 0.01,
+            "E_save": 0.25
+          },
+          "教室照明十小时": {
+            "P": 0.04,
+            "t": 10,
+            "E": 0.4,
+            "P_old": 0.1,
+            "P_new": 0.04,
+            "E_save": 0.6
+          }
+        },
+        "formulas": [
+          {
+            "name": "能量输入与各输出的平衡",
+            "expr": "E_in = E_use+E_loss",
+            "when": "按给定系统边界统计全部有用输出与损耗，能量单位一致。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "高效电机",
+                "expr": "E_use+E_loss",
+                "ref": 100,
+                "note": "80 J 有用输出+20 J 其他转化=100 J 输入。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "发电装置",
+                "expr": "E_use+E_loss",
+                "ref": 100,
+                "note": "60 J 有用输出+40 J 其他转化=100 J 输入。"
+              },
+              {
+                "type": "scan",
+                "scenario": "高效电机",
+                "var": "E_use",
+                "lo": 0,
+                "hi": 1000,
+                "note": "扫描非负有用输出，按能量账目计算输入。"
+              },
+              {
+                "type": "consistency",
+                "scenario": "高效电机",
+                "with": "sustain-02|能量输入与各输出的平衡",
+                "with_expr": "E_in",
+                "target": "设备输入的能量",
+                "note": "直接求本公式输出，与情境中另列的E_in设计基准核对；数据是设计示例，不是实测。用于核对定义、反算或边界值，不宣称不同物理原理互证。",
+                "verification_kind": "独立设计情境数据核对"
+              }
+            ]
+          },
+          {
+            "name": "能量利用效率",
+            "expr": "eta = E_use/E_in",
+            "when": "有用能量与输入能量使用相同单位，输入能量大于零。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "高效电机",
+                "expr": "E_use/E_in",
+                "ref": 0.8,
+                "note": "80 J÷100 J=0.8，即 80%。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "发电装置",
+                "expr": "E_use/E_in",
+                "ref": 0.6,
+                "note": "60 J÷100 J=0.6，即 60%。"
+              },
+              {
+                "type": "direction",
+                "scenario": "高效电机",
+                "var": "E_use",
+                "lo": 0,
+                "hi": 100,
+                "expr": "E_use/E_in",
+                "expect": "up",
+                "note": "输入能量固定时，有用输出增加，效率提高。"
+              },
+              {
+                "type": "scan",
+                "scenario": "高效电机",
+                "var": "E_in",
+                "lo": 1,
+                "hi": 10000,
+                "note": "扫描正输入能量，效率计算不会除以零。"
+              },
+              {
+                "type": "compare",
+                "scenario": "高效电机",
+                "expr": "eta",
+                "op": "<=",
+                "vs": "1",
+                "note": "有用输出不超过输入能量，效率不大于 1。"
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "给能量转换过程划定系统边界，统计输入能量。",
+          "把输出分成完成目标的有用能量与其他转化能量。",
+          "能量守恒要求输入与全部输出相等。",
+          "有用输出除以输入能量得到效率，可乘 100% 表示百分数。"
+        ],
+        "errors": [
+          {
+            "wrong": "把能量利用效率写成输入能量除以有用能量。",
+            "wrong_expr": "eta = E_in/E_use",
+            "why": "效率是有用输出占输入的比例；高效电机情境中为 80/100=0.8，而不是 1.25。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "高效电机",
+              "expr": "E_in/E_use",
+              "ref": 0.8
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "认为可再生能源没有任何环境影响，或认为能量损耗意味着能量消失。",
+            "why": "可再生能源的利用仍可能影响生态和土地；损耗能量通常转化为不易利用的热、声等形式，并未违反能量守恒。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "一台装置输入 100 J 能量，其中 80 J 转化为有用输出，求效率和其他能量。",
+          "solution": [
+            "效率 eta=80/100=0.8=80%。",
+            "其他转化能量为 100-80=20 J。"
+          ],
+          "answer": "效率为 80%，其他能量为 20 J。"
+        },
+        "prereq": [
+          "energy-01",
+          "machine-03"
+        ],
+        "next": [
+          "sustain-05"
+        ],
+        "tags": [
+          "可再生能源",
+          "不可再生能源",
+          "能量守恒",
+          "能源效率",
+          "可持续发展"
+        ],
+        "core": [
+          {
+            "title": "能量转化的基本规律",
+            "text": "能量可转化、可转移，总量守恒；转移和转化具有方向性，分散到环境的内能通常难以全部回收。节约能源的原因是易用能资源和利用条件有限，不是能量会从宇宙消失。效率先约定有用目标和系统边界，不能超过100%，不同装置效率要在可比边界下比较。"
+          }
+        ],
+        "learning_scope": "初中"
+      },
+      "error_index": 0,
+      "chapter": "能源与可持续发展"
+    },
+    "diagnostic-sustain-02-2": {
+      "point": {
+        "id": "sustain-02",
+        "title": "能量转化的基本规律",
+        "level": "基础",
+        "definition": "能量可以从一种形式转化为另一种形式，也可以在物体之间传递；在转化和传递过程中，能量总量保持不变。实际装置中一部分能量会转化为不便利用的形式，能量利用效率表示有用输出占输入的比例。",
+        "meaning": "分析能量转化时要先划定研究对象和过程，再把输入、有用输出以及转化到环境中的其他能量分别列出。能量守恒不表示每一部分能量都同样容易利用；效率是有用能量与输入能量之比，不能超过 100%。本节的能量账目关系可用于检查转换过程是否漏项，效率关系用于比较装置利用输入能量的程度。",
+        "symbols": {
+          "E_in": {
+            "desc": "设备输入的能量",
+            "unit": "J"
+          },
+          "E_use": {
+            "desc": "转化得到的有用能量",
+            "unit": "J"
+          },
+          "E_loss": {
+            "desc": "未成为目标有用输出的能量",
+            "unit": "J"
+          },
+          "eta": {
+            "desc": "能量利用效率，以小数表示",
+            "unit": "1"
+          },
+          "P": {
+            "desc": "用电器功率",
+            "unit": "kW"
+          },
+          "t": {
+            "desc": "使用时间",
+            "unit": "h"
+          },
+          "E": {
+            "desc": "使用期间消耗的电能",
+            "unit": "kWh"
+          },
+          "P_old": {
+            "desc": "原用电器功率",
+            "unit": "kW"
+          },
+          "P_new": {
+            "desc": "替换后用电器功率",
+            "unit": "kW"
+          },
+          "E_save": {
+            "desc": "替换后节省的电能",
+            "unit": "kWh"
+          }
+        },
+        "scenarios": {
+          "高效电机": {
+            "E_in": 100,
+            "E_use": 80,
+            "E_loss": 20,
+            "eta": 0.8
+          },
+          "发电装置": {
+            "E_in": 100,
+            "E_use": 60,
+            "E_loss": 40,
+            "eta": 0.6
+          },
+          "LED灯五小时": {
+            "P": 0.01,
+            "t": 5,
+            "E": 0.05,
+            "P_old": 0.06,
+            "P_new": 0.01,
+            "E_save": 0.25
+          },
+          "教室照明十小时": {
+            "P": 0.04,
+            "t": 10,
+            "E": 0.4,
+            "P_old": 0.1,
+            "P_new": 0.04,
+            "E_save": 0.6
+          }
+        },
+        "formulas": [
+          {
+            "name": "能量输入与各输出的平衡",
+            "expr": "E_in = E_use+E_loss",
+            "when": "按给定系统边界统计全部有用输出与损耗，能量单位一致。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "高效电机",
+                "expr": "E_use+E_loss",
+                "ref": 100,
+                "note": "80 J 有用输出+20 J 其他转化=100 J 输入。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "发电装置",
+                "expr": "E_use+E_loss",
+                "ref": 100,
+                "note": "60 J 有用输出+40 J 其他转化=100 J 输入。"
+              },
+              {
+                "type": "scan",
+                "scenario": "高效电机",
+                "var": "E_use",
+                "lo": 0,
+                "hi": 1000,
+                "note": "扫描非负有用输出，按能量账目计算输入。"
+              },
+              {
+                "type": "consistency",
+                "scenario": "高效电机",
+                "with": "sustain-02|能量输入与各输出的平衡",
+                "with_expr": "E_in",
+                "target": "设备输入的能量",
+                "note": "直接求本公式输出，与情境中另列的E_in设计基准核对；数据是设计示例，不是实测。用于核对定义、反算或边界值，不宣称不同物理原理互证。",
+                "verification_kind": "独立设计情境数据核对"
+              }
+            ]
+          },
+          {
+            "name": "能量利用效率",
+            "expr": "eta = E_use/E_in",
+            "when": "有用能量与输入能量使用相同单位，输入能量大于零。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "高效电机",
+                "expr": "E_use/E_in",
+                "ref": 0.8,
+                "note": "80 J÷100 J=0.8，即 80%。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "发电装置",
+                "expr": "E_use/E_in",
+                "ref": 0.6,
+                "note": "60 J÷100 J=0.6，即 60%。"
+              },
+              {
+                "type": "direction",
+                "scenario": "高效电机",
+                "var": "E_use",
+                "lo": 0,
+                "hi": 100,
+                "expr": "E_use/E_in",
+                "expect": "up",
+                "note": "输入能量固定时，有用输出增加，效率提高。"
+              },
+              {
+                "type": "scan",
+                "scenario": "高效电机",
+                "var": "E_in",
+                "lo": 1,
+                "hi": 10000,
+                "note": "扫描正输入能量，效率计算不会除以零。"
+              },
+              {
+                "type": "compare",
+                "scenario": "高效电机",
+                "expr": "eta",
+                "op": "<=",
+                "vs": "1",
+                "note": "有用输出不超过输入能量，效率不大于 1。"
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "给能量转换过程划定系统边界，统计输入能量。",
+          "把输出分成完成目标的有用能量与其他转化能量。",
+          "能量守恒要求输入与全部输出相等。",
+          "有用输出除以输入能量得到效率，可乘 100% 表示百分数。"
+        ],
+        "errors": [
+          {
+            "wrong": "把能量利用效率写成输入能量除以有用能量。",
+            "wrong_expr": "eta = E_in/E_use",
+            "why": "效率是有用输出占输入的比例；高效电机情境中为 80/100=0.8，而不是 1.25。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "高效电机",
+              "expr": "E_in/E_use",
+              "ref": 0.8
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "认为可再生能源没有任何环境影响，或认为能量损耗意味着能量消失。",
+            "why": "可再生能源的利用仍可能影响生态和土地；损耗能量通常转化为不易利用的热、声等形式，并未违反能量守恒。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "一台装置输入 100 J 能量，其中 80 J 转化为有用输出，求效率和其他能量。",
+          "solution": [
+            "效率 eta=80/100=0.8=80%。",
+            "其他转化能量为 100-80=20 J。"
+          ],
+          "answer": "效率为 80%，其他能量为 20 J。"
+        },
+        "prereq": [
+          "energy-01",
+          "machine-03"
+        ],
+        "next": [
+          "sustain-05"
+        ],
+        "tags": [
+          "可再生能源",
+          "不可再生能源",
+          "能量守恒",
+          "能源效率",
+          "可持续发展"
+        ],
+        "core": [
+          {
+            "title": "能量转化的基本规律",
+            "text": "能量可转化、可转移，总量守恒；转移和转化具有方向性，分散到环境的内能通常难以全部回收。节约能源的原因是易用能资源和利用条件有限，不是能量会从宇宙消失。效率先约定有用目标和系统边界，不能超过100%，不同装置效率要在可比边界下比较。"
+          }
+        ],
+        "learning_scope": "初中"
+      },
+      "error_index": 1,
+      "chapter": "能源与可持续发展"
+    },
+    "diagnostic-sustain-05-1": {
+      "point": {
+        "id": "sustain-05",
+        "title": "能源与可持续发展",
+        "level": "基础",
+        "definition": "能源与可持续发展要求兼顾当前生产生活需要、资源长期供应和生态环境保护。节约能源、提高利用效率、发展可再生能源并减少污染排放，都是降低能源系统负担的途径；不同能源方案还要结合场地、稳定性和安全条件比较。",
+        "meaning": "比较节能措施时，先确保新旧方案提供相同的照明、出行或生产服务，再比较同一使用时长内的耗电量差。功率较低并不自动意味着更可持续，还要考虑设备寿命、发电结构、材料和回收等因素。本条用新旧设备的耗电量差做一个边界清楚的定量例子，不把单次能耗计算冒充完整的生命周期评价。",
+        "symbols": {
+          "P_old": {
+            "desc": "旧设备功率",
+            "unit": "W"
+          },
+          "P_new": {
+            "desc": "新设备功率",
+            "unit": "W"
+          },
+          "t_use": {
+            "desc": "两种设备提供相同服务的使用时间",
+            "unit": "s"
+          },
+          "E_old": {
+            "desc": "旧设备在该时段消耗的电能",
+            "unit": "J"
+          },
+          "E_new": {
+            "desc": "新设备在该时段消耗的电能",
+            "unit": "J"
+          },
+          "E_save": {
+            "desc": "新设备相对旧设备减少的耗电量",
+            "unit": "J"
+          }
+        },
+        "scenarios": {
+          "节能灯具一": {
+            "P_old": 60,
+            "P_new": 10,
+            "t_use": 3600,
+            "E_old": 216000,
+            "E_new": 36000,
+            "E_save": 180000
+          },
+          "节能设备二": {
+            "P_old": 100,
+            "P_new": 25,
+            "t_use": 7200,
+            "E_old": 720000,
+            "E_new": 180000,
+            "E_save": 540000
+          }
+        },
+        "formulas": [
+          {
+            "name": "计算旧设备在相同服务时段的耗电量",
+            "expr": "E_old = P_old*t_use",
+            "when": "功率近似稳定，时间用 s、功率用 W，所得能量为 J。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "节能灯具一",
+                "expr": "P_old*t_use",
+                "ref": 216000,
+                "note": "60 W×3600 s=216000 J。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "节能设备二",
+                "expr": "P_old*t_use",
+                "ref": 720000,
+                "note": "100 W×7200 s=720000 J。"
+              },
+              {
+                "type": "direction",
+                "scenario": "节能灯具一",
+                "var": "t_use",
+                "lo": 0,
+                "hi": 100000,
+                "expr": "P_old*t_use",
+                "expect": "up",
+                "note": "旧设备功率固定时，使用时间越长，耗电量越多。"
+              },
+              {
+                "type": "scan",
+                "scenario": "节能灯具一",
+                "var": "t_use",
+                "lo": 0,
+                "hi": 10000000,
+                "note": "扫描非负使用时长，能耗估算保持有限。"
+              }
+            ]
+          },
+          {
+            "name": "计算新设备在相同服务时段的耗电量",
+            "expr": "E_new = P_new*t_use",
+            "when": "新设备功率近似稳定，且新旧设备工作时间相同。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "节能灯具一",
+                "expr": "P_new*t_use",
+                "ref": 36000,
+                "note": "10 W×3600 s=36000 J。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "节能设备二",
+                "expr": "P_new*t_use",
+                "ref": 180000,
+                "note": "25 W×7200 s=180000 J。"
+              },
+              {
+                "type": "direction",
+                "scenario": "节能灯具一",
+                "var": "P_new",
+                "lo": 0,
+                "hi": 1000,
+                "expr": "P_new*t_use",
+                "expect": "up",
+                "note": "使用时间固定时，新设备功率越大，耗电量越多。"
+              },
+              {
+                "type": "scan",
+                "scenario": "节能灯具一",
+                "var": "P_new",
+                "lo": 0,
+                "hi": 100000,
+                "note": "扫描非负新设备功率，能耗计算稳定。"
+              }
+            ]
+          },
+          {
+            "name": "由新旧设备耗电量求节能量",
+            "expr": "E_save = E_old-E_new",
+            "when": "新旧方案提供相同服务，且旧方案耗能不小于新方案。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "节能灯具一",
+                "expr": "E_old-E_new",
+                "ref": 180000,
+                "note": "216000 J−36000 J=180000 J。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "节能设备二",
+                "expr": "E_old-E_new",
+                "ref": 540000,
+                "note": "720000 J−180000 J=540000 J。"
+              },
+              {
+                "type": "direction",
+                "scenario": "节能灯具一",
+                "var": "E_old",
+                "lo": 0,
+                "hi": 1000000,
+                "expr": "E_old-E_new",
+                "expect": "up",
+                "note": "新设备耗电量固定时，旧设备耗电量越大，节能差值越大。"
+              },
+              {
+                "type": "scan",
+                "scenario": "节能灯具一",
+                "var": "E_old",
+                "lo": 0,
+                "hi": 10000000,
+                "note": "扫描非负旧设备耗电量，差值保持可计算。"
+              },
+              {
+                "type": "consistency",
+                "scenario": "节能灯具一",
+                "with": "sustain-05|由新旧设备耗电量求节能量",
+                "with_expr": "E_save",
+                "target": "新设备相对旧设备减少的耗电量",
+                "note": "直接求本公式输出，与情境中另列的E_save设计基准核对；数据是设计示例，不是实测。用于核对定义、反算或边界值，不宣称不同物理原理互证。",
+                "verification_kind": "独立设计情境数据核对"
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "先确定新旧方案提供的是同一项服务，使用时长也相同。",
+          "分别按功率乘时间计算两种设备消耗的电能。",
+          "用旧设备耗电量减去新设备耗电量，得到该时段的节能量。",
+          "完整的可持续性判断还要比较能源来源、排放、设备寿命和回收，不能只靠这一个能耗差。"
+        ],
+        "errors": [
+          {
+            "wrong": "把新设备耗电量加到旧设备耗电量上当成节能量。",
+            "wrong_expr": "E_save = E_old+E_new",
+            "why": "节能量是旧设备比新设备多消耗的部分，应做差而不是相加。比较之前先统一时间范围和所提供的服务。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "节能灯具一",
+              "expr": "E_old+E_new",
+              "ref": 180000
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "比较灯具节能量时让旧灯和新灯使用不同时间。",
+            "why": "要比较相同服务，必须统一照明时长等条件。比较之前先统一时间范围和所提供的服务。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "仅凭一次电费差值就断定一种能源在全生命周期都更可持续。",
+            "why": "生命周期评价还涉及制造、运输、发电来源、维护和回收等边界。比较之前先统一时间范围和所提供的服务。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "旧灯功率 60 W，新灯功率 10 W，两者提供相同照明且各使用 3600 s，求这段时间少消耗的电能。",
+          "solution": [
+            "E_old=60×3600=216000 J。",
+            "E_new=10×3600=36000 J。",
+            "E_save=E_old−E_new=180000 J。"
+          ],
+          "answer": "新灯在该时段少消耗 180000 J 电能。"
+        },
+        "prereq": [
+          "sustain-01",
+          "sustain-02",
+          "power-01"
+        ],
+        "next": [],
+        "tags": [
+          "可持续发展",
+          "节能",
+          "能源效率",
+          "可再生能源",
+          "环境影响",
+          "生命周期边界"
+        ],
+        "core": [
+          {
+            "title": "能源与可持续发展",
+            "text": "提高效率、节约使用、发展适合场地的可再生能源、减少污染和做好回收，需兼顾当前与未来需求。比较灯具先保持照度、时长等服务相同；比较交通需保持运送需求相同。可再生能源也可能影响土地和生态，评价结合生命周期，不能只看一笔电费。"
+          }
+        ],
+        "learning_scope": "初中"
+      },
+      "error_index": 0,
+      "chapter": "能源与可持续发展"
+    },
+    "diagnostic-sustain-05-2": {
+      "point": {
+        "id": "sustain-05",
+        "title": "能源与可持续发展",
+        "level": "基础",
+        "definition": "能源与可持续发展要求兼顾当前生产生活需要、资源长期供应和生态环境保护。节约能源、提高利用效率、发展可再生能源并减少污染排放，都是降低能源系统负担的途径；不同能源方案还要结合场地、稳定性和安全条件比较。",
+        "meaning": "比较节能措施时，先确保新旧方案提供相同的照明、出行或生产服务，再比较同一使用时长内的耗电量差。功率较低并不自动意味着更可持续，还要考虑设备寿命、发电结构、材料和回收等因素。本条用新旧设备的耗电量差做一个边界清楚的定量例子，不把单次能耗计算冒充完整的生命周期评价。",
+        "symbols": {
+          "P_old": {
+            "desc": "旧设备功率",
+            "unit": "W"
+          },
+          "P_new": {
+            "desc": "新设备功率",
+            "unit": "W"
+          },
+          "t_use": {
+            "desc": "两种设备提供相同服务的使用时间",
+            "unit": "s"
+          },
+          "E_old": {
+            "desc": "旧设备在该时段消耗的电能",
+            "unit": "J"
+          },
+          "E_new": {
+            "desc": "新设备在该时段消耗的电能",
+            "unit": "J"
+          },
+          "E_save": {
+            "desc": "新设备相对旧设备减少的耗电量",
+            "unit": "J"
+          }
+        },
+        "scenarios": {
+          "节能灯具一": {
+            "P_old": 60,
+            "P_new": 10,
+            "t_use": 3600,
+            "E_old": 216000,
+            "E_new": 36000,
+            "E_save": 180000
+          },
+          "节能设备二": {
+            "P_old": 100,
+            "P_new": 25,
+            "t_use": 7200,
+            "E_old": 720000,
+            "E_new": 180000,
+            "E_save": 540000
+          }
+        },
+        "formulas": [
+          {
+            "name": "计算旧设备在相同服务时段的耗电量",
+            "expr": "E_old = P_old*t_use",
+            "when": "功率近似稳定，时间用 s、功率用 W，所得能量为 J。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "节能灯具一",
+                "expr": "P_old*t_use",
+                "ref": 216000,
+                "note": "60 W×3600 s=216000 J。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "节能设备二",
+                "expr": "P_old*t_use",
+                "ref": 720000,
+                "note": "100 W×7200 s=720000 J。"
+              },
+              {
+                "type": "direction",
+                "scenario": "节能灯具一",
+                "var": "t_use",
+                "lo": 0,
+                "hi": 100000,
+                "expr": "P_old*t_use",
+                "expect": "up",
+                "note": "旧设备功率固定时，使用时间越长，耗电量越多。"
+              },
+              {
+                "type": "scan",
+                "scenario": "节能灯具一",
+                "var": "t_use",
+                "lo": 0,
+                "hi": 10000000,
+                "note": "扫描非负使用时长，能耗估算保持有限。"
+              }
+            ]
+          },
+          {
+            "name": "计算新设备在相同服务时段的耗电量",
+            "expr": "E_new = P_new*t_use",
+            "when": "新设备功率近似稳定，且新旧设备工作时间相同。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "节能灯具一",
+                "expr": "P_new*t_use",
+                "ref": 36000,
+                "note": "10 W×3600 s=36000 J。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "节能设备二",
+                "expr": "P_new*t_use",
+                "ref": 180000,
+                "note": "25 W×7200 s=180000 J。"
+              },
+              {
+                "type": "direction",
+                "scenario": "节能灯具一",
+                "var": "P_new",
+                "lo": 0,
+                "hi": 1000,
+                "expr": "P_new*t_use",
+                "expect": "up",
+                "note": "使用时间固定时，新设备功率越大，耗电量越多。"
+              },
+              {
+                "type": "scan",
+                "scenario": "节能灯具一",
+                "var": "P_new",
+                "lo": 0,
+                "hi": 100000,
+                "note": "扫描非负新设备功率，能耗计算稳定。"
+              }
+            ]
+          },
+          {
+            "name": "由新旧设备耗电量求节能量",
+            "expr": "E_save = E_old-E_new",
+            "when": "新旧方案提供相同服务，且旧方案耗能不小于新方案。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "节能灯具一",
+                "expr": "E_old-E_new",
+                "ref": 180000,
+                "note": "216000 J−36000 J=180000 J。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "节能设备二",
+                "expr": "E_old-E_new",
+                "ref": 540000,
+                "note": "720000 J−180000 J=540000 J。"
+              },
+              {
+                "type": "direction",
+                "scenario": "节能灯具一",
+                "var": "E_old",
+                "lo": 0,
+                "hi": 1000000,
+                "expr": "E_old-E_new",
+                "expect": "up",
+                "note": "新设备耗电量固定时，旧设备耗电量越大，节能差值越大。"
+              },
+              {
+                "type": "scan",
+                "scenario": "节能灯具一",
+                "var": "E_old",
+                "lo": 0,
+                "hi": 10000000,
+                "note": "扫描非负旧设备耗电量，差值保持可计算。"
+              },
+              {
+                "type": "consistency",
+                "scenario": "节能灯具一",
+                "with": "sustain-05|由新旧设备耗电量求节能量",
+                "with_expr": "E_save",
+                "target": "新设备相对旧设备减少的耗电量",
+                "note": "直接求本公式输出，与情境中另列的E_save设计基准核对；数据是设计示例，不是实测。用于核对定义、反算或边界值，不宣称不同物理原理互证。",
+                "verification_kind": "独立设计情境数据核对"
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "先确定新旧方案提供的是同一项服务，使用时长也相同。",
+          "分别按功率乘时间计算两种设备消耗的电能。",
+          "用旧设备耗电量减去新设备耗电量，得到该时段的节能量。",
+          "完整的可持续性判断还要比较能源来源、排放、设备寿命和回收，不能只靠这一个能耗差。"
+        ],
+        "errors": [
+          {
+            "wrong": "把新设备耗电量加到旧设备耗电量上当成节能量。",
+            "wrong_expr": "E_save = E_old+E_new",
+            "why": "节能量是旧设备比新设备多消耗的部分，应做差而不是相加。比较之前先统一时间范围和所提供的服务。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "节能灯具一",
+              "expr": "E_old+E_new",
+              "ref": 180000
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "比较灯具节能量时让旧灯和新灯使用不同时间。",
+            "why": "要比较相同服务，必须统一照明时长等条件。比较之前先统一时间范围和所提供的服务。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "仅凭一次电费差值就断定一种能源在全生命周期都更可持续。",
+            "why": "生命周期评价还涉及制造、运输、发电来源、维护和回收等边界。比较之前先统一时间范围和所提供的服务。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "旧灯功率 60 W，新灯功率 10 W，两者提供相同照明且各使用 3600 s，求这段时间少消耗的电能。",
+          "solution": [
+            "E_old=60×3600=216000 J。",
+            "E_new=10×3600=36000 J。",
+            "E_save=E_old−E_new=180000 J。"
+          ],
+          "answer": "新灯在该时段少消耗 180000 J 电能。"
+        },
+        "prereq": [
+          "sustain-01",
+          "sustain-02",
+          "power-01"
+        ],
+        "next": [],
+        "tags": [
+          "可持续发展",
+          "节能",
+          "能源效率",
+          "可再生能源",
+          "环境影响",
+          "生命周期边界"
+        ],
+        "core": [
+          {
+            "title": "能源与可持续发展",
+            "text": "提高效率、节约使用、发展适合场地的可再生能源、减少污染和做好回收，需兼顾当前与未来需求。比较灯具先保持照度、时长等服务相同；比较交通需保持运送需求相同。可再生能源也可能影响土地和生态，评价结合生命周期，不能只看一笔电费。"
+          }
+        ],
+        "learning_scope": "初中"
+      },
+      "error_index": 1,
+      "chapter": "能源与可持续发展"
+    },
+    "diagnostic-sustain-05-3": {
+      "point": {
+        "id": "sustain-05",
+        "title": "能源与可持续发展",
+        "level": "基础",
+        "definition": "能源与可持续发展要求兼顾当前生产生活需要、资源长期供应和生态环境保护。节约能源、提高利用效率、发展可再生能源并减少污染排放，都是降低能源系统负担的途径；不同能源方案还要结合场地、稳定性和安全条件比较。",
+        "meaning": "比较节能措施时，先确保新旧方案提供相同的照明、出行或生产服务，再比较同一使用时长内的耗电量差。功率较低并不自动意味着更可持续，还要考虑设备寿命、发电结构、材料和回收等因素。本条用新旧设备的耗电量差做一个边界清楚的定量例子，不把单次能耗计算冒充完整的生命周期评价。",
+        "symbols": {
+          "P_old": {
+            "desc": "旧设备功率",
+            "unit": "W"
+          },
+          "P_new": {
+            "desc": "新设备功率",
+            "unit": "W"
+          },
+          "t_use": {
+            "desc": "两种设备提供相同服务的使用时间",
+            "unit": "s"
+          },
+          "E_old": {
+            "desc": "旧设备在该时段消耗的电能",
+            "unit": "J"
+          },
+          "E_new": {
+            "desc": "新设备在该时段消耗的电能",
+            "unit": "J"
+          },
+          "E_save": {
+            "desc": "新设备相对旧设备减少的耗电量",
+            "unit": "J"
+          }
+        },
+        "scenarios": {
+          "节能灯具一": {
+            "P_old": 60,
+            "P_new": 10,
+            "t_use": 3600,
+            "E_old": 216000,
+            "E_new": 36000,
+            "E_save": 180000
+          },
+          "节能设备二": {
+            "P_old": 100,
+            "P_new": 25,
+            "t_use": 7200,
+            "E_old": 720000,
+            "E_new": 180000,
+            "E_save": 540000
+          }
+        },
+        "formulas": [
+          {
+            "name": "计算旧设备在相同服务时段的耗电量",
+            "expr": "E_old = P_old*t_use",
+            "when": "功率近似稳定，时间用 s、功率用 W，所得能量为 J。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "节能灯具一",
+                "expr": "P_old*t_use",
+                "ref": 216000,
+                "note": "60 W×3600 s=216000 J。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "节能设备二",
+                "expr": "P_old*t_use",
+                "ref": 720000,
+                "note": "100 W×7200 s=720000 J。"
+              },
+              {
+                "type": "direction",
+                "scenario": "节能灯具一",
+                "var": "t_use",
+                "lo": 0,
+                "hi": 100000,
+                "expr": "P_old*t_use",
+                "expect": "up",
+                "note": "旧设备功率固定时，使用时间越长，耗电量越多。"
+              },
+              {
+                "type": "scan",
+                "scenario": "节能灯具一",
+                "var": "t_use",
+                "lo": 0,
+                "hi": 10000000,
+                "note": "扫描非负使用时长，能耗估算保持有限。"
+              }
+            ]
+          },
+          {
+            "name": "计算新设备在相同服务时段的耗电量",
+            "expr": "E_new = P_new*t_use",
+            "when": "新设备功率近似稳定，且新旧设备工作时间相同。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "节能灯具一",
+                "expr": "P_new*t_use",
+                "ref": 36000,
+                "note": "10 W×3600 s=36000 J。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "节能设备二",
+                "expr": "P_new*t_use",
+                "ref": 180000,
+                "note": "25 W×7200 s=180000 J。"
+              },
+              {
+                "type": "direction",
+                "scenario": "节能灯具一",
+                "var": "P_new",
+                "lo": 0,
+                "hi": 1000,
+                "expr": "P_new*t_use",
+                "expect": "up",
+                "note": "使用时间固定时，新设备功率越大，耗电量越多。"
+              },
+              {
+                "type": "scan",
+                "scenario": "节能灯具一",
+                "var": "P_new",
+                "lo": 0,
+                "hi": 100000,
+                "note": "扫描非负新设备功率，能耗计算稳定。"
+              }
+            ]
+          },
+          {
+            "name": "由新旧设备耗电量求节能量",
+            "expr": "E_save = E_old-E_new",
+            "when": "新旧方案提供相同服务，且旧方案耗能不小于新方案。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "节能灯具一",
+                "expr": "E_old-E_new",
+                "ref": 180000,
+                "note": "216000 J−36000 J=180000 J。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "节能设备二",
+                "expr": "E_old-E_new",
+                "ref": 540000,
+                "note": "720000 J−180000 J=540000 J。"
+              },
+              {
+                "type": "direction",
+                "scenario": "节能灯具一",
+                "var": "E_old",
+                "lo": 0,
+                "hi": 1000000,
+                "expr": "E_old-E_new",
+                "expect": "up",
+                "note": "新设备耗电量固定时，旧设备耗电量越大，节能差值越大。"
+              },
+              {
+                "type": "scan",
+                "scenario": "节能灯具一",
+                "var": "E_old",
+                "lo": 0,
+                "hi": 10000000,
+                "note": "扫描非负旧设备耗电量，差值保持可计算。"
+              },
+              {
+                "type": "consistency",
+                "scenario": "节能灯具一",
+                "with": "sustain-05|由新旧设备耗电量求节能量",
+                "with_expr": "E_save",
+                "target": "新设备相对旧设备减少的耗电量",
+                "note": "直接求本公式输出，与情境中另列的E_save设计基准核对；数据是设计示例，不是实测。用于核对定义、反算或边界值，不宣称不同物理原理互证。",
+                "verification_kind": "独立设计情境数据核对"
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "先确定新旧方案提供的是同一项服务，使用时长也相同。",
+          "分别按功率乘时间计算两种设备消耗的电能。",
+          "用旧设备耗电量减去新设备耗电量，得到该时段的节能量。",
+          "完整的可持续性判断还要比较能源来源、排放、设备寿命和回收，不能只靠这一个能耗差。"
+        ],
+        "errors": [
+          {
+            "wrong": "把新设备耗电量加到旧设备耗电量上当成节能量。",
+            "wrong_expr": "E_save = E_old+E_new",
+            "why": "节能量是旧设备比新设备多消耗的部分，应做差而不是相加。比较之前先统一时间范围和所提供的服务。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "节能灯具一",
+              "expr": "E_old+E_new",
+              "ref": 180000
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "比较灯具节能量时让旧灯和新灯使用不同时间。",
+            "why": "要比较相同服务，必须统一照明时长等条件。比较之前先统一时间范围和所提供的服务。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "仅凭一次电费差值就断定一种能源在全生命周期都更可持续。",
+            "why": "生命周期评价还涉及制造、运输、发电来源、维护和回收等边界。比较之前先统一时间范围和所提供的服务。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "旧灯功率 60 W，新灯功率 10 W，两者提供相同照明且各使用 3600 s，求这段时间少消耗的电能。",
+          "solution": [
+            "E_old=60×3600=216000 J。",
+            "E_new=10×3600=36000 J。",
+            "E_save=E_old−E_new=180000 J。"
+          ],
+          "answer": "新灯在该时段少消耗 180000 J 电能。"
+        },
+        "prereq": [
+          "sustain-01",
+          "sustain-02",
+          "power-01"
+        ],
+        "next": [],
+        "tags": [
+          "可持续发展",
+          "节能",
+          "能源效率",
+          "可再生能源",
+          "环境影响",
+          "生命周期边界"
+        ],
+        "core": [
+          {
+            "title": "能源与可持续发展",
+            "text": "提高效率、节约使用、发展适合场地的可再生能源、减少污染和做好回收，需兼顾当前与未来需求。比较灯具先保持照度、时长等服务相同；比较交通需保持运送需求相同。可再生能源也可能影响土地和生态，评价结合生命周期，不能只看一笔电费。"
+          }
+        ],
+        "learning_scope": "初中"
+      },
+      "error_index": 2,
+      "chapter": "能源与可持续发展"
+    }
+  },
+  "generator_version": "2026-10-04-条件过程返工-8"
+}

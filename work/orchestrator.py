@@ -15,7 +15,7 @@
           → 合格就进入下一批；不合格就把质检报告塞回去让它重修
           → 连续失败就停机；网络断了就等，等回来再继续
 
-    质检用的是 work/qc.py —— 质检方写的，已冻结，Codex 不许改。
+    质检用的是 work/qc.py —— 阿酉写的，已冻结，Codex 不许改。
     这样一来「生产」和「质检」是两个作者、两套代码，才拦得住互相印证式的错误。
 
 【两种跑法】
@@ -24,7 +24,7 @@
              python work/orchestrator.py --rounds 2
 
     2) 定时：Windows 任务计划程序每 30 分钟跑 D:\\codex\\run_loop_hidden.vbs
-             每次跑到「等质检方放行」「网络不通」「连续失败」就自己退出，
+             每次跑到「等阿酉放行」「网络不通」「连续失败」就自己退出，
              下一次定时再接着跑。这样天然自愈，不需要一直守着。
 
 【常用参数】
@@ -35,7 +35,7 @@
                    （质检报告会照常重算一遍，因为派什么活得看质检结果）
     --no-codex     只跑质检，不叫 Codex（想单看质检结果时用）
     --plan         只打印《批次计划》（进度真相）和下一批目标
-    --force        无视「等质检方放行」这道闸门，直接开跑（慎用）
+    --force        无视「等阿酉放行」这道闸门，直接开跑（慎用）
     --status       只打印当前状态，什么都不干
 
 【两方的交互契约（这是本脚本存在的理由）】
@@ -43,16 +43,16 @@
     一个文件只允许一个作者 —— 之前没说清，所以两边都可能往同一个文件上写字。
 
         work/批次计划.md      编排器写（Codex 只读）—— 进度真相、每批交付什么
-        work/协作状态.json    编排器写（质检方只开/关「放行」这一个字段）
+        work/协作状态.json    编排器写（阿酉只开/关「放行」这一个字段）
         work/交接单.json      Codex 写  —— 声明它这一轮实际改了哪些文件
         work/本批报告.md      Codex 写  —— 给人看的说明
-        outputs/质检意见.md   质检方写   —— Codex 下一轮必须逐条回应
-        work/质检回执.json    质检方写   —— 结论 + 逐条回应 + 是否放行
+        outputs/质检意见.md   阿酉写   —— Codex 下一轮必须逐条回应
+        work/质检回执.json    阿酉写   —— 结论 + 逐条回应 + 是否放行
 
     一轮的往返：
         编排器照《批次计划》抄派活指令 → Codex 只做那一批 → 交《交接单》
         → 编排器「轮后质检」+「★ 对账」（拿交接单跟文件时间/git 比）
-        → 质检方核抽样单、写《质检意见》《质检回执》→ 编排器标完成、开下一批
+        → 阿酉核抽样单、写《质检意见》《质检回执》→ 编排器标完成、开下一批
 
     ★ 为什么必须有「对账」这一步：
       实测教训 —— 2026-09-18 第一轮的交接报告写「本批修改了 kb 两个文件」，
@@ -158,11 +158,11 @@ CONFIG = {
     "默认轮数": 6,
     "默认分钟": 170,
 
-    # ★ 每批做完后，在闸门上等多久（分钟）看质检方放行是否翻牌。
+    # ★ 每批做完后，在闸门上等多久（分钟）看阿酉放行是否翻牌。
     # 翻牌了就立刻接着干下一批，不必等下一次定时任务。
     # 这一条专治「等我放行」的空转：原来平均白等一小时，现在最多等这么久。
     #
-    # 为什么是 45 而不是更短：质检方的质检任务本身是**每小时**跑一次，
+    # 为什么是 45 而不是更短：阿酉的质检任务本身是**每小时**跑一次，
     # 窗口太短（原来 25 分钟）命中率不到一半，白等一场还得再等下一个周期。
     # 45 分钟能覆盖大多数情况，而且等待期间只是 sleep，不烧 CPU 也不烧额度。
     "等放行分钟": 45,
@@ -204,12 +204,12 @@ CONFIG = {
     # 质检随机抽几条公式留给人看。
     "抽样条数": 8,
 
-    # ★ 闸门：每批做完是否必须等质检方放行才继续。
-    #   2026-09-19 改成 False —— 需求方的要求是「全都要、效率要高」，不等人工点头。
+    # ★ 闸门：每批做完是否必须等阿酉放行才继续。
+    #   2026-09-19 改成 False —— 主人的要求是「全都要、效率要高」，不等人工点头。
     #   ⚠ 关掉的只是「等人工签字」，**不等于放弃质检**：
     #     每轮照样跑 qc.py（指纹 / 覆盖门槛 / 独立复算 / 成品一致），
     #     抽样单也照样留在 outputs/质检报告.md 里，事后随时能看。
-    "每批需质检方放行": False,
+    "每批需阿酉放行": False,
 
     # 每轮结束后是否自动 git 提交（留回退点，不会 push）。
     "自动提交": True,
@@ -224,8 +224,8 @@ BATCH_PLAN = os.path.join(WORK, "批次计划.md")               # 进度真相�
 HANDOFF = os.path.join(WORK, "交接单.json")                  # Codex 写：声明它实际改了什么
 CODEX_NOTE = os.path.join(WORK, "本批报告.md")               # Codex 写：给人看的说明
 QC_REPORT = os.path.join(OUTPUTS, "质检报告.md")             # qc.py 生成
-AYOU_NOTE = os.path.join(OUTPUTS, "质检意见.md")             # 质检方写，本脚本只读
-AYOU_RECEIPT = os.path.join(WORK, "质检回执.json")           # 质检方写，本脚本只读
+AYOU_NOTE = os.path.join(OUTPUTS, "质检意见.md")             # 阿酉写，本脚本只读
+AYOU_RECEIPT = os.path.join(WORK, "质检回执.json")           # 阿酉写，本脚本只读
 
 # 防撞锁：同一时间只允许一个循环在跑。
 # 手动双击和定时任务撞上时，两个 Codex 会互相覆盖对方的文件 —— 所以必须有这把锁。
@@ -234,8 +234,8 @@ LOCK = os.path.join(WORK, ".loop.lock")
 # 我们自己叫起来的那个 Codex 的进程号，记在案。
 # 用途只有一个：下次开跑前，如果发现它还赖着没走（上一轮被强杀留下的孤儿），把它清掉。
 # ★ 为什么要有这个文件、而不是"按进程名把 codex.exe 全杀"：
-#   需求方的 ChatGPT/Codex 桌面应用**自己也常驻着一个 codex.exe**
-#   （命令行 `codex.exe … app-server …`）。按名字扫会连它一起杀 —— 拆的是需求方的东西。
+#   主人的 ChatGPT/Codex 桌面应用**自己也常驻着一个 codex.exe**
+#   （命令行 `codex.exe … app-server …`）。按名字扫会连它一起杀 —— 拆的是主人的东西。
 OUR_PID = os.path.join(WORK, ".ours_codex.pid")
 
 # 演练模式开关。--dry-run 时置 True：只打印，不往日志/状态/指标里落任何东西。
@@ -318,7 +318,7 @@ def codex_exe():
             # ★ 优先挑「一整套齐全」的目录：同目录里必须有 codex-code-mode-host.exe。
             #
             #   为什么（2026-09-19 踩过，整整空转两轮）：
-            #   需求方更新 Codex 后，新版装进一个新目录
+            #   主人更新 Codex 后，新版装进一个新目录
             #   （bin\247581e4…\，里面 codex.exe + codex-code-mode-host.exe
             #   + codex-command-runner.exe + codex-windows-sandbox-setup.exe 四件齐全），
             #   而**旧目录 bin\cdef5aaf…\ 里只剩一个孤零零的旧 codex.exe**。
@@ -424,11 +424,11 @@ def kill_stale_codex(tag="开跑前"):
     2026-09-18 实测就留了一个 PID 22908，CPU 时间纹丝不动地挂了 40 分钟。
 
     ★ 这里有个必须写清楚的坑（2026-09-19 踩过，而且踩得不轻）：
-      早先这个函数是「按进程名把 codex.exe 全杀一遍」。但需求方的
+      早先这个函数是「按进程名把 codex.exe 全杀一遍」。但主人的
       **ChatGPT/Codex 桌面应用自己也常驻一个 codex.exe**
       （命令行 `codex.exe … app-server …`，父进程 `ChatGPT.exe`）。
-      于是每次开跑前，它都会顺手把需求方的应用进程杀掉 ——
-      应用随后自动重启，所以表面上「没出事」，实际是在反复拆需求方的东西。
+      于是每次开跑前，它都会顺手把主人的应用进程杀掉 ——
+      应用随后自动重启，所以表面上「没出事」，实际是在反复拆主人的东西。
       → 现在**只认我们自己记录过的那个进程号**（OUR_PID 文件），绝不按名字扫。
     """
     if not CONFIG["清理残留进程"]:
@@ -657,18 +657,18 @@ def handoff_brief():
 
 
 def wait_for_release(minutes):
-    """每批做完后，在闸门上等一会儿看质检方放行是否翻牌。
+    """每批做完后，在闸门上等一会儿看阿酉放行是否翻牌。
 
     翻牌了就立刻接着干下一批 —— 省掉「退出 → 等下一次定时 → 再启动」那段空转。
     """
     if minutes <= 0:
         return False
-    log("在这等质检方看一眼（最多 %d 分钟）；放行了就立刻接着干" % minutes)
+    log("在这等阿酉看一眼（最多 %d 分钟）；放行了就立刻接着干" % minutes)
     deadline = time.time() + minutes * 60
     while time.time() < deadline:
         time.sleep(30)
-        if read_json(STATE_FILE, {}).get("质检方放行"):
-            log("质检方放行了，接着干下一批")
+        if read_json(STATE_FILE, {}).get("阿酉放行"):
+            log("阿酉放行了，接着干下一批")
             return True
     log("等了 %d 分钟没等到放行，先退出；下一次定时任务会接着跑" % minutes)
     return False
@@ -732,7 +732,7 @@ def build_prompt(state, qc_ok, round_no, batch, plan, handoff_issues):
     - 明确收工要交「交接单 + 本批报告」，并说清交接单会被拿去对账
     """
     L = []
-    L.append("你是这个项目的执行方（Codex）。质检方是另一个模型（质检方），它独立跑 work/qc.py 查你。")
+    L.append("你是这个项目的执行方（Codex）。质检方是另一个模型（阿酉），它独立跑 work/qc.py 查你。")
     L.append("")
 
     last = str(state.get("上轮codex") or "")
@@ -798,7 +798,7 @@ def build_prompt(state, qc_ok, round_no, batch, plan, handoff_issues):
     L.append("")
     L.append("【开工前只需要看这三样，别重读整个项目】")
     L.append("1. work/批次计划.md —— 进度真相（你**只读不写**）")
-    L.append("2. outputs/质检意见.md —— 质检方上一轮给你的意见，**必须逐条回应**（没有就忽略）")
+    L.append("2. outputs/质检意见.md —— 阿酉上一轮给你的意见，**必须逐条回应**（没有就忽略）")
     L.append("3. work/kb/01_kinematics.json 或 02_newton.json —— 照抄格式")
     L.append("（确实需要时再查 AGENTS.md / 参考文献/13，不必每轮重读）")
     L.append("")
@@ -949,7 +949,7 @@ def detect_quota(hb, human_file):
       - stdout 的人读流水（human_file），形如 `[错误] You've hit your usage limit…`
 
     顺带把「几点重置」抠出来 —— 报错原文里就写着 `try again at 11:44 AM`，
-    这对需求方有用（能直接告诉他等到几点）。
+    这对主人有用（能直接告诉他等到几点）。
     """
     text = str(hb.get("last_err") or "")
     try:
@@ -1181,7 +1181,7 @@ def run_codex(prompt, round_no):
     # ★ 识别它**自己报告的**环境故障。
     #
     #   为什么必须有这一段（2026-09-19 实测，空转两轮的元凶）：
-    #   需求方更新 Codex 后，新版装进新目录，而自动查找选中了旧目录里那个
+    #   主人更新 Codex 后，新版装进新目录，而自动查找选中了旧目录里那个
     #   「孤零零的 codex.exe」（同目录没有 codex-code-mode-host.exe）。
     #   Codex 于是回报「本轮未能开工：本地命令执行宿主缺失」——
     #   退出码 0、事件流也有记录，编排器**误判成「正常收工」**；
@@ -1245,7 +1245,7 @@ def main(argv):
 
     ensure_dirs()
     state = read_json(STATE_FILE, {
-        "阶段": "空闲", "轮次": 0, "连续失败": 0, "质检方放行": True,
+        "阶段": "空闲", "轮次": 0, "连续失败": 0, "阿酉放行": True,
         "上次结果": "", "停机原因": "", "最后更新": "", "历史": [],
     })
 
@@ -1254,7 +1254,7 @@ def main(argv):
         print("=" * 62)
         print("协作状态")
         print("=" * 62)
-        for k in ("阶段", "轮次", "连续失败", "质检方放行", "上次结果", "停机原因", "最后更新"):
+        for k in ("阶段", "轮次", "连续失败", "阿酉放行", "上次结果", "停机原因", "最后更新"):
             print("%-8s %s" % (k, state.get(k, "")))
         print()
         print("最近 5 轮：")
@@ -1319,9 +1319,9 @@ def main(argv):
             break
 
         # ---- 闸门 ----
-        if not force and not state.get("质检方放行", True):
-            stop_reason = "在等质检方放行（每批做完会停一次，这是配置里开的）"
-            state["阶段"] = "待质检方放行"
+        if not force and not state.get("阿酉放行", True):
+            stop_reason = "在等阿酉放行（每批做完会停一次，这是配置里开的）"
+            state["阶段"] = "待阿酉放行"
             log("%s：%s" % (label, stop_reason))
             break
 
@@ -1489,18 +1489,18 @@ def main(argv):
                 mark_batch_done(batch["批次"], "质检+对账通过")
                 log("《批次计划》已把第 %d 批标为已完成" % batch["批次"])
 
-            if CONFIG["每批需质检方放行"]:
-                state["质检方放行"] = False
-                state["阶段"] = "待质检方放行"
+            if CONFIG["每批需阿酉放行"]:
+                state["阿酉放行"] = False
+                state["阶段"] = "待阿酉放行"
                 write_json(STATE_FILE, state)
-                log("本轮合格。关上闸门等质检方看抽样单（最多 %d 分钟）"
+                log("本轮合格。关上闸门等阿酉看抽样单（最多 %d 分钟）"
                     % CONFIG["等放行分钟"])
                 if wait_for_release(CONFIG["等放行分钟"]):
-                    # ★ 注意：闸门只由质检方开。这里绝不代它打开 —— 否则闸门就形同虚设。
+                    # ★ 注意：闸门只由阿酉开。这里绝不代它打开 —— 否则闸门就形同虚设。
                     state["阶段"] = "空闲"
                     write_json(STATE_FILE, state)
                     continue
-                stop_reason = "等质检方放行超时（下一次定时任务会接着跑）"
+                stop_reason = "等阿酉放行超时（下一次定时任务会接着跑）"
                 break
         elif "额度用尽" in note:
             # ★★ 资源故障 ≠ 生产失败（2026-09-19 加）。

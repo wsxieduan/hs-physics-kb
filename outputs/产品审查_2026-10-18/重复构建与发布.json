@@ -1,0 +1,45 @@
+{
+  "checked_at": "2026-10-18T14:51:54.610906+08:00",
+  "version": "43872e9f69734254e215445d5df542d051d6825ac12fbe64b27f04874d1d0a24",
+  "version_stable": true,
+  "products_byte_stable": true,
+  "products": {
+    "index.html": {
+      "outputs": "d5aeae61b8226f571583021da27158448f654a92de3e5ee05929f676511fbcdb",
+      "site": "d5aeae61b8226f571583021da27158448f654a92de3e5ee05929f676511fbcdb",
+      "outputs/物理知识库整合版": "d5aeae61b8226f571583021da27158448f654a92de3e5ee05929f676511fbcdb"
+    },
+    "junior.html": {
+      "outputs": "408754488fb0b0462984170daa340ec2da268d136b1e22e47949047c0bfcccec",
+      "site": "408754488fb0b0462984170daa340ec2da268d136b1e22e47949047c0bfcccec",
+      "outputs/物理知识库整合版": "408754488fb0b0462984170daa340ec2da268d136b1e22e47949047c0bfcccec"
+    },
+    "student.html": {
+      "outputs": "c8e4e78c6c229e5fb4145f9f0d1b987945ae26447186d1e21d358a035b0523be",
+      "site": "c8e4e78c6c229e5fb4145f9f0d1b987945ae26447186d1e21d358a035b0523be",
+      "outputs/物理知识库整合版": "c8e4e78c6c229e5fb4145f9f0d1b987945ae26447186d1e21d358a035b0523be"
+    },
+    "quick.html": {
+      "outputs": "c5435ffa437a5872eea1aba8a546d6bf768d0de30369479ecbcf47e5f4c149d1",
+      "site": "c5435ffa437a5872eea1aba8a546d6bf768d0de30369479ecbcf47e5f4c149d1",
+      "outputs/物理知识库整合版": "c5435ffa437a5872eea1aba8a546d6bf768d0de30369479ecbcf47e5f4c149d1"
+    },
+    "junior-quick.html": {
+      "outputs": "77ff776203b7d1dafe6f271bf0e6e0711ac31aae78416f30f7efae1e47305a95",
+      "site": "77ff776203b7d1dafe6f271bf0e6e0711ac31aae78416f30f7efae1e47305a95",
+      "outputs/物理知识库整合版": "77ff776203b7d1dafe6f271bf0e6e0711ac31aae78416f30f7efae1e47305a95"
+    },
+    "quiz-hs.html": {
+      "outputs": "304ee5158926f4001735d8c869422135ea7a151363df6097e8f060c04ca29ccb",
+      "site": "304ee5158926f4001735d8c869422135ea7a151363df6097e8f060c04ca29ccb",
+      "outputs/物理知识库整合版": "304ee5158926f4001735d8c869422135ea7a151363df6097e8f060c04ca29ccb"
+    },
+    "quiz-junior.html": {
+      "outputs": "7cbd00cefb7dd7e91de835a8c9a97cc09f63598bf2cef3bd0dfed95ae154c83c",
+      "site": "7cbd00cefb7dd7e91de835a8c9a97cc09f63598bf2cef3bd0dfed95ae154c83c",
+      "outputs/物理知识库整合版": "7cbd00cefb7dd7e91de835a8c9a97cc09f63598bf2cef3bd0dfed95ae154c83c"
+    }
+  },
+  "qc_origin": "执行方运行冻结程序 --check 的机器自查，不代表独立人工复核或教师审核",
+  "pass": true
+}

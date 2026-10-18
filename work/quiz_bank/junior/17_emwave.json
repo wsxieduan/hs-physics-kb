@@ -1,0 +1,2861 @@
+{
+  "segment": "初中",
+  "chapter": "电磁波与现代通信",
+  "source_file": "17_emwave.json",
+  "questions": [
+    {
+      "id": "diagnostic-emwave-03-1",
+      "point_id": "emwave-03",
+      "point_title": "信息与信息传播",
+      "chapter": "电磁波与现代通信",
+      "stem": "关于“信息与信息传播”，判断这一说法是否成立，并说明依据：\n将每秒传送的符号数视为整段信息的符号总数。",
+      "options": [
+        {
+          "label": "A",
+          "text": "该说法不成立。"
+        },
+        {
+          "label": "B",
+          "text": "该说法成立。"
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "符号总数还要乘以传送时间；只写每秒速率会漏掉时间因素，题目问总量时尤其要注意。\n知识点条件：通信过程既有信号在空间传播所需的时间，也有信息符号逐个传送所需的时间，两者不能混为一谈。下面的简单速率模型只计算在给定平均符号传送速率下传送一段信息所需的时间，不描述编码、纠错、排队或网络协议；符号速率不是电磁波载波频率，也不等同于每秒比特数。\n推导依据：信息先被记录或编码成可以传送的信号。；信号需要经过发射、传播和接收，接收端再从信号中还原信息。；若用平均符号速率描述一段稳定传输，符号总数等于每秒符号数乘以时间。；此拓展模型只算符号传送时间；真实通信还会受编码、纠错、设备处理和网络排队影响。\n卡片公式各自的适用条件（不是本题共同前提）：\n按符号速率估算传输时间：拓展计算，非本卡初中必背主线。传送速率在该段时间内近似稳定；传送速率 用每秒符号数表示，传送时间 用 s。\n由符号数和时间求平均传送速率：拓展计算，非本卡初中必背主线。符号总数和传送时间对应同一段传输，传送时间 大于 0。",
+      "error_type": "概念混淆",
+      "judging": "teacher",
+      "source_error_index": 0,
+      "source_caught_by": "人工审核",
+      "wrong_expr": null,
+      "trap_test": null,
+      "level": "拓展",
+      "learning_scope": "初中主线；公式含拓展",
+      "answer_evidence": {
+        "kind": "teacher",
+        "claim_source": "wrong",
+        "reference_only": true,
+        "reason": "概念、操作或无法建立完整定量证据，教师确认条件与结论。"
+      },
+      "review": {
+        "confidence": "medium",
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": false,
+          "no_answer_leak_in_options": true
+        },
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。",
+        "material": {
+          "anchors": [
+            {
+              "kind": "概念或操作",
+              "name": "信息与信息传播",
+              "claim": "把每秒传送的符号数误当成整段信息的符号总数。",
+              "correction_basis": "符号总数还要乘以传送时间；只写每秒速率会漏掉时间因素，题目问总量时尤其要注意。",
+              "note": "概念锚点及命题真假待教师确认；未套用任意第一条公式",
+              "display": "把每秒传送的符号数误当成整段信息的符号总数。"
+            },
+            {
+              "kind": "数值反例补充",
+              "name": "人工标签保留的指定数值反例",
+              "display": "N<sub>符号</sub> = R<sub>符号</sub>·t<sub>信息</sub>",
+              "note": "这是原创设计反例，机器仅验证指定模型、数据及量纲；自然语言命题、学生认知与装置仍待教师确认。 每秒600个符号持续5 s总量3000个；只拿600每秒速率充当总量，被目标量纲门禁拒绝。"
+            }
+          ],
+          "source": {
+            "nature": "原创概念/操作命题；无真实测量记录",
+            "source_error_index": 0
+          },
+          "predicted_errors": [
+            {
+              "option": "B",
+              "text": "该说法成立。",
+              "reason": "符号总数还要乘以传送时间；只写每秒速率会漏掉时间因素，题目问总量时尤其要注意。",
+              "expression": null,
+              "status": "误答原因预测，待教师确认；未采集学生作答证据"
+            }
+          ],
+          "difficulty_note": "建议难度沿用本题level（源卡难度）；尚非题目难度实测，待教师调整",
+          "estimated_seconds": [
+            180,
+            360
+          ],
+          "time_basis": "未做学生计时；按现有难度给出备课估计区间，待教师确认",
+          "machine_checks": [
+            {
+              "name": "题目ID关联源知识点",
+              "passed": true
+            },
+            {
+              "name": "选项标签唯一且参考标签存在",
+              "passed": true
+            },
+            {
+              "name": "选项文本互异",
+              "passed": true
+            },
+            {
+              "name": "指定反例正确控制正式求值通过",
+              "passed": true,
+              "actual": {
+                "type": "numeric",
+                "type_name": "数值代入",
+                "formula": "补充反例正确控制",
+                "ok": true,
+                "detail": "情境「None」：算得N_sym=3000；参考3000；有效容差3e-07",
+                "note": "",
+                "error": null,
+                "evaluation_status": "success",
+                "failure_reason": null,
+                "result_dimension": "无量纲",
+                "reference_dimension": "无量纲",
+                "diagnostics": {
+                  "primary_expression": "R_sym·t_info",
+                  "target_expression": "N_sym",
+                  "follows_primary_formula_changes": true,
+                  "primary_source_rhs": "R_sym·t_info",
+                  "numeric_reference": 3000,
+                  "actual_variables": [
+                    "R_sym",
+                    "t_info"
+                  ],
+                  "target_variables": [
+                    "N_sym"
+                  ],
+                  "rtol": 1e-10,
+                  "atol": 0.0,
+                  "effective_limit": 3e-07,
+                  "declared_limit": 3e-07,
+                  "capped_by_default": false,
+                  "scale": 3000.0,
+                  "policy": "显式rtol/atol（严于默认，照此执行）",
+                  "expected_zero": false,
+                  "zero_basis": null,
+                  "actual_value": 3000.0,
+                  "reference_value": 3000
+                },
+                "physical_error_identified": false
+              }
+            },
+            {
+              "name": "指定反例错误注入被拒绝（非求值失败）",
+              "passed": true,
+              "actual": {
+                "type": "numeric",
+                "type_name": "数值代入",
+                "formula": "补充反例错误注入",
+                "ok": false,
+                "detail": "被测结果与实际目标量纲不同",
+                "note": "",
+                "error": null,
+                "evaluation_status": "dimension_conflict",
+                "failure_reason": "dimension_conflict",
+                "result_dimension": "T^-1",
+                "reference_dimension": "无量纲",
+                "diagnostics": {
+                  "primary_expression": "R_sym",
+                  "target_expression": "N_sym",
+                  "follows_primary_formula_changes": false,
+                  "primary_source_rhs": "R_sym·t_info",
+                  "numeric_reference": 3000,
+                  "actual_variables": [
+                    "R_sym"
+                  ],
+                  "target_variables": [
+                    "N_sym"
+                  ]
+                },
+                "physical_error_identified": true
+              }
+            }
+          ],
+          "machine_boundary": "只列本次逐题实际执行项目；不把关联知识卡的方向、扫描或一致性检查算作本题已验。概念题未验命题真假。",
+          "human_review_items": [
+            "题干条件是否充分、清楚且符合学段",
+            "参考结论在指定条件下是否唯一",
+            "干扰项是否合理、对应真实认知问题且无答案暗示",
+            "公式或概念锚点是否准确",
+            "建议难度及用时是否适合教学",
+            "语言、装置与安全操作是否恰当"
+          ],
+          "reference_answer_note": "现有参考答案保持；即使本地可以判选项，也仍须教师审核教学可用性"
+        }
+      }
+    },
+    {
+      "id": "diagnostic-emwave-03-2",
+      "point_id": "emwave-03",
+      "point_title": "信息与信息传播",
+      "chapter": "电磁波与现代通信",
+      "stem": "在“信息与信息传播”的模型下，R<sub>符号</sub>（平均符号传送速率，每秒传送的符号数）=600 Hz；t<sub>信息</sub>（传送这段符号信息所用的时间）=5 s。条件：拓展计算，非本卡初中必背主线。传送速率在该段时间内近似稳定；传送速率 用每秒符号数表示，传送时间 用 s。。求一段信息中传送的符号总数，按个计数（N<sub>符号</sub>）。这些数值是设计示例。",
+      "options": [
+        {
+          "label": "A",
+          "text": "3 1"
+        },
+        {
+          "label": "B",
+          "text": "3000 1"
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "使用按符号速率估算传输时间：R<sub>符号</sub>·t<sub>信息</sub>，代入得3000 1。另一结果来自R<sub>符号</sub>·(t<sub>信息</sub>/1000)，算得3 1。\n情境时间已经用秒表示，不能再次按毫秒缩小；重复换算会让估算结果少 1000 倍。\n知识点条件：通信过程既有信号在空间传播所需的时间，也有信息符号逐个传送所需的时间，两者不能混为一谈。下面的简单速率模型只计算在给定平均符号传送速率下传送一段信息所需的时间，不描述编码、纠错、排队或网络协议；符号速率不是电磁波载波频率，也不等同于每秒比特数。\n推导依据：信息先被记录或编码成可以传送的信号。；信号需要经过发射、传播和接收，接收端再从信号中还原信息。；若用平均符号速率描述一段稳定传输，符号总数等于每秒符号数乘以时间。；此拓展模型只算符号传送时间；真实通信还会受编码、纠错、设备处理和网络排队影响。\n卡片公式各自的适用条件（不是本题共同前提）：\n按符号速率估算传输时间：拓展计算，非本卡初中必背主线。传送速率在该段时间内近似稳定；传送速率 用每秒符号数表示，传送时间 用 s。\n由符号数和时间求平均传送速率：拓展计算，非本卡初中必背主线。符号总数和传送时间对应同一段传输，传送时间 大于 0。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 1,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "N<sub>符号</sub> = R<sub>符号</sub>·(t<sub>信息</sub>/1000)",
+      "trap_test": {
+        "scenario": "短消息传输",
+        "expr": "R_sym*(t_info/1000)",
+        "ref": 3000
+      },
+      "level": "拓展",
+      "learning_scope": "初中主线；公式含拓展",
+      "answer_evidence": {
+        "kind": "numeric",
+        "scenario": "短消息传输",
+        "parameters": {
+          "N_sym": 3000,
+          "R_sym": 600,
+          "t_info": 5
+        },
+        "target": "N_sym",
+        "unit": "1",
+        "reference": 3000,
+        "correct_proof": {
+          "expression": "R_sym*t_info",
+          "formula": "按符号速率估算传输时间",
+          "value": 3000,
+          "when": "拓展计算，非本卡初中必背主线。传送速率在该段时间内近似稳定；传送速率 用每秒符号数表示，传送时间 用 s。"
+        },
+        "distractor_expression": "R_sym*(t_info/1000)",
+        "distractor_value": 3.0,
+        "dimension_matches": true,
+        "independent_evaluation": true
+      },
+      "review": {
+        "confidence": "medium",
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": true,
+          "no_answer_leak_in_options": true
+        },
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。",
+        "material": {
+          "anchors": [
+            {
+              "kind": "公式",
+              "name": "按符号速率估算传输时间",
+              "expression": "R_sym*t_info",
+              "when": "拓展计算，非本卡初中必背主线。传送速率在该段时间内近似稳定；传送速率 用每秒符号数表示，传送时间 用 s。",
+              "display": "R<sub>符号</sub>·t<sub>信息</sub>"
+            }
+          ],
+          "source": {
+            "nature": "原创设计示例，非教材实测或真实实验记录",
+            "scenario": "短消息传输",
+            "parameters": {
+              "N_sym": 3000,
+              "R_sym": 600,
+              "t_info": 5
+            },
+            "data": [
+              "一段信息中传送的符号总数，按个计数：3000 1",
+              "平均符号传送速率，每秒传送的符号数：600 Hz",
+              "传送这段符号信息所用的时间：5 s"
+            ]
+          },
+          "predicted_errors": [
+            {
+              "option": "A",
+              "text": "3 1",
+              "reason": "情境时间已经用秒表示，不能再次按毫秒缩小；重复换算会让估算结果少 1000 倍。",
+              "expression": "R_sym*(t_info/1000)",
+              "status": "误答原因预测，待教师确认；未采集学生作答证据"
+            }
+          ],
+          "difficulty_note": "建议难度沿用本题level（源卡难度）；尚非题目难度实测，待教师调整",
+          "estimated_seconds": [
+            180,
+            360
+          ],
+          "time_basis": "未做学生计时；按现有难度给出备课估计区间，待教师确认",
+          "machine_checks": [
+            {
+              "name": "题目ID关联源知识点",
+              "passed": true
+            },
+            {
+              "name": "选项标签唯一且参考标签存在",
+              "passed": true
+            },
+            {
+              "name": "选项文本互异",
+              "passed": true
+            },
+            {
+              "name": "正确路径独立数值复算",
+              "passed": true
+            },
+            {
+              "name": "带量纲求值与独立求值一致",
+              "passed": true
+            },
+            {
+              "name": "干扰路径复算且与正确路径分离",
+              "passed": true
+            }
+          ],
+          "machine_boundary": "只列本次逐题实际执行项目；不把关联知识卡的方向、扫描或一致性检查算作本题已验。概念题未验命题真假。",
+          "human_review_items": [
+            "题干条件是否充分、清楚且符合学段",
+            "参考结论在指定条件下是否唯一",
+            "干扰项是否合理、对应真实认知问题且无答案暗示",
+            "公式或概念锚点是否准确",
+            "建议难度及用时是否适合教学",
+            "语言、装置与安全操作是否恰当"
+          ],
+          "reference_answer_note": "现有参考答案保持；即使本地可以判选项，也仍须教师审核教学可用性"
+        }
+      }
+    },
+    {
+      "id": "diagnostic-emwave-03-3",
+      "point_id": "emwave-03",
+      "point_title": "信息与信息传播",
+      "chapter": "电磁波与现代通信",
+      "stem": "关于“信息与信息传播”，判断这一说法是否成立，并说明依据：\n符号速率、载波频率和比特率的定义不同。",
+      "options": [
+        {
+          "label": "A",
+          "text": "该说法不成立。"
+        },
+        {
+          "label": "B",
+          "text": "该说法成立。"
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "符号速率、载波频率和比特率的定义不同；没有调制和编码信息时，不能把三者数值直接等同。\n知识点条件：通信过程既有信号在空间传播所需的时间，也有信息符号逐个传送所需的时间，两者不能混为一谈。下面的简单速率模型只计算在给定平均符号传送速率下传送一段信息所需的时间，不描述编码、纠错、排队或网络协议；符号速率不是电磁波载波频率，也不等同于每秒比特数。\n推导依据：信息先被记录或编码成可以传送的信号。；信号需要经过发射、传播和接收，接收端再从信号中还原信息。；若用平均符号速率描述一段稳定传输，符号总数等于每秒符号数乘以时间。；此拓展模型只算符号传送时间；真实通信还会受编码、纠错、设备处理和网络排队影响。\n卡片公式各自的适用条件（不是本题共同前提）：\n按符号速率估算传输时间：拓展计算，非本卡初中必背主线。传送速率在该段时间内近似稳定；传送速率 用每秒符号数表示，传送时间 用 s。\n由符号数和时间求平均传送速率：拓展计算，非本卡初中必背主线。符号总数和传送时间对应同一段传输，传送时间 大于 0。",
+      "error_type": "概念混淆",
+      "judging": "teacher",
+      "source_error_index": 2,
+      "source_caught_by": "人工审核",
+      "wrong_expr": null,
+      "trap_test": null,
+      "level": "拓展",
+      "learning_scope": "初中主线；公式含拓展",
+      "answer_evidence": {
+        "kind": "teacher",
+        "claim_source": "why",
+        "reference_only": true,
+        "reason": "概念、操作或无法建立完整定量证据，教师确认条件与结论。"
+      },
+      "review": {
+        "confidence": "medium",
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": false,
+          "no_answer_leak_in_options": true
+        },
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。",
+        "material": {
+          "anchors": [
+            {
+              "kind": "概念或操作",
+              "name": "信息与信息传播",
+              "claim": "把符号传送速率等同于电磁波载波频率或每秒比特数。",
+              "correction_basis": "符号速率、载波频率和比特率的定义不同；没有调制和编码信息时，不能把三者数值直接等同。",
+              "note": "概念锚点及命题真假待教师确认；未套用任意第一条公式",
+              "display": "把符号传送速率等同于电磁波载波频率或每秒比特数。"
+            }
+          ],
+          "source": {
+            "nature": "原创概念/操作命题；无真实测量记录",
+            "source_error_index": 2
+          },
+          "predicted_errors": [
+            {
+              "option": "A",
+              "text": "该说法不成立。",
+              "reason": "符号速率、载波频率和比特率的定义不同；没有调制和编码信息时，不能把三者数值直接等同。",
+              "expression": null,
+              "status": "误答原因预测，待教师确认；未采集学生作答证据"
+            }
+          ],
+          "difficulty_note": "建议难度沿用本题level（源卡难度）；尚非题目难度实测，待教师调整",
+          "estimated_seconds": [
+            180,
+            360
+          ],
+          "time_basis": "未做学生计时；按现有难度给出备课估计区间，待教师确认",
+          "machine_checks": [
+            {
+              "name": "题目ID关联源知识点",
+              "passed": true
+            },
+            {
+              "name": "选项标签唯一且参考标签存在",
+              "passed": true
+            },
+            {
+              "name": "选项文本互异",
+              "passed": true
+            }
+          ],
+          "machine_boundary": "只列本次逐题实际执行项目；不把关联知识卡的方向、扫描或一致性检查算作本题已验。概念题未验命题真假。",
+          "human_review_items": [
+            "题干条件是否充分、清楚且符合学段",
+            "参考结论在指定条件下是否唯一",
+            "干扰项是否合理、对应真实认知问题且无答案暗示",
+            "公式或概念锚点是否准确",
+            "建议难度及用时是否适合教学",
+            "语言、装置与安全操作是否恰当"
+          ],
+          "reference_answer_note": "现有参考答案保持；即使本地可以判选项，也仍须教师审核教学可用性"
+        }
+      }
+    },
+    {
+      "id": "diagnostic-emwave-01-1",
+      "point_id": "emwave-01",
+      "point_title": "电磁波的波速、频率和波长",
+      "chapter": "电磁波与现代通信",
+      "stem": "在“电磁波的波速、频率和波长”中，波长 λ 用 m、频率 f 用 Hz，c 用 m/s；真空波速取约 3.0×10⁸ m/s。。电磁波在真空中的传播速度近似值的单位为m/s。下列哪一表达式的量纲与该目标量一致？",
+      "options": [
+        {
+          "label": "A",
+          "text": "c = f/λ"
+        },
+        {
+          "label": "B",
+          "text": "c = λ·f"
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "波速关系为波长乘频率；f/λ 的单位不是 m/s。\n知识点条件：无线电波、微波、红外线、可见光、紫外线、X 射线和伽马射线都属于电磁波，主要差别包括频率和波长范围。电磁波不需要空气等介质才能传播。使用波速关系时，波长用 m、频率用 Hz，所得波速为 m/s；空气中传播速度可近似按真空光速处理。\n推导依据：电磁波每秒传播一定距离，该距离为波速 c。；波长 λ 表示相邻同相位点之间的距离，频率 f 表示每秒振动次数。；每秒前进的完整波长数乘以波长，得到 c=λ·f。；同一真空中 c 近似不变，所以频率越高波长越短。\n卡片公式各自的适用条件（不是本题共同前提）：\n波速等于波长乘频率：波长 λ 用 m、频率 f 用 Hz，c 用 m/s；真空波速取约 3.0×10⁸ m/s。\n由波速和频率求波长：电磁波在真空或近似真空的空气中传播，f 不为零。",
+      "error_type": "量纲一致性",
+      "judging": "auto",
+      "source_error_index": 0,
+      "source_caught_by": "量纲一致性",
+      "wrong_expr": "c = f/λ",
+      "trap_test": {
+        "kind": "dimension",
+        "target": "c = f/lambda",
+        "lhs_dim": "L·T^-1",
+        "rhs_dim": "L^-1·T^-1",
+        "expect": "mismatch",
+        "note": "实际量纲检查得到等号左边为L·T^-1、右边为L^-1·T^-1；两边不是同一物理量，因此该等式不成立。"
+      },
+      "level": "基础",
+      "learning_scope": "初中",
+      "answer_evidence": {
+        "kind": "dimension",
+        "target": "c",
+        "correct_expression": "c = lambda*f",
+        "distractor_expression": "c = f/lambda",
+        "target_dimension": "L·T^-1",
+        "distractor_dimension": "L^-1·T^-1"
+      },
+      "review": {
+        "confidence": "medium",
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": true,
+          "no_answer_leak_in_options": true
+        },
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。",
+        "material": {
+          "anchors": [
+            {
+              "kind": "公式量纲",
+              "name": "本题目标量与等式",
+              "expression": "c = lambda*f",
+              "when": "量纲相符是必要条件，不能据此证明系数或物理条件正确",
+              "display": "c = λ·f"
+            }
+          ],
+          "source": {
+            "nature": "原创量纲辨析命题；无实测数据",
+            "source_error_index": 0
+          },
+          "predicted_errors": [
+            {
+              "option": "A",
+              "text": "c = f/λ",
+              "reason": "波速关系为波长乘频率；f/lambda 的单位不是 m/s。",
+              "expression": "c = f/lambda",
+              "status": "误答原因预测，待教师确认；未采集学生作答证据"
+            }
+          ],
+          "difficulty_note": "建议难度沿用本题level（源卡难度）；尚非题目难度实测，待教师调整",
+          "estimated_seconds": [
+            60,
+            120
+          ],
+          "time_basis": "未做学生计时；按现有难度给出备课估计区间，待教师确认",
+          "machine_checks": [
+            {
+              "name": "题目ID关联源知识点",
+              "passed": true
+            },
+            {
+              "name": "选项标签唯一且参考标签存在",
+              "passed": true
+            },
+            {
+              "name": "选项文本互异",
+              "passed": true
+            },
+            {
+              "name": "正确式量纲一致",
+              "passed": true,
+              "actual": {
+                "type": "dimension",
+                "type_name": "量纲一致性",
+                "formula": "教师审核证据",
+                "ok": true,
+                "detail": "左端L·T^-1，右端L·T^-1",
+                "note": "",
+                "error": null,
+                "evaluation_status": "success",
+                "failure_reason": null,
+                "result_dimension": "L·T^-1",
+                "reference_dimension": "L·T^-1",
+                "diagnostics": {},
+                "physical_error_identified": false
+              }
+            },
+            {
+              "name": "干扰式量纲冲突",
+              "passed": true,
+              "actual": {
+                "type": "dimension",
+                "type_name": "量纲一致性",
+                "formula": "教师审核证据",
+                "ok": false,
+                "detail": "左端L·T^-1，右端L^-1·T^-1",
+                "note": "",
+                "error": null,
+                "evaluation_status": "dimension_conflict",
+                "failure_reason": "dimension_conflict",
+                "result_dimension": "L^-1·T^-1",
+                "reference_dimension": "L·T^-1",
+                "diagnostics": {},
+                "physical_error_identified": true
+              }
+            }
+          ],
+          "machine_boundary": "只列本次逐题实际执行项目；不把关联知识卡的方向、扫描或一致性检查算作本题已验。概念题未验命题真假。",
+          "human_review_items": [
+            "题干条件是否充分、清楚且符合学段",
+            "参考结论在指定条件下是否唯一",
+            "干扰项是否合理、对应真实认知问题且无答案暗示",
+            "公式或概念锚点是否准确",
+            "建议难度及用时是否适合教学",
+            "语言、装置与安全操作是否恰当"
+          ],
+          "reference_answer_note": "现有参考答案保持；即使本地可以判选项，也仍须教师审核教学可用性"
+        }
+      }
+    },
+    {
+      "id": "diagnostic-emwave-01-2",
+      "point_id": "emwave-01",
+      "point_title": "电磁波的波速、频率和波长",
+      "chapter": "电磁波与现代通信",
+      "stem": "在“电磁波的波速、频率和波长”的模型下，λ（电磁波波长）=3 m；f（电磁波频率）=1e+08 Hz。条件：波长 λ 用 m、频率 f 用 Hz，c 用 m/s；真空波速取约 3.0×10⁸ m/s。。求电磁波在真空中的传播速度近似值（c）。这些数值是设计示例。",
+      "options": [
+        {
+          "label": "A",
+          "text": "300 m/s"
+        },
+        {
+          "label": "B",
+          "text": "3e+08 m/s"
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "使用波速等于波长乘频率：λ·f，代入得3e+08 m/s。另一结果来自λ·f/1000000，算得300 m/s。\n情境中的 100 000 000 已是 Hz；与 3 m 相乘应得到 3.0×10⁸ m/s，不应重复换算。\n知识点条件：无线电波、微波、红外线、可见光、紫外线、X 射线和伽马射线都属于电磁波，主要差别包括频率和波长范围。电磁波不需要空气等介质才能传播。使用波速关系时，波长用 m、频率用 Hz，所得波速为 m/s；空气中传播速度可近似按真空光速处理。\n推导依据：电磁波每秒传播一定距离，该距离为波速 c。；波长 λ 表示相邻同相位点之间的距离，频率 f 表示每秒振动次数。；每秒前进的完整波长数乘以波长，得到 c=λ·f。；同一真空中 c 近似不变，所以频率越高波长越短。\n卡片公式各自的适用条件（不是本题共同前提）：\n波速等于波长乘频率：波长 λ 用 m、频率 f 用 Hz，c 用 m/s；真空波速取约 3.0×10⁸ m/s。\n由波速和频率求波长：电磁波在真空或近似真空的空气中传播，f 不为零。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 1,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "c = λ·f/1000000",
+      "trap_test": {
+        "scenario": "无线电波",
+        "expr": "lambda*f/1000000",
+        "ref": 300000000
+      },
+      "level": "基础",
+      "learning_scope": "初中",
+      "answer_evidence": {
+        "kind": "numeric",
+        "scenario": "无线电波",
+        "parameters": {
+          "c": 300000000,
+          "lambda": 3,
+          "f": 100000000
+        },
+        "target": "c",
+        "unit": "m/s",
+        "reference": 300000000,
+        "correct_proof": {
+          "expression": "lambda*f",
+          "formula": "波速等于波长乘频率",
+          "value": 300000000,
+          "when": "波长 lambda 用 m、频率 f 用 Hz，c 用 m/s；真空波速取约 3.0×10^8 m/s。"
+        },
+        "distractor_expression": "lambda*f/1000000",
+        "distractor_value": 300.0,
+        "dimension_matches": true,
+        "independent_evaluation": true
+      },
+      "review": {
+        "confidence": "medium",
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": true,
+          "no_answer_leak_in_options": true
+        },
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。",
+        "material": {
+          "anchors": [
+            {
+              "kind": "公式",
+              "name": "波速等于波长乘频率",
+              "expression": "lambda*f",
+              "when": "波长 lambda 用 m、频率 f 用 Hz，c 用 m/s；真空波速取约 3.0×10^8 m/s。",
+              "display": "λ·f"
+            }
+          ],
+          "source": {
+            "nature": "原创设计示例，非教材实测或真实实验记录",
+            "scenario": "无线电波",
+            "parameters": {
+              "c": 300000000,
+              "lambda": 3,
+              "f": 100000000
+            },
+            "data": [
+              "电磁波在真空中的传播速度近似值：300000000 m/s",
+              "电磁波波长：3 m",
+              "电磁波频率：100000000 Hz"
+            ]
+          },
+          "predicted_errors": [
+            {
+              "option": "A",
+              "text": "300 m/s",
+              "reason": "情境中的 100 000 000 已是 Hz；与 3 m 相乘应得到 3.0×10^8 m/s，不应重复换算。",
+              "expression": "lambda*f/1000000",
+              "status": "误答原因预测，待教师确认；未采集学生作答证据"
+            }
+          ],
+          "difficulty_note": "建议难度沿用本题level（源卡难度）；尚非题目难度实测，待教师调整",
+          "estimated_seconds": [
+            60,
+            120
+          ],
+          "time_basis": "未做学生计时；按现有难度给出备课估计区间，待教师确认",
+          "machine_checks": [
+            {
+              "name": "题目ID关联源知识点",
+              "passed": true
+            },
+            {
+              "name": "选项标签唯一且参考标签存在",
+              "passed": true
+            },
+            {
+              "name": "选项文本互异",
+              "passed": true
+            },
+            {
+              "name": "正确路径独立数值复算",
+              "passed": true
+            },
+            {
+              "name": "带量纲求值与独立求值一致",
+              "passed": true
+            },
+            {
+              "name": "干扰路径复算且与正确路径分离",
+              "passed": true
+            }
+          ],
+          "machine_boundary": "只列本次逐题实际执行项目；不把关联知识卡的方向、扫描或一致性检查算作本题已验。概念题未验命题真假。",
+          "human_review_items": [
+            "题干条件是否充分、清楚且符合学段",
+            "参考结论在指定条件下是否唯一",
+            "干扰项是否合理、对应真实认知问题且无答案暗示",
+            "公式或概念锚点是否准确",
+            "建议难度及用时是否适合教学",
+            "语言、装置与安全操作是否恰当"
+          ],
+          "reference_answer_note": "现有参考答案保持；即使本地可以判选项，也仍须教师审核教学可用性"
+        }
+      }
+    },
+    {
+      "id": "diagnostic-emwave-01-3",
+      "point_id": "emwave-01",
+      "point_title": "电磁波的波速、频率和波长",
+      "chapter": "电磁波与现代通信",
+      "stem": "关于“电磁波的波速、频率和波长”，判断这一说法是否成立，并说明依据：\n电磁波能够在真空中传播。",
+      "options": [
+        {
+          "label": "A",
+          "text": "该说法成立。"
+        },
+        {
+          "label": "B",
+          "text": "该说法不成立。"
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "电磁波能够在真空中传播；声波需要介质，两类波的传播条件不同。\n知识点条件：无线电波、微波、红外线、可见光、紫外线、X 射线和伽马射线都属于电磁波，主要差别包括频率和波长范围。电磁波不需要空气等介质才能传播。使用波速关系时，波长用 m、频率用 Hz，所得波速为 m/s；空气中传播速度可近似按真空光速处理。\n推导依据：电磁波每秒传播一定距离，该距离为波速 c。；波长 λ 表示相邻同相位点之间的距离，频率 f 表示每秒振动次数。；每秒前进的完整波长数乘以波长，得到 c=λ·f。；同一真空中 c 近似不变，所以频率越高波长越短。\n卡片公式各自的适用条件（不是本题共同前提）：\n波速等于波长乘频率：波长 λ 用 m、频率 f 用 Hz，c 用 m/s；真空波速取约 3.0×10⁸ m/s。\n由波速和频率求波长：电磁波在真空或近似真空的空气中传播，f 不为零。",
+      "error_type": "概念混淆",
+      "judging": "teacher",
+      "source_error_index": 2,
+      "source_caught_by": "人工审核",
+      "wrong_expr": null,
+      "trap_test": null,
+      "level": "基础",
+      "learning_scope": "初中",
+      "answer_evidence": {
+        "kind": "teacher",
+        "claim_source": "why",
+        "reference_only": true,
+        "reason": "概念、操作或无法建立完整定量证据，教师确认条件与结论。"
+      },
+      "review": {
+        "confidence": "medium",
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": false,
+          "no_answer_leak_in_options": true
+        },
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。",
+        "material": {
+          "anchors": [
+            {
+              "kind": "概念或操作",
+              "name": "电磁波的波速、频率和波长",
+              "claim": "认为电磁波传播必须依赖空气或其他介质。",
+              "correction_basis": "电磁波能够在真空中传播；声波需要介质，两类波的传播条件不同。",
+              "note": "概念锚点及命题真假待教师确认；未套用任意第一条公式",
+              "display": "认为电磁波传播必须依赖空气或其他介质。"
+            }
+          ],
+          "source": {
+            "nature": "原创概念/操作命题；无真实测量记录",
+            "source_error_index": 2
+          },
+          "predicted_errors": [
+            {
+              "option": "B",
+              "text": "该说法不成立。",
+              "reason": "电磁波能够在真空中传播；声波需要介质，两类波的传播条件不同。",
+              "expression": null,
+              "status": "误答原因预测，待教师确认；未采集学生作答证据"
+            }
+          ],
+          "difficulty_note": "建议难度沿用本题level（源卡难度）；尚非题目难度实测，待教师调整",
+          "estimated_seconds": [
+            60,
+            120
+          ],
+          "time_basis": "未做学生计时；按现有难度给出备课估计区间，待教师确认",
+          "machine_checks": [
+            {
+              "name": "题目ID关联源知识点",
+              "passed": true
+            },
+            {
+              "name": "选项标签唯一且参考标签存在",
+              "passed": true
+            },
+            {
+              "name": "选项文本互异",
+              "passed": true
+            }
+          ],
+          "machine_boundary": "只列本次逐题实际执行项目；不把关联知识卡的方向、扫描或一致性检查算作本题已验。概念题未验命题真假。",
+          "human_review_items": [
+            "题干条件是否充分、清楚且符合学段",
+            "参考结论在指定条件下是否唯一",
+            "干扰项是否合理、对应真实认知问题且无答案暗示",
+            "公式或概念锚点是否准确",
+            "建议难度及用时是否适合教学",
+            "语言、装置与安全操作是否恰当"
+          ],
+          "reference_answer_note": "现有参考答案保持；即使本地可以判选项，也仍须教师审核教学可用性"
+        }
+      }
+    },
+    {
+      "id": "diagnostic-emwave-02-1",
+      "point_id": "emwave-02",
+      "point_title": "电磁波传播与通信时延",
+      "chapter": "电磁波与现代通信",
+      "stem": "在“电磁波传播与通信时延”的模型下，d（电磁波传播距离）=3000 m；c（电磁波传播速度近似值）=3e+08 m/s。条件：d 为单程距离，c 为这段路径上的近似传播速度。。求理想传播所用时间（t）。这些数值是设计示例。",
+      "options": [
+        {
+          "label": "A",
+          "text": "2e-05 s"
+        },
+        {
+          "label": "B",
+          "text": "1e-05 s"
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "使用由距离和波速求传播时间：d/c，代入得1e-05 s。另一结果来自2·d/c，算得2e-05 s。\n通信单程时延只对应单程路径；若题目明确发射后返回的回波才计算往返。\n知识点条件：无线电波传播速度接近真空光速，因此远距离通信仍有传播时延；实际通信总时延还包括设备处理、排队和网络转发时间。用路程和时间估算只能表示理想的一段传播过程，不代表整个互联网应用的响应时间。\n推导依据：把通信链路的单程距离 d 统一为 m。；无线电波在空气中的速度近似取 3.0×10⁸ m/s。；用距离除以波速估算理想传播时间。；实际通信还包含设备处理等时延，不能把估算值当成端到端总时延。\n卡片公式各自的适用条件（不是本题共同前提）：\n传播距离与时间关系：电磁波在空气中近似以真空光速传播，且只计算单程传播。\n由距离和波速求传播时间：d 为单程距离，c 为这段路径上的近似传播速度。",
+      "error_type": "数值代入",
+      "judging": "auto",
+      "source_error_index": 0,
+      "source_caught_by": "数值代入",
+      "wrong_expr": "t = 2·d/c",
+      "trap_test": {
+        "scenario": "传播3千米",
+        "expr": "2*d/c",
+        "ref": 1e-05
+      },
+      "level": "基础",
+      "learning_scope": "初中",
+      "answer_evidence": {
+        "kind": "numeric",
+        "scenario": "传播3千米",
+        "parameters": {
+          "d": 3000,
+          "c": 300000000,
+          "t": 1e-05
+        },
+        "target": "t",
+        "unit": "s",
+        "reference": 1e-05,
+        "correct_proof": {
+          "expression": "d/c",
+          "formula": "由距离和波速求传播时间",
+          "value": 1e-05,
+          "when": "d 为单程距离，c 为这段路径上的近似传播速度。"
+        },
+        "distractor_expression": "2*d/c",
+        "distractor_value": 2e-05,
+        "dimension_matches": true,
+        "independent_evaluation": true
+      },
+      "review": {
+        "confidence": "medium",
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": true,
+          "no_answer_leak_in_options": true
+        },
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。",
+        "material": {
+          "anchors": [
+            {
+              "kind": "公式",
+              "name": "由距离和波速求传播时间",
+              "expression": "d/c",
+              "when": "d 为单程距离，c 为这段路径上的近似传播速度。",
+              "display": "d/c"
+            }
+          ],
+          "source": {
+            "nature": "原创设计示例，非教材实测或真实实验记录",
+            "scenario": "传播3千米",
+            "parameters": {
+              "d": 3000,
+              "c": 300000000,
+              "t": 1e-05
+            },
+            "data": [
+              "电磁波传播距离：3000 m",
+              "电磁波传播速度近似值：300000000 m/s",
+              "理想传播所用时间：1e-05 s"
+            ]
+          },
+          "predicted_errors": [
+            {
+              "option": "A",
+              "text": "2e-05 s",
+              "reason": "通信单程时延只对应单程路径；若题目明确发射后返回的回波才计算往返。",
+              "expression": "2*d/c",
+              "status": "误答原因预测，待教师确认；未采集学生作答证据"
+            }
+          ],
+          "difficulty_note": "建议难度沿用本题level（源卡难度）；尚非题目难度实测，待教师调整",
+          "estimated_seconds": [
+            60,
+            120
+          ],
+          "time_basis": "未做学生计时；按现有难度给出备课估计区间，待教师确认",
+          "machine_checks": [
+            {
+              "name": "题目ID关联源知识点",
+              "passed": true
+            },
+            {
+              "name": "选项标签唯一且参考标签存在",
+              "passed": true
+            },
+            {
+              "name": "选项文本互异",
+              "passed": true
+            },
+            {
+              "name": "正确路径独立数值复算",
+              "passed": true
+            },
+            {
+              "name": "带量纲求值与独立求值一致",
+              "passed": true
+            },
+            {
+              "name": "干扰路径复算且与正确路径分离",
+              "passed": true
+            }
+          ],
+          "machine_boundary": "只列本次逐题实际执行项目；不把关联知识卡的方向、扫描或一致性检查算作本题已验。概念题未验命题真假。",
+          "human_review_items": [
+            "题干条件是否充分、清楚且符合学段",
+            "参考结论在指定条件下是否唯一",
+            "干扰项是否合理、对应真实认知问题且无答案暗示",
+            "公式或概念锚点是否准确",
+            "建议难度及用时是否适合教学",
+            "语言、装置与安全操作是否恰当"
+          ],
+          "reference_answer_note": "现有参考答案保持；即使本地可以判选项，也仍须教师审核教学可用性"
+        }
+      }
+    },
+    {
+      "id": "diagnostic-emwave-02-2",
+      "point_id": "emwave-02",
+      "point_title": "电磁波传播与通信时延",
+      "chapter": "电磁波与现代通信",
+      "stem": "关于“电磁波传播与通信时延”，判断这一说法是否成立，并说明依据：\n将光速传播时间视为端到端网络响应时间。",
+      "options": [
+        {
+          "label": "A",
+          "text": "该说法成立。"
+        },
+        {
+          "label": "B",
+          "text": "该说法不成立。"
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "互联网通信还包含路由、排队和设备处理时间，理想传播时延只是其中一部分。\n知识点条件：无线电波传播速度接近真空光速，因此远距离通信仍有传播时延；实际通信总时延还包括设备处理、排队和网络转发时间。用路程和时间估算只能表示理想的一段传播过程，不代表整个互联网应用的响应时间。\n推导依据：把通信链路的单程距离 d 统一为 m。；无线电波在空气中的速度近似取 3.0×10⁸ m/s。；用距离除以波速估算理想传播时间。；实际通信还包含设备处理等时延，不能把估算值当成端到端总时延。\n卡片公式各自的适用条件（不是本题共同前提）：\n传播距离与时间关系：电磁波在空气中近似以真空光速传播，且只计算单程传播。\n由距离和波速求传播时间：d 为单程距离，c 为这段路径上的近似传播速度。",
+      "error_type": "概念混淆",
+      "judging": "teacher",
+      "source_error_index": 1,
+      "source_caught_by": "人工审核",
+      "wrong_expr": null,
+      "trap_test": null,
+      "level": "基础",
+      "learning_scope": "初中",
+      "answer_evidence": {
+        "kind": "teacher",
+        "claim_source": "wrong",
+        "reference_only": true,
+        "reason": "概念、操作或无法建立完整定量证据，教师确认条件与结论。"
+      },
+      "review": {
+        "confidence": "medium",
+        "requires_teacher": true,
+        "machine": {
+          "unique_option_text": true,
+          "valid_answer_label": true,
+          "numeric_or_dimension_evidence": false,
+          "no_answer_leak_in_options": true
+        },
+        "executor": {
+          "status": "已复查题目结构与同主题来源",
+          "scope": "数值/量纲逐题复算；概念及操作只作执行方复查"
+        },
+        "teacher": {
+          "status": "待审",
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null
+        },
+        "checks": {
+          "answer_unique": null,
+          "distractors_plausible": null,
+          "stem_clear": null,
+          "no_cross_segment": null
+        },
+        "note": "机器证据不等于教学审核；教师未签署。点评题不计自动正确率。",
+        "material": {
+          "anchors": [
+            {
+              "kind": "概念或操作",
+              "name": "电磁波传播与通信时延",
+              "claim": "把光速传播时间当成端到端网络响应时间。",
+              "correction_basis": "互联网通信还包含路由、排队和设备处理时间，理想传播时延只是其中一部分。",
+              "note": "概念锚点及命题真假待教师确认；未套用任意第一条公式",
+              "display": "把光速传播时间当成端到端网络响应时间。"
+            }
+          ],
+          "source": {
+            "nature": "原创概念/操作命题；无真实测量记录",
+            "source_error_index": 1
+          },
+          "predicted_errors": [
+            {
+              "option": "A",
+              "text": "该说法成立。",
+              "reason": "互联网通信还包含路由、排队和设备处理时间，理想传播时延只是其中一部分。",
+              "expression": null,
+              "status": "误答原因预测，待教师确认；未采集学生作答证据"
+            }
+          ],
+          "difficulty_note": "建议难度沿用本题level（源卡难度）；尚非题目难度实测，待教师调整",
+          "estimated_seconds": [
+            60,
+            120
+          ],
+          "time_basis": "未做学生计时；按现有难度给出备课估计区间，待教师确认",
+          "machine_checks": [
+            {
+              "name": "题目ID关联源知识点",
+              "passed": true
+            },
+            {
+              "name": "选项标签唯一且参考标签存在",
+              "passed": true
+            },
+            {
+              "name": "选项文本互异",
+              "passed": true
+            }
+          ],
+          "machine_boundary": "只列本次逐题实际执行项目；不把关联知识卡的方向、扫描或一致性检查算作本题已验。概念题未验命题真假。",
+          "human_review_items": [
+            "题干条件是否充分、清楚且符合学段",
+            "参考结论在指定条件下是否唯一",
+            "干扰项是否合理、对应真实认知问题且无答案暗示",
+            "公式或概念锚点是否准确",
+            "建议难度及用时是否适合教学",
+            "语言、装置与安全操作是否恰当"
+          ],
+          "reference_answer_note": "现有参考答案保持；即使本地可以判选项，也仍须教师审核教学可用性"
+        }
+      }
+    }
+  ],
+  "skipped": [],
+  "source_records": {
+    "diagnostic-emwave-03-1": {
+      "point": {
+        "id": "emwave-03",
+        "title": "信息与信息传播",
+        "level": "拓展",
+        "definition": "信息可以记录在文字、图像、声音等载体中，并通过声、光或电磁信号传递。现代通信常把信息转换成适合传输的信号，经过发射、传播和接收后再还原；本条中的符号速率计算是帮助理解传输过程的拓展模型。",
+        "meaning": "通信过程既有信号在空间传播所需的时间，也有信息符号逐个传送所需的时间，两者不能混为一谈。下面的简单速率模型只计算在给定平均符号传送速率下传送一段信息所需的时间，不描述编码、纠错、排队或网络协议；符号速率不是电磁波载波频率，也不等同于每秒比特数。",
+        "symbols": {
+          "N_sym": {
+            "desc": "一段信息中传送的符号总数，按个计数",
+            "unit": "1"
+          },
+          "R_sym": {
+            "desc": "平均符号传送速率，每秒传送的符号数",
+            "unit": "Hz"
+          },
+          "t_info": {
+            "desc": "传送这段符号信息所用的时间",
+            "unit": "s"
+          }
+        },
+        "scenarios": {
+          "短消息传输": {
+            "N_sym": 3000,
+            "R_sym": 600,
+            "t_info": 5
+          },
+          "较长消息传输": {
+            "N_sym": 12000,
+            "R_sym": 800,
+            "t_info": 15
+          }
+        },
+        "formulas": [
+          {
+            "name": "按符号速率估算传输时间",
+            "expr": "N_sym = R_sym*t_info",
+            "when": "拓展计算，非本卡初中必背主线。传送速率在该段时间内近似稳定；传送速率 用每秒符号数表示，传送时间 用 s。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "短消息传输",
+                "expr": "R_sym*t_info",
+                "ref": 3000,
+                "note": "600 个符号每秒×5 s=3000 个符号。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "较长消息传输",
+                "expr": "R_sym*t_info",
+                "ref": 12000,
+                "note": "800 个符号每秒×15 s=12000 个符号。"
+              },
+              {
+                "type": "direction",
+                "scenario": "短消息传输",
+                "var": "t_info",
+                "lo": 0,
+                "hi": 100,
+                "expr": "R_sym*t_info",
+                "expect": "up",
+                "note": "传送速率固定时，传送时间越长，传送的符号数越多。"
+              },
+              {
+                "type": "scan",
+                "scenario": "短消息传输",
+                "var": "t_info",
+                "lo": 0,
+                "hi": 10000,
+                "note": "扫描非负时间，符号数量估算保持有限。"
+              },
+              {
+                "type": "consistency",
+                "scenario": "短消息传输",
+                "with": "emwave-03|按符号速率估算传输时间",
+                "with_expr": "N_sym",
+                "target": "一段信息中传送的符号总数，按个计数",
+                "note": "直接求本公式输出，与情境中另列的N_sym设计基准核对；数据是设计示例，不是实测。用于核对定义、反算或边界值，不宣称不同物理原理互证。",
+                "verification_kind": "独立设计情境数据核对"
+              },
+              {
+                "type": "numeric",
+                "scenario": "短消息传输",
+                "ref": 3000,
+                "rtol": 1e-10,
+                "atol": 0,
+                "note": "设计示例；人工标签保留的指定反例正确控制。每秒600个符号持续5 s总量3000个；只拿600每秒速率充当总量，被目标量纲门禁拒绝。"
+              }
+            ]
+          },
+          {
+            "name": "由符号数和时间求平均传送速率",
+            "expr": "R_sym = N_sym/t_info",
+            "when": "拓展计算，非本卡初中必背主线。符号总数和传送时间对应同一段传输，传送时间 大于 0。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "短消息传输",
+                "expr": "N_sym/t_info",
+                "ref": 600,
+                "note": "3000 个符号÷5 s=600 个符号每秒。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "较长消息传输",
+                "expr": "N_sym/t_info",
+                "ref": 800,
+                "note": "12000 个符号÷15 s=800 个符号每秒。"
+              },
+              {
+                "type": "direction",
+                "scenario": "短消息传输",
+                "var": "N_sym",
+                "lo": 0,
+                "hi": 100000,
+                "expr": "N_sym/t_info",
+                "expect": "up",
+                "note": "传送时间固定时，符号总数越多，平均传送速率越大。"
+              },
+              {
+                "type": "scan",
+                "scenario": "短消息传输",
+                "var": "t_info",
+                "lo": 0.1,
+                "hi": 10000,
+                "note": "扫描正传送时间，速率计算不除以零。"
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "信息先被记录或编码成可以传送的信号。",
+          "信号需要经过发射、传播和接收，接收端再从信号中还原信息。",
+          "若用平均符号速率描述一段稳定传输，符号总数等于每秒符号数乘以时间。",
+          "此拓展模型只算符号传送时间；真实通信还会受编码、纠错、设备处理和网络排队影响。"
+        ],
+        "errors": [
+          {
+            "wrong": "把每秒传送的符号数误当成整段信息的符号总数。",
+            "why": "符号总数还要乘以传送时间；只写每秒速率会漏掉时间因素，题目问总量时尤其要注意。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            },
+            "automation_review": {
+              "status": "指定反例已补验；原人工审核标签保留",
+              "basis": "每秒600个符号持续5 s总量3000个；只拿600每秒速率充当总量，被目标量纲门禁拒绝。",
+              "scenario": "短消息传输",
+              "correct_expression": "N_sym = R_sym*t_info",
+              "wrong_expression": "R_sym",
+              "correct_value": 3000,
+              "wrong_value": 600,
+              "unit": "1",
+              "wrong_status": "dimension_conflict",
+              "note": "这是原创设计反例，机器仅验证指定模型、数据及量纲；自然语言命题、学生认知与装置仍待教师确认。"
+            }
+          },
+          {
+            "wrong": "把传送 5 s 当成 5 ms，再把符号总数少算 1000 倍。",
+            "wrong_expr": "N_sym = R_sym*(t_info/1000)",
+            "why": "情境时间已经用秒表示，不能再次按毫秒缩小；重复换算会让估算结果少 1000 倍。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "短消息传输",
+              "expr": "R_sym*(t_info/1000)",
+              "ref": 3000
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "把符号传送速率等同于电磁波载波频率或每秒比特数。",
+            "why": "符号速率、载波频率和比特率的定义不同；没有调制和编码信息时，不能把三者数值直接等同。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "一个简化通信模型中，平均每秒传送 600 个符号，传送 5 s，估算传过的符号总数。",
+          "solution": [
+            "N_sym=R_sym*t_info=600×5=3000 个符号。",
+            "这是符号数的拓展估算，不代表网络端到端时延或比特率。"
+          ],
+          "answer": "约传送 3000 个符号。"
+        },
+        "prereq": [
+          "motion-01",
+          "emwave-01"
+        ],
+        "next": [
+          "emwave-02"
+        ],
+        "tags": [
+          "信息",
+          "信息传播",
+          "通信信号",
+          "符号速率",
+          "拓展模型"
+        ],
+        "core": [
+          {
+            "title": "信息与信息传播",
+            "text": "信息借声音、文字、图像等载体记录，通信可把信息转为信号，经发送、传输和接收还原。模拟信号连续变化，数字信号用离散状态表示；两者不是“快慢”同义词。数据符号率和电磁波频率定义不同，数字信号也可借电磁波传输。"
+          },
+          {
+            "title": "本章素养回顾（原创任务）",
+            "text": "选择本章一个现象，写出结论、成立条件和证据；用另一条本章规律复核解释是否矛盾。指出一次测量或模型的局限，并说明还需什么证据；数值通过不替代概念辨析。"
+          }
+        ],
+        "learning_scope": "初中主线；公式含拓展"
+      },
+      "error_index": 0,
+      "chapter": "电磁波与现代通信"
+    },
+    "diagnostic-emwave-03-2": {
+      "point": {
+        "id": "emwave-03",
+        "title": "信息与信息传播",
+        "level": "拓展",
+        "definition": "信息可以记录在文字、图像、声音等载体中，并通过声、光或电磁信号传递。现代通信常把信息转换成适合传输的信号，经过发射、传播和接收后再还原；本条中的符号速率计算是帮助理解传输过程的拓展模型。",
+        "meaning": "通信过程既有信号在空间传播所需的时间，也有信息符号逐个传送所需的时间，两者不能混为一谈。下面的简单速率模型只计算在给定平均符号传送速率下传送一段信息所需的时间，不描述编码、纠错、排队或网络协议；符号速率不是电磁波载波频率，也不等同于每秒比特数。",
+        "symbols": {
+          "N_sym": {
+            "desc": "一段信息中传送的符号总数，按个计数",
+            "unit": "1"
+          },
+          "R_sym": {
+            "desc": "平均符号传送速率，每秒传送的符号数",
+            "unit": "Hz"
+          },
+          "t_info": {
+            "desc": "传送这段符号信息所用的时间",
+            "unit": "s"
+          }
+        },
+        "scenarios": {
+          "短消息传输": {
+            "N_sym": 3000,
+            "R_sym": 600,
+            "t_info": 5
+          },
+          "较长消息传输": {
+            "N_sym": 12000,
+            "R_sym": 800,
+            "t_info": 15
+          }
+        },
+        "formulas": [
+          {
+            "name": "按符号速率估算传输时间",
+            "expr": "N_sym = R_sym*t_info",
+            "when": "拓展计算，非本卡初中必背主线。传送速率在该段时间内近似稳定；传送速率 用每秒符号数表示，传送时间 用 s。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "短消息传输",
+                "expr": "R_sym*t_info",
+                "ref": 3000,
+                "note": "600 个符号每秒×5 s=3000 个符号。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "较长消息传输",
+                "expr": "R_sym*t_info",
+                "ref": 12000,
+                "note": "800 个符号每秒×15 s=12000 个符号。"
+              },
+              {
+                "type": "direction",
+                "scenario": "短消息传输",
+                "var": "t_info",
+                "lo": 0,
+                "hi": 100,
+                "expr": "R_sym*t_info",
+                "expect": "up",
+                "note": "传送速率固定时，传送时间越长，传送的符号数越多。"
+              },
+              {
+                "type": "scan",
+                "scenario": "短消息传输",
+                "var": "t_info",
+                "lo": 0,
+                "hi": 10000,
+                "note": "扫描非负时间，符号数量估算保持有限。"
+              },
+              {
+                "type": "consistency",
+                "scenario": "短消息传输",
+                "with": "emwave-03|按符号速率估算传输时间",
+                "with_expr": "N_sym",
+                "target": "一段信息中传送的符号总数，按个计数",
+                "note": "直接求本公式输出，与情境中另列的N_sym设计基准核对；数据是设计示例，不是实测。用于核对定义、反算或边界值，不宣称不同物理原理互证。",
+                "verification_kind": "独立设计情境数据核对"
+              },
+              {
+                "type": "numeric",
+                "scenario": "短消息传输",
+                "ref": 3000,
+                "rtol": 1e-10,
+                "atol": 0,
+                "note": "设计示例；人工标签保留的指定反例正确控制。每秒600个符号持续5 s总量3000个；只拿600每秒速率充当总量，被目标量纲门禁拒绝。"
+              }
+            ]
+          },
+          {
+            "name": "由符号数和时间求平均传送速率",
+            "expr": "R_sym = N_sym/t_info",
+            "when": "拓展计算，非本卡初中必背主线。符号总数和传送时间对应同一段传输，传送时间 大于 0。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "短消息传输",
+                "expr": "N_sym/t_info",
+                "ref": 600,
+                "note": "3000 个符号÷5 s=600 个符号每秒。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "较长消息传输",
+                "expr": "N_sym/t_info",
+                "ref": 800,
+                "note": "12000 个符号÷15 s=800 个符号每秒。"
+              },
+              {
+                "type": "direction",
+                "scenario": "短消息传输",
+                "var": "N_sym",
+                "lo": 0,
+                "hi": 100000,
+                "expr": "N_sym/t_info",
+                "expect": "up",
+                "note": "传送时间固定时，符号总数越多，平均传送速率越大。"
+              },
+              {
+                "type": "scan",
+                "scenario": "短消息传输",
+                "var": "t_info",
+                "lo": 0.1,
+                "hi": 10000,
+                "note": "扫描正传送时间，速率计算不除以零。"
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "信息先被记录或编码成可以传送的信号。",
+          "信号需要经过发射、传播和接收，接收端再从信号中还原信息。",
+          "若用平均符号速率描述一段稳定传输，符号总数等于每秒符号数乘以时间。",
+          "此拓展模型只算符号传送时间；真实通信还会受编码、纠错、设备处理和网络排队影响。"
+        ],
+        "errors": [
+          {
+            "wrong": "把每秒传送的符号数误当成整段信息的符号总数。",
+            "why": "符号总数还要乘以传送时间；只写每秒速率会漏掉时间因素，题目问总量时尤其要注意。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            },
+            "automation_review": {
+              "status": "指定反例已补验；原人工审核标签保留",
+              "basis": "每秒600个符号持续5 s总量3000个；只拿600每秒速率充当总量，被目标量纲门禁拒绝。",
+              "scenario": "短消息传输",
+              "correct_expression": "N_sym = R_sym*t_info",
+              "wrong_expression": "R_sym",
+              "correct_value": 3000,
+              "wrong_value": 600,
+              "unit": "1",
+              "wrong_status": "dimension_conflict",
+              "note": "这是原创设计反例，机器仅验证指定模型、数据及量纲；自然语言命题、学生认知与装置仍待教师确认。"
+            }
+          },
+          {
+            "wrong": "把传送 5 s 当成 5 ms，再把符号总数少算 1000 倍。",
+            "wrong_expr": "N_sym = R_sym*(t_info/1000)",
+            "why": "情境时间已经用秒表示，不能再次按毫秒缩小；重复换算会让估算结果少 1000 倍。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "短消息传输",
+              "expr": "R_sym*(t_info/1000)",
+              "ref": 3000
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "把符号传送速率等同于电磁波载波频率或每秒比特数。",
+            "why": "符号速率、载波频率和比特率的定义不同；没有调制和编码信息时，不能把三者数值直接等同。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "一个简化通信模型中，平均每秒传送 600 个符号，传送 5 s，估算传过的符号总数。",
+          "solution": [
+            "N_sym=R_sym*t_info=600×5=3000 个符号。",
+            "这是符号数的拓展估算，不代表网络端到端时延或比特率。"
+          ],
+          "answer": "约传送 3000 个符号。"
+        },
+        "prereq": [
+          "motion-01",
+          "emwave-01"
+        ],
+        "next": [
+          "emwave-02"
+        ],
+        "tags": [
+          "信息",
+          "信息传播",
+          "通信信号",
+          "符号速率",
+          "拓展模型"
+        ],
+        "core": [
+          {
+            "title": "信息与信息传播",
+            "text": "信息借声音、文字、图像等载体记录，通信可把信息转为信号，经发送、传输和接收还原。模拟信号连续变化，数字信号用离散状态表示；两者不是“快慢”同义词。数据符号率和电磁波频率定义不同，数字信号也可借电磁波传输。"
+          },
+          {
+            "title": "本章素养回顾（原创任务）",
+            "text": "选择本章一个现象，写出结论、成立条件和证据；用另一条本章规律复核解释是否矛盾。指出一次测量或模型的局限，并说明还需什么证据；数值通过不替代概念辨析。"
+          }
+        ],
+        "learning_scope": "初中主线；公式含拓展"
+      },
+      "error_index": 1,
+      "chapter": "电磁波与现代通信"
+    },
+    "diagnostic-emwave-03-3": {
+      "point": {
+        "id": "emwave-03",
+        "title": "信息与信息传播",
+        "level": "拓展",
+        "definition": "信息可以记录在文字、图像、声音等载体中，并通过声、光或电磁信号传递。现代通信常把信息转换成适合传输的信号，经过发射、传播和接收后再还原；本条中的符号速率计算是帮助理解传输过程的拓展模型。",
+        "meaning": "通信过程既有信号在空间传播所需的时间，也有信息符号逐个传送所需的时间，两者不能混为一谈。下面的简单速率模型只计算在给定平均符号传送速率下传送一段信息所需的时间，不描述编码、纠错、排队或网络协议；符号速率不是电磁波载波频率，也不等同于每秒比特数。",
+        "symbols": {
+          "N_sym": {
+            "desc": "一段信息中传送的符号总数，按个计数",
+            "unit": "1"
+          },
+          "R_sym": {
+            "desc": "平均符号传送速率，每秒传送的符号数",
+            "unit": "Hz"
+          },
+          "t_info": {
+            "desc": "传送这段符号信息所用的时间",
+            "unit": "s"
+          }
+        },
+        "scenarios": {
+          "短消息传输": {
+            "N_sym": 3000,
+            "R_sym": 600,
+            "t_info": 5
+          },
+          "较长消息传输": {
+            "N_sym": 12000,
+            "R_sym": 800,
+            "t_info": 15
+          }
+        },
+        "formulas": [
+          {
+            "name": "按符号速率估算传输时间",
+            "expr": "N_sym = R_sym*t_info",
+            "when": "拓展计算，非本卡初中必背主线。传送速率在该段时间内近似稳定；传送速率 用每秒符号数表示，传送时间 用 s。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "短消息传输",
+                "expr": "R_sym*t_info",
+                "ref": 3000,
+                "note": "600 个符号每秒×5 s=3000 个符号。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "较长消息传输",
+                "expr": "R_sym*t_info",
+                "ref": 12000,
+                "note": "800 个符号每秒×15 s=12000 个符号。"
+              },
+              {
+                "type": "direction",
+                "scenario": "短消息传输",
+                "var": "t_info",
+                "lo": 0,
+                "hi": 100,
+                "expr": "R_sym*t_info",
+                "expect": "up",
+                "note": "传送速率固定时，传送时间越长，传送的符号数越多。"
+              },
+              {
+                "type": "scan",
+                "scenario": "短消息传输",
+                "var": "t_info",
+                "lo": 0,
+                "hi": 10000,
+                "note": "扫描非负时间，符号数量估算保持有限。"
+              },
+              {
+                "type": "consistency",
+                "scenario": "短消息传输",
+                "with": "emwave-03|按符号速率估算传输时间",
+                "with_expr": "N_sym",
+                "target": "一段信息中传送的符号总数，按个计数",
+                "note": "直接求本公式输出，与情境中另列的N_sym设计基准核对；数据是设计示例，不是实测。用于核对定义、反算或边界值，不宣称不同物理原理互证。",
+                "verification_kind": "独立设计情境数据核对"
+              },
+              {
+                "type": "numeric",
+                "scenario": "短消息传输",
+                "ref": 3000,
+                "rtol": 1e-10,
+                "atol": 0,
+                "note": "设计示例；人工标签保留的指定反例正确控制。每秒600个符号持续5 s总量3000个；只拿600每秒速率充当总量，被目标量纲门禁拒绝。"
+              }
+            ]
+          },
+          {
+            "name": "由符号数和时间求平均传送速率",
+            "expr": "R_sym = N_sym/t_info",
+            "when": "拓展计算，非本卡初中必背主线。符号总数和传送时间对应同一段传输，传送时间 大于 0。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "短消息传输",
+                "expr": "N_sym/t_info",
+                "ref": 600,
+                "note": "3000 个符号÷5 s=600 个符号每秒。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "较长消息传输",
+                "expr": "N_sym/t_info",
+                "ref": 800,
+                "note": "12000 个符号÷15 s=800 个符号每秒。"
+              },
+              {
+                "type": "direction",
+                "scenario": "短消息传输",
+                "var": "N_sym",
+                "lo": 0,
+                "hi": 100000,
+                "expr": "N_sym/t_info",
+                "expect": "up",
+                "note": "传送时间固定时，符号总数越多，平均传送速率越大。"
+              },
+              {
+                "type": "scan",
+                "scenario": "短消息传输",
+                "var": "t_info",
+                "lo": 0.1,
+                "hi": 10000,
+                "note": "扫描正传送时间，速率计算不除以零。"
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "信息先被记录或编码成可以传送的信号。",
+          "信号需要经过发射、传播和接收，接收端再从信号中还原信息。",
+          "若用平均符号速率描述一段稳定传输，符号总数等于每秒符号数乘以时间。",
+          "此拓展模型只算符号传送时间；真实通信还会受编码、纠错、设备处理和网络排队影响。"
+        ],
+        "errors": [
+          {
+            "wrong": "把每秒传送的符号数误当成整段信息的符号总数。",
+            "why": "符号总数还要乘以传送时间；只写每秒速率会漏掉时间因素，题目问总量时尤其要注意。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            },
+            "automation_review": {
+              "status": "指定反例已补验；原人工审核标签保留",
+              "basis": "每秒600个符号持续5 s总量3000个；只拿600每秒速率充当总量，被目标量纲门禁拒绝。",
+              "scenario": "短消息传输",
+              "correct_expression": "N_sym = R_sym*t_info",
+              "wrong_expression": "R_sym",
+              "correct_value": 3000,
+              "wrong_value": 600,
+              "unit": "1",
+              "wrong_status": "dimension_conflict",
+              "note": "这是原创设计反例，机器仅验证指定模型、数据及量纲；自然语言命题、学生认知与装置仍待教师确认。"
+            }
+          },
+          {
+            "wrong": "把传送 5 s 当成 5 ms，再把符号总数少算 1000 倍。",
+            "wrong_expr": "N_sym = R_sym*(t_info/1000)",
+            "why": "情境时间已经用秒表示，不能再次按毫秒缩小；重复换算会让估算结果少 1000 倍。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "短消息传输",
+              "expr": "R_sym*(t_info/1000)",
+              "ref": 3000
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "把符号传送速率等同于电磁波载波频率或每秒比特数。",
+            "why": "符号速率、载波频率和比特率的定义不同；没有调制和编码信息时，不能把三者数值直接等同。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "一个简化通信模型中，平均每秒传送 600 个符号，传送 5 s，估算传过的符号总数。",
+          "solution": [
+            "N_sym=R_sym*t_info=600×5=3000 个符号。",
+            "这是符号数的拓展估算，不代表网络端到端时延或比特率。"
+          ],
+          "answer": "约传送 3000 个符号。"
+        },
+        "prereq": [
+          "motion-01",
+          "emwave-01"
+        ],
+        "next": [
+          "emwave-02"
+        ],
+        "tags": [
+          "信息",
+          "信息传播",
+          "通信信号",
+          "符号速率",
+          "拓展模型"
+        ],
+        "core": [
+          {
+            "title": "信息与信息传播",
+            "text": "信息借声音、文字、图像等载体记录，通信可把信息转为信号，经发送、传输和接收还原。模拟信号连续变化，数字信号用离散状态表示；两者不是“快慢”同义词。数据符号率和电磁波频率定义不同，数字信号也可借电磁波传输。"
+          },
+          {
+            "title": "本章素养回顾（原创任务）",
+            "text": "选择本章一个现象，写出结论、成立条件和证据；用另一条本章规律复核解释是否矛盾。指出一次测量或模型的局限，并说明还需什么证据；数值通过不替代概念辨析。"
+          }
+        ],
+        "learning_scope": "初中主线；公式含拓展"
+      },
+      "error_index": 2,
+      "chapter": "电磁波与现代通信"
+    },
+    "diagnostic-emwave-01-1": {
+      "point": {
+        "id": "emwave-01",
+        "title": "电磁波的波速、频率和波长",
+        "level": "基础",
+        "definition": "电磁波能够在真空中传播，真空中的传播速度约为 3.0×10^8 m/s。电磁波的波速等于波长与频率的乘积；在同一真空中波速近似固定，频率越高，波长越短。",
+        "meaning": "无线电波、微波、红外线、可见光、紫外线、X 射线和伽马射线都属于电磁波，主要差别包括频率和波长范围。电磁波不需要空气等介质才能传播。使用波速关系时，波长用 m、频率用 Hz，所得波速为 m/s；空气中传播速度可近似按真空光速处理。",
+        "symbols": {
+          "c": {
+            "desc": "电磁波在真空中的传播速度近似值",
+            "unit": "m/s"
+          },
+          "lambda": {
+            "desc": "电磁波波长",
+            "unit": "m"
+          },
+          "f": {
+            "desc": "电磁波频率",
+            "unit": "Hz"
+          },
+          "d": {
+            "desc": "电磁波传播距离",
+            "unit": "m"
+          },
+          "t": {
+            "desc": "理想传播所用时间",
+            "unit": "s"
+          }
+        },
+        "scenarios": {
+          "无线电波": {
+            "c": 300000000,
+            "lambda": 3,
+            "f": 100000000
+          },
+          "微波": {
+            "c": 300000000,
+            "lambda": 0.5,
+            "f": 600000000
+          },
+          "传播3千米": {
+            "d": 3000,
+            "c": 300000000,
+            "t": 1e-05
+          },
+          "传播30千米": {
+            "d": 30000,
+            "c": 300000000,
+            "t": 0.0001
+          }
+        },
+        "formulas": [
+          {
+            "name": "波速等于波长乘频率",
+            "expr": "c = lambda*f",
+            "when": "波长 lambda 用 m、频率 f 用 Hz，c 用 m/s；真空波速取约 3.0×10^8 m/s。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "无线电波",
+                "expr": "lambda*f",
+                "ref": 300000000,
+                "note": "3 m×100 000 000 Hz=3.0×10^8 m/s。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "微波",
+                "expr": "lambda*f",
+                "ref": 300000000,
+                "note": "0.5 m×600 000 000 Hz=3.0×10^8 m/s。"
+              },
+              {
+                "type": "scan",
+                "scenario": "无线电波",
+                "var": "f",
+                "lo": 1,
+                "hi": 10000000000,
+                "note": "扫描正频率范围，波速乘积计算保持有限。"
+              },
+              {
+                "type": "consistency",
+                "scenario": "无线电波",
+                "with": "emwave-01|波速等于波长乘频率",
+                "with_expr": "c",
+                "target": "电磁波在真空中的传播速度近似值",
+                "note": "直接求本公式输出，与情境中另列的c设计基准核对；数据是设计示例，不是实测。用于核对定义、反算或边界值，不宣称不同物理原理互证。",
+                "verification_kind": "独立设计情境数据核对"
+              }
+            ]
+          },
+          {
+            "name": "由波速和频率求波长",
+            "expr": "lambda = c/f",
+            "when": "电磁波在真空或近似真空的空气中传播，f 不为零。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "无线电波",
+                "expr": "c/f",
+                "ref": 3,
+                "note": "3.0×10^8 m/s÷100 000 000 Hz=3 m。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "微波",
+                "expr": "c/f",
+                "ref": 0.5,
+                "note": "3.0×10^8÷600 000 000=0.5 m。"
+              },
+              {
+                "type": "direction",
+                "scenario": "无线电波",
+                "var": "f",
+                "lo": 1000000,
+                "hi": 1000000000,
+                "expr": "c/f",
+                "expect": "down",
+                "note": "波速固定时，频率增大，波长减小。"
+              },
+              {
+                "type": "scan",
+                "scenario": "无线电波",
+                "var": "f",
+                "lo": 1,
+                "hi": 10000000000,
+                "note": "扫描正频率，反算波长不除以零。"
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "电磁波每秒传播一定距离，该距离为波速 c。",
+          "波长 lambda 表示相邻同相位点之间的距离，频率 f 表示每秒振动次数。",
+          "每秒前进的完整波长数乘以波长，得到 c=lambda*f。",
+          "同一真空中 c 近似不变，所以频率越高波长越短。"
+        ],
+        "errors": [
+          {
+            "wrong": "把波长与频率相乘写成频率除以波长。",
+            "wrong_expr": "c = f/lambda",
+            "why": "波速关系为波长乘频率；f/lambda 的单位不是 m/s。",
+            "caught_by": "量纲一致性",
+            "trap_test": {
+              "kind": "dimension",
+              "target": "c = f/lambda",
+              "lhs_dim": "L·T^-1",
+              "rhs_dim": "L^-1·T^-1",
+              "expect": "mismatch",
+              "note": "实际量纲检查得到等号左边为L·T^-1、右边为L^-1·T^-1；两边不是同一物理量，因此该等式不成立。"
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "频率已用 Hz 代入后，又按 MHz 再除以 1 000 000，造成波速少算百万倍。",
+            "wrong_expr": "c = lambda*f/1000000",
+            "why": "情境中的 100 000 000 已是 Hz；与 3 m 相乘应得到 3.0×10^8 m/s，不应重复换算。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "无线电波",
+              "expr": "lambda*f/1000000",
+              "ref": 300000000
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "认为电磁波传播必须依赖空气或其他介质。",
+            "why": "电磁波能够在真空中传播；声波需要介质，两类波的传播条件不同。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "某无线电波频率100 MHz，在真空中传播，取真空光速3.0×10⁸ m/s，求波长。",
+          "solution": [
+            "100 MHz=100 000 000 Hz。",
+            "lambda=c/f=3.0×10^8/100 000 000=3 m。"
+          ],
+          "answer": "波长约为 3 m。"
+        },
+        "prereq": [
+          "particle-02"
+        ],
+        "next": [
+          "emwave-02"
+        ],
+        "tags": [
+          "电磁波",
+          "波速",
+          "频率",
+          "波长",
+          "无线电波",
+          "微波"
+        ],
+        "core": [
+          {
+            "title": "电磁波及其传播",
+            "text": "变化的电流可产生电磁波，电磁波能在真空中传播，波速、波长、频率满足乘积关系。发射装置把待传信息加载到信号，接收装置选择信号并还原信息；不是电磁波凭空认识文字。频率较高对应真空波长较短，不能说频率越高必定传播越快。"
+          }
+        ],
+        "learning_scope": "初中"
+      },
+      "error_index": 0,
+      "chapter": "电磁波与现代通信"
+    },
+    "diagnostic-emwave-01-2": {
+      "point": {
+        "id": "emwave-01",
+        "title": "电磁波的波速、频率和波长",
+        "level": "基础",
+        "definition": "电磁波能够在真空中传播，真空中的传播速度约为 3.0×10^8 m/s。电磁波的波速等于波长与频率的乘积；在同一真空中波速近似固定，频率越高，波长越短。",
+        "meaning": "无线电波、微波、红外线、可见光、紫外线、X 射线和伽马射线都属于电磁波，主要差别包括频率和波长范围。电磁波不需要空气等介质才能传播。使用波速关系时，波长用 m、频率用 Hz，所得波速为 m/s；空气中传播速度可近似按真空光速处理。",
+        "symbols": {
+          "c": {
+            "desc": "电磁波在真空中的传播速度近似值",
+            "unit": "m/s"
+          },
+          "lambda": {
+            "desc": "电磁波波长",
+            "unit": "m"
+          },
+          "f": {
+            "desc": "电磁波频率",
+            "unit": "Hz"
+          },
+          "d": {
+            "desc": "电磁波传播距离",
+            "unit": "m"
+          },
+          "t": {
+            "desc": "理想传播所用时间",
+            "unit": "s"
+          }
+        },
+        "scenarios": {
+          "无线电波": {
+            "c": 300000000,
+            "lambda": 3,
+            "f": 100000000
+          },
+          "微波": {
+            "c": 300000000,
+            "lambda": 0.5,
+            "f": 600000000
+          },
+          "传播3千米": {
+            "d": 3000,
+            "c": 300000000,
+            "t": 1e-05
+          },
+          "传播30千米": {
+            "d": 30000,
+            "c": 300000000,
+            "t": 0.0001
+          }
+        },
+        "formulas": [
+          {
+            "name": "波速等于波长乘频率",
+            "expr": "c = lambda*f",
+            "when": "波长 lambda 用 m、频率 f 用 Hz，c 用 m/s；真空波速取约 3.0×10^8 m/s。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "无线电波",
+                "expr": "lambda*f",
+                "ref": 300000000,
+                "note": "3 m×100 000 000 Hz=3.0×10^8 m/s。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "微波",
+                "expr": "lambda*f",
+                "ref": 300000000,
+                "note": "0.5 m×600 000 000 Hz=3.0×10^8 m/s。"
+              },
+              {
+                "type": "scan",
+                "scenario": "无线电波",
+                "var": "f",
+                "lo": 1,
+                "hi": 10000000000,
+                "note": "扫描正频率范围，波速乘积计算保持有限。"
+              },
+              {
+                "type": "consistency",
+                "scenario": "无线电波",
+                "with": "emwave-01|波速等于波长乘频率",
+                "with_expr": "c",
+                "target": "电磁波在真空中的传播速度近似值",
+                "note": "直接求本公式输出，与情境中另列的c设计基准核对；数据是设计示例，不是实测。用于核对定义、反算或边界值，不宣称不同物理原理互证。",
+                "verification_kind": "独立设计情境数据核对"
+              }
+            ]
+          },
+          {
+            "name": "由波速和频率求波长",
+            "expr": "lambda = c/f",
+            "when": "电磁波在真空或近似真空的空气中传播，f 不为零。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "无线电波",
+                "expr": "c/f",
+                "ref": 3,
+                "note": "3.0×10^8 m/s÷100 000 000 Hz=3 m。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "微波",
+                "expr": "c/f",
+                "ref": 0.5,
+                "note": "3.0×10^8÷600 000 000=0.5 m。"
+              },
+              {
+                "type": "direction",
+                "scenario": "无线电波",
+                "var": "f",
+                "lo": 1000000,
+                "hi": 1000000000,
+                "expr": "c/f",
+                "expect": "down",
+                "note": "波速固定时，频率增大，波长减小。"
+              },
+              {
+                "type": "scan",
+                "scenario": "无线电波",
+                "var": "f",
+                "lo": 1,
+                "hi": 10000000000,
+                "note": "扫描正频率，反算波长不除以零。"
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "电磁波每秒传播一定距离，该距离为波速 c。",
+          "波长 lambda 表示相邻同相位点之间的距离，频率 f 表示每秒振动次数。",
+          "每秒前进的完整波长数乘以波长，得到 c=lambda*f。",
+          "同一真空中 c 近似不变，所以频率越高波长越短。"
+        ],
+        "errors": [
+          {
+            "wrong": "把波长与频率相乘写成频率除以波长。",
+            "wrong_expr": "c = f/lambda",
+            "why": "波速关系为波长乘频率；f/lambda 的单位不是 m/s。",
+            "caught_by": "量纲一致性",
+            "trap_test": {
+              "kind": "dimension",
+              "target": "c = f/lambda",
+              "lhs_dim": "L·T^-1",
+              "rhs_dim": "L^-1·T^-1",
+              "expect": "mismatch",
+              "note": "实际量纲检查得到等号左边为L·T^-1、右边为L^-1·T^-1；两边不是同一物理量，因此该等式不成立。"
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "频率已用 Hz 代入后，又按 MHz 再除以 1 000 000，造成波速少算百万倍。",
+            "wrong_expr": "c = lambda*f/1000000",
+            "why": "情境中的 100 000 000 已是 Hz；与 3 m 相乘应得到 3.0×10^8 m/s，不应重复换算。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "无线电波",
+              "expr": "lambda*f/1000000",
+              "ref": 300000000
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "认为电磁波传播必须依赖空气或其他介质。",
+            "why": "电磁波能够在真空中传播；声波需要介质，两类波的传播条件不同。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "某无线电波频率100 MHz，在真空中传播，取真空光速3.0×10⁸ m/s，求波长。",
+          "solution": [
+            "100 MHz=100 000 000 Hz。",
+            "lambda=c/f=3.0×10^8/100 000 000=3 m。"
+          ],
+          "answer": "波长约为 3 m。"
+        },
+        "prereq": [
+          "particle-02"
+        ],
+        "next": [
+          "emwave-02"
+        ],
+        "tags": [
+          "电磁波",
+          "波速",
+          "频率",
+          "波长",
+          "无线电波",
+          "微波"
+        ],
+        "core": [
+          {
+            "title": "电磁波及其传播",
+            "text": "变化的电流可产生电磁波，电磁波能在真空中传播，波速、波长、频率满足乘积关系。发射装置把待传信息加载到信号，接收装置选择信号并还原信息；不是电磁波凭空认识文字。频率较高对应真空波长较短，不能说频率越高必定传播越快。"
+          }
+        ],
+        "learning_scope": "初中"
+      },
+      "error_index": 1,
+      "chapter": "电磁波与现代通信"
+    },
+    "diagnostic-emwave-01-3": {
+      "point": {
+        "id": "emwave-01",
+        "title": "电磁波的波速、频率和波长",
+        "level": "基础",
+        "definition": "电磁波能够在真空中传播，真空中的传播速度约为 3.0×10^8 m/s。电磁波的波速等于波长与频率的乘积；在同一真空中波速近似固定，频率越高，波长越短。",
+        "meaning": "无线电波、微波、红外线、可见光、紫外线、X 射线和伽马射线都属于电磁波，主要差别包括频率和波长范围。电磁波不需要空气等介质才能传播。使用波速关系时，波长用 m、频率用 Hz，所得波速为 m/s；空气中传播速度可近似按真空光速处理。",
+        "symbols": {
+          "c": {
+            "desc": "电磁波在真空中的传播速度近似值",
+            "unit": "m/s"
+          },
+          "lambda": {
+            "desc": "电磁波波长",
+            "unit": "m"
+          },
+          "f": {
+            "desc": "电磁波频率",
+            "unit": "Hz"
+          },
+          "d": {
+            "desc": "电磁波传播距离",
+            "unit": "m"
+          },
+          "t": {
+            "desc": "理想传播所用时间",
+            "unit": "s"
+          }
+        },
+        "scenarios": {
+          "无线电波": {
+            "c": 300000000,
+            "lambda": 3,
+            "f": 100000000
+          },
+          "微波": {
+            "c": 300000000,
+            "lambda": 0.5,
+            "f": 600000000
+          },
+          "传播3千米": {
+            "d": 3000,
+            "c": 300000000,
+            "t": 1e-05
+          },
+          "传播30千米": {
+            "d": 30000,
+            "c": 300000000,
+            "t": 0.0001
+          }
+        },
+        "formulas": [
+          {
+            "name": "波速等于波长乘频率",
+            "expr": "c = lambda*f",
+            "when": "波长 lambda 用 m、频率 f 用 Hz，c 用 m/s；真空波速取约 3.0×10^8 m/s。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "无线电波",
+                "expr": "lambda*f",
+                "ref": 300000000,
+                "note": "3 m×100 000 000 Hz=3.0×10^8 m/s。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "微波",
+                "expr": "lambda*f",
+                "ref": 300000000,
+                "note": "0.5 m×600 000 000 Hz=3.0×10^8 m/s。"
+              },
+              {
+                "type": "scan",
+                "scenario": "无线电波",
+                "var": "f",
+                "lo": 1,
+                "hi": 10000000000,
+                "note": "扫描正频率范围，波速乘积计算保持有限。"
+              },
+              {
+                "type": "consistency",
+                "scenario": "无线电波",
+                "with": "emwave-01|波速等于波长乘频率",
+                "with_expr": "c",
+                "target": "电磁波在真空中的传播速度近似值",
+                "note": "直接求本公式输出，与情境中另列的c设计基准核对；数据是设计示例，不是实测。用于核对定义、反算或边界值，不宣称不同物理原理互证。",
+                "verification_kind": "独立设计情境数据核对"
+              }
+            ]
+          },
+          {
+            "name": "由波速和频率求波长",
+            "expr": "lambda = c/f",
+            "when": "电磁波在真空或近似真空的空气中传播，f 不为零。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "无线电波",
+                "expr": "c/f",
+                "ref": 3,
+                "note": "3.0×10^8 m/s÷100 000 000 Hz=3 m。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "微波",
+                "expr": "c/f",
+                "ref": 0.5,
+                "note": "3.0×10^8÷600 000 000=0.5 m。"
+              },
+              {
+                "type": "direction",
+                "scenario": "无线电波",
+                "var": "f",
+                "lo": 1000000,
+                "hi": 1000000000,
+                "expr": "c/f",
+                "expect": "down",
+                "note": "波速固定时，频率增大，波长减小。"
+              },
+              {
+                "type": "scan",
+                "scenario": "无线电波",
+                "var": "f",
+                "lo": 1,
+                "hi": 10000000000,
+                "note": "扫描正频率，反算波长不除以零。"
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "电磁波每秒传播一定距离，该距离为波速 c。",
+          "波长 lambda 表示相邻同相位点之间的距离，频率 f 表示每秒振动次数。",
+          "每秒前进的完整波长数乘以波长，得到 c=lambda*f。",
+          "同一真空中 c 近似不变，所以频率越高波长越短。"
+        ],
+        "errors": [
+          {
+            "wrong": "把波长与频率相乘写成频率除以波长。",
+            "wrong_expr": "c = f/lambda",
+            "why": "波速关系为波长乘频率；f/lambda 的单位不是 m/s。",
+            "caught_by": "量纲一致性",
+            "trap_test": {
+              "kind": "dimension",
+              "target": "c = f/lambda",
+              "lhs_dim": "L·T^-1",
+              "rhs_dim": "L^-1·T^-1",
+              "expect": "mismatch",
+              "note": "实际量纲检查得到等号左边为L·T^-1、右边为L^-1·T^-1；两边不是同一物理量，因此该等式不成立。"
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "频率已用 Hz 代入后，又按 MHz 再除以 1 000 000，造成波速少算百万倍。",
+            "wrong_expr": "c = lambda*f/1000000",
+            "why": "情境中的 100 000 000 已是 Hz；与 3 m 相乘应得到 3.0×10^8 m/s，不应重复换算。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "无线电波",
+              "expr": "lambda*f/1000000",
+              "ref": 300000000
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "认为电磁波传播必须依赖空气或其他介质。",
+            "why": "电磁波能够在真空中传播；声波需要介质，两类波的传播条件不同。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "某无线电波频率100 MHz，在真空中传播，取真空光速3.0×10⁸ m/s，求波长。",
+          "solution": [
+            "100 MHz=100 000 000 Hz。",
+            "lambda=c/f=3.0×10^8/100 000 000=3 m。"
+          ],
+          "answer": "波长约为 3 m。"
+        },
+        "prereq": [
+          "particle-02"
+        ],
+        "next": [
+          "emwave-02"
+        ],
+        "tags": [
+          "电磁波",
+          "波速",
+          "频率",
+          "波长",
+          "无线电波",
+          "微波"
+        ],
+        "core": [
+          {
+            "title": "电磁波及其传播",
+            "text": "变化的电流可产生电磁波，电磁波能在真空中传播，波速、波长、频率满足乘积关系。发射装置把待传信息加载到信号，接收装置选择信号并还原信息；不是电磁波凭空认识文字。频率较高对应真空波长较短，不能说频率越高必定传播越快。"
+          }
+        ],
+        "learning_scope": "初中"
+      },
+      "error_index": 2,
+      "chapter": "电磁波与现代通信"
+    },
+    "diagnostic-emwave-02-1": {
+      "point": {
+        "id": "emwave-02",
+        "title": "电磁波传播与通信时延",
+        "level": "基础",
+        "definition": "无线通信把信息转换成电信号并调制到电磁波上，经空间传播后由接收设备还原信息。忽略处理设备和传播介质影响时，信号传播时间可用传播距离除以波速估算。",
+        "meaning": "无线电波传播速度接近真空光速，因此远距离通信仍有传播时延；实际通信总时延还包括设备处理、排队和网络转发时间。用路程和时间估算只能表示理想的一段传播过程，不代表整个互联网应用的响应时间。",
+        "symbols": {
+          "d": {
+            "desc": "电磁波传播距离",
+            "unit": "m"
+          },
+          "c": {
+            "desc": "电磁波传播速度近似值",
+            "unit": "m/s"
+          },
+          "t": {
+            "desc": "理想传播所用时间",
+            "unit": "s"
+          },
+          "lambda": {
+            "desc": "电磁波波长",
+            "unit": "m"
+          },
+          "f": {
+            "desc": "电磁波频率",
+            "unit": "Hz"
+          }
+        },
+        "scenarios": {
+          "传播3千米": {
+            "d": 3000,
+            "c": 300000000,
+            "t": 1e-05
+          },
+          "传播30千米": {
+            "d": 30000,
+            "c": 300000000,
+            "t": 0.0001
+          },
+          "无线电波": {
+            "c": 300000000,
+            "lambda": 3,
+            "f": 100000000
+          },
+          "微波": {
+            "c": 300000000,
+            "lambda": 0.5,
+            "f": 600000000
+          }
+        },
+        "formulas": [
+          {
+            "name": "传播距离与时间关系",
+            "expr": "d = c*t",
+            "when": "电磁波在空气中近似以真空光速传播，且只计算单程传播。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "传播3千米",
+                "expr": "c*t",
+                "ref": 3000,
+                "note": "3.0×10^8 m/s×10^-5 s=3000 m。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "传播30千米",
+                "expr": "c*t",
+                "ref": 30000,
+                "note": "传播距离和时间同时扩大十倍。"
+              },
+              {
+                "type": "direction",
+                "scenario": "传播3千米",
+                "var": "t",
+                "lo": 0,
+                "hi": 0.01,
+                "expr": "c*t",
+                "expect": "up",
+                "note": "波速固定时，传播时间越长，路程越远。"
+              },
+              {
+                "type": "scan",
+                "scenario": "传播3千米",
+                "var": "t",
+                "lo": 0,
+                "hi": 1,
+                "note": "扫描非负传播时间，路程计算稳定。"
+              },
+              {
+                "type": "consistency",
+                "scenario": "传播3千米",
+                "with": "emwave-02|传播距离与时间关系",
+                "with_expr": "d",
+                "target": "电磁波传播距离",
+                "note": "直接求本公式输出，与情境中另列的d设计基准核对；数据是设计示例，不是实测。用于核对定义、反算或边界值，不宣称不同物理原理互证。",
+                "verification_kind": "独立设计情境数据核对"
+              }
+            ]
+          },
+          {
+            "name": "由距离和波速求传播时间",
+            "expr": "t = d/c",
+            "when": "d 为单程距离，c 为这段路径上的近似传播速度。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "传播3千米",
+                "expr": "d/c",
+                "ref": 1e-05,
+                "note": "3000 m÷3.0×10^8 m/s=0.00001 s。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "传播30千米",
+                "expr": "d/c",
+                "ref": 0.0001,
+                "note": "30 000 m÷3.0×10^8 m/s=0.0001 s。"
+              },
+              {
+                "type": "direction",
+                "scenario": "传播3千米",
+                "var": "d",
+                "lo": 0,
+                "hi": 3000000,
+                "expr": "d/c",
+                "expect": "up",
+                "note": "传播速度固定时，距离越远，理想传播时间越长。"
+              },
+              {
+                "type": "scan",
+                "scenario": "传播3千米",
+                "var": "d",
+                "lo": 0,
+                "hi": 300000000,
+                "note": "扫描非负距离，传播时间反算稳定。"
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "把通信链路的单程距离 d 统一为 m。",
+          "无线电波在空气中的速度近似取 3.0×10^8 m/s。",
+          "用距离除以波速估算理想传播时间。",
+          "实际通信还包含设备处理等时延，不能把估算值当成端到端总时延。"
+        ],
+        "errors": [
+          {
+            "wrong": "把单程传播距离误当成往返距离，计算时多乘 2。",
+            "wrong_expr": "t = 2*d/c",
+            "why": "通信单程时延只对应单程路径；若题目明确发射后返回的回波才计算往返。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "传播3千米",
+              "expr": "2*d/c",
+              "ref": 1e-05
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "把光速传播时间当成端到端网络响应时间。",
+            "why": "互联网通信还包含路由、排队和设备处理时间，理想传播时延只是其中一部分。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "电磁波在空气中传播 30 km，按 3.0×10^8 m/s 估算单程时间。",
+          "solution": [
+            "30 km=30 000 m。",
+            "t=d/c=30 000/(3.0×10^8)=0.0001 s。"
+          ],
+          "answer": "理想单程传播时间约为 0.0001 s。"
+        },
+        "prereq": [
+          "emwave-01",
+          "motion-01"
+        ],
+        "next": [],
+        "tags": [
+          "无线通信",
+          "传播速度",
+          "时延",
+          "单程距离"
+        ],
+        "core": [
+          {
+            "title": "现代通信与信息时代",
+            "text": "无线通信利用电磁波，卫星通信可接力跨区域信号；光纤通信以光传信息，光在适当条件下被约束在纤芯传播；网络把终端和交换设备连接起来。光纤传的是信号能量及信息，不是把整颗电子从发端搬到收端。传输时延不等于下载总时间；信息技术也涉及隐私、真实性和合理使用。"
+          }
+        ],
+        "learning_scope": "初中"
+      },
+      "error_index": 0,
+      "chapter": "电磁波与现代通信"
+    },
+    "diagnostic-emwave-02-2": {
+      "point": {
+        "id": "emwave-02",
+        "title": "电磁波传播与通信时延",
+        "level": "基础",
+        "definition": "无线通信把信息转换成电信号并调制到电磁波上，经空间传播后由接收设备还原信息。忽略处理设备和传播介质影响时，信号传播时间可用传播距离除以波速估算。",
+        "meaning": "无线电波传播速度接近真空光速，因此远距离通信仍有传播时延；实际通信总时延还包括设备处理、排队和网络转发时间。用路程和时间估算只能表示理想的一段传播过程，不代表整个互联网应用的响应时间。",
+        "symbols": {
+          "d": {
+            "desc": "电磁波传播距离",
+            "unit": "m"
+          },
+          "c": {
+            "desc": "电磁波传播速度近似值",
+            "unit": "m/s"
+          },
+          "t": {
+            "desc": "理想传播所用时间",
+            "unit": "s"
+          },
+          "lambda": {
+            "desc": "电磁波波长",
+            "unit": "m"
+          },
+          "f": {
+            "desc": "电磁波频率",
+            "unit": "Hz"
+          }
+        },
+        "scenarios": {
+          "传播3千米": {
+            "d": 3000,
+            "c": 300000000,
+            "t": 1e-05
+          },
+          "传播30千米": {
+            "d": 30000,
+            "c": 300000000,
+            "t": 0.0001
+          },
+          "无线电波": {
+            "c": 300000000,
+            "lambda": 3,
+            "f": 100000000
+          },
+          "微波": {
+            "c": 300000000,
+            "lambda": 0.5,
+            "f": 600000000
+          }
+        },
+        "formulas": [
+          {
+            "name": "传播距离与时间关系",
+            "expr": "d = c*t",
+            "when": "电磁波在空气中近似以真空光速传播，且只计算单程传播。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "传播3千米",
+                "expr": "c*t",
+                "ref": 3000,
+                "note": "3.0×10^8 m/s×10^-5 s=3000 m。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "传播30千米",
+                "expr": "c*t",
+                "ref": 30000,
+                "note": "传播距离和时间同时扩大十倍。"
+              },
+              {
+                "type": "direction",
+                "scenario": "传播3千米",
+                "var": "t",
+                "lo": 0,
+                "hi": 0.01,
+                "expr": "c*t",
+                "expect": "up",
+                "note": "波速固定时，传播时间越长，路程越远。"
+              },
+              {
+                "type": "scan",
+                "scenario": "传播3千米",
+                "var": "t",
+                "lo": 0,
+                "hi": 1,
+                "note": "扫描非负传播时间，路程计算稳定。"
+              },
+              {
+                "type": "consistency",
+                "scenario": "传播3千米",
+                "with": "emwave-02|传播距离与时间关系",
+                "with_expr": "d",
+                "target": "电磁波传播距离",
+                "note": "直接求本公式输出，与情境中另列的d设计基准核对；数据是设计示例，不是实测。用于核对定义、反算或边界值，不宣称不同物理原理互证。",
+                "verification_kind": "独立设计情境数据核对"
+              }
+            ]
+          },
+          {
+            "name": "由距离和波速求传播时间",
+            "expr": "t = d/c",
+            "when": "d 为单程距离，c 为这段路径上的近似传播速度。",
+            "checks": [
+              {
+                "type": "numeric",
+                "scenario": "传播3千米",
+                "expr": "d/c",
+                "ref": 1e-05,
+                "note": "3000 m÷3.0×10^8 m/s=0.00001 s。"
+              },
+              {
+                "type": "numeric",
+                "scenario": "传播30千米",
+                "expr": "d/c",
+                "ref": 0.0001,
+                "note": "30 000 m÷3.0×10^8 m/s=0.0001 s。"
+              },
+              {
+                "type": "direction",
+                "scenario": "传播3千米",
+                "var": "d",
+                "lo": 0,
+                "hi": 3000000,
+                "expr": "d/c",
+                "expect": "up",
+                "note": "传播速度固定时，距离越远，理想传播时间越长。"
+              },
+              {
+                "type": "scan",
+                "scenario": "传播3千米",
+                "var": "d",
+                "lo": 0,
+                "hi": 300000000,
+                "note": "扫描非负距离，传播时间反算稳定。"
+              }
+            ]
+          }
+        ],
+        "derivation": [
+          "把通信链路的单程距离 d 统一为 m。",
+          "无线电波在空气中的速度近似取 3.0×10^8 m/s。",
+          "用距离除以波速估算理想传播时间。",
+          "实际通信还包含设备处理等时延，不能把估算值当成端到端总时延。"
+        ],
+        "errors": [
+          {
+            "wrong": "把单程传播距离误当成往返距离，计算时多乘 2。",
+            "wrong_expr": "t = 2*d/c",
+            "why": "通信单程时延只对应单程路径；若题目明确发射后返回的回波才计算往返。",
+            "caught_by": "数值代入",
+            "trap_test": {
+              "scenario": "传播3千米",
+              "expr": "2*d/c",
+              "ref": 1e-05
+            },
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          },
+          {
+            "wrong": "把光速传播时间当成端到端网络响应时间。",
+            "why": "互联网通信还包含路由、排队和设备处理时间，理想传播时延只是其中一部分。",
+            "caught_by": "人工审核",
+            "diagnostic": {
+              "style": "物理结论与步骤辨析"
+            }
+          }
+        ],
+        "example": {
+          "stem": "电磁波在空气中传播 30 km，按 3.0×10^8 m/s 估算单程时间。",
+          "solution": [
+            "30 km=30 000 m。",
+            "t=d/c=30 000/(3.0×10^8)=0.0001 s。"
+          ],
+          "answer": "理想单程传播时间约为 0.0001 s。"
+        },
+        "prereq": [
+          "emwave-01",
+          "motion-01"
+        ],
+        "next": [],
+        "tags": [
+          "无线通信",
+          "传播速度",
+          "时延",
+          "单程距离"
+        ],
+        "core": [
+          {
+            "title": "现代通信与信息时代",
+            "text": "无线通信利用电磁波，卫星通信可接力跨区域信号；光纤通信以光传信息，光在适当条件下被约束在纤芯传播；网络把终端和交换设备连接起来。光纤传的是信号能量及信息，不是把整颗电子从发端搬到收端。传输时延不等于下载总时间；信息技术也涉及隐私、真实性和合理使用。"
+          }
+        ],
+        "learning_scope": "初中"
+      },
+      "error_index": 1,
+      "chapter": "电磁波与现代通信"
+    }
+  },
+  "generator_version": "2026-10-04-条件过程返工-8"
+}

@@ -161,8 +161,8 @@ def render_formula_index(groups):
         for p in pts:
             L.append('<div class="vp">%s</div>' % E(p.get("title", p["id"])))
             for f in p.get("formulas", []):
-                L.append('<div class="vf">%s%s</div>'
-                         % ('<div class="formula-scroll">'+BS.mathml_block(f.get("mathml", ""),p["id"])+'</div>',
+                L.append('<div class="vf" data-point="%s">%s%s</div>'
+                         % (E(p["id"]), '<div class="formula-scroll">'+BS.mathml_block(f.get("mathml", ""),p["id"])+'</div>',
                             ('<div class="vw">适用：%s</div>' % prose(f["when"])) if f.get("when") else ""))
     L.append('</section>')
     return "".join(L)
@@ -367,13 +367,32 @@ __SEGMENT_BAR__
 (function(){
   var q=document.getElementById('q'), chips=document.querySelectorAll('.chips button'),
       cards=document.querySelectorAll('.kp'), cur='all';
+  // 学生版也从实际正文建立索引，折叠的例题和说明不再漏搜。
+  function cleanSearch(value){return String(value||'').normalize('NFKC').toLowerCase().replace(/\\s+/g,' ').trim();}
+  function matchSearch(value,words){var source=cleanSearch(value);return words.every(function(word){return source.indexOf(word)>=0;});}
+  Array.prototype.forEach.call(cards,function(c){c.dataset.search=cleanSearch(c.textContent+' '+c.dataset.chapter+' '+c.id);});
   function apply(){
-    var kw=(q.value||'').trim().toLowerCase(), n=0;
+    var kw=cleanSearch(q.value), words=kw.split(' ').filter(Boolean), n=0;
     Array.prototype.forEach.call(cards,function(c){
-      var okKw=!kw||(c.getAttribute('data-search')||'').toLowerCase().indexOf(kw)>=0;
+      var okKw=matchSearch(c.getAttribute('data-search'),words);
       var okCh=cur==='all'||c.getAttribute('data-chapter')===cur;
       var vis=okKw&&okCh; c.style.display=vis?'':'none'; if(vis) n++;
     });
+    var view=document.body.getAttribute('data-view');
+    if(view==='formula'||view==='symbol'){
+      n=0;document.querySelectorAll(view==='formula'?'.vf':'.vsrow').forEach(function(row){
+        var point=view==='formula'?document.getElementById(row.dataset.point):null;
+        var title=point?point.querySelector('h3').textContent:'';
+        var visible=matchSearch(row.textContent+' '+title,words);
+        row.style.display=visible?'':'none';if(visible)n++;
+      });
+      // 没有匹配行时一并隐藏分组标题，避免空标题被误认为检索结果。
+      document.querySelectorAll(view==='formula'?'#allformulas .ch,#allformulas .vp':'#allsymbols .vsb').forEach(function(h){
+        var el=h.nextElementSibling,any=false;
+        while(el&&!el.matches(view==='formula'?(h.matches('.ch')?'.ch':'.ch,.vp'):'.vsb')){if(el.matches(view==='formula'?'.vf':'.vsrow')&&el.style.display!=='none')any=true;el=el.nextElementSibling;}
+        h.style.display=any?'':'none';
+      });
+    }
     document.getElementById('empty').style.display = n?'none':'block';
     Array.prototype.forEach.call(document.querySelectorAll('h1.ch'),function(h){
       var any=false, el=h.nextElementSibling;

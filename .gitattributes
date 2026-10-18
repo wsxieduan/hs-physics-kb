@@ -1,0 +1,13 @@
+# 校验基线和版本号依赖实际字节；保留物理项目源码与成品的已验收换行。
+# 禁止自动换行转换，但仍允许 Git 正常显示文本差异；不影响其他项目。
+/work/*.py -text
+/work/physkit/*.py -text
+/work/kb/*.json -text
+/work/kb_junior/*.json -text
+/work/quiz_bank/hs/*.json -text
+/work/quiz_bank/junior/*.json -text
+/work/crosswalk*.json -text
+/site/*.html -text
+/outputs/*.html -text
+/outputs/物理知识库整合版/*.html -text
+/质检基线.json -text

@@ -1,0 +1,134 @@
+{
+  "version": "43872e9f69734254e215445d5df542d051d6825ac12fbe64b27f04874d1d0a24",
+  "checks": [
+    {
+      "name": "原有知识内容、题目、冻结引擎和基线没有被界面改造改写",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "index.html 三处交付字节相同",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "index.html 没有外部脚本、样式或资源依赖",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "index.html 本地页面跳转目标存在",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "junior.html 三处交付字节相同",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "junior.html 没有外部脚本、样式或资源依赖",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "junior.html 本地页面跳转目标存在",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "student.html 三处交付字节相同",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "student.html 没有外部脚本、样式或资源依赖",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "student.html 本地页面跳转目标存在",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "quick.html 三处交付字节相同",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "quick.html 没有外部脚本、样式或资源依赖",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "quick.html 本地页面跳转目标存在",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "junior-quick.html 三处交付字节相同",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "junior-quick.html 没有外部脚本、样式或资源依赖",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "junior-quick.html 本地页面跳转目标存在",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "quiz-hs.html 三处交付字节相同",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "quiz-hs.html 没有外部脚本、样式或资源依赖",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "quiz-hs.html 本地页面跳转目标存在",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "quiz-junior.html 三处交付字节相同",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "quiz-junior.html 没有外部脚本、样式或资源依赖",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "quiz-junior.html 本地页面跳转目标存在",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "高中 速查界面全部字段与已校验源逐项对应",
+      "pass": true,
+      "detail": {
+        "chapters": 25,
+        "points": 217,
+        "formulas": 561
+      }
+    },
+    {
+      "name": "初中 速查界面全部字段与已校验源逐项对应",
+      "pass": true,
+      "detail": {
+        "chapters": 21,
+        "points": 113,
+        "formulas": 219
+      }
+    }
+  ],
+  "pass": true
+}
